@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PhoneNumber import PhoneNumber
-from .Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
+from ._PhoneNumber import PhoneNumber
+from ._Max2048Text import Max2048Text
 
 class CommunicationAddress7(base_types._BaseFieldType):
 
-	__slots__ = ["_TlxAdr", "_URLAdr", "_Email", "_PhneNb", "_FaxNb", "_MobNb"]
+	__slots__ = ["_TlxAdr", "_URLAdr", "_PhneNb", "_FaxNb", "_MobNb", "_Email"]
 	@property
 	def TlxAdr(self):
 		return self._TlxAdr
@@ -31,19 +31,6 @@ class CommunicationAddress7(base_types._BaseFieldType):
 	def URLAdr(self):
 		del self._URLAdr
 		self._URLAdr = None
-
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
 
 	@property
 	def PhneNb(self):
@@ -84,12 +71,25 @@ class CommunicationAddress7(base_types._BaseFieldType):
 		del self._MobNb
 		self._MobNb = None
 
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TlxAdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .UpdatedAdditionalInformation21 import UpdatedAdditionalInformation21
-from .UpdatedAdditionalInformation19 import UpdatedAdditionalInformation19
+from ._UpdatedAdditionalInformation21 import UpdatedAdditionalInformation21
+from ._UpdatedAdditionalInformation19 import UpdatedAdditionalInformation19
 
 class CorporateActionNarrative66(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxtnConds", "_InfToCmplyWth", "_AddtlTxt", "_CertfctnBrkdwn", "_InfConds", "_SctyRstrctn", "_NrrtvVrsn"]
-	@property
-	def TaxtnConds(self):
-		return self._TaxtnConds
-
-	@TaxtnConds.setter
-	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
-
-	@TaxtnConds.deleter
-	def TaxtnConds(self):
-		del self._TaxtnConds
-		self._TaxtnConds = None
-
+	__slots__ = ["_InfToCmplyWth", "_CertfctnBrkdwn", "_InfConds", "_AddtlTxt", "_SctyRstrctn", "_NrrtvVrsn", "_TaxtnConds"]
 	@property
 	def InfToCmplyWth(self):
 		return self._InfToCmplyWth
@@ -30,19 +17,6 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 	def InfToCmplyWth(self):
 		del self._InfToCmplyWth
 		self._InfToCmplyWth = None
-
-	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
-
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
-
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
 
 	@property
 	def CertfctnBrkdwn(self):
@@ -71,6 +45,19 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 		self._InfConds = None
 
 	@property
+	def AddtlTxt(self):
+		return self._AddtlTxt
+
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
+
+	@property
 	def SctyRstrctn(self):
 		return self._SctyRstrctn
 
@@ -96,13 +83,26 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 		del self._NrrtvVrsn
 		self._NrrtvVrsn = None
 
+	@property
+	def TaxtnConds(self):
+		return self._TaxtnConds
+
+	@TaxtnConds.setter
+	def TaxtnConds(self, value):
+		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+
+	@TaxtnConds.deleter
+	def TaxtnConds(self):
+		del self._TaxtnConds
+		self._TaxtnConds = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyRstrctn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrrtvVrsn', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 	))
 

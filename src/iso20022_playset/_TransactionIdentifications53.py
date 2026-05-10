@@ -1,9 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class TransactionIdentifications53(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_NonceId", "_AcctSvcrTxId", "_CmonId"]
+	__slots__ = ["_AcctOwnrTxId", "_CmonId", "_AcctSvcrTxId", "_NonceId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -18,17 +18,17 @@ class TransactionIdentifications53(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def NonceId(self):
-		return self._NonceId
+	def CmonId(self):
+		return self._CmonId
 
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
 
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -44,22 +44,22 @@ class TransactionIdentifications53(base_types._BaseFieldType):
 		self._AcctSvcrTxId = None
 
 	@property
-	def CmonId(self):
-		return self._CmonId
+	def NonceId(self):
+		return self._NonceId
 
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
 
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountSwitchTechnicalRejectionV02 import AccountSwitchTechnicalRejectionV02
+from ._AccountSwitchTechnicalRejectionV02 import AccountSwitchTechnicalRejectionV02
 
 class ACMT_037_001_02():
 

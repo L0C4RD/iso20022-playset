@@ -1,38 +1,12 @@
 from . import base_types
-from .PaperCommodityContainerBoard2 import PaperCommodityContainerBoard2
-from .PaperCommodityOther1 import PaperCommodityOther1
-from .PaperCommodityNewsprint2 import PaperCommodityNewsprint2
-from .PaperCommodityPulp2 import PaperCommodityPulp2
+from ._PaperCommodityOther1 import PaperCommodityOther1
+from ._PaperCommodityPulp2 import PaperCommodityPulp2
+from ._PaperCommodityContainerBoard2 import PaperCommodityContainerBoard2
+from ._PaperCommodityNewsprint2 import PaperCommodityNewsprint2
 
 class AssetClassCommodityPaper4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RcvrdPpr", "_Othr", "_Nwsprnt", "_CntnrBrd", "_Pulp"]
-	@property
-	def RcvrdPpr(self):
-		return self._RcvrdPpr
-
-	@RcvrdPpr.setter
-	def RcvrdPpr(self, value):
-		self._RcvrdPpr = value if type(value) != base_types.auto else self.make_default("RcvrdPpr")
-
-	@RcvrdPpr.deleter
-	def RcvrdPpr(self):
-		del self._RcvrdPpr
-		self._RcvrdPpr = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_Nwsprnt", "_CntnrBrd", "_Othr", "_RcvrdPpr", "_Pulp"]
 	@property
 	def Nwsprnt(self):
 		return self._Nwsprnt
@@ -60,6 +34,32 @@ class AssetClassCommodityPaper4Choice(base_types._BaseFieldType):
 		self._CntnrBrd = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def RcvrdPpr(self):
+		return self._RcvrdPpr
+
+	@RcvrdPpr.setter
+	def RcvrdPpr(self, value):
+		self._RcvrdPpr = value if type(value) != base_types.auto else self.make_default("RcvrdPpr")
+
+	@RcvrdPpr.deleter
+	def RcvrdPpr(self):
+		del self._RcvrdPpr
+		self._RcvrdPpr = None
+
+	@property
 	def Pulp(self):
 		return self._Pulp
 
@@ -73,10 +73,10 @@ class AssetClassCommodityPaper4Choice(base_types._BaseFieldType):
 		self._Pulp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcvrdPpr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nwsprnt', type=PaperCommodityNewsprint2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RcvrdPpr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pulp', type=PaperCommodityPulp2, min=0, max=1, mutex_group=1, array=False),
 	))
 

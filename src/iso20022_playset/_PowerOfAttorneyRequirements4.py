@@ -1,24 +1,11 @@
 from . import base_types
-from .DateFormat58Choice import DateFormat58Choice
-from .Max350Text import Max350Text
-from .PowerOfAttorneyLegalisation1Code import PowerOfAttorneyLegalisation1Code
+from ._DateFormat58Choice import DateFormat58Choice
+from ._Max350Text import Max350Text
+from ._PowerOfAttorneyLegalisation1Code import PowerOfAttorneyLegalisation1Code
 
 class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrDcmnttn", "_LglRqrmnt", "_DocSubmissnDdln"]
-	@property
-	def OthrDcmnttn(self):
-		return self._OthrDcmnttn
-
-	@OthrDcmnttn.setter
-	def OthrDcmnttn(self, value):
-		self._OthrDcmnttn = value if type(value) != base_types.auto else self.make_default("OthrDcmnttn")
-
-	@OthrDcmnttn.deleter
-	def OthrDcmnttn(self):
-		del self._OthrDcmnttn
-		self._OthrDcmnttn = None
-
+	__slots__ = ["_LglRqrmnt", "_OthrDcmnttn", "_DocSubmissnDdln"]
 	@property
 	def LglRqrmnt(self):
 		return self._LglRqrmnt
@@ -31,6 +18,19 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 	def LglRqrmnt(self):
 		del self._LglRqrmnt
 		self._LglRqrmnt = None
+
+	@property
+	def OthrDcmnttn(self):
+		return self._OthrDcmnttn
+
+	@OthrDcmnttn.setter
+	def OthrDcmnttn(self, value):
+		self._OthrDcmnttn = value if type(value) != base_types.auto else self.make_default("OthrDcmnttn")
+
+	@OthrDcmnttn.deleter
+	def OthrDcmnttn(self):
+		del self._OthrDcmnttn
+		self._OthrDcmnttn = None
 
 	@property
 	def DocSubmissnDdln(self):
@@ -46,8 +46,8 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 		self._DocSubmissnDdln = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrDcmnttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglRqrmnt', type=PowerOfAttorneyLegalisation1Code, min=0, max=4, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrDcmnttn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocSubmissnDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

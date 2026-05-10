@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .GenericAccountIdentification1 import GenericAccountIdentification1
-from .IBAN2007Identifier import IBAN2007Identifier
+from ._Max35Text import Max35Text
+from ._IBAN2007Identifier import IBAN2007Identifier
+from ._GenericAccountIdentification1 import GenericAccountIdentification1
 
 class AccountIdentificationAndName6(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Othr", "_IBAN"]
+	__slots__ = ["_IBAN", "_Nm", "_Othr"]
+	@property
+	def IBAN(self):
+		return self._IBAN
+
+	@IBAN.setter
+	def IBAN(self, value):
+		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+
+	@IBAN.deleter
+	def IBAN(self):
+		del self._IBAN
+		self._IBAN = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -32,22 +45,9 @@ class AccountIdentificationAndName6(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def IBAN(self):
-		return self._IBAN
-
-	@IBAN.setter
-	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
-
-	@IBAN.deleter
-	def IBAN(self):
-		del self._IBAN
-		self._IBAN = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

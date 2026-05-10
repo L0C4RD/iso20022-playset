@@ -1,7 +1,7 @@
 from . import base_types
-from .AssetClassProductType4Code import AssetClassProductType4Code
-from .AssetClassSubProductType32Code import AssetClassSubProductType32Code
-from .AssetClassDetailedSubProductType12Code import AssetClassDetailedSubProductType12Code
+from ._AssetClassDetailedSubProductType12Code import AssetClassDetailedSubProductType12Code
+from ._AssetClassProductType4Code import AssetClassProductType4Code
+from ._AssetClassSubProductType32Code import AssetClassSubProductType32Code
 
 class FreightCommodityWet1(base_types._BaseFieldType):
 

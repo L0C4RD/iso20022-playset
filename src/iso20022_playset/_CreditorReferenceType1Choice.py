@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentType3Code import DocumentType3Code
+from ._Max35Text import Max35Text
+from ._DocumentType3Code import DocumentType3Code
 
 class CreditorReferenceType1Choice(base_types._BaseFieldType):
 

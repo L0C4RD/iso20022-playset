@@ -1,8 +1,8 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .NameAndAddress5 import NameAndAddress5
-from .GenericIdentification36 import GenericIdentification36
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._NameAndAddress5 import NameAndAddress5
+from ._GenericIdentification36 import GenericIdentification36
 
 class PartyIdentification129Choice(base_types._BaseFieldType):
 

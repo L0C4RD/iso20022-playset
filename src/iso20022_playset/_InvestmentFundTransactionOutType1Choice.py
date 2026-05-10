@@ -1,6 +1,6 @@
 from . import base_types
-from .InvestmentFundTransactionOutType1Code import InvestmentFundTransactionOutType1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._InvestmentFundTransactionOutType1Code import InvestmentFundTransactionOutType1Code
 
 class InvestmentFundTransactionOutType1Choice(base_types._BaseFieldType):
 

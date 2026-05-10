@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountAndDirection106 import AmountAndDirection106
-from .ISODate import ISODate
+from ._AmountAndDirection106 import AmountAndDirection106
+from ._ISODate import ISODate
 
 class Schedule11(base_types._BaseFieldType):
 

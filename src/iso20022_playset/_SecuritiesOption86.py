@@ -1,12 +1,25 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Quantity54Choice import Quantity54Choice
-from .SecurityIdentification20 import SecurityIdentification20
-from .CreditDebitCode import CreditDebitCode
+from ._Quantity54Choice import Quantity54Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPstngDt", "_PstngDt", "_CdtDbtInd", "_PstngQty", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_OrgnlPstngDt", "_PstngDt", "_CdtDbtInd", "_PstngQty"]
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	@property
 	def OrgnlPstngDt(self):
 		return self._OrgnlPstngDt
@@ -59,24 +72,11 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		del self._PstngQty
 		self._PstngQty = None
 
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 	))
 

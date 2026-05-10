@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionTotalsSet2 import TransactionTotalsSet2
+from ._Max35Text import Max35Text
+from ._TransactionTotalsSet2 import TransactionTotalsSet2
 
 class ReportGetTotalsResponse2(base_types._BaseFieldType):
 

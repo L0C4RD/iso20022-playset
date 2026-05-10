@@ -1,7 +1,7 @@
 from . import base_types
-from .CreditTransferTransaction66 import CreditTransferTransaction66
-from .GroupHeader119 import GroupHeader119
-from .SupplementaryData1 import SupplementaryData1
+from ._CreditTransferTransaction66 import CreditTransferTransaction66
+from ._SupplementaryData1 import SupplementaryData1
+from ._GroupHeader119 import GroupHeader119
 
 class FinancialInstitutionDirectDebitV06(base_types._BaseFieldType):
 

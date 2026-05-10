@@ -1,39 +1,26 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max35Text import Max35Text
-from .Disclosure3Choice import Disclosure3Choice
-from .PartyIdentification219 import PartyIdentification219
-from .Pagination1 import Pagination1
-from .DisclosureRequestIdentification1 import DisclosureRequestIdentification1
+from ._Pagination1 import Pagination1
+from ._PartyIdentification219 import PartyIdentification219
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._Disclosure3Choice import Disclosure3Choice
+from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
 
 class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_SplmtryData", "_RspndgIntrmy", "_IssrDsclsrReqRef", "_DsclsrRspnId", "_DsclsrInf"]
+	__slots__ = ["_IssrDsclsrReqRef", "_RspndgIntrmy", "_Pgntn", "_DsclsrRspnId", "_DsclsrInf", "_SplmtryData"]
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def IssrDsclsrReqRef(self):
+		return self._IssrDsclsrReqRef
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@IssrDsclsrReqRef.setter
+	def IssrDsclsrReqRef(self, value):
+		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@IssrDsclsrReqRef.deleter
+	def IssrDsclsrReqRef(self):
+		del self._IssrDsclsrReqRef
+		self._IssrDsclsrReqRef = None
 
 	@property
 	def RspndgIntrmy(self):
@@ -49,17 +36,17 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 		self._RspndgIntrmy = None
 
 	@property
-	def IssrDsclsrReqRef(self):
-		return self._IssrDsclsrReqRef
+	def Pgntn(self):
+		return self._Pgntn
 
-	@IssrDsclsrReqRef.setter
-	def IssrDsclsrReqRef(self, value):
-		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@IssrDsclsrReqRef.deleter
-	def IssrDsclsrReqRef(self):
-		del self._IssrDsclsrReqRef
-		self._IssrDsclsrReqRef = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def DsclsrRspnId(self):
@@ -87,12 +74,25 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 		del self._DsclsrInf
 		self._DsclsrInf = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification219, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification219, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DsclsrInf', type=Disclosure3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

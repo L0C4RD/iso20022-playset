@@ -1,23 +1,10 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .DocumentNumber16Choice import DocumentNumber16Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._DocumentNumber16Choice import DocumentNumber16Choice
 
 class GenericDocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNb", "_Id"]
-	@property
-	def MsgNb(self):
-		return self._MsgNb
-
-	@MsgNb.setter
-	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
-
-	@MsgNb.deleter
-	def MsgNb(self):
-		del self._MsgNb
-		self._MsgNb = None
-
+	__slots__ = ["_Id", "_MsgNb"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class GenericDocumentIdentification6(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def MsgNb(self):
+		return self._MsgNb
+
+	@MsgNb.setter
+	def MsgNb(self, value):
+		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
+
+	@MsgNb.deleter
+	def MsgNb(self):
+		del self._MsgNb
+		self._MsgNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgNb', type=DocumentNumber16Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNb', type=DocumentNumber16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

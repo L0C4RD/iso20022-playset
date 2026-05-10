@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BICFIIdentifier import BICFIIdentifier
-from .ClearingSystemMemberIdentificationChoice import ClearingSystemMemberIdentificationChoice
-from .NameAndAddress5 import NameAndAddress5
+from ._Max35Text import Max35Text
+from ._ClearingSystemMemberIdentificationChoice import ClearingSystemMemberIdentificationChoice
+from ._NameAndAddress5 import NameAndAddress5
+from ._BICFIIdentifier import BICFIIdentifier
 
 class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_BICFI", "_ClrSysMmbId", "_NmAndAdr"]
-	@property
-	def PrtryId(self):
-		return self._PrtryId
-
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
-
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
+	__slots__ = ["_BICFI", "_PrtryId", "_NmAndAdr", "_ClrSysMmbId"]
 	@property
 	def BICFI(self):
 		return self._BICFI
@@ -34,17 +21,17 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
+	def PrtryId(self):
+		return self._PrtryId
 
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def NmAndAdr(self):
@@ -59,10 +46,23 @@ class FinancialInstitutionIdentification8Choice(base_types._BaseFieldType):
 		del self._NmAndAdr
 		self._NmAndAdr = None
 
+	@property
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
+
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentificationChoice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentificationChoice, min=0, max=1, mutex_group=1, array=False),
 	))
 

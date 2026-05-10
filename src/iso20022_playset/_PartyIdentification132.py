@@ -1,13 +1,39 @@
 from . import base_types
-from .GenericIdentification1 import GenericIdentification1
-from .ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .NameAndAddress5 import NameAndAddress5
-from .LEIIdentifier import LEIIdentifier
+from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._GenericIdentification1 import GenericIdentification1
+from ._NameAndAddress5 import NameAndAddress5
 
 class PartyIdentification132(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_LEI", "_AnyBIC", "_PrtryId", "_ClrSysMmbId"]
+	__slots__ = ["_AnyBIC", "_ClrSysMmbId", "_NmAndAdr", "_LEI", "_PrtryId"]
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
+	@property
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
+
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
+
 	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
@@ -35,19 +61,6 @@ class PartyIdentification132(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
-	@property
 	def PrtryId(self):
 		return self._PrtryId
 
@@ -60,24 +73,11 @@ class PartyIdentification132(base_types._BaseFieldType):
 		del self._PrtryId
 		self._PrtryId = None
 
-	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
-
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
-
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

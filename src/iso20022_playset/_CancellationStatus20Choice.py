@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .CancellationReason18 import CancellationReason18
+from ._NoReasonCode import NoReasonCode
+from ._CancellationReason18 import CancellationReason18
 
 class CancellationStatus20Choice(base_types._BaseFieldType):
 

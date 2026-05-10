@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .TimeFrame2Code import TimeFrame2Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._TimeFrame2Code import TimeFrame2Code
 
 class TimeFrame9Choice(base_types._BaseFieldType):
 

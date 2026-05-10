@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AdditionalInformation15 import AdditionalInformation15
-from .TargetMarket1Choice import TargetMarket1Choice
+from ._Max35Text import Max35Text
+from ._TargetMarket1Choice import TargetMarket1Choice
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 
-	__slots__ = ["_AbltyToBearLossesTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AbltyToBearLossesTp", "_AddtlInf", "_Trgt"]
 	@property
 	def AbltyToBearLossesTp(self):
 		return self._AbltyToBearLossesTp
@@ -20,19 +20,6 @@ class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 		self._AbltyToBearLossesTp = None
 
 	@property
-	def Trgt(self):
-		return self._Trgt
-
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
-
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
-
-	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -45,9 +32,22 @@ class OtherTargetMarketLossBearing1(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Trgt(self):
+		return self._Trgt
+
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
+
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AbltyToBearLossesTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

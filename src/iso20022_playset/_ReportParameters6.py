@@ -1,38 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .EventFrequency6Code import EventFrequency6Code
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .ISODateTime import ISODateTime
+from ._EventFrequency6Code import EventFrequency6Code
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ISODateTime import ISODateTime
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class ReportParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_RptCcy", "_ClctnDt", "_RptDtAndTm", "_RptId", "_Frqcy"]
+	__slots__ = ["_RptId", "_RptDtAndTm", "_ClctnDt", "_Frqcy", "_RptCcy"]
 	@property
-	def RptCcy(self):
-		return self._RptCcy
+	def RptId(self):
+		return self._RptId
 
-	@RptCcy.setter
-	def RptCcy(self, value):
-		self._RptCcy = value if type(value) != base_types.auto else self.make_default("RptCcy")
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
 
-	@RptCcy.deleter
-	def RptCcy(self):
-		del self._RptCcy
-		self._RptCcy = None
-
-	@property
-	def ClctnDt(self):
-		return self._ClctnDt
-
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
-
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
 
 	@property
 	def RptDtAndTm(self):
@@ -48,17 +35,17 @@ class ReportParameters6(base_types._BaseFieldType):
 		self._RptDtAndTm = None
 
 	@property
-	def RptId(self):
-		return self._RptId
+	def ClctnDt(self):
+		return self._ClctnDt
 
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
 
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
 
 	@property
 	def Frqcy(self):
@@ -73,11 +60,24 @@ class ReportParameters6(base_types._BaseFieldType):
 		del self._Frqcy
 		self._Frqcy = None
 
+	@property
+	def RptCcy(self):
+		return self._RptCcy
+
+	@RptCcy.setter
+	def RptCcy(self, value):
+		self._RptCcy = value if type(value) != base_types.auto else self.make_default("RptCcy")
+
+	@RptCcy.deleter
+	def RptCcy(self):
+		del self._RptCcy
+		self._RptCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=EventFrequency6Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

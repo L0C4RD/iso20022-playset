@@ -1,12 +1,25 @@
 from . import base_types
-from .TransactionIdentifier3 import TransactionIdentifier3
-from .ATMOperation2Code import ATMOperation2Code
-from .ATMCassette3 import ATMCassette3
-from .Max35Text import Max35Text
+from ._ATMOperation2Code import ATMOperation2Code
+from ._ATMCassette3 import ATMCassette3
+from ._Max35Text import Max35Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction30(base_types._BaseFieldType):
 
-	__slots__ = ["_Csstt", "_TxId", "_RcncltnId", "_TpOfOpr"]
+	__slots__ = ["_TpOfOpr", "_Csstt", "_TxId", "_RcncltnId"]
+	@property
+	def TpOfOpr(self):
+		return self._TpOfOpr
+
+	@TpOfOpr.setter
+	def TpOfOpr(self, value):
+		self._TpOfOpr = value if type(value) != base_types.auto else self.make_default("TpOfOpr")
+
+	@TpOfOpr.deleter
+	def TpOfOpr(self):
+		del self._TpOfOpr
+		self._TpOfOpr = None
+
 	@property
 	def Csstt(self):
 		return self._Csstt
@@ -46,23 +59,10 @@ class ATMTransaction30(base_types._BaseFieldType):
 		del self._RcncltnId
 		self._RcncltnId = None
 
-	@property
-	def TpOfOpr(self):
-		return self._TpOfOpr
-
-	@TpOfOpr.setter
-	def TpOfOpr(self, value):
-		self._TpOfOpr = value if type(value) != base_types.auto else self.make_default("TpOfOpr")
-
-	@TpOfOpr.deleter
-	def TpOfOpr(self):
-		del self._TpOfOpr
-		self._TpOfOpr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TpOfOpr', type=ATMOperation2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

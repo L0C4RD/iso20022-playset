@@ -1,5 +1,5 @@
 from . import base_types
-from .Max5NumericText import Max5NumericText
+from ._Max5NumericText import Max5NumericText
 
 class AddressVerification1(base_types._BaseFieldType):
 

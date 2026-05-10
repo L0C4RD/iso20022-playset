@@ -1,17 +1,30 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ContractClosureReason1Choice import ContractClosureReason1Choice
-from .ContractCessionData2 import ContractCessionData2
-from .Priority2Code import Priority2Code
-from .DocumentIdentification29 import DocumentIdentification29
-from .Max35Text import Max35Text
-from .DocumentGeneralInformation5 import DocumentGeneralInformation5
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .TradeParty6 import TradeParty6
+from ._SupplementaryData1 import SupplementaryData1
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Priority2Code import Priority2Code
+from ._ContractCessionData2 import ContractCessionData2
+from ._DocumentIdentification29 import DocumentIdentification29
+from ._Max35Text import Max35Text
+from ._ContractClosureReason1Choice import ContractClosureReason1Choice
+from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
+from ._TradeParty6 import TradeParty6
 
 class RegisteredContract19(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRegdCtrct", "_SplmtryData", "_Attchmnt", "_Prty", "_Cssn", "_ClsrRsn", "_RegdCtrctClsrId", "_RptgPty", "_RegnAgt"]
+	__slots__ = ["_Cssn", "_OrgnlRegdCtrct", "_Attchmnt", "_RegdCtrctClsrId", "_ClsrRsn", "_RptgPty", "_RegnAgt", "_SplmtryData", "_Prty"]
+	@property
+	def Cssn(self):
+		return self._Cssn
+
+	@Cssn.setter
+	def Cssn(self, value):
+		self._Cssn = value if type(value) != base_types.auto else self.make_default("Cssn")
+
+	@Cssn.deleter
+	def Cssn(self):
+		del self._Cssn
+		self._Cssn = None
+
 	@property
 	def OrgnlRegdCtrct(self):
 		return self._OrgnlRegdCtrct
@@ -24,19 +37,6 @@ class RegisteredContract19(base_types._BaseFieldType):
 	def OrgnlRegdCtrct(self):
 		del self._OrgnlRegdCtrct
 		self._OrgnlRegdCtrct = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def Attchmnt(self):
@@ -52,30 +52,17 @@ class RegisteredContract19(base_types._BaseFieldType):
 		self._Attchmnt = None
 
 	@property
-	def Prty(self):
-		return self._Prty
+	def RegdCtrctClsrId(self):
+		return self._RegdCtrctClsrId
 
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+	@RegdCtrctClsrId.setter
+	def RegdCtrctClsrId(self, value):
+		self._RegdCtrctClsrId = value if type(value) != base_types.auto else self.make_default("RegdCtrctClsrId")
 
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def Cssn(self):
-		return self._Cssn
-
-	@Cssn.setter
-	def Cssn(self, value):
-		self._Cssn = value if type(value) != base_types.auto else self.make_default("Cssn")
-
-	@Cssn.deleter
-	def Cssn(self):
-		del self._Cssn
-		self._Cssn = None
+	@RegdCtrctClsrId.deleter
+	def RegdCtrctClsrId(self):
+		del self._RegdCtrctClsrId
+		self._RegdCtrctClsrId = None
 
 	@property
 	def ClsrRsn(self):
@@ -89,19 +76,6 @@ class RegisteredContract19(base_types._BaseFieldType):
 	def ClsrRsn(self):
 		del self._ClsrRsn
 		self._ClsrRsn = None
-
-	@property
-	def RegdCtrctClsrId(self):
-		return self._RegdCtrctClsrId
-
-	@RegdCtrctClsrId.setter
-	def RegdCtrctClsrId(self, value):
-		self._RegdCtrctClsrId = value if type(value) != base_types.auto else self.make_default("RegdCtrctClsrId")
-
-	@RegdCtrctClsrId.deleter
-	def RegdCtrctClsrId(self):
-		del self._RegdCtrctClsrId
-		self._RegdCtrctClsrId = None
 
 	@property
 	def RptgPty(self):
@@ -129,15 +103,41 @@ class RegisteredContract19(base_types._BaseFieldType):
 		del self._RegnAgt
 		self._RegnAgt = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlRegdCtrct', type=DocumentIdentification29, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Prty', type=Priority2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cssn', type=ContractCessionData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRegdCtrct', type=DocumentIdentification29, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegdCtrctClsrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prty', type=Priority2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

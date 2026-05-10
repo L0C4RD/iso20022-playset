@@ -1,7 +1,7 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .Max105Text import Max105Text
-from .MandateReason1Choice import MandateReason1Choice
+from ._Max105Text import Max105Text
+from ._MandateReason1Choice import MandateReason1Choice
+from ._PartyIdentification272 import PartyIdentification272
 
 class MandateCancellationReason2(base_types._BaseFieldType):
 

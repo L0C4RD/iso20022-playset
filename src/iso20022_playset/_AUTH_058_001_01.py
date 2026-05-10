@@ -1,5 +1,5 @@
 from . import base_types
-from .CCPPortfolioStressTestingResultReportV01 import CCPPortfolioStressTestingResultReportV01
+from ._CCPPortfolioStressTestingResultReportV01 import CCPPortfolioStressTestingResultReportV01
 
 class AUTH_058_001_01():
 

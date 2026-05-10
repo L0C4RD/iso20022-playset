@@ -1,5 +1,5 @@
 from . import base_types
-from .DebitAuthorisationRequestV10 import DebitAuthorisationRequestV10
+from ._DebitAuthorisationRequestV10 import DebitAuthorisationRequestV10
 
 class CAMT_037_001_10():
 

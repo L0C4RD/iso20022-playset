@@ -1,22 +1,35 @@
 from . import base_types
-from .DateFormat54Choice import DateFormat54Choice
-from .DateFormat49Choice import DateFormat49Choice
+from ._DateFormat49Choice import DateFormat49Choice
+from ._DateFormat54Choice import DateFormat54Choice
 
 class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlyRspnDdln", "_MktDdln", "_PrtctDdln", "_CoverPrtctDdln", "_RspnDdln"]
+	__slots__ = ["_CoverPrtctDdln", "_RspnDdln", "_MktDdln", "_PrtctDdln", "_EarlyRspnDdln"]
 	@property
-	def EarlyRspnDdln(self):
-		return self._EarlyRspnDdln
+	def CoverPrtctDdln(self):
+		return self._CoverPrtctDdln
 
-	@EarlyRspnDdln.setter
-	def EarlyRspnDdln(self, value):
-		self._EarlyRspnDdln = value if type(value) != base_types.auto else self.make_default("EarlyRspnDdln")
+	@CoverPrtctDdln.setter
+	def CoverPrtctDdln(self, value):
+		self._CoverPrtctDdln = value if type(value) != base_types.auto else self.make_default("CoverPrtctDdln")
 
-	@EarlyRspnDdln.deleter
-	def EarlyRspnDdln(self):
-		del self._EarlyRspnDdln
-		self._EarlyRspnDdln = None
+	@CoverPrtctDdln.deleter
+	def CoverPrtctDdln(self):
+		del self._CoverPrtctDdln
+		self._CoverPrtctDdln = None
+
+	@property
+	def RspnDdln(self):
+		return self._RspnDdln
+
+	@RspnDdln.setter
+	def RspnDdln(self, value):
+		self._RspnDdln = value if type(value) != base_types.auto else self.make_default("RspnDdln")
+
+	@RspnDdln.deleter
+	def RspnDdln(self):
+		del self._RspnDdln
+		self._RspnDdln = None
 
 	@property
 	def MktDdln(self):
@@ -45,36 +58,23 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 		self._PrtctDdln = None
 
 	@property
-	def CoverPrtctDdln(self):
-		return self._CoverPrtctDdln
+	def EarlyRspnDdln(self):
+		return self._EarlyRspnDdln
 
-	@CoverPrtctDdln.setter
-	def CoverPrtctDdln(self, value):
-		self._CoverPrtctDdln = value if type(value) != base_types.auto else self.make_default("CoverPrtctDdln")
+	@EarlyRspnDdln.setter
+	def EarlyRspnDdln(self, value):
+		self._EarlyRspnDdln = value if type(value) != base_types.auto else self.make_default("EarlyRspnDdln")
 
-	@CoverPrtctDdln.deleter
-	def CoverPrtctDdln(self):
-		del self._CoverPrtctDdln
-		self._CoverPrtctDdln = None
-
-	@property
-	def RspnDdln(self):
-		return self._RspnDdln
-
-	@RspnDdln.setter
-	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != base_types.auto else self.make_default("RspnDdln")
-
-	@RspnDdln.deleter
-	def RspnDdln(self):
-		del self._RspnDdln
-		self._RspnDdln = None
+	@EarlyRspnDdln.deleter
+	def EarlyRspnDdln(self):
+		del self._EarlyRspnDdln
+		self._EarlyRspnDdln = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CoverPrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnDdln', type=DateFormat54Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

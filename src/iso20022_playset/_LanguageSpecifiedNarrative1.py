@@ -1,6 +1,6 @@
 from . import base_types
-from .Max8000Text import Max8000Text
-from .ISO2ALanguageCode import ISO2ALanguageCode
+from ._Max8000Text import Max8000Text
+from ._ISO2ALanguageCode import ISO2ALanguageCode
 
 class LanguageSpecifiedNarrative1(base_types._BaseFieldType):
 

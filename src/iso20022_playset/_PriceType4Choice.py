@@ -1,5 +1,5 @@
 from . import base_types
-from .Price7 import Price7
+from ._Price7 import Price7
 
 class PriceType4Choice(base_types._BaseFieldType):
 

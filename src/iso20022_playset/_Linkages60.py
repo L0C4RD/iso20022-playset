@@ -1,12 +1,12 @@
 from . import base_types
-from .DocumentNumber6Choice import DocumentNumber6Choice
-from .References50Choice import References50Choice
-from .ProcessingPosition10Choice import ProcessingPosition10Choice
-from .PartyIdentification136Choice import PartyIdentification136Choice
+from ._ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._DocumentNumber6Choice import DocumentNumber6Choice
+from ._References50Choice import References50Choice
+from ._PartyIdentification136Choice import PartyIdentification136Choice
 
 class Linkages60(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNb", "_RefOwnr", "_Ref", "_PrcgPos"]
+	__slots__ = ["_MsgNb", "_Ref", "_RefOwnr", "_PrcgPos"]
 	@property
 	def MsgNb(self):
 		return self._MsgNb
@@ -21,19 +21,6 @@ class Linkages60(base_types._BaseFieldType):
 		self._MsgNb = None
 
 	@property
-	def RefOwnr(self):
-		return self._RefOwnr
-
-	@RefOwnr.setter
-	def RefOwnr(self, value):
-		self._RefOwnr = value if type(value) != base_types.auto else self.make_default("RefOwnr")
-
-	@RefOwnr.deleter
-	def RefOwnr(self):
-		del self._RefOwnr
-		self._RefOwnr = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -45,6 +32,19 @@ class Linkages60(base_types._BaseFieldType):
 	def Ref(self):
 		del self._Ref
 		self._Ref = None
+
+	@property
+	def RefOwnr(self):
+		return self._RefOwnr
+
+	@RefOwnr.setter
+	def RefOwnr(self, value):
+		self._RefOwnr = value if type(value) != base_types.auto else self.make_default("RefOwnr")
+
+	@RefOwnr.deleter
+	def RefOwnr(self):
+		del self._RefOwnr
+		self._RefOwnr = None
 
 	@property
 	def PrcgPos(self):
@@ -61,8 +61,8 @@ class Linkages60(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

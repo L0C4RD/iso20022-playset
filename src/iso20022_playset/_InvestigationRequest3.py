@@ -1,30 +1,17 @@
 from . import base_types
-from .InvestigationServiceLevel1Choice import InvestigationServiceLevel1Choice
-from .InvestigationSubType1Choice import InvestigationSubType1Choice
-from .UUIDv4Identifier import UUIDv4Identifier
-from .Party40Choice import Party40Choice
-from .UnderlyingData2Choice import UnderlyingData2Choice
-from .Max35Text import Max35Text
-from .InvestigationType1Choice import InvestigationType1Choice
-from .UnderlyingInvestigationInstrument1Choice import UnderlyingInvestigationInstrument1Choice
-from .InvestigationRequestAction1 import InvestigationRequestAction1
+from ._UnderlyingInvestigationInstrument1Choice import UnderlyingInvestigationInstrument1Choice
+from ._InvestigationSubType1Choice import InvestigationSubType1Choice
+from ._UUIDv4Identifier import UUIDv4Identifier
+from ._UnderlyingData2Choice import UnderlyingData2Choice
+from ._InvestigationType1Choice import InvestigationType1Choice
+from ._InvestigationServiceLevel1Choice import InvestigationServiceLevel1Choice
+from ._Party40Choice import Party40Choice
+from ._Max35Text import Max35Text
+from ._InvestigationRequestAction1 import InvestigationRequestAction1
 
 class InvestigationRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygInstrm", "_InvstgtnTp", "_InvstgtnSubTp", "_MsgId", "_Rspndr", "_SvcLvl", "_XpctdRspndr", "_Rqstr", "_RspndrInvstgtnId", "_ReqOrgtr", "_ReqActn", "_Undrlyg", "_RqstrInvstgtnId", "_EIR"]
-	@property
-	def UndrlygInstrm(self):
-		return self._UndrlygInstrm
-
-	@UndrlygInstrm.setter
-	def UndrlygInstrm(self, value):
-		self._UndrlygInstrm = value if type(value) != base_types.auto else self.make_default("UndrlygInstrm")
-
-	@UndrlygInstrm.deleter
-	def UndrlygInstrm(self):
-		del self._UndrlygInstrm
-		self._UndrlygInstrm = None
-
+	__slots__ = ["_InvstgtnTp", "_Undrlyg", "_InvstgtnSubTp", "_SvcLvl", "_EIR", "_ReqActn", "_MsgId", "_Rspndr", "_UndrlygInstrm", "_Rqstr", "_ReqOrgtr", "_RqstrInvstgtnId", "_XpctdRspndr", "_RspndrInvstgtnId"]
 	@property
 	def InvstgtnTp(self):
 		return self._InvstgtnTp
@@ -39,6 +26,19 @@ class InvestigationRequest3(base_types._BaseFieldType):
 		self._InvstgtnTp = None
 
 	@property
+	def Undrlyg(self):
+		return self._Undrlyg
+
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
+
+	@property
 	def InvstgtnSubTp(self):
 		return self._InvstgtnSubTp
 
@@ -50,6 +50,45 @@ class InvestigationRequest3(base_types._BaseFieldType):
 	def InvstgtnSubTp(self):
 		del self._InvstgtnSubTp
 		self._InvstgtnSubTp = None
+
+	@property
+	def SvcLvl(self):
+		return self._SvcLvl
+
+	@SvcLvl.setter
+	def SvcLvl(self, value):
+		self._SvcLvl = value if type(value) != base_types.auto else self.make_default("SvcLvl")
+
+	@SvcLvl.deleter
+	def SvcLvl(self):
+		del self._SvcLvl
+		self._SvcLvl = None
+
+	@property
+	def EIR(self):
+		return self._EIR
+
+	@EIR.setter
+	def EIR(self, value):
+		self._EIR = value if type(value) != base_types.auto else self.make_default("EIR")
+
+	@EIR.deleter
+	def EIR(self):
+		del self._EIR
+		self._EIR = None
+
+	@property
+	def ReqActn(self):
+		return self._ReqActn
+
+	@ReqActn.setter
+	def ReqActn(self, value):
+		self._ReqActn = value if type(value) != base_types.auto else self.make_default("ReqActn")
+
+	@ReqActn.deleter
+	def ReqActn(self):
+		del self._ReqActn
+		self._ReqActn = None
 
 	@property
 	def MsgId(self):
@@ -78,30 +117,17 @@ class InvestigationRequest3(base_types._BaseFieldType):
 		self._Rspndr = None
 
 	@property
-	def SvcLvl(self):
-		return self._SvcLvl
+	def UndrlygInstrm(self):
+		return self._UndrlygInstrm
 
-	@SvcLvl.setter
-	def SvcLvl(self, value):
-		self._SvcLvl = value if type(value) != base_types.auto else self.make_default("SvcLvl")
+	@UndrlygInstrm.setter
+	def UndrlygInstrm(self, value):
+		self._UndrlygInstrm = value if type(value) != base_types.auto else self.make_default("UndrlygInstrm")
 
-	@SvcLvl.deleter
-	def SvcLvl(self):
-		del self._SvcLvl
-		self._SvcLvl = None
-
-	@property
-	def XpctdRspndr(self):
-		return self._XpctdRspndr
-
-	@XpctdRspndr.setter
-	def XpctdRspndr(self, value):
-		self._XpctdRspndr = value if type(value) != base_types.auto else self.make_default("XpctdRspndr")
-
-	@XpctdRspndr.deleter
-	def XpctdRspndr(self):
-		del self._XpctdRspndr
-		self._XpctdRspndr = None
+	@UndrlygInstrm.deleter
+	def UndrlygInstrm(self):
+		del self._UndrlygInstrm
+		self._UndrlygInstrm = None
 
 	@property
 	def Rqstr(self):
@@ -117,19 +143,6 @@ class InvestigationRequest3(base_types._BaseFieldType):
 		self._Rqstr = None
 
 	@property
-	def RspndrInvstgtnId(self):
-		return self._RspndrInvstgtnId
-
-	@RspndrInvstgtnId.setter
-	def RspndrInvstgtnId(self, value):
-		self._RspndrInvstgtnId = value if type(value) != base_types.auto else self.make_default("RspndrInvstgtnId")
-
-	@RspndrInvstgtnId.deleter
-	def RspndrInvstgtnId(self):
-		del self._RspndrInvstgtnId
-		self._RspndrInvstgtnId = None
-
-	@property
 	def ReqOrgtr(self):
 		return self._ReqOrgtr
 
@@ -141,32 +154,6 @@ class InvestigationRequest3(base_types._BaseFieldType):
 	def ReqOrgtr(self):
 		del self._ReqOrgtr
 		self._ReqOrgtr = None
-
-	@property
-	def ReqActn(self):
-		return self._ReqActn
-
-	@ReqActn.setter
-	def ReqActn(self, value):
-		self._ReqActn = value if type(value) != base_types.auto else self.make_default("ReqActn")
-
-	@ReqActn.deleter
-	def ReqActn(self):
-		del self._ReqActn
-		self._ReqActn = None
-
-	@property
-	def Undrlyg(self):
-		return self._Undrlyg
-
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
-
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
 
 	@property
 	def RqstrInvstgtnId(self):
@@ -182,32 +169,45 @@ class InvestigationRequest3(base_types._BaseFieldType):
 		self._RqstrInvstgtnId = None
 
 	@property
-	def EIR(self):
-		return self._EIR
+	def XpctdRspndr(self):
+		return self._XpctdRspndr
 
-	@EIR.setter
-	def EIR(self, value):
-		self._EIR = value if type(value) != base_types.auto else self.make_default("EIR")
+	@XpctdRspndr.setter
+	def XpctdRspndr(self, value):
+		self._XpctdRspndr = value if type(value) != base_types.auto else self.make_default("XpctdRspndr")
 
-	@EIR.deleter
-	def EIR(self):
-		del self._EIR
-		self._EIR = None
+	@XpctdRspndr.deleter
+	def XpctdRspndr(self):
+		del self._XpctdRspndr
+		self._XpctdRspndr = None
+
+	@property
+	def RspndrInvstgtnId(self):
+		return self._RspndrInvstgtnId
+
+	@RspndrInvstgtnId.setter
+	def RspndrInvstgtnId(self, value):
+		self._RspndrInvstgtnId = value if type(value) != base_types.auto else self.make_default("RspndrInvstgtnId")
+
+	@RspndrInvstgtnId.deleter
+	def RspndrInvstgtnId(self):
+		del self._RspndrInvstgtnId
+		self._RspndrInvstgtnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygInstrm', type=UnderlyingInvestigationInstrument1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtnTp', type=InvestigationType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingData2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtnSubTp', type=InvestigationSubType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcLvl', type=InvestigationServiceLevel1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EIR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqActn', type=InvestigationRequestAction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspndr', type=Party40Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcLvl', type=InvestigationServiceLevel1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='XpctdRspndr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrm', type=UnderlyingInvestigationInstrument1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rqstr', type=Party40Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspndrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqOrgtr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqActn', type=InvestigationRequestAction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingData2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RqstrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EIR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdRspndr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspndrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

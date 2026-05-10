@@ -1,13 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BaseOneRate import BaseOneRate
-from .PositiveNumber import PositiveNumber
-from .ISODateTime import ISODateTime
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max35Text import Max35Text
+from ._BaseOneRate import BaseOneRate
+from ._PositiveNumber import PositiveNumber
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ISODateTime import ISODateTime
 
 class CurrencyExchange24(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_SrcCcy", "_TrgtCcy", "_CtrctId", "_XchgRate", "_QtnDt", "_XchgRateBase"]
+	__slots__ = ["_UnitCcy", "_CtrctId", "_TrgtCcy", "_XchgRateBase", "_XchgRate", "_QtnDt", "_SrcCcy"]
 	@property
 	def UnitCcy(self):
 		return self._UnitCcy
@@ -22,17 +22,17 @@ class CurrencyExchange24(base_types._BaseFieldType):
 		self._UnitCcy = None
 
 	@property
-	def SrcCcy(self):
-		return self._SrcCcy
+	def CtrctId(self):
+		return self._CtrctId
 
-	@SrcCcy.setter
-	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
+	@CtrctId.setter
+	def CtrctId(self, value):
+		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
 
-	@SrcCcy.deleter
-	def SrcCcy(self):
-		del self._SrcCcy
-		self._SrcCcy = None
+	@CtrctId.deleter
+	def CtrctId(self):
+		del self._CtrctId
+		self._CtrctId = None
 
 	@property
 	def TrgtCcy(self):
@@ -48,17 +48,17 @@ class CurrencyExchange24(base_types._BaseFieldType):
 		self._TrgtCcy = None
 
 	@property
-	def CtrctId(self):
-		return self._CtrctId
+	def XchgRateBase(self):
+		return self._XchgRateBase
 
-	@CtrctId.setter
-	def CtrctId(self, value):
-		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
+	@XchgRateBase.setter
+	def XchgRateBase(self, value):
+		self._XchgRateBase = value if type(value) != base_types.auto else self.make_default("XchgRateBase")
 
-	@CtrctId.deleter
-	def CtrctId(self):
-		del self._CtrctId
-		self._CtrctId = None
+	@XchgRateBase.deleter
+	def XchgRateBase(self):
+		del self._XchgRateBase
+		self._XchgRateBase = None
 
 	@property
 	def XchgRate(self):
@@ -87,25 +87,25 @@ class CurrencyExchange24(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
-	def XchgRateBase(self):
-		return self._XchgRateBase
+	def SrcCcy(self):
+		return self._SrcCcy
 
-	@XchgRateBase.setter
-	def XchgRateBase(self, value):
-		self._XchgRateBase = value if type(value) != base_types.auto else self.make_default("XchgRateBase")
+	@SrcCcy.setter
+	def SrcCcy(self, value):
+		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
 
-	@XchgRateBase.deleter
-	def XchgRateBase(self):
-		del self._XchgRateBase
-		self._XchgRateBase = None
+	@SrcCcy.deleter
+	def SrcCcy(self):
+		del self._SrcCcy
+		self._SrcCcy = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrgtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrgtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateBase', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateBase', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,52 +1,26 @@
 from . import base_types
-from .ProcessingStatus79Choice import ProcessingStatus79Choice
-from .PartyIdentification144 import PartyIdentification144
-from .SupplementaryData1 import SupplementaryData1
-from .Identification14 import Identification14
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BuyInAdviceDetails2 import BuyInAdviceDetails2
+from ._SupplementaryData1 import SupplementaryData1
+from ._BuyInAdviceDetails2 import BuyInAdviceDetails2
+from ._Identification14 import Identification14
+from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._ProcessingStatus79Choice import ProcessingStatus79Choice
 
 class BuyInRegulatoryAdviceResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_AdvcRef", "_SplmtryData", "_AcctOwnr", "_SfkpgAcct", "_BuyInAttrbts"]
+	__slots__ = ["_BuyInAttrbts", "_AcctOwnr", "_SfkpgAcct", "_PrcgSts", "_SplmtryData", "_AdvcRef"]
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def BuyInAttrbts(self):
+		return self._BuyInAttrbts
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+	@BuyInAttrbts.setter
+	def BuyInAttrbts(self, value):
+		self._BuyInAttrbts = value if type(value) != base_types.auto else self.make_default("BuyInAttrbts")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
-
-	@property
-	def AdvcRef(self):
-		return self._AdvcRef
-
-	@AdvcRef.setter
-	def AdvcRef(self, value):
-		self._AdvcRef = value if type(value) != base_types.auto else self.make_default("AdvcRef")
-
-	@AdvcRef.deleter
-	def AdvcRef(self):
-		del self._AdvcRef
-		self._AdvcRef = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@BuyInAttrbts.deleter
+	def BuyInAttrbts(self):
+		del self._BuyInAttrbts
+		self._BuyInAttrbts = None
 
 	@property
 	def AcctOwnr(self):
@@ -75,24 +49,50 @@ class BuyInRegulatoryAdviceResponseV02(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def BuyInAttrbts(self):
-		return self._BuyInAttrbts
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@BuyInAttrbts.setter
-	def BuyInAttrbts(self, value):
-		self._BuyInAttrbts = value if type(value) != base_types.auto else self.make_default("BuyInAttrbts")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
-	@BuyInAttrbts.deleter
-	def BuyInAttrbts(self):
-		del self._BuyInAttrbts
-		self._BuyInAttrbts = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def AdvcRef(self):
+		return self._AdvcRef
+
+	@AdvcRef.setter
+	def AdvcRef(self, value):
+		self._AdvcRef = value if type(value) != base_types.auto else self.make_default("AdvcRef")
+
+	@AdvcRef.deleter
+	def AdvcRef(self):
+		del self._AdvcRef
+		self._AdvcRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus79Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvcRef', type=Identification14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyInAttrbts', type=BuyInAdviceDetails2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInAttrbts', type=BuyInAdviceDetails2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus79Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdvcRef', type=Identification14, min=1, max=1, mutex_group=None, array=False),
 	))
 

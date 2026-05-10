@@ -1,12 +1,12 @@
 from . import base_types
-from .TransactionIdentifier3 import TransactionIdentifier3
-from .OnLinePIN5 import OnLinePIN5
-from .Max10000Binary import Max10000Binary
-from .Max35Text import Max35Text
+from ._Max10000Binary import Max10000Binary
+from ._OnLinePIN5 import OnLinePIN5
+from ._Max35Text import Max35Text
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction43(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_RcncltnId", "_ICCRltdData", "_CrdhldrNewPIN"]
+	__slots__ = ["_TxId", "_ICCRltdData", "_CrdhldrNewPIN", "_RcncltnId"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -19,19 +19,6 @@ class ATMTransaction43(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
-
-	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
 
 	@property
 	def ICCRltdData(self):
@@ -59,10 +46,23 @@ class ATMTransaction43(base_types._BaseFieldType):
 		del self._CrdhldrNewPIN
 		self._CrdhldrNewPIN = None
 
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

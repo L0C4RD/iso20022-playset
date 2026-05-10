@@ -1,23 +1,23 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .QuantityNominalValue2Choice import QuantityNominalValue2Choice
-from .VolumeMetrics6 import VolumeMetrics6
+from ._QuantityNominalValue2Choice import QuantityNominalValue2Choice
+from ._VolumeMetrics6 import VolumeMetrics6
+from ._PercentageRate import PercentageRate
 
 class PositionSetMetrics12(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyOrNmnlAmt", "_VolMtrcs", "_HrcutOrMrgn"]
+	__slots__ = ["_HrcutOrMrgn", "_VolMtrcs", "_QtyOrNmnlAmt"]
 	@property
-	def QtyOrNmnlAmt(self):
-		return self._QtyOrNmnlAmt
+	def HrcutOrMrgn(self):
+		return self._HrcutOrMrgn
 
-	@QtyOrNmnlAmt.setter
-	def QtyOrNmnlAmt(self, value):
-		self._QtyOrNmnlAmt = value if type(value) != base_types.auto else self.make_default("QtyOrNmnlAmt")
+	@HrcutOrMrgn.setter
+	def HrcutOrMrgn(self, value):
+		self._HrcutOrMrgn = value if type(value) != base_types.auto else self.make_default("HrcutOrMrgn")
 
-	@QtyOrNmnlAmt.deleter
-	def QtyOrNmnlAmt(self):
-		del self._QtyOrNmnlAmt
-		self._QtyOrNmnlAmt = None
+	@HrcutOrMrgn.deleter
+	def HrcutOrMrgn(self):
+		del self._HrcutOrMrgn
+		self._HrcutOrMrgn = None
 
 	@property
 	def VolMtrcs(self):
@@ -33,21 +33,21 @@ class PositionSetMetrics12(base_types._BaseFieldType):
 		self._VolMtrcs = None
 
 	@property
-	def HrcutOrMrgn(self):
-		return self._HrcutOrMrgn
+	def QtyOrNmnlAmt(self):
+		return self._QtyOrNmnlAmt
 
-	@HrcutOrMrgn.setter
-	def HrcutOrMrgn(self, value):
-		self._HrcutOrMrgn = value if type(value) != base_types.auto else self.make_default("HrcutOrMrgn")
+	@QtyOrNmnlAmt.setter
+	def QtyOrNmnlAmt(self, value):
+		self._QtyOrNmnlAmt = value if type(value) != base_types.auto else self.make_default("QtyOrNmnlAmt")
 
-	@HrcutOrMrgn.deleter
-	def HrcutOrMrgn(self):
-		del self._HrcutOrMrgn
-		self._HrcutOrMrgn = None
+	@QtyOrNmnlAmt.deleter
+	def QtyOrNmnlAmt(self):
+		del self._QtyOrNmnlAmt
+		self._QtyOrNmnlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtyOrNmnlAmt', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VolMtrcs', type=VolumeMetrics6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HrcutOrMrgn', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VolMtrcs', type=VolumeMetrics6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyOrNmnlAmt', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

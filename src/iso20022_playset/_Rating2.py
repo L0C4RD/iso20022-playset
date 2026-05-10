@@ -1,6 +1,6 @@
 from . import base_types
-from .Max10Text import Max10Text
-from .MarketIdentification89 import MarketIdentification89
+from ._MarketIdentification89 import MarketIdentification89
+from ._Max10Text import Max10Text
 
 class Rating2(base_types._BaseFieldType):
 

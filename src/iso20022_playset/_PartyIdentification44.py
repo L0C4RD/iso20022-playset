@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AnyBICIdentifier import AnyBICIdentifier
+from ._Max35Text import Max35Text
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification44(base_types._BaseFieldType):
 
-	__slots__ = ["_AnyBIC", "_AltrntvIdr"]
-	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
+	__slots__ = ["_AltrntvIdr", "_AnyBIC"]
 	@property
 	def AltrntvIdr(self):
 		return self._AltrntvIdr
@@ -31,8 +18,21 @@ class PartyIdentification44(base_types._BaseFieldType):
 		del self._AltrntvIdr
 		self._AltrntvIdr = None
 
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrntvIdr', type=Max35Text, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

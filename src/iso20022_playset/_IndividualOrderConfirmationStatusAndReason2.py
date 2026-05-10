@@ -1,64 +1,38 @@
 from . import base_types
-from .InvestmentAccount58 import InvestmentAccount58
-from .Max35Text import Max35Text
-from .ConfirmationStatus1Choice import ConfirmationStatus1Choice
-from .PartyIdentification113 import PartyIdentification113
-from .FinancialInstrument57 import FinancialInstrument57
+from ._Max35Text import Max35Text
+from ._ConfirmationStatus1Choice import ConfirmationStatus1Choice
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._PartyIdentification113 import PartyIdentification113
 
 class IndividualOrderConfirmationStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_StsInitr", "_InvstmtAcctDtls", "_Conf", "_MstrRef", "_DealRef", "_OrdrRef", "_ClntRef"]
+	__slots__ = ["_DealRef", "_ClntRef", "_MstrRef", "_InvstmtAcctDtls", "_FinInstrmDtls", "_OrdrRef", "_Conf", "_StsInitr"]
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def DealRef(self):
+		return self._DealRef
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+	@DealRef.setter
+	def DealRef(self, value):
+		self._DealRef = value if type(value) != base_types.auto else self.make_default("DealRef")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
-	@property
-	def StsInitr(self):
-		return self._StsInitr
-
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
-
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
+	@DealRef.deleter
+	def DealRef(self):
+		del self._DealRef
+		self._DealRef = None
 
 	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
+	def ClntRef(self):
+		return self._ClntRef
 
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
-
-	@property
-	def Conf(self):
-		return self._Conf
-
-	@Conf.setter
-	def Conf(self, value):
-		self._Conf = value if type(value) != base_types.auto else self.make_default("Conf")
-
-	@Conf.deleter
-	def Conf(self):
-		del self._Conf
-		self._Conf = None
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
 
 	@property
 	def MstrRef(self):
@@ -74,17 +48,30 @@ class IndividualOrderConfirmationStatusAndReason2(base_types._BaseFieldType):
 		self._MstrRef = None
 
 	@property
-	def DealRef(self):
-		return self._DealRef
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
 
-	@DealRef.setter
-	def DealRef(self, value):
-		self._DealRef = value if type(value) != base_types.auto else self.make_default("DealRef")
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
 
-	@DealRef.deleter
-	def DealRef(self):
-		del self._DealRef
-		self._DealRef = None
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
 
 	@property
 	def OrdrRef(self):
@@ -100,26 +87,39 @@ class IndividualOrderConfirmationStatusAndReason2(base_types._BaseFieldType):
 		self._OrdrRef = None
 
 	@property
-	def ClntRef(self):
-		return self._ClntRef
+	def Conf(self):
+		return self._Conf
 
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+	@Conf.setter
+	def Conf(self, value):
+		self._Conf = value if type(value) != base_types.auto else self.make_default("Conf")
 
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
+	@Conf.deleter
+	def Conf(self):
+		del self._Conf
+		self._Conf = None
+
+	@property
+	def StsInitr(self):
+		return self._StsInitr
+
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
+
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Conf', type=ConfirmationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Conf', type=ConfirmationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 	))
 

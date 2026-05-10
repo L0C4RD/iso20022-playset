@@ -1,6 +1,6 @@
 from . import base_types
-from .GeneratedReasons5Choice import GeneratedReasons5Choice
-from .Max210Text import Max210Text
+from ._GeneratedReasons5Choice import GeneratedReasons5Choice
+from ._Max210Text import Max210Text
 
 class GeneratedReason5(base_types._BaseFieldType):
 

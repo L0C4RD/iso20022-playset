@@ -1,5 +1,5 @@
 from . import base_types
-from .DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
+from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
 
 class CompareReferenceParty1(base_types._BaseFieldType):
 

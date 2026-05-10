@@ -1,10 +1,36 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification132 import PartyIdentification132
+from ._Max35Text import Max35Text
+from ._PartyIdentification132 import PartyIdentification132
 
 class InvestmentAccount69(base_types._BaseFieldType):
 
-	__slots__ = ["_Svcr", "_AcctNm", "_Dsgnt", "_Id"]
+	__slots__ = ["_Id", "_Dsgnt", "_Svcr", "_AcctNm"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
+
 	@property
 	def Svcr(self):
 		return self._Svcr
@@ -31,36 +57,10 @@ class InvestmentAccount69(base_types._BaseFieldType):
 		del self._AcctNm
 		self._AcctNm = None
 
-	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

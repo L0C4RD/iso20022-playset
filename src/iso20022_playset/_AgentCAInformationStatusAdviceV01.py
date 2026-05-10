@@ -1,11 +1,11 @@
 from . import base_types
-from .CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
-from .CorporateActionInformationStatus1Choice import CorporateActionInformationStatus1Choice
-from .DocumentIdentification8 import DocumentIdentification8
+from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
+from ._CorporateActionInformationStatus1Choice import CorporateActionInformationStatus1Choice
 
 class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCAInfAdvcId", "_Id", "_InfStsDtls", "_CorpActnAddtlInf"]
+	__slots__ = ["_AgtCAInfAdvcId", "_InfStsDtls", "_Id", "_CorpActnAddtlInf"]
 	@property
 	def AgtCAInfAdvcId(self):
 		return self._AgtCAInfAdvcId
@@ -20,19 +20,6 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 		self._AgtCAInfAdvcId = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def InfStsDtls(self):
 		return self._InfStsDtls
 
@@ -44,6 +31,19 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 	def InfStsDtls(self):
 		del self._InfStsDtls
 		self._InfStsDtls = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def CorpActnAddtlInf(self):
@@ -60,8 +60,8 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAInfAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfStsDtls', type=CorporateActionInformationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnAddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

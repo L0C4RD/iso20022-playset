@@ -1,7 +1,7 @@
 from . import base_types
-from .PendingStatus73Choice import PendingStatus73Choice
-from .FailingStatus15Choice import FailingStatus15Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._FailingStatus15Choice import FailingStatus15Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._PendingStatus73Choice import PendingStatus73Choice
 
 class SettlementStatus32Choice(base_types._BaseFieldType):
 

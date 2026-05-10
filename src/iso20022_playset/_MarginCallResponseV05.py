@@ -1,92 +1,27 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max35Text import Max35Text
-from .AgreedAmount1Choice import AgreedAmount1Choice
-from .Obligation9 import Obligation9
-from .Agreement4 import Agreement4
-from .MarginCall1 import MarginCall1
-from .Response1 import Response1
+from ._AgreedAmount1Choice import AgreedAmount1Choice
+from ._Response1 import Response1
+from ._Obligation9 import Obligation9
+from ._Max35Text import Max35Text
+from ._MarginCall1 import MarginCall1
+from ._SupplementaryData1 import SupplementaryData1
+from ._Agreement4 import Agreement4
 
 class MarginCallResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnDtlsDueToA", "_SplmtryData", "_Oblgtn", "_MrgnDtlsDueToB", "_Agrmt", "_RspnDtls", "_AgrdAmtDueToA", "_AgrdAmtDueToB", "_TxId"]
+	__slots__ = ["_TxId", "_AgrdAmtDueToA", "_Agrmt", "_Oblgtn", "_RspnDtls", "_AgrdAmtDueToB", "_MrgnDtlsDueToA", "_MrgnDtlsDueToB", "_SplmtryData"]
 	@property
-	def MrgnDtlsDueToA(self):
-		return self._MrgnDtlsDueToA
+	def TxId(self):
+		return self._TxId
 
-	@MrgnDtlsDueToA.setter
-	def MrgnDtlsDueToA(self, value):
-		self._MrgnDtlsDueToA = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToA")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@MrgnDtlsDueToA.deleter
-	def MrgnDtlsDueToA(self):
-		del self._MrgnDtlsDueToA
-		self._MrgnDtlsDueToA = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
-	@property
-	def MrgnDtlsDueToB(self):
-		return self._MrgnDtlsDueToB
-
-	@MrgnDtlsDueToB.setter
-	def MrgnDtlsDueToB(self, value):
-		self._MrgnDtlsDueToB = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToB")
-
-	@MrgnDtlsDueToB.deleter
-	def MrgnDtlsDueToB(self):
-		del self._MrgnDtlsDueToB
-		self._MrgnDtlsDueToB = None
-
-	@property
-	def Agrmt(self):
-		return self._Agrmt
-
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
-
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
-
-	@property
-	def RspnDtls(self):
-		return self._RspnDtls
-
-	@RspnDtls.setter
-	def RspnDtls(self, value):
-		self._RspnDtls = value if type(value) != base_types.auto else self.make_default("RspnDtls")
-
-	@RspnDtls.deleter
-	def RspnDtls(self):
-		del self._RspnDtls
-		self._RspnDtls = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def AgrdAmtDueToA(self):
@@ -102,6 +37,45 @@ class MarginCallResponseV05(base_types._BaseFieldType):
 		self._AgrdAmtDueToA = None
 
 	@property
+	def Agrmt(self):
+		return self._Agrmt
+
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
+
+	@property
+	def Oblgtn(self):
+		return self._Oblgtn
+
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
+
+	@property
+	def RspnDtls(self):
+		return self._RspnDtls
+
+	@RspnDtls.setter
+	def RspnDtls(self, value):
+		self._RspnDtls = value if type(value) != base_types.auto else self.make_default("RspnDtls")
+
+	@RspnDtls.deleter
+	def RspnDtls(self):
+		del self._RspnDtls
+		self._RspnDtls = None
+
+	@property
 	def AgrdAmtDueToB(self):
 		return self._AgrdAmtDueToB
 
@@ -115,27 +89,53 @@ class MarginCallResponseV05(base_types._BaseFieldType):
 		self._AgrdAmtDueToB = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def MrgnDtlsDueToA(self):
+		return self._MrgnDtlsDueToA
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@MrgnDtlsDueToA.setter
+	def MrgnDtlsDueToA(self, value):
+		self._MrgnDtlsDueToA = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToA")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@MrgnDtlsDueToA.deleter
+	def MrgnDtlsDueToA(self):
+		del self._MrgnDtlsDueToA
+		self._MrgnDtlsDueToA = None
+
+	@property
+	def MrgnDtlsDueToB(self):
+		return self._MrgnDtlsDueToB
+
+	@MrgnDtlsDueToB.setter
+	def MrgnDtlsDueToB(self, value):
+		self._MrgnDtlsDueToB = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToB")
+
+	@MrgnDtlsDueToB.deleter
+	def MrgnDtlsDueToB(self):
+		del self._MrgnDtlsDueToB
+		self._MrgnDtlsDueToB = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnDtlsDueToA', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnDtlsDueToB', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnDtls', type=Response1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrdAmtDueToA', type=AgreedAmount1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrdAmtDueToB', type=AgreedAmount1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrdAmtDueToA', type=AgreedAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnDtls', type=Response1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrdAmtDueToB', type=AgreedAmount1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnDtlsDueToA', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnDtlsDueToB', type=MarginCall1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

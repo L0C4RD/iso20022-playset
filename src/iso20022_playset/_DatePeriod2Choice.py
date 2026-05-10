@@ -1,10 +1,23 @@
 from . import base_types
-from .DatePeriod2 import DatePeriod2
-from .ISODate import ISODate
+from ._DatePeriod2 import DatePeriod2
+from ._ISODate import ISODate
 
 class DatePeriod2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDt", "_FrDt", "_ToDt"]
+	__slots__ = ["_ToDt", "_FrToDt", "_FrDt"]
+	@property
+	def ToDt(self):
+		return self._ToDt
+
+	@ToDt.setter
+	def ToDt(self, value):
+		self._ToDt = value if type(value) != base_types.auto else self.make_default("ToDt")
+
+	@ToDt.deleter
+	def ToDt(self):
+		del self._ToDt
+		self._ToDt = None
+
 	@property
 	def FrToDt(self):
 		return self._FrToDt
@@ -31,22 +44,9 @@ class DatePeriod2Choice(base_types._BaseFieldType):
 		del self._FrDt
 		self._FrDt = None
 
-	@property
-	def ToDt(self):
-		return self._ToDt
-
-	@ToDt.setter
-	def ToDt(self, value):
-		self._ToDt = value if type(value) != base_types.auto else self.make_default("ToDt")
-
-	@ToDt.deleter
-	def ToDt(self):
-		del self._ToDt
-		self._ToDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrToDt', type=DatePeriod2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ToDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 	))
 

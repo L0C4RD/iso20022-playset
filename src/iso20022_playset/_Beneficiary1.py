@@ -1,6 +1,6 @@
 from . import base_types
-from .Max2000Text import Max2000Text
-from .AddressOrParty1Choice import AddressOrParty1Choice
+from ._AddressOrParty1Choice import AddressOrParty1Choice
+from ._Max2000Text import Max2000Text
 
 class Beneficiary1(base_types._BaseFieldType):
 

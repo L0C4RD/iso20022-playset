@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class CustomerDevice3(base_types._BaseFieldType):
 
-	__slots__ = ["_Prvdr", "_Id", "_Tp"]
-	@property
-	def Prvdr(self):
-		return self._Prvdr
-
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
-
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
-
+	__slots__ = ["_Id", "_Tp", "_Prvdr"]
 	@property
 	def Id(self):
 		return self._Id
@@ -44,9 +31,22 @@ class CustomerDevice3(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

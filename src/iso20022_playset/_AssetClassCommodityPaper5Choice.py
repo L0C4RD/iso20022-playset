@@ -1,26 +1,13 @@
 from . import base_types
-from .PaperCommodityContainerBoard2 import PaperCommodityContainerBoard2
-from .PaperCommodityNewsprint2 import PaperCommodityNewsprint2
-from .PaperCommodityPulp2 import PaperCommodityPulp2
-from .PaperCommodityRecoveredPaper3 import PaperCommodityRecoveredPaper3
-from .PaperCommodityOther1 import PaperCommodityOther1
+from ._PaperCommodityOther1 import PaperCommodityOther1
+from ._PaperCommodityRecoveredPaper3 import PaperCommodityRecoveredPaper3
+from ._PaperCommodityNewsprint2 import PaperCommodityNewsprint2
+from ._PaperCommodityPulp2 import PaperCommodityPulp2
+from ._PaperCommodityContainerBoard2 import PaperCommodityContainerBoard2
 
 class AssetClassCommodityPaper5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Nwsprnt", "_CntnrBrd", "_Pulp", "_RcvrdPpr"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_Nwsprnt", "_CntnrBrd", "_Othr", "_Pulp", "_RcvrdPpr"]
 	@property
 	def Nwsprnt(self):
 		return self._Nwsprnt
@@ -46,6 +33,19 @@ class AssetClassCommodityPaper5Choice(base_types._BaseFieldType):
 	def CntnrBrd(self):
 		del self._CntnrBrd
 		self._CntnrBrd = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def Pulp(self):
@@ -74,9 +74,9 @@ class AssetClassCommodityPaper5Choice(base_types._BaseFieldType):
 		self._RcvrdPpr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nwsprnt', type=PaperCommodityNewsprint2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntnrBrd', type=PaperCommodityContainerBoard2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=PaperCommodityOther1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pulp', type=PaperCommodityPulp2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvrdPpr', type=PaperCommodityRecoveredPaper3, min=0, max=1, mutex_group=1, array=False),
 	))

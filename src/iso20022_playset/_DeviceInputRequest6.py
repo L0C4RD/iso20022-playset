@@ -1,6 +1,6 @@
 from . import base_types
-from .InputData6 import InputData6
-from .ActionMessage11 import ActionMessage11
+from ._ActionMessage11 import ActionMessage11
+from ._InputData6 import InputData6
 
 class DeviceInputRequest6(base_types._BaseFieldType):
 

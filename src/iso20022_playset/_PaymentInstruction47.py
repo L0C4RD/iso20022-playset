@@ -1,73 +1,47 @@
 from . import base_types
-from .PaymentTransactionParty4 import PaymentTransactionParty4
-from .PaymentType4Choice import PaymentType4Choice
-from .PaymentStatus6 import PaymentStatus6
-from .Max10Text import Max10Text
-from .ISODate import ISODate
-from .Amount3Choice import Amount3Choice
-from .Priority1Choice import Priority1Choice
-from .Amount2Choice import Amount2Choice
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max35Text import Max35Text
-from .PaymentOrigin1Choice import PaymentOrigin1Choice
-from .Max20000Text import Max20000Text
-from .DateTimePeriod1Choice import DateTimePeriod1Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max20000Text import Max20000Text
+from ._PaymentTransactionParty4 import PaymentTransactionParty4
+from ._Amount2Choice import Amount2Choice
+from ._Priority1Choice import Priority1Choice
+from ._PaymentType4Choice import PaymentType4Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._PaymentStatus6 import PaymentStatus6
+from ._Amount3Choice import Amount3Choice
+from ._Max35Text import Max35Text
+from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max10Text import Max10Text
+from ._ISODate import ISODate
 
 class PaymentInstruction47(base_types._BaseFieldType):
 
-	__slots__ = ["_GnrtdOrdr", "_IntrBkSttlmAmt", "_EndToEndId", "_Prty", "_InstrCpy", "_Tp", "_Sts", "_ReqdExctnDt", "_InstdAmt", "_PrcgVldtyTm", "_TxId", "_PmtMtd", "_Purp", "_Pties", "_MsgId", "_IntrBkSttlmDt"]
+	__slots__ = ["_InstdAmt", "_IntrBkSttlmDt", "_InstrCpy", "_EndToEndId", "_ReqdExctnDt", "_Prty", "_TxId", "_MsgId", "_Purp", "_Sts", "_PmtMtd", "_Tp", "_Pties", "_PrcgVldtyTm", "_IntrBkSttlmAmt", "_GnrtdOrdr"]
 	@property
-	def GnrtdOrdr(self):
-		return self._GnrtdOrdr
+	def InstdAmt(self):
+		return self._InstdAmt
 
-	@GnrtdOrdr.setter
-	def GnrtdOrdr(self, value):
-		self._GnrtdOrdr = value if type(value) != base_types.auto else self.make_default("GnrtdOrdr")
+	@InstdAmt.setter
+	def InstdAmt(self, value):
+		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
 
-	@GnrtdOrdr.deleter
-	def GnrtdOrdr(self):
-		del self._GnrtdOrdr
-		self._GnrtdOrdr = None
-
-	@property
-	def IntrBkSttlmAmt(self):
-		return self._IntrBkSttlmAmt
-
-	@IntrBkSttlmAmt.setter
-	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
-
-	@IntrBkSttlmAmt.deleter
-	def IntrBkSttlmAmt(self):
-		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+	@InstdAmt.deleter
+	def InstdAmt(self):
+		del self._InstdAmt
+		self._InstdAmt = None
 
 	@property
-	def EndToEndId(self):
-		return self._EndToEndId
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
 
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
 
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
 
 	@property
 	def InstrCpy(self):
@@ -83,30 +57,17 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._InstrCpy = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def EndToEndId(self):
+		return self._EndToEndId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
 
 	@property
 	def ReqdExctnDt(self):
@@ -122,30 +83,17 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._ReqdExctnDt = None
 
 	@property
-	def InstdAmt(self):
-		return self._InstdAmt
+	def Prty(self):
+		return self._Prty
 
-	@InstdAmt.setter
-	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
 
-	@InstdAmt.deleter
-	def InstdAmt(self):
-		del self._InstdAmt
-		self._InstdAmt = None
-
-	@property
-	def PrcgVldtyTm(self):
-		return self._PrcgVldtyTm
-
-	@PrcgVldtyTm.setter
-	def PrcgVldtyTm(self, value):
-		self._PrcgVldtyTm = value if type(value) != base_types.auto else self.make_default("PrcgVldtyTm")
-
-	@PrcgVldtyTm.deleter
-	def PrcgVldtyTm(self):
-		del self._PrcgVldtyTm
-		self._PrcgVldtyTm = None
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
 
 	@property
 	def TxId(self):
@@ -161,17 +109,17 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def PmtMtd(self):
-		return self._PmtMtd
+	def MsgId(self):
+		return self._MsgId
 
-	@PmtMtd.setter
-	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@PmtMtd.deleter
-	def PmtMtd(self):
-		del self._PmtMtd
-		self._PmtMtd = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Purp(self):
@@ -187,6 +135,45 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._Purp = None
 
 	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def PmtMtd(self):
+		return self._PmtMtd
+
+	@PmtMtd.setter
+	def PmtMtd(self, value):
+		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+
+	@PmtMtd.deleter
+	def PmtMtd(self):
+		del self._PmtMtd
+		self._PmtMtd = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def Pties(self):
 		return self._Pties
 
@@ -200,47 +187,60 @@ class PaymentInstruction47(base_types._BaseFieldType):
 		self._Pties = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def PrcgVldtyTm(self):
+		return self._PrcgVldtyTm
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@PrcgVldtyTm.setter
+	def PrcgVldtyTm(self, value):
+		self._PrcgVldtyTm = value if type(value) != base_types.auto else self.make_default("PrcgVldtyTm")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@PrcgVldtyTm.deleter
+	def PrcgVldtyTm(self):
+		del self._PrcgVldtyTm
+		self._PrcgVldtyTm = None
 
 	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
+	def IntrBkSttlmAmt(self):
+		return self._IntrBkSttlmAmt
 
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+	@IntrBkSttlmAmt.setter
+	def IntrBkSttlmAmt(self, value):
+		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
 
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+	@IntrBkSttlmAmt.deleter
+	def IntrBkSttlmAmt(self):
+		del self._IntrBkSttlmAmt
+		self._IntrBkSttlmAmt = None
+
+	@property
+	def GnrtdOrdr(self):
+		return self._GnrtdOrdr
+
+	@GnrtdOrdr.setter
+	def GnrtdOrdr(self, value):
+		self._GnrtdOrdr = value if type(value) != base_types.auto else self.make_default("GnrtdOrdr")
+
+	@GnrtdOrdr.deleter
+	def GnrtdOrdr(self):
+		del self._GnrtdOrdr
+		self._GnrtdOrdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GnrtdOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrCpy', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=Amount3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pties', type=PaymentTransactionParty4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrCpy', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pties', type=PaymentTransactionParty4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgVldtyTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmAmt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnrtdOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

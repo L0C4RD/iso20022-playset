@@ -1,6 +1,6 @@
 from . import base_types
-from .RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
-from .Operator1Code import Operator1Code
+from ._RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
+from ._Operator1Code import Operator1Code
 
 class Term1(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .ContentInformationType38 import ContentInformationType38
-from .MessageStatusRequest8 import MessageStatusRequest8
-from .Header41 import Header41
+from ._Header41 import Header41
+from ._ContentInformationType38 import ContentInformationType38
+from ._MessageStatusRequest8 import MessageStatusRequest8
 
 class SaleToPOIMessageStatusRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_StsReq"]
+	__slots__ = ["_StsReq", "_Hdr", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def StsReq(self):
+		return self._StsReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@StsReq.setter
+	def StsReq(self, value):
+		self._StsReq = value if type(value) != base_types.auto else self.make_default("StsReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@StsReq.deleter
+	def StsReq(self):
+		del self._StsReq
+		self._StsReq = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class SaleToPOIMessageStatusRequestV07(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def StsReq(self):
-		return self._StsReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@StsReq.setter
-	def StsReq(self, value):
-		self._StsReq = value if type(value) != base_types.auto else self.make_default("StsReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@StsReq.deleter
-	def StsReq(self):
-		del self._StsReq
-		self._StsReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsReq', type=MessageStatusRequest8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

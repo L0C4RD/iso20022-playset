@@ -1,6 +1,6 @@
 from . import base_types
-from .Algorithm20Code import Algorithm20Code
-from .AlgorithmIdentification26 import AlgorithmIdentification26
+from ._AlgorithmIdentification26 import AlgorithmIdentification26
+from ._Algorithm20Code import Algorithm20Code
 
 class Parameter13(base_types._BaseFieldType):
 

@@ -1,17 +1,17 @@
 from . import base_types
-from .PartyIdentification248Choice import PartyIdentification248Choice
-from .UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
-from .CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .TransactionOperationType10Code import TransactionOperationType10Code
-from .MasterAgreement8 import MasterAgreement8
-from .ISODateTime import ISODateTime
-from .DerivativeEventType3Code import DerivativeEventType3Code
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._TransactionOperationType10Code import TransactionOperationType10Code
+from ._PartyIdentification248Choice import PartyIdentification248Choice
+from ._MasterAgreement8 import MasterAgreement8
+from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
+from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
+from ._DerivativeEventType3Code import DerivativeEventType3Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._ISODateTime import ISODateTime
 
 class TradeTransactionIdentification24(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivEvtTp", "_TechRcrdId", "_ActnTp", "_RptgTmStmp", "_UnqIdr", "_MstrAgrmt", "_CollPrtflCd", "_OthrCtrPty", "_DerivEvtTmStmp"]
+	__slots__ = ["_DerivEvtTp", "_UnqIdr", "_ActnTp", "_MstrAgrmt", "_CollPrtflCd", "_OthrCtrPty", "_RptgTmStmp", "_DerivEvtTmStmp", "_TechRcrdId"]
 	@property
 	def DerivEvtTp(self):
 		return self._DerivEvtTp
@@ -26,17 +26,17 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		self._DerivEvtTp = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def UnqIdr(self):
+		return self._UnqIdr
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+	@UnqIdr.setter
+	def UnqIdr(self, value):
+		self._UnqIdr = value if type(value) != base_types.auto else self.make_default("UnqIdr")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@UnqIdr.deleter
+	def UnqIdr(self):
+		del self._UnqIdr
+		self._UnqIdr = None
 
 	@property
 	def ActnTp(self):
@@ -50,32 +50,6 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 	def ActnTp(self):
 		del self._ActnTp
 		self._ActnTp = None
-
-	@property
-	def RptgTmStmp(self):
-		return self._RptgTmStmp
-
-	@RptgTmStmp.setter
-	def RptgTmStmp(self, value):
-		self._RptgTmStmp = value if type(value) != base_types.auto else self.make_default("RptgTmStmp")
-
-	@RptgTmStmp.deleter
-	def RptgTmStmp(self):
-		del self._RptgTmStmp
-		self._RptgTmStmp = None
-
-	@property
-	def UnqIdr(self):
-		return self._UnqIdr
-
-	@UnqIdr.setter
-	def UnqIdr(self, value):
-		self._UnqIdr = value if type(value) != base_types.auto else self.make_default("UnqIdr")
-
-	@UnqIdr.deleter
-	def UnqIdr(self):
-		del self._UnqIdr
-		self._UnqIdr = None
 
 	@property
 	def MstrAgrmt(self):
@@ -117,6 +91,19 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		self._OthrCtrPty = None
 
 	@property
+	def RptgTmStmp(self):
+		return self._RptgTmStmp
+
+	@RptgTmStmp.setter
+	def RptgTmStmp(self, value):
+		self._RptgTmStmp = value if type(value) != base_types.auto else self.make_default("RptgTmStmp")
+
+	@RptgTmStmp.deleter
+	def RptgTmStmp(self):
+		del self._RptgTmStmp
+		self._RptgTmStmp = None
+
+	@property
 	def DerivEvtTmStmp(self):
 		return self._DerivEvtTmStmp
 
@@ -129,15 +116,28 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		del self._DerivEvtTmStmp
 		self._DerivEvtTmStmp = None
 
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DerivEvtTp', type=DerivativeEventType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType10Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqIdr', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType10Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification248Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivEvtTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

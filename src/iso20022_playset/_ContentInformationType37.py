@@ -1,23 +1,10 @@
 from . import base_types
-from .AuthenticatedData10 import AuthenticatedData10
-from .ContentType2Code import ContentType2Code
+from ._AuthenticatedData10 import AuthenticatedData10
+from ._ContentType2Code import ContentType2Code
 
 class ContentInformationType37(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthntcdData", "_CnttTp"]
-	@property
-	def AuthntcdData(self):
-		return self._AuthntcdData
-
-	@AuthntcdData.setter
-	def AuthntcdData(self, value):
-		self._AuthntcdData = value if type(value) != base_types.auto else self.make_default("AuthntcdData")
-
-	@AuthntcdData.deleter
-	def AuthntcdData(self):
-		del self._AuthntcdData
-		self._AuthntcdData = None
-
+	__slots__ = ["_CnttTp", "_AuthntcdData"]
 	@property
 	def CnttTp(self):
 		return self._CnttTp
@@ -31,8 +18,21 @@ class ContentInformationType37(base_types._BaseFieldType):
 		del self._CnttTp
 		self._CnttTp = None
 
+	@property
+	def AuthntcdData(self):
+		return self._AuthntcdData
+
+	@AuthntcdData.setter
+	def AuthntcdData(self, value):
+		self._AuthntcdData = value if type(value) != base_types.auto else self.make_default("AuthntcdData")
+
+	@AuthntcdData.deleter
+	def AuthntcdData(self):
+		del self._AuthntcdData
+		self._AuthntcdData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=1, max=1, mutex_group=None, array=False),
 	))
 

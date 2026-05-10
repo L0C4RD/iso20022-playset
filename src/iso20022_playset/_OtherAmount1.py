@@ -1,6 +1,6 @@
 from . import base_types
-from .OtherAmountType1Choice import OtherAmountType1Choice
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._OtherAmountType1Choice import OtherAmountType1Choice
 
 class OtherAmount1(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .ContentInformationType38 import ContentInformationType38
-from .ManagementPlan13 import ManagementPlan13
-from .TMSHeader1 import TMSHeader1
+from ._TMSHeader1 import TMSHeader1
+from ._ContentInformationType38 import ContentInformationType38
+from ._ManagementPlan13 import ManagementPlan13
 
 class ManagementPlanReplacementV13(base_types._BaseFieldType):
 

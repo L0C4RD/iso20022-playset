@@ -1,9 +1,9 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_XcssCollPstd", "_VartnMrgnPstd", "_InitlMrgnPstd"]
+	__slots__ = ["_XcssCollPstd", "_InitlMrgnPstd", "_VartnMrgnPstd"]
 	@property
 	def XcssCollPstd(self):
 		return self._XcssCollPstd
@@ -18,19 +18,6 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 		self._XcssCollPstd = None
 
 	@property
-	def VartnMrgnPstd(self):
-		return self._VartnMrgnPstd
-
-	@VartnMrgnPstd.setter
-	def VartnMrgnPstd(self, value):
-		self._VartnMrgnPstd = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstd")
-
-	@VartnMrgnPstd.deleter
-	def VartnMrgnPstd(self):
-		del self._VartnMrgnPstd
-		self._VartnMrgnPstd = None
-
-	@property
 	def InitlMrgnPstd(self):
 		return self._InitlMrgnPstd
 
@@ -43,9 +30,22 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 		del self._InitlMrgnPstd
 		self._InitlMrgnPstd = None
 
+	@property
+	def VartnMrgnPstd(self):
+		return self._VartnMrgnPstd
+
+	@VartnMrgnPstd.setter
+	def VartnMrgnPstd(self, value):
+		self._VartnMrgnPstd = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstd")
+
+	@VartnMrgnPstd.deleter
+	def VartnMrgnPstd(self):
+		del self._VartnMrgnPstd
+		self._VartnMrgnPstd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='XcssCollPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

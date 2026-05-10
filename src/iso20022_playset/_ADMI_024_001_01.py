@@ -1,5 +1,5 @@
 from . import base_types
-from .NotificationOfCorrespondenceV01 import NotificationOfCorrespondenceV01
+from ._NotificationOfCorrespondenceV01 import NotificationOfCorrespondenceV01
 
 class ADMI_024_001_01():
 

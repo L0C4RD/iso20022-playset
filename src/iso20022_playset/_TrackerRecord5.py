@@ -1,12 +1,12 @@
 from . import base_types
-from .ChargeBearerType1Code import ChargeBearerType1Code
-from .CurrencyExchange13 import CurrencyExchange13
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ChargeBearerType1Code import ChargeBearerType1Code
+from ._CurrencyExchange13 import CurrencyExchange13
 
 class TrackerRecord5(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRateData", "_Agt", "_ChrgBr", "_ChrgsAmt"]
+	__slots__ = ["_XchgRateData", "_ChrgBr", "_Agt", "_ChrgsAmt"]
 	@property
 	def XchgRateData(self):
 		return self._XchgRateData
@@ -21,19 +21,6 @@ class TrackerRecord5(base_types._BaseFieldType):
 		self._XchgRateData = None
 
 	@property
-	def Agt(self):
-		return self._Agt
-
-	@Agt.setter
-	def Agt(self, value):
-		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
-
-	@Agt.deleter
-	def Agt(self):
-		del self._Agt
-		self._Agt = None
-
-	@property
 	def ChrgBr(self):
 		return self._ChrgBr
 
@@ -45,6 +32,19 @@ class TrackerRecord5(base_types._BaseFieldType):
 	def ChrgBr(self):
 		del self._ChrgBr
 		self._ChrgBr = None
+
+	@property
+	def Agt(self):
+		return self._Agt
+
+	@Agt.setter
+	def Agt(self, value):
+		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
+
+	@Agt.deleter
+	def Agt(self):
+		del self._Agt
+		self._Agt = None
 
 	@property
 	def ChrgsAmt(self):
@@ -61,8 +61,8 @@ class TrackerRecord5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

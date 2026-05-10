@@ -1,7 +1,7 @@
 from . import base_types
-from .Number import Number
-from .ExternalDateFrequency1Code import ExternalDateFrequency1Code
-from .ISODate import ISODate
+from ._ExternalDateFrequency1Code import ExternalDateFrequency1Code
+from ._Number import Number
+from ._ISODate import ISODate
 
 class DateInformation1(base_types._BaseFieldType):
 

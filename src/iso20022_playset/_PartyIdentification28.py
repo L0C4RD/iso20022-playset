@@ -1,6 +1,6 @@
 from . import base_types
-from .Max70Text import Max70Text
-from .GenericIdentification4 import GenericIdentification4
+from ._Max70Text import Max70Text
+from ._GenericIdentification4 import GenericIdentification4
 
 class PartyIdentification28(base_types._BaseFieldType):
 

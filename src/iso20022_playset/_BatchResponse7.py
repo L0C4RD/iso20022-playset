@@ -1,10 +1,10 @@
 from . import base_types
-from .TransactionIdentifier1 import TransactionIdentifier1
-from .PerformedTransaction7 import PerformedTransaction7
+from ._PerformedTransaction7 import PerformedTransaction7
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class BatchResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleBtchId", "_PrfrmdTx", "_POIBtchId"]
+	__slots__ = ["_SaleBtchId", "_POIBtchId", "_PrfrmdTx"]
 	@property
 	def SaleBtchId(self):
 		return self._SaleBtchId
@@ -19,19 +19,6 @@ class BatchResponse7(base_types._BaseFieldType):
 		self._SaleBtchId = None
 
 	@property
-	def PrfrmdTx(self):
-		return self._PrfrmdTx
-
-	@PrfrmdTx.setter
-	def PrfrmdTx(self, value):
-		self._PrfrmdTx = value if type(value) != base_types.auto else self.make_default("PrfrmdTx")
-
-	@PrfrmdTx.deleter
-	def PrfrmdTx(self):
-		del self._PrfrmdTx
-		self._PrfrmdTx = None
-
-	@property
 	def POIBtchId(self):
 		return self._POIBtchId
 
@@ -44,9 +31,22 @@ class BatchResponse7(base_types._BaseFieldType):
 		del self._POIBtchId
 		self._POIBtchId = None
 
+	@property
+	def PrfrmdTx(self):
+		return self._PrfrmdTx
+
+	@PrfrmdTx.setter
+	def PrfrmdTx(self, value):
+		self._PrfrmdTx = value if type(value) != base_types.auto else self.make_default("PrfrmdTx")
+
+	@PrfrmdTx.deleter
+	def PrfrmdTx(self):
+		del self._PrfrmdTx
+		self._PrfrmdTx = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SaleBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrfrmdTx', type=PerformedTransaction7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrfrmdTx', type=PerformedTransaction7, min=0, max=None, mutex_group=None, array=True),
 	))
 

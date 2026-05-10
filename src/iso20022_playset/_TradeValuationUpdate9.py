@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CounterpartyData88 import CounterpartyData88
-from .LoanData113 import LoanData113
-from .Max140Text import Max140Text
+from ._CounterpartyData88 import CounterpartyData88
+from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._LoanData113 import LoanData113
 
 class TradeValuationUpdate9(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CtrPtySpcfcData", "_TechRcrdId", "_LnData"]
+	__slots__ = ["_SplmtryData", "_LnData", "_TechRcrdId", "_CtrPtySpcfcData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,17 +21,17 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
+	def LnData(self):
+		return self._LnData
 
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
+	@LnData.setter
+	def LnData(self, value):
+		self._LnData = value if type(value) != base_types.auto else self.make_default("LnData")
 
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+	@LnData.deleter
+	def LnData(self):
+		del self._LnData
+		self._LnData = None
 
 	@property
 	def TechRcrdId(self):
@@ -47,22 +47,22 @@ class TradeValuationUpdate9(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def LnData(self):
-		return self._LnData
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
 
-	@LnData.setter
-	def LnData(self, value):
-		self._LnData = value if type(value) != base_types.auto else self.make_default("LnData")
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
 
-	@LnData.deleter
-	def LnData(self):
-		del self._LnData
-		self._LnData = None
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnData', type=LoanData113, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartyData88, min=1, max=1, mutex_group=None, array=False),
 	))
 

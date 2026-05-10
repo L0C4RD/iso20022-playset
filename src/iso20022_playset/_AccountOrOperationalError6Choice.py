@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .AccountReport35 import AccountReport35
+from ._ErrorHandling5 import ErrorHandling5
+from ._AccountReport35 import AccountReport35
 
 class AccountOrOperationalError6Choice(base_types._BaseFieldType):
 

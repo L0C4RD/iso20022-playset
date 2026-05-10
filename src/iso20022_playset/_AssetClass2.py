@@ -1,23 +1,23 @@
 from . import base_types
-from .DerivativeInterest3 import DerivativeInterest3
-from .DerivativeCommodity2 import DerivativeCommodity2
-from .DerivativeForeignExchange3 import DerivativeForeignExchange3
+from ._DerivativeCommodity2 import DerivativeCommodity2
+from ._DerivativeInterest3 import DerivativeInterest3
+from ._DerivativeForeignExchange3 import DerivativeForeignExchange3
 
 class AssetClass2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmmdty", "_Intrst", "_FX"]
+	__slots__ = ["_FX", "_Intrst", "_Cmmdty"]
 	@property
-	def Cmmdty(self):
-		return self._Cmmdty
+	def FX(self):
+		return self._FX
 
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+	@FX.setter
+	def FX(self, value):
+		self._FX = value if type(value) != base_types.auto else self.make_default("FX")
 
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
+	@FX.deleter
+	def FX(self):
+		del self._FX
+		self._FX = None
 
 	@property
 	def Intrst(self):
@@ -33,21 +33,21 @@ class AssetClass2(base_types._BaseFieldType):
 		self._Intrst = None
 
 	@property
-	def FX(self):
-		return self._FX
+	def Cmmdty(self):
+		return self._Cmmdty
 
-	@FX.setter
-	def FX(self, value):
-		self._FX = value if type(value) != base_types.auto else self.make_default("FX")
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
 
-	@FX.deleter
-	def FX(self):
-		del self._FX
-		self._FX = None
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cmmdty', type=DerivativeCommodity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Intrst', type=DerivativeInterest3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrst', type=DerivativeInterest3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmmdty', type=DerivativeCommodity2, min=0, max=1, mutex_group=None, array=False),
 	))
 

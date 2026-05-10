@@ -1,23 +1,10 @@
 from . import base_types
-from .Modification1Code import Modification1Code
-from .StatementFrequencyAndForm1 import StatementFrequencyAndForm1
+from ._Modification1Code import Modification1Code
+from ._StatementFrequencyAndForm1 import StatementFrequencyAndForm1
 
 class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtFrqcyAndForm", "_ModCd"]
-	@property
-	def StmtFrqcyAndForm(self):
-		return self._StmtFrqcyAndForm
-
-	@StmtFrqcyAndForm.setter
-	def StmtFrqcyAndForm(self, value):
-		self._StmtFrqcyAndForm = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndForm")
-
-	@StmtFrqcyAndForm.deleter
-	def StmtFrqcyAndForm(self):
-		del self._StmtFrqcyAndForm
-		self._StmtFrqcyAndForm = None
-
+	__slots__ = ["_ModCd", "_StmtFrqcyAndForm"]
 	@property
 	def ModCd(self):
 		return self._ModCd
@@ -31,8 +18,21 @@ class StatementFrequencyAndFormModification1(base_types._BaseFieldType):
 		del self._ModCd
 		self._ModCd = None
 
+	@property
+	def StmtFrqcyAndForm(self):
+		return self._StmtFrqcyAndForm
+
+	@StmtFrqcyAndForm.setter
+	def StmtFrqcyAndForm(self, value):
+		self._StmtFrqcyAndForm = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndForm")
+
+	@StmtFrqcyAndForm.deleter
+	def StmtFrqcyAndForm(self):
+		del self._StmtFrqcyAndForm
+		self._StmtFrqcyAndForm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtFrqcyAndForm', type=StatementFrequencyAndForm1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtFrqcyAndForm', type=StatementFrequencyAndForm1, min=1, max=1, mutex_group=None, array=False),
 	))
 

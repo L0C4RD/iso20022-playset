@@ -1,5 +1,5 @@
 from . import base_types
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class SettlementParties34Choice(base_types._BaseFieldType):
 

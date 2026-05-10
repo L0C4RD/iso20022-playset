@@ -1,41 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionIdentifier1 import TransactionIdentifier1
-from .LoyaltyResult3 import LoyaltyResult3
-from .CustomerOrder1 import CustomerOrder1
-from .RetailerPaymentResult7 import RetailerPaymentResult7
-from .PaymentReceipt6 import PaymentReceipt6
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._RetailerPaymentResult7 import RetailerPaymentResult7
+from ._PaymentReceipt6 import PaymentReceipt6
+from ._Max35Text import Max35Text
+from ._CustomerOrder1 import CustomerOrder1
+from ._LoyaltyResult3 import LoyaltyResult3
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class PaymentResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleTxId", "_POIRcncltnId", "_PmtRct", "_SaleRefId", "_RtlrPmtRslt", "_CstmrOrdr", "_POITxId", "_LltyRslt", "_IssrRefData"]
-	@property
-	def SaleTxId(self):
-		return self._SaleTxId
-
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
-
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
-
-	@property
-	def POIRcncltnId(self):
-		return self._POIRcncltnId
-
-	@POIRcncltnId.setter
-	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
-
-	@POIRcncltnId.deleter
-	def POIRcncltnId(self):
-		del self._POIRcncltnId
-		self._POIRcncltnId = None
-
+	__slots__ = ["_PmtRct", "_CstmrOrdr", "_SaleTxId", "_SaleRefId", "_POITxId", "_LltyRslt", "_RtlrPmtRslt", "_POIRcncltnId", "_IssrRefData"]
 	@property
 	def PmtRct(self):
 		return self._PmtRct
@@ -50,32 +24,6 @@ class PaymentResponse7(base_types._BaseFieldType):
 		self._PmtRct = None
 
 	@property
-	def SaleRefId(self):
-		return self._SaleRefId
-
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
-
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
-
-	@property
-	def RtlrPmtRslt(self):
-		return self._RtlrPmtRslt
-
-	@RtlrPmtRslt.setter
-	def RtlrPmtRslt(self, value):
-		self._RtlrPmtRslt = value if type(value) != base_types.auto else self.make_default("RtlrPmtRslt")
-
-	@RtlrPmtRslt.deleter
-	def RtlrPmtRslt(self):
-		del self._RtlrPmtRslt
-		self._RtlrPmtRslt = None
-
-	@property
 	def CstmrOrdr(self):
 		return self._CstmrOrdr
 
@@ -87,6 +35,32 @@ class PaymentResponse7(base_types._BaseFieldType):
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
 		self._CstmrOrdr = None
+
+	@property
+	def SaleTxId(self):
+		return self._SaleTxId
+
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
+
+	@property
+	def SaleRefId(self):
+		return self._SaleRefId
+
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
+
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
 
 	@property
 	def POITxId(self):
@@ -115,6 +89,32 @@ class PaymentResponse7(base_types._BaseFieldType):
 		self._LltyRslt = None
 
 	@property
+	def RtlrPmtRslt(self):
+		return self._RtlrPmtRslt
+
+	@RtlrPmtRslt.setter
+	def RtlrPmtRslt(self, value):
+		self._RtlrPmtRslt = value if type(value) != base_types.auto else self.make_default("RtlrPmtRslt")
+
+	@RtlrPmtRslt.deleter
+	def RtlrPmtRslt(self):
+		del self._RtlrPmtRslt
+		self._RtlrPmtRslt = None
+
+	@property
+	def POIRcncltnId(self):
+		return self._POIRcncltnId
+
+	@POIRcncltnId.setter
+	def POIRcncltnId(self, value):
+		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+
+	@POIRcncltnId.deleter
+	def POIRcncltnId(self):
+		del self._POIRcncltnId
+		self._POIRcncltnId = None
+
+	@property
 	def IssrRefData(self):
 		return self._IssrRefData
 
@@ -128,14 +128,14 @@ class PaymentResponse7(base_types._BaseFieldType):
 		self._IssrRefData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtRct', type=PaymentReceipt6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtlrPmtRslt', type=RetailerPaymentResult7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyRslt', type=LoyaltyResult3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtlrPmtRslt', type=RetailerPaymentResult7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

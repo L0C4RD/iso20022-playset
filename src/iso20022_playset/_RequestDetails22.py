@@ -1,41 +1,15 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .ClearingChannel2Code import ClearingChannel2Code
-from .PriorityNumeric4Choice import PriorityNumeric4Choice
-from .Linkages57 import Linkages57
-from .YesNoIndicator import YesNoIndicator
-from .LinkageType3Choice import LinkageType3Choice
-from .References14 import References14
+from ._GenericIdentification30 import GenericIdentification30
+from ._LinkageType3Choice import LinkageType3Choice
+from ._PriorityNumeric4Choice import PriorityNumeric4Choice
+from ._References14 import References14
+from ._Linkages57 import Linkages57
+from ._YesNoIndicator import YesNoIndicator
+from ._ClearingChannel2Code import ClearingChannel2Code
 
 class RequestDetails22(base_types._BaseFieldType):
 
-	__slots__ = ["_Prty", "_ClrChanl", "_Lkg", "_PrtlSttlmInd", "_Ref", "_OthrPrcg", "_Lnkgs"]
-	@property
-	def Prty(self):
-		return self._Prty
-
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
-
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
-
-	@property
-	def ClrChanl(self):
-		return self._ClrChanl
-
-	@ClrChanl.setter
-	def ClrChanl(self, value):
-		self._ClrChanl = value if type(value) != base_types.auto else self.make_default("ClrChanl")
-
-	@ClrChanl.deleter
-	def ClrChanl(self):
-		del self._ClrChanl
-		self._ClrChanl = None
-
+	__slots__ = ["_Lkg", "_OthrPrcg", "_Ref", "_ClrChanl", "_Lnkgs", "_Prty", "_PrtlSttlmInd"]
 	@property
 	def Lkg(self):
 		return self._Lkg
@@ -48,32 +22,6 @@ class RequestDetails22(base_types._BaseFieldType):
 	def Lkg(self):
 		del self._Lkg
 		self._Lkg = None
-
-	@property
-	def PrtlSttlmInd(self):
-		return self._PrtlSttlmInd
-
-	@PrtlSttlmInd.setter
-	def PrtlSttlmInd(self, value):
-		self._PrtlSttlmInd = value if type(value) != base_types.auto else self.make_default("PrtlSttlmInd")
-
-	@PrtlSttlmInd.deleter
-	def PrtlSttlmInd(self):
-		del self._PrtlSttlmInd
-		self._PrtlSttlmInd = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
 
 	@property
 	def OthrPrcg(self):
@@ -89,6 +37,32 @@ class RequestDetails22(base_types._BaseFieldType):
 		self._OthrPrcg = None
 
 	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def ClrChanl(self):
+		return self._ClrChanl
+
+	@ClrChanl.setter
+	def ClrChanl(self, value):
+		self._ClrChanl = value if type(value) != base_types.auto else self.make_default("ClrChanl")
+
+	@ClrChanl.deleter
+	def ClrChanl(self):
+		del self._ClrChanl
+		self._ClrChanl = None
+
+	@property
 	def Lnkgs(self):
 		return self._Lnkgs
 
@@ -101,13 +75,39 @@ class RequestDetails22(base_types._BaseFieldType):
 		del self._Lnkgs
 		self._Lnkgs = None
 
+	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def PrtlSttlmInd(self):
+		return self._PrtlSttlmInd
+
+	@PrtlSttlmInd.setter
+	def PrtlSttlmInd(self, value):
+		self._PrtlSttlmInd = value if type(value) != base_types.auto else self.make_default("PrtlSttlmInd")
+
+	@PrtlSttlmInd.deleter
+	def PrtlSttlmInd(self):
+		del self._PrtlSttlmInd
+		self._PrtlSttlmInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lkg', type=LinkageType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlSttlmInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=References14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPrcg', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ref', type=References14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages57, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlmInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

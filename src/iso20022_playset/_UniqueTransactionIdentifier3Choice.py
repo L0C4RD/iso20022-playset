@@ -1,24 +1,11 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .GenericIdentification175 import GenericIdentification175
-from .UTIIdentifier import UTIIdentifier
+from ._UTIIdentifier import UTIIdentifier
+from ._GenericIdentification175 import GenericIdentification175
+from ._NoReasonCode import NoReasonCode
 
 class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotAvlbl", "_UnqTxIdr", "_Prtry"]
-	@property
-	def NotAvlbl(self):
-		return self._NotAvlbl
-
-	@NotAvlbl.setter
-	def NotAvlbl(self, value):
-		self._NotAvlbl = value if type(value) != base_types.auto else self.make_default("NotAvlbl")
-
-	@NotAvlbl.deleter
-	def NotAvlbl(self):
-		del self._NotAvlbl
-		self._NotAvlbl = None
-
+	__slots__ = ["_UnqTxIdr", "_NotAvlbl", "_Prtry"]
 	@property
 	def UnqTxIdr(self):
 		return self._UnqTxIdr
@@ -31,6 +18,19 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
 		self._UnqTxIdr = None
+
+	@property
+	def NotAvlbl(self):
+		return self._NotAvlbl
+
+	@NotAvlbl.setter
+	def NotAvlbl(self, value):
+		self._NotAvlbl = value if type(value) != base_types.auto else self.make_default("NotAvlbl")
+
+	@NotAvlbl.deleter
+	def NotAvlbl(self):
+		del self._NotAvlbl
+		self._NotAvlbl = None
 
 	@property
 	def Prtry(self):
@@ -46,8 +46,8 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotAvlbl', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotAvlbl', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification175, min=0, max=1, mutex_group=1, array=False),
 	))
 

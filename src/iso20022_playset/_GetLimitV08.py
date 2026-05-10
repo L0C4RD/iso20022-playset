@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader9 import MessageHeader9
-from .LimitQuery5 import LimitQuery5
+from ._LimitQuery5 import LimitQuery5
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader9 import MessageHeader9
 
 class GetLimitV08(base_types._BaseFieldType):
 

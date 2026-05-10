@@ -1,6 +1,6 @@
 from . import base_types
-from .BeneficiaryType1Code import BeneficiaryType1Code
-from .GenericIdentification36 import GenericIdentification36
+from ._GenericIdentification36 import GenericIdentification36
+from ._BeneficiaryType1Code import BeneficiaryType1Code
 
 class BeneficiaryType1Choice(base_types._BaseFieldType):
 

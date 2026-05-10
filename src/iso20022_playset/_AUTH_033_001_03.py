@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstrumentReportingNonEquityTransparencyDataReportV03 import FinancialInstrumentReportingNonEquityTransparencyDataReportV03
+from ._FinancialInstrumentReportingNonEquityTransparencyDataReportV03 import FinancialInstrumentReportingNonEquityTransparencyDataReportV03
 
 class AUTH_033_001_03():
 

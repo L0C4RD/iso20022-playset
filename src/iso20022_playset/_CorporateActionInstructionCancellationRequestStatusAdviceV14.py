@@ -1,41 +1,28 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ProtectInstruction4 import ProtectInstruction4
-from .DocumentIdentification9 import DocumentIdentification9
-from .CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
-from .CorporateActionOption239 import CorporateActionOption239
-from .InstructionCancellationRequestStatus17Choice import InstructionCancellationRequestStatus17Choice
-from .CorporateActionNarrative10 import CorporateActionNarrative10
-from .DocumentIdentification33 import DocumentIdentification33
+from ._InstructionCancellationRequestStatus17Choice import InstructionCancellationRequestStatus17Choice
+from ._ProtectInstruction4 import ProtectInstruction4
+from ._CorporateActionNarrative10 import CorporateActionNarrative10
+from ._DocumentIdentification33 import DocumentIdentification33
+from ._CorporateActionOption239 import CorporateActionOption239
+from ._SupplementaryData1 import SupplementaryData1
+from ._DocumentIdentification9 import DocumentIdentification9
+from ._CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
 
 class CorporateActionInstructionCancellationRequestStatusAdviceV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_InstrCxlReqId", "_InstrCxlReqSts", "_CorpActnGnlInf", "_PrtctInstr", "_AddtlInf", "_CorpActnInstr", "_OthrDocId"]
+	__slots__ = ["_OthrDocId", "_InstrCxlReqSts", "_SplmtryData", "_AddtlInf", "_PrtctInstr", "_CorpActnInstr", "_CorpActnGnlInf", "_InstrCxlReqId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OthrDocId(self):
+		return self._OthrDocId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@OthrDocId.setter
+	def OthrDocId(self, value):
+		self._OthrDocId = value if type(value) != base_types.auto else self.make_default("OthrDocId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def InstrCxlReqId(self):
-		return self._InstrCxlReqId
-
-	@InstrCxlReqId.setter
-	def InstrCxlReqId(self, value):
-		self._InstrCxlReqId = value if type(value) != base_types.auto else self.make_default("InstrCxlReqId")
-
-	@InstrCxlReqId.deleter
-	def InstrCxlReqId(self):
-		del self._InstrCxlReqId
-		self._InstrCxlReqId = None
+	@OthrDocId.deleter
+	def OthrDocId(self):
+		del self._OthrDocId
+		self._OthrDocId = None
 
 	@property
 	def InstrCxlReqSts(self):
@@ -51,30 +38,17 @@ class CorporateActionInstructionCancellationRequestStatusAdviceV14(base_types._B
 		self._InstrCxlReqSts = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def PrtctInstr(self):
-		return self._PrtctInstr
-
-	@PrtctInstr.setter
-	def PrtctInstr(self, value):
-		self._PrtctInstr = value if type(value) != base_types.auto else self.make_default("PrtctInstr")
-
-	@PrtctInstr.deleter
-	def PrtctInstr(self):
-		del self._PrtctInstr
-		self._PrtctInstr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def AddtlInf(self):
@@ -90,6 +64,19 @@ class CorporateActionInstructionCancellationRequestStatusAdviceV14(base_types._B
 		self._AddtlInf = None
 
 	@property
+	def PrtctInstr(self):
+		return self._PrtctInstr
+
+	@PrtctInstr.setter
+	def PrtctInstr(self, value):
+		self._PrtctInstr = value if type(value) != base_types.auto else self.make_default("PrtctInstr")
+
+	@PrtctInstr.deleter
+	def PrtctInstr(self):
+		del self._PrtctInstr
+		self._PrtctInstr = None
+
+	@property
 	def CorpActnInstr(self):
 		return self._CorpActnInstr
 
@@ -103,26 +90,39 @@ class CorporateActionInstructionCancellationRequestStatusAdviceV14(base_types._B
 		self._CorpActnInstr = None
 
 	@property
-	def OthrDocId(self):
-		return self._OthrDocId
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
 
-	@OthrDocId.setter
-	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != base_types.auto else self.make_default("OthrDocId")
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
 
-	@OthrDocId.deleter
-	def OthrDocId(self):
-		del self._OthrDocId
-		self._OthrDocId = None
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
+	def InstrCxlReqId(self):
+		return self._InstrCxlReqId
+
+	@InstrCxlReqId.setter
+	def InstrCxlReqId(self, value):
+		self._InstrCxlReqId = value if type(value) != base_types.auto else self.make_default("InstrCxlReqId")
+
+	@InstrCxlReqId.deleter
+	def InstrCxlReqId(self):
+		del self._InstrCxlReqId
+		self._InstrCxlReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstrCxlReqId', type=DocumentIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrCxlReqSts', type=InstructionCancellationRequestStatus17Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation182, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctInstr', type=ProtectInstruction4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnInstr', type=CorporateActionOption239, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification33, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstrCxlReqSts', type=InstructionCancellationRequestStatus17Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctInstr', type=ProtectInstruction4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnInstr', type=CorporateActionOption239, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation182, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrCxlReqId', type=DocumentIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

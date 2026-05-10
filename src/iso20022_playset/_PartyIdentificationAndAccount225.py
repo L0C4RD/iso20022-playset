@@ -1,12 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AlternatePartyIdentification7 import AlternatePartyIdentification7
-from .CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from .PartyIdentification120Choice import PartyIdentification120Choice
+from ._Max35Text import Max35Text
+from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
+from ._PartyIdentification120Choice import PartyIdentification120Choice
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 
 class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_CshAcct", "_AltrnId", "_Id"]
+	__slots__ = ["_Id", "_PrcgId", "_AltrnId", "_CshAcct"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -19,19 +32,6 @@ class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 	def PrcgId(self):
 		del self._PrcgId
 		self._PrcgId = None
-
-	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
 
 	@property
 	def AltrnId(self):
@@ -47,22 +47,22 @@ class PartyIdentificationAndAccount225(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def CshAcct(self):
+		return self._CshAcct
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification120Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

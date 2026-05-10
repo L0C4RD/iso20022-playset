@@ -1,6 +1,6 @@
 from . import base_types
-from .ShortLong1Code import ShortLong1Code
-from .Amount2 import Amount2
+from ._Amount2 import Amount2
+from ._ShortLong1Code import ShortLong1Code
 
 class TotalVariationMargin1(base_types._BaseFieldType):
 

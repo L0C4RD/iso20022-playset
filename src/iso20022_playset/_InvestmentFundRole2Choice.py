@@ -1,6 +1,6 @@
 from . import base_types
-from .InvestmentFundRole2Code import InvestmentFundRole2Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._InvestmentFundRole2Code import InvestmentFundRole2Code
 
 class InvestmentFundRole2Choice(base_types._BaseFieldType):
 

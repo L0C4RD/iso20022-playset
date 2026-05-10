@@ -1,6 +1,6 @@
 from . import base_types
-from .UnmatchedReason30Choice import UnmatchedReason30Choice
-from .Max210Text import Max210Text
+from ._UnmatchedReason30Choice import UnmatchedReason30Choice
+from ._Max210Text import Max210Text
 
 class UnmatchedReason21(base_types._BaseFieldType):
 

@@ -1,11 +1,24 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .OrganisationIdentification38 import OrganisationIdentification38
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._OrganisationIdentification38 import OrganisationIdentification38
 
 class OrganisationIdentification15Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Othr", "_AnyBIC"]
+	__slots__ = ["_AnyBIC", "_LEI", "_Othr"]
+	@property
+	def AnyBIC(self):
+		return self._AnyBIC
+
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
+
 	@property
 	def LEI(self):
 		return self._LEI
@@ -32,22 +45,9 @@ class OrganisationIdentification15Choice(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def AnyBIC(self):
-		return self._AnyBIC
-
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
-
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=OrganisationIdentification38, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

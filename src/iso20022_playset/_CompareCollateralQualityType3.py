@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralQualityType1Code import CollateralQualityType1Code
+from ._CollateralQualityType1Code import CollateralQualityType1Code
 
 class CompareCollateralQualityType3(base_types._BaseFieldType):
 

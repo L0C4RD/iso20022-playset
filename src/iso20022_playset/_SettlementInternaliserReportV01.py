@@ -1,12 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .IssuerCSDReport1 import IssuerCSDReport1
-from .SettlementInternaliser1 import SettlementInternaliser1
-from .SettlementInternaliserReportHeader1 import SettlementInternaliserReportHeader1
+from ._SettlementInternaliser1 import SettlementInternaliser1
+from ._SupplementaryData1 import SupplementaryData1
+from ._IssuerCSDReport1 import IssuerCSDReport1
+from ._SettlementInternaliserReportHeader1 import SettlementInternaliserReportHeader1
 
 class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptHdr", "_IssrCSD", "_SttlmIntlr"]
+	__slots__ = ["_IssrCSD", "_SplmtryData", "_RptHdr", "_SttlmIntlr"]
+	@property
+	def IssrCSD(self):
+		return self._IssrCSD
+
+	@IssrCSD.setter
+	def IssrCSD(self, value):
+		self._IssrCSD = value if type(value) != base_types.auto else self.make_default("IssrCSD")
+
+	@IssrCSD.deleter
+	def IssrCSD(self):
+		del self._IssrCSD
+		self._IssrCSD = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +47,6 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 		self._RptHdr = None
 
 	@property
-	def IssrCSD(self):
-		return self._IssrCSD
-
-	@IssrCSD.setter
-	def IssrCSD(self, value):
-		self._IssrCSD = value if type(value) != base_types.auto else self.make_default("IssrCSD")
-
-	@IssrCSD.deleter
-	def IssrCSD(self):
-		del self._IssrCSD
-		self._IssrCSD = None
-
-	@property
 	def SttlmIntlr(self):
 		return self._SttlmIntlr
 
@@ -60,9 +60,9 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 		self._SttlmIntlr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IssrCSD', type=IssuerCSDReport1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SettlementInternaliserReportHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrCSD', type=IssuerCSDReport1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmIntlr', type=SettlementInternaliser1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .MarginReportV02 import MarginReportV02
+from ._MarginReportV02 import MarginReportV02
 
 class SECL_005_001_02():
 

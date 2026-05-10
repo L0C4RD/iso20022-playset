@@ -1,6 +1,6 @@
 from . import base_types
-from .ClosingBalance7Choice import ClosingBalance7Choice
-from .ShortLong1Code import ShortLong1Code
+from ._ClosingBalance7Choice import ClosingBalance7Choice
+from ._ShortLong1Code import ShortLong1Code
 
 class ClosingBalance6(base_types._BaseFieldType):
 

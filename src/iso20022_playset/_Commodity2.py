@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassDetailedSubProductType1Choice import AssetClassDetailedSubProductType1Choice
-from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
+from ._AssetClassDetailedSubProductType1Choice import AssetClassDetailedSubProductType1Choice
+from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 
 class Commodity2(base_types._BaseFieldType):
 

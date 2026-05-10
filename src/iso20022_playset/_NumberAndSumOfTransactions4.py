@@ -1,24 +1,11 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .Max15NumericText import Max15NumericText
-from .AmountAndDirection35 import AmountAndDirection35
+from ._AmountAndDirection35 import AmountAndDirection35
+from ._Max15NumericText import Max15NumericText
+from ._DecimalNumber import DecimalNumber
 
 class NumberAndSumOfTransactions4(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNetNtry", "_NbOfNtries", "_Sum"]
-	@property
-	def TtlNetNtry(self):
-		return self._TtlNetNtry
-
-	@TtlNetNtry.setter
-	def TtlNetNtry(self, value):
-		self._TtlNetNtry = value if type(value) != base_types.auto else self.make_default("TtlNetNtry")
-
-	@TtlNetNtry.deleter
-	def TtlNetNtry(self):
-		del self._TtlNetNtry
-		self._TtlNetNtry = None
-
+	__slots__ = ["_NbOfNtries", "_Sum", "_TtlNetNtry"]
 	@property
 	def NbOfNtries(self):
 		return self._NbOfNtries
@@ -45,9 +32,22 @@ class NumberAndSumOfTransactions4(base_types._BaseFieldType):
 		del self._Sum
 		self._Sum = None
 
+	@property
+	def TtlNetNtry(self):
+		return self._TtlNetNtry
+
+	@TtlNetNtry.setter
+	def TtlNetNtry(self, value):
+		self._TtlNetNtry = value if type(value) != base_types.auto else self.make_default("TtlNetNtry")
+
+	@TtlNetNtry.deleter
+	def TtlNetNtry(self):
+		del self._TtlNetNtry
+		self._TtlNetNtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNetNtry', type=AmountAndDirection35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNetNtry', type=AmountAndDirection35, min=0, max=1, mutex_group=None, array=False),
 	))
 

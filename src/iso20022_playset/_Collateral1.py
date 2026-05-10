@@ -1,5 +1,5 @@
 from . import base_types
-from .MarginCollateral1 import MarginCollateral1
+from ._MarginCollateral1 import MarginCollateral1
 
 class Collateral1(base_types._BaseFieldType):
 

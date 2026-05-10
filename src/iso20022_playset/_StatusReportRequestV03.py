@@ -1,6 +1,6 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .BICIdentification1 import BICIdentification1
+from ._BICIdentification1 import BICIdentification1
+from ._MessageIdentification1 import MessageIdentification1
 
 class StatusReportRequestV03(base_types._BaseFieldType):
 

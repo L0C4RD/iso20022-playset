@@ -1,6 +1,6 @@
 from . import base_types
-from .PendingReason26Choice import PendingReason26Choice
-from .Max210Text import Max210Text
+from ._PendingReason26Choice import PendingReason26Choice
+from ._Max210Text import Max210Text
 
 class PendingReason14(base_types._BaseFieldType):
 

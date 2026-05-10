@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader9 import MessageHeader9
-from .AccountQuery4 import AccountQuery4
+from ._AccountQuery4 import AccountQuery4
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader9 import MessageHeader9
 
 class GetAccountV08(base_types._BaseFieldType):
 

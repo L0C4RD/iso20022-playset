@@ -1,38 +1,38 @@
 from . import base_types
-from .ProprietaryReason4 import ProprietaryReason4
-from .CancellationStatus29Choice import CancellationStatus29Choice
-from .PendingStatus56Choice import PendingStatus56Choice
-from .RejectionStatus33Choice import RejectionStatus33Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._PendingStatus56Choice import PendingStatus56Choice
+from ._RejectionStatus33Choice import RejectionStatus33Choice
+from ._CancellationStatus29Choice import CancellationStatus29Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ProcessingStatus82Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_Canc", "_Rjctd", "_Prcd", "_Prtry", "_CxlReq", "_Futr"]
+	__slots__ = ["_Prtry", "_CxlReq", "_Rjctd", "_Prcd", "_PdgCxl", "_Futr", "_Canc"]
 	@property
-	def PdgCxl(self):
-		return self._PdgCxl
+	def Prtry(self):
+		return self._Prtry
 
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
-	def Canc(self):
-		return self._Canc
+	def CxlReq(self):
+		return self._CxlReq
 
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+	@CxlReq.setter
+	def CxlReq(self, value):
+		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
 
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
+	@CxlReq.deleter
+	def CxlReq(self):
+		del self._CxlReq
+		self._CxlReq = None
 
 	@property
 	def Rjctd(self):
@@ -61,30 +61,17 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		self._Prcd = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def PdgCxl(self):
+		return self._PdgCxl
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
-	@property
-	def CxlReq(self):
-		return self._CxlReq
-
-	@CxlReq.setter
-	def CxlReq(self, value):
-		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
-
-	@CxlReq.deleter
-	def CxlReq(self):
-		del self._CxlReq
-		self._CxlReq = None
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
 
 	@property
 	def Futr(self):
@@ -99,13 +86,26 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 		del self._Futr
 		self._Futr = None
 
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdgCxl', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus33Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlReq', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus33Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prcd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingStatus56Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Futr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

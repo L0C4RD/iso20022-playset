@@ -1,23 +1,10 @@
 from . import base_types
-from .MatchingCriteria10 import MatchingCriteria10
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._MatchingCriteria10 import MatchingCriteria10
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class ReconciliationResult10(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty1", "_CtrPty2", "_MtchgCrit"]
-	@property
-	def CtrPty1(self):
-		return self._CtrPty1
-
-	@CtrPty1.setter
-	def CtrPty1(self, value):
-		self._CtrPty1 = value if type(value) != base_types.auto else self.make_default("CtrPty1")
-
-	@CtrPty1.deleter
-	def CtrPty1(self):
-		del self._CtrPty1
-		self._CtrPty1 = None
-
+	__slots__ = ["_CtrPty2", "_MtchgCrit", "_CtrPty1"]
 	@property
 	def CtrPty2(self):
 		return self._CtrPty2
@@ -44,9 +31,22 @@ class ReconciliationResult10(base_types._BaseFieldType):
 		del self._MtchgCrit
 		self._MtchgCrit = None
 
+	@property
+	def CtrPty1(self):
+		return self._CtrPty1
+
+	@CtrPty1.setter
+	def CtrPty1(self, value):
+		self._CtrPty1 = value if type(value) != base_types.auto else self.make_default("CtrPty1")
+
+	@CtrPty1.deleter
+	def CtrPty1(self):
+		del self._CtrPty1
+		self._CtrPty1 = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPty1', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPty2', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgCrit', type=MatchingCriteria10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty1', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

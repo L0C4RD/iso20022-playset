@@ -1,24 +1,11 @@
 from . import base_types
-from .RestrictedFINMax15Text import RestrictedFINMax15Text
-from .ProtectTransactionType3Code import ProtectTransactionType3Code
-from .ISODate import ISODate
+from ._RestrictedFINMax15Text import RestrictedFINMax15Text
+from ._ISODate import ISODate
+from ._ProtectTransactionType3Code import ProtectTransactionType3Code
 
 class ProtectInstruction7(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_PrtctDt", "_TxTp"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_PrtctDt", "_TxTp", "_TxId"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt
@@ -45,9 +32,22 @@ class ProtectInstruction7(base_types._BaseFieldType):
 		del self._TxTp
 		self._TxTp = None
 
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=RestrictedFINMax15Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

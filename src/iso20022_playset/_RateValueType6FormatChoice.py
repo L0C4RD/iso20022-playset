@@ -1,23 +1,10 @@
 from . import base_types
-from .GenericIdentification13 import GenericIdentification13
-from .RateValueType6Code import RateValueType6Code
+from ._GenericIdentification13 import GenericIdentification13
+from ._RateValueType6Code import RateValueType6Code
 
 class RateValueType6FormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class RateValueType6FormatChoice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=RateValueType6Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=RateValueType6Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

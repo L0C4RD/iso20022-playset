@@ -1,11 +1,24 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .LocationAmenity1Code import LocationAmenity1Code
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._LocationAmenity1Code import LocationAmenity1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class LocalAmenity1(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblInd", "_Tp", "_OthrTp"]
+	__slots__ = ["_OthrTp", "_AvlblInd", "_Tp"]
+	@property
+	def OthrTp(self):
+		return self._OthrTp
+
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
 	@property
 	def AvlblInd(self):
 		return self._AvlblInd
@@ -32,22 +45,9 @@ class LocalAmenity1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=LocationAmenity1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .Extended350Code import Extended350Code
-from .TransferUnmatchedReason3Code import TransferUnmatchedReason3Code
-from .GenericIdentification1 import GenericIdentification1
+from ._GenericIdentification1 import GenericIdentification1
+from ._TransferUnmatchedReason3Code import TransferUnmatchedReason3Code
+from ._NoReasonCode import NoReasonCode
+from ._Extended350Code import Extended350Code
 
 class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_XtndedRsn", "_DataSrcSchme", "_NoSpcfdRsn", "_Rsn"]
-	@property
-	def XtndedRsn(self):
-		return self._XtndedRsn
-
-	@XtndedRsn.setter
-	def XtndedRsn(self, value):
-		self._XtndedRsn = value if type(value) != base_types.auto else self.make_default("XtndedRsn")
-
-	@XtndedRsn.deleter
-	def XtndedRsn(self):
-		del self._XtndedRsn
-		self._XtndedRsn = None
-
+	__slots__ = ["_DataSrcSchme", "_Rsn", "_NoSpcfdRsn", "_XtndedRsn"]
 	@property
 	def DataSrcSchme(self):
 		return self._DataSrcSchme
@@ -32,6 +19,19 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 	def DataSrcSchme(self):
 		del self._DataSrcSchme
 		self._DataSrcSchme = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def NoSpcfdRsn(self):
@@ -47,22 +47,22 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 		self._NoSpcfdRsn = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def XtndedRsn(self):
+		return self._XtndedRsn
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+	@XtndedRsn.setter
+	def XtndedRsn(self, value):
+		self._XtndedRsn = value if type(value) != base_types.auto else self.make_default("XtndedRsn")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@XtndedRsn.deleter
+	def XtndedRsn(self):
+		del self._XtndedRsn
+		self._XtndedRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=TransferUnmatchedReason3Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

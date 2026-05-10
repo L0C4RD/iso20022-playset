@@ -1,25 +1,12 @@
 from . import base_types
-from .Header31 import Header31
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType13 import ContentInformationType13
-from .ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
+from ._ContentInformationType10 import ContentInformationType10
+from ._Header31 import Header31
+from ._ContentInformationType13 import ContentInformationType13
+from ._ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
 
 class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMKeyDwnldRspn", "_PrtctdATMKeyDwnldRspn", "_SctyTrlr", "_Hdr"]
-	@property
-	def ATMKeyDwnldRspn(self):
-		return self._ATMKeyDwnldRspn
-
-	@ATMKeyDwnldRspn.setter
-	def ATMKeyDwnldRspn(self, value):
-		self._ATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("ATMKeyDwnldRspn")
-
-	@ATMKeyDwnldRspn.deleter
-	def ATMKeyDwnldRspn(self):
-		del self._ATMKeyDwnldRspn
-		self._ATMKeyDwnldRspn = None
-
+	__slots__ = ["_PrtctdATMKeyDwnldRspn", "_SctyTrlr", "_ATMKeyDwnldRspn", "_Hdr"]
 	@property
 	def PrtctdATMKeyDwnldRspn(self):
 		return self._PrtctdATMKeyDwnldRspn
@@ -47,6 +34,19 @@ class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
+	def ATMKeyDwnldRspn(self):
+		return self._ATMKeyDwnldRspn
+
+	@ATMKeyDwnldRspn.setter
+	def ATMKeyDwnldRspn(self, value):
+		self._ATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("ATMKeyDwnldRspn")
+
+	@ATMKeyDwnldRspn.deleter
+	def ATMKeyDwnldRspn(self):
+		del self._ATMKeyDwnldRspn
+		self._ATMKeyDwnldRspn = None
+
+	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -60,9 +60,9 @@ class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMKeyDwnldRspn', type=ATMKeyDownloadResponse5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMKeyDwnldRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMKeyDwnldRspn', type=ATMKeyDownloadResponse5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))
 

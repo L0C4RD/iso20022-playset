@@ -1,12 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .AdditionalInformation30 import AdditionalInformation30
-from .ActionTaken1Code import ActionTaken1Code
+from ._Max35Text import Max35Text
+from ._AdditionalInformation30 import AdditionalInformation30
+from ._Max256Text import Max256Text
+from ._ActionTaken1Code import ActionTaken1Code
 
 class FraudDispositionStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_WrngData", "_OthrActnTaken", "_AddtlInf", "_ErrData", "_ActnTaken"]
+	__slots__ = ["_WrngData", "_ErrData", "_ActnTaken", "_AddtlInf", "_OthrActnTaken"]
 	@property
 	def WrngData(self):
 		return self._WrngData
@@ -19,32 +19,6 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 	def WrngData(self):
 		del self._WrngData
 		self._WrngData = None
-
-	@property
-	def OthrActnTaken(self):
-		return self._OthrActnTaken
-
-	@OthrActnTaken.setter
-	def OthrActnTaken(self, value):
-		self._OthrActnTaken = value if type(value) != base_types.auto else self.make_default("OthrActnTaken")
-
-	@OthrActnTaken.deleter
-	def OthrActnTaken(self):
-		del self._OthrActnTaken
-		self._OthrActnTaken = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
 
 	@property
 	def ErrData(self):
@@ -72,11 +46,37 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		del self._ActnTaken
 		self._ActnTaken = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def OthrActnTaken(self):
+		return self._OthrActnTaken
+
+	@OthrActnTaken.setter
+	def OthrActnTaken(self, value):
+		self._OthrActnTaken = value if type(value) != base_types.auto else self.make_default("OthrActnTaken")
+
+	@OthrActnTaken.deleter
+	def OthrActnTaken(self):
+		del self._OthrActnTaken
+		self._OthrActnTaken = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrActnTaken', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation30, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ErrData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnTaken', type=ActionTaken1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrActnTaken', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

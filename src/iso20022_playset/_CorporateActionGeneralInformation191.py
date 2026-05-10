@@ -1,12 +1,51 @@
 from . import base_types
-from .CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
-from .SecurityIdentification20 import SecurityIdentification20
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .CorporateActionEventType121Choice import CorporateActionEventType121Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
+from ._CorporateActionEventType121Choice import CorporateActionEventType121Choice
+from ._SecurityIdentification20 import SecurityIdentification20
 
 class CorporateActionGeneralInformation191(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssActnNb", "_OffclCorpActnEvtId", "_CorpActnEvtId", "_MndtryVlntryEvtTp", "_EvtTp", "_FinInstrmId"]
+	__slots__ = ["_CorpActnEvtId", "_FinInstrmId", "_MndtryVlntryEvtTp", "_ClssActnNb", "_OffclCorpActnEvtId", "_EvtTp"]
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def MndtryVlntryEvtTp(self):
+		return self._MndtryVlntryEvtTp
+
+	@MndtryVlntryEvtTp.setter
+	def MndtryVlntryEvtTp(self, value):
+		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+
+	@MndtryVlntryEvtTp.deleter
+	def MndtryVlntryEvtTp(self):
+		del self._MndtryVlntryEvtTp
+		self._MndtryVlntryEvtTp = None
+
 	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb
@@ -34,32 +73,6 @@ class CorporateActionGeneralInformation191(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def MndtryVlntryEvtTp(self):
-		return self._MndtryVlntryEvtTp
-
-	@MndtryVlntryEvtTp.setter
-	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
-
-	@MndtryVlntryEvtTp.deleter
-	def MndtryVlntryEvtTp(self):
-		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
-
-	@property
 	def EvtTp(self):
 		return self._EvtTp
 
@@ -72,25 +85,12 @@ class CorporateActionGeneralInformation191(base_types._BaseFieldType):
 		del self._EvtTp
 		self._EvtTp = None
 
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssActnNb', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType121Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 	))
 

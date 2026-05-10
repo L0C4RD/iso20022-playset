@@ -1,5 +1,5 @@
 from . import base_types
-from .AgentCADeactivationStatusAdviceV01 import AgentCADeactivationStatusAdviceV01
+from ._AgentCADeactivationStatusAdviceV01 import AgentCADeactivationStatusAdviceV01
 
 class SEEV_030_001_01():
 

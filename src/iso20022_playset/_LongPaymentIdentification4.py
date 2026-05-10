@@ -1,27 +1,27 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PaymentOrigin1Choice import PaymentOrigin1Choice
-from .UUIDv4Identifier import UUIDv4Identifier
-from .ISODate import ISODate
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .EntryTypeIdentifier import EntryTypeIdentifier
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._PaymentOrigin1Choice import PaymentOrigin1Choice
+from ._EntryTypeIdentifier import EntryTypeIdentifier
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class LongPaymentIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrBkSttlmDt", "_InstdAgt", "_UETR", "_InstgAgt", "_IntrBkSttlmAmt", "_EndToEndId", "_TxId", "_PmtMtd", "_NtryTp"]
+	__slots__ = ["_IntrBkSttlmAmt", "_InstdAgt", "_NtryTp", "_PmtMtd", "_EndToEndId", "_InstgAgt", "_TxId", "_UETR", "_IntrBkSttlmDt"]
 	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
+	def IntrBkSttlmAmt(self):
+		return self._IntrBkSttlmAmt
 
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+	@IntrBkSttlmAmt.setter
+	def IntrBkSttlmAmt(self, value):
+		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
 
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+	@IntrBkSttlmAmt.deleter
+	def IntrBkSttlmAmt(self):
+		del self._IntrBkSttlmAmt
+		self._IntrBkSttlmAmt = None
 
 	@property
 	def InstdAgt(self):
@@ -37,69 +37,17 @@ class LongPaymentIdentification4(base_types._BaseFieldType):
 		self._InstdAgt = None
 
 	@property
-	def UETR(self):
-		return self._UETR
+	def NtryTp(self):
+		return self._NtryTp
 
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+	@NtryTp.setter
+	def NtryTp(self, value):
+		self._NtryTp = value if type(value) != base_types.auto else self.make_default("NtryTp")
 
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
-
-	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
-	@property
-	def IntrBkSttlmAmt(self):
-		return self._IntrBkSttlmAmt
-
-	@IntrBkSttlmAmt.setter
-	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
-
-	@IntrBkSttlmAmt.deleter
-	def IntrBkSttlmAmt(self):
-		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
-
-	@property
-	def EndToEndId(self):
-		return self._EndToEndId
-
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
-
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@NtryTp.deleter
+	def NtryTp(self):
+		del self._NtryTp
+		self._NtryTp = None
 
 	@property
 	def PmtMtd(self):
@@ -115,27 +63,79 @@ class LongPaymentIdentification4(base_types._BaseFieldType):
 		self._PmtMtd = None
 
 	@property
-	def NtryTp(self):
-		return self._NtryTp
+	def EndToEndId(self):
+		return self._EndToEndId
 
-	@NtryTp.setter
-	def NtryTp(self, value):
-		self._NtryTp = value if type(value) != base_types.auto else self.make_default("NtryTp")
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
 
-	@NtryTp.deleter
-	def NtryTp(self):
-		del self._NtryTp
-		self._NtryTp = None
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
+
+	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def UETR(self):
+		return self._UETR
+
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
+
+	@property
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
+
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryTp', type=EntryTypeIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

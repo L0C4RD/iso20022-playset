@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CreditTransferTransaction67 import CreditTransferTransaction67
-from .GroupHeader131 import GroupHeader131
+from ._SupplementaryData1 import SupplementaryData1
+from ._GroupHeader131 import GroupHeader131
+from ._CreditTransferTransaction67 import CreditTransferTransaction67
 
 class FinancialInstitutionCreditTransferV12(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_CdtTrfTxInf"]
+	__slots__ = ["_CdtTrfTxInf", "_SplmtryData", "_GrpHdr"]
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def CdtTrfTxInf(self):
+		return self._CdtTrfTxInf
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+	@CdtTrfTxInf.setter
+	def CdtTrfTxInf(self, value):
+		self._CdtTrfTxInf = value if type(value) != base_types.auto else self.make_default("CdtTrfTxInf")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@CdtTrfTxInf.deleter
+	def CdtTrfTxInf(self):
+		del self._CdtTrfTxInf
+		self._CdtTrfTxInf = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class FinancialInstitutionCreditTransferV12(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def CdtTrfTxInf(self):
-		return self._CdtTrfTxInf
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@CdtTrfTxInf.setter
-	def CdtTrfTxInf(self, value):
-		self._CdtTrfTxInf = value if type(value) != base_types.auto else self.make_default("CdtTrfTxInf")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
-	@CdtTrfTxInf.deleter
-	def CdtTrfTxInf(self):
-		del self._CdtTrfTxInf
-		self._CdtTrfTxInf = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader131, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtTrfTxInf', type=CreditTransferTransaction67, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader131, min=1, max=1, mutex_group=None, array=False),
 	))
 

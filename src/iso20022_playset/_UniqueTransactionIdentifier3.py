@@ -1,5 +1,5 @@
 from . import base_types
-from .UTIIdentifier import UTIIdentifier
+from ._UTIIdentifier import UTIIdentifier
 
 class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 

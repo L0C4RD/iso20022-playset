@@ -1,24 +1,11 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .AmountAndDirection106 import AmountAndDirection106
-from .TradeTransactionIdentification24 import TradeTransactionIdentification24
+from ._AmountAndDirection106 import AmountAndDirection106
+from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnAmt", "_ValtnTmStmp", "_TxId"]
-	@property
-	def ValtnAmt(self):
-		return self._ValtnAmt
-
-	@ValtnAmt.setter
-	def ValtnAmt(self, value):
-		self._ValtnAmt = value if type(value) != base_types.auto else self.make_default("ValtnAmt")
-
-	@ValtnAmt.deleter
-	def ValtnAmt(self):
-		del self._ValtnAmt
-		self._ValtnAmt = None
-
+	__slots__ = ["_ValtnTmStmp", "_ValtnAmt", "_TxId"]
 	@property
 	def ValtnTmStmp(self):
 		return self._ValtnTmStmp
@@ -31,6 +18,19 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 	def ValtnTmStmp(self):
 		del self._ValtnTmStmp
 		self._ValtnTmStmp = None
+
+	@property
+	def ValtnAmt(self):
+		return self._ValtnAmt
+
+	@ValtnAmt.setter
+	def ValtnAmt(self, value):
+		self._ValtnAmt = value if type(value) != base_types.auto else self.make_default("ValtnAmt")
+
+	@ValtnAmt.deleter
+	def ValtnAmt(self):
+		del self._ValtnAmt
+		self._ValtnAmt = None
 
 	@property
 	def TxId(self):
@@ -46,8 +46,8 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
 	))
 

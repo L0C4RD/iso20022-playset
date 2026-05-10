@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountOrPercentage2Choice import AmountOrPercentage2Choice
-from .ChargesType1Choice import ChargesType1Choice
+from ._ChargesType1Choice import ChargesType1Choice
+from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
 
 class ChargesDetails3(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .CommodityDerivative2Choice import CommodityDerivative2Choice
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CommodityDerivative2Choice import CommodityDerivative2Choice
 
 class CommodityDerivative4(base_types._BaseFieldType):
 

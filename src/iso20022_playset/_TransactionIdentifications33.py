@@ -1,22 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class TransactionIdentifications33(base_types._BaseFieldType):
 
-	__slots__ = ["_MktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_OthrId"]
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
+	__slots__ = ["_PrcrTxId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_MktInfrstrctrTxId", "_OthrId"]
 	@property
 	def PrcrTxId(self):
 		return self._PrcrTxId
@@ -57,6 +44,19 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
 	def OthrId(self):
 		return self._OthrId
 
@@ -70,10 +70,10 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 		self._OthrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageIdentification1 import MessageIdentification1
-from .AccountSwitchDetails1 import AccountSwitchDetails1
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageIdentification1 import MessageIdentification1
+from ._AccountSwitchDetails1 import AccountSwitchDetails1
 
 class AccountSwitchTechnicalRejectionV02(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSwtchDtls", "_SplmtryData", "_MsgId"]
+	__slots__ = ["_MsgId", "_SplmtryData", "_AcctSwtchDtls"]
 	@property
-	def AcctSwtchDtls(self):
-		return self._AcctSwtchDtls
+	def MsgId(self):
+		return self._MsgId
 
-	@AcctSwtchDtls.setter
-	def AcctSwtchDtls(self, value):
-		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@AcctSwtchDtls.deleter
-	def AcctSwtchDtls(self):
-		del self._AcctSwtchDtls
-		self._AcctSwtchDtls = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class AccountSwitchTechnicalRejectionV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def AcctSwtchDtls(self):
+		return self._AcctSwtchDtls
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@AcctSwtchDtls.setter
+	def AcctSwtchDtls(self, value):
+		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@AcctSwtchDtls.deleter
+	def AcctSwtchDtls(self):
+		del self._AcctSwtchDtls
+		self._AcctSwtchDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 	))
 

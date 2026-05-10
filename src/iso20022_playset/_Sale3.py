@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SaleItem4 import SaleItem4
-from .LoyaltyProgramme4 import LoyaltyProgramme4
-from .Adjustment13 import Adjustment13
+from ._SaleItem4 import SaleItem4
+from ._Max35Text import Max35Text
+from ._Adjustment13 import Adjustment13
+from ._LoyaltyProgramme4 import LoyaltyProgramme4
 
 class Sale3(base_types._BaseFieldType):
 
-	__slots__ = ["_Adjstmnt", "_LineItm", "_SummryCmmdtyId", "_LltyPrgrmm"]
+	__slots__ = ["_LltyPrgrmm", "_LineItm", "_SummryCmmdtyId", "_Adjstmnt"]
 	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
+	def LltyPrgrmm(self):
+		return self._LltyPrgrmm
 
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+	@LltyPrgrmm.setter
+	def LltyPrgrmm(self, value):
+		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
 
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
+	@LltyPrgrmm.deleter
+	def LltyPrgrmm(self):
+		del self._LltyPrgrmm
+		self._LltyPrgrmm = None
 
 	@property
 	def LineItm(self):
@@ -47,22 +47,22 @@ class Sale3(base_types._BaseFieldType):
 		self._SummryCmmdtyId = None
 
 	@property
-	def LltyPrgrmm(self):
-		return self._LltyPrgrmm
+	def Adjstmnt(self):
+		return self._Adjstmnt
 
-	@LltyPrgrmm.setter
-	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
 
-	@LltyPrgrmm.deleter
-	def LltyPrgrmm(self):
-		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItm', type=SaleItem4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),
 	))
 

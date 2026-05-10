@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentType2Code import DocumentType2Code
+from ._Max35Text import Max35Text
+from ._DocumentType2Code import DocumentType2Code
 
 class ReferredDocumentType1(base_types._BaseFieldType):
 

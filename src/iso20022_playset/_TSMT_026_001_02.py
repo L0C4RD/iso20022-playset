@@ -1,5 +1,5 @@
 from . import base_types
-from .StatusChangeRequestV02 import StatusChangeRequestV02
+from ._StatusChangeRequestV02 import StatusChangeRequestV02
 
 class TSMT_026_001_02():
 

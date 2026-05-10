@@ -1,5 +1,5 @@
 from . import base_types
-from .FeeCollectionInitiationV03 import FeeCollectionInitiationV03
+from ._FeeCollectionInitiationV03 import FeeCollectionInitiationV03
 
 class CAFC_001_001_03():
 

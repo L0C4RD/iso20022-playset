@@ -1,10 +1,10 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .PartialSettlement2Code import PartialSettlement2Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._PartialSettlement2Code import PartialSettlement2Code
 
 class AdditionalParameters34(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_CorpActnEvtId", "_CtrPtyMktInfrstrctrTxId", "_PrtlSttlm", "_PrvsPrtlConfId", "_PoolId", "_MktInfrstrctrTxId", "_AcctOwnrTxId"]
+	__slots__ = ["_AcctSvcrTxId", "_PrcrTxId", "_CtrPtyMktInfrstrctrTxId", "_MktInfrstrctrTxId", "_PoolId", "_CorpActnEvtId", "_PrvsPrtlConfId", "_PrtlSttlm", "_AcctOwnrTxId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -32,19 +32,6 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._PrcrTxId = None
 
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
 	def CtrPtyMktInfrstrctrTxId(self):
 		return self._CtrPtyMktInfrstrctrTxId
 
@@ -58,30 +45,17 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._CtrPtyMktInfrstrctrTxId = None
 
 	@property
-	def PrtlSttlm(self):
-		return self._PrtlSttlm
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
 
-	@PrtlSttlm.setter
-	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != base_types.auto else self.make_default("PrtlSttlm")
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
 
-	@PrtlSttlm.deleter
-	def PrtlSttlm(self):
-		del self._PrtlSttlm
-		self._PrtlSttlm = None
-
-	@property
-	def PrvsPrtlConfId(self):
-		return self._PrvsPrtlConfId
-
-	@PrvsPrtlConfId.setter
-	def PrvsPrtlConfId(self, value):
-		self._PrvsPrtlConfId = value if type(value) != base_types.auto else self.make_default("PrvsPrtlConfId")
-
-	@PrvsPrtlConfId.deleter
-	def PrvsPrtlConfId(self):
-		del self._PrvsPrtlConfId
-		self._PrvsPrtlConfId = None
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
 
 	@property
 	def PoolId(self):
@@ -97,17 +71,43 @@ class AdditionalParameters34(base_types._BaseFieldType):
 		self._PoolId = None
 
 	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
+	@property
+	def PrvsPrtlConfId(self):
+		return self._PrvsPrtlConfId
+
+	@PrvsPrtlConfId.setter
+	def PrvsPrtlConfId(self, value):
+		self._PrvsPrtlConfId = value if type(value) != base_types.auto else self.make_default("PrvsPrtlConfId")
+
+	@PrvsPrtlConfId.deleter
+	def PrvsPrtlConfId(self):
+		del self._PrvsPrtlConfId
+		self._PrvsPrtlConfId = None
+
+	@property
+	def PrtlSttlm(self):
+		return self._PrtlSttlm
+
+	@PrtlSttlm.setter
+	def PrtlSttlm(self, value):
+		self._PrtlSttlm = value if type(value) != base_types.auto else self.make_default("PrtlSttlm")
+
+	@PrtlSttlm.deleter
+	def PrtlSttlm(self):
+		del self._PrtlSttlm
+		self._PrtlSttlm = None
 
 	@property
 	def AcctOwnrTxId(self):
@@ -125,12 +125,12 @@ class AdditionalParameters34(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsPrtlConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsPrtlConfId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

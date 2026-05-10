@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._GenericIdentification36 import GenericIdentification36
 
 class PartyIdentification203Choice(base_types._BaseFieldType):
 

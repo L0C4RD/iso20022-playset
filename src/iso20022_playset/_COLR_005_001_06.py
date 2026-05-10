@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralManagementCancellationRequestV06 import CollateralManagementCancellationRequestV06
+from ._CollateralManagementCancellationRequestV06 import CollateralManagementCancellationRequestV06
 
 class COLR_005_001_06():
 

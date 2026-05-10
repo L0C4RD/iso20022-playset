@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyDeletionRequestV01 import PartyDeletionRequestV01
+from ._PartyDeletionRequestV01 import PartyDeletionRequestV01
 
 class REDA_031_001_01():
 

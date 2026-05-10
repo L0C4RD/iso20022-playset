@@ -1,5 +1,5 @@
 from . import base_types
-from .PercentageRate import PercentageRate
+from ._PercentageRate import PercentageRate
 
 class PercentageTolerance1(base_types._BaseFieldType):
 

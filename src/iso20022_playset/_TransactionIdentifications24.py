@@ -1,9 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class TransactionIdentifications24(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_PrcrTxId", "_MktInfrstrctrTxId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_MktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -18,19 +18,6 @@ class TransactionIdentifications24(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def PrcrTxId(self):
-		return self._PrcrTxId
-
-	@PrcrTxId.setter
-	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
-
-	@PrcrTxId.deleter
-	def PrcrTxId(self):
-		del self._PrcrTxId
-		self._PrcrTxId = None
-
-	@property
 	def MktInfrstrctrTxId(self):
 		return self._MktInfrstrctrTxId
 
@@ -42,6 +29,19 @@ class TransactionIdentifications24(base_types._BaseFieldType):
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
 		self._MktInfrstrctrTxId = None
+
+	@property
+	def PrcrTxId(self):
+		return self._PrcrTxId
+
+	@PrcrTxId.setter
+	def PrcrTxId(self, value):
+		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+
+	@PrcrTxId.deleter
+	def PrcrTxId(self):
+		del self._PrcrTxId
+		self._PrcrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -58,8 +58,8 @@ class TransactionIdentifications24(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

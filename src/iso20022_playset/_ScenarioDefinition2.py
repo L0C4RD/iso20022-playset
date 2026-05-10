@@ -1,26 +1,13 @@
 from . import base_types
-from .ScenarioType1Code import ScenarioType1Code
-from .StressItem1 import StressItem1
-from .Max2000Text import Max2000Text
-from .StrategyStressType1Code import StrategyStressType1Code
-from .GenericIdentification165 import GenericIdentification165
+from ._StressItem1 import StressItem1
+from ._GenericIdentification165 import GenericIdentification165
+from ._StrategyStressType1Code import StrategyStressType1Code
+from ._Max2000Text import Max2000Text
+from ._ScenarioType1Code import ScenarioType1Code
 
 class ScenarioDefinition2(base_types._BaseFieldType):
 
-	__slots__ = ["_StrssItm", "_Id", "_StrtgyStrssTp", "_ScnroTp", "_Desc"]
-	@property
-	def StrssItm(self):
-		return self._StrssItm
-
-	@StrssItm.setter
-	def StrssItm(self, value):
-		self._StrssItm = value if type(value) != base_types.auto else self.make_default("StrssItm")
-
-	@StrssItm.deleter
-	def StrssItm(self):
-		del self._StrssItm
-		self._StrssItm = None
-
+	__slots__ = ["_Id", "_ScnroTp", "_StrssItm", "_Desc", "_StrtgyStrssTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -33,19 +20,6 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def StrtgyStrssTp(self):
-		return self._StrtgyStrssTp
-
-	@StrtgyStrssTp.setter
-	def StrtgyStrssTp(self, value):
-		self._StrtgyStrssTp = value if type(value) != base_types.auto else self.make_default("StrtgyStrssTp")
-
-	@StrtgyStrssTp.deleter
-	def StrtgyStrssTp(self):
-		del self._StrtgyStrssTp
-		self._StrtgyStrssTp = None
 
 	@property
 	def ScnroTp(self):
@@ -61,6 +35,19 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		self._ScnroTp = None
 
 	@property
+	def StrssItm(self):
+		return self._StrssItm
+
+	@StrssItm.setter
+	def StrssItm(self, value):
+		self._StrssItm = value if type(value) != base_types.auto else self.make_default("StrssItm")
+
+	@StrssItm.deleter
+	def StrssItm(self):
+		del self._StrssItm
+		self._StrssItm = None
+
+	@property
 	def Desc(self):
 		return self._Desc
 
@@ -73,11 +60,24 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def StrtgyStrssTp(self):
+		return self._StrtgyStrssTp
+
+	@StrtgyStrssTp.setter
+	def StrtgyStrssTp(self, value):
+		self._StrtgyStrssTp = value if type(value) != base_types.auto else self.make_default("StrtgyStrssTp")
+
+	@StrtgyStrssTp.deleter
+	def StrtgyStrssTp(self):
+		del self._StrtgyStrssTp
+		self._StrtgyStrssTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StrssItm', type=StressItem1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtgyStrssTp', type=StrategyStressType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScnroTp', type=ScenarioType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrssItm', type=StressItem1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtgyStrssTp', type=StrategyStressType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .ProprietaryReason4 import ProprietaryReason4
-from .MatchingReason6Choice import MatchingReason6Choice
-from .MatchingReason5Choice import MatchingReason5Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._MatchingReason6Choice import MatchingReason6Choice
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._MatchingReason5Choice import MatchingReason5Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class MatchingStatus35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgAllgd", "_MtchdWthTlrnce", "_Mtchd", "_PrtrySts", "_Umtchd"]
-	@property
-	def MtchgAllgd(self):
-		return self._MtchgAllgd
-
-	@MtchgAllgd.setter
-	def MtchgAllgd(self, value):
-		self._MtchgAllgd = value if type(value) != base_types.auto else self.make_default("MtchgAllgd")
-
-	@MtchgAllgd.deleter
-	def MtchgAllgd(self):
-		del self._MtchgAllgd
-		self._MtchgAllgd = None
-
+	__slots__ = ["_MtchdWthTlrnce", "_Umtchd", "_Mtchd", "_PrtrySts", "_MtchgAllgd"]
 	@property
 	def MtchdWthTlrnce(self):
 		return self._MtchdWthTlrnce
@@ -32,6 +19,19 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 	def MtchdWthTlrnce(self):
 		del self._MtchdWthTlrnce
 		self._MtchdWthTlrnce = None
+
+	@property
+	def Umtchd(self):
+		return self._Umtchd
+
+	@Umtchd.setter
+	def Umtchd(self, value):
+		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+
+	@Umtchd.deleter
+	def Umtchd(self):
+		del self._Umtchd
+		self._Umtchd = None
 
 	@property
 	def Mtchd(self):
@@ -60,23 +60,23 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def Umtchd(self):
-		return self._Umtchd
+	def MtchgAllgd(self):
+		return self._MtchgAllgd
 
-	@Umtchd.setter
-	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+	@MtchgAllgd.setter
+	def MtchgAllgd(self, value):
+		self._MtchgAllgd = value if type(value) != base_types.auto else self.make_default("MtchgAllgd")
 
-	@Umtchd.deleter
-	def Umtchd(self):
-		del self._Umtchd
-		self._Umtchd = None
+	@MtchgAllgd.deleter
+	def MtchgAllgd(self):
+		del self._MtchgAllgd
+		self._MtchgAllgd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchgAllgd', type=MatchingReason5Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchgAllgd', type=MatchingReason5Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

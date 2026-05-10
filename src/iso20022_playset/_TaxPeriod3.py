@@ -1,23 +1,23 @@
 from . import base_types
-from .ISOYear import ISOYear
-from .DatePeriod2 import DatePeriod2
-from .TaxRecordPeriod1Code import TaxRecordPeriod1Code
+from ._TaxRecordPeriod1Code import TaxRecordPeriod1Code
+from ._DatePeriod2 import DatePeriod2
+from ._ISOYear import ISOYear
 
 class TaxPeriod3(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_FrToDt", "_Yr"]
+	__slots__ = ["_Yr", "_FrToDt", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Yr(self):
+		return self._Yr
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Yr.setter
+	def Yr(self, value):
+		self._Yr = value if type(value) != base_types.auto else self.make_default("Yr")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Yr.deleter
+	def Yr(self):
+		del self._Yr
+		self._Yr = None
 
 	@property
 	def FrToDt(self):
@@ -33,21 +33,21 @@ class TaxPeriod3(base_types._BaseFieldType):
 		self._FrToDt = None
 
 	@property
-	def Yr(self):
-		return self._Yr
+	def Tp(self):
+		return self._Tp
 
-	@Yr.setter
-	def Yr(self, value):
-		self._Yr = value if type(value) != base_types.auto else self.make_default("Yr")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Yr.deleter
-	def Yr(self):
-		del self._Yr
-		self._Yr = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TaxRecordPeriod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrToDt', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yr', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrToDt', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxRecordPeriod1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

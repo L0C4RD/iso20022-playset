@@ -1,7 +1,7 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .CashAccount19 import CashAccount19
-from .Max350Text import Max350Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max350Text import Max350Text
+from ._CashAccount19 import CashAccount19
 
 class CashProceeds1(base_types._BaseFieldType):
 

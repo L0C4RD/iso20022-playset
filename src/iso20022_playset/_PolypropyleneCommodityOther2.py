@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassSubProductType49Code import AssetClassSubProductType49Code
-from .AssetClassProductType9Code import AssetClassProductType9Code
+from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
+from ._AssetClassProductType9Code import AssetClassProductType9Code
 
 class PolypropyleneCommodityOther2(base_types._BaseFieldType):
 

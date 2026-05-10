@@ -1,6 +1,6 @@
 from . import base_types
-from .Collateral54 import Collateral54
-from .Collateral55 import Collateral55
+from ._Collateral55 import Collateral55
+from ._Collateral54 import Collateral54
 
 class CollateralMovement13(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .NonClearingReason2 import NonClearingReason2
+from ._NonClearingReason2 import NonClearingReason2
 
 class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 

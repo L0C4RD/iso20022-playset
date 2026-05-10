@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesAccountReferenceDataChange2 import SecuritiesAccountReferenceDataChange2
-from .ISODate import ISODate
+from ._SecuritiesAccountReferenceDataChange2 import SecuritiesAccountReferenceDataChange2
+from ._ISODate import ISODate
 
 class SecuritiesAccountStatement2(base_types._BaseFieldType):
 

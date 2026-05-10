@@ -1,5 +1,5 @@
 from . import base_types
-from .BICIdentification1 import BICIdentification1
+from ._BICIdentification1 import BICIdentification1
 
 class RequiredSubmission2(base_types._BaseFieldType):
 

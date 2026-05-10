@@ -1,23 +1,10 @@
 from . import base_types
-from .RiskInputData2 import RiskInputData2
-from .RiskAssessment3 import RiskAssessment3
+from ._RiskInputData2 import RiskInputData2
+from ._RiskAssessment3 import RiskAssessment3
 
 class RiskContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_Assmnt", "_InptData"]
-	@property
-	def Assmnt(self):
-		return self._Assmnt
-
-	@Assmnt.setter
-	def Assmnt(self, value):
-		self._Assmnt = value if type(value) != base_types.auto else self.make_default("Assmnt")
-
-	@Assmnt.deleter
-	def Assmnt(self):
-		del self._Assmnt
-		self._Assmnt = None
-
+	__slots__ = ["_InptData", "_Assmnt"]
 	@property
 	def InptData(self):
 		return self._InptData
@@ -31,8 +18,21 @@ class RiskContext3(base_types._BaseFieldType):
 		del self._InptData
 		self._InptData = None
 
+	@property
+	def Assmnt(self):
+		return self._Assmnt
+
+	@Assmnt.setter
+	def Assmnt(self, value):
+		self._Assmnt = value if type(value) != base_types.auto else self.make_default("Assmnt")
+
+	@Assmnt.deleter
+	def Assmnt(self):
+		del self._Assmnt
+		self._Assmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assmnt', type=RiskAssessment3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InptData', type=RiskInputData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assmnt', type=RiskAssessment3, min=0, max=None, mutex_group=None, array=True),
 	))
 

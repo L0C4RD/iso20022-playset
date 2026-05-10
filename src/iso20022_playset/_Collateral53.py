@@ -1,25 +1,12 @@
 from . import base_types
-from .CollateralValuation13 import CollateralValuation13
-from .Summary3 import Summary3
-from .BlockChainAddressWallet5 import BlockChainAddressWallet5
-from .CollateralAccount3 import CollateralAccount3
+from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._Summary3 import Summary3
+from ._CollateralAccount3 import CollateralAccount3
+from ._CollateralValuation13 import CollateralValuation13
 
 class Collateral53(base_types._BaseFieldType):
 
-	__slots__ = ["_RptSummry", "_CollValtn", "_AcctId", "_BlckChainAdrOrWllt"]
-	@property
-	def RptSummry(self):
-		return self._RptSummry
-
-	@RptSummry.setter
-	def RptSummry(self, value):
-		self._RptSummry = value if type(value) != base_types.auto else self.make_default("RptSummry")
-
-	@RptSummry.deleter
-	def RptSummry(self):
-		del self._RptSummry
-		self._RptSummry = None
-
+	__slots__ = ["_CollValtn", "_RptSummry", "_BlckChainAdrOrWllt", "_AcctId"]
 	@property
 	def CollValtn(self):
 		return self._CollValtn
@@ -34,17 +21,17 @@ class Collateral53(base_types._BaseFieldType):
 		self._CollValtn = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def RptSummry(self):
+		return self._RptSummry
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+	@RptSummry.setter
+	def RptSummry(self, value):
+		self._RptSummry = value if type(value) != base_types.auto else self.make_default("RptSummry")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@RptSummry.deleter
+	def RptSummry(self):
+		del self._RptSummry
+		self._RptSummry = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -59,10 +46,23 @@ class Collateral53(base_types._BaseFieldType):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
 
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptSummry', type=Summary3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollValtn', type=CollateralValuation13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSummry', type=Summary3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 	))
 

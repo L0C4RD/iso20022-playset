@@ -1,39 +1,26 @@
 from . import base_types
-from .ProprietaryReason4 import ProprietaryReason4
-from .PendingStatus38Choice import PendingStatus38Choice
-from .AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
-from .RepairStatus12Choice import RepairStatus12Choice
-from .PendingProcessingStatus11Choice import PendingProcessingStatus11Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._PendingProcessingStatus11Choice import PendingProcessingStatus11Choice
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._PendingStatus38Choice import PendingStatus38Choice
+from ._AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
+from ._RepairStatus12Choice import RepairStatus12Choice
 
 class ProcessingStatus52Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgCxl", "_AckdAccptd", "_Rpr", "_Prtry", "_CxlReqd", "_PdgPrcg"]
+	__slots__ = ["_PdgPrcg", "_Rpr", "_Prtry", "_PdgCxl", "_AckdAccptd", "_CxlReqd"]
 	@property
-	def PdgCxl(self):
-		return self._PdgCxl
+	def PdgPrcg(self):
+		return self._PdgPrcg
 
-	@PdgCxl.setter
-	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+	@PdgPrcg.setter
+	def PdgPrcg(self, value):
+		self._PdgPrcg = value if type(value) != base_types.auto else self.make_default("PdgPrcg")
 
-	@PdgCxl.deleter
-	def PdgCxl(self):
-		del self._PdgCxl
-		self._PdgCxl = None
-
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
+	@PdgPrcg.deleter
+	def PdgPrcg(self):
+		del self._PdgPrcg
+		self._PdgPrcg = None
 
 	@property
 	def Rpr(self):
@@ -62,6 +49,32 @@ class ProcessingStatus52Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
+	def PdgCxl(self):
+		return self._PdgCxl
+
+	@PdgCxl.setter
+	def PdgCxl(self, value):
+		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+
+	@PdgCxl.deleter
+	def PdgCxl(self):
+		del self._PdgCxl
+		self._PdgCxl = None
+
+	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
+	@property
 	def CxlReqd(self):
 		return self._CxlReqd
 
@@ -74,25 +87,12 @@ class ProcessingStatus52Choice(base_types._BaseFieldType):
 		del self._CxlReqd
 		self._CxlReqd = None
 
-	@property
-	def PdgPrcg(self):
-		return self._PdgPrcg
-
-	@PdgPrcg.setter
-	def PdgPrcg(self, value):
-		self._PdgPrcg = value if type(value) != base_types.auto else self.make_default("PdgPrcg")
-
-	@PdgPrcg.deleter
-	def PdgPrcg(self):
-		del self._PdgPrcg
-		self._PdgPrcg = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdgCxl', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus11Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RepairStatus12Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgCxl', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus11Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

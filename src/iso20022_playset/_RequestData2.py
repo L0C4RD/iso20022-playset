@@ -1,24 +1,24 @@
 from . import base_types
-from .PartyIdentification242Choice import PartyIdentification242Choice
-from .Max4Text import Max4Text
-from .ISODate import ISODate
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._Max4Text import Max4Text
+from ._PartyIdentification242Choice import PartyIdentification242Choice
+from ._ISODate import ISODate
 
 class RequestData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqTp", "_NetSvcPtcptId", "_ReqdActvtnDt", "_ReqSvcr", "_MsgId", "_NetSvcTp"]
+	__slots__ = ["_NetSvcTp", "_NetSvcPtcptId", "_ReqdActvtnDt", "_ReqTp", "_MsgId", "_ReqSvcr"]
 	@property
-	def ReqTp(self):
-		return self._ReqTp
+	def NetSvcTp(self):
+		return self._NetSvcTp
 
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
+	@NetSvcTp.setter
+	def NetSvcTp(self, value):
+		self._NetSvcTp = value if type(value) != base_types.auto else self.make_default("NetSvcTp")
 
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
+	@NetSvcTp.deleter
+	def NetSvcTp(self):
+		del self._NetSvcTp
+		self._NetSvcTp = None
 
 	@property
 	def NetSvcPtcptId(self):
@@ -47,17 +47,17 @@ class RequestData2(base_types._BaseFieldType):
 		self._ReqdActvtnDt = None
 
 	@property
-	def ReqSvcr(self):
-		return self._ReqSvcr
+	def ReqTp(self):
+		return self._ReqTp
 
-	@ReqSvcr.setter
-	def ReqSvcr(self, value):
-		self._ReqSvcr = value if type(value) != base_types.auto else self.make_default("ReqSvcr")
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
 
-	@ReqSvcr.deleter
-	def ReqSvcr(self):
-		del self._ReqSvcr
-		self._ReqSvcr = None
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
 
 	@property
 	def MsgId(self):
@@ -73,24 +73,24 @@ class RequestData2(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def NetSvcTp(self):
-		return self._NetSvcTp
+	def ReqSvcr(self):
+		return self._ReqSvcr
 
-	@NetSvcTp.setter
-	def NetSvcTp(self, value):
-		self._NetSvcTp = value if type(value) != base_types.auto else self.make_default("NetSvcTp")
+	@ReqSvcr.setter
+	def ReqSvcr(self, value):
+		self._ReqSvcr = value if type(value) != base_types.auto else self.make_default("ReqSvcr")
 
-	@NetSvcTp.deleter
-	def NetSvcTp(self):
-		del self._NetSvcTp
-		self._NetSvcTp = None
+	@ReqSvcr.deleter
+	def ReqSvcr(self):
+		del self._ReqSvcr
+		self._ReqSvcr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcPtcptId', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdActvtnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqSvcr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetSvcTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqSvcr', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

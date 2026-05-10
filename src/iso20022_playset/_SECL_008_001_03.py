@@ -1,5 +1,5 @@
 from . import base_types
-from .BuyInResponseV03 import BuyInResponseV03
+from ._BuyInResponseV03 import BuyInResponseV03
 
 class SECL_008_001_03():
 

@@ -1,37 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SecuritiesAccountOrOperationalError3Choice import SecuritiesAccountOrOperationalError3Choice
-from .Pagination1 import Pagination1
-from .MessageHeader3 import MessageHeader3
+from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
+from ._MessageHeader3 import MessageHeader3
+from ._SecuritiesAccountOrOperationalError3Choice import SecuritiesAccountOrOperationalError3Choice
 
 class SecuritiesAccountReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData", "_Pgntn"]
+	__slots__ = ["_Pgntn", "_SplmtryData", "_RptOrErr", "_MsgHdr"]
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def Pgntn(self):
+		return self._Pgntn
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
-	@property
-	def RptOrErr(self):
-		return self._RptOrErr
-
-	@RptOrErr.setter
-	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != base_types.auto else self.make_default("RptOrErr")
-
-	@RptOrErr.deleter
-	def RptOrErr(self):
-		del self._RptOrErr
-		self._RptOrErr = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +34,35 @@ class SecuritiesAccountReportV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def RptOrErr(self):
+		return self._RptOrErr
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@RptOrErr.setter
+	def RptOrErr(self, value):
+		self._RptOrErr = value if type(value) != base_types.auto else self.make_default("RptOrErr")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@RptOrErr.deleter
+	def RptOrErr(self):
+		del self._RptOrErr
+		self._RptOrErr = None
+
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptOrErr', type=SecuritiesAccountOrOperationalError3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptOrErr', type=SecuritiesAccountOrOperationalError3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader3, min=0, max=1, mutex_group=None, array=False),
 	))
 

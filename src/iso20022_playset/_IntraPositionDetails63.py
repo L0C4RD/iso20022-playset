@@ -1,24 +1,11 @@
 from . import base_types
-from .IntraPositionMovementDetails20 import IntraPositionMovementDetails20
-from .SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
-from .SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
+from ._IntraPositionMovementDetails20 import IntraPositionMovementDetails20
+from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
+from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
 
 class IntraPositionDetails63(base_types._BaseFieldType):
 
-	__slots__ = ["_BalFr", "_SfkpgPlc", "_IntraPosMvmnt"]
-	@property
-	def BalFr(self):
-		return self._BalFr
-
-	@BalFr.setter
-	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
-
-	@BalFr.deleter
-	def BalFr(self):
-		del self._BalFr
-		self._BalFr = None
-
+	__slots__ = ["_SfkpgPlc", "_BalFr", "_IntraPosMvmnt"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -31,6 +18,19 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
+
+	@property
+	def BalFr(self):
+		return self._BalFr
+
+	@BalFr.setter
+	def BalFr(self, value):
+		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+
+	@BalFr.deleter
+	def BalFr(self):
+		del self._BalFr
+		self._BalFr = None
 
 	@property
 	def IntraPosMvmnt(self):
@@ -46,8 +46,8 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 		self._IntraPosMvmnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat39Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraPosMvmnt', type=IntraPositionMovementDetails20, min=1, max=None, mutex_group=None, array=True),
 	))
 

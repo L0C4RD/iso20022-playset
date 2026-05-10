@@ -1,37 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AmountAndTrigger1 import AmountAndTrigger1
-from .Max2000Text import Max2000Text
-from .VariationType1Code import VariationType1Code
+from ._Max2000Text import Max2000Text
+from ._Max35Text import Max35Text
+from ._AmountAndTrigger1 import AmountAndTrigger1
+from ._VariationType1Code import VariationType1Code
 
 class AutomaticVariation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AddtlInf", "_Tp", "_AmtAndTrggr"]
+	__slots__ = ["_AmtAndTrggr", "_Tp", "_AddtlInf", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def AmtAndTrggr(self):
+		return self._AmtAndTrggr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@AmtAndTrggr.setter
+	def AmtAndTrggr(self, value):
+		self._AmtAndTrggr = value if type(value) != base_types.auto else self.make_default("AmtAndTrggr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@AmtAndTrggr.deleter
+	def AmtAndTrggr(self):
+		del self._AmtAndTrggr
+		self._AmtAndTrggr = None
 
 	@property
 	def Tp(self):
@@ -47,22 +34,35 @@ class AutomaticVariation1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def AmtAndTrggr(self):
-		return self._AmtAndTrggr
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@AmtAndTrggr.setter
-	def AmtAndTrggr(self, value):
-		self._AmtAndTrggr = value if type(value) != base_types.auto else self.make_default("AmtAndTrggr")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@AmtAndTrggr.deleter
-	def AmtAndTrggr(self):
-		del self._AmtAndTrggr
-		self._AmtAndTrggr = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=VariationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtAndTrggr', type=AmountAndTrigger1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=VariationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

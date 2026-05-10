@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .BlockedStatusReason2 import BlockedStatusReason2
+from ._BlockedStatusReason2 import BlockedStatusReason2
+from ._NoReasonCode import NoReasonCode
 
 class BlockedStatusReason2Choice(base_types._BaseFieldType):
 

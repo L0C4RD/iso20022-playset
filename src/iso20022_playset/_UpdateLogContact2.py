@@ -1,5 +1,5 @@
 from . import base_types
-from .Contact14 import Contact14
+from ._Contact14 import Contact14
 
 class UpdateLogContact2(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .OriginalGroupInformation29 import OriginalGroupInformation29
-from .UUIDv4Identifier import UUIDv4Identifier
+from ._Max35Text import Max35Text
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNtryId", "_OrgnlUETR", "_OrgnlGrpInf", "_OrgnlStmtId"]
-	@property
-	def OrgnlNtryId(self):
-		return self._OrgnlNtryId
-
-	@OrgnlNtryId.setter
-	def OrgnlNtryId(self, value):
-		self._OrgnlNtryId = value if type(value) != base_types.auto else self.make_default("OrgnlNtryId")
-
-	@OrgnlNtryId.deleter
-	def OrgnlNtryId(self):
-		del self._OrgnlNtryId
-		self._OrgnlNtryId = None
-
+	__slots__ = ["_OrgnlUETR", "_OrgnlGrpInf", "_OrgnlNtryId", "_OrgnlStmtId"]
 	@property
 	def OrgnlUETR(self):
 		return self._OrgnlUETR
@@ -46,6 +33,19 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 		self._OrgnlGrpInf = None
 
 	@property
+	def OrgnlNtryId(self):
+		return self._OrgnlNtryId
+
+	@OrgnlNtryId.setter
+	def OrgnlNtryId(self, value):
+		self._OrgnlNtryId = value if type(value) != base_types.auto else self.make_default("OrgnlNtryId")
+
+	@OrgnlNtryId.deleter
+	def OrgnlNtryId(self):
+		del self._OrgnlNtryId
+		self._OrgnlNtryId = None
+
+	@property
 	def OrgnlStmtId(self):
 		return self._OrgnlStmtId
 
@@ -59,9 +59,9 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 		self._OrgnlStmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlNtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

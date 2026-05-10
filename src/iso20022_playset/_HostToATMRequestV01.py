@@ -1,12 +1,25 @@
 from . import base_types
-from .HostToATMRequest1 import HostToATMRequest1
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .Header20 import Header20
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._HostToATMRequest1 import HostToATMRequest1
+from ._Header20 import Header20
 
 class HostToATMRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_HstToATMReq", "_Hdr", "_SctyTrlr", "_PrtctdHstToATMReq"]
+	__slots__ = ["_PrtctdHstToATMReq", "_HstToATMReq", "_Hdr", "_SctyTrlr"]
+	@property
+	def PrtctdHstToATMReq(self):
+		return self._PrtctdHstToATMReq
+
+	@PrtctdHstToATMReq.setter
+	def PrtctdHstToATMReq(self, value):
+		self._PrtctdHstToATMReq = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMReq")
+
+	@PrtctdHstToATMReq.deleter
+	def PrtctdHstToATMReq(self):
+		del self._PrtctdHstToATMReq
+		self._PrtctdHstToATMReq = None
+
 	@property
 	def HstToATMReq(self):
 		return self._HstToATMReq
@@ -46,23 +59,10 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def PrtctdHstToATMReq(self):
-		return self._PrtctdHstToATMReq
-
-	@PrtctdHstToATMReq.setter
-	def PrtctdHstToATMReq(self, value):
-		self._PrtctdHstToATMReq = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMReq")
-
-	@PrtctdHstToATMReq.deleter
-	def PrtctdHstToATMReq(self):
-		del self._PrtctdHstToATMReq
-		self._PrtctdHstToATMReq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdHstToATMReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .GenericIdentification85 import GenericIdentification85
-from .PledgeeTypeAndText2 import PledgeeTypeAndText2
-from .PledgeeTypeAndAnyBICIdentifier2 import PledgeeTypeAndAnyBICIdentifier2
+from ._GenericIdentification85 import GenericIdentification85
+from ._PledgeeTypeAndText2 import PledgeeTypeAndText2
+from ._PledgeeTypeAndAnyBICIdentifier2 import PledgeeTypeAndAnyBICIdentifier2
 
 class PledgeeFormat6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Prtry", "_TpAndId"]
+	__slots__ = ["_TpAndId", "_Prtry", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def TpAndId(self):
+		return self._TpAndId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@TpAndId.setter
+	def TpAndId(self, value):
+		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TpAndId.deleter
+	def TpAndId(self):
+		del self._TpAndId
+		self._TpAndId = None
 
 	@property
 	def Prtry(self):
@@ -33,21 +33,21 @@ class PledgeeFormat6Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def TpAndId(self):
-		return self._TpAndId
+	def Id(self):
+		return self._Id
 
-	@TpAndId.setter
-	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@TpAndId.deleter
-	def TpAndId(self):
-		del self._TpAndId
-		self._TpAndId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PledgeeTypeAndText2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=PledgeeTypeAndAnyBICIdentifier2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification85, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=PledgeeTypeAndText2, min=0, max=1, mutex_group=1, array=False),
 	))
 

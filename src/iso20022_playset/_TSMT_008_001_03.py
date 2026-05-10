@@ -1,5 +1,5 @@
 from . import base_types
-from .AmendmentRejectionNotificationV03 import AmendmentRejectionNotificationV03
+from ._AmendmentRejectionNotificationV03 import AmendmentRejectionNotificationV03
 
 class TSMT_008_001_03():
 

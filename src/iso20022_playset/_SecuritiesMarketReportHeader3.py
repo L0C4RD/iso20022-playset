@@ -1,39 +1,39 @@
 from . import base_types
-from .Number import Number
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .Pagination1 import Pagination1
-from .ISODateTime import ISODateTime
-from .Period11Choice import Period11Choice
-from .TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from ._Number import Number
+from ._Pagination1 import Pagination1
+from ._Period11Choice import Period11Choice
+from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ISODateTime import ISODateTime
 
 class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
-	__slots__ = ["_ISIN", "_MsgPgntn", "_SubmissnDtTm", "_RptgPrd", "_RptgNtty", "_NbRcrds"]
+	__slots__ = ["_RptgNtty", "_NbRcrds", "_SubmissnDtTm", "_RptgPrd", "_MsgPgntn", "_ISIN"]
 	@property
-	def ISIN(self):
-		return self._ISIN
+	def RptgNtty(self):
+		return self._RptgNtty
 
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+	@RptgNtty.setter
+	def RptgNtty(self, value):
+		self._RptgNtty = value if type(value) != base_types.auto else self.make_default("RptgNtty")
 
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
+	@RptgNtty.deleter
+	def RptgNtty(self):
+		del self._RptgNtty
+		self._RptgNtty = None
 
 	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
+	def NbRcrds(self):
+		return self._NbRcrds
 
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+	@NbRcrds.setter
+	def NbRcrds(self, value):
+		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
 
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
+	@NbRcrds.deleter
+	def NbRcrds(self):
+		del self._NbRcrds
+		self._NbRcrds = None
 
 	@property
 	def SubmissnDtTm(self):
@@ -62,37 +62,37 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		self._RptgPrd = None
 
 	@property
-	def RptgNtty(self):
-		return self._RptgNtty
+	def MsgPgntn(self):
+		return self._MsgPgntn
 
-	@RptgNtty.setter
-	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != base_types.auto else self.make_default("RptgNtty")
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
 
-	@RptgNtty.deleter
-	def RptgNtty(self):
-		del self._RptgNtty
-		self._RptgNtty = None
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
 
 	@property
-	def NbRcrds(self):
-		return self._NbRcrds
+	def ISIN(self):
+		return self._ISIN
 
-	@NbRcrds.setter
-	def NbRcrds(self, value):
-		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
 
-	@NbRcrds.deleter
-	def NbRcrds(self):
-		del self._NbRcrds
-		self._NbRcrds = None
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 	))
 

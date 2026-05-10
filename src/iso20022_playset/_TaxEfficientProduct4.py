@@ -1,8 +1,8 @@
 from . import base_types
-from .PreviousYear2Choice import PreviousYear2Choice
-from .YesNoIndicator import YesNoIndicator
-from .TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
-from .AdditionalInformation15 import AdditionalInformation15
+from ._PreviousYear2Choice import PreviousYear2Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class TaxEfficientProduct4(base_types._BaseFieldType):
 

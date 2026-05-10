@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalAccountIdentification1Code import ExternalAccountIdentification1Code
+from ._Max35Text import Max35Text
+from ._ExternalAccountIdentification1Code import ExternalAccountIdentification1Code
 
 class AccountSchemeName1Choice(base_types._BaseFieldType):
 

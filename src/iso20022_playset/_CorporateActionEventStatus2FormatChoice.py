@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification13 import GenericIdentification13
-from .CorporateActionEventStatus2Code import CorporateActionEventStatus2Code
+from ._GenericIdentification13 import GenericIdentification13
+from ._CorporateActionEventStatus2Code import CorporateActionEventStatus2Code
 
 class CorporateActionEventStatus2FormatChoice(base_types._BaseFieldType):
 

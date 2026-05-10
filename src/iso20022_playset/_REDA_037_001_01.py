@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesAccountAuditTrailReportV01 import SecuritiesAccountAuditTrailReportV01
+from ._SecuritiesAccountAuditTrailReportV01 import SecuritiesAccountAuditTrailReportV01
 
 class REDA_037_001_01():
 

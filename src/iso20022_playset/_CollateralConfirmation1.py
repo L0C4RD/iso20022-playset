@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CollateralSubstitutionConfirmation1Code import CollateralSubstitutionConfirmation1Code
-from .Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._CollateralSubstitutionConfirmation1Code import CollateralSubstitutionConfirmation1Code
 
 class CollateralConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfTp", "_Cmnt", "_CollSbstitnRspnId", "_CollSbstitnReqId"]
-	@property
-	def ConfTp(self):
-		return self._ConfTp
-
-	@ConfTp.setter
-	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
-
-	@ConfTp.deleter
-	def ConfTp(self):
-		del self._ConfTp
-		self._ConfTp = None
-
+	__slots__ = ["_Cmnt", "_ConfTp", "_CollSbstitnRspnId", "_CollSbstitnReqId"]
 	@property
 	def Cmnt(self):
 		return self._Cmnt
@@ -31,6 +18,19 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 	def Cmnt(self):
 		del self._Cmnt
 		self._Cmnt = None
+
+	@property
+	def ConfTp(self):
+		return self._ConfTp
+
+	@ConfTp.setter
+	def ConfTp(self, value):
+		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+
+	@ConfTp.deleter
+	def ConfTp(self):
+		del self._ConfTp
+		self._ConfTp = None
 
 	@property
 	def CollSbstitnRspnId(self):
@@ -59,8 +59,8 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 		self._CollSbstitnReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,6 +1,6 @@
 from . import base_types
-from .AwaitingAffirmationReason2Choice import AwaitingAffirmationReason2Choice
-from .Max210Text import Max210Text
+from ._AwaitingAffirmationReason2Choice import AwaitingAffirmationReason2Choice
+from ._Max210Text import Max210Text
 
 class AwaitingAffirmationReason2(base_types._BaseFieldType):
 

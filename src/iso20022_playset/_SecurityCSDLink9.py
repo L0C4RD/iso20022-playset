@@ -1,7 +1,7 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecurityCSDLink9(base_types._BaseFieldType):
 

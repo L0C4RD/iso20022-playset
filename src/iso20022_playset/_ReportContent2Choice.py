@@ -1,23 +1,23 @@
 from . import base_types
-from .Max10MbText import Max10MbText
-from .ProtectedData2 import ProtectedData2
-from .Max20MbBinary import Max20MbBinary
+from ._Max10MbText import Max10MbText
+from ._ProtectedData2 import ProtectedData2
+from ._Max20MbBinary import Max20MbBinary
 
 class ReportContent2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Txt", "_PrtctdData", "_Binry"]
+	__slots__ = ["_Binry", "_PrtctdData", "_Txt"]
 	@property
-	def Txt(self):
-		return self._Txt
+	def Binry(self):
+		return self._Binry
 
-	@Txt.setter
-	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+	@Binry.setter
+	def Binry(self, value):
+		self._Binry = value if type(value) != base_types.auto else self.make_default("Binry")
 
-	@Txt.deleter
-	def Txt(self):
-		del self._Txt
-		self._Txt = None
+	@Binry.deleter
+	def Binry(self):
+		del self._Binry
+		self._Binry = None
 
 	@property
 	def PrtctdData(self):
@@ -33,21 +33,21 @@ class ReportContent2Choice(base_types._BaseFieldType):
 		self._PrtctdData = None
 
 	@property
-	def Binry(self):
-		return self._Binry
+	def Txt(self):
+		return self._Txt
 
-	@Binry.setter
-	def Binry(self, value):
-		self._Binry = value if type(value) != base_types.auto else self.make_default("Binry")
+	@Txt.setter
+	def Txt(self, value):
+		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
 
-	@Binry.deleter
-	def Binry(self):
-		del self._Binry
-		self._Binry = None
+	@Txt.deleter
+	def Txt(self):
+		del self._Txt
+		self._Txt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Txt', type=Max10MbText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Binry', type=Max20MbBinary, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Txt', type=Max10MbText, min=0, max=1, mutex_group=1, array=False),
 	))
 

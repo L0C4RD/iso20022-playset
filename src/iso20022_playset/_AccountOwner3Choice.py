@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification220 import PartyIdentification220
-from .IndividualPersonIdentification3Choice import IndividualPersonIdentification3Choice
+from ._PartyIdentification220 import PartyIdentification220
+from ._IndividualPersonIdentification3Choice import IndividualPersonIdentification3Choice
 
 class AccountOwner3Choice(base_types._BaseFieldType):
 

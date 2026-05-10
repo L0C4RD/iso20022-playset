@@ -1,27 +1,14 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .EventFrequency6Code import EventFrequency6Code
-from .Exact5NumericText import Exact5NumericText
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .StatementUpdateType1Code import StatementUpdateType1Code
-from .YesNoIndicator import YesNoIndicator
+from ._StatementUpdateType1Code import StatementUpdateType1Code
+from ._EventFrequency6Code import EventFrequency6Code
+from ._Max35Text import Max35Text
+from ._Exact5NumericText import Exact5NumericText
+from ._YesNoIndicator import YesNoIndicator
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class Statement86(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_Frqcy", "_RptNb", "_StmtId", "_UpdTp", "_StmtDtAndTm"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
+	__slots__ = ["_Frqcy", "_StmtId", "_UpdTp", "_ActvtyInd", "_RptNb", "_StmtDtAndTm"]
 	@property
 	def Frqcy(self):
 		return self._Frqcy
@@ -34,19 +21,6 @@ class Statement86(base_types._BaseFieldType):
 	def Frqcy(self):
 		del self._Frqcy
 		self._Frqcy = None
-
-	@property
-	def RptNb(self):
-		return self._RptNb
-
-	@RptNb.setter
-	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
-
-	@RptNb.deleter
-	def RptNb(self):
-		del self._RptNb
-		self._RptNb = None
 
 	@property
 	def StmtId(self):
@@ -75,6 +49,32 @@ class Statement86(base_types._BaseFieldType):
 		self._UpdTp = None
 
 	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def RptNb(self):
+		return self._RptNb
+
+	@RptNb.setter
+	def RptNb(self, value):
+		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+
+	@RptNb.deleter
+	def RptNb(self):
+		del self._RptNb
+		self._RptNb = None
+
+	@property
 	def StmtDtAndTm(self):
 		return self._StmtDtAndTm
 
@@ -88,11 +88,11 @@ class Statement86(base_types._BaseFieldType):
 		self._StmtDtAndTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=EventFrequency6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Exact5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=StatementUpdateType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Exact5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtAndTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .InvestmentFundReportRequestV03 import InvestmentFundReportRequestV03
+from ._InvestmentFundReportRequestV03 import InvestmentFundReportRequestV03
 
 class REDA_005_001_03():
 

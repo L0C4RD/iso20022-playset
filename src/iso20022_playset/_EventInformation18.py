@@ -1,12 +1,25 @@
 from . import base_types
-from .CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
-from .NotificationIdentification6 import NotificationIdentification6
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .CorporateActionEventType117Choice import CorporateActionEventType117Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._NotificationIdentification6 import NotificationIdentification6
+from ._CorporateActionMandatoryVoluntary4Choice import CorporateActionMandatoryVoluntary4Choice
+from ._CorporateActionEventType117Choice import CorporateActionEventType117Choice
 
 class EventInformation18(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_LastNtfctnId", "_OffclCorpActnEvtId", "_CorpActnEvtId", "_MndtryVlntryEvtTp"]
+	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_MndtryVlntryEvtTp", "_LastNtfctnId", "_OffclCorpActnEvtId"]
+	@property
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
+
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
+
 	@property
 	def EvtTp(self):
 		return self._EvtTp
@@ -19,6 +32,19 @@ class EventInformation18(base_types._BaseFieldType):
 	def EvtTp(self):
 		del self._EvtTp
 		self._EvtTp = None
+
+	@property
+	def MndtryVlntryEvtTp(self):
+		return self._MndtryVlntryEvtTp
+
+	@MndtryVlntryEvtTp.setter
+	def MndtryVlntryEvtTp(self, value):
+		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+
+	@MndtryVlntryEvtTp.deleter
+	def MndtryVlntryEvtTp(self):
+		del self._MndtryVlntryEvtTp
+		self._MndtryVlntryEvtTp = None
 
 	@property
 	def LastNtfctnId(self):
@@ -46,37 +72,11 @@ class EventInformation18(base_types._BaseFieldType):
 		del self._OffclCorpActnEvtId
 		self._OffclCorpActnEvtId = None
 
-	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
-
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
-
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
-
-	@property
-	def MndtryVlntryEvtTp(self):
-		return self._MndtryVlntryEvtTp
-
-	@MndtryVlntryEvtTp.setter
-	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
-
-	@MndtryVlntryEvtTp.deleter
-	def MndtryVlntryEvtTp(self):
-		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType117Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastNtfctnId', type=NotificationIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtryVlntryEvtTp', type=CorporateActionMandatoryVoluntary4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

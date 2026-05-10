@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesTransactionPostingReportV13 import SecuritiesTransactionPostingReportV13
+from ._SecuritiesTransactionPostingReportV13 import SecuritiesTransactionPostingReportV13
 
 class SEMT_017_001_13():
 

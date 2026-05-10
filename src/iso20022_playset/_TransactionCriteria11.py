@@ -1,25 +1,12 @@
 from . import base_types
-from .TransactionSearchCriteria11 import TransactionSearchCriteria11
-from .TransactionReturnCriteria5 import TransactionReturnCriteria5
-from .ReportIndicator1Code import ReportIndicator1Code
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._TransactionSearchCriteria11 import TransactionSearchCriteria11
+from ._ReportIndicator1Code import ReportIndicator1Code
+from ._TransactionReturnCriteria5 import TransactionReturnCriteria5
 
 class TransactionCriteria11(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_NewQryNm", "_RtrCrit", "_StmtRpt"]
-	@property
-	def SchCrit(self):
-		return self._SchCrit
-
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
-
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
-
+	__slots__ = ["_NewQryNm", "_SchCrit", "_StmtRpt", "_RtrCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm
@@ -34,17 +21,17 @@ class TransactionCriteria11(base_types._BaseFieldType):
 		self._NewQryNm = None
 
 	@property
-	def RtrCrit(self):
-		return self._RtrCrit
+	def SchCrit(self):
+		return self._SchCrit
 
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
 
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
 
 	@property
 	def StmtRpt(self):
@@ -59,10 +46,23 @@ class TransactionCriteria11(base_types._BaseFieldType):
 		del self._StmtRpt
 		self._StmtRpt = None
 
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=TransactionSearchCriteria11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrCrit', type=TransactionReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=TransactionSearchCriteria11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtRpt', type=ReportIndicator1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=TransactionReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
 	))
 

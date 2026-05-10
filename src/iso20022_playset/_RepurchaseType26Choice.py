@@ -1,6 +1,6 @@
 from . import base_types
-from .RepurchaseType10Code import RepurchaseType10Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._RepurchaseType10Code import RepurchaseType10Code
 
 class RepurchaseType26Choice(base_types._BaseFieldType):
 

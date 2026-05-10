@@ -1,5 +1,5 @@
 from . import base_types
-from .GetTransactionV11 import GetTransactionV11
+from ._GetTransactionV11 import GetTransactionV11
 
 class CAMT_005_001_11():
 

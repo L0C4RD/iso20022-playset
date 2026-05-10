@@ -1,6 +1,6 @@
 from . import base_types
-from .SecurityReuseData1 import SecurityReuseData1
-from .CashReuseData1 import CashReuseData1
+from ._SecurityReuseData1 import SecurityReuseData1
+from ._CashReuseData1 import CashReuseData1
 
 class CollateralType19(base_types._BaseFieldType):
 

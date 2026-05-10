@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesTradeConfirmationV05 import SecuritiesTradeConfirmationV05
+from ._SecuritiesTradeConfirmationV05 import SecuritiesTradeConfirmationV05
 
 class SETR_027_001_05():
 

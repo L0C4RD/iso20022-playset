@@ -1,7 +1,7 @@
 from . import base_types
-from .Pension6 import Pension6
-from .GeneralInvestment2 import GeneralInvestment2
-from .TaxEfficientProduct4 import TaxEfficientProduct4
+from ._GeneralInvestment2 import GeneralInvestment2
+from ._TaxEfficientProduct4 import TaxEfficientProduct4
+from ._Pension6 import Pension6
 
 class FundPortfolio9Choice(base_types._BaseFieldType):
 

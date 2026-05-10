@@ -1,5 +1,5 @@
 from . import base_types
-from .BalanceQuantity14Choice import BalanceQuantity14Choice
+from ._BalanceQuantity14Choice import BalanceQuantity14Choice
 
 class OpeningBalance6Choice(base_types._BaseFieldType):
 

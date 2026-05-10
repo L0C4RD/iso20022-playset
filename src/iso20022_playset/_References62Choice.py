@@ -1,5 +1,5 @@
 from . import base_types
-from .AdditionalReference8 import AdditionalReference8
+from ._AdditionalReference8 import AdditionalReference8
 
 class References62Choice(base_types._BaseFieldType):
 

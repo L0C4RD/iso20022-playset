@@ -1,5 +1,5 @@
 from . import base_types
-from .AgentCANotificationAdviceV02 import AgentCANotificationAdviceV02
+from ._AgentCANotificationAdviceV02 import AgentCANotificationAdviceV02
 
 class SEEV_009_001_02():
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .DateAndDateTime1Choice import DateAndDateTime1Choice
-from .Max35Text import Max35Text
-from .SecuritiesCertificate3 import SecuritiesCertificate3
+from ._Max35Text import Max35Text
+from ._SecuritiesCertificate3 import SecuritiesCertificate3
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 
 class RegistrationParameters3(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnDtTm", "_CertNb", "_CertfctnId", "_RegarAcct"]
+	__slots__ = ["_CertfctnId", "_CertNb", "_CertfctnDtTm", "_RegarAcct"]
 	@property
-	def CertfctnDtTm(self):
-		return self._CertfctnDtTm
+	def CertfctnId(self):
+		return self._CertfctnId
 
-	@CertfctnDtTm.setter
-	def CertfctnDtTm(self, value):
-		self._CertfctnDtTm = value if type(value) != base_types.auto else self.make_default("CertfctnDtTm")
+	@CertfctnId.setter
+	def CertfctnId(self, value):
+		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
 
-	@CertfctnDtTm.deleter
-	def CertfctnDtTm(self):
-		del self._CertfctnDtTm
-		self._CertfctnDtTm = None
+	@CertfctnId.deleter
+	def CertfctnId(self):
+		del self._CertfctnId
+		self._CertfctnId = None
 
 	@property
 	def CertNb(self):
@@ -33,17 +33,17 @@ class RegistrationParameters3(base_types._BaseFieldType):
 		self._CertNb = None
 
 	@property
-	def CertfctnId(self):
-		return self._CertfctnId
+	def CertfctnDtTm(self):
+		return self._CertfctnDtTm
 
-	@CertfctnId.setter
-	def CertfctnId(self, value):
-		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
+	@CertfctnDtTm.setter
+	def CertfctnDtTm(self, value):
+		self._CertfctnDtTm = value if type(value) != base_types.auto else self.make_default("CertfctnDtTm")
 
-	@CertfctnId.deleter
-	def CertfctnId(self):
-		del self._CertfctnId
-		self._CertfctnId = None
+	@CertfctnDtTm.deleter
+	def CertfctnDtTm(self):
+		del self._CertfctnDtTm
+		self._CertfctnDtTm = None
 
 	@property
 	def RegarAcct(self):
@@ -59,9 +59,9 @@ class RegistrationParameters3(base_types._BaseFieldType):
 		self._RegarAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

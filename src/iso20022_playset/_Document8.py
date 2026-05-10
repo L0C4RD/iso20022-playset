@@ -1,7 +1,7 @@
 from . import base_types
-from .Presentation3 import Presentation3
-from .Max20000Text import Max20000Text
-from .PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
+from ._Max20000Text import Max20000Text
+from ._PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
+from ._Presentation3 import Presentation3
 
 class Document8(base_types._BaseFieldType):
 

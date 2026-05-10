@@ -1,5 +1,5 @@
 from . import base_types
-from .CashInOrOut7Choice import CashInOrOut7Choice
+from ._CashInOrOut7Choice import CashInOrOut7Choice
 
 class PaymentTransaction71(base_types._BaseFieldType):
 

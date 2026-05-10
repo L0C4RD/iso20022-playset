@@ -1,24 +1,11 @@
 from . import base_types
-from .ContentInformationType37 import ContentInformationType37
-from .AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
-from .Header70 import Header70
+from ._Header70 import Header70
+from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
+from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorCurrencyConversionAdviceResponseV08(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyConvsAdvcRspn", "_SctyTrlr", "_Hdr"]
-	@property
-	def CcyConvsAdvcRspn(self):
-		return self._CcyConvsAdvcRspn
-
-	@CcyConvsAdvcRspn.setter
-	def CcyConvsAdvcRspn(self, value):
-		self._CcyConvsAdvcRspn = value if type(value) != base_types.auto else self.make_default("CcyConvsAdvcRspn")
-
-	@CcyConvsAdvcRspn.deleter
-	def CcyConvsAdvcRspn(self):
-		del self._CcyConvsAdvcRspn
-		self._CcyConvsAdvcRspn = None
-
+	__slots__ = ["_SctyTrlr", "_Hdr", "_CcyConvsAdvcRspn"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -45,9 +32,22 @@ class AcceptorCurrencyConversionAdviceResponseV08(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def CcyConvsAdvcRspn(self):
+		return self._CcyConvsAdvcRspn
+
+	@CcyConvsAdvcRspn.setter
+	def CcyConvsAdvcRspn(self, value):
+		self._CcyConvsAdvcRspn = value if type(value) != base_types.auto else self.make_default("CcyConvsAdvcRspn")
+
+	@CcyConvsAdvcRspn.deleter
+	def CcyConvsAdvcRspn(self):
+		del self._CcyConvsAdvcRspn
+		self._CcyConvsAdvcRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CcyConvsAdvcRspn', type=AcceptorCancellationAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyConvsAdvcRspn', type=AcceptorCancellationAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
 	))
 

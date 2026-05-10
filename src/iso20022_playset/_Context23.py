@@ -1,85 +1,85 @@
 from . import base_types
-from .TransactionInitiator1Code import TransactionInitiator1Code
-from .ISODate import ISODate
-from .ICCFallbackReason1Code import ICCFallbackReason1Code
-from .ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from .QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max35Text import Max35Text
-from .MOTO2Code import MOTO2Code
-from .SecurityCharacteristics1Code import SecurityCharacteristics1Code
-from .AdditionalData1 import AdditionalData1
-from .ECommerceData1 import ECommerceData1
-from .CardDataReading10Code import CardDataReading10Code
-from .Max35NumericText import Max35NumericText
+from ._Max35NumericText import Max35NumericText
+from ._ECommerceData1 import ECommerceData1
+from ._SecurityCharacteristics1Code import SecurityCharacteristics1Code
+from ._QRCodePresentmentMode1Code import QRCodePresentmentMode1Code
+from ._ICCFallbackReason1Code import ICCFallbackReason1Code
+from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
+from ._CardDataReading10Code import CardDataReading10Code
+from ._MOTO2Code import MOTO2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._TransactionInitiator1Code import TransactionInitiator1Code
+from ._Max35Text import Max35Text
+from ._AdditionalData1 import AdditionalData1
+from ._ISODate import ISODate
 
 class Context23(base_types._BaseFieldType):
 
-	__slots__ = ["_EComrc", "_CstmrCnsnt", "_SctyChrtcs", "_SpltPmt", "_TempScrCardDataReusd", "_MrchntCtgyCd", "_TxInitr", "_CardDataNtryMd", "_PrtlApprvlSpprtd", "_StorgLctn", "_QRCdPresntmntMd", "_PmtCrdntlMrchntRltsh", "_Attndd", "_AddtlData", "_EComrcIndPropsd", "_ICCFllbck", "_OthrQRCdPresntmntMd", "_DtAntcptd", "_MgntcStrpFllbck", "_DfrrdDlvry", "_ICCFllbckRsnCd", "_AuthntcnOutg", "_UattnddLvlCtgy", "_MOTOCd", "_PrtlShipmnt", "_TrnspndrInittd", "_OthrMrchntCtgy", "_EComrcData", "_OthrICCFllbckRsnCd", "_CardPres", "_MrchntCtgySpcfcData", "_PINNtryBpss", "_ReSubmissn", "_Reauthstn", "_NoShow", "_FnlAuthstn", "_Trnst", "_CrdhldrActvtd", "_OthrCardDataNtryMd", "_PINPadInprtv", "_DelydChrgs", "_EComrcIndApld", "_OthrSctyChrtcs", "_CaptrDt", "_LatePresntmnt", "_DelydAuthstn", "_CrdhldrPres"]
+	__slots__ = ["_OthrMrchntCtgy", "_DfrrdDlvry", "_DelydAuthstn", "_QRCdPresntmntMd", "_AuthntcnOutg", "_MrchntCtgyCd", "_CrdhldrActvtd", "_CstmrCnsnt", "_Trnst", "_EComrcData", "_TempScrCardDataReusd", "_PmtCrdntlMrchntRltsh", "_DelydChrgs", "_PINNtryBpss", "_Attndd", "_FnlAuthstn", "_UattnddLvlCtgy", "_TxInitr", "_NoShow", "_OthrSctyChrtcs", "_ReSubmissn", "_EComrcIndPropsd", "_Reauthstn", "_EComrc", "_ICCFllbckRsnCd", "_OthrICCFllbckRsnCd", "_MrchntCtgySpcfcData", "_PINPadInprtv", "_TrnspndrInittd", "_CaptrDt", "_CardPres", "_ICCFllbck", "_SctyChrtcs", "_LatePresntmnt", "_MgntcStrpFllbck", "_EComrcIndApld", "_MOTOCd", "_CrdhldrPres", "_PrtlApprvlSpprtd", "_StorgLctn", "_AddtlData", "_SpltPmt", "_CardDataNtryMd", "_DtAntcptd", "_OthrQRCdPresntmntMd", "_OthrCardDataNtryMd", "_PrtlShipmnt"]
 	@property
-	def EComrc(self):
-		return self._EComrc
+	def OthrMrchntCtgy(self):
+		return self._OthrMrchntCtgy
 
-	@EComrc.setter
-	def EComrc(self, value):
-		self._EComrc = value if type(value) != base_types.auto else self.make_default("EComrc")
+	@OthrMrchntCtgy.setter
+	def OthrMrchntCtgy(self, value):
+		self._OthrMrchntCtgy = value if type(value) != base_types.auto else self.make_default("OthrMrchntCtgy")
 
-	@EComrc.deleter
-	def EComrc(self):
-		del self._EComrc
-		self._EComrc = None
-
-	@property
-	def CstmrCnsnt(self):
-		return self._CstmrCnsnt
-
-	@CstmrCnsnt.setter
-	def CstmrCnsnt(self, value):
-		self._CstmrCnsnt = value if type(value) != base_types.auto else self.make_default("CstmrCnsnt")
-
-	@CstmrCnsnt.deleter
-	def CstmrCnsnt(self):
-		del self._CstmrCnsnt
-		self._CstmrCnsnt = None
+	@OthrMrchntCtgy.deleter
+	def OthrMrchntCtgy(self):
+		del self._OthrMrchntCtgy
+		self._OthrMrchntCtgy = None
 
 	@property
-	def SctyChrtcs(self):
-		return self._SctyChrtcs
+	def DfrrdDlvry(self):
+		return self._DfrrdDlvry
 
-	@SctyChrtcs.setter
-	def SctyChrtcs(self, value):
-		self._SctyChrtcs = value if type(value) != base_types.auto else self.make_default("SctyChrtcs")
+	@DfrrdDlvry.setter
+	def DfrrdDlvry(self, value):
+		self._DfrrdDlvry = value if type(value) != base_types.auto else self.make_default("DfrrdDlvry")
 
-	@SctyChrtcs.deleter
-	def SctyChrtcs(self):
-		del self._SctyChrtcs
-		self._SctyChrtcs = None
-
-	@property
-	def SpltPmt(self):
-		return self._SpltPmt
-
-	@SpltPmt.setter
-	def SpltPmt(self, value):
-		self._SpltPmt = value if type(value) != base_types.auto else self.make_default("SpltPmt")
-
-	@SpltPmt.deleter
-	def SpltPmt(self):
-		del self._SpltPmt
-		self._SpltPmt = None
+	@DfrrdDlvry.deleter
+	def DfrrdDlvry(self):
+		del self._DfrrdDlvry
+		self._DfrrdDlvry = None
 
 	@property
-	def TempScrCardDataReusd(self):
-		return self._TempScrCardDataReusd
+	def DelydAuthstn(self):
+		return self._DelydAuthstn
 
-	@TempScrCardDataReusd.setter
-	def TempScrCardDataReusd(self, value):
-		self._TempScrCardDataReusd = value if type(value) != base_types.auto else self.make_default("TempScrCardDataReusd")
+	@DelydAuthstn.setter
+	def DelydAuthstn(self, value):
+		self._DelydAuthstn = value if type(value) != base_types.auto else self.make_default("DelydAuthstn")
 
-	@TempScrCardDataReusd.deleter
-	def TempScrCardDataReusd(self):
-		del self._TempScrCardDataReusd
-		self._TempScrCardDataReusd = None
+	@DelydAuthstn.deleter
+	def DelydAuthstn(self):
+		del self._DelydAuthstn
+		self._DelydAuthstn = None
+
+	@property
+	def QRCdPresntmntMd(self):
+		return self._QRCdPresntmntMd
+
+	@QRCdPresntmntMd.setter
+	def QRCdPresntmntMd(self, value):
+		self._QRCdPresntmntMd = value if type(value) != base_types.auto else self.make_default("QRCdPresntmntMd")
+
+	@QRCdPresntmntMd.deleter
+	def QRCdPresntmntMd(self):
+		del self._QRCdPresntmntMd
+		self._QRCdPresntmntMd = None
+
+	@property
+	def AuthntcnOutg(self):
+		return self._AuthntcnOutg
+
+	@AuthntcnOutg.setter
+	def AuthntcnOutg(self, value):
+		self._AuthntcnOutg = value if type(value) != base_types.auto else self.make_default("AuthntcnOutg")
+
+	@AuthntcnOutg.deleter
+	def AuthntcnOutg(self):
+		del self._AuthntcnOutg
+		self._AuthntcnOutg = None
 
 	@property
 	def MrchntCtgyCd(self):
@@ -95,6 +95,149 @@ class Context23(base_types._BaseFieldType):
 		self._MrchntCtgyCd = None
 
 	@property
+	def CrdhldrActvtd(self):
+		return self._CrdhldrActvtd
+
+	@CrdhldrActvtd.setter
+	def CrdhldrActvtd(self, value):
+		self._CrdhldrActvtd = value if type(value) != base_types.auto else self.make_default("CrdhldrActvtd")
+
+	@CrdhldrActvtd.deleter
+	def CrdhldrActvtd(self):
+		del self._CrdhldrActvtd
+		self._CrdhldrActvtd = None
+
+	@property
+	def CstmrCnsnt(self):
+		return self._CstmrCnsnt
+
+	@CstmrCnsnt.setter
+	def CstmrCnsnt(self, value):
+		self._CstmrCnsnt = value if type(value) != base_types.auto else self.make_default("CstmrCnsnt")
+
+	@CstmrCnsnt.deleter
+	def CstmrCnsnt(self):
+		del self._CstmrCnsnt
+		self._CstmrCnsnt = None
+
+	@property
+	def Trnst(self):
+		return self._Trnst
+
+	@Trnst.setter
+	def Trnst(self, value):
+		self._Trnst = value if type(value) != base_types.auto else self.make_default("Trnst")
+
+	@Trnst.deleter
+	def Trnst(self):
+		del self._Trnst
+		self._Trnst = None
+
+	@property
+	def EComrcData(self):
+		return self._EComrcData
+
+	@EComrcData.setter
+	def EComrcData(self, value):
+		self._EComrcData = value if type(value) != base_types.auto else self.make_default("EComrcData")
+
+	@EComrcData.deleter
+	def EComrcData(self):
+		del self._EComrcData
+		self._EComrcData = None
+
+	@property
+	def TempScrCardDataReusd(self):
+		return self._TempScrCardDataReusd
+
+	@TempScrCardDataReusd.setter
+	def TempScrCardDataReusd(self, value):
+		self._TempScrCardDataReusd = value if type(value) != base_types.auto else self.make_default("TempScrCardDataReusd")
+
+	@TempScrCardDataReusd.deleter
+	def TempScrCardDataReusd(self):
+		del self._TempScrCardDataReusd
+		self._TempScrCardDataReusd = None
+
+	@property
+	def PmtCrdntlMrchntRltsh(self):
+		return self._PmtCrdntlMrchntRltsh
+
+	@PmtCrdntlMrchntRltsh.setter
+	def PmtCrdntlMrchntRltsh(self, value):
+		self._PmtCrdntlMrchntRltsh = value if type(value) != base_types.auto else self.make_default("PmtCrdntlMrchntRltsh")
+
+	@PmtCrdntlMrchntRltsh.deleter
+	def PmtCrdntlMrchntRltsh(self):
+		del self._PmtCrdntlMrchntRltsh
+		self._PmtCrdntlMrchntRltsh = None
+
+	@property
+	def DelydChrgs(self):
+		return self._DelydChrgs
+
+	@DelydChrgs.setter
+	def DelydChrgs(self, value):
+		self._DelydChrgs = value if type(value) != base_types.auto else self.make_default("DelydChrgs")
+
+	@DelydChrgs.deleter
+	def DelydChrgs(self):
+		del self._DelydChrgs
+		self._DelydChrgs = None
+
+	@property
+	def PINNtryBpss(self):
+		return self._PINNtryBpss
+
+	@PINNtryBpss.setter
+	def PINNtryBpss(self, value):
+		self._PINNtryBpss = value if type(value) != base_types.auto else self.make_default("PINNtryBpss")
+
+	@PINNtryBpss.deleter
+	def PINNtryBpss(self):
+		del self._PINNtryBpss
+		self._PINNtryBpss = None
+
+	@property
+	def Attndd(self):
+		return self._Attndd
+
+	@Attndd.setter
+	def Attndd(self, value):
+		self._Attndd = value if type(value) != base_types.auto else self.make_default("Attndd")
+
+	@Attndd.deleter
+	def Attndd(self):
+		del self._Attndd
+		self._Attndd = None
+
+	@property
+	def FnlAuthstn(self):
+		return self._FnlAuthstn
+
+	@FnlAuthstn.setter
+	def FnlAuthstn(self, value):
+		self._FnlAuthstn = value if type(value) != base_types.auto else self.make_default("FnlAuthstn")
+
+	@FnlAuthstn.deleter
+	def FnlAuthstn(self):
+		del self._FnlAuthstn
+		self._FnlAuthstn = None
+
+	@property
+	def UattnddLvlCtgy(self):
+		return self._UattnddLvlCtgy
+
+	@UattnddLvlCtgy.setter
+	def UattnddLvlCtgy(self, value):
+		self._UattnddLvlCtgy = value if type(value) != base_types.auto else self.make_default("UattnddLvlCtgy")
+
+	@UattnddLvlCtgy.deleter
+	def UattnddLvlCtgy(self):
+		del self._UattnddLvlCtgy
+		self._UattnddLvlCtgy = None
+
+	@property
 	def TxInitr(self):
 		return self._TxInitr
 
@@ -108,17 +251,264 @@ class Context23(base_types._BaseFieldType):
 		self._TxInitr = None
 
 	@property
-	def CardDataNtryMd(self):
-		return self._CardDataNtryMd
+	def NoShow(self):
+		return self._NoShow
 
-	@CardDataNtryMd.setter
-	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+	@NoShow.setter
+	def NoShow(self, value):
+		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
 
-	@CardDataNtryMd.deleter
-	def CardDataNtryMd(self):
-		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+	@NoShow.deleter
+	def NoShow(self):
+		del self._NoShow
+		self._NoShow = None
+
+	@property
+	def OthrSctyChrtcs(self):
+		return self._OthrSctyChrtcs
+
+	@OthrSctyChrtcs.setter
+	def OthrSctyChrtcs(self, value):
+		self._OthrSctyChrtcs = value if type(value) != base_types.auto else self.make_default("OthrSctyChrtcs")
+
+	@OthrSctyChrtcs.deleter
+	def OthrSctyChrtcs(self):
+		del self._OthrSctyChrtcs
+		self._OthrSctyChrtcs = None
+
+	@property
+	def ReSubmissn(self):
+		return self._ReSubmissn
+
+	@ReSubmissn.setter
+	def ReSubmissn(self, value):
+		self._ReSubmissn = value if type(value) != base_types.auto else self.make_default("ReSubmissn")
+
+	@ReSubmissn.deleter
+	def ReSubmissn(self):
+		del self._ReSubmissn
+		self._ReSubmissn = None
+
+	@property
+	def EComrcIndPropsd(self):
+		return self._EComrcIndPropsd
+
+	@EComrcIndPropsd.setter
+	def EComrcIndPropsd(self, value):
+		self._EComrcIndPropsd = value if type(value) != base_types.auto else self.make_default("EComrcIndPropsd")
+
+	@EComrcIndPropsd.deleter
+	def EComrcIndPropsd(self):
+		del self._EComrcIndPropsd
+		self._EComrcIndPropsd = None
+
+	@property
+	def Reauthstn(self):
+		return self._Reauthstn
+
+	@Reauthstn.setter
+	def Reauthstn(self, value):
+		self._Reauthstn = value if type(value) != base_types.auto else self.make_default("Reauthstn")
+
+	@Reauthstn.deleter
+	def Reauthstn(self):
+		del self._Reauthstn
+		self._Reauthstn = None
+
+	@property
+	def EComrc(self):
+		return self._EComrc
+
+	@EComrc.setter
+	def EComrc(self, value):
+		self._EComrc = value if type(value) != base_types.auto else self.make_default("EComrc")
+
+	@EComrc.deleter
+	def EComrc(self):
+		del self._EComrc
+		self._EComrc = None
+
+	@property
+	def ICCFllbckRsnCd(self):
+		return self._ICCFllbckRsnCd
+
+	@ICCFllbckRsnCd.setter
+	def ICCFllbckRsnCd(self, value):
+		self._ICCFllbckRsnCd = value if type(value) != base_types.auto else self.make_default("ICCFllbckRsnCd")
+
+	@ICCFllbckRsnCd.deleter
+	def ICCFllbckRsnCd(self):
+		del self._ICCFllbckRsnCd
+		self._ICCFllbckRsnCd = None
+
+	@property
+	def OthrICCFllbckRsnCd(self):
+		return self._OthrICCFllbckRsnCd
+
+	@OthrICCFllbckRsnCd.setter
+	def OthrICCFllbckRsnCd(self, value):
+		self._OthrICCFllbckRsnCd = value if type(value) != base_types.auto else self.make_default("OthrICCFllbckRsnCd")
+
+	@OthrICCFllbckRsnCd.deleter
+	def OthrICCFllbckRsnCd(self):
+		del self._OthrICCFllbckRsnCd
+		self._OthrICCFllbckRsnCd = None
+
+	@property
+	def MrchntCtgySpcfcData(self):
+		return self._MrchntCtgySpcfcData
+
+	@MrchntCtgySpcfcData.setter
+	def MrchntCtgySpcfcData(self, value):
+		self._MrchntCtgySpcfcData = value if type(value) != base_types.auto else self.make_default("MrchntCtgySpcfcData")
+
+	@MrchntCtgySpcfcData.deleter
+	def MrchntCtgySpcfcData(self):
+		del self._MrchntCtgySpcfcData
+		self._MrchntCtgySpcfcData = None
+
+	@property
+	def PINPadInprtv(self):
+		return self._PINPadInprtv
+
+	@PINPadInprtv.setter
+	def PINPadInprtv(self, value):
+		self._PINPadInprtv = value if type(value) != base_types.auto else self.make_default("PINPadInprtv")
+
+	@PINPadInprtv.deleter
+	def PINPadInprtv(self):
+		del self._PINPadInprtv
+		self._PINPadInprtv = None
+
+	@property
+	def TrnspndrInittd(self):
+		return self._TrnspndrInittd
+
+	@TrnspndrInittd.setter
+	def TrnspndrInittd(self, value):
+		self._TrnspndrInittd = value if type(value) != base_types.auto else self.make_default("TrnspndrInittd")
+
+	@TrnspndrInittd.deleter
+	def TrnspndrInittd(self):
+		del self._TrnspndrInittd
+		self._TrnspndrInittd = None
+
+	@property
+	def CaptrDt(self):
+		return self._CaptrDt
+
+	@CaptrDt.setter
+	def CaptrDt(self, value):
+		self._CaptrDt = value if type(value) != base_types.auto else self.make_default("CaptrDt")
+
+	@CaptrDt.deleter
+	def CaptrDt(self):
+		del self._CaptrDt
+		self._CaptrDt = None
+
+	@property
+	def CardPres(self):
+		return self._CardPres
+
+	@CardPres.setter
+	def CardPres(self, value):
+		self._CardPres = value if type(value) != base_types.auto else self.make_default("CardPres")
+
+	@CardPres.deleter
+	def CardPres(self):
+		del self._CardPres
+		self._CardPres = None
+
+	@property
+	def ICCFllbck(self):
+		return self._ICCFllbck
+
+	@ICCFllbck.setter
+	def ICCFllbck(self, value):
+		self._ICCFllbck = value if type(value) != base_types.auto else self.make_default("ICCFllbck")
+
+	@ICCFllbck.deleter
+	def ICCFllbck(self):
+		del self._ICCFllbck
+		self._ICCFllbck = None
+
+	@property
+	def SctyChrtcs(self):
+		return self._SctyChrtcs
+
+	@SctyChrtcs.setter
+	def SctyChrtcs(self, value):
+		self._SctyChrtcs = value if type(value) != base_types.auto else self.make_default("SctyChrtcs")
+
+	@SctyChrtcs.deleter
+	def SctyChrtcs(self):
+		del self._SctyChrtcs
+		self._SctyChrtcs = None
+
+	@property
+	def LatePresntmnt(self):
+		return self._LatePresntmnt
+
+	@LatePresntmnt.setter
+	def LatePresntmnt(self, value):
+		self._LatePresntmnt = value if type(value) != base_types.auto else self.make_default("LatePresntmnt")
+
+	@LatePresntmnt.deleter
+	def LatePresntmnt(self):
+		del self._LatePresntmnt
+		self._LatePresntmnt = None
+
+	@property
+	def MgntcStrpFllbck(self):
+		return self._MgntcStrpFllbck
+
+	@MgntcStrpFllbck.setter
+	def MgntcStrpFllbck(self, value):
+		self._MgntcStrpFllbck = value if type(value) != base_types.auto else self.make_default("MgntcStrpFllbck")
+
+	@MgntcStrpFllbck.deleter
+	def MgntcStrpFllbck(self):
+		del self._MgntcStrpFllbck
+		self._MgntcStrpFllbck = None
+
+	@property
+	def EComrcIndApld(self):
+		return self._EComrcIndApld
+
+	@EComrcIndApld.setter
+	def EComrcIndApld(self, value):
+		self._EComrcIndApld = value if type(value) != base_types.auto else self.make_default("EComrcIndApld")
+
+	@EComrcIndApld.deleter
+	def EComrcIndApld(self):
+		del self._EComrcIndApld
+		self._EComrcIndApld = None
+
+	@property
+	def MOTOCd(self):
+		return self._MOTOCd
+
+	@MOTOCd.setter
+	def MOTOCd(self, value):
+		self._MOTOCd = value if type(value) != base_types.auto else self.make_default("MOTOCd")
+
+	@MOTOCd.deleter
+	def MOTOCd(self):
+		del self._MOTOCd
+		self._MOTOCd = None
+
+	@property
+	def CrdhldrPres(self):
+		return self._CrdhldrPres
+
+	@CrdhldrPres.setter
+	def CrdhldrPres(self, value):
+		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
+
+	@CrdhldrPres.deleter
+	def CrdhldrPres(self):
+		del self._CrdhldrPres
+		self._CrdhldrPres = None
 
 	@property
 	def PrtlApprvlSpprtd(self):
@@ -147,45 +537,6 @@ class Context23(base_types._BaseFieldType):
 		self._StorgLctn = None
 
 	@property
-	def QRCdPresntmntMd(self):
-		return self._QRCdPresntmntMd
-
-	@QRCdPresntmntMd.setter
-	def QRCdPresntmntMd(self, value):
-		self._QRCdPresntmntMd = value if type(value) != base_types.auto else self.make_default("QRCdPresntmntMd")
-
-	@QRCdPresntmntMd.deleter
-	def QRCdPresntmntMd(self):
-		del self._QRCdPresntmntMd
-		self._QRCdPresntmntMd = None
-
-	@property
-	def PmtCrdntlMrchntRltsh(self):
-		return self._PmtCrdntlMrchntRltsh
-
-	@PmtCrdntlMrchntRltsh.setter
-	def PmtCrdntlMrchntRltsh(self, value):
-		self._PmtCrdntlMrchntRltsh = value if type(value) != base_types.auto else self.make_default("PmtCrdntlMrchntRltsh")
-
-	@PmtCrdntlMrchntRltsh.deleter
-	def PmtCrdntlMrchntRltsh(self):
-		del self._PmtCrdntlMrchntRltsh
-		self._PmtCrdntlMrchntRltsh = None
-
-	@property
-	def Attndd(self):
-		return self._Attndd
-
-	@Attndd.setter
-	def Attndd(self, value):
-		self._Attndd = value if type(value) != base_types.auto else self.make_default("Attndd")
-
-	@Attndd.deleter
-	def Attndd(self):
-		del self._Attndd
-		self._Attndd = None
-
-	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -199,43 +550,30 @@ class Context23(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def EComrcIndPropsd(self):
-		return self._EComrcIndPropsd
+	def SpltPmt(self):
+		return self._SpltPmt
 
-	@EComrcIndPropsd.setter
-	def EComrcIndPropsd(self, value):
-		self._EComrcIndPropsd = value if type(value) != base_types.auto else self.make_default("EComrcIndPropsd")
+	@SpltPmt.setter
+	def SpltPmt(self, value):
+		self._SpltPmt = value if type(value) != base_types.auto else self.make_default("SpltPmt")
 
-	@EComrcIndPropsd.deleter
-	def EComrcIndPropsd(self):
-		del self._EComrcIndPropsd
-		self._EComrcIndPropsd = None
-
-	@property
-	def ICCFllbck(self):
-		return self._ICCFllbck
-
-	@ICCFllbck.setter
-	def ICCFllbck(self, value):
-		self._ICCFllbck = value if type(value) != base_types.auto else self.make_default("ICCFllbck")
-
-	@ICCFllbck.deleter
-	def ICCFllbck(self):
-		del self._ICCFllbck
-		self._ICCFllbck = None
+	@SpltPmt.deleter
+	def SpltPmt(self):
+		del self._SpltPmt
+		self._SpltPmt = None
 
 	@property
-	def OthrQRCdPresntmntMd(self):
-		return self._OthrQRCdPresntmntMd
+	def CardDataNtryMd(self):
+		return self._CardDataNtryMd
 
-	@OthrQRCdPresntmntMd.setter
-	def OthrQRCdPresntmntMd(self, value):
-		self._OthrQRCdPresntmntMd = value if type(value) != base_types.auto else self.make_default("OthrQRCdPresntmntMd")
+	@CardDataNtryMd.setter
+	def CardDataNtryMd(self, value):
+		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
 
-	@OthrQRCdPresntmntMd.deleter
-	def OthrQRCdPresntmntMd(self):
-		del self._OthrQRCdPresntmntMd
-		self._OthrQRCdPresntmntMd = None
+	@CardDataNtryMd.deleter
+	def CardDataNtryMd(self):
+		del self._CardDataNtryMd
+		self._CardDataNtryMd = None
 
 	@property
 	def DtAntcptd(self):
@@ -251,264 +589,17 @@ class Context23(base_types._BaseFieldType):
 		self._DtAntcptd = None
 
 	@property
-	def MgntcStrpFllbck(self):
-		return self._MgntcStrpFllbck
+	def OthrQRCdPresntmntMd(self):
+		return self._OthrQRCdPresntmntMd
 
-	@MgntcStrpFllbck.setter
-	def MgntcStrpFllbck(self, value):
-		self._MgntcStrpFllbck = value if type(value) != base_types.auto else self.make_default("MgntcStrpFllbck")
+	@OthrQRCdPresntmntMd.setter
+	def OthrQRCdPresntmntMd(self, value):
+		self._OthrQRCdPresntmntMd = value if type(value) != base_types.auto else self.make_default("OthrQRCdPresntmntMd")
 
-	@MgntcStrpFllbck.deleter
-	def MgntcStrpFllbck(self):
-		del self._MgntcStrpFllbck
-		self._MgntcStrpFllbck = None
-
-	@property
-	def DfrrdDlvry(self):
-		return self._DfrrdDlvry
-
-	@DfrrdDlvry.setter
-	def DfrrdDlvry(self, value):
-		self._DfrrdDlvry = value if type(value) != base_types.auto else self.make_default("DfrrdDlvry")
-
-	@DfrrdDlvry.deleter
-	def DfrrdDlvry(self):
-		del self._DfrrdDlvry
-		self._DfrrdDlvry = None
-
-	@property
-	def ICCFllbckRsnCd(self):
-		return self._ICCFllbckRsnCd
-
-	@ICCFllbckRsnCd.setter
-	def ICCFllbckRsnCd(self, value):
-		self._ICCFllbckRsnCd = value if type(value) != base_types.auto else self.make_default("ICCFllbckRsnCd")
-
-	@ICCFllbckRsnCd.deleter
-	def ICCFllbckRsnCd(self):
-		del self._ICCFllbckRsnCd
-		self._ICCFllbckRsnCd = None
-
-	@property
-	def AuthntcnOutg(self):
-		return self._AuthntcnOutg
-
-	@AuthntcnOutg.setter
-	def AuthntcnOutg(self, value):
-		self._AuthntcnOutg = value if type(value) != base_types.auto else self.make_default("AuthntcnOutg")
-
-	@AuthntcnOutg.deleter
-	def AuthntcnOutg(self):
-		del self._AuthntcnOutg
-		self._AuthntcnOutg = None
-
-	@property
-	def UattnddLvlCtgy(self):
-		return self._UattnddLvlCtgy
-
-	@UattnddLvlCtgy.setter
-	def UattnddLvlCtgy(self, value):
-		self._UattnddLvlCtgy = value if type(value) != base_types.auto else self.make_default("UattnddLvlCtgy")
-
-	@UattnddLvlCtgy.deleter
-	def UattnddLvlCtgy(self):
-		del self._UattnddLvlCtgy
-		self._UattnddLvlCtgy = None
-
-	@property
-	def MOTOCd(self):
-		return self._MOTOCd
-
-	@MOTOCd.setter
-	def MOTOCd(self, value):
-		self._MOTOCd = value if type(value) != base_types.auto else self.make_default("MOTOCd")
-
-	@MOTOCd.deleter
-	def MOTOCd(self):
-		del self._MOTOCd
-		self._MOTOCd = None
-
-	@property
-	def PrtlShipmnt(self):
-		return self._PrtlShipmnt
-
-	@PrtlShipmnt.setter
-	def PrtlShipmnt(self, value):
-		self._PrtlShipmnt = value if type(value) != base_types.auto else self.make_default("PrtlShipmnt")
-
-	@PrtlShipmnt.deleter
-	def PrtlShipmnt(self):
-		del self._PrtlShipmnt
-		self._PrtlShipmnt = None
-
-	@property
-	def TrnspndrInittd(self):
-		return self._TrnspndrInittd
-
-	@TrnspndrInittd.setter
-	def TrnspndrInittd(self, value):
-		self._TrnspndrInittd = value if type(value) != base_types.auto else self.make_default("TrnspndrInittd")
-
-	@TrnspndrInittd.deleter
-	def TrnspndrInittd(self):
-		del self._TrnspndrInittd
-		self._TrnspndrInittd = None
-
-	@property
-	def OthrMrchntCtgy(self):
-		return self._OthrMrchntCtgy
-
-	@OthrMrchntCtgy.setter
-	def OthrMrchntCtgy(self, value):
-		self._OthrMrchntCtgy = value if type(value) != base_types.auto else self.make_default("OthrMrchntCtgy")
-
-	@OthrMrchntCtgy.deleter
-	def OthrMrchntCtgy(self):
-		del self._OthrMrchntCtgy
-		self._OthrMrchntCtgy = None
-
-	@property
-	def EComrcData(self):
-		return self._EComrcData
-
-	@EComrcData.setter
-	def EComrcData(self, value):
-		self._EComrcData = value if type(value) != base_types.auto else self.make_default("EComrcData")
-
-	@EComrcData.deleter
-	def EComrcData(self):
-		del self._EComrcData
-		self._EComrcData = None
-
-	@property
-	def OthrICCFllbckRsnCd(self):
-		return self._OthrICCFllbckRsnCd
-
-	@OthrICCFllbckRsnCd.setter
-	def OthrICCFllbckRsnCd(self, value):
-		self._OthrICCFllbckRsnCd = value if type(value) != base_types.auto else self.make_default("OthrICCFllbckRsnCd")
-
-	@OthrICCFllbckRsnCd.deleter
-	def OthrICCFllbckRsnCd(self):
-		del self._OthrICCFllbckRsnCd
-		self._OthrICCFllbckRsnCd = None
-
-	@property
-	def CardPres(self):
-		return self._CardPres
-
-	@CardPres.setter
-	def CardPres(self, value):
-		self._CardPres = value if type(value) != base_types.auto else self.make_default("CardPres")
-
-	@CardPres.deleter
-	def CardPres(self):
-		del self._CardPres
-		self._CardPres = None
-
-	@property
-	def MrchntCtgySpcfcData(self):
-		return self._MrchntCtgySpcfcData
-
-	@MrchntCtgySpcfcData.setter
-	def MrchntCtgySpcfcData(self, value):
-		self._MrchntCtgySpcfcData = value if type(value) != base_types.auto else self.make_default("MrchntCtgySpcfcData")
-
-	@MrchntCtgySpcfcData.deleter
-	def MrchntCtgySpcfcData(self):
-		del self._MrchntCtgySpcfcData
-		self._MrchntCtgySpcfcData = None
-
-	@property
-	def PINNtryBpss(self):
-		return self._PINNtryBpss
-
-	@PINNtryBpss.setter
-	def PINNtryBpss(self, value):
-		self._PINNtryBpss = value if type(value) != base_types.auto else self.make_default("PINNtryBpss")
-
-	@PINNtryBpss.deleter
-	def PINNtryBpss(self):
-		del self._PINNtryBpss
-		self._PINNtryBpss = None
-
-	@property
-	def ReSubmissn(self):
-		return self._ReSubmissn
-
-	@ReSubmissn.setter
-	def ReSubmissn(self, value):
-		self._ReSubmissn = value if type(value) != base_types.auto else self.make_default("ReSubmissn")
-
-	@ReSubmissn.deleter
-	def ReSubmissn(self):
-		del self._ReSubmissn
-		self._ReSubmissn = None
-
-	@property
-	def Reauthstn(self):
-		return self._Reauthstn
-
-	@Reauthstn.setter
-	def Reauthstn(self, value):
-		self._Reauthstn = value if type(value) != base_types.auto else self.make_default("Reauthstn")
-
-	@Reauthstn.deleter
-	def Reauthstn(self):
-		del self._Reauthstn
-		self._Reauthstn = None
-
-	@property
-	def NoShow(self):
-		return self._NoShow
-
-	@NoShow.setter
-	def NoShow(self, value):
-		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
-
-	@NoShow.deleter
-	def NoShow(self):
-		del self._NoShow
-		self._NoShow = None
-
-	@property
-	def FnlAuthstn(self):
-		return self._FnlAuthstn
-
-	@FnlAuthstn.setter
-	def FnlAuthstn(self, value):
-		self._FnlAuthstn = value if type(value) != base_types.auto else self.make_default("FnlAuthstn")
-
-	@FnlAuthstn.deleter
-	def FnlAuthstn(self):
-		del self._FnlAuthstn
-		self._FnlAuthstn = None
-
-	@property
-	def Trnst(self):
-		return self._Trnst
-
-	@Trnst.setter
-	def Trnst(self, value):
-		self._Trnst = value if type(value) != base_types.auto else self.make_default("Trnst")
-
-	@Trnst.deleter
-	def Trnst(self):
-		del self._Trnst
-		self._Trnst = None
-
-	@property
-	def CrdhldrActvtd(self):
-		return self._CrdhldrActvtd
-
-	@CrdhldrActvtd.setter
-	def CrdhldrActvtd(self, value):
-		self._CrdhldrActvtd = value if type(value) != base_types.auto else self.make_default("CrdhldrActvtd")
-
-	@CrdhldrActvtd.deleter
-	def CrdhldrActvtd(self):
-		del self._CrdhldrActvtd
-		self._CrdhldrActvtd = None
+	@OthrQRCdPresntmntMd.deleter
+	def OthrQRCdPresntmntMd(self):
+		del self._OthrQRCdPresntmntMd
+		self._OthrQRCdPresntmntMd = None
 
 	@property
 	def OthrCardDataNtryMd(self):
@@ -524,156 +615,65 @@ class Context23(base_types._BaseFieldType):
 		self._OthrCardDataNtryMd = None
 
 	@property
-	def PINPadInprtv(self):
-		return self._PINPadInprtv
+	def PrtlShipmnt(self):
+		return self._PrtlShipmnt
 
-	@PINPadInprtv.setter
-	def PINPadInprtv(self, value):
-		self._PINPadInprtv = value if type(value) != base_types.auto else self.make_default("PINPadInprtv")
+	@PrtlShipmnt.setter
+	def PrtlShipmnt(self, value):
+		self._PrtlShipmnt = value if type(value) != base_types.auto else self.make_default("PrtlShipmnt")
 
-	@PINPadInprtv.deleter
-	def PINPadInprtv(self):
-		del self._PINPadInprtv
-		self._PINPadInprtv = None
-
-	@property
-	def DelydChrgs(self):
-		return self._DelydChrgs
-
-	@DelydChrgs.setter
-	def DelydChrgs(self, value):
-		self._DelydChrgs = value if type(value) != base_types.auto else self.make_default("DelydChrgs")
-
-	@DelydChrgs.deleter
-	def DelydChrgs(self):
-		del self._DelydChrgs
-		self._DelydChrgs = None
-
-	@property
-	def EComrcIndApld(self):
-		return self._EComrcIndApld
-
-	@EComrcIndApld.setter
-	def EComrcIndApld(self, value):
-		self._EComrcIndApld = value if type(value) != base_types.auto else self.make_default("EComrcIndApld")
-
-	@EComrcIndApld.deleter
-	def EComrcIndApld(self):
-		del self._EComrcIndApld
-		self._EComrcIndApld = None
-
-	@property
-	def OthrSctyChrtcs(self):
-		return self._OthrSctyChrtcs
-
-	@OthrSctyChrtcs.setter
-	def OthrSctyChrtcs(self, value):
-		self._OthrSctyChrtcs = value if type(value) != base_types.auto else self.make_default("OthrSctyChrtcs")
-
-	@OthrSctyChrtcs.deleter
-	def OthrSctyChrtcs(self):
-		del self._OthrSctyChrtcs
-		self._OthrSctyChrtcs = None
-
-	@property
-	def CaptrDt(self):
-		return self._CaptrDt
-
-	@CaptrDt.setter
-	def CaptrDt(self, value):
-		self._CaptrDt = value if type(value) != base_types.auto else self.make_default("CaptrDt")
-
-	@CaptrDt.deleter
-	def CaptrDt(self):
-		del self._CaptrDt
-		self._CaptrDt = None
-
-	@property
-	def LatePresntmnt(self):
-		return self._LatePresntmnt
-
-	@LatePresntmnt.setter
-	def LatePresntmnt(self, value):
-		self._LatePresntmnt = value if type(value) != base_types.auto else self.make_default("LatePresntmnt")
-
-	@LatePresntmnt.deleter
-	def LatePresntmnt(self):
-		del self._LatePresntmnt
-		self._LatePresntmnt = None
-
-	@property
-	def DelydAuthstn(self):
-		return self._DelydAuthstn
-
-	@DelydAuthstn.setter
-	def DelydAuthstn(self, value):
-		self._DelydAuthstn = value if type(value) != base_types.auto else self.make_default("DelydAuthstn")
-
-	@DelydAuthstn.deleter
-	def DelydAuthstn(self):
-		del self._DelydAuthstn
-		self._DelydAuthstn = None
-
-	@property
-	def CrdhldrPres(self):
-		return self._CrdhldrPres
-
-	@CrdhldrPres.setter
-	def CrdhldrPres(self, value):
-		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
-
-	@CrdhldrPres.deleter
-	def CrdhldrPres(self):
-		del self._CrdhldrPres
-		self._CrdhldrPres = None
+	@PrtlShipmnt.deleter
+	def PrtlShipmnt(self):
+		del self._PrtlShipmnt
+		self._PrtlShipmnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EComrc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrCnsnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyChrtcs', type=SecurityCharacteristics1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SpltPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TempScrCardDataReusd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrMrchntCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DfrrdDlvry', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DelydAuthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QRCdPresntmntMd', type=QRCodePresentmentMode1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnOutg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrchntCtgyCd', type=ISO18245MerchantCategoryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrActvtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrCnsnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trnst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EComrcData', type=ECommerceData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TempScrCardDataReusd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtCrdntlMrchntRltsh', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DelydChrgs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINNtryBpss', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attndd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FnlAuthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UattnddLvlCtgy', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInitr', type=TransactionInitiator1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading10Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrSctyChrtcs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReSubmissn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EComrcIndPropsd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Reauthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EComrc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCFllbckRsnCd', type=ICCFallbackReason1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrICCFllbckRsnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntCtgySpcfcData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINPadInprtv', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnspndrInittd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CaptrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCFllbck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyChrtcs', type=SecurityCharacteristics1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LatePresntmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MgntcStrpFllbck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EComrcIndApld', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MOTOCd', type=MOTO2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlApprvlSpprtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StorgLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QRCdPresntmntMd', type=QRCodePresentmentMode1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtCrdntlMrchntRltsh', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attndd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EComrcIndPropsd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCFllbck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrQRCdPresntmntMd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpltPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading10Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtAntcptd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MgntcStrpFllbck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfrrdDlvry', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCFllbckRsnCd', type=ICCFallbackReason1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnOutg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UattnddLvlCtgy', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MOTOCd', type=MOTO2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtlShipmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnspndrInittd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrMrchntCtgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EComrcData', type=ECommerceData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrICCFllbckRsnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntCtgySpcfcData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PINNtryBpss', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReSubmissn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Reauthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FnlAuthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trnst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrActvtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrQRCdPresntmntMd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCardDataNtryMd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PINPadInprtv', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DelydChrgs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EComrcIndApld', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrSctyChrtcs', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CaptrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LatePresntmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DelydAuthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtlShipmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-from .PartyOrGroup3Choice import PartyOrGroup3Choice
-from .Modification1Code import Modification1Code
-from .Max15PlusSignedNumericText import Max15PlusSignedNumericText
-from .Authorisation2 import Authorisation2
+from ._PartyOrGroup3Choice import PartyOrGroup3Choice
+from ._Modification1Code import Modification1Code
+from ._Authorisation2 import Authorisation2
+from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
 
 class PartyAndAuthorisation6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyOrGrp", "_SgntrOrdr", "_Authstn", "_ModCd"]
+	__slots__ = ["_ModCd", "_PtyOrGrp", "_Authstn", "_SgntrOrdr"]
+	@property
+	def ModCd(self):
+		return self._ModCd
+
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
+
 	@property
 	def PtyOrGrp(self):
 		return self._PtyOrGrp
@@ -19,19 +32,6 @@ class PartyAndAuthorisation6(base_types._BaseFieldType):
 	def PtyOrGrp(self):
 		del self._PtyOrGrp
 		self._PtyOrGrp = None
-
-	@property
-	def SgntrOrdr(self):
-		return self._SgntrOrdr
-
-	@SgntrOrdr.setter
-	def SgntrOrdr(self, value):
-		self._SgntrOrdr = value if type(value) != base_types.auto else self.make_default("SgntrOrdr")
-
-	@SgntrOrdr.deleter
-	def SgntrOrdr(self):
-		del self._SgntrOrdr
-		self._SgntrOrdr = None
 
 	@property
 	def Authstn(self):
@@ -47,22 +47,22 @@ class PartyAndAuthorisation6(base_types._BaseFieldType):
 		self._Authstn = None
 
 	@property
-	def ModCd(self):
-		return self._ModCd
+	def SgntrOrdr(self):
+		return self._SgntrOrdr
 
-	@ModCd.setter
-	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+	@SgntrOrdr.setter
+	def SgntrOrdr(self, value):
+		self._SgntrOrdr = value if type(value) != base_types.auto else self.make_default("SgntrOrdr")
 
-	@ModCd.deleter
-	def ModCd(self):
-		del self._ModCd
-		self._ModCd = None
+	@SgntrOrdr.deleter
+	def SgntrOrdr(self):
+		del self._SgntrOrdr
+		self._SgntrOrdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

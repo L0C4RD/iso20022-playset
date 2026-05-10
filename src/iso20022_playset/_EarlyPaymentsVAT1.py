@@ -1,23 +1,23 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .Max4Text import Max4Text
-from .CurrencyAndAmount import CurrencyAndAmount
+from ._Max4Text import Max4Text
+from ._PercentageRate import PercentageRate
+from ._CurrencyAndAmount import CurrencyAndAmount
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntTaxAmt", "_DscntTaxTp", "_TaxRate"]
+	__slots__ = ["_TaxRate", "_DscntTaxTp", "_DscntTaxAmt"]
 	@property
-	def DscntTaxAmt(self):
-		return self._DscntTaxAmt
+	def TaxRate(self):
+		return self._TaxRate
 
-	@DscntTaxAmt.setter
-	def DscntTaxAmt(self, value):
-		self._DscntTaxAmt = value if type(value) != base_types.auto else self.make_default("DscntTaxAmt")
+	@TaxRate.setter
+	def TaxRate(self, value):
+		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
 
-	@DscntTaxAmt.deleter
-	def DscntTaxAmt(self):
-		del self._DscntTaxAmt
-		self._DscntTaxAmt = None
+	@TaxRate.deleter
+	def TaxRate(self):
+		del self._TaxRate
+		self._TaxRate = None
 
 	@property
 	def DscntTaxTp(self):
@@ -33,21 +33,21 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 		self._DscntTaxTp = None
 
 	@property
-	def TaxRate(self):
-		return self._TaxRate
+	def DscntTaxAmt(self):
+		return self._DscntTaxAmt
 
-	@TaxRate.setter
-	def TaxRate(self, value):
-		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
+	@DscntTaxAmt.setter
+	def DscntTaxAmt(self, value):
+		self._DscntTaxAmt = value if type(value) != base_types.auto else self.make_default("DscntTaxAmt")
 
-	@TaxRate.deleter
-	def TaxRate(self):
-		del self._TaxRate
-		self._TaxRate = None
+	@DscntTaxAmt.deleter
+	def DscntTaxAmt(self):
+		del self._DscntTaxAmt
+		self._DscntTaxAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

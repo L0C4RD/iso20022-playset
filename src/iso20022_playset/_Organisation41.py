@@ -1,13 +1,26 @@
 from . import base_types
-from .LocationCategory4Code import LocationCategory4Code
-from .CommunicationAddress9 import CommunicationAddress9
-from .GenericIdentification32 import GenericIdentification32
-from .Max70Text import Max70Text
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Max70Text import Max70Text
+from ._GenericIdentification32 import GenericIdentification32
+from ._CommunicationAddress9 import CommunicationAddress9
+from ._LocationCategory4Code import LocationCategory4Code
 
 class Organisation41(base_types._BaseFieldType):
 
-	__slots__ = ["_CmonNm", "_SchmeData", "_Id", "_LctnAndCtct", "_LctnCtgy"]
+	__slots__ = ["_LctnCtgy", "_CmonNm", "_SchmeData", "_LctnAndCtct", "_Id"]
+	@property
+	def LctnCtgy(self):
+		return self._LctnCtgy
+
+	@LctnCtgy.setter
+	def LctnCtgy(self, value):
+		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
+
+	@LctnCtgy.deleter
+	def LctnCtgy(self):
+		del self._LctnCtgy
+		self._LctnCtgy = None
+
 	@property
 	def CmonNm(self):
 		return self._CmonNm
@@ -35,19 +48,6 @@ class Organisation41(base_types._BaseFieldType):
 		self._SchmeData = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def LctnAndCtct(self):
 		return self._LctnAndCtct
 
@@ -61,23 +61,23 @@ class Organisation41(base_types._BaseFieldType):
 		self._LctnAndCtct = None
 
 	@property
-	def LctnCtgy(self):
-		return self._LctnCtgy
+	def Id(self):
+		return self._Id
 
-	@LctnCtgy.setter
-	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@LctnCtgy.deleter
-	def LctnCtgy(self):
-		del self._LctnCtgy
-		self._LctnCtgy = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LctnCtgy', type=LocationCategory4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=GenericIdentification32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnAndCtct', type=CommunicationAddress9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LctnCtgy', type=LocationCategory4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification32, min=0, max=1, mutex_group=None, array=False),
 	))
 

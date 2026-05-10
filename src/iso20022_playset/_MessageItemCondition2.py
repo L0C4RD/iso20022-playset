@@ -1,23 +1,10 @@
 from . import base_types
-from .MessageItemCondition2Code import MessageItemCondition2Code
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._MessageItemCondition2Code import MessageItemCondition2Code
 
 class MessageItemCondition2(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_Cond", "_ItmId"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_Cond", "_ItmId", "_Val"]
 	@property
 	def Cond(self):
 		return self._Cond
@@ -44,9 +31,22 @@ class MessageItemCondition2(base_types._BaseFieldType):
 		del self._ItmId
 		self._ItmId = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cond', type=MessageItemCondition2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

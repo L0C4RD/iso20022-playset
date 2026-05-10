@@ -1,37 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
-from .GenericDocumentIdentification4 import GenericDocumentIdentification4
+from ._Max35Text import Max35Text
+from ._GenericDocumentIdentification4 import GenericDocumentIdentification4
+from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
 
 class References44Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSttlmTxId", "_OthrTxId", "_SctiesFincgTxId", "_IntraPosMvmntId"]
-	@property
-	def SctiesSttlmTxId(self):
-		return self._SctiesSttlmTxId
-
-	@SctiesSttlmTxId.setter
-	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
-
-	@SctiesSttlmTxId.deleter
-	def SctiesSttlmTxId(self):
-		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
-
-	@property
-	def OthrTxId(self):
-		return self._OthrTxId
-
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
-
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
-
+	__slots__ = ["_SctiesFincgTxId", "_IntraPosMvmntId", "_SctiesSttlmTxId", "_OthrTxId"]
 	@property
 	def SctiesFincgTxId(self):
 		return self._SctiesFincgTxId
@@ -58,10 +32,36 @@ class References44Choice(base_types._BaseFieldType):
 		del self._IntraPosMvmntId
 		self._IntraPosMvmntId = None
 
+	@property
+	def SctiesSttlmTxId(self):
+		return self._SctiesSttlmTxId
+
+	@SctiesSttlmTxId.setter
+	def SctiesSttlmTxId(self, value):
+		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+
+	@SctiesSttlmTxId.deleter
+	def SctiesSttlmTxId(self):
+		del self._SctiesSttlmTxId
+		self._SctiesSttlmTxId = None
+
+	@property
+	def OthrTxId(self):
+		return self._OthrTxId
+
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
+
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification18, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=GenericDocumentIdentification4, min=0, max=1, mutex_group=1, array=False),
 	))
 

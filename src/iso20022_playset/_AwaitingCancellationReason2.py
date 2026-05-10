@@ -1,6 +1,6 @@
 from . import base_types
-from .AwaitingCancellationReason2Choice import AwaitingCancellationReason2Choice
-from .Max210Text import Max210Text
+from ._AwaitingCancellationReason2Choice import AwaitingCancellationReason2Choice
+from ._Max210Text import Max210Text
 
 class AwaitingCancellationReason2(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .MailType1Code import MailType1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._MailType1Code import MailType1Code
 
 class MailType1Choice(base_types._BaseFieldType):
 

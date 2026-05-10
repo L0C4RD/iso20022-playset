@@ -1,5 +1,5 @@
 from . import base_types
-from .ReturnStandingOrderV06 import ReturnStandingOrderV06
+from ._ReturnStandingOrderV06 import ReturnStandingOrderV06
 
 class CAMT_070_001_06():
 

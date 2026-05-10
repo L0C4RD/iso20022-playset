@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
 
 class AuthorityRequestType1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
+from ._ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
 
 class CompareExchangeRateBasis1(base_types._BaseFieldType):
 

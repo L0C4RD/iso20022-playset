@@ -1,38 +1,12 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .SearchCriteria1 import SearchCriteria1
-from .SearchOutputOrder1 import SearchOutputOrder1
-from .PositiveNumber import PositiveNumber
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._SearchOutputOrder1 import SearchOutputOrder1
+from ._SearchCriteria1 import SearchCriteria1
+from ._PositiveNumber import PositiveNumber
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_DscndgOrdr", "_BlckStart", "_BlckStop", "_SchOutptOrdr"]
-	@property
-	def SchCrit(self):
-		return self._SchCrit
-
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
-
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
-
-	@property
-	def DscndgOrdr(self):
-		return self._DscndgOrdr
-
-	@DscndgOrdr.setter
-	def DscndgOrdr(self, value):
-		self._DscndgOrdr = value if type(value) != base_types.auto else self.make_default("DscndgOrdr")
-
-	@DscndgOrdr.deleter
-	def DscndgOrdr(self):
-		del self._DscndgOrdr
-		self._DscndgOrdr = None
-
+	__slots__ = ["_BlckStart", "_BlckStop", "_DscndgOrdr", "_SchOutptOrdr", "_SchCrit"]
 	@property
 	def BlckStart(self):
 		return self._BlckStart
@@ -60,6 +34,19 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		self._BlckStop = None
 
 	@property
+	def DscndgOrdr(self):
+		return self._DscndgOrdr
+
+	@DscndgOrdr.setter
+	def DscndgOrdr(self, value):
+		self._DscndgOrdr = value if type(value) != base_types.auto else self.make_default("DscndgOrdr")
+
+	@DscndgOrdr.deleter
+	def DscndgOrdr(self):
+		del self._DscndgOrdr
+		self._DscndgOrdr = None
+
+	@property
 	def SchOutptOrdr(self):
 		return self._SchOutptOrdr
 
@@ -72,11 +59,24 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		del self._SchOutptOrdr
 		self._SchOutptOrdr = None
 
+	@property
+	def SchCrit(self):
+		return self._SchCrit
+
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchOutptOrdr', type=SearchOutputOrder1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
 	))
 

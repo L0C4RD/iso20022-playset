@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Unlimited9Text import Unlimited9Text
+from ._Unlimited9Text import Unlimited9Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 

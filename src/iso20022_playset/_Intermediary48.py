@@ -1,12 +1,38 @@
 from . import base_types
-from .Role8Choice import Role8Choice
-from .Account34 import Account34
-from .ContactIdentification2 import ContactIdentification2
-from .PartyIdentification132 import PartyIdentification132
+from ._Role8Choice import Role8Choice
+from ._Account34 import Account34
+from ._PartyIdentification132 import PartyIdentification132
+from ._ContactIdentification2 import ContactIdentification2
 
 class Intermediary48(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_Acct", "_Role", "_Id"]
+	__slots__ = ["_Id", "_Role", "_CtctPrsn", "_Acct"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def Role(self):
+		return self._Role
+
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
+
 	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn
@@ -33,36 +59,10 @@ class Intermediary48(base_types._BaseFieldType):
 		del self._Acct
 		self._Acct = None
 
-	@property
-	def Role(self):
-		return self._Role
-
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
-
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Role8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Role', type=Role8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
 	))
 

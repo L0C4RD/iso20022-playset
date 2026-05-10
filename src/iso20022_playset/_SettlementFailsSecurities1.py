@@ -1,6 +1,6 @@
 from . import base_types
-from .Max2NumericText import Max2NumericText
-from .SecurityIdentification19 import SecurityIdentification19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._Max2NumericText import Max2NumericText
 
 class SettlementFailsSecurities1(base_types._BaseFieldType):
 

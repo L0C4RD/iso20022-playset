@@ -1,22 +1,22 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .SystemEventType4Choice import SystemEventType4Choice
+from ._SystemEventType4Choice import SystemEventType4Choice
+from ._ISODateTime import ISODateTime
 
 class SystemEvent3(base_types._BaseFieldType):
 
-	__slots__ = ["_StartTm", "_SchdldTm", "_Tp", "_EndTm", "_FctvTm"]
+	__slots__ = ["_EndTm", "_SchdldTm", "_Tp", "_FctvTm", "_StartTm"]
 	@property
-	def StartTm(self):
-		return self._StartTm
+	def EndTm(self):
+		return self._EndTm
 
-	@StartTm.setter
-	def StartTm(self, value):
-		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+	@EndTm.setter
+	def EndTm(self, value):
+		self._EndTm = value if type(value) != base_types.auto else self.make_default("EndTm")
 
-	@StartTm.deleter
-	def StartTm(self):
-		del self._StartTm
-		self._StartTm = None
+	@EndTm.deleter
+	def EndTm(self):
+		del self._EndTm
+		self._EndTm = None
 
 	@property
 	def SchdldTm(self):
@@ -45,19 +45,6 @@ class SystemEvent3(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def EndTm(self):
-		return self._EndTm
-
-	@EndTm.setter
-	def EndTm(self, value):
-		self._EndTm = value if type(value) != base_types.auto else self.make_default("EndTm")
-
-	@EndTm.deleter
-	def EndTm(self):
-		del self._EndTm
-		self._EndTm = None
-
-	@property
 	def FctvTm(self):
 		return self._FctvTm
 
@@ -70,11 +57,24 @@ class SystemEvent3(base_types._BaseFieldType):
 		del self._FctvTm
 		self._FctvTm = None
 
+	@property
+	def StartTm(self):
+		return self._StartTm
+
+	@StartTm.setter
+	def StartTm(self, value):
+		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+
+	@StartTm.deleter
+	def StartTm(self):
+		del self._StartTm
+		self._StartTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdldTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=SystemEventType4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

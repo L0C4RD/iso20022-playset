@@ -1,5 +1,5 @@
 from . import base_types
-from .CCPMemberObligationsReportV01 import CCPMemberObligationsReportV01
+from ._CCPMemberObligationsReportV01 import CCPMemberObligationsReportV01
 
 class AUTH_056_001_01():
 

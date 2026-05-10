@@ -1,26 +1,13 @@
 from . import base_types
-from .Max10Text import Max10Text
-from .Max20000Text import Max20000Text
-from .SupervisingAuthorityIdentification1 import SupervisingAuthorityIdentification1
-from .CountryCode import CountryCode
-from .Period4Choice import Period4Choice
+from ._Max20000Text import Max20000Text
+from ._SupervisingAuthorityIdentification1 import SupervisingAuthorityIdentification1
+from ._CountryCode import CountryCode
+from ._Max10Text import Max10Text
+from ._Period4Choice import Period4Choice
 
 class StatusDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Cmnt", "_CmptntAuthrty", "_StsRsn", "_ActvtyPrd", "_Sts"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_Cmnt", "_Ctry", "_Sts", "_StsRsn", "_CmptntAuthrty", "_ActvtyPrd"]
 	@property
 	def Cmnt(self):
 		return self._Cmnt
@@ -35,17 +22,30 @@ class StatusDetail1(base_types._BaseFieldType):
 		self._Cmnt = None
 
 	@property
-	def CmptntAuthrty(self):
-		return self._CmptntAuthrty
+	def Ctry(self):
+		return self._Ctry
 
-	@CmptntAuthrty.setter
-	def CmptntAuthrty(self, value):
-		self._CmptntAuthrty = value if type(value) != base_types.auto else self.make_default("CmptntAuthrty")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@CmptntAuthrty.deleter
-	def CmptntAuthrty(self):
-		del self._CmptntAuthrty
-		self._CmptntAuthrty = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def StsRsn(self):
@@ -61,6 +61,19 @@ class StatusDetail1(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	@property
+	def CmptntAuthrty(self):
+		return self._CmptntAuthrty
+
+	@CmptntAuthrty.setter
+	def CmptntAuthrty(self, value):
+		self._CmptntAuthrty = value if type(value) != base_types.auto else self.make_default("CmptntAuthrty")
+
+	@CmptntAuthrty.deleter
+	def CmptntAuthrty(self):
+		del self._CmptntAuthrty
+		self._CmptntAuthrty = None
+
+	@property
 	def ActvtyPrd(self):
 		return self._ActvtyPrd
 
@@ -73,25 +86,12 @@ class StatusDetail1(base_types._BaseFieldType):
 		del self._ActvtyPrd
 		self._ActvtyPrd = None
 
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmptntAuthrty', type=SupervisingAuthorityIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmptntAuthrty', type=SupervisingAuthorityIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

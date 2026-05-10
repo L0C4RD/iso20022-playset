@@ -1,13 +1,26 @@
 from . import base_types
-from .EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
-from .ReconciliationList1 import ReconciliationList1
-from .DecimalNumber import DecimalNumber
-from .BusinessLetter1 import BusinessLetter1
-from .Max15NumericText import Max15NumericText
+from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._Max15NumericText import Max15NumericText
+from ._BusinessLetter1 import BusinessLetter1
+from ._ReconciliationList1 import ReconciliationList1
+from ._DecimalNumber import DecimalNumber
 
 class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlSum", "_Hdr", "_RcncltnCnt", "_AttchdMsg", "_RcncltnList", "_ItmCnt"]
+	__slots__ = ["_AttchdMsg", "_CtrlSum", "_ItmCnt", "_RcncltnCnt", "_Hdr", "_RcncltnList"]
+	@property
+	def AttchdMsg(self):
+		return self._AttchdMsg
+
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
+
 	@property
 	def CtrlSum(self):
 		return self._CtrlSum
@@ -22,17 +35,17 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ItmCnt(self):
+		return self._ItmCnt
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
 
 	@property
 	def RcncltnCnt(self):
@@ -48,17 +61,17 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 		self._RcncltnCnt = None
 
 	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
+	def Hdr(self):
+		return self._Hdr
 
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
 
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def RcncltnList(self):
@@ -73,25 +86,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 		del self._RcncltnList
 		self._RcncltnList = None
 
-	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RcncltnList', type=ReconciliationList1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnList', type=ReconciliationList1, min=1, max=None, mutex_group=None, array=True),
 	))
 

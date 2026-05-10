@@ -1,24 +1,11 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .AmountAndDirection102 import AmountAndDirection102
-from .GenericIdentification165 import GenericIdentification165
+from ._AmountAndDirection102 import AmountAndDirection102
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._GenericIdentification165 import GenericIdentification165
 
 class PortfolioStressTestResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_StrssLoss", "_PrtflId", "_RawStrssLoss", "_Cover2Flg", "_Cover1Flg"]
-	@property
-	def StrssLoss(self):
-		return self._StrssLoss
-
-	@StrssLoss.setter
-	def StrssLoss(self, value):
-		self._StrssLoss = value if type(value) != base_types.auto else self.make_default("StrssLoss")
-
-	@StrssLoss.deleter
-	def StrssLoss(self):
-		del self._StrssLoss
-		self._StrssLoss = None
-
+	__slots__ = ["_PrtflId", "_RawStrssLoss", "_Cover1Flg", "_Cover2Flg", "_StrssLoss"]
 	@property
 	def PrtflId(self):
 		return self._PrtflId
@@ -46,6 +33,19 @@ class PortfolioStressTestResult1(base_types._BaseFieldType):
 		self._RawStrssLoss = None
 
 	@property
+	def Cover1Flg(self):
+		return self._Cover1Flg
+
+	@Cover1Flg.setter
+	def Cover1Flg(self, value):
+		self._Cover1Flg = value if type(value) != base_types.auto else self.make_default("Cover1Flg")
+
+	@Cover1Flg.deleter
+	def Cover1Flg(self):
+		del self._Cover1Flg
+		self._Cover1Flg = None
+
+	@property
 	def Cover2Flg(self):
 		return self._Cover2Flg
 
@@ -59,23 +59,23 @@ class PortfolioStressTestResult1(base_types._BaseFieldType):
 		self._Cover2Flg = None
 
 	@property
-	def Cover1Flg(self):
-		return self._Cover1Flg
+	def StrssLoss(self):
+		return self._StrssLoss
 
-	@Cover1Flg.setter
-	def Cover1Flg(self, value):
-		self._Cover1Flg = value if type(value) != base_types.auto else self.make_default("Cover1Flg")
+	@StrssLoss.setter
+	def StrssLoss(self, value):
+		self._StrssLoss = value if type(value) != base_types.auto else self.make_default("StrssLoss")
 
-	@Cover1Flg.deleter
-	def Cover1Flg(self):
-		del self._Cover1Flg
-		self._Cover1Flg = None
+	@StrssLoss.deleter
+	def StrssLoss(self):
+		del self._StrssLoss
+		self._StrssLoss = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StrssLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtflId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RawStrssLoss', type=AmountAndDirection102, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cover2Flg', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cover1Flg', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cover2Flg', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrssLoss', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 	))
 

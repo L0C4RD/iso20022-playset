@@ -1,6 +1,6 @@
 from . import base_types
-from .Max10MbText import Max10MbText
-from .Max20MbBinary import Max20MbBinary
+from ._Max10MbText import Max10MbText
+from ._Max20MbBinary import Max20MbBinary
 
 class DataRecord1Choice(base_types._BaseFieldType):
 

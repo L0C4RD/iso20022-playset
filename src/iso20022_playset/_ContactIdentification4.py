@@ -1,26 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .Max350Text import Max350Text
-from .PhoneNumber import PhoneNumber
-from .NamePrefix1Code import NamePrefix1Code
+from ._NamePrefix1Code import NamePrefix1Code
+from ._PhoneNumber import PhoneNumber
+from ._Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
 
 class ContactIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_GvnNm", "_Nm", "_Role", "_NmPrfx", "_PhneNb", "_FaxNb", "_EmailAdr"]
-	@property
-	def GvnNm(self):
-		return self._GvnNm
-
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
-
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
+	__slots__ = ["_Nm", "_Role", "_GvnNm", "_PhneNb", "_FaxNb", "_NmPrfx", "_EmailAdr"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -48,17 +35,17 @@ class ContactIdentification4(base_types._BaseFieldType):
 		self._Role = None
 
 	@property
-	def NmPrfx(self):
-		return self._NmPrfx
+	def GvnNm(self):
+		return self._GvnNm
 
-	@NmPrfx.setter
-	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
 
-	@NmPrfx.deleter
-	def NmPrfx(self):
-		del self._NmPrfx
-		self._NmPrfx = None
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
 
 	@property
 	def PhneNb(self):
@@ -87,6 +74,19 @@ class ContactIdentification4(base_types._BaseFieldType):
 		self._FaxNb = None
 
 	@property
+	def NmPrfx(self):
+		return self._NmPrfx
+
+	@NmPrfx.setter
+	def NmPrfx(self, value):
+		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+
+	@NmPrfx.deleter
+	def NmPrfx(self):
+		del self._NmPrfx
+		self._NmPrfx = None
+
+	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -100,12 +100,12 @@ class ContactIdentification4(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GvnNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

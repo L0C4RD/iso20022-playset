@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
-from .CollateralMarginNew10 import CollateralMarginNew10
+from ._CollateralMarginNew10 import CollateralMarginNew10
+from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class TradeData38Choice(base_types._BaseFieldType):
 

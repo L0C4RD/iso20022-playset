@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .SecuritiesCertificate4 import SecuritiesCertificate4
+from ._Max35Text import Max35Text
+from ._SecuritiesCertificate4 import SecuritiesCertificate4
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class RegistrationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnId", "_RegarAcct", "_CertNb", "_CertfctnDtTm"]
+	__slots__ = ["_CertfctnId", "_CertfctnDtTm", "_CertNb", "_RegarAcct"]
 	@property
 	def CertfctnId(self):
 		return self._CertfctnId
@@ -20,17 +20,17 @@ class RegistrationParameters6(base_types._BaseFieldType):
 		self._CertfctnId = None
 
 	@property
-	def RegarAcct(self):
-		return self._RegarAcct
+	def CertfctnDtTm(self):
+		return self._CertfctnDtTm
 
-	@RegarAcct.setter
-	def RegarAcct(self, value):
-		self._RegarAcct = value if type(value) != base_types.auto else self.make_default("RegarAcct")
+	@CertfctnDtTm.setter
+	def CertfctnDtTm(self, value):
+		self._CertfctnDtTm = value if type(value) != base_types.auto else self.make_default("CertfctnDtTm")
 
-	@RegarAcct.deleter
-	def RegarAcct(self):
-		del self._RegarAcct
-		self._RegarAcct = None
+	@CertfctnDtTm.deleter
+	def CertfctnDtTm(self):
+		del self._CertfctnDtTm
+		self._CertfctnDtTm = None
 
 	@property
 	def CertNb(self):
@@ -46,22 +46,22 @@ class RegistrationParameters6(base_types._BaseFieldType):
 		self._CertNb = None
 
 	@property
-	def CertfctnDtTm(self):
-		return self._CertfctnDtTm
+	def RegarAcct(self):
+		return self._RegarAcct
 
-	@CertfctnDtTm.setter
-	def CertfctnDtTm(self, value):
-		self._CertfctnDtTm = value if type(value) != base_types.auto else self.make_default("CertfctnDtTm")
+	@RegarAcct.setter
+	def RegarAcct(self, value):
+		self._RegarAcct = value if type(value) != base_types.auto else self.make_default("RegarAcct")
 
-	@CertfctnDtTm.deleter
-	def CertfctnDtTm(self):
-		del self._CertfctnDtTm
-		self._CertfctnDtTm = None
+	@RegarAcct.deleter
+	def RegarAcct(self):
+		del self._RegarAcct
+		self._RegarAcct = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

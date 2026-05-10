@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .YesNoIndicator import YesNoIndicator
-from .MovementResponseType1Code import MovementResponseType1Code
+from ._Max35Text import Max35Text
+from ._MovementResponseType1Code import MovementResponseType1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class MovementReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_QryRef", "_QryTp", "_RptId", "_ActvtyInd"]
+	__slots__ = ["_ActvtyInd", "_QryTp", "_RptId", "_QryRef"]
 	@property
-	def QryRef(self):
-		return self._QryRef
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def QryTp(self):
@@ -46,22 +46,22 @@ class MovementReport1(base_types._BaseFieldType):
 		self._RptId = None
 
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def QryRef(self):
+		return self._QryRef
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

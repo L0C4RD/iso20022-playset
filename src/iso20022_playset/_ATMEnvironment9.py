@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AutomatedTellerMachine7 import AutomatedTellerMachine7
-from .Acquirer7 import Acquirer7
+from ._Max35Text import Max35Text
+from ._AutomatedTellerMachine7 import AutomatedTellerMachine7
+from ._Acquirer7 import Acquirer7
 
 class ATMEnvironment9(base_types._BaseFieldType):
 

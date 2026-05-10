@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
-from .FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
+from ._FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
+from ._FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 

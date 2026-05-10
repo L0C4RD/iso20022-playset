@@ -1,5 +1,5 @@
 from . import base_types
-from .ATMDiagnosticResponseV02 import ATMDiagnosticResponseV02
+from ._ATMDiagnosticResponseV02 import ATMDiagnosticResponseV02
 
 class CAAM_006_001_02():
 

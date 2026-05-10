@@ -1,5 +1,5 @@
 from . import base_types
-from .TradeConfirmationType2Code import TradeConfirmationType2Code
+from ._TradeConfirmationType2Code import TradeConfirmationType2Code
 
 class TradeNonConfirmation1(base_types._BaseFieldType):
 

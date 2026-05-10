@@ -1,27 +1,14 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AdditionalReference10 import AdditionalReference10
-from .MarketPracticeVersion1 import MarketPracticeVersion1
-from .MessageIdentification1 import MessageIdentification1
-from .TransferReference14 import TransferReference14
-from .AdditionalReference11 import AdditionalReference11
+from ._TransferReference14 import TransferReference14
+from ._MessageIdentification1 import MessageIdentification1
+from ._MarketPracticeVersion1 import MarketPracticeVersion1
+from ._AdditionalReference10 import AdditionalReference10
+from ._Max35Text import Max35Text
+from ._AdditionalReference11 import AdditionalReference11
 
 class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfRefs", "_RltdRef", "_PrvsRef", "_PoolRef", "_MktPrctcVrsn", "_MstrRef", "_MsgRef"]
-	@property
-	def TrfRefs(self):
-		return self._TrfRefs
-
-	@TrfRefs.setter
-	def TrfRefs(self, value):
-		self._TrfRefs = value if type(value) != base_types.auto else self.make_default("TrfRefs")
-
-	@TrfRefs.deleter
-	def TrfRefs(self):
-		del self._TrfRefs
-		self._TrfRefs = None
-
+	__slots__ = ["_RltdRef", "_TrfRefs", "_PrvsRef", "_MktPrctcVrsn", "_MsgRef", "_MstrRef", "_PoolRef"]
 	@property
 	def RltdRef(self):
 		return self._RltdRef
@@ -34,6 +21,19 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 	def RltdRef(self):
 		del self._RltdRef
 		self._RltdRef = None
+
+	@property
+	def TrfRefs(self):
+		return self._TrfRefs
+
+	@TrfRefs.setter
+	def TrfRefs(self, value):
+		self._TrfRefs = value if type(value) != base_types.auto else self.make_default("TrfRefs")
+
+	@TrfRefs.deleter
+	def TrfRefs(self):
+		del self._TrfRefs
+		self._TrfRefs = None
 
 	@property
 	def PrvsRef(self):
@@ -49,19 +49,6 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
-	@property
 	def MktPrctcVrsn(self):
 		return self._MktPrctcVrsn
 
@@ -73,6 +60,19 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
 		self._MktPrctcVrsn = None
+
+	@property
+	def MsgRef(self):
+		return self._MsgRef
+
+	@MsgRef.setter
+	def MsgRef(self, value):
+		self._MsgRef = value if type(value) != base_types.auto else self.make_default("MsgRef")
+
+	@MsgRef.deleter
+	def MsgRef(self):
+		del self._MsgRef
+		self._MsgRef = None
 
 	@property
 	def MstrRef(self):
@@ -88,25 +88,25 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 		self._MstrRef = None
 
 	@property
-	def MsgRef(self):
-		return self._MsgRef
+	def PoolRef(self):
+		return self._PoolRef
 
-	@MsgRef.setter
-	def MsgRef(self, value):
-		self._MsgRef = value if type(value) != base_types.auto else self.make_default("MsgRef")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
 
-	@MsgRef.deleter
-	def MsgRef(self):
-		del self._MsgRef
-		self._MsgRef = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfRefs', type=TransferReference14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfRefs', type=TransferReference14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
 	))
 

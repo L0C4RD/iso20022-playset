@@ -1,6 +1,6 @@
 from . import base_types
-from .Max5NumericText import Max5NumericText
-from .YesNoIndicator import YesNoIndicator
+from ._YesNoIndicator import YesNoIndicator
+from ._Max5NumericText import Max5NumericText
 
 class Pagination(base_types._BaseFieldType):
 

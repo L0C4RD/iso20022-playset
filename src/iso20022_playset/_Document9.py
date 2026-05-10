@@ -1,13 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
-from .PartyAndSignature2 import PartyAndSignature2
-from .Max2MBBinary import Max2MBBinary
-from .DocumentFormat1Choice import DocumentFormat1Choice
+from ._Max35Text import Max35Text
+from ._Max2MBBinary import Max2MBBinary
+from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
+from ._DocumentFormat1Choice import DocumentFormat1Choice
+from ._PartyAndSignature2 import PartyAndSignature2
 
 class Document9(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_Frmt", "_Nclsr", "_DgtlSgntr"]
+	__slots__ = ["_Nclsr", "_Id", "_DgtlSgntr", "_Frmt", "_Tp"]
+	@property
+	def Nclsr(self):
+		return self._Nclsr
+
+	@Nclsr.setter
+	def Nclsr(self, value):
+		self._Nclsr = value if type(value) != base_types.auto else self.make_default("Nclsr")
+
+	@Nclsr.deleter
+	def Nclsr(self):
+		del self._Nclsr
+		self._Nclsr = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -22,17 +35,17 @@ class Document9(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	@property
 	def Frmt(self):
@@ -48,36 +61,23 @@ class Document9(base_types._BaseFieldType):
 		self._Frmt = None
 
 	@property
-	def Nclsr(self):
-		return self._Nclsr
+	def Tp(self):
+		return self._Tp
 
-	@Nclsr.setter
-	def Nclsr(self, value):
-		self._Nclsr = value if type(value) != base_types.auto else self.make_default("Nclsr")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Nclsr.deleter
-	def Nclsr(self):
-		del self._Nclsr
-		self._Nclsr = None
-
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

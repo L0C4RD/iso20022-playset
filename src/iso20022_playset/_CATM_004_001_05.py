@@ -1,5 +1,5 @@
 from . import base_types
-from .TerminalManagementRejectionV05 import TerminalManagementRejectionV05
+from ._TerminalManagementRejectionV05 import TerminalManagementRejectionV05
 
 class CATM_004_001_05():
 

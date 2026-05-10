@@ -1,21 +1,21 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_FeesAndComssns", "_AcrdIntrstAmt", "_RptdCcyAndAmt", "_MktValAmt", "_CollAmt"]
+	__slots__ = ["_RptdCcyAndAmt", "_AcrdIntrstAmt", "_MktValAmt", "_FeesAndComssns", "_CollAmt"]
 	@property
-	def FeesAndComssns(self):
-		return self._FeesAndComssns
+	def RptdCcyAndAmt(self):
+		return self._RptdCcyAndAmt
 
-	@FeesAndComssns.setter
-	def FeesAndComssns(self, value):
-		self._FeesAndComssns = value if type(value) != base_types.auto else self.make_default("FeesAndComssns")
+	@RptdCcyAndAmt.setter
+	def RptdCcyAndAmt(self, value):
+		self._RptdCcyAndAmt = value if type(value) != base_types.auto else self.make_default("RptdCcyAndAmt")
 
-	@FeesAndComssns.deleter
-	def FeesAndComssns(self):
-		del self._FeesAndComssns
-		self._FeesAndComssns = None
+	@RptdCcyAndAmt.deleter
+	def RptdCcyAndAmt(self):
+		del self._RptdCcyAndAmt
+		self._RptdCcyAndAmt = None
 
 	@property
 	def AcrdIntrstAmt(self):
@@ -31,19 +31,6 @@ class CollateralAmount1(base_types._BaseFieldType):
 		self._AcrdIntrstAmt = None
 
 	@property
-	def RptdCcyAndAmt(self):
-		return self._RptdCcyAndAmt
-
-	@RptdCcyAndAmt.setter
-	def RptdCcyAndAmt(self, value):
-		self._RptdCcyAndAmt = value if type(value) != base_types.auto else self.make_default("RptdCcyAndAmt")
-
-	@RptdCcyAndAmt.deleter
-	def RptdCcyAndAmt(self):
-		del self._RptdCcyAndAmt
-		self._RptdCcyAndAmt = None
-
-	@property
 	def MktValAmt(self):
 		return self._MktValAmt
 
@@ -55,6 +42,19 @@ class CollateralAmount1(base_types._BaseFieldType):
 	def MktValAmt(self):
 		del self._MktValAmt
 		self._MktValAmt = None
+
+	@property
+	def FeesAndComssns(self):
+		return self._FeesAndComssns
+
+	@FeesAndComssns.setter
+	def FeesAndComssns(self, value):
+		self._FeesAndComssns = value if type(value) != base_types.auto else self.make_default("FeesAndComssns")
+
+	@FeesAndComssns.deleter
+	def FeesAndComssns(self):
+		del self._FeesAndComssns
+		self._FeesAndComssns = None
 
 	@property
 	def CollAmt(self):
@@ -70,10 +70,10 @@ class CollateralAmount1(base_types._BaseFieldType):
 		self._CollAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

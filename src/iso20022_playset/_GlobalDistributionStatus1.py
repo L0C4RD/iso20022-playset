@@ -1,6 +1,6 @@
 from . import base_types
-from .DistributionRejectionStatus1 import DistributionRejectionStatus1
-from .DistributionProcessingStatus1 import DistributionProcessingStatus1
+from ._DistributionProcessingStatus1 import DistributionProcessingStatus1
+from ._DistributionRejectionStatus1 import DistributionRejectionStatus1
 
 class GlobalDistributionStatus1(base_types._BaseFieldType):
 

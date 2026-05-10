@@ -1,40 +1,27 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .CollateralTransactionType1Choice import CollateralTransactionType1Choice
-from .YesNoIndicator import YesNoIndicator
-from .CollateralRole1Code import CollateralRole1Code
-from .RateOrType1Choice import RateOrType1Choice
-from .ExposureType23Choice import ExposureType23Choice
-from .GenericIdentification1 import GenericIdentification1
+from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._ExposureType23Choice import ExposureType23Choice
+from ._CollateralRole1Code import CollateralRole1Code
+from ._GenericIdentification1 import GenericIdentification1
+from ._RateOrType1Choice import RateOrType1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class CollateralParameters11(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPrc", "_ElgbltySetPrfl", "_CollInstrTp", "_XpsrTp", "_CollSd", "_ValSghtMrgnRate", "_TrfTitl"]
+	__slots__ = ["_TrfTitl", "_CollInstrTp", "_ValSghtMrgnRate", "_XpsrTp", "_CollSd", "_SttlmPrc", "_ElgbltySetPrfl"]
 	@property
-	def SttlmPrc(self):
-		return self._SttlmPrc
+	def TrfTitl(self):
+		return self._TrfTitl
 
-	@SttlmPrc.setter
-	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
+	@TrfTitl.setter
+	def TrfTitl(self, value):
+		self._TrfTitl = value if type(value) != base_types.auto else self.make_default("TrfTitl")
 
-	@SttlmPrc.deleter
-	def SttlmPrc(self):
-		del self._SttlmPrc
-		self._SttlmPrc = None
-
-	@property
-	def ElgbltySetPrfl(self):
-		return self._ElgbltySetPrfl
-
-	@ElgbltySetPrfl.setter
-	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
-
-	@ElgbltySetPrfl.deleter
-	def ElgbltySetPrfl(self):
-		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+	@TrfTitl.deleter
+	def TrfTitl(self):
+		del self._TrfTitl
+		self._TrfTitl = None
 
 	@property
 	def CollInstrTp(self):
@@ -48,6 +35,19 @@ class CollateralParameters11(base_types._BaseFieldType):
 	def CollInstrTp(self):
 		del self._CollInstrTp
 		self._CollInstrTp = None
+
+	@property
+	def ValSghtMrgnRate(self):
+		return self._ValSghtMrgnRate
+
+	@ValSghtMrgnRate.setter
+	def ValSghtMrgnRate(self, value):
+		self._ValSghtMrgnRate = value if type(value) != base_types.auto else self.make_default("ValSghtMrgnRate")
+
+	@ValSghtMrgnRate.deleter
+	def ValSghtMrgnRate(self):
+		del self._ValSghtMrgnRate
+		self._ValSghtMrgnRate = None
 
 	@property
 	def XpsrTp(self):
@@ -76,38 +76,38 @@ class CollateralParameters11(base_types._BaseFieldType):
 		self._CollSd = None
 
 	@property
-	def ValSghtMrgnRate(self):
-		return self._ValSghtMrgnRate
+	def SttlmPrc(self):
+		return self._SttlmPrc
 
-	@ValSghtMrgnRate.setter
-	def ValSghtMrgnRate(self, value):
-		self._ValSghtMrgnRate = value if type(value) != base_types.auto else self.make_default("ValSghtMrgnRate")
+	@SttlmPrc.setter
+	def SttlmPrc(self, value):
+		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
 
-	@ValSghtMrgnRate.deleter
-	def ValSghtMrgnRate(self):
-		del self._ValSghtMrgnRate
-		self._ValSghtMrgnRate = None
+	@SttlmPrc.deleter
+	def SttlmPrc(self):
+		del self._SttlmPrc
+		self._SttlmPrc = None
 
 	@property
-	def TrfTitl(self):
-		return self._TrfTitl
+	def ElgbltySetPrfl(self):
+		return self._ElgbltySetPrfl
 
-	@TrfTitl.setter
-	def TrfTitl(self, value):
-		self._TrfTitl = value if type(value) != base_types.auto else self.make_default("TrfTitl")
+	@ElgbltySetPrfl.setter
+	def ElgbltySetPrfl(self, value):
+		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
 
-	@TrfTitl.deleter
-	def TrfTitl(self):
-		del self._TrfTitl
-		self._TrfTitl = None
+	@ElgbltySetPrfl.deleter
+	def ElgbltySetPrfl(self):
+		del self._ElgbltySetPrfl
+		self._ElgbltySetPrfl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfTitl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollInstrTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValSghtMrgnRate', type=RateOrType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValSghtMrgnRate', type=RateOrType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfTitl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

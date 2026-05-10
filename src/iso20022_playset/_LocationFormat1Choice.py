@@ -1,6 +1,6 @@
 from . import base_types
-from .PostalAddress1 import PostalAddress1
-from .PlaceType1Code import PlaceType1Code
+from ._PostalAddress1 import PostalAddress1
+from ._PlaceType1Code import PlaceType1Code
 
 class LocationFormat1Choice(base_types._BaseFieldType):
 

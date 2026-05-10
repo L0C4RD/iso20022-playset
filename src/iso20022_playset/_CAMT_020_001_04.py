@@ -1,5 +1,5 @@
 from . import base_types
-from .GetGeneralBusinessInformationV04 import GetGeneralBusinessInformationV04
+from ._GetGeneralBusinessInformationV04 import GetGeneralBusinessInformationV04
 
 class CAMT_020_001_04():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalDocumentAmountType1Code import ExternalDocumentAmountType1Code
+from ._Max35Text import Max35Text
+from ._ExternalDocumentAmountType1Code import ExternalDocumentAmountType1Code
 
 class DocumentAmountType1Choice(base_types._BaseFieldType):
 

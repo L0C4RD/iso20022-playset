@@ -1,9 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class TransportBySea4(base_types._BaseFieldType):
 
-	__slots__ = ["_PortOfLoadng", "_VsslNm", "_PortOfDschrge", "_SeaCrrierNm"]
+	__slots__ = ["_PortOfLoadng", "_SeaCrrierNm", "_PortOfDschrge", "_VsslNm"]
 	@property
 	def PortOfLoadng(self):
 		return self._PortOfLoadng
@@ -18,17 +18,17 @@ class TransportBySea4(base_types._BaseFieldType):
 		self._PortOfLoadng = None
 
 	@property
-	def VsslNm(self):
-		return self._VsslNm
+	def SeaCrrierNm(self):
+		return self._SeaCrrierNm
 
-	@VsslNm.setter
-	def VsslNm(self, value):
-		self._VsslNm = value if type(value) != base_types.auto else self.make_default("VsslNm")
+	@SeaCrrierNm.setter
+	def SeaCrrierNm(self, value):
+		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
 
-	@VsslNm.deleter
-	def VsslNm(self):
-		del self._VsslNm
-		self._VsslNm = None
+	@SeaCrrierNm.deleter
+	def SeaCrrierNm(self):
+		del self._SeaCrrierNm
+		self._SeaCrrierNm = None
 
 	@property
 	def PortOfDschrge(self):
@@ -44,22 +44,22 @@ class TransportBySea4(base_types._BaseFieldType):
 		self._PortOfDschrge = None
 
 	@property
-	def SeaCrrierNm(self):
-		return self._SeaCrrierNm
+	def VsslNm(self):
+		return self._VsslNm
 
-	@SeaCrrierNm.setter
-	def SeaCrrierNm(self, value):
-		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
+	@VsslNm.setter
+	def VsslNm(self, value):
+		self._VsslNm = value if type(value) != base_types.auto else self.make_default("VsslNm")
 
-	@SeaCrrierNm.deleter
-	def SeaCrrierNm(self):
-		del self._SeaCrrierNm
-		self._SeaCrrierNm = None
+	@VsslNm.deleter
+	def VsslNm(self):
+		del self._VsslNm
+		self._VsslNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VsslNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeaCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VsslNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

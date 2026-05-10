@@ -1,5 +1,5 @@
 from . import base_types
-from .AssetClassCommodity6Choice import AssetClassCommodity6Choice
+from ._AssetClassCommodity6Choice import AssetClassCommodity6Choice
 
 class CompareCommodityAssetClass4(base_types._BaseFieldType):
 

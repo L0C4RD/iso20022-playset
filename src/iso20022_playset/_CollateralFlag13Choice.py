@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .CollaterisedData12 import CollaterisedData12
+from ._NoReasonCode import NoReasonCode
+from ._CollaterisedData12 import CollaterisedData12
 
 class CollateralFlag13Choice(base_types._BaseFieldType):
 

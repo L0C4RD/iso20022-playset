@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .Action2Code import Action2Code
+from ._Max140Text import Max140Text
+from ._Action2Code import Action2Code
 
 class PendingActivity2(base_types._BaseFieldType):
 

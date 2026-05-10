@@ -1,24 +1,11 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SecurityAttributes10 import SecurityAttributes10
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._SecurityAttributes10 import SecurityAttributes10
 
 class SecurityCreationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Scty", "_MsgHdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Scty", "_SplmtryData", "_MsgHdr"]
 	@property
 	def Scty(self):
 		return self._Scty
@@ -31,6 +18,19 @@ class SecurityCreationRequestV01(base_types._BaseFieldType):
 	def Scty(self):
 		del self._Scty
 		self._Scty = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -46,8 +46,8 @@ class SecurityCreationRequestV01(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Scty', type=SecurityAttributes10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

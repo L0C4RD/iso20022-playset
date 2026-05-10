@@ -1,40 +1,14 @@
 from . import base_types
-from .Number import Number
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ExchangePolicy2Code import ExchangePolicy2Code
-from .ProcessRetry3 import ProcessRetry3
-from .ProcessTiming6 import ProcessTiming6
+from ._Number import Number
+from ._ExchangePolicy2Code import ExchangePolicy2Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ProcessRetry3 import ProcessRetry3
+from ._ProcessTiming6 import ProcessTiming6
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ExchangeConfiguration10(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgDclnd", "_XchgFaild", "_ReTry", "_XchgPlcy", "_MaxAmt", "_MaxNb", "_TmCond"]
-	@property
-	def XchgDclnd(self):
-		return self._XchgDclnd
-
-	@XchgDclnd.setter
-	def XchgDclnd(self, value):
-		self._XchgDclnd = value if type(value) != base_types.auto else self.make_default("XchgDclnd")
-
-	@XchgDclnd.deleter
-	def XchgDclnd(self):
-		del self._XchgDclnd
-		self._XchgDclnd = None
-
-	@property
-	def XchgFaild(self):
-		return self._XchgFaild
-
-	@XchgFaild.setter
-	def XchgFaild(self, value):
-		self._XchgFaild = value if type(value) != base_types.auto else self.make_default("XchgFaild")
-
-	@XchgFaild.deleter
-	def XchgFaild(self):
-		del self._XchgFaild
-		self._XchgFaild = None
-
+	__slots__ = ["_ReTry", "_MaxNb", "_XchgPlcy", "_MaxAmt", "_TmCond", "_XchgDclnd", "_XchgFaild"]
 	@property
 	def ReTry(self):
 		return self._ReTry
@@ -47,6 +21,19 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 	def ReTry(self):
 		del self._ReTry
 		self._ReTry = None
+
+	@property
+	def MaxNb(self):
+		return self._MaxNb
+
+	@MaxNb.setter
+	def MaxNb(self, value):
+		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
+
+	@MaxNb.deleter
+	def MaxNb(self):
+		del self._MaxNb
+		self._MaxNb = None
 
 	@property
 	def XchgPlcy(self):
@@ -75,19 +62,6 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 		self._MaxAmt = None
 
 	@property
-	def MaxNb(self):
-		return self._MaxNb
-
-	@MaxNb.setter
-	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
-
-	@MaxNb.deleter
-	def MaxNb(self):
-		del self._MaxNb
-		self._MaxNb = None
-
-	@property
 	def TmCond(self):
 		return self._TmCond
 
@@ -100,13 +74,39 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 		del self._TmCond
 		self._TmCond = None
 
+	@property
+	def XchgDclnd(self):
+		return self._XchgDclnd
+
+	@XchgDclnd.setter
+	def XchgDclnd(self, value):
+		self._XchgDclnd = value if type(value) != base_types.auto else self.make_default("XchgDclnd")
+
+	@XchgDclnd.deleter
+	def XchgDclnd(self):
+		del self._XchgDclnd
+		self._XchgDclnd = None
+
+	@property
+	def XchgFaild(self):
+		return self._XchgFaild
+
+	@XchgFaild.setter
+	def XchgFaild(self, value):
+		self._XchgFaild = value if type(value) != base_types.auto else self.make_default("XchgFaild")
+
+	@XchgFaild.deleter
+	def XchgFaild(self):
+		del self._XchgFaild
+		self._XchgFaild = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgDclnd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgFaild', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgDclnd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgFaild', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .DateQuarter1Choice import DateQuarter1Choice
-from .AdditionalInformation15 import AdditionalInformation15
+from ._DateQuarter1Choice import DateQuarter1Choice
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class Tax36(base_types._BaseFieldType):
 

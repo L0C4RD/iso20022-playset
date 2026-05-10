@@ -1,6 +1,6 @@
 from . import base_types
-from .OriginalAndCurrentQuantities6 import OriginalAndCurrentQuantities6
-from .SignedQuantityFormat10 import SignedQuantityFormat10
+from ._OriginalAndCurrentQuantities6 import OriginalAndCurrentQuantities6
+from ._SignedQuantityFormat10 import SignedQuantityFormat10
 
 class Quantity50Choice(base_types._BaseFieldType):
 

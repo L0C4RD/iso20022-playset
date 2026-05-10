@@ -1,20 +1,72 @@
 from . import base_types
-from .PaymentTypeInformation26 import PaymentTypeInformation26
-from .CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from .ContentInformationType40 import ContentInformationType40
-from .CapturedSignature1 import CapturedSignature1
-from .CardPaymentServiceType15Code import CardPaymentServiceType15Code
-from .TrueFalseIndicator import TrueFalseIndicator
-from .PaymentInstrumentType2Code import PaymentInstrumentType2Code
-from .CardPaymentTransaction144 import CardPaymentTransaction144
-from .CustomerOrder1 import CustomerOrder1
-from .LanguageCode import LanguageCode
-from .PaymentTransaction165 import PaymentTransaction165
-from .CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._CardPaymentTransaction144 import CardPaymentTransaction144
+from ._PaymentInstrumentType2Code import PaymentInstrumentType2Code
+from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
+from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
+from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
+from ._ContentInformationType40 import ContentInformationType40
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CustomerOrder1 import CustomerOrder1
+from ._LanguageCode import LanguageCode
+from ._CapturedSignature1 import CapturedSignature1
+from ._PaymentTypeInformation26 import PaymentTypeInformation26
 
 class RetailerPaymentResult7(base_types._BaseFieldType):
 
-	__slots__ = ["_OnlnFlg", "_TxTp", "_CstmrOrdr", "_ReqdTx", "_ImgCaptrdSgntr", "_PrtctdCaptrdSgntr", "_CstmrLang", "_PmtTpInf", "_PmtInstrm", "_SvcAttr", "_MrchntOvrrdFlg", "_TxRspn", "_AddtlSvc"]
+	__slots__ = ["_CstmrLang", "_PmtTpInf", "_MrchntOvrrdFlg", "_SvcAttr", "_OnlnFlg", "_CstmrOrdr", "_TxRspn", "_TxTp", "_ImgCaptrdSgntr", "_PrtctdCaptrdSgntr", "_PmtInstrm", "_ReqdTx", "_AddtlSvc"]
+	@property
+	def CstmrLang(self):
+		return self._CstmrLang
+
+	@CstmrLang.setter
+	def CstmrLang(self, value):
+		self._CstmrLang = value if type(value) != base_types.auto else self.make_default("CstmrLang")
+
+	@CstmrLang.deleter
+	def CstmrLang(self):
+		del self._CstmrLang
+		self._CstmrLang = None
+
+	@property
+	def PmtTpInf(self):
+		return self._PmtTpInf
+
+	@PmtTpInf.setter
+	def PmtTpInf(self, value):
+		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
+
+	@PmtTpInf.deleter
+	def PmtTpInf(self):
+		del self._PmtTpInf
+		self._PmtTpInf = None
+
+	@property
+	def MrchntOvrrdFlg(self):
+		return self._MrchntOvrrdFlg
+
+	@MrchntOvrrdFlg.setter
+	def MrchntOvrrdFlg(self, value):
+		self._MrchntOvrrdFlg = value if type(value) != base_types.auto else self.make_default("MrchntOvrrdFlg")
+
+	@MrchntOvrrdFlg.deleter
+	def MrchntOvrrdFlg(self):
+		del self._MrchntOvrrdFlg
+		self._MrchntOvrrdFlg = None
+
+	@property
+	def SvcAttr(self):
+		return self._SvcAttr
+
+	@SvcAttr.setter
+	def SvcAttr(self, value):
+		self._SvcAttr = value if type(value) != base_types.auto else self.make_default("SvcAttr")
+
+	@SvcAttr.deleter
+	def SvcAttr(self):
+		del self._SvcAttr
+		self._SvcAttr = None
+
 	@property
 	def OnlnFlg(self):
 		return self._OnlnFlg
@@ -27,19 +79,6 @@ class RetailerPaymentResult7(base_types._BaseFieldType):
 	def OnlnFlg(self):
 		del self._OnlnFlg
 		self._OnlnFlg = None
-
-	@property
-	def TxTp(self):
-		return self._TxTp
-
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
-
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
 
 	@property
 	def CstmrOrdr(self):
@@ -55,17 +94,30 @@ class RetailerPaymentResult7(base_types._BaseFieldType):
 		self._CstmrOrdr = None
 
 	@property
-	def ReqdTx(self):
-		return self._ReqdTx
+	def TxRspn(self):
+		return self._TxRspn
 
-	@ReqdTx.setter
-	def ReqdTx(self, value):
-		self._ReqdTx = value if type(value) != base_types.auto else self.make_default("ReqdTx")
+	@TxRspn.setter
+	def TxRspn(self, value):
+		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
 
-	@ReqdTx.deleter
-	def ReqdTx(self):
-		del self._ReqdTx
-		self._ReqdTx = None
+	@TxRspn.deleter
+	def TxRspn(self):
+		del self._TxRspn
+		self._TxRspn = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
 
 	@property
 	def ImgCaptrdSgntr(self):
@@ -94,32 +146,6 @@ class RetailerPaymentResult7(base_types._BaseFieldType):
 		self._PrtctdCaptrdSgntr = None
 
 	@property
-	def CstmrLang(self):
-		return self._CstmrLang
-
-	@CstmrLang.setter
-	def CstmrLang(self, value):
-		self._CstmrLang = value if type(value) != base_types.auto else self.make_default("CstmrLang")
-
-	@CstmrLang.deleter
-	def CstmrLang(self):
-		del self._CstmrLang
-		self._CstmrLang = None
-
-	@property
-	def PmtTpInf(self):
-		return self._PmtTpInf
-
-	@PmtTpInf.setter
-	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
-
-	@PmtTpInf.deleter
-	def PmtTpInf(self):
-		del self._PmtTpInf
-		self._PmtTpInf = None
-
-	@property
 	def PmtInstrm(self):
 		return self._PmtInstrm
 
@@ -133,43 +159,17 @@ class RetailerPaymentResult7(base_types._BaseFieldType):
 		self._PmtInstrm = None
 
 	@property
-	def SvcAttr(self):
-		return self._SvcAttr
+	def ReqdTx(self):
+		return self._ReqdTx
 
-	@SvcAttr.setter
-	def SvcAttr(self, value):
-		self._SvcAttr = value if type(value) != base_types.auto else self.make_default("SvcAttr")
+	@ReqdTx.setter
+	def ReqdTx(self, value):
+		self._ReqdTx = value if type(value) != base_types.auto else self.make_default("ReqdTx")
 
-	@SvcAttr.deleter
-	def SvcAttr(self):
-		del self._SvcAttr
-		self._SvcAttr = None
-
-	@property
-	def MrchntOvrrdFlg(self):
-		return self._MrchntOvrrdFlg
-
-	@MrchntOvrrdFlg.setter
-	def MrchntOvrrdFlg(self, value):
-		self._MrchntOvrrdFlg = value if type(value) != base_types.auto else self.make_default("MrchntOvrrdFlg")
-
-	@MrchntOvrrdFlg.deleter
-	def MrchntOvrrdFlg(self):
-		del self._MrchntOvrrdFlg
-		self._MrchntOvrrdFlg = None
-
-	@property
-	def TxRspn(self):
-		return self._TxRspn
-
-	@TxRspn.setter
-	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
-
-	@TxRspn.deleter
-	def TxRspn(self):
-		del self._TxRspn
-		self._TxRspn = None
+	@ReqdTx.deleter
+	def ReqdTx(self):
+		del self._ReqdTx
+		self._ReqdTx = None
 
 	@property
 	def AddtlSvc(self):
@@ -185,18 +185,18 @@ class RetailerPaymentResult7(base_types._BaseFieldType):
 		self._AddtlSvc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OnlnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ImgCaptrdSgntr', type=CapturedSignature1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdCaptrdSgntr', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTpInf', type=PaymentTypeInformation26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvcAttr', type=CardPaymentServiceType15Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrchntOvrrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcAttr', type=CardPaymentServiceType15Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OnlnFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ImgCaptrdSgntr', type=CapturedSignature1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdCaptrdSgntr', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrumentType2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqdTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType9Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

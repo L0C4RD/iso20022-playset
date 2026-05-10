@@ -1,24 +1,24 @@
 from . import base_types
-from .PendingProcessingStatus17Choice import PendingProcessingStatus17Choice
-from .AcknowledgedAcceptedStatus32Choice import AcknowledgedAcceptedStatus32Choice
-from .RejectionStatus30Choice import RejectionStatus30Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._AcknowledgedAcceptedStatus32Choice import AcknowledgedAcceptedStatus32Choice
+from ._RejectionStatus30Choice import RejectionStatus30Choice
+from ._PendingProcessingStatus17Choice import PendingProcessingStatus17Choice
 
 class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_AckdAccptd", "_PdgPrcg", "_Prtry"]
+	__slots__ = ["_Prtry", "_AckdAccptd", "_Rjctd", "_PdgPrcg"]
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Prtry(self):
+		return self._Prtry
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	@property
 	def AckdAccptd(self):
@@ -34,6 +34,19 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
+	@property
 	def PdgPrcg(self):
 		return self._PdgPrcg
 
@@ -46,23 +59,10 @@ class PortfolioTransferStatus2Choice(base_types._BaseFieldType):
 		del self._PdgPrcg
 		self._PdgPrcg = None
 
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus32Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionStatus30Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus17Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

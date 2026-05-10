@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SecuritiesTransactionReport7 import SecuritiesTransactionReport7
-from .SecuritiesTransactionReport2 import SecuritiesTransactionReport2
+from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecuritiesTransactionReport2 import SecuritiesTransactionReport2
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 

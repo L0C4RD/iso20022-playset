@@ -1,8 +1,8 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .AmountPrice3 import AmountPrice3
-from .PercentagePrice3 import PercentagePrice3
-from .PriceValueType10Code import PriceValueType10Code
+from ._PriceValueType10Code import PriceValueType10Code
+from ._AmountPrice3 import AmountPrice3
+from ._PercentagePrice3 import PercentagePrice3
+from ._DecimalNumber import DecimalNumber
 
 class PriceFormat80Choice(base_types._BaseFieldType):
 

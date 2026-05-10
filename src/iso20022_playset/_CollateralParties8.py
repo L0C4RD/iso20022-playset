@@ -1,12 +1,12 @@
 from . import base_types
-from .PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
-from .PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
-from .PartyIdentification136 import PartyIdentification136
-from .PartyIdentificationAndAccount193 import PartyIdentificationAndAccount193
+from ._PartyIdentification136 import PartyIdentification136
+from ._PartyIdentificationAndAccount193 import PartyIdentificationAndAccount193
+from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
+from ._PartyIdentificationAndAccount203 import PartyIdentificationAndAccount203
 
 class CollateralParties8(base_types._BaseFieldType):
 
-	__slots__ = ["_TrptyAgt", "_PtyA", "_PtyB", "_ClntPtyA", "_ClntPtyB"]
+	__slots__ = ["_TrptyAgt", "_PtyA", "_ClntPtyB", "_PtyB", "_ClntPtyA"]
 	@property
 	def TrptyAgt(self):
 		return self._TrptyAgt
@@ -34,6 +34,19 @@ class CollateralParties8(base_types._BaseFieldType):
 		self._PtyA = None
 
 	@property
+	def ClntPtyB(self):
+		return self._ClntPtyB
+
+	@ClntPtyB.setter
+	def ClntPtyB(self, value):
+		self._ClntPtyB = value if type(value) != base_types.auto else self.make_default("ClntPtyB")
+
+	@ClntPtyB.deleter
+	def ClntPtyB(self):
+		del self._ClntPtyB
+		self._ClntPtyB = None
+
+	@property
 	def PtyB(self):
 		return self._PtyB
 
@@ -59,24 +72,11 @@ class CollateralParties8(base_types._BaseFieldType):
 		del self._ClntPtyA
 		self._ClntPtyA = None
 
-	@property
-	def ClntPtyB(self):
-		return self._ClntPtyB
-
-	@ClntPtyB.setter
-	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != base_types.auto else self.make_default("ClntPtyB")
-
-	@ClntPtyB.deleter
-	def ClntPtyB(self):
-		del self._ClntPtyB
-		self._ClntPtyB = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyA', type=PartyIdentificationAndAccount202, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentificationAndAccount193, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentificationAndAccount203, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount193, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentificationAndAccount193, min=0, max=1, mutex_group=None, array=False),
 	))
 

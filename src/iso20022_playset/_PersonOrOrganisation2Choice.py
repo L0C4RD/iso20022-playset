@@ -1,6 +1,6 @@
 from . import base_types
-from .PersonIdentification10 import PersonIdentification10
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._PersonIdentification10 import PersonIdentification10
 
 class PersonOrOrganisation2Choice(base_types._BaseFieldType):
 

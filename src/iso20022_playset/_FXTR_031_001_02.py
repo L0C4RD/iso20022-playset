@@ -1,5 +1,5 @@
 from . import base_types
-from .ForeignExchangeTradeCaptureReportV02 import ForeignExchangeTradeCaptureReportV02
+from ._ForeignExchangeTradeCaptureReportV02 import ForeignExchangeTradeCaptureReportV02
 
 class FXTR_031_001_02():
 

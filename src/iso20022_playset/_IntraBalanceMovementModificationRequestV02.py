@@ -1,15 +1,15 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SystemPartyIdentification8 import SystemPartyIdentification8
-from .IntraBalance5 import IntraBalance5
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .CashAccount40 import CashAccount40
-from .DocumentIdentification51 import DocumentIdentification51
-from .RequestDetails22 import RequestDetails22
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._SupplementaryData1 import SupplementaryData1
+from ._CashAccount40 import CashAccount40
+from ._RequestDetails22 import RequestDetails22
+from ._IntraBalance5 import IntraBalance5
+from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementModificationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygIntraBal", "_CshAcctSvcr", "_CshAcct", "_CshAcctOwnr", "_SplmtryData", "_ReqDtls", "_Id"]
+	__slots__ = ["_UndrlygIntraBal", "_CshAcct", "_ReqDtls", "_Id", "_SplmtryData", "_CshAcctOwnr", "_CshAcctSvcr"]
 	@property
 	def UndrlygIntraBal(self):
 		return self._UndrlygIntraBal
@@ -24,19 +24,6 @@ class IntraBalanceMovementModificationRequestV02(base_types._BaseFieldType):
 		self._UndrlygIntraBal = None
 
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
 	def CshAcct(self):
 		return self._CshAcct
 
@@ -48,32 +35,6 @@ class IntraBalanceMovementModificationRequestV02(base_types._BaseFieldType):
 	def CshAcct(self):
 		del self._CshAcct
 		self._CshAcct = None
-
-	@property
-	def CshAcctOwnr(self):
-		return self._CshAcctOwnr
-
-	@CshAcctOwnr.setter
-	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
-
-	@CshAcctOwnr.deleter
-	def CshAcctOwnr(self):
-		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def ReqDtls(self):
@@ -101,13 +62,52 @@ class IntraBalanceMovementModificationRequestV02(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def CshAcctOwnr(self):
+		return self._CshAcctOwnr
+
+	@CshAcctOwnr.setter
+	def CshAcctOwnr(self, value):
+		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
+
+	@CshAcctOwnr.deleter
+	def CshAcctOwnr(self):
+		del self._CshAcctOwnr
+		self._CshAcctOwnr = None
+
+	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UndrlygIntraBal', type=IntraBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqDtls', type=RequestDetails22, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

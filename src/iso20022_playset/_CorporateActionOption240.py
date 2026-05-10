@@ -1,24 +1,24 @@
 from . import base_types
-from .CorporateActionOption33Choice import CorporateActionOption33Choice
-from .CashOption109 import CashOption109
-from .SecuritiesOption80 import SecuritiesOption80
-from .OptionNumber1Choice import OptionNumber1Choice
+from ._CashOption109 import CashOption109
+from ._CorporateActionOption33Choice import CorporateActionOption33Choice
+from ._SecuritiesOption80 import SecuritiesOption80
+from ._OptionNumber1Choice import OptionNumber1Choice
 
 class CorporateActionOption240(base_types._BaseFieldType):
 
-	__slots__ = ["_CshMvmntDtls", "_OptnNb", "_SctiesMvmntDtls", "_OptnTp"]
+	__slots__ = ["_OptnTp", "_OptnNb", "_CshMvmntDtls", "_SctiesMvmntDtls"]
 	@property
-	def CshMvmntDtls(self):
-		return self._CshMvmntDtls
+	def OptnTp(self):
+		return self._OptnTp
 
-	@CshMvmntDtls.setter
-	def CshMvmntDtls(self, value):
-		self._CshMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshMvmntDtls")
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
 
-	@CshMvmntDtls.deleter
-	def CshMvmntDtls(self):
-		del self._CshMvmntDtls
-		self._CshMvmntDtls = None
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
 	def OptnNb(self):
@@ -34,6 +34,19 @@ class CorporateActionOption240(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	@property
+	def CshMvmntDtls(self):
+		return self._CshMvmntDtls
+
+	@CshMvmntDtls.setter
+	def CshMvmntDtls(self, value):
+		self._CshMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshMvmntDtls")
+
+	@CshMvmntDtls.deleter
+	def CshMvmntDtls(self):
+		del self._CshMvmntDtls
+		self._CshMvmntDtls = None
+
+	@property
 	def SctiesMvmntDtls(self):
 		return self._SctiesMvmntDtls
 
@@ -46,23 +59,10 @@ class CorporateActionOption240(base_types._BaseFieldType):
 		del self._SctiesMvmntDtls
 		self._SctiesMvmntDtls = None
 
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption109, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption80, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption109, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption80, min=0, max=None, mutex_group=None, array=True),
 	))
 

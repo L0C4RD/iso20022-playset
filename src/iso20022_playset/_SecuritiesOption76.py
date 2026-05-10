@@ -1,12 +1,12 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .DateFormat58Choice import DateFormat58Choice
-from .Quantity6Choice import Quantity6Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Quantity6Choice import Quantity6Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._CreditDebitCode import CreditDebitCode
+from ._DateFormat58Choice import DateFormat58Choice
 
 class SecuritiesOption76(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_CdtDbtInd", "_FinInstrmId", "_EntitldQty"]
+	__slots__ = ["_PmtDt", "_EntitldQty", "_FinInstrmId", "_CdtDbtInd"]
 	@property
 	def PmtDt(self):
 		return self._PmtDt
@@ -21,17 +21,17 @@ class SecuritiesOption76(base_types._BaseFieldType):
 		self._PmtDt = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def EntitldQty(self):
+		return self._EntitldQty
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+	@EntitldQty.setter
+	def EntitldQty(self, value):
+		self._EntitldQty = value if type(value) != base_types.auto else self.make_default("EntitldQty")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@EntitldQty.deleter
+	def EntitldQty(self):
+		del self._EntitldQty
+		self._EntitldQty = None
 
 	@property
 	def FinInstrmId(self):
@@ -47,22 +47,22 @@ class SecuritiesOption76(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def EntitldQty(self):
-		return self._EntitldQty
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@EntitldQty.setter
-	def EntitldQty(self, value):
-		self._EntitldQty = value if type(value) != base_types.auto else self.make_default("EntitldQty")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
 
-	@EntitldQty.deleter
-	def EntitldQty(self):
-		del self._EntitldQty
-		self._EntitldQty = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtDt', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EntitldQty', type=Quantity6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

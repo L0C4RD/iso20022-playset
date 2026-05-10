@@ -1,24 +1,11 @@
 from . import base_types
-from .Max105Text import Max105Text
-from .Max500Text import Max500Text
-from .GenericIdentification175 import GenericIdentification175
+from ._Max105Text import Max105Text
+from ._GenericIdentification175 import GenericIdentification175
+from ._Max500Text import Max500Text
 
 class NaturalPersonIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_Dmcl"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Id", "_Dmcl", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -45,9 +32,22 @@ class NaturalPersonIdentification2(base_types._BaseFieldType):
 		del self._Dmcl
 		self._Dmcl = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dmcl', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

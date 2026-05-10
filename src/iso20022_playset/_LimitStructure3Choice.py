@@ -1,6 +1,6 @@
 from . import base_types
-from .LimitIdentification9 import LimitIdentification9
-from .LimitIdentification8 import LimitIdentification8
+from ._LimitIdentification8 import LimitIdentification8
+from ._LimitIdentification9 import LimitIdentification9
 
 class LimitStructure3Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class NotificationUpdate2(base_types._BaseFieldType):
 

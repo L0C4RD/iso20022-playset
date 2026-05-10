@@ -1,5 +1,5 @@
 from . import base_types
-from .InvoiceTaxReportStatusAdviceV01 import InvoiceTaxReportStatusAdviceV01
+from ._InvoiceTaxReportStatusAdviceV01 import InvoiceTaxReportStatusAdviceV01
 
 class AUTH_038_001_01():
 

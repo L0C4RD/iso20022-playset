@@ -1,9 +1,22 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnRcvd", "_XcssCollRcvd", "_VartnMrgnRcvd"]
+	__slots__ = ["_VartnMrgnRcvd", "_InitlMrgnRcvd", "_XcssCollRcvd"]
+	@property
+	def VartnMrgnRcvd(self):
+		return self._VartnMrgnRcvd
+
+	@VartnMrgnRcvd.setter
+	def VartnMrgnRcvd(self, value):
+		self._VartnMrgnRcvd = value if type(value) != base_types.auto else self.make_default("VartnMrgnRcvd")
+
+	@VartnMrgnRcvd.deleter
+	def VartnMrgnRcvd(self):
+		del self._VartnMrgnRcvd
+		self._VartnMrgnRcvd = None
+
 	@property
 	def InitlMrgnRcvd(self):
 		return self._InitlMrgnRcvd
@@ -30,22 +43,9 @@ class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 		del self._XcssCollRcvd
 		self._XcssCollRcvd = None
 
-	@property
-	def VartnMrgnRcvd(self):
-		return self._VartnMrgnRcvd
-
-	@VartnMrgnRcvd.setter
-	def VartnMrgnRcvd(self, value):
-		self._VartnMrgnRcvd = value if type(value) != base_types.auto else self.make_default("VartnMrgnRcvd")
-
-	@VartnMrgnRcvd.deleter
-	def VartnMrgnRcvd(self):
-		del self._VartnMrgnRcvd
-		self._VartnMrgnRcvd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='VartnMrgnRcvd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnRcvd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcssCollRcvd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VartnMrgnRcvd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

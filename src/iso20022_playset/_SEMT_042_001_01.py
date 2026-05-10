@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesBalanceTransparencyReportStatusAdviceV01 import SecuritiesBalanceTransparencyReportStatusAdviceV01
+from ._SecuritiesBalanceTransparencyReportStatusAdviceV01 import SecuritiesBalanceTransparencyReportStatusAdviceV01
 
 class SEMT_042_001_01():
 

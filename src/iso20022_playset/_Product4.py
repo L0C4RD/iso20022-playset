@@ -1,5 +1,5 @@
 from . import base_types
-from .Max70Text import Max70Text
+from ._Max70Text import Max70Text
 
 class Product4(base_types._BaseFieldType):
 

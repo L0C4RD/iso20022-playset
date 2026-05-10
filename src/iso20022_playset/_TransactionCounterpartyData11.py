@@ -1,24 +1,11 @@
 from . import base_types
-from .SettlementParties34Choice import SettlementParties34Choice
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .PartyIdentification236Choice import PartyIdentification236Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._SettlementParties34Choice import SettlementParties34Choice
 
 class TransactionCounterpartyData11(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPties", "_ClrMmb", "_AgtLndr", "_TrptyAgt", "_Brkr", "_Bnfcry"]
-	@property
-	def SttlmPties(self):
-		return self._SttlmPties
-
-	@SttlmPties.setter
-	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != base_types.auto else self.make_default("SttlmPties")
-
-	@SttlmPties.deleter
-	def SttlmPties(self):
-		del self._SttlmPties
-		self._SttlmPties = None
-
+	__slots__ = ["_ClrMmb", "_Brkr", "_AgtLndr", "_TrptyAgt", "_SttlmPties", "_Bnfcry"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb
@@ -31,6 +18,19 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 	def ClrMmb(self):
 		del self._ClrMmb
 		self._ClrMmb = None
+
+	@property
+	def Brkr(self):
+		return self._Brkr
+
+	@Brkr.setter
+	def Brkr(self, value):
+		self._Brkr = value if type(value) != base_types.auto else self.make_default("Brkr")
+
+	@Brkr.deleter
+	def Brkr(self):
+		del self._Brkr
+		self._Brkr = None
 
 	@property
 	def AgtLndr(self):
@@ -59,17 +59,17 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 		self._TrptyAgt = None
 
 	@property
-	def Brkr(self):
-		return self._Brkr
+	def SttlmPties(self):
+		return self._SttlmPties
 
-	@Brkr.setter
-	def Brkr(self, value):
-		self._Brkr = value if type(value) != base_types.auto else self.make_default("Brkr")
+	@SttlmPties.setter
+	def SttlmPties(self, value):
+		self._SttlmPties = value if type(value) != base_types.auto else self.make_default("SttlmPties")
 
-	@Brkr.deleter
-	def Brkr(self):
-		del self._Brkr
-		self._Brkr = None
+	@SttlmPties.deleter
+	def SttlmPties(self):
+		del self._SttlmPties
+		self._SttlmPties = None
 
 	@property
 	def Bnfcry(self):
@@ -85,11 +85,11 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 		self._Bnfcry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmPties', type=SettlementParties34Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmb', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brkr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Brkr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPties', type=SettlementParties34Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

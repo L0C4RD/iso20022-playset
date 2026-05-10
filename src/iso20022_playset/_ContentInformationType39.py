@@ -1,26 +1,13 @@
 from . import base_types
-from .AuthenticatedData10 import AuthenticatedData10
-from .DigestedData6 import DigestedData6
-from .EnvelopedData11 import EnvelopedData11
-from .ContentType2Code import ContentType2Code
-from .SignedData9 import SignedData9
+from ._AuthenticatedData10 import AuthenticatedData10
+from ._SignedData9 import SignedData9
+from ._ContentType2Code import ContentType2Code
+from ._DigestedData6 import DigestedData6
+from ._EnvelopedData11 import EnvelopedData11
 
 class ContentInformationType39(base_types._BaseFieldType):
 
-	__slots__ = ["_SgndData", "_EnvlpdData", "_AuthntcdData", "_CnttTp", "_DgstdData"]
-	@property
-	def SgndData(self):
-		return self._SgndData
-
-	@SgndData.setter
-	def SgndData(self, value):
-		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
-
-	@SgndData.deleter
-	def SgndData(self):
-		del self._SgndData
-		self._SgndData = None
-
+	__slots__ = ["_EnvlpdData", "_DgstdData", "_AuthntcdData", "_SgndData", "_CnttTp"]
 	@property
 	def EnvlpdData(self):
 		return self._EnvlpdData
@@ -33,6 +20,19 @@ class ContentInformationType39(base_types._BaseFieldType):
 	def EnvlpdData(self):
 		del self._EnvlpdData
 		self._EnvlpdData = None
+
+	@property
+	def DgstdData(self):
+		return self._DgstdData
+
+	@DgstdData.setter
+	def DgstdData(self, value):
+		self._DgstdData = value if type(value) != base_types.auto else self.make_default("DgstdData")
+
+	@DgstdData.deleter
+	def DgstdData(self):
+		del self._DgstdData
+		self._DgstdData = None
 
 	@property
 	def AuthntcdData(self):
@@ -48,6 +48,19 @@ class ContentInformationType39(base_types._BaseFieldType):
 		self._AuthntcdData = None
 
 	@property
+	def SgndData(self):
+		return self._SgndData
+
+	@SgndData.setter
+	def SgndData(self, value):
+		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
+
+	@SgndData.deleter
+	def SgndData(self):
+		del self._SgndData
+		self._SgndData = None
+
+	@property
 	def CnttTp(self):
 		return self._CnttTp
 
@@ -60,24 +73,11 @@ class ContentInformationType39(base_types._BaseFieldType):
 		del self._CnttTp
 		self._CnttTp = None
 
-	@property
-	def DgstdData(self):
-		return self._DgstdData
-
-	@DgstdData.setter
-	def DgstdData(self, value):
-		self._DgstdData = value if type(value) != base_types.auto else self.make_default("DgstdData")
-
-	@DgstdData.deleter
-	def DgstdData(self):
-		del self._DgstdData
-		self._DgstdData = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EnvlpdData', type=EnvelopedData11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstdData', type=DigestedData6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndData', type=SignedData9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .Max2048Text import Max2048Text
+from ._Max2048Text import Max2048Text
 
 class SettlementFailureReason2(base_types._BaseFieldType):
 

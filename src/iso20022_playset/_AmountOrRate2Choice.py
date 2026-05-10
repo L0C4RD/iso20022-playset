@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PercentageRate import PercentageRate
 
 class AmountOrRate2Choice(base_types._BaseFieldType):
 

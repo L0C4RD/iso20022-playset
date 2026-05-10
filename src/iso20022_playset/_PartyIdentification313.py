@@ -1,16 +1,42 @@
 from . import base_types
-from .Max350Text import Max350Text
-from .CountryCode import CountryCode
-from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from .LEIIdentifier import LEIIdentifier
-from .AlternatePartyIdentification7 import AlternatePartyIdentification7
-from .RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
-from .PartyIdentification229Choice import PartyIdentification229Choice
-from .BeneficiaryCertificationType10Choice import BeneficiaryCertificationType10Choice
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Max350Text import Max350Text
+from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._PartyIdentification229Choice import PartyIdentification229Choice
+from ._CountryCode import CountryCode
+from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
+from ._BeneficiaryCertificationType10Choice import BeneficiaryCertificationType10Choice
 
 class PartyIdentification313(base_types._BaseFieldType):
 
-	__slots__ = ["_LEIId", "_OwndSctiesQty", "_WhldgTaxRate", "_CertfctnBrkdwn", "_DmclCtry", "_NonDmclCtry", "_OwnrId", "_CertfctnTp", "_AltrnId"]
+	__slots__ = ["_CertfctnTp", "_OwnrId", "_LEIId", "_OwndSctiesQty", "_CertfctnBrkdwn", "_AltrnId", "_DmclCtry", "_WhldgTaxRate", "_NonDmclCtry"]
+	@property
+	def CertfctnTp(self):
+		return self._CertfctnTp
+
+	@CertfctnTp.setter
+	def CertfctnTp(self, value):
+		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
+
+	@CertfctnTp.deleter
+	def CertfctnTp(self):
+		del self._CertfctnTp
+		self._CertfctnTp = None
+
+	@property
+	def OwnrId(self):
+		return self._OwnrId
+
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
+
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
+
 	@property
 	def LEIId(self):
 		return self._LEIId
@@ -38,19 +64,6 @@ class PartyIdentification313(base_types._BaseFieldType):
 		self._OwndSctiesQty = None
 
 	@property
-	def WhldgTaxRate(self):
-		return self._WhldgTaxRate
-
-	@WhldgTaxRate.setter
-	def WhldgTaxRate(self, value):
-		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
-
-	@WhldgTaxRate.deleter
-	def WhldgTaxRate(self):
-		del self._WhldgTaxRate
-		self._WhldgTaxRate = None
-
-	@property
 	def CertfctnBrkdwn(self):
 		return self._CertfctnBrkdwn
 
@@ -62,6 +75,19 @@ class PartyIdentification313(base_types._BaseFieldType):
 	def CertfctnBrkdwn(self):
 		del self._CertfctnBrkdwn
 		self._CertfctnBrkdwn = None
+
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
 	def DmclCtry(self):
@@ -77,6 +103,19 @@ class PartyIdentification313(base_types._BaseFieldType):
 		self._DmclCtry = None
 
 	@property
+	def WhldgTaxRate(self):
+		return self._WhldgTaxRate
+
+	@WhldgTaxRate.setter
+	def WhldgTaxRate(self, value):
+		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
+
+	@WhldgTaxRate.deleter
+	def WhldgTaxRate(self):
+		del self._WhldgTaxRate
+		self._WhldgTaxRate = None
+
+	@property
 	def NonDmclCtry(self):
 		return self._NonDmclCtry
 
@@ -89,54 +128,15 @@ class PartyIdentification313(base_types._BaseFieldType):
 		del self._NonDmclCtry
 		self._NonDmclCtry = None
 
-	@property
-	def OwnrId(self):
-		return self._OwnrId
-
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
-
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
-
-	@property
-	def CertfctnTp(self):
-		return self._CertfctnTp
-
-	@CertfctnTp.setter
-	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
-
-	@CertfctnTp.deleter
-	def CertfctnTp(self):
-		del self._CertfctnTp
-		self._CertfctnTp = None
-
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType10Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OwnrId', type=PartyIdentification229Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEIId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwndSctiesQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat57Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DmclCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OwnrId', type=PartyIdentification229Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnTp', type=BeneficiaryCertificationType10Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DmclCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat57Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonDmclCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ReportType2Code import ReportType2Code
+from ._ReportType2Code import ReportType2Code
 
 class ReportType2(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Quantity48Choice import Quantity48Choice
-from .ShortLong1Code import ShortLong1Code
+from ._Quantity48Choice import Quantity48Choice
+from ._ShortLong1Code import ShortLong1Code
 
 class SignedQuantityFormat11(base_types._BaseFieldType):
 

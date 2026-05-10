@@ -1,14 +1,14 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Linkages76 import Linkages76
-from .StatusAndReason46 import StatusAndReason46
-from .ConfirmationParties8 import ConfirmationParties8
-from .Clearing6 import Clearing6
-from .TransactiontIdentification4 import TransactiontIdentification4
+from ._Clearing6 import Clearing6
+from ._StatusAndReason46 import StatusAndReason46
+from ._ConfirmationParties8 import ConfirmationParties8
+from ._SupplementaryData1 import SupplementaryData1
+from ._Linkages76 import Linkages76
+from ._TransactiontIdentification4 import TransactiontIdentification4
 
 class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Refs", "_ConfPties", "_SplmtryData", "_Id", "_Sts", "_ClrDtls"]
+	__slots__ = ["_Refs", "_ConfPties", "_Id", "_Sts", "_SplmtryData", "_ClrDtls"]
 	@property
 	def Refs(self):
 		return self._Refs
@@ -34,19 +34,6 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 	def ConfPties(self):
 		del self._ConfPties
 		self._ConfPties = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def Id(self):
@@ -75,6 +62,19 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def ClrDtls(self):
 		return self._ClrDtls
 
@@ -90,9 +90,9 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Refs', type=Linkages76, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatusAndReason46, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrDtls', type=Clearing6, min=0, max=1, mutex_group=None, array=False),
 	))
 

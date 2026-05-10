@@ -1,5 +1,5 @@
 from . import base_types
-from .ExposureMetrics6 import ExposureMetrics6
+from ._ExposureMetrics6 import ExposureMetrics6
 
 class PositionSetMetrics10(base_types._BaseFieldType):
 

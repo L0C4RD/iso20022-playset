@@ -1,26 +1,26 @@
 from . import base_types
-from .MarginCalculation1 import MarginCalculation1
-from .MarginProductType1Choice import MarginProductType1Choice
-from .YesNoIndicator import YesNoIndicator
-from .SecuritiesAccount18 import SecuritiesAccount18
-from .PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
-from .MarginCalculation2 import MarginCalculation2
+from ._MarginCalculation2 import MarginCalculation2
+from ._YesNoIndicator import YesNoIndicator
+from ._MarginCalculation1 import MarginCalculation1
+from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
+from ._SecuritiesAccount18 import SecuritiesAccount18
+from ._MarginProductType1Choice import MarginProductType1Choice
 
 class MarginReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnClctnSummry", "_CollsdMrgnAcctInd", "_MrgnAcct", "_MrgnClctn", "_MrgnPdct", "_NonClrMmb"]
+	__slots__ = ["_MrgnAcct", "_CollsdMrgnAcctInd", "_MrgnPdct", "_MrgnClctn", "_NonClrMmb", "_MrgnClctnSummry"]
 	@property
-	def MrgnClctnSummry(self):
-		return self._MrgnClctnSummry
+	def MrgnAcct(self):
+		return self._MrgnAcct
 
-	@MrgnClctnSummry.setter
-	def MrgnClctnSummry(self, value):
-		self._MrgnClctnSummry = value if type(value) != base_types.auto else self.make_default("MrgnClctnSummry")
+	@MrgnAcct.setter
+	def MrgnAcct(self, value):
+		self._MrgnAcct = value if type(value) != base_types.auto else self.make_default("MrgnAcct")
 
-	@MrgnClctnSummry.deleter
-	def MrgnClctnSummry(self):
-		del self._MrgnClctnSummry
-		self._MrgnClctnSummry = None
+	@MrgnAcct.deleter
+	def MrgnAcct(self):
+		del self._MrgnAcct
+		self._MrgnAcct = None
 
 	@property
 	def CollsdMrgnAcctInd(self):
@@ -36,17 +36,17 @@ class MarginReport2(base_types._BaseFieldType):
 		self._CollsdMrgnAcctInd = None
 
 	@property
-	def MrgnAcct(self):
-		return self._MrgnAcct
+	def MrgnPdct(self):
+		return self._MrgnPdct
 
-	@MrgnAcct.setter
-	def MrgnAcct(self, value):
-		self._MrgnAcct = value if type(value) != base_types.auto else self.make_default("MrgnAcct")
+	@MrgnPdct.setter
+	def MrgnPdct(self, value):
+		self._MrgnPdct = value if type(value) != base_types.auto else self.make_default("MrgnPdct")
 
-	@MrgnAcct.deleter
-	def MrgnAcct(self):
-		del self._MrgnAcct
-		self._MrgnAcct = None
+	@MrgnPdct.deleter
+	def MrgnPdct(self):
+		del self._MrgnPdct
+		self._MrgnPdct = None
 
 	@property
 	def MrgnClctn(self):
@@ -62,19 +62,6 @@ class MarginReport2(base_types._BaseFieldType):
 		self._MrgnClctn = None
 
 	@property
-	def MrgnPdct(self):
-		return self._MrgnPdct
-
-	@MrgnPdct.setter
-	def MrgnPdct(self, value):
-		self._MrgnPdct = value if type(value) != base_types.auto else self.make_default("MrgnPdct")
-
-	@MrgnPdct.deleter
-	def MrgnPdct(self):
-		del self._MrgnPdct
-		self._MrgnPdct = None
-
-	@property
 	def NonClrMmb(self):
 		return self._NonClrMmb
 
@@ -87,12 +74,25 @@ class MarginReport2(base_types._BaseFieldType):
 		del self._NonClrMmb
 		self._NonClrMmb = None
 
+	@property
+	def MrgnClctnSummry(self):
+		return self._MrgnClctnSummry
+
+	@MrgnClctnSummry.setter
+	def MrgnClctnSummry(self, value):
+		self._MrgnClctnSummry = value if type(value) != base_types.auto else self.make_default("MrgnClctnSummry")
+
+	@MrgnClctnSummry.deleter
+	def MrgnClctnSummry(self):
+		del self._MrgnClctnSummry
+		self._MrgnClctnSummry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnClctnSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollsdMrgnAcctInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnClctn', type=MarginCalculation2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollsdMrgnAcctInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnPdct', type=MarginProductType1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnClctn', type=MarginCalculation2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount31, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnClctnSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

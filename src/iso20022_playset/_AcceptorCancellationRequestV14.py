@@ -1,11 +1,11 @@
 from . import base_types
-from .AcceptorCancellationRequest14 import AcceptorCancellationRequest14
-from .ContentInformationType37 import ContentInformationType37
-from .Header70 import Header70
+from ._Header70 import Header70
+from ._AcceptorCancellationRequest14 import AcceptorCancellationRequest14
+from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorCancellationRequestV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_CxlReq", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_CxlReq"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -20,19 +20,6 @@ class AcceptorCancellationRequestV14(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def CxlReq(self):
-		return self._CxlReq
-
-	@CxlReq.setter
-	def CxlReq(self, value):
-		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
-
-	@CxlReq.deleter
-	def CxlReq(self):
-		del self._CxlReq
-		self._CxlReq = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,9 +32,22 @@ class AcceptorCancellationRequestV14(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def CxlReq(self):
+		return self._CxlReq
+
+	@CxlReq.setter
+	def CxlReq(self, value):
+		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
+
+	@CxlReq.deleter
+	def CxlReq(self):
+		del self._CxlReq
+		self._CxlReq = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlReq', type=AcceptorCancellationRequest14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlReq', type=AcceptorCancellationRequest14, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,32 +1,19 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .OriginalTransactionReference35 import OriginalTransactionReference35
-from .ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from .UUIDv4Identifier import UUIDv4Identifier
-from .Charges7 import Charges7
-from .Max35Text import Max35Text
-from .OriginalGroupInformation29 import OriginalGroupInformation29
-from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from .StatusReasonInformation12 import StatusReasonInformation12
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .ISODateTime import ISODateTime
+from ._OriginalGroupInformation29 import OriginalGroupInformation29
+from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from ._UUIDv4Identifier import UUIDv4Identifier
+from ._StatusReasonInformation12 import StatusReasonInformation12
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._OriginalTransactionReference35 import OriginalTransactionReference35
+from ._Charges7 import Charges7
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ISODateTime import ISODateTime
 
 class PaymentTransaction130(base_types._BaseFieldType):
 
-	__slots__ = ["_InstgAgt", "_OrgnlEndToEndId", "_AccptncDtTm", "_StsId", "_SplmtryData", "_OrgnlInstrId", "_OrgnlTxRef", "_FctvIntrBkSttlmDt", "_ChrgsInf", "_OrgnlUETR", "_AcctSvcrRef", "_InstdAgt", "_OrgnlGrpInf", "_OrgnlTxId", "_ClrSysRef", "_StsRsnInf", "_TxSts"]
-	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
+	__slots__ = ["_OrgnlEndToEndId", "_AccptncDtTm", "_TxSts", "_InstgAgt", "_OrgnlInstrId", "_AcctSvcrRef", "_OrgnlGrpInf", "_ChrgsInf", "_StsId", "_ClrSysRef", "_FctvIntrBkSttlmDt", "_InstdAgt", "_OrgnlUETR", "_OrgnlTxRef", "_StsRsnInf", "_SplmtryData", "_OrgnlTxId"]
 	@property
 	def OrgnlEndToEndId(self):
 		return self._OrgnlEndToEndId
@@ -54,30 +41,30 @@ class PaymentTransaction130(base_types._BaseFieldType):
 		self._AccptncDtTm = None
 
 	@property
-	def StsId(self):
-		return self._StsId
+	def TxSts(self):
+		return self._TxSts
 
-	@StsId.setter
-	def StsId(self, value):
-		self._StsId = value if type(value) != base_types.auto else self.make_default("StsId")
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
 
-	@StsId.deleter
-	def StsId(self):
-		del self._StsId
-		self._StsId = None
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def InstgAgt(self):
+		return self._InstgAgt
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
 
 	@property
 	def OrgnlInstrId(self):
@@ -93,58 +80,6 @@ class PaymentTransaction130(base_types._BaseFieldType):
 		self._OrgnlInstrId = None
 
 	@property
-	def OrgnlTxRef(self):
-		return self._OrgnlTxRef
-
-	@OrgnlTxRef.setter
-	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != base_types.auto else self.make_default("OrgnlTxRef")
-
-	@OrgnlTxRef.deleter
-	def OrgnlTxRef(self):
-		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
-
-	@property
-	def FctvIntrBkSttlmDt(self):
-		return self._FctvIntrBkSttlmDt
-
-	@FctvIntrBkSttlmDt.setter
-	def FctvIntrBkSttlmDt(self, value):
-		self._FctvIntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvIntrBkSttlmDt")
-
-	@FctvIntrBkSttlmDt.deleter
-	def FctvIntrBkSttlmDt(self):
-		del self._FctvIntrBkSttlmDt
-		self._FctvIntrBkSttlmDt = None
-
-	@property
-	def ChrgsInf(self):
-		return self._ChrgsInf
-
-	@ChrgsInf.setter
-	def ChrgsInf(self, value):
-		self._ChrgsInf = value if type(value) != base_types.auto else self.make_default("ChrgsInf")
-
-	@ChrgsInf.deleter
-	def ChrgsInf(self):
-		del self._ChrgsInf
-		self._ChrgsInf = None
-
-	@property
-	def OrgnlUETR(self):
-		return self._OrgnlUETR
-
-	@OrgnlUETR.setter
-	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
-
-	@OrgnlUETR.deleter
-	def OrgnlUETR(self):
-		del self._OrgnlUETR
-		self._OrgnlUETR = None
-
-	@property
 	def AcctSvcrRef(self):
 		return self._AcctSvcrRef
 
@@ -156,19 +91,6 @@ class PaymentTransaction130(base_types._BaseFieldType):
 	def AcctSvcrRef(self):
 		del self._AcctSvcrRef
 		self._AcctSvcrRef = None
-
-	@property
-	def InstdAgt(self):
-		return self._InstdAgt
-
-	@InstdAgt.setter
-	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
-
-	@InstdAgt.deleter
-	def InstdAgt(self):
-		del self._InstdAgt
-		self._InstdAgt = None
 
 	@property
 	def OrgnlGrpInf(self):
@@ -184,17 +106,30 @@ class PaymentTransaction130(base_types._BaseFieldType):
 		self._OrgnlGrpInf = None
 
 	@property
-	def OrgnlTxId(self):
-		return self._OrgnlTxId
+	def ChrgsInf(self):
+		return self._ChrgsInf
 
-	@OrgnlTxId.setter
-	def OrgnlTxId(self, value):
-		self._OrgnlTxId = value if type(value) != base_types.auto else self.make_default("OrgnlTxId")
+	@ChrgsInf.setter
+	def ChrgsInf(self, value):
+		self._ChrgsInf = value if type(value) != base_types.auto else self.make_default("ChrgsInf")
 
-	@OrgnlTxId.deleter
-	def OrgnlTxId(self):
-		del self._OrgnlTxId
-		self._OrgnlTxId = None
+	@ChrgsInf.deleter
+	def ChrgsInf(self):
+		del self._ChrgsInf
+		self._ChrgsInf = None
+
+	@property
+	def StsId(self):
+		return self._StsId
+
+	@StsId.setter
+	def StsId(self, value):
+		self._StsId = value if type(value) != base_types.auto else self.make_default("StsId")
+
+	@StsId.deleter
+	def StsId(self):
+		del self._StsId
+		self._StsId = None
 
 	@property
 	def ClrSysRef(self):
@@ -210,6 +145,58 @@ class PaymentTransaction130(base_types._BaseFieldType):
 		self._ClrSysRef = None
 
 	@property
+	def FctvIntrBkSttlmDt(self):
+		return self._FctvIntrBkSttlmDt
+
+	@FctvIntrBkSttlmDt.setter
+	def FctvIntrBkSttlmDt(self, value):
+		self._FctvIntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvIntrBkSttlmDt")
+
+	@FctvIntrBkSttlmDt.deleter
+	def FctvIntrBkSttlmDt(self):
+		del self._FctvIntrBkSttlmDt
+		self._FctvIntrBkSttlmDt = None
+
+	@property
+	def InstdAgt(self):
+		return self._InstdAgt
+
+	@InstdAgt.setter
+	def InstdAgt(self, value):
+		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
+
+	@InstdAgt.deleter
+	def InstdAgt(self):
+		del self._InstdAgt
+		self._InstdAgt = None
+
+	@property
+	def OrgnlUETR(self):
+		return self._OrgnlUETR
+
+	@OrgnlUETR.setter
+	def OrgnlUETR(self, value):
+		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+
+	@OrgnlUETR.deleter
+	def OrgnlUETR(self):
+		del self._OrgnlUETR
+		self._OrgnlUETR = None
+
+	@property
+	def OrgnlTxRef(self):
+		return self._OrgnlTxRef
+
+	@OrgnlTxRef.setter
+	def OrgnlTxRef(self, value):
+		self._OrgnlTxRef = value if type(value) != base_types.auto else self.make_default("OrgnlTxRef")
+
+	@OrgnlTxRef.deleter
+	def OrgnlTxRef(self):
+		del self._OrgnlTxRef
+		self._OrgnlTxRef = None
+
+	@property
 	def StsRsnInf(self):
 		return self._StsRsnInf
 
@@ -223,35 +210,48 @@ class PaymentTransaction130(base_types._BaseFieldType):
 		self._StsRsnInf = None
 
 	@property
-	def TxSts(self):
-		return self._TxSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def OrgnlTxId(self):
+		return self._OrgnlTxId
+
+	@OrgnlTxId.setter
+	def OrgnlTxId(self, value):
+		self._OrgnlTxId = value if type(value) != base_types.auto else self.make_default("OrgnlTxId")
+
+	@OrgnlTxId.deleter
+	def OrgnlTxId(self):
+		del self._OrgnlTxId
+		self._OrgnlTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference35, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvIntrBkSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsInf', type=Charges7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation12, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=ExternalPaymentTransactionStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsInf', type=Charges7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvIntrBkSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

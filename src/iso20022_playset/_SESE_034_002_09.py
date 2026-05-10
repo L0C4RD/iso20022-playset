@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesFinancingStatusAdvice002V09 import SecuritiesFinancingStatusAdvice002V09
+from ._SecuritiesFinancingStatusAdvice002V09 import SecuritiesFinancingStatusAdvice002V09
 
 class SESE_034_002_09():
 

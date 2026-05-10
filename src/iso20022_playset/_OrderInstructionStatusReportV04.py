@@ -1,24 +1,24 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .References61Choice import References61Choice
-from .Extension1 import Extension1
-from .Status24Choice import Status24Choice
+from ._Extension1 import Extension1
+from ._Status24Choice import Status24Choice
+from ._MessageIdentification1 import MessageIdentification1
+from ._References61Choice import References61Choice
 
 class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRpt", "_Xtnsn", "_Ref", "_MsgId"]
+	__slots__ = ["_MsgId", "_Xtnsn", "_StsRpt", "_Ref"]
 	@property
-	def StsRpt(self):
-		return self._StsRpt
+	def MsgId(self):
+		return self._MsgId
 
-	@StsRpt.setter
-	def StsRpt(self, value):
-		self._StsRpt = value if type(value) != base_types.auto else self.make_default("StsRpt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@StsRpt.deleter
-	def StsRpt(self):
-		del self._StsRpt
-		self._StsRpt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def Xtnsn(self):
@@ -34,6 +34,19 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
+	def StsRpt(self):
+		return self._StsRpt
+
+	@StsRpt.setter
+	def StsRpt(self, value):
+		self._StsRpt = value if type(value) != base_types.auto else self.make_default("StsRpt")
+
+	@StsRpt.deleter
+	def StsRpt(self):
+		del self._StsRpt
+		self._StsRpt = None
+
+	@property
 	def Ref(self):
 		return self._Ref
 
@@ -46,23 +59,10 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRpt', type=Status24Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRpt', type=Status24Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

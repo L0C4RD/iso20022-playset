@@ -1,7 +1,7 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._Max52Text import Max52Text
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class BasketQuery1(base_types._BaseFieldType):
 

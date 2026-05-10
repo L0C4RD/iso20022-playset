@@ -1,6 +1,6 @@
 from . import base_types
-from .ConsentOrRejectionReason4Choice import ConsentOrRejectionReason4Choice
-from .Max210Text import Max210Text
+from ._ConsentOrRejectionReason4Choice import ConsentOrRejectionReason4Choice
+from ._Max210Text import Max210Text
 
 class ConsentReason4(base_types._BaseFieldType):
 

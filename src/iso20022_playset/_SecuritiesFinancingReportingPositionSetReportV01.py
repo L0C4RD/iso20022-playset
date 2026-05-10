@@ -1,6 +1,6 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PositionSetReport3Choice import PositionSetReport3Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._PositionSetReport3Choice import PositionSetReport3Choice
 
 class SecuritiesFinancingReportingPositionSetReportV01(base_types._BaseFieldType):
 

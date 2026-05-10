@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesStatementQueryV08 import SecuritiesStatementQueryV08
+from ._SecuritiesStatementQueryV08 import SecuritiesStatementQueryV08
 
 class SEMT_021_001_08():
 

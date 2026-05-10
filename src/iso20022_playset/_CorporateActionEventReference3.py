@@ -1,6 +1,6 @@
 from . import base_types
-from .CorporateActionEventReference3Choice import CorporateActionEventReference3Choice
-from .ProcessingPosition7Choice import ProcessingPosition7Choice
+from ._CorporateActionEventReference3Choice import CorporateActionEventReference3Choice
+from ._ProcessingPosition7Choice import ProcessingPosition7Choice
 
 class CorporateActionEventReference3(base_types._BaseFieldType):
 

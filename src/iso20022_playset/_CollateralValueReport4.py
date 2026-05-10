@@ -1,26 +1,26 @@
 from . import base_types
-from .PartyIdentification136 import PartyIdentification136
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .CollateralValueReportOrError6Choice import CollateralValueReportOrError6Choice
-from .CashAccount40 import CashAccount40
-from .SystemPartyIdentification8 import SystemPartyIdentification8
-from .SystemPartyIdentification11 import SystemPartyIdentification11
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CollateralValueReportOrError6Choice import CollateralValueReportOrError6Choice
+from ._SystemPartyIdentification11 import SystemPartyIdentification11
+from ._PartyIdentification136 import PartyIdentification136
+from ._CashAccount40 import CashAccount40
 
 class CollateralValueReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcctSvcr", "_CshAcct", "_CshAcctOwnr", "_SctiesAcctSvcr", "_SctiesAcctOwnr", "_CollValRpt"]
+	__slots__ = ["_SctiesAcctOwnr", "_CshAcct", "_CshAcctOwnr", "_SctiesAcctSvcr", "_CollValRpt", "_CshAcctSvcr"]
 	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
+	def SctiesAcctOwnr(self):
+		return self._SctiesAcctOwnr
 
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+	@SctiesAcctOwnr.setter
+	def SctiesAcctOwnr(self, value):
+		self._SctiesAcctOwnr = value if type(value) != base_types.auto else self.make_default("SctiesAcctOwnr")
 
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
+	@SctiesAcctOwnr.deleter
+	def SctiesAcctOwnr(self):
+		del self._SctiesAcctOwnr
+		self._SctiesAcctOwnr = None
 
 	@property
 	def CshAcct(self):
@@ -62,19 +62,6 @@ class CollateralValueReport4(base_types._BaseFieldType):
 		self._SctiesAcctSvcr = None
 
 	@property
-	def SctiesAcctOwnr(self):
-		return self._SctiesAcctOwnr
-
-	@SctiesAcctOwnr.setter
-	def SctiesAcctOwnr(self, value):
-		self._SctiesAcctOwnr = value if type(value) != base_types.auto else self.make_default("SctiesAcctOwnr")
-
-	@SctiesAcctOwnr.deleter
-	def SctiesAcctOwnr(self):
-		del self._SctiesAcctOwnr
-		self._SctiesAcctOwnr = None
-
-	@property
 	def CollValRpt(self):
 		return self._CollValRpt
 
@@ -87,12 +74,25 @@ class CollateralValueReport4(base_types._BaseFieldType):
 		del self._CollValRpt
 		self._CollValRpt = None
 
+	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollValRpt', type=CollateralValueReportOrError6Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max12Text import Max12Text
-from .UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
+from ._Max12Text import Max12Text
+from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
 
 class ProductIdentifier3Choice(base_types._BaseFieldType):
 

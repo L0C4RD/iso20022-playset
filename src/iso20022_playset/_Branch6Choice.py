@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification236Choice import PartyIdentification236Choice
-from .CountryCode import CountryCode
+from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._CountryCode import CountryCode
 
 class Branch6Choice(base_types._BaseFieldType):
 

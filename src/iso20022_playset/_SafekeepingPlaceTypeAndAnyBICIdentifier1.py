@@ -1,23 +1,10 @@
 from . import base_types
-from .SafekeepingPlace1Code import SafekeepingPlace1Code
-from .AnyBICIdentifier import AnyBICIdentifier
+from ._SafekeepingPlace1Code import SafekeepingPlace1Code
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class SafekeepingPlaceTypeAndAnyBICIdentifier1(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlcTp", "_Id"]
-	@property
-	def SfkpgPlcTp(self):
-		return self._SfkpgPlcTp
-
-	@SfkpgPlcTp.setter
-	def SfkpgPlcTp(self, value):
-		self._SfkpgPlcTp = value if type(value) != base_types.auto else self.make_default("SfkpgPlcTp")
-
-	@SfkpgPlcTp.deleter
-	def SfkpgPlcTp(self):
-		del self._SfkpgPlcTp
-		self._SfkpgPlcTp = None
-
+	__slots__ = ["_Id", "_SfkpgPlcTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class SafekeepingPlaceTypeAndAnyBICIdentifier1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def SfkpgPlcTp(self):
+		return self._SfkpgPlcTp
+
+	@SfkpgPlcTp.setter
+	def SfkpgPlcTp(self, value):
+		self._SfkpgPlcTp = value if type(value) != base_types.auto else self.make_default("SfkpgPlcTp")
+
+	@SfkpgPlcTp.deleter
+	def SfkpgPlcTp(self):
+		del self._SfkpgPlcTp
+		self._SfkpgPlcTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlcTp', type=SafekeepingPlace1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AnyBICIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlcTp', type=SafekeepingPlace1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

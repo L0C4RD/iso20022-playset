@@ -1,11 +1,11 @@
 from . import base_types
-from .CorporateActionEventType119Choice import CorporateActionEventType119Choice
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .FinancialInstrumentAttributes133 import FinancialInstrumentAttributes133
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._FinancialInstrumentAttributes133 import FinancialInstrumentAttributes133
+from ._CorporateActionEventType119Choice import CorporateActionEventType119Choice
 
 class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_UndrlygScty", "_EvtTp", "_OffclCorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_OffclCorpActnEvtId", "_UndrlygScty", "_EvtTp"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -18,6 +18,19 @@ class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
+
+	@property
+	def OffclCorpActnEvtId(self):
+		return self._OffclCorpActnEvtId
+
+	@OffclCorpActnEvtId.setter
+	def OffclCorpActnEvtId(self, value):
+		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+
+	@OffclCorpActnEvtId.deleter
+	def OffclCorpActnEvtId(self):
+		del self._OffclCorpActnEvtId
+		self._OffclCorpActnEvtId = None
 
 	@property
 	def UndrlygScty(self):
@@ -45,23 +58,10 @@ class CorporateActionGeneralInformation189(base_types._BaseFieldType):
 		del self._EvtTp
 		self._EvtTp = None
 
-	@property
-	def OffclCorpActnEvtId(self):
-		return self._OffclCorpActnEvtId
-
-	@OffclCorpActnEvtId.setter
-	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
-
-	@OffclCorpActnEvtId.deleter
-	def OffclCorpActnEvtId(self):
-		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes133, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType119Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

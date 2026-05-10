@@ -1,38 +1,12 @@
 from . import base_types
-from .Header31 import Header31
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .ATMWithdrawalRequest3 import ATMWithdrawalRequest3
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header31 import Header31
+from ._ATMWithdrawalRequest3 import ATMWithdrawalRequest3
 
 class ATMWithdrawalRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMWdrwlReq", "_SctyTrlr", "_PrtctdATMWdrwlReq", "_Hdr"]
-	@property
-	def ATMWdrwlReq(self):
-		return self._ATMWdrwlReq
-
-	@ATMWdrwlReq.setter
-	def ATMWdrwlReq(self, value):
-		self._ATMWdrwlReq = value if type(value) != base_types.auto else self.make_default("ATMWdrwlReq")
-
-	@ATMWdrwlReq.deleter
-	def ATMWdrwlReq(self):
-		del self._ATMWdrwlReq
-		self._ATMWdrwlReq = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_PrtctdATMWdrwlReq", "_Hdr", "_SctyTrlr", "_ATMWdrwlReq"]
 	@property
 	def PrtctdATMWdrwlReq(self):
 		return self._PrtctdATMWdrwlReq
@@ -59,10 +33,36 @@ class ATMWithdrawalRequestV03(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def ATMWdrwlReq(self):
+		return self._ATMWdrwlReq
+
+	@ATMWdrwlReq.setter
+	def ATMWdrwlReq(self, value):
+		self._ATMWdrwlReq = value if type(value) != base_types.auto else self.make_default("ATMWdrwlReq")
+
+	@ATMWdrwlReq.deleter
+	def ATMWdrwlReq(self):
+		del self._ATMWdrwlReq
+		self._ATMWdrwlReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMWdrwlReq', type=ATMWithdrawalRequest3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMWdrwlReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMWdrwlReq', type=ATMWithdrawalRequest3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,37 +1,24 @@
 from . import base_types
-from .TargetMarket5Choice import TargetMarket5Choice
-from .TargetMarket3Code import TargetMarket3Code
-from .OtherTargetMarketInvestor1 import OtherTargetMarketInvestor1
-from .TargetMarket1Code import TargetMarket1Code
+from ._TargetMarket5Choice import TargetMarket5Choice
+from ._OtherTargetMarketInvestor1 import OtherTargetMarketInvestor1
+from ._TargetMarket3Code import TargetMarket3Code
+from ._TargetMarket1Code import TargetMarket1Code
 
 class InvestorType2(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrTpRtl", "_InvstrTpPrfssnl", "_Othr", "_InvstrTpElgblCtrPty"]
+	__slots__ = ["_InvstrTpElgblCtrPty", "_Othr", "_InvstrTpPrfssnl", "_InvstrTpRtl"]
 	@property
-	def InvstrTpRtl(self):
-		return self._InvstrTpRtl
+	def InvstrTpElgblCtrPty(self):
+		return self._InvstrTpElgblCtrPty
 
-	@InvstrTpRtl.setter
-	def InvstrTpRtl(self, value):
-		self._InvstrTpRtl = value if type(value) != base_types.auto else self.make_default("InvstrTpRtl")
+	@InvstrTpElgblCtrPty.setter
+	def InvstrTpElgblCtrPty(self, value):
+		self._InvstrTpElgblCtrPty = value if type(value) != base_types.auto else self.make_default("InvstrTpElgblCtrPty")
 
-	@InvstrTpRtl.deleter
-	def InvstrTpRtl(self):
-		del self._InvstrTpRtl
-		self._InvstrTpRtl = None
-
-	@property
-	def InvstrTpPrfssnl(self):
-		return self._InvstrTpPrfssnl
-
-	@InvstrTpPrfssnl.setter
-	def InvstrTpPrfssnl(self, value):
-		self._InvstrTpPrfssnl = value if type(value) != base_types.auto else self.make_default("InvstrTpPrfssnl")
-
-	@InvstrTpPrfssnl.deleter
-	def InvstrTpPrfssnl(self):
-		del self._InvstrTpPrfssnl
-		self._InvstrTpPrfssnl = None
+	@InvstrTpElgblCtrPty.deleter
+	def InvstrTpElgblCtrPty(self):
+		del self._InvstrTpElgblCtrPty
+		self._InvstrTpElgblCtrPty = None
 
 	@property
 	def Othr(self):
@@ -47,22 +34,35 @@ class InvestorType2(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def InvstrTpElgblCtrPty(self):
-		return self._InvstrTpElgblCtrPty
+	def InvstrTpPrfssnl(self):
+		return self._InvstrTpPrfssnl
 
-	@InvstrTpElgblCtrPty.setter
-	def InvstrTpElgblCtrPty(self, value):
-		self._InvstrTpElgblCtrPty = value if type(value) != base_types.auto else self.make_default("InvstrTpElgblCtrPty")
+	@InvstrTpPrfssnl.setter
+	def InvstrTpPrfssnl(self, value):
+		self._InvstrTpPrfssnl = value if type(value) != base_types.auto else self.make_default("InvstrTpPrfssnl")
 
-	@InvstrTpElgblCtrPty.deleter
-	def InvstrTpElgblCtrPty(self):
-		del self._InvstrTpElgblCtrPty
-		self._InvstrTpElgblCtrPty = None
+	@InvstrTpPrfssnl.deleter
+	def InvstrTpPrfssnl(self):
+		del self._InvstrTpPrfssnl
+		self._InvstrTpPrfssnl = None
+
+	@property
+	def InvstrTpRtl(self):
+		return self._InvstrTpRtl
+
+	@InvstrTpRtl.setter
+	def InvstrTpRtl(self, value):
+		self._InvstrTpRtl = value if type(value) != base_types.auto else self.make_default("InvstrTpRtl")
+
+	@InvstrTpRtl.deleter
+	def InvstrTpRtl(self):
+		del self._InvstrTpRtl
+		self._InvstrTpRtl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTpPrfssnl', type=TargetMarket5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstrTpElgblCtrPty', type=TargetMarket3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestor1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstrTpPrfssnl', type=TargetMarket5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTpRtl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

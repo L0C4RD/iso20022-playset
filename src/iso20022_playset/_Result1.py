@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max210Text import Max210Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max210Text import Max210Text
 
 class Result1(base_types._BaseFieldType):
 

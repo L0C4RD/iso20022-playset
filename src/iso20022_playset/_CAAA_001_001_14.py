@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorAuthorisationRequestV14 import AcceptorAuthorisationRequestV14
+from ._AcceptorAuthorisationRequestV14 import AcceptorAuthorisationRequestV14
 
 class CAAA_001_001_14():
 

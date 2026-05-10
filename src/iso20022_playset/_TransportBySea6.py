@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max70Text import Max70Text
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._CountryCode import CountryCode
 
 class TransportBySea6(base_types._BaseFieldType):
 
-	__slots__ = ["_PortOfDschrge", "_SeaCrrierNm", "_CrrierAgtNm", "_PortOfLoadng", "_CrrierAgtCtry", "_VsslNm", "_SeaCrrierCtry"]
-	@property
-	def PortOfDschrge(self):
-		return self._PortOfDschrge
-
-	@PortOfDschrge.setter
-	def PortOfDschrge(self, value):
-		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
-
-	@PortOfDschrge.deleter
-	def PortOfDschrge(self):
-		del self._PortOfDschrge
-		self._PortOfDschrge = None
-
+	__slots__ = ["_SeaCrrierNm", "_CrrierAgtNm", "_PortOfLoadng", "_SeaCrrierCtry", "_CrrierAgtCtry", "_PortOfDschrge", "_VsslNm"]
 	@property
 	def SeaCrrierNm(self):
 		return self._SeaCrrierNm
@@ -59,6 +46,19 @@ class TransportBySea6(base_types._BaseFieldType):
 		self._PortOfLoadng = None
 
 	@property
+	def SeaCrrierCtry(self):
+		return self._SeaCrrierCtry
+
+	@SeaCrrierCtry.setter
+	def SeaCrrierCtry(self, value):
+		self._SeaCrrierCtry = value if type(value) != base_types.auto else self.make_default("SeaCrrierCtry")
+
+	@SeaCrrierCtry.deleter
+	def SeaCrrierCtry(self):
+		del self._SeaCrrierCtry
+		self._SeaCrrierCtry = None
+
+	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry
 
@@ -70,6 +70,19 @@ class TransportBySea6(base_types._BaseFieldType):
 	def CrrierAgtCtry(self):
 		del self._CrrierAgtCtry
 		self._CrrierAgtCtry = None
+
+	@property
+	def PortOfDschrge(self):
+		return self._PortOfDschrge
+
+	@PortOfDschrge.setter
+	def PortOfDschrge(self, value):
+		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
+
+	@PortOfDschrge.deleter
+	def PortOfDschrge(self):
+		del self._PortOfDschrge
+		self._PortOfDschrge = None
 
 	@property
 	def VsslNm(self):
@@ -84,26 +97,13 @@ class TransportBySea6(base_types._BaseFieldType):
 		del self._VsslNm
 		self._VsslNm = None
 
-	@property
-	def SeaCrrierCtry(self):
-		return self._SeaCrrierCtry
-
-	@SeaCrrierCtry.setter
-	def SeaCrrierCtry(self, value):
-		self._SeaCrrierCtry = value if type(value) != base_types.auto else self.make_default("SeaCrrierCtry")
-
-	@SeaCrrierCtry.deleter
-	def SeaCrrierCtry(self):
-		del self._SeaCrrierCtry
-		self._SeaCrrierCtry = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SeaCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VsslNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeaCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VsslNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

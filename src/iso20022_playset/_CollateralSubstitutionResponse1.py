@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollSbstitnReqId", "_AccptdAmt"]
-	@property
-	def CollSbstitnReqId(self):
-		return self._CollSbstitnReqId
-
-	@CollSbstitnReqId.setter
-	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
-
-	@CollSbstitnReqId.deleter
-	def CollSbstitnReqId(self):
-		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
-
+	__slots__ = ["_AccptdAmt", "_CollSbstitnReqId"]
 	@property
 	def AccptdAmt(self):
 		return self._AccptdAmt
@@ -31,8 +18,21 @@ class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 		del self._AccptdAmt
 		self._AccptdAmt = None
 
+	@property
+	def CollSbstitnReqId(self):
+		return self._CollSbstitnReqId
+
+	@CollSbstitnReqId.setter
+	def CollSbstitnReqId(self, value):
+		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
+
+	@CollSbstitnReqId.deleter
+	def CollSbstitnReqId(self):
+		del self._CollSbstitnReqId
+		self._CollSbstitnReqId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

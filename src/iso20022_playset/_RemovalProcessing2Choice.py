@@ -1,11 +1,24 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .GenericIdentification37 import GenericIdentification37
-from .SecurityIdentification19 import SecurityIdentification19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._GenericIdentification37 import GenericIdentification37
+from ._CountryCode import CountryCode
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxId", "_FinInstrmId", "_IssrCtry"]
+	__slots__ = ["_IssrCtry", "_IndxId", "_FinInstrmId"]
+	@property
+	def IssrCtry(self):
+		return self._IssrCtry
+
+	@IssrCtry.setter
+	def IssrCtry(self, value):
+		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
+
+	@IssrCtry.deleter
+	def IssrCtry(self):
+		del self._IssrCtry
+		self._IssrCtry = None
+
 	@property
 	def IndxId(self):
 		return self._IndxId
@@ -32,22 +45,9 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
-	@property
-	def IssrCtry(self):
-		return self._IssrCtry
-
-	@IssrCtry.setter
-	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
-
-	@IssrCtry.deleter
-	def IssrCtry(self):
-		del self._IssrCtry
-		self._IssrCtry = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxId', type=GenericIdentification37, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

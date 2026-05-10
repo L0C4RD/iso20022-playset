@@ -1,14 +1,14 @@
 from . import base_types
-from .SecurityIdentification25Choice import SecurityIdentification25Choice
-from .GateHoldBack1Code import GateHoldBack1Code
-from .ISODate import ISODate
-from .Max350Text import Max350Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .RedemptionCompletion1Code import RedemptionCompletion1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._GateHoldBack1Code import GateHoldBack1Code
+from ._Max350Text import Max350Text
+from ._RedemptionCompletion1Code import RedemptionCompletion1Code
+from ._SecurityIdentification25Choice import SecurityIdentification25Choice
+from ._ISODate import ISODate
 
 class HoldBackInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_XpctdRlsDt", "_Tp", "_Amt", "_FinInstrmNm", "_FinInstrmId", "_RedCmpltn"]
+	__slots__ = ["_XpctdRlsDt", "_Amt", "_FinInstrmId", "_RedCmpltn", "_Tp", "_FinInstrmNm"]
 	@property
 	def XpctdRlsDt(self):
 		return self._XpctdRlsDt
@@ -23,19 +23,6 @@ class HoldBackInformation3(base_types._BaseFieldType):
 		self._XpctdRlsDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -47,19 +34,6 @@ class HoldBackInformation3(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
-
-	@property
-	def FinInstrmNm(self):
-		return self._FinInstrmNm
-
-	@FinInstrmNm.setter
-	def FinInstrmNm(self, value):
-		self._FinInstrmNm = value if type(value) != base_types.auto else self.make_default("FinInstrmNm")
-
-	@FinInstrmNm.deleter
-	def FinInstrmNm(self):
-		del self._FinInstrmNm
-		self._FinInstrmNm = None
 
 	@property
 	def FinInstrmId(self):
@@ -87,12 +61,38 @@ class HoldBackInformation3(base_types._BaseFieldType):
 		del self._RedCmpltn
 		self._RedCmpltn = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def FinInstrmNm(self):
+		return self._FinInstrmNm
+
+	@FinInstrmNm.setter
+	def FinInstrmNm(self, value):
+		self._FinInstrmNm = value if type(value) != base_types.auto else self.make_default("FinInstrmNm")
+
+	@FinInstrmNm.deleter
+	def FinInstrmNm(self):
+		del self._FinInstrmNm
+		self._FinInstrmNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='XpctdRlsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GateHoldBack1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RedCmpltn', type=RedemptionCompletion1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=GateHoldBack1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

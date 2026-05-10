@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SettlementAgent2 import SettlementAgent2
-from .ConcentrationAgent1 import ConcentrationAgent1
+from ._SupplementaryData1 import SupplementaryData1
+from ._SettlementAgent2 import SettlementAgent2
+from ._ConcentrationAgent1 import ConcentrationAgent1
 
 class CCPDailyCashFlowsReportV02(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .WeekDay3Code import WeekDay3Code
-from .DayOfMonthNumber import DayOfMonthNumber
-from .Frequency14Code import Frequency14Code
+from ._WeekDay3Code import WeekDay3Code
+from ._Frequency14Code import Frequency14Code
+from ._DayOfMonthNumber import DayOfMonthNumber
 
 class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
-	__slots__ = ["_DayOfMnth", "_DlvryDay", "_FrqcyTp"]
-	@property
-	def DayOfMnth(self):
-		return self._DayOfMnth
-
-	@DayOfMnth.setter
-	def DayOfMnth(self, value):
-		self._DayOfMnth = value if type(value) != base_types.auto else self.make_default("DayOfMnth")
-
-	@DayOfMnth.deleter
-	def DayOfMnth(self):
-		del self._DayOfMnth
-		self._DayOfMnth = None
-
+	__slots__ = ["_DlvryDay", "_FrqcyTp", "_DayOfMnth"]
 	@property
 	def DlvryDay(self):
 		return self._DlvryDay
@@ -45,9 +32,22 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 		del self._FrqcyTp
 		self._FrqcyTp = None
 
+	@property
+	def DayOfMnth(self):
+		return self._DayOfMnth
+
+	@DayOfMnth.setter
+	def DayOfMnth(self, value):
+		self._DayOfMnth = value if type(value) != base_types.auto else self.make_default("DayOfMnth")
+
+	@DayOfMnth.deleter
+	def DayOfMnth(self):
+		del self._DayOfMnth
+		self._DayOfMnth = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DayOfMnth', type=DayOfMonthNumber, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvryDay', type=WeekDay3Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FrqcyTp', type=Frequency14Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DayOfMnth', type=DayOfMonthNumber, min=0, max=None, mutex_group=None, array=True),
 	))
 

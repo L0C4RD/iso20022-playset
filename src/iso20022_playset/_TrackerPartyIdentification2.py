@@ -1,24 +1,11 @@
 from . import base_types
-from .TrackerParty2Choice import TrackerParty2Choice
-from .PostalAddress24 import PostalAddress24
-from .Max140Text import Max140Text
+from ._PostalAddress24 import PostalAddress24
+from ._Max140Text import Max140Text
+from ._TrackerParty2Choice import TrackerParty2Choice
 
 class TrackerPartyIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Id", "_Nm"]
-	@property
-	def PstlAdr(self):
-		return self._PstlAdr
-
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
-
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
+	__slots__ = ["_Id", "_PstlAdr", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class TrackerPartyIdentification2(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def PstlAdr(self):
+		return self._PstlAdr
+
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def Nm(self):
@@ -46,8 +46,8 @@ class TrackerPartyIdentification2(base_types._BaseFieldType):
 		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=TrackerParty2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

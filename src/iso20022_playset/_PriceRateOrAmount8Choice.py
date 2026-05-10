@@ -1,6 +1,6 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._Percentage14Rate import Percentage14Rate
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceRateOrAmount8Choice(base_types._BaseFieldType):
 

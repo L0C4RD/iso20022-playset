@@ -1,81 +1,16 @@
 from . import base_types
-from .PartyIdentification139 import PartyIdentification139
-from .ISODate import ISODate
-from .DeliveringPartiesAndAccount20 import DeliveringPartiesAndAccount20
-from .Max35Text import Max35Text
-from .SafekeepingPlaceFormat40Choice import SafekeepingPlaceFormat40Choice
-from .ReceivingPartiesAndAccount20 import ReceivingPartiesAndAccount20
-from .TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
-from .SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
+from ._PartyIdentification139 import PartyIdentification139
+from ._SafekeepingPlaceFormat40Choice import SafekeepingPlaceFormat40Choice
+from ._SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
+from ._DeliveringPartiesAndAccount20 import DeliveringPartiesAndAccount20
+from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
+from ._ReceivingPartiesAndAccount20 import ReceivingPartiesAndAccount20
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 
 class FundSettlementParameters20(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_TradTxCond", "_DlvrgSdDtls", "_RcvgSdDtls", "_SttlmPlc", "_SfkpgPlc", "_SttlmTxCond", "_SctiesSttlmSysId"]
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def TradTxCond(self):
-		return self._TradTxCond
-
-	@TradTxCond.setter
-	def TradTxCond(self, value):
-		self._TradTxCond = value if type(value) != base_types.auto else self.make_default("TradTxCond")
-
-	@TradTxCond.deleter
-	def TradTxCond(self):
-		del self._TradTxCond
-		self._TradTxCond = None
-
-	@property
-	def DlvrgSdDtls(self):
-		return self._DlvrgSdDtls
-
-	@DlvrgSdDtls.setter
-	def DlvrgSdDtls(self, value):
-		self._DlvrgSdDtls = value if type(value) != base_types.auto else self.make_default("DlvrgSdDtls")
-
-	@DlvrgSdDtls.deleter
-	def DlvrgSdDtls(self):
-		del self._DlvrgSdDtls
-		self._DlvrgSdDtls = None
-
-	@property
-	def RcvgSdDtls(self):
-		return self._RcvgSdDtls
-
-	@RcvgSdDtls.setter
-	def RcvgSdDtls(self, value):
-		self._RcvgSdDtls = value if type(value) != base_types.auto else self.make_default("RcvgSdDtls")
-
-	@RcvgSdDtls.deleter
-	def RcvgSdDtls(self):
-		del self._RcvgSdDtls
-		self._RcvgSdDtls = None
-
-	@property
-	def SttlmPlc(self):
-		return self._SttlmPlc
-
-	@SttlmPlc.setter
-	def SttlmPlc(self, value):
-		self._SttlmPlc = value if type(value) != base_types.auto else self.make_default("SttlmPlc")
-
-	@SttlmPlc.deleter
-	def SttlmPlc(self):
-		del self._SttlmPlc
-		self._SttlmPlc = None
-
+	__slots__ = ["_SfkpgPlc", "_SttlmTxCond", "_SttlmDt", "_SctiesSttlmSysId", "_SttlmPlc", "_RcvgSdDtls", "_TradTxCond", "_DlvrgSdDtls"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -103,6 +38,19 @@ class FundSettlementParameters20(base_types._BaseFieldType):
 		self._SttlmTxCond = None
 
 	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
 	def SctiesSttlmSysId(self):
 		return self._SctiesSttlmSysId
 
@@ -115,14 +63,66 @@ class FundSettlementParameters20(base_types._BaseFieldType):
 		del self._SctiesSttlmSysId
 		self._SctiesSttlmSysId = None
 
+	@property
+	def SttlmPlc(self):
+		return self._SttlmPlc
+
+	@SttlmPlc.setter
+	def SttlmPlc(self, value):
+		self._SttlmPlc = value if type(value) != base_types.auto else self.make_default("SttlmPlc")
+
+	@SttlmPlc.deleter
+	def SttlmPlc(self):
+		del self._SttlmPlc
+		self._SttlmPlc = None
+
+	@property
+	def RcvgSdDtls(self):
+		return self._RcvgSdDtls
+
+	@RcvgSdDtls.setter
+	def RcvgSdDtls(self, value):
+		self._RcvgSdDtls = value if type(value) != base_types.auto else self.make_default("RcvgSdDtls")
+
+	@RcvgSdDtls.deleter
+	def RcvgSdDtls(self):
+		del self._RcvgSdDtls
+		self._RcvgSdDtls = None
+
+	@property
+	def TradTxCond(self):
+		return self._TradTxCond
+
+	@TradTxCond.setter
+	def TradTxCond(self, value):
+		self._TradTxCond = value if type(value) != base_types.auto else self.make_default("TradTxCond")
+
+	@TradTxCond.deleter
+	def TradTxCond(self):
+		del self._TradTxCond
+		self._TradTxCond = None
+
+	@property
+	def DlvrgSdDtls(self):
+		return self._DlvrgSdDtls
+
+	@DlvrgSdDtls.setter
+	def DlvrgSdDtls(self, value):
+		self._DlvrgSdDtls = value if type(value) != base_types.auto else self.make_default("DlvrgSdDtls")
+
+	@DlvrgSdDtls.deleter
+	def DlvrgSdDtls(self):
+		del self._DlvrgSdDtls
+		self._DlvrgSdDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvrgSdDtls', type=DeliveringPartiesAndAccount20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgSdDtls', type=ReceivingPartiesAndAccount20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPlc', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat40Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition30Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSysId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPlc', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgSdDtls', type=ReceivingPartiesAndAccount20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition8Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvrgSdDtls', type=DeliveringPartiesAndAccount20, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
+from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
 
 class CompareDeliveryMethod3(base_types._BaseFieldType):
 

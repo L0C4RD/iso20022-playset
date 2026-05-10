@@ -1,5 +1,5 @@
 from . import base_types
-from .ReturnCurrencyExchangeRateV05 import ReturnCurrencyExchangeRateV05
+from ._ReturnCurrencyExchangeRateV05 import ReturnCurrencyExchangeRateV05
 
 class CAMT_017_001_05():
 

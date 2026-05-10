@@ -1,5 +1,5 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 

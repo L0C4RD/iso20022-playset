@@ -1,5 +1,5 @@
 from . import base_types
-from .SwitchOrderConfirmationV04 import SwitchOrderConfirmationV04
+from ._SwitchOrderConfirmationV04 import SwitchOrderConfirmationV04
 
 class SETR_015_001_04():
 

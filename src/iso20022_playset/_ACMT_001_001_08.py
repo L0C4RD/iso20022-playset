@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountOpeningInstructionV08 import AccountOpeningInstructionV08
+from ._AccountOpeningInstructionV08 import AccountOpeningInstructionV08
 
 class ACMT_001_001_08():
 

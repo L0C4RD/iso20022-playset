@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
-from .DataModification1Code import DataModification1Code
+from ._SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
+from ._DataModification1Code import DataModification1Code
 
 class SecuritiesAccountModification2(base_types._BaseFieldType):
 

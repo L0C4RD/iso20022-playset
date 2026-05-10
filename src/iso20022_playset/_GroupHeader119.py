@@ -1,26 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .ISODateTime import ISODateTime
-from .DecimalNumber import DecimalNumber
-from .Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._Max15NumericText import Max15NumericText
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._DecimalNumber import DecimalNumber
+from ._ISODateTime import ISODateTime
 
 class GroupHeader119(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_CreDtTm", "_CtrlSum", "_InstdAgt", "_MsgId", "_InstgAgt"]
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
+	__slots__ = ["_CreDtTm", "_NbOfTxs", "_InstdAgt", "_InstgAgt", "_MsgId", "_CtrlSum"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -35,17 +22,17 @@ class GroupHeader119(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def NbOfTxs(self):
+		return self._NbOfTxs
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def InstdAgt(self):
@@ -61,6 +48,19 @@ class GroupHeader119(base_types._BaseFieldType):
 		self._InstdAgt = None
 
 	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
+	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -74,24 +74,24 @@ class GroupHeader119(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def InstgAgt(self):
-		return self._InstgAgt
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
 
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

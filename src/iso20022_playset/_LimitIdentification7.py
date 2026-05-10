@@ -1,25 +1,25 @@
 from . import base_types
-from .LimitType4Code import LimitType4Code
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .PartyIdentification136 import PartyIdentification136
-from .AccountIdentification4Choice import AccountIdentification4Choice
-from .SystemPartyIdentification8 import SystemPartyIdentification8
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._PartyIdentification136 import PartyIdentification136
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._LimitType4Code import LimitType4Code
 
 class LimitIdentification7(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_Tp", "_BilLmtCtrPtyId", "_AcctId", "_LmtCcy"]
+	__slots__ = ["_AcctId", "_Tp", "_AcctOwnr", "_BilLmtCtrPtyId", "_LmtCcy"]
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def AcctId(self):
+		return self._AcctId
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def Tp(self):
@@ -35,6 +35,19 @@ class LimitIdentification7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
 	def BilLmtCtrPtyId(self):
 		return self._BilLmtCtrPtyId
 
@@ -46,19 +59,6 @@ class LimitIdentification7(base_types._BaseFieldType):
 	def BilLmtCtrPtyId(self):
 		del self._BilLmtCtrPtyId
 		self._BilLmtCtrPtyId = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
 
 	@property
 	def LmtCcy(self):
@@ -74,10 +74,10 @@ class LimitIdentification7(base_types._BaseFieldType):
 		self._LmtCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=LimitType4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BilLmtCtrPtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=LimitType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BilLmtCtrPtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

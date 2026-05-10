@@ -1,23 +1,23 @@
 from . import base_types
-from .PriceValueType3Code import PriceValueType3Code
-from .PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
-from .TypeOfPrice1Code import TypeOfPrice1Code
+from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
+from ._PriceValueType3Code import PriceValueType3Code
+from ._TypeOfPrice1Code import TypeOfPrice1Code
 
 class Price8(base_types._BaseFieldType):
 
-	__slots__ = ["_ValTp", "_PricTp", "_Val"]
+	__slots__ = ["_Val", "_PricTp", "_ValTp"]
 	@property
-	def ValTp(self):
-		return self._ValTp
+	def Val(self):
+		return self._Val
 
-	@ValTp.setter
-	def ValTp(self, value):
-		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
-	@ValTp.deleter
-	def ValTp(self):
-		del self._ValTp
-		self._ValTp = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def PricTp(self):
@@ -33,21 +33,21 @@ class Price8(base_types._BaseFieldType):
 		self._PricTp = None
 
 	@property
-	def Val(self):
-		return self._Val
+	def ValTp(self):
+		return self._ValTp
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+	@ValTp.setter
+	def ValTp(self, value):
+		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@ValTp.deleter
+	def ValTp(self):
+		del self._ValTp
+		self._ValTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValTp', type=PriceValueType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricTp', type=TypeOfPrice1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricTp', type=TypeOfPrice1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValTp', type=PriceValueType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

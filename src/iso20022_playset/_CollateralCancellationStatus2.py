@@ -1,23 +1,23 @@
 from . import base_types
-from .RejectionStatus3 import RejectionStatus3
-from .Status4Code import Status4Code
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._RejectionStatus3 import RejectionStatus3
+from ._Status4Code import Status4Code
 
 class CollateralCancellationStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnDtls", "_CollStsCd", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_CollStsCd", "_RjctnDtls"]
 	@property
-	def RjctnDtls(self):
-		return self._RjctnDtls
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@RjctnDtls.setter
-	def RjctnDtls(self, value):
-		self._RjctnDtls = value if type(value) != base_types.auto else self.make_default("RjctnDtls")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@RjctnDtls.deleter
-	def RjctnDtls(self):
-		del self._RjctnDtls
-		self._RjctnDtls = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def CollStsCd(self):
@@ -33,21 +33,21 @@ class CollateralCancellationStatus2(base_types._BaseFieldType):
 		self._CollStsCd = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def RjctnDtls(self):
+		return self._RjctnDtls
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@RjctnDtls.setter
+	def RjctnDtls(self, value):
+		self._RjctnDtls = value if type(value) != base_types.auto else self.make_default("RjctnDtls")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@RjctnDtls.deleter
+	def RjctnDtls(self):
+		del self._RjctnDtls
+		self._RjctnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctnDtls', type=RejectionStatus3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollStsCd', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollStsCd', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnDtls', type=RejectionStatus3, min=0, max=1, mutex_group=None, array=False),
 	))
 

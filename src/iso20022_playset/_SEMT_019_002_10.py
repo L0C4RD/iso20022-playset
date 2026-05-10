@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesSettlementTransactionAllegementReport002V10 import SecuritiesSettlementTransactionAllegementReport002V10
+from ._SecuritiesSettlementTransactionAllegementReport002V10 import SecuritiesSettlementTransactionAllegementReport002V10
 
 class SEMT_019_002_10():
 

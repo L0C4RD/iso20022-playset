@@ -1,5 +1,5 @@
 from . import base_types
-from .Amount2Choice import Amount2Choice
+from ._Amount2Choice import Amount2Choice
 
 class Amount4Choice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .CreateStandingOrderV03 import CreateStandingOrderV03
+from ._CreateStandingOrderV03 import CreateStandingOrderV03
 
 class CAMT_102_001_03():
 

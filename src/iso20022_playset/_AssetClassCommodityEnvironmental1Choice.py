@@ -1,11 +1,11 @@
 from . import base_types
-from .EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
-from .EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
-from .EnvironmentalCommodityEmission1 import EnvironmentalCommodityEmission1
+from ._EnvironmentalCommodityEmission1 import EnvironmentalCommodityEmission1
+from ._EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
+from ._EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
 
 class AssetClassCommodityEnvironmental1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wthr", "_CrbnRltd", "_Emssns"]
+	__slots__ = ["_Wthr", "_Emssns", "_CrbnRltd"]
 	@property
 	def Wthr(self):
 		return self._Wthr
@@ -20,19 +20,6 @@ class AssetClassCommodityEnvironmental1Choice(base_types._BaseFieldType):
 		self._Wthr = None
 
 	@property
-	def CrbnRltd(self):
-		return self._CrbnRltd
-
-	@CrbnRltd.setter
-	def CrbnRltd(self, value):
-		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
-
-	@CrbnRltd.deleter
-	def CrbnRltd(self):
-		del self._CrbnRltd
-		self._CrbnRltd = None
-
-	@property
 	def Emssns(self):
 		return self._Emssns
 
@@ -45,9 +32,22 @@ class AssetClassCommodityEnvironmental1Choice(base_types._BaseFieldType):
 		del self._Emssns
 		self._Emssns = None
 
+	@property
+	def CrbnRltd(self):
+		return self._CrbnRltd
+
+	@CrbnRltd.setter
+	def CrbnRltd(self, value):
+		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
+
+	@CrbnRltd.deleter
+	def CrbnRltd(self):
+		del self._CrbnRltd
+		self._CrbnRltd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Emssns', type=EnvironmentalCommodityEmission1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .SettlementDateCode7Choice import SettlementDateCode7Choice
+from ._SettlementDateCode7Choice import SettlementDateCode7Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SettlementDate17Choice(base_types._BaseFieldType):
 

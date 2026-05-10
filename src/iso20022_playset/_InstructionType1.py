@@ -1,5 +1,5 @@
 from . import base_types
-from .InstructionType1Code import InstructionType1Code
+from ._InstructionType1Code import InstructionType1Code
 
 class InstructionType1(base_types._BaseFieldType):
 

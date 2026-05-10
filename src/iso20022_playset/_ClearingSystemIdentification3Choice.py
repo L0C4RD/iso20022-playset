@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalCashClearingSystem1Code import ExternalCashClearingSystem1Code
+from ._Max35Text import Max35Text
+from ._ExternalCashClearingSystem1Code import ExternalCashClearingSystem1Code
 
 class ClearingSystemIdentification3Choice(base_types._BaseFieldType):
 

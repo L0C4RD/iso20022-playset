@@ -1,25 +1,25 @@
 from . import base_types
-from .ATMSecurityContext3 import ATMSecurityContext3
-from .SecurityParameters10 import SecurityParameters10
-from .Max140Binary import Max140Binary
-from .ATMEnvironment7 import ATMEnvironment7
-from .ATMCommand17 import ATMCommand17
+from ._ATMEnvironment7 import ATMEnvironment7
+from ._ATMCommand17 import ATMCommand17
+from ._SecurityParameters10 import SecurityParameters10
+from ._ATMSecurityContext3 import ATMSecurityContext3
+from ._Max140Binary import Max140Binary
 
 class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMSctyCntxt", "_Cmd", "_HstSctyParams", "_Envt", "_ATMChllng"]
+	__slots__ = ["_HstSctyParams", "_Cmd", "_Envt", "_ATMChllng", "_ATMSctyCntxt"]
 	@property
-	def ATMSctyCntxt(self):
-		return self._ATMSctyCntxt
+	def HstSctyParams(self):
+		return self._HstSctyParams
 
-	@ATMSctyCntxt.setter
-	def ATMSctyCntxt(self, value):
-		self._ATMSctyCntxt = value if type(value) != base_types.auto else self.make_default("ATMSctyCntxt")
+	@HstSctyParams.setter
+	def HstSctyParams(self, value):
+		self._HstSctyParams = value if type(value) != base_types.auto else self.make_default("HstSctyParams")
 
-	@ATMSctyCntxt.deleter
-	def ATMSctyCntxt(self):
-		del self._ATMSctyCntxt
-		self._ATMSctyCntxt = None
+	@HstSctyParams.deleter
+	def HstSctyParams(self):
+		del self._HstSctyParams
+		self._HstSctyParams = None
 
 	@property
 	def Cmd(self):
@@ -33,19 +33,6 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 	def Cmd(self):
 		del self._Cmd
 		self._Cmd = None
-
-	@property
-	def HstSctyParams(self):
-		return self._HstSctyParams
-
-	@HstSctyParams.setter
-	def HstSctyParams(self, value):
-		self._HstSctyParams = value if type(value) != base_types.auto else self.make_default("HstSctyParams")
-
-	@HstSctyParams.deleter
-	def HstSctyParams(self):
-		del self._HstSctyParams
-		self._HstSctyParams = None
 
 	@property
 	def Envt(self):
@@ -73,11 +60,24 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 		del self._ATMChllng
 		self._ATMChllng = None
 
+	@property
+	def ATMSctyCntxt(self):
+		return self._ATMSctyCntxt
+
+	@ATMSctyCntxt.setter
+	def ATMSctyCntxt(self, value):
+		self._ATMSctyCntxt = value if type(value) != base_types.auto else self.make_default("ATMSctyCntxt")
+
+	@ATMSctyCntxt.deleter
+	def ATMSctyCntxt(self):
+		del self._ATMSctyCntxt
+		self._ATMSctyCntxt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmd', type=ATMCommand17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HstSctyParams', type=SecurityParameters10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmd', type=ATMCommand17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext3, min=1, max=1, mutex_group=None, array=False),
 	))
 

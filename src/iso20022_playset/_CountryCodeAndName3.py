@@ -1,6 +1,6 @@
 from . import base_types
-from .Max70Text import Max70Text
-from .CountryCode import CountryCode
+from ._Max70Text import Max70Text
+from ._CountryCode import CountryCode
 
 class CountryCodeAndName3(base_types._BaseFieldType):
 

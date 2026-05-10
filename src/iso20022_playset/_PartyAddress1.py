@@ -1,25 +1,12 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .Max256Text import Max256Text
-from .PostalAddress26 import PostalAddress26
-from .Max2048Text import Max2048Text
+from ._PostalAddress26 import PostalAddress26
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max256Text import Max256Text
+from ._Max2048Text import Max2048Text
 
 class PartyAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_URLAdr", "_AnyBIC", "_PstlAdr", "_EmailAdr"]
-	@property
-	def URLAdr(self):
-		return self._URLAdr
-
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
-
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
-
+	__slots__ = ["_AnyBIC", "_URLAdr", "_PstlAdr", "_EmailAdr"]
 	@property
 	def AnyBIC(self):
 		return self._AnyBIC
@@ -32,6 +19,19 @@ class PartyAddress1(base_types._BaseFieldType):
 	def AnyBIC(self):
 		del self._AnyBIC
 		self._AnyBIC = None
+
+	@property
+	def URLAdr(self):
+		return self._URLAdr
+
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
 
 	@property
 	def PstlAdr(self):
@@ -60,8 +60,8 @@ class PartyAddress1(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))

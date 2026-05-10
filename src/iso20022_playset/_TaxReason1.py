@@ -1,6 +1,6 @@
 from . import base_types
-from .Max10Text import Max10Text
-from .Max105Text import Max105Text
+from ._Max105Text import Max105Text
+from ._Max10Text import Max10Text
 
 class TaxReason1(base_types._BaseFieldType):
 

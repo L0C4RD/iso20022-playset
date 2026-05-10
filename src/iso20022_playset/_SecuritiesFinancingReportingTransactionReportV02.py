@@ -1,23 +1,10 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .TradeData40Choice import TradeData40Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeData40Choice import TradeData40Choice
 
 class SecuritiesFinancingReportingTransactionReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradData"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_TradData", "_SplmtryData"]
 	@property
 	def TradData(self):
 		return self._TradData
@@ -31,8 +18,21 @@ class SecuritiesFinancingReportingTransactionReportV02(base_types._BaseFieldType
 		del self._TradData
 		self._TradData = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradData', type=TradeData40Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraPositionMovementConfirmationV10 import IntraPositionMovementConfirmationV10
+from ._IntraPositionMovementConfirmationV10 import IntraPositionMovementConfirmationV10
 
 class SEMT_015_001_10():
 

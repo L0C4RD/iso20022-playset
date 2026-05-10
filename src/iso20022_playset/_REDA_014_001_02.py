@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyCreationRequestV02 import PartyCreationRequestV02
+from ._PartyCreationRequestV02 import PartyCreationRequestV02
 
 class REDA_014_001_02():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .SettlementFailsSecurities1 import SettlementFailsSecurities1
+from ._SettlementFailsSecurities1 import SettlementFailsSecurities1
 
 class SettlementFailsSecuritiesRange1(base_types._BaseFieldType):
 

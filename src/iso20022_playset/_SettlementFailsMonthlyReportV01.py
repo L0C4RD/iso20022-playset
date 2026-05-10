@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SettlementFailsReportHeader2 import SettlementFailsReportHeader2
-from .SettlementFailsData3 import SettlementFailsData3
-from .SettlementFailsDailyData3 import SettlementFailsDailyData3
+from ._SupplementaryData1 import SupplementaryData1
+from ._SettlementFailsDailyData3 import SettlementFailsDailyData3
+from ._SettlementFailsData3 import SettlementFailsData3
+from ._SettlementFailsReportHeader2 import SettlementFailsReportHeader2
 
 class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MnthlyAggt", "_DalyData", "_SplmtryData", "_RptHdr"]
-	@property
-	def MnthlyAggt(self):
-		return self._MnthlyAggt
-
-	@MnthlyAggt.setter
-	def MnthlyAggt(self, value):
-		self._MnthlyAggt = value if type(value) != base_types.auto else self.make_default("MnthlyAggt")
-
-	@MnthlyAggt.deleter
-	def MnthlyAggt(self):
-		del self._MnthlyAggt
-		self._MnthlyAggt = None
-
+	__slots__ = ["_DalyData", "_SplmtryData", "_RptHdr", "_MnthlyAggt"]
 	@property
 	def DalyData(self):
 		return self._DalyData
@@ -59,10 +46,23 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 		del self._RptHdr
 		self._RptHdr = None
 
+	@property
+	def MnthlyAggt(self):
+		return self._MnthlyAggt
+
+	@MnthlyAggt.setter
+	def MnthlyAggt(self, value):
+		self._MnthlyAggt = value if type(value) != base_types.auto else self.make_default("MnthlyAggt")
+
+	@MnthlyAggt.deleter
+	def MnthlyAggt(self):
+		del self._MnthlyAggt
+		self._MnthlyAggt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MnthlyAggt', type=SettlementFailsData3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DalyData', type=SettlementFailsDailyData3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MnthlyAggt', type=SettlementFailsData3, min=1, max=1, mutex_group=None, array=False),
 	))
 

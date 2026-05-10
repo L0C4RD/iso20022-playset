@@ -1,6 +1,6 @@
 from . import base_types
-from .ATMEnvironment9 import ATMEnvironment9
-from .ATMStatus2 import ATMStatus2
+from ._ATMStatus2 import ATMStatus2
+from ._ATMEnvironment9 import ATMEnvironment9
 
 class ATMDiagnosticRequest3(base_types._BaseFieldType):
 

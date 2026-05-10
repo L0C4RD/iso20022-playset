@@ -1,26 +1,13 @@
 from . import base_types
-from .PairingStatus1Code import PairingStatus1Code
-from .TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
-from .ReconciliationStatus2Code import ReconciliationStatus2Code
-from .YesNoIndicator import YesNoIndicator
-from .ReconciliationStatus1Code import ReconciliationStatus1Code
+from ._PairingStatus1Code import PairingStatus1Code
+from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
+from ._ReconciliationStatus1Code import ReconciliationStatus1Code
+from ._YesNoIndicator import YesNoIndicator
+from ._ReconciliationStatus2Code import ReconciliationStatus2Code
 
 class ReconciliationCategory5(base_types._BaseFieldType):
 
-	__slots__ = ["_Pairg", "_Rcncltn", "_FrthrMod", "_Rvvd", "_ValtnRcncltn", "_RptgTp"]
-	@property
-	def Pairg(self):
-		return self._Pairg
-
-	@Pairg.setter
-	def Pairg(self, value):
-		self._Pairg = value if type(value) != base_types.auto else self.make_default("Pairg")
-
-	@Pairg.deleter
-	def Pairg(self):
-		del self._Pairg
-		self._Pairg = None
-
+	__slots__ = ["_Rcncltn", "_Pairg", "_ValtnRcncltn", "_FrthrMod", "_RptgTp", "_Rvvd"]
 	@property
 	def Rcncltn(self):
 		return self._Rcncltn
@@ -35,30 +22,17 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		self._Rcncltn = None
 
 	@property
-	def FrthrMod(self):
-		return self._FrthrMod
+	def Pairg(self):
+		return self._Pairg
 
-	@FrthrMod.setter
-	def FrthrMod(self, value):
-		self._FrthrMod = value if type(value) != base_types.auto else self.make_default("FrthrMod")
+	@Pairg.setter
+	def Pairg(self, value):
+		self._Pairg = value if type(value) != base_types.auto else self.make_default("Pairg")
 
-	@FrthrMod.deleter
-	def FrthrMod(self):
-		del self._FrthrMod
-		self._FrthrMod = None
-
-	@property
-	def Rvvd(self):
-		return self._Rvvd
-
-	@Rvvd.setter
-	def Rvvd(self, value):
-		self._Rvvd = value if type(value) != base_types.auto else self.make_default("Rvvd")
-
-	@Rvvd.deleter
-	def Rvvd(self):
-		del self._Rvvd
-		self._Rvvd = None
+	@Pairg.deleter
+	def Pairg(self):
+		del self._Pairg
+		self._Pairg = None
 
 	@property
 	def ValtnRcncltn(self):
@@ -74,6 +48,19 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		self._ValtnRcncltn = None
 
 	@property
+	def FrthrMod(self):
+		return self._FrthrMod
+
+	@FrthrMod.setter
+	def FrthrMod(self, value):
+		self._FrthrMod = value if type(value) != base_types.auto else self.make_default("FrthrMod")
+
+	@FrthrMod.deleter
+	def FrthrMod(self):
+		del self._FrthrMod
+		self._FrthrMod = None
+
+	@property
 	def RptgTp(self):
 		return self._RptgTp
 
@@ -86,12 +73,25 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 		del self._RptgTp
 		self._RptgTp = None
 
+	@property
+	def Rvvd(self):
+		return self._Rvvd
+
+	@Rvvd.setter
+	def Rvvd(self, value):
+		self._Rvvd = value if type(value) != base_types.auto else self.make_default("Rvvd")
+
+	@Rvvd.deleter
+	def Rvvd(self):
+		del self._Rvvd
+		self._Rvvd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pairg', type=PairingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcncltn', type=ReconciliationStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrthrMod', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rvvd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pairg', type=PairingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnRcncltn', type=ReconciliationStatus2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrthrMod', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgTp', type=TradeRepositoryReportingType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rvvd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

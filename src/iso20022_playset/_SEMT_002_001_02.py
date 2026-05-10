@@ -1,5 +1,5 @@
 from . import base_types
-from .CustodyStatementOfHoldingsV02 import CustodyStatementOfHoldingsV02
+from ._CustodyStatementOfHoldingsV02 import CustodyStatementOfHoldingsV02
 
 class SEMT_002_001_02():
 

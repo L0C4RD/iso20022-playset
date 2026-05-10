@@ -1,22 +1,22 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .OwnershipType3Choice import OwnershipType3Choice
+from ._OwnershipType3Choice import OwnershipType3Choice
+from ._PercentageRate import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrshPctg", "_OwnrshTp", "_UsfrctPctg"]
+	__slots__ = ["_UsfrctPctg", "_OwnrshTp", "_OwnrshPctg"]
 	@property
-	def OwnrshPctg(self):
-		return self._OwnrshPctg
+	def UsfrctPctg(self):
+		return self._UsfrctPctg
 
-	@OwnrshPctg.setter
-	def OwnrshPctg(self, value):
-		self._OwnrshPctg = value if type(value) != base_types.auto else self.make_default("OwnrshPctg")
+	@UsfrctPctg.setter
+	def UsfrctPctg(self, value):
+		self._UsfrctPctg = value if type(value) != base_types.auto else self.make_default("UsfrctPctg")
 
-	@OwnrshPctg.deleter
-	def OwnrshPctg(self):
-		del self._OwnrshPctg
-		self._OwnrshPctg = None
+	@UsfrctPctg.deleter
+	def UsfrctPctg(self):
+		del self._UsfrctPctg
+		self._UsfrctPctg = None
 
 	@property
 	def OwnrshTp(self):
@@ -32,21 +32,21 @@ class Ownership1(base_types._BaseFieldType):
 		self._OwnrshTp = None
 
 	@property
-	def UsfrctPctg(self):
-		return self._UsfrctPctg
+	def OwnrshPctg(self):
+		return self._OwnrshPctg
 
-	@UsfrctPctg.setter
-	def UsfrctPctg(self, value):
-		self._UsfrctPctg = value if type(value) != base_types.auto else self.make_default("UsfrctPctg")
+	@OwnrshPctg.setter
+	def OwnrshPctg(self, value):
+		self._OwnrshPctg = value if type(value) != base_types.auto else self.make_default("OwnrshPctg")
 
-	@UsfrctPctg.deleter
-	def UsfrctPctg(self):
-		del self._UsfrctPctg
-		self._UsfrctPctg = None
+	@OwnrshPctg.deleter
+	def OwnrshPctg(self):
+		del self._OwnrshPctg
+		self._OwnrshPctg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsfrctPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .ElectronicInvoice1 import ElectronicInvoice1
-from .DebtorActivation6 import DebtorActivation6
+from ._DebtorActivation6 import DebtorActivation6
+from ._ElectronicInvoice1 import ElectronicInvoice1
 
 class DebtorActivationAmendment6(base_types._BaseFieldType):
 

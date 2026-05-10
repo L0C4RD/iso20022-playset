@@ -1,23 +1,23 @@
 from . import base_types
-from .InvestigationLocationMethod1Code import InvestigationLocationMethod1Code
-from .NameAndAddress18 import NameAndAddress18
-from .Max2048Text import Max2048Text
+from ._InvestigationLocationMethod1Code import InvestigationLocationMethod1Code
+from ._Max2048Text import Max2048Text
+from ._NameAndAddress18 import NameAndAddress18
 
 class NotificationLocationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Mtd", "_ElctrncAdr"]
+	__slots__ = ["_ElctrncAdr", "_Mtd", "_PstlAdr"]
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def ElctrncAdr(self):
+		return self._ElctrncAdr
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+	@ElctrncAdr.setter
+	def ElctrncAdr(self, value):
+		self._ElctrncAdr = value if type(value) != base_types.auto else self.make_default("ElctrncAdr")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@ElctrncAdr.deleter
+	def ElctrncAdr(self):
+		del self._ElctrncAdr
+		self._ElctrncAdr = None
 
 	@property
 	def Mtd(self):
@@ -33,21 +33,21 @@ class NotificationLocationData1(base_types._BaseFieldType):
 		self._Mtd = None
 
 	@property
-	def ElctrncAdr(self):
-		return self._ElctrncAdr
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@ElctrncAdr.setter
-	def ElctrncAdr(self, value):
-		self._ElctrncAdr = value if type(value) != base_types.auto else self.make_default("ElctrncAdr")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
 
-	@ElctrncAdr.deleter
-	def ElctrncAdr(self):
-		del self._ElctrncAdr
-		self._ElctrncAdr = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mtd', type=InvestigationLocationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtd', type=InvestigationLocationMethod1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 	))
 

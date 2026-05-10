@@ -1,27 +1,14 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
-from .MeetingType4Code import MeetingType4Code
-from .PartyIdentification129Choice import PartyIdentification129Choice
-from .ISODateTime import ISODateTime
-from .PostalAddress1 import PostalAddress1
+from ._MeetingType4Code import MeetingType4Code
+from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._PostalAddress1 import PostalAddress1
+from ._ISODateTime import ISODateTime
 
 class MeetingReference10(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrMtgId", "_MtgId", "_MtgDtAndTm", "_Clssfctn", "_Tp", "_Lctn", "_Issr"]
-	@property
-	def IssrMtgId(self):
-		return self._IssrMtgId
-
-	@IssrMtgId.setter
-	def IssrMtgId(self, value):
-		self._IssrMtgId = value if type(value) != base_types.auto else self.make_default("IssrMtgId")
-
-	@IssrMtgId.deleter
-	def IssrMtgId(self):
-		del self._IssrMtgId
-		self._IssrMtgId = None
-
+	__slots__ = ["_MtgId", "_Clssfctn", "_Issr", "_IssrMtgId", "_Tp", "_Lctn", "_MtgDtAndTm"]
 	@property
 	def MtgId(self):
 		return self._MtgId
@@ -36,19 +23,6 @@ class MeetingReference10(base_types._BaseFieldType):
 		self._MtgId = None
 
 	@property
-	def MtgDtAndTm(self):
-		return self._MtgDtAndTm
-
-	@MtgDtAndTm.setter
-	def MtgDtAndTm(self, value):
-		self._MtgDtAndTm = value if type(value) != base_types.auto else self.make_default("MtgDtAndTm")
-
-	@MtgDtAndTm.deleter
-	def MtgDtAndTm(self):
-		del self._MtgDtAndTm
-		self._MtgDtAndTm = None
-
-	@property
 	def Clssfctn(self):
 		return self._Clssfctn
 
@@ -60,6 +34,32 @@ class MeetingReference10(base_types._BaseFieldType):
 	def Clssfctn(self):
 		del self._Clssfctn
 		self._Clssfctn = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def IssrMtgId(self):
+		return self._IssrMtgId
+
+	@IssrMtgId.setter
+	def IssrMtgId(self, value):
+		self._IssrMtgId = value if type(value) != base_types.auto else self.make_default("IssrMtgId")
+
+	@IssrMtgId.deleter
+	def IssrMtgId(self):
+		del self._IssrMtgId
+		self._IssrMtgId = None
 
 	@property
 	def Tp(self):
@@ -88,25 +88,25 @@ class MeetingReference10(base_types._BaseFieldType):
 		self._Lctn = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def MtgDtAndTm(self):
+		return self._MtgDtAndTm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+	@MtgDtAndTm.setter
+	def MtgDtAndTm(self, value):
+		self._MtgDtAndTm = value if type(value) != base_types.auto else self.make_default("MtgDtAndTm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@MtgDtAndTm.deleter
+	def MtgDtAndTm(self):
+		del self._MtgDtAndTm
+		self._MtgDtAndTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrMtgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Clssfctn', type=MeetingTypeClassification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrMtgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MeetingType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=PostalAddress1, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

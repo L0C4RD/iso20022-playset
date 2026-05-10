@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .IntraBalanceCancellation7 import IntraBalanceCancellation7
+from ._IntraBalanceCancellation7 import IntraBalanceCancellation7
+from ._ErrorHandling5 import ErrorHandling5
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 

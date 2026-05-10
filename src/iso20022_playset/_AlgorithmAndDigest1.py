@@ -1,6 +1,6 @@
 from . import base_types
-from .Algorithm5Code import Algorithm5Code
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Algorithm5Code import Algorithm5Code
 
 class AlgorithmAndDigest1(base_types._BaseFieldType):
 

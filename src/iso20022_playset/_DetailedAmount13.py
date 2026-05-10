@@ -1,7 +1,7 @@
 from . import base_types
-from .Max70Text import Max70Text
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max70Text import Max70Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class DetailedAmount13(base_types._BaseFieldType):
 

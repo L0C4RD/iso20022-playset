@@ -1,11 +1,24 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .ISODate import ISODate
-from .AmountAndDirection53 import AmountAndDirection53
+from ._AmountAndDirection53 import AmountAndDirection53
+from ._Max52Text import Max52Text
+from ._ISODate import ISODate
 
 class LoanData113(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqTradIdr", "_MktVal", "_EvtDt"]
+	__slots__ = ["_EvtDt", "_UnqTradIdr", "_MktVal"]
+	@property
+	def EvtDt(self):
+		return self._EvtDt
+
+	@EvtDt.setter
+	def EvtDt(self, value):
+		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+
+	@EvtDt.deleter
+	def EvtDt(self):
+		del self._EvtDt
+		self._EvtDt = None
+
 	@property
 	def UnqTradIdr(self):
 		return self._UnqTradIdr
@@ -32,22 +45,9 @@ class LoanData113(base_types._BaseFieldType):
 		del self._MktVal
 		self._MktVal = None
 
-	@property
-	def EvtDt(self):
-		return self._EvtDt
-
-	@EvtDt.setter
-	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
-
-	@EvtDt.deleter
-	def EvtDt(self):
-		del self._EvtDt
-		self._EvtDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=AmountAndDirection53, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

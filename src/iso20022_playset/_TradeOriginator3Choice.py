@@ -1,6 +1,6 @@
 from . import base_types
-from .OriginatorRole2Code import OriginatorRole2Code
-from .GenericIdentification30 import GenericIdentification30
+from ._GenericIdentification30 import GenericIdentification30
+from ._OriginatorRole2Code import OriginatorRole2Code
 
 class TradeOriginator3Choice(base_types._BaseFieldType):
 

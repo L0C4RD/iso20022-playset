@@ -1,5 +1,5 @@
 from . import base_types
-from .SaleToPOIMessageRejectionV02 import SaleToPOIMessageRejectionV02
+from ._SaleToPOIMessageRejectionV02 import SaleToPOIMessageRejectionV02
 
 class CASP_013_001_02():
 

@@ -1,10 +1,10 @@
 from . import base_types
-from .DatePeriodDetails import DatePeriodDetails
-from .DecimalNumber import DecimalNumber
+from ._DatePeriodDetails import DatePeriodDetails
+from ._DecimalNumber import DecimalNumber
 
 class PerformanceFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnFctr", "_AcmltnPrd", "_CmltvCorpActnFctr", "_NrmlPrfrmnc"]
+	__slots__ = ["_CorpActnFctr", "_AcmltnPrd", "_NrmlPrfrmnc", "_CmltvCorpActnFctr"]
 	@property
 	def CorpActnFctr(self):
 		return self._CorpActnFctr
@@ -32,19 +32,6 @@ class PerformanceFactors1(base_types._BaseFieldType):
 		self._AcmltnPrd = None
 
 	@property
-	def CmltvCorpActnFctr(self):
-		return self._CmltvCorpActnFctr
-
-	@CmltvCorpActnFctr.setter
-	def CmltvCorpActnFctr(self, value):
-		self._CmltvCorpActnFctr = value if type(value) != base_types.auto else self.make_default("CmltvCorpActnFctr")
-
-	@CmltvCorpActnFctr.deleter
-	def CmltvCorpActnFctr(self):
-		del self._CmltvCorpActnFctr
-		self._CmltvCorpActnFctr = None
-
-	@property
 	def NrmlPrfrmnc(self):
 		return self._NrmlPrfrmnc
 
@@ -57,10 +44,23 @@ class PerformanceFactors1(base_types._BaseFieldType):
 		del self._NrmlPrfrmnc
 		self._NrmlPrfrmnc = None
 
+	@property
+	def CmltvCorpActnFctr(self):
+		return self._CmltvCorpActnFctr
+
+	@CmltvCorpActnFctr.setter
+	def CmltvCorpActnFctr(self, value):
+		self._CmltvCorpActnFctr = value if type(value) != base_types.auto else self.make_default("CmltvCorpActnFctr")
+
+	@CmltvCorpActnFctr.deleter
+	def CmltvCorpActnFctr(self):
+		del self._CmltvCorpActnFctr
+		self._CmltvCorpActnFctr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcmltnPrd', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmltvCorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrmlPrfrmnc', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvCorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

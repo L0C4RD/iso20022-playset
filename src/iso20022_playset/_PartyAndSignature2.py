@@ -1,6 +1,6 @@
 from . import base_types
-from .ProprietaryData3 import ProprietaryData3
-from .PartyIdentification43 import PartyIdentification43
+from ._ProprietaryData3 import ProprietaryData3
+from ._PartyIdentification43 import PartyIdentification43
 
 class PartyAndSignature2(base_types._BaseFieldType):
 

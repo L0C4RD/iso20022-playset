@@ -1,38 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ValidationStatusReason3 import ValidationStatusReason3
-from .StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from .ISODateTime import ISODateTime
-from .CurrencyControlRecordStatus3 import CurrencyControlRecordStatus3
+from ._CurrencyControlRecordStatus3 import CurrencyControlRecordStatus3
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from ._Max35Text import Max35Text
+from ._ValidationStatusReason3 import ValidationStatusReason3
+from ._ISODateTime import ISODateTime
 
 class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_RcrdSts", "_StsDtTm", "_Sts", "_PackgId", "_StsRsn"]
+	__slots__ = ["_PackgId", "_Sts", "_StsDtTm", "_StsRsn", "_RcrdSts"]
 	@property
-	def RcrdSts(self):
-		return self._RcrdSts
+	def PackgId(self):
+		return self._PackgId
 
-	@RcrdSts.setter
-	def RcrdSts(self, value):
-		self._RcrdSts = value if type(value) != base_types.auto else self.make_default("RcrdSts")
+	@PackgId.setter
+	def PackgId(self, value):
+		self._PackgId = value if type(value) != base_types.auto else self.make_default("PackgId")
 
-	@RcrdSts.deleter
-	def RcrdSts(self):
-		del self._RcrdSts
-		self._RcrdSts = None
-
-	@property
-	def StsDtTm(self):
-		return self._StsDtTm
-
-	@StsDtTm.setter
-	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
-
-	@StsDtTm.deleter
-	def StsDtTm(self):
-		del self._StsDtTm
-		self._StsDtTm = None
+	@PackgId.deleter
+	def PackgId(self):
+		del self._PackgId
+		self._PackgId = None
 
 	@property
 	def Sts(self):
@@ -48,17 +35,17 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def PackgId(self):
-		return self._PackgId
+	def StsDtTm(self):
+		return self._StsDtTm
 
-	@PackgId.setter
-	def PackgId(self, value):
-		self._PackgId = value if type(value) != base_types.auto else self.make_default("PackgId")
+	@StsDtTm.setter
+	def StsDtTm(self, value):
+		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
 
-	@PackgId.deleter
-	def PackgId(self):
-		del self._PackgId
-		self._PackgId = None
+	@StsDtTm.deleter
+	def StsDtTm(self):
+		del self._StsDtTm
+		self._StsDtTm = None
 
 	@property
 	def StsRsn(self):
@@ -73,11 +60,24 @@ class CurrencyControlPackageStatus3(base_types._BaseFieldType):
 		del self._StsRsn
 		self._StsRsn = None
 
+	@property
+	def RcrdSts(self):
+		return self._RcrdSts
+
+	@RcrdSts.setter
+	def RcrdSts(self, value):
+		self._RcrdSts = value if type(value) != base_types.auto else self.make_default("RcrdSts")
+
+	@RcrdSts.deleter
+	def RcrdSts(self):
+		del self._RcrdSts
+		self._RcrdSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcrdSts', type=CurrencyControlRecordStatus3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PackgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcrdSts', type=CurrencyControlRecordStatus3, min=0, max=None, mutex_group=None, array=True),
 	))
 

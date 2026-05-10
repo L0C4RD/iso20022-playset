@@ -1,12 +1,12 @@
 from . import base_types
-from .CreditorEnrolment5 import CreditorEnrolment5
-from .EnrolmentHeader3 import EnrolmentHeader3
-from .SupplementaryData1 import SupplementaryData1
-from .CreditorInvoice6 import CreditorInvoice6
+from ._CreditorEnrolment5 import CreditorEnrolment5
+from ._SupplementaryData1 import SupplementaryData1
+from ._CreditorInvoice6 import CreditorInvoice6
+from ._EnrolmentHeader3 import EnrolmentHeader3
 
 class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtrEnrlmnt", "_ActvtnData", "_Hdr", "_SplmtryData"]
+	__slots__ = ["_CdtrEnrlmnt", "_SplmtryData", "_Hdr", "_ActvtnData"]
 	@property
 	def CdtrEnrlmnt(self):
 		return self._CdtrEnrlmnt
@@ -21,17 +21,17 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 		self._CdtrEnrlmnt = None
 
 	@property
-	def ActvtnData(self):
-		return self._ActvtnData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ActvtnData.setter
-	def ActvtnData(self, value):
-		self._ActvtnData = value if type(value) != base_types.auto else self.make_default("ActvtnData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@ActvtnData.deleter
-	def ActvtnData(self):
-		del self._ActvtnData
-		self._ActvtnData = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Hdr(self):
@@ -47,22 +47,22 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ActvtnData(self):
+		return self._ActvtnData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@ActvtnData.setter
+	def ActvtnData(self, value):
+		self._ActvtnData = value if type(value) != base_types.auto else self.make_default("ActvtnData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ActvtnData.deleter
+	def ActvtnData(self):
+		del self._ActvtnData
+		self._ActvtnData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtrEnrlmnt', type=CreditorEnrolment5, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ActvtnData', type=CreditorInvoice6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnData', type=CreditorInvoice6, min=1, max=1, mutex_group=None, array=False),
 	))
 

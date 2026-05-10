@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CardholderVerificationCapability5Code import CardholderVerificationCapability5Code
+from ._Max35Text import Max35Text
+from ._CardholderVerificationCapability5Code import CardholderVerificationCapability5Code
 
 class CardholderVerificationCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cpblty", "_OthrCpblty"]
-	@property
-	def Cpblty(self):
-		return self._Cpblty
-
-	@Cpblty.setter
-	def Cpblty(self, value):
-		self._Cpblty = value if type(value) != base_types.auto else self.make_default("Cpblty")
-
-	@Cpblty.deleter
-	def Cpblty(self):
-		del self._Cpblty
-		self._Cpblty = None
-
+	__slots__ = ["_OthrCpblty", "_Cpblty"]
 	@property
 	def OthrCpblty(self):
 		return self._OthrCpblty
@@ -31,8 +18,21 @@ class CardholderVerificationCapabilities1(base_types._BaseFieldType):
 		del self._OthrCpblty
 		self._OthrCpblty = None
 
+	@property
+	def Cpblty(self):
+		return self._Cpblty
+
+	@Cpblty.setter
+	def Cpblty(self, value):
+		self._Cpblty = value if type(value) != base_types.auto else self.make_default("Cpblty")
+
+	@Cpblty.deleter
+	def Cpblty(self):
+		del self._Cpblty
+		self._Cpblty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cpblty', type=CardholderVerificationCapability5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCpblty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cpblty', type=CardholderVerificationCapability5Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

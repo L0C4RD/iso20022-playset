@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .PartyStatement3 import PartyStatement3
+from ._SupplementaryData1 import SupplementaryData1
+from ._PartyStatement3 import PartyStatement3
+from ._MessageHeader1 import MessageHeader1
 
 class PartyActivityAdviceV02(base_types._BaseFieldType):
 

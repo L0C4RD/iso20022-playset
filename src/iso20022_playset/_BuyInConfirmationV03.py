@@ -1,25 +1,38 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max35Text import Max35Text
-from .SettlementObligation7 import SettlementObligation7
-from .BuyIn2 import BuyIn2
-from .PartyIdentification35Choice import PartyIdentification35Choice
+from ._SettlementObligation7 import SettlementObligation7
+from ._BuyIn2 import BuyIn2
+from ._PartyIdentification35Choice import PartyIdentification35Choice
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
 
 class BuyInConfirmationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmb", "_BuyInDtls", "_SplmtryData", "_TxId", "_OrgnlSttlmOblgtn"]
+	__slots__ = ["_OrgnlSttlmOblgtn", "_TxId", "_BuyInDtls", "_SplmtryData", "_ClrMmb"]
 	@property
-	def ClrMmb(self):
-		return self._ClrMmb
+	def OrgnlSttlmOblgtn(self):
+		return self._OrgnlSttlmOblgtn
 
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+	@OrgnlSttlmOblgtn.setter
+	def OrgnlSttlmOblgtn(self, value):
+		self._OrgnlSttlmOblgtn = value if type(value) != base_types.auto else self.make_default("OrgnlSttlmOblgtn")
 
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
+	@OrgnlSttlmOblgtn.deleter
+	def OrgnlSttlmOblgtn(self):
+		del self._OrgnlSttlmOblgtn
+		self._OrgnlSttlmOblgtn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def BuyInDtls(self):
@@ -48,36 +61,23 @@ class BuyInConfirmationV03(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def ClrMmb(self):
+		return self._ClrMmb
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def OrgnlSttlmOblgtn(self):
-		return self._OrgnlSttlmOblgtn
-
-	@OrgnlSttlmOblgtn.setter
-	def OrgnlSttlmOblgtn(self, value):
-		self._OrgnlSttlmOblgtn = value if type(value) != base_types.auto else self.make_default("OrgnlSttlmOblgtn")
-
-	@OrgnlSttlmOblgtn.deleter
-	def OrgnlSttlmOblgtn(self):
-		del self._OrgnlSttlmOblgtn
-		self._OrgnlSttlmOblgtn = None
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlSttlmOblgtn', type=SettlementObligation7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInDtls', type=BuyIn2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlSttlmOblgtn', type=SettlementObligation7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

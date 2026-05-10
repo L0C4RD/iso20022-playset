@@ -1,10 +1,10 @@
 from . import base_types
-from .SecuritiesReferenceDataReport6 import SecuritiesReferenceDataReport6
-from .SecuritiesReferenceDataReport7 import SecuritiesReferenceDataReport7
+from ._SecuritiesReferenceDataReport6 import SecuritiesReferenceDataReport6
+from ._SecuritiesReferenceDataReport7 import SecuritiesReferenceDataReport7
 
 class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ModfdRcrd", "_TermntdRcrd", "_NewRcrd", "_CancRcrd"]
+	__slots__ = ["_ModfdRcrd", "_NewRcrd", "_CancRcrd", "_TermntdRcrd"]
 	@property
 	def ModfdRcrd(self):
 		return self._ModfdRcrd
@@ -17,19 +17,6 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 	def ModfdRcrd(self):
 		del self._ModfdRcrd
 		self._ModfdRcrd = None
-
-	@property
-	def TermntdRcrd(self):
-		return self._TermntdRcrd
-
-	@TermntdRcrd.setter
-	def TermntdRcrd(self, value):
-		self._TermntdRcrd = value if type(value) != base_types.auto else self.make_default("TermntdRcrd")
-
-	@TermntdRcrd.deleter
-	def TermntdRcrd(self):
-		del self._TermntdRcrd
-		self._TermntdRcrd = None
 
 	@property
 	def NewRcrd(self):
@@ -57,10 +44,23 @@ class SecuritiesReferenceDeltaStatusReport5Choice(base_types._BaseFieldType):
 		del self._CancRcrd
 		self._CancRcrd = None
 
+	@property
+	def TermntdRcrd(self):
+		return self._TermntdRcrd
+
+	@TermntdRcrd.setter
+	def TermntdRcrd(self, value):
+		self._TermntdRcrd = value if type(value) != base_types.auto else self.make_default("TermntdRcrd")
+
+	@TermntdRcrd.deleter
+	def TermntdRcrd(self):
+		del self._TermntdRcrd
+		self._TermntdRcrd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ModfdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TermntdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NewRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CancRcrd', type=SecuritiesReferenceDataReport7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TermntdRcrd', type=SecuritiesReferenceDataReport6, min=0, max=1, mutex_group=1, array=False),
 	))
 

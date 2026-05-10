@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .CorporateActionInformationType1Code import CorporateActionInformationType1Code
+from ._GenericIdentification30 import GenericIdentification30
+from ._CorporateActionInformationType1Code import CorporateActionInformationType1Code
 
 class InformationTypeFormat4Choice(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
-from .TransactionVerificationResult5 import TransactionVerificationResult5
-from .ATMCustomerProfile6 import ATMCustomerProfile6
-from .LanguageCode import LanguageCode
-from .CardholderAuthentication8 import CardholderAuthentication8
+from ._TransactionVerificationResult5 import TransactionVerificationResult5
+from ._LanguageCode import LanguageCode
+from ._ATMCustomerProfile6 import ATMCustomerProfile6
+from ._CardholderAuthentication8 import CardholderAuthentication8
 
 class ATMCustomer8(base_types._BaseFieldType):
 
-	__slots__ = ["_Authntcn", "_AuthntcnRslt", "_Prfl", "_SelctdLang"]
+	__slots__ = ["_Authntcn", "_Prfl", "_SelctdLang", "_AuthntcnRslt"]
 	@property
 	def Authntcn(self):
 		return self._Authntcn
@@ -19,19 +19,6 @@ class ATMCustomer8(base_types._BaseFieldType):
 	def Authntcn(self):
 		del self._Authntcn
 		self._Authntcn = None
-
-	@property
-	def AuthntcnRslt(self):
-		return self._AuthntcnRslt
-
-	@AuthntcnRslt.setter
-	def AuthntcnRslt(self, value):
-		self._AuthntcnRslt = value if type(value) != base_types.auto else self.make_default("AuthntcnRslt")
-
-	@AuthntcnRslt.deleter
-	def AuthntcnRslt(self):
-		del self._AuthntcnRslt
-		self._AuthntcnRslt = None
 
 	@property
 	def Prfl(self):
@@ -59,10 +46,23 @@ class ATMCustomer8(base_types._BaseFieldType):
 		del self._SelctdLang
 		self._SelctdLang = None
 
+	@property
+	def AuthntcnRslt(self):
+		return self._AuthntcnRslt
+
+	@AuthntcnRslt.setter
+	def AuthntcnRslt(self, value):
+		self._AuthntcnRslt = value if type(value) != base_types.auto else self.make_default("AuthntcnRslt")
+
+	@AuthntcnRslt.deleter
+	def AuthntcnRslt(self):
+		del self._AuthntcnRslt
+		self._AuthntcnRslt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Authntcn', type=CardholderAuthentication8, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SelctdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=0, max=None, mutex_group=None, array=True),
 	))
 

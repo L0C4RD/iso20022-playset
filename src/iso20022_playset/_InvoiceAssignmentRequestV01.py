@@ -1,13 +1,26 @@
 from . import base_types
-from .EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
-from .FinancingItemList1 import FinancingItemList1
-from .DecimalNumber import DecimalNumber
-from .BusinessLetter1 import BusinessLetter1
-from .Max15NumericText import Max15NumericText
+from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
+from ._Max15NumericText import Max15NumericText
+from ._BusinessLetter1 import BusinessLetter1
+from ._FinancingItemList1 import FinancingItemList1
+from ._DecimalNumber import DecimalNumber
 
 class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrlSum", "_AssgnmtCnt", "_AssgnmtList", "_Hdr", "_AttchdMsg", "_ItmCnt"]
+	__slots__ = ["_AttchdMsg", "_CtrlSum", "_ItmCnt", "_AssgnmtCnt", "_Hdr", "_AssgnmtList"]
+	@property
+	def AttchdMsg(self):
+		return self._AttchdMsg
+
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
+
 	@property
 	def CtrlSum(self):
 		return self._CtrlSum
@@ -20,6 +33,19 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 	def CtrlSum(self):
 		del self._CtrlSum
 		self._CtrlSum = None
+
+	@property
+	def ItmCnt(self):
+		return self._ItmCnt
+
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
+
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
 
 	@property
 	def AssgnmtCnt(self):
@@ -35,19 +61,6 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 		self._AssgnmtCnt = None
 
 	@property
-	def AssgnmtList(self):
-		return self._AssgnmtList
-
-	@AssgnmtList.setter
-	def AssgnmtList(self, value):
-		self._AssgnmtList = value if type(value) != base_types.auto else self.make_default("AssgnmtList")
-
-	@AssgnmtList.deleter
-	def AssgnmtList(self):
-		del self._AssgnmtList
-		self._AssgnmtList = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -61,37 +74,24 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
+	def AssgnmtList(self):
+		return self._AssgnmtList
 
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+	@AssgnmtList.setter
+	def AssgnmtList(self, value):
+		self._AssgnmtList = value if type(value) != base_types.auto else self.make_default("AssgnmtList")
 
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
-
-	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
+	@AssgnmtList.deleter
+	def AssgnmtList(self):
+		del self._AssgnmtList
+		self._AssgnmtList = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssgnmtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AssgnmtList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssgnmtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssgnmtList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
 	))
 

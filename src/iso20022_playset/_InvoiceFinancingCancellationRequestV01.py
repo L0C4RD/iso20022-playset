@@ -1,6 +1,6 @@
 from . import base_types
-from .CancellationRequestInformation1 import CancellationRequestInformation1
-from .MessageIdentification1 import MessageIdentification1
+from ._CancellationRequestInformation1 import CancellationRequestInformation1
+from ._MessageIdentification1 import MessageIdentification1
 
 class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 

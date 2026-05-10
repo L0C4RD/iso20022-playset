@@ -1,6 +1,6 @@
 from . import base_types
-from .GeneralBusinessInformationCriteriaDefinition1Choice import GeneralBusinessInformationCriteriaDefinition1Choice
-from .QueryType2Code import QueryType2Code
+from ._GeneralBusinessInformationCriteriaDefinition1Choice import GeneralBusinessInformationCriteriaDefinition1Choice
+from ._QueryType2Code import QueryType2Code
 
 class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 

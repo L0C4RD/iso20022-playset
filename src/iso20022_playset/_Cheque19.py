@@ -1,28 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ChequeType2Code import ChequeType2Code
-from .NameAndAddress18 import NameAndAddress18
-from .ISODate import ISODate
-from .Priority2Code import Priority2Code
-from .Max70Text import Max70Text
-from .ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
+from ._NameAndAddress18 import NameAndAddress18
+from ._ChequeType2Code import ChequeType2Code
+from ._Priority2Code import Priority2Code
+from ._ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
 
 class Cheque19(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryMtd", "_ChqMtrtyDt", "_FrmsCd", "_PrtLctn", "_Sgntr", "_DlvrTo", "_ChqTp", "_ChqNb", "_MemoFld", "_RgnlClrZone", "_ChqFr", "_InstrPrty"]
-	@property
-	def DlvryMtd(self):
-		return self._DlvryMtd
-
-	@DlvryMtd.setter
-	def DlvryMtd(self, value):
-		self._DlvryMtd = value if type(value) != base_types.auto else self.make_default("DlvryMtd")
-
-	@DlvryMtd.deleter
-	def DlvryMtd(self):
-		del self._DlvryMtd
-		self._DlvryMtd = None
-
+	__slots__ = ["_ChqMtrtyDt", "_Sgntr", "_FrmsCd", "_MemoFld", "_InstrPrty", "_DlvryMtd", "_ChqFr", "_ChqNb", "_DlvrTo", "_PrtLctn", "_ChqTp", "_RgnlClrZone"]
 	@property
 	def ChqMtrtyDt(self):
 		return self._ChqMtrtyDt
@@ -35,32 +22,6 @@ class Cheque19(base_types._BaseFieldType):
 	def ChqMtrtyDt(self):
 		del self._ChqMtrtyDt
 		self._ChqMtrtyDt = None
-
-	@property
-	def FrmsCd(self):
-		return self._FrmsCd
-
-	@FrmsCd.setter
-	def FrmsCd(self, value):
-		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
-
-	@FrmsCd.deleter
-	def FrmsCd(self):
-		del self._FrmsCd
-		self._FrmsCd = None
-
-	@property
-	def PrtLctn(self):
-		return self._PrtLctn
-
-	@PrtLctn.setter
-	def PrtLctn(self, value):
-		self._PrtLctn = value if type(value) != base_types.auto else self.make_default("PrtLctn")
-
-	@PrtLctn.deleter
-	def PrtLctn(self):
-		del self._PrtLctn
-		self._PrtLctn = None
 
 	@property
 	def Sgntr(self):
@@ -76,43 +37,17 @@ class Cheque19(base_types._BaseFieldType):
 		self._Sgntr = None
 
 	@property
-	def DlvrTo(self):
-		return self._DlvrTo
+	def FrmsCd(self):
+		return self._FrmsCd
 
-	@DlvrTo.setter
-	def DlvrTo(self, value):
-		self._DlvrTo = value if type(value) != base_types.auto else self.make_default("DlvrTo")
+	@FrmsCd.setter
+	def FrmsCd(self, value):
+		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
 
-	@DlvrTo.deleter
-	def DlvrTo(self):
-		del self._DlvrTo
-		self._DlvrTo = None
-
-	@property
-	def ChqTp(self):
-		return self._ChqTp
-
-	@ChqTp.setter
-	def ChqTp(self, value):
-		self._ChqTp = value if type(value) != base_types.auto else self.make_default("ChqTp")
-
-	@ChqTp.deleter
-	def ChqTp(self):
-		del self._ChqTp
-		self._ChqTp = None
-
-	@property
-	def ChqNb(self):
-		return self._ChqNb
-
-	@ChqNb.setter
-	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != base_types.auto else self.make_default("ChqNb")
-
-	@ChqNb.deleter
-	def ChqNb(self):
-		del self._ChqNb
-		self._ChqNb = None
+	@FrmsCd.deleter
+	def FrmsCd(self):
+		del self._FrmsCd
+		self._FrmsCd = None
 
 	@property
 	def MemoFld(self):
@@ -128,17 +63,30 @@ class Cheque19(base_types._BaseFieldType):
 		self._MemoFld = None
 
 	@property
-	def RgnlClrZone(self):
-		return self._RgnlClrZone
+	def InstrPrty(self):
+		return self._InstrPrty
 
-	@RgnlClrZone.setter
-	def RgnlClrZone(self, value):
-		self._RgnlClrZone = value if type(value) != base_types.auto else self.make_default("RgnlClrZone")
+	@InstrPrty.setter
+	def InstrPrty(self, value):
+		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
 
-	@RgnlClrZone.deleter
-	def RgnlClrZone(self):
-		del self._RgnlClrZone
-		self._RgnlClrZone = None
+	@InstrPrty.deleter
+	def InstrPrty(self):
+		del self._InstrPrty
+		self._InstrPrty = None
+
+	@property
+	def DlvryMtd(self):
+		return self._DlvryMtd
+
+	@DlvryMtd.setter
+	def DlvryMtd(self, value):
+		self._DlvryMtd = value if type(value) != base_types.auto else self.make_default("DlvryMtd")
+
+	@DlvryMtd.deleter
+	def DlvryMtd(self):
+		del self._DlvryMtd
+		self._DlvryMtd = None
 
 	@property
 	def ChqFr(self):
@@ -154,30 +102,82 @@ class Cheque19(base_types._BaseFieldType):
 		self._ChqFr = None
 
 	@property
-	def InstrPrty(self):
-		return self._InstrPrty
+	def ChqNb(self):
+		return self._ChqNb
 
-	@InstrPrty.setter
-	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+	@ChqNb.setter
+	def ChqNb(self, value):
+		self._ChqNb = value if type(value) != base_types.auto else self.make_default("ChqNb")
 
-	@InstrPrty.deleter
-	def InstrPrty(self):
-		del self._InstrPrty
-		self._InstrPrty = None
+	@ChqNb.deleter
+	def ChqNb(self):
+		del self._ChqNb
+		self._ChqNb = None
+
+	@property
+	def DlvrTo(self):
+		return self._DlvrTo
+
+	@DlvrTo.setter
+	def DlvrTo(self, value):
+		self._DlvrTo = value if type(value) != base_types.auto else self.make_default("DlvrTo")
+
+	@DlvrTo.deleter
+	def DlvrTo(self):
+		del self._DlvrTo
+		self._DlvrTo = None
+
+	@property
+	def PrtLctn(self):
+		return self._PrtLctn
+
+	@PrtLctn.setter
+	def PrtLctn(self, value):
+		self._PrtLctn = value if type(value) != base_types.auto else self.make_default("PrtLctn")
+
+	@PrtLctn.deleter
+	def PrtLctn(self):
+		del self._PrtLctn
+		self._PrtLctn = None
+
+	@property
+	def ChqTp(self):
+		return self._ChqTp
+
+	@ChqTp.setter
+	def ChqTp(self, value):
+		self._ChqTp = value if type(value) != base_types.auto else self.make_default("ChqTp")
+
+	@ChqTp.deleter
+	def ChqTp(self):
+		del self._ChqTp
+		self._ChqTp = None
+
+	@property
+	def RgnlClrZone(self):
+		return self._RgnlClrZone
+
+	@RgnlClrZone.setter
+	def RgnlClrZone(self, value):
+		self._RgnlClrZone = value if type(value) != base_types.auto else self.make_default("RgnlClrZone")
+
+	@RgnlClrZone.deleter
+	def RgnlClrZone(self):
+		del self._RgnlClrZone
+		self._RgnlClrZone = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvryMtd', type=ChequeDeliveryMethod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChqMtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmsCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgntr', type=Max70Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvrTo', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChqTp', type=ChequeType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmsCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MemoFld', type=Max35Text, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RgnlClrZone', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChqFr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryMtd', type=ChequeDeliveryMethod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChqFr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrTo', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChqTp', type=ChequeType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgnlClrZone', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

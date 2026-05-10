@@ -1,13 +1,13 @@
 from . import base_types
-from .InvestmentAccount58 import InvestmentAccount58
-from .Max350Text import Max350Text
-from .LegIdentification1Choice import LegIdentification1Choice
-from .Fee3 import Fee3
-from .FinancialInstrument57 import FinancialInstrument57
+from ._InvestmentAccount58 import InvestmentAccount58
+from ._Max350Text import Max350Text
+from ._FinancialInstrument57 import FinancialInstrument57
+from ._Fee3 import Fee3
+from ._LegIdentification1Choice import LegIdentification1Choice
 
 class SwitchLegReferences2(base_types._BaseFieldType):
 
-	__slots__ = ["_LegRjctnRsn", "_InvstmtAcctDtls", "_RprdFee", "_FinInstrmDtls", "_LegId"]
+	__slots__ = ["_LegRjctnRsn", "_LegId", "_RprdFee", "_InvstmtAcctDtls", "_FinInstrmDtls"]
 	@property
 	def LegRjctnRsn(self):
 		return self._LegRjctnRsn
@@ -22,17 +22,17 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		self._LegRjctnRsn = None
 
 	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
+	def LegId(self):
+		return self._LegId
 
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+	@LegId.setter
+	def LegId(self, value):
+		self._LegId = value if type(value) != base_types.auto else self.make_default("LegId")
 
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+	@LegId.deleter
+	def LegId(self):
+		del self._LegId
+		self._LegId = None
 
 	@property
 	def RprdFee(self):
@@ -48,6 +48,19 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		self._RprdFee = None
 
 	@property
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
+
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls
 
@@ -60,24 +73,11 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		del self._FinInstrmDtls
 		self._FinInstrmDtls = None
 
-	@property
-	def LegId(self):
-		return self._LegId
-
-	@LegId.setter
-	def LegId(self, value):
-		self._LegId = value if type(value) != base_types.auto else self.make_default("LegId")
-
-	@LegId.deleter
-	def LegId(self):
-		del self._LegId
-		self._LegId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegId', type=LegIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
 	))
 

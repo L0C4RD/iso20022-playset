@@ -1,27 +1,14 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .Max35Text import Max35Text
-from .Pagination1 import Pagination1
-from .ISODateTime import ISODateTime
-from .OriginalBusinessQuery1 import OriginalBusinessQuery1
-from .Max500Text import Max500Text
+from ._Pagination1 import Pagination1
+from ._PartyIdentification272 import PartyIdentification272
+from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
+from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
+from ._ISODateTime import ISODateTime
 
 class GroupHeader116(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_CreDtTm", "_OrgnlBizQry", "_MsgId", "_AddtlInf", "_MsgRcpt"]
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
+	__slots__ = ["_CreDtTm", "_OrgnlBizQry", "_MsgId", "_MsgRcpt", "_AddtlInf", "_MsgPgntn"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -62,6 +49,19 @@ class GroupHeader116(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
+	def MsgRcpt(self):
+		return self._MsgRcpt
+
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -75,24 +75,24 @@ class GroupHeader116(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def MsgPgntn(self):
+		return self._MsgPgntn
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

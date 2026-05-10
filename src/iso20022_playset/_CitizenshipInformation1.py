@@ -1,24 +1,11 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .NationalityCode import NationalityCode
-from .ISODate import ISODate
+from ._YesNoIndicator import YesNoIndicator
+from ._ISODate import ISODate
+from ._NationalityCode import NationalityCode
 
 class CitizenshipInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_MnrInd", "_EndDt", "_Ntlty"]
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
+	__slots__ = ["_MnrInd", "_Ntlty", "_StartDt", "_EndDt"]
 	@property
 	def MnrInd(self):
 		return self._MnrInd
@@ -33,19 +20,6 @@ class CitizenshipInformation1(base_types._BaseFieldType):
 		self._MnrInd = None
 
 	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
-
-	@property
 	def Ntlty(self):
 		return self._Ntlty
 
@@ -58,10 +32,36 @@ class CitizenshipInformation1(base_types._BaseFieldType):
 		del self._Ntlty
 		self._Ntlty = None
 
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def EndDt(self):
+		return self._EndDt
+
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MnrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntlty', type=NationalityCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

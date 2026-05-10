@@ -1,11 +1,24 @@
 from . import base_types
-from .Number import Number
-from .Max140Text import Max140Text
-from .Min5Max16Binary import Min5Max16Binary
+from ._Min5Max16Binary import Min5Max16Binary
+from ._Number import Number
+from ._Max140Text import Max140Text
 
 class KEKIdentifier2(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_SeqNb", "_KeyVrsn", "_DerivtnId"]
+	__slots__ = ["_DerivtnId", "_KeyId", "_SeqNb", "_KeyVrsn"]
+	@property
+	def DerivtnId(self):
+		return self._DerivtnId
+
+	@DerivtnId.setter
+	def DerivtnId(self, value):
+		self._DerivtnId = value if type(value) != base_types.auto else self.make_default("DerivtnId")
+
+	@DerivtnId.deleter
+	def DerivtnId(self):
+		del self._DerivtnId
+		self._DerivtnId = None
+
 	@property
 	def KeyId(self):
 		return self._KeyId
@@ -45,23 +58,10 @@ class KEKIdentifier2(base_types._BaseFieldType):
 		del self._KeyVrsn
 		self._KeyVrsn = None
 
-	@property
-	def DerivtnId(self):
-		return self._DerivtnId
-
-	@DerivtnId.setter
-	def DerivtnId(self, value):
-		self._DerivtnId = value if type(value) != base_types.auto else self.make_default("DerivtnId")
-
-	@DerivtnId.deleter
-	def DerivtnId(self):
-		del self._DerivtnId
-		self._DerivtnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

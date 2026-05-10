@@ -1,5 +1,5 @@
 from . import base_types
-from .SwitchOrderV04 import SwitchOrderV04
+from ._SwitchOrderV04 import SwitchOrderV04
 
 class SETR_013_001_04():
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .AmountPriceType3Code import AmountPriceType3Code
+from ._AmountPriceType3Code import AmountPriceType3Code
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class AmountPrice6(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtPricTp", "_PricVal"]
-	@property
-	def AmtPricTp(self):
-		return self._AmtPricTp
-
-	@AmtPricTp.setter
-	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
-
-	@AmtPricTp.deleter
-	def AmtPricTp(self):
-		del self._AmtPricTp
-		self._AmtPricTp = None
-
+	__slots__ = ["_PricVal", "_AmtPricTp"]
 	@property
 	def PricVal(self):
 		return self._PricVal
@@ -31,8 +18,21 @@ class AmountPrice6(base_types._BaseFieldType):
 		del self._PricVal
 		self._PricVal = None
 
+	@property
+	def AmtPricTp(self):
+		return self._AmtPricTp
+
+	@AmtPricTp.setter
+	def AmtPricTp(self, value):
+		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
+
+	@AmtPricTp.deleter
+	def AmtPricTp(self):
+		del self._AmtPricTp
+		self._AmtPricTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

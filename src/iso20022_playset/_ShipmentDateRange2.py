@@ -1,10 +1,23 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .ISODate import ISODate
+from ._ISODate import ISODate
+from ._DecimalNumber import DecimalNumber
 
 class ShipmentDateRange2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubQtyVal", "_LatstShipmntDt", "_EarlstShipmntDt"]
+	__slots__ = ["_EarlstShipmntDt", "_SubQtyVal", "_LatstShipmntDt"]
+	@property
+	def EarlstShipmntDt(self):
+		return self._EarlstShipmntDt
+
+	@EarlstShipmntDt.setter
+	def EarlstShipmntDt(self, value):
+		self._EarlstShipmntDt = value if type(value) != base_types.auto else self.make_default("EarlstShipmntDt")
+
+	@EarlstShipmntDt.deleter
+	def EarlstShipmntDt(self):
+		del self._EarlstShipmntDt
+		self._EarlstShipmntDt = None
+
 	@property
 	def SubQtyVal(self):
 		return self._SubQtyVal
@@ -31,22 +44,9 @@ class ShipmentDateRange2(base_types._BaseFieldType):
 		del self._LatstShipmntDt
 		self._LatstShipmntDt = None
 
-	@property
-	def EarlstShipmntDt(self):
-		return self._EarlstShipmntDt
-
-	@EarlstShipmntDt.setter
-	def EarlstShipmntDt(self, value):
-		self._EarlstShipmntDt = value if type(value) != base_types.auto else self.make_default("EarlstShipmntDt")
-
-	@EarlstShipmntDt.deleter
-	def EarlstShipmntDt(self):
-		del self._EarlstShipmntDt
-		self._EarlstShipmntDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubQtyVal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

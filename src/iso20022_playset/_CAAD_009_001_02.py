@@ -1,5 +1,5 @@
 from . import base_types
-from .AdministrativeResponseV02 import AdministrativeResponseV02
+from ._AdministrativeResponseV02 import AdministrativeResponseV02
 
 class CAAD_009_001_02():
 

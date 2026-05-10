@@ -1,5 +1,5 @@
 from . import base_types
-from .SubscriptionBulkOrderConfirmationV04 import SubscriptionBulkOrderConfirmationV04
+from ._SubscriptionBulkOrderConfirmationV04 import SubscriptionBulkOrderConfirmationV04
 
 class SETR_009_001_04():
 

@@ -1,51 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._Max350Text import Max350Text
+from ._ISODateTime import ISODateTime
 
 class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 
-	__slots__ = ["_OprTmStmp", "_SctiesAcctId", "_FldNm", "_OdFldVal", "_NewFldVal"]
-	@property
-	def OprTmStmp(self):
-		return self._OprTmStmp
-
-	@OprTmStmp.setter
-	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
-
-	@OprTmStmp.deleter
-	def OprTmStmp(self):
-		del self._OprTmStmp
-		self._OprTmStmp = None
-
-	@property
-	def SctiesAcctId(self):
-		return self._SctiesAcctId
-
-	@SctiesAcctId.setter
-	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
-
-	@SctiesAcctId.deleter
-	def SctiesAcctId(self):
-		del self._SctiesAcctId
-		self._SctiesAcctId = None
-
-	@property
-	def FldNm(self):
-		return self._FldNm
-
-	@FldNm.setter
-	def FldNm(self, value):
-		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
-
-	@FldNm.deleter
-	def FldNm(self):
-		del self._FldNm
-		self._FldNm = None
-
+	__slots__ = ["_OdFldVal", "_NewFldVal", "_OprTmStmp", "_FldNm", "_SctiesAcctId"]
 	@property
 	def OdFldVal(self):
 		return self._OdFldVal
@@ -72,11 +33,50 @@ class SecuritiesAccountReferenceDataChange2(base_types._BaseFieldType):
 		del self._NewFldVal
 		self._NewFldVal = None
 
+	@property
+	def OprTmStmp(self):
+		return self._OprTmStmp
+
+	@OprTmStmp.setter
+	def OprTmStmp(self, value):
+		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
+
+	@OprTmStmp.deleter
+	def OprTmStmp(self):
+		del self._OprTmStmp
+		self._OprTmStmp = None
+
+	@property
+	def FldNm(self):
+		return self._FldNm
+
+	@FldNm.setter
+	def FldNm(self, value):
+		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
+
+	@FldNm.deleter
+	def FldNm(self):
+		del self._FldNm
+		self._FldNm = None
+
+	@property
+	def SctiesAcctId(self):
+		return self._SctiesAcctId
+
+	@SctiesAcctId.setter
+	def SctiesAcctId(self, value):
+		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+
+	@SctiesAcctId.deleter
+	def SctiesAcctId(self):
+		del self._SctiesAcctId
+		self._SctiesAcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewFldVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 	))
 

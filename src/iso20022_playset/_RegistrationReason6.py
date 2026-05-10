@@ -1,6 +1,6 @@
 from . import base_types
-from .Registration12Choice import Registration12Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._Registration12Choice import Registration12Choice
 
 class RegistrationReason6(base_types._BaseFieldType):
 

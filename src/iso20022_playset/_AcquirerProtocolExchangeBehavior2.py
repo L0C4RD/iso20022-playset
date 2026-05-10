@@ -1,12 +1,25 @@
 from . import base_types
-from .ExchangeConfiguration9 import ExchangeConfiguration9
-from .ExchangeConfiguration10 import ExchangeConfiguration10
-from .CancellationProcess2Code import CancellationProcess2Code
-from .FinancialCapture1Code import FinancialCapture1Code
+from ._ExchangeConfiguration10 import ExchangeConfiguration10
+from ._ExchangeConfiguration9 import ExchangeConfiguration9
+from ._CancellationProcess2Code import CancellationProcess2Code
+from ._FinancialCapture1Code import FinancialCapture1Code
 
 class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
-	__slots__ = ["_CmpltnXchg", "_FinCaptr", "_BtchTrf", "_CxlXchg"]
+	__slots__ = ["_CxlXchg", "_CmpltnXchg", "_FinCaptr", "_BtchTrf"]
+	@property
+	def CxlXchg(self):
+		return self._CxlXchg
+
+	@CxlXchg.setter
+	def CxlXchg(self, value):
+		self._CxlXchg = value if type(value) != base_types.auto else self.make_default("CxlXchg")
+
+	@CxlXchg.deleter
+	def CxlXchg(self):
+		del self._CxlXchg
+		self._CxlXchg = None
+
 	@property
 	def CmpltnXchg(self):
 		return self._CmpltnXchg
@@ -46,23 +59,10 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		del self._BtchTrf
 		self._BtchTrf = None
 
-	@property
-	def CxlXchg(self):
-		return self._CxlXchg
-
-	@CxlXchg.setter
-	def CxlXchg(self, value):
-		self._CxlXchg = value if type(value) != base_types.auto else self.make_default("CxlXchg")
-
-	@CxlXchg.deleter
-	def CxlXchg(self):
-		del self._CxlXchg
-		self._CxlXchg = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpltnXchg', type=ExchangeConfiguration10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinCaptr', type=FinancialCapture1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=ExchangeConfiguration9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

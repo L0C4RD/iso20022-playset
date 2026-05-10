@@ -1,28 +1,28 @@
 from . import base_types
-from .TradingPartyCapacity3Choice import TradingPartyCapacity3Choice
-from .SecuritiesAccount35 import SecuritiesAccount35
-from .AccountIdentification55Choice import AccountIdentification55Choice
-from .PartyIdentification240Choice import PartyIdentification240Choice
-from .Max35Text import Max35Text
-from .AlternatePartyIdentification8 import AlternatePartyIdentification8
-from .PartyTextInformation5 import PartyTextInformation5
-from .YesNoIndicator import YesNoIndicator
+from ._PartyIdentification240Choice import PartyIdentification240Choice
+from ._TradingPartyCapacity3Choice import TradingPartyCapacity3Choice
+from ._PartyTextInformation5 import PartyTextInformation5
+from ._SecuritiesAccount35 import SecuritiesAccount35
+from ._AccountIdentification55Choice import AccountIdentification55Choice
+from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class ConfirmationPartyDetails16(base_types._BaseFieldType):
 
-	__slots__ = ["_CshDtls", "_InvstrPrtcnAssoctnMmbsh", "_PtyCpcty", "_AddtlInf", "_Id", "_PrcgId", "_SfkpgAcct", "_AltrnId"]
+	__slots__ = ["_AddtlInf", "_InvstrPrtcnAssoctnMmbsh", "_CshDtls", "_Id", "_PtyCpcty", "_PrcgId", "_SfkpgAcct", "_AltrnId"]
 	@property
-	def CshDtls(self):
-		return self._CshDtls
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@CshDtls.setter
-	def CshDtls(self, value):
-		self._CshDtls = value if type(value) != base_types.auto else self.make_default("CshDtls")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@CshDtls.deleter
-	def CshDtls(self):
-		del self._CshDtls
-		self._CshDtls = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def InvstrPrtcnAssoctnMmbsh(self):
@@ -38,30 +38,17 @@ class ConfirmationPartyDetails16(base_types._BaseFieldType):
 		self._InvstrPrtcnAssoctnMmbsh = None
 
 	@property
-	def PtyCpcty(self):
-		return self._PtyCpcty
+	def CshDtls(self):
+		return self._CshDtls
 
-	@PtyCpcty.setter
-	def PtyCpcty(self, value):
-		self._PtyCpcty = value if type(value) != base_types.auto else self.make_default("PtyCpcty")
+	@CshDtls.setter
+	def CshDtls(self, value):
+		self._CshDtls = value if type(value) != base_types.auto else self.make_default("CshDtls")
 
-	@PtyCpcty.deleter
-	def PtyCpcty(self):
-		del self._PtyCpcty
-		self._PtyCpcty = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@CshDtls.deleter
+	def CshDtls(self):
+		del self._CshDtls
+		self._CshDtls = None
 
 	@property
 	def Id(self):
@@ -75,6 +62,19 @@ class ConfirmationPartyDetails16(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def PtyCpcty(self):
+		return self._PtyCpcty
+
+	@PtyCpcty.setter
+	def PtyCpcty(self, value):
+		self._PtyCpcty = value if type(value) != base_types.auto else self.make_default("PtyCpcty")
+
+	@PtyCpcty.deleter
+	def PtyCpcty(self):
+		del self._PtyCpcty
+		self._PtyCpcty = None
 
 	@property
 	def PrcgId(self):
@@ -116,11 +116,11 @@ class ConfirmationPartyDetails16(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrPrtcnAssoctnMmbsh', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrPrtcnAssoctnMmbsh', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),

@@ -1,6 +1,6 @@
 from . import base_types
-from .Exact3NumericText import Exact3NumericText
-from .TotalNumber1 import TotalNumber1
+from ._TotalNumber1 import TotalNumber1
+from ._Exact3NumericText import Exact3NumericText
 
 class NumberCount1Choice(base_types._BaseFieldType):
 

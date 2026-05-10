@@ -1,39 +1,13 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ISODate import ISODate
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max10000Binary import Max10000Binary
+from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10000Binary import Max10000Binary
 
 class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_TtlAmt", "_ICCRltdData", "_VldtyDt", "_KeepAuthstnOpn"]
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
+	__slots__ = ["_ICCRltdData", "_Ccy", "_VldtyDt", "_KeepAuthstnOpn", "_TtlAmt"]
 	@property
 	def ICCRltdData(self):
 		return self._ICCRltdData
@@ -46,6 +20,19 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 	def ICCRltdData(self):
 		del self._ICCRltdData
 		self._ICCRltdData = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def VldtyDt(self):
@@ -73,11 +60,24 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 		del self._KeepAuthstnOpn
 		self._KeepAuthstnOpn = None
 
+	@property
+	def TtlAmt(self):
+		return self._TtlAmt
+
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeepAuthstnOpn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

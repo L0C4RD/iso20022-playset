@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ShareholdingBalance1 import ShareholdingBalance1
-from .PartyIdentification276 import PartyIdentification276
+from ._Max35Text import Max35Text
+from ._ShareholdingBalance1 import ShareholdingBalance1
+from ._PartyIdentification276 import PartyIdentification276
 
 class AccountSubLevel25(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_ShrhldgBal", "_AcctHldr"]
+	__slots__ = ["_AcctHldr", "_ShrhldgBal", "_SfkpgAcct"]
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def AcctHldr(self):
+		return self._AcctHldr
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+	@AcctHldr.setter
+	def AcctHldr(self, value):
+		self._AcctHldr = value if type(value) != base_types.auto else self.make_default("AcctHldr")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@AcctHldr.deleter
+	def AcctHldr(self):
+		del self._AcctHldr
+		self._AcctHldr = None
 
 	@property
 	def ShrhldgBal(self):
@@ -33,21 +33,21 @@ class AccountSubLevel25(base_types._BaseFieldType):
 		self._ShrhldgBal = None
 
 	@property
-	def AcctHldr(self):
-		return self._AcctHldr
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@AcctHldr.setter
-	def AcctHldr(self, value):
-		self._AcctHldr = value if type(value) != base_types.auto else self.make_default("AcctHldr")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
-	@AcctHldr.deleter
-	def AcctHldr(self):
-		del self._AcctHldr
-		self._AcctHldr = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrhldgBal', type=ShareholdingBalance1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctHldr', type=PartyIdentification276, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrhldgBal', type=ShareholdingBalance1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TradeParty1 import TradeParty1
+from ._Max35Text import Max35Text
+from ._TradeParty1 import TradeParty1
 
 class SingleQualifiedPartyIdentification1(base_types._BaseFieldType):
 

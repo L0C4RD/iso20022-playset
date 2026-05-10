@@ -1,5 +1,5 @@
 from . import base_types
-from .CorporateActionInstructionCancellationRequestV13 import CorporateActionInstructionCancellationRequestV13
+from ._CorporateActionInstructionCancellationRequestV13 import CorporateActionInstructionCancellationRequestV13
 
 class SEEV_040_001_13():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .RepoTerminationOption2Code import RepoTerminationOption2Code
-from .ISODate import ISODate
+from ._ISODate import ISODate
+from ._RepoTerminationOption2Code import RepoTerminationOption2Code
 
 class FixedOpenTermContract2(base_types._BaseFieldType):
 

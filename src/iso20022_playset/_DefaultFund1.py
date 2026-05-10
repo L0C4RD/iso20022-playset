@@ -1,7 +1,7 @@
 from . import base_types
-from .AccountIdentification4Choice import AccountIdentification4Choice
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Contribution1 import Contribution1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Contribution1 import Contribution1
+from ._AccountIdentification4Choice import AccountIdentification4Choice
 
 class DefaultFund1(base_types._BaseFieldType):
 

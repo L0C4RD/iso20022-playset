@@ -1,5 +1,5 @@
 from . import base_types
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
 class CompareLongFraction19DecimalNumber1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyName4 import PartyName4
+from ._PartyName4 import PartyName4
 
 class UpdateLogPartyName1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .KeyExchangeInitiationV04 import KeyExchangeInitiationV04
+from ._KeyExchangeInitiationV04 import KeyExchangeInitiationV04
 
 class CANM_003_001_04():
 

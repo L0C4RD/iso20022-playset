@@ -1,39 +1,13 @@
 from . import base_types
-from .Number import Number
-from .CryptographicKeyType3Code import CryptographicKeyType3Code
-from .Min5Max16Binary import Min5Max16Binary
-from .KeyUsage1Code import KeyUsage1Code
-from .Max140Text import Max140Text
+from ._Min5Max16Binary import Min5Max16Binary
+from ._Number import Number
+from ._Max140Text import Max140Text
+from ._CryptographicKeyType3Code import CryptographicKeyType3Code
+from ._KeyUsage1Code import KeyUsage1Code
 
 class KEKIdentifier5(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_KeyVrsn", "_DerivtnId", "_Fctn", "_SeqNb", "_Tp"]
-	@property
-	def KeyId(self):
-		return self._KeyId
-
-	@KeyId.setter
-	def KeyId(self, value):
-		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
-
-	@KeyId.deleter
-	def KeyId(self):
-		del self._KeyId
-		self._KeyId = None
-
-	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
-
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
-
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
-
+	__slots__ = ["_DerivtnId", "_Tp", "_SeqNb", "_KeyId", "_Fctn", "_KeyVrsn"]
 	@property
 	def DerivtnId(self):
 		return self._DerivtnId
@@ -48,17 +22,17 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._DerivtnId = None
 
 	@property
-	def Fctn(self):
-		return self._Fctn
+	def Tp(self):
+		return self._Tp
 
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def SeqNb(self):
@@ -74,24 +48,50 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def KeyId(self):
+		return self._KeyId
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@KeyId.setter
+	def KeyId(self, value):
+		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@KeyId.deleter
+	def KeyId(self):
+		del self._KeyId
+		self._KeyId = None
+
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
+	@property
+	def KeyVrsn(self):
+		return self._KeyVrsn
+
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
+
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

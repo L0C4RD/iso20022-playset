@@ -1,30 +1,17 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MeetingInstructionCancellation1 import MeetingInstructionCancellation1
-from .DocumentIdentification32 import DocumentIdentification32
-from .SecurityIdentification19 import SecurityIdentification19
-from .Max35Text import Max35Text
-from .MeetingInstructionIdentification1 import MeetingInstructionIdentification1
-from .MeetingReference10 import MeetingReference10
-from .Pagination1 import Pagination1
-from .Instruction8 import Instruction8
+from ._DocumentIdentification32 import DocumentIdentification32
+from ._Instruction8 import Instruction8
+from ._MeetingInstructionCancellation1 import MeetingInstructionCancellation1
+from ._MeetingInstructionIdentification1 import MeetingInstructionIdentification1
+from ._Pagination1 import Pagination1
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._MeetingReference10 import MeetingReference10
 
 class MeetingInstructionV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OthrDocId", "_InstrCxlReqId", "_Instr", "_MtgInstrId", "_CancInstrId", "_MtgRef", "_FinInstrmId", "_Pgntn"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_OthrDocId", "_Pgntn", "_CancInstrId", "_Instr", "_MtgRef", "_InstrCxlReqId", "_SplmtryData", "_FinInstrmId", "_MtgInstrId"]
 	@property
 	def OthrDocId(self):
 		return self._OthrDocId
@@ -39,43 +26,17 @@ class MeetingInstructionV10(base_types._BaseFieldType):
 		self._OthrDocId = None
 
 	@property
-	def InstrCxlReqId(self):
-		return self._InstrCxlReqId
+	def Pgntn(self):
+		return self._Pgntn
 
-	@InstrCxlReqId.setter
-	def InstrCxlReqId(self, value):
-		self._InstrCxlReqId = value if type(value) != base_types.auto else self.make_default("InstrCxlReqId")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@InstrCxlReqId.deleter
-	def InstrCxlReqId(self):
-		del self._InstrCxlReqId
-		self._InstrCxlReqId = None
-
-	@property
-	def Instr(self):
-		return self._Instr
-
-	@Instr.setter
-	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
-
-	@Instr.deleter
-	def Instr(self):
-		del self._Instr
-		self._Instr = None
-
-	@property
-	def MtgInstrId(self):
-		return self._MtgInstrId
-
-	@MtgInstrId.setter
-	def MtgInstrId(self, value):
-		self._MtgInstrId = value if type(value) != base_types.auto else self.make_default("MtgInstrId")
-
-	@MtgInstrId.deleter
-	def MtgInstrId(self):
-		del self._MtgInstrId
-		self._MtgInstrId = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def CancInstrId(self):
@@ -91,6 +52,19 @@ class MeetingInstructionV10(base_types._BaseFieldType):
 		self._CancInstrId = None
 
 	@property
+	def Instr(self):
+		return self._Instr
+
+	@Instr.setter
+	def Instr(self, value):
+		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+
+	@Instr.deleter
+	def Instr(self):
+		del self._Instr
+		self._Instr = None
+
+	@property
 	def MtgRef(self):
 		return self._MtgRef
 
@@ -102,6 +76,32 @@ class MeetingInstructionV10(base_types._BaseFieldType):
 	def MtgRef(self):
 		del self._MtgRef
 		self._MtgRef = None
+
+	@property
+	def InstrCxlReqId(self):
+		return self._InstrCxlReqId
+
+	@InstrCxlReqId.setter
+	def InstrCxlReqId(self, value):
+		self._InstrCxlReqId = value if type(value) != base_types.auto else self.make_default("InstrCxlReqId")
+
+	@InstrCxlReqId.deleter
+	def InstrCxlReqId(self):
+		del self._InstrCxlReqId
+		self._InstrCxlReqId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def FinInstrmId(self):
@@ -117,27 +117,27 @@ class MeetingInstructionV10(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def MtgInstrId(self):
+		return self._MtgInstrId
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@MtgInstrId.setter
+	def MtgInstrId(self, value):
+		self._MtgInstrId = value if type(value) != base_types.auto else self.make_default("MtgInstrId")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@MtgInstrId.deleter
+	def MtgInstrId(self):
+		del self._MtgInstrId
+		self._MtgInstrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrDocId', type=DocumentIdentification32, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstrCxlReqId', type=MeetingInstructionCancellation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Instr', type=Instruction8, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtgInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CancInstrId', type=MeetingInstructionIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CancInstrId', type=MeetingInstructionIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Instr', type=Instruction8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrCxlReqId', type=MeetingInstructionCancellation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,134 +1,56 @@
 from . import base_types
-from .Tax36 import Tax36
-from .AdditionalReference10 import AdditionalReference10
-from .Quantity50 import Quantity50
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .FundSettlementParameters17 import FundSettlementParameters17
-from .TransferType2Choice import TransferType2Choice
-from .PaymentInstrument20 import PaymentInstrument20
-from .Unit11 import Unit11
-from .DateAndAmount2 import DateAndAmount2
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .YesNoIndicator import YesNoIndicator
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from .BusinessFlowType1Code import BusinessFlowType1Code
-from .FinancialInstrument63Choice import FinancialInstrument63Choice
-from .ISODate import ISODate
-from .AdditionalInformation15 import AdditionalInformation15
-from .Intermediary43 import Intermediary43
-from .Max35Text import Max35Text
-from .Conversion3 import Conversion3
-from .Crystallisation2 import Crystallisation2
-from .PercentageRate import PercentageRate
-from .Account28 import Account28
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._PercentageRate import PercentageRate
+from ._DateAndAmount2 import DateAndAmount2
+from ._YesNoIndicator import YesNoIndicator
+from ._Quantity50 import Quantity50
+from ._Conversion3 import Conversion3
+from ._Crystallisation2 import Crystallisation2
+from ._ISODate import ISODate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
+from ._BusinessFlowType1Code import BusinessFlowType1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Unit11 import Unit11
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._TransferType2Choice import TransferType2Choice
+from ._FundSettlementParameters17 import FundSettlementParameters17
+from ._AdditionalReference10 import AdditionalReference10
+from ._Tax36 import Tax36
+from ._Max35Text import Max35Text
+from ._Intermediary43 import Intermediary43
+from ._FinancialInstrument63Choice import FinancialInstrument63Choice
+from ._PaymentInstrument20 import PaymentInstrument20
+from ._Account28 import Account28
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class FinancialInstrument105(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvSttlmDt", "_SttlmPtiesDtls", "_LineId", "_Convs", "_CtrPtyRef", "_NotAvlbl", "_OrgnlPctgInstd", "_Qty", "_TrfRsltsInChngOfBnfclOwnr", "_TrfCcy", "_AvrgAcqstnPric", "_TtlBookVal", "_CrstllstnDtls", "_TrfTp", "_ClntRef", "_ReqdSttlmDt", "_AddtlInf", "_FctvTrfDt", "_AddtlAsst", "_IntrmyInf", "_AsstsHeldInOwnNm", "_Trfr", "_TaxValtnPt", "_BizFlowTp", "_PmtDtls", "_Instrm", "_OrgnlCost", "_LatstValtn", "_UnitsDtls", "_ReqdTradDt", "_TrfeeAcct", "_PrtlInstdQty"]
+	__slots__ = ["_BizFlowTp", "_ReqdTradDt", "_TrfRsltsInChngOfBnfclOwnr", "_Qty", "_Trfr", "_Convs", "_ClntRef", "_TtlBookVal", "_OrgnlPctgInstd", "_LatstValtn", "_AsstsHeldInOwnNm", "_TaxValtnPt", "_IntrmyInf", "_CrstllstnDtls", "_OrgnlCost", "_UnitsDtls", "_LineId", "_PmtDtls", "_TrfCcy", "_NotAvlbl", "_TrfTp", "_ReqdSttlmDt", "_AvrgAcqstnPric", "_SttlmPtiesDtls", "_TrfeeAcct", "_FctvTrfDt", "_AddtlAsst", "_FctvSttlmDt", "_CtrPtyRef", "_Instrm", "_AddtlInf", "_PrtlInstdQty"]
 	@property
-	def FctvSttlmDt(self):
-		return self._FctvSttlmDt
+	def BizFlowTp(self):
+		return self._BizFlowTp
 
-	@FctvSttlmDt.setter
-	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+	@BizFlowTp.setter
+	def BizFlowTp(self, value):
+		self._BizFlowTp = value if type(value) != base_types.auto else self.make_default("BizFlowTp")
 
-	@FctvSttlmDt.deleter
-	def FctvSttlmDt(self):
-		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
-
-	@property
-	def SttlmPtiesDtls(self):
-		return self._SttlmPtiesDtls
-
-	@SttlmPtiesDtls.setter
-	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
-
-	@SttlmPtiesDtls.deleter
-	def SttlmPtiesDtls(self):
-		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
+	@BizFlowTp.deleter
+	def BizFlowTp(self):
+		del self._BizFlowTp
+		self._BizFlowTp = None
 
 	@property
-	def LineId(self):
-		return self._LineId
+	def ReqdTradDt(self):
+		return self._ReqdTradDt
 
-	@LineId.setter
-	def LineId(self, value):
-		self._LineId = value if type(value) != base_types.auto else self.make_default("LineId")
+	@ReqdTradDt.setter
+	def ReqdTradDt(self, value):
+		self._ReqdTradDt = value if type(value) != base_types.auto else self.make_default("ReqdTradDt")
 
-	@LineId.deleter
-	def LineId(self):
-		del self._LineId
-		self._LineId = None
-
-	@property
-	def Convs(self):
-		return self._Convs
-
-	@Convs.setter
-	def Convs(self, value):
-		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
-
-	@Convs.deleter
-	def Convs(self):
-		del self._Convs
-		self._Convs = None
-
-	@property
-	def CtrPtyRef(self):
-		return self._CtrPtyRef
-
-	@CtrPtyRef.setter
-	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
-
-	@CtrPtyRef.deleter
-	def CtrPtyRef(self):
-		del self._CtrPtyRef
-		self._CtrPtyRef = None
-
-	@property
-	def NotAvlbl(self):
-		return self._NotAvlbl
-
-	@NotAvlbl.setter
-	def NotAvlbl(self, value):
-		self._NotAvlbl = value if type(value) != base_types.auto else self.make_default("NotAvlbl")
-
-	@NotAvlbl.deleter
-	def NotAvlbl(self):
-		del self._NotAvlbl
-		self._NotAvlbl = None
-
-	@property
-	def OrgnlPctgInstd(self):
-		return self._OrgnlPctgInstd
-
-	@OrgnlPctgInstd.setter
-	def OrgnlPctgInstd(self, value):
-		self._OrgnlPctgInstd = value if type(value) != base_types.auto else self.make_default("OrgnlPctgInstd")
-
-	@OrgnlPctgInstd.deleter
-	def OrgnlPctgInstd(self):
-		del self._OrgnlPctgInstd
-		self._OrgnlPctgInstd = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@ReqdTradDt.deleter
+	def ReqdTradDt(self):
+		del self._ReqdTradDt
+		self._ReqdTradDt = None
 
 	@property
 	def TrfRsltsInChngOfBnfclOwnr(self):
@@ -144,69 +66,43 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._TrfRsltsInChngOfBnfclOwnr = None
 
 	@property
-	def TrfCcy(self):
-		return self._TrfCcy
+	def Qty(self):
+		return self._Qty
 
-	@TrfCcy.setter
-	def TrfCcy(self, value):
-		self._TrfCcy = value if type(value) != base_types.auto else self.make_default("TrfCcy")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@TrfCcy.deleter
-	def TrfCcy(self):
-		del self._TrfCcy
-		self._TrfCcy = None
-
-	@property
-	def AvrgAcqstnPric(self):
-		return self._AvrgAcqstnPric
-
-	@AvrgAcqstnPric.setter
-	def AvrgAcqstnPric(self, value):
-		self._AvrgAcqstnPric = value if type(value) != base_types.auto else self.make_default("AvrgAcqstnPric")
-
-	@AvrgAcqstnPric.deleter
-	def AvrgAcqstnPric(self):
-		del self._AvrgAcqstnPric
-		self._AvrgAcqstnPric = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
-	def TtlBookVal(self):
-		return self._TtlBookVal
+	def Trfr(self):
+		return self._Trfr
 
-	@TtlBookVal.setter
-	def TtlBookVal(self, value):
-		self._TtlBookVal = value if type(value) != base_types.auto else self.make_default("TtlBookVal")
+	@Trfr.setter
+	def Trfr(self, value):
+		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
 
-	@TtlBookVal.deleter
-	def TtlBookVal(self):
-		del self._TtlBookVal
-		self._TtlBookVal = None
-
-	@property
-	def CrstllstnDtls(self):
-		return self._CrstllstnDtls
-
-	@CrstllstnDtls.setter
-	def CrstllstnDtls(self, value):
-		self._CrstllstnDtls = value if type(value) != base_types.auto else self.make_default("CrstllstnDtls")
-
-	@CrstllstnDtls.deleter
-	def CrstllstnDtls(self):
-		del self._CrstllstnDtls
-		self._CrstllstnDtls = None
+	@Trfr.deleter
+	def Trfr(self):
+		del self._Trfr
+		self._Trfr = None
 
 	@property
-	def TrfTp(self):
-		return self._TrfTp
+	def Convs(self):
+		return self._Convs
 
-	@TrfTp.setter
-	def TrfTp(self, value):
-		self._TrfTp = value if type(value) != base_types.auto else self.make_default("TrfTp")
+	@Convs.setter
+	def Convs(self, value):
+		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
 
-	@TrfTp.deleter
-	def TrfTp(self):
-		del self._TrfTp
-		self._TrfTp = None
+	@Convs.deleter
+	def Convs(self):
+		del self._Convs
+		self._Convs = None
 
 	@property
 	def ClntRef(self):
@@ -222,6 +118,188 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
+	def TtlBookVal(self):
+		return self._TtlBookVal
+
+	@TtlBookVal.setter
+	def TtlBookVal(self, value):
+		self._TtlBookVal = value if type(value) != base_types.auto else self.make_default("TtlBookVal")
+
+	@TtlBookVal.deleter
+	def TtlBookVal(self):
+		del self._TtlBookVal
+		self._TtlBookVal = None
+
+	@property
+	def OrgnlPctgInstd(self):
+		return self._OrgnlPctgInstd
+
+	@OrgnlPctgInstd.setter
+	def OrgnlPctgInstd(self, value):
+		self._OrgnlPctgInstd = value if type(value) != base_types.auto else self.make_default("OrgnlPctgInstd")
+
+	@OrgnlPctgInstd.deleter
+	def OrgnlPctgInstd(self):
+		del self._OrgnlPctgInstd
+		self._OrgnlPctgInstd = None
+
+	@property
+	def LatstValtn(self):
+		return self._LatstValtn
+
+	@LatstValtn.setter
+	def LatstValtn(self, value):
+		self._LatstValtn = value if type(value) != base_types.auto else self.make_default("LatstValtn")
+
+	@LatstValtn.deleter
+	def LatstValtn(self):
+		del self._LatstValtn
+		self._LatstValtn = None
+
+	@property
+	def AsstsHeldInOwnNm(self):
+		return self._AsstsHeldInOwnNm
+
+	@AsstsHeldInOwnNm.setter
+	def AsstsHeldInOwnNm(self, value):
+		self._AsstsHeldInOwnNm = value if type(value) != base_types.auto else self.make_default("AsstsHeldInOwnNm")
+
+	@AsstsHeldInOwnNm.deleter
+	def AsstsHeldInOwnNm(self):
+		del self._AsstsHeldInOwnNm
+		self._AsstsHeldInOwnNm = None
+
+	@property
+	def TaxValtnPt(self):
+		return self._TaxValtnPt
+
+	@TaxValtnPt.setter
+	def TaxValtnPt(self, value):
+		self._TaxValtnPt = value if type(value) != base_types.auto else self.make_default("TaxValtnPt")
+
+	@TaxValtnPt.deleter
+	def TaxValtnPt(self):
+		del self._TaxValtnPt
+		self._TaxValtnPt = None
+
+	@property
+	def IntrmyInf(self):
+		return self._IntrmyInf
+
+	@IntrmyInf.setter
+	def IntrmyInf(self, value):
+		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+
+	@IntrmyInf.deleter
+	def IntrmyInf(self):
+		del self._IntrmyInf
+		self._IntrmyInf = None
+
+	@property
+	def CrstllstnDtls(self):
+		return self._CrstllstnDtls
+
+	@CrstllstnDtls.setter
+	def CrstllstnDtls(self, value):
+		self._CrstllstnDtls = value if type(value) != base_types.auto else self.make_default("CrstllstnDtls")
+
+	@CrstllstnDtls.deleter
+	def CrstllstnDtls(self):
+		del self._CrstllstnDtls
+		self._CrstllstnDtls = None
+
+	@property
+	def OrgnlCost(self):
+		return self._OrgnlCost
+
+	@OrgnlCost.setter
+	def OrgnlCost(self, value):
+		self._OrgnlCost = value if type(value) != base_types.auto else self.make_default("OrgnlCost")
+
+	@OrgnlCost.deleter
+	def OrgnlCost(self):
+		del self._OrgnlCost
+		self._OrgnlCost = None
+
+	@property
+	def UnitsDtls(self):
+		return self._UnitsDtls
+
+	@UnitsDtls.setter
+	def UnitsDtls(self, value):
+		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
+
+	@UnitsDtls.deleter
+	def UnitsDtls(self):
+		del self._UnitsDtls
+		self._UnitsDtls = None
+
+	@property
+	def LineId(self):
+		return self._LineId
+
+	@LineId.setter
+	def LineId(self, value):
+		self._LineId = value if type(value) != base_types.auto else self.make_default("LineId")
+
+	@LineId.deleter
+	def LineId(self):
+		del self._LineId
+		self._LineId = None
+
+	@property
+	def PmtDtls(self):
+		return self._PmtDtls
+
+	@PmtDtls.setter
+	def PmtDtls(self, value):
+		self._PmtDtls = value if type(value) != base_types.auto else self.make_default("PmtDtls")
+
+	@PmtDtls.deleter
+	def PmtDtls(self):
+		del self._PmtDtls
+		self._PmtDtls = None
+
+	@property
+	def TrfCcy(self):
+		return self._TrfCcy
+
+	@TrfCcy.setter
+	def TrfCcy(self, value):
+		self._TrfCcy = value if type(value) != base_types.auto else self.make_default("TrfCcy")
+
+	@TrfCcy.deleter
+	def TrfCcy(self):
+		del self._TrfCcy
+		self._TrfCcy = None
+
+	@property
+	def NotAvlbl(self):
+		return self._NotAvlbl
+
+	@NotAvlbl.setter
+	def NotAvlbl(self, value):
+		self._NotAvlbl = value if type(value) != base_types.auto else self.make_default("NotAvlbl")
+
+	@NotAvlbl.deleter
+	def NotAvlbl(self):
+		del self._NotAvlbl
+		self._NotAvlbl = None
+
+	@property
+	def TrfTp(self):
+		return self._TrfTp
+
+	@TrfTp.setter
+	def TrfTp(self, value):
+		self._TrfTp = value if type(value) != base_types.auto else self.make_default("TrfTp")
+
+	@TrfTp.deleter
+	def TrfTp(self):
+		del self._TrfTp
+		self._TrfTp = None
+
+	@property
 	def ReqdSttlmDt(self):
 		return self._ReqdSttlmDt
 
@@ -235,17 +313,43 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._ReqdSttlmDt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def AvrgAcqstnPric(self):
+		return self._AvrgAcqstnPric
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@AvrgAcqstnPric.setter
+	def AvrgAcqstnPric(self, value):
+		self._AvrgAcqstnPric = value if type(value) != base_types.auto else self.make_default("AvrgAcqstnPric")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@AvrgAcqstnPric.deleter
+	def AvrgAcqstnPric(self):
+		del self._AvrgAcqstnPric
+		self._AvrgAcqstnPric = None
+
+	@property
+	def SttlmPtiesDtls(self):
+		return self._SttlmPtiesDtls
+
+	@SttlmPtiesDtls.setter
+	def SttlmPtiesDtls(self, value):
+		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
+
+	@SttlmPtiesDtls.deleter
+	def SttlmPtiesDtls(self):
+		del self._SttlmPtiesDtls
+		self._SttlmPtiesDtls = None
+
+	@property
+	def TrfeeAcct(self):
+		return self._TrfeeAcct
+
+	@TrfeeAcct.setter
+	def TrfeeAcct(self, value):
+		self._TrfeeAcct = value if type(value) != base_types.auto else self.make_default("TrfeeAcct")
+
+	@TrfeeAcct.deleter
+	def TrfeeAcct(self):
+		del self._TrfeeAcct
+		self._TrfeeAcct = None
 
 	@property
 	def FctvTrfDt(self):
@@ -274,82 +378,30 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._AddtlAsst = None
 
 	@property
-	def IntrmyInf(self):
-		return self._IntrmyInf
+	def FctvSttlmDt(self):
+		return self._FctvSttlmDt
 
-	@IntrmyInf.setter
-	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+	@FctvSttlmDt.setter
+	def FctvSttlmDt(self, value):
+		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
 
-	@IntrmyInf.deleter
-	def IntrmyInf(self):
-		del self._IntrmyInf
-		self._IntrmyInf = None
-
-	@property
-	def AsstsHeldInOwnNm(self):
-		return self._AsstsHeldInOwnNm
-
-	@AsstsHeldInOwnNm.setter
-	def AsstsHeldInOwnNm(self, value):
-		self._AsstsHeldInOwnNm = value if type(value) != base_types.auto else self.make_default("AsstsHeldInOwnNm")
-
-	@AsstsHeldInOwnNm.deleter
-	def AsstsHeldInOwnNm(self):
-		del self._AsstsHeldInOwnNm
-		self._AsstsHeldInOwnNm = None
+	@FctvSttlmDt.deleter
+	def FctvSttlmDt(self):
+		del self._FctvSttlmDt
+		self._FctvSttlmDt = None
 
 	@property
-	def Trfr(self):
-		return self._Trfr
+	def CtrPtyRef(self):
+		return self._CtrPtyRef
 
-	@Trfr.setter
-	def Trfr(self, value):
-		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
+	@CtrPtyRef.setter
+	def CtrPtyRef(self, value):
+		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
 
-	@Trfr.deleter
-	def Trfr(self):
-		del self._Trfr
-		self._Trfr = None
-
-	@property
-	def TaxValtnPt(self):
-		return self._TaxValtnPt
-
-	@TaxValtnPt.setter
-	def TaxValtnPt(self, value):
-		self._TaxValtnPt = value if type(value) != base_types.auto else self.make_default("TaxValtnPt")
-
-	@TaxValtnPt.deleter
-	def TaxValtnPt(self):
-		del self._TaxValtnPt
-		self._TaxValtnPt = None
-
-	@property
-	def BizFlowTp(self):
-		return self._BizFlowTp
-
-	@BizFlowTp.setter
-	def BizFlowTp(self, value):
-		self._BizFlowTp = value if type(value) != base_types.auto else self.make_default("BizFlowTp")
-
-	@BizFlowTp.deleter
-	def BizFlowTp(self):
-		del self._BizFlowTp
-		self._BizFlowTp = None
-
-	@property
-	def PmtDtls(self):
-		return self._PmtDtls
-
-	@PmtDtls.setter
-	def PmtDtls(self, value):
-		self._PmtDtls = value if type(value) != base_types.auto else self.make_default("PmtDtls")
-
-	@PmtDtls.deleter
-	def PmtDtls(self):
-		del self._PmtDtls
-		self._PmtDtls = None
+	@CtrPtyRef.deleter
+	def CtrPtyRef(self):
+		del self._CtrPtyRef
+		self._CtrPtyRef = None
 
 	@property
 	def Instrm(self):
@@ -365,69 +417,17 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._Instrm = None
 
 	@property
-	def OrgnlCost(self):
-		return self._OrgnlCost
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@OrgnlCost.setter
-	def OrgnlCost(self, value):
-		self._OrgnlCost = value if type(value) != base_types.auto else self.make_default("OrgnlCost")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@OrgnlCost.deleter
-	def OrgnlCost(self):
-		del self._OrgnlCost
-		self._OrgnlCost = None
-
-	@property
-	def LatstValtn(self):
-		return self._LatstValtn
-
-	@LatstValtn.setter
-	def LatstValtn(self, value):
-		self._LatstValtn = value if type(value) != base_types.auto else self.make_default("LatstValtn")
-
-	@LatstValtn.deleter
-	def LatstValtn(self):
-		del self._LatstValtn
-		self._LatstValtn = None
-
-	@property
-	def UnitsDtls(self):
-		return self._UnitsDtls
-
-	@UnitsDtls.setter
-	def UnitsDtls(self, value):
-		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
-
-	@UnitsDtls.deleter
-	def UnitsDtls(self):
-		del self._UnitsDtls
-		self._UnitsDtls = None
-
-	@property
-	def ReqdTradDt(self):
-		return self._ReqdTradDt
-
-	@ReqdTradDt.setter
-	def ReqdTradDt(self, value):
-		self._ReqdTradDt = value if type(value) != base_types.auto else self.make_default("ReqdTradDt")
-
-	@ReqdTradDt.deleter
-	def ReqdTradDt(self):
-		del self._ReqdTradDt
-		self._ReqdTradDt = None
-
-	@property
-	def TrfeeAcct(self):
-		return self._TrfeeAcct
-
-	@TrfeeAcct.setter
-	def TrfeeAcct(self, value):
-		self._TrfeeAcct = value if type(value) != base_types.auto else self.make_default("TrfeeAcct")
-
-	@TrfeeAcct.deleter
-	def TrfeeAcct(self):
-		del self._TrfeeAcct
-		self._TrfeeAcct = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def PrtlInstdQty(self):
@@ -443,37 +443,37 @@ class FinancialInstrument105(base_types._BaseFieldType):
 		self._PrtlInstdQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Convs', type=Conversion3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NotAvlbl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPctgInstd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=Quantity50, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizFlowTp', type=BusinessFlowType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfRsltsInChngOfBnfclOwnr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgAcqstnPric', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlBookVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrstllstnDtls', type=Crystallisation2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrfTp', type=TransferType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=Quantity50, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Convs', type=Conversion3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlBookVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPctgInstd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LatstValtn', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstsHeldInOwnNm', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxValtnPt', type=Tax36, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyInf', type=Intermediary43, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CrstllstnDtls', type=Crystallisation2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlCost', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitsDtls', type=Unit11, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LineId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDtls', type=PaymentInstrument20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NotAvlbl', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfTp', type=TransferType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AvrgAcqstnPric', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvTrfDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlAsst', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyInf', type=Intermediary43, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AsstsHeldInOwnNm', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trfr', type=Account28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxValtnPt', type=Tax36, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizFlowTp', type=BusinessFlowType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDtls', type=PaymentInstrument20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Instrm', type=FinancialInstrument63Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCost', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LatstValtn', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitsDtls', type=Unit11, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfeeAcct', type=Account28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrtlInstdQty', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

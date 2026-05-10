@@ -1,5 +1,5 @@
 from . import base_types
-from .PTRREvent3 import PTRREvent3
+from ._PTRREvent3 import PTRREvent3
 
 class ComparePostTradeRiskReduction2(base_types._BaseFieldType):
 

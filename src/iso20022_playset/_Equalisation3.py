@@ -1,12 +1,12 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .EqualisationMethodologyType2 import EqualisationMethodologyType2
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._PercentageRate import PercentageRate
+from ._EqualisationMethodologyType2 import EqualisationMethodologyType2
 
 class Equalisation3(base_types._BaseFieldType):
 
-	__slots__ = ["_EqulstnMthdlgyTp", "_GrssAsstVal", "_Amt", "_HghWtrmrk", "_Rate"]
+	__slots__ = ["_EqulstnMthdlgyTp", "_GrssAsstVal", "_Amt", "_Rate", "_HghWtrmrk"]
 	@property
 	def EqulstnMthdlgyTp(self):
 		return self._EqulstnMthdlgyTp
@@ -47,19 +47,6 @@ class Equalisation3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def HghWtrmrk(self):
-		return self._HghWtrmrk
-
-	@HghWtrmrk.setter
-	def HghWtrmrk(self, value):
-		self._HghWtrmrk = value if type(value) != base_types.auto else self.make_default("HghWtrmrk")
-
-	@HghWtrmrk.deleter
-	def HghWtrmrk(self):
-		del self._HghWtrmrk
-		self._HghWtrmrk = None
-
-	@property
 	def Rate(self):
 		return self._Rate
 
@@ -72,11 +59,24 @@ class Equalisation3(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def HghWtrmrk(self):
+		return self._HghWtrmrk
+
+	@HghWtrmrk.setter
+	def HghWtrmrk(self, value):
+		self._HghWtrmrk = value if type(value) != base_types.auto else self.make_default("HghWtrmrk")
+
+	@HghWtrmrk.deleter
+	def HghWtrmrk(self):
+		del self._HghWtrmrk
+		self._HghWtrmrk = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EqulstnMthdlgyTp', type=EqualisationMethodologyType2, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrssAsstVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HghWtrmrk', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HghWtrmrk', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

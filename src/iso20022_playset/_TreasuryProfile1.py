@@ -1,7 +1,7 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ISODate import ISODate
-from .PartyRole5Choice import PartyRole5Choice
+from ._PartyRole5Choice import PartyRole5Choice
+from ._PercentageRate import PercentageRate
+from ._ISODate import ISODate
 
 class TreasuryProfile1(base_types._BaseFieldType):
 

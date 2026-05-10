@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CorporateActionEventType112Choice import CorporateActionEventType112Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max35Text import Max35Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
 
 class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_OffclCorpActnEvtId", "_EvtTp", "_CorpActnEvtId"]
+	__slots__ = ["_FinInstrmId", "_OffclCorpActnEvtId", "_CorpActnEvtId", "_EvtTp"]
 	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
@@ -33,19 +33,6 @@ class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
 
@@ -58,10 +45,23 @@ class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
 
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

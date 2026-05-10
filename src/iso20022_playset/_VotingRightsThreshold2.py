@@ -1,6 +1,6 @@
 from . import base_types
-from .ThresholdBasis1Choice import ThresholdBasis1Choice
-from .NumberOrPercentage2Choice import NumberOrPercentage2Choice
+from ._ThresholdBasis1Choice import ThresholdBasis1Choice
+from ._NumberOrPercentage2Choice import NumberOrPercentage2Choice
 
 class VotingRightsThreshold2(base_types._BaseFieldType):
 

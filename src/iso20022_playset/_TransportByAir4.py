@@ -1,37 +1,24 @@
 from . import base_types
-from .AirportName1Choice import AirportName1Choice
-from .Max70Text import Max70Text
-from .Max35Text import Max35Text
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._CountryCode import CountryCode
+from ._AirportName1Choice import AirportName1Choice
 
 class TransportByAir4(base_types._BaseFieldType):
 
-	__slots__ = ["_DprtureAirprt", "_DstnAirprt", "_CrrierAgtNm", "_CrrierAgtCtry", "_AirCrrierNm", "_AirCrrierCtry", "_FlghtNb"]
+	__slots__ = ["_FlghtNb", "_CrrierAgtNm", "_AirCrrierCtry", "_DprtureAirprt", "_CrrierAgtCtry", "_DstnAirprt", "_AirCrrierNm"]
 	@property
-	def DprtureAirprt(self):
-		return self._DprtureAirprt
+	def FlghtNb(self):
+		return self._FlghtNb
 
-	@DprtureAirprt.setter
-	def DprtureAirprt(self, value):
-		self._DprtureAirprt = value if type(value) != base_types.auto else self.make_default("DprtureAirprt")
+	@FlghtNb.setter
+	def FlghtNb(self, value):
+		self._FlghtNb = value if type(value) != base_types.auto else self.make_default("FlghtNb")
 
-	@DprtureAirprt.deleter
-	def DprtureAirprt(self):
-		del self._DprtureAirprt
-		self._DprtureAirprt = None
-
-	@property
-	def DstnAirprt(self):
-		return self._DstnAirprt
-
-	@DstnAirprt.setter
-	def DstnAirprt(self, value):
-		self._DstnAirprt = value if type(value) != base_types.auto else self.make_default("DstnAirprt")
-
-	@DstnAirprt.deleter
-	def DstnAirprt(self):
-		del self._DstnAirprt
-		self._DstnAirprt = None
+	@FlghtNb.deleter
+	def FlghtNb(self):
+		del self._FlghtNb
+		self._FlghtNb = None
 
 	@property
 	def CrrierAgtNm(self):
@@ -47,6 +34,32 @@ class TransportByAir4(base_types._BaseFieldType):
 		self._CrrierAgtNm = None
 
 	@property
+	def AirCrrierCtry(self):
+		return self._AirCrrierCtry
+
+	@AirCrrierCtry.setter
+	def AirCrrierCtry(self, value):
+		self._AirCrrierCtry = value if type(value) != base_types.auto else self.make_default("AirCrrierCtry")
+
+	@AirCrrierCtry.deleter
+	def AirCrrierCtry(self):
+		del self._AirCrrierCtry
+		self._AirCrrierCtry = None
+
+	@property
+	def DprtureAirprt(self):
+		return self._DprtureAirprt
+
+	@DprtureAirprt.setter
+	def DprtureAirprt(self, value):
+		self._DprtureAirprt = value if type(value) != base_types.auto else self.make_default("DprtureAirprt")
+
+	@DprtureAirprt.deleter
+	def DprtureAirprt(self):
+		del self._DprtureAirprt
+		self._DprtureAirprt = None
+
+	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry
 
@@ -58,6 +71,19 @@ class TransportByAir4(base_types._BaseFieldType):
 	def CrrierAgtCtry(self):
 		del self._CrrierAgtCtry
 		self._CrrierAgtCtry = None
+
+	@property
+	def DstnAirprt(self):
+		return self._DstnAirprt
+
+	@DstnAirprt.setter
+	def DstnAirprt(self, value):
+		self._DstnAirprt = value if type(value) != base_types.auto else self.make_default("DstnAirprt")
+
+	@DstnAirprt.deleter
+	def DstnAirprt(self):
+		del self._DstnAirprt
+		self._DstnAirprt = None
 
 	@property
 	def AirCrrierNm(self):
@@ -72,39 +98,13 @@ class TransportByAir4(base_types._BaseFieldType):
 		del self._AirCrrierNm
 		self._AirCrrierNm = None
 
-	@property
-	def AirCrrierCtry(self):
-		return self._AirCrrierCtry
-
-	@AirCrrierCtry.setter
-	def AirCrrierCtry(self, value):
-		self._AirCrrierCtry = value if type(value) != base_types.auto else self.make_default("AirCrrierCtry")
-
-	@AirCrrierCtry.deleter
-	def AirCrrierCtry(self):
-		del self._AirCrrierCtry
-		self._AirCrrierCtry = None
-
-	@property
-	def FlghtNb(self):
-		return self._FlghtNb
-
-	@FlghtNb.setter
-	def FlghtNb(self, value):
-		self._FlghtNb = value if type(value) != base_types.auto else self.make_default("FlghtNb")
-
-	@FlghtNb.deleter
-	def FlghtNb(self):
-		del self._FlghtNb
-		self._FlghtNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DprtureAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstnAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AirCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AirCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FlghtNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AirCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DprtureAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstnAirprt', type=AirportName1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AirCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

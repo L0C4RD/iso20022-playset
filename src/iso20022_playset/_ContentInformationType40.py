@@ -1,6 +1,6 @@
 from . import base_types
-from .ContentType2Code import ContentType2Code
-from .EnvelopedData11 import EnvelopedData11
+from ._ContentType2Code import ContentType2Code
+from ._EnvelopedData11 import EnvelopedData11
 
 class ContentInformationType40(base_types._BaseFieldType):
 

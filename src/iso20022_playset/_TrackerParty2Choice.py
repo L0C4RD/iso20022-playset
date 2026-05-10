@@ -1,23 +1,23 @@
 from . import base_types
-from .OrganisationIdentification29 import OrganisationIdentification29
-from .PersonIdentification13 import PersonIdentification13
-from .FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
+from ._FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
+from ._PersonIdentification13 import PersonIdentification13
+from ._OrganisationIdentification29 import OrganisationIdentification29
 
 class TrackerParty2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvtId", "_FinInstnId", "_OrgId"]
+	__slots__ = ["_OrgId", "_FinInstnId", "_PrvtId"]
 	@property
-	def PrvtId(self):
-		return self._PrvtId
+	def OrgId(self):
+		return self._OrgId
 
-	@PrvtId.setter
-	def PrvtId(self, value):
-		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
+	@OrgId.setter
+	def OrgId(self, value):
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
 
-	@PrvtId.deleter
-	def PrvtId(self):
-		del self._PrvtId
-		self._PrvtId = None
+	@OrgId.deleter
+	def OrgId(self):
+		del self._OrgId
+		self._OrgId = None
 
 	@property
 	def FinInstnId(self):
@@ -33,21 +33,21 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 		self._FinInstnId = None
 
 	@property
-	def OrgId(self):
-		return self._OrgId
+	def PrvtId(self):
+		return self._PrvtId
 
-	@OrgId.setter
-	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+	@PrvtId.setter
+	def PrvtId(self, value):
+		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
 
-	@OrgId.deleter
-	def OrgId(self):
-		del self._OrgId
-		self._OrgId = None
+	@PrvtId.deleter
+	def PrvtId(self):
+		del self._PrvtId
+		self._PrvtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvtId', type=PersonIdentification13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification29, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification21, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrvtId', type=PersonIdentification13, min=0, max=1, mutex_group=1, array=False),
 	))
 

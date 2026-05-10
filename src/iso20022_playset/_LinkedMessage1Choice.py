@@ -1,9 +1,9 @@
 from . import base_types
-from .AdditionalReference3 import AdditionalReference3
+from ._AdditionalReference3 import AdditionalReference3
 
 class LinkedMessage1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRef", "_PrvsRef", "_RltdRef"]
+	__slots__ = ["_OthrRef", "_RltdRef", "_PrvsRef"]
 	@property
 	def OthrRef(self):
 		return self._OthrRef
@@ -18,19 +18,6 @@ class LinkedMessage1Choice(base_types._BaseFieldType):
 		self._OthrRef = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
-	@property
 	def RltdRef(self):
 		return self._RltdRef
 
@@ -43,9 +30,22 @@ class LinkedMessage1Choice(base_types._BaseFieldType):
 		del self._RltdRef
 		self._RltdRef = None
 
+	@property
+	def PrvsRef(self):
+		return self._PrvsRef
+
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrRef', type=AdditionalReference3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference3, min=0, max=1, mutex_group=1, array=False),
 	))
 

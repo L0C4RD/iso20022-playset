@@ -1,6 +1,6 @@
 from . import base_types
-from .RateName1 import RateName1
-from .Rate2 import Rate2
+from ._RateName1 import RateName1
+from ._Rate2 import Rate2
 
 class RateOrName1Choice(base_types._BaseFieldType):
 

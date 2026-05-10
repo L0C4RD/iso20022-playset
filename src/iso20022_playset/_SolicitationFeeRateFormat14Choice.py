@@ -1,24 +1,24 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .AmountAndQuantityRatio5 import AmountAndQuantityRatio5
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from .RateValueType7Code import RateValueType7Code
+from ._Percentage14Rate import Percentage14Rate
+from ._RateValueType7Code import RateValueType7Code
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._AmountAndQuantityRatio5 import AmountAndQuantityRatio5
 
 class SolicitationFeeRateFormat14Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdRate", "_AmtToQty", "_Rate", "_Amt"]
+	__slots__ = ["_Rate", "_AmtToQty", "_NotSpcfdRate", "_Amt"]
 	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
+	def Rate(self):
+		return self._Rate
 
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def AmtToQty(self):
@@ -34,17 +34,17 @@ class SolicitationFeeRateFormat14Choice(base_types._BaseFieldType):
 		self._AmtToQty = None
 
 	@property
-	def Rate(self):
-		return self._Rate
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
 
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
 
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
 
 	@property
 	def Amt(self):
@@ -60,9 +60,9 @@ class SolicitationFeeRateFormat14Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

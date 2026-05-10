@@ -1,5 +1,5 @@
 from . import base_types
-from .TaxBasis1Choice import TaxBasis1Choice
+from ._TaxBasis1Choice import TaxBasis1Choice
 
 class TaxCalculationInformation9(base_types._BaseFieldType):
 

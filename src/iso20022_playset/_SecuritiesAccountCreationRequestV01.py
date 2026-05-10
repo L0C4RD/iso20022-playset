@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SystemSecuritiesAccount7 import SystemSecuritiesAccount7
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._SystemSecuritiesAccount7 import SystemSecuritiesAccount7
 
 class SecuritiesAccountCreationRequestV01(base_types._BaseFieldType):
 

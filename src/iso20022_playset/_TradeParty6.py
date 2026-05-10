@@ -1,24 +1,11 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .TaxParty4 import TaxParty4
-from .LegalOrganisation2 import LegalOrganisation2
+from ._PartyIdentification272 import PartyIdentification272
+from ._LegalOrganisation2 import LegalOrganisation2
+from ._TaxParty4 import TaxParty4
 
 class TradeParty6(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_LglOrg", "_TaxPty"]
-	@property
-	def PtyId(self):
-		return self._PtyId
-
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
-
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
-
+	__slots__ = ["_LglOrg", "_TaxPty", "_PtyId"]
 	@property
 	def LglOrg(self):
 		return self._LglOrg
@@ -45,9 +32,22 @@ class TradeParty6(base_types._BaseFieldType):
 		del self._TaxPty
 		self._TaxPty = None
 
+	@property
+	def PtyId(self):
+		return self._PtyId
+
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxPty', type=TaxParty4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 	))
 

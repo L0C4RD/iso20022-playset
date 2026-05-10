@@ -1,26 +1,39 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CaseAssignment6 import CaseAssignment6
-from .RequestedModification11 import RequestedModification11
-from .Case6 import Case6
-from .InstructionForAssignee1 import InstructionForAssignee1
-from .UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from ._RequestedModification11 import RequestedModification11
+from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._SupplementaryData1 import SupplementaryData1
+from ._InstructionForAssignee1 import InstructionForAssignee1
 
 class RequestToModifyPaymentV09(base_types._BaseFieldType):
 
-	__slots__ = ["_Undrlyg", "_Case", "_SplmtryData", "_Mod", "_InstrForAssgne", "_Assgnmt"]
+	__slots__ = ["_Assgnmt", "_SplmtryData", "_Case", "_Undrlyg", "_Mod", "_InstrForAssgne"]
 	@property
-	def Undrlyg(self):
-		return self._Undrlyg
+	def Assgnmt(self):
+		return self._Assgnmt
 
-	@Undrlyg.setter
-	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
 
-	@Undrlyg.deleter
-	def Undrlyg(self):
-		del self._Undrlyg
-		self._Undrlyg = None
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Case(self):
@@ -36,17 +49,17 @@ class RequestToModifyPaymentV09(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Undrlyg(self):
+		return self._Undrlyg
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@Undrlyg.setter
+	def Undrlyg(self, value):
+		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Undrlyg.deleter
+	def Undrlyg(self):
+		del self._Undrlyg
+		self._Undrlyg = None
 
 	@property
 	def Mod(self):
@@ -74,25 +87,12 @@ class RequestToModifyPaymentV09(base_types._BaseFieldType):
 		del self._InstrForAssgne
 		self._InstrForAssgne = None
 
-	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mod', type=RequestedModification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrForAssgne', type=InstructionForAssignee1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

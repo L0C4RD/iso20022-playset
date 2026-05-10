@@ -1,13 +1,65 @@
 from . import base_types
-from .Commodity2 import Commodity2
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Guarantee1 import Guarantee1
-from .SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
-from .TripartyCollateralAndAmount1 import TripartyCollateralAndAmount1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._TripartyCollateralAndAmount1 import TripartyCollateralAndAmount1
+from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
+from ._Commodity2 import Commodity2
+from ._Guarantee1 import Guarantee1
 
 class AssetHolding3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Csh", "_Trpty", "_Gold", "_Grnt", "_Cmmdty", "_Scty"]
+	__slots__ = ["_Cmmdty", "_Grnt", "_Gold", "_Scty", "_Csh", "_Trpty"]
+	@property
+	def Cmmdty(self):
+		return self._Cmmdty
+
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
+
+	@property
+	def Grnt(self):
+		return self._Grnt
+
+	@Grnt.setter
+	def Grnt(self, value):
+		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
+
+	@Grnt.deleter
+	def Grnt(self):
+		del self._Grnt
+		self._Grnt = None
+
+	@property
+	def Gold(self):
+		return self._Gold
+
+	@Gold.setter
+	def Gold(self, value):
+		self._Gold = value if type(value) != base_types.auto else self.make_default("Gold")
+
+	@Gold.deleter
+	def Gold(self):
+		del self._Gold
+		self._Gold = None
+
+	@property
+	def Scty(self):
+		return self._Scty
+
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
+
 	@property
 	def Csh(self):
 		return self._Csh
@@ -34,64 +86,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 		del self._Trpty
 		self._Trpty = None
 
-	@property
-	def Gold(self):
-		return self._Gold
-
-	@Gold.setter
-	def Gold(self, value):
-		self._Gold = value if type(value) != base_types.auto else self.make_default("Gold")
-
-	@Gold.deleter
-	def Gold(self):
-		del self._Gold
-		self._Gold = None
-
-	@property
-	def Grnt(self):
-		return self._Grnt
-
-	@Grnt.setter
-	def Grnt(self, value):
-		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
-
-	@Grnt.deleter
-	def Grnt(self):
-		del self._Grnt
-		self._Grnt = None
-
-	@property
-	def Cmmdty(self):
-		return self._Cmmdty
-
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
-
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
-
-	@property
-	def Scty(self):
-		return self._Scty
-
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
-
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Csh', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Trpty', type=TripartyCollateralAndAmount1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
 	))
 

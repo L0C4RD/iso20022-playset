@@ -1,41 +1,15 @@
 from . import base_types
-from .TaxCapacityParty5Choice import TaxCapacityParty5Choice
-from .GenericIdentification47 import GenericIdentification47
-from .SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
-from .SettlementTransactionCondition21Choice import SettlementTransactionCondition21Choice
-from .Registration11Choice import Registration11Choice
-from .Restriction6Choice import Restriction6Choice
-from .SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._GenericIdentification47 import GenericIdentification47
+from ._TaxCapacityParty5Choice import TaxCapacityParty5Choice
+from ._SettlementTransactionCondition21Choice import SettlementTransactionCondition21Choice
+from ._Restriction6Choice import Restriction6Choice
+from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
+from ._SettlementSystemMethod5Choice import SettlementSystemMethod5Choice
+from ._Registration11Choice import Registration11Choice
 
 class SettlementDetails103(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSysMtd", "_SttlmTxCond", "_SctiesRTGS", "_LglRstrctns", "_StmpDtyTaxBsis", "_Regn", "_TaxCpcty"]
-	@property
-	def SttlmSysMtd(self):
-		return self._SttlmSysMtd
-
-	@SttlmSysMtd.setter
-	def SttlmSysMtd(self, value):
-		self._SttlmSysMtd = value if type(value) != base_types.auto else self.make_default("SttlmSysMtd")
-
-	@SttlmSysMtd.deleter
-	def SttlmSysMtd(self):
-		del self._SttlmSysMtd
-		self._SttlmSysMtd = None
-
-	@property
-	def SttlmTxCond(self):
-		return self._SttlmTxCond
-
-	@SttlmTxCond.setter
-	def SttlmTxCond(self, value):
-		self._SttlmTxCond = value if type(value) != base_types.auto else self.make_default("SttlmTxCond")
-
-	@SttlmTxCond.deleter
-	def SttlmTxCond(self):
-		del self._SttlmTxCond
-		self._SttlmTxCond = None
-
+	__slots__ = ["_SctiesRTGS", "_Regn", "_SttlmSysMtd", "_TaxCpcty", "_StmpDtyTaxBsis", "_SttlmTxCond", "_LglRstrctns"]
 	@property
 	def SctiesRTGS(self):
 		return self._SctiesRTGS
@@ -48,32 +22,6 @@ class SettlementDetails103(base_types._BaseFieldType):
 	def SctiesRTGS(self):
 		del self._SctiesRTGS
 		self._SctiesRTGS = None
-
-	@property
-	def LglRstrctns(self):
-		return self._LglRstrctns
-
-	@LglRstrctns.setter
-	def LglRstrctns(self, value):
-		self._LglRstrctns = value if type(value) != base_types.auto else self.make_default("LglRstrctns")
-
-	@LglRstrctns.deleter
-	def LglRstrctns(self):
-		del self._LglRstrctns
-		self._LglRstrctns = None
-
-	@property
-	def StmpDtyTaxBsis(self):
-		return self._StmpDtyTaxBsis
-
-	@StmpDtyTaxBsis.setter
-	def StmpDtyTaxBsis(self, value):
-		self._StmpDtyTaxBsis = value if type(value) != base_types.auto else self.make_default("StmpDtyTaxBsis")
-
-	@StmpDtyTaxBsis.deleter
-	def StmpDtyTaxBsis(self):
-		del self._StmpDtyTaxBsis
-		self._StmpDtyTaxBsis = None
 
 	@property
 	def Regn(self):
@@ -89,6 +37,19 @@ class SettlementDetails103(base_types._BaseFieldType):
 		self._Regn = None
 
 	@property
+	def SttlmSysMtd(self):
+		return self._SttlmSysMtd
+
+	@SttlmSysMtd.setter
+	def SttlmSysMtd(self, value):
+		self._SttlmSysMtd = value if type(value) != base_types.auto else self.make_default("SttlmSysMtd")
+
+	@SttlmSysMtd.deleter
+	def SttlmSysMtd(self):
+		del self._SttlmSysMtd
+		self._SttlmSysMtd = None
+
+	@property
 	def TaxCpcty(self):
 		return self._TaxCpcty
 
@@ -101,13 +62,52 @@ class SettlementDetails103(base_types._BaseFieldType):
 		del self._TaxCpcty
 		self._TaxCpcty = None
 
+	@property
+	def StmpDtyTaxBsis(self):
+		return self._StmpDtyTaxBsis
+
+	@StmpDtyTaxBsis.setter
+	def StmpDtyTaxBsis(self, value):
+		self._StmpDtyTaxBsis = value if type(value) != base_types.auto else self.make_default("StmpDtyTaxBsis")
+
+	@StmpDtyTaxBsis.deleter
+	def StmpDtyTaxBsis(self):
+		del self._StmpDtyTaxBsis
+		self._StmpDtyTaxBsis = None
+
+	@property
+	def SttlmTxCond(self):
+		return self._SttlmTxCond
+
+	@SttlmTxCond.setter
+	def SttlmTxCond(self, value):
+		self._SttlmTxCond = value if type(value) != base_types.auto else self.make_default("SttlmTxCond")
+
+	@SttlmTxCond.deleter
+	def SttlmTxCond(self):
+		del self._SttlmTxCond
+		self._SttlmTxCond = None
+
+	@property
+	def LglRstrctns(self):
+		return self._LglRstrctns
+
+	@LglRstrctns.setter
+	def LglRstrctns(self, value):
+		self._LglRstrctns = value if type(value) != base_types.auto else self.make_default("LglRstrctns")
+
+	@LglRstrctns.deleter
+	def LglRstrctns(self):
+		del self._LglRstrctns
+		self._LglRstrctns = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmSysMtd', type=SettlementSystemMethod5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition21Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Regn', type=Registration11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSysMtd', type=SettlementSystemMethod5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition21Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglRstrctns', type=Restriction6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

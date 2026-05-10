@@ -1,6 +1,6 @@
 from . import base_types
-from .CancellationStatus6Code import CancellationStatus6Code
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
+from ._CancellationStatus6Code import CancellationStatus6Code
 
 class CancellationProcessingStatus2(base_types._BaseFieldType):
 

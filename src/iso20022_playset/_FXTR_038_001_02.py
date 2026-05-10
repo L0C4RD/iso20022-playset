@@ -1,5 +1,5 @@
 from . import base_types
-from .ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02 import ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02
+from ._ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02 import ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02
 
 class FXTR_038_001_02():
 

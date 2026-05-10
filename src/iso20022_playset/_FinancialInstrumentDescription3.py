@@ -1,24 +1,11 @@
 from . import base_types
-from .SecurityIdentification7 import SecurityIdentification7
-from .MICIdentifier import MICIdentifier
-from .PartyIdentification2Choice import PartyIdentification2Choice
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._MICIdentifier import MICIdentifier
+from ._SecurityIdentification7 import SecurityIdentification7
 
 class FinancialInstrumentDescription3(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfListg", "_SfkpgPlc", "_SctyId"]
-	@property
-	def PlcOfListg(self):
-		return self._PlcOfListg
-
-	@PlcOfListg.setter
-	def PlcOfListg(self, value):
-		self._PlcOfListg = value if type(value) != base_types.auto else self.make_default("PlcOfListg")
-
-	@PlcOfListg.deleter
-	def PlcOfListg(self):
-		del self._PlcOfListg
-		self._PlcOfListg = None
-
+	__slots__ = ["_SfkpgPlc", "_PlcOfListg", "_SctyId"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -31,6 +18,19 @@ class FinancialInstrumentDescription3(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
+
+	@property
+	def PlcOfListg(self):
+		return self._PlcOfListg
+
+	@PlcOfListg.setter
+	def PlcOfListg(self, value):
+		self._PlcOfListg = value if type(value) != base_types.auto else self.make_default("PlcOfListg")
+
+	@PlcOfListg.deleter
+	def PlcOfListg(self):
+		del self._PlcOfListg
+		self._PlcOfListg = None
 
 	@property
 	def SctyId(self):
@@ -46,8 +46,8 @@ class FinancialInstrumentDescription3(base_types._BaseFieldType):
 		self._SctyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
 

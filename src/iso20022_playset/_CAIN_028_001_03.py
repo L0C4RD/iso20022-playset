@@ -1,5 +1,5 @@
 from . import base_types
-from .ChargeBackResponseV03 import ChargeBackResponseV03
+from ._ChargeBackResponseV03 import ChargeBackResponseV03
 
 class CAIN_028_001_03():
 

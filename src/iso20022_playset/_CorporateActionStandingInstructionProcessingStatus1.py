@@ -1,23 +1,10 @@
 from . import base_types
-from .ProcessedStatus3FormatChoice import ProcessedStatus3FormatChoice
-from .Max350Text import Max350Text
+from ._ProcessedStatus3FormatChoice import ProcessedStatus3FormatChoice
+from ._Max350Text import Max350Text
 
 class CorporateActionStandingInstructionProcessingStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AddtlInf"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_AddtlInf", "_Sts"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -31,8 +18,21 @@ class CorporateActionStandingInstructionProcessingStatus1(base_types._BaseFieldT
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=ProcessedStatus3FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=ProcessedStatus3FormatChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

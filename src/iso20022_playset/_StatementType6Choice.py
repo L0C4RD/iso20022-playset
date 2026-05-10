@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .SecuritiesStatementType1Code import SecuritiesStatementType1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._SecuritiesStatementType1Code import SecuritiesStatementType1Code
 
 class StatementType6Choice(base_types._BaseFieldType):
 

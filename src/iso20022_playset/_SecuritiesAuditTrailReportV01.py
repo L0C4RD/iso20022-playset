@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .SecuritiesAuditTrailOrOperationalError4Choice import SecuritiesAuditTrailOrOperationalError4Choice
-from .MessageHeader12 import MessageHeader12
+from ._SecuritiesAuditTrailOrOperationalError4Choice import SecuritiesAuditTrailOrOperationalError4Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader12 import MessageHeader12
 
 class SecuritiesAuditTrailReportV01(base_types._BaseFieldType):
 

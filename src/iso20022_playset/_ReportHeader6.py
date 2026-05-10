@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Pagination1 import Pagination1
+from ._Max35Text import Max35Text
+from ._Pagination1 import Pagination1
 
 class ReportHeader6(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_RptId"]
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
+	__slots__ = ["_RptId", "_MsgPgntn"]
 	@property
 	def RptId(self):
 		return self._RptId
@@ -31,8 +18,21 @@ class ReportHeader6(base_types._BaseFieldType):
 		del self._RptId
 		self._RptId = None
 
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

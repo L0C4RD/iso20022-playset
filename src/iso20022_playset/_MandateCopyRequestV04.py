@@ -1,23 +1,23 @@
 from . import base_types
-from .MandateCopy4 import MandateCopy4
-from .GroupHeader110 import GroupHeader110
-from .SupplementaryData1 import SupplementaryData1
+from ._SupplementaryData1 import SupplementaryData1
+from ._MandateCopy4 import MandateCopy4
+from ._GroupHeader110 import GroupHeader110
 
 class MandateCopyRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygCpyReqDtls", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_UndrlygCpyReqDtls"]
 	@property
-	def UndrlygCpyReqDtls(self):
-		return self._UndrlygCpyReqDtls
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@UndrlygCpyReqDtls.setter
-	def UndrlygCpyReqDtls(self, value):
-		self._UndrlygCpyReqDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCpyReqDtls")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
-	@UndrlygCpyReqDtls.deleter
-	def UndrlygCpyReqDtls(self):
-		del self._UndrlygCpyReqDtls
-		self._UndrlygCpyReqDtls = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class MandateCopyRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def UndrlygCpyReqDtls(self):
+		return self._UndrlygCpyReqDtls
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+	@UndrlygCpyReqDtls.setter
+	def UndrlygCpyReqDtls(self, value):
+		self._UndrlygCpyReqDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCpyReqDtls")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@UndrlygCpyReqDtls.deleter
+	def UndrlygCpyReqDtls(self):
+		del self._UndrlygCpyReqDtls
+		self._UndrlygCpyReqDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygCpyReqDtls', type=MandateCopy4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UndrlygCpyReqDtls', type=MandateCopy4, min=1, max=None, mutex_group=None, array=True),
 	))
 

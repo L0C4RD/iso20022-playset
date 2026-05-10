@@ -1,7 +1,7 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max1025Text import Max1025Text
-from .CashCollateral5 import CashCollateral5
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CashCollateral5 import CashCollateral5
+from ._Max1025Text import Max1025Text
 
 class ContractCollateral1(base_types._BaseFieldType):
 

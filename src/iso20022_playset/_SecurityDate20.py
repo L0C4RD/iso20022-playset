@@ -1,34 +1,21 @@
 from . import base_types
-from .DateFormat30Choice import DateFormat30Choice
+from ._DateFormat30Choice import DateFormat30Choice
 
 class SecurityDate20(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_PrpssDt", "_DvddRnkgDt", "_AvlblDt", "_PmtDt", "_LastTradgDt"]
+	__slots__ = ["_PmtDt", "_DvddRnkgDt", "_LastTradgDt", "_AvlblDt", "_PrpssDt", "_EarlstPmtDt"]
 	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
+	def PmtDt(self):
+		return self._PmtDt
 
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
 
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
-
-	@property
-	def PrpssDt(self):
-		return self._PrpssDt
-
-	@PrpssDt.setter
-	def PrpssDt(self, value):
-		self._PrpssDt = value if type(value) != base_types.auto else self.make_default("PrpssDt")
-
-	@PrpssDt.deleter
-	def PrpssDt(self):
-		del self._PrpssDt
-		self._PrpssDt = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	@property
 	def DvddRnkgDt(self):
@@ -44,6 +31,19 @@ class SecurityDate20(base_types._BaseFieldType):
 		self._DvddRnkgDt = None
 
 	@property
+	def LastTradgDt(self):
+		return self._LastTradgDt
+
+	@LastTradgDt.setter
+	def LastTradgDt(self, value):
+		self._LastTradgDt = value if type(value) != base_types.auto else self.make_default("LastTradgDt")
+
+	@LastTradgDt.deleter
+	def LastTradgDt(self):
+		del self._LastTradgDt
+		self._LastTradgDt = None
+
+	@property
 	def AvlblDt(self):
 		return self._AvlblDt
 
@@ -57,37 +57,37 @@ class SecurityDate20(base_types._BaseFieldType):
 		self._AvlblDt = None
 
 	@property
-	def PmtDt(self):
-		return self._PmtDt
+	def PrpssDt(self):
+		return self._PrpssDt
 
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+	@PrpssDt.setter
+	def PrpssDt(self, value):
+		self._PrpssDt = value if type(value) != base_types.auto else self.make_default("PrpssDt")
 
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
+	@PrpssDt.deleter
+	def PrpssDt(self):
+		del self._PrpssDt
+		self._PrpssDt = None
 
 	@property
-	def LastTradgDt(self):
-		return self._LastTradgDt
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
 
-	@LastTradgDt.setter
-	def LastTradgDt(self, value):
-		self._LastTradgDt = value if type(value) != base_types.auto else self.make_default("LastTradgDt")
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
 
-	@LastTradgDt.deleter
-	def LastTradgDt(self):
-		del self._LastTradgDt
-		self._LastTradgDt = None
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrpssDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastTradgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrpssDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

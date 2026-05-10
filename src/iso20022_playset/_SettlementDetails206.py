@@ -1,24 +1,11 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .SettlementParties36Choice import SettlementParties36Choice
-from .CollateralOwnership4 import CollateralOwnership4
+from ._CollateralOwnership4 import CollateralOwnership4
+from ._SettlementParties36Choice import SettlementParties36Choice
+from ._ISODateTime import ISODateTime
 
 class SettlementDetails206(base_types._BaseFieldType):
 
-	__slots__ = ["_CollOwnrsh", "_TradDt", "_SttlmPties"]
-	@property
-	def CollOwnrsh(self):
-		return self._CollOwnrsh
-
-	@CollOwnrsh.setter
-	def CollOwnrsh(self, value):
-		self._CollOwnrsh = value if type(value) != base_types.auto else self.make_default("CollOwnrsh")
-
-	@CollOwnrsh.deleter
-	def CollOwnrsh(self):
-		del self._CollOwnrsh
-		self._CollOwnrsh = None
-
+	__slots__ = ["_TradDt", "_CollOwnrsh", "_SttlmPties"]
 	@property
 	def TradDt(self):
 		return self._TradDt
@@ -31,6 +18,19 @@ class SettlementDetails206(base_types._BaseFieldType):
 	def TradDt(self):
 		del self._TradDt
 		self._TradDt = None
+
+	@property
+	def CollOwnrsh(self):
+		return self._CollOwnrsh
+
+	@CollOwnrsh.setter
+	def CollOwnrsh(self, value):
+		self._CollOwnrsh = value if type(value) != base_types.auto else self.make_default("CollOwnrsh")
+
+	@CollOwnrsh.deleter
+	def CollOwnrsh(self):
+		del self._CollOwnrsh
+		self._CollOwnrsh = None
 
 	@property
 	def SttlmPties(self):
@@ -46,8 +46,8 @@ class SettlementDetails206(base_types._BaseFieldType):
 		self._SttlmPties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollOwnrsh', type=CollateralOwnership4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollOwnrsh', type=CollateralOwnership4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmPties', type=SettlementParties36Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

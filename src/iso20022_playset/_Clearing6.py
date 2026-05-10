@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification243Choice import PartyIdentification243Choice
-from .PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
+from ._PartyIdentificationAndAccount219 import PartyIdentificationAndAccount219
+from ._PartyIdentification243Choice import PartyIdentification243Choice
 
 class Clearing6(base_types._BaseFieldType):
 

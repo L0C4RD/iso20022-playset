@@ -1,23 +1,23 @@
 from . import base_types
-from .Demand4 import Demand4
-from .Undertaking9 import Undertaking9
-from .DemandStatus1Code import DemandStatus1Code
+from ._Demand4 import Demand4
+from ._DemandStatus1Code import DemandStatus1Code
+from ._Undertaking9 import Undertaking9
 
 class ExtendOrPayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_DmndDtls", "_UdrtkgId"]
+	__slots__ = ["_UdrtkgId", "_DmndDtls", "_Sts"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def UdrtkgId(self):
+		return self._UdrtkgId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
 
 	@property
 	def DmndDtls(self):
@@ -33,21 +33,21 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 		self._DmndDtls = None
 
 	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
+	def Sts(self):
+		return self._Sts
 
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=DemandStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=DemandStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

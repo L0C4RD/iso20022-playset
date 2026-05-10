@@ -1,5 +1,5 @@
 from . import base_types
-from .FIToFIPaymentReversalV13 import FIToFIPaymentReversalV13
+from ._FIToFIPaymentReversalV13 import FIToFIPaymentReversalV13
 
 class PACS_007_001_13():
 

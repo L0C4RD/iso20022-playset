@@ -1,8 +1,8 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ElectronicInvoice1 import ElectronicInvoice1
-from .ActivationHeader3 import ActivationHeader3
-from .DebtorActivation5 import DebtorActivation5
+from ._ActivationHeader3 import ActivationHeader3
+from ._SupplementaryData1 import SupplementaryData1
+from ._DebtorActivation5 import DebtorActivation5
+from ._ElectronicInvoice1 import ElectronicInvoice1
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 

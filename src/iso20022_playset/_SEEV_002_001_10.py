@@ -1,5 +1,5 @@
 from . import base_types
-from .MeetingCancellationV10 import MeetingCancellationV10
+from ._MeetingCancellationV10 import MeetingCancellationV10
 
 class SEEV_002_001_10():
 

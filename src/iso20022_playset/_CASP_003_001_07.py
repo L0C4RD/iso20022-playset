@@ -1,5 +1,5 @@
 from . import base_types
-from .SaleToPOIReconciliationRequestV07 import SaleToPOIReconciliationRequestV07
+from ._SaleToPOIReconciliationRequestV07 import SaleToPOIReconciliationRequestV07
 
 class CASP_003_001_07():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .OrderWaiverReason1Code import OrderWaiverReason1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._OrderWaiverReason1Code import OrderWaiverReason1Code
 
 class OrderWaiverReason3Choice(base_types._BaseFieldType):
 

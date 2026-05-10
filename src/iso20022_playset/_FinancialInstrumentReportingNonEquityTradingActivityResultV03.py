@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .TransparencyDataReport20 import TransparencyDataReport20
-from .SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
+from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
+from ._TransparencyDataReport20 import TransparencyDataReport20
+from ._SupplementaryData1 import SupplementaryData1
 
 class FinancialInstrumentReportingNonEquityTradingActivityResultV03(base_types._BaseFieldType):
 

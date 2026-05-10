@@ -1,5 +1,5 @@
 from . import base_types
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class SimpleIdentificationInformation1(base_types._BaseFieldType):
 

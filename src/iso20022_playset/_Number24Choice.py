@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
-from .Max4NumericText import Max4NumericText
+from ._GenericIdentification36 import GenericIdentification36
+from ._Max4NumericText import Max4NumericText
 
 class Number24Choice(base_types._BaseFieldType):
 

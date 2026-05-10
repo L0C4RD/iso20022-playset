@@ -1,27 +1,14 @@
 from . import base_types
-from .Number import Number
-from .CreditDebitCode import CreditDebitCode
-from .BalanceStatus1Code import BalanceStatus1Code
-from .BalanceType9Choice import BalanceType9Choice
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._BalanceStatus1Code import BalanceStatus1Code
+from ._Number import Number
+from ._BalanceType9Choice import BalanceType9Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class CashBalance11(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Tp", "_NbOfPmts", "_Amt", "_ValDt", "_CdtDbtInd"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_Tp", "_Amt", "_Sts", "_NbOfPmts", "_ValDt", "_CdtDbtInd"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -36,19 +23,6 @@ class CashBalance11(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def NbOfPmts(self):
-		return self._NbOfPmts
-
-	@NbOfPmts.setter
-	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
-
-	@NbOfPmts.deleter
-	def NbOfPmts(self):
-		del self._NbOfPmts
-		self._NbOfPmts = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -60,6 +34,32 @@ class CashBalance11(base_types._BaseFieldType):
 	def Amt(self):
 		del self._Amt
 		self._Amt = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def NbOfPmts(self):
+		return self._NbOfPmts
+
+	@NbOfPmts.setter
+	def NbOfPmts(self, value):
+		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
+
+	@NbOfPmts.deleter
+	def NbOfPmts(self):
+		del self._NbOfPmts
+		self._NbOfPmts = None
 
 	@property
 	def ValDt(self):
@@ -88,10 +88,10 @@ class CashBalance11(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType9Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))

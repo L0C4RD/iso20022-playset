@@ -1,5 +1,5 @@
 from . import base_types
-from .UnitOfMeasure11Code import UnitOfMeasure11Code
+from ._UnitOfMeasure11Code import UnitOfMeasure11Code
 
 class CompareUnitOfMeasure3(base_types._BaseFieldType):
 

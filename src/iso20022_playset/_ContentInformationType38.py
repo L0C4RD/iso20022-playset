@@ -1,7 +1,7 @@
 from . import base_types
-from .ContentType2Code import ContentType2Code
-from .SignedData9 import SignedData9
-from .AuthenticatedData10 import AuthenticatedData10
+from ._AuthenticatedData10 import AuthenticatedData10
+from ._ContentType2Code import ContentType2Code
+from ._SignedData9 import SignedData9
 
 class ContentInformationType38(base_types._BaseFieldType):
 

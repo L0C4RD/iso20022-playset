@@ -1,11 +1,11 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from .GenericIdentification39 import GenericIdentification39
+from ._GenericIdentification47 import GenericIdentification47
+from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from ._GenericIdentification39 import GenericIdentification39
 
 class QuantityBreakdown65(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesSubBalTp", "_LotQty", "_LotNb"]
+	__slots__ = ["_SctiesSubBalTp", "_LotNb", "_LotQty"]
 	@property
 	def SctiesSubBalTp(self):
 		return self._SctiesSubBalTp
@@ -20,19 +20,6 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 		self._SctiesSubBalTp = None
 
 	@property
-	def LotQty(self):
-		return self._LotQty
-
-	@LotQty.setter
-	def LotQty(self, value):
-		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
-
-	@LotQty.deleter
-	def LotQty(self):
-		del self._LotQty
-		self._LotQty = None
-
-	@property
 	def LotNb(self):
 		return self._LotNb
 
@@ -45,9 +32,22 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 		del self._LotNb
 		self._LotNb = None
 
+	@property
+	def LotQty(self):
+		return self._LotQty
+
+	@LotQty.setter
+	def LotQty(self, value):
+		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
+
+	@LotQty.deleter
+	def LotQty(self):
+		del self._LotQty
+		self._LotQty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

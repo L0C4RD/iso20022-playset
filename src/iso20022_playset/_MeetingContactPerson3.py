@@ -1,24 +1,11 @@
 from . import base_types
-from .PartyIdentification129Choice import PartyIdentification129Choice
-from .MICIdentifier import MICIdentifier
-from .ContactIdentification1 import ContactIdentification1
+from ._ContactIdentification1 import ContactIdentification1
+from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._MICIdentifier import MICIdentifier
 
 class MeetingContactPerson3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_PlcOfListg", "_EmplngPty"]
-	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
-
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
-
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
-
+	__slots__ = ["_PlcOfListg", "_CtctPrsn", "_EmplngPty"]
 	@property
 	def PlcOfListg(self):
 		return self._PlcOfListg
@@ -31,6 +18,19 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 	def PlcOfListg(self):
 		del self._PlcOfListg
 		self._PlcOfListg = None
+
+	@property
+	def CtctPrsn(self):
+		return self._CtctPrsn
+
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
 
 	@property
 	def EmplngPty(self):
@@ -46,8 +46,8 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 		self._EmplngPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .DocumentNumber6Choice import DocumentNumber6Choice
-from .DocumentIdentification4Choice import DocumentIdentification4Choice
+from ._DocumentIdentification4Choice import DocumentIdentification4Choice
+from ._DocumentNumber6Choice import DocumentNumber6Choice
 
 class DocumentIdentification34(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DocNb"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_DocNb", "_Id"]
 	@property
 	def DocNb(self):
 		return self._DocNb
@@ -31,8 +18,21 @@ class DocumentIdentification34(base_types._BaseFieldType):
 		del self._DocNb
 		self._DocNb = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

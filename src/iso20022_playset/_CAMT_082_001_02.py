@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraBalanceMovementCancellationQueryV02 import IntraBalanceMovementCancellationQueryV02
+from ._IntraBalanceMovementCancellationQueryV02 import IntraBalanceMovementCancellationQueryV02
 
 class CAMT_082_001_02():
 

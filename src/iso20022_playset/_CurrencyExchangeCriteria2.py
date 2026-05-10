@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CurrencyExchangeSearchCriteria1 import CurrencyExchangeSearchCriteria1
+from ._Max35Text import Max35Text
+from ._CurrencyExchangeSearchCriteria1 import CurrencyExchangeSearchCriteria1
 
 class CurrencyExchangeCriteria2(base_types._BaseFieldType):
 

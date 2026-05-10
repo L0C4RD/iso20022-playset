@@ -1,50 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CopyDuplicate1Code import CopyDuplicate1Code
-from .PartyIdentification136 import PartyIdentification136
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._Max35Text import Max35Text
+from ._PartyIdentification136 import PartyIdentification136
+from ._CopyDuplicate1Code import CopyDuplicate1Code
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_DocId", "_CpyDplct", "_MsgOrgtr", "_CreDtTm", "_MsgRcpt", "_TxId"]
+	__slots__ = ["_TxId", "_CreDtTm", "_MsgOrgtr", "_DocId", "_MsgRcpt", "_CpyDplct"]
 	@property
-	def DocId(self):
-		return self._DocId
+	def TxId(self):
+		return self._TxId
 
-	@DocId.setter
-	def DocId(self, value):
-		self._DocId = value if type(value) != base_types.auto else self.make_default("DocId")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@DocId.deleter
-	def DocId(self):
-		del self._DocId
-		self._DocId = None
-
-	@property
-	def CpyDplct(self):
-		return self._CpyDplct
-
-	@CpyDplct.setter
-	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
-
-	@CpyDplct.deleter
-	def CpyDplct(self):
-		del self._CpyDplct
-		self._CpyDplct = None
-
-	@property
-	def MsgOrgtr(self):
-		return self._MsgOrgtr
-
-	@MsgOrgtr.setter
-	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
-
-	@MsgOrgtr.deleter
-	def MsgOrgtr(self):
-		del self._MsgOrgtr
-		self._MsgOrgtr = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def CreDtTm(self):
@@ -60,6 +34,32 @@ class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
+	def MsgOrgtr(self):
+		return self._MsgOrgtr
+
+	@MsgOrgtr.setter
+	def MsgOrgtr(self, value):
+		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+
+	@MsgOrgtr.deleter
+	def MsgOrgtr(self):
+		del self._MsgOrgtr
+		self._MsgOrgtr = None
+
+	@property
+	def DocId(self):
+		return self._DocId
+
+	@DocId.setter
+	def DocId(self, value):
+		self._DocId = value if type(value) != base_types.auto else self.make_default("DocId")
+
+	@DocId.deleter
+	def DocId(self):
+		del self._DocId
+		self._DocId = None
+
+	@property
 	def MsgRcpt(self):
 		return self._MsgRcpt
 
@@ -73,24 +73,24 @@ class TransactionAndDocumentIdentification6(base_types._BaseFieldType):
 		self._MsgRcpt = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def CpyDplct(self):
+		return self._CpyDplct
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@CpyDplct.setter
+	def CpyDplct(self, value):
+		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@CpyDplct.deleter
+	def CpyDplct(self):
+		del self._CpyDplct
+		self._CpyDplct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DocId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

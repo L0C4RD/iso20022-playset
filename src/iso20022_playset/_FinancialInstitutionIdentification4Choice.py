@@ -1,23 +1,10 @@
 from . import base_types
-from .NameAndAddress6 import NameAndAddress6
-from .BICIdentifier import BICIdentifier
+from ._NameAndAddress6 import NameAndAddress6
+from ._BICIdentifier import BICIdentifier
 
 class FinancialInstitutionIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_BIC"]
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
+	__slots__ = ["_BIC", "_NmAndAdr"]
 	@property
 	def BIC(self):
 		return self._BIC
@@ -31,8 +18,21 @@ class FinancialInstitutionIdentification4Choice(base_types._BaseFieldType):
 		del self._BIC
 		self._BIC = None
 
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress6, min=0, max=1, mutex_group=1, array=False),
 	))
 

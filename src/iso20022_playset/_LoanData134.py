@@ -1,44 +1,31 @@
 from . import base_types
-from .ISODate import ISODate
-from .SpecialCollateral1Code import SpecialCollateral1Code
-from .ExternalAgreementType1Code import ExternalAgreementType1Code
-from .TradingVenueType1Choice import TradingVenueType1Choice
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ContractTerm6Choice import ContractTerm6Choice
-from .Max52Text import Max52Text
-from .ExposureType10Code import ExposureType10Code
-from .Security49 import Security49
-from .Rates1Choice import Rates1Choice
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Rates1Choice import Rates1Choice
+from ._ExternalAgreementType1Code import ExternalAgreementType1Code
+from ._ContractTerm6Choice import ContractTerm6Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._TradingVenueType1Choice import TradingVenueType1Choice
+from ._ExposureType10Code import ExposureType10Code
+from ._Max52Text import Max52Text
+from ._SpecialCollateral1Code import SpecialCollateral1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ISODate import ISODate
+from ._Security49 import Security49
 
 class LoanData134(base_types._BaseFieldType):
 
-	__slots__ = ["_Clrd", "_Scty", "_Term", "_MtrtyDt", "_Rates", "_GnlColl", "_MstrAgrmtTp", "_PrncplAmtCcy", "_PricCcy", "_TradgVn", "_CtrctTp", "_PrtflCd", "_OutsdngMrgnLnCcy"]
+	__slots__ = ["_OutsdngMrgnLnCcy", "_Term", "_MtrtyDt", "_CtrctTp", "_GnlColl", "_PrncplAmtCcy", "_Clrd", "_Rates", "_TradgVn", "_Scty", "_PrtflCd", "_PricCcy", "_MstrAgrmtTp"]
 	@property
-	def Clrd(self):
-		return self._Clrd
+	def OutsdngMrgnLnCcy(self):
+		return self._OutsdngMrgnLnCcy
 
-	@Clrd.setter
-	def Clrd(self, value):
-		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
+	@OutsdngMrgnLnCcy.setter
+	def OutsdngMrgnLnCcy(self, value):
+		self._OutsdngMrgnLnCcy = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnCcy")
 
-	@Clrd.deleter
-	def Clrd(self):
-		del self._Clrd
-		self._Clrd = None
-
-	@property
-	def Scty(self):
-		return self._Scty
-
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
-
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
+	@OutsdngMrgnLnCcy.deleter
+	def OutsdngMrgnLnCcy(self):
+		del self._OutsdngMrgnLnCcy
+		self._OutsdngMrgnLnCcy = None
 
 	@property
 	def Term(self):
@@ -67,17 +54,17 @@ class LoanData134(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	@property
-	def Rates(self):
-		return self._Rates
+	def CtrctTp(self):
+		return self._CtrctTp
 
-	@Rates.setter
-	def Rates(self, value):
-		self._Rates = value if type(value) != base_types.auto else self.make_default("Rates")
+	@CtrctTp.setter
+	def CtrctTp(self, value):
+		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
 
-	@Rates.deleter
-	def Rates(self):
-		del self._Rates
-		self._Rates = None
+	@CtrctTp.deleter
+	def CtrctTp(self):
+		del self._CtrctTp
+		self._CtrctTp = None
 
 	@property
 	def GnlColl(self):
@@ -93,19 +80,6 @@ class LoanData134(base_types._BaseFieldType):
 		self._GnlColl = None
 
 	@property
-	def MstrAgrmtTp(self):
-		return self._MstrAgrmtTp
-
-	@MstrAgrmtTp.setter
-	def MstrAgrmtTp(self, value):
-		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
-
-	@MstrAgrmtTp.deleter
-	def MstrAgrmtTp(self):
-		del self._MstrAgrmtTp
-		self._MstrAgrmtTp = None
-
-	@property
 	def PrncplAmtCcy(self):
 		return self._PrncplAmtCcy
 
@@ -119,17 +93,30 @@ class LoanData134(base_types._BaseFieldType):
 		self._PrncplAmtCcy = None
 
 	@property
-	def PricCcy(self):
-		return self._PricCcy
+	def Clrd(self):
+		return self._Clrd
 
-	@PricCcy.setter
-	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+	@Clrd.setter
+	def Clrd(self, value):
+		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
 
-	@PricCcy.deleter
-	def PricCcy(self):
-		del self._PricCcy
-		self._PricCcy = None
+	@Clrd.deleter
+	def Clrd(self):
+		del self._Clrd
+		self._Clrd = None
+
+	@property
+	def Rates(self):
+		return self._Rates
+
+	@Rates.setter
+	def Rates(self, value):
+		self._Rates = value if type(value) != base_types.auto else self.make_default("Rates")
+
+	@Rates.deleter
+	def Rates(self):
+		del self._Rates
+		self._Rates = None
 
 	@property
 	def TradgVn(self):
@@ -145,17 +132,17 @@ class LoanData134(base_types._BaseFieldType):
 		self._TradgVn = None
 
 	@property
-	def CtrctTp(self):
-		return self._CtrctTp
+	def Scty(self):
+		return self._Scty
 
-	@CtrctTp.setter
-	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
-	@CtrctTp.deleter
-	def CtrctTp(self):
-		del self._CtrctTp
-		self._CtrctTp = None
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
 
 	@property
 	def PrtflCd(self):
@@ -171,31 +158,44 @@ class LoanData134(base_types._BaseFieldType):
 		self._PrtflCd = None
 
 	@property
-	def OutsdngMrgnLnCcy(self):
-		return self._OutsdngMrgnLnCcy
+	def PricCcy(self):
+		return self._PricCcy
 
-	@OutsdngMrgnLnCcy.setter
-	def OutsdngMrgnLnCcy(self, value):
-		self._OutsdngMrgnLnCcy = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnCcy")
+	@PricCcy.setter
+	def PricCcy(self, value):
+		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
 
-	@OutsdngMrgnLnCcy.deleter
-	def OutsdngMrgnLnCcy(self):
-		del self._OutsdngMrgnLnCcy
-		self._OutsdngMrgnLnCcy = None
+	@PricCcy.deleter
+	def PricCcy(self):
+		del self._PricCcy
+		self._PricCcy = None
+
+	@property
+	def MstrAgrmtTp(self):
+		return self._MstrAgrmtTp
+
+	@MstrAgrmtTp.setter
+	def MstrAgrmtTp(self, value):
+		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
+
+	@MstrAgrmtTp.deleter
+	def MstrAgrmtTp(self):
+		del self._MstrAgrmtTp
+		self._MstrAgrmtTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Clrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scty', type=Security49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutsdngMrgnLnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=ContractTerm6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rates', type=Rates1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmtTp', type=ExternalAgreementType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVn', type=TradingVenueType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctTp', type=ExposureType10Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlColl', type=SpecialCollateral1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rates', type=Rates1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=TradingVenueType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scty', type=Security49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtflCd', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutsdngMrgnLnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmtTp', type=ExternalAgreementType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

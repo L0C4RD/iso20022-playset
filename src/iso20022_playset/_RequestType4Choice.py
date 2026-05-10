@@ -1,11 +1,11 @@
 from . import base_types
-from .ExternalEnquiryRequestType1Code import ExternalEnquiryRequestType1Code
-from .ExternalPaymentControlRequestType1Code import ExternalPaymentControlRequestType1Code
-from .GenericIdentification1 import GenericIdentification1
+from ._ExternalPaymentControlRequestType1Code import ExternalPaymentControlRequestType1Code
+from ._GenericIdentification1 import GenericIdentification1
+from ._ExternalEnquiryRequestType1Code import ExternalEnquiryRequestType1Code
 
 class RequestType4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Enqry", "_PmtCtrl"]
+	__slots__ = ["_Prtry", "_PmtCtrl", "_Enqry"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -20,19 +20,6 @@ class RequestType4Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Enqry(self):
-		return self._Enqry
-
-	@Enqry.setter
-	def Enqry(self, value):
-		self._Enqry = value if type(value) != base_types.auto else self.make_default("Enqry")
-
-	@Enqry.deleter
-	def Enqry(self):
-		del self._Enqry
-		self._Enqry = None
-
-	@property
 	def PmtCtrl(self):
 		return self._PmtCtrl
 
@@ -45,9 +32,22 @@ class RequestType4Choice(base_types._BaseFieldType):
 		del self._PmtCtrl
 		self._PmtCtrl = None
 
+	@property
+	def Enqry(self):
+		return self._Enqry
+
+	@Enqry.setter
+	def Enqry(self, value):
+		self._Enqry = value if type(value) != base_types.auto else self.make_default("Enqry")
+
+	@Enqry.deleter
+	def Enqry(self):
+		del self._Enqry
+		self._Enqry = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Enqry', type=ExternalEnquiryRequestType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PmtCtrl', type=ExternalPaymentControlRequestType1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Enqry', type=ExternalEnquiryRequestType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

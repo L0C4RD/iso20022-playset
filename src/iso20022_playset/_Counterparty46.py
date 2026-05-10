@@ -1,7 +1,7 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
-from .PartyIdentification248Choice import PartyIdentification248Choice
+from ._CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
+from ._PartyIdentification248Choice import PartyIdentification248Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class Counterparty46(base_types._BaseFieldType):
 

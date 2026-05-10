@@ -1,7 +1,7 @@
 from . import base_types
-from .ResponseType10 import ResponseType10
-from .TransactionReconciliation5 import TransactionReconciliation5
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._TransactionReconciliation5 import TransactionReconciliation5
+from ._ResponseType10 import ResponseType10
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .OriginalGroupHeader17 import OriginalGroupHeader17
-from .PaymentTransaction130 import PaymentTransaction130
-from .GroupHeader101 import GroupHeader101
+from ._SupplementaryData1 import SupplementaryData1
+from ._OriginalGroupHeader17 import OriginalGroupHeader17
+from ._PaymentTransaction130 import PaymentTransaction130
+from ._GroupHeader101 import GroupHeader101
 
 class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_TxInfAndSts", "_OrgnlGrpInfAndSts"]
+	__slots__ = ["_GrpHdr", "_TxInfAndSts", "_SplmtryData", "_OrgnlGrpInfAndSts"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -21,19 +21,6 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def TxInfAndSts(self):
 		return self._TxInfAndSts
 
@@ -45,6 +32,19 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 	def TxInfAndSts(self):
 		del self._TxInfAndSts
 		self._TxInfAndSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def OrgnlGrpInfAndSts(self):
@@ -61,8 +61,8 @@ class FIToFIPaymentStatusReportV12(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader101, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInfAndSts', type=PaymentTransaction130, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader17, min=0, max=None, mutex_group=None, array=True),
 	))
 

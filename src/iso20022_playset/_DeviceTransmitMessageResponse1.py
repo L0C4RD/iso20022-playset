@@ -1,5 +1,5 @@
 from . import base_types
-from .Max100KBinary import Max100KBinary
+from ._Max100KBinary import Max100KBinary
 
 class DeviceTransmitMessageResponse1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .FutureOrOptionDetails3 import FutureOrOptionDetails3
-from .SecuritiesFinancing12 import SecuritiesFinancing12
+from ._SecuritiesFinancing12 import SecuritiesFinancing12
+from ._FutureOrOptionDetails3 import FutureOrOptionDetails3
 
 class TwoLegTransactionType4Choice(base_types._BaseFieldType):
 

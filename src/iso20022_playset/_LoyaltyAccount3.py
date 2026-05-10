@@ -1,15 +1,15 @@
 from . import base_types
-from .CardIdentificationType1Code import CardIdentificationType1Code
-from .Max35Text import Max35Text
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .CardDataReading8Code import CardDataReading8Code
-from .Max45Text import Max45Text
-from .AmountUnit1Code import AmountUnit1Code
+from ._Max35Text import Max35Text
+from ._CardIdentificationType1Code import CardIdentificationType1Code
+from ._AmountUnit1Code import AmountUnit1Code
+from ._CardDataReading8Code import CardDataReading8Code
+from ._Max45Text import Max45Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class LoyaltyAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrNm", "_IdTp", "_Unit", "_Bal", "_LltyId", "_Ccy", "_NtryMd", "_Brnd", "_Prvdr"]
+	__slots__ = ["_OwnrNm", "_NtryMd", "_Prvdr", "_IdTp", "_Unit", "_Brnd", "_Ccy", "_LltyId", "_Bal"]
 	@property
 	def OwnrNm(self):
 		return self._OwnrNm
@@ -22,6 +22,32 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 	def OwnrNm(self):
 		del self._OwnrNm
 		self._OwnrNm = None
+
+	@property
+	def NtryMd(self):
+		return self._NtryMd
+
+	@NtryMd.setter
+	def NtryMd(self, value):
+		self._NtryMd = value if type(value) != base_types.auto else self.make_default("NtryMd")
+
+	@NtryMd.deleter
+	def NtryMd(self):
+		del self._NtryMd
+		self._NtryMd = None
+
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
 
 	@property
 	def IdTp(self):
@@ -50,30 +76,17 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 		self._Unit = None
 
 	@property
-	def Bal(self):
-		return self._Bal
+	def Brnd(self):
+		return self._Brnd
 
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+	@Brnd.setter
+	def Brnd(self, value):
+		self._Brnd = value if type(value) != base_types.auto else self.make_default("Brnd")
 
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
-	@property
-	def LltyId(self):
-		return self._LltyId
-
-	@LltyId.setter
-	def LltyId(self, value):
-		self._LltyId = value if type(value) != base_types.auto else self.make_default("LltyId")
-
-	@LltyId.deleter
-	def LltyId(self):
-		del self._LltyId
-		self._LltyId = None
+	@Brnd.deleter
+	def Brnd(self):
+		del self._Brnd
+		self._Brnd = None
 
 	@property
 	def Ccy(self):
@@ -89,53 +102,40 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def NtryMd(self):
-		return self._NtryMd
+	def LltyId(self):
+		return self._LltyId
 
-	@NtryMd.setter
-	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != base_types.auto else self.make_default("NtryMd")
+	@LltyId.setter
+	def LltyId(self, value):
+		self._LltyId = value if type(value) != base_types.auto else self.make_default("LltyId")
 
-	@NtryMd.deleter
-	def NtryMd(self):
-		del self._NtryMd
-		self._NtryMd = None
-
-	@property
-	def Brnd(self):
-		return self._Brnd
-
-	@Brnd.setter
-	def Brnd(self, value):
-		self._Brnd = value if type(value) != base_types.auto else self.make_default("Brnd")
-
-	@Brnd.deleter
-	def Brnd(self):
-		del self._Brnd
-		self._Brnd = None
+	@LltyId.deleter
+	def LltyId(self):
+		del self._LltyId
+		self._LltyId = None
 
 	@property
-	def Prvdr(self):
-		return self._Prvdr
+	def Bal(self):
+		return self._Bal
 
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
 
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OwnrNm', type=Max45Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IdTp', type=CardIdentificationType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Unit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brnd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

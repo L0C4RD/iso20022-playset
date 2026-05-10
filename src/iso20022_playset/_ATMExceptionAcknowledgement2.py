@@ -1,24 +1,11 @@
 from . import base_types
-from .AutomatedTellerMachine3 import AutomatedTellerMachine3
-from .ATMTransaction41 import ATMTransaction41
-from .ATMContext25 import ATMContext25
+from ._ATMTransaction41 import ATMTransaction41
+from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
+from ._ATMContext25 import ATMContext25
 
 class ATMExceptionAcknowledgement2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cntxt", "_ATM", "_Tx"]
-	@property
-	def Cntxt(self):
-		return self._Cntxt
-
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
-
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
-
+	__slots__ = ["_ATM", "_Cntxt", "_Tx"]
 	@property
 	def ATM(self):
 		return self._ATM
@@ -31,6 +18,19 @@ class ATMExceptionAcknowledgement2(base_types._BaseFieldType):
 	def ATM(self):
 		del self._ATM
 		self._ATM = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
 
 	@property
 	def Tx(self):
@@ -46,8 +46,8 @@ class ATMExceptionAcknowledgement2(base_types._BaseFieldType):
 		self._Tx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cntxt', type=ATMContext25, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=ATMContext25, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction41, min=1, max=1, mutex_group=None, array=False),
 	))
 

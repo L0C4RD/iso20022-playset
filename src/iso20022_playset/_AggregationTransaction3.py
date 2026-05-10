@@ -1,11 +1,11 @@
 from . import base_types
-from .Number import Number
-from .ISODateTime import ISODateTime
-from .DetailedAmount21 import DetailedAmount21
+from ._Number import Number
+from ._ISODateTime import ISODateTime
+from ._DetailedAmount21 import DetailedAmount21
 
 class AggregationTransaction3(base_types._BaseFieldType):
 
-	__slots__ = ["_IndvPmt", "_FrstPmtDtTm", "_NbOfPmts", "_LastPmtDtTm"]
+	__slots__ = ["_IndvPmt", "_FrstPmtDtTm", "_LastPmtDtTm", "_NbOfPmts"]
 	@property
 	def IndvPmt(self):
 		return self._IndvPmt
@@ -33,19 +33,6 @@ class AggregationTransaction3(base_types._BaseFieldType):
 		self._FrstPmtDtTm = None
 
 	@property
-	def NbOfPmts(self):
-		return self._NbOfPmts
-
-	@NbOfPmts.setter
-	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
-
-	@NbOfPmts.deleter
-	def NbOfPmts(self):
-		del self._NbOfPmts
-		self._NbOfPmts = None
-
-	@property
 	def LastPmtDtTm(self):
 		return self._LastPmtDtTm
 
@@ -58,10 +45,23 @@ class AggregationTransaction3(base_types._BaseFieldType):
 		del self._LastPmtDtTm
 		self._LastPmtDtTm = None
 
+	@property
+	def NbOfPmts(self):
+		return self._NbOfPmts
+
+	@NbOfPmts.setter
+	def NbOfPmts(self, value):
+		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
+
+	@NbOfPmts.deleter
+	def NbOfPmts(self):
+		del self._NbOfPmts
+		self._NbOfPmts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvPmt', type=DetailedAmount21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FrstPmtDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastPmtDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

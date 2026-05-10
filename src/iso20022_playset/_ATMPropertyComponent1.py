@@ -1,7 +1,7 @@
 from . import base_types
-from .ATMPropertyType1Code import ATMPropertyType1Code
-from .Max2000Text import Max2000Text
-from .Max70Text import Max70Text
+from ._Max70Text import Max70Text
+from ._Max2000Text import Max2000Text
+from ._ATMPropertyType1Code import ATMPropertyType1Code
 
 class ATMPropertyComponent1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .Direction4Choice import Direction4Choice
+from ._Direction4Choice import Direction4Choice
 
 class CompareLegDirection2(base_types._BaseFieldType):
 

@@ -1,14 +1,27 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentType1Choice import DocumentType1Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .DocumentFormat1Choice import DocumentFormat1Choice
-from .Max140Text import Max140Text
-from .Max2048Text import Max2048Text
+from ._Max140Text import Max140Text
+from ._DocumentFormat1Choice import DocumentFormat1Choice
+from ._Max35Text import Max35Text
+from ._Max2048Text import Max2048Text
+from ._DocumentType1Choice import DocumentType1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class FileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_FileNm", "_FileLctnElctrncAdr", "_IsseDt", "_Frmt", "_NtwkRef"]
+	__slots__ = ["_FileNm", "_Id", "_Tp", "_FileLctnElctrncAdr", "_Frmt", "_NtwkRef", "_IsseDt"]
+	@property
+	def FileNm(self):
+		return self._FileNm
+
+	@FileNm.setter
+	def FileNm(self, value):
+		self._FileNm = value if type(value) != base_types.auto else self.make_default("FileNm")
+
+	@FileNm.deleter
+	def FileNm(self):
+		del self._FileNm
+		self._FileNm = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -36,19 +49,6 @@ class FileData1(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def FileNm(self):
-		return self._FileNm
-
-	@FileNm.setter
-	def FileNm(self, value):
-		self._FileNm = value if type(value) != base_types.auto else self.make_default("FileNm")
-
-	@FileNm.deleter
-	def FileNm(self):
-		del self._FileNm
-		self._FileNm = None
-
-	@property
 	def FileLctnElctrncAdr(self):
 		return self._FileLctnElctrncAdr
 
@@ -60,19 +60,6 @@ class FileData1(base_types._BaseFieldType):
 	def FileLctnElctrncAdr(self):
 		del self._FileLctnElctrncAdr
 		self._FileLctnElctrncAdr = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
 
 	@property
 	def Frmt(self):
@@ -100,13 +87,26 @@ class FileData1(base_types._BaseFieldType):
 		del self._NtwkRef
 		self._NtwkRef = None
 
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FileLctnElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtwkRef', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

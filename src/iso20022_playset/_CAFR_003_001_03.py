@@ -1,5 +1,5 @@
 from . import base_types
-from .FraudDispositionInitiationV03 import FraudDispositionInitiationV03
+from ._FraudDispositionInitiationV03 import FraudDispositionInitiationV03
 
 class CAFR_003_001_03():
 

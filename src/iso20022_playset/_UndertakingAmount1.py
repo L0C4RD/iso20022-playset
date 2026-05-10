@@ -1,7 +1,7 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max2000Text import Max2000Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PercentageRate import PercentageRate
+from ._Max2000Text import Max2000Text
 
 class UndertakingAmount1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GovernanceIdentification1Code import GovernanceIdentification1Code
-from .GenericIdentification1 import GenericIdentification1
+from ._GenericIdentification1 import GenericIdentification1
+from ._GovernanceIdentification1Code import GovernanceIdentification1Code
 
 class GovernanceIdentification1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountPrice5 import AmountPrice5
-from .PercentagePrice2 import PercentagePrice2
+from ._PercentagePrice2 import PercentagePrice2
+from ._AmountPrice5 import AmountPrice5
 
 class PriceFormat85Choice(base_types._BaseFieldType):
 

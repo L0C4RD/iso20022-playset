@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .FundOrderType5Code import FundOrderType5Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._FundOrderType5Code import FundOrderType5Code
 
 class OrderBreakdownType1Choice(base_types._BaseFieldType):
 

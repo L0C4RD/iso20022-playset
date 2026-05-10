@@ -1,7 +1,7 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max70Text import Max70Text
-from .ISODate import ISODate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
 
 class Instalment1(base_types._BaseFieldType):
 

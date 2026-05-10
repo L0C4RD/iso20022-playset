@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._YesNoIndicator import YesNoIndicator
 
 class ResidualCash1(base_types._BaseFieldType):
 

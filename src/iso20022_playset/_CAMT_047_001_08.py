@@ -1,5 +1,5 @@
 from . import base_types
-from .ReturnReservationV08 import ReturnReservationV08
+from ._ReturnReservationV08 import ReturnReservationV08
 
 class CAMT_047_001_08():
 

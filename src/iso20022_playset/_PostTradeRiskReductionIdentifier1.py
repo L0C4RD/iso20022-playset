@@ -1,6 +1,6 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._Max52Text import Max52Text
 
 class PostTradeRiskReductionIdentifier1(base_types._BaseFieldType):
 

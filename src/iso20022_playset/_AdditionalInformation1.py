@@ -1,6 +1,6 @@
 from . import base_types
-from .InformationType1Choice import InformationType1Choice
-from .Max350Text import Max350Text
+from ._InformationType1Choice import InformationType1Choice
+from ._Max350Text import Max350Text
 
 class AdditionalInformation1(base_types._BaseFieldType):
 

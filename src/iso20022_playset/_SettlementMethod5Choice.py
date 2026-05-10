@@ -1,5 +1,5 @@
 from . import base_types
-from .CreditTransferTransaction59 import CreditTransferTransaction59
+from ._CreditTransferTransaction59 import CreditTransferTransaction59
 
 class SettlementMethod5Choice(base_types._BaseFieldType):
 

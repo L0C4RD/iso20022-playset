@@ -1,24 +1,11 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .Max70Text import Max70Text
+from ._GenericIdentification47 import GenericIdentification47
+from ._Max70Text import Max70Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
 
 class SecuritiesAccount40(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Tp", "_Dsgnt"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Nm", "_Tp", "_Dsgnt", "_Id"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -58,10 +45,23 @@ class SecuritiesAccount40(base_types._BaseFieldType):
 		del self._Dsgnt
 		self._Dsgnt = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

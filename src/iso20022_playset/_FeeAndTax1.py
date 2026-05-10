@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Tax30 import Tax30
-from .Fee1 import Fee1
+from ._Max35Text import Max35Text
+from ._Tax30 import Tax30
+from ._Fee1 import Fee1
 
 class FeeAndTax1(base_types._BaseFieldType):
 
-	__slots__ = ["_ComrclAgrmtRef", "_IndvTax", "_IndvFee"]
+	__slots__ = ["_IndvFee", "_IndvTax", "_ComrclAgrmtRef"]
 	@property
-	def ComrclAgrmtRef(self):
-		return self._ComrclAgrmtRef
+	def IndvFee(self):
+		return self._IndvFee
 
-	@ComrclAgrmtRef.setter
-	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+	@IndvFee.setter
+	def IndvFee(self, value):
+		self._IndvFee = value if type(value) != base_types.auto else self.make_default("IndvFee")
 
-	@ComrclAgrmtRef.deleter
-	def ComrclAgrmtRef(self):
-		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
+	@IndvFee.deleter
+	def IndvFee(self):
+		del self._IndvFee
+		self._IndvFee = None
 
 	@property
 	def IndvTax(self):
@@ -33,21 +33,21 @@ class FeeAndTax1(base_types._BaseFieldType):
 		self._IndvTax = None
 
 	@property
-	def IndvFee(self):
-		return self._IndvFee
+	def ComrclAgrmtRef(self):
+		return self._ComrclAgrmtRef
 
-	@IndvFee.setter
-	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != base_types.auto else self.make_default("IndvFee")
+	@ComrclAgrmtRef.setter
+	def ComrclAgrmtRef(self, value):
+		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
 
-	@IndvFee.deleter
-	def IndvFee(self):
-		del self._IndvFee
-		self._IndvFee = None
+	@ComrclAgrmtRef.deleter
+	def ComrclAgrmtRef(self):
+		del self._ComrclAgrmtRef
+		self._ComrclAgrmtRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvFee', type=Fee1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

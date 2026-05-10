@@ -1,11 +1,24 @@
 from . import base_types
-from .MessageHeader7 import MessageHeader7
-from .ResendSearchCriteria2 import ResendSearchCriteria2
-from .SupplementaryData1 import SupplementaryData1
+from ._MessageHeader7 import MessageHeader7
+from ._SupplementaryData1 import SupplementaryData1
+from ._ResendSearchCriteria2 import ResendSearchCriteria2
 
 class ResendRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_RsndSchCrit", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_RsndSchCrit"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -32,22 +45,9 @@ class ResendRequestV01(base_types._BaseFieldType):
 		del self._RsndSchCrit
 		self._RsndSchCrit = None
 
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsndSchCrit', type=ResendSearchCriteria2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

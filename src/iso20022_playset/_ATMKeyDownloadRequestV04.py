@@ -1,8 +1,8 @@
 from . import base_types
-from .Header31 import Header31
-from .ContentInformationType10 import ContentInformationType10
-from .ATMKeyDownloadRequest5 import ATMKeyDownloadRequest5
-from .ContentInformationType13 import ContentInformationType13
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType13 import ContentInformationType13
+from ._ATMKeyDownloadRequest5 import ATMKeyDownloadRequest5
+from ._Header31 import Header31
 
 class ATMKeyDownloadRequestV04(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .PartyIdentification118Choice import PartyIdentification118Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PartyIdentification118Choice import PartyIdentification118Choice
 
 class Guarantee1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prvdr", "_Amt"]
-	@property
-	def Prvdr(self):
-		return self._Prvdr
-
-	@Prvdr.setter
-	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
-
-	@Prvdr.deleter
-	def Prvdr(self):
-		del self._Prvdr
-		self._Prvdr = None
-
+	__slots__ = ["_Amt", "_Prvdr"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class Guarantee1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Prvdr(self):
+		return self._Prvdr
+
+	@Prvdr.setter
+	def Prvdr(self, value):
+		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+
+	@Prvdr.deleter
+	def Prvdr(self):
+		del self._Prvdr
+		self._Prvdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prvdr', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prvdr', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

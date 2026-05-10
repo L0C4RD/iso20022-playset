@@ -1,11 +1,11 @@
 from . import base_types
-from .ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from .ISO3NumericCountryCode import ISO3NumericCountryCode
-from .Max50Text import Max50Text
+from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
+from ._Max50Text import Max50Text
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 
 class Authority1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrySubDvsnMjr", "_Nm", "_CtrySubDvsnMnrNm", "_CtrySubDvsnMnr", "_CtrySubDvsnMjrNm", "_Ctry"]
+	__slots__ = ["_CtrySubDvsnMjr", "_Ctry", "_CtrySubDvsnMnr", "_CtrySubDvsnMnrNm", "_Nm", "_CtrySubDvsnMjrNm"]
 	@property
 	def CtrySubDvsnMjr(self):
 		return self._CtrySubDvsnMjr
@@ -20,30 +20,17 @@ class Authority1(base_types._BaseFieldType):
 		self._CtrySubDvsnMjr = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Ctry(self):
+		return self._Ctry
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def CtrySubDvsnMnrNm(self):
-		return self._CtrySubDvsnMnrNm
-
-	@CtrySubDvsnMnrNm.setter
-	def CtrySubDvsnMnrNm(self, value):
-		self._CtrySubDvsnMnrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMnrNm")
-
-	@CtrySubDvsnMnrNm.deleter
-	def CtrySubDvsnMnrNm(self):
-		del self._CtrySubDvsnMnrNm
-		self._CtrySubDvsnMnrNm = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def CtrySubDvsnMnr(self):
@@ -59,6 +46,32 @@ class Authority1(base_types._BaseFieldType):
 		self._CtrySubDvsnMnr = None
 
 	@property
+	def CtrySubDvsnMnrNm(self):
+		return self._CtrySubDvsnMnrNm
+
+	@CtrySubDvsnMnrNm.setter
+	def CtrySubDvsnMnrNm(self, value):
+		self._CtrySubDvsnMnrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMnrNm")
+
+	@CtrySubDvsnMnrNm.deleter
+	def CtrySubDvsnMnrNm(self):
+		del self._CtrySubDvsnMnrNm
+		self._CtrySubDvsnMnrNm = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def CtrySubDvsnMjrNm(self):
 		return self._CtrySubDvsnMjrNm
 
@@ -71,25 +84,12 @@ class Authority1(base_types._BaseFieldType):
 		del self._CtrySubDvsnMjrNm
 		self._CtrySubDvsnMjrNm = None
 
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrySubDvsnMjr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMnr', type=ISOCountrySubDivisionCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMnrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrySubDvsnMjrNm', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

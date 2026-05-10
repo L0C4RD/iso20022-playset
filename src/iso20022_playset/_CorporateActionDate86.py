@@ -1,5 +1,5 @@
 from . import base_types
-from .DateFormat30Choice import DateFormat30Choice
+from ._DateFormat30Choice import DateFormat30Choice
 
 class CorporateActionDate86(base_types._BaseFieldType):
 

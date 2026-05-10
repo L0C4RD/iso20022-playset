@@ -1,7 +1,7 @@
 from . import base_types
-from .Max256Text import Max256Text
-from .DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
-from .GenericPersonIdentification2 import GenericPersonIdentification2
+from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
+from ._Max256Text import Max256Text
+from ._GenericPersonIdentification2 import GenericPersonIdentification2
 
 class PersonIdentification20(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .RateType46Choice import RateType46Choice
-from .Percentage14Rate import Percentage14Rate
+from ._RateType46Choice import RateType46Choice
+from ._Percentage14Rate import Percentage14Rate
 
 class RateTypeAndPercentageRate21(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_RateTp"]
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
+	__slots__ = ["_RateTp", "_Rate"]
 	@property
 	def RateTp(self):
 		return self._RateTp
@@ -31,8 +18,21 @@ class RateTypeAndPercentageRate21(base_types._BaseFieldType):
 		del self._RateTp
 		self._RateTp = None
 
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=RateType46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 from . import base_types
-from .CancellationReason33Choice import CancellationReason33Choice
-from .Max105Text import Max105Text
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
+from ._Max105Text import Max105Text
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ISODate import ISODate
+from ._CancellationReason33Choice import CancellationReason33Choice
 
 class DebitAuthorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDtToDbt", "_AmtToDbt", "_CxlRsn", "_AddtlCxlRsnInf"]
+	__slots__ = ["_AddtlCxlRsnInf", "_AmtToDbt", "_CxlRsn", "_ValDtToDbt"]
 	@property
-	def ValDtToDbt(self):
-		return self._ValDtToDbt
+	def AddtlCxlRsnInf(self):
+		return self._AddtlCxlRsnInf
 
-	@ValDtToDbt.setter
-	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != base_types.auto else self.make_default("ValDtToDbt")
+	@AddtlCxlRsnInf.setter
+	def AddtlCxlRsnInf(self, value):
+		self._AddtlCxlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlCxlRsnInf")
 
-	@ValDtToDbt.deleter
-	def ValDtToDbt(self):
-		del self._ValDtToDbt
-		self._ValDtToDbt = None
+	@AddtlCxlRsnInf.deleter
+	def AddtlCxlRsnInf(self):
+		del self._AddtlCxlRsnInf
+		self._AddtlCxlRsnInf = None
 
 	@property
 	def AmtToDbt(self):
@@ -47,22 +47,22 @@ class DebitAuthorisation2(base_types._BaseFieldType):
 		self._CxlRsn = None
 
 	@property
-	def AddtlCxlRsnInf(self):
-		return self._AddtlCxlRsnInf
+	def ValDtToDbt(self):
+		return self._ValDtToDbt
 
-	@AddtlCxlRsnInf.setter
-	def AddtlCxlRsnInf(self, value):
-		self._AddtlCxlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlCxlRsnInf")
+	@ValDtToDbt.setter
+	def ValDtToDbt(self, value):
+		self._ValDtToDbt = value if type(value) != base_types.auto else self.make_default("ValDtToDbt")
 
-	@AddtlCxlRsnInf.deleter
-	def AddtlCxlRsnInf(self):
-		del self._AddtlCxlRsnInf
-		self._AddtlCxlRsnInf = None
+	@ValDtToDbt.deleter
+	def ValDtToDbt(self):
+		del self._ValDtToDbt
+		self._ValDtToDbt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCxlRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=CancellationReason33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCxlRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

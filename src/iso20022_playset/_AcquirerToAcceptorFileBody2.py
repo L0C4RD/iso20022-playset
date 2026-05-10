@@ -1,7 +1,7 @@
 from . import base_types
-from .CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
-from .AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
-from .AcceptorCompletionAdviceResponse13 import AcceptorCompletionAdviceResponse13
+from ._AcceptorCompletionAdviceResponse13 import AcceptorCompletionAdviceResponse13
+from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
+from ._CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
 
 class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 

@@ -1,15 +1,28 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .RecordTechnicalData4 import RecordTechnicalData4
-from .SecurityInstrumentDescription17 import SecurityInstrumentDescription17
-from .DerivativeInstrument5 import DerivativeInstrument5
-from .TradingVenueAttributes2 import TradingVenueAttributes2
-from .DebtInstrument2 import DebtInstrument2
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._RecordTechnicalData4 import RecordTechnicalData4
+from ._Max35Text import Max35Text
+from ._TradingVenueAttributes2 import TradingVenueAttributes2
+from ._DerivativeInstrument5 import DerivativeInstrument5
+from ._DebtInstrument2 import DebtInstrument2
+from ._SecurityInstrumentDescription17 import SecurityInstrumentDescription17
 
 class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 
-	__slots__ = ["_DerivInstrmAttrbts", "_DebtInstrmAttrbts", "_Issr", "_TechRcrdId", "_TradgVnRltdAttrbts", "_FinInstrmGnlAttrbts", "_TechAttrbts"]
+	__slots__ = ["_TradgVnRltdAttrbts", "_DerivInstrmAttrbts", "_DebtInstrmAttrbts", "_TechRcrdId", "_Issr", "_FinInstrmGnlAttrbts", "_TechAttrbts"]
+	@property
+	def TradgVnRltdAttrbts(self):
+		return self._TradgVnRltdAttrbts
+
+	@TradgVnRltdAttrbts.setter
+	def TradgVnRltdAttrbts(self, value):
+		self._TradgVnRltdAttrbts = value if type(value) != base_types.auto else self.make_default("TradgVnRltdAttrbts")
+
+	@TradgVnRltdAttrbts.deleter
+	def TradgVnRltdAttrbts(self):
+		del self._TradgVnRltdAttrbts
+		self._TradgVnRltdAttrbts = None
+
 	@property
 	def DerivInstrmAttrbts(self):
 		return self._DerivInstrmAttrbts
@@ -37,19 +50,6 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._DebtInstrmAttrbts = None
 
 	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -63,17 +63,17 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def TradgVnRltdAttrbts(self):
-		return self._TradgVnRltdAttrbts
+	def Issr(self):
+		return self._Issr
 
-	@TradgVnRltdAttrbts.setter
-	def TradgVnRltdAttrbts(self, value):
-		self._TradgVnRltdAttrbts = value if type(value) != base_types.auto else self.make_default("TradgVnRltdAttrbts")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
-	@TradgVnRltdAttrbts.deleter
-	def TradgVnRltdAttrbts(self):
-		del self._TradgVnRltdAttrbts
-		self._TradgVnRltdAttrbts = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def FinInstrmGnlAttrbts(self):
@@ -102,11 +102,11 @@ class SecuritiesReferenceDataReport7(base_types._BaseFieldType):
 		self._TechAttrbts = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData4, min=0, max=1, mutex_group=None, array=False),
 	))

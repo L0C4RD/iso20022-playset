@@ -1,5 +1,5 @@
 from . import base_types
-from .UndertakingAmendmentResponseV01 import UndertakingAmendmentResponseV01
+from ._UndertakingAmendmentResponseV01 import UndertakingAmendmentResponseV01
 
 class TSRV_008_001_01():
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Number import Number
-from .Period4Choice import Period4Choice
-from .SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
+from ._SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
+from ._SupplementaryData1 import SupplementaryData1
+from ._Period4Choice import Period4Choice
+from ._Number import Number
 
 class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrms", "_SplmtryData", "_DtPrd", "_NbOfRcrds"]
-	@property
-	def FinInstrms(self):
-		return self._FinInstrms
-
-	@FinInstrms.setter
-	def FinInstrms(self, value):
-		self._FinInstrms = value if type(value) != base_types.auto else self.make_default("FinInstrms")
-
-	@FinInstrms.deleter
-	def FinInstrms(self):
-		del self._FinInstrms
-		self._FinInstrms = None
-
+	__slots__ = ["_SplmtryData", "_DtPrd", "_FinInstrms", "_NbOfRcrds"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -47,6 +34,19 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 		self._DtPrd = None
 
 	@property
+	def FinInstrms(self):
+		return self._FinInstrms
+
+	@FinInstrms.setter
+	def FinInstrms(self, value):
+		self._FinInstrms = value if type(value) != base_types.auto else self.make_default("FinInstrms")
+
+	@FinInstrms.deleter
+	def FinInstrms(self):
+		del self._FinInstrms
+		self._FinInstrms = None
+
+	@property
 	def NbOfRcrds(self):
 		return self._NbOfRcrds
 
@@ -60,9 +60,9 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 		self._NbOfRcrds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrms', type=SecuritiesInvalidReferenceDataReport4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrms', type=SecuritiesInvalidReferenceDataReport4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

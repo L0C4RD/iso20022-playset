@@ -1,5 +1,5 @@
 from . import base_types
-from .TimePeriod3 import TimePeriod3
+from ._TimePeriod3 import TimePeriod3
 
 class CompareTimePeriod2(base_types._BaseFieldType):
 

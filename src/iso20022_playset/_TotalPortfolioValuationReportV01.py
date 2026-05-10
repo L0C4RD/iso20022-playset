@@ -1,27 +1,14 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PortfolioBalance1 import PortfolioBalance1
-from .Report4 import Report4
-from .Pagination import Pagination
-from .TotalPortfolioValuation1 import TotalPortfolioValuation1
-from .SecuritiesAccount21 import SecuritiesAccount21
+from ._SecuritiesAccount21 import SecuritiesAccount21
+from ._PortfolioBalance1 import PortfolioBalance1
+from ._Pagination import Pagination
+from ._SupplementaryData1 import SupplementaryData1
+from ._Report4 import Report4
+from ._TotalPortfolioValuation1 import TotalPortfolioValuation1
 
 class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlPrtflValtn", "_AcctDtls", "_SplmtryData", "_Pgntn", "_Bal", "_RptGnlDtls"]
-	@property
-	def TtlPrtflValtn(self):
-		return self._TtlPrtflValtn
-
-	@TtlPrtflValtn.setter
-	def TtlPrtflValtn(self, value):
-		self._TtlPrtflValtn = value if type(value) != base_types.auto else self.make_default("TtlPrtflValtn")
-
-	@TtlPrtflValtn.deleter
-	def TtlPrtflValtn(self):
-		del self._TtlPrtflValtn
-		self._TtlPrtflValtn = None
-
+	__slots__ = ["_AcctDtls", "_TtlPrtflValtn", "_Pgntn", "_SplmtryData", "_Bal", "_RptGnlDtls"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -36,17 +23,17 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		self._AcctDtls = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TtlPrtflValtn(self):
+		return self._TtlPrtflValtn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@TtlPrtflValtn.setter
+	def TtlPrtflValtn(self, value):
+		self._TtlPrtflValtn = value if type(value) != base_types.auto else self.make_default("TtlPrtflValtn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TtlPrtflValtn.deleter
+	def TtlPrtflValtn(self):
+		del self._TtlPrtflValtn
+		self._TtlPrtflValtn = None
 
 	@property
 	def Pgntn(self):
@@ -60,6 +47,19 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 	def Pgntn(self):
 		del self._Pgntn
 		self._Pgntn = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Bal(self):
@@ -88,10 +88,10 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 		self._RptGnlDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlPrtflValtn', type=TotalPortfolioValuation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPrtflValtn', type=TotalPortfolioValuation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=PortfolioBalance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=Report4, min=1, max=1, mutex_group=None, array=False),
 	))

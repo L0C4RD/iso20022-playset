@@ -1,12 +1,12 @@
 from . import base_types
-from .Number import Number
-from .UserInterface4Code import UserInterface4Code
-from .OutputFormat1Code import OutputFormat1Code
-from .LanguageCode import LanguageCode
+from ._OutputFormat1Code import OutputFormat1Code
+from ._Number import Number
+from ._UserInterface4Code import UserInterface4Code
+from ._LanguageCode import LanguageCode
 
 class DisplayCapabilities4(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblFrmt", "_AvlblLang", "_LineWidth", "_Dstn", "_NbOfLines"]
+	__slots__ = ["_AvlblFrmt", "_LineWidth", "_Dstn", "_NbOfLines", "_AvlblLang"]
 	@property
 	def AvlblFrmt(self):
 		return self._AvlblFrmt
@@ -19,19 +19,6 @@ class DisplayCapabilities4(base_types._BaseFieldType):
 	def AvlblFrmt(self):
 		del self._AvlblFrmt
 		self._AvlblFrmt = None
-
-	@property
-	def AvlblLang(self):
-		return self._AvlblLang
-
-	@AvlblLang.setter
-	def AvlblLang(self, value):
-		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
-
-	@AvlblLang.deleter
-	def AvlblLang(self):
-		del self._AvlblLang
-		self._AvlblLang = None
 
 	@property
 	def LineWidth(self):
@@ -72,11 +59,24 @@ class DisplayCapabilities4(base_types._BaseFieldType):
 		del self._NbOfLines
 		self._NbOfLines = None
 
+	@property
+	def AvlblLang(self):
+		return self._AvlblLang
+
+	@AvlblLang.setter
+	def AvlblLang(self, value):
+		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
+
+	@AvlblLang.deleter
+	def AvlblLang(self):
+		del self._AvlblLang
+		self._AvlblLang = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LineWidth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dstn', type=UserInterface4Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfLines', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvlblLang', type=LanguageCode, min=0, max=None, mutex_group=None, array=True),
 	))
 

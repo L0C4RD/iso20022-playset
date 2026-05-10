@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 

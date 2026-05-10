@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BaseOneRate import BaseOneRate
-from .ExchangeRateType1Code import ExchangeRateType1Code
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max35Text import Max35Text
+from ._ExchangeRateType1Code import ExchangeRateType1Code
+from ._BaseOneRate import BaseOneRate
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class ExchangeRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitCcy", "_RateTp", "_XchgRate", "_CtrctId"]
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
-
+	__slots__ = ["_RateTp", "_CtrctId", "_XchgRate", "_UnitCcy"]
 	@property
 	def RateTp(self):
 		return self._RateTp
@@ -32,6 +19,19 @@ class ExchangeRate1(base_types._BaseFieldType):
 	def RateTp(self):
 		del self._RateTp
 		self._RateTp = None
+
+	@property
+	def CtrctId(self):
+		return self._CtrctId
+
+	@CtrctId.setter
+	def CtrctId(self, value):
+		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
+
+	@CtrctId.deleter
+	def CtrctId(self):
+		del self._CtrctId
+		self._CtrctId = None
 
 	@property
 	def XchgRate(self):
@@ -47,22 +47,22 @@ class ExchangeRate1(base_types._BaseFieldType):
 		self._XchgRate = None
 
 	@property
-	def CtrctId(self):
-		return self._CtrctId
+	def UnitCcy(self):
+		return self._UnitCcy
 
-	@CtrctId.setter
-	def CtrctId(self, value):
-		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
 
-	@CtrctId.deleter
-	def CtrctId(self):
-		del self._CtrctId
-		self._CtrctId = None
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=ExchangeRateType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

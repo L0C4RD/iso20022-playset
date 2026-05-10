@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PostalAddress1 import PostalAddress1
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PostalAddress1 import PostalAddress1
+from ._Max350Text import Max350Text
 
 class NameAndAddress8(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Nm", "_AltrntvIdr"]
+	__slots__ = ["_AltrntvIdr", "_Nm", "_Adr"]
 	@property
-	def Adr(self):
-		return self._Adr
+	def AltrntvIdr(self):
+		return self._AltrntvIdr
 
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+	@AltrntvIdr.setter
+	def AltrntvIdr(self, value):
+		self._AltrntvIdr = value if type(value) != base_types.auto else self.make_default("AltrntvIdr")
 
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
+	@AltrntvIdr.deleter
+	def AltrntvIdr(self):
+		del self._AltrntvIdr
+		self._AltrntvIdr = None
 
 	@property
 	def Nm(self):
@@ -33,21 +33,21 @@ class NameAndAddress8(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def AltrntvIdr(self):
-		return self._AltrntvIdr
+	def Adr(self):
+		return self._Adr
 
-	@AltrntvIdr.setter
-	def AltrntvIdr(self, value):
-		self._AltrntvIdr = value if type(value) != base_types.auto else self.make_default("AltrntvIdr")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
-	@AltrntvIdr.deleter
-	def AltrntvIdr(self):
-		del self._AltrntvIdr
-		self._AltrntvIdr = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrntvIdr', type=Max35Text, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
 

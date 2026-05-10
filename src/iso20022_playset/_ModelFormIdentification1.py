@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ModelFormIdentification1Choice import ModelFormIdentification1Choice
+from ._Max35Text import Max35Text
+from ._ModelFormIdentification1Choice import ModelFormIdentification1Choice
 
 class ModelFormIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Vrsn"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Vrsn", "_Id"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -31,8 +18,21 @@ class ModelFormIdentification1(base_types._BaseFieldType):
 		del self._Vrsn
 		self._Vrsn = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=ModelFormIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ModelFormIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

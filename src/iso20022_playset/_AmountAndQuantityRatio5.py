@@ -1,6 +1,6 @@
 from . import base_types
-from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class AmountAndQuantityRatio5(base_types._BaseFieldType):
 

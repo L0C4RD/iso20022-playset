@@ -1,5 +1,5 @@
 from . import base_types
-from .TripartyCollateralUnilateralRemovalRequestV01 import TripartyCollateralUnilateralRemovalRequestV01
+from ._TripartyCollateralUnilateralRemovalRequestV01 import TripartyCollateralUnilateralRemovalRequestV01
 
 class REDA_074_001_01():
 

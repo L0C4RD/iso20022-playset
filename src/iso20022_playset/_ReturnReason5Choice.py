@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalReturnReason1Code import ExternalReturnReason1Code
+from ._Max35Text import Max35Text
+from ._ExternalReturnReason1Code import ExternalReturnReason1Code
 
 class ReturnReason5Choice(base_types._BaseFieldType):
 

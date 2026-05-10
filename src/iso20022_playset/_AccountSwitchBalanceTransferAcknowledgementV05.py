@@ -1,40 +1,14 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .BalanceTransfer5 import BalanceTransfer5
-from .MessageIdentification1 import MessageIdentification1
-from .AmountAndDirection5 import AmountAndDirection5
-from .CashAccount43 import CashAccount43
-from .AccountSwitchDetails1 import AccountSwitchDetails1
+from ._BalanceTransfer5 import BalanceTransfer5
+from ._MessageIdentification1 import MessageIdentification1
+from ._AmountAndDirection5 import AmountAndDirection5
+from ._AccountSwitchDetails1 import AccountSwitchDetails1
+from ._SupplementaryData1 import SupplementaryData1
+from ._CashAccount43 import CashAccount43
 
 class AccountSwitchBalanceTransferAcknowledgementV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_OdAcct", "_AcctSwtchDtls", "_OdAcctBal", "_BalTrf", "_MsgId"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def OdAcct(self):
-		return self._OdAcct
-
-	@OdAcct.setter
-	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
-
-	@OdAcct.deleter
-	def OdAcct(self):
-		del self._OdAcct
-		self._OdAcct = None
-
+	__slots__ = ["_AcctSwtchDtls", "_OdAcctBal", "_OdAcct", "_BalTrf", "_MsgId", "_SplmtryData"]
 	@property
 	def AcctSwtchDtls(self):
 		return self._AcctSwtchDtls
@@ -62,6 +36,19 @@ class AccountSwitchBalanceTransferAcknowledgementV05(base_types._BaseFieldType):
 		self._OdAcctBal = None
 
 	@property
+	def OdAcct(self):
+		return self._OdAcct
+
+	@OdAcct.setter
+	def OdAcct(self, value):
+		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
+
+	@OdAcct.deleter
+	def OdAcct(self):
+		del self._OdAcct
+		self._OdAcct = None
+
+	@property
 	def BalTrf(self):
 		return self._BalTrf
 
@@ -87,12 +74,25 @@ class AccountSwitchBalanceTransferAcknowledgementV05(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdAcctBal', type=AmountAndDirection5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OdAcct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrf', type=BalanceTransfer5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

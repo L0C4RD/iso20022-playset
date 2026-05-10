@@ -1,23 +1,23 @@
 from . import base_types
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .YesNoIndicator import YesNoIndicator
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._YesNoIndicator import YesNoIndicator
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class IssuanceAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncBlckChainAdrOrWllt", "_PmryAcctInd", "_IssncAcct"]
+	__slots__ = ["_IssncAcct", "_PmryAcctInd", "_IssncBlckChainAdrOrWllt"]
 	@property
-	def IssncBlckChainAdrOrWllt(self):
-		return self._IssncBlckChainAdrOrWllt
+	def IssncAcct(self):
+		return self._IssncAcct
 
-	@IssncBlckChainAdrOrWllt.setter
-	def IssncBlckChainAdrOrWllt(self, value):
-		self._IssncBlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("IssncBlckChainAdrOrWllt")
+	@IssncAcct.setter
+	def IssncAcct(self, value):
+		self._IssncAcct = value if type(value) != base_types.auto else self.make_default("IssncAcct")
 
-	@IssncBlckChainAdrOrWllt.deleter
-	def IssncBlckChainAdrOrWllt(self):
-		del self._IssncBlckChainAdrOrWllt
-		self._IssncBlckChainAdrOrWllt = None
+	@IssncAcct.deleter
+	def IssncAcct(self):
+		del self._IssncAcct
+		self._IssncAcct = None
 
 	@property
 	def PmryAcctInd(self):
@@ -33,21 +33,21 @@ class IssuanceAccount3(base_types._BaseFieldType):
 		self._PmryAcctInd = None
 
 	@property
-	def IssncAcct(self):
-		return self._IssncAcct
+	def IssncBlckChainAdrOrWllt(self):
+		return self._IssncBlckChainAdrOrWllt
 
-	@IssncAcct.setter
-	def IssncAcct(self, value):
-		self._IssncAcct = value if type(value) != base_types.auto else self.make_default("IssncAcct")
+	@IssncBlckChainAdrOrWllt.setter
+	def IssncBlckChainAdrOrWllt(self, value):
+		self._IssncBlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("IssncBlckChainAdrOrWllt")
 
-	@IssncAcct.deleter
-	def IssncAcct(self):
-		del self._IssncAcct
-		self._IssncAcct = None
+	@IssncBlckChainAdrOrWllt.deleter
+	def IssncBlckChainAdrOrWllt(self):
+		del self._IssncBlckChainAdrOrWllt
+		self._IssncBlckChainAdrOrWllt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssncBlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncBlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 	))
 

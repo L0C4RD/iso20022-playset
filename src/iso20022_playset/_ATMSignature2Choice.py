@@ -1,6 +1,6 @@
 from . import base_types
-from .TRRelatedData2 import TRRelatedData2
-from .ContentInformationType14 import ContentInformationType14
+from ._ContentInformationType14 import ContentInformationType14
+from ._TRRelatedData2 import TRRelatedData2
 
 class ATMSignature2Choice(base_types._BaseFieldType):
 

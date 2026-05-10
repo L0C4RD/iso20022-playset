@@ -1,25 +1,12 @@
 from . import base_types
-from .ATMExceptionAcknowledgement2 import ATMExceptionAcknowledgement2
-from .ContentInformationType10 import ContentInformationType10
-from .Header32 import Header32
-from .ContentInformationType15 import ContentInformationType15
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._ATMExceptionAcknowledgement2 import ATMExceptionAcknowledgement2
+from ._Header32 import Header32
 
 class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMXcptnAck", "_ATMXcptnAck", "_Hdr", "_SctyTrlr"]
-	@property
-	def PrtctdATMXcptnAck(self):
-		return self._PrtctdATMXcptnAck
-
-	@PrtctdATMXcptnAck.setter
-	def PrtctdATMXcptnAck(self, value):
-		self._PrtctdATMXcptnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAck")
-
-	@PrtctdATMXcptnAck.deleter
-	def PrtctdATMXcptnAck(self):
-		del self._PrtctdATMXcptnAck
-		self._PrtctdATMXcptnAck = None
-
+	__slots__ = ["_ATMXcptnAck", "_Hdr", "_PrtctdATMXcptnAck", "_SctyTrlr"]
 	@property
 	def ATMXcptnAck(self):
 		return self._ATMXcptnAck
@@ -47,6 +34,19 @@ class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
+	def PrtctdATMXcptnAck(self):
+		return self._PrtctdATMXcptnAck
+
+	@PrtctdATMXcptnAck.setter
+	def PrtctdATMXcptnAck(self, value):
+		self._PrtctdATMXcptnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAck")
+
+	@PrtctdATMXcptnAck.deleter
+	def PrtctdATMXcptnAck(self):
+		del self._PrtctdATMXcptnAck
+		self._PrtctdATMXcptnAck = None
+
+	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
@@ -60,9 +60,9 @@ class ATMExceptionAcknowledgementV02(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMXcptnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMXcptnAck', type=ATMExceptionAcknowledgement2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMXcptnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AccountIdentification1 import AccountIdentification1
-from .PartyIdentification2Choice import PartyIdentification2Choice
-from .Intermediary27 import Intermediary27
+from ._Max35Text import Max35Text
+from ._Intermediary27 import Intermediary27
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._AccountIdentification1 import AccountIdentification1
 
 class InvestmentAccount43(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_Nm", "_Dsgnt", "_Id", "_IntrmyInf"]
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Dsgnt", "_Id", "_AcctSvcr", "_Nm", "_IntrmyInf"]
 	@property
 	def Dsgnt(self):
 		return self._Dsgnt
@@ -60,6 +34,32 @@ class InvestmentAccount43(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def IntrmyInf(self):
 		return self._IntrmyInf
 
@@ -73,10 +73,10 @@ class InvestmentAccount43(base_types._BaseFieldType):
 		self._IntrmyInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary27, min=0, max=10, mutex_group=None, array=True),
 	))
 

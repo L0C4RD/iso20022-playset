@@ -1,5 +1,5 @@
 from . import base_types
-from .PaymentReturnV14 import PaymentReturnV14
+from ._PaymentReturnV14 import PaymentReturnV14
 
 class PACS_004_001_14():
 

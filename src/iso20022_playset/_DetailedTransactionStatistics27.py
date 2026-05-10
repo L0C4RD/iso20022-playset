@@ -1,10 +1,10 @@
 from . import base_types
-from .Number import Number
-from .MissingValuationsData2 import MissingValuationsData2
+from ._MissingValuationsData2 import MissingValuationsData2
+from ._Number import Number
 
 class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
-	__slots__ = ["_Wrnngs", "_NbOfOutsdngDerivsWthNoValtn", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthOutdtdValtn"]
+	__slots__ = ["_Wrnngs", "_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthNoValtn", "_NbOfOutsdngDerivsWthOutdtdValtn"]
 	@property
 	def Wrnngs(self):
 		return self._Wrnngs
@@ -19,19 +19,6 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 		self._Wrnngs = None
 
 	@property
-	def NbOfOutsdngDerivsWthNoValtn(self):
-		return self._NbOfOutsdngDerivsWthNoValtn
-
-	@NbOfOutsdngDerivsWthNoValtn.setter
-	def NbOfOutsdngDerivsWthNoValtn(self, value):
-		self._NbOfOutsdngDerivsWthNoValtn = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthNoValtn")
-
-	@NbOfOutsdngDerivsWthNoValtn.deleter
-	def NbOfOutsdngDerivsWthNoValtn(self):
-		del self._NbOfOutsdngDerivsWthNoValtn
-		self._NbOfOutsdngDerivsWthNoValtn = None
-
-	@property
 	def NbOfOutsdngDerivs(self):
 		return self._NbOfOutsdngDerivs
 
@@ -43,6 +30,19 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 	def NbOfOutsdngDerivs(self):
 		del self._NbOfOutsdngDerivs
 		self._NbOfOutsdngDerivs = None
+
+	@property
+	def NbOfOutsdngDerivsWthNoValtn(self):
+		return self._NbOfOutsdngDerivsWthNoValtn
+
+	@NbOfOutsdngDerivsWthNoValtn.setter
+	def NbOfOutsdngDerivsWthNoValtn(self, value):
+		self._NbOfOutsdngDerivsWthNoValtn = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthNoValtn")
+
+	@NbOfOutsdngDerivsWthNoValtn.deleter
+	def NbOfOutsdngDerivsWthNoValtn(self):
+		del self._NbOfOutsdngDerivsWthNoValtn
+		self._NbOfOutsdngDerivsWthNoValtn = None
 
 	@property
 	def NbOfOutsdngDerivsWthOutdtdValtn(self):
@@ -59,8 +59,8 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Wrnngs', type=MissingValuationsData2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

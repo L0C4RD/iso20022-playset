@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SafekeepingAccount18 import SafekeepingAccount18
+from ._Max35Text import Max35Text
+from ._SafekeepingAccount18 import SafekeepingAccount18
 
 class CancelInstruction5(base_types._BaseFieldType):
 

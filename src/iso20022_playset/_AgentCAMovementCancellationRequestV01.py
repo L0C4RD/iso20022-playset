@@ -1,11 +1,11 @@
 from . import base_types
-from .MovementInstruction1 import MovementInstruction1
-from .DocumentIdentification8 import DocumentIdentification8
-from .CorporateActionInformation1 import CorporateActionInformation1
+from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
+from ._MovementInstruction1 import MovementInstruction1
 
 class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntDtls", "_Id", "_CorpActnGnlInf", "_AgtCAMvmntInstrId"]
+	__slots__ = ["_MvmntDtls", "_CorpActnGnlInf", "_Id", "_AgtCAMvmntInstrId"]
 	@property
 	def MvmntDtls(self):
 		return self._MvmntDtls
@@ -20,19 +20,6 @@ class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 		self._MvmntDtls = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def CorpActnGnlInf(self):
 		return self._CorpActnGnlInf
 
@@ -44,6 +31,19 @@ class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
 		self._CorpActnGnlInf = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AgtCAMvmntInstrId(self):
@@ -60,8 +60,8 @@ class AgentCAMovementCancellationRequestV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MvmntDtls', type=MovementInstruction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAMvmntInstrId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

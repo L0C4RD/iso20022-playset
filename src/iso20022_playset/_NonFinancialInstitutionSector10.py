@@ -1,10 +1,23 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .GenericIdentification175 import GenericIdentification175
+from ._GenericIdentification175 import GenericIdentification175
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrThrshld", "_FdrlInstn", "_Sctr", "_DrctlyLkdActvty"]
+	__slots__ = ["_Sctr", "_ClrThrshld", "_FdrlInstn", "_DrctlyLkdActvty"]
+	@property
+	def Sctr(self):
+		return self._Sctr
+
+	@Sctr.setter
+	def Sctr(self, value):
+		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+
+	@Sctr.deleter
+	def Sctr(self):
+		del self._Sctr
+		self._Sctr = None
+
 	@property
 	def ClrThrshld(self):
 		return self._ClrThrshld
@@ -32,19 +45,6 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 		self._FdrlInstn = None
 
 	@property
-	def Sctr(self):
-		return self._Sctr
-
-	@Sctr.setter
-	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
-
-	@Sctr.deleter
-	def Sctr(self):
-		del self._Sctr
-		self._Sctr = None
-
-	@property
 	def DrctlyLkdActvty(self):
 		return self._DrctlyLkdActvty
 
@@ -58,9 +58,9 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 		self._DrctlyLkdActvty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Sctr', type=GenericIdentification175, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrThrshld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FdrlInstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sctr', type=GenericIdentification175, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DrctlyLkdActvty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

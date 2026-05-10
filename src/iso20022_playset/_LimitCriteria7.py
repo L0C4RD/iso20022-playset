@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .LimitSearchCriteria7 import LimitSearchCriteria7
-from .LimitReturnCriteria2 import LimitReturnCriteria2
+from ._LimitReturnCriteria2 import LimitReturnCriteria2
+from ._Max35Text import Max35Text
+from ._LimitSearchCriteria7 import LimitSearchCriteria7
 
 class LimitCriteria7(base_types._BaseFieldType):
 

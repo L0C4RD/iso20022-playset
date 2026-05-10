@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesTransactionPendingReport002V13 import SecuritiesTransactionPendingReport002V13
+from ._SecuritiesTransactionPendingReport002V13 import SecuritiesTransactionPendingReport002V13
 
 class SEMT_018_002_13():
 

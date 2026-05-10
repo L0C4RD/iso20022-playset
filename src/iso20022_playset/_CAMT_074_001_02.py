@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraBalanceMovementCancellationRequestV02 import IntraBalanceMovementCancellationRequestV02
+from ._IntraBalanceMovementCancellationRequestV02 import IntraBalanceMovementCancellationRequestV02
 
 class CAMT_074_001_02():
 

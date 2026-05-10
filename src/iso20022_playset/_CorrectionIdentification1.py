@@ -1,7 +1,7 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ISODate import ISODate
-from .ISOTime import ISOTime
+from ._ISOTime import ISOTime
+from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class CorrectionIdentification1(base_types._BaseFieldType):
 

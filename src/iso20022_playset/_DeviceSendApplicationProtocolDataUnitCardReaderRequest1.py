@@ -1,21 +1,21 @@
 from . import base_types
-from .Min1Max256Binary import Min1Max256Binary
+from ._Min1Max256Binary import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Instr", "_Data", "_XpctdLngth", "_Param1", "_Clss", "_Param2"]
+	__slots__ = ["_Param1", "_Data", "_XpctdLngth", "_Clss", "_Instr", "_Param2"]
 	@property
-	def Instr(self):
-		return self._Instr
+	def Param1(self):
+		return self._Param1
 
-	@Instr.setter
-	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+	@Param1.setter
+	def Param1(self, value):
+		self._Param1 = value if type(value) != base_types.auto else self.make_default("Param1")
 
-	@Instr.deleter
-	def Instr(self):
-		del self._Instr
-		self._Instr = None
+	@Param1.deleter
+	def Param1(self):
+		del self._Param1
+		self._Param1 = None
 
 	@property
 	def Data(self):
@@ -44,19 +44,6 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 		self._XpctdLngth = None
 
 	@property
-	def Param1(self):
-		return self._Param1
-
-	@Param1.setter
-	def Param1(self, value):
-		self._Param1 = value if type(value) != base_types.auto else self.make_default("Param1")
-
-	@Param1.deleter
-	def Param1(self):
-		del self._Param1
-		self._Param1 = None
-
-	@property
 	def Clss(self):
 		return self._Clss
 
@@ -68,6 +55,19 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 	def Clss(self):
 		del self._Clss
 		self._Clss = None
+
+	@property
+	def Instr(self):
+		return self._Instr
+
+	@Instr.setter
+	def Instr(self, value):
+		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+
+	@Instr.deleter
+	def Instr(self):
+		del self._Instr
+		self._Instr = None
 
 	@property
 	def Param2(self):
@@ -83,11 +83,11 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 		self._Param2 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Instr', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Param1', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=Min1Max256Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdLngth', type=Min1Max256Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Param1', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Clss', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instr', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Param2', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

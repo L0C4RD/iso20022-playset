@@ -1,6 +1,6 @@
 from . import base_types
-from .CancelledReason10Choice import CancelledReason10Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._CancelledReason10Choice import CancelledReason10Choice
 
 class CancelledStatusReason13(base_types._BaseFieldType):
 

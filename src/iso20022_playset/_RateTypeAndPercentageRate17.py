@@ -1,6 +1,6 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .DeemedRateType2Choice import DeemedRateType2Choice
+from ._Percentage14Rate import Percentage14Rate
+from ._DeemedRateType2Choice import DeemedRateType2Choice
 
 class RateTypeAndPercentageRate17(base_types._BaseFieldType):
 

@@ -1,25 +1,25 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .ForeignExchangeTerms8 import ForeignExchangeTerms8
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .CorporateActionDate5 import CorporateActionDate5
-from .CorporateActionAmounts1 import CorporateActionAmounts1
+from ._CorporateActionDate5 import CorporateActionDate5
+from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
+from ._CorporateActionAmounts1 import CorporateActionAmounts1
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CreditDebitCode import CreditDebitCode
 
 class CashOption1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbtInd", "_Ccy", "_XchgRate", "_AmtDtls", "_DtDtls"]
+	__slots__ = ["_DtDtls", "_Ccy", "_CdtDbtInd", "_XchgRate", "_AmtDtls"]
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def DtDtls(self):
+		return self._DtDtls
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
 
 	@property
 	def Ccy(self):
@@ -33,6 +33,19 @@ class CashOption1(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def XchgRate(self):
@@ -60,24 +73,11 @@ class CashOption1(base_types._BaseFieldType):
 		del self._AmtDtls
 		self._AmtDtls = None
 
-	@property
-	def DtDtls(self):
-		return self._DtDtls
-
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
-
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=ForeignExchangeTerms8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate5, min=0, max=1, mutex_group=None, array=False),
 	))
 

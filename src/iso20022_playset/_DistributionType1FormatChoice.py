@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification13 import GenericIdentification13
-from .DistributionType1Code import DistributionType1Code
+from ._GenericIdentification13 import GenericIdentification13
+from ._DistributionType1Code import DistributionType1Code
 
 class DistributionType1FormatChoice(base_types._BaseFieldType):
 

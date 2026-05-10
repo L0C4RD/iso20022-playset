@@ -1,5 +1,5 @@
 from . import base_types
-from .UndertakingIssuanceNotificationV01 import UndertakingIssuanceNotificationV01
+from ._UndertakingIssuanceNotificationV01 import UndertakingIssuanceNotificationV01
 
 class TSRV_003_001_01():
 

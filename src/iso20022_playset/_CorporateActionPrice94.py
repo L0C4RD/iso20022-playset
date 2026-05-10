@@ -1,10 +1,23 @@
 from . import base_types
-from .PriceFormat62Choice import PriceFormat62Choice
-from .PriceFormat88Choice import PriceFormat88Choice
+from ._PriceFormat88Choice import PriceFormat88Choice
+from ._PriceFormat62Choice import PriceFormat62Choice
 
 class CorporateActionPrice94(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxCshToInst", "_MinCshToInst", "_CshInLieuOfShrPric", "_MinMltplCshToInst", "_OverSbcptDpstPric"]
+	__slots__ = ["_MinMltplCshToInst", "_MaxCshToInst", "_MinCshToInst", "_CshInLieuOfShrPric", "_OverSbcptDpstPric"]
+	@property
+	def MinMltplCshToInst(self):
+		return self._MinMltplCshToInst
+
+	@MinMltplCshToInst.setter
+	def MinMltplCshToInst(self, value):
+		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
+
+	@MinMltplCshToInst.deleter
+	def MinMltplCshToInst(self):
+		del self._MinMltplCshToInst
+		self._MinMltplCshToInst = None
+
 	@property
 	def MaxCshToInst(self):
 		return self._MaxCshToInst
@@ -45,19 +58,6 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		self._CshInLieuOfShrPric = None
 
 	@property
-	def MinMltplCshToInst(self):
-		return self._MinMltplCshToInst
-
-	@MinMltplCshToInst.setter
-	def MinMltplCshToInst(self, value):
-		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
-
-	@MinMltplCshToInst.deleter
-	def MinMltplCshToInst(self):
-		del self._MinMltplCshToInst
-		self._MinMltplCshToInst = None
-
-	@property
 	def OverSbcptDpstPric(self):
 		return self._OverSbcptDpstPric
 
@@ -71,10 +71,10 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		self._OverSbcptDpstPric = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

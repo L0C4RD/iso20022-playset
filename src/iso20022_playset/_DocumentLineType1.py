@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentLineType1Choice import DocumentLineType1Choice
+from ._Max35Text import Max35Text
+from ._DocumentLineType1Choice import DocumentLineType1Choice
 
 class DocumentLineType1(base_types._BaseFieldType):
 
-	__slots__ = ["_CdOrPrtry", "_Issr"]
-	@property
-	def CdOrPrtry(self):
-		return self._CdOrPrtry
-
-	@CdOrPrtry.setter
-	def CdOrPrtry(self, value):
-		self._CdOrPrtry = value if type(value) != base_types.auto else self.make_default("CdOrPrtry")
-
-	@CdOrPrtry.deleter
-	def CdOrPrtry(self):
-		del self._CdOrPrtry
-		self._CdOrPrtry = None
-
+	__slots__ = ["_Issr", "_CdOrPrtry"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -31,8 +18,21 @@ class DocumentLineType1(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def CdOrPrtry(self):
+		return self._CdOrPrtry
+
+	@CdOrPrtry.setter
+	def CdOrPrtry(self, value):
+		self._CdOrPrtry = value if type(value) != base_types.auto else self.make_default("CdOrPrtry")
+
+	@CdOrPrtry.deleter
+	def CdOrPrtry(self):
+		del self._CdOrPrtry
+		self._CdOrPrtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdOrPrtry', type=DocumentLineType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdOrPrtry', type=DocumentLineType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

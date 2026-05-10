@@ -1,26 +1,39 @@
 from . import base_types
-from .FundCashOutBreakdown3 import FundCashOutBreakdown3
-from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
-from .FundBalance1 import FundBalance1
-from .YesNoIndicator import YesNoIndicator
+from ._ISODate import ISODate
+from ._FundCashOutBreakdown3 import FundCashOutBreakdown3
+from ._FundBalance1 import FundBalance1
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._YesNoIndicator import YesNoIndicator
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
 
 class CashOutForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlBal", "_XcptnlCshFlowInd", "_SubTtlUnitsNb", "_CshOutBrkdwnDtls", "_CshSttlmDt", "_SubTtlAmt"]
+	__slots__ = ["_SubTtlUnitsNb", "_SubTtlAmt", "_XcptnlCshFlowInd", "_CshSttlmDt", "_CshOutBrkdwnDtls", "_AddtlBal"]
 	@property
-	def AddtlBal(self):
-		return self._AddtlBal
+	def SubTtlUnitsNb(self):
+		return self._SubTtlUnitsNb
 
-	@AddtlBal.setter
-	def AddtlBal(self, value):
-		self._AddtlBal = value if type(value) != base_types.auto else self.make_default("AddtlBal")
+	@SubTtlUnitsNb.setter
+	def SubTtlUnitsNb(self, value):
+		self._SubTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("SubTtlUnitsNb")
 
-	@AddtlBal.deleter
-	def AddtlBal(self):
-		del self._AddtlBal
-		self._AddtlBal = None
+	@SubTtlUnitsNb.deleter
+	def SubTtlUnitsNb(self):
+		del self._SubTtlUnitsNb
+		self._SubTtlUnitsNb = None
+
+	@property
+	def SubTtlAmt(self):
+		return self._SubTtlAmt
+
+	@SubTtlAmt.setter
+	def SubTtlAmt(self, value):
+		self._SubTtlAmt = value if type(value) != base_types.auto else self.make_default("SubTtlAmt")
+
+	@SubTtlAmt.deleter
+	def SubTtlAmt(self):
+		del self._SubTtlAmt
+		self._SubTtlAmt = None
 
 	@property
 	def XcptnlCshFlowInd(self):
@@ -36,17 +49,17 @@ class CashOutForecast5(base_types._BaseFieldType):
 		self._XcptnlCshFlowInd = None
 
 	@property
-	def SubTtlUnitsNb(self):
-		return self._SubTtlUnitsNb
+	def CshSttlmDt(self):
+		return self._CshSttlmDt
 
-	@SubTtlUnitsNb.setter
-	def SubTtlUnitsNb(self, value):
-		self._SubTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("SubTtlUnitsNb")
+	@CshSttlmDt.setter
+	def CshSttlmDt(self, value):
+		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
 
-	@SubTtlUnitsNb.deleter
-	def SubTtlUnitsNb(self):
-		del self._SubTtlUnitsNb
-		self._SubTtlUnitsNb = None
+	@CshSttlmDt.deleter
+	def CshSttlmDt(self):
+		del self._CshSttlmDt
+		self._CshSttlmDt = None
 
 	@property
 	def CshOutBrkdwnDtls(self):
@@ -62,37 +75,24 @@ class CashOutForecast5(base_types._BaseFieldType):
 		self._CshOutBrkdwnDtls = None
 
 	@property
-	def CshSttlmDt(self):
-		return self._CshSttlmDt
+	def AddtlBal(self):
+		return self._AddtlBal
 
-	@CshSttlmDt.setter
-	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+	@AddtlBal.setter
+	def AddtlBal(self, value):
+		self._AddtlBal = value if type(value) != base_types.auto else self.make_default("AddtlBal")
 
-	@CshSttlmDt.deleter
-	def CshSttlmDt(self):
-		del self._CshSttlmDt
-		self._CshSttlmDt = None
-
-	@property
-	def SubTtlAmt(self):
-		return self._SubTtlAmt
-
-	@SubTtlAmt.setter
-	def SubTtlAmt(self, value):
-		self._SubTtlAmt = value if type(value) != base_types.auto else self.make_default("SubTtlAmt")
-
-	@SubTtlAmt.deleter
-	def SubTtlAmt(self):
-		del self._SubTtlAmt
-		self._SubTtlAmt = None
+	@AddtlBal.deleter
+	def AddtlBal(self):
+		del self._AddtlBal
+		self._AddtlBal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XcptnlCshFlowInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshOutBrkdwnDtls', type=FundCashOutBreakdown3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcptnlCshFlowInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshOutBrkdwnDtls', type=FundCashOutBreakdown3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
 	))
 

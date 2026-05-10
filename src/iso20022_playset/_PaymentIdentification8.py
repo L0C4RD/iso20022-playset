@@ -1,10 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UUIDv4Identifier import UUIDv4Identifier
+from ._Max35Text import Max35Text
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_EndToEndId", "_UETR", "_TxId"]
+	__slots__ = ["_InstrId", "_TxId", "_UETR", "_EndToEndId"]
 	@property
 	def InstrId(self):
 		return self._InstrId
@@ -19,17 +19,17 @@ class PaymentIdentification8(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
-	def EndToEndId(self):
-		return self._EndToEndId
+	def TxId(self):
+		return self._TxId
 
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def UETR(self):
@@ -45,22 +45,22 @@ class PaymentIdentification8(base_types._BaseFieldType):
 		self._UETR = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def EndToEndId(self):
+		return self._EndToEndId
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

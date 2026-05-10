@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ISODate import ISODate
-from .ReferredDocumentType1 import ReferredDocumentType1
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ReferredDocumentType1 import ReferredDocumentType1
+from ._ISODate import ISODate
 
 class ReferredDocumentInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_DocAmt", "_RltdDt", "_DocNb", "_Tp"]
-	@property
-	def DocAmt(self):
-		return self._DocAmt
-
-	@DocAmt.setter
-	def DocAmt(self, value):
-		self._DocAmt = value if type(value) != base_types.auto else self.make_default("DocAmt")
-
-	@DocAmt.deleter
-	def DocAmt(self):
-		del self._DocAmt
-		self._DocAmt = None
-
+	__slots__ = ["_RltdDt", "_DocAmt", "_Tp", "_DocNb"]
 	@property
 	def RltdDt(self):
 		return self._RltdDt
@@ -34,17 +21,17 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 		self._RltdDt = None
 
 	@property
-	def DocNb(self):
-		return self._DocNb
+	def DocAmt(self):
+		return self._DocAmt
 
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+	@DocAmt.setter
+	def DocAmt(self, value):
+		self._DocAmt = value if type(value) != base_types.auto else self.make_default("DocAmt")
 
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
+	@DocAmt.deleter
+	def DocAmt(self):
+		del self._DocAmt
+		self._DocAmt = None
 
 	@property
 	def Tp(self):
@@ -59,10 +46,23 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def DocNb(self):
+		return self._DocNb
+
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DocAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReferredDocumentType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

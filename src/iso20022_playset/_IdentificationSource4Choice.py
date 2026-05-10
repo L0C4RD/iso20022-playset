@@ -1,6 +1,6 @@
 from . import base_types
-from .ExternalFinancialInstrumentIdentificationType1Code import ExternalFinancialInstrumentIdentificationType1Code
-from .RestrictedFINExact2Text import RestrictedFINExact2Text
+from ._ExternalFinancialInstrumentIdentificationType1Code import ExternalFinancialInstrumentIdentificationType1Code
+from ._RestrictedFINExact2Text import RestrictedFINExact2Text
 
 class IdentificationSource4Choice(base_types._BaseFieldType):
 

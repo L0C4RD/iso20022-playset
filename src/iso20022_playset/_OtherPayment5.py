@@ -1,12 +1,25 @@
 from . import base_types
-from .PartyIdentification236Choice import PartyIdentification236Choice
-from .AmountAndDirection106 import AmountAndDirection106
-from .ISODate import ISODate
-from .PaymentType5Choice import PaymentType5Choice
+from ._AmountAndDirection106 import AmountAndDirection106
+from ._PaymentType5Choice import PaymentType5Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._ISODate import ISODate
 
 class OtherPayment5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtTp", "_PmtAmt", "_PmtRcvr", "_PmtDt", "_PmtPyer"]
+	__slots__ = ["_PmtRcvr", "_PmtTp", "_PmtPyer", "_PmtAmt", "_PmtDt"]
+	@property
+	def PmtRcvr(self):
+		return self._PmtRcvr
+
+	@PmtRcvr.setter
+	def PmtRcvr(self, value):
+		self._PmtRcvr = value if type(value) != base_types.auto else self.make_default("PmtRcvr")
+
+	@PmtRcvr.deleter
+	def PmtRcvr(self):
+		del self._PmtRcvr
+		self._PmtRcvr = None
+
 	@property
 	def PmtTp(self):
 		return self._PmtTp
@@ -19,6 +32,19 @@ class OtherPayment5(base_types._BaseFieldType):
 	def PmtTp(self):
 		del self._PmtTp
 		self._PmtTp = None
+
+	@property
+	def PmtPyer(self):
+		return self._PmtPyer
+
+	@PmtPyer.setter
+	def PmtPyer(self, value):
+		self._PmtPyer = value if type(value) != base_types.auto else self.make_default("PmtPyer")
+
+	@PmtPyer.deleter
+	def PmtPyer(self):
+		del self._PmtPyer
+		self._PmtPyer = None
 
 	@property
 	def PmtAmt(self):
@@ -34,19 +60,6 @@ class OtherPayment5(base_types._BaseFieldType):
 		self._PmtAmt = None
 
 	@property
-	def PmtRcvr(self):
-		return self._PmtRcvr
-
-	@PmtRcvr.setter
-	def PmtRcvr(self, value):
-		self._PmtRcvr = value if type(value) != base_types.auto else self.make_default("PmtRcvr")
-
-	@PmtRcvr.deleter
-	def PmtRcvr(self):
-		del self._PmtRcvr
-		self._PmtRcvr = None
-
-	@property
 	def PmtDt(self):
 		return self._PmtDt
 
@@ -59,24 +72,11 @@ class OtherPayment5(base_types._BaseFieldType):
 		del self._PmtDt
 		self._PmtDt = None
 
-	@property
-	def PmtPyer(self):
-		return self._PmtPyer
-
-	@PmtPyer.setter
-	def PmtPyer(self, value):
-		self._PmtPyer = value if type(value) != base_types.auto else self.make_default("PmtPyer")
-
-	@PmtPyer.deleter
-	def PmtPyer(self):
-		del self._PmtPyer
-		self._PmtPyer = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtTp', type=PaymentType5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtRcvr', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTp', type=PaymentType5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtPyer', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

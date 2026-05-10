@@ -1,5 +1,5 @@
 from . import base_types
-from .Quantity10 import Quantity10
+from ._Quantity10 import Quantity10
 
 class Consignment3(base_types._BaseFieldType):
 

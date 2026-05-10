@@ -1,7 +1,7 @@
 from . import base_types
-from .DerivativeClassification1 import DerivativeClassification1
-from .DerivativeUnderlyingLeg1 import DerivativeUnderlyingLeg1
-from .Option14 import Option14
+from ._DerivativeUnderlyingLeg1 import DerivativeUnderlyingLeg1
+from ._Option14 import Option14
+from ._DerivativeClassification1 import DerivativeClassification1
 
 class Derivative3(base_types._BaseFieldType):
 

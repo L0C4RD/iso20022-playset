@@ -1,23 +1,23 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .OriginalRequestInformation1 import OriginalRequestInformation1
-from .FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._MessageIdentification1 import MessageIdentification1
+from ._OriginalRequestInformation1 import OriginalRequestInformation1
 
 class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgInfAndSts", "_OrgnlReqInfAndSts", "_StsId"]
+	__slots__ = ["_StsId", "_OrgnlReqInfAndSts", "_FincgInfAndSts"]
 	@property
-	def FincgInfAndSts(self):
-		return self._FincgInfAndSts
+	def StsId(self):
+		return self._StsId
 
-	@FincgInfAndSts.setter
-	def FincgInfAndSts(self, value):
-		self._FincgInfAndSts = value if type(value) != base_types.auto else self.make_default("FincgInfAndSts")
+	@StsId.setter
+	def StsId(self, value):
+		self._StsId = value if type(value) != base_types.auto else self.make_default("StsId")
 
-	@FincgInfAndSts.deleter
-	def FincgInfAndSts(self):
-		del self._FincgInfAndSts
-		self._FincgInfAndSts = None
+	@StsId.deleter
+	def StsId(self):
+		del self._StsId
+		self._StsId = None
 
 	@property
 	def OrgnlReqInfAndSts(self):
@@ -33,21 +33,21 @@ class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):
 		self._OrgnlReqInfAndSts = None
 
 	@property
-	def StsId(self):
-		return self._StsId
+	def FincgInfAndSts(self):
+		return self._FincgInfAndSts
 
-	@StsId.setter
-	def StsId(self, value):
-		self._StsId = value if type(value) != base_types.auto else self.make_default("StsId")
+	@FincgInfAndSts.setter
+	def FincgInfAndSts(self, value):
+		self._FincgInfAndSts = value if type(value) != base_types.auto else self.make_default("FincgInfAndSts")
 
-	@StsId.deleter
-	def StsId(self):
-		del self._StsId
-		self._StsId = None
+	@FincgInfAndSts.deleter
+	def FincgInfAndSts(self):
+		del self._FincgInfAndSts
+		self._FincgInfAndSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FincgInfAndSts', type=FinancingInformationAndStatus1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlReqInfAndSts', type=OriginalRequestInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlReqInfAndSts', type=OriginalRequestInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FincgInfAndSts', type=FinancingInformationAndStatus1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .TradeQueryExecutionFrequency3 import TradeQueryExecutionFrequency3
-from .Max1000Text import Max1000Text
-from .ISODate import ISODate
+from ._Max1000Text import Max1000Text
+from ._ISODate import ISODate
+from ._TradeQueryExecutionFrequency3 import TradeQueryExecutionFrequency3
 
 class TradeRecurrentQuery5(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_VldUntil", "_Frqcy"]
+	__slots__ = ["_Frqcy", "_VldUntil", "_QryTp"]
 	@property
-	def QryTp(self):
-		return self._QryTp
+	def Frqcy(self):
+		return self._Frqcy
 
-	@QryTp.setter
-	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+	@Frqcy.setter
+	def Frqcy(self, value):
+		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
 
-	@QryTp.deleter
-	def QryTp(self):
-		del self._QryTp
-		self._QryTp = None
+	@Frqcy.deleter
+	def Frqcy(self):
+		del self._Frqcy
+		self._Frqcy = None
 
 	@property
 	def VldUntil(self):
@@ -33,21 +33,21 @@ class TradeRecurrentQuery5(base_types._BaseFieldType):
 		self._VldUntil = None
 
 	@property
-	def Frqcy(self):
-		return self._Frqcy
+	def QryTp(self):
+		return self._QryTp
 
-	@Frqcy.setter
-	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+	@QryTp.setter
+	def QryTp(self, value):
+		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
 
-	@Frqcy.deleter
-	def Frqcy(self):
-		del self._Frqcy
-		self._Frqcy = None
+	@QryTp.deleter
+	def QryTp(self):
+		del self._QryTp
+		self._QryTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QryTp', type=Max1000Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldUntil', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=TradeQueryExecutionFrequency3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldUntil', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryTp', type=Max1000Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .NameAndAddress5 import NameAndAddress5
-from .AnyBICIdentifier import AnyBICIdentifier
-from .CountryCode import CountryCode
+from ._NameAndAddress5 import NameAndAddress5
+from ._CountryCode import CountryCode
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification75Choice(base_types._BaseFieldType):
 

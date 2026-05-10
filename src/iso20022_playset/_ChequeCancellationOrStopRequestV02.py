@@ -1,7 +1,7 @@
 from . import base_types
-from .GroupHeader103 import GroupHeader103
-from .Cheque20 import Cheque20
-from .SupplementaryData1 import SupplementaryData1
+from ._SupplementaryData1 import SupplementaryData1
+from ._Cheque20 import Cheque20
+from ._GroupHeader103 import GroupHeader103
 
 class ChequeCancellationOrStopRequestV02(base_types._BaseFieldType):
 

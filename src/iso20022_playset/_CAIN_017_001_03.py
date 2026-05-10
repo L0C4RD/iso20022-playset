@@ -1,5 +1,5 @@
 from . import base_types
-from .InquiryResponseV03 import InquiryResponseV03
+from ._InquiryResponseV03 import InquiryResponseV03
 
 class CAIN_017_001_03():
 

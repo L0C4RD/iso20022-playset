@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ValidationRuleSchemeName1Choice import ValidationRuleSchemeName1Choice
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._ValidationRuleSchemeName1Choice import ValidationRuleSchemeName1Choice
+from ._Max350Text import Max350Text
 
 class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Desc", "_SchmeNm", "_Issr"]
+	__slots__ = ["_SchmeNm", "_Desc", "_Issr", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	@property
 	def Desc(self):
@@ -33,19 +33,6 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
-
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
-
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
-
-	@property
 	def Issr(self):
 		return self._Issr
 
@@ -58,10 +45,23 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=ValidationRuleSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

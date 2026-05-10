@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Number import Number
-from .BICIdentification1 import BICIdentification1
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._BICIdentification1 import BICIdentification1
 
 class DocumentIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Vrsn", "_Submitr"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Vrsn", "_Submitr", "_Id"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -45,9 +32,22 @@ class DocumentIdentification1(base_types._BaseFieldType):
 		del self._Submitr
 		self._Submitr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TradeLegNotificationIdentification1Choice import TradeLegNotificationIdentification1Choice
+from ._Max35Text import Max35Text
+from ._TradeLegNotificationIdentification1Choice import TradeLegNotificationIdentification1Choice
 
 class Reference24(base_types._BaseFieldType):
 

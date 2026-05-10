@@ -1,38 +1,25 @@
 from . import base_types
-from .AlternatePartyIdentification9 import AlternatePartyIdentification9
-from .PartyIdentification137Choice import PartyIdentification137Choice
-from .PartyTextInformation4 import PartyTextInformation4
-from .CashAccountIdentification6Choice import CashAccountIdentification6Choice
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._PartyTextInformation4 import PartyTextInformation4
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
+from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
 
 class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Id", "_ComssnAcct", "_AltrnId", "_CshAcct", "_ChrgsAcct", "_TaxAcct", "_AddtlInf"]
+	__slots__ = ["_TaxAcct", "_ComssnAcct", "_ChrgsAcct", "_Id", "_CshAcct", "_AltrnId", "_LEI", "_AddtlInf"]
 	@property
-	def LEI(self):
-		return self._LEI
+	def TaxAcct(self):
+		return self._TaxAcct
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+	@TaxAcct.setter
+	def TaxAcct(self, value):
+		self._TaxAcct = value if type(value) != base_types.auto else self.make_default("TaxAcct")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TaxAcct.deleter
+	def TaxAcct(self):
+		del self._TaxAcct
+		self._TaxAcct = None
 
 	@property
 	def ComssnAcct(self):
@@ -48,17 +35,30 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._ComssnAcct = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
+	def ChrgsAcct(self):
+		return self._ChrgsAcct
 
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+	@ChrgsAcct.setter
+	def ChrgsAcct(self, value):
+		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
 
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
+	@ChrgsAcct.deleter
+	def ChrgsAcct(self):
+		del self._ChrgsAcct
+		self._ChrgsAcct = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def CshAcct(self):
@@ -74,30 +74,30 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def ChrgsAcct(self):
-		return self._ChrgsAcct
+	def AltrnId(self):
+		return self._AltrnId
 
-	@ChrgsAcct.setter
-	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
 
-	@ChrgsAcct.deleter
-	def ChrgsAcct(self):
-		del self._ChrgsAcct
-		self._ChrgsAcct = None
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
 
 	@property
-	def TaxAcct(self):
-		return self._TaxAcct
+	def LEI(self):
+		return self._LEI
 
-	@TaxAcct.setter
-	def TaxAcct(self, value):
-		self._TaxAcct = value if type(value) != base_types.auto else self.make_default("TaxAcct")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@TaxAcct.deleter
-	def TaxAcct(self):
-		del self._TaxAcct
-		self._TaxAcct = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def AddtlInf(self):
@@ -113,13 +113,13 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComssnAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComssnAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation4, min=0, max=1, mutex_group=None, array=False),
 	))
 

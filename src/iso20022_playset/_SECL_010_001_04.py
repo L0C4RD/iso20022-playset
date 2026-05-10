@@ -1,5 +1,5 @@
 from . import base_types
-from .SettlementObligationReportV04 import SettlementObligationReportV04
+from ._SettlementObligationReportV04 import SettlementObligationReportV04
 
 class SECL_010_001_04():
 

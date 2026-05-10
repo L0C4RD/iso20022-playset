@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountAndDirection102 import AmountAndDirection102
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._AmountAndDirection102 import AmountAndDirection102
 
 class EndOfDayRequirement1(base_types._BaseFieldType):
 

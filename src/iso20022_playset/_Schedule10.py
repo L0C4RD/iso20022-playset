@@ -1,7 +1,7 @@
 from . import base_types
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from .ISODate import ISODate
-from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._ISODate import ISODate
 
 class Schedule10(base_types._BaseFieldType):
 

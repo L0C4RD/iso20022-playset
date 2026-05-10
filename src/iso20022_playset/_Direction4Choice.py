@@ -1,6 +1,6 @@
 from . import base_types
-from .OptionParty1Code import OptionParty1Code
-from .Direction2 import Direction2
+from ._OptionParty1Code import OptionParty1Code
+from ._Direction2 import Direction2
 
 class Direction4Choice(base_types._BaseFieldType):
 

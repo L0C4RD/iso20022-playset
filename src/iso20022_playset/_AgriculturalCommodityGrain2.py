@@ -1,11 +1,24 @@
 from . import base_types
-from .AssetClassSubProductType5Code import AssetClassSubProductType5Code
-from .AssetClassProductType1Code import AssetClassProductType1Code
-from .AssetClassDetailedSubProductType30Code import AssetClassDetailedSubProductType30Code
+from ._AssetClassProductType1Code import AssetClassProductType1Code
+from ._AssetClassDetailedSubProductType30Code import AssetClassDetailedSubProductType30Code
+from ._AssetClassSubProductType5Code import AssetClassSubProductType5Code
 
 class AgriculturalCommodityGrain2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct", "_AddtlSubPdct"]
+	__slots__ = ["_AddtlSubPdct", "_SubPdct", "_BasePdct"]
+	@property
+	def AddtlSubPdct(self):
+		return self._AddtlSubPdct
+
+	@AddtlSubPdct.setter
+	def AddtlSubPdct(self, value):
+		self._AddtlSubPdct = value if type(value) != base_types.auto else self.make_default("AddtlSubPdct")
+
+	@AddtlSubPdct.deleter
+	def AddtlSubPdct(self):
+		del self._AddtlSubPdct
+		self._AddtlSubPdct = None
+
 	@property
 	def SubPdct(self):
 		return self._SubPdct
@@ -32,22 +45,9 @@ class AgriculturalCommodityGrain2(base_types._BaseFieldType):
 		del self._BasePdct
 		self._BasePdct = None
 
-	@property
-	def AddtlSubPdct(self):
-		return self._AddtlSubPdct
-
-	@AddtlSubPdct.setter
-	def AddtlSubPdct(self, value):
-		self._AddtlSubPdct = value if type(value) != base_types.auto else self.make_default("AddtlSubPdct")
-
-	@AddtlSubPdct.deleter
-	def AddtlSubPdct(self):
-		del self._AddtlSubPdct
-		self._AddtlSubPdct = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType30Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType30Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .LiquidityDebitTransferV07 import LiquidityDebitTransferV07
+from ._LiquidityDebitTransferV07 import LiquidityDebitTransferV07
 
 class CAMT_051_001_07():
 

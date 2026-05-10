@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesBalanceType6Code import SecuritiesBalanceType6Code
-from .GenericIdentification13 import GenericIdentification13
+from ._GenericIdentification13 import GenericIdentification13
+from ._SecuritiesBalanceType6Code import SecuritiesBalanceType6Code
 
 class SecuritiesBalanceType6FormatChoice(base_types._BaseFieldType):
 

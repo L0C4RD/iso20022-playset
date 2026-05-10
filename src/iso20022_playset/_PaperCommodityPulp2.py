@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassProductType8Code import AssetClassProductType8Code
-from .AssetClassSubProductType37Code import AssetClassSubProductType37Code
+from ._AssetClassSubProductType37Code import AssetClassSubProductType37Code
+from ._AssetClassProductType8Code import AssetClassProductType8Code
 
 class PaperCommodityPulp2(base_types._BaseFieldType):
 

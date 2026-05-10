@@ -1,40 +1,14 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .Max350Text import Max350Text
-from .DeliveryType2Code import DeliveryType2Code
-from .PercentageRate import PercentageRate
-from .ISODateTime import ISODateTime
-from .ClosingType1Code import ClosingType1Code
+from ._Max350Text import Max350Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._DeliveryType2Code import DeliveryType2Code
+from ._PercentageRate import PercentageRate
+from ._ClosingType1Code import ClosingType1Code
+from ._ISODateTime import ISODateTime
 
 class Agreement5(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_MrgnRatio", "_ClsgTp", "_Ccy", "_StartDt", "_Desc", "_DlvryTp"]
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def MrgnRatio(self):
-		return self._MrgnRatio
-
-	@MrgnRatio.setter
-	def MrgnRatio(self, value):
-		self._MrgnRatio = value if type(value) != base_types.auto else self.make_default("MrgnRatio")
-
-	@MrgnRatio.deleter
-	def MrgnRatio(self):
-		del self._MrgnRatio
-		self._MrgnRatio = None
-
+	__slots__ = ["_ClsgTp", "_Desc", "_Ccy", "_MrgnRatio", "_StartDt", "_Dt", "_DlvryTp"]
 	@property
 	def ClsgTp(self):
 		return self._ClsgTp
@@ -47,32 +21,6 @@ class Agreement5(base_types._BaseFieldType):
 	def ClsgTp(self):
 		del self._ClsgTp
 		self._ClsgTp = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
 
 	@property
 	def Desc(self):
@@ -88,6 +36,58 @@ class Agreement5(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def MrgnRatio(self):
+		return self._MrgnRatio
+
+	@MrgnRatio.setter
+	def MrgnRatio(self, value):
+		self._MrgnRatio = value if type(value) != base_types.auto else self.make_default("MrgnRatio")
+
+	@MrgnRatio.deleter
+	def MrgnRatio(self):
+		del self._MrgnRatio
+		self._MrgnRatio = None
+
+	@property
+	def StartDt(self):
+		return self._StartDt
+
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
+	@property
 	def DlvryTp(self):
 		return self._DlvryTp
 
@@ -101,12 +101,12 @@ class Agreement5(base_types._BaseFieldType):
 		self._DlvryTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnRatio', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgTp', type=ClosingType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnRatio', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryTp', type=DeliveryType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

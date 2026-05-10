@@ -1,6 +1,6 @@
 from . import base_types
-from .Quantity51Choice import Quantity51Choice
-from .RejectedStatus56Choice import RejectedStatus56Choice
+from ._RejectedStatus56Choice import RejectedStatus56Choice
+from ._Quantity51Choice import Quantity51Choice
 
 class RejectedStatus11(base_types._BaseFieldType):
 

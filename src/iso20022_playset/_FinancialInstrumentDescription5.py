@@ -1,11 +1,11 @@
 from . import base_types
-from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from .MarketIdentification3Choice import MarketIdentification3Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from ._MarketIdentification3Choice import MarketIdentification3Choice
 
 class FinancialInstrumentDescription5(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_FinInstrmId", "_PlcOfListg"]
+	__slots__ = ["_SfkpgPlc", "_PlcOfListg", "_FinInstrmId"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -20,19 +20,6 @@ class FinancialInstrumentDescription5(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
 	def PlcOfListg(self):
 		return self._PlcOfListg
 
@@ -45,9 +32,22 @@ class FinancialInstrumentDescription5(base_types._BaseFieldType):
 		del self._PlcOfListg
 		self._PlcOfListg = None
 
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfListg', type=MarketIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .TRRelatedData2 import TRRelatedData2
-from .ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType10 import ContentInformationType10
+from ._TRRelatedData2 import TRRelatedData2
 
 class KeyChoiceValue2(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdKeyVal", "_TRRltdData"]
-	@property
-	def NcrptdKeyVal(self):
-		return self._NcrptdKeyVal
-
-	@NcrptdKeyVal.setter
-	def NcrptdKeyVal(self, value):
-		self._NcrptdKeyVal = value if type(value) != base_types.auto else self.make_default("NcrptdKeyVal")
-
-	@NcrptdKeyVal.deleter
-	def NcrptdKeyVal(self):
-		del self._NcrptdKeyVal
-		self._NcrptdKeyVal = None
-
+	__slots__ = ["_TRRltdData", "_NcrptdKeyVal"]
 	@property
 	def TRRltdData(self):
 		return self._TRRltdData
@@ -31,8 +18,21 @@ class KeyChoiceValue2(base_types._BaseFieldType):
 		del self._TRRltdData
 		self._TRRltdData = None
 
+	@property
+	def NcrptdKeyVal(self):
+		return self._NcrptdKeyVal
+
+	@NcrptdKeyVal.setter
+	def NcrptdKeyVal(self, value):
+		self._NcrptdKeyVal = value if type(value) != base_types.auto else self.make_default("NcrptdKeyVal")
+
+	@NcrptdKeyVal.deleter
+	def NcrptdKeyVal(self):
+		del self._NcrptdKeyVal
+		self._NcrptdKeyVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdKeyVal', type=ContentInformationType10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TRRltdData', type=TRRelatedData2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NcrptdKeyVal', type=ContentInformationType10, min=0, max=1, mutex_group=1, array=False),
 	))
 

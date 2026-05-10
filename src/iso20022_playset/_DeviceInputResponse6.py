@@ -1,6 +1,6 @@
 from . import base_types
-from .OutputResult2 import OutputResult2
-from .InputResult6 import InputResult6
+from ._InputResult6 import InputResult6
+from ._OutputResult2 import OutputResult2
 
 class DeviceInputResponse6(base_types._BaseFieldType):
 

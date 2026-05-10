@@ -1,6 +1,6 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .ExchangeRateBasis1 import ExchangeRateBasis1
+from ._ExchangeRateBasis1 import ExchangeRateBasis1
+from ._Max52Text import Max52Text
 
 class ExchangeRateBasis1Choice(base_types._BaseFieldType):
 

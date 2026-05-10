@@ -1,7 +1,7 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .PartialSettlement2Code import PartialSettlement2Code
-from .PreConfirmation1Code import PreConfirmation1Code
+from ._PartialSettlement2Code import PartialSettlement2Code
+from ._PreConfirmation1Code import PreConfirmation1Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class AdditionalParameters26(base_types._BaseFieldType):
 

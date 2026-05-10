@@ -1,31 +1,18 @@
 from . import base_types
-from .ReconciliationFlag2 import ReconciliationFlag2
-from .SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
-from .IssuerJurisdiction1Choice import IssuerJurisdiction1Choice
-from .ReinvestedCashTypeAndAmount2 import ReinvestedCashTypeAndAmount2
-from .CollateralQualityType1Code import CollateralQualityType1Code
-from .CollateralType6Code import CollateralType6Code
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ContractTerm6Choice import ContractTerm6Choice
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
+from ._CollateralType6Code import CollateralType6Code
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._ContractTerm6Choice import ContractTerm6Choice
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ReconciliationFlag2 import ReconciliationFlag2
+from ._IssuerJurisdiction1Choice import IssuerJurisdiction1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._CollateralQualityType1Code import CollateralQualityType1Code
+from ._ReinvestedCashTypeAndAmount2 import ReinvestedCashTypeAndAmount2
 
 class CollateralData33(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnFlg", "_Tp", "_NetXpsrCollstnInd", "_Qlty", "_CshCollCcy", "_PricCcy", "_TradRpstry", "_IssrJursdctn", "_Mtrty", "_CmpntTp", "_RinvstdCsh"]
-	@property
-	def RcncltnFlg(self):
-		return self._RcncltnFlg
-
-	@RcncltnFlg.setter
-	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
-
-	@RcncltnFlg.deleter
-	def RcncltnFlg(self):
-		del self._RcncltnFlg
-		self._RcncltnFlg = None
-
+	__slots__ = ["_Tp", "_TradRpstry", "_RcncltnFlg", "_Mtrty", "_NetXpsrCollstnInd", "_IssrJursdctn", "_CmpntTp", "_PricCcy", "_RinvstdCsh", "_CshCollCcy", "_Qlty"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -38,58 +25,6 @@ class CollateralData33(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def NetXpsrCollstnInd(self):
-		return self._NetXpsrCollstnInd
-
-	@NetXpsrCollstnInd.setter
-	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
-
-	@NetXpsrCollstnInd.deleter
-	def NetXpsrCollstnInd(self):
-		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
-
-	@property
-	def Qlty(self):
-		return self._Qlty
-
-	@Qlty.setter
-	def Qlty(self, value):
-		self._Qlty = value if type(value) != base_types.auto else self.make_default("Qlty")
-
-	@Qlty.deleter
-	def Qlty(self):
-		del self._Qlty
-		self._Qlty = None
-
-	@property
-	def CshCollCcy(self):
-		return self._CshCollCcy
-
-	@CshCollCcy.setter
-	def CshCollCcy(self, value):
-		self._CshCollCcy = value if type(value) != base_types.auto else self.make_default("CshCollCcy")
-
-	@CshCollCcy.deleter
-	def CshCollCcy(self):
-		del self._CshCollCcy
-		self._CshCollCcy = None
-
-	@property
-	def PricCcy(self):
-		return self._PricCcy
-
-	@PricCcy.setter
-	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
-
-	@PricCcy.deleter
-	def PricCcy(self):
-		del self._PricCcy
-		self._PricCcy = None
 
 	@property
 	def TradRpstry(self):
@@ -105,17 +40,17 @@ class CollateralData33(base_types._BaseFieldType):
 		self._TradRpstry = None
 
 	@property
-	def IssrJursdctn(self):
-		return self._IssrJursdctn
+	def RcncltnFlg(self):
+		return self._RcncltnFlg
 
-	@IssrJursdctn.setter
-	def IssrJursdctn(self, value):
-		self._IssrJursdctn = value if type(value) != base_types.auto else self.make_default("IssrJursdctn")
+	@RcncltnFlg.setter
+	def RcncltnFlg(self, value):
+		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
 
-	@IssrJursdctn.deleter
-	def IssrJursdctn(self):
-		del self._IssrJursdctn
-		self._IssrJursdctn = None
+	@RcncltnFlg.deleter
+	def RcncltnFlg(self):
+		del self._RcncltnFlg
+		self._RcncltnFlg = None
 
 	@property
 	def Mtrty(self):
@@ -131,6 +66,32 @@ class CollateralData33(base_types._BaseFieldType):
 		self._Mtrty = None
 
 	@property
+	def NetXpsrCollstnInd(self):
+		return self._NetXpsrCollstnInd
+
+	@NetXpsrCollstnInd.setter
+	def NetXpsrCollstnInd(self, value):
+		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
+
+	@NetXpsrCollstnInd.deleter
+	def NetXpsrCollstnInd(self):
+		del self._NetXpsrCollstnInd
+		self._NetXpsrCollstnInd = None
+
+	@property
+	def IssrJursdctn(self):
+		return self._IssrJursdctn
+
+	@IssrJursdctn.setter
+	def IssrJursdctn(self, value):
+		self._IssrJursdctn = value if type(value) != base_types.auto else self.make_default("IssrJursdctn")
+
+	@IssrJursdctn.deleter
+	def IssrJursdctn(self):
+		del self._IssrJursdctn
+		self._IssrJursdctn = None
+
+	@property
 	def CmpntTp(self):
 		return self._CmpntTp
 
@@ -142,6 +103,19 @@ class CollateralData33(base_types._BaseFieldType):
 	def CmpntTp(self):
 		del self._CmpntTp
 		self._CmpntTp = None
+
+	@property
+	def PricCcy(self):
+		return self._PricCcy
+
+	@PricCcy.setter
+	def PricCcy(self, value):
+		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+
+	@PricCcy.deleter
+	def PricCcy(self):
+		del self._PricCcy
+		self._PricCcy = None
 
 	@property
 	def RinvstdCsh(self):
@@ -156,17 +130,43 @@ class CollateralData33(base_types._BaseFieldType):
 		del self._RinvstdCsh
 		self._RinvstdCsh = None
 
+	@property
+	def CshCollCcy(self):
+		return self._CshCollCcy
+
+	@CshCollCcy.setter
+	def CshCollCcy(self, value):
+		self._CshCollCcy = value if type(value) != base_types.auto else self.make_default("CshCollCcy")
+
+	@CshCollCcy.deleter
+	def CshCollCcy(self):
+		del self._CshCollCcy
+		self._CshCollCcy = None
+
+	@property
+	def Qlty(self):
+		return self._Qlty
+
+	@Qlty.setter
+	def Qlty(self, value):
+		self._Qlty = value if type(value) != base_types.auto else self.make_default("Qlty")
+
+	@Qlty.deleter
+	def Qlty(self):
+		del self._Qlty
+		self._Qlty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=SecuritiesLendingType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qlty', type=CollateralQualityType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshCollCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradRpstry', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrJursdctn', type=IssuerJurisdiction1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnFlg', type=ReconciliationFlag2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtrty', type=ContractTerm6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrJursdctn', type=IssuerJurisdiction1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmpntTp', type=CollateralType6Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RinvstdCsh', type=ReinvestedCashTypeAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshCollCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qlty', type=CollateralQualityType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

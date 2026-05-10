@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .BusinessDay8 import BusinessDay8
+from ._BusinessDay8 import BusinessDay8
+from ._ErrorHandling5 import ErrorHandling5
 
 class BusinessDayReportOrError9Choice(base_types._BaseFieldType):
 

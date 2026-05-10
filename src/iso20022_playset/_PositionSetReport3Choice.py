@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
-from .NamedPosition3 import NamedPosition3
+from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from ._NamedPosition3 import NamedPosition3
 
 class PositionSetReport3Choice(base_types._BaseFieldType):
 

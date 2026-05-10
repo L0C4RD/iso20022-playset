@@ -1,6 +1,6 @@
 from . import base_types
-from .PairedReconciled3Code import PairedReconciled3Code
-from .Max15NumericText import Max15NumericText
+from ._Max15NumericText import Max15NumericText
+from ._PairedReconciled3Code import PairedReconciled3Code
 
 class NumberOfReportsPerStatus4(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
+from ._GenericIdentification36 import GenericIdentification36
 
 class OtherAccountStatus1(base_types._BaseFieldType):
 

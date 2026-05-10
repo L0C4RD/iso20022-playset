@@ -1,24 +1,11 @@
 from . import base_types
-from .CommonFinancialInstrumentAttributes10 import CommonFinancialInstrumentAttributes10
-from .FinancialInstrument97 import FinancialInstrument97
-from .SecurityIdentification39 import SecurityIdentification39
+from ._CommonFinancialInstrumentAttributes10 import CommonFinancialInstrumentAttributes10
+from ._FinancialInstrument97 import FinancialInstrument97
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class SecurityAttributes10(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmTp", "_FinInstrmAttrbts", "_FinInstrmId"]
-	@property
-	def FinInstrmTp(self):
-		return self._FinInstrmTp
-
-	@FinInstrmTp.setter
-	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
-
-	@FinInstrmTp.deleter
-	def FinInstrmTp(self):
-		del self._FinInstrmTp
-		self._FinInstrmTp = None
-
+	__slots__ = ["_FinInstrmAttrbts", "_FinInstrmTp", "_FinInstrmId"]
 	@property
 	def FinInstrmAttrbts(self):
 		return self._FinInstrmAttrbts
@@ -31,6 +18,19 @@ class SecurityAttributes10(base_types._BaseFieldType):
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
 		self._FinInstrmAttrbts = None
+
+	@property
+	def FinInstrmTp(self):
+		return self._FinInstrmTp
+
+	@FinInstrmTp.setter
+	def FinInstrmTp(self, value):
+		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
+
+	@FinInstrmTp.deleter
+	def FinInstrmTp(self):
+		del self._FinInstrmTp
+		self._FinInstrmTp = None
 
 	@property
 	def FinInstrmId(self):
@@ -46,8 +46,8 @@ class SecurityAttributes10(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=CommonFinancialInstrumentAttributes10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
 	))
 

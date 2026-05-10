@@ -1,6 +1,6 @@
 from . import base_types
-from .Max256Text import Max256Text
-from .Max4AlphaNumericText import Max4AlphaNumericText
+from ._Max256Text import Max256Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class ProprietaryStatusJustification2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .BankServicesBillingStatementV05 import BankServicesBillingStatementV05
+from ._BankServicesBillingStatementV05 import BankServicesBillingStatementV05
 
 class CAMT_086_001_05():
 

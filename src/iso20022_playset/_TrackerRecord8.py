@@ -1,25 +1,38 @@
 from . import base_types
-from .ChargeBearerType1Code import ChargeBearerType1Code
-from .CurrencyExchange13 import CurrencyExchange13
-from .ISODateTime import ISODateTime
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .TrackerPartyIdentification2 import TrackerPartyIdentification2
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODateTime import ISODateTime
+from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
+from ._CurrencyExchange13 import CurrencyExchange13
+from ._ChargeBearerType1Code import ChargeBearerType1Code
 
 class TrackerRecord8(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgDtTm", "_IntrBkSttlmAmt", "_ChrgBr", "_ChrgsAmt", "_XchgRateData", "_PtyOrAgtId"]
+	__slots__ = ["_ChrgsAmt", "_PtyOrAgtId", "_IntrBkSttlmAmt", "_XchgRateData", "_ChrgBr", "_PrcgDtTm"]
 	@property
-	def PrcgDtTm(self):
-		return self._PrcgDtTm
+	def ChrgsAmt(self):
+		return self._ChrgsAmt
 
-	@PrcgDtTm.setter
-	def PrcgDtTm(self, value):
-		self._PrcgDtTm = value if type(value) != base_types.auto else self.make_default("PrcgDtTm")
+	@ChrgsAmt.setter
+	def ChrgsAmt(self, value):
+		self._ChrgsAmt = value if type(value) != base_types.auto else self.make_default("ChrgsAmt")
 
-	@PrcgDtTm.deleter
-	def PrcgDtTm(self):
-		del self._PrcgDtTm
-		self._PrcgDtTm = None
+	@ChrgsAmt.deleter
+	def ChrgsAmt(self):
+		del self._ChrgsAmt
+		self._ChrgsAmt = None
+
+	@property
+	def PtyOrAgtId(self):
+		return self._PtyOrAgtId
+
+	@PtyOrAgtId.setter
+	def PtyOrAgtId(self, value):
+		self._PtyOrAgtId = value if type(value) != base_types.auto else self.make_default("PtyOrAgtId")
+
+	@PtyOrAgtId.deleter
+	def PtyOrAgtId(self):
+		del self._PtyOrAgtId
+		self._PtyOrAgtId = None
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -35,32 +48,6 @@ class TrackerRecord8(base_types._BaseFieldType):
 		self._IntrBkSttlmAmt = None
 
 	@property
-	def ChrgBr(self):
-		return self._ChrgBr
-
-	@ChrgBr.setter
-	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
-
-	@ChrgBr.deleter
-	def ChrgBr(self):
-		del self._ChrgBr
-		self._ChrgBr = None
-
-	@property
-	def ChrgsAmt(self):
-		return self._ChrgsAmt
-
-	@ChrgsAmt.setter
-	def ChrgsAmt(self, value):
-		self._ChrgsAmt = value if type(value) != base_types.auto else self.make_default("ChrgsAmt")
-
-	@ChrgsAmt.deleter
-	def ChrgsAmt(self):
-		del self._ChrgsAmt
-		self._ChrgsAmt = None
-
-	@property
 	def XchgRateData(self):
 		return self._XchgRateData
 
@@ -74,24 +61,37 @@ class TrackerRecord8(base_types._BaseFieldType):
 		self._XchgRateData = None
 
 	@property
-	def PtyOrAgtId(self):
-		return self._PtyOrAgtId
+	def ChrgBr(self):
+		return self._ChrgBr
 
-	@PtyOrAgtId.setter
-	def PtyOrAgtId(self, value):
-		self._PtyOrAgtId = value if type(value) != base_types.auto else self.make_default("PtyOrAgtId")
+	@ChrgBr.setter
+	def ChrgBr(self, value):
+		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
 
-	@PtyOrAgtId.deleter
-	def PtyOrAgtId(self):
-		del self._PtyOrAgtId
-		self._PtyOrAgtId = None
+	@ChrgBr.deleter
+	def ChrgBr(self):
+		del self._ChrgBr
+		self._ChrgBr = None
+
+	@property
+	def PrcgDtTm(self):
+		return self._PrcgDtTm
+
+	@PrcgDtTm.setter
+	def PrcgDtTm(self, value):
+		self._PrcgDtTm = value if type(value) != base_types.auto else self.make_default("PrcgDtTm")
+
+	@PrcgDtTm.deleter
+	def PrcgDtTm(self):
+		del self._PrcgDtTm
+		self._PrcgDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyOrAgtId', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRateData', type=CurrencyExchange13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgBr', type=ChargeBearerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

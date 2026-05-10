@@ -1,23 +1,10 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Investment2Choice import Investment2Choice
+from ._Investment2Choice import Investment2Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Invstmt", "_SplmtryData"]
-	@property
-	def Invstmt(self):
-		return self._Invstmt
-
-	@Invstmt.setter
-	def Invstmt(self, value):
-		self._Invstmt = value if type(value) != base_types.auto else self.make_default("Invstmt")
-
-	@Invstmt.deleter
-	def Invstmt(self):
-		del self._Invstmt
-		self._Invstmt = None
-
+	__slots__ = ["_SplmtryData", "_Invstmt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,8 +18,21 @@ class CCPInvestmentsReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def Invstmt(self):
+		return self._Invstmt
+
+	@Invstmt.setter
+	def Invstmt(self, value):
+		self._Invstmt = value if type(value) != base_types.auto else self.make_default("Invstmt")
+
+	@Invstmt.deleter
+	def Invstmt(self):
+		del self._Invstmt
+		self._Invstmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Invstmt', type=Investment2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Invstmt', type=Investment2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

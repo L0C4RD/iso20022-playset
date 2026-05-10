@@ -1,5 +1,5 @@
 from . import base_types
-from .UndertakingDemandV01 import UndertakingDemandV01
+from ._UndertakingDemandV01 import UndertakingDemandV01
 
 class TSRV_013_001_01():
 

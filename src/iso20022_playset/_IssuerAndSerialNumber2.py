@@ -1,6 +1,6 @@
 from . import base_types
-from .Max500Binary import Max500Binary
-from .CertificateIssuer1 import CertificateIssuer1
+from ._CertificateIssuer1 import CertificateIssuer1
+from ._Max500Binary import Max500Binary
 
 class IssuerAndSerialNumber2(base_types._BaseFieldType):
 

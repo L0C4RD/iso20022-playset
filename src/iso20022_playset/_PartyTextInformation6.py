@@ -1,7 +1,7 @@
 from . import base_types
-from .PostalAddress1 import PostalAddress1
-from .Max140Text import Max140Text
-from .Max350Text import Max350Text
+from ._Max140Text import Max140Text
+from ._PostalAddress1 import PostalAddress1
+from ._Max350Text import Max350Text
 
 class PartyTextInformation6(base_types._BaseFieldType):
 

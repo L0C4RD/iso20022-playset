@@ -1,25 +1,38 @@
 from . import base_types
-from .Number import Number
-from .EncapsulatedContent3 import EncapsulatedContent3
-from .AlgorithmIdentification16 import AlgorithmIdentification16
-from .Signer3 import Signer3
-from .Max5000Binary import Max5000Binary
+from ._Number import Number
+from ._Signer3 import Signer3
+from ._EncapsulatedContent3 import EncapsulatedContent3
+from ._AlgorithmIdentification16 import AlgorithmIdentification16
+from ._Max5000Binary import Max5000Binary
 
 class SignedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_DgstAlgo", "_Vrsn", "_NcpsltdCntt", "_Sgnr"]
+	__slots__ = ["_NcpsltdCntt", "_Sgnr", "_DgstAlgo", "_Vrsn", "_Cert"]
 	@property
-	def Cert(self):
-		return self._Cert
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
 
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
 
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
+
+	@property
+	def Sgnr(self):
+		return self._Sgnr
+
+	@Sgnr.setter
+	def Sgnr(self, value):
+		self._Sgnr = value if type(value) != base_types.auto else self.make_default("Sgnr")
+
+	@Sgnr.deleter
+	def Sgnr(self):
+		del self._Sgnr
+		self._Sgnr = None
 
 	@property
 	def DgstAlgo(self):
@@ -48,36 +61,23 @@ class SignedData4(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
+	def Cert(self):
+		return self._Cert
 
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
 
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
-
-	@property
-	def Sgnr(self):
-		return self._Sgnr
-
-	@Sgnr.setter
-	def Sgnr(self, value):
-		self._Sgnr = value if type(value) != base_types.auto else self.make_default("Sgnr")
-
-	@Sgnr.deleter
-	def Sgnr(self):
-		del self._Sgnr
-		self._Sgnr = None
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification16, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgnr', type=Signer3, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification16, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
 	))
 

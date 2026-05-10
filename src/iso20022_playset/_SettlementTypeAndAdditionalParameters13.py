@@ -1,10 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_RcncltnInd", "_CmonId"]
+	__slots__ = ["_CorpActnEvtId", "_CmonId", "_RcncltnInd"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -19,19 +19,6 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def RcncltnInd(self):
-		return self._RcncltnInd
-
-	@RcncltnInd.setter
-	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
-
-	@RcncltnInd.deleter
-	def RcncltnInd(self):
-		del self._RcncltnInd
-		self._RcncltnInd = None
-
-	@property
 	def CmonId(self):
 		return self._CmonId
 
@@ -44,9 +31,22 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 		del self._CmonId
 		self._CmonId = None
 
+	@property
+	def RcncltnInd(self):
+		return self._RcncltnInd
+
+	@RcncltnInd.setter
+	def RcncltnInd(self, value):
+		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
+
+	@RcncltnInd.deleter
+	def RcncltnInd(self):
+		del self._RcncltnInd
+		self._RcncltnInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

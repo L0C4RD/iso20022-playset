@@ -1,5 +1,5 @@
 from . import base_types
-from .SettlementInternaliserReportV01 import SettlementInternaliserReportV01
+from ._SettlementInternaliserReportV01 import SettlementInternaliserReportV01
 
 class AUTH_072_001_01():
 

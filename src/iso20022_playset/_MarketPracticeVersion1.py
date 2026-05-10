@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISOYearMonth import ISOYearMonth
+from ._Max35Text import Max35Text
+from ._ISOYearMonth import ISOYearMonth
 
 class MarketPracticeVersion1(base_types._BaseFieldType):
 

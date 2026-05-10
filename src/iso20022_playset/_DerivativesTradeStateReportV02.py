@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .TradeData60Choice import TradeData60Choice
-from .TradeReportHeader4 import TradeReportHeader4
+from ._SupplementaryData1 import SupplementaryData1
+from ._TradeData60Choice import TradeData60Choice
+from ._TradeReportHeader4 import TradeReportHeader4
 
 class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TradData", "_SplmtryData", "_RptHdr"]
+	__slots__ = ["_RptHdr", "_SplmtryData", "_TradData"]
 	@property
-	def TradData(self):
-		return self._TradData
+	def RptHdr(self):
+		return self._RptHdr
 
-	@TradData.setter
-	def TradData(self, value):
-		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
 
-	@TradData.deleter
-	def TradData(self):
-		del self._TradData
-		self._TradData = None
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RptHdr(self):
-		return self._RptHdr
+	def TradData(self):
+		return self._TradData
 
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+	@TradData.setter
+	def TradData(self, value):
+		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
 
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
+	@TradData.deleter
+	def TradData(self):
+		del self._TradData
+		self._TradData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradData', type=TradeData60Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=TradeReportHeader4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradData', type=TradeData60Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

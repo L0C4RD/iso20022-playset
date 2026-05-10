@@ -1,26 +1,26 @@
 from . import base_types
-from .AcceptedStatus8Choice import AcceptedStatus8Choice
-from .RejectedStatus37Choice import RejectedStatus37Choice
-from .CancelledStatus12Choice import CancelledStatus12Choice
-from .PendingStatus63Choice import PendingStatus63Choice
-from .MatchingStatus34Choice import MatchingStatus34Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._PendingStatus63Choice import PendingStatus63Choice
+from ._MatchingStatus34Choice import MatchingStatus34Choice
+from ._CancelledStatus12Choice import CancelledStatus12Choice
+from ._RejectedStatus37Choice import RejectedStatus37Choice
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._AcceptedStatus8Choice import AcceptedStatus8Choice
 
 class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchgSts", "_Rjctd", "_AccptdForFrthrPrcg", "_Canc", "_Pdg", "_PrtrySts"]
+	__slots__ = ["_AccptdForFrthrPrcg", "_Rjctd", "_Pdg", "_Canc", "_PrtrySts", "_MtchgSts"]
 	@property
-	def MtchgSts(self):
-		return self._MtchgSts
+	def AccptdForFrthrPrcg(self):
+		return self._AccptdForFrthrPrcg
 
-	@MtchgSts.setter
-	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+	@AccptdForFrthrPrcg.setter
+	def AccptdForFrthrPrcg(self, value):
+		self._AccptdForFrthrPrcg = value if type(value) != base_types.auto else self.make_default("AccptdForFrthrPrcg")
 
-	@MtchgSts.deleter
-	def MtchgSts(self):
-		del self._MtchgSts
-		self._MtchgSts = None
+	@AccptdForFrthrPrcg.deleter
+	def AccptdForFrthrPrcg(self):
+		del self._AccptdForFrthrPrcg
+		self._AccptdForFrthrPrcg = None
 
 	@property
 	def Rjctd(self):
@@ -36,17 +36,17 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def AccptdForFrthrPrcg(self):
-		return self._AccptdForFrthrPrcg
+	def Pdg(self):
+		return self._Pdg
 
-	@AccptdForFrthrPrcg.setter
-	def AccptdForFrthrPrcg(self, value):
-		self._AccptdForFrthrPrcg = value if type(value) != base_types.auto else self.make_default("AccptdForFrthrPrcg")
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
 
-	@AccptdForFrthrPrcg.deleter
-	def AccptdForFrthrPrcg(self):
-		del self._AccptdForFrthrPrcg
-		self._AccptdForFrthrPrcg = None
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	@property
 	def Canc(self):
@@ -62,19 +62,6 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		self._Canc = None
 
 	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
-	@property
 	def PrtrySts(self):
 		return self._PrtrySts
 
@@ -87,12 +74,25 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 		del self._PrtrySts
 		self._PrtrySts = None
 
+	@property
+	def MtchgSts(self):
+		return self._MtchgSts
+
+	@MtchgSts.setter
+	def MtchgSts(self, value):
+		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+
+	@MtchgSts.deleter
+	def MtchgSts(self):
+		del self._MtchgSts
+		self._MtchgSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus34Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus8Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancelledStatus12Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus37Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=PendingStatus63Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancelledStatus12Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus34Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

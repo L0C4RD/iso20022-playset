@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesTransactionPrice23Choice import SecuritiesTransactionPrice23Choice
+from ._SecuritiesTransactionPrice23Choice import SecuritiesTransactionPrice23Choice
 
 class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .CorporateActionNotification002V15 import CorporateActionNotification002V15
+from ._CorporateActionNotification002V15 import CorporateActionNotification002V15
 
 class SEEV_031_002_15():
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ReportHeader7 import ReportHeader7
-from .Case6 import Case6
+from ._SupplementaryData1 import SupplementaryData1
+from ._ReportHeader7 import ReportHeader7
+from ._Case6 import Case6
 
 class CaseStatusReportRequestV05(base_types._BaseFieldType):
 

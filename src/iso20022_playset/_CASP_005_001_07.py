@@ -1,5 +1,5 @@
 from . import base_types
-from .SaleToPOISessionManagementRequestV07 import SaleToPOISessionManagementRequestV07
+from ._SaleToPOISessionManagementRequestV07 import SaleToPOISessionManagementRequestV07
 
 class CASP_005_001_07():
 

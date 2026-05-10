@@ -1,6 +1,6 @@
 from . import base_types
-from .MeetingCancellationReason2Code import MeetingCancellationReason2Code
-from .GenericIdentification13 import GenericIdentification13
+from ._GenericIdentification13 import GenericIdentification13
+from ._MeetingCancellationReason2Code import MeetingCancellationReason2Code
 
 class MeetingCancellationReason1Choice(base_types._BaseFieldType):
 

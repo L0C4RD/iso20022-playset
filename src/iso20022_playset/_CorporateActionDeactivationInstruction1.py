@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .CorporateActionOption2 import CorporateActionOption2
+from ._CorporateActionOption2 import CorporateActionOption2
+from ._ISODateTime import ISODateTime
 
 class CorporateActionDeactivationInstruction1(base_types._BaseFieldType):
 

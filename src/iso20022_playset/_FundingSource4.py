@@ -1,22 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FundingSourceType3Code import FundingSourceType3Code
+from ._Max35Text import Max35Text
+from ._FundingSourceType3Code import FundingSourceType3Code
 
 class FundingSource4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ref", "_OthrTp"]
+	__slots__ = ["_OthrTp", "_Ref", "_Tp"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
 
 	@property
 	def Ref(self):
@@ -32,21 +32,21 @@ class FundingSource4(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def OthrTp(self):
-		return self._OthrTp
+	def Tp(self):
+		return self._Tp
 
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=FundingSourceType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=FundingSourceType3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

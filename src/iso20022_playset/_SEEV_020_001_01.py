@@ -1,5 +1,5 @@
 from . import base_types
-from .AgentCAMovementCancellationRequestV01 import AgentCAMovementCancellationRequestV01
+from ._AgentCAMovementCancellationRequestV01 import AgentCAMovementCancellationRequestV01
 
 class SEEV_020_001_01():
 

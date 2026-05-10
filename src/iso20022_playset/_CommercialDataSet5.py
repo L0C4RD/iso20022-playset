@@ -1,39 +1,26 @@
 from . import base_types
-from .LineItem15 import LineItem15
-from .InvoiceIdentification1 import InvoiceIdentification1
-from .PaymentTerms4 import PaymentTerms4
-from .SettlementTerms3 import SettlementTerms3
-from .PartyIdentification26 import PartyIdentification26
-from .DocumentIdentification1 import DocumentIdentification1
+from ._SettlementTerms3 import SettlementTerms3
+from ._PartyIdentification26 import PartyIdentification26
+from ._DocumentIdentification1 import DocumentIdentification1
+from ._PaymentTerms4 import PaymentTerms4
+from ._LineItem15 import LineItem15
+from ._InvoiceIdentification1 import InvoiceIdentification1
 
 class CommercialDataSet5(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmTerms", "_BllTo", "_ComrclDocRef", "_DataSetId", "_Sellr", "_Buyr", "_PmtTerms", "_Goods"]
+	__slots__ = ["_Goods", "_ComrclDocRef", "_Buyr", "_DataSetId", "_SttlmTerms", "_Sellr", "_BllTo", "_PmtTerms"]
 	@property
-	def SttlmTerms(self):
-		return self._SttlmTerms
+	def Goods(self):
+		return self._Goods
 
-	@SttlmTerms.setter
-	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+	@Goods.setter
+	def Goods(self, value):
+		self._Goods = value if type(value) != base_types.auto else self.make_default("Goods")
 
-	@SttlmTerms.deleter
-	def SttlmTerms(self):
-		del self._SttlmTerms
-		self._SttlmTerms = None
-
-	@property
-	def BllTo(self):
-		return self._BllTo
-
-	@BllTo.setter
-	def BllTo(self, value):
-		self._BllTo = value if type(value) != base_types.auto else self.make_default("BllTo")
-
-	@BllTo.deleter
-	def BllTo(self):
-		del self._BllTo
-		self._BllTo = None
+	@Goods.deleter
+	def Goods(self):
+		del self._Goods
+		self._Goods = None
 
 	@property
 	def ComrclDocRef(self):
@@ -49,6 +36,19 @@ class CommercialDataSet5(base_types._BaseFieldType):
 		self._ComrclDocRef = None
 
 	@property
+	def Buyr(self):
+		return self._Buyr
+
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
+
+	@property
 	def DataSetId(self):
 		return self._DataSetId
 
@@ -60,6 +60,19 @@ class CommercialDataSet5(base_types._BaseFieldType):
 	def DataSetId(self):
 		del self._DataSetId
 		self._DataSetId = None
+
+	@property
+	def SttlmTerms(self):
+		return self._SttlmTerms
+
+	@SttlmTerms.setter
+	def SttlmTerms(self, value):
+		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+
+	@SttlmTerms.deleter
+	def SttlmTerms(self):
+		del self._SttlmTerms
+		self._SttlmTerms = None
 
 	@property
 	def Sellr(self):
@@ -75,17 +88,17 @@ class CommercialDataSet5(base_types._BaseFieldType):
 		self._Sellr = None
 
 	@property
-	def Buyr(self):
-		return self._Buyr
+	def BllTo(self):
+		return self._BllTo
 
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+	@BllTo.setter
+	def BllTo(self, value):
+		self._BllTo = value if type(value) != base_types.auto else self.make_default("BllTo")
 
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
+	@BllTo.deleter
+	def BllTo(self):
+		del self._BllTo
+		self._BllTo = None
 
 	@property
 	def PmtTerms(self):
@@ -100,27 +113,14 @@ class CommercialDataSet5(base_types._BaseFieldType):
 		del self._PmtTerms
 		self._PmtTerms = None
 
-	@property
-	def Goods(self):
-		return self._Goods
-
-	@Goods.setter
-	def Goods(self, value):
-		self._Goods = value if type(value) != base_types.auto else self.make_default("Goods")
-
-	@Goods.deleter
-	def Goods(self):
-		del self._Goods
-		self._Goods = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComrclDocRef', type=InvoiceIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Goods', type=LineItem15, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ComrclDocRef', type=InvoiceIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms4, min=1, max=None, mutex_group=None, array=True),
 	))
 

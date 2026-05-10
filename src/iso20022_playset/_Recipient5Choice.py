@@ -1,6 +1,6 @@
 from . import base_types
-from .KEKIdentifier2 import KEKIdentifier2
-from .IssuerAndSerialNumber1 import IssuerAndSerialNumber1
+from ._KEKIdentifier2 import KEKIdentifier2
+from ._IssuerAndSerialNumber1 import IssuerAndSerialNumber1
 
 class Recipient5Choice(base_types._BaseFieldType):
 

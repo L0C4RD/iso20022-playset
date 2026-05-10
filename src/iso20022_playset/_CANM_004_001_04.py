@@ -1,5 +1,5 @@
 from . import base_types
-from .KeyExchangeResponseV04 import KeyExchangeResponseV04
+from ._KeyExchangeResponseV04 import KeyExchangeResponseV04
 
 class CANM_004_001_04():
 

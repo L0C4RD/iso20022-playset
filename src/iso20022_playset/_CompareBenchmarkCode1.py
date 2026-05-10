@@ -1,5 +1,5 @@
 from . import base_types
-from .ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
+from ._ExternalBenchmarkCurveName1Code import ExternalBenchmarkCurveName1Code
 
 class CompareBenchmarkCode1(base_types._BaseFieldType):
 

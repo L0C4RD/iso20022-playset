@@ -1,9 +1,9 @@
 from . import base_types
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
 
 class CorporateActionNarrative32(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrAddtlInf", "_DlvryDtls", "_FXInstrsAddtlInf", "_InfToCmplyWth"]
+	__slots__ = ["_InstrAddtlInf", "_FXInstrsAddtlInf", "_DlvryDtls", "_InfToCmplyWth"]
 	@property
 	def InstrAddtlInf(self):
 		return self._InstrAddtlInf
@@ -18,19 +18,6 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 		self._InstrAddtlInf = None
 
 	@property
-	def DlvryDtls(self):
-		return self._DlvryDtls
-
-	@DlvryDtls.setter
-	def DlvryDtls(self, value):
-		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
-
-	@DlvryDtls.deleter
-	def DlvryDtls(self):
-		del self._DlvryDtls
-		self._DlvryDtls = None
-
-	@property
 	def FXInstrsAddtlInf(self):
 		return self._FXInstrsAddtlInf
 
@@ -42,6 +29,19 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 	def FXInstrsAddtlInf(self):
 		del self._FXInstrsAddtlInf
 		self._FXInstrsAddtlInf = None
+
+	@property
+	def DlvryDtls(self):
+		return self._DlvryDtls
+
+	@DlvryDtls.setter
+	def DlvryDtls(self, value):
+		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
+
+	@DlvryDtls.deleter
+	def DlvryDtls(self):
+		del self._DlvryDtls
+		self._DlvryDtls = None
 
 	@property
 	def InfToCmplyWth(self):
@@ -58,8 +58,8 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvryDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FXInstrsAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

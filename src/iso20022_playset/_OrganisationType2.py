@@ -1,10 +1,10 @@
 from . import base_types
-from .RequestedIndicator import RequestedIndicator
-from .GenericOrganisationType1 import GenericOrganisationType1
+from ._RequestedIndicator import RequestedIndicator
+from ._GenericOrganisationType1 import GenericOrganisationType1
 
 class OrganisationType2(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_EmailAdr", "_Othr", "_AnyBIC"]
+	__slots__ = ["_LEI", "_AnyBIC", "_Othr", "_EmailAdr"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -19,17 +19,17 @@ class OrganisationType2(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def AnyBIC(self):
+		return self._AnyBIC
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+	@AnyBIC.setter
+	def AnyBIC(self, value):
+		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@AnyBIC.deleter
+	def AnyBIC(self):
+		del self._AnyBIC
+		self._AnyBIC = None
 
 	@property
 	def Othr(self):
@@ -45,22 +45,22 @@ class OrganisationType2(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def AnyBIC(self):
-		return self._AnyBIC
+	def EmailAdr(self):
+		return self._EmailAdr
 
-	@AnyBIC.setter
-	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
 
-	@AnyBIC.deleter
-	def AnyBIC(self):
-		del self._AnyBIC
-		self._AnyBIC = None
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LEI', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericOrganisationType1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AnyBIC', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericOrganisationType1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

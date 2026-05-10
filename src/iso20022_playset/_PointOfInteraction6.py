@@ -1,22 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class PointOfInteraction6(base_types._BaseFieldType):
 
-	__slots__ = ["_Mdl", "_ManfctrIdr", "_SrlNb"]
-	@property
-	def Mdl(self):
-		return self._Mdl
-
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
-
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
-
+	__slots__ = ["_ManfctrIdr", "_Mdl", "_SrlNb"]
 	@property
 	def ManfctrIdr(self):
 		return self._ManfctrIdr
@@ -29,6 +16,19 @@ class PointOfInteraction6(base_types._BaseFieldType):
 	def ManfctrIdr(self):
 		del self._ManfctrIdr
 		self._ManfctrIdr = None
+
+	@property
+	def Mdl(self):
+		return self._Mdl
+
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
 
 	@property
 	def SrlNb(self):
@@ -44,8 +44,8 @@ class PointOfInteraction6(base_types._BaseFieldType):
 		self._SrlNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mdl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ManfctrIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

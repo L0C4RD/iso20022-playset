@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ResponseType11 import ResponseType11
-from .NonFinancialResponseContentComponent5 import NonFinancialResponseContentComponent5
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._NonFinancialResponseContentComponent5 import NonFinancialResponseContentComponent5
+from ._SupplementaryData1 import SupplementaryData1
+from ._ResponseType11 import ResponseType11
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class NonFinancialResponseComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_SplmtryData", "_RspnCntt", "_Rspn"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_SplmtryData", "_Envt", "_RspnCntt", "_Rspn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,6 +19,19 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def RspnCntt(self):
@@ -60,8 +60,8 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 		self._Rspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 	))

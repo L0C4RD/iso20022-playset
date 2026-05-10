@@ -1,36 +1,23 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .DecimalNumber import DecimalNumber
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._PercentageRate import PercentageRate
+from ._DecimalNumber import DecimalNumber
 
 class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_GrssAmt", "_PctgOfTtlSbcptAmt", "_UnitsNb", "_NetAmt", "_HldgsRedRate"]
+	__slots__ = ["_HldgsRedRate", "_UnitsNb", "_GrssAmt", "_NetAmt", "_PctgOfTtlSbcptAmt"]
 	@property
-	def GrssAmt(self):
-		return self._GrssAmt
+	def HldgsRedRate(self):
+		return self._HldgsRedRate
 
-	@GrssAmt.setter
-	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+	@HldgsRedRate.setter
+	def HldgsRedRate(self, value):
+		self._HldgsRedRate = value if type(value) != base_types.auto else self.make_default("HldgsRedRate")
 
-	@GrssAmt.deleter
-	def GrssAmt(self):
-		del self._GrssAmt
-		self._GrssAmt = None
-
-	@property
-	def PctgOfTtlSbcptAmt(self):
-		return self._PctgOfTtlSbcptAmt
-
-	@PctgOfTtlSbcptAmt.setter
-	def PctgOfTtlSbcptAmt(self, value):
-		self._PctgOfTtlSbcptAmt = value if type(value) != base_types.auto else self.make_default("PctgOfTtlSbcptAmt")
-
-	@PctgOfTtlSbcptAmt.deleter
-	def PctgOfTtlSbcptAmt(self):
-		del self._PctgOfTtlSbcptAmt
-		self._PctgOfTtlSbcptAmt = None
+	@HldgsRedRate.deleter
+	def HldgsRedRate(self):
+		del self._HldgsRedRate
+		self._HldgsRedRate = None
 
 	@property
 	def UnitsNb(self):
@@ -46,6 +33,19 @@ class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 		self._UnitsNb = None
 
 	@property
+	def GrssAmt(self):
+		return self._GrssAmt
+
+	@GrssAmt.setter
+	def GrssAmt(self, value):
+		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+
+	@GrssAmt.deleter
+	def GrssAmt(self):
+		del self._GrssAmt
+		self._GrssAmt = None
+
+	@property
 	def NetAmt(self):
 		return self._NetAmt
 
@@ -59,23 +59,23 @@ class FinancialInstrumentQuantity29Choice(base_types._BaseFieldType):
 		self._NetAmt = None
 
 	@property
-	def HldgsRedRate(self):
-		return self._HldgsRedRate
+	def PctgOfTtlSbcptAmt(self):
+		return self._PctgOfTtlSbcptAmt
 
-	@HldgsRedRate.setter
-	def HldgsRedRate(self, value):
-		self._HldgsRedRate = value if type(value) != base_types.auto else self.make_default("HldgsRedRate")
+	@PctgOfTtlSbcptAmt.setter
+	def PctgOfTtlSbcptAmt(self, value):
+		self._PctgOfTtlSbcptAmt = value if type(value) != base_types.auto else self.make_default("PctgOfTtlSbcptAmt")
 
-	@HldgsRedRate.deleter
-	def HldgsRedRate(self):
-		del self._HldgsRedRate
-		self._HldgsRedRate = None
+	@PctgOfTtlSbcptAmt.deleter
+	def PctgOfTtlSbcptAmt(self):
+		del self._PctgOfTtlSbcptAmt
+		self._PctgOfTtlSbcptAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgOfTtlSbcptAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='HldgsRedRate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PctgOfTtlSbcptAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

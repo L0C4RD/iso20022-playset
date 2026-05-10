@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .GenderCode import GenderCode
-from .ISODate import ISODate
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._GenderCode import GenderCode
+from ._Max350Text import Max350Text
+from ._ISODate import ISODate
 
 class IndividualPerson30(base_types._BaseFieldType):
 
-	__slots__ = ["_BirthDt", "_Nm", "_GvnNm", "_MddlNm", "_Gndr"]
-	@property
-	def BirthDt(self):
-		return self._BirthDt
-
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
-
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
-
+	__slots__ = ["_Nm", "_Gndr", "_MddlNm", "_BirthDt", "_GvnNm"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -34,17 +21,17 @@ class IndividualPerson30(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def GvnNm(self):
-		return self._GvnNm
+	def Gndr(self):
+		return self._Gndr
 
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+	@Gndr.setter
+	def Gndr(self, value):
+		self._Gndr = value if type(value) != base_types.auto else self.make_default("Gndr")
 
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
+	@Gndr.deleter
+	def Gndr(self):
+		del self._Gndr
+		self._Gndr = None
 
 	@property
 	def MddlNm(self):
@@ -60,23 +47,36 @@ class IndividualPerson30(base_types._BaseFieldType):
 		self._MddlNm = None
 
 	@property
-	def Gndr(self):
-		return self._Gndr
+	def BirthDt(self):
+		return self._BirthDt
 
-	@Gndr.setter
-	def Gndr(self, value):
-		self._Gndr = value if type(value) != base_types.auto else self.make_default("Gndr")
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
 
-	@Gndr.deleter
-	def Gndr(self):
-		del self._Gndr
-		self._Gndr = None
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
+
+	@property
+	def GvnNm(self):
+		return self._GvnNm
+
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Gndr', type=GenderCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

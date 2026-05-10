@@ -1,5 +1,5 @@
 from . import base_types
-from .ForeignExchangeTradeBulkStatusNotificationV06 import ForeignExchangeTradeBulkStatusNotificationV06
+from ._ForeignExchangeTradeBulkStatusNotificationV06 import ForeignExchangeTradeBulkStatusNotificationV06
 
 class FXTR_030_001_06():
 

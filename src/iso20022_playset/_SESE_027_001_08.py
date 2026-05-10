@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesTransactionCancellationRequestStatusAdviceV08 import SecuritiesTransactionCancellationRequestStatusAdviceV08
+from ._SecuritiesTransactionCancellationRequestStatusAdviceV08 import SecuritiesTransactionCancellationRequestStatusAdviceV08
 
 class SESE_027_001_08():
 

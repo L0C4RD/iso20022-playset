@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .GenericIdentification77 import GenericIdentification77
+from ._Max35Text import Max35Text
+from ._GenericIdentification77 import GenericIdentification77
+from ._ISODateTime import ISODateTime
 
 class Traceability4(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmOut", "_TracDtTmIn", "_RlayId", "_SeqNb"]
-	@property
-	def TracDtTmOut(self):
-		return self._TracDtTmOut
-
-	@TracDtTmOut.setter
-	def TracDtTmOut(self, value):
-		self._TracDtTmOut = value if type(value) != base_types.auto else self.make_default("TracDtTmOut")
-
-	@TracDtTmOut.deleter
-	def TracDtTmOut(self):
-		del self._TracDtTmOut
-		self._TracDtTmOut = None
-
+	__slots__ = ["_TracDtTmIn", "_RlayId", "_SeqNb", "_TracDtTmOut"]
 	@property
 	def TracDtTmIn(self):
 		return self._TracDtTmIn
@@ -58,10 +45,23 @@ class Traceability4(base_types._BaseFieldType):
 		del self._SeqNb
 		self._SeqNb = None
 
+	@property
+	def TracDtTmOut(self):
+		return self._TracDtTmOut
+
+	@TracDtTmOut.setter
+	def TracDtTmOut(self, value):
+		self._TracDtTmOut = value if type(value) != base_types.auto else self.make_default("TracDtTmOut")
+
+	@TracDtTmOut.deleter
+	def TracDtTmOut(self):
+		del self._TracDtTmOut
+		self._TracDtTmOut = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RlayId', type=GenericIdentification77, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

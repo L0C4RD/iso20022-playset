@@ -1,23 +1,10 @@
 from . import base_types
-from .RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
-from .IBAN2007Identifier import IBAN2007Identifier
+from ._RestrictedFINX2Max34Text import RestrictedFINX2Max34Text
+from ._IBAN2007Identifier import IBAN2007Identifier
 
 class CashAccountIdentification6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IBAN", "_Prtry"]
-	@property
-	def IBAN(self):
-		return self._IBAN
-
-	@IBAN.setter
-	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
-
-	@IBAN.deleter
-	def IBAN(self):
-		del self._IBAN
-		self._IBAN = None
-
+	__slots__ = ["_Prtry", "_IBAN"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class CashAccountIdentification6Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def IBAN(self):
+		return self._IBAN
+
+	@IBAN.setter
+	def IBAN(self, value):
+		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+
+	@IBAN.deleter
+	def IBAN(self):
+		del self._IBAN
+		self._IBAN = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=RestrictedFINX2Max34Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

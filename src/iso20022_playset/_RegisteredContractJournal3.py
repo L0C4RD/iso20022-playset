@@ -1,8 +1,8 @@
 from . import base_types
-from .DocumentIdentification28 import DocumentIdentification28
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .ContractClosureReason1Choice import ContractClosureReason1Choice
-from .ISODate import ISODate
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._ContractClosureReason1Choice import ContractClosureReason1Choice
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._ISODate import ISODate
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 

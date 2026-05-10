@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CurrencyConversionResponse2Code import CurrencyConversionResponse2Code
-from .CurrencyConversion32 import CurrencyConversion32
+from ._Max35Text import Max35Text
+from ._CurrencyConversion32 import CurrencyConversion32
+from ._CurrencyConversionResponse2Code import CurrencyConversionResponse2Code
 
 class CurrencyConversion33(base_types._BaseFieldType):
 
-	__slots__ = ["_Rslt", "_Convs", "_RsltRsn"]
+	__slots__ = ["_Rslt", "_RsltRsn", "_Convs"]
 	@property
 	def Rslt(self):
 		return self._Rslt
@@ -20,19 +20,6 @@ class CurrencyConversion33(base_types._BaseFieldType):
 		self._Rslt = None
 
 	@property
-	def Convs(self):
-		return self._Convs
-
-	@Convs.setter
-	def Convs(self, value):
-		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
-
-	@Convs.deleter
-	def Convs(self):
-		del self._Convs
-		self._Convs = None
-
-	@property
 	def RsltRsn(self):
 		return self._RsltRsn
 
@@ -45,9 +32,22 @@ class CurrencyConversion33(base_types._BaseFieldType):
 		del self._RsltRsn
 		self._RsltRsn = None
 
+	@property
+	def Convs(self):
+		return self._Convs
+
+	@Convs.setter
+	def Convs(self, value):
+		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
+
+	@Convs.deleter
+	def Convs(self):
+		del self._Convs
+		self._Convs = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rslt', type=CurrencyConversionResponse2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Convs', type=CurrencyConversion32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsltRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Convs', type=CurrencyConversion32, min=0, max=1, mutex_group=None, array=False),
 	))
 

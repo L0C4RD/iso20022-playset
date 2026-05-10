@@ -1,24 +1,11 @@
 from . import base_types
-from .Max256Text import Max256Text
-from .DataSetCategory8Code import DataSetCategory8Code
-from .ISODateTime import ISODateTime
+from ._Max256Text import Max256Text
+from ._DataSetCategory8Code import DataSetCategory8Code
+from ._ISODateTime import ISODateTime
 
 class DataSetIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CreDtTm", "_Tp", "_Vrsn"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_CreDtTm", "_Vrsn", "_Nm", "_Tp"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -33,19 +20,6 @@ class DataSetIdentification5(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -58,10 +32,36 @@ class DataSetIdentification5(base_types._BaseFieldType):
 		del self._Vrsn
 		self._Vrsn = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=DataSetCategory8Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=DataSetCategory8Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

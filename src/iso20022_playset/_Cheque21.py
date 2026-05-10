@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification139 import PartyIdentification139
-from .FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
+from ._Max35Text import Max35Text
+from ._PartyIdentification139 import PartyIdentification139
+from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
 
 class Cheque21(base_types._BaseFieldType):
 

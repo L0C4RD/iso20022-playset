@@ -1,5 +1,5 @@
 from . import base_types
-from .TransferInCancellationRequestV09 import TransferInCancellationRequestV09
+from ._TransferInCancellationRequestV09 import TransferInCancellationRequestV09
 
 class SESE_006_001_09():
 

@@ -1,11 +1,24 @@
 from . import base_types
-from .DataSetCategory20Code import DataSetCategory20Code
-from .Max256Text import Max256Text
-from .ISODateTime import ISODateTime
+from ._Max256Text import Max256Text
+from ._DataSetCategory20Code import DataSetCategory20Code
+from ._ISODateTime import ISODateTime
 
 class DataSetIdentification11(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_CreDtTm", "_Vrsn", "_Tp"]
+	__slots__ = ["_Tp", "_Nm", "_Vrsn", "_CreDtTm"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -18,19 +31,6 @@ class DataSetIdentification11(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
 
 	@property
 	def Vrsn(self):
@@ -46,22 +46,22 @@ class DataSetIdentification11(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DataSetCategory20Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

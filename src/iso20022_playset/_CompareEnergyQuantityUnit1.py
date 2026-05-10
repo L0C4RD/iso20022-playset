@@ -1,5 +1,5 @@
 from . import base_types
-from .EnergyQuantityUnit2Choice import EnergyQuantityUnit2Choice
+from ._EnergyQuantityUnit2Choice import EnergyQuantityUnit2Choice
 
 class CompareEnergyQuantityUnit1(base_types._BaseFieldType):
 

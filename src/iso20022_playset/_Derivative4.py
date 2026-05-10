@@ -1,23 +1,10 @@
 from . import base_types
-from .Future4 import Future4
-from .Option15 import Option15
+from ._Future4 import Future4
+from ._Option15 import Option15
 
 class Derivative4(base_types._BaseFieldType):
 
-	__slots__ = ["_Futr", "_Optn"]
-	@property
-	def Futr(self):
-		return self._Futr
-
-	@Futr.setter
-	def Futr(self, value):
-		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
-
-	@Futr.deleter
-	def Futr(self):
-		del self._Futr
-		self._Futr = None
-
+	__slots__ = ["_Optn", "_Futr"]
 	@property
 	def Optn(self):
 		return self._Optn
@@ -31,8 +18,21 @@ class Derivative4(base_types._BaseFieldType):
 		del self._Optn
 		self._Optn = None
 
+	@property
+	def Futr(self):
+		return self._Futr
+
+	@Futr.setter
+	def Futr(self, value):
+		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
+
+	@Futr.deleter
+	def Futr(self):
+		del self._Futr
+		self._Futr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Futr', type=Future4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Optn', type=Option15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Futr', type=Future4, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max10KText import Max10KText
-from .PartyType28Code import PartyType28Code
+from ._Max35Text import Max35Text
+from ._Max10KText import Max10KText
+from ._PartyType28Code import PartyType28Code
 
 class RiskInputData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Val", "_OthrNttyTp", "_NttyTp"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Val", "_NttyTp", "_Tp", "_OthrNttyTp"]
 	@property
 	def Val(self):
 		return self._Val
@@ -33,19 +20,6 @@ class RiskInputData2(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def OthrNttyTp(self):
-		return self._OthrNttyTp
-
-	@OthrNttyTp.setter
-	def OthrNttyTp(self, value):
-		self._OthrNttyTp = value if type(value) != base_types.auto else self.make_default("OthrNttyTp")
-
-	@OthrNttyTp.deleter
-	def OthrNttyTp(self):
-		del self._OthrNttyTp
-		self._OthrNttyTp = None
-
-	@property
 	def NttyTp(self):
 		return self._NttyTp
 
@@ -58,10 +32,36 @@ class RiskInputData2(base_types._BaseFieldType):
 		del self._NttyTp
 		self._NttyTp = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def OthrNttyTp(self):
+		return self._OthrNttyTp
+
+	@OthrNttyTp.setter
+	def OthrNttyTp(self, value):
+		self._OthrNttyTp = value if type(value) != base_types.auto else self.make_default("OthrNttyTp")
+
+	@OthrNttyTp.deleter
+	def OthrNttyTp(self):
+		del self._OthrNttyTp
+		self._OthrNttyTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max10KText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrNttyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyTp', type=PartyType28Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrNttyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

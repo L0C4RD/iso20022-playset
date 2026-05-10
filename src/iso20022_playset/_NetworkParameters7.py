@@ -1,13 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .NetworkParameters9 import NetworkParameters9
-from .Max10KBinary import Max10KBinary
-from .Max35Binary import Max35Binary
-from .Max140Binary import Max140Binary
+from ._Max35Text import Max35Text
+from ._Max35Binary import Max35Binary
+from ._Max10KBinary import Max10KBinary
+from ._Max140Binary import Max140Binary
+from ._NetworkParameters9 import NetworkParameters9
 
 class NetworkParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_UsrNm", "_SvrCert", "_AccsCd", "_ClntCert", "_SvrCertIdr", "_Adr", "_SctyPrfl"]
+	__slots__ = ["_Adr", "_UsrNm", "_ClntCert", "_SvrCert", "_AccsCd", "_SvrCertIdr", "_SctyPrfl"]
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
 	@property
 	def UsrNm(self):
 		return self._UsrNm
@@ -20,6 +33,19 @@ class NetworkParameters7(base_types._BaseFieldType):
 	def UsrNm(self):
 		del self._UsrNm
 		self._UsrNm = None
+
+	@property
+	def ClntCert(self):
+		return self._ClntCert
+
+	@ClntCert.setter
+	def ClntCert(self, value):
+		self._ClntCert = value if type(value) != base_types.auto else self.make_default("ClntCert")
+
+	@ClntCert.deleter
+	def ClntCert(self):
+		del self._ClntCert
+		self._ClntCert = None
 
 	@property
 	def SvrCert(self):
@@ -48,19 +74,6 @@ class NetworkParameters7(base_types._BaseFieldType):
 		self._AccsCd = None
 
 	@property
-	def ClntCert(self):
-		return self._ClntCert
-
-	@ClntCert.setter
-	def ClntCert(self, value):
-		self._ClntCert = value if type(value) != base_types.auto else self.make_default("ClntCert")
-
-	@ClntCert.deleter
-	def ClntCert(self):
-		del self._ClntCert
-		self._ClntCert = None
-
-	@property
 	def SvrCertIdr(self):
 		return self._SvrCertIdr
 
@@ -72,19 +85,6 @@ class NetworkParameters7(base_types._BaseFieldType):
 	def SvrCertIdr(self):
 		del self._SvrCertIdr
 		self._SvrCertIdr = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
 
 	@property
 	def SctyPrfl(self):
@@ -100,12 +100,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 		self._SctyPrfl = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Adr', type=NetworkParameters9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvrCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvrCertIdr', type=Max140Binary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Adr', type=NetworkParameters9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

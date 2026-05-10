@@ -1,53 +1,14 @@
 from . import base_types
-from .Number import Number
-from .ContentInformationType39 import ContentInformationType39
-from .TrueFalseIndicator import TrueFalseIndicator
-from .InputCommand1Code import InputCommand1Code
-from .Max20000Text import Max20000Text
-from .CapturedSignature1 import CapturedSignature1
+from ._Max20000Text import Max20000Text
+from ._Number import Number
+from ._ContentInformationType39 import ContentInformationType39
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._InputCommand1Code import InputCommand1Code
+from ._CapturedSignature1 import CapturedSignature1
 
 class InputResultData6(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfdFlg", "_FctnKey", "_InptCmd", "_InptMsg", "_Pwd", "_ImgCaptrdSgntr"]
-	@property
-	def ConfdFlg(self):
-		return self._ConfdFlg
-
-	@ConfdFlg.setter
-	def ConfdFlg(self, value):
-		self._ConfdFlg = value if type(value) != base_types.auto else self.make_default("ConfdFlg")
-
-	@ConfdFlg.deleter
-	def ConfdFlg(self):
-		del self._ConfdFlg
-		self._ConfdFlg = None
-
-	@property
-	def FctnKey(self):
-		return self._FctnKey
-
-	@FctnKey.setter
-	def FctnKey(self, value):
-		self._FctnKey = value if type(value) != base_types.auto else self.make_default("FctnKey")
-
-	@FctnKey.deleter
-	def FctnKey(self):
-		del self._FctnKey
-		self._FctnKey = None
-
-	@property
-	def InptCmd(self):
-		return self._InptCmd
-
-	@InptCmd.setter
-	def InptCmd(self, value):
-		self._InptCmd = value if type(value) != base_types.auto else self.make_default("InptCmd")
-
-	@InptCmd.deleter
-	def InptCmd(self):
-		del self._InptCmd
-		self._InptCmd = None
-
+	__slots__ = ["_InptMsg", "_Pwd", "_ConfdFlg", "_InptCmd", "_ImgCaptrdSgntr", "_FctnKey"]
 	@property
 	def InptMsg(self):
 		return self._InptMsg
@@ -75,6 +36,32 @@ class InputResultData6(base_types._BaseFieldType):
 		self._Pwd = None
 
 	@property
+	def ConfdFlg(self):
+		return self._ConfdFlg
+
+	@ConfdFlg.setter
+	def ConfdFlg(self, value):
+		self._ConfdFlg = value if type(value) != base_types.auto else self.make_default("ConfdFlg")
+
+	@ConfdFlg.deleter
+	def ConfdFlg(self):
+		del self._ConfdFlg
+		self._ConfdFlg = None
+
+	@property
+	def InptCmd(self):
+		return self._InptCmd
+
+	@InptCmd.setter
+	def InptCmd(self, value):
+		self._InptCmd = value if type(value) != base_types.auto else self.make_default("InptCmd")
+
+	@InptCmd.deleter
+	def InptCmd(self):
+		del self._InptCmd
+		self._InptCmd = None
+
+	@property
 	def ImgCaptrdSgntr(self):
 		return self._ImgCaptrdSgntr
 
@@ -87,12 +74,25 @@ class InputResultData6(base_types._BaseFieldType):
 		del self._ImgCaptrdSgntr
 		self._ImgCaptrdSgntr = None
 
+	@property
+	def FctnKey(self):
+		return self._FctnKey
+
+	@FctnKey.setter
+	def FctnKey(self, value):
+		self._FctnKey = value if type(value) != base_types.auto else self.make_default("FctnKey")
+
+	@FctnKey.deleter
+	def FctnKey(self):
+		del self._FctnKey
+		self._FctnKey = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctnKey', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InptCmd', type=InputCommand1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptMsg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pwd', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InptCmd', type=InputCommand1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImgCaptrdSgntr', type=CapturedSignature1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctnKey', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

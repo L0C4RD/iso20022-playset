@@ -1,10 +1,10 @@
 from . import base_types
-from .ContactAttributes5 import ContactAttributes5
-from .ExtendedParty13 import ExtendedParty13
+from ._ExtendedParty13 import ExtendedParty13
+from ._ContactAttributes5 import ContactAttributes5
 
 class FundParties1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPty", "_Guarntr", "_Audtr", "_Trstee"]
+	__slots__ = ["_OthrPty", "_Trstee", "_Audtr", "_Guarntr"]
 	@property
 	def OthrPty(self):
 		return self._OthrPty
@@ -19,17 +19,17 @@ class FundParties1(base_types._BaseFieldType):
 		self._OthrPty = None
 
 	@property
-	def Guarntr(self):
-		return self._Guarntr
+	def Trstee(self):
+		return self._Trstee
 
-	@Guarntr.setter
-	def Guarntr(self, value):
-		self._Guarntr = value if type(value) != base_types.auto else self.make_default("Guarntr")
+	@Trstee.setter
+	def Trstee(self, value):
+		self._Trstee = value if type(value) != base_types.auto else self.make_default("Trstee")
 
-	@Guarntr.deleter
-	def Guarntr(self):
-		del self._Guarntr
-		self._Guarntr = None
+	@Trstee.deleter
+	def Trstee(self):
+		del self._Trstee
+		self._Trstee = None
 
 	@property
 	def Audtr(self):
@@ -45,22 +45,22 @@ class FundParties1(base_types._BaseFieldType):
 		self._Audtr = None
 
 	@property
-	def Trstee(self):
-		return self._Trstee
+	def Guarntr(self):
+		return self._Guarntr
 
-	@Trstee.setter
-	def Trstee(self, value):
-		self._Trstee = value if type(value) != base_types.auto else self.make_default("Trstee")
+	@Guarntr.setter
+	def Guarntr(self, value):
+		self._Guarntr = value if type(value) != base_types.auto else self.make_default("Guarntr")
 
-	@Trstee.deleter
-	def Trstee(self):
-		del self._Trstee
-		self._Trstee = None
+	@Guarntr.deleter
+	def Guarntr(self):
+		del self._Guarntr
+		self._Guarntr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPty', type=ExtendedParty13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Guarntr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Audtr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trstee', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Audtr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Guarntr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
 	))
 

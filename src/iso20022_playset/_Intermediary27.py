@@ -1,7 +1,7 @@
 from . import base_types
-from .Role4Choice import Role4Choice
-from .PartyIdentification2Choice import PartyIdentification2Choice
-from .Account7 import Account7
+from ._Role4Choice import Role4Choice
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._Account7 import Account7
 
 class Intermediary27(base_types._BaseFieldType):
 

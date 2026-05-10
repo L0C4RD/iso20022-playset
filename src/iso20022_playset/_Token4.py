@@ -1,53 +1,14 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max19NumericText import Max19NumericText
-from .ISOYearMonth import ISOYearMonth
-from .Max2NumericText import Max2NumericText
-from .Max11NumericText import Max11NumericText
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._ISOYearMonth import ISOYearMonth
+from ._Max19NumericText import Max19NumericText
+from ._Max2NumericText import Max2NumericText
+from ._Max11NumericText import Max11NumericText
 
 class Token4(base_types._BaseFieldType):
 
-	__slots__ = ["_TknAssrncMtd", "_PmtTkn", "_TknAssrncData", "_TknRqstrId", "_TknRefId", "_TknXpryDt"]
-	@property
-	def TknAssrncMtd(self):
-		return self._TknAssrncMtd
-
-	@TknAssrncMtd.setter
-	def TknAssrncMtd(self, value):
-		self._TknAssrncMtd = value if type(value) != base_types.auto else self.make_default("TknAssrncMtd")
-
-	@TknAssrncMtd.deleter
-	def TknAssrncMtd(self):
-		del self._TknAssrncMtd
-		self._TknAssrncMtd = None
-
-	@property
-	def PmtTkn(self):
-		return self._PmtTkn
-
-	@PmtTkn.setter
-	def PmtTkn(self, value):
-		self._PmtTkn = value if type(value) != base_types.auto else self.make_default("PmtTkn")
-
-	@PmtTkn.deleter
-	def PmtTkn(self):
-		del self._PmtTkn
-		self._PmtTkn = None
-
-	@property
-	def TknAssrncData(self):
-		return self._TknAssrncData
-
-	@TknAssrncData.setter
-	def TknAssrncData(self, value):
-		self._TknAssrncData = value if type(value) != base_types.auto else self.make_default("TknAssrncData")
-
-	@TknAssrncData.deleter
-	def TknAssrncData(self):
-		del self._TknAssrncData
-		self._TknAssrncData = None
-
+	__slots__ = ["_TknRqstrId", "_TknRefId", "_TknXpryDt", "_TknAssrncMtd", "_PmtTkn", "_TknAssrncData"]
 	@property
 	def TknRqstrId(self):
 		return self._TknRqstrId
@@ -87,12 +48,51 @@ class Token4(base_types._BaseFieldType):
 		del self._TknXpryDt
 		self._TknXpryDt = None
 
+	@property
+	def TknAssrncMtd(self):
+		return self._TknAssrncMtd
+
+	@TknAssrncMtd.setter
+	def TknAssrncMtd(self, value):
+		self._TknAssrncMtd = value if type(value) != base_types.auto else self.make_default("TknAssrncMtd")
+
+	@TknAssrncMtd.deleter
+	def TknAssrncMtd(self):
+		del self._TknAssrncMtd
+		self._TknAssrncMtd = None
+
+	@property
+	def PmtTkn(self):
+		return self._PmtTkn
+
+	@PmtTkn.setter
+	def PmtTkn(self, value):
+		self._PmtTkn = value if type(value) != base_types.auto else self.make_default("PmtTkn")
+
+	@PmtTkn.deleter
+	def PmtTkn(self):
+		del self._PmtTkn
+		self._PmtTkn = None
+
+	@property
+	def TknAssrncData(self):
+		return self._TknAssrncData
+
+	@TknAssrncData.setter
+	def TknAssrncData(self, value):
+		self._TknAssrncData = value if type(value) != base_types.auto else self.make_default("TknAssrncData")
+
+	@TknAssrncData.deleter
+	def TknAssrncData(self):
+		del self._TknAssrncData
+		self._TknAssrncData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknRqstrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknXpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTkn', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknAssrncData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

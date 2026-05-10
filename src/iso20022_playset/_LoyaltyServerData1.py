@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionIdentifier1 import TransactionIdentifier1
-from .Min6Max8Text import Min6Max8Text
+from ._Max35Text import Max35Text
+from ._Min6Max8Text import Min6Max8Text
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class LoyaltyServerData1(base_types._BaseFieldType):
 
-	__slots__ = ["_LltySvrId", "_HstRcncltnId", "_ApprvlCd", "_LltyTxId"]
+	__slots__ = ["_LltySvrId", "_ApprvlCd", "_HstRcncltnId", "_LltyTxId"]
 	@property
 	def LltySvrId(self):
 		return self._LltySvrId
@@ -20,19 +20,6 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 		self._LltySvrId = None
 
 	@property
-	def HstRcncltnId(self):
-		return self._HstRcncltnId
-
-	@HstRcncltnId.setter
-	def HstRcncltnId(self, value):
-		self._HstRcncltnId = value if type(value) != base_types.auto else self.make_default("HstRcncltnId")
-
-	@HstRcncltnId.deleter
-	def HstRcncltnId(self):
-		del self._HstRcncltnId
-		self._HstRcncltnId = None
-
-	@property
 	def ApprvlCd(self):
 		return self._ApprvlCd
 
@@ -44,6 +31,19 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 	def ApprvlCd(self):
 		del self._ApprvlCd
 		self._ApprvlCd = None
+
+	@property
+	def HstRcncltnId(self):
+		return self._HstRcncltnId
+
+	@HstRcncltnId.setter
+	def HstRcncltnId(self, value):
+		self._HstRcncltnId = value if type(value) != base_types.auto else self.make_default("HstRcncltnId")
+
+	@HstRcncltnId.deleter
+	def HstRcncltnId(self):
+		del self._HstRcncltnId
+		self._HstRcncltnId = None
 
 	@property
 	def LltyTxId(self):
@@ -60,8 +60,8 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltySvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApprvlCd', type=Min6Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
 

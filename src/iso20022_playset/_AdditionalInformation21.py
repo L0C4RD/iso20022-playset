@@ -1,8 +1,8 @@
 from . import base_types
-from .PartyType23Code import PartyType23Code
-from .OutputFormat4Code import OutputFormat4Code
-from .UserInterface7Code import UserInterface7Code
-from .Max20KText import Max20KText
+from ._Max20KText import Max20KText
+from ._OutputFormat4Code import OutputFormat4Code
+from ._UserInterface7Code import UserInterface7Code
+from ._PartyType23Code import PartyType23Code
 
 class AdditionalInformation21(base_types._BaseFieldType):
 

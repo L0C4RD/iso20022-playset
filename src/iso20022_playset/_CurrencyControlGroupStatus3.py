@@ -1,15 +1,28 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .ValidationStatusReason3 import ValidationStatusReason3
-from .StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from .OriginalMessage7 import OriginalMessage7
-from .TradeParty6 import TradeParty6
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .Period4Choice import Period4Choice
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._OriginalMessage7 import OriginalMessage7
+from ._ValidationStatusReason3 import ValidationStatusReason3
+from ._Period4Choice import Period4Choice
+from ._TradeParty6 import TradeParty6
+from ._ISODateTime import ISODateTime
 
 class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDtTm", "_RptgPrd", "_Sts", "_RptgPty", "_OrgnlRefs", "_RegnAgt", "_StsRsn"]
+	__slots__ = ["_Sts", "_StsDtTm", "_StsRsn", "_RptgPty", "_OrgnlRefs", "_RegnAgt", "_RptgPrd"]
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	@property
 	def StsDtTm(self):
 		return self._StsDtTm
@@ -24,30 +37,17 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 		self._StsDtTm = None
 
 	@property
-	def RptgPrd(self):
-		return self._RptgPrd
+	def StsRsn(self):
+		return self._StsRsn
 
-	@RptgPrd.setter
-	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
 
-	@RptgPrd.deleter
-	def RptgPrd(self):
-		del self._RptgPrd
-		self._RptgPrd = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	@property
 	def RptgPty(self):
@@ -89,25 +89,25 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 		self._RegnAgt = None
 
 	@property
-	def StsRsn(self):
-		return self._StsRsn
+	def RptgPrd(self):
+		return self._RptgPrd
 
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+	@RptgPrd.setter
+	def RptgPrd(self, value):
+		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
 
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
+	@RptgPrd.deleter
+	def RptgPrd(self):
+		del self._RptgPrd
+		self._RptgPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRefs', type=OriginalMessage7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptgPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

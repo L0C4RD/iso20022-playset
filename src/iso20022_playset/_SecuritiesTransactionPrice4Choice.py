@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
-from .SecuritiesTransactionPrice1 import SecuritiesTransactionPrice1
+from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
+from ._SecuritiesTransactionPrice1 import SecuritiesTransactionPrice1
 
 class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 

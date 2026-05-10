@@ -1,6 +1,6 @@
 from . import base_types
-from .Schedule10 import Schedule10
-from .QuantityTerm1 import QuantityTerm1
+from ._QuantityTerm1 import QuantityTerm1
+from ._Schedule10 import Schedule10
 
 class QuantityOrTerm1Choice(base_types._BaseFieldType):
 

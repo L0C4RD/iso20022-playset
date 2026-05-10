@@ -1,11 +1,11 @@
 from . import base_types
-from .ContentInformationType37 import ContentInformationType37
-from .AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
-from .Header70 import Header70
+from ._Header70 import Header70
+from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
+from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_CxlAdvcRspn", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_CxlAdvcRspn"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -20,19 +20,6 @@ class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def CxlAdvcRspn(self):
-		return self._CxlAdvcRspn
-
-	@CxlAdvcRspn.setter
-	def CxlAdvcRspn(self, value):
-		self._CxlAdvcRspn = value if type(value) != base_types.auto else self.make_default("CxlAdvcRspn")
-
-	@CxlAdvcRspn.deleter
-	def CxlAdvcRspn(self):
-		del self._CxlAdvcRspn
-		self._CxlAdvcRspn = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,9 +32,22 @@ class AcceptorCancellationAdviceResponseV13(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def CxlAdvcRspn(self):
+		return self._CxlAdvcRspn
+
+	@CxlAdvcRspn.setter
+	def CxlAdvcRspn(self, value):
+		self._CxlAdvcRspn = value if type(value) != base_types.auto else self.make_default("CxlAdvcRspn")
+
+	@CxlAdvcRspn.deleter
+	def CxlAdvcRspn(self):
+		del self._CxlAdvcRspn
+		self._CxlAdvcRspn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlAdvcRspn', type=AcceptorCancellationAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlAdvcRspn', type=AcceptorCancellationAdviceResponse13, min=1, max=1, mutex_group=None, array=False),
 	))
 

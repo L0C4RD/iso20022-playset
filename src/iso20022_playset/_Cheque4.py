@@ -1,5 +1,5 @@
 from . import base_types
-from .NameAndAddress5 import NameAndAddress5
+from ._NameAndAddress5 import NameAndAddress5
 
 class Cheque4(base_types._BaseFieldType):
 

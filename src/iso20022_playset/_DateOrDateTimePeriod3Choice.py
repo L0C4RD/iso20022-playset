@@ -1,6 +1,6 @@
 from . import base_types
-from .Period8Choice import Period8Choice
-from .Period4Choice import Period4Choice
+from ._Period8Choice import Period8Choice
+from ._Period4Choice import Period4Choice
 
 class DateOrDateTimePeriod3Choice(base_types._BaseFieldType):
 

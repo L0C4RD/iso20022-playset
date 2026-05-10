@@ -1,5 +1,5 @@
 from . import base_types
-from .BaselineStatus2Code import BaselineStatus2Code
+from ._BaselineStatus2Code import BaselineStatus2Code
 
 class TransactionStatus3(base_types._BaseFieldType):
 

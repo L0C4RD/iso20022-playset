@@ -1,24 +1,24 @@
 from . import base_types
-from .Number import Number
-from .ATMMediaType4Code import ATMMediaType4Code
-from .ATMMediaType3Code import ATMMediaType3Code
-from .ATMDepositedMediaItem1 import ATMDepositedMediaItem1
+from ._ATMMediaType3Code import ATMMediaType3Code
+from ._Number import Number
+from ._ATMDepositedMediaItem1 import ATMDepositedMediaItem1
+from ._ATMMediaType4Code import ATMMediaType4Code
 
 class ATMDepositedMedia4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSeqNb", "_MdiaItm", "_MdiaTp", "_MdiaCtgy"]
+	__slots__ = ["_MdiaCtgy", "_MdiaItm", "_AcctSeqNb", "_MdiaTp"]
 	@property
-	def AcctSeqNb(self):
-		return self._AcctSeqNb
+	def MdiaCtgy(self):
+		return self._MdiaCtgy
 
-	@AcctSeqNb.setter
-	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != base_types.auto else self.make_default("AcctSeqNb")
+	@MdiaCtgy.setter
+	def MdiaCtgy(self, value):
+		self._MdiaCtgy = value if type(value) != base_types.auto else self.make_default("MdiaCtgy")
 
-	@AcctSeqNb.deleter
-	def AcctSeqNb(self):
-		del self._AcctSeqNb
-		self._AcctSeqNb = None
+	@MdiaCtgy.deleter
+	def MdiaCtgy(self):
+		del self._MdiaCtgy
+		self._MdiaCtgy = None
 
 	@property
 	def MdiaItm(self):
@@ -34,6 +34,19 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 		self._MdiaItm = None
 
 	@property
+	def AcctSeqNb(self):
+		return self._AcctSeqNb
+
+	@AcctSeqNb.setter
+	def AcctSeqNb(self, value):
+		self._AcctSeqNb = value if type(value) != base_types.auto else self.make_default("AcctSeqNb")
+
+	@AcctSeqNb.deleter
+	def AcctSeqNb(self):
+		del self._AcctSeqNb
+		self._AcctSeqNb = None
+
+	@property
 	def MdiaTp(self):
 		return self._MdiaTp
 
@@ -46,23 +59,10 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 		del self._MdiaTp
 		self._MdiaTp = None
 
-	@property
-	def MdiaCtgy(self):
-		return self._MdiaCtgy
-
-	@MdiaCtgy.setter
-	def MdiaCtgy(self, value):
-		self._MdiaCtgy = value if type(value) != base_types.auto else self.make_default("MdiaCtgy")
-
-	@MdiaCtgy.deleter
-	def MdiaCtgy(self):
-		del self._MdiaCtgy
-		self._MdiaCtgy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdiaItm', type=ATMDepositedMediaItem1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaItm', type=ATMDepositedMediaItem1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

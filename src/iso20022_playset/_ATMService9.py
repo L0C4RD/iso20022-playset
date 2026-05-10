@@ -1,10 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ATMServiceType1Code import ATMServiceType1Code
+from ._Max35Text import Max35Text
+from ._ATMServiceType1Code import ATMServiceType1Code
 
 class ATMService9(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcRef", "_ATMSvcCd", "_SvcTp", "_SvcVarntId"]
+	__slots__ = ["_SvcVarntId", "_SvcRef", "_ATMSvcCd", "_SvcTp"]
+	@property
+	def SvcVarntId(self):
+		return self._SvcVarntId
+
+	@SvcVarntId.setter
+	def SvcVarntId(self, value):
+		self._SvcVarntId = value if type(value) != base_types.auto else self.make_default("SvcVarntId")
+
+	@SvcVarntId.deleter
+	def SvcVarntId(self):
+		del self._SvcVarntId
+		self._SvcVarntId = None
+
 	@property
 	def SvcRef(self):
 		return self._SvcRef
@@ -44,23 +57,10 @@ class ATMService9(base_types._BaseFieldType):
 		del self._SvcTp
 		self._SvcTp = None
 
-	@property
-	def SvcVarntId(self):
-		return self._SvcVarntId
-
-	@SvcVarntId.setter
-	def SvcVarntId(self, value):
-		self._SvcVarntId = value if type(value) != base_types.auto else self.make_default("SvcVarntId")
-
-	@SvcVarntId.deleter
-	def SvcVarntId(self):
-		del self._SvcVarntId
-		self._SvcVarntId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcTp', type=ATMServiceType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

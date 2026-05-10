@@ -1,8 +1,8 @@
 from . import base_types
-from .DocumentNumber6Choice import DocumentNumber6Choice
-from .PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
-from .References58Choice import References58Choice
-from .ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
+from ._References58Choice import References58Choice
+from ._DocumentNumber6Choice import DocumentNumber6Choice
+from ._ProcessingPosition10Choice import ProcessingPosition10Choice
 
 class Linkages70(base_types._BaseFieldType):
 

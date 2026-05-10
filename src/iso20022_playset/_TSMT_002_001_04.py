@@ -1,5 +1,5 @@
 from . import base_types
-from .ActivityReportV04 import ActivityReportV04
+from ._ActivityReportV04 import ActivityReportV04
 
 class TSMT_002_001_04():
 

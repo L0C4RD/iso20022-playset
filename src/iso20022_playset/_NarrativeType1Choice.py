@@ -1,6 +1,6 @@
 from . import base_types
-from .ExternalNarrativeType1Code import ExternalNarrativeType1Code
-from .GenericIdentification1 import GenericIdentification1
+from ._GenericIdentification1 import GenericIdentification1
+from ._ExternalNarrativeType1Code import ExternalNarrativeType1Code
 
 class NarrativeType1Choice(base_types._BaseFieldType):
 

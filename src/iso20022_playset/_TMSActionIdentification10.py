@@ -1,6 +1,6 @@
 from . import base_types
-from .TerminalManagementAction5Code import TerminalManagementAction5Code
-from .DataSetIdentification11 import DataSetIdentification11
+from ._DataSetIdentification11 import DataSetIdentification11
+from ._TerminalManagementAction5Code import TerminalManagementAction5Code
 
 class TMSActionIdentification10(base_types._BaseFieldType):
 

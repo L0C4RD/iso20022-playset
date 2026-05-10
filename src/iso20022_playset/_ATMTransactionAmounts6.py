@@ -1,7 +1,7 @@
 from . import base_types
-from .ATMTransactionAmounts7 import ATMTransactionAmounts7
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMTransactionAmounts6(base_types._BaseFieldType):
 

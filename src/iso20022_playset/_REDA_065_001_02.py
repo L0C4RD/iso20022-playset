@@ -1,5 +1,5 @@
 from . import base_types
-from .CalendarReportV02 import CalendarReportV02
+from ._CalendarReportV02 import CalendarReportV02
 
 class REDA_065_001_02():
 

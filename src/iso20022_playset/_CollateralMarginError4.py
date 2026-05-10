@@ -1,13 +1,26 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max52Text import Max52Text
-from .Counterparty39 import Counterparty39
-from .ISODateTime import ISODateTime
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ISODateTime import ISODateTime
+from ._Max52Text import Max52Text
+from ._Counterparty39 import Counterparty39
 
 class CollateralMarginError4(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TechRcrdId", "_CtrPty", "_CollPrtflId", "_RptgDtTm"]
+	__slots__ = ["_RptgDtTm", "_SplmtryData", "_CollPrtflId", "_CtrPty", "_TechRcrdId"]
+	@property
+	def RptgDtTm(self):
+		return self._RptgDtTm
+
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,32 +33,6 @@ class CollateralMarginError4(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
-	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
 
 	@property
 	def CollPrtflId(self):
@@ -61,23 +48,36 @@ class CollateralMarginError4(base_types._BaseFieldType):
 		self._CollPrtflId = None
 
 	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
+	def CtrPty(self):
+		return self._CtrPty
 
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
 
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty', type=Counterparty39, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=Counterparty39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

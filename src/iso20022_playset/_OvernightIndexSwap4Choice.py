@@ -1,6 +1,6 @@
 from . import base_types
-from .OvernightIndexSwapTransaction4 import OvernightIndexSwapTransaction4
-from .ReportPeriodActivity3Code import ReportPeriodActivity3Code
+from ._OvernightIndexSwapTransaction4 import OvernightIndexSwapTransaction4
+from ._ReportPeriodActivity3Code import ReportPeriodActivity3Code
 
 class OvernightIndexSwap4Choice(base_types._BaseFieldType):
 

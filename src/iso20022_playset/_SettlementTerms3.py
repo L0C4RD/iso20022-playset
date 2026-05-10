@@ -1,6 +1,6 @@
 from . import base_types
-from .CashAccount24 import CashAccount24
-from .FinancialInstitutionIdentification4Choice import FinancialInstitutionIdentification4Choice
+from ._FinancialInstitutionIdentification4Choice import FinancialInstitutionIdentification4Choice
+from ._CashAccount24 import CashAccount24
 
 class SettlementTerms3(base_types._BaseFieldType):
 

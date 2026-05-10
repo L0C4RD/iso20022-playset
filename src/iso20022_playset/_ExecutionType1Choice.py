@@ -1,23 +1,10 @@
 from . import base_types
-from .EventType1Choice import EventType1Choice
-from .ISOTime import ISOTime
+from ._ISOTime import ISOTime
+from ._EventType1Choice import EventType1Choice
 
 class ExecutionType1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Evt", "_Tm"]
-	@property
-	def Evt(self):
-		return self._Evt
-
-	@Evt.setter
-	def Evt(self, value):
-		self._Evt = value if type(value) != base_types.auto else self.make_default("Evt")
-
-	@Evt.deleter
-	def Evt(self):
-		del self._Evt
-		self._Evt = None
-
+	__slots__ = ["_Tm", "_Evt"]
 	@property
 	def Tm(self):
 		return self._Tm
@@ -31,8 +18,21 @@ class ExecutionType1Choice(base_types._BaseFieldType):
 		del self._Tm
 		self._Tm = None
 
+	@property
+	def Evt(self):
+		return self._Evt
+
+	@Evt.setter
+	def Evt(self, value):
+		self._Evt = value if type(value) != base_types.auto else self.make_default("Evt")
+
+	@Evt.deleter
+	def Evt(self):
+		del self._Evt
+		self._Evt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Evt', type=EventType1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Evt', type=EventType1Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

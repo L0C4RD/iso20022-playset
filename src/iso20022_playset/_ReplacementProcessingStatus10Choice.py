@@ -1,49 +1,10 @@
 from . import base_types
-from .ProprietaryReason4 import ProprietaryReason4
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._ProprietaryReason4 import ProprietaryReason4
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 
 class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Accptd", "_PrtlRplcmntAccptd", "_ModReqd", "_RcvdAtIntrmy", "_Dnd", "_Cmpltd", "_InRpr", "_Pdg", "_Rjctd", "_PrtrySts", "_RcvdAtStockXchg"]
-	@property
-	def Accptd(self):
-		return self._Accptd
-
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
-
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
-
-	@property
-	def PrtlRplcmntAccptd(self):
-		return self._PrtlRplcmntAccptd
-
-	@PrtlRplcmntAccptd.setter
-	def PrtlRplcmntAccptd(self, value):
-		self._PrtlRplcmntAccptd = value if type(value) != base_types.auto else self.make_default("PrtlRplcmntAccptd")
-
-	@PrtlRplcmntAccptd.deleter
-	def PrtlRplcmntAccptd(self):
-		del self._PrtlRplcmntAccptd
-		self._PrtlRplcmntAccptd = None
-
-	@property
-	def ModReqd(self):
-		return self._ModReqd
-
-	@ModReqd.setter
-	def ModReqd(self, value):
-		self._ModReqd = value if type(value) != base_types.auto else self.make_default("ModReqd")
-
-	@ModReqd.deleter
-	def ModReqd(self):
-		del self._ModReqd
-		self._ModReqd = None
-
+	__slots__ = ["_RcvdAtIntrmy", "_Dnd", "_RcvdAtStockXchg", "_PrtrySts", "_Accptd", "_Cmpltd", "_ModReqd", "_InRpr", "_PrtlRplcmntAccptd", "_Rjctd", "_Pdg"]
 	@property
 	def RcvdAtIntrmy(self):
 		return self._RcvdAtIntrmy
@@ -71,56 +32,17 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 		self._Dnd = None
 
 	@property
-	def Cmpltd(self):
-		return self._Cmpltd
+	def RcvdAtStockXchg(self):
+		return self._RcvdAtStockXchg
 
-	@Cmpltd.setter
-	def Cmpltd(self, value):
-		self._Cmpltd = value if type(value) != base_types.auto else self.make_default("Cmpltd")
+	@RcvdAtStockXchg.setter
+	def RcvdAtStockXchg(self, value):
+		self._RcvdAtStockXchg = value if type(value) != base_types.auto else self.make_default("RcvdAtStockXchg")
 
-	@Cmpltd.deleter
-	def Cmpltd(self):
-		del self._Cmpltd
-		self._Cmpltd = None
-
-	@property
-	def InRpr(self):
-		return self._InRpr
-
-	@InRpr.setter
-	def InRpr(self, value):
-		self._InRpr = value if type(value) != base_types.auto else self.make_default("InRpr")
-
-	@InRpr.deleter
-	def InRpr(self):
-		del self._InRpr
-		self._InRpr = None
-
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@RcvdAtStockXchg.deleter
+	def RcvdAtStockXchg(self):
+		del self._RcvdAtStockXchg
+		self._RcvdAtStockXchg = None
 
 	@property
 	def PrtrySts(self):
@@ -136,29 +58,107 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def RcvdAtStockXchg(self):
-		return self._RcvdAtStockXchg
+	def Accptd(self):
+		return self._Accptd
 
-	@RcvdAtStockXchg.setter
-	def RcvdAtStockXchg(self, value):
-		self._RcvdAtStockXchg = value if type(value) != base_types.auto else self.make_default("RcvdAtStockXchg")
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
 
-	@RcvdAtStockXchg.deleter
-	def RcvdAtStockXchg(self):
-		del self._RcvdAtStockXchg
-		self._RcvdAtStockXchg = None
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
+
+	@property
+	def Cmpltd(self):
+		return self._Cmpltd
+
+	@Cmpltd.setter
+	def Cmpltd(self, value):
+		self._Cmpltd = value if type(value) != base_types.auto else self.make_default("Cmpltd")
+
+	@Cmpltd.deleter
+	def Cmpltd(self):
+		del self._Cmpltd
+		self._Cmpltd = None
+
+	@property
+	def ModReqd(self):
+		return self._ModReqd
+
+	@ModReqd.setter
+	def ModReqd(self, value):
+		self._ModReqd = value if type(value) != base_types.auto else self.make_default("ModReqd")
+
+	@ModReqd.deleter
+	def ModReqd(self):
+		del self._ModReqd
+		self._ModReqd = None
+
+	@property
+	def InRpr(self):
+		return self._InRpr
+
+	@InRpr.setter
+	def InRpr(self, value):
+		self._InRpr = value if type(value) != base_types.auto else self.make_default("InRpr")
+
+	@InRpr.deleter
+	def InRpr(self):
+		del self._InRpr
+		self._InRpr = None
+
+	@property
+	def PrtlRplcmntAccptd(self):
+		return self._PrtlRplcmntAccptd
+
+	@PrtlRplcmntAccptd.setter
+	def PrtlRplcmntAccptd(self, value):
+		self._PrtlRplcmntAccptd = value if type(value) != base_types.auto else self.make_default("PrtlRplcmntAccptd")
+
+	@PrtlRplcmntAccptd.deleter
+	def PrtlRplcmntAccptd(self):
+		del self._PrtlRplcmntAccptd
+		self._PrtlRplcmntAccptd = None
+
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Accptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtlRplcmntAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ModReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvdAtIntrmy', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dnd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='InRpr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvdAtStockXchg', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Accptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ModReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='InRpr', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtlRplcmntAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

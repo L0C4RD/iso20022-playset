@@ -1,25 +1,12 @@
 from . import base_types
-from .TerminalHosting1 import TerminalHosting1
-from .AutomatedTellerMachine6 import AutomatedTellerMachine6
-from .Acquirer7 import Acquirer7
-from .Max35Text import Max35Text
+from ._TerminalHosting1 import TerminalHosting1
+from ._AutomatedTellerMachine6 import AutomatedTellerMachine6
+from ._Max35Text import Max35Text
+from ._Acquirer7 import Acquirer7
 
 class ATMEnvironment15(base_types._BaseFieldType):
 
-	__slots__ = ["_HstgNtty", "_Acqrr", "_ATM", "_ATMMgrId"]
-	@property
-	def HstgNtty(self):
-		return self._HstgNtty
-
-	@HstgNtty.setter
-	def HstgNtty(self, value):
-		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
-
-	@HstgNtty.deleter
-	def HstgNtty(self):
-		del self._HstgNtty
-		self._HstgNtty = None
-
+	__slots__ = ["_Acqrr", "_HstgNtty", "_ATM", "_ATMMgrId"]
 	@property
 	def Acqrr(self):
 		return self._Acqrr
@@ -32,6 +19,19 @@ class ATMEnvironment15(base_types._BaseFieldType):
 	def Acqrr(self):
 		del self._Acqrr
 		self._Acqrr = None
+
+	@property
+	def HstgNtty(self):
+		return self._HstgNtty
+
+	@HstgNtty.setter
+	def HstgNtty(self, value):
+		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
+
+	@HstgNtty.deleter
+	def HstgNtty(self):
+		del self._HstgNtty
+		self._HstgNtty = None
 
 	@property
 	def ATM(self):
@@ -60,8 +60,8 @@ class ATMEnvironment15(base_types._BaseFieldType):
 		self._ATMMgrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

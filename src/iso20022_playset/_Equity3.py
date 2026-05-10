@@ -1,24 +1,24 @@
 from . import base_types
-from .Number import Number
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ISODateTime import ISODateTime
-from .PreferenceToIncome5Choice import PreferenceToIncome5Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Number import Number
+from ._PreferenceToIncome5Choice import PreferenceToIncome5Choice
+from ._ISODateTime import ISODateTime
 
 class Equity3(base_types._BaseFieldType):
 
-	__slots__ = ["_VtngRghtsPerShr", "_ParVal", "_MtrtyDt", "_PrefToIncm", "_NonPdAmt"]
+	__slots__ = ["_PrefToIncm", "_ParVal", "_VtngRghtsPerShr", "_MtrtyDt", "_NonPdAmt"]
 	@property
-	def VtngRghtsPerShr(self):
-		return self._VtngRghtsPerShr
+	def PrefToIncm(self):
+		return self._PrefToIncm
 
-	@VtngRghtsPerShr.setter
-	def VtngRghtsPerShr(self, value):
-		self._VtngRghtsPerShr = value if type(value) != base_types.auto else self.make_default("VtngRghtsPerShr")
+	@PrefToIncm.setter
+	def PrefToIncm(self, value):
+		self._PrefToIncm = value if type(value) != base_types.auto else self.make_default("PrefToIncm")
 
-	@VtngRghtsPerShr.deleter
-	def VtngRghtsPerShr(self):
-		del self._VtngRghtsPerShr
-		self._VtngRghtsPerShr = None
+	@PrefToIncm.deleter
+	def PrefToIncm(self):
+		del self._PrefToIncm
+		self._PrefToIncm = None
 
 	@property
 	def ParVal(self):
@@ -34,6 +34,19 @@ class Equity3(base_types._BaseFieldType):
 		self._ParVal = None
 
 	@property
+	def VtngRghtsPerShr(self):
+		return self._VtngRghtsPerShr
+
+	@VtngRghtsPerShr.setter
+	def VtngRghtsPerShr(self, value):
+		self._VtngRghtsPerShr = value if type(value) != base_types.auto else self.make_default("VtngRghtsPerShr")
+
+	@VtngRghtsPerShr.deleter
+	def VtngRghtsPerShr(self):
+		del self._VtngRghtsPerShr
+		self._VtngRghtsPerShr = None
+
+	@property
 	def MtrtyDt(self):
 		return self._MtrtyDt
 
@@ -45,19 +58,6 @@ class Equity3(base_types._BaseFieldType):
 	def MtrtyDt(self):
 		del self._MtrtyDt
 		self._MtrtyDt = None
-
-	@property
-	def PrefToIncm(self):
-		return self._PrefToIncm
-
-	@PrefToIncm.setter
-	def PrefToIncm(self, value):
-		self._PrefToIncm = value if type(value) != base_types.auto else self.make_default("PrefToIncm")
-
-	@PrefToIncm.deleter
-	def PrefToIncm(self):
-		del self._PrefToIncm
-		self._PrefToIncm = None
 
 	@property
 	def NonPdAmt(self):
@@ -73,10 +73,10 @@ class Equity3(base_types._BaseFieldType):
 		self._NonPdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VtngRghtsPerShr', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrefToIncm', type=PreferenceToIncome5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ParVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VtngRghtsPerShr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonPdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

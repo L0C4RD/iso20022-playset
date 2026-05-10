@@ -1,38 +1,12 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .NameAndAddress12 import NameAndAddress12
-from .DTI2024Identifier import DTI2024Identifier
-from .CountryCode import CountryCode
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._DTI2024Identifier import DTI2024Identifier
+from ._NameAndAddress12 import NameAndAddress12
+from ._CountryCode import CountryCode
 
 class PartyIdentification258Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlLdgrId", "_NmAndAdr", "_Ctry", "_AnyBIC"]
-	@property
-	def DgtlLdgrId(self):
-		return self._DgtlLdgrId
-
-	@DgtlLdgrId.setter
-	def DgtlLdgrId(self, value):
-		self._DgtlLdgrId = value if type(value) != base_types.auto else self.make_default("DgtlLdgrId")
-
-	@DgtlLdgrId.deleter
-	def DgtlLdgrId(self):
-		del self._DgtlLdgrId
-		self._DgtlLdgrId = None
-
-	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
+	__slots__ = ["_Ctry", "_DgtlLdgrId", "_AnyBIC", "_NmAndAdr"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -47,6 +21,19 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def DgtlLdgrId(self):
+		return self._DgtlLdgrId
+
+	@DgtlLdgrId.setter
+	def DgtlLdgrId(self, value):
+		self._DgtlLdgrId = value if type(value) != base_types.auto else self.make_default("DgtlLdgrId")
+
+	@DgtlLdgrId.deleter
+	def DgtlLdgrId(self):
+		del self._DgtlLdgrId
+		self._DgtlLdgrId = None
+
+	@property
 	def AnyBIC(self):
 		return self._AnyBIC
 
@@ -59,10 +46,23 @@ class PartyIdentification258Choice(base_types._BaseFieldType):
 		del self._AnyBIC
 		self._AnyBIC = None
 
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 	))
 

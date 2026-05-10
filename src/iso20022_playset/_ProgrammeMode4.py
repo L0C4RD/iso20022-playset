@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyType20Code import PartyType20Code
-from .AdditionalData1 import AdditionalData1
+from ._Max35Text import Max35Text
+from ._PartyType20Code import PartyType20Code
+from ._AdditionalData1 import AdditionalData1
 
 class ProgrammeMode4(base_types._BaseFieldType):
 
-	__slots__ = ["_PropsdId", "_IdSelctdBy", "_ApldId", "_AddtlId"]
+	__slots__ = ["_AddtlId", "_IdSelctdBy", "_ApldId", "_PropsdId"]
 	@property
-	def PropsdId(self):
-		return self._PropsdId
+	def AddtlId(self):
+		return self._AddtlId
 
-	@PropsdId.setter
-	def PropsdId(self, value):
-		self._PropsdId = value if type(value) != base_types.auto else self.make_default("PropsdId")
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
 
-	@PropsdId.deleter
-	def PropsdId(self):
-		del self._PropsdId
-		self._PropsdId = None
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	@property
 	def IdSelctdBy(self):
@@ -46,22 +46,22 @@ class ProgrammeMode4(base_types._BaseFieldType):
 		self._ApldId = None
 
 	@property
-	def AddtlId(self):
-		return self._AddtlId
+	def PropsdId(self):
+		return self._PropsdId
 
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+	@PropsdId.setter
+	def PropsdId(self, value):
+		self._PropsdId = value if type(value) != base_types.auto else self.make_default("PropsdId")
 
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
+	@PropsdId.deleter
+	def PropsdId(self):
+		del self._PropsdId
+		self._PropsdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PropsdId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IdSelctdBy', type=PartyType20Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PropsdId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

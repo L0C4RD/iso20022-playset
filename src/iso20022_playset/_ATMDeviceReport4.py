@@ -1,52 +1,13 @@
 from . import base_types
-from .ATMCommand16 import ATMCommand16
-from .ATMCommand15 import ATMCommand15
-from .ATMSecurityContext5 import ATMSecurityContext5
-from .ATMEnvironment6 import ATMEnvironment6
-from .ATMStatus2 import ATMStatus2
+from ._ATMCommand15 import ATMCommand15
+from ._ATMStatus2 import ATMStatus2
+from ._ATMEnvironment6 import ATMEnvironment6
+from ._ATMSecurityContext5 import ATMSecurityContext5
+from ._ATMCommand16 import ATMCommand16
 
 class ATMDeviceReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_CmdCntxt", "_CmdRslt", "_ATMSctyCntxt", "_ATMGblSts"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
-	@property
-	def CmdCntxt(self):
-		return self._CmdCntxt
-
-	@CmdCntxt.setter
-	def CmdCntxt(self, value):
-		self._CmdCntxt = value if type(value) != base_types.auto else self.make_default("CmdCntxt")
-
-	@CmdCntxt.deleter
-	def CmdCntxt(self):
-		del self._CmdCntxt
-		self._CmdCntxt = None
-
-	@property
-	def CmdRslt(self):
-		return self._CmdRslt
-
-	@CmdRslt.setter
-	def CmdRslt(self, value):
-		self._CmdRslt = value if type(value) != base_types.auto else self.make_default("CmdRslt")
-
-	@CmdRslt.deleter
-	def CmdRslt(self):
-		del self._CmdRslt
-		self._CmdRslt = None
-
+	__slots__ = ["_ATMSctyCntxt", "_ATMGblSts", "_CmdCntxt", "_Envt", "_CmdRslt"]
 	@property
 	def ATMSctyCntxt(self):
 		return self._ATMSctyCntxt
@@ -73,11 +34,50 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 		del self._ATMGblSts
 		self._ATMGblSts = None
 
+	@property
+	def CmdCntxt(self):
+		return self._CmdCntxt
+
+	@CmdCntxt.setter
+	def CmdCntxt(self, value):
+		self._CmdCntxt = value if type(value) != base_types.auto else self.make_default("CmdCntxt")
+
+	@CmdCntxt.deleter
+	def CmdCntxt(self):
+		del self._CmdCntxt
+		self._CmdCntxt = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def CmdRslt(self):
+		return self._CmdRslt
+
+	@CmdRslt.setter
+	def CmdRslt(self, value):
+		self._CmdRslt = value if type(value) != base_types.auto else self.make_default("CmdRslt")
+
+	@CmdRslt.deleter
+	def CmdRslt(self):
+		del self._CmdRslt
+		self._CmdRslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
 	))
 

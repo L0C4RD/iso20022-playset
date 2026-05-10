@@ -1,6 +1,6 @@
 from . import base_types
-from .SettlingCapacity2Code import SettlingCapacity2Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._SettlingCapacity2Code import SettlingCapacity2Code
 
 class SettlingCapacity8Choice(base_types._BaseFieldType):
 

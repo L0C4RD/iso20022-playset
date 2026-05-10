@@ -1,5 +1,5 @@
 from . import base_types
-from .CustomerPaymentStatusReportV14 import CustomerPaymentStatusReportV14
+from ._CustomerPaymentStatusReportV14 import CustomerPaymentStatusReportV14
 
 class PAIN_002_001_14():
 

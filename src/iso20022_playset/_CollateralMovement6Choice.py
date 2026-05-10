@@ -1,23 +1,10 @@
 from . import base_types
-from .Collateral54 import Collateral54
-from .CollateralMovement13 import CollateralMovement13
+from ._Collateral54 import Collateral54
+from ._CollateralMovement13 import CollateralMovement13
 
 class CollateralMovement6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollMvmntDrctn", "_Rtr"]
-	@property
-	def CollMvmntDrctn(self):
-		return self._CollMvmntDrctn
-
-	@CollMvmntDrctn.setter
-	def CollMvmntDrctn(self, value):
-		self._CollMvmntDrctn = value if type(value) != base_types.auto else self.make_default("CollMvmntDrctn")
-
-	@CollMvmntDrctn.deleter
-	def CollMvmntDrctn(self):
-		del self._CollMvmntDrctn
-		self._CollMvmntDrctn = None
-
+	__slots__ = ["_Rtr", "_CollMvmntDrctn"]
 	@property
 	def Rtr(self):
 		return self._Rtr
@@ -31,8 +18,21 @@ class CollateralMovement6Choice(base_types._BaseFieldType):
 		del self._Rtr
 		self._Rtr = None
 
+	@property
+	def CollMvmntDrctn(self):
+		return self._CollMvmntDrctn
+
+	@CollMvmntDrctn.setter
+	def CollMvmntDrctn(self, value):
+		self._CollMvmntDrctn = value if type(value) != base_types.auto else self.make_default("CollMvmntDrctn")
+
+	@CollMvmntDrctn.deleter
+	def CollMvmntDrctn(self):
+		del self._CollMvmntDrctn
+		self._CollMvmntDrctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollMvmntDrctn', type=CollateralMovement13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rtr', type=Collateral54, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollMvmntDrctn', type=CollateralMovement13, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .Number import Number
-from .Algorithm14Code import Algorithm14Code
+from ._Number import Number
+from ._Algorithm14Code import Algorithm14Code
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntrAlgo", "_MaxSgntrs", "_MaxCerts"]
-	@property
-	def DgtlSgntrAlgo(self):
-		return self._DgtlSgntrAlgo
-
-	@DgtlSgntrAlgo.setter
-	def DgtlSgntrAlgo(self, value):
-		self._DgtlSgntrAlgo = value if type(value) != base_types.auto else self.make_default("DgtlSgntrAlgo")
-
-	@DgtlSgntrAlgo.deleter
-	def DgtlSgntrAlgo(self):
-		del self._DgtlSgntrAlgo
-		self._DgtlSgntrAlgo = None
-
+	__slots__ = ["_MaxSgntrs", "_MaxCerts", "_DgtlSgntrAlgo"]
 	@property
 	def MaxSgntrs(self):
 		return self._MaxSgntrs
@@ -44,9 +31,22 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 		del self._MaxCerts
 		self._MaxCerts = None
 
+	@property
+	def DgtlSgntrAlgo(self):
+		return self._DgtlSgntrAlgo
+
+	@DgtlSgntrAlgo.setter
+	def DgtlSgntrAlgo(self, value):
+		self._DgtlSgntrAlgo = value if type(value) != base_types.auto else self.make_default("DgtlSgntrAlgo")
+
+	@DgtlSgntrAlgo.deleter
+	def DgtlSgntrAlgo(self):
+		del self._DgtlSgntrAlgo
+		self._DgtlSgntrAlgo = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxSgntrs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxCerts', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),
 	))
 

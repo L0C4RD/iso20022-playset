@@ -1,11 +1,11 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .NameAndAddress4 import NameAndAddress4
-from .ContactIdentification2 import ContactIdentification2
+from ._NameAndAddress4 import NameAndAddress4
+from ._YesNoIndicator import YesNoIndicator
+from ._ContactIdentification2 import ContactIdentification2
 
 class DeliveryParameters4(base_types._BaseFieldType):
 
-	__slots__ = ["_RegdAdrInd", "_NmAndAdr", "_CtctPrsn"]
+	__slots__ = ["_RegdAdrInd", "_CtctPrsn", "_NmAndAdr"]
 	@property
 	def RegdAdrInd(self):
 		return self._RegdAdrInd
@@ -20,19 +20,6 @@ class DeliveryParameters4(base_types._BaseFieldType):
 		self._RegdAdrInd = None
 
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
-
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
-
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
-
-	@property
 	def CtctPrsn(self):
 		return self._CtctPrsn
 
@@ -45,9 +32,22 @@ class DeliveryParameters4(base_types._BaseFieldType):
 		del self._CtctPrsn
 		self._CtctPrsn = None
 
+	@property
+	def NmAndAdr(self):
+		return self._NmAndAdr
+
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegdAdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=0, max=1, mutex_group=None, array=False),
 	))
 

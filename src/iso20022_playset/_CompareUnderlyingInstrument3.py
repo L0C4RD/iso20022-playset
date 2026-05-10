@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityIdentification41Choice import SecurityIdentification41Choice
+from ._SecurityIdentification41Choice import SecurityIdentification41Choice
 
 class CompareUnderlyingInstrument3(base_types._BaseFieldType):
 

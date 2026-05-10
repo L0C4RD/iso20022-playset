@@ -1,6 +1,6 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ScenarioDefinition2 import ScenarioDefinition2
+from ._ScenarioDefinition2 import ScenarioDefinition2
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPPortfolioStressTestingDefinitionReportV02(base_types._BaseFieldType):
 

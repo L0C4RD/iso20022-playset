@@ -1,5 +1,5 @@
 from . import base_types
-from .InvestigationRejection1Code import InvestigationRejection1Code
+from ._InvestigationRejection1Code import InvestigationRejection1Code
 
 class InvestigationRejectionJustification1(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .FailingStatus12Choice import FailingStatus12Choice
-from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from .PendingStatus47Choice import PendingStatus47Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from ._FailingStatus12Choice import FailingStatus12Choice
+from ._PendingStatus47Choice import PendingStatus47Choice
 
 class SettlementStatus21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Prtry", "_Flng"]
+	__slots__ = ["_Flng", "_Prtry", "_Pdg"]
 	@property
-	def Pdg(self):
-		return self._Pdg
+	def Flng(self):
+		return self._Flng
 
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+	@Flng.setter
+	def Flng(self, value):
+		self._Flng = value if type(value) != base_types.auto else self.make_default("Flng")
 
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
+	@Flng.deleter
+	def Flng(self):
+		del self._Flng
+		self._Flng = None
 
 	@property
 	def Prtry(self):
@@ -33,21 +33,21 @@ class SettlementStatus21Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Flng(self):
-		return self._Flng
+	def Pdg(self):
+		return self._Pdg
 
-	@Flng.setter
-	def Flng(self, value):
-		self._Flng = value if type(value) != base_types.auto else self.make_default("Flng")
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
 
-	@Flng.deleter
-	def Flng(self):
-		del self._Flng
-		self._Flng = None
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=PendingStatus47Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Flng', type=FailingStatus12Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus47Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,42 +1,16 @@
 from . import base_types
-from .BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from .ISODate import ISODate
-from .Modification1Code import Modification1Code
-from .PartyAndAuthorisation6 import PartyAndAuthorisation6
-from .Max35Text import Max35Text
-from .Max15PlusSignedNumericText import Max15PlusSignedNumericText
-from .Channel2Choice import Channel2Choice
-from .YesNoIndicator import YesNoIndicator
+from ._Modification1Code import Modification1Code
+from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
+from ._PartyAndAuthorisation6 import PartyAndAuthorisation6
+from ._Channel2Choice import Channel2Choice
+from ._Max35Text import Max35Text
+from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
+from ._YesNoIndicator import YesNoIndicator
+from ._ISODate import ISODate
 
 class OperationMandate6(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqrdSgntrNb", "_EndDt", "_BkOpr", "_MndtHldr", "_AplblChanl", "_ModCd", "_Id", "_SgntrOrdrInd", "_StartDt"]
-	@property
-	def ReqrdSgntrNb(self):
-		return self._ReqrdSgntrNb
-
-	@ReqrdSgntrNb.setter
-	def ReqrdSgntrNb(self, value):
-		self._ReqrdSgntrNb = value if type(value) != base_types.auto else self.make_default("ReqrdSgntrNb")
-
-	@ReqrdSgntrNb.deleter
-	def ReqrdSgntrNb(self):
-		del self._ReqrdSgntrNb
-		self._ReqrdSgntrNb = None
-
-	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
-
+	__slots__ = ["_BkOpr", "_MndtHldr", "_StartDt", "_EndDt", "_SgntrOrdrInd", "_ModCd", "_ReqrdSgntrNb", "_AplblChanl", "_Id"]
 	@property
 	def BkOpr(self):
 		return self._BkOpr
@@ -64,43 +38,30 @@ class OperationMandate6(base_types._BaseFieldType):
 		self._MndtHldr = None
 
 	@property
-	def AplblChanl(self):
-		return self._AplblChanl
+	def StartDt(self):
+		return self._StartDt
 
-	@AplblChanl.setter
-	def AplblChanl(self, value):
-		self._AplblChanl = value if type(value) != base_types.auto else self.make_default("AplblChanl")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
-	@AplblChanl.deleter
-	def AplblChanl(self):
-		del self._AplblChanl
-		self._AplblChanl = None
-
-	@property
-	def ModCd(self):
-		return self._ModCd
-
-	@ModCd.setter
-	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
-
-	@ModCd.deleter
-	def ModCd(self):
-		del self._ModCd
-		self._ModCd = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def EndDt(self):
+		return self._EndDt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
 
 	@property
 	def SgntrOrdrInd(self):
@@ -116,27 +77,66 @@ class OperationMandate6(base_types._BaseFieldType):
 		self._SgntrOrdrInd = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
+	def ModCd(self):
+		return self._ModCd
 
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
 
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
+
+	@property
+	def ReqrdSgntrNb(self):
+		return self._ReqrdSgntrNb
+
+	@ReqrdSgntrNb.setter
+	def ReqrdSgntrNb(self, value):
+		self._ReqrdSgntrNb = value if type(value) != base_types.auto else self.make_default("ReqrdSgntrNb")
+
+	@ReqrdSgntrNb.deleter
+	def ReqrdSgntrNb(self):
+		del self._ReqrdSgntrNb
+		self._ReqrdSgntrNb = None
+
+	@property
+	def AplblChanl(self):
+		return self._AplblChanl
+
+	@AplblChanl.setter
+	def AplblChanl(self, value):
+		self._AplblChanl = value if type(value) != base_types.auto else self.make_default("AplblChanl")
+
+	@AplblChanl.deleter
+	def AplblChanl(self):
+		del self._AplblChanl
+		self._AplblChanl = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqrdSgntrNb', type=Max15PlusSignedNumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkOpr', type=BankTransactionCodeStructure4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MndtHldr', type=PartyAndAuthorisation6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AplblChanl', type=Channel2Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrOrdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrOrdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdSgntrNb', type=Max15PlusSignedNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AplblChanl', type=Channel2Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

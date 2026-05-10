@@ -1,9 +1,9 @@
 from . import base_types
-from .AmountAndDirection49 import AmountAndDirection49
+from ._AmountAndDirection49 import AmountAndDirection49
 
 class CollateralAmount14(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_ValSght", "_Acrd", "_UdsptdTx", "_Termntn"]
+	__slots__ = ["_Tx", "_ValSght", "_Acrd", "_Termntn", "_UdsptdTx"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -44,19 +44,6 @@ class CollateralAmount14(base_types._BaseFieldType):
 		self._Acrd = None
 
 	@property
-	def UdsptdTx(self):
-		return self._UdsptdTx
-
-	@UdsptdTx.setter
-	def UdsptdTx(self, value):
-		self._UdsptdTx = value if type(value) != base_types.auto else self.make_default("UdsptdTx")
-
-	@UdsptdTx.deleter
-	def UdsptdTx(self):
-		del self._UdsptdTx
-		self._UdsptdTx = None
-
-	@property
 	def Termntn(self):
 		return self._Termntn
 
@@ -69,11 +56,24 @@ class CollateralAmount14(base_types._BaseFieldType):
 		del self._Termntn
 		self._Termntn = None
 
+	@property
+	def UdsptdTx(self):
+		return self._UdsptdTx
+
+	@UdsptdTx.setter
+	def UdsptdTx(self, value):
+		self._UdsptdTx = value if type(value) != base_types.auto else self.make_default("UdsptdTx")
+
+	@UdsptdTx.deleter
+	def UdsptdTx(self):
+		del self._UdsptdTx
+		self._UdsptdTx = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdsptdTx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdsptdTx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 	))
 

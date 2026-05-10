@@ -1,6 +1,6 @@
 from . import base_types
-from .ClosureReason2Choice import ClosureReason2Choice
-from .DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._ClosureReason2Choice import ClosureReason2Choice
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class SystemClosure2(base_types._BaseFieldType):
 

@@ -1,54 +1,41 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PartyIdentification272 import PartyIdentification272
-from .DocumentIdentification28 import DocumentIdentification28
-from .SupportingDocumentEntry2 import SupportingDocumentEntry2
-from .Max35Text import Max35Text
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .DocumentAmendment1 import DocumentAmendment1
-from .ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from ._DocumentAmendment1 import DocumentAmendment1
+from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._PartyIdentification272 import PartyIdentification272
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
 
 class SupportingDocument4(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CtrctRef", "_OrgnlReqId", "_AcctOwnr", "_Ntry", "_SpprtgDocId", "_Amdmnt", "_AcctSvcr", "_Cert"]
+	__slots__ = ["_Cert", "_AcctSvcr", "_AcctOwnr", "_Ntry", "_OrgnlReqId", "_SpprtgDocId", "_CtrctRef", "_SplmtryData", "_Amdmnt"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Cert(self):
+		return self._Cert
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def CtrctRef(self):
-		return self._CtrctRef
-
-	@CtrctRef.setter
-	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
-
-	@CtrctRef.deleter
-	def CtrctRef(self):
-		del self._CtrctRef
-		self._CtrctRef = None
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	@property
-	def OrgnlReqId(self):
-		return self._OrgnlReqId
+	def AcctSvcr(self):
+		return self._AcctSvcr
 
-	@OrgnlReqId.setter
-	def OrgnlReqId(self, value):
-		self._OrgnlReqId = value if type(value) != base_types.auto else self.make_default("OrgnlReqId")
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
 
-	@OrgnlReqId.deleter
-	def OrgnlReqId(self):
-		del self._OrgnlReqId
-		self._OrgnlReqId = None
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
 
 	@property
 	def AcctOwnr(self):
@@ -77,6 +64,19 @@ class SupportingDocument4(base_types._BaseFieldType):
 		self._Ntry = None
 
 	@property
+	def OrgnlReqId(self):
+		return self._OrgnlReqId
+
+	@OrgnlReqId.setter
+	def OrgnlReqId(self, value):
+		self._OrgnlReqId = value if type(value) != base_types.auto else self.make_default("OrgnlReqId")
+
+	@OrgnlReqId.deleter
+	def OrgnlReqId(self):
+		del self._OrgnlReqId
+		self._OrgnlReqId = None
+
+	@property
 	def SpprtgDocId(self):
 		return self._SpprtgDocId
 
@@ -88,6 +88,32 @@ class SupportingDocument4(base_types._BaseFieldType):
 	def SpprtgDocId(self):
 		del self._SpprtgDocId
 		self._SpprtgDocId = None
+
+	@property
+	def CtrctRef(self):
+		return self._CtrctRef
+
+	@CtrctRef.setter
+	def CtrctRef(self, value):
+		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+
+	@CtrctRef.deleter
+	def CtrctRef(self):
+		del self._CtrctRef
+		self._CtrctRef = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Amdmnt(self):
@@ -102,41 +128,15 @@ class SupportingDocument4(base_types._BaseFieldType):
 		del self._Amdmnt
 		self._Amdmnt = None
 
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def Cert(self):
-		return self._Cert
-
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
-
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntry', type=SupportingDocumentEntry2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtgDocId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 	))
 

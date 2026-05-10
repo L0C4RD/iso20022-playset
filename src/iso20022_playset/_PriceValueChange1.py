@@ -1,24 +1,11 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from .PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._PercentageRate import PercentageRate
 
 class PriceValueChange1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_AmtSgn"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Rate", "_AmtSgn", "_Amt"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -45,9 +32,22 @@ class PriceValueChange1(base_types._BaseFieldType):
 		del self._AmtSgn
 		self._AmtSgn = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

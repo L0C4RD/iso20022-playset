@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .Max350Text import Max350Text
+from ._Max140Text import Max140Text
+from ._Max350Text import Max350Text
 
 class PartyTextInformation2(base_types._BaseFieldType):
 

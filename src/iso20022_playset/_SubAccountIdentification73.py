@@ -1,26 +1,13 @@
 from . import base_types
-from .PartyIdentification144 import PartyIdentification144
-from .SecuritiesAccount25 import SecuritiesAccount25
-from .FinancialInstrumentDetails46 import FinancialInstrumentDetails46
-from .YesNoIndicator import YesNoIndicator
-from .BlockChainAddressWallet2 import BlockChainAddressWallet2
+from ._BlockChainAddressWallet2 import BlockChainAddressWallet2
+from ._SecuritiesAccount25 import SecuritiesAccount25
+from ._PartyIdentification144 import PartyIdentification144
+from ._YesNoIndicator import YesNoIndicator
+from ._FinancialInstrumentDetails46 import FinancialInstrumentDetails46
 
 class SubAccountIdentification73(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_FinInstrmDtls"]
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
+	__slots__ = ["_AcctOwnr", "_FinInstrmDtls", "_ActvtyInd", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -33,6 +20,32 @@ class SubAccountIdentification73(base_types._BaseFieldType):
 	def AcctOwnr(self):
 		del self._AcctOwnr
 		self._AcctOwnr = None
+
+	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -60,24 +73,11 @@ class SubAccountIdentification73(base_types._BaseFieldType):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
 
-	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
-
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
-
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrumentDetails46, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrumentDetails46, min=0, max=None, mutex_group=None, array=True),
 	))
 

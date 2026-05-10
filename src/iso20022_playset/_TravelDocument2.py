@@ -1,13 +1,13 @@
 from . import base_types
-from .PresentationMedium2Code import PresentationMedium2Code
-from .Max70Text import Max70Text
-from .ISODate import ISODate
-from .OfficialDocumentType1Code import OfficialDocumentType1Code
-from .ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._OfficialDocumentType1Code import OfficialDocumentType1Code
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._Max70Text import Max70Text
+from ._PresentationMedium2Code import PresentationMedium2Code
+from ._ISODate import ISODate
 
 class TravelDocument2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_IssncDt", "_Assgnr", "_Ctry", "_XprtnDt", "_Form"]
+	__slots__ = ["_Tp", "_Id", "_IssncDt", "_Ctry", "_Assgnr", "_XprtnDt", "_Form"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -48,19 +48,6 @@ class TravelDocument2(base_types._BaseFieldType):
 		self._IssncDt = None
 
 	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
-	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -72,6 +59,19 @@ class TravelDocument2(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def XprtnDt(self):
@@ -103,8 +103,8 @@ class TravelDocument2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=OfficialDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Form', type=PresentationMedium2Code, min=0, max=1, mutex_group=None, array=False),
 	))

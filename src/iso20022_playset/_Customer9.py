@@ -1,39 +1,13 @@
 from . import base_types
-from .Address2 import Address2
-from .Credentials3 import Credentials3
-from .Max2NumericText import Max2NumericText
-from .ContactPersonal1 import ContactPersonal1
-from .Max70Text import Max70Text
+from ._Max70Text import Max70Text
+from ._Credentials3 import Credentials3
+from ._Address2 import Address2
+from ._ContactPersonal1 import ContactPersonal1
+from ._Max2NumericText import Max2NumericText
 
 class Customer9(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Adr", "_CstmrFileRefNb", "_Age", "_Ctct", "_Id"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
+	__slots__ = ["_CstmrFileRefNb", "_Ctct", "_Nm", "_Id", "_Adr", "_Age"]
 	@property
 	def CstmrFileRefNb(self):
 		return self._CstmrFileRefNb
@@ -46,19 +20,6 @@ class Customer9(base_types._BaseFieldType):
 	def CstmrFileRefNb(self):
 		del self._CstmrFileRefNb
 		self._CstmrFileRefNb = None
-
-	@property
-	def Age(self):
-		return self._Age
-
-	@Age.setter
-	def Age(self, value):
-		self._Age = value if type(value) != base_types.auto else self.make_default("Age")
-
-	@Age.deleter
-	def Age(self):
-		del self._Age
-		self._Age = None
 
 	@property
 	def Ctct(self):
@@ -74,6 +35,19 @@ class Customer9(base_types._BaseFieldType):
 		self._Ctct = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -86,12 +60,38 @@ class Customer9(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def Age(self):
+		return self._Age
+
+	@Age.setter
+	def Age(self, value):
+		self._Age = value if type(value) != base_types.auto else self.make_default("Age")
+
+	@Age.deleter
+	def Age(self):
+		del self._Age
+		self._Age = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

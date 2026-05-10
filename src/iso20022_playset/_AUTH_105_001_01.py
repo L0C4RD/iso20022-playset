@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesFinancingReportingPositionSetReportV01 import SecuritiesFinancingReportingPositionSetReportV01
+from ._SecuritiesFinancingReportingPositionSetReportV01 import SecuritiesFinancingReportingPositionSetReportV01
 
 class AUTH_105_001_01():
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .BusinessDayReportOrError10Choice import BusinessDayReportOrError10Choice
-from .SystemIdentification2Choice import SystemIdentification2Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
+from ._BusinessDayReportOrError10Choice import BusinessDayReportOrError10Choice
 
 class BusinessDay8(base_types._BaseFieldType):
 
-	__slots__ = ["_SysId", "_BizDayOrErr"]
-	@property
-	def SysId(self):
-		return self._SysId
-
-	@SysId.setter
-	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
-
-	@SysId.deleter
-	def SysId(self):
-		del self._SysId
-		self._SysId = None
-
+	__slots__ = ["_BizDayOrErr", "_SysId"]
 	@property
 	def BizDayOrErr(self):
 		return self._BizDayOrErr
@@ -31,8 +18,21 @@ class BusinessDay8(base_types._BaseFieldType):
 		del self._BizDayOrErr
 		self._BizDayOrErr = None
 
+	@property
+	def SysId(self):
+		return self._SysId
+
+	@SysId.setter
+	def SysId(self, value):
+		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+
+	@SysId.deleter
+	def SysId(self):
+		del self._SysId
+		self._SysId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BizDayOrErr', type=BusinessDayReportOrError10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysId', type=SystemIdentification2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader4 import MessageHeader4
-from .StandingOrderQuery5 import StandingOrderQuery5
+from ._SupplementaryData1 import SupplementaryData1
+from ._StandingOrderQuery5 import StandingOrderQuery5
+from ._MessageHeader4 import MessageHeader4
 
 class GetStandingOrderV05(base_types._BaseFieldType):
 
-	__slots__ = ["_StgOrdrQryDef", "_MsgHdr", "_SplmtryData"]
-	@property
-	def StgOrdrQryDef(self):
-		return self._StgOrdrQryDef
-
-	@StgOrdrQryDef.setter
-	def StgOrdrQryDef(self, value):
-		self._StgOrdrQryDef = value if type(value) != base_types.auto else self.make_default("StgOrdrQryDef")
-
-	@StgOrdrQryDef.deleter
-	def StgOrdrQryDef(self):
-		del self._StgOrdrQryDef
-		self._StgOrdrQryDef = None
-
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_StgOrdrQryDef"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -45,9 +32,22 @@ class GetStandingOrderV05(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def StgOrdrQryDef(self):
+		return self._StgOrdrQryDef
+
+	@StgOrdrQryDef.setter
+	def StgOrdrQryDef(self, value):
+		self._StgOrdrQryDef = value if type(value) != base_types.auto else self.make_default("StgOrdrQryDef")
+
+	@StgOrdrQryDef.deleter
+	def StgOrdrQryDef(self):
+		del self._StgOrdrQryDef
+		self._StgOrdrQryDef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StgOrdrQryDef', type=StandingOrderQuery5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StgOrdrQryDef', type=StandingOrderQuery5, min=0, max=1, mutex_group=None, array=False),
 	))
 

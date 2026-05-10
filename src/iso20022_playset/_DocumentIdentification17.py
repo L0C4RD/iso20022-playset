@@ -1,5 +1,5 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class DocumentIdentification17(base_types._BaseFieldType):
 

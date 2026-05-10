@@ -1,6 +1,6 @@
 from . import base_types
-from .CorporateActionOption1 import CorporateActionOption1
-from .CorporateAction2 import CorporateAction2
+from ._CorporateAction2 import CorporateAction2
+from ._CorporateActionOption1 import CorporateActionOption1
 
 class CorporateActionNotificationAdvice1(base_types._BaseFieldType):
 

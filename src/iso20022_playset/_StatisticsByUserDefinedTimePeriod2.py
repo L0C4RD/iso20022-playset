@@ -1,24 +1,24 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .DateOrDateTimePeriodChoice import DateOrDateTimePeriodChoice
-from .PriceValueChange1 import PriceValueChange1
-from .PriceValue5 import PriceValue5
+from ._PriceValueChange1 import PriceValueChange1
+from ._PriceValue5 import PriceValue5
+from ._PercentageRate import PercentageRate
+from ._DateOrDateTimePeriodChoice import DateOrDateTimePeriodChoice
 
 class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_LwstPricVal", "_Yld", "_PricChng", "_HghstPricVal", "_Prd"]
+	__slots__ = ["_PricChng", "_Yld", "_LwstPricVal", "_HghstPricVal", "_Prd"]
 	@property
-	def LwstPricVal(self):
-		return self._LwstPricVal
+	def PricChng(self):
+		return self._PricChng
 
-	@LwstPricVal.setter
-	def LwstPricVal(self, value):
-		self._LwstPricVal = value if type(value) != base_types.auto else self.make_default("LwstPricVal")
+	@PricChng.setter
+	def PricChng(self, value):
+		self._PricChng = value if type(value) != base_types.auto else self.make_default("PricChng")
 
-	@LwstPricVal.deleter
-	def LwstPricVal(self):
-		del self._LwstPricVal
-		self._LwstPricVal = None
+	@PricChng.deleter
+	def PricChng(self):
+		del self._PricChng
+		self._PricChng = None
 
 	@property
 	def Yld(self):
@@ -34,17 +34,17 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		self._Yld = None
 
 	@property
-	def PricChng(self):
-		return self._PricChng
+	def LwstPricVal(self):
+		return self._LwstPricVal
 
-	@PricChng.setter
-	def PricChng(self, value):
-		self._PricChng = value if type(value) != base_types.auto else self.make_default("PricChng")
+	@LwstPricVal.setter
+	def LwstPricVal(self, value):
+		self._LwstPricVal = value if type(value) != base_types.auto else self.make_default("LwstPricVal")
 
-	@PricChng.deleter
-	def PricChng(self):
-		del self._PricChng
-		self._PricChng = None
+	@LwstPricVal.deleter
+	def LwstPricVal(self):
+		del self._LwstPricVal
+		self._LwstPricVal = None
 
 	@property
 	def HghstPricVal(self):
@@ -73,9 +73,9 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		self._Prd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
 	))

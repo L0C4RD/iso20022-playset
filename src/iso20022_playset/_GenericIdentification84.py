@@ -1,6 +1,6 @@
 from . import base_types
-from .Max4AlphaNumericText import Max4AlphaNumericText
-from .RestrictedFINXMax34Text import RestrictedFINXMax34Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._RestrictedFINXMax34Text import RestrictedFINXMax34Text
 
 class GenericIdentification84(base_types._BaseFieldType):
 

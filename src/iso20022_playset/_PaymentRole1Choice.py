@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalPaymentRole1Code import ExternalPaymentRole1Code
+from ._Max35Text import Max35Text
+from ._ExternalPaymentRole1Code import ExternalPaymentRole1Code
 
 class PaymentRole1Choice(base_types._BaseFieldType):
 

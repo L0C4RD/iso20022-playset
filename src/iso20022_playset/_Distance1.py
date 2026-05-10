@@ -1,11 +1,24 @@
 from . import base_types
-from .UnitOfMeasure10Code import UnitOfMeasure10Code
-from .Max10NumericText import Max10NumericText
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._UnitOfMeasure10Code import UnitOfMeasure10Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max10NumericText import Max10NumericText
 
 class Distance1(base_types._BaseFieldType):
 
-	__slots__ = ["_FreeDstnc", "_TtlDstnc", "_OdmtrStart", "_Rate", "_OdmtrRtr", "_UnitOfMeasr"]
+	__slots__ = ["_OdmtrRtr", "_FreeDstnc", "_OdmtrStart", "_Rate", "_TtlDstnc", "_UnitOfMeasr"]
+	@property
+	def OdmtrRtr(self):
+		return self._OdmtrRtr
+
+	@OdmtrRtr.setter
+	def OdmtrRtr(self, value):
+		self._OdmtrRtr = value if type(value) != base_types.auto else self.make_default("OdmtrRtr")
+
+	@OdmtrRtr.deleter
+	def OdmtrRtr(self):
+		del self._OdmtrRtr
+		self._OdmtrRtr = None
+
 	@property
 	def FreeDstnc(self):
 		return self._FreeDstnc
@@ -18,19 +31,6 @@ class Distance1(base_types._BaseFieldType):
 	def FreeDstnc(self):
 		del self._FreeDstnc
 		self._FreeDstnc = None
-
-	@property
-	def TtlDstnc(self):
-		return self._TtlDstnc
-
-	@TtlDstnc.setter
-	def TtlDstnc(self, value):
-		self._TtlDstnc = value if type(value) != base_types.auto else self.make_default("TtlDstnc")
-
-	@TtlDstnc.deleter
-	def TtlDstnc(self):
-		del self._TtlDstnc
-		self._TtlDstnc = None
 
 	@property
 	def OdmtrStart(self):
@@ -59,17 +59,17 @@ class Distance1(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def OdmtrRtr(self):
-		return self._OdmtrRtr
+	def TtlDstnc(self):
+		return self._TtlDstnc
 
-	@OdmtrRtr.setter
-	def OdmtrRtr(self, value):
-		self._OdmtrRtr = value if type(value) != base_types.auto else self.make_default("OdmtrRtr")
+	@TtlDstnc.setter
+	def TtlDstnc(self, value):
+		self._TtlDstnc = value if type(value) != base_types.auto else self.make_default("TtlDstnc")
 
-	@OdmtrRtr.deleter
-	def OdmtrRtr(self):
-		del self._OdmtrRtr
-		self._OdmtrRtr = None
+	@TtlDstnc.deleter
+	def TtlDstnc(self):
+		del self._TtlDstnc
+		self._TtlDstnc = None
 
 	@property
 	def UnitOfMeasr(self):
@@ -85,11 +85,11 @@ class Distance1(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OdmtrRtr', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FreeDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdmtrStart', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OdmtrRtr', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure10Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

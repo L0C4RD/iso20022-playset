@@ -1,11 +1,11 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .Amount2 import Amount2
-from .MarginType1Choice import MarginType1Choice
+from ._MarginType1Choice import MarginType1Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._Amount2 import Amount2
 
 class Margin4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CdtDbtInd", "_Amt"]
+	__slots__ = ["_Tp", "_Amt", "_CdtDbtInd"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -20,19 +20,6 @@ class Margin4(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -45,9 +32,22 @@ class Margin4(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=MarginType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .LiquidityStressScenarioDefinition1 import LiquidityStressScenarioDefinition1
+from ._SupplementaryData1 import SupplementaryData1
+from ._LiquidityStressScenarioDefinition1 import LiquidityStressScenarioDefinition1
 
 class CCPLiquidityStressTestingDefinitionReportV01(base_types._BaseFieldType):
 

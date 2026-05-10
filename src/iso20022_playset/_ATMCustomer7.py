@@ -1,7 +1,7 @@
 from . import base_types
-from .TransactionVerificationResult5 import TransactionVerificationResult5
-from .ATMCustomerProfile6 import ATMCustomerProfile6
-from .LanguageCode import LanguageCode
+from ._TransactionVerificationResult5 import TransactionVerificationResult5
+from ._LanguageCode import LanguageCode
+from ._ATMCustomerProfile6 import ATMCustomerProfile6
 
 class ATMCustomer7(base_types._BaseFieldType):
 

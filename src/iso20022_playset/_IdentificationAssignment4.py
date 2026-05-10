@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .Party50Choice import Party50Choice
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
+from ._ISODateTime import ISODateTime
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDtTm", "_Assgne", "_Cretr", "_FrstAgt", "_MsgId", "_Assgnr"]
+	__slots__ = ["_Assgnr", "_Assgne", "_CreDtTm", "_Cretr", "_FrstAgt", "_MsgId"]
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def Assgnr(self):
+		return self._Assgnr
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
 
 	@property
 	def Assgne(self):
@@ -32,6 +32,19 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 	def Assgne(self):
 		del self._Assgne
 		self._Assgne = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def Cretr(self):
@@ -72,25 +85,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		del self._MsgId
 		self._MsgId = None
 
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

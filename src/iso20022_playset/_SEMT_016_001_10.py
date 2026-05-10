@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraPositionMovementPostingReportV10 import IntraPositionMovementPostingReportV10
+from ._IntraPositionMovementPostingReportV10 import IntraPositionMovementPostingReportV10
 
 class SEMT_016_001_10():
 

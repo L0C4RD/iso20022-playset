@@ -1,11 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
-from .SecurityIdentification19 import SecurityIdentification19
+from ._FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class AggregateHoldingBalance2(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_FinInstrmId", "_BalForFinInstrm"]
+	__slots__ = ["_BalForFinInstrm", "_SplmtryData", "_FinInstrmId"]
+	@property
+	def BalForFinInstrm(self):
+		return self._BalForFinInstrm
+
+	@BalForFinInstrm.setter
+	def BalForFinInstrm(self, value):
+		self._BalForFinInstrm = value if type(value) != base_types.auto else self.make_default("BalForFinInstrm")
+
+	@BalForFinInstrm.deleter
+	def BalForFinInstrm(self):
+		del self._BalForFinInstrm
+		self._BalForFinInstrm = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class AggregateHoldingBalance2(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
-	@property
-	def BalForFinInstrm(self):
-		return self._BalForFinInstrm
-
-	@BalForFinInstrm.setter
-	def BalForFinInstrm(self, value):
-		self._BalForFinInstrm = value if type(value) != base_types.auto else self.make_default("BalForFinInstrm")
-
-	@BalForFinInstrm.deleter
-	def BalForFinInstrm(self):
-		del self._BalForFinInstrm
-		self._BalForFinInstrm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BalForFinInstrm', type=FinancialInstrumentAggregateBalance1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForFinInstrm', type=FinancialInstrumentAggregateBalance1, min=1, max=None, mutex_group=None, array=True),
 	))
 

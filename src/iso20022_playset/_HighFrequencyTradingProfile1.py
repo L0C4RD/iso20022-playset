@@ -1,7 +1,7 @@
 from . import base_types
-from .ISODate import ISODate
-from .SettlementFrequency1Choice import SettlementFrequency1Choice
-from .ConsolidationType1Choice import ConsolidationType1Choice
+from ._ConsolidationType1Choice import ConsolidationType1Choice
+from ._ISODate import ISODate
+from ._SettlementFrequency1Choice import SettlementFrequency1Choice
 
 class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 

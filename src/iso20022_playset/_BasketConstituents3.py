@@ -1,7 +1,7 @@
 from . import base_types
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from .InstrumentIdentification6Choice import InstrumentIdentification6Choice
-from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._InstrumentIdentification6Choice import InstrumentIdentification6Choice
 
 class BasketConstituents3(base_types._BaseFieldType):
 

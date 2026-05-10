@@ -1,6 +1,6 @@
 from . import base_types
-from .Max256Text import Max256Text
-from .PartyType7Code import PartyType7Code
+from ._PartyType7Code import PartyType7Code
+from ._Max256Text import Max256Text
 
 class GenericIdentification186(base_types._BaseFieldType):
 

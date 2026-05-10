@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Date3Choice import Date3Choice
+from ._Date3Choice import Date3Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class ClosingDate4Choice(base_types._BaseFieldType):
 

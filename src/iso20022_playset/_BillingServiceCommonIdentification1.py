@@ -1,6 +1,6 @@
 from . import base_types
-from .Max8Text import Max8Text
-from .Max6Text import Max6Text
+from ._Max8Text import Max8Text
+from ._Max6Text import Max6Text
 
 class BillingServiceCommonIdentification1(base_types._BaseFieldType):
 

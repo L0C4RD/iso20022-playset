@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .RestrictionStatus1Code import RestrictionStatus1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._RestrictionStatus1Code import RestrictionStatus1Code
 
 class RestrictionStatus1Choice(base_types._BaseFieldType):
 

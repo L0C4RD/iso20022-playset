@@ -1,5 +1,5 @@
 from . import base_types
-from .HostToATMRequestV01 import HostToATMRequestV01
+from ._HostToATMRequestV01 import HostToATMRequestV01
 
 class CAAM_007_001_01():
 

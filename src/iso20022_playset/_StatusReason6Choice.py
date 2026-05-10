@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalStatusReason1Code import ExternalStatusReason1Code
+from ._Max35Text import Max35Text
+from ._ExternalStatusReason1Code import ExternalStatusReason1Code
 
 class StatusReason6Choice(base_types._BaseFieldType):
 

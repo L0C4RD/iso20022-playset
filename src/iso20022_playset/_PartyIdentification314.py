@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification257Choice import PartyIdentification257Choice
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._Max35Text import Max35Text
+from ._PartyIdentification257Choice import PartyIdentification257Choice
 
 class PartyIdentification314(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PrcgId", "_LEI"]
+	__slots__ = ["_LEI", "_PrcgId", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def LEI(self):
+		return self._LEI
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def PrcgId(self):
@@ -33,21 +33,21 @@ class PartyIdentification314(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def Id(self):
+		return self._Id
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

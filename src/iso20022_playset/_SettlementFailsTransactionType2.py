@@ -1,9 +1,22 @@
 from . import base_types
-from .SettlementTotalData1Choice import SettlementTotalData1Choice
+from ._SettlementTotalData1Choice import SettlementTotalData1Choice
 
 class SettlementFailsTransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesBuyOrSell", "_RpAgrmt", "_CollMgmtOpr", "_Othr", "_SctiesLndgOrBrrwg"]
+	__slots__ = ["_SctiesLndgOrBrrwg", "_SctiesBuyOrSell", "_RpAgrmt", "_Othr", "_CollMgmtOpr"]
+	@property
+	def SctiesLndgOrBrrwg(self):
+		return self._SctiesLndgOrBrrwg
+
+	@SctiesLndgOrBrrwg.setter
+	def SctiesLndgOrBrrwg(self, value):
+		self._SctiesLndgOrBrrwg = value if type(value) != base_types.auto else self.make_default("SctiesLndgOrBrrwg")
+
+	@SctiesLndgOrBrrwg.deleter
+	def SctiesLndgOrBrrwg(self):
+		del self._SctiesLndgOrBrrwg
+		self._SctiesLndgOrBrrwg = None
+
 	@property
 	def SctiesBuyOrSell(self):
 		return self._SctiesBuyOrSell
@@ -31,19 +44,6 @@ class SettlementFailsTransactionType2(base_types._BaseFieldType):
 		self._RpAgrmt = None
 
 	@property
-	def CollMgmtOpr(self):
-		return self._CollMgmtOpr
-
-	@CollMgmtOpr.setter
-	def CollMgmtOpr(self, value):
-		self._CollMgmtOpr = value if type(value) != base_types.auto else self.make_default("CollMgmtOpr")
-
-	@CollMgmtOpr.deleter
-	def CollMgmtOpr(self):
-		del self._CollMgmtOpr
-		self._CollMgmtOpr = None
-
-	@property
 	def Othr(self):
 		return self._Othr
 
@@ -57,23 +57,23 @@ class SettlementFailsTransactionType2(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def SctiesLndgOrBrrwg(self):
-		return self._SctiesLndgOrBrrwg
+	def CollMgmtOpr(self):
+		return self._CollMgmtOpr
 
-	@SctiesLndgOrBrrwg.setter
-	def SctiesLndgOrBrrwg(self, value):
-		self._SctiesLndgOrBrrwg = value if type(value) != base_types.auto else self.make_default("SctiesLndgOrBrrwg")
+	@CollMgmtOpr.setter
+	def CollMgmtOpr(self, value):
+		self._CollMgmtOpr = value if type(value) != base_types.auto else self.make_default("CollMgmtOpr")
 
-	@SctiesLndgOrBrrwg.deleter
-	def SctiesLndgOrBrrwg(self):
-		del self._SctiesLndgOrBrrwg
-		self._SctiesLndgOrBrrwg = None
+	@CollMgmtOpr.deleter
+	def CollMgmtOpr(self):
+		del self._CollMgmtOpr
+		self._CollMgmtOpr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpAgrmt', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

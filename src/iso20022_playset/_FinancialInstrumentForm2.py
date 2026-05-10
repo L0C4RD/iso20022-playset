@@ -1,6 +1,6 @@
 from . import base_types
-from .Appearance3Choice import Appearance3Choice
-from .FormOfSecurity8Choice import FormOfSecurity8Choice
+from ._Appearance3Choice import Appearance3Choice
+from ._FormOfSecurity8Choice import FormOfSecurity8Choice
 
 class FinancialInstrumentForm2(base_types._BaseFieldType):
 

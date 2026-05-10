@@ -1,12 +1,25 @@
 from . import base_types
-from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .YesNoIndicator import YesNoIndicator
-from .SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
+from ._YesNoIndicator import YesNoIndicator
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class TransactionTypeAndAdditionalParameters18(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesFincgTxTp", "_CmonId", "_Pmt", "_RcncltnInd"]
+	__slots__ = ["_Pmt", "_SctiesFincgTxTp", "_CmonId", "_RcncltnInd"]
+	@property
+	def Pmt(self):
+		return self._Pmt
+
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
+
 	@property
 	def SctiesFincgTxTp(self):
 		return self._SctiesFincgTxTp
@@ -34,19 +47,6 @@ class TransactionTypeAndAdditionalParameters18(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
-	@property
 	def RcncltnInd(self):
 		return self._RcncltnInd
 
@@ -60,9 +60,9 @@ class TransactionTypeAndAdditionalParameters18(base_types._BaseFieldType):
 		self._RcncltnInd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxTp', type=SecuritiesFinancingTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

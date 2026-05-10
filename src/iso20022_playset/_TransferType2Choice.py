@@ -1,6 +1,6 @@
 from . import base_types
-from .TransferType4Code import TransferType4Code
-from .GenericIdentification36 import GenericIdentification36
+from ._GenericIdentification36 import GenericIdentification36
+from ._TransferType4Code import TransferType4Code
 
 class TransferType2Choice(base_types._BaseFieldType):
 

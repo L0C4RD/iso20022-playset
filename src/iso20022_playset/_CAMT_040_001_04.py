@@ -1,5 +1,5 @@
 from . import base_types
-from .FundEstimatedCashForecastReportV04 import FundEstimatedCashForecastReportV04
+from ._FundEstimatedCashForecastReportV04 import FundEstimatedCashForecastReportV04
 
 class CAMT_040_001_04():
 

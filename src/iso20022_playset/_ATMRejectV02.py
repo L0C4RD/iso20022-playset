@@ -1,6 +1,6 @@
 from . import base_types
-from .ATMReject2 import ATMReject2
-from .Header33 import Header33
+from ._Header33 import Header33
+from ._ATMReject2 import ATMReject2
 
 class ATMRejectV02(base_types._BaseFieldType):
 

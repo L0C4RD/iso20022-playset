@@ -1,108 +1,43 @@
 from . import base_types
-from .ISODate import ISODate
-from .SecurityIdentification18 import SecurityIdentification18
-from .SettlementDate8Code import SettlementDate8Code
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .AgreedRate3 import AgreedRate3
-from .DecimalNumber import DecimalNumber
-from .Max70Text import Max70Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._SettlementDate8Code import SettlementDate8Code
+from ._Max70Text import Max70Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._DecimalNumber import DecimalNumber
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._SecurityIdentification18 import SecurityIdentification18
+from ._AgreedRate3 import AgreedRate3
+from ._ISODate import ISODate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class Trade10(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnRate", "_LastQty", "_ValDt", "_SttlmTp", "_ClctdCtrPtyCcyLastQty", "_SctyId", "_FwdPts", "_OptnInd", "_SttlmDt", "_RskAmt", "_AssoctdTradRef", "_FxgCcy", "_DltaInd", "_ExctnPric", "_FxgDt"]
+	__slots__ = ["_RskAmt", "_FxgDt", "_OptnInd", "_SttlmTp", "_ExctnPric", "_ValDt", "_AssoctdTradRef", "_FxgCcy", "_DltaInd", "_SttlmDt", "_ValtnRate", "_LastQty", "_ClctdCtrPtyCcyLastQty", "_SctyId", "_FwdPts"]
 	@property
-	def ValtnRate(self):
-		return self._ValtnRate
+	def RskAmt(self):
+		return self._RskAmt
 
-	@ValtnRate.setter
-	def ValtnRate(self, value):
-		self._ValtnRate = value if type(value) != base_types.auto else self.make_default("ValtnRate")
+	@RskAmt.setter
+	def RskAmt(self, value):
+		self._RskAmt = value if type(value) != base_types.auto else self.make_default("RskAmt")
 
-	@ValtnRate.deleter
-	def ValtnRate(self):
-		del self._ValtnRate
-		self._ValtnRate = None
-
-	@property
-	def LastQty(self):
-		return self._LastQty
-
-	@LastQty.setter
-	def LastQty(self, value):
-		self._LastQty = value if type(value) != base_types.auto else self.make_default("LastQty")
-
-	@LastQty.deleter
-	def LastQty(self):
-		del self._LastQty
-		self._LastQty = None
+	@RskAmt.deleter
+	def RskAmt(self):
+		del self._RskAmt
+		self._RskAmt = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def FxgDt(self):
+		return self._FxgDt
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+	@FxgDt.setter
+	def FxgDt(self, value):
+		self._FxgDt = value if type(value) != base_types.auto else self.make_default("FxgDt")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
-	def SttlmTp(self):
-		return self._SttlmTp
-
-	@SttlmTp.setter
-	def SttlmTp(self, value):
-		self._SttlmTp = value if type(value) != base_types.auto else self.make_default("SttlmTp")
-
-	@SttlmTp.deleter
-	def SttlmTp(self):
-		del self._SttlmTp
-		self._SttlmTp = None
-
-	@property
-	def ClctdCtrPtyCcyLastQty(self):
-		return self._ClctdCtrPtyCcyLastQty
-
-	@ClctdCtrPtyCcyLastQty.setter
-	def ClctdCtrPtyCcyLastQty(self, value):
-		self._ClctdCtrPtyCcyLastQty = value if type(value) != base_types.auto else self.make_default("ClctdCtrPtyCcyLastQty")
-
-	@ClctdCtrPtyCcyLastQty.deleter
-	def ClctdCtrPtyCcyLastQty(self):
-		del self._ClctdCtrPtyCcyLastQty
-		self._ClctdCtrPtyCcyLastQty = None
-
-	@property
-	def SctyId(self):
-		return self._SctyId
-
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
-
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
-
-	@property
-	def FwdPts(self):
-		return self._FwdPts
-
-	@FwdPts.setter
-	def FwdPts(self, value):
-		self._FwdPts = value if type(value) != base_types.auto else self.make_default("FwdPts")
-
-	@FwdPts.deleter
-	def FwdPts(self):
-		del self._FwdPts
-		self._FwdPts = None
+	@FxgDt.deleter
+	def FxgDt(self):
+		del self._FxgDt
+		self._FxgDt = None
 
 	@property
 	def OptnInd(self):
@@ -118,30 +53,43 @@ class Trade10(base_types._BaseFieldType):
 		self._OptnInd = None
 
 	@property
-	def SttlmDt(self):
-		return self._SttlmDt
+	def SttlmTp(self):
+		return self._SttlmTp
 
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+	@SttlmTp.setter
+	def SttlmTp(self, value):
+		self._SttlmTp = value if type(value) != base_types.auto else self.make_default("SttlmTp")
 
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
+	@SttlmTp.deleter
+	def SttlmTp(self):
+		del self._SttlmTp
+		self._SttlmTp = None
 
 	@property
-	def RskAmt(self):
-		return self._RskAmt
+	def ExctnPric(self):
+		return self._ExctnPric
 
-	@RskAmt.setter
-	def RskAmt(self, value):
-		self._RskAmt = value if type(value) != base_types.auto else self.make_default("RskAmt")
+	@ExctnPric.setter
+	def ExctnPric(self, value):
+		self._ExctnPric = value if type(value) != base_types.auto else self.make_default("ExctnPric")
 
-	@RskAmt.deleter
-	def RskAmt(self):
-		del self._RskAmt
-		self._RskAmt = None
+	@ExctnPric.deleter
+	def ExctnPric(self):
+		del self._ExctnPric
+		self._ExctnPric = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def AssoctdTradRef(self):
@@ -183,46 +131,98 @@ class Trade10(base_types._BaseFieldType):
 		self._DltaInd = None
 
 	@property
-	def ExctnPric(self):
-		return self._ExctnPric
+	def SttlmDt(self):
+		return self._SttlmDt
 
-	@ExctnPric.setter
-	def ExctnPric(self, value):
-		self._ExctnPric = value if type(value) != base_types.auto else self.make_default("ExctnPric")
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
 
-	@ExctnPric.deleter
-	def ExctnPric(self):
-		del self._ExctnPric
-		self._ExctnPric = None
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
 
 	@property
-	def FxgDt(self):
-		return self._FxgDt
+	def ValtnRate(self):
+		return self._ValtnRate
 
-	@FxgDt.setter
-	def FxgDt(self, value):
-		self._FxgDt = value if type(value) != base_types.auto else self.make_default("FxgDt")
+	@ValtnRate.setter
+	def ValtnRate(self, value):
+		self._ValtnRate = value if type(value) != base_types.auto else self.make_default("ValtnRate")
 
-	@FxgDt.deleter
-	def FxgDt(self):
-		del self._FxgDt
-		self._FxgDt = None
+	@ValtnRate.deleter
+	def ValtnRate(self):
+		del self._ValtnRate
+		self._ValtnRate = None
+
+	@property
+	def LastQty(self):
+		return self._LastQty
+
+	@LastQty.setter
+	def LastQty(self, value):
+		self._LastQty = value if type(value) != base_types.auto else self.make_default("LastQty")
+
+	@LastQty.deleter
+	def LastQty(self):
+		del self._LastQty
+		self._LastQty = None
+
+	@property
+	def ClctdCtrPtyCcyLastQty(self):
+		return self._ClctdCtrPtyCcyLastQty
+
+	@ClctdCtrPtyCcyLastQty.setter
+	def ClctdCtrPtyCcyLastQty(self, value):
+		self._ClctdCtrPtyCcyLastQty = value if type(value) != base_types.auto else self.make_default("ClctdCtrPtyCcyLastQty")
+
+	@ClctdCtrPtyCcyLastQty.deleter
+	def ClctdCtrPtyCcyLastQty(self):
+		del self._ClctdCtrPtyCcyLastQty
+		self._ClctdCtrPtyCcyLastQty = None
+
+	@property
+	def SctyId(self):
+		return self._SctyId
+
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
+
+	@property
+	def FwdPts(self):
+		return self._FwdPts
+
+	@FwdPts.setter
+	def FwdPts(self, value):
+		self._FwdPts = value if type(value) != base_types.auto else self.make_default("FwdPts")
+
+	@FwdPts.deleter
+	def FwdPts(self):
+		del self._FwdPts
+		self._FwdPts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctdCtrPtyCcyLastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FwdPts', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RskAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FxgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmTp', type=SettlementDate8Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssoctdTradRef', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FxgCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DltaInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnPric', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FxgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctdCtrPtyCcyLastQty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification18, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdPts', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

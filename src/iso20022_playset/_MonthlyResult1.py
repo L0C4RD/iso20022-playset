@@ -1,39 +1,13 @@
 from . import base_types
-from .BaseOneRate import BaseOneRate
-from .PositiveNumber import PositiveNumber
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .GenericIdentification165 import GenericIdentification165
-from .NonNegativeNumber import NonNegativeNumber
+from ._NonNegativeNumber import NonNegativeNumber
+from ._BaseOneRate import BaseOneRate
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PositiveNumber import PositiveNumber
+from ._GenericIdentification165 import GenericIdentification165
 
 class MonthlyResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_LrgstXcptn", "_LrgstXcptnId", "_Cvrg", "_AvrgXcptn", "_NbOfObsrvtns", "_NbOfXcptns"]
-	@property
-	def LrgstXcptn(self):
-		return self._LrgstXcptn
-
-	@LrgstXcptn.setter
-	def LrgstXcptn(self, value):
-		self._LrgstXcptn = value if type(value) != base_types.auto else self.make_default("LrgstXcptn")
-
-	@LrgstXcptn.deleter
-	def LrgstXcptn(self):
-		del self._LrgstXcptn
-		self._LrgstXcptn = None
-
-	@property
-	def LrgstXcptnId(self):
-		return self._LrgstXcptnId
-
-	@LrgstXcptnId.setter
-	def LrgstXcptnId(self, value):
-		self._LrgstXcptnId = value if type(value) != base_types.auto else self.make_default("LrgstXcptnId")
-
-	@LrgstXcptnId.deleter
-	def LrgstXcptnId(self):
-		del self._LrgstXcptnId
-		self._LrgstXcptnId = None
-
+	__slots__ = ["_Cvrg", "_NbOfObsrvtns", "_LrgstXcptnId", "_NbOfXcptns", "_AvrgXcptn", "_LrgstXcptn"]
 	@property
 	def Cvrg(self):
 		return self._Cvrg
@@ -46,19 +20,6 @@ class MonthlyResult1(base_types._BaseFieldType):
 	def Cvrg(self):
 		del self._Cvrg
 		self._Cvrg = None
-
-	@property
-	def AvrgXcptn(self):
-		return self._AvrgXcptn
-
-	@AvrgXcptn.setter
-	def AvrgXcptn(self, value):
-		self._AvrgXcptn = value if type(value) != base_types.auto else self.make_default("AvrgXcptn")
-
-	@AvrgXcptn.deleter
-	def AvrgXcptn(self):
-		del self._AvrgXcptn
-		self._AvrgXcptn = None
 
 	@property
 	def NbOfObsrvtns(self):
@@ -74,6 +35,19 @@ class MonthlyResult1(base_types._BaseFieldType):
 		self._NbOfObsrvtns = None
 
 	@property
+	def LrgstXcptnId(self):
+		return self._LrgstXcptnId
+
+	@LrgstXcptnId.setter
+	def LrgstXcptnId(self, value):
+		self._LrgstXcptnId = value if type(value) != base_types.auto else self.make_default("LrgstXcptnId")
+
+	@LrgstXcptnId.deleter
+	def LrgstXcptnId(self):
+		del self._LrgstXcptnId
+		self._LrgstXcptnId = None
+
+	@property
 	def NbOfXcptns(self):
 		return self._NbOfXcptns
 
@@ -86,12 +60,38 @@ class MonthlyResult1(base_types._BaseFieldType):
 		del self._NbOfXcptns
 		self._NbOfXcptns = None
 
+	@property
+	def AvrgXcptn(self):
+		return self._AvrgXcptn
+
+	@AvrgXcptn.setter
+	def AvrgXcptn(self, value):
+		self._AvrgXcptn = value if type(value) != base_types.auto else self.make_default("AvrgXcptn")
+
+	@AvrgXcptn.deleter
+	def AvrgXcptn(self):
+		del self._AvrgXcptn
+		self._AvrgXcptn = None
+
+	@property
+	def LrgstXcptn(self):
+		return self._LrgstXcptn
+
+	@LrgstXcptn.setter
+	def LrgstXcptn(self, value):
+		self._LrgstXcptn = value if type(value) != base_types.auto else self.make_default("LrgstXcptn")
+
+	@LrgstXcptn.deleter
+	def LrgstXcptn(self):
+		del self._LrgstXcptn
+		self._LrgstXcptn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LrgstXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LrgstXcptnId', type=GenericIdentification165, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cvrg', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfObsrvtns', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LrgstXcptnId', type=GenericIdentification165, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfXcptns', type=NonNegativeNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LrgstXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

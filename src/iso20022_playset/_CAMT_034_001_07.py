@@ -1,5 +1,5 @@
 from . import base_types
-from .DuplicateV07 import DuplicateV07
+from ._DuplicateV07 import DuplicateV07
 
 class CAMT_034_001_07():
 

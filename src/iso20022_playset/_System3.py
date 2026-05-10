@@ -1,12 +1,12 @@
 from . import base_types
-from .AccountIdentification4Choice import AccountIdentification4Choice
-from .MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .CountryCode import CountryCode
+from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._AccountIdentification4Choice import AccountIdentification4Choice
+from ._CountryCode import CountryCode
 
 class System3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_SysId", "_MmbId", "_AcctId"]
+	__slots__ = ["_Ctry", "_AcctId", "_SysId", "_MmbId"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -19,6 +19,19 @@ class System3(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def SysId(self):
@@ -46,23 +59,10 @@ class System3(base_types._BaseFieldType):
 		del self._MmbId
 		self._MmbId = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=MarketInfrastructureIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

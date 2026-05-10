@@ -1,24 +1,11 @@
 from . import base_types
-from .GenericIdentification36 import GenericIdentification36
-from .Max210Text import Max210Text
-from .ProprietaryReason1Choice import ProprietaryReason1Choice
+from ._ProprietaryReason1Choice import ProprietaryReason1Choice
+from ._Max210Text import Max210Text
+from ._GenericIdentification36 import GenericIdentification36
 
 class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlRsnInf", "_Sts"]
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
+	__slots__ = ["_AddtlRsnInf", "_Rsn", "_Sts"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf
@@ -31,6 +18,19 @@ class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
 		self._AddtlRsnInf = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Sts(self):
@@ -46,8 +46,8 @@ class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=ProprietaryReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=ProprietaryReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

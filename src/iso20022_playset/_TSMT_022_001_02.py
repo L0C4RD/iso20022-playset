@@ -1,5 +1,5 @@
 from . import base_types
-from .MisMatchRejectionV02 import MisMatchRejectionV02
+from ._MisMatchRejectionV02 import MisMatchRejectionV02
 
 class TSMT_022_001_02():
 

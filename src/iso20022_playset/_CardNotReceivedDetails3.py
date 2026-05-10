@@ -1,39 +1,26 @@
 from . import base_types
-from .Address2 import Address2
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max256Text import Max256Text
-from .Max16Text import Max16Text
-from .ISODate import ISODate
-from .CardSecurityCapability1 import CardSecurityCapability1
+from ._CardSecurityCapability1 import CardSecurityCapability1
+from ._Max256Text import Max256Text
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Address2 import Address2
+from ._Max16Text import Max16Text
+from ._ISODate import ISODate
 
 class CardNotReceivedDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_MldFrPstlCd", "_DtMld", "_MlngAdr", "_CardSctyCpblty", "_CardSctyCd", "_VldFr", "_MlngAdrUstrd"]
+	__slots__ = ["_MlngAdrUstrd", "_MlngAdr", "_CardSctyCpblty", "_MldFrPstlCd", "_CardSctyCd", "_DtMld", "_VldFr"]
 	@property
-	def MldFrPstlCd(self):
-		return self._MldFrPstlCd
+	def MlngAdrUstrd(self):
+		return self._MlngAdrUstrd
 
-	@MldFrPstlCd.setter
-	def MldFrPstlCd(self, value):
-		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+	@MlngAdrUstrd.setter
+	def MlngAdrUstrd(self, value):
+		self._MlngAdrUstrd = value if type(value) != base_types.auto else self.make_default("MlngAdrUstrd")
 
-	@MldFrPstlCd.deleter
-	def MldFrPstlCd(self):
-		del self._MldFrPstlCd
-		self._MldFrPstlCd = None
-
-	@property
-	def DtMld(self):
-		return self._DtMld
-
-	@DtMld.setter
-	def DtMld(self, value):
-		self._DtMld = value if type(value) != base_types.auto else self.make_default("DtMld")
-
-	@DtMld.deleter
-	def DtMld(self):
-		del self._DtMld
-		self._DtMld = None
+	@MlngAdrUstrd.deleter
+	def MlngAdrUstrd(self):
+		del self._MlngAdrUstrd
+		self._MlngAdrUstrd = None
 
 	@property
 	def MlngAdr(self):
@@ -62,6 +49,19 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 		self._CardSctyCpblty = None
 
 	@property
+	def MldFrPstlCd(self):
+		return self._MldFrPstlCd
+
+	@MldFrPstlCd.setter
+	def MldFrPstlCd(self, value):
+		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+
+	@MldFrPstlCd.deleter
+	def MldFrPstlCd(self):
+		del self._MldFrPstlCd
+		self._MldFrPstlCd = None
+
+	@property
 	def CardSctyCd(self):
 		return self._CardSctyCd
 
@@ -73,6 +73,19 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 	def CardSctyCd(self):
 		del self._CardSctyCd
 		self._CardSctyCd = None
+
+	@property
+	def DtMld(self):
+		return self._DtMld
+
+	@DtMld.setter
+	def DtMld(self, value):
+		self._DtMld = value if type(value) != base_types.auto else self.make_default("DtMld")
+
+	@DtMld.deleter
+	def DtMld(self):
+		del self._DtMld
+		self._DtMld = None
 
 	@property
 	def VldFr(self):
@@ -87,26 +100,13 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 		del self._VldFr
 		self._VldFr = None
 
-	@property
-	def MlngAdrUstrd(self):
-		return self._MlngAdrUstrd
-
-	@MlngAdrUstrd.setter
-	def MlngAdrUstrd(self, value):
-		self._MlngAdrUstrd = value if type(value) != base_types.auto else self.make_default("MlngAdrUstrd")
-
-	@MlngAdrUstrd.deleter
-	def MlngAdrUstrd(self):
-		del self._MlngAdrUstrd
-		self._MlngAdrUstrd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MldFrPstlCd', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtMld', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MlngAdrUstrd', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MlngAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSctyCpblty', type=CardSecurityCapability1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MldFrPstlCd', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSctyCd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtMld', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MlngAdrUstrd', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentNumber6Choice import DocumentNumber6Choice
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._DocumentNumber6Choice import DocumentNumber6Choice
 
 class DocumentIdentification55(base_types._BaseFieldType):
 

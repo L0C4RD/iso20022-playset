@@ -1,27 +1,14 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ResponseMode2Code import ResponseMode2Code
-from .ProcessingPosition2Code import ProcessingPosition2Code
-from .PercentageRate import PercentageRate
-from .ResourceAction1Code import ResourceAction1Code
-from .ResourceContent1 import ResourceContent1
+from ._ProcessingPosition2Code import ProcessingPosition2Code
+from ._ResourceAction1Code import ResourceAction1Code
+from ._ResponseMode2Code import ResponseMode2Code
+from ._Max35Text import Max35Text
+from ._ResourceContent1 import ResourceContent1
+from ._PercentageRate import PercentageRate
 
 class DevicePlayResourceRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsrc", "_TmgSlot", "_RsrcActn", "_RspnMd", "_DispRsltn", "_SoundVol"]
-	@property
-	def Rsrc(self):
-		return self._Rsrc
-
-	@Rsrc.setter
-	def Rsrc(self, value):
-		self._Rsrc = value if type(value) != base_types.auto else self.make_default("Rsrc")
-
-	@Rsrc.deleter
-	def Rsrc(self):
-		del self._Rsrc
-		self._Rsrc = None
-
+	__slots__ = ["_TmgSlot", "_SoundVol", "_RspnMd", "_Rsrc", "_RsrcActn", "_DispRsltn"]
 	@property
 	def TmgSlot(self):
 		return self._TmgSlot
@@ -36,17 +23,17 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		self._TmgSlot = None
 
 	@property
-	def RsrcActn(self):
-		return self._RsrcActn
+	def SoundVol(self):
+		return self._SoundVol
 
-	@RsrcActn.setter
-	def RsrcActn(self, value):
-		self._RsrcActn = value if type(value) != base_types.auto else self.make_default("RsrcActn")
+	@SoundVol.setter
+	def SoundVol(self, value):
+		self._SoundVol = value if type(value) != base_types.auto else self.make_default("SoundVol")
 
-	@RsrcActn.deleter
-	def RsrcActn(self):
-		del self._RsrcActn
-		self._RsrcActn = None
+	@SoundVol.deleter
+	def SoundVol(self):
+		del self._SoundVol
+		self._SoundVol = None
 
 	@property
 	def RspnMd(self):
@@ -62,6 +49,32 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		self._RspnMd = None
 
 	@property
+	def Rsrc(self):
+		return self._Rsrc
+
+	@Rsrc.setter
+	def Rsrc(self, value):
+		self._Rsrc = value if type(value) != base_types.auto else self.make_default("Rsrc")
+
+	@Rsrc.deleter
+	def Rsrc(self):
+		del self._Rsrc
+		self._Rsrc = None
+
+	@property
+	def RsrcActn(self):
+		return self._RsrcActn
+
+	@RsrcActn.setter
+	def RsrcActn(self, value):
+		self._RsrcActn = value if type(value) != base_types.auto else self.make_default("RsrcActn")
+
+	@RsrcActn.deleter
+	def RsrcActn(self):
+		del self._RsrcActn
+		self._RsrcActn = None
+
+	@property
 	def DispRsltn(self):
 		return self._DispRsltn
 
@@ -74,25 +87,12 @@ class DevicePlayResourceRequest1(base_types._BaseFieldType):
 		del self._DispRsltn
 		self._DispRsltn = None
 
-	@property
-	def SoundVol(self):
-		return self._SoundVol
-
-	@SoundVol.setter
-	def SoundVol(self, value):
-		self._SoundVol = value if type(value) != base_types.auto else self.make_default("SoundVol")
-
-	@SoundVol.deleter
-	def SoundVol(self):
-		del self._SoundVol
-		self._SoundVol = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmgSlot', type=ProcessingPosition2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SoundVol', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsrc', type=ResourceContent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcActn', type=ResourceAction1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispRsltn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

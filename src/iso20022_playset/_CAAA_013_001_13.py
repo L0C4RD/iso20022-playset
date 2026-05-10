@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorDiagnosticRequestV13 import AcceptorDiagnosticRequestV13
+from ._AcceptorDiagnosticRequestV13 import AcceptorDiagnosticRequestV13
 
 class CAAA_013_001_13():
 

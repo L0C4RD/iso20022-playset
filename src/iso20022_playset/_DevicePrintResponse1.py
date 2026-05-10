@@ -1,5 +1,5 @@
 from . import base_types
-from .DocumentType7Code import DocumentType7Code
+from ._DocumentType7Code import DocumentType7Code
 
 class DevicePrintResponse1(base_types._BaseFieldType):
 

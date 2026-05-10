@@ -1,5 +1,5 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class CorporateAction59(base_types._BaseFieldType):
 

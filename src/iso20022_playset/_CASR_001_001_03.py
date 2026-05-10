@@ -1,5 +1,5 @@
 from . import base_types
-from .SettlementReportingInitiationV03 import SettlementReportingInitiationV03
+from ._SettlementReportingInitiationV03 import SettlementReportingInitiationV03
 
 class CASR_001_001_03():
 

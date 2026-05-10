@@ -1,13 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AlternatePartyIdentification8 import AlternatePartyIdentification8
-from .PartyIdentification117Choice import PartyIdentification117Choice
-from .PartyTextInformation5 import PartyTextInformation5
-from .YesNoIndicator import YesNoIndicator
+from ._PartyTextInformation5 import PartyTextInformation5
+from ._PartyIdentification117Choice import PartyIdentification117Choice
+from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
 
 class ConfirmationPartyDetails9(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrPrtcnAssoctnMmbsh", "_Id", "_PrcgId", "_AddtlInf", "_AltrnId"]
+	__slots__ = ["_AddtlInf", "_InvstrPrtcnAssoctnMmbsh", "_PrcgId", "_Id", "_AltrnId"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def InvstrPrtcnAssoctnMmbsh(self):
 		return self._InvstrPrtcnAssoctnMmbsh
@@ -20,19 +33,6 @@ class ConfirmationPartyDetails9(base_types._BaseFieldType):
 	def InvstrPrtcnAssoctnMmbsh(self):
 		del self._InvstrPrtcnAssoctnMmbsh
 		self._InvstrPrtcnAssoctnMmbsh = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def PrcgId(self):
@@ -48,17 +48,17 @@ class ConfirmationPartyDetails9(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Id(self):
+		return self._Id
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AltrnId(self):
@@ -74,10 +74,10 @@ class ConfirmationPartyDetails9(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstrPrtcnAssoctnMmbsh', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrPrtcnAssoctnMmbsh', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

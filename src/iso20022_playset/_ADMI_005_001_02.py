@@ -1,5 +1,5 @@
 from . import base_types
-from .ReportQueryRequestV02 import ReportQueryRequestV02
+from ._ReportQueryRequestV02 import ReportQueryRequestV02
 
 class ADMI_005_001_02():
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .Number import Number
-from .Algorithm11Code import Algorithm11Code
-from .AlgorithmIdentification12 import AlgorithmIdentification12
+from ._AlgorithmIdentification12 import AlgorithmIdentification12
+from ._Number import Number
+from ._Algorithm11Code import Algorithm11Code
 
 class Parameter8(base_types._BaseFieldType):
 
-	__slots__ = ["_MskGnrtrAlgo", "_TrlrFld", "_DgstAlgo", "_SaltLngth"]
-	@property
-	def MskGnrtrAlgo(self):
-		return self._MskGnrtrAlgo
-
-	@MskGnrtrAlgo.setter
-	def MskGnrtrAlgo(self, value):
-		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
-
-	@MskGnrtrAlgo.deleter
-	def MskGnrtrAlgo(self):
-		del self._MskGnrtrAlgo
-		self._MskGnrtrAlgo = None
-
+	__slots__ = ["_TrlrFld", "_MskGnrtrAlgo", "_DgstAlgo", "_SaltLngth"]
 	@property
 	def TrlrFld(self):
 		return self._TrlrFld
@@ -31,6 +18,19 @@ class Parameter8(base_types._BaseFieldType):
 	def TrlrFld(self):
 		del self._TrlrFld
 		self._TrlrFld = None
+
+	@property
+	def MskGnrtrAlgo(self):
+		return self._MskGnrtrAlgo
+
+	@MskGnrtrAlgo.setter
+	def MskGnrtrAlgo(self, value):
+		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
+
+	@MskGnrtrAlgo.deleter
+	def MskGnrtrAlgo(self):
+		del self._MskGnrtrAlgo
+		self._MskGnrtrAlgo = None
 
 	@property
 	def DgstAlgo(self):
@@ -59,8 +59,8 @@ class Parameter8(base_types._BaseFieldType):
 		self._SaltLngth = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaltLngth', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))

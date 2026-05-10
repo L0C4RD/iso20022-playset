@@ -1,24 +1,24 @@
 from . import base_types
-from .Branch5Choice import Branch5Choice
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .CollateralRole1Code import CollateralRole1Code
-from .CounterpartyTradeNature7Choice import CounterpartyTradeNature7Choice
+from ._CollateralRole1Code import CollateralRole1Code
+from ._Branch5Choice import Branch5Choice
+from ._CounterpartyTradeNature7Choice import CounterpartyTradeNature7Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyIdentification11(base_types._BaseFieldType):
 
-	__slots__ = ["_Ntr", "_Sd", "_Brnch", "_Id"]
+	__slots__ = ["_Id", "_Sd", "_Brnch", "_Ntr"]
 	@property
-	def Ntr(self):
-		return self._Ntr
+	def Id(self):
+		return self._Id
 
-	@Ntr.setter
-	def Ntr(self, value):
-		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Ntr.deleter
-	def Ntr(self):
-		del self._Ntr
-		self._Ntr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Sd(self):
@@ -47,22 +47,22 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 		self._Brnch = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Ntr(self):
+		return self._Ntr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Ntr.setter
+	def Ntr(self, value):
+		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Ntr.deleter
+	def Ntr(self):
+		del self._Ntr
+		self._Ntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sd', type=CollateralRole1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brnch', type=Branch5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

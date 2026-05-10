@@ -1,6 +1,6 @@
 from . import base_types
-from .Max256Text import Max256Text
-from .CorporateActionReversalReason10Choice import CorporateActionReversalReason10Choice
+from ._CorporateActionReversalReason10Choice import CorporateActionReversalReason10Choice
+from ._Max256Text import Max256Text
 
 class CorporateActionReversalReason8(base_types._BaseFieldType):
 

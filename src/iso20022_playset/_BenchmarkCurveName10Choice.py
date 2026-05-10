@@ -1,6 +1,6 @@
 from . import base_types
-from .Max350Text import Max350Text
-from .BenchmarkCurveName3Code import BenchmarkCurveName3Code
+from ._BenchmarkCurveName3Code import BenchmarkCurveName3Code
+from ._Max350Text import Max350Text
 
 class BenchmarkCurveName10Choice(base_types._BaseFieldType):
 

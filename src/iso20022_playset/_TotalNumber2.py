@@ -1,5 +1,5 @@
 from . import base_types
-from .Max6NumericText import Max6NumericText
+from ._Max6NumericText import Max6NumericText
 
 class TotalNumber2(base_types._BaseFieldType):
 

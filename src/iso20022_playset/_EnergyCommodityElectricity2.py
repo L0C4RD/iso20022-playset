@@ -1,11 +1,11 @@
 from . import base_types
-from .AssetClassDetailedSubProductType5Code import AssetClassDetailedSubProductType5Code
-from .AssetClassSubProductType6Code import AssetClassSubProductType6Code
-from .AssetClassProductType2Code import AssetClassProductType2Code
+from ._AssetClassDetailedSubProductType5Code import AssetClassDetailedSubProductType5Code
+from ._AssetClassSubProductType6Code import AssetClassSubProductType6Code
+from ._AssetClassProductType2Code import AssetClassProductType2Code
 
 class EnergyCommodityElectricity2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct", "_AddtlSubPdct"]
+	__slots__ = ["_SubPdct", "_AddtlSubPdct", "_BasePdct"]
 	@property
 	def SubPdct(self):
 		return self._SubPdct
@@ -20,19 +20,6 @@ class EnergyCommodityElectricity2(base_types._BaseFieldType):
 		self._SubPdct = None
 
 	@property
-	def BasePdct(self):
-		return self._BasePdct
-
-	@BasePdct.setter
-	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
-
-	@BasePdct.deleter
-	def BasePdct(self):
-		del self._BasePdct
-		self._BasePdct = None
-
-	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct
 
@@ -45,9 +32,22 @@ class EnergyCommodityElectricity2(base_types._BaseFieldType):
 		del self._AddtlSubPdct
 		self._AddtlSubPdct = None
 
+	@property
+	def BasePdct(self):
+		return self._BasePdct
+
+	@BasePdct.setter
+	def BasePdct(self, value):
+		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
+
+	@BasePdct.deleter
+	def BasePdct(self):
+		del self._BasePdct
+		self._BasePdct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType6Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

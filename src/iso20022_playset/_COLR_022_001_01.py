@@ -1,5 +1,5 @@
 from . import base_types
-from .TripartyCollateralAndExposureReportV01 import TripartyCollateralAndExposureReportV01
+from ._TripartyCollateralAndExposureReportV01 import TripartyCollateralAndExposureReportV01
 
 class COLR_022_001_01():
 

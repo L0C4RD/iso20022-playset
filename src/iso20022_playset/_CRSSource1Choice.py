@@ -1,6 +1,6 @@
 from . import base_types
-from .CRSSourceStatus1Code import CRSSourceStatus1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._CRSSourceStatus1Code import CRSSourceStatus1Code
 
 class CRSSource1Choice(base_types._BaseFieldType):
 

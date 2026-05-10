@@ -1,23 +1,10 @@
 from . import base_types
-from .MemberCriteriaDefinition2Choice import MemberCriteriaDefinition2Choice
-from .QueryType2Code import QueryType2Code
+from ._MemberCriteriaDefinition2Choice import MemberCriteriaDefinition2Choice
+from ._QueryType2Code import QueryType2Code
 
 class MemberQueryDefinition4(base_types._BaseFieldType):
 
-	__slots__ = ["_MmbCrit", "_QryTp"]
-	@property
-	def MmbCrit(self):
-		return self._MmbCrit
-
-	@MmbCrit.setter
-	def MmbCrit(self, value):
-		self._MmbCrit = value if type(value) != base_types.auto else self.make_default("MmbCrit")
-
-	@MmbCrit.deleter
-	def MmbCrit(self):
-		del self._MmbCrit
-		self._MmbCrit = None
-
+	__slots__ = ["_QryTp", "_MmbCrit"]
 	@property
 	def QryTp(self):
 		return self._QryTp
@@ -31,8 +18,21 @@ class MemberQueryDefinition4(base_types._BaseFieldType):
 		del self._QryTp
 		self._QryTp = None
 
+	@property
+	def MmbCrit(self):
+		return self._MmbCrit
+
+	@MmbCrit.setter
+	def MmbCrit(self, value):
+		self._MmbCrit = value if type(value) != base_types.auto else self.make_default("MmbCrit")
+
+	@MmbCrit.deleter
+	def MmbCrit(self):
+		del self._MmbCrit
+		self._MmbCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MmbCrit', type=MemberCriteriaDefinition2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbCrit', type=MemberCriteriaDefinition2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-from .InvestmentAccount60 import InvestmentAccount60
-from .Cheque21 import Cheque21
-from .CreditTransfer10 import CreditTransfer10
+from ._CreditTransfer10 import CreditTransfer10
+from ._InvestmentAccount60 import InvestmentAccount60
+from ._Cheque21 import Cheque21
 
 class PaymentInstrument26Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtTrfDtls", "_BkrsDrftDtls", "_ChqDtls", "_CshAcctDtls"]
+	__slots__ = ["_CdtTrfDtls", "_CshAcctDtls", "_BkrsDrftDtls", "_ChqDtls"]
 	@property
 	def CdtTrfDtls(self):
 		return self._CdtTrfDtls
@@ -18,6 +18,19 @@ class PaymentInstrument26Choice(base_types._BaseFieldType):
 	def CdtTrfDtls(self):
 		del self._CdtTrfDtls
 		self._CdtTrfDtls = None
+
+	@property
+	def CshAcctDtls(self):
+		return self._CshAcctDtls
+
+	@CshAcctDtls.setter
+	def CshAcctDtls(self, value):
+		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
+
+	@CshAcctDtls.deleter
+	def CshAcctDtls(self):
+		del self._CshAcctDtls
+		self._CshAcctDtls = None
 
 	@property
 	def BkrsDrftDtls(self):
@@ -45,23 +58,10 @@ class PaymentInstrument26Choice(base_types._BaseFieldType):
 		del self._ChqDtls
 		self._ChqDtls = None
 
-	@property
-	def CshAcctDtls(self):
-		return self._CshAcctDtls
-
-	@CshAcctDtls.setter
-	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
-
-	@CshAcctDtls.deleter
-	def CshAcctDtls(self):
-		del self._CshAcctDtls
-		self._CshAcctDtls = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtTrfDtls', type=CreditTransfer10, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BkrsDrftDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ChqDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 	))
 

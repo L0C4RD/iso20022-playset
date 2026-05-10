@@ -1,6 +1,6 @@
 from . import base_types
-from .ReinvestmentType1Code import ReinvestmentType1Code
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ReinvestmentType1Code import ReinvestmentType1Code
 
 class ReinvestedCashTypeAndAmount2(base_types._BaseFieldType):
 

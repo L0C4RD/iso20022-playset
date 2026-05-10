@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DateFormat46Choice import DateFormat46Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max35Text import Max35Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._DateFormat46Choice import DateFormat46Choice
 
 class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrDsclsrReqId", "_FinInstrmId", "_ShrhldrsDsclsrRcrdDt"]
+	__slots__ = ["_ShrhldrsDsclsrRcrdDt", "_FinInstrmId", "_IssrDsclsrReqId"]
 	@property
-	def IssrDsclsrReqId(self):
-		return self._IssrDsclsrReqId
+	def ShrhldrsDsclsrRcrdDt(self):
+		return self._ShrhldrsDsclsrRcrdDt
 
-	@IssrDsclsrReqId.setter
-	def IssrDsclsrReqId(self, value):
-		self._IssrDsclsrReqId = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqId")
+	@ShrhldrsDsclsrRcrdDt.setter
+	def ShrhldrsDsclsrRcrdDt(self, value):
+		self._ShrhldrsDsclsrRcrdDt = value if type(value) != base_types.auto else self.make_default("ShrhldrsDsclsrRcrdDt")
 
-	@IssrDsclsrReqId.deleter
-	def IssrDsclsrReqId(self):
-		del self._IssrDsclsrReqId
-		self._IssrDsclsrReqId = None
+	@ShrhldrsDsclsrRcrdDt.deleter
+	def ShrhldrsDsclsrRcrdDt(self):
+		del self._ShrhldrsDsclsrRcrdDt
+		self._ShrhldrsDsclsrRcrdDt = None
 
 	@property
 	def FinInstrmId(self):
@@ -33,21 +33,21 @@ class DisclosureRequestIdentification1(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def ShrhldrsDsclsrRcrdDt(self):
-		return self._ShrhldrsDsclsrRcrdDt
+	def IssrDsclsrReqId(self):
+		return self._IssrDsclsrReqId
 
-	@ShrhldrsDsclsrRcrdDt.setter
-	def ShrhldrsDsclsrRcrdDt(self, value):
-		self._ShrhldrsDsclsrRcrdDt = value if type(value) != base_types.auto else self.make_default("ShrhldrsDsclsrRcrdDt")
+	@IssrDsclsrReqId.setter
+	def IssrDsclsrReqId(self, value):
+		self._IssrDsclsrReqId = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqId")
 
-	@ShrhldrsDsclsrRcrdDt.deleter
-	def ShrhldrsDsclsrRcrdDt(self):
-		del self._ShrhldrsDsclsrRcrdDt
-		self._ShrhldrsDsclsrRcrdDt = None
+	@IssrDsclsrReqId.deleter
+	def IssrDsclsrReqId(self):
+		del self._IssrDsclsrReqId
+		self._IssrDsclsrReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrDsclsrReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldrsDsclsrRcrdDt', type=DateFormat46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrDsclsrReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

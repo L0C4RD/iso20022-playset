@@ -1,37 +1,24 @@
 from . import base_types
-from .ResourceType1Code import ResourceType1Code
-from .Max1025Text import Max1025Text
-from .SoundFormat1Code import SoundFormat1Code
-from .LanguageCode import LanguageCode
+from ._ResourceType1Code import ResourceType1Code
+from ._SoundFormat1Code import SoundFormat1Code
+from ._LanguageCode import LanguageCode
+from ._Max1025Text import Max1025Text
 
 class ResourceContent1(base_types._BaseFieldType):
 
-	__slots__ = ["_RsrcFrmt", "_Lang", "_RsrcTp", "_RsrcRef"]
+	__slots__ = ["_RsrcRef", "_RsrcTp", "_Lang", "_RsrcFrmt"]
 	@property
-	def RsrcFrmt(self):
-		return self._RsrcFrmt
+	def RsrcRef(self):
+		return self._RsrcRef
 
-	@RsrcFrmt.setter
-	def RsrcFrmt(self, value):
-		self._RsrcFrmt = value if type(value) != base_types.auto else self.make_default("RsrcFrmt")
+	@RsrcRef.setter
+	def RsrcRef(self, value):
+		self._RsrcRef = value if type(value) != base_types.auto else self.make_default("RsrcRef")
 
-	@RsrcFrmt.deleter
-	def RsrcFrmt(self):
-		del self._RsrcFrmt
-		self._RsrcFrmt = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
+	@RsrcRef.deleter
+	def RsrcRef(self):
+		del self._RsrcRef
+		self._RsrcRef = None
 
 	@property
 	def RsrcTp(self):
@@ -47,22 +34,35 @@ class ResourceContent1(base_types._BaseFieldType):
 		self._RsrcTp = None
 
 	@property
-	def RsrcRef(self):
-		return self._RsrcRef
+	def Lang(self):
+		return self._Lang
 
-	@RsrcRef.setter
-	def RsrcRef(self, value):
-		self._RsrcRef = value if type(value) != base_types.auto else self.make_default("RsrcRef")
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
 
-	@RsrcRef.deleter
-	def RsrcRef(self):
-		del self._RsrcRef
-		self._RsrcRef = None
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
+	def RsrcFrmt(self):
+		return self._RsrcFrmt
+
+	@RsrcFrmt.setter
+	def RsrcFrmt(self, value):
+		self._RsrcFrmt = value if type(value) != base_types.auto else self.make_default("RsrcFrmt")
+
+	@RsrcFrmt.deleter
+	def RsrcFrmt(self):
+		del self._RsrcFrmt
+		self._RsrcFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RsrcFrmt', type=SoundFormat1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsrcTp', type=ResourceType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsrcRef', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcTp', type=ResourceType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcFrmt', type=SoundFormat1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

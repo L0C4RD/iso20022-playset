@@ -1,5 +1,5 @@
 from . import base_types
-from .HostToATMAcknowledgementV01 import HostToATMAcknowledgementV01
+from ._HostToATMAcknowledgementV01 import HostToATMAcknowledgementV01
 
 class CAAM_008_001_01():
 

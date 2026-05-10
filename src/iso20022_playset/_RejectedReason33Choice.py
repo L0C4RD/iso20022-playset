@@ -1,23 +1,10 @@
 from . import base_types
-from .RejectedStatusReason12Code import RejectedStatusReason12Code
-from .GenericIdentification36 import GenericIdentification36
+from ._RejectedStatusReason12Code import RejectedStatusReason12Code
+from ._GenericIdentification36 import GenericIdentification36
 
 class RejectedReason33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Prtry"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Prtry", "_Cd"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class RejectedReason33Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=RejectedStatusReason12Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification36, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=RejectedStatusReason12Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

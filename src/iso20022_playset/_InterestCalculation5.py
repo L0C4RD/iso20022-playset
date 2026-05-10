@@ -1,41 +1,15 @@
 from . import base_types
-from .Number import Number
-from .CollateralAccount3 import CollateralAccount3
-from .AmountAndDirection20 import AmountAndDirection20
-from .ISODate import ISODate
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Number import Number
+from ._ISODate import ISODate
+from ._CollateralAccount3 import CollateralAccount3
+from ._PercentageRate import PercentageRate
+from ._AmountAndDirection20 import AmountAndDirection20
 
 class InterestCalculation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAcctId", "_AggtdIntrstAmt", "_IntrstRate", "_ClctnDt", "_PrncplAmt", "_MvmntAmt", "_Sprd", "_AcrdIntrstAmt", "_FctvRate", "_FctvPrncplAmt", "_NbOfDays", "_BlckChainAdrOrWllt"]
-	@property
-	def CollAcctId(self):
-		return self._CollAcctId
-
-	@CollAcctId.setter
-	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
-
-	@CollAcctId.deleter
-	def CollAcctId(self):
-		del self._CollAcctId
-		self._CollAcctId = None
-
-	@property
-	def AggtdIntrstAmt(self):
-		return self._AggtdIntrstAmt
-
-	@AggtdIntrstAmt.setter
-	def AggtdIntrstAmt(self, value):
-		self._AggtdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AggtdIntrstAmt")
-
-	@AggtdIntrstAmt.deleter
-	def AggtdIntrstAmt(self):
-		del self._AggtdIntrstAmt
-		self._AggtdIntrstAmt = None
-
+	__slots__ = ["_IntrstRate", "_BlckChainAdrOrWllt", "_CollAcctId", "_MvmntAmt", "_NbOfDays", "_PrncplAmt", "_ClctnDt", "_AggtdIntrstAmt", "_FctvPrncplAmt", "_Sprd", "_AcrdIntrstAmt", "_FctvRate"]
 	@property
 	def IntrstRate(self):
 		return self._IntrstRate
@@ -50,17 +24,56 @@ class InterestCalculation5(base_types._BaseFieldType):
 		self._IntrstRate = None
 
 	@property
-	def ClctnDt(self):
-		return self._ClctnDt
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def CollAcctId(self):
+		return self._CollAcctId
+
+	@CollAcctId.setter
+	def CollAcctId(self, value):
+		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
+
+	@CollAcctId.deleter
+	def CollAcctId(self):
+		del self._CollAcctId
+		self._CollAcctId = None
+
+	@property
+	def MvmntAmt(self):
+		return self._MvmntAmt
+
+	@MvmntAmt.setter
+	def MvmntAmt(self, value):
+		self._MvmntAmt = value if type(value) != base_types.auto else self.make_default("MvmntAmt")
+
+	@MvmntAmt.deleter
+	def MvmntAmt(self):
+		del self._MvmntAmt
+		self._MvmntAmt = None
+
+	@property
+	def NbOfDays(self):
+		return self._NbOfDays
+
+	@NbOfDays.setter
+	def NbOfDays(self, value):
+		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+
+	@NbOfDays.deleter
+	def NbOfDays(self):
+		del self._NbOfDays
+		self._NbOfDays = None
 
 	@property
 	def PrncplAmt(self):
@@ -76,17 +89,43 @@ class InterestCalculation5(base_types._BaseFieldType):
 		self._PrncplAmt = None
 
 	@property
-	def MvmntAmt(self):
-		return self._MvmntAmt
+	def ClctnDt(self):
+		return self._ClctnDt
 
-	@MvmntAmt.setter
-	def MvmntAmt(self, value):
-		self._MvmntAmt = value if type(value) != base_types.auto else self.make_default("MvmntAmt")
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
 
-	@MvmntAmt.deleter
-	def MvmntAmt(self):
-		del self._MvmntAmt
-		self._MvmntAmt = None
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
+
+	@property
+	def AggtdIntrstAmt(self):
+		return self._AggtdIntrstAmt
+
+	@AggtdIntrstAmt.setter
+	def AggtdIntrstAmt(self, value):
+		self._AggtdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AggtdIntrstAmt")
+
+	@AggtdIntrstAmt.deleter
+	def AggtdIntrstAmt(self):
+		del self._AggtdIntrstAmt
+		self._AggtdIntrstAmt = None
+
+	@property
+	def FctvPrncplAmt(self):
+		return self._FctvPrncplAmt
+
+	@FctvPrncplAmt.setter
+	def FctvPrncplAmt(self, value):
+		self._FctvPrncplAmt = value if type(value) != base_types.auto else self.make_default("FctvPrncplAmt")
+
+	@FctvPrncplAmt.deleter
+	def FctvPrncplAmt(self):
+		del self._FctvPrncplAmt
+		self._FctvPrncplAmt = None
 
 	@property
 	def Sprd(self):
@@ -127,57 +166,18 @@ class InterestCalculation5(base_types._BaseFieldType):
 		del self._FctvRate
 		self._FctvRate = None
 
-	@property
-	def FctvPrncplAmt(self):
-		return self._FctvPrncplAmt
-
-	@FctvPrncplAmt.setter
-	def FctvPrncplAmt(self, value):
-		self._FctvPrncplAmt = value if type(value) != base_types.auto else self.make_default("FctvPrncplAmt")
-
-	@FctvPrncplAmt.deleter
-	def FctvPrncplAmt(self):
-		del self._FctvPrncplAmt
-		self._FctvPrncplAmt = None
-
-	@property
-	def NbOfDays(self):
-		return self._NbOfDays
-
-	@NbOfDays.setter
-	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
-
-	@NbOfDays.deleter
-	def NbOfDays(self):
-		del self._NbOfDays
-		self._NbOfDays = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AggtdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmt', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MvmntAmt', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDays', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmt', type=AmountAndDirection20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AggtdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FctvPrncplAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FctvPrncplAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfDays', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
 	))
 

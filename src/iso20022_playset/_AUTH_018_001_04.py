@@ -1,5 +1,5 @@
 from . import base_types
-from .ContractRegistrationRequestV04 import ContractRegistrationRequestV04
+from ._ContractRegistrationRequestV04 import ContractRegistrationRequestV04
 
 class AUTH_018_001_04():
 

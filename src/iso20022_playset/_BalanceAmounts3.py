@@ -1,9 +1,9 @@
 from . import base_types
-from .AmountAndDirection6 import AmountAndDirection6
+from ._AmountAndDirection6 import AmountAndDirection6
 
 class BalanceAmounts3(base_types._BaseFieldType):
 
-	__slots__ = ["_ElgblCollVal", "_AcrdIntrstAmt", "_PrvsHldgVal", "_BookVal", "_HldgVal"]
+	__slots__ = ["_ElgblCollVal", "_HldgVal", "_BookVal", "_PrvsHldgVal", "_AcrdIntrstAmt"]
 	@property
 	def ElgblCollVal(self):
 		return self._ElgblCollVal
@@ -18,30 +18,17 @@ class BalanceAmounts3(base_types._BaseFieldType):
 		self._ElgblCollVal = None
 
 	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
+	def HldgVal(self):
+		return self._HldgVal
 
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
 
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
-
-	@property
-	def PrvsHldgVal(self):
-		return self._PrvsHldgVal
-
-	@PrvsHldgVal.setter
-	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
-
-	@PrvsHldgVal.deleter
-	def PrvsHldgVal(self):
-		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
 
 	@property
 	def BookVal(self):
@@ -57,23 +44,36 @@ class BalanceAmounts3(base_types._BaseFieldType):
 		self._BookVal = None
 
 	@property
-	def HldgVal(self):
-		return self._HldgVal
+	def PrvsHldgVal(self):
+		return self._PrvsHldgVal
 
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+	@PrvsHldgVal.setter
+	def PrvsHldgVal(self, value):
+		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
 
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
+	@PrvsHldgVal.deleter
+	def PrvsHldgVal(self):
+		del self._PrvsHldgVal
+		self._PrvsHldgVal = None
+
+	@property
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
+
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElgblCollVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),
 	))
 

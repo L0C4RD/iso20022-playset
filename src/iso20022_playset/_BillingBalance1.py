@@ -1,24 +1,11 @@
 from . import base_types
-from .BillingBalanceType1Choice import BillingBalanceType1Choice
-from .AmountAndDirection34 import AmountAndDirection34
-from .BillingCurrencyType1Code import BillingCurrencyType1Code
+from ._BillingCurrencyType1Code import BillingCurrencyType1Code
+from ._AmountAndDirection34 import AmountAndDirection34
+from ._BillingBalanceType1Choice import BillingBalanceType1Choice
 
 class BillingBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_CcyTp", "_Tp"]
-	@property
-	def Val(self):
-		return self._Val
-
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
-
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
-
+	__slots__ = ["_CcyTp", "_Tp", "_Val"]
 	@property
 	def CcyTp(self):
 		return self._CcyTp
@@ -45,9 +32,22 @@ class BillingBalance1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Val', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyTp', type=BillingCurrencyType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BillingBalanceType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Val', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

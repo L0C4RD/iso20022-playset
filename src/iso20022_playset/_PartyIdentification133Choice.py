@@ -1,7 +1,7 @@
 from . import base_types
-from .BICFIDec2014Identifier import BICFIDec2014Identifier
-from .NameAndAddress5 import NameAndAddress5
-from .GenericIdentification36 import GenericIdentification36
+from ._GenericIdentification36 import GenericIdentification36
+from ._NameAndAddress5 import NameAndAddress5
+from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 
 class PartyIdentification133Choice(base_types._BaseFieldType):
 

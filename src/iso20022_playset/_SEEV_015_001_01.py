@@ -1,5 +1,5 @@
 from . import base_types
-from .AgentCAElectionStatusAdviceV01 import AgentCAElectionStatusAdviceV01
+from ._AgentCAElectionStatusAdviceV01 import AgentCAElectionStatusAdviceV01
 
 class SEEV_015_001_01():
 

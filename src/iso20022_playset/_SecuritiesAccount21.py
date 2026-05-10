@@ -1,23 +1,23 @@
 from . import base_types
-from .AccountIdentification5 import AccountIdentification5
-from .BaseOneRate import BaseOneRate
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BaseOneRate import BaseOneRate
+from ._AccountIdentification5 import AccountIdentification5
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_SubAcct", "_BaseCcy", "_RptgCcy", "_FXRate"]
+	__slots__ = ["_FXRate", "_SubAcct", "_BaseCcy", "_RptgCcy", "_Acct"]
 	@property
-	def Acct(self):
-		return self._Acct
+	def FXRate(self):
+		return self._FXRate
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+	@FXRate.setter
+	def FXRate(self, value):
+		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@FXRate.deleter
+	def FXRate(self):
+		del self._FXRate
+		self._FXRate = None
 
 	@property
 	def SubAcct(self):
@@ -59,23 +59,23 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		self._RptgCcy = None
 
 	@property
-	def FXRate(self):
-		return self._FXRate
+	def Acct(self):
+		return self._Acct
 
-	@FXRate.setter
-	def FXRate(self, value):
-		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
 
-	@FXRate.deleter
-	def FXRate(self):
-		del self._FXRate
-		self._FXRate = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),
 	))
 

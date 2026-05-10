@@ -1,28 +1,15 @@
 from . import base_types
-from .Number import Number
-from .MessageIdentification1 import MessageIdentification1
-from .YesNoIndicator import YesNoIndicator
-from .ISODateTime import ISODateTime
-from .TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
-from .Max35NumericText import Max35NumericText
-from .ConfirmationRequest1Code import ConfirmationRequest1Code
+from ._Max35NumericText import Max35NumericText
+from ._Number import Number
+from ._MessageIdentification1 import MessageIdentification1
+from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
+from ._ConfirmationRequest1Code import ConfirmationRequest1Code
+from ._YesNoIndicator import YesNoIndicator
+from ._ISODateTime import ISODateTime
 
 class Confirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfSts", "_ConfTm", "_ReqId", "_ListOrdrNb", "_LastPgInd", "_TradPtyConfTm", "_LastRptReqd", "_TtlNbOfRpts", "_InitgPtyConfTm", "_ConfTp", "_QryStartNb", "_PgNb", "_MsgNbOfCurPg", "_QryPgNb"]
-	@property
-	def ConfSts(self):
-		return self._ConfSts
-
-	@ConfSts.setter
-	def ConfSts(self, value):
-		self._ConfSts = value if type(value) != base_types.auto else self.make_default("ConfSts")
-
-	@ConfSts.deleter
-	def ConfSts(self):
-		del self._ConfSts
-		self._ConfSts = None
-
+	__slots__ = ["_ConfTm", "_ConfSts", "_MsgNbOfCurPg", "_InitgPtyConfTm", "_TradPtyConfTm", "_LastRptReqd", "_QryPgNb", "_ListOrdrNb", "_LastPgInd", "_QryStartNb", "_ConfTp", "_PgNb", "_ReqId", "_TtlNbOfRpts"]
 	@property
 	def ConfTm(self):
 		return self._ConfTm
@@ -37,43 +24,43 @@ class Confirmation1(base_types._BaseFieldType):
 		self._ConfTm = None
 
 	@property
-	def ReqId(self):
-		return self._ReqId
+	def ConfSts(self):
+		return self._ConfSts
 
-	@ReqId.setter
-	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+	@ConfSts.setter
+	def ConfSts(self, value):
+		self._ConfSts = value if type(value) != base_types.auto else self.make_default("ConfSts")
 
-	@ReqId.deleter
-	def ReqId(self):
-		del self._ReqId
-		self._ReqId = None
-
-	@property
-	def ListOrdrNb(self):
-		return self._ListOrdrNb
-
-	@ListOrdrNb.setter
-	def ListOrdrNb(self, value):
-		self._ListOrdrNb = value if type(value) != base_types.auto else self.make_default("ListOrdrNb")
-
-	@ListOrdrNb.deleter
-	def ListOrdrNb(self):
-		del self._ListOrdrNb
-		self._ListOrdrNb = None
+	@ConfSts.deleter
+	def ConfSts(self):
+		del self._ConfSts
+		self._ConfSts = None
 
 	@property
-	def LastPgInd(self):
-		return self._LastPgInd
+	def MsgNbOfCurPg(self):
+		return self._MsgNbOfCurPg
 
-	@LastPgInd.setter
-	def LastPgInd(self, value):
-		self._LastPgInd = value if type(value) != base_types.auto else self.make_default("LastPgInd")
+	@MsgNbOfCurPg.setter
+	def MsgNbOfCurPg(self, value):
+		self._MsgNbOfCurPg = value if type(value) != base_types.auto else self.make_default("MsgNbOfCurPg")
 
-	@LastPgInd.deleter
-	def LastPgInd(self):
-		del self._LastPgInd
-		self._LastPgInd = None
+	@MsgNbOfCurPg.deleter
+	def MsgNbOfCurPg(self):
+		del self._MsgNbOfCurPg
+		self._MsgNbOfCurPg = None
+
+	@property
+	def InitgPtyConfTm(self):
+		return self._InitgPtyConfTm
+
+	@InitgPtyConfTm.setter
+	def InitgPtyConfTm(self, value):
+		self._InitgPtyConfTm = value if type(value) != base_types.auto else self.make_default("InitgPtyConfTm")
+
+	@InitgPtyConfTm.deleter
+	def InitgPtyConfTm(self):
+		del self._InitgPtyConfTm
+		self._InitgPtyConfTm = None
 
 	@property
 	def TradPtyConfTm(self):
@@ -102,43 +89,43 @@ class Confirmation1(base_types._BaseFieldType):
 		self._LastRptReqd = None
 
 	@property
-	def TtlNbOfRpts(self):
-		return self._TtlNbOfRpts
+	def QryPgNb(self):
+		return self._QryPgNb
 
-	@TtlNbOfRpts.setter
-	def TtlNbOfRpts(self, value):
-		self._TtlNbOfRpts = value if type(value) != base_types.auto else self.make_default("TtlNbOfRpts")
+	@QryPgNb.setter
+	def QryPgNb(self, value):
+		self._QryPgNb = value if type(value) != base_types.auto else self.make_default("QryPgNb")
 
-	@TtlNbOfRpts.deleter
-	def TtlNbOfRpts(self):
-		del self._TtlNbOfRpts
-		self._TtlNbOfRpts = None
-
-	@property
-	def InitgPtyConfTm(self):
-		return self._InitgPtyConfTm
-
-	@InitgPtyConfTm.setter
-	def InitgPtyConfTm(self, value):
-		self._InitgPtyConfTm = value if type(value) != base_types.auto else self.make_default("InitgPtyConfTm")
-
-	@InitgPtyConfTm.deleter
-	def InitgPtyConfTm(self):
-		del self._InitgPtyConfTm
-		self._InitgPtyConfTm = None
+	@QryPgNb.deleter
+	def QryPgNb(self):
+		del self._QryPgNb
+		self._QryPgNb = None
 
 	@property
-	def ConfTp(self):
-		return self._ConfTp
+	def ListOrdrNb(self):
+		return self._ListOrdrNb
 
-	@ConfTp.setter
-	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+	@ListOrdrNb.setter
+	def ListOrdrNb(self, value):
+		self._ListOrdrNb = value if type(value) != base_types.auto else self.make_default("ListOrdrNb")
 
-	@ConfTp.deleter
-	def ConfTp(self):
-		del self._ConfTp
-		self._ConfTp = None
+	@ListOrdrNb.deleter
+	def ListOrdrNb(self):
+		del self._ListOrdrNb
+		self._ListOrdrNb = None
+
+	@property
+	def LastPgInd(self):
+		return self._LastPgInd
+
+	@LastPgInd.setter
+	def LastPgInd(self, value):
+		self._LastPgInd = value if type(value) != base_types.auto else self.make_default("LastPgInd")
+
+	@LastPgInd.deleter
+	def LastPgInd(self):
+		del self._LastPgInd
+		self._LastPgInd = None
 
 	@property
 	def QryStartNb(self):
@@ -154,6 +141,19 @@ class Confirmation1(base_types._BaseFieldType):
 		self._QryStartNb = None
 
 	@property
+	def ConfTp(self):
+		return self._ConfTp
+
+	@ConfTp.setter
+	def ConfTp(self, value):
+		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+
+	@ConfTp.deleter
+	def ConfTp(self):
+		del self._ConfTp
+		self._ConfTp = None
+
+	@property
 	def PgNb(self):
 		return self._PgNb
 
@@ -167,45 +167,45 @@ class Confirmation1(base_types._BaseFieldType):
 		self._PgNb = None
 
 	@property
-	def MsgNbOfCurPg(self):
-		return self._MsgNbOfCurPg
+	def ReqId(self):
+		return self._ReqId
 
-	@MsgNbOfCurPg.setter
-	def MsgNbOfCurPg(self, value):
-		self._MsgNbOfCurPg = value if type(value) != base_types.auto else self.make_default("MsgNbOfCurPg")
+	@ReqId.setter
+	def ReqId(self, value):
+		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
 
-	@MsgNbOfCurPg.deleter
-	def MsgNbOfCurPg(self):
-		del self._MsgNbOfCurPg
-		self._MsgNbOfCurPg = None
+	@ReqId.deleter
+	def ReqId(self):
+		del self._ReqId
+		self._ReqId = None
 
 	@property
-	def QryPgNb(self):
-		return self._QryPgNb
+	def TtlNbOfRpts(self):
+		return self._TtlNbOfRpts
 
-	@QryPgNb.setter
-	def QryPgNb(self, value):
-		self._QryPgNb = value if type(value) != base_types.auto else self.make_default("QryPgNb")
+	@TtlNbOfRpts.setter
+	def TtlNbOfRpts(self, value):
+		self._TtlNbOfRpts = value if type(value) != base_types.auto else self.make_default("TtlNbOfRpts")
 
-	@QryPgNb.deleter
-	def QryPgNb(self):
-		del self._QryPgNb
-		self._QryPgNb = None
+	@TtlNbOfRpts.deleter
+	def TtlNbOfRpts(self):
+		del self._TtlNbOfRpts
+		self._TtlNbOfRpts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ConfSts', type=TradeConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ListOrdrNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastPgInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfSts', type=TradeConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNbOfCurPg', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPtyConfTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyConfTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastRptReqd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfRpts', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitgPtyConfTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfTp', type=ConfirmationRequest1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryStartNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PgNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgNbOfCurPg', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryPgNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ListOrdrNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastPgInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryStartNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfTp', type=ConfirmationRequest1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PgNb', type=Max35NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfRpts', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

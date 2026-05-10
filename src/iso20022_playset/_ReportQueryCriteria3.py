@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ReportQuerySearchCriteria3 import ReportQuerySearchCriteria3
+from ._Max35Text import Max35Text
+from ._ReportQuerySearchCriteria3 import ReportQuerySearchCriteria3
 
 class ReportQueryCriteria3(base_types._BaseFieldType):
 

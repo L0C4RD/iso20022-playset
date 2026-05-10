@@ -1,5 +1,5 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class OriginalAmountDetails1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .CollateralType1Code import CollateralType1Code
-from .ISODate import ISODate
+from ._CollateralType1Code import CollateralType1Code
+from ._ISODate import ISODate
 
 class CollateralMovement9(base_types._BaseFieldType):
 

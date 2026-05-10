@@ -1,6 +1,6 @@
 from . import base_types
-from .ContentType2Code import ContentType2Code
-from .AuthenticatedData4 import AuthenticatedData4
+from ._ContentType2Code import ContentType2Code
+from ._AuthenticatedData4 import AuthenticatedData4
 
 class ContentInformationType15(base_types._BaseFieldType):
 

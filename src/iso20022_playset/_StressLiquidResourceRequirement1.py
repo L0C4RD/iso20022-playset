@@ -1,9 +1,22 @@
 from . import base_types
-from .AmountAndDirection102 import AmountAndDirection102
+from ._AmountAndDirection102 import AmountAndDirection102
 
 class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_OprlOutflw", "_VartnMrgnPmtOblgtn", "_Othr", "_SttlmOrDlvry"]
+	__slots__ = ["_Othr", "_OprlOutflw", "_VartnMrgnPmtOblgtn", "_SttlmOrDlvry"]
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	@property
 	def OprlOutflw(self):
 		return self._OprlOutflw
@@ -31,19 +44,6 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 		self._VartnMrgnPmtOblgtn = None
 
 	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
 	def SttlmOrDlvry(self):
 		return self._SttlmOrDlvry
 
@@ -57,9 +57,9 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 		self._SttlmOrDlvry = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Othr', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprlOutflw', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnPmtOblgtn', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmOrDlvry', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),
 	))
 

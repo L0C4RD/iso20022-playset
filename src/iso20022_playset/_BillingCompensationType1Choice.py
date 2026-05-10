@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalBillingCompensationType1Code import ExternalBillingCompensationType1Code
+from ._Max35Text import Max35Text
+from ._ExternalBillingCompensationType1Code import ExternalBillingCompensationType1Code
 
 class BillingCompensationType1Choice(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .Max9NumericText import Max9NumericText
-from .TimeUnit1Code import TimeUnit1Code
+from ._Max9NumericText import Max9NumericText
+from ._TimeUnit1Code import TimeUnit1Code
+from ._ISODateTime import ISODateTime
 
 class ProcessTiming6(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_UnitOfTm", "_EndTm", "_StartTm"]
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
+	__slots__ = ["_UnitOfTm", "_StartTm", "_EndTm", "_Prd"]
 	@property
 	def UnitOfTm(self):
 		return self._UnitOfTm
@@ -31,6 +18,19 @@ class ProcessTiming6(base_types._BaseFieldType):
 	def UnitOfTm(self):
 		del self._UnitOfTm
 		self._UnitOfTm = None
+
+	@property
+	def StartTm(self):
+		return self._StartTm
+
+	@StartTm.setter
+	def StartTm(self, value):
+		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+
+	@StartTm.deleter
+	def StartTm(self):
+		del self._StartTm
+		self._StartTm = None
 
 	@property
 	def EndTm(self):
@@ -46,22 +46,22 @@ class ProcessTiming6(base_types._BaseFieldType):
 		self._EndTm = None
 
 	@property
-	def StartTm(self):
-		return self._StartTm
+	def Prd(self):
+		return self._Prd
 
-	@StartTm.setter
-	def StartTm(self, value):
-		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
 
-	@StartTm.deleter
-	def StartTm(self):
-		del self._StartTm
-		self._StartTm = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfTm', type=TimeUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

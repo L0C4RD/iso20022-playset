@@ -1,39 +1,13 @@
 from . import base_types
-from .DateTimePeriod1 import DateTimePeriod1
-from .ISODate import ISODate
-from .DateOrBlankQuery2Choice import DateOrBlankQuery2Choice
-from .DateTimeOrBlankQuery1Choice import DateTimeOrBlankQuery1Choice
-from .DatePeriod1 import DatePeriod1
+from ._DatePeriod1 import DatePeriod1
+from ._DateTimePeriod1 import DateTimePeriod1
+from ._DateOrBlankQuery2Choice import DateOrBlankQuery2Choice
+from ._DateTimeOrBlankQuery1Choice import DateTimeOrBlankQuery1Choice
+from ._ISODate import ISODate
 
 class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgDtTm", "_CollTmStmp", "_ValtnDtTm", "_XprtnDt", "_EarlyTermntnDt", "_ExctnDtTm", "_MtrtyDt", "_FctvDt", "_HstrclAsOfDt"]
-	@property
-	def RptgDtTm(self):
-		return self._RptgDtTm
-
-	@RptgDtTm.setter
-	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
-
-	@RptgDtTm.deleter
-	def RptgDtTm(self):
-		del self._RptgDtTm
-		self._RptgDtTm = None
-
-	@property
-	def CollTmStmp(self):
-		return self._CollTmStmp
-
-	@CollTmStmp.setter
-	def CollTmStmp(self, value):
-		self._CollTmStmp = value if type(value) != base_types.auto else self.make_default("CollTmStmp")
-
-	@CollTmStmp.deleter
-	def CollTmStmp(self):
-		del self._CollTmStmp
-		self._CollTmStmp = None
-
+	__slots__ = ["_ValtnDtTm", "_MtrtyDt", "_FctvDt", "_ExctnDtTm", "_CollTmStmp", "_XprtnDt", "_EarlyTermntnDt", "_HstrclAsOfDt", "_RptgDtTm"]
 	@property
 	def ValtnDtTm(self):
 		return self._ValtnDtTm
@@ -46,45 +20,6 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 	def ValtnDtTm(self):
 		del self._ValtnDtTm
 		self._ValtnDtTm = None
-
-	@property
-	def XprtnDt(self):
-		return self._XprtnDt
-
-	@XprtnDt.setter
-	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
-
-	@XprtnDt.deleter
-	def XprtnDt(self):
-		del self._XprtnDt
-		self._XprtnDt = None
-
-	@property
-	def EarlyTermntnDt(self):
-		return self._EarlyTermntnDt
-
-	@EarlyTermntnDt.setter
-	def EarlyTermntnDt(self, value):
-		self._EarlyTermntnDt = value if type(value) != base_types.auto else self.make_default("EarlyTermntnDt")
-
-	@EarlyTermntnDt.deleter
-	def EarlyTermntnDt(self):
-		del self._EarlyTermntnDt
-		self._EarlyTermntnDt = None
-
-	@property
-	def ExctnDtTm(self):
-		return self._ExctnDtTm
-
-	@ExctnDtTm.setter
-	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != base_types.auto else self.make_default("ExctnDtTm")
-
-	@ExctnDtTm.deleter
-	def ExctnDtTm(self):
-		del self._ExctnDtTm
-		self._ExctnDtTm = None
 
 	@property
 	def MtrtyDt(self):
@@ -113,6 +48,58 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		self._FctvDt = None
 
 	@property
+	def ExctnDtTm(self):
+		return self._ExctnDtTm
+
+	@ExctnDtTm.setter
+	def ExctnDtTm(self, value):
+		self._ExctnDtTm = value if type(value) != base_types.auto else self.make_default("ExctnDtTm")
+
+	@ExctnDtTm.deleter
+	def ExctnDtTm(self):
+		del self._ExctnDtTm
+		self._ExctnDtTm = None
+
+	@property
+	def CollTmStmp(self):
+		return self._CollTmStmp
+
+	@CollTmStmp.setter
+	def CollTmStmp(self, value):
+		self._CollTmStmp = value if type(value) != base_types.auto else self.make_default("CollTmStmp")
+
+	@CollTmStmp.deleter
+	def CollTmStmp(self):
+		del self._CollTmStmp
+		self._CollTmStmp = None
+
+	@property
+	def XprtnDt(self):
+		return self._XprtnDt
+
+	@XprtnDt.setter
+	def XprtnDt(self, value):
+		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+
+	@XprtnDt.deleter
+	def XprtnDt(self):
+		del self._XprtnDt
+		self._XprtnDt = None
+
+	@property
+	def EarlyTermntnDt(self):
+		return self._EarlyTermntnDt
+
+	@EarlyTermntnDt.setter
+	def EarlyTermntnDt(self, value):
+		self._EarlyTermntnDt = value if type(value) != base_types.auto else self.make_default("EarlyTermntnDt")
+
+	@EarlyTermntnDt.deleter
+	def EarlyTermntnDt(self):
+		del self._EarlyTermntnDt
+		self._EarlyTermntnDt = None
+
+	@property
 	def HstrclAsOfDt(self):
 		return self._HstrclAsOfDt
 
@@ -125,15 +112,28 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 		del self._HstrclAsOfDt
 		self._HstrclAsOfDt = None
 
+	@property
+	def RptgDtTm(self):
+		return self._RptgDtTm
+
+	@RptgDtTm.setter
+	def RptgDtTm(self, value):
+		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+
+	@RptgDtTm.deleter
+	def RptgDtTm(self):
+		del self._RptgDtTm
+		self._RptgDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollTmStmp', type=DateTimeOrBlankQuery1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XprtnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyTermntnDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollTmStmp', type=DateTimeOrBlankQuery1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XprtnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyTermntnDt', type=DatePeriod1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstrclAsOfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .SubscriptionBulkOrderV04 import SubscriptionBulkOrderV04
+from ._SubscriptionBulkOrderV04 import SubscriptionBulkOrderV04
 
 class SETR_007_001_04():
 

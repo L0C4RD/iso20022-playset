@@ -1,13 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PhoneNumber import PhoneNumber
-from .Max140Text import Max140Text
-from .NamePrefix1Code import NamePrefix1Code
-from .Max2048Text import Max2048Text
+from ._Max140Text import Max140Text
+from ._NamePrefix1Code import NamePrefix1Code
+from ._PhoneNumber import PhoneNumber
+from ._Max35Text import Max35Text
+from ._Max2048Text import Max2048Text
 
 class ContactDetails2(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Nm", "_NmPrfx", "_PhneNb", "_EmailAdr", "_FaxNb", "_MobNb"]
+	__slots__ = ["_EmailAdr", "_Othr", "_NmPrfx", "_PhneNb", "_FaxNb", "_MobNb", "_Nm"]
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	@property
 	def Othr(self):
 		return self._Othr
@@ -20,19 +33,6 @@ class ContactDetails2(base_types._BaseFieldType):
 	def Othr(self):
 		del self._Othr
 		self._Othr = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
 
 	@property
 	def NmPrfx(self):
@@ -61,19 +61,6 @@ class ContactDetails2(base_types._BaseFieldType):
 		self._PhneNb = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
-	@property
 	def FaxNb(self):
 		return self._FaxNb
 
@@ -99,13 +86,26 @@ class ContactDetails2(base_types._BaseFieldType):
 		del self._MobNb
 		self._MobNb = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

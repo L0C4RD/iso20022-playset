@@ -1,6 +1,6 @@
 from . import base_types
-from .AcknowledgementReason10 import AcknowledgementReason10
-from .NoReasonCode import NoReasonCode
+from ._NoReasonCode import NoReasonCode
+from ._AcknowledgementReason10 import AcknowledgementReason10
 
 class AcknowledgedAcceptedStatus22Choice(base_types._BaseFieldType):
 

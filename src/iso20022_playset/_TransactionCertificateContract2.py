@@ -1,12 +1,12 @@
 from . import base_types
-from .ISODate import ISODate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max1025Text import Max1025Text
-from .ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ISODate import ISODate
+from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
+from ._Max1025Text import Max1025Text
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctRef", "_XpctdShipmntDt", "_XpctdAdvncPmtRtrDt", "_TxAmtInCtrctCcy", "_AddtlInf"]
+	__slots__ = ["_CtrctRef", "_XpctdShipmntDt", "_AddtlInf", "_XpctdAdvncPmtRtrDt", "_TxAmtInCtrctCcy"]
 	@property
 	def CtrctRef(self):
 		return self._CtrctRef
@@ -34,6 +34,19 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		self._XpctdShipmntDt = None
 
 	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def XpctdAdvncPmtRtrDt(self):
 		return self._XpctdAdvncPmtRtrDt
 
@@ -59,24 +72,11 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		del self._TxAmtInCtrctCcy
 		self._TxAmtInCtrctCcy = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdAdvncPmtRtrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

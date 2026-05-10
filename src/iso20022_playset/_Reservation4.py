@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Amount2Choice import Amount2Choice
+from ._Amount2Choice import Amount2Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class Reservation4(base_types._BaseFieldType):
 

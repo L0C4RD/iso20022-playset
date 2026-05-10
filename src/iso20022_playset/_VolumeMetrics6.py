@@ -1,5 +1,5 @@
 from . import base_types
-from .ExposureMetrics5 import ExposureMetrics5
+from ._ExposureMetrics5 import ExposureMetrics5
 
 class VolumeMetrics6(base_types._BaseFieldType):
 

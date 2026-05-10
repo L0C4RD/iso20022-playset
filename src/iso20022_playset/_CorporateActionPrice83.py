@@ -1,25 +1,25 @@
 from . import base_types
-from .PriceFormat76Choice import PriceFormat76Choice
-from .PriceFormat77Choice import PriceFormat77Choice
-from .AmountPrice2 import AmountPrice2
-from .PriceFormat75Choice import PriceFormat75Choice
-from .IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
+from ._PriceFormat75Choice import PriceFormat75Choice
+from ._IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
+from ._PriceFormat76Choice import PriceFormat76Choice
+from ._AmountPrice2 import AmountPrice2
+from ._PriceFormat77Choice import PriceFormat77Choice
 
 class CorporateActionPrice83(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInLieuOfShrPric", "_IndctvOrMktPric", "_CshValForTax", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct"]
+	__slots__ = ["_GncCshPricRcvdPerPdct", "_IndctvOrMktPric", "_CshInLieuOfShrPric", "_CshValForTax", "_GncCshPricPdPerPdct"]
 	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
+	def GncCshPricRcvdPerPdct(self):
+		return self._GncCshPricRcvdPerPdct
 
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+	@GncCshPricRcvdPerPdct.setter
+	def GncCshPricRcvdPerPdct(self, value):
+		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
 
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+	@GncCshPricRcvdPerPdct.deleter
+	def GncCshPricRcvdPerPdct(self):
+		del self._GncCshPricRcvdPerPdct
+		self._GncCshPricRcvdPerPdct = None
 
 	@property
 	def IndctvOrMktPric(self):
@@ -35,6 +35,19 @@ class CorporateActionPrice83(base_types._BaseFieldType):
 		self._IndctvOrMktPric = None
 
 	@property
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
+
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
+
+	@property
 	def CshValForTax(self):
 		return self._CshValForTax
 
@@ -46,19 +59,6 @@ class CorporateActionPrice83(base_types._BaseFieldType):
 	def CshValForTax(self):
 		del self._CshValForTax
 		self._CshValForTax = None
-
-	@property
-	def GncCshPricRcvdPerPdct(self):
-		return self._GncCshPricRcvdPerPdct
-
-	@GncCshPricRcvdPerPdct.setter
-	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
-
-	@GncCshPricRcvdPerPdct.deleter
-	def GncCshPricRcvdPerPdct(self):
-		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
 
 	@property
 	def GncCshPricPdPerPdct(self):
@@ -74,10 +74,10 @@ class CorporateActionPrice83(base_types._BaseFieldType):
 		self._GncCshPricPdPerPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshValForTax', type=AmountPrice2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat76Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice13Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshValForTax', type=AmountPrice2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat75Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

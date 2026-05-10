@@ -1,5 +1,5 @@
 from . import base_types
-from .FileActionResponseV03 import FileActionResponseV03
+from ._FileActionResponseV03 import FileActionResponseV03
 
 class CAFM_002_001_03():
 

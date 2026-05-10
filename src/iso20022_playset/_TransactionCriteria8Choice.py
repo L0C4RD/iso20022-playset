@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionCriteria11 import TransactionCriteria11
+from ._Max35Text import Max35Text
+from ._TransactionCriteria11 import TransactionCriteria11
 
 class TransactionCriteria8Choice(base_types._BaseFieldType):
 

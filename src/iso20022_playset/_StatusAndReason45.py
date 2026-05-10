@@ -1,23 +1,10 @@
 from . import base_types
-from .Status39Choice import Status39Choice
-from .Transaction127 import Transaction127
+from ._Status39Choice import Status39Choice
+from ._Transaction127 import Transaction127
 
 class StatusAndReason45(base_types._BaseFieldType):
 
-	__slots__ = ["_StsAndRsn", "_Tx"]
-	@property
-	def StsAndRsn(self):
-		return self._StsAndRsn
-
-	@StsAndRsn.setter
-	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
-
-	@StsAndRsn.deleter
-	def StsAndRsn(self):
-		del self._StsAndRsn
-		self._StsAndRsn = None
-
+	__slots__ = ["_Tx", "_StsAndRsn"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -31,8 +18,21 @@ class StatusAndReason45(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
+	@property
+	def StsAndRsn(self):
+		return self._StsAndRsn
+
+	@StsAndRsn.setter
+	def StsAndRsn(self, value):
+		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+
+	@StsAndRsn.deleter
+	def StsAndRsn(self):
+		del self._StsAndRsn
+		self._StsAndRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsAndRsn', type=Status39Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=Transaction127, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsAndRsn', type=Status39Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

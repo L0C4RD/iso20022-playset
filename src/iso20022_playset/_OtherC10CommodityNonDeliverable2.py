@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassProductType11Code import AssetClassProductType11Code
-from .AssetClassSubProductType48Code import AssetClassSubProductType48Code
+from ._AssetClassSubProductType48Code import AssetClassSubProductType48Code
+from ._AssetClassProductType11Code import AssetClassProductType11Code
 
 class OtherC10CommodityNonDeliverable2(base_types._BaseFieldType):
 

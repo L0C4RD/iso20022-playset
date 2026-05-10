@@ -1,21 +1,21 @@
 from . import base_types
-from .AmountAndDirection44 import AmountAndDirection44
+from ._AmountAndDirection44 import AmountAndDirection44
 
 class CollateralAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_RmngSttlm", "_ReqrdMrgn", "_Collsd", "_RmngCollsd", "_Sttld"]
+	__slots__ = ["_Collsd", "_ReqrdMrgn", "_RmngCollsd", "_RmngSttlm", "_Sttld"]
 	@property
-	def RmngSttlm(self):
-		return self._RmngSttlm
+	def Collsd(self):
+		return self._Collsd
 
-	@RmngSttlm.setter
-	def RmngSttlm(self, value):
-		self._RmngSttlm = value if type(value) != base_types.auto else self.make_default("RmngSttlm")
+	@Collsd.setter
+	def Collsd(self, value):
+		self._Collsd = value if type(value) != base_types.auto else self.make_default("Collsd")
 
-	@RmngSttlm.deleter
-	def RmngSttlm(self):
-		del self._RmngSttlm
-		self._RmngSttlm = None
+	@Collsd.deleter
+	def Collsd(self):
+		del self._Collsd
+		self._Collsd = None
 
 	@property
 	def ReqrdMrgn(self):
@@ -31,19 +31,6 @@ class CollateralAmount5(base_types._BaseFieldType):
 		self._ReqrdMrgn = None
 
 	@property
-	def Collsd(self):
-		return self._Collsd
-
-	@Collsd.setter
-	def Collsd(self, value):
-		self._Collsd = value if type(value) != base_types.auto else self.make_default("Collsd")
-
-	@Collsd.deleter
-	def Collsd(self):
-		del self._Collsd
-		self._Collsd = None
-
-	@property
 	def RmngCollsd(self):
 		return self._RmngCollsd
 
@@ -55,6 +42,19 @@ class CollateralAmount5(base_types._BaseFieldType):
 	def RmngCollsd(self):
 		del self._RmngCollsd
 		self._RmngCollsd = None
+
+	@property
+	def RmngSttlm(self):
+		return self._RmngSttlm
+
+	@RmngSttlm.setter
+	def RmngSttlm(self, value):
+		self._RmngSttlm = value if type(value) != base_types.auto else self.make_default("RmngSttlm")
+
+	@RmngSttlm.deleter
+	def RmngSttlm(self):
+		del self._RmngSttlm
+		self._RmngSttlm = None
 
 	@property
 	def Sttld(self):
@@ -70,10 +70,10 @@ class CollateralAmount5(base_types._BaseFieldType):
 		self._Sttld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmngSttlm', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqrdMrgn', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Collsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdMrgn', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmngCollsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmngSttlm', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sttld', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max70Text import Max70Text
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DetailedAmount18(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Labl", "_Ccy", "_ChrgAcctTo"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Labl", "_Amt", "_ChrgAcctTo", "_Ccy"]
 	@property
 	def Labl(self):
 		return self._Labl
@@ -34,17 +21,17 @@ class DetailedAmount18(base_types._BaseFieldType):
 		self._Labl = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Amt(self):
+		return self._Amt
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def ChrgAcctTo(self):
@@ -59,10 +46,23 @@ class DetailedAmount18(base_types._BaseFieldType):
 		del self._ChrgAcctTo
 		self._ChrgAcctTo = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgAcctTo', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

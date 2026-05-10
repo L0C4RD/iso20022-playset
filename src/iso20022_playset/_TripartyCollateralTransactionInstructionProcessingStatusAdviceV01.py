@@ -1,33 +1,59 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ProcessingStatus82Choice import ProcessingStatus82Choice
-from .MatchingStatus33Choice import MatchingStatus33Choice
-from .CollateralParameters12 import CollateralParameters12
-from .CancellationStatus30Choice import CancellationStatus30Choice
-from .CashMovement7 import CashMovement7
-from .SecuritiesMovement8 import SecuritiesMovement8
-from .CollateralDate2 import CollateralDate2
-from .DealTransactionDetails7 import DealTransactionDetails7
-from .Max35Text import Max35Text
-from .CollateralParties8 import CollateralParties8
-from .Pagination1 import Pagination1
-from .TransactionIdentifications46 import TransactionIdentifications46
+from ._ProcessingStatus82Choice import ProcessingStatus82Choice
+from ._CollateralDate2 import CollateralDate2
+from ._TransactionIdentifications46 import TransactionIdentifications46
+from ._CashMovement7 import CashMovement7
+from ._CancellationStatus30Choice import CancellationStatus30Choice
+from ._DealTransactionDetails7 import DealTransactionDetails7
+from ._CollateralParameters12 import CollateralParameters12
+from ._Pagination1 import Pagination1
+from ._CollateralParties8 import CollateralParties8
+from ._Max35Text import Max35Text
+from ._MatchingStatus33Choice import MatchingStatus33Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecuritiesMovement8 import SecuritiesMovement8
 
 class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_CollPties", "_CxlReqRef", "_DealTxDtls", "_DealTxDt", "_TxInstrId", "_MtchgSts", "_InstrPrcgSts", "_CshMvmnt", "_Pgntn", "_CxlPrcgSts", "_SctiesMvmnt", "_GnlParams"]
+	__slots__ = ["_GnlParams", "_DealTxDt", "_InstrPrcgSts", "_CollPties", "_CshMvmnt", "_DealTxDtls", "_TxInstrId", "_MtchgSts", "_CxlReqRef", "_Pgntn", "_SctiesMvmnt", "_SplmtryData", "_CxlPrcgSts"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def GnlParams(self):
+		return self._GnlParams
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@GnlParams.setter
+	def GnlParams(self, value):
+		self._GnlParams = value if type(value) != base_types.auto else self.make_default("GnlParams")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@GnlParams.deleter
+	def GnlParams(self):
+		del self._GnlParams
+		self._GnlParams = None
+
+	@property
+	def DealTxDt(self):
+		return self._DealTxDt
+
+	@DealTxDt.setter
+	def DealTxDt(self, value):
+		self._DealTxDt = value if type(value) != base_types.auto else self.make_default("DealTxDt")
+
+	@DealTxDt.deleter
+	def DealTxDt(self):
+		del self._DealTxDt
+		self._DealTxDt = None
+
+	@property
+	def InstrPrcgSts(self):
+		return self._InstrPrcgSts
+
+	@InstrPrcgSts.setter
+	def InstrPrcgSts(self, value):
+		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
+
+	@InstrPrcgSts.deleter
+	def InstrPrcgSts(self):
+		del self._InstrPrcgSts
+		self._InstrPrcgSts = None
 
 	@property
 	def CollPties(self):
@@ -43,17 +69,17 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 		self._CollPties = None
 
 	@property
-	def CxlReqRef(self):
-		return self._CxlReqRef
+	def CshMvmnt(self):
+		return self._CshMvmnt
 
-	@CxlReqRef.setter
-	def CxlReqRef(self, value):
-		self._CxlReqRef = value if type(value) != base_types.auto else self.make_default("CxlReqRef")
+	@CshMvmnt.setter
+	def CshMvmnt(self, value):
+		self._CshMvmnt = value if type(value) != base_types.auto else self.make_default("CshMvmnt")
 
-	@CxlReqRef.deleter
-	def CxlReqRef(self):
-		del self._CxlReqRef
-		self._CxlReqRef = None
+	@CshMvmnt.deleter
+	def CshMvmnt(self):
+		del self._CshMvmnt
+		self._CshMvmnt = None
 
 	@property
 	def DealTxDtls(self):
@@ -67,19 +93,6 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 	def DealTxDtls(self):
 		del self._DealTxDtls
 		self._DealTxDtls = None
-
-	@property
-	def DealTxDt(self):
-		return self._DealTxDt
-
-	@DealTxDt.setter
-	def DealTxDt(self, value):
-		self._DealTxDt = value if type(value) != base_types.auto else self.make_default("DealTxDt")
-
-	@DealTxDt.deleter
-	def DealTxDt(self):
-		del self._DealTxDt
-		self._DealTxDt = None
 
 	@property
 	def TxInstrId(self):
@@ -108,30 +121,17 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 		self._MtchgSts = None
 
 	@property
-	def InstrPrcgSts(self):
-		return self._InstrPrcgSts
+	def CxlReqRef(self):
+		return self._CxlReqRef
 
-	@InstrPrcgSts.setter
-	def InstrPrcgSts(self, value):
-		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
+	@CxlReqRef.setter
+	def CxlReqRef(self, value):
+		self._CxlReqRef = value if type(value) != base_types.auto else self.make_default("CxlReqRef")
 
-	@InstrPrcgSts.deleter
-	def InstrPrcgSts(self):
-		del self._InstrPrcgSts
-		self._InstrPrcgSts = None
-
-	@property
-	def CshMvmnt(self):
-		return self._CshMvmnt
-
-	@CshMvmnt.setter
-	def CshMvmnt(self, value):
-		self._CshMvmnt = value if type(value) != base_types.auto else self.make_default("CshMvmnt")
-
-	@CshMvmnt.deleter
-	def CshMvmnt(self):
-		del self._CshMvmnt
-		self._CshMvmnt = None
+	@CxlReqRef.deleter
+	def CxlReqRef(self):
+		del self._CxlReqRef
+		self._CxlReqRef = None
 
 	@property
 	def Pgntn(self):
@@ -147,19 +147,6 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 		self._Pgntn = None
 
 	@property
-	def CxlPrcgSts(self):
-		return self._CxlPrcgSts
-
-	@CxlPrcgSts.setter
-	def CxlPrcgSts(self, value):
-		self._CxlPrcgSts = value if type(value) != base_types.auto else self.make_default("CxlPrcgSts")
-
-	@CxlPrcgSts.deleter
-	def CxlPrcgSts(self):
-		del self._CxlPrcgSts
-		self._CxlPrcgSts = None
-
-	@property
 	def SctiesMvmnt(self):
 		return self._SctiesMvmnt
 
@@ -173,31 +160,44 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 		self._SctiesMvmnt = None
 
 	@property
-	def GnlParams(self):
-		return self._GnlParams
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@GnlParams.setter
-	def GnlParams(self, value):
-		self._GnlParams = value if type(value) != base_types.auto else self.make_default("GnlParams")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@GnlParams.deleter
-	def GnlParams(self):
-		del self._GnlParams
-		self._GnlParams = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def CxlPrcgSts(self):
+		return self._CxlPrcgSts
+
+	@CxlPrcgSts.setter
+	def CxlPrcgSts(self, value):
+		self._CxlPrcgSts = value if type(value) != base_types.auto else self.make_default("CxlPrcgSts")
+
+	@CxlPrcgSts.deleter
+	def CxlPrcgSts(self):
+		del self._CxlPrcgSts
+		self._CxlPrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollPties', type=CollateralParties8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlReqRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealTxDtls', type=DealTransactionDetails7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GnlParams', type=CollateralParameters12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealTxDt', type=CollateralDate2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrcgSts', type=ProcessingStatus82Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollPties', type=CollateralParties8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshMvmnt', type=CashMovement7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DealTxDtls', type=DealTransactionDetails7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications46, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus33Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstrPrcgSts', type=ProcessingStatus82Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshMvmnt', type=CashMovement7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlReqRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationStatus30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmnt', type=SecuritiesMovement8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GnlParams', type=CollateralParameters12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationStatus30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

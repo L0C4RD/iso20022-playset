@@ -1,52 +1,26 @@
 from . import base_types
-from .DateTimePeriod1Choice import DateTimePeriod1Choice
-from .ISODate import ISODate
-from .PercentageRate import PercentageRate
-from .ISODateTime import ISODateTime
-from .Price8 import Price8
-from .CalculationType3Choice import CalculationType3Choice
+from ._Price8 import Price8
+from ._CalculationType3Choice import CalculationType3Choice
+from ._ISODateTime import ISODateTime
+from ._PercentageRate import PercentageRate
+from ._ISODate import ISODate
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 
 class YieldCalculation6(base_types._BaseFieldType):
 
-	__slots__ = ["_ValDt", "_ClctnTp", "_ClctnDt", "_RedPric", "_Val", "_ValPrd"]
+	__slots__ = ["_Val", "_RedPric", "_ClctnDt", "_ValDt", "_ValPrd", "_ClctnTp"]
 	@property
-	def ValDt(self):
-		return self._ValDt
+	def Val(self):
+		return self._Val
 
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
 
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
-	def ClctnTp(self):
-		return self._ClctnTp
-
-	@ClctnTp.setter
-	def ClctnTp(self, value):
-		self._ClctnTp = value if type(value) != base_types.auto else self.make_default("ClctnTp")
-
-	@ClctnTp.deleter
-	def ClctnTp(self):
-		del self._ClctnTp
-		self._ClctnTp = None
-
-	@property
-	def ClctnDt(self):
-		return self._ClctnDt
-
-	@ClctnDt.setter
-	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
-
-	@ClctnDt.deleter
-	def ClctnDt(self):
-		del self._ClctnDt
-		self._ClctnDt = None
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def RedPric(self):
@@ -62,17 +36,30 @@ class YieldCalculation6(base_types._BaseFieldType):
 		self._RedPric = None
 
 	@property
-	def Val(self):
-		return self._Val
+	def ClctnDt(self):
+		return self._ClctnDt
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+	@ClctnDt.setter
+	def ClctnDt(self, value):
+		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@ClctnDt.deleter
+	def ClctnDt(self):
+		del self._ClctnDt
+		self._ClctnDt = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
 
 	@property
 	def ValPrd(self):
@@ -87,12 +74,25 @@ class YieldCalculation6(base_types._BaseFieldType):
 		del self._ValPrd
 		self._ValPrd = None
 
+	@property
+	def ClctnTp(self):
+		return self._ClctnTp
+
+	@ClctnTp.setter
+	def ClctnTp(self, value):
+		self._ClctnTp = value if type(value) != base_types.auto else self.make_default("ClctnTp")
+
+	@ClctnTp.deleter
+	def ClctnTp(self):
+		del self._ClctnTp
+		self._ClctnTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnTp', type=CalculationType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValPrd', type=DateTimePeriod1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClctnTp', type=CalculationType3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

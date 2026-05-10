@@ -1,12 +1,12 @@
 from . import base_types
-from .DateAndDateTime1Choice import DateAndDateTime1Choice
-from .MarketIdentification93 import MarketIdentification93
-from .DateTimePeriod1Choice import DateTimePeriod1Choice
-from .Price14 import Price14
+from ._MarketIdentification93 import MarketIdentification93
+from ._Price14 import Price14
+from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 
 class PriceInformation28(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_SrcOfPric", "_PricClctnPrd", "_Val"]
+	__slots__ = ["_QtnDt", "_PricClctnPrd", "_SrcOfPric", "_Val"]
 	@property
 	def QtnDt(self):
 		return self._QtnDt
@@ -21,19 +21,6 @@ class PriceInformation28(base_types._BaseFieldType):
 		self._QtnDt = None
 
 	@property
-	def SrcOfPric(self):
-		return self._SrcOfPric
-
-	@SrcOfPric.setter
-	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != base_types.auto else self.make_default("SrcOfPric")
-
-	@SrcOfPric.deleter
-	def SrcOfPric(self):
-		del self._SrcOfPric
-		self._SrcOfPric = None
-
-	@property
 	def PricClctnPrd(self):
 		return self._PricClctnPrd
 
@@ -45,6 +32,19 @@ class PriceInformation28(base_types._BaseFieldType):
 	def PricClctnPrd(self):
 		del self._PricClctnPrd
 		self._PricClctnPrd = None
+
+	@property
+	def SrcOfPric(self):
+		return self._SrcOfPric
+
+	@SrcOfPric.setter
+	def SrcOfPric(self, value):
+		self._SrcOfPric = value if type(value) != base_types.auto else self.make_default("SrcOfPric")
+
+	@SrcOfPric.deleter
+	def SrcOfPric(self):
+		del self._SrcOfPric
+		self._SrcOfPric = None
 
 	@property
 	def Val(self):
@@ -61,8 +61,8 @@ class PriceInformation28(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification93, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricClctnPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification93, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Price14, min=1, max=1, mutex_group=None, array=False),
 	))
 

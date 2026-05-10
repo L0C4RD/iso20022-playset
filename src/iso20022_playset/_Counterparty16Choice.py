@@ -1,22 +1,9 @@
 from . import base_types
-from .PartyIdentificationAndAccount206 import PartyIdentificationAndAccount206
+from ._PartyIdentificationAndAccount206 import PartyIdentificationAndAccount206
 
 class Counterparty16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Buyr", "_Sellr"]
-	@property
-	def Buyr(self):
-		return self._Buyr
-
-	@Buyr.setter
-	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
-
-	@Buyr.deleter
-	def Buyr(self):
-		del self._Buyr
-		self._Buyr = None
-
+	__slots__ = ["_Sellr", "_Buyr"]
 	@property
 	def Sellr(self):
 		return self._Sellr
@@ -30,8 +17,21 @@ class Counterparty16Choice(base_types._BaseFieldType):
 		del self._Sellr
 		self._Sellr = None
 
+	@property
+	def Buyr(self):
+		return self._Buyr
+
+	@Buyr.setter
+	def Buyr(self, value):
+		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+
+	@Buyr.deleter
+	def Buyr(self):
+		del self._Buyr
+		self._Buyr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sellr', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=1, array=False),
 	))
 

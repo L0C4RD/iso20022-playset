@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ATMService20 import ATMService20
+from ._Max35Text import Max35Text
+from ._ATMService20 import ATMService20
 
 class ATMContext16(base_types._BaseFieldType):
 

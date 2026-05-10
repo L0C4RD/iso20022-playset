@@ -1,5 +1,5 @@
 from . import base_types
-from .ReservationIdentification4 import ReservationIdentification4
+from ._ReservationIdentification4 import ReservationIdentification4
 
 class CurrentOrDefaultReservation4Choice(base_types._BaseFieldType):
 

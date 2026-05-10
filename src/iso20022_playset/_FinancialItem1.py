@@ -1,18 +1,31 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .InvoiceTotals1 import InvoiceTotals1
-from .SupplementaryData1 import SupplementaryData1
-from .FinancialItemParameters1 import FinancialItemParameters1
-from .Max2000Text import Max2000Text
-from .Instalment2 import Instalment2
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .xs:IDREF import xs:IDREF
-from .ValidationStatusInformation1 import ValidationStatusInformation1
-from .FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._FinancialItemParameters1 import FinancialItemParameters1
+from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._Instalment2 import Instalment2
+from ._Max2000Text import Max2000Text
+from ._xs:IDREF import xs:IDREF
+from ._InvoiceTotals1 import InvoiceTotals1
+from ._SupplementaryData1 import SupplementaryData1
+from ._CreditDebitCode import CreditDebitCode
 
 class FinancialItem1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_TtlAmt", "_VldtnStsInf", "_CdtDbtInd", "_FincgSts", "_PrtryDtls", "_FinDocRef", "_DueAmt", "_InstlmtInf", "_AssoctdDoc", "_ItmCntxt"]
+	__slots__ = ["_FincgSts", "_AddtlInf", "_VldtnStsInf", "_ItmCntxt", "_DueAmt", "_TtlAmt", "_FinDocRef", "_AssoctdDoc", "_PrtryDtls", "_InstlmtInf", "_CdtDbtInd"]
+	@property
+	def FincgSts(self):
+		return self._FincgSts
+
+	@FincgSts.setter
+	def FincgSts(self, value):
+		self._FincgSts = value if type(value) != base_types.auto else self.make_default("FincgSts")
+
+	@FincgSts.deleter
+	def FincgSts(self):
+		del self._FincgSts
+		self._FincgSts = None
+
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -25,19 +38,6 @@ class FinancialItem1(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
 
 	@property
 	def VldtnStsInf(self):
@@ -53,56 +53,17 @@ class FinancialItem1(base_types._BaseFieldType):
 		self._VldtnStsInf = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def ItmCntxt(self):
+		return self._ItmCntxt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+	@ItmCntxt.setter
+	def ItmCntxt(self, value):
+		self._ItmCntxt = value if type(value) != base_types.auto else self.make_default("ItmCntxt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def FincgSts(self):
-		return self._FincgSts
-
-	@FincgSts.setter
-	def FincgSts(self, value):
-		self._FincgSts = value if type(value) != base_types.auto else self.make_default("FincgSts")
-
-	@FincgSts.deleter
-	def FincgSts(self):
-		del self._FincgSts
-		self._FincgSts = None
-
-	@property
-	def PrtryDtls(self):
-		return self._PrtryDtls
-
-	@PrtryDtls.setter
-	def PrtryDtls(self, value):
-		self._PrtryDtls = value if type(value) != base_types.auto else self.make_default("PrtryDtls")
-
-	@PrtryDtls.deleter
-	def PrtryDtls(self):
-		del self._PrtryDtls
-		self._PrtryDtls = None
-
-	@property
-	def FinDocRef(self):
-		return self._FinDocRef
-
-	@FinDocRef.setter
-	def FinDocRef(self, value):
-		self._FinDocRef = value if type(value) != base_types.auto else self.make_default("FinDocRef")
-
-	@FinDocRef.deleter
-	def FinDocRef(self):
-		del self._FinDocRef
-		self._FinDocRef = None
+	@ItmCntxt.deleter
+	def ItmCntxt(self):
+		del self._ItmCntxt
+		self._ItmCntxt = None
 
 	@property
 	def DueAmt(self):
@@ -118,17 +79,30 @@ class FinancialItem1(base_types._BaseFieldType):
 		self._DueAmt = None
 
 	@property
-	def InstlmtInf(self):
-		return self._InstlmtInf
+	def TtlAmt(self):
+		return self._TtlAmt
 
-	@InstlmtInf.setter
-	def InstlmtInf(self, value):
-		self._InstlmtInf = value if type(value) != base_types.auto else self.make_default("InstlmtInf")
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
 
-	@InstlmtInf.deleter
-	def InstlmtInf(self):
-		del self._InstlmtInf
-		self._InstlmtInf = None
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
+	@property
+	def FinDocRef(self):
+		return self._FinDocRef
+
+	@FinDocRef.setter
+	def FinDocRef(self, value):
+		self._FinDocRef = value if type(value) != base_types.auto else self.make_default("FinDocRef")
+
+	@FinDocRef.deleter
+	def FinDocRef(self):
+		del self._FinDocRef
+		self._FinDocRef = None
 
 	@property
 	def AssoctdDoc(self):
@@ -144,29 +118,55 @@ class FinancialItem1(base_types._BaseFieldType):
 		self._AssoctdDoc = None
 
 	@property
-	def ItmCntxt(self):
-		return self._ItmCntxt
+	def PrtryDtls(self):
+		return self._PrtryDtls
 
-	@ItmCntxt.setter
-	def ItmCntxt(self, value):
-		self._ItmCntxt = value if type(value) != base_types.auto else self.make_default("ItmCntxt")
+	@PrtryDtls.setter
+	def PrtryDtls(self, value):
+		self._PrtryDtls = value if type(value) != base_types.auto else self.make_default("PrtryDtls")
 
-	@ItmCntxt.deleter
-	def ItmCntxt(self):
-		del self._ItmCntxt
-		self._ItmCntxt = None
+	@PrtryDtls.deleter
+	def PrtryDtls(self):
+		del self._PrtryDtls
+		self._PrtryDtls = None
+
+	@property
+	def InstlmtInf(self):
+		return self._InstlmtInf
+
+	@InstlmtInf.setter
+	def InstlmtInf(self, value):
+		self._InstlmtInf = value if type(value) != base_types.auto else self.make_default("InstlmtInf")
+
+	@InstlmtInf.deleter
+	def InstlmtInf(self):
+		del self._InstlmtInf
+		self._InstlmtInf = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=InvoiceTotals1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgSts', type=FinancingInformationAndStatus1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryDtls', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinDocRef', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DueAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstlmtInf', type=Instalment2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ItmCntxt', type=FinancialItemParameters1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=InvoiceTotals1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinDocRef', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AssoctdDoc', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtryDtls', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstlmtInf', type=Instalment2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

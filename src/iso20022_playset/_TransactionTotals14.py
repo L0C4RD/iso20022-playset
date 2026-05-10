@@ -1,16 +1,16 @@
 from . import base_types
-from .CreditDebit3Code import CreditDebit3Code
-from .ISODate import ISODate
-from .MessageReconciliation3 import MessageReconciliation3
-from .Min2Max3NumericText import Min2Max3NumericText
-from .Max35Text import Max35Text
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .FinancialReconciliation3 import FinancialReconciliation3
-from .AdditionalFeeReconciliation3 import AdditionalFeeReconciliation3
+from ._Min2Max3NumericText import Min2Max3NumericText
+from ._FinancialReconciliation3 import FinancialReconciliation3
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._AdditionalFeeReconciliation3 import AdditionalFeeReconciliation3
+from ._Max35Text import Max35Text
+from ._CreditDebit3Code import CreditDebit3Code
+from ._MessageReconciliation3 import MessageReconciliation3
+from ._ISODate import ISODate
 
 class TransactionTotals14(base_types._BaseFieldType):
 
-	__slots__ = ["_Msg", "_Fin", "_Ccy", "_ChckptRef", "_AddtlFeeRcncltn", "_CdtDbt", "_Id", "_Dt", "_Amt"]
+	__slots__ = ["_Msg", "_Amt", "_AddtlFeeRcncltn", "_Fin", "_CdtDbt", "_Id", "_ChckptRef", "_Ccy", "_Dt"]
 	@property
 	def Msg(self):
 		return self._Msg
@@ -25,43 +25,17 @@ class TransactionTotals14(base_types._BaseFieldType):
 		self._Msg = None
 
 	@property
-	def Fin(self):
-		return self._Fin
+	def Amt(self):
+		return self._Amt
 
-	@Fin.setter
-	def Fin(self, value):
-		self._Fin = value if type(value) != base_types.auto else self.make_default("Fin")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@Fin.deleter
-	def Fin(self):
-		del self._Fin
-		self._Fin = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def ChckptRef(self):
-		return self._ChckptRef
-
-	@ChckptRef.setter
-	def ChckptRef(self, value):
-		self._ChckptRef = value if type(value) != base_types.auto else self.make_default("ChckptRef")
-
-	@ChckptRef.deleter
-	def ChckptRef(self):
-		del self._ChckptRef
-		self._ChckptRef = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def AddtlFeeRcncltn(self):
@@ -75,6 +49,19 @@ class TransactionTotals14(base_types._BaseFieldType):
 	def AddtlFeeRcncltn(self):
 		del self._AddtlFeeRcncltn
 		self._AddtlFeeRcncltn = None
+
+	@property
+	def Fin(self):
+		return self._Fin
+
+	@Fin.setter
+	def Fin(self, value):
+		self._Fin = value if type(value) != base_types.auto else self.make_default("Fin")
+
+	@Fin.deleter
+	def Fin(self):
+		del self._Fin
+		self._Fin = None
 
 	@property
 	def CdtDbt(self):
@@ -103,6 +90,32 @@ class TransactionTotals14(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def ChckptRef(self):
+		return self._ChckptRef
+
+	@ChckptRef.setter
+	def ChckptRef(self, value):
+		self._ChckptRef = value if type(value) != base_types.auto else self.make_default("ChckptRef")
+
+	@ChckptRef.deleter
+	def ChckptRef(self):
+		del self._ChckptRef
+		self._ChckptRef = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def Dt(self):
 		return self._Dt
 
@@ -115,28 +128,15 @@ class TransactionTotals14(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Msg', type=MessageReconciliation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Fin', type=FinancialReconciliation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ccy', type=Min2Max3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckptRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlFeeRcncltn', type=AdditionalFeeReconciliation3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Fin', type=FinancialReconciliation3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckptRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=Min2Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

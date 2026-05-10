@@ -1,12 +1,12 @@
 from . import base_types
-from .Number import Number
-from .Max500Binary import Max500Binary
-from .AlgorithmIdentification32 import AlgorithmIdentification32
-from .KEKIdentifier7 import KEKIdentifier7
+from ._AlgorithmIdentification32 import AlgorithmIdentification32
+from ._Number import Number
+from ._Max500Binary import Max500Binary
+from ._KEKIdentifier7 import KEKIdentifier7
 
 class KEK9(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_KEKId", "_KeyNcrptnAlgo", "_NcrptdKey"]
+	__slots__ = ["_Vrsn", "_KeyNcrptnAlgo", "_KEKId", "_NcrptdKey"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -21,19 +21,6 @@ class KEK9(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def KEKId(self):
-		return self._KEKId
-
-	@KEKId.setter
-	def KEKId(self, value):
-		self._KEKId = value if type(value) != base_types.auto else self.make_default("KEKId")
-
-	@KEKId.deleter
-	def KEKId(self):
-		del self._KEKId
-		self._KEKId = None
-
-	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
 
@@ -45,6 +32,19 @@ class KEK9(base_types._BaseFieldType):
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
 		self._KeyNcrptnAlgo = None
+
+	@property
+	def KEKId(self):
+		return self._KEKId
+
+	@KEKId.setter
+	def KEKId(self, value):
+		self._KEKId = value if type(value) != base_types.auto else self.make_default("KEKId")
+
+	@KEKId.deleter
+	def KEKId(self):
+		del self._KEKId
+		self._KEKId = None
 
 	@property
 	def NcrptdKey(self):
@@ -61,8 +61,8 @@ class KEK9(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

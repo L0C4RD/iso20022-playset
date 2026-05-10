@@ -1,6 +1,6 @@
 from . import base_types
-from .FormOfSecurity1Code import FormOfSecurity1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._FormOfSecurity1Code import FormOfSecurity1Code
 
 class FormOfSecurity7Choice(base_types._BaseFieldType):
 

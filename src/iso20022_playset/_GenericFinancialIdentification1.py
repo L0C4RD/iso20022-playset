@@ -1,22 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FinancialIdentificationSchemeName1Choice import FinancialIdentificationSchemeName1Choice
+from ._Max35Text import Max35Text
+from ._FinancialIdentificationSchemeName1Choice import FinancialIdentificationSchemeName1Choice
 
 class GenericFinancialIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Issr", "_SchmeNm"]
+	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	@property
 	def Issr(self):
@@ -32,21 +32,21 @@ class GenericFinancialIdentification1(base_types._BaseFieldType):
 		self._Issr = None
 
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def Id(self):
+		return self._Id
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=FinancialIdentificationSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

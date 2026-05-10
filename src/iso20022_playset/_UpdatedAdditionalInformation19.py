@@ -1,6 +1,6 @@
 from . import base_types
-from .ISO2ALanguageCode import ISO2ALanguageCode
-from .Max350Text import Max350Text
+from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._Max350Text import Max350Text
 
 class UpdatedAdditionalInformation19(base_types._BaseFieldType):
 

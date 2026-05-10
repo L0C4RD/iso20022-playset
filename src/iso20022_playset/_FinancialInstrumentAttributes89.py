@@ -1,25 +1,12 @@
 from . import base_types
-from .GenericIdentification165 import GenericIdentification165
-from .PhysicalTransferType4Code import PhysicalTransferType4Code
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ContractSize1 import ContractSize1
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._PhysicalTransferType4Code import PhysicalTransferType4Code
+from ._ContractSize1 import ContractSize1
+from ._GenericIdentification165 import GenericIdentification165
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryTp", "_UndrlygId", "_PricCcy", "_CtrctSz"]
-	@property
-	def DlvryTp(self):
-		return self._DlvryTp
-
-	@DlvryTp.setter
-	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
-
-	@DlvryTp.deleter
-	def DlvryTp(self):
-		del self._DlvryTp
-		self._DlvryTp = None
-
+	__slots__ = ["_UndrlygId", "_CtrctSz", "_DlvryTp", "_PricCcy"]
 	@property
 	def UndrlygId(self):
 		return self._UndrlygId
@@ -34,19 +21,6 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		self._UndrlygId = None
 
 	@property
-	def PricCcy(self):
-		return self._PricCcy
-
-	@PricCcy.setter
-	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
-
-	@PricCcy.deleter
-	def PricCcy(self):
-		del self._PricCcy
-		self._PricCcy = None
-
-	@property
 	def CtrctSz(self):
 		return self._CtrctSz
 
@@ -59,10 +33,36 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		del self._CtrctSz
 		self._CtrctSz = None
 
+	@property
+	def DlvryTp(self):
+		return self._DlvryTp
+
+	@DlvryTp.setter
+	def DlvryTp(self, value):
+		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
+
+	@DlvryTp.deleter
+	def DlvryTp(self):
+		del self._DlvryTp
+		self._DlvryTp = None
+
+	@property
+	def PricCcy(self):
+		return self._PricCcy
+
+	@PricCcy.setter
+	def PricCcy(self, value):
+		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+
+	@PricCcy.deleter
+	def PricCcy(self):
+		del self._PricCcy
+		self._PricCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctSz', type=ContractSize1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryTp', type=PhysicalTransferType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

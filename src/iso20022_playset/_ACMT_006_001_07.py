@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountManagementStatusReportV07 import AccountManagementStatusReportV07
+from ._AccountManagementStatusReportV07 import AccountManagementStatusReportV07
 
 class ACMT_006_001_07():
 

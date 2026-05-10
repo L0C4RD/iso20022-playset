@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .PartyAuditTrailSearchCriteria2 import PartyAuditTrailSearchCriteria2
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._PartyAuditTrailSearchCriteria2 import PartyAuditTrailSearchCriteria2
 
 class PartyAuditTrailQueryV01(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 from . import base_types
-from .ISODate import ISODate
-from .Max70Text import Max70Text
-from .PlusOrMinusIndicator import PlusOrMinusIndicator
-from .CurrencyAndAmount import CurrencyAndAmount
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
+from ._CurrencyAndAmount import CurrencyAndAmount
 
 class AmountAndDirection111(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Sgn", "_Labl", "_Dt"]
+	__slots__ = ["_Amt", "_Labl", "_Sgn", "_Dt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -21,19 +21,6 @@ class AmountAndDirection111(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Sgn(self):
-		return self._Sgn
-
-	@Sgn.setter
-	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
-
-	@Sgn.deleter
-	def Sgn(self):
-		del self._Sgn
-		self._Sgn = None
-
-	@property
 	def Labl(self):
 		return self._Labl
 
@@ -45,6 +32,19 @@ class AmountAndDirection111(base_types._BaseFieldType):
 	def Labl(self):
 		del self._Labl
 		self._Labl = None
+
+	@property
+	def Sgn(self):
+		return self._Sgn
+
+	@Sgn.setter
+	def Sgn(self, value):
+		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+
+	@Sgn.deleter
+	def Sgn(self):
+		del self._Sgn
+		self._Sgn = None
 
 	@property
 	def Dt(self):
@@ -61,8 +61,8 @@ class AmountAndDirection111(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Labl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-from .PendingStatus74Choice import PendingStatus74Choice
-from .NoSpecifiedReason1 import NoSpecifiedReason1
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._NoSpecifiedReason1 import NoSpecifiedReason1
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._PendingStatus74Choice import PendingStatus74Choice
 
 class EventProcessingStatus7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_PrtrySts", "_Rcncld", "_Cmplt"]
+	__slots__ = ["_Pdg", "_PrtrySts", "_Cmplt", "_Rcncld"]
 	@property
 	def Pdg(self):
 		return self._Pdg
@@ -33,19 +33,6 @@ class EventProcessingStatus7Choice(base_types._BaseFieldType):
 		self._PrtrySts = None
 
 	@property
-	def Rcncld(self):
-		return self._Rcncld
-
-	@Rcncld.setter
-	def Rcncld(self, value):
-		self._Rcncld = value if type(value) != base_types.auto else self.make_default("Rcncld")
-
-	@Rcncld.deleter
-	def Rcncld(self):
-		del self._Rcncld
-		self._Rcncld = None
-
-	@property
 	def Cmplt(self):
 		return self._Cmplt
 
@@ -58,10 +45,23 @@ class EventProcessingStatus7Choice(base_types._BaseFieldType):
 		del self._Cmplt
 		self._Cmplt = None
 
+	@property
+	def Rcncld(self):
+		return self._Rcncld
+
+	@Rcncld.setter
+	def Rcncld(self, value):
+		self._Rcncld = value if type(value) != base_types.auto else self.make_default("Rcncld")
+
+	@Rcncld.deleter
+	def Rcncld(self):
+		del self._Rcncld
+		self._Rcncld = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pdg', type=PendingStatus74Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rcncld', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmplt', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rcncld', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 	))
 

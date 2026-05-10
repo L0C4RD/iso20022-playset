@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification242Choice import PartyIdentification242Choice
-from .NettingCutOff2 import NettingCutOff2
+from ._NettingCutOff2 import NettingCutOff2
+from ._PartyIdentification242Choice import PartyIdentification242Choice
 
 class CutOffData2(base_types._BaseFieldType):
 

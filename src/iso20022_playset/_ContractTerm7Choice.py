@@ -1,5 +1,5 @@
 from . import base_types
-from .FixedOpenTermContract2 import FixedOpenTermContract2
+from ._FixedOpenTermContract2 import FixedOpenTermContract2
 
 class ContractTerm7Choice(base_types._BaseFieldType):
 

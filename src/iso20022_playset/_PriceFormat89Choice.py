@@ -1,12 +1,12 @@
 from . import base_types
-from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
-from .PercentagePrice2 import PercentagePrice2
-from .AmountPrice5 import AmountPrice5
-from .PriceValueType10Code import PriceValueType10Code
+from ._PriceValueType10Code import PriceValueType10Code
+from ._PercentagePrice2 import PercentagePrice2
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._AmountPrice5 import AmountPrice5
 
 class PriceFormat89Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_NotSpcfdPric", "_AmtPric", "_PctgPric"]
+	__slots__ = ["_IndxPts", "_PctgPric", "_AmtPric", "_NotSpcfdPric"]
 	@property
 	def IndxPts(self):
 		return self._IndxPts
@@ -21,17 +21,17 @@ class PriceFormat89Choice(base_types._BaseFieldType):
 		self._IndxPts = None
 
 	@property
-	def NotSpcfdPric(self):
-		return self._NotSpcfdPric
+	def PctgPric(self):
+		return self._PctgPric
 
-	@NotSpcfdPric.setter
-	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
+	@PctgPric.setter
+	def PctgPric(self, value):
+		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
 
-	@NotSpcfdPric.deleter
-	def NotSpcfdPric(self):
-		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
+	@PctgPric.deleter
+	def PctgPric(self):
+		del self._PctgPric
+		self._PctgPric = None
 
 	@property
 	def AmtPric(self):
@@ -47,22 +47,22 @@ class PriceFormat89Choice(base_types._BaseFieldType):
 		self._AmtPric = None
 
 	@property
-	def PctgPric(self):
-		return self._PctgPric
+	def NotSpcfdPric(self):
+		return self._NotSpcfdPric
 
-	@PctgPric.setter
-	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
+	@NotSpcfdPric.setter
+	def NotSpcfdPric(self, value):
+		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
 
-	@PctgPric.deleter
-	def PctgPric(self):
-		del self._PctgPric
-		self._PctgPric = None
+	@NotSpcfdPric.deleter
+	def NotSpcfdPric(self):
+		del self._NotSpcfdPric
+		self._NotSpcfdPric = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

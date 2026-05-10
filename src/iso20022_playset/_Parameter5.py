@@ -1,5 +1,5 @@
 from . import base_types
-from .Algorithm11Code import Algorithm11Code
+from ._Algorithm11Code import Algorithm11Code
 
 class Parameter5(base_types._BaseFieldType):
 

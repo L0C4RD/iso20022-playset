@@ -1,6 +1,6 @@
 from . import base_types
-from .CalendarReport1 import CalendarReport1
-from .ErrorHandling4 import ErrorHandling4
+from ._ErrorHandling4 import ErrorHandling4
+from ._CalendarReport1 import CalendarReport1
 
 class CalendarReportOrError1Choice(base_types._BaseFieldType):
 

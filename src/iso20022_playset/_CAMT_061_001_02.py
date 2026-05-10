@@ -1,5 +1,5 @@
 from . import base_types
-from .PayInCallV02 import PayInCallV02
+from ._PayInCallV02 import PayInCallV02
 
 class CAMT_061_001_02():
 

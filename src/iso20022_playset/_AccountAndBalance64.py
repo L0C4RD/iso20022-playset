@@ -1,13 +1,26 @@
 from . import base_types
-from .SafekeepingPlaceFormat52Choice import SafekeepingPlaceFormat52Choice
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from .PartyIdentification136Choice import PartyIdentification136Choice
-from .CorporateActionBalanceDetails46 import CorporateActionBalanceDetails46
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._SafekeepingPlaceFormat52Choice import SafekeepingPlaceFormat52Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._CorporateActionBalanceDetails46 import CorporateActionBalanceDetails46
 
 class AccountAndBalance64(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Bal", "_AcctOwnr", "_SfkpgAcct", "_SfkpgPlc"]
+	__slots__ = ["_SfkpgPlc", "_BlckChainAdrOrWllt", "_Bal", "_SfkpgAcct", "_AcctOwnr"]
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -35,19 +48,6 @@ class AccountAndBalance64(base_types._BaseFieldType):
 		self._Bal = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -61,23 +61,23 @@ class AccountAndBalance64(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat52Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalanceDetails46, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat52Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

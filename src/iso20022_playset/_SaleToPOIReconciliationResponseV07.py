@@ -1,7 +1,7 @@
 from . import base_types
-from .ReconciliationResponse10 import ReconciliationResponse10
-from .ContentInformationType38 import ContentInformationType38
-from .Header41 import Header41
+from ._Header41 import Header41
+from ._ReconciliationResponse10 import ReconciliationResponse10
+from ._ContentInformationType38 import ContentInformationType38
 
 class SaleToPOIReconciliationResponseV07(base_types._BaseFieldType):
 

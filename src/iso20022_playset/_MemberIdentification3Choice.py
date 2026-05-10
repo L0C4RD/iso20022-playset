@@ -1,11 +1,24 @@
 from . import base_types
-from .BICFIDec2014Identifier import BICFIDec2014Identifier
-from .GenericFinancialIdentification1 import GenericFinancialIdentification1
-from .ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
+from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 
 class MemberIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_ClrSysMmbId", "_BICFI"]
+	__slots__ = ["_BICFI", "_Othr", "_ClrSysMmbId"]
+	@property
+	def BICFI(self):
+		return self._BICFI
+
+	@BICFI.setter
+	def BICFI(self, value):
+		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
+
+	@BICFI.deleter
+	def BICFI(self):
+		del self._BICFI
+		self._BICFI = None
+
 	@property
 	def Othr(self):
 		return self._Othr
@@ -32,22 +45,9 @@ class MemberIdentification3Choice(base_types._BaseFieldType):
 		del self._ClrSysMmbId
 		self._ClrSysMmbId = None
 
-	@property
-	def BICFI(self):
-		return self._BICFI
-
-	@BICFI.setter
-	def BICFI(self, value):
-		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
-
-	@BICFI.deleter
-	def BICFI(self):
-		del self._BICFI
-		self._BICFI = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

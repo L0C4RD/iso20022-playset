@@ -1,8 +1,8 @@
 from . import base_types
-from .PartyIdentification137Choice import PartyIdentification137Choice
-from .CashAccountIdentification12Choice import CashAccountIdentification12Choice
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .AlternatePartyIdentification9 import AlternatePartyIdentification9
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
+from ._CashAccountIdentification12Choice import CashAccountIdentification12Choice
 
 class PartyIdentificationAndAccount231(base_types._BaseFieldType):
 

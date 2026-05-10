@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader10 import MessageHeader10
-from .ReceiptAcknowledgementReport2 import ReceiptAcknowledgementReport2
+from ._ReceiptAcknowledgementReport2 import ReceiptAcknowledgementReport2
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader10 import MessageHeader10
 
 class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_SplmtryData", "_Rpt"]
+	__slots__ = ["_Rpt", "_SplmtryData", "_MsgId"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Rpt(self):
+		return self._Rpt
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@Rpt.setter
+	def Rpt(self, value):
+		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@Rpt.deleter
+	def Rpt(self):
+		del self._Rpt
+		self._Rpt = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Rpt(self):
-		return self._Rpt
+	def MsgId(self):
+		return self._MsgId
 
-	@Rpt.setter
-	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@Rpt.deleter
-	def Rpt(self):
-		del self._Rpt
-		self._Rpt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageHeader10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rpt', type=ReceiptAcknowledgementReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageHeader10, min=1, max=1, mutex_group=None, array=False),
 	))
 

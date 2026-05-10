@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityReportV01 import SecurityReportV01
+from ._SecurityReportV01 import SecurityReportV01
 
 class REDA_012_001_01():
 

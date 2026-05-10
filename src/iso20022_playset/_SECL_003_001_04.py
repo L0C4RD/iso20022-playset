@@ -1,5 +1,5 @@
 from . import base_types
-from .TradeLegStatementV04 import TradeLegStatementV04
+from ._TradeLegStatementV04 import TradeLegStatementV04
 
 class SECL_003_001_04():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .VolumeMetrics5 import VolumeMetrics5
+from ._VolumeMetrics5 import VolumeMetrics5
 
 class PositionSetMetrics7(base_types._BaseFieldType):
 

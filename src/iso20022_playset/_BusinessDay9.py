@@ -1,23 +1,23 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
-from .SystemStatus3 import SystemStatus3
+from ._SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
+from ._SystemStatus3 import SystemStatus3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class BusinessDay9(base_types._BaseFieldType):
 
-	__slots__ = ["_SysSts", "_SysInfPerCcy", "_SysDt"]
+	__slots__ = ["_SysDt", "_SysInfPerCcy", "_SysSts"]
 	@property
-	def SysSts(self):
-		return self._SysSts
+	def SysDt(self):
+		return self._SysDt
 
-	@SysSts.setter
-	def SysSts(self, value):
-		self._SysSts = value if type(value) != base_types.auto else self.make_default("SysSts")
+	@SysDt.setter
+	def SysDt(self, value):
+		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
 
-	@SysSts.deleter
-	def SysSts(self):
-		del self._SysSts
-		self._SysSts = None
+	@SysDt.deleter
+	def SysDt(self):
+		del self._SysDt
+		self._SysDt = None
 
 	@property
 	def SysInfPerCcy(self):
@@ -33,21 +33,21 @@ class BusinessDay9(base_types._BaseFieldType):
 		self._SysInfPerCcy = None
 
 	@property
-	def SysDt(self):
-		return self._SysDt
+	def SysSts(self):
+		return self._SysSts
 
-	@SysDt.setter
-	def SysDt(self, value):
-		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
+	@SysSts.setter
+	def SysSts(self, value):
+		self._SysSts = value if type(value) != base_types.auto else self.make_default("SysSts")
 
-	@SysDt.deleter
-	def SysDt(self):
-		del self._SysDt
-		self._SysDt = None
+	@SysSts.deleter
+	def SysSts(self):
+		del self._SysSts
+		self._SysSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysSts', type=SystemStatus3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysInfPerCcy', type=SystemAvailabilityAndEvents3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysInfPerCcy', type=SystemAvailabilityAndEvents3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SysSts', type=SystemStatus3, min=0, max=1, mutex_group=None, array=False),
 	))
 

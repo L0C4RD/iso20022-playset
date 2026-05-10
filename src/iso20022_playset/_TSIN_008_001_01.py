@@ -1,5 +1,5 @@
 from . import base_types
-from .InvoiceAssignmentNotificationV01 import InvoiceAssignmentNotificationV01
+from ._InvoiceAssignmentNotificationV01 import InvoiceAssignmentNotificationV01
 
 class TSIN_008_001_01():
 

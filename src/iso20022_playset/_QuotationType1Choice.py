@@ -1,6 +1,6 @@
 from . import base_types
-from .QuotationType1Code import QuotationType1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._QuotationType1Code import QuotationType1Code
 
 class QuotationType1Choice(base_types._BaseFieldType):
 

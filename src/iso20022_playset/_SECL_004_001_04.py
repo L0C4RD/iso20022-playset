@@ -1,5 +1,5 @@
 from . import base_types
-from .NetPositionV04 import NetPositionV04
+from ._NetPositionV04 import NetPositionV04
 
 class SECL_004_001_04():
 

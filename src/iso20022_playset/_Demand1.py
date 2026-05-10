@@ -1,17 +1,17 @@
 from . import base_types
-from .UndertakingAmount3 import UndertakingAmount3
-from .Max2000Text import Max2000Text
-from .ISODate import ISODate
-from .DemandType1Code import DemandType1Code
-from .Max35Text import Max35Text
-from .DemandDocumentation1 import DemandDocumentation1
-from .Undertaking6 import Undertaking6
-from .CashAccount27 import CashAccount27
-from .Presentation2 import Presentation2
+from ._CashAccount27 import CashAccount27
+from ._Undertaking6 import Undertaking6
+from ._DemandDocumentation1 import DemandDocumentation1
+from ._Max2000Text import Max2000Text
+from ._DemandType1Code import DemandType1Code
+from ._Max35Text import Max35Text
+from ._Presentation2 import Presentation2
+from ._UndertakingAmount3 import UndertakingAmount3
+from ._ISODate import ISODate
 
 class Demand1(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndAmt", "_CnfrmrRefNb", "_SttlmAcct", "_DmndDcmnttn", "_ReqdXpryDt", "_UdrtkgId", "_Id", "_Tp", "_AdvsgPtyRefNb", "_ScndAdvsgPtyRefNb", "_PresntnDtls", "_AddtlInf"]
+	__slots__ = ["_DmndAmt", "_ReqdXpryDt", "_PresntnDtls", "_AdvsgPtyRefNb", "_Tp", "_DmndDcmnttn", "_SttlmAcct", "_UdrtkgId", "_Id", "_AddtlInf", "_CnfrmrRefNb", "_ScndAdvsgPtyRefNb"]
 	@property
 	def DmndAmt(self):
 		return self._DmndAmt
@@ -26,30 +26,56 @@ class Demand1(base_types._BaseFieldType):
 		self._DmndAmt = None
 
 	@property
-	def CnfrmrRefNb(self):
-		return self._CnfrmrRefNb
+	def ReqdXpryDt(self):
+		return self._ReqdXpryDt
 
-	@CnfrmrRefNb.setter
-	def CnfrmrRefNb(self, value):
-		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
+	@ReqdXpryDt.setter
+	def ReqdXpryDt(self, value):
+		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
 
-	@CnfrmrRefNb.deleter
-	def CnfrmrRefNb(self):
-		del self._CnfrmrRefNb
-		self._CnfrmrRefNb = None
+	@ReqdXpryDt.deleter
+	def ReqdXpryDt(self):
+		del self._ReqdXpryDt
+		self._ReqdXpryDt = None
 
 	@property
-	def SttlmAcct(self):
-		return self._SttlmAcct
+	def PresntnDtls(self):
+		return self._PresntnDtls
 
-	@SttlmAcct.setter
-	def SttlmAcct(self, value):
-		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
+	@PresntnDtls.setter
+	def PresntnDtls(self, value):
+		self._PresntnDtls = value if type(value) != base_types.auto else self.make_default("PresntnDtls")
 
-	@SttlmAcct.deleter
-	def SttlmAcct(self):
-		del self._SttlmAcct
-		self._SttlmAcct = None
+	@PresntnDtls.deleter
+	def PresntnDtls(self):
+		del self._PresntnDtls
+		self._PresntnDtls = None
+
+	@property
+	def AdvsgPtyRefNb(self):
+		return self._AdvsgPtyRefNb
+
+	@AdvsgPtyRefNb.setter
+	def AdvsgPtyRefNb(self, value):
+		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
+
+	@AdvsgPtyRefNb.deleter
+	def AdvsgPtyRefNb(self):
+		del self._AdvsgPtyRefNb
+		self._AdvsgPtyRefNb = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def DmndDcmnttn(self):
@@ -65,17 +91,17 @@ class Demand1(base_types._BaseFieldType):
 		self._DmndDcmnttn = None
 
 	@property
-	def ReqdXpryDt(self):
-		return self._ReqdXpryDt
+	def SttlmAcct(self):
+		return self._SttlmAcct
 
-	@ReqdXpryDt.setter
-	def ReqdXpryDt(self, value):
-		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
+	@SttlmAcct.setter
+	def SttlmAcct(self, value):
+		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
 
-	@ReqdXpryDt.deleter
-	def ReqdXpryDt(self):
-		del self._ReqdXpryDt
-		self._ReqdXpryDt = None
+	@SttlmAcct.deleter
+	def SttlmAcct(self):
+		del self._SttlmAcct
+		self._SttlmAcct = None
 
 	@property
 	def UdrtkgId(self):
@@ -104,30 +130,30 @@ class Demand1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
-	def AdvsgPtyRefNb(self):
-		return self._AdvsgPtyRefNb
+	def CnfrmrRefNb(self):
+		return self._CnfrmrRefNb
 
-	@AdvsgPtyRefNb.setter
-	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
+	@CnfrmrRefNb.setter
+	def CnfrmrRefNb(self, value):
+		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
 
-	@AdvsgPtyRefNb.deleter
-	def AdvsgPtyRefNb(self):
-		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
+	@CnfrmrRefNb.deleter
+	def CnfrmrRefNb(self):
+		del self._CnfrmrRefNb
+		self._CnfrmrRefNb = None
 
 	@property
 	def ScndAdvsgPtyRefNb(self):
@@ -142,44 +168,18 @@ class Demand1(base_types._BaseFieldType):
 		del self._ScndAdvsgPtyRefNb
 		self._ScndAdvsgPtyRefNb = None
 
-	@property
-	def PresntnDtls(self):
-		return self._PresntnDtls
-
-	@PresntnDtls.setter
-	def PresntnDtls(self, value):
-		self._PresntnDtls = value if type(value) != base_types.auto else self.make_default("PresntnDtls")
-
-	@PresntnDtls.deleter
-	def PresntnDtls(self):
-		del self._PresntnDtls
-		self._PresntnDtls = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DmndAmt', type=UndertakingAmount3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAcct', type=CashAccount27, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DmndDcmnttn', type=DemandDocumentation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdXpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PresntnDtls', type=Presentation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=DemandType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmndDcmnttn', type=DemandDocumentation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAcct', type=CashAccount27, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=DemandType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PresntnDtls', type=Presentation2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CnfrmrRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndAdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

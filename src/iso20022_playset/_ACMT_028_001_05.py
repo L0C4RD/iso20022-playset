@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountSwitchInformationResponseV05 import AccountSwitchInformationResponseV05
+from ._AccountSwitchInformationResponseV05 import AccountSwitchInformationResponseV05
 
 class ACMT_028_001_05():
 

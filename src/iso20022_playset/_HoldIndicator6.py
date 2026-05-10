@@ -1,23 +1,10 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .RegistrationReason5 import RegistrationReason5
+from ._RegistrationReason5 import RegistrationReason5
+from ._YesNoIndicator import YesNoIndicator
 
 class HoldIndicator6(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_Ind"]
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
+	__slots__ = ["_Ind", "_Rsn"]
 	@property
 	def Ind(self):
 		return self._Ind
@@ -31,8 +18,21 @@ class HoldIndicator6(base_types._BaseFieldType):
 		del self._Ind
 		self._Ind = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=RegistrationReason5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ind', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=RegistrationReason5, min=0, max=None, mutex_group=None, array=True),
 	))
 

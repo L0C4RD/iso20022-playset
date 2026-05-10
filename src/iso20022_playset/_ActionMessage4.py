@@ -1,52 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max20000Text import Max20000Text
-from .Max35Binary import Max35Binary
-from .ATMDevice1Code import ATMDevice1Code
-from .OutputFormat2Code import OutputFormat2Code
+from ._Max20000Text import Max20000Text
+from ._ATMDevice1Code import ATMDevice1Code
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._OutputFormat2Code import OutputFormat2Code
 
 class ActionMessage4(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_Dvc", "_MsgCnttSgntr", "_Msg", "_Ref"]
-	@property
-	def Frmt(self):
-		return self._Frmt
-
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
-
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
-
-	@property
-	def Dvc(self):
-		return self._Dvc
-
-	@Dvc.setter
-	def Dvc(self, value):
-		self._Dvc = value if type(value) != base_types.auto else self.make_default("Dvc")
-
-	@Dvc.deleter
-	def Dvc(self):
-		del self._Dvc
-		self._Dvc = None
-
-	@property
-	def MsgCnttSgntr(self):
-		return self._MsgCnttSgntr
-
-	@MsgCnttSgntr.setter
-	def MsgCnttSgntr(self, value):
-		self._MsgCnttSgntr = value if type(value) != base_types.auto else self.make_default("MsgCnttSgntr")
-
-	@MsgCnttSgntr.deleter
-	def MsgCnttSgntr(self):
-		del self._MsgCnttSgntr
-		self._MsgCnttSgntr = None
-
+	__slots__ = ["_Msg", "_Ref", "_Dvc", "_Frmt", "_MsgCnttSgntr"]
 	@property
 	def Msg(self):
 		return self._Msg
@@ -73,11 +34,50 @@ class ActionMessage4(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def Dvc(self):
+		return self._Dvc
+
+	@Dvc.setter
+	def Dvc(self, value):
+		self._Dvc = value if type(value) != base_types.auto else self.make_default("Dvc")
+
+	@Dvc.deleter
+	def Dvc(self):
+		del self._Dvc
+		self._Dvc = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
+	def MsgCnttSgntr(self):
+		return self._MsgCnttSgntr
+
+	@MsgCnttSgntr.setter
+	def MsgCnttSgntr(self, value):
+		self._MsgCnttSgntr = value if type(value) != base_types.auto else self.make_default("MsgCnttSgntr")
+
+	@MsgCnttSgntr.deleter
+	def MsgCnttSgntr(self):
+		del self._MsgCnttSgntr
+		self._MsgCnttSgntr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Msg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

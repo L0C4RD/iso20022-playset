@@ -1,6 +1,6 @@
 from . import base_types
-from .CashAccount206 import CashAccount206
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CashAccount206 import CashAccount206
 
 class CashAccount205(base_types._BaseFieldType):
 

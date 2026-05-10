@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class AmountAndCurrency1(base_types._BaseFieldType):
 

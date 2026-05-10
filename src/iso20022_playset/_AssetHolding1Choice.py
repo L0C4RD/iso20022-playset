@@ -1,24 +1,24 @@
 from . import base_types
-from .Commodity2 import Commodity2
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Guarantee1 import Guarantee1
-from .SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Guarantee1 import Guarantee1
+from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
+from ._Commodity2 import Commodity2
 
 class AssetHolding1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Csh", "_Gold", "_Grnt", "_Cmmdty", "_Trpty", "_Scty"]
+	__slots__ = ["_Cmmdty", "_Gold", "_Scty", "_Csh", "_Trpty", "_Grnt"]
 	@property
-	def Csh(self):
-		return self._Csh
+	def Cmmdty(self):
+		return self._Cmmdty
 
-	@Csh.setter
-	def Csh(self, value):
-		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
+	@Cmmdty.setter
+	def Cmmdty(self, value):
+		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
 
-	@Csh.deleter
-	def Csh(self):
-		del self._Csh
-		self._Csh = None
+	@Cmmdty.deleter
+	def Cmmdty(self):
+		del self._Cmmdty
+		self._Cmmdty = None
 
 	@property
 	def Gold(self):
@@ -34,30 +34,30 @@ class AssetHolding1Choice(base_types._BaseFieldType):
 		self._Gold = None
 
 	@property
-	def Grnt(self):
-		return self._Grnt
+	def Scty(self):
+		return self._Scty
 
-	@Grnt.setter
-	def Grnt(self, value):
-		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
 
-	@Grnt.deleter
-	def Grnt(self):
-		del self._Grnt
-		self._Grnt = None
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
 
 	@property
-	def Cmmdty(self):
-		return self._Cmmdty
+	def Csh(self):
+		return self._Csh
 
-	@Cmmdty.setter
-	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+	@Csh.setter
+	def Csh(self, value):
+		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
 
-	@Cmmdty.deleter
-	def Cmmdty(self):
-		del self._Cmmdty
-		self._Cmmdty = None
+	@Csh.deleter
+	def Csh(self):
+		del self._Csh
+		self._Csh = None
 
 	@property
 	def Trpty(self):
@@ -73,24 +73,24 @@ class AssetHolding1Choice(base_types._BaseFieldType):
 		self._Trpty = None
 
 	@property
-	def Scty(self):
-		return self._Scty
+	def Grnt(self):
+		return self._Grnt
 
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+	@Grnt.setter
+	def Grnt(self, value):
+		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
 
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
+	@Grnt.deleter
+	def Grnt(self):
+		del self._Grnt
+		self._Grnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Csh', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Trpty', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Csh', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Trpty', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
 	))
 

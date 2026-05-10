@@ -1,10 +1,23 @@
 from . import base_types
-from .RejectionReason53 import RejectionReason53
-from .Max15NumericText import Max15NumericText
+from ._Max15NumericText import Max15NumericText
+from ._RejectionReason53 import RejectionReason53
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsRjctd", "_TxsRjctnsRsn", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs"]
+	__slots__ = ["_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TxsRjctnsRsn", "_TtlNbOfTxs"]
+	@property
+	def TtlNbOfTxsAccptd(self):
+		return self._TtlNbOfTxsAccptd
+
+	@TtlNbOfTxsAccptd.setter
+	def TtlNbOfTxsAccptd(self, value):
+		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
+
+	@TtlNbOfTxsAccptd.deleter
+	def TtlNbOfTxsAccptd(self):
+		del self._TtlNbOfTxsAccptd
+		self._TtlNbOfTxsAccptd = None
+
 	@property
 	def TtlNbOfTxsRjctd(self):
 		return self._TtlNbOfTxsRjctd
@@ -32,19 +45,6 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TxsRjctnsRsn = None
 
 	@property
-	def TtlNbOfTxsAccptd(self):
-		return self._TtlNbOfTxsAccptd
-
-	@TtlNbOfTxsAccptd.setter
-	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
-
-	@TtlNbOfTxsAccptd.deleter
-	def TtlNbOfTxsAccptd(self):
-		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
-
-	@property
 	def TtlNbOfTxs(self):
 		return self._TtlNbOfTxs
 
@@ -58,9 +58,9 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TtlNbOfTxs = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class UndertakingAmount4(base_types._BaseFieldType):
 

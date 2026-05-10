@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class ProprietaryPrice2(base_types._BaseFieldType):
 

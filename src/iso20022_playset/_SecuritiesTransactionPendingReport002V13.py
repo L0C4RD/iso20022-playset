@@ -1,53 +1,27 @@
 from . import base_types
-from .Transaction125 import Transaction125
-from .Pagination1 import Pagination1
-from .BlockChainAddressWallet7 import BlockChainAddressWallet7
-from .Statement70 import Statement70
-from .PartyIdentification156 import PartyIdentification156
-from .StatusAndReason45 import StatusAndReason45
-from .SecuritiesAccount30 import SecuritiesAccount30
+from ._Transaction125 import Transaction125
+from ._Pagination1 import Pagination1
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._StatusAndReason45 import StatusAndReason45
+from ._PartyIdentification156 import PartyIdentification156
+from ._Statement70 import Statement70
 
 class SecuritiesTransactionPendingReport002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_Pgntn", "_AcctOwnr", "_SfkpgAcct", "_Txs", "_BlckChainAdrOrWllt", "_Sts", "_StmtGnlDtls"]
+	__slots__ = ["_Sts", "_Txs", "_BlckChainAdrOrWllt", "_Pgntn", "_StmtGnlDtls", "_AcctOwnr", "_SfkpgAcct"]
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def Sts(self):
+		return self._Sts
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def Txs(self):
@@ -76,17 +50,17 @@ class SecuritiesTransactionPendingReport002V13(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def Pgntn(self):
+		return self._Pgntn
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def StmtGnlDtls(self):
@@ -101,13 +75,39 @@ class SecuritiesTransactionPendingReport002V13(base_types._BaseFieldType):
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
 
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatusAndReason45, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Txs', type=Transaction125, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatusAndReason45, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 	))
 

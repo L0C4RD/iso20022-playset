@@ -1,22 +1,9 @@
 from . import base_types
-from .Restriction1 import Restriction1
+from ._Restriction1 import Restriction1
 
 class UpdateLogRestriction1(base_types._BaseFieldType):
 
-	__slots__ = ["_New", "_Od"]
-	@property
-	def New(self):
-		return self._New
-
-	@New.setter
-	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
-
-	@New.deleter
-	def New(self):
-		del self._New
-		self._New = None
-
+	__slots__ = ["_Od", "_New"]
 	@property
 	def Od(self):
 		return self._Od
@@ -30,8 +17,21 @@ class UpdateLogRestriction1(base_types._BaseFieldType):
 		del self._Od
 		self._Od = None
 
+	@property
+	def New(self):
+		return self._New
+
+	@New.setter
+	def New(self, value):
+		self._New = value if type(value) != base_types.auto else self.make_default("New")
+
+	@New.deleter
+	def New(self):
+		del self._New
+		self._New = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='New', type=Restriction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Od', type=Restriction1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='New', type=Restriction1, min=1, max=1, mutex_group=None, array=False),
 	))
 

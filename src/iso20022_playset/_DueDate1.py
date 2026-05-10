@@ -1,6 +1,6 @@
 from . import base_types
-from .Max140Text import Max140Text
-from .ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._ISODate import ISODate
 
 class DueDate1(base_types._BaseFieldType):
 

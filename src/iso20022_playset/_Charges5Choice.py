@@ -1,23 +1,23 @@
 from . import base_types
-from .ChargesPerTransaction5 import ChargesPerTransaction5
-from .ChargesPerType5 import ChargesPerType5
-from .ChargesRecord11 import ChargesRecord11
+from ._ChargesRecord11 import ChargesRecord11
+from ._ChargesPerType5 import ChargesPerType5
+from ._ChargesPerTransaction5 import ChargesPerTransaction5
 
 class Charges5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Sngl", "_PerTp", "_PerTx"]
+	__slots__ = ["_PerTx", "_PerTp", "_Sngl"]
 	@property
-	def Sngl(self):
-		return self._Sngl
+	def PerTx(self):
+		return self._PerTx
 
-	@Sngl.setter
-	def Sngl(self, value):
-		self._Sngl = value if type(value) != base_types.auto else self.make_default("Sngl")
+	@PerTx.setter
+	def PerTx(self, value):
+		self._PerTx = value if type(value) != base_types.auto else self.make_default("PerTx")
 
-	@Sngl.deleter
-	def Sngl(self):
-		del self._Sngl
-		self._Sngl = None
+	@PerTx.deleter
+	def PerTx(self):
+		del self._PerTx
+		self._PerTx = None
 
 	@property
 	def PerTp(self):
@@ -33,21 +33,21 @@ class Charges5Choice(base_types._BaseFieldType):
 		self._PerTp = None
 
 	@property
-	def PerTx(self):
-		return self._PerTx
+	def Sngl(self):
+		return self._Sngl
 
-	@PerTx.setter
-	def PerTx(self, value):
-		self._PerTx = value if type(value) != base_types.auto else self.make_default("PerTx")
+	@Sngl.setter
+	def Sngl(self, value):
+		self._Sngl = value if type(value) != base_types.auto else self.make_default("Sngl")
 
-	@PerTx.deleter
-	def PerTx(self):
-		del self._PerTx
-		self._PerTx = None
+	@Sngl.deleter
+	def Sngl(self):
+		del self._Sngl
+		self._Sngl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sngl', type=ChargesRecord11, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PerTp', type=ChargesPerType5, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='PerTx', type=ChargesPerTransaction5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PerTp', type=ChargesPerType5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='Sngl', type=ChargesRecord11, min=0, max=1, mutex_group=1, array=False),
 	))
 

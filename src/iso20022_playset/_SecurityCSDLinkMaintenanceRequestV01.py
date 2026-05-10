@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SecurityCSDLinkUpdate3 import SecurityCSDLinkUpdate3
-from .SecurityCSDLink9 import SecurityCSDLink9
+from ._SecurityCSDLink9 import SecurityCSDLink9
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecurityCSDLinkUpdate3 import SecurityCSDLinkUpdate3
+from ._MessageHeader1 import MessageHeader1
 
 class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyCSDLkId", "_SplmtryData", "_Upd", "_MsgHdr"]
+	__slots__ = ["_SctyCSDLkId", "_Upd", "_SplmtryData", "_MsgHdr"]
 	@property
 	def SctyCSDLkId(self):
 		return self._SctyCSDLkId
@@ -21,19 +21,6 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 		self._SctyCSDLkId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def Upd(self):
 		return self._Upd
 
@@ -45,6 +32,19 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 	def Upd(self):
 		del self._Upd
 		self._Upd = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -61,8 +61,8 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyCSDLkId', type=SecurityCSDLink9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Upd', type=SecurityCSDLinkUpdate3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

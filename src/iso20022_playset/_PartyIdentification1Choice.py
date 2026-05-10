@@ -1,7 +1,7 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
-from .NameAndAddress2 import NameAndAddress2
-from .GenericIdentification1 import GenericIdentification1
+from ._NameAndAddress2 import NameAndAddress2
+from ._GenericIdentification1 import GenericIdentification1
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification1Choice(base_types._BaseFieldType):
 

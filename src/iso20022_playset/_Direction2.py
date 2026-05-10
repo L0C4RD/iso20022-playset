@@ -1,5 +1,5 @@
 from . import base_types
-from .OptionParty3Code import OptionParty3Code
+from ._OptionParty3Code import OptionParty3Code
 
 class Direction2(base_types._BaseFieldType):
 

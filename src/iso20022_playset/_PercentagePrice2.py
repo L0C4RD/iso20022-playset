@@ -1,6 +1,6 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .PriceRateType3Code import PriceRateType3Code
+from ._Percentage14Rate import Percentage14Rate
+from ._PriceRateType3Code import PriceRateType3Code
 
 class PercentagePrice2(base_types._BaseFieldType):
 

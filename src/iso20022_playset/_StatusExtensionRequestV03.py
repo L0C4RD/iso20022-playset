@@ -1,11 +1,24 @@
 from . import base_types
-from .TransactionStatus5 import TransactionStatus5
-from .MessageIdentification1 import MessageIdentification1
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus5 import TransactionStatus5
+from ._MessageIdentification1 import MessageIdentification1
 
 class StatusExtensionRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_ReqId", "_StsToBeXtnded", "_TxId"]
+	__slots__ = ["_StsToBeXtnded", "_SubmitrTxRef", "_ReqId", "_TxId"]
+	@property
+	def StsToBeXtnded(self):
+		return self._StsToBeXtnded
+
+	@StsToBeXtnded.setter
+	def StsToBeXtnded(self, value):
+		self._StsToBeXtnded = value if type(value) != base_types.auto else self.make_default("StsToBeXtnded")
+
+	@StsToBeXtnded.deleter
+	def StsToBeXtnded(self):
+		del self._StsToBeXtnded
+		self._StsToBeXtnded = None
+
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -33,19 +46,6 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 		self._ReqId = None
 
 	@property
-	def StsToBeXtnded(self):
-		return self._StsToBeXtnded
-
-	@StsToBeXtnded.setter
-	def StsToBeXtnded(self, value):
-		self._StsToBeXtnded = value if type(value) != base_types.auto else self.make_default("StsToBeXtnded")
-
-	@StsToBeXtnded.deleter
-	def StsToBeXtnded(self):
-		del self._StsToBeXtnded
-		self._StsToBeXtnded = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -59,9 +59,9 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 		self._TxId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StsToBeXtnded', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsToBeXtnded', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
 

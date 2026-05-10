@@ -1,25 +1,12 @@
 from . import base_types
-from .Header31 import Header31
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .ATMWithdrawalResponse3 import ATMWithdrawalResponse3
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header31 import Header31
+from ._ATMWithdrawalResponse3 import ATMWithdrawalResponse3
 
 class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMWdrwlRspn", "_ATMWdrwlRspn", "_SctyTrlr", "_Hdr"]
-	@property
-	def PrtctdATMWdrwlRspn(self):
-		return self._PrtctdATMWdrwlRspn
-
-	@PrtctdATMWdrwlRspn.setter
-	def PrtctdATMWdrwlRspn(self, value):
-		self._PrtctdATMWdrwlRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMWdrwlRspn")
-
-	@PrtctdATMWdrwlRspn.deleter
-	def PrtctdATMWdrwlRspn(self):
-		del self._PrtctdATMWdrwlRspn
-		self._PrtctdATMWdrwlRspn = None
-
+	__slots__ = ["_ATMWdrwlRspn", "_Hdr", "_SctyTrlr", "_PrtctdATMWdrwlRspn"]
 	@property
 	def ATMWdrwlRspn(self):
 		return self._ATMWdrwlRspn
@@ -32,6 +19,19 @@ class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 	def ATMWdrwlRspn(self):
 		del self._ATMWdrwlRspn
 		self._ATMWdrwlRspn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -47,22 +47,22 @@ class ATMWithdrawalResponseV03(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def PrtctdATMWdrwlRspn(self):
+		return self._PrtctdATMWdrwlRspn
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+	@PrtctdATMWdrwlRspn.setter
+	def PrtctdATMWdrwlRspn(self, value):
+		self._PrtctdATMWdrwlRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMWdrwlRspn")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@PrtctdATMWdrwlRspn.deleter
+	def PrtctdATMWdrwlRspn(self):
+		del self._PrtctdATMWdrwlRspn
+		self._PrtctdATMWdrwlRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMWdrwlRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMWdrwlRspn', type=ATMWithdrawalResponse3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMWdrwlRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

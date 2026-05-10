@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralMovement12 import CollateralMovement12
+from ._CollateralMovement12 import CollateralMovement12
 
 class CollateralProposal7(base_types._BaseFieldType):
 

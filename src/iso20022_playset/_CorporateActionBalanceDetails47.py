@@ -1,5 +1,5 @@
 from . import base_types
-from .RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
 
 class CorporateActionBalanceDetails47(base_types._BaseFieldType):
 

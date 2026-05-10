@@ -1,5 +1,5 @@
 from . import base_types
-from .CorporateActionInstruction002V13 import CorporateActionInstruction002V13
+from ._CorporateActionInstruction002V13 import CorporateActionInstruction002V13
 
 class SEEV_033_002_13():
 

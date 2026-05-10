@@ -1,12 +1,25 @@
 from . import base_types
-from .Number import Number
-from .ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .CreditDebit3Code import CreditDebit3Code
+from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
+from ._CreditDebit3Code import CreditDebit3Code
+from ._Number import Number
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class OtherAmount5(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrchngFeeCdtDbt", "_ClrCdtDbt", "_IntrchngFeeAmt", "_ClrCnt", "_AgtFeeCcy", "_ClrAmt", "_AgtFeeAmt", "_ClrCcy", "_AgtFeeCdtDbt", "_IntrchngFeeCcy"]
+	__slots__ = ["_ClrCcy", "_IntrchngFeeCdtDbt", "_AgtFeeCcy", "_AgtFeeCdtDbt", "_ClrCdtDbt", "_IntrchngFeeCcy", "_AgtFeeAmt", "_ClrAmt", "_ClrCnt", "_IntrchngFeeAmt"]
+	@property
+	def ClrCcy(self):
+		return self._ClrCcy
+
+	@ClrCcy.setter
+	def ClrCcy(self, value):
+		self._ClrCcy = value if type(value) != base_types.auto else self.make_default("ClrCcy")
+
+	@ClrCcy.deleter
+	def ClrCcy(self):
+		del self._ClrCcy
+		self._ClrCcy = None
+
 	@property
 	def IntrchngFeeCdtDbt(self):
 		return self._IntrchngFeeCdtDbt
@@ -19,45 +32,6 @@ class OtherAmount5(base_types._BaseFieldType):
 	def IntrchngFeeCdtDbt(self):
 		del self._IntrchngFeeCdtDbt
 		self._IntrchngFeeCdtDbt = None
-
-	@property
-	def ClrCdtDbt(self):
-		return self._ClrCdtDbt
-
-	@ClrCdtDbt.setter
-	def ClrCdtDbt(self, value):
-		self._ClrCdtDbt = value if type(value) != base_types.auto else self.make_default("ClrCdtDbt")
-
-	@ClrCdtDbt.deleter
-	def ClrCdtDbt(self):
-		del self._ClrCdtDbt
-		self._ClrCdtDbt = None
-
-	@property
-	def IntrchngFeeAmt(self):
-		return self._IntrchngFeeAmt
-
-	@IntrchngFeeAmt.setter
-	def IntrchngFeeAmt(self, value):
-		self._IntrchngFeeAmt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeAmt")
-
-	@IntrchngFeeAmt.deleter
-	def IntrchngFeeAmt(self):
-		del self._IntrchngFeeAmt
-		self._IntrchngFeeAmt = None
-
-	@property
-	def ClrCnt(self):
-		return self._ClrCnt
-
-	@ClrCnt.setter
-	def ClrCnt(self, value):
-		self._ClrCnt = value if type(value) != base_types.auto else self.make_default("ClrCnt")
-
-	@ClrCnt.deleter
-	def ClrCnt(self):
-		del self._ClrCnt
-		self._ClrCnt = None
 
 	@property
 	def AgtFeeCcy(self):
@@ -73,17 +47,43 @@ class OtherAmount5(base_types._BaseFieldType):
 		self._AgtFeeCcy = None
 
 	@property
-	def ClrAmt(self):
-		return self._ClrAmt
+	def AgtFeeCdtDbt(self):
+		return self._AgtFeeCdtDbt
 
-	@ClrAmt.setter
-	def ClrAmt(self, value):
-		self._ClrAmt = value if type(value) != base_types.auto else self.make_default("ClrAmt")
+	@AgtFeeCdtDbt.setter
+	def AgtFeeCdtDbt(self, value):
+		self._AgtFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("AgtFeeCdtDbt")
 
-	@ClrAmt.deleter
-	def ClrAmt(self):
-		del self._ClrAmt
-		self._ClrAmt = None
+	@AgtFeeCdtDbt.deleter
+	def AgtFeeCdtDbt(self):
+		del self._AgtFeeCdtDbt
+		self._AgtFeeCdtDbt = None
+
+	@property
+	def ClrCdtDbt(self):
+		return self._ClrCdtDbt
+
+	@ClrCdtDbt.setter
+	def ClrCdtDbt(self, value):
+		self._ClrCdtDbt = value if type(value) != base_types.auto else self.make_default("ClrCdtDbt")
+
+	@ClrCdtDbt.deleter
+	def ClrCdtDbt(self):
+		del self._ClrCdtDbt
+		self._ClrCdtDbt = None
+
+	@property
+	def IntrchngFeeCcy(self):
+		return self._IntrchngFeeCcy
+
+	@IntrchngFeeCcy.setter
+	def IntrchngFeeCcy(self, value):
+		self._IntrchngFeeCcy = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCcy")
+
+	@IntrchngFeeCcy.deleter
+	def IntrchngFeeCcy(self):
+		del self._IntrchngFeeCcy
+		self._IntrchngFeeCcy = None
 
 	@property
 	def AgtFeeAmt(self):
@@ -99,54 +99,54 @@ class OtherAmount5(base_types._BaseFieldType):
 		self._AgtFeeAmt = None
 
 	@property
-	def ClrCcy(self):
-		return self._ClrCcy
+	def ClrAmt(self):
+		return self._ClrAmt
 
-	@ClrCcy.setter
-	def ClrCcy(self, value):
-		self._ClrCcy = value if type(value) != base_types.auto else self.make_default("ClrCcy")
+	@ClrAmt.setter
+	def ClrAmt(self, value):
+		self._ClrAmt = value if type(value) != base_types.auto else self.make_default("ClrAmt")
 
-	@ClrCcy.deleter
-	def ClrCcy(self):
-		del self._ClrCcy
-		self._ClrCcy = None
-
-	@property
-	def AgtFeeCdtDbt(self):
-		return self._AgtFeeCdtDbt
-
-	@AgtFeeCdtDbt.setter
-	def AgtFeeCdtDbt(self, value):
-		self._AgtFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("AgtFeeCdtDbt")
-
-	@AgtFeeCdtDbt.deleter
-	def AgtFeeCdtDbt(self):
-		del self._AgtFeeCdtDbt
-		self._AgtFeeCdtDbt = None
+	@ClrAmt.deleter
+	def ClrAmt(self):
+		del self._ClrAmt
+		self._ClrAmt = None
 
 	@property
-	def IntrchngFeeCcy(self):
-		return self._IntrchngFeeCcy
+	def ClrCnt(self):
+		return self._ClrCnt
 
-	@IntrchngFeeCcy.setter
-	def IntrchngFeeCcy(self, value):
-		self._IntrchngFeeCcy = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCcy")
+	@ClrCnt.setter
+	def ClrCnt(self, value):
+		self._ClrCnt = value if type(value) != base_types.auto else self.make_default("ClrCnt")
 
-	@IntrchngFeeCcy.deleter
-	def IntrchngFeeCcy(self):
-		del self._IntrchngFeeCcy
-		self._IntrchngFeeCcy = None
+	@ClrCnt.deleter
+	def ClrCnt(self):
+		del self._ClrCnt
+		self._ClrCnt = None
+
+	@property
+	def IntrchngFeeAmt(self):
+		return self._IntrchngFeeAmt
+
+	@IntrchngFeeAmt.setter
+	def IntrchngFeeAmt(self, value):
+		self._IntrchngFeeAmt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeAmt")
+
+	@IntrchngFeeAmt.deleter
+	def IntrchngFeeAmt(self):
+		del self._IntrchngFeeAmt
+		self._IntrchngFeeAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrCnt', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtFeeCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFeeCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrCnt', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrchngFeeAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

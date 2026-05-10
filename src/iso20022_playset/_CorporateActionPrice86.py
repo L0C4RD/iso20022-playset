@@ -1,22 +1,22 @@
 from . import base_types
-from .PriceFormat61Choice import PriceFormat61Choice
-from .PriceFormat74Choice import PriceFormat74Choice
+from ._PriceFormat74Choice import PriceFormat74Choice
+from ._PriceFormat61Choice import PriceFormat61Choice
 
 class CorporateActionPrice86(base_types._BaseFieldType):
 
-	__slots__ = ["_OverSbcptDpstPric", "_MinCshToInst", "_MinMltplCshToInst", "_MaxCshToInst", "_CshInLieuOfShrPric"]
+	__slots__ = ["_MinMltplCshToInst", "_MinCshToInst", "_CshInLieuOfShrPric", "_MaxCshToInst", "_OverSbcptDpstPric"]
 	@property
-	def OverSbcptDpstPric(self):
-		return self._OverSbcptDpstPric
+	def MinMltplCshToInst(self):
+		return self._MinMltplCshToInst
 
-	@OverSbcptDpstPric.setter
-	def OverSbcptDpstPric(self, value):
-		self._OverSbcptDpstPric = value if type(value) != base_types.auto else self.make_default("OverSbcptDpstPric")
+	@MinMltplCshToInst.setter
+	def MinMltplCshToInst(self, value):
+		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
 
-	@OverSbcptDpstPric.deleter
-	def OverSbcptDpstPric(self):
-		del self._OverSbcptDpstPric
-		self._OverSbcptDpstPric = None
+	@MinMltplCshToInst.deleter
+	def MinMltplCshToInst(self):
+		del self._MinMltplCshToInst
+		self._MinMltplCshToInst = None
 
 	@property
 	def MinCshToInst(self):
@@ -32,17 +32,17 @@ class CorporateActionPrice86(base_types._BaseFieldType):
 		self._MinCshToInst = None
 
 	@property
-	def MinMltplCshToInst(self):
-		return self._MinMltplCshToInst
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
 
-	@MinMltplCshToInst.setter
-	def MinMltplCshToInst(self, value):
-		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
 
-	@MinMltplCshToInst.deleter
-	def MinMltplCshToInst(self):
-		del self._MinMltplCshToInst
-		self._MinMltplCshToInst = None
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
 
 	@property
 	def MaxCshToInst(self):
@@ -58,23 +58,23 @@ class CorporateActionPrice86(base_types._BaseFieldType):
 		self._MaxCshToInst = None
 
 	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
+	def OverSbcptDpstPric(self):
+		return self._OverSbcptDpstPric
 
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+	@OverSbcptDpstPric.setter
+	def OverSbcptDpstPric(self, value):
+		self._OverSbcptDpstPric = value if type(value) != base_types.auto else self.make_default("OverSbcptDpstPric")
 
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+	@OverSbcptDpstPric.deleter
+	def OverSbcptDpstPric(self):
+		del self._OverSbcptDpstPric
+		self._OverSbcptDpstPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat61Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

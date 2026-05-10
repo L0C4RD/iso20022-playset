@@ -1,5 +1,5 @@
 from . import base_types
-from .ErrorReportV03 import ErrorReportV03
+from ._ErrorReportV03 import ErrorReportV03
 
 class TSMT_016_001_03():
 

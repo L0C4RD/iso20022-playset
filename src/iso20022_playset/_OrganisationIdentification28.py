@@ -1,25 +1,25 @@
 from . import base_types
-from .ContactDetails2 import ContactDetails2
-from .PostalAddress6 import PostalAddress6
-from .CountryCode import CountryCode
-from .OrganisationIdentification8 import OrganisationIdentification8
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._OrganisationIdentification8 import OrganisationIdentification8
+from ._ContactDetails2 import ContactDetails2
+from ._CountryCode import CountryCode
+from ._PostalAddress6 import PostalAddress6
 
 class OrganisationIdentification28(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CtctDtls", "_Nm", "_PstlAdr", "_CtryOfRes"]
+	__slots__ = ["_CtryOfRes", "_CtctDtls", "_Id", "_PstlAdr", "_Nm"]
 	@property
-	def Id(self):
-		return self._Id
+	def CtryOfRes(self):
+		return self._CtryOfRes
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@CtryOfRes.setter
+	def CtryOfRes(self, value):
+		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@CtryOfRes.deleter
+	def CtryOfRes(self):
+		del self._CtryOfRes
+		self._CtryOfRes = None
 
 	@property
 	def CtctDtls(self):
@@ -35,17 +35,17 @@ class OrganisationIdentification28(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Id(self):
+		return self._Id
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def PstlAdr(self):
@@ -61,23 +61,23 @@ class OrganisationIdentification28(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def CtryOfRes(self):
-		return self._CtryOfRes
+	def Nm(self):
+		return self._Nm
 
-	@CtryOfRes.setter
-	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@CtryOfRes.deleter
-	def CtryOfRes(self):
-		del self._CtryOfRes
-		self._CtryOfRes = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=OrganisationIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctDtls', type=ContactDetails2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=OrganisationIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

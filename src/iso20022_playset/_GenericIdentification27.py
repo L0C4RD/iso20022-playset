@@ -1,9 +1,9 @@
 from . import base_types
-from .Max4AlphaNumericText import Max4AlphaNumericText
+from ._Max4AlphaNumericText import Max4AlphaNumericText
 
 class GenericIdentification27(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Issr", "_Id"]
+	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
 	@property
 	def SchmeNm(self):
 		return self._SchmeNm
@@ -18,19 +18,6 @@ class GenericIdentification27(base_types._BaseFieldType):
 		self._SchmeNm = None
 
 	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -43,9 +30,22 @@ class GenericIdentification27(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

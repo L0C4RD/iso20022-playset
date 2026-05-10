@@ -1,7 +1,7 @@
 from . import base_types
-from .Max8000Text import Max8000Text
-from .ISO2ALanguageCode import ISO2ALanguageCode
-from .Max1025Text import Max1025Text
+from ._Max8000Text import Max8000Text
+from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._Max1025Text import Max1025Text
 
 class ItemDescription2(base_types._BaseFieldType):
 

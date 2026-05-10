@@ -1,23 +1,23 @@
 from . import base_types
-from .NameAndAddress6 import NameAndAddress6
-from .GenericIdentification29 import GenericIdentification29
-from .AnyBICIdentifier import AnyBICIdentifier
+from ._GenericIdentification29 import GenericIdentification29
+from ._NameAndAddress6 import NameAndAddress6
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification33Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_AnyBIC", "_PrtryId"]
+	__slots__ = ["_PrtryId", "_AnyBIC", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def PrtryId(self):
+		return self._PrtryId
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def AnyBIC(self):
@@ -33,21 +33,21 @@ class PartyIdentification33Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification29, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress6, min=0, max=1, mutex_group=1, array=False),
 	))
 

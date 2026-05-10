@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountReportingRequestV07 import AccountReportingRequestV07
+from ._AccountReportingRequestV07 import AccountReportingRequestV07
 
 class CAMT_060_001_07():
 

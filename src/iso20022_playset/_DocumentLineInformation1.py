@@ -1,7 +1,7 @@
 from . import base_types
-from .DocumentLineIdentification1 import DocumentLineIdentification1
-from .RemittanceAmount3 import RemittanceAmount3
-from .Max2048Text import Max2048Text
+from ._DocumentLineIdentification1 import DocumentLineIdentification1
+from ._Max2048Text import Max2048Text
+from ._RemittanceAmount3 import RemittanceAmount3
 
 class DocumentLineInformation1(base_types._BaseFieldType):
 

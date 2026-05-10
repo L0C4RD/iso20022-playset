@@ -1,23 +1,10 @@
 from . import base_types
-from .BalanceDetails6 import BalanceDetails6
-from .BalanceDetails5 import BalanceDetails5
+from ._BalanceDetails5 import BalanceDetails5
+from ._BalanceDetails6 import BalanceDetails6
 
 class PortfolioBalance1(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldBal", "_SummryBal"]
-	@property
-	def DtldBal(self):
-		return self._DtldBal
-
-	@DtldBal.setter
-	def DtldBal(self, value):
-		self._DtldBal = value if type(value) != base_types.auto else self.make_default("DtldBal")
-
-	@DtldBal.deleter
-	def DtldBal(self):
-		del self._DtldBal
-		self._DtldBal = None
-
+	__slots__ = ["_SummryBal", "_DtldBal"]
 	@property
 	def SummryBal(self):
 		return self._SummryBal
@@ -31,8 +18,21 @@ class PortfolioBalance1(base_types._BaseFieldType):
 		del self._SummryBal
 		self._SummryBal = None
 
+	@property
+	def DtldBal(self):
+		return self._DtldBal
+
+	@DtldBal.setter
+	def DtldBal(self, value):
+		self._DtldBal = value if type(value) != base_types.auto else self.make_default("DtldBal")
+
+	@DtldBal.deleter
+	def DtldBal(self):
+		del self._DtldBal
+		self._DtldBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldBal', type=BalanceDetails6, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SummryBal', type=BalanceDetails5, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='DtldBal', type=BalanceDetails6, min=1, max=None, mutex_group=1, array=True),
 	))
 

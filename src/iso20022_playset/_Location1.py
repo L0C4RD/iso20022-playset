@@ -1,24 +1,11 @@
 from . import base_types
-from .CountrySubdivision1Choice import CountrySubdivision1Choice
-from .Max2000Text import Max2000Text
-from .CountryCode import CountryCode
+from ._Max2000Text import Max2000Text
+from ._CountryCode import CountryCode
+from ._CountrySubdivision1Choice import CountrySubdivision1Choice
 
 class Location1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Txt", "_CtrySubDvsn"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_Txt", "_CtrySubDvsn", "_Ctry"]
 	@property
 	def Txt(self):
 		return self._Txt
@@ -45,9 +32,22 @@ class Location1(base_types._BaseFieldType):
 		del self._CtrySubDvsn
 		self._CtrySubDvsn = None
 
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txt', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrySubDvsn', type=CountrySubdivision1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

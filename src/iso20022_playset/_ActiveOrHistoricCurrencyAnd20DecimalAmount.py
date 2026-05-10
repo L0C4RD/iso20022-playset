@@ -1,5 +1,5 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class ActiveOrHistoricCurrencyAnd20DecimalAmount(base_types._BaseDataType_Decimal):
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .PriceFormat4Choice import PriceFormat4Choice
-from .PriceFormat2Choice import PriceFormat2Choice
-from .AmountPrice1 import AmountPrice1
-from .PriceFormat1Choice import PriceFormat1Choice
+from ._PriceFormat4Choice import PriceFormat4Choice
+from ._PriceFormat2Choice import PriceFormat2Choice
+from ._PriceFormat1Choice import PriceFormat1Choice
+from ._AmountPrice1 import AmountPrice1
 
 class CorporateActionPrice1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshInLieuOfShrPric", "_GncCshPricRcvdPerPdct", "_GncCshPricPdPerPdct", "_TaxblIncmPerDvddShr", "_IssePric", "_OverSbcptDpstPric", "_ExrcPric"]
-	@property
-	def CshInLieuOfShrPric(self):
-		return self._CshInLieuOfShrPric
-
-	@CshInLieuOfShrPric.setter
-	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
-
-	@CshInLieuOfShrPric.deleter
-	def CshInLieuOfShrPric(self):
-		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
-
+	__slots__ = ["_GncCshPricRcvdPerPdct", "_IssePric", "_GncCshPricPdPerPdct", "_OverSbcptDpstPric", "_ExrcPric", "_TaxblIncmPerDvddShr", "_CshInLieuOfShrPric"]
 	@property
 	def GncCshPricRcvdPerPdct(self):
 		return self._GncCshPricRcvdPerPdct
@@ -34,32 +21,6 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 		self._GncCshPricRcvdPerPdct = None
 
 	@property
-	def GncCshPricPdPerPdct(self):
-		return self._GncCshPricPdPerPdct
-
-	@GncCshPricPdPerPdct.setter
-	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
-
-	@GncCshPricPdPerPdct.deleter
-	def GncCshPricPdPerPdct(self):
-		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
-
-	@property
-	def TaxblIncmPerDvddShr(self):
-		return self._TaxblIncmPerDvddShr
-
-	@TaxblIncmPerDvddShr.setter
-	def TaxblIncmPerDvddShr(self, value):
-		self._TaxblIncmPerDvddShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvddShr")
-
-	@TaxblIncmPerDvddShr.deleter
-	def TaxblIncmPerDvddShr(self):
-		del self._TaxblIncmPerDvddShr
-		self._TaxblIncmPerDvddShr = None
-
-	@property
 	def IssePric(self):
 		return self._IssePric
 
@@ -71,6 +32,19 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 	def IssePric(self):
 		del self._IssePric
 		self._IssePric = None
+
+	@property
+	def GncCshPricPdPerPdct(self):
+		return self._GncCshPricPdPerPdct
+
+	@GncCshPricPdPerPdct.setter
+	def GncCshPricPdPerPdct(self, value):
+		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
+
+	@GncCshPricPdPerPdct.deleter
+	def GncCshPricPdPerPdct(self):
+		del self._GncCshPricPdPerPdct
+		self._GncCshPricPdPerPdct = None
 
 	@property
 	def OverSbcptDpstPric(self):
@@ -98,13 +72,39 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 		del self._ExrcPric
 		self._ExrcPric = None
 
+	@property
+	def TaxblIncmPerDvddShr(self):
+		return self._TaxblIncmPerDvddShr
+
+	@TaxblIncmPerDvddShr.setter
+	def TaxblIncmPerDvddShr(self, value):
+		self._TaxblIncmPerDvddShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvddShr")
+
+	@TaxblIncmPerDvddShr.deleter
+	def TaxblIncmPerDvddShr(self):
+		del self._TaxblIncmPerDvddShr
+		self._TaxblIncmPerDvddShr = None
+
+	@property
+	def CshInLieuOfShrPric(self):
+		return self._CshInLieuOfShrPric
+
+	@CshInLieuOfShrPric.setter
+	def CshInLieuOfShrPric(self, value):
+		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+
+	@CshInLieuOfShrPric.deleter
+	def CshInLieuOfShrPric(self):
+		del self._CshInLieuOfShrPric
+		self._CshInLieuOfShrPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxblIncmPerDvddShr', type=AmountPrice1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssePric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExrcPric', type=PriceFormat4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerDvddShr', type=AmountPrice1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

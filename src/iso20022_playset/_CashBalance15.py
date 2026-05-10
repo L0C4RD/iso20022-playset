@@ -1,13 +1,26 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .GenericIdentification178 import GenericIdentification178
-from .ValuationsDetails2 import ValuationsDetails2
-from .ForeignExchangeTerms19 import ForeignExchangeTerms19
-from .CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
+from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
+from ._GenericIdentification178 import GenericIdentification178
+from ._ValuationsDetails2 import ValuationsDetails2
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class CashBalance15(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_FXDtls", "_ValtnDtls", "_Amt", "_TxLotNb"]
+	__slots__ = ["_ValtnDtls", "_CshAcct", "_FXDtls", "_TxLotNb", "_Amt"]
+	@property
+	def ValtnDtls(self):
+		return self._ValtnDtls
+
+	@ValtnDtls.setter
+	def ValtnDtls(self, value):
+		self._ValtnDtls = value if type(value) != base_types.auto else self.make_default("ValtnDtls")
+
+	@ValtnDtls.deleter
+	def ValtnDtls(self):
+		del self._ValtnDtls
+		self._ValtnDtls = None
+
 	@property
 	def CshAcct(self):
 		return self._CshAcct
@@ -35,17 +48,17 @@ class CashBalance15(base_types._BaseFieldType):
 		self._FXDtls = None
 
 	@property
-	def ValtnDtls(self):
-		return self._ValtnDtls
+	def TxLotNb(self):
+		return self._TxLotNb
 
-	@ValtnDtls.setter
-	def ValtnDtls(self, value):
-		self._ValtnDtls = value if type(value) != base_types.auto else self.make_default("ValtnDtls")
+	@TxLotNb.setter
+	def TxLotNb(self, value):
+		self._TxLotNb = value if type(value) != base_types.auto else self.make_default("TxLotNb")
 
-	@ValtnDtls.deleter
-	def ValtnDtls(self):
-		del self._ValtnDtls
-		self._ValtnDtls = None
+	@TxLotNb.deleter
+	def TxLotNb(self):
+		del self._TxLotNb
+		self._TxLotNb = None
 
 	@property
 	def Amt(self):
@@ -60,24 +73,11 @@ class CashBalance15(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def TxLotNb(self):
-		return self._TxLotNb
-
-	@TxLotNb.setter
-	def TxLotNb(self, value):
-		self._TxLotNb = value if type(value) != base_types.auto else self.make_default("TxLotNb")
-
-	@TxLotNb.deleter
-	def TxLotNb(self):
-		del self._TxLotNb
-		self._TxLotNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ValtnDtls', type=ValuationsDetails2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDtls', type=ValuationsDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxLotNb', type=GenericIdentification178, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

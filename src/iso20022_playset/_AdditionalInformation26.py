@@ -1,43 +1,30 @@
 from . import base_types
-from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from .SecurityIdentification19 import SecurityIdentification19
-from .Max35Text import Max35Text
-from .PartyIdentificationAndAccount195 import PartyIdentificationAndAccount195
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .ClassificationType32Choice import ClassificationType32Choice
-from .PartyIdentification136 import PartyIdentification136
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .YesNoIndicator import YesNoIndicator
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._ClassificationType32Choice import ClassificationType32Choice
+from ._PartyIdentification136 import PartyIdentification136
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._PartyIdentificationAndAccount195 import PartyIdentificationAndAccount195
+from ._Max35Text import Max35Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._YesNoIndicator import YesNoIndicator
 
 class AdditionalInformation26(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssfctnTp", "_Qty", "_XpryDt", "_SfkpgAcct", "_FinInstrmId", "_DlvrgPty1", "_AcctOwnrTxId", "_RcvgPty1", "_CutOffDt", "_FctvDt", "_TxSbjtToBuyIn", "_BlckChainAdrOrWllt", "_Invstr"]
+	__slots__ = ["_DlvrgPty1", "_XpryDt", "_SfkpgAcct", "_AcctOwnrTxId", "_Qty", "_FctvDt", "_CutOffDt", "_Invstr", "_TxSbjtToBuyIn", "_FinInstrmId", "_RcvgPty1", "_BlckChainAdrOrWllt", "_ClssfctnTp"]
 	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
+	def DlvrgPty1(self):
+		return self._DlvrgPty1
 
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+	@DlvrgPty1.setter
+	def DlvrgPty1(self, value):
+		self._DlvrgPty1 = value if type(value) != base_types.auto else self.make_default("DlvrgPty1")
 
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@DlvrgPty1.deleter
+	def DlvrgPty1(self):
+		del self._DlvrgPty1
+		self._DlvrgPty1 = None
 
 	@property
 	def XpryDt(self):
@@ -66,32 +53,6 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
-	@property
-	def DlvrgPty1(self):
-		return self._DlvrgPty1
-
-	@DlvrgPty1.setter
-	def DlvrgPty1(self, value):
-		self._DlvrgPty1 = value if type(value) != base_types.auto else self.make_default("DlvrgPty1")
-
-	@DlvrgPty1.deleter
-	def DlvrgPty1(self):
-		del self._DlvrgPty1
-		self._DlvrgPty1 = None
-
-	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
 
@@ -105,30 +66,17 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def RcvgPty1(self):
-		return self._RcvgPty1
+	def Qty(self):
+		return self._Qty
 
-	@RcvgPty1.setter
-	def RcvgPty1(self, value):
-		self._RcvgPty1 = value if type(value) != base_types.auto else self.make_default("RcvgPty1")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
 
-	@RcvgPty1.deleter
-	def RcvgPty1(self):
-		del self._RcvgPty1
-		self._RcvgPty1 = None
-
-	@property
-	def CutOffDt(self):
-		return self._CutOffDt
-
-	@CutOffDt.setter
-	def CutOffDt(self, value):
-		self._CutOffDt = value if type(value) != base_types.auto else self.make_default("CutOffDt")
-
-	@CutOffDt.deleter
-	def CutOffDt(self):
-		del self._CutOffDt
-		self._CutOffDt = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	@property
 	def FctvDt(self):
@@ -144,6 +92,32 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._FctvDt = None
 
 	@property
+	def CutOffDt(self):
+		return self._CutOffDt
+
+	@CutOffDt.setter
+	def CutOffDt(self, value):
+		self._CutOffDt = value if type(value) != base_types.auto else self.make_default("CutOffDt")
+
+	@CutOffDt.deleter
+	def CutOffDt(self):
+		del self._CutOffDt
+		self._CutOffDt = None
+
+	@property
+	def Invstr(self):
+		return self._Invstr
+
+	@Invstr.setter
+	def Invstr(self, value):
+		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+
+	@Invstr.deleter
+	def Invstr(self):
+		del self._Invstr
+		self._Invstr = None
+
+	@property
 	def TxSbjtToBuyIn(self):
 		return self._TxSbjtToBuyIn
 
@@ -155,6 +129,32 @@ class AdditionalInformation26(base_types._BaseFieldType):
 	def TxSbjtToBuyIn(self):
 		del self._TxSbjtToBuyIn
 		self._TxSbjtToBuyIn = None
+
+	@property
+	def FinInstrmId(self):
+		return self._FinInstrmId
+
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def RcvgPty1(self):
+		return self._RcvgPty1
+
+	@RcvgPty1.setter
+	def RcvgPty1(self, value):
+		self._RcvgPty1 = value if type(value) != base_types.auto else self.make_default("RcvgPty1")
+
+	@RcvgPty1.deleter
+	def RcvgPty1(self):
+		del self._RcvgPty1
+		self._RcvgPty1 = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -170,31 +170,31 @@ class AdditionalInformation26(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def Invstr(self):
-		return self._Invstr
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
 
-	@Invstr.setter
-	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
 
-	@Invstr.deleter
-	def Invstr(self):
-		del self._Invstr
-		self._Invstr = None
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CutOffDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSbjtToBuyIn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CutOffDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSbjtToBuyIn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgPty1', type=PartyIdentificationAndAccount195, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType32Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

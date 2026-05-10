@@ -1,23 +1,23 @@
 from . import base_types
-from .ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
-from .GenericIdentification30 import GenericIdentification30
-from .Exact3NumericText import Exact3NumericText
+from ._GenericIdentification30 import GenericIdentification30
+from ._Exact3NumericText import Exact3NumericText
+from ._ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
 
 class DocumentNumber17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNb", "_LngNb", "_PrtryNb"]
+	__slots__ = ["_PrtryNb", "_LngNb", "_ShrtNb"]
 	@property
-	def ShrtNb(self):
-		return self._ShrtNb
+	def PrtryNb(self):
+		return self._PrtryNb
 
-	@ShrtNb.setter
-	def ShrtNb(self, value):
-		self._ShrtNb = value if type(value) != base_types.auto else self.make_default("ShrtNb")
+	@PrtryNb.setter
+	def PrtryNb(self, value):
+		self._PrtryNb = value if type(value) != base_types.auto else self.make_default("PrtryNb")
 
-	@ShrtNb.deleter
-	def ShrtNb(self):
-		del self._ShrtNb
-		self._ShrtNb = None
+	@PrtryNb.deleter
+	def PrtryNb(self):
+		del self._PrtryNb
+		self._PrtryNb = None
 
 	@property
 	def LngNb(self):
@@ -33,21 +33,21 @@ class DocumentNumber17Choice(base_types._BaseFieldType):
 		self._LngNb = None
 
 	@property
-	def PrtryNb(self):
-		return self._PrtryNb
+	def ShrtNb(self):
+		return self._ShrtNb
 
-	@PrtryNb.setter
-	def PrtryNb(self, value):
-		self._PrtryNb = value if type(value) != base_types.auto else self.make_default("PrtryNb")
+	@ShrtNb.setter
+	def ShrtNb(self, value):
+		self._ShrtNb = value if type(value) != base_types.auto else self.make_default("ShrtNb")
 
-	@PrtryNb.deleter
-	def PrtryNb(self):
-		del self._PrtryNb
-		self._PrtryNb = None
+	@ShrtNb.deleter
+	def ShrtNb(self):
+		del self._ShrtNb
+		self._ShrtNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='LngNb', type=ISO20022MessageIdentificationText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryNb', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LngNb', type=ISO20022MessageIdentificationText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ShrtNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),
 	))
 

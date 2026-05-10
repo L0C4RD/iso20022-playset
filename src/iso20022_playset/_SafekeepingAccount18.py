@@ -1,13 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .HoldingBalance15 import HoldingBalance15
-from .PartyIdentification231Choice import PartyIdentification231Choice
-from .PartyIdentification246Choice import PartyIdentification246Choice
-from .Max140Text import Max140Text
+from ._HoldingBalance15 import HoldingBalance15
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification231Choice import PartyIdentification231Choice
+from ._PartyIdentification246Choice import PartyIdentification246Choice
 
 class SafekeepingAccount18(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdBal", "_RghtsHldr", "_AcctId", "_BlckChainAdrOrWllt", "_SubAcctId", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_InstdBal", "_RghtsHldr", "_AcctId", "_BlckChainAdrOrWllt", "_SubAcctId"]
+	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
 	@property
 	def InstdBal(self):
 		return self._InstdBal
@@ -73,25 +86,12 @@ class SafekeepingAccount18(base_types._BaseFieldType):
 		del self._SubAcctId
 		self._SubAcctId = None
 
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdBal', type=HoldingBalance15, min=1, max=15, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

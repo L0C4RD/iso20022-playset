@@ -1,7 +1,7 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .MICIdentifier import MICIdentifier
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
+from ._PercentageRate import PercentageRate
+from ._MICIdentifier import MICIdentifier
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 

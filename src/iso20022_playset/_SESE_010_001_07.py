@@ -1,5 +1,5 @@
 from . import base_types
-from .TransferCancellationStatusReportV07 import TransferCancellationStatusReportV07
+from ._TransferCancellationStatusReportV07 import TransferCancellationStatusReportV07
 
 class SESE_010_001_07():
 

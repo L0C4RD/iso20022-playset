@@ -1,7 +1,7 @@
 from . import base_types
-from .ContentInformationType38 import ContentInformationType38
-from .CertificateManagementResponse3 import CertificateManagementResponse3
-from .TMSHeader1 import TMSHeader1
+from ._CertificateManagementResponse3 import CertificateManagementResponse3
+from ._TMSHeader1 import TMSHeader1
+from ._ContentInformationType38 import ContentInformationType38
 
 class CertificateManagementResponseV07(base_types._BaseFieldType):
 

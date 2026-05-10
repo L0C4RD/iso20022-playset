@@ -1,5 +1,5 @@
 from . import base_types
-from .IntentToPayNotificationV02 import IntentToPayNotificationV02
+from ._IntentToPayNotificationV02 import IntentToPayNotificationV02
 
 class TSMT_044_001_02():
 

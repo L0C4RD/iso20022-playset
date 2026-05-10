@@ -1,9 +1,22 @@
 from . import base_types
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
 
 class CorporateActionNarrative30(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnDtls", "_PtyCtctNrrtv", "_CertfctnBrkdwn"]
+	__slots__ = ["_CertfctnBrkdwn", "_RegnDtls", "_PtyCtctNrrtv"]
+	@property
+	def CertfctnBrkdwn(self):
+		return self._CertfctnBrkdwn
+
+	@CertfctnBrkdwn.setter
+	def CertfctnBrkdwn(self, value):
+		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
+
+	@CertfctnBrkdwn.deleter
+	def CertfctnBrkdwn(self):
+		del self._CertfctnBrkdwn
+		self._CertfctnBrkdwn = None
+
 	@property
 	def RegnDtls(self):
 		return self._RegnDtls
@@ -30,22 +43,9 @@ class CorporateActionNarrative30(base_types._BaseFieldType):
 		del self._PtyCtctNrrtv
 		self._PtyCtctNrrtv = None
 
-	@property
-	def CertfctnBrkdwn(self):
-		return self._CertfctnBrkdwn
-
-	@CertfctnBrkdwn.setter
-	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
-
-	@CertfctnBrkdwn.deleter
-	def CertfctnBrkdwn(self):
-		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CertfctnBrkdwn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertfctnBrkdwn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

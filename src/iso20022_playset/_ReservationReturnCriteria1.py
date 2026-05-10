@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestedIndicator import RequestedIndicator
+from ._RequestedIndicator import RequestedIndicator
 
 class ReservationReturnCriteria1(base_types._BaseFieldType):
 

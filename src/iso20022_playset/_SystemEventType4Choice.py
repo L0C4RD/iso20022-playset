@@ -1,6 +1,6 @@
 from . import base_types
-from .ExternalSystemEventType1Code import ExternalSystemEventType1Code
-from .GenericIdentification1 import GenericIdentification1
+from ._ExternalSystemEventType1Code import ExternalSystemEventType1Code
+from ._GenericIdentification1 import GenericIdentification1
 
 class SystemEventType4Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .InterestRecord2 import InterestRecord2
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._InterestRecord2 import InterestRecord2
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class TransactionInterest4(base_types._BaseFieldType):
 

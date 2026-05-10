@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._Max350Text import Max350Text
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
-	__slots__ = ["_ISOShrtNm", "_VldFr", "_ISOLngNm"]
+	__slots__ = ["_ISOLngNm", "_ISOShrtNm", "_VldFr"]
+	@property
+	def ISOLngNm(self):
+		return self._ISOLngNm
+
+	@ISOLngNm.setter
+	def ISOLngNm(self, value):
+		self._ISOLngNm = value if type(value) != base_types.auto else self.make_default("ISOLngNm")
+
+	@ISOLngNm.deleter
+	def ISOLngNm(self):
+		del self._ISOLngNm
+		self._ISOLngNm = None
+
 	@property
 	def ISOShrtNm(self):
 		return self._ISOShrtNm
@@ -32,22 +45,9 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 		del self._VldFr
 		self._VldFr = None
 
-	@property
-	def ISOLngNm(self):
-		return self._ISOLngNm
-
-	@ISOLngNm.setter
-	def ISOLngNm(self, value):
-		self._ISOLngNm = value if type(value) != base_types.auto else self.make_default("ISOLngNm")
-
-	@ISOLngNm.deleter
-	def ISOLngNm(self):
-		del self._ISOLngNm
-		self._ISOLngNm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISOShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .PaymentInstrument25Choice import PaymentInstrument25Choice
-from .Max35Text import Max35Text
-from .ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._PaymentInstrument25Choice import PaymentInstrument25Choice
+from ._ISODate import ISODate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class PaymentInstrument18(base_types._BaseFieldType):
 
-	__slots__ = ["_CshSttlmDtls", "_PmtDt", "_Amt", "_Ref"]
+	__slots__ = ["_Ref", "_CshSttlmDtls", "_PmtDt", "_Amt"]
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	@property
 	def CshSttlmDtls(self):
 		return self._CshSttlmDtls
@@ -46,23 +59,10 @@ class PaymentInstrument18(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentInstrument25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

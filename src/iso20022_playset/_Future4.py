@@ -1,28 +1,15 @@
 from . import base_types
-from .Price8 import Price8
-from .BaseOneRate import BaseOneRate
-from .ISODateTime import ISODateTime
-from .UnderlyingAttributes4 import UnderlyingAttributes4
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .UnitOfMeasure7Choice import UnitOfMeasure7Choice
-from .TimeUnit3Choice import TimeUnit3Choice
+from ._UnderlyingAttributes4 import UnderlyingAttributes4
+from ._BaseOneRate import BaseOneRate
+from ._UnitOfMeasure7Choice import UnitOfMeasure7Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Price8 import Price8
+from ._TimeUnit3Choice import TimeUnit3Choice
+from ._ISODateTime import ISODateTime
 
 class Future4(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSz", "_ExrcPric", "_UnitOfMeasr", "_FutrDt", "_AddtlUndrlygAttrbts", "_TmUnit", "_CtrctSz"]
-	@property
-	def MinSz(self):
-		return self._MinSz
-
-	@MinSz.setter
-	def MinSz(self, value):
-		self._MinSz = value if type(value) != base_types.auto else self.make_default("MinSz")
-
-	@MinSz.deleter
-	def MinSz(self):
-		del self._MinSz
-		self._MinSz = None
-
+	__slots__ = ["_ExrcPric", "_FutrDt", "_UnitOfMeasr", "_TmUnit", "_AddtlUndrlygAttrbts", "_CtrctSz", "_MinSz"]
 	@property
 	def ExrcPric(self):
 		return self._ExrcPric
@@ -35,19 +22,6 @@ class Future4(base_types._BaseFieldType):
 	def ExrcPric(self):
 		del self._ExrcPric
 		self._ExrcPric = None
-
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
 
 	@property
 	def FutrDt(self):
@@ -63,17 +37,17 @@ class Future4(base_types._BaseFieldType):
 		self._FutrDt = None
 
 	@property
-	def AddtlUndrlygAttrbts(self):
-		return self._AddtlUndrlygAttrbts
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@AddtlUndrlygAttrbts.setter
-	def AddtlUndrlygAttrbts(self, value):
-		self._AddtlUndrlygAttrbts = value if type(value) != base_types.auto else self.make_default("AddtlUndrlygAttrbts")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
-	@AddtlUndrlygAttrbts.deleter
-	def AddtlUndrlygAttrbts(self):
-		del self._AddtlUndrlygAttrbts
-		self._AddtlUndrlygAttrbts = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
 	def TmUnit(self):
@@ -89,6 +63,19 @@ class Future4(base_types._BaseFieldType):
 		self._TmUnit = None
 
 	@property
+	def AddtlUndrlygAttrbts(self):
+		return self._AddtlUndrlygAttrbts
+
+	@AddtlUndrlygAttrbts.setter
+	def AddtlUndrlygAttrbts(self, value):
+		self._AddtlUndrlygAttrbts = value if type(value) != base_types.auto else self.make_default("AddtlUndrlygAttrbts")
+
+	@AddtlUndrlygAttrbts.deleter
+	def AddtlUndrlygAttrbts(self):
+		del self._AddtlUndrlygAttrbts
+		self._AddtlUndrlygAttrbts = None
+
+	@property
 	def CtrctSz(self):
 		return self._CtrctSz
 
@@ -101,13 +88,26 @@ class Future4(base_types._BaseFieldType):
 		del self._CtrctSz
 		self._CtrctSz = None
 
+	@property
+	def MinSz(self):
+		return self._MinSz
+
+	@MinSz.setter
+	def MinSz(self, value):
+		self._MinSz = value if type(value) != base_types.auto else self.make_default("MinSz")
+
+	@MinSz.deleter
+	def MinSz(self):
+		del self._MinSz
+		self._MinSz = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinSz', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExrcPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FutrDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlUndrlygAttrbts', type=UnderlyingAttributes4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmUnit', type=TimeUnit3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlUndrlygAttrbts', type=UnderlyingAttributes4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctSz', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinSz', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

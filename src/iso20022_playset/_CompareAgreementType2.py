@@ -1,5 +1,5 @@
 from . import base_types
-from .AgreementType1Choice import AgreementType1Choice
+from ._AgreementType1Choice import AgreementType1Choice
 
 class CompareAgreementType2(base_types._BaseFieldType):
 

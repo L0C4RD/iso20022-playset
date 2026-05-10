@@ -1,12 +1,12 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .StatusReportContent14 import StatusReportContent14
-from .Max9NumericText import Max9NumericText
-from .DataSetIdentification11 import DataSetIdentification11
+from ._DataSetIdentification11 import DataSetIdentification11
+from ._Max9NumericText import Max9NumericText
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._StatusReportContent14 import StatusReportContent14
 
 class StatusReportDataSetRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_SeqCntr", "_Id", "_Cntt", "_LastSeq"]
+	__slots__ = ["_SeqCntr", "_LastSeq", "_Cntt", "_Id"]
 	@property
 	def SeqCntr(self):
 		return self._SeqCntr
@@ -21,17 +21,17 @@ class StatusReportDataSetRequest6(base_types._BaseFieldType):
 		self._SeqCntr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def LastSeq(self):
+		return self._LastSeq
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@LastSeq.setter
+	def LastSeq(self, value):
+		self._LastSeq = value if type(value) != base_types.auto else self.make_default("LastSeq")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@LastSeq.deleter
+	def LastSeq(self):
+		del self._LastSeq
+		self._LastSeq = None
 
 	@property
 	def Cntt(self):
@@ -47,22 +47,22 @@ class StatusReportDataSetRequest6(base_types._BaseFieldType):
 		self._Cntt = None
 
 	@property
-	def LastSeq(self):
-		return self._LastSeq
+	def Id(self):
+		return self._Id
 
-	@LastSeq.setter
-	def LastSeq(self, value):
-		self._LastSeq = value if type(value) != base_types.auto else self.make_default("LastSeq")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@LastSeq.deleter
-	def LastSeq(self):
-		del self._LastSeq
-		self._LastSeq = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SeqCntr', type=Max9NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntt', type=StatusReportContent14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastSeq', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntt', type=StatusReportContent14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
 	))
 

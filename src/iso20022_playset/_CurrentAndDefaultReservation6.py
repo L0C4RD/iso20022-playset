@@ -1,5 +1,5 @@
 from . import base_types
-from .ReservationReport8 import ReservationReport8
+from ._ReservationReport8 import ReservationReport8
 
 class CurrentAndDefaultReservation6(base_types._BaseFieldType):
 

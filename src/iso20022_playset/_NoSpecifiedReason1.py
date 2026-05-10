@@ -1,5 +1,5 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
+from ._NoReasonCode import NoReasonCode
 
 class NoSpecifiedReason1(base_types._BaseFieldType):
 

@@ -1,35 +1,9 @@
 from . import base_types
-from .SettlementFailsDailyCSD1Choice import SettlementFailsDailyCSD1Choice
+from ._SettlementFailsDailyCSD1Choice import SettlementFailsDailyCSD1Choice
 
 class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmt", "_Othr", "_SctiesBuyOrSell", "_CollMgmtOpr", "_SctiesLndgOrBrrwg"]
-	@property
-	def RpAgrmt(self):
-		return self._RpAgrmt
-
-	@RpAgrmt.setter
-	def RpAgrmt(self, value):
-		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
-
-	@RpAgrmt.deleter
-	def RpAgrmt(self):
-		del self._RpAgrmt
-		self._RpAgrmt = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
+	__slots__ = ["_SctiesBuyOrSell", "_CollMgmtOpr", "_Othr", "_SctiesLndgOrBrrwg", "_RpAgrmt"]
 	@property
 	def SctiesBuyOrSell(self):
 		return self._SctiesBuyOrSell
@@ -57,6 +31,19 @@ class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 		self._CollMgmtOpr = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def SctiesLndgOrBrrwg(self):
 		return self._SctiesLndgOrBrrwg
 
@@ -69,11 +56,24 @@ class SettlementFailsDailyTransactionType3(base_types._BaseFieldType):
 		del self._SctiesLndgOrBrrwg
 		self._SctiesLndgOrBrrwg = None
 
+	@property
+	def RpAgrmt(self):
+		return self._RpAgrmt
+
+	@RpAgrmt.setter
+	def RpAgrmt(self, value):
+		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
+
+	@RpAgrmt.deleter
+	def RpAgrmt(self):
+		del self._RpAgrmt
+		self._RpAgrmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RpAgrmt', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMgmtOpr', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=SettlementFailsDailyCSD1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

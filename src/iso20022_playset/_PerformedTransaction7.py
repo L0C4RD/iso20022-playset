@@ -1,39 +1,39 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionIdentifier1 import TransactionIdentifier1
-from .LoyaltyResult3 import LoyaltyResult3
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ResponseType11 import ResponseType11
-from .RetailerPaymentResult7 import RetailerPaymentResult7
+from ._RetailerPaymentResult7 import RetailerPaymentResult7
+from ._ResponseType11 import ResponseType11
+from ._Max35Text import Max35Text
+from ._LoyaltyResult3 import LoyaltyResult3
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class PerformedTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_POIRcncltnId", "_RvsdAmt", "_PmtRslt", "_POITxId", "_LltyRslt", "_SaleTxId", "_Rspn"]
+	__slots__ = ["_LltyRslt", "_Rspn", "_PmtRslt", "_POITxId", "_SaleTxId", "_RvsdAmt", "_POIRcncltnId"]
 	@property
-	def POIRcncltnId(self):
-		return self._POIRcncltnId
+	def LltyRslt(self):
+		return self._LltyRslt
 
-	@POIRcncltnId.setter
-	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+	@LltyRslt.setter
+	def LltyRslt(self, value):
+		self._LltyRslt = value if type(value) != base_types.auto else self.make_default("LltyRslt")
 
-	@POIRcncltnId.deleter
-	def POIRcncltnId(self):
-		del self._POIRcncltnId
-		self._POIRcncltnId = None
+	@LltyRslt.deleter
+	def LltyRslt(self):
+		del self._LltyRslt
+		self._LltyRslt = None
 
 	@property
-	def RvsdAmt(self):
-		return self._RvsdAmt
+	def Rspn(self):
+		return self._Rspn
 
-	@RvsdAmt.setter
-	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
 
-	@RvsdAmt.deleter
-	def RvsdAmt(self):
-		del self._RvsdAmt
-		self._RvsdAmt = None
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	@property
 	def PmtRslt(self):
@@ -62,19 +62,6 @@ class PerformedTransaction7(base_types._BaseFieldType):
 		self._POITxId = None
 
 	@property
-	def LltyRslt(self):
-		return self._LltyRslt
-
-	@LltyRslt.setter
-	def LltyRslt(self, value):
-		self._LltyRslt = value if type(value) != base_types.auto else self.make_default("LltyRslt")
-
-	@LltyRslt.deleter
-	def LltyRslt(self):
-		del self._LltyRslt
-		self._LltyRslt = None
-
-	@property
 	def SaleTxId(self):
 		return self._SaleTxId
 
@@ -88,25 +75,38 @@ class PerformedTransaction7(base_types._BaseFieldType):
 		self._SaleTxId = None
 
 	@property
-	def Rspn(self):
-		return self._Rspn
+	def RvsdAmt(self):
+		return self._RvsdAmt
 
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+	@RvsdAmt.setter
+	def RvsdAmt(self, value):
+		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
 
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
+	@RvsdAmt.deleter
+	def RvsdAmt(self):
+		del self._RvsdAmt
+		self._RvsdAmt = None
+
+	@property
+	def POIRcncltnId(self):
+		return self._POIRcncltnId
+
+	@POIRcncltnId.setter
+	def POIRcncltnId(self, value):
+		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+
+	@POIRcncltnId.deleter
+	def POIRcncltnId(self):
+		del self._POIRcncltnId
+		self._POIRcncltnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RvsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyRslt', type=LoyaltyResult3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtRslt', type=RetailerPaymentResult7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POITxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LltyRslt', type=LoyaltyResult3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RvsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

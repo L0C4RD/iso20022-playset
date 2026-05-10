@@ -1,6 +1,6 @@
 from . import base_types
-from .NotificationRejectionReason2 import NotificationRejectionReason2
-from .NotificationProcessingStatus2 import NotificationProcessingStatus2
+from ._NotificationProcessingStatus2 import NotificationProcessingStatus2
+from ._NotificationRejectionReason2 import NotificationRejectionReason2
 
 class NotificationAdviceStatus2Choice(base_types._BaseFieldType):
 

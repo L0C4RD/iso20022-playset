@@ -1,116 +1,25 @@
 from . import base_types
-from .InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
-from .AccountParties13Choice import AccountParties13Choice
-from .RegisteredShareholderName1Choice import RegisteredShareholderName1Choice
-from .ExtendedParty15 import ExtendedParty15
-from .DataModification1Code import DataModification1Code
+from ._ExtendedParty15 import ExtendedParty15
+from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
+from ._DataModification1Code import DataModification1Code
+from ._AccountParties13Choice import AccountParties13Choice
+from ._RegisteredShareholderName1Choice import RegisteredShareholderName1Choice
 
 class AccountParties18(base_types._BaseFieldType):
 
-	__slots__ = ["_Admstr", "_ScndryOwnr", "_Bnfcry", "_SucssrOnDth", "_PrncplAcctPty", "_LglGuardn", "_Prtctr", "_OthrPty", "_PwrOfAttny", "_Sttlr", "_ModScpIndctn", "_Grntr", "_SnrMggOffcl", "_RegdShrhldrNm", "_CtdnForMnr"]
+	__slots__ = ["_Grntr", "_PwrOfAttny", "_Sttlr", "_Bnfcry", "_CtdnForMnr", "_Admstr", "_ScndryOwnr", "_OthrPty", "_RegdShrhldrNm", "_PrncplAcctPty", "_SnrMggOffcl", "_SucssrOnDth", "_LglGuardn", "_ModScpIndctn", "_Prtctr"]
 	@property
-	def Admstr(self):
-		return self._Admstr
+	def Grntr(self):
+		return self._Grntr
 
-	@Admstr.setter
-	def Admstr(self, value):
-		self._Admstr = value if type(value) != base_types.auto else self.make_default("Admstr")
+	@Grntr.setter
+	def Grntr(self, value):
+		self._Grntr = value if type(value) != base_types.auto else self.make_default("Grntr")
 
-	@Admstr.deleter
-	def Admstr(self):
-		del self._Admstr
-		self._Admstr = None
-
-	@property
-	def ScndryOwnr(self):
-		return self._ScndryOwnr
-
-	@ScndryOwnr.setter
-	def ScndryOwnr(self, value):
-		self._ScndryOwnr = value if type(value) != base_types.auto else self.make_default("ScndryOwnr")
-
-	@ScndryOwnr.deleter
-	def ScndryOwnr(self):
-		del self._ScndryOwnr
-		self._ScndryOwnr = None
-
-	@property
-	def Bnfcry(self):
-		return self._Bnfcry
-
-	@Bnfcry.setter
-	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
-
-	@Bnfcry.deleter
-	def Bnfcry(self):
-		del self._Bnfcry
-		self._Bnfcry = None
-
-	@property
-	def SucssrOnDth(self):
-		return self._SucssrOnDth
-
-	@SucssrOnDth.setter
-	def SucssrOnDth(self, value):
-		self._SucssrOnDth = value if type(value) != base_types.auto else self.make_default("SucssrOnDth")
-
-	@SucssrOnDth.deleter
-	def SucssrOnDth(self):
-		del self._SucssrOnDth
-		self._SucssrOnDth = None
-
-	@property
-	def PrncplAcctPty(self):
-		return self._PrncplAcctPty
-
-	@PrncplAcctPty.setter
-	def PrncplAcctPty(self, value):
-		self._PrncplAcctPty = value if type(value) != base_types.auto else self.make_default("PrncplAcctPty")
-
-	@PrncplAcctPty.deleter
-	def PrncplAcctPty(self):
-		del self._PrncplAcctPty
-		self._PrncplAcctPty = None
-
-	@property
-	def LglGuardn(self):
-		return self._LglGuardn
-
-	@LglGuardn.setter
-	def LglGuardn(self, value):
-		self._LglGuardn = value if type(value) != base_types.auto else self.make_default("LglGuardn")
-
-	@LglGuardn.deleter
-	def LglGuardn(self):
-		del self._LglGuardn
-		self._LglGuardn = None
-
-	@property
-	def Prtctr(self):
-		return self._Prtctr
-
-	@Prtctr.setter
-	def Prtctr(self, value):
-		self._Prtctr = value if type(value) != base_types.auto else self.make_default("Prtctr")
-
-	@Prtctr.deleter
-	def Prtctr(self):
-		del self._Prtctr
-		self._Prtctr = None
-
-	@property
-	def OthrPty(self):
-		return self._OthrPty
-
-	@OthrPty.setter
-	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
-
-	@OthrPty.deleter
-	def OthrPty(self):
-		del self._OthrPty
-		self._OthrPty = None
+	@Grntr.deleter
+	def Grntr(self):
+		del self._Grntr
+		self._Grntr = None
 
 	@property
 	def PwrOfAttny(self):
@@ -139,43 +48,69 @@ class AccountParties18(base_types._BaseFieldType):
 		self._Sttlr = None
 
 	@property
-	def ModScpIndctn(self):
-		return self._ModScpIndctn
+	def Bnfcry(self):
+		return self._Bnfcry
 
-	@ModScpIndctn.setter
-	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+	@Bnfcry.setter
+	def Bnfcry(self, value):
+		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
 
-	@ModScpIndctn.deleter
-	def ModScpIndctn(self):
-		del self._ModScpIndctn
-		self._ModScpIndctn = None
-
-	@property
-	def Grntr(self):
-		return self._Grntr
-
-	@Grntr.setter
-	def Grntr(self, value):
-		self._Grntr = value if type(value) != base_types.auto else self.make_default("Grntr")
-
-	@Grntr.deleter
-	def Grntr(self):
-		del self._Grntr
-		self._Grntr = None
+	@Bnfcry.deleter
+	def Bnfcry(self):
+		del self._Bnfcry
+		self._Bnfcry = None
 
 	@property
-	def SnrMggOffcl(self):
-		return self._SnrMggOffcl
+	def CtdnForMnr(self):
+		return self._CtdnForMnr
 
-	@SnrMggOffcl.setter
-	def SnrMggOffcl(self, value):
-		self._SnrMggOffcl = value if type(value) != base_types.auto else self.make_default("SnrMggOffcl")
+	@CtdnForMnr.setter
+	def CtdnForMnr(self, value):
+		self._CtdnForMnr = value if type(value) != base_types.auto else self.make_default("CtdnForMnr")
 
-	@SnrMggOffcl.deleter
-	def SnrMggOffcl(self):
-		del self._SnrMggOffcl
-		self._SnrMggOffcl = None
+	@CtdnForMnr.deleter
+	def CtdnForMnr(self):
+		del self._CtdnForMnr
+		self._CtdnForMnr = None
+
+	@property
+	def Admstr(self):
+		return self._Admstr
+
+	@Admstr.setter
+	def Admstr(self, value):
+		self._Admstr = value if type(value) != base_types.auto else self.make_default("Admstr")
+
+	@Admstr.deleter
+	def Admstr(self):
+		del self._Admstr
+		self._Admstr = None
+
+	@property
+	def ScndryOwnr(self):
+		return self._ScndryOwnr
+
+	@ScndryOwnr.setter
+	def ScndryOwnr(self, value):
+		self._ScndryOwnr = value if type(value) != base_types.auto else self.make_default("ScndryOwnr")
+
+	@ScndryOwnr.deleter
+	def ScndryOwnr(self):
+		del self._ScndryOwnr
+		self._ScndryOwnr = None
+
+	@property
+	def OthrPty(self):
+		return self._OthrPty
+
+	@OthrPty.setter
+	def OthrPty(self, value):
+		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
+
+	@OthrPty.deleter
+	def OthrPty(self):
+		del self._OthrPty
+		self._OthrPty = None
 
 	@property
 	def RegdShrhldrNm(self):
@@ -191,33 +126,98 @@ class AccountParties18(base_types._BaseFieldType):
 		self._RegdShrhldrNm = None
 
 	@property
-	def CtdnForMnr(self):
-		return self._CtdnForMnr
+	def PrncplAcctPty(self):
+		return self._PrncplAcctPty
 
-	@CtdnForMnr.setter
-	def CtdnForMnr(self, value):
-		self._CtdnForMnr = value if type(value) != base_types.auto else self.make_default("CtdnForMnr")
+	@PrncplAcctPty.setter
+	def PrncplAcctPty(self, value):
+		self._PrncplAcctPty = value if type(value) != base_types.auto else self.make_default("PrncplAcctPty")
 
-	@CtdnForMnr.deleter
-	def CtdnForMnr(self):
-		del self._CtdnForMnr
-		self._CtdnForMnr = None
+	@PrncplAcctPty.deleter
+	def PrncplAcctPty(self):
+		del self._PrncplAcctPty
+		self._PrncplAcctPty = None
+
+	@property
+	def SnrMggOffcl(self):
+		return self._SnrMggOffcl
+
+	@SnrMggOffcl.setter
+	def SnrMggOffcl(self, value):
+		self._SnrMggOffcl = value if type(value) != base_types.auto else self.make_default("SnrMggOffcl")
+
+	@SnrMggOffcl.deleter
+	def SnrMggOffcl(self):
+		del self._SnrMggOffcl
+		self._SnrMggOffcl = None
+
+	@property
+	def SucssrOnDth(self):
+		return self._SucssrOnDth
+
+	@SucssrOnDth.setter
+	def SucssrOnDth(self, value):
+		self._SucssrOnDth = value if type(value) != base_types.auto else self.make_default("SucssrOnDth")
+
+	@SucssrOnDth.deleter
+	def SucssrOnDth(self):
+		del self._SucssrOnDth
+		self._SucssrOnDth = None
+
+	@property
+	def LglGuardn(self):
+		return self._LglGuardn
+
+	@LglGuardn.setter
+	def LglGuardn(self, value):
+		self._LglGuardn = value if type(value) != base_types.auto else self.make_default("LglGuardn")
+
+	@LglGuardn.deleter
+	def LglGuardn(self):
+		del self._LglGuardn
+		self._LglGuardn = None
+
+	@property
+	def ModScpIndctn(self):
+		return self._ModScpIndctn
+
+	@ModScpIndctn.setter
+	def ModScpIndctn(self, value):
+		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+
+	@ModScpIndctn.deleter
+	def ModScpIndctn(self):
+		del self._ModScpIndctn
+		self._ModScpIndctn = None
+
+	@property
+	def Prtctr(self):
+		return self._Prtctr
+
+	@Prtctr.setter
+	def Prtctr(self, value):
+		self._Prtctr = value if type(value) != base_types.auto else self.make_default("Prtctr")
+
+	@Prtctr.deleter
+	def Prtctr(self):
+		del self._Prtctr
+		self._Prtctr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Admstr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ScndryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Bnfcry', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SucssrOnDth', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrncplAcctPty', type=AccountParties13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglGuardn', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Prtctr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrPty', type=ExtendedParty15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Grntr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PwrOfAttny', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sttlr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Grntr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SnrMggOffcl', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RegdShrhldrNm', type=RegisteredShareholderName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bnfcry', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtdnForMnr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Admstr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScndryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrPty', type=ExtendedParty15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegdShrhldrNm', type=RegisteredShareholderName1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAcctPty', type=AccountParties13Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnrMggOffcl', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SucssrOnDth', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglGuardn', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtctr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),
 	))
 

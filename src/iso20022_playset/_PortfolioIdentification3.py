@@ -1,6 +1,6 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .TrueFalseIndicator import TrueFalseIndicator
+from ._Max52Text import Max52Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PortfolioIdentification3(base_types._BaseFieldType):
 

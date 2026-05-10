@@ -1,154 +1,24 @@
 from . import base_types
-from .DetailedAmount13 import DetailedAmount13
-from .DetailedAmount16 import DetailedAmount16
-from .ATMTransactionStatus1Code import ATMTransactionStatus1Code
-from .Max70Text import Max70Text
-from .TransactionIdentifier3 import TransactionIdentifier3
-from .ATMDepositComponent1 import ATMDepositComponent1
-from .Max10000Binary import Max10000Binary
-from .ATMTotals4 import ATMTotals4
-from .ATMCassette3 import ATMCassette3
-from .ATMDepositedMedia4 import ATMDepositedMedia4
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max35Text import Max35Text
-from .FailureReason9Code import FailureReason9Code
-from .AmountAndCurrency1 import AmountAndCurrency1
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .AuthorisationResult20 import AuthorisationResult20
+from ._ATMTotals4 import ATMTotals4
+from ._DetailedAmount16 import DetailedAmount16
+from ._ATMCassette3 import ATMCassette3
+from ._Max70Text import Max70Text
+from ._ATMDepositedMedia4 import ATMDepositedMedia4
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._AuthorisationResult20 import AuthorisationResult20
+from ._AmountAndCurrency1 import AmountAndCurrency1
+from ._Max10000Binary import Max10000Binary
+from ._ATMDepositComponent1 import ATMDepositComponent1
+from ._ATMTransactionStatus1Code import ATMTransactionStatus1Code
+from ._DetailedAmount13 import DetailedAmount13
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._FailureReason9Code import FailureReason9Code
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction51(base_types._BaseFieldType):
 
-	__slots__ = ["_DtldReqdAmt", "_AuthstnRslt", "_ATMTtls", "_ICCRltdData", "_RctPrtd", "_TtlAuthrsdAmt", "_SubDpst", "_ToBeRcncldMdiaCntrs", "_TxId", "_Csstt", "_IncdntDtl", "_ReqdRct", "_RcncltnId", "_TtlReqdAmt", "_AddtlChrg", "_TtlDpstdAmt", "_Incdnt", "_TxSts"]
-	@property
-	def DtldReqdAmt(self):
-		return self._DtldReqdAmt
-
-	@DtldReqdAmt.setter
-	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
-
-	@DtldReqdAmt.deleter
-	def DtldReqdAmt(self):
-		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
-
-	@property
-	def AuthstnRslt(self):
-		return self._AuthstnRslt
-
-	@AuthstnRslt.setter
-	def AuthstnRslt(self, value):
-		self._AuthstnRslt = value if type(value) != base_types.auto else self.make_default("AuthstnRslt")
-
-	@AuthstnRslt.deleter
-	def AuthstnRslt(self):
-		del self._AuthstnRslt
-		self._AuthstnRslt = None
-
-	@property
-	def ATMTtls(self):
-		return self._ATMTtls
-
-	@ATMTtls.setter
-	def ATMTtls(self, value):
-		self._ATMTtls = value if type(value) != base_types.auto else self.make_default("ATMTtls")
-
-	@ATMTtls.deleter
-	def ATMTtls(self):
-		del self._ATMTtls
-		self._ATMTtls = None
-
-	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
-
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
-
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
-
-	@property
-	def RctPrtd(self):
-		return self._RctPrtd
-
-	@RctPrtd.setter
-	def RctPrtd(self, value):
-		self._RctPrtd = value if type(value) != base_types.auto else self.make_default("RctPrtd")
-
-	@RctPrtd.deleter
-	def RctPrtd(self):
-		del self._RctPrtd
-		self._RctPrtd = None
-
-	@property
-	def TtlAuthrsdAmt(self):
-		return self._TtlAuthrsdAmt
-
-	@TtlAuthrsdAmt.setter
-	def TtlAuthrsdAmt(self, value):
-		self._TtlAuthrsdAmt = value if type(value) != base_types.auto else self.make_default("TtlAuthrsdAmt")
-
-	@TtlAuthrsdAmt.deleter
-	def TtlAuthrsdAmt(self):
-		del self._TtlAuthrsdAmt
-		self._TtlAuthrsdAmt = None
-
-	@property
-	def SubDpst(self):
-		return self._SubDpst
-
-	@SubDpst.setter
-	def SubDpst(self, value):
-		self._SubDpst = value if type(value) != base_types.auto else self.make_default("SubDpst")
-
-	@SubDpst.deleter
-	def SubDpst(self):
-		del self._SubDpst
-		self._SubDpst = None
-
-	@property
-	def ToBeRcncldMdiaCntrs(self):
-		return self._ToBeRcncldMdiaCntrs
-
-	@ToBeRcncldMdiaCntrs.setter
-	def ToBeRcncldMdiaCntrs(self, value):
-		self._ToBeRcncldMdiaCntrs = value if type(value) != base_types.auto else self.make_default("ToBeRcncldMdiaCntrs")
-
-	@ToBeRcncldMdiaCntrs.deleter
-	def ToBeRcncldMdiaCntrs(self):
-		del self._ToBeRcncldMdiaCntrs
-		self._ToBeRcncldMdiaCntrs = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def Csstt(self):
-		return self._Csstt
-
-	@Csstt.setter
-	def Csstt(self, value):
-		self._Csstt = value if type(value) != base_types.auto else self.make_default("Csstt")
-
-	@Csstt.deleter
-	def Csstt(self):
-		del self._Csstt
-		self._Csstt = None
-
+	__slots__ = ["_IncdntDtl", "_AddtlChrg", "_Incdnt", "_TxSts", "_AuthstnRslt", "_ReqdRct", "_TxId", "_ToBeRcncldMdiaCntrs", "_ATMTtls", "_SubDpst", "_DtldReqdAmt", "_RcncltnId", "_Csstt", "_RctPrtd", "_ICCRltdData", "_TtlDpstdAmt", "_TtlAuthrsdAmt", "_TtlReqdAmt"]
 	@property
 	def IncdntDtl(self):
 		return self._IncdntDtl
@@ -163,45 +33,6 @@ class ATMTransaction51(base_types._BaseFieldType):
 		self._IncdntDtl = None
 
 	@property
-	def ReqdRct(self):
-		return self._ReqdRct
-
-	@ReqdRct.setter
-	def ReqdRct(self, value):
-		self._ReqdRct = value if type(value) != base_types.auto else self.make_default("ReqdRct")
-
-	@ReqdRct.deleter
-	def ReqdRct(self):
-		del self._ReqdRct
-		self._ReqdRct = None
-
-	@property
-	def RcncltnId(self):
-		return self._RcncltnId
-
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
-
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
-	@property
-	def TtlReqdAmt(self):
-		return self._TtlReqdAmt
-
-	@TtlReqdAmt.setter
-	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
-
-	@TtlReqdAmt.deleter
-	def TtlReqdAmt(self):
-		del self._TtlReqdAmt
-		self._TtlReqdAmt = None
-
-	@property
 	def AddtlChrg(self):
 		return self._AddtlChrg
 
@@ -213,19 +44,6 @@ class ATMTransaction51(base_types._BaseFieldType):
 	def AddtlChrg(self):
 		del self._AddtlChrg
 		self._AddtlChrg = None
-
-	@property
-	def TtlDpstdAmt(self):
-		return self._TtlDpstdAmt
-
-	@TtlDpstdAmt.setter
-	def TtlDpstdAmt(self, value):
-		self._TtlDpstdAmt = value if type(value) != base_types.auto else self.make_default("TtlDpstdAmt")
-
-	@TtlDpstdAmt.deleter
-	def TtlDpstdAmt(self):
-		del self._TtlDpstdAmt
-		self._TtlDpstdAmt = None
 
 	@property
 	def Incdnt(self):
@@ -253,24 +71,206 @@ class ATMTransaction51(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
+	@property
+	def AuthstnRslt(self):
+		return self._AuthstnRslt
+
+	@AuthstnRslt.setter
+	def AuthstnRslt(self, value):
+		self._AuthstnRslt = value if type(value) != base_types.auto else self.make_default("AuthstnRslt")
+
+	@AuthstnRslt.deleter
+	def AuthstnRslt(self):
+		del self._AuthstnRslt
+		self._AuthstnRslt = None
+
+	@property
+	def ReqdRct(self):
+		return self._ReqdRct
+
+	@ReqdRct.setter
+	def ReqdRct(self, value):
+		self._ReqdRct = value if type(value) != base_types.auto else self.make_default("ReqdRct")
+
+	@ReqdRct.deleter
+	def ReqdRct(self):
+		del self._ReqdRct
+		self._ReqdRct = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def ToBeRcncldMdiaCntrs(self):
+		return self._ToBeRcncldMdiaCntrs
+
+	@ToBeRcncldMdiaCntrs.setter
+	def ToBeRcncldMdiaCntrs(self, value):
+		self._ToBeRcncldMdiaCntrs = value if type(value) != base_types.auto else self.make_default("ToBeRcncldMdiaCntrs")
+
+	@ToBeRcncldMdiaCntrs.deleter
+	def ToBeRcncldMdiaCntrs(self):
+		del self._ToBeRcncldMdiaCntrs
+		self._ToBeRcncldMdiaCntrs = None
+
+	@property
+	def ATMTtls(self):
+		return self._ATMTtls
+
+	@ATMTtls.setter
+	def ATMTtls(self, value):
+		self._ATMTtls = value if type(value) != base_types.auto else self.make_default("ATMTtls")
+
+	@ATMTtls.deleter
+	def ATMTtls(self):
+		del self._ATMTtls
+		self._ATMTtls = None
+
+	@property
+	def SubDpst(self):
+		return self._SubDpst
+
+	@SubDpst.setter
+	def SubDpst(self, value):
+		self._SubDpst = value if type(value) != base_types.auto else self.make_default("SubDpst")
+
+	@SubDpst.deleter
+	def SubDpst(self):
+		del self._SubDpst
+		self._SubDpst = None
+
+	@property
+	def DtldReqdAmt(self):
+		return self._DtldReqdAmt
+
+	@DtldReqdAmt.setter
+	def DtldReqdAmt(self, value):
+		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+
+	@DtldReqdAmt.deleter
+	def DtldReqdAmt(self):
+		del self._DtldReqdAmt
+		self._DtldReqdAmt = None
+
+	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
+	def Csstt(self):
+		return self._Csstt
+
+	@Csstt.setter
+	def Csstt(self, value):
+		self._Csstt = value if type(value) != base_types.auto else self.make_default("Csstt")
+
+	@Csstt.deleter
+	def Csstt(self):
+		del self._Csstt
+		self._Csstt = None
+
+	@property
+	def RctPrtd(self):
+		return self._RctPrtd
+
+	@RctPrtd.setter
+	def RctPrtd(self, value):
+		self._RctPrtd = value if type(value) != base_types.auto else self.make_default("RctPrtd")
+
+	@RctPrtd.deleter
+	def RctPrtd(self):
+		del self._RctPrtd
+		self._RctPrtd = None
+
+	@property
+	def ICCRltdData(self):
+		return self._ICCRltdData
+
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
+
+	@property
+	def TtlDpstdAmt(self):
+		return self._TtlDpstdAmt
+
+	@TtlDpstdAmt.setter
+	def TtlDpstdAmt(self, value):
+		self._TtlDpstdAmt = value if type(value) != base_types.auto else self.make_default("TtlDpstdAmt")
+
+	@TtlDpstdAmt.deleter
+	def TtlDpstdAmt(self):
+		del self._TtlDpstdAmt
+		self._TtlDpstdAmt = None
+
+	@property
+	def TtlAuthrsdAmt(self):
+		return self._TtlAuthrsdAmt
+
+	@TtlAuthrsdAmt.setter
+	def TtlAuthrsdAmt(self, value):
+		self._TtlAuthrsdAmt = value if type(value) != base_types.auto else self.make_default("TtlAuthrsdAmt")
+
+	@TtlAuthrsdAmt.deleter
+	def TtlAuthrsdAmt(self):
+		del self._TtlAuthrsdAmt
+		self._TtlAuthrsdAmt = None
+
+	@property
+	def TtlReqdAmt(self):
+		return self._TtlReqdAmt
+
+	@TtlReqdAmt.setter
+	def TtlReqdAmt(self, value):
+		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
+
+	@TtlReqdAmt.deleter
+	def TtlReqdAmt(self):
+		del self._TtlReqdAmt
+		self._TtlReqdAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMTtls', type=ATMTotals4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RctPrtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAuthrsdAmt', type=ImpliedCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubDpst', type=ATMDepositComponent1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ToBeRcncldMdiaCntrs', type=ATMDepositedMedia4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IncdntDtl', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdRct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlChrg', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlDpstdAmt', type=AmountAndCurrency1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Incdnt', type=FailureReason9Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=ATMTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult20, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdRct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ToBeRcncldMdiaCntrs', type=ATMDepositedMedia4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ATMTtls', type=ATMTotals4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubDpst', type=ATMDepositComponent1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Csstt', type=ATMCassette3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RctPrtd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlDpstdAmt', type=AmountAndCurrency1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlAuthrsdAmt', type=ImpliedCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 	))
 

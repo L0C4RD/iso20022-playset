@@ -1,12 +1,12 @@
 from . import base_types
-from .RateSourceText import RateSourceText
-from .Exact4NumericText import Exact4NumericText
-from .Exact2AlphaNumericText import Exact2AlphaNumericText
-from .CountryCode import CountryCode
+from ._Exact2AlphaNumericText import Exact2AlphaNumericText
+from ._CountryCode import CountryCode
+from ._Exact4NumericText import Exact4NumericText
+from ._RateSourceText import RateSourceText
 
 class SettlementRateSource1(base_types._BaseFieldType):
 
-	__slots__ = ["_RateSrc", "_LctnCd", "_CtryCd", "_Tm"]
+	__slots__ = ["_RateSrc", "_Tm", "_LctnCd", "_CtryCd"]
 	@property
 	def RateSrc(self):
 		return self._RateSrc
@@ -19,6 +19,19 @@ class SettlementRateSource1(base_types._BaseFieldType):
 	def RateSrc(self):
 		del self._RateSrc
 		self._RateSrc = None
+
+	@property
+	def Tm(self):
+		return self._Tm
+
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
 
 	@property
 	def LctnCd(self):
@@ -46,23 +59,10 @@ class SettlementRateSource1(base_types._BaseFieldType):
 		del self._CtryCd
 		self._CtryCd = None
 
-	@property
-	def Tm(self):
-		return self._Tm
-
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
-
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RateSrc', type=RateSourceText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnCd', type=Exact2AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tm', type=Exact4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

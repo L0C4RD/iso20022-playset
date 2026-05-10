@@ -1,6 +1,6 @@
 from . import base_types
-from .InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
-from .InvestigationActionReason1 import InvestigationActionReason1
+from ._InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
+from ._InvestigationActionReason1 import InvestigationActionReason1
 
 class InvestigationRequestAction1(base_types._BaseFieldType):
 

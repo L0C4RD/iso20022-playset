@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Mandate22 import Mandate22
+from ._Max35Text import Max35Text
+from ._Mandate22 import Mandate22
 
 class OriginalMandate11Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
+from ._ISODateTime import ISODateTime
 
 class GroupHeader121(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm", "_MsgRcpt"]
+	__slots__ = ["_MsgRcpt", "_CreDtTm", "_MsgId"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def MsgRcpt(self):
+		return self._MsgRcpt
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@MsgRcpt.setter
+	def MsgRcpt(self, value):
+		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@MsgRcpt.deleter
+	def MsgRcpt(self):
+		del self._MsgRcpt
+		self._MsgRcpt = None
 
 	@property
 	def CreDtTm(self):
@@ -33,21 +33,21 @@ class GroupHeader121(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def MsgRcpt(self):
-		return self._MsgRcpt
+	def MsgId(self):
+		return self._MsgId
 
-	@MsgRcpt.setter
-	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@MsgRcpt.deleter
-	def MsgRcpt(self):
-		del self._MsgRcpt
-		self._MsgRcpt = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

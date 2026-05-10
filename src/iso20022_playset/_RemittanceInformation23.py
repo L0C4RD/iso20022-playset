@@ -1,12 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .StructuredRemittanceInformation18 import StructuredRemittanceInformation18
-from .OriginalPaymentInformation10 import OriginalPaymentInformation10
-from .Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._OriginalPaymentInformation10 import OriginalPaymentInformation10
+from ._StructuredRemittanceInformation18 import StructuredRemittanceInformation18
 
 class RemittanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_Ustrd", "_OrgnlPmtInf", "_RmtId", "_Strd"]
+	__slots__ = ["_Ustrd", "_RmtId", "_Strd", "_OrgnlPmtInf"]
 	@property
 	def Ustrd(self):
 		return self._Ustrd
@@ -19,19 +19,6 @@ class RemittanceInformation23(base_types._BaseFieldType):
 	def Ustrd(self):
 		del self._Ustrd
 		self._Ustrd = None
-
-	@property
-	def OrgnlPmtInf(self):
-		return self._OrgnlPmtInf
-
-	@OrgnlPmtInf.setter
-	def OrgnlPmtInf(self, value):
-		self._OrgnlPmtInf = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInf")
-
-	@OrgnlPmtInf.deleter
-	def OrgnlPmtInf(self):
-		del self._OrgnlPmtInf
-		self._OrgnlPmtInf = None
 
 	@property
 	def RmtId(self):
@@ -59,10 +46,23 @@ class RemittanceInformation23(base_types._BaseFieldType):
 		del self._Strd
 		self._Strd = None
 
+	@property
+	def OrgnlPmtInf(self):
+		return self._OrgnlPmtInf
+
+	@OrgnlPmtInf.setter
+	def OrgnlPmtInf(self, value):
+		self._OrgnlPmtInf = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInf")
+
+	@OrgnlPmtInf.deleter
+	def OrgnlPmtInf(self):
+		del self._OrgnlPmtInf
+		self._OrgnlPmtInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ustrd', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Strd', type=StructuredRemittanceInformation18, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),
 	))
 

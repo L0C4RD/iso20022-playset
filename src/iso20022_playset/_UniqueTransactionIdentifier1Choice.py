@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification179 import GenericIdentification179
-from .UTIIdentifier import UTIIdentifier
+from ._UTIIdentifier import UTIIdentifier
+from ._GenericIdentification179 import GenericIdentification179
 
 class UniqueTransactionIdentifier1Choice(base_types._BaseFieldType):
 

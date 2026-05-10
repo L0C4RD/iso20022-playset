@@ -1,5 +1,5 @@
 from . import base_types
-from .ATMDepositRequestV02 import ATMDepositRequestV02
+from ._ATMDepositRequestV02 import ATMDepositRequestV02
 
 class CATP_012_001_02():
 

@@ -1,12 +1,12 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
-from .ATMWithdrawalCompletionAdvice3 import ATMWithdrawalCompletionAdvice3
-from .ContentInformationType15 import ContentInformationType15
-from .Header32 import Header32
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._ATMWithdrawalCompletionAdvice3 import ATMWithdrawalCompletionAdvice3
+from ._Header32 import Header32
 
 class ATMWithdrawalCompletionAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_ATMWdrwlCmpltnAdvc", "_Hdr", "_PrtctdATMWdrwlCmpltnAdvc"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_ATMWdrwlCmpltnAdvc", "_PrtctdATMWdrwlCmpltnAdvc"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -21,19 +21,6 @@ class ATMWithdrawalCompletionAdviceV03(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def ATMWdrwlCmpltnAdvc(self):
-		return self._ATMWdrwlCmpltnAdvc
-
-	@ATMWdrwlCmpltnAdvc.setter
-	def ATMWdrwlCmpltnAdvc(self, value):
-		self._ATMWdrwlCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMWdrwlCmpltnAdvc")
-
-	@ATMWdrwlCmpltnAdvc.deleter
-	def ATMWdrwlCmpltnAdvc(self):
-		del self._ATMWdrwlCmpltnAdvc
-		self._ATMWdrwlCmpltnAdvc = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,6 +32,19 @@ class ATMWithdrawalCompletionAdviceV03(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def ATMWdrwlCmpltnAdvc(self):
+		return self._ATMWdrwlCmpltnAdvc
+
+	@ATMWdrwlCmpltnAdvc.setter
+	def ATMWdrwlCmpltnAdvc(self, value):
+		self._ATMWdrwlCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMWdrwlCmpltnAdvc")
+
+	@ATMWdrwlCmpltnAdvc.deleter
+	def ATMWdrwlCmpltnAdvc(self):
+		del self._ATMWdrwlCmpltnAdvc
+		self._ATMWdrwlCmpltnAdvc = None
 
 	@property
 	def PrtctdATMWdrwlCmpltnAdvc(self):
@@ -61,8 +61,8 @@ class ATMWithdrawalCompletionAdviceV03(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMWdrwlCmpltnAdvc', type=ATMWithdrawalCompletionAdvice3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMWdrwlCmpltnAdvc', type=ATMWithdrawalCompletionAdvice3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMWdrwlCmpltnAdvc', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
 

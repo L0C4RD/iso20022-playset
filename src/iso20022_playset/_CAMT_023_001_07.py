@@ -1,5 +1,5 @@
 from . import base_types
-from .BackupPaymentV07 import BackupPaymentV07
+from ._BackupPaymentV07 import BackupPaymentV07
 
 class CAMT_023_001_07():
 

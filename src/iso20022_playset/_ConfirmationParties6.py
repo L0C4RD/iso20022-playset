@@ -1,50 +1,37 @@
 from . import base_types
-from .ConfirmationPartyDetails10 import ConfirmationPartyDetails10
-from .ConfirmationPartyDetails8 import ConfirmationPartyDetails8
-from .ConfirmationPartyDetails9 import ConfirmationPartyDetails9
-from .ConfirmationPartyDetails7 import ConfirmationPartyDetails7
+from ._ConfirmationPartyDetails8 import ConfirmationPartyDetails8
+from ._ConfirmationPartyDetails10 import ConfirmationPartyDetails10
+from ._ConfirmationPartyDetails7 import ConfirmationPartyDetails7
+from ._ConfirmationPartyDetails9 import ConfirmationPartyDetails9
 
 class ConfirmationParties6(base_types._BaseFieldType):
 
-	__slots__ = ["_Brrwr", "_IntrdcgFirm", "_AffrmgPty", "_Lndr", "_Buyr", "_TradBnfcryPty", "_CMUPty", "_Sellr", "_ClrFirm", "_BrkrOfCdt", "_StepOutFirm", "_CMUCtrPty", "_ExctgBrkr", "_StepInFirm"]
+	__slots__ = ["_ExctgBrkr", "_StepOutFirm", "_Lndr", "_Buyr", "_TradBnfcryPty", "_Sellr", "_IntrdcgFirm", "_ClrFirm", "_CMUPty", "_CMUCtrPty", "_AffrmgPty", "_StepInFirm", "_BrkrOfCdt", "_Brrwr"]
 	@property
-	def Brrwr(self):
-		return self._Brrwr
+	def ExctgBrkr(self):
+		return self._ExctgBrkr
 
-	@Brrwr.setter
-	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
+	@ExctgBrkr.setter
+	def ExctgBrkr(self, value):
+		self._ExctgBrkr = value if type(value) != base_types.auto else self.make_default("ExctgBrkr")
 
-	@Brrwr.deleter
-	def Brrwr(self):
-		del self._Brrwr
-		self._Brrwr = None
-
-	@property
-	def IntrdcgFirm(self):
-		return self._IntrdcgFirm
-
-	@IntrdcgFirm.setter
-	def IntrdcgFirm(self, value):
-		self._IntrdcgFirm = value if type(value) != base_types.auto else self.make_default("IntrdcgFirm")
-
-	@IntrdcgFirm.deleter
-	def IntrdcgFirm(self):
-		del self._IntrdcgFirm
-		self._IntrdcgFirm = None
+	@ExctgBrkr.deleter
+	def ExctgBrkr(self):
+		del self._ExctgBrkr
+		self._ExctgBrkr = None
 
 	@property
-	def AffrmgPty(self):
-		return self._AffrmgPty
+	def StepOutFirm(self):
+		return self._StepOutFirm
 
-	@AffrmgPty.setter
-	def AffrmgPty(self, value):
-		self._AffrmgPty = value if type(value) != base_types.auto else self.make_default("AffrmgPty")
+	@StepOutFirm.setter
+	def StepOutFirm(self, value):
+		self._StepOutFirm = value if type(value) != base_types.auto else self.make_default("StepOutFirm")
 
-	@AffrmgPty.deleter
-	def AffrmgPty(self):
-		del self._AffrmgPty
-		self._AffrmgPty = None
+	@StepOutFirm.deleter
+	def StepOutFirm(self):
+		del self._StepOutFirm
+		self._StepOutFirm = None
 
 	@property
 	def Lndr(self):
@@ -86,19 +73,6 @@ class ConfirmationParties6(base_types._BaseFieldType):
 		self._TradBnfcryPty = None
 
 	@property
-	def CMUPty(self):
-		return self._CMUPty
-
-	@CMUPty.setter
-	def CMUPty(self, value):
-		self._CMUPty = value if type(value) != base_types.auto else self.make_default("CMUPty")
-
-	@CMUPty.deleter
-	def CMUPty(self):
-		del self._CMUPty
-		self._CMUPty = None
-
-	@property
 	def Sellr(self):
 		return self._Sellr
 
@@ -110,6 +84,19 @@ class ConfirmationParties6(base_types._BaseFieldType):
 	def Sellr(self):
 		del self._Sellr
 		self._Sellr = None
+
+	@property
+	def IntrdcgFirm(self):
+		return self._IntrdcgFirm
+
+	@IntrdcgFirm.setter
+	def IntrdcgFirm(self, value):
+		self._IntrdcgFirm = value if type(value) != base_types.auto else self.make_default("IntrdcgFirm")
+
+	@IntrdcgFirm.deleter
+	def IntrdcgFirm(self):
+		del self._IntrdcgFirm
+		self._IntrdcgFirm = None
 
 	@property
 	def ClrFirm(self):
@@ -125,30 +112,17 @@ class ConfirmationParties6(base_types._BaseFieldType):
 		self._ClrFirm = None
 
 	@property
-	def BrkrOfCdt(self):
-		return self._BrkrOfCdt
+	def CMUPty(self):
+		return self._CMUPty
 
-	@BrkrOfCdt.setter
-	def BrkrOfCdt(self, value):
-		self._BrkrOfCdt = value if type(value) != base_types.auto else self.make_default("BrkrOfCdt")
+	@CMUPty.setter
+	def CMUPty(self, value):
+		self._CMUPty = value if type(value) != base_types.auto else self.make_default("CMUPty")
 
-	@BrkrOfCdt.deleter
-	def BrkrOfCdt(self):
-		del self._BrkrOfCdt
-		self._BrkrOfCdt = None
-
-	@property
-	def StepOutFirm(self):
-		return self._StepOutFirm
-
-	@StepOutFirm.setter
-	def StepOutFirm(self, value):
-		self._StepOutFirm = value if type(value) != base_types.auto else self.make_default("StepOutFirm")
-
-	@StepOutFirm.deleter
-	def StepOutFirm(self):
-		del self._StepOutFirm
-		self._StepOutFirm = None
+	@CMUPty.deleter
+	def CMUPty(self):
+		del self._CMUPty
+		self._CMUPty = None
 
 	@property
 	def CMUCtrPty(self):
@@ -164,17 +138,17 @@ class ConfirmationParties6(base_types._BaseFieldType):
 		self._CMUCtrPty = None
 
 	@property
-	def ExctgBrkr(self):
-		return self._ExctgBrkr
+	def AffrmgPty(self):
+		return self._AffrmgPty
 
-	@ExctgBrkr.setter
-	def ExctgBrkr(self, value):
-		self._ExctgBrkr = value if type(value) != base_types.auto else self.make_default("ExctgBrkr")
+	@AffrmgPty.setter
+	def AffrmgPty(self, value):
+		self._AffrmgPty = value if type(value) != base_types.auto else self.make_default("AffrmgPty")
 
-	@ExctgBrkr.deleter
-	def ExctgBrkr(self):
-		del self._ExctgBrkr
-		self._ExctgBrkr = None
+	@AffrmgPty.deleter
+	def AffrmgPty(self):
+		del self._AffrmgPty
+		self._AffrmgPty = None
 
 	@property
 	def StepInFirm(self):
@@ -189,20 +163,46 @@ class ConfirmationParties6(base_types._BaseFieldType):
 		del self._StepInFirm
 		self._StepInFirm = None
 
+	@property
+	def BrkrOfCdt(self):
+		return self._BrkrOfCdt
+
+	@BrkrOfCdt.setter
+	def BrkrOfCdt(self, value):
+		self._BrkrOfCdt = value if type(value) != base_types.auto else self.make_default("BrkrOfCdt")
+
+	@BrkrOfCdt.deleter
+	def BrkrOfCdt(self):
+		del self._BrkrOfCdt
+		self._BrkrOfCdt = None
+
+	@property
+	def Brrwr(self):
+		return self._Brrwr
+
+	@Brrwr.setter
+	def Brrwr(self, value):
+		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
+
+	@Brrwr.deleter
+	def Brrwr(self):
+		del self._Brrwr
+		self._Brrwr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrdcgFirm', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctgBrkr', type=ConfirmationPartyDetails9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StepOutFirm', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lndr', type=ConfirmationPartyDetails7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=ConfirmationPartyDetails7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CMUPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sellr', type=ConfirmationPartyDetails7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrdcgFirm', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrFirm', type=ConfirmationPartyDetails9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrkrOfCdt', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StepOutFirm', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CMUPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CMUCtrPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctgBrkr', type=ConfirmationPartyDetails9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StepInFirm', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrkrOfCdt', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brrwr', type=ConfirmationPartyDetails7, min=0, max=1, mutex_group=None, array=False),
 	))
 

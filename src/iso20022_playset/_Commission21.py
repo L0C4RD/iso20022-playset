@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountOrRate3Choice import AmountOrRate3Choice
-from .CommissionType5Choice import CommissionType5Choice
+from ._CommissionType5Choice import CommissionType5Choice
+from ._AmountOrRate3Choice import AmountOrRate3Choice
 
 class Commission21(base_types._BaseFieldType):
 

@@ -1,43 +1,17 @@
 from . import base_types
-from .Incoterms4 import Incoterms4
-from .DocumentIdentification7 import DocumentIdentification7
-from .LineItemDetails14 import LineItemDetails14
-from .CurrencyAndAmount import CurrencyAndAmount
-from .Tax22 import Tax22
-from .Charge25 import Charge25
-from .Adjustment6 import Adjustment6
-from .YesNoIndicator import YesNoIndicator
-from .UserDefinedInformation1 import UserDefinedInformation1
+from ._Charge25 import Charge25
+from ._UserDefinedInformation1 import UserDefinedInformation1
+from ._LineItemDetails14 import LineItemDetails14
+from ._DocumentIdentification7 import DocumentIdentification7
+from ._Incoterms4 import Incoterms4
+from ._Tax22 import Tax22
+from ._Adjustment6 import Adjustment6
+from ._YesNoIndicator import YesNoIndicator
+from ._CurrencyAndAmount import CurrencyAndAmount
 
 class LineItem15(base_types._BaseFieldType):
 
-	__slots__ = ["_FrghtChrgs", "_BuyrDfndInf", "_PurchsOrdrRef", "_ComrclLineItms", "_Tax", "_SellrDfndInf", "_TtlNetAmt", "_LineItmsTtlAmt", "_FnlSubmissn", "_Incotrms", "_Adjstmnt"]
-	@property
-	def FrghtChrgs(self):
-		return self._FrghtChrgs
-
-	@FrghtChrgs.setter
-	def FrghtChrgs(self, value):
-		self._FrghtChrgs = value if type(value) != base_types.auto else self.make_default("FrghtChrgs")
-
-	@FrghtChrgs.deleter
-	def FrghtChrgs(self):
-		del self._FrghtChrgs
-		self._FrghtChrgs = None
-
-	@property
-	def BuyrDfndInf(self):
-		return self._BuyrDfndInf
-
-	@BuyrDfndInf.setter
-	def BuyrDfndInf(self, value):
-		self._BuyrDfndInf = value if type(value) != base_types.auto else self.make_default("BuyrDfndInf")
-
-	@BuyrDfndInf.deleter
-	def BuyrDfndInf(self):
-		del self._BuyrDfndInf
-		self._BuyrDfndInf = None
-
+	__slots__ = ["_PurchsOrdrRef", "_Incotrms", "_ComrclLineItms", "_SellrDfndInf", "_TtlNetAmt", "_BuyrDfndInf", "_FrghtChrgs", "_Adjstmnt", "_FnlSubmissn", "_Tax", "_LineItmsTtlAmt"]
 	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
@@ -52,6 +26,19 @@ class LineItem15(base_types._BaseFieldType):
 		self._PurchsOrdrRef = None
 
 	@property
+	def Incotrms(self):
+		return self._Incotrms
+
+	@Incotrms.setter
+	def Incotrms(self, value):
+		self._Incotrms = value if type(value) != base_types.auto else self.make_default("Incotrms")
+
+	@Incotrms.deleter
+	def Incotrms(self):
+		del self._Incotrms
+		self._Incotrms = None
+
+	@property
 	def ComrclLineItms(self):
 		return self._ComrclLineItms
 
@@ -63,19 +50,6 @@ class LineItem15(base_types._BaseFieldType):
 	def ComrclLineItms(self):
 		del self._ComrclLineItms
 		self._ComrclLineItms = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
 
 	@property
 	def SellrDfndInf(self):
@@ -104,17 +78,43 @@ class LineItem15(base_types._BaseFieldType):
 		self._TtlNetAmt = None
 
 	@property
-	def LineItmsTtlAmt(self):
-		return self._LineItmsTtlAmt
+	def BuyrDfndInf(self):
+		return self._BuyrDfndInf
 
-	@LineItmsTtlAmt.setter
-	def LineItmsTtlAmt(self, value):
-		self._LineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("LineItmsTtlAmt")
+	@BuyrDfndInf.setter
+	def BuyrDfndInf(self, value):
+		self._BuyrDfndInf = value if type(value) != base_types.auto else self.make_default("BuyrDfndInf")
 
-	@LineItmsTtlAmt.deleter
-	def LineItmsTtlAmt(self):
-		del self._LineItmsTtlAmt
-		self._LineItmsTtlAmt = None
+	@BuyrDfndInf.deleter
+	def BuyrDfndInf(self):
+		del self._BuyrDfndInf
+		self._BuyrDfndInf = None
+
+	@property
+	def FrghtChrgs(self):
+		return self._FrghtChrgs
+
+	@FrghtChrgs.setter
+	def FrghtChrgs(self, value):
+		self._FrghtChrgs = value if type(value) != base_types.auto else self.make_default("FrghtChrgs")
+
+	@FrghtChrgs.deleter
+	def FrghtChrgs(self):
+		del self._FrghtChrgs
+		self._FrghtChrgs = None
+
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
 
 	@property
 	def FnlSubmissn(self):
@@ -130,42 +130,42 @@ class LineItem15(base_types._BaseFieldType):
 		self._FnlSubmissn = None
 
 	@property
-	def Incotrms(self):
-		return self._Incotrms
+	def Tax(self):
+		return self._Tax
 
-	@Incotrms.setter
-	def Incotrms(self, value):
-		self._Incotrms = value if type(value) != base_types.auto else self.make_default("Incotrms")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
 
-	@Incotrms.deleter
-	def Incotrms(self):
-		del self._Incotrms
-		self._Incotrms = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
+	def LineItmsTtlAmt(self):
+		return self._LineItmsTtlAmt
 
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+	@LineItmsTtlAmt.setter
+	def LineItmsTtlAmt(self, value):
+		self._LineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("LineItmsTtlAmt")
 
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
+	@LineItmsTtlAmt.deleter
+	def LineItmsTtlAmt(self):
+		del self._LineItmsTtlAmt
+		self._LineItmsTtlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrghtChrgs', type=Charge25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Incotrms', type=Incoterms4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComrclLineItms', type=LineItemDetails14, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tax', type=Tax22, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SellrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FnlSubmissn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Incotrms', type=Incoterms4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FrghtChrgs', type=Charge25, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FnlSubmissn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tax', type=Tax22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

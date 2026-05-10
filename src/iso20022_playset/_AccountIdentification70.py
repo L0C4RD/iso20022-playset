@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from .PartyIdentification127Choice import PartyIdentification127Choice
+from ._Max35Text import Max35Text
+from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
+from ._PartyIdentification127Choice import PartyIdentification127Choice
 
 class AccountIdentification70(base_types._BaseFieldType):
 

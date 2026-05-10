@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max70Text import Max70Text
-from .ActivationStatus2Code import ActivationStatus2Code
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._ActivationStatus2Code import ActivationStatus2Code
 
 class ATMVersionReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_CfgtnVrsn", "_FailRsn", "_CfgtnSts"]
+	__slots__ = ["_CfgtnSts", "_CfgtnVrsn", "_FailRsn"]
+	@property
+	def CfgtnSts(self):
+		return self._CfgtnSts
+
+	@CfgtnSts.setter
+	def CfgtnSts(self, value):
+		self._CfgtnSts = value if type(value) != base_types.auto else self.make_default("CfgtnSts")
+
+	@CfgtnSts.deleter
+	def CfgtnSts(self):
+		del self._CfgtnSts
+		self._CfgtnSts = None
+
 	@property
 	def CfgtnVrsn(self):
 		return self._CfgtnVrsn
@@ -32,22 +45,9 @@ class ATMVersionReport1(base_types._BaseFieldType):
 		del self._FailRsn
 		self._FailRsn = None
 
-	@property
-	def CfgtnSts(self):
-		return self._CfgtnSts
-
-	@CfgtnSts.setter
-	def CfgtnSts(self, value):
-		self._CfgtnSts = value if type(value) != base_types.auto else self.make_default("CfgtnSts")
-
-	@CfgtnSts.deleter
-	def CfgtnSts(self):
-		del self._CfgtnSts
-		self._CfgtnSts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CfgtnSts', type=ActivationStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CfgtnVrsn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FailRsn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CfgtnSts', type=ActivationStatus2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

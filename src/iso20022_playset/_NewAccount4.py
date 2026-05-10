@@ -1,7 +1,7 @@
 from . import base_types
-from .Organisation43 import Organisation43
-from .IndividualPerson44 import IndividualPerson44
-from .CashAccount43 import CashAccount43
+from ._IndividualPerson44 import IndividualPerson44
+from ._CashAccount43 import CashAccount43
+from ._Organisation43 import Organisation43
 
 class NewAccount4(base_types._BaseFieldType):
 

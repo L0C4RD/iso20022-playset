@@ -1,23 +1,23 @@
 from . import base_types
-from .ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
-from .BICIdentifier import BICIdentifier
-from .GenericIdentification4 import GenericIdentification4
+from ._ClearingSystemMemberIdentification2Choice import ClearingSystemMemberIdentification2Choice
+from ._BICIdentifier import BICIdentifier
+from ._GenericIdentification4 import GenericIdentification4
 
 class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_BIC", "_PrtryId", "_ClrSysMmbId"]
+	__slots__ = ["_ClrSysMmbId", "_PrtryId", "_BIC"]
 	@property
-	def BIC(self):
-		return self._BIC
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
 
-	@BIC.setter
-	def BIC(self, value):
-		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
 
-	@BIC.deleter
-	def BIC(self):
-		del self._BIC
-		self._BIC = None
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
 
 	@property
 	def PrtryId(self):
@@ -33,21 +33,21 @@ class FinancialInstitutionIdentification6(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
+	def BIC(self):
+		return self._BIC
 
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+	@BIC.setter
+	def BIC(self, value):
+		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
 
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+	@BIC.deleter
+	def BIC(self):
+		del self._BIC
+		self._BIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

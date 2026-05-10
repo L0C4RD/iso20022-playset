@@ -1,38 +1,12 @@
 from . import base_types
-from .CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
-from .GenericIdentification164 import GenericIdentification164
-from .ISODate import ISODate
-from .Max350Text import Max350Text
+from ._GenericIdentification164 import GenericIdentification164
+from ._Max350Text import Max350Text
+from ._ISODate import ISODate
+from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
 
 class IndividualPerson32(base_types._BaseFieldType):
 
-	__slots__ = ["_BirthDt", "_OthrId", "_CtryAndResdtlSts", "_Nm"]
-	@property
-	def BirthDt(self):
-		return self._BirthDt
-
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
-
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
-
-	@property
-	def OthrId(self):
-		return self._OthrId
-
-	@OthrId.setter
-	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
-
-	@OthrId.deleter
-	def OthrId(self):
-		del self._OthrId
-		self._OthrId = None
-
+	__slots__ = ["_CtryAndResdtlSts", "_Nm", "_OthrId", "_BirthDt"]
 	@property
 	def CtryAndResdtlSts(self):
 		return self._CtryAndResdtlSts
@@ -59,10 +33,36 @@ class IndividualPerson32(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def OthrId(self):
+		return self._OthrId
+
+	@OthrId.setter
+	def OthrId(self, value):
+		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+
+	@OthrId.deleter
+	def OthrId(self):
+		del self._OthrId
+		self._OthrId = None
+
+	@property
+	def BirthDt(self):
+		return self._BirthDt
+
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .AgentRole2Code import AgentRole2Code
-from .GenericIdentification13 import GenericIdentification13
+from ._GenericIdentification13 import GenericIdentification13
+from ._AgentRole2Code import AgentRole2Code
 
 class AgentRole1FormatChoice(base_types._BaseFieldType):
 

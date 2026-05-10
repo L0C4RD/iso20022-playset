@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ExternalUndertakingAmountType1Code import ExternalUndertakingAmountType1Code
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ExternalUndertakingAmountType1Code import ExternalUndertakingAmountType1Code
 
 class ReportedAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Amt", "_Tp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Amt", "_Tp", "_Id"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -45,9 +32,22 @@ class ReportedAmount1(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ExternalUndertakingAmountType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ScenarioStressTestResult1 import ScenarioStressTestResult1
+from ._ScenarioStressTestResult1 import ScenarioStressTestResult1
+from ._SupplementaryData1 import SupplementaryData1
 
 class CCPPortfolioStressTestingResultReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ScnroStrssTstRslt", "_SplmtryData"]
-	@property
-	def ScnroStrssTstRslt(self):
-		return self._ScnroStrssTstRslt
-
-	@ScnroStrssTstRslt.setter
-	def ScnroStrssTstRslt(self, value):
-		self._ScnroStrssTstRslt = value if type(value) != base_types.auto else self.make_default("ScnroStrssTstRslt")
-
-	@ScnroStrssTstRslt.deleter
-	def ScnroStrssTstRslt(self):
-		del self._ScnroStrssTstRslt
-		self._ScnroStrssTstRslt = None
-
+	__slots__ = ["_SplmtryData", "_ScnroStrssTstRslt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,8 +18,21 @@ class CCPPortfolioStressTestingResultReportV01(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def ScnroStrssTstRslt(self):
+		return self._ScnroStrssTstRslt
+
+	@ScnroStrssTstRslt.setter
+	def ScnroStrssTstRslt(self, value):
+		self._ScnroStrssTstRslt = value if type(value) != base_types.auto else self.make_default("ScnroStrssTstRslt")
+
+	@ScnroStrssTstRslt.deleter
+	def ScnroStrssTstRslt(self):
+		del self._ScnroStrssTstRslt
+		self._ScnroStrssTstRslt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ScnroStrssTstRslt', type=ScenarioStressTestResult1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScnroStrssTstRslt', type=ScenarioStressTestResult1, min=1, max=None, mutex_group=None, array=True),
 	))
 

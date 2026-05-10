@@ -1,23 +1,10 @@
 from . import base_types
-from .Number import Number
-from .Amount17 import Amount17
+from ._Amount17 import Amount17
+from ._Number import Number
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_PrcgFee", "_Cnt", "_IntrchngFee"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_PrcgFee", "_Cnt", "_Amt", "_IntrchngFee"]
 	@property
 	def PrcgFee(self):
 		return self._PrcgFee
@@ -45,6 +32,19 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		self._Cnt = None
 
 	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
 	def IntrchngFee(self):
 		return self._IntrchngFee
 
@@ -58,9 +58,9 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		self._IntrchngFee = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnt', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 	))
 

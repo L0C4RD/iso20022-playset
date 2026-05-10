@@ -1,34 +1,60 @@
 from . import base_types
-from .SettlementTotalData1Choice import SettlementTotalData1Choice
+from ._SettlementTotalData1Choice import SettlementTotalData1Choice
 
 class SettlementFailsInstrument2(base_types._BaseFieldType):
 
-	__slots__ = ["_MnyMktInstrm", "_SvrgnDebt", "_XchgTraddFnds", "_OthrTrfblScties", "_CllctvInvstmtUdrtkgs", "_Eqty", "_Othr", "_EmssnAllwnc", "_Bd"]
+	__slots__ = ["_OthrTrfblScties", "_EmssnAllwnc", "_Bd", "_CllctvInvstmtUdrtkgs", "_XchgTraddFnds", "_MnyMktInstrm", "_Eqty", "_Othr", "_SvrgnDebt"]
 	@property
-	def MnyMktInstrm(self):
-		return self._MnyMktInstrm
+	def OthrTrfblScties(self):
+		return self._OthrTrfblScties
 
-	@MnyMktInstrm.setter
-	def MnyMktInstrm(self, value):
-		self._MnyMktInstrm = value if type(value) != base_types.auto else self.make_default("MnyMktInstrm")
+	@OthrTrfblScties.setter
+	def OthrTrfblScties(self, value):
+		self._OthrTrfblScties = value if type(value) != base_types.auto else self.make_default("OthrTrfblScties")
 
-	@MnyMktInstrm.deleter
-	def MnyMktInstrm(self):
-		del self._MnyMktInstrm
-		self._MnyMktInstrm = None
+	@OthrTrfblScties.deleter
+	def OthrTrfblScties(self):
+		del self._OthrTrfblScties
+		self._OthrTrfblScties = None
 
 	@property
-	def SvrgnDebt(self):
-		return self._SvrgnDebt
+	def EmssnAllwnc(self):
+		return self._EmssnAllwnc
 
-	@SvrgnDebt.setter
-	def SvrgnDebt(self, value):
-		self._SvrgnDebt = value if type(value) != base_types.auto else self.make_default("SvrgnDebt")
+	@EmssnAllwnc.setter
+	def EmssnAllwnc(self, value):
+		self._EmssnAllwnc = value if type(value) != base_types.auto else self.make_default("EmssnAllwnc")
 
-	@SvrgnDebt.deleter
-	def SvrgnDebt(self):
-		del self._SvrgnDebt
-		self._SvrgnDebt = None
+	@EmssnAllwnc.deleter
+	def EmssnAllwnc(self):
+		del self._EmssnAllwnc
+		self._EmssnAllwnc = None
+
+	@property
+	def Bd(self):
+		return self._Bd
+
+	@Bd.setter
+	def Bd(self, value):
+		self._Bd = value if type(value) != base_types.auto else self.make_default("Bd")
+
+	@Bd.deleter
+	def Bd(self):
+		del self._Bd
+		self._Bd = None
+
+	@property
+	def CllctvInvstmtUdrtkgs(self):
+		return self._CllctvInvstmtUdrtkgs
+
+	@CllctvInvstmtUdrtkgs.setter
+	def CllctvInvstmtUdrtkgs(self, value):
+		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
+
+	@CllctvInvstmtUdrtkgs.deleter
+	def CllctvInvstmtUdrtkgs(self):
+		del self._CllctvInvstmtUdrtkgs
+		self._CllctvInvstmtUdrtkgs = None
 
 	@property
 	def XchgTraddFnds(self):
@@ -44,30 +70,17 @@ class SettlementFailsInstrument2(base_types._BaseFieldType):
 		self._XchgTraddFnds = None
 
 	@property
-	def OthrTrfblScties(self):
-		return self._OthrTrfblScties
+	def MnyMktInstrm(self):
+		return self._MnyMktInstrm
 
-	@OthrTrfblScties.setter
-	def OthrTrfblScties(self, value):
-		self._OthrTrfblScties = value if type(value) != base_types.auto else self.make_default("OthrTrfblScties")
+	@MnyMktInstrm.setter
+	def MnyMktInstrm(self, value):
+		self._MnyMktInstrm = value if type(value) != base_types.auto else self.make_default("MnyMktInstrm")
 
-	@OthrTrfblScties.deleter
-	def OthrTrfblScties(self):
-		del self._OthrTrfblScties
-		self._OthrTrfblScties = None
-
-	@property
-	def CllctvInvstmtUdrtkgs(self):
-		return self._CllctvInvstmtUdrtkgs
-
-	@CllctvInvstmtUdrtkgs.setter
-	def CllctvInvstmtUdrtkgs(self, value):
-		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
-
-	@CllctvInvstmtUdrtkgs.deleter
-	def CllctvInvstmtUdrtkgs(self):
-		del self._CllctvInvstmtUdrtkgs
-		self._CllctvInvstmtUdrtkgs = None
+	@MnyMktInstrm.deleter
+	def MnyMktInstrm(self):
+		del self._MnyMktInstrm
+		self._MnyMktInstrm = None
 
 	@property
 	def Eqty(self):
@@ -96,40 +109,27 @@ class SettlementFailsInstrument2(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def EmssnAllwnc(self):
-		return self._EmssnAllwnc
+	def SvrgnDebt(self):
+		return self._SvrgnDebt
 
-	@EmssnAllwnc.setter
-	def EmssnAllwnc(self, value):
-		self._EmssnAllwnc = value if type(value) != base_types.auto else self.make_default("EmssnAllwnc")
+	@SvrgnDebt.setter
+	def SvrgnDebt(self, value):
+		self._SvrgnDebt = value if type(value) != base_types.auto else self.make_default("SvrgnDebt")
 
-	@EmssnAllwnc.deleter
-	def EmssnAllwnc(self):
-		del self._EmssnAllwnc
-		self._EmssnAllwnc = None
-
-	@property
-	def Bd(self):
-		return self._Bd
-
-	@Bd.setter
-	def Bd(self, value):
-		self._Bd = value if type(value) != base_types.auto else self.make_default("Bd")
-
-	@Bd.deleter
-	def Bd(self):
-		del self._Bd
-		self._Bd = None
+	@SvrgnDebt.deleter
+	def SvrgnDebt(self):
+		del self._SvrgnDebt
+		self._SvrgnDebt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MnyMktInstrm', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvrgnDebt', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgTraddFnds', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTrfblScties', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Eqty', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmssnAllwnc', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bd', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgTraddFnds', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MnyMktInstrm', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Eqty', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrgnDebt', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

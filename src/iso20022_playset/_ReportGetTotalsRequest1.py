@@ -1,6 +1,6 @@
 from . import base_types
-from .TotalFilter1 import TotalFilter1
-from .TotalDetails1Code import TotalDetails1Code
+from ._TotalFilter1 import TotalFilter1
+from ._TotalDetails1Code import TotalDetails1Code
 
 class ReportGetTotalsRequest1(base_types._BaseFieldType):
 

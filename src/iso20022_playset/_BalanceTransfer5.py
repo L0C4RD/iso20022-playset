@@ -1,23 +1,23 @@
 from . import base_types
-from .BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
-from .SettlementMethod5Choice import SettlementMethod5Choice
-from .BalanceTransferReference1 import BalanceTransferReference1
+from ._SettlementMethod5Choice import SettlementMethod5Choice
+from ._BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
+from ._BalanceTransferReference1 import BalanceTransferReference1
 
 class BalanceTransfer5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTrfFndgLmt", "_BalTrfRef", "_BalTrfMtd"]
+	__slots__ = ["_BalTrfMtd", "_BalTrfRef", "_BalTrfFndgLmt"]
 	@property
-	def BalTrfFndgLmt(self):
-		return self._BalTrfFndgLmt
+	def BalTrfMtd(self):
+		return self._BalTrfMtd
 
-	@BalTrfFndgLmt.setter
-	def BalTrfFndgLmt(self, value):
-		self._BalTrfFndgLmt = value if type(value) != base_types.auto else self.make_default("BalTrfFndgLmt")
+	@BalTrfMtd.setter
+	def BalTrfMtd(self, value):
+		self._BalTrfMtd = value if type(value) != base_types.auto else self.make_default("BalTrfMtd")
 
-	@BalTrfFndgLmt.deleter
-	def BalTrfFndgLmt(self):
-		del self._BalTrfFndgLmt
-		self._BalTrfFndgLmt = None
+	@BalTrfMtd.deleter
+	def BalTrfMtd(self):
+		del self._BalTrfMtd
+		self._BalTrfMtd = None
 
 	@property
 	def BalTrfRef(self):
@@ -33,21 +33,21 @@ class BalanceTransfer5(base_types._BaseFieldType):
 		self._BalTrfRef = None
 
 	@property
-	def BalTrfMtd(self):
-		return self._BalTrfMtd
+	def BalTrfFndgLmt(self):
+		return self._BalTrfFndgLmt
 
-	@BalTrfMtd.setter
-	def BalTrfMtd(self, value):
-		self._BalTrfMtd = value if type(value) != base_types.auto else self.make_default("BalTrfMtd")
+	@BalTrfFndgLmt.setter
+	def BalTrfFndgLmt(self, value):
+		self._BalTrfFndgLmt = value if type(value) != base_types.auto else self.make_default("BalTrfFndgLmt")
 
-	@BalTrfMtd.deleter
-	def BalTrfMtd(self):
-		del self._BalTrfMtd
-		self._BalTrfMtd = None
+	@BalTrfFndgLmt.deleter
+	def BalTrfFndgLmt(self):
+		del self._BalTrfFndgLmt
+		self._BalTrfFndgLmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalTrfFndgLmt', type=BalanceTransferFundingLimit1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalTrfRef', type=BalanceTransferReference1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrfMtd', type=SettlementMethod5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfRef', type=BalanceTransferReference1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfFndgLmt', type=BalanceTransferFundingLimit1, min=0, max=1, mutex_group=None, array=False),
 	))
 

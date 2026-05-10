@@ -1,6 +1,6 @@
 from . import base_types
-from .EmploymentDetails1 import EmploymentDetails1
-from .AdditionalInformation15 import AdditionalInformation15
+from ._AdditionalInformation15 import AdditionalInformation15
+from ._EmploymentDetails1 import EmploymentDetails1
 
 class Drawdown3(base_types._BaseFieldType):
 

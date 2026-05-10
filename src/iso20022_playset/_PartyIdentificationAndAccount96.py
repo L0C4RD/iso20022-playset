@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification64 import PartyIdentification64
-from .AccountIdentification26 import AccountIdentification26
+from ._PartyIdentification64 import PartyIdentification64
+from ._AccountIdentification26 import AccountIdentification26
 
 class PartyIdentificationAndAccount96(base_types._BaseFieldType):
 

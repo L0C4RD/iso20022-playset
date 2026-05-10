@@ -1,11 +1,24 @@
 from . import base_types
-from .RegulatoryAuthority2 import RegulatoryAuthority2
-from .StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
-from .RegulatoryReportingType1Code import RegulatoryReportingType1Code
+from ._RegulatoryReportingType1Code import RegulatoryReportingType1Code
+from ._StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
+from ._RegulatoryAuthority2 import RegulatoryAuthority2
 
 class RegulatoryReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_DbtCdtRptgInd", "_Dtls", "_Authrty"]
+	__slots__ = ["_Authrty", "_DbtCdtRptgInd", "_Dtls"]
+	@property
+	def Authrty(self):
+		return self._Authrty
+
+	@Authrty.setter
+	def Authrty(self, value):
+		self._Authrty = value if type(value) != base_types.auto else self.make_default("Authrty")
+
+	@Authrty.deleter
+	def Authrty(self):
+		del self._Authrty
+		self._Authrty = None
+
 	@property
 	def DbtCdtRptgInd(self):
 		return self._DbtCdtRptgInd
@@ -32,22 +45,9 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 		del self._Dtls
 		self._Dtls = None
 
-	@property
-	def Authrty(self):
-		return self._Authrty
-
-	@Authrty.setter
-	def Authrty(self, value):
-		self._Authrty = value if type(value) != base_types.auto else self.make_default("Authrty")
-
-	@Authrty.deleter
-	def Authrty(self):
-		del self._Authrty
-		self._Authrty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Authrty', type=RegulatoryAuthority2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtCdtRptgInd', type=RegulatoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dtls', type=StructuredRegulatoryReporting3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Authrty', type=RegulatoryAuthority2, min=0, max=1, mutex_group=None, array=False),
 	))
 

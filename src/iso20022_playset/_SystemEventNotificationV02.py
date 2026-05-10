@@ -1,5 +1,5 @@
 from . import base_types
-from .Event2 import Event2
+from ._Event2 import Event2
 
 class SystemEventNotificationV02(base_types._BaseFieldType):
 

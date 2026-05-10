@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentTransaction165 import PaymentTransaction165
-from .LoyaltyRequestData3 import LoyaltyRequestData3
+from ._LoyaltyRequestData3 import LoyaltyRequestData3
+from ._PaymentTransaction165 import PaymentTransaction165
 
 class PaymentRequest7(base_types._BaseFieldType):
 

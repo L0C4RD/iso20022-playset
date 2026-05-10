@@ -1,6 +1,6 @@
 from . import base_types
-from .RepairReason14Choice import RepairReason14Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RepairReason14Choice import RepairReason14Choice
 
 class RepairReason13(base_types._BaseFieldType):
 

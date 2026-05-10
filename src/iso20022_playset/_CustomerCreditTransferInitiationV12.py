@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .GroupHeader114 import GroupHeader114
-from .PaymentInstruction44 import PaymentInstruction44
+from ._PaymentInstruction44 import PaymentInstruction44
+from ._SupplementaryData1 import SupplementaryData1
+from ._GroupHeader114 import GroupHeader114
 
 class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtInf", "_SplmtryData", "_GrpHdr"]
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_PmtInf"]
 	@property
-	def PmtInf(self):
-		return self._PmtInf
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@PmtInf.setter
-	def PmtInf(self, value):
-		self._PmtInf = value if type(value) != base_types.auto else self.make_default("PmtInf")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
 
-	@PmtInf.deleter
-	def PmtInf(self):
-		del self._PmtInf
-		self._PmtInf = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class CustomerCreditTransferInitiationV12(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def PmtInf(self):
+		return self._PmtInf
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+	@PmtInf.setter
+	def PmtInf(self, value):
+		self._PmtInf = value if type(value) != base_types.auto else self.make_default("PmtInf")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@PmtInf.deleter
+	def PmtInf(self):
+		del self._PmtInf
+		self._PmtInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtInf', type=PaymentInstruction44, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader114, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtInf', type=PaymentInstruction44, min=1, max=None, mutex_group=None, array=True),
 	))
 

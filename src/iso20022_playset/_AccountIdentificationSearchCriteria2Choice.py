@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AccountIdentification4Choice import AccountIdentification4Choice
+from ._Max35Text import Max35Text
+from ._AccountIdentification4Choice import AccountIdentification4Choice
 
 class AccountIdentificationSearchCriteria2Choice(base_types._BaseFieldType):
 

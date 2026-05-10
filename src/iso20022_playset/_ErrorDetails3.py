@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max500Text import Max500Text
-from .MessageError1Code import MessageError1Code
-from .Max4000Text import Max4000Text
+from ._MessageError1Code import MessageError1Code
+from ._Max35Text import Max35Text
+from ._Max500Text import Max500Text
+from ._Max4000Text import Max4000Text
 
 class ErrorDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_DataElmtInErr", "_Tp", "_Desc", "_Cd", "_OthrTp"]
-	@property
-	def DataElmtInErr(self):
-		return self._DataElmtInErr
-
-	@DataElmtInErr.setter
-	def DataElmtInErr(self, value):
-		self._DataElmtInErr = value if type(value) != base_types.auto else self.make_default("DataElmtInErr")
-
-	@DataElmtInErr.deleter
-	def DataElmtInErr(self):
-		del self._DataElmtInErr
-		self._DataElmtInErr = None
-
+	__slots__ = ["_Tp", "_Cd", "_OthrTp", "_Desc", "_DataElmtInErr"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,19 +19,6 @@ class ErrorDetails3(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
 
 	@property
 	def Cd(self):
@@ -72,11 +46,37 @@ class ErrorDetails3(base_types._BaseFieldType):
 		del self._OthrTp
 		self._OthrTp = None
 
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
+	def DataElmtInErr(self):
+		return self._DataElmtInErr
+
+	@DataElmtInErr.setter
+	def DataElmtInErr(self, value):
+		self._DataElmtInErr = value if type(value) != base_types.auto else self.make_default("DataElmtInErr")
+
+	@DataElmtInErr.deleter
+	def DataElmtInErr(self):
+		del self._DataElmtInErr
+		self._DataElmtInErr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=MessageError1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

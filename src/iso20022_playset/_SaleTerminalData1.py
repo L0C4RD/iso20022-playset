@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AttendanceContext1Code import AttendanceContext1Code
+from ._Max35Text import Max35Text
+from ._AttendanceContext1Code import AttendanceContext1Code
 
 class SaleTerminalData1(base_types._BaseFieldType):
 

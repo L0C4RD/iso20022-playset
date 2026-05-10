@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesSettlementConditionModificationStatusAdviceV10 import SecuritiesSettlementConditionModificationStatusAdviceV10
+from ._SecuritiesSettlementConditionModificationStatusAdviceV10 import SecuritiesSettlementConditionModificationStatusAdviceV10
 
 class SESE_031_001_10():
 

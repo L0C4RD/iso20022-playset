@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorConfigurationUpdateV14 import AcceptorConfigurationUpdateV14
+from ._AcceptorConfigurationUpdateV14 import AcceptorConfigurationUpdateV14
 
 class CATM_003_001_14():
 

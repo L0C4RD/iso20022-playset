@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ReservationSearchCriteria6 import ReservationSearchCriteria6
-from .ReservationReturnCriteria1 import ReservationReturnCriteria1
+from ._Max35Text import Max35Text
+from ._ReservationSearchCriteria6 import ReservationSearchCriteria6
+from ._ReservationReturnCriteria1 import ReservationReturnCriteria1
 
 class ReservationCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrCrit", "_NewQryNm", "_SchCrit"]
-	@property
-	def RtrCrit(self):
-		return self._RtrCrit
-
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
-
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
-
+	__slots__ = ["_NewQryNm", "_RtrCrit", "_SchCrit"]
 	@property
 	def NewQryNm(self):
 		return self._NewQryNm
@@ -31,6 +18,19 @@ class ReservationCriteria7(base_types._BaseFieldType):
 	def NewQryNm(self):
 		del self._NewQryNm
 		self._NewQryNm = None
+
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
 
 	@property
 	def SchCrit(self):
@@ -46,8 +46,8 @@ class ReservationCriteria7(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrCrit', type=ReservationReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=ReservationReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=ReservationSearchCriteria6, min=0, max=None, mutex_group=None, array=True),
 	))
 

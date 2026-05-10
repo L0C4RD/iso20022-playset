@@ -1,5 +1,5 @@
 from . import base_types
-from .Max50Text import Max50Text
+from ._Max50Text import Max50Text
 
 class CompareMax50Text1(base_types._BaseFieldType):
 

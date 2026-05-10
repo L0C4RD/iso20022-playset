@@ -1,6 +1,6 @@
 from . import base_types
-from .ProductCharacteristics1 import ProductCharacteristics1
-from .GenericIdentification4 import GenericIdentification4
+from ._ProductCharacteristics1 import ProductCharacteristics1
+from ._GenericIdentification4 import GenericIdentification4
 
 class ProductCharacteristics1Choice(base_types._BaseFieldType):
 

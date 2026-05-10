@@ -1,27 +1,14 @@
 from . import base_types
-from .QueueTransactionIdentification1 import QueueTransactionIdentification1
-from .LongPaymentIdentification4 import LongPaymentIdentification4
-from .Max35Text import Max35Text
-from .UUIDv4Identifier import UUIDv4Identifier
-from .Max70Text import Max70Text
-from .ShortPaymentIdentification4 import ShortPaymentIdentification4
+from ._QueueTransactionIdentification1 import QueueTransactionIdentification1
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._LongPaymentIdentification4 import LongPaymentIdentification4
+from ._ShortPaymentIdentification4 import ShortPaymentIdentification4
+from ._UUIDv4Identifier import UUIDv4Identifier
 
 class PaymentIdentification8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LngBizId", "_UETR", "_PrtryId", "_QId", "_ShrtBizId", "_TxId"]
-	@property
-	def LngBizId(self):
-		return self._LngBizId
-
-	@LngBizId.setter
-	def LngBizId(self, value):
-		self._LngBizId = value if type(value) != base_types.auto else self.make_default("LngBizId")
-
-	@LngBizId.deleter
-	def LngBizId(self):
-		del self._LngBizId
-		self._LngBizId = None
-
+	__slots__ = ["_UETR", "_ShrtBizId", "_LngBizId", "_PrtryId", "_QId", "_TxId"]
 	@property
 	def UETR(self):
 		return self._UETR
@@ -34,6 +21,32 @@ class PaymentIdentification8Choice(base_types._BaseFieldType):
 	def UETR(self):
 		del self._UETR
 		self._UETR = None
+
+	@property
+	def ShrtBizId(self):
+		return self._ShrtBizId
+
+	@ShrtBizId.setter
+	def ShrtBizId(self, value):
+		self._ShrtBizId = value if type(value) != base_types.auto else self.make_default("ShrtBizId")
+
+	@ShrtBizId.deleter
+	def ShrtBizId(self):
+		del self._ShrtBizId
+		self._ShrtBizId = None
+
+	@property
+	def LngBizId(self):
+		return self._LngBizId
+
+	@LngBizId.setter
+	def LngBizId(self, value):
+		self._LngBizId = value if type(value) != base_types.auto else self.make_default("LngBizId")
+
+	@LngBizId.deleter
+	def LngBizId(self):
+		del self._LngBizId
+		self._LngBizId = None
 
 	@property
 	def PrtryId(self):
@@ -62,19 +75,6 @@ class PaymentIdentification8Choice(base_types._BaseFieldType):
 		self._QId = None
 
 	@property
-	def ShrtBizId(self):
-		return self._ShrtBizId
-
-	@ShrtBizId.setter
-	def ShrtBizId(self, value):
-		self._ShrtBizId = value if type(value) != base_types.auto else self.make_default("ShrtBizId")
-
-	@ShrtBizId.deleter
-	def ShrtBizId(self):
-		del self._ShrtBizId
-		self._ShrtBizId = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -88,11 +88,11 @@ class PaymentIdentification8Choice(base_types._BaseFieldType):
 		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LngBizId', type=LongPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ShrtBizId', type=ShortPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LngBizId', type=LongPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QId', type=QueueTransactionIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ShrtBizId', type=ShortPaymentIdentification4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SubAccount5 import SubAccount5
-from .PartyIdentification132 import PartyIdentification132
+from ._Max35Text import Max35Text
+from ._SubAccount5 import SubAccount5
+from ._PartyIdentification132 import PartyIdentification132
 
 class Account28(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctNm", "_Svcr", "_Dsgnt", "_SubAcctDtls", "_AcctId", "_OwnrId"]
-	@property
-	def AcctNm(self):
-		return self._AcctNm
-
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
-
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
-
+	__slots__ = ["_Svcr", "_Dsgnt", "_AcctId", "_AcctNm", "_OwnrId", "_SubAcctDtls"]
 	@property
 	def Svcr(self):
 		return self._Svcr
@@ -46,19 +33,6 @@ class Account28(base_types._BaseFieldType):
 		self._Dsgnt = None
 
 	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
-
-	@property
 	def AcctId(self):
 		return self._AcctId
 
@@ -70,6 +44,19 @@ class Account28(base_types._BaseFieldType):
 	def AcctId(self):
 		del self._AcctId
 		self._AcctId = None
+
+	@property
+	def AcctNm(self):
+		return self._AcctNm
+
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
+
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
 
 	@property
 	def OwnrId(self):
@@ -84,12 +71,25 @@ class Account28(base_types._BaseFieldType):
 		del self._OwnrId
 		self._OwnrId = None
 
+	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrId', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 	))
 

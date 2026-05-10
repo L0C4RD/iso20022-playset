@@ -1,5 +1,5 @@
 from . import base_types
-from .InterestPaymentStatementV05 import InterestPaymentStatementV05
+from ._InterestPaymentStatementV05 import InterestPaymentStatementV05
 
 class COLR_015_001_05():
 

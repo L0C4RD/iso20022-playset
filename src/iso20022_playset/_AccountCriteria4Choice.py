@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AccountCriteria8 import AccountCriteria8
+from ._Max35Text import Max35Text
+from ._AccountCriteria8 import AccountCriteria8
 
 class AccountCriteria4Choice(base_types._BaseFieldType):
 

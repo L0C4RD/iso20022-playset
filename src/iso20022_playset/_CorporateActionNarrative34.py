@@ -1,22 +1,9 @@
 from . import base_types
-from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class CorporateActionNarrative34(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnDtls", "_CertfctnBrkdwn", "_PtyCtctNrrtv"]
-	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
-
+	__slots__ = ["_CertfctnBrkdwn", "_PtyCtctNrrtv", "_RegnDtls"]
 	@property
 	def CertfctnBrkdwn(self):
 		return self._CertfctnBrkdwn
@@ -43,9 +30,22 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 		del self._PtyCtctNrrtv
 		self._PtyCtctNrrtv = None
 
+	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyCtctNrrtv', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

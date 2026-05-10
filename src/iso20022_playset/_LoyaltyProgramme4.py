@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
 
 class LoyaltyProgramme4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_PtcptId"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Tp", "_PtcptId", "_Id"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -44,9 +31,22 @@ class LoyaltyProgramme4(base_types._BaseFieldType):
 		del self._PtcptId
 		self._PtcptId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtcptId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

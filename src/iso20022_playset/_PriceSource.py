@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PriceSource1Code import PriceSource1Code
+from ._Max35Text import Max35Text
+from ._PriceSource1Code import PriceSource1Code
 
 class PriceSource(base_types._BaseFieldType):
 
-	__slots__ = ["_PricSrc", "_Nrrtv"]
-	@property
-	def PricSrc(self):
-		return self._PricSrc
-
-	@PricSrc.setter
-	def PricSrc(self, value):
-		self._PricSrc = value if type(value) != base_types.auto else self.make_default("PricSrc")
-
-	@PricSrc.deleter
-	def PricSrc(self):
-		del self._PricSrc
-		self._PricSrc = None
-
+	__slots__ = ["_Nrrtv", "_PricSrc"]
 	@property
 	def Nrrtv(self):
 		return self._Nrrtv
@@ -31,8 +18,21 @@ class PriceSource(base_types._BaseFieldType):
 		del self._Nrrtv
 		self._Nrrtv = None
 
+	@property
+	def PricSrc(self):
+		return self._PricSrc
+
+	@PricSrc.setter
+	def PricSrc(self, value):
+		self._PricSrc = value if type(value) != base_types.auto else self.make_default("PricSrc")
+
+	@PricSrc.deleter
+	def PricSrc(self):
+		del self._PricSrc
+		self._PricSrc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricSrc', type=PriceSource1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nrrtv', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricSrc', type=PriceSource1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GeolocationUTMCoordinates1 import GeolocationUTMCoordinates1
-from .GeolocationGeographicCoordinates1 import GeolocationGeographicCoordinates1
+from ._GeolocationUTMCoordinates1 import GeolocationUTMCoordinates1
+from ._GeolocationGeographicCoordinates1 import GeolocationGeographicCoordinates1
 
 class Geolocation1(base_types._BaseFieldType):
 

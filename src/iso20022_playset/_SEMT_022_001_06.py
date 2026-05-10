@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesSettlementTransactionAuditTrailReportV06 import SecuritiesSettlementTransactionAuditTrailReportV06
+from ._SecuritiesSettlementTransactionAuditTrailReportV06 import SecuritiesSettlementTransactionAuditTrailReportV06
 
 class SEMT_022_001_06():
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .DeliveryPlace3Code import DeliveryPlace3Code
-from .Max105Text import Max105Text
-from .NameAndAddress9 import NameAndAddress9
+from ._Max105Text import Max105Text
+from ._DeliveryPlace3Code import DeliveryPlace3Code
+from ._NameAndAddress9 import NameAndAddress9
 
 class AttendanceCard3(base_types._BaseFieldType):
 

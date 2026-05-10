@@ -1,25 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Contact9 import Contact9
-from .CountryCode import CountryCode
-from .Max140Text import Max140Text
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._Max140Text import Max140Text
+from ._CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Contact9 import Contact9
 
 class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfJursdctn", "_CSDLglNm", "_SysId", "_RspnsblPty", "_LEI", "_SysNm"]
+	__slots__ = ["_SysNm", "_CSDLglNm", "_CtryOfJursdctn", "_SysId", "_RspnsblPty", "_LEI"]
 	@property
-	def CtryOfJursdctn(self):
-		return self._CtryOfJursdctn
+	def SysNm(self):
+		return self._SysNm
 
-	@CtryOfJursdctn.setter
-	def CtryOfJursdctn(self, value):
-		self._CtryOfJursdctn = value if type(value) != base_types.auto else self.make_default("CtryOfJursdctn")
+	@SysNm.setter
+	def SysNm(self, value):
+		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
 
-	@CtryOfJursdctn.deleter
-	def CtryOfJursdctn(self):
-		del self._CtryOfJursdctn
-		self._CtryOfJursdctn = None
+	@SysNm.deleter
+	def SysNm(self):
+		del self._SysNm
+		self._SysNm = None
 
 	@property
 	def CSDLglNm(self):
@@ -33,6 +33,19 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 	def CSDLglNm(self):
 		del self._CSDLglNm
 		self._CSDLglNm = None
+
+	@property
+	def CtryOfJursdctn(self):
+		return self._CtryOfJursdctn
+
+	@CtryOfJursdctn.setter
+	def CtryOfJursdctn(self, value):
+		self._CtryOfJursdctn = value if type(value) != base_types.auto else self.make_default("CtryOfJursdctn")
+
+	@CtryOfJursdctn.deleter
+	def CtryOfJursdctn(self):
+		del self._CtryOfJursdctn
+		self._CtryOfJursdctn = None
 
 	@property
 	def SysId(self):
@@ -73,25 +86,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
-	@property
-	def SysNm(self):
-		return self._SysNm
-
-	@SysNm.setter
-	def SysNm(self, value):
-		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
-
-	@SysNm.deleter
-	def SysNm(self):
-		del self._SysNm
-		self._SysNm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CSDLglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfJursdctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPty', type=Contact9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

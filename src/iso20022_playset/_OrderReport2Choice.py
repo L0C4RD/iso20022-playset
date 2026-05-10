@@ -1,6 +1,6 @@
 from . import base_types
-from .NewOrderReport2 import NewOrderReport2
-from .CancelOrderReport1 import CancelOrderReport1
+from ._NewOrderReport2 import NewOrderReport2
+from ._CancelOrderReport1 import CancelOrderReport1
 
 class OrderReport2Choice(base_types._BaseFieldType):
 

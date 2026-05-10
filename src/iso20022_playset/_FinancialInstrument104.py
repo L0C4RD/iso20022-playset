@@ -1,6 +1,6 @@
 from . import base_types
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class FinancialInstrument104(base_types._BaseFieldType):
 

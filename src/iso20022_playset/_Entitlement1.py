@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CashEntitlement1 import CashEntitlement1
-from .SecuritiesEntitlement1 import SecuritiesEntitlement1
-from .PartyIdentification2Choice import PartyIdentification2Choice
+from ._Max35Text import Max35Text
+from ._CashEntitlement1 import CashEntitlement1
+from ._SecuritiesEntitlement1 import SecuritiesEntitlement1
+from ._PartyIdentification2Choice import PartyIdentification2Choice
 
 class Entitlement1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctId", "_AcctOwnrId", "_CshDstrbtnDtls", "_SctiesDstrbtnDtls"]
+	__slots__ = ["_CshDstrbtnDtls", "_AcctOwnrId", "_AcctId", "_SctiesDstrbtnDtls"]
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def CshDstrbtnDtls(self):
+		return self._CshDstrbtnDtls
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+	@CshDstrbtnDtls.setter
+	def CshDstrbtnDtls(self, value):
+		self._CshDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("CshDstrbtnDtls")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@CshDstrbtnDtls.deleter
+	def CshDstrbtnDtls(self):
+		del self._CshDstrbtnDtls
+		self._CshDstrbtnDtls = None
 
 	@property
 	def AcctOwnrId(self):
@@ -34,17 +34,17 @@ class Entitlement1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def CshDstrbtnDtls(self):
-		return self._CshDstrbtnDtls
+	def AcctId(self):
+		return self._AcctId
 
-	@CshDstrbtnDtls.setter
-	def CshDstrbtnDtls(self, value):
-		self._CshDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("CshDstrbtnDtls")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@CshDstrbtnDtls.deleter
-	def CshDstrbtnDtls(self):
-		del self._CshDstrbtnDtls
-		self._CshDstrbtnDtls = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def SctiesDstrbtnDtls(self):
@@ -60,9 +60,9 @@ class Entitlement1(base_types._BaseFieldType):
 		self._SctiesDstrbtnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashEntitlement1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesEntitlement1, min=0, max=None, mutex_group=None, array=True),
 	))
 

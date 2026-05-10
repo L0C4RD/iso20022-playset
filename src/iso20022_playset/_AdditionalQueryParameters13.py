@@ -1,7 +1,7 @@
 from . import base_types
-from .Status19Choice import Status19Choice
-from .Reason19Choice import Reason19Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Status19Choice import Status19Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._Reason19Choice import Reason19Choice
 
 class AdditionalQueryParameters13(base_types._BaseFieldType):
 

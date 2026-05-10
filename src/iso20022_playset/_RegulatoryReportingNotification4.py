@@ -1,38 +1,12 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .TransactionCertificate4 import TransactionCertificate4
-from .Max35Text import Max35Text
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Max35Text import Max35Text
+from ._PartyIdentification272 import PartyIdentification272
+from ._TransactionCertificate4 import TransactionCertificate4
 
 class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnr", "_TxCert", "_AcctSvcr", "_TxNtfctnId"]
-	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
-
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
-
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
-
-	@property
-	def TxCert(self):
-		return self._TxCert
-
-	@TxCert.setter
-	def TxCert(self, value):
-		self._TxCert = value if type(value) != base_types.auto else self.make_default("TxCert")
-
-	@TxCert.deleter
-	def TxCert(self):
-		del self._TxCert
-		self._TxCert = None
-
+	__slots__ = ["_AcctSvcr", "_AcctOwnr", "_TxNtfctnId", "_TxCert"]
 	@property
 	def AcctSvcr(self):
 		return self._AcctSvcr
@@ -47,6 +21,19 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
+	def AcctOwnr(self):
+		return self._AcctOwnr
+
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
+
+	@property
 	def TxNtfctnId(self):
 		return self._TxNtfctnId
 
@@ -59,10 +46,23 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 		del self._TxNtfctnId
 		self._TxNtfctnId = None
 
+	@property
+	def TxCert(self):
+		return self._TxCert
+
+	@TxCert.setter
+	def TxCert(self, value):
+		self._TxCert = value if type(value) != base_types.auto else self.make_default("TxCert")
+
+	@TxCert.deleter
+	def TxCert(self):
+		del self._TxCert
+		self._TxCert = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxCert', type=TransactionCertificate4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxCert', type=TransactionCertificate4, min=1, max=None, mutex_group=None, array=True),
 	))
 

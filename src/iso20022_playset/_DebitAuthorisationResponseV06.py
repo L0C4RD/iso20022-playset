@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CaseAssignment6 import CaseAssignment6
-from .Case6 import Case6
-from .DebitAuthorisationConfirmation2 import DebitAuthorisationConfirmation2
+from ._SupplementaryData1 import SupplementaryData1
+from ._DebitAuthorisationConfirmation2 import DebitAuthorisationConfirmation2
+from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
 
 class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Conf", "_Case", "_Assgnmt"]
+	__slots__ = ["_SplmtryData", "_Assgnmt", "_Conf", "_Case"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,6 +19,19 @@ class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def Assgnmt(self):
+		return self._Assgnmt
+
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
 
 	@property
 	def Conf(self):
@@ -46,23 +59,10 @@ class DebitAuthorisationResponseV06(base_types._BaseFieldType):
 		del self._Case
 		self._Case = None
 
-	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Conf', type=DebitAuthorisationConfirmation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
 	))
 

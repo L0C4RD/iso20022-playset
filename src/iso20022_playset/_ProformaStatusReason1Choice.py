@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .ProformaStatusReason1 import ProformaStatusReason1
+from ._ProformaStatusReason1 import ProformaStatusReason1
+from ._NoReasonCode import NoReasonCode
 
 class ProformaStatusReason1Choice(base_types._BaseFieldType):
 

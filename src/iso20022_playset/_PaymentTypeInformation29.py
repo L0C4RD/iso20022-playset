@@ -1,25 +1,25 @@
 from . import base_types
-from .ServiceLevel8Choice import ServiceLevel8Choice
-from .CategoryPurpose1Choice import CategoryPurpose1Choice
-from .LocalInstrument2Choice import LocalInstrument2Choice
-from .Priority2Code import Priority2Code
-from .SequenceType3Code import SequenceType3Code
+from ._LocalInstrument2Choice import LocalInstrument2Choice
+from ._SequenceType3Code import SequenceType3Code
+from ._ServiceLevel8Choice import ServiceLevel8Choice
+from ._CategoryPurpose1Choice import CategoryPurpose1Choice
+from ._Priority2Code import Priority2Code
 
 class PaymentTypeInformation29(base_types._BaseFieldType):
 
-	__slots__ = ["_CtgyPurp", "_SeqTp", "_LclInstrm", "_SvcLvl", "_InstrPrty"]
+	__slots__ = ["_InstrPrty", "_SeqTp", "_SvcLvl", "_CtgyPurp", "_LclInstrm"]
 	@property
-	def CtgyPurp(self):
-		return self._CtgyPurp
+	def InstrPrty(self):
+		return self._InstrPrty
 
-	@CtgyPurp.setter
-	def CtgyPurp(self, value):
-		self._CtgyPurp = value if type(value) != base_types.auto else self.make_default("CtgyPurp")
+	@InstrPrty.setter
+	def InstrPrty(self, value):
+		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
 
-	@CtgyPurp.deleter
-	def CtgyPurp(self):
-		del self._CtgyPurp
-		self._CtgyPurp = None
+	@InstrPrty.deleter
+	def InstrPrty(self):
+		del self._InstrPrty
+		self._InstrPrty = None
 
 	@property
 	def SeqTp(self):
@@ -35,19 +35,6 @@ class PaymentTypeInformation29(base_types._BaseFieldType):
 		self._SeqTp = None
 
 	@property
-	def LclInstrm(self):
-		return self._LclInstrm
-
-	@LclInstrm.setter
-	def LclInstrm(self, value):
-		self._LclInstrm = value if type(value) != base_types.auto else self.make_default("LclInstrm")
-
-	@LclInstrm.deleter
-	def LclInstrm(self):
-		del self._LclInstrm
-		self._LclInstrm = None
-
-	@property
 	def SvcLvl(self):
 		return self._SvcLvl
 
@@ -61,23 +48,36 @@ class PaymentTypeInformation29(base_types._BaseFieldType):
 		self._SvcLvl = None
 
 	@property
-	def InstrPrty(self):
-		return self._InstrPrty
+	def CtgyPurp(self):
+		return self._CtgyPurp
 
-	@InstrPrty.setter
-	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+	@CtgyPurp.setter
+	def CtgyPurp(self, value):
+		self._CtgyPurp = value if type(value) != base_types.auto else self.make_default("CtgyPurp")
 
-	@InstrPrty.deleter
-	def InstrPrty(self):
-		del self._InstrPrty
-		self._InstrPrty = None
+	@CtgyPurp.deleter
+	def CtgyPurp(self):
+		del self._CtgyPurp
+		self._CtgyPurp = None
+
+	@property
+	def LclInstrm(self):
+		return self._LclInstrm
+
+	@LclInstrm.setter
+	def LclInstrm(self, value):
+		self._LclInstrm = value if type(value) != base_types.auto else self.make_default("LclInstrm")
+
+	@LclInstrm.deleter
+	def LclInstrm(self):
+		del self._LclInstrm
+		self._LclInstrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqTp', type=SequenceType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrPrty', type=Priority2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqTp', type=SequenceType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .PaymentStatusReason1Choice import PaymentStatusReason1Choice
-from .PaymentStatusCode6Choice import PaymentStatusCode6Choice
+from ._PaymentStatusReason1Choice import PaymentStatusReason1Choice
+from ._PaymentStatusCode6Choice import PaymentStatusCode6Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class PaymentStatus6(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTm", "_Rsn", "_Cd"]
-	@property
-	def DtTm(self):
-		return self._DtTm
-
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
-
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
-
+	__slots__ = ["_Rsn", "_Cd", "_DtTm"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -45,9 +32,22 @@ class PaymentStatus6(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def DtTm(self):
+		return self._DtTm
+
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=PaymentStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cd', type=PaymentStatusCode6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

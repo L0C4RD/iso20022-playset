@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectionOrRepairReason40 import RejectionOrRepairReason40
-from .NoReasonCode import NoReasonCode
+from ._RejectionOrRepairReason40 import RejectionOrRepairReason40
+from ._NoReasonCode import NoReasonCode
 
 class RejectionOrRepairStatus45Choice(base_types._BaseFieldType):
 

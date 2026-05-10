@@ -1,10 +1,23 @@
 from . import base_types
-from .UnderlyingContractForDifferenceType3Code import UnderlyingContractForDifferenceType3Code
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._UnderlyingContractForDifferenceType3Code import UnderlyingContractForDifferenceType3Code
 
 class ContractForDifference2(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygTp", "_NtnlCcy2", "_NtnlCcy1"]
+	__slots__ = ["_NtnlCcy1", "_UndrlygTp", "_NtnlCcy2"]
+	@property
+	def NtnlCcy1(self):
+		return self._NtnlCcy1
+
+	@NtnlCcy1.setter
+	def NtnlCcy1(self, value):
+		self._NtnlCcy1 = value if type(value) != base_types.auto else self.make_default("NtnlCcy1")
+
+	@NtnlCcy1.deleter
+	def NtnlCcy1(self):
+		del self._NtnlCcy1
+		self._NtnlCcy1 = None
+
 	@property
 	def UndrlygTp(self):
 		return self._UndrlygTp
@@ -31,22 +44,9 @@ class ContractForDifference2(base_types._BaseFieldType):
 		del self._NtnlCcy2
 		self._NtnlCcy2 = None
 
-	@property
-	def NtnlCcy1(self):
-		return self._NtnlCcy1
-
-	@NtnlCcy1.setter
-	def NtnlCcy1(self, value):
-		self._NtnlCcy1 = value if type(value) != base_types.auto else self.make_default("NtnlCcy1")
-
-	@NtnlCcy1.deleter
-	def NtnlCcy1(self):
-		del self._NtnlCcy1
-		self._NtnlCcy1 = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NtnlCcy1', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygTp', type=UnderlyingContractForDifferenceType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtnlCcy2', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcy1', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SecurityIdentification39 import SecurityIdentification39
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class SecurityDeletionRequestV01(base_types._BaseFieldType):
 

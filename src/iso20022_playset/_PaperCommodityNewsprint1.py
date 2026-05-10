@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassProductType8Code import AssetClassProductType8Code
-from .AssetClassSubProductType36Code import AssetClassSubProductType36Code
+from ._AssetClassProductType8Code import AssetClassProductType8Code
+from ._AssetClassSubProductType36Code import AssetClassSubProductType36Code
 
 class PaperCommodityNewsprint1(base_types._BaseFieldType):
 

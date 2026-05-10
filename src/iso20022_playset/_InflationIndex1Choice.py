@@ -1,23 +1,10 @@
 from . import base_types
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .Max25Text import Max25Text
+from ._Max25Text import Max25Text
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class InflationIndex1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_ISIN"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_ISIN", "_Nm"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -31,8 +18,21 @@ class InflationIndex1Choice(base_types._BaseFieldType):
 		del self._ISIN
 		self._ISIN = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max25Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Nm', type=Max25Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

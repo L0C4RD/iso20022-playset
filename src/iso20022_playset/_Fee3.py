@@ -1,13 +1,39 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ChargeType5Choice import ChargeType5Choice
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .YesNoIndicator import YesNoIndicator
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._YesNoIndicator import YesNoIndicator
+from ._ChargeType5Choice import ChargeType5Choice
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
 
 class Fee3(base_types._BaseFieldType):
 
-	__slots__ = ["_RprdDscntAmt", "_NewComrclAgrmtRefInd", "_ComrclAgrmtRef", "_RprdReqdAmt", "_RprdReqdRate", "_RprdStdAmt", "_Tp", "_RprdStdRate", "_RprdDscntRate"]
+	__slots__ = ["_NewComrclAgrmtRefInd", "_RprdReqdAmt", "_RprdDscntAmt", "_RprdStdRate", "_ComrclAgrmtRef", "_Tp", "_RprdReqdRate", "_RprdStdAmt", "_RprdDscntRate"]
+	@property
+	def NewComrclAgrmtRefInd(self):
+		return self._NewComrclAgrmtRefInd
+
+	@NewComrclAgrmtRefInd.setter
+	def NewComrclAgrmtRefInd(self, value):
+		self._NewComrclAgrmtRefInd = value if type(value) != base_types.auto else self.make_default("NewComrclAgrmtRefInd")
+
+	@NewComrclAgrmtRefInd.deleter
+	def NewComrclAgrmtRefInd(self):
+		del self._NewComrclAgrmtRefInd
+		self._NewComrclAgrmtRefInd = None
+
+	@property
+	def RprdReqdAmt(self):
+		return self._RprdReqdAmt
+
+	@RprdReqdAmt.setter
+	def RprdReqdAmt(self, value):
+		self._RprdReqdAmt = value if type(value) != base_types.auto else self.make_default("RprdReqdAmt")
+
+	@RprdReqdAmt.deleter
+	def RprdReqdAmt(self):
+		del self._RprdReqdAmt
+		self._RprdReqdAmt = None
+
 	@property
 	def RprdDscntAmt(self):
 		return self._RprdDscntAmt
@@ -22,17 +48,17 @@ class Fee3(base_types._BaseFieldType):
 		self._RprdDscntAmt = None
 
 	@property
-	def NewComrclAgrmtRefInd(self):
-		return self._NewComrclAgrmtRefInd
+	def RprdStdRate(self):
+		return self._RprdStdRate
 
-	@NewComrclAgrmtRefInd.setter
-	def NewComrclAgrmtRefInd(self, value):
-		self._NewComrclAgrmtRefInd = value if type(value) != base_types.auto else self.make_default("NewComrclAgrmtRefInd")
+	@RprdStdRate.setter
+	def RprdStdRate(self, value):
+		self._RprdStdRate = value if type(value) != base_types.auto else self.make_default("RprdStdRate")
 
-	@NewComrclAgrmtRefInd.deleter
-	def NewComrclAgrmtRefInd(self):
-		del self._NewComrclAgrmtRefInd
-		self._NewComrclAgrmtRefInd = None
+	@RprdStdRate.deleter
+	def RprdStdRate(self):
+		del self._RprdStdRate
+		self._RprdStdRate = None
 
 	@property
 	def ComrclAgrmtRef(self):
@@ -48,17 +74,17 @@ class Fee3(base_types._BaseFieldType):
 		self._ComrclAgrmtRef = None
 
 	@property
-	def RprdReqdAmt(self):
-		return self._RprdReqdAmt
+	def Tp(self):
+		return self._Tp
 
-	@RprdReqdAmt.setter
-	def RprdReqdAmt(self, value):
-		self._RprdReqdAmt = value if type(value) != base_types.auto else self.make_default("RprdReqdAmt")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@RprdReqdAmt.deleter
-	def RprdReqdAmt(self):
-		del self._RprdReqdAmt
-		self._RprdReqdAmt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def RprdReqdRate(self):
@@ -87,32 +113,6 @@ class Fee3(base_types._BaseFieldType):
 		self._RprdStdAmt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def RprdStdRate(self):
-		return self._RprdStdRate
-
-	@RprdStdRate.setter
-	def RprdStdRate(self, value):
-		self._RprdStdRate = value if type(value) != base_types.auto else self.make_default("RprdStdRate")
-
-	@RprdStdRate.deleter
-	def RprdStdRate(self):
-		del self._RprdStdRate
-		self._RprdStdRate = None
-
-	@property
 	def RprdDscntRate(self):
 		return self._RprdDscntRate
 
@@ -126,14 +126,14 @@ class Fee3(base_types._BaseFieldType):
 		self._RprdDscntRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RprdDscntAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewComrclAgrmtRefInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdReqdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprdDscntAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprdStdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ChargeType5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdReqdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdStdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ChargeType5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RprdStdRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdDscntRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

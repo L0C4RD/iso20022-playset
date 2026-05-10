@@ -1,7 +1,7 @@
 from . import base_types
-from .ContactDetails2 import ContactDetails2
-from .PostalAddress6 import PostalAddress6
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._PostalAddress6 import PostalAddress6
+from ._ContactDetails2 import ContactDetails2
 
 class TaxOrganisationIdentification1(base_types._BaseFieldType):
 

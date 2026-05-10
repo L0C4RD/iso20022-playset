@@ -1,28 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .TerminalManagementAction3Code import TerminalManagementAction3Code
-from .PositiveNumber import PositiveNumber
-from .Max8Text import Max8Text
-from .Max10000Binary import Max10000Binary
-from .NetworkParameters8 import NetworkParameters8
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._PositiveNumber import PositiveNumber
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
+from ._NetworkParameters8 import NetworkParameters8
+from ._Max8Text import Max8Text
+from ._Max10000Binary import Max10000Binary
 
 class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_OthrParams", "_Prxy", "_OthrParamsLngth", "_ParamFrmtIdr", "_OffsetStart", "_MrchntId", "_OffsetEnd", "_Vrsn"]
-	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
+	__slots__ = ["_OthrParams", "_OthrParamsLngth", "_Vrsn", "_OffsetStart", "_ParamFrmtIdr", "_OffsetEnd", "_Prxy", "_MrchntId", "_ActnTp"]
 	@property
 	def OthrParams(self):
 		return self._OthrParams
@@ -35,19 +22,6 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 	def OthrParams(self):
 		del self._OthrParams
 		self._OthrParams = None
-
-	@property
-	def Prxy(self):
-		return self._Prxy
-
-	@Prxy.setter
-	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
-
-	@Prxy.deleter
-	def Prxy(self):
-		del self._Prxy
-		self._Prxy = None
 
 	@property
 	def OthrParamsLngth(self):
@@ -63,17 +37,17 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OthrParamsLngth = None
 
 	@property
-	def ParamFrmtIdr(self):
-		return self._ParamFrmtIdr
+	def Vrsn(self):
+		return self._Vrsn
 
-	@ParamFrmtIdr.setter
-	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != base_types.auto else self.make_default("ParamFrmtIdr")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
-	@ParamFrmtIdr.deleter
-	def ParamFrmtIdr(self):
-		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def OffsetStart(self):
@@ -89,17 +63,17 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OffsetStart = None
 
 	@property
-	def MrchntId(self):
-		return self._MrchntId
+	def ParamFrmtIdr(self):
+		return self._ParamFrmtIdr
 
-	@MrchntId.setter
-	def MrchntId(self, value):
-		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+	@ParamFrmtIdr.setter
+	def ParamFrmtIdr(self, value):
+		self._ParamFrmtIdr = value if type(value) != base_types.auto else self.make_default("ParamFrmtIdr")
 
-	@MrchntId.deleter
-	def MrchntId(self):
-		del self._MrchntId
-		self._MrchntId = None
+	@ParamFrmtIdr.deleter
+	def ParamFrmtIdr(self):
+		del self._ParamFrmtIdr
+		self._ParamFrmtIdr = None
 
 	@property
 	def OffsetEnd(self):
@@ -115,27 +89,53 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		self._OffsetEnd = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def Prxy(self):
+		return self._Prxy
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+	@Prxy.setter
+	def Prxy(self, value):
+		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Prxy.deleter
+	def Prxy(self):
+		del self._Prxy
+		self._Prxy = None
+
+	@property
+	def MrchntId(self):
+		return self._MrchntId
+
+	@MrchntId.setter
+	def MrchntId(self, value):
+		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+
+	@MrchntId.deleter
+	def MrchntId(self):
+		del self._MrchntId
+		self._MrchntId = None
+
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrParams', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prxy', type=NetworkParameters8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrParamsLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ParamFrmtIdr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prxy', type=NetworkParameters8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

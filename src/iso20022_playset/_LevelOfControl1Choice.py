@@ -1,6 +1,6 @@
 from . import base_types
-from .LevelOfControl1Code import LevelOfControl1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._LevelOfControl1Code import LevelOfControl1Code
 
 class LevelOfControl1Choice(base_types._BaseFieldType):
 

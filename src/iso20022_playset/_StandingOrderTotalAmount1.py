@@ -1,21 +1,21 @@
 from . import base_types
-from .TotalAmountAndCurrency1 import TotalAmountAndCurrency1
+from ._TotalAmountAndCurrency1 import TotalAmountAndCurrency1
 
 class StandingOrderTotalAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPrdfndOrdr", "_SetPrdfndOrdr", "_SetStgOrdr", "_PdgStgOrdr"]
+	__slots__ = ["_PdgStgOrdr", "_SetPrdfndOrdr", "_SetStgOrdr", "_PdgPrdfndOrdr"]
 	@property
-	def PdgPrdfndOrdr(self):
-		return self._PdgPrdfndOrdr
+	def PdgStgOrdr(self):
+		return self._PdgStgOrdr
 
-	@PdgPrdfndOrdr.setter
-	def PdgPrdfndOrdr(self, value):
-		self._PdgPrdfndOrdr = value if type(value) != base_types.auto else self.make_default("PdgPrdfndOrdr")
+	@PdgStgOrdr.setter
+	def PdgStgOrdr(self, value):
+		self._PdgStgOrdr = value if type(value) != base_types.auto else self.make_default("PdgStgOrdr")
 
-	@PdgPrdfndOrdr.deleter
-	def PdgPrdfndOrdr(self):
-		del self._PdgPrdfndOrdr
-		self._PdgPrdfndOrdr = None
+	@PdgStgOrdr.deleter
+	def PdgStgOrdr(self):
+		del self._PdgStgOrdr
+		self._PdgStgOrdr = None
 
 	@property
 	def SetPrdfndOrdr(self):
@@ -44,22 +44,22 @@ class StandingOrderTotalAmount1(base_types._BaseFieldType):
 		self._SetStgOrdr = None
 
 	@property
-	def PdgStgOrdr(self):
-		return self._PdgStgOrdr
+	def PdgPrdfndOrdr(self):
+		return self._PdgPrdfndOrdr
 
-	@PdgStgOrdr.setter
-	def PdgStgOrdr(self, value):
-		self._PdgStgOrdr = value if type(value) != base_types.auto else self.make_default("PdgStgOrdr")
+	@PdgPrdfndOrdr.setter
+	def PdgPrdfndOrdr(self, value):
+		self._PdgPrdfndOrdr = value if type(value) != base_types.auto else self.make_default("PdgPrdfndOrdr")
 
-	@PdgStgOrdr.deleter
-	def PdgStgOrdr(self):
-		del self._PdgStgOrdr
-		self._PdgStgOrdr = None
+	@PdgPrdfndOrdr.deleter
+	def PdgPrdfndOrdr(self):
+		del self._PdgPrdfndOrdr
+		self._PdgPrdfndOrdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdgPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SetPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SetStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 	))
 

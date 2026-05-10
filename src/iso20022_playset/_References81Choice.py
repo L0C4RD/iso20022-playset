@@ -1,10 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UTIIdentifier import UTIIdentifier
+from ._Max35Text import Max35Text
+from ._UTIIdentifier import UTIIdentifier
 
 class References81Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcrTxId", "_UnqTxIdr", "_TradId", "_MktInfrstrctrTxId", "_PoolId", "_CtrPtyMktInfrstrctrTxId", "_SctiesSttlmTxId", "_OthrTxId", "_IntraBalMvmntId", "_CmonId", "_IntraPosMvmntId"]
+	__slots__ = ["_AcctSvcrTxId", "_MktInfrstrctrTxId", "_IntraPosMvmntId", "_CmonId", "_CtrPtyMktInfrstrctrTxId", "_OthrTxId", "_UnqTxIdr", "_IntraBalMvmntId", "_SctiesSttlmTxId", "_TradId", "_PoolId"]
 	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
@@ -17,32 +17,6 @@ class References81Choice(base_types._BaseFieldType):
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
-
-	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
-
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
-
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
-
-	@property
-	def TradId(self):
-		return self._TradId
-
-	@TradId.setter
-	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
-
-	@TradId.deleter
-	def TradId(self):
-		del self._TradId
-		self._TradId = None
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -58,69 +32,17 @@ class References81Choice(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def PoolId(self):
-		return self._PoolId
+	def IntraPosMvmntId(self):
+		return self._IntraPosMvmntId
 
-	@PoolId.setter
-	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+	@IntraPosMvmntId.setter
+	def IntraPosMvmntId(self, value):
+		self._IntraPosMvmntId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntId")
 
-	@PoolId.deleter
-	def PoolId(self):
-		del self._PoolId
-		self._PoolId = None
-
-	@property
-	def CtrPtyMktInfrstrctrTxId(self):
-		return self._CtrPtyMktInfrstrctrTxId
-
-	@CtrPtyMktInfrstrctrTxId.setter
-	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
-
-	@CtrPtyMktInfrstrctrTxId.deleter
-	def CtrPtyMktInfrstrctrTxId(self):
-		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
-
-	@property
-	def SctiesSttlmTxId(self):
-		return self._SctiesSttlmTxId
-
-	@SctiesSttlmTxId.setter
-	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
-
-	@SctiesSttlmTxId.deleter
-	def SctiesSttlmTxId(self):
-		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
-
-	@property
-	def OthrTxId(self):
-		return self._OthrTxId
-
-	@OthrTxId.setter
-	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
-
-	@OthrTxId.deleter
-	def OthrTxId(self):
-		del self._OthrTxId
-		self._OthrTxId = None
-
-	@property
-	def IntraBalMvmntId(self):
-		return self._IntraBalMvmntId
-
-	@IntraBalMvmntId.setter
-	def IntraBalMvmntId(self, value):
-		self._IntraBalMvmntId = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntId")
-
-	@IntraBalMvmntId.deleter
-	def IntraBalMvmntId(self):
-		del self._IntraBalMvmntId
-		self._IntraBalMvmntId = None
+	@IntraPosMvmntId.deleter
+	def IntraPosMvmntId(self):
+		del self._IntraPosMvmntId
+		self._IntraPosMvmntId = None
 
 	@property
 	def CmonId(self):
@@ -136,29 +58,107 @@ class References81Choice(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def IntraPosMvmntId(self):
-		return self._IntraPosMvmntId
+	def CtrPtyMktInfrstrctrTxId(self):
+		return self._CtrPtyMktInfrstrctrTxId
 
-	@IntraPosMvmntId.setter
-	def IntraPosMvmntId(self, value):
-		self._IntraPosMvmntId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntId")
+	@CtrPtyMktInfrstrctrTxId.setter
+	def CtrPtyMktInfrstrctrTxId(self, value):
+		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
 
-	@IntraPosMvmntId.deleter
-	def IntraPosMvmntId(self):
-		del self._IntraPosMvmntId
-		self._IntraPosMvmntId = None
+	@CtrPtyMktInfrstrctrTxId.deleter
+	def CtrPtyMktInfrstrctrTxId(self):
+		del self._CtrPtyMktInfrstrctrTxId
+		self._CtrPtyMktInfrstrctrTxId = None
+
+	@property
+	def OthrTxId(self):
+		return self._OthrTxId
+
+	@OthrTxId.setter
+	def OthrTxId(self, value):
+		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
+
+	@OthrTxId.deleter
+	def OthrTxId(self):
+		del self._OthrTxId
+		self._OthrTxId = None
+
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
+	@property
+	def IntraBalMvmntId(self):
+		return self._IntraBalMvmntId
+
+	@IntraBalMvmntId.setter
+	def IntraBalMvmntId(self, value):
+		self._IntraBalMvmntId = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntId")
+
+	@IntraBalMvmntId.deleter
+	def IntraBalMvmntId(self):
+		del self._IntraBalMvmntId
+		self._IntraBalMvmntId = None
+
+	@property
+	def SctiesSttlmTxId(self):
+		return self._SctiesSttlmTxId
+
+	@SctiesSttlmTxId.setter
+	def SctiesSttlmTxId(self, value):
+		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+
+	@SctiesSttlmTxId.deleter
+	def SctiesSttlmTxId(self):
+		del self._SctiesSttlmTxId
+		self._SctiesSttlmTxId = None
+
+	@property
+	def TradId(self):
+		return self._TradId
+
+	@TradId.setter
+	def TradId(self, value):
+		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+
+	@TradId.deleter
+	def TradId(self):
+		del self._TradId
+		self._TradId = None
+
+	@property
+	def PoolId(self):
+		return self._PoolId
+
+	@PoolId.setter
+	def PoolId(self, value):
+		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+
+	@PoolId.deleter
+	def PoolId(self):
+		del self._PoolId
+		self._PoolId = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SctiesSttlmTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OthrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntraBalMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntraPosMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntraBalMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesSttlmTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,27 +1,14 @@
 from . import base_types
-from .PartyIdentification139 import PartyIdentification139
-from .ChargeBearer1Code import ChargeBearer1Code
-from .ChargeType6Choice import ChargeType6Choice
-from .ChargeBasis2Choice import ChargeBasis2Choice
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
+from ._ChargeBasis2Choice import ChargeBasis2Choice
+from ._PartyIdentification139 import PartyIdentification139
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ChargeBearer1Code import ChargeBearer1Code
+from ._ChargeType6Choice import ChargeType6Choice
+from ._ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
 
 class Fee7(base_types._BaseFieldType):
 
-	__slots__ = ["_Bsis", "_RcptId", "_Amt", "_Tp", "_DscntDtls", "_ChrgBr"]
-	@property
-	def Bsis(self):
-		return self._Bsis
-
-	@Bsis.setter
-	def Bsis(self, value):
-		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
-
-	@Bsis.deleter
-	def Bsis(self):
-		del self._Bsis
-		self._Bsis = None
-
+	__slots__ = ["_RcptId", "_DscntDtls", "_Bsis", "_Amt", "_Tp", "_ChrgBr"]
 	@property
 	def RcptId(self):
 		return self._RcptId
@@ -34,6 +21,32 @@ class Fee7(base_types._BaseFieldType):
 	def RcptId(self):
 		del self._RcptId
 		self._RcptId = None
+
+	@property
+	def DscntDtls(self):
+		return self._DscntDtls
+
+	@DscntDtls.setter
+	def DscntDtls(self, value):
+		self._DscntDtls = value if type(value) != base_types.auto else self.make_default("DscntDtls")
+
+	@DscntDtls.deleter
+	def DscntDtls(self):
+		del self._DscntDtls
+		self._DscntDtls = None
+
+	@property
+	def Bsis(self):
+		return self._Bsis
+
+	@Bsis.setter
+	def Bsis(self, value):
+		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
+
+	@Bsis.deleter
+	def Bsis(self):
+		del self._Bsis
+		self._Bsis = None
 
 	@property
 	def Amt(self):
@@ -62,19 +75,6 @@ class Fee7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def DscntDtls(self):
-		return self._DscntDtls
-
-	@DscntDtls.setter
-	def DscntDtls(self, value):
-		self._DscntDtls = value if type(value) != base_types.auto else self.make_default("DscntDtls")
-
-	@DscntDtls.deleter
-	def DscntDtls(self):
-		del self._DscntDtls
-		self._DscntDtls = None
-
-	@property
 	def ChrgBr(self):
 		return self._ChrgBr
 
@@ -88,11 +88,11 @@ class Fee7(base_types._BaseFieldType):
 		self._ChrgBr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Bsis', type=ChargeBasis2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntDtls', type=ChargeOrCommissionDiscount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bsis', type=ChargeBasis2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ChargeType6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscntDtls', type=ChargeOrCommissionDiscount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChrgBr', type=ChargeBearer1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

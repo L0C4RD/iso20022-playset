@@ -1,35 +1,22 @@
 from . import base_types
-from .SecuritiesQuantityOrAmount6Choice import SecuritiesQuantityOrAmount6Choice
-from .FractionDispositionType28Choice import FractionDispositionType28Choice
-from .CorporateActionPrice88 import CorporateActionPrice88
-from .CorporateActionRate127 import CorporateActionRate127
-from .SecurityIdentification19 import SecurityIdentification19
-from .Max25Text import Max25Text
-from .CorporateActionOption40Choice import CorporateActionOption40Choice
-from .OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
-from .CorporateActionNarrative32 import CorporateActionNarrative32
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .OptionNumber1Choice import OptionNumber1Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .YesNoIndicator import YesNoIndicator
-from .CorporateActionChangeTypeFormat6Choice import CorporateActionChangeTypeFormat6Choice
+from ._FractionDispositionType28Choice import FractionDispositionType28Choice
+from ._CorporateActionOption40Choice import CorporateActionOption40Choice
+from ._CorporateActionNarrative32 import CorporateActionNarrative32
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._CorporateActionChangeTypeFormat6Choice import CorporateActionChangeTypeFormat6Choice
+from ._Max25Text import Max25Text
+from ._CorporateActionRate127 import CorporateActionRate127
+from ._OptionNumber1Choice import OptionNumber1Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._CorporateActionPrice88 import CorporateActionPrice88
+from ._OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
+from ._SecuritiesQuantityOrAmount6Choice import SecuritiesQuantityOrAmount6Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._YesNoIndicator import YesNoIndicator
 
 class CorporateActionOption237(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnFeatrs", "_AddtlInf", "_SctyId", "_ChngTp", "_ElgblForCollInd", "_SctiesQtyOrInstdAmt", "_PricDtls", "_OptnNb", "_SlctnDealrFeeInd", "_FrctnDspstn", "_CcyOptn", "_RateAndAmtDtls", "_OptnTp", "_CcyToSell", "_ShrhldrNb", "_ExctnReqdDtTm", "_CcyToBuy"]
-	@property
-	def OptnFeatrs(self):
-		return self._OptnFeatrs
-
-	@OptnFeatrs.setter
-	def OptnFeatrs(self, value):
-		self._OptnFeatrs = value if type(value) != base_types.auto else self.make_default("OptnFeatrs")
-
-	@OptnFeatrs.deleter
-	def OptnFeatrs(self):
-		del self._OptnFeatrs
-		self._OptnFeatrs = None
-
+	__slots__ = ["_AddtlInf", "_RateAndAmtDtls", "_CcyOptn", "_ChngTp", "_FrctnDspstn", "_SlctnDealrFeeInd", "_OptnNb", "_OptnTp", "_ShrhldrNb", "_OptnFeatrs", "_ElgblForCollInd", "_CcyToSell", "_SctiesQtyOrInstdAmt", "_PricDtls", "_CcyToBuy", "_SctyId", "_ExctnReqdDtTm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -44,17 +31,30 @@ class CorporateActionOption237(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def SctyId(self):
-		return self._SctyId
+	def RateAndAmtDtls(self):
+		return self._RateAndAmtDtls
 
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+	@RateAndAmtDtls.setter
+	def RateAndAmtDtls(self, value):
+		self._RateAndAmtDtls = value if type(value) != base_types.auto else self.make_default("RateAndAmtDtls")
 
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
+	@RateAndAmtDtls.deleter
+	def RateAndAmtDtls(self):
+		del self._RateAndAmtDtls
+		self._RateAndAmtDtls = None
+
+	@property
+	def CcyOptn(self):
+		return self._CcyOptn
+
+	@CcyOptn.setter
+	def CcyOptn(self, value):
+		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
+
+	@CcyOptn.deleter
+	def CcyOptn(self):
+		del self._CcyOptn
+		self._CcyOptn = None
 
 	@property
 	def ChngTp(self):
@@ -70,6 +70,84 @@ class CorporateActionOption237(base_types._BaseFieldType):
 		self._ChngTp = None
 
 	@property
+	def FrctnDspstn(self):
+		return self._FrctnDspstn
+
+	@FrctnDspstn.setter
+	def FrctnDspstn(self, value):
+		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+
+	@FrctnDspstn.deleter
+	def FrctnDspstn(self):
+		del self._FrctnDspstn
+		self._FrctnDspstn = None
+
+	@property
+	def SlctnDealrFeeInd(self):
+		return self._SlctnDealrFeeInd
+
+	@SlctnDealrFeeInd.setter
+	def SlctnDealrFeeInd(self, value):
+		self._SlctnDealrFeeInd = value if type(value) != base_types.auto else self.make_default("SlctnDealrFeeInd")
+
+	@SlctnDealrFeeInd.deleter
+	def SlctnDealrFeeInd(self):
+		del self._SlctnDealrFeeInd
+		self._SlctnDealrFeeInd = None
+
+	@property
+	def OptnNb(self):
+		return self._OptnNb
+
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
+
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
+	def ShrhldrNb(self):
+		return self._ShrhldrNb
+
+	@ShrhldrNb.setter
+	def ShrhldrNb(self, value):
+		self._ShrhldrNb = value if type(value) != base_types.auto else self.make_default("ShrhldrNb")
+
+	@ShrhldrNb.deleter
+	def ShrhldrNb(self):
+		del self._ShrhldrNb
+		self._ShrhldrNb = None
+
+	@property
+	def OptnFeatrs(self):
+		return self._OptnFeatrs
+
+	@OptnFeatrs.setter
+	def OptnFeatrs(self, value):
+		self._OptnFeatrs = value if type(value) != base_types.auto else self.make_default("OptnFeatrs")
+
+	@OptnFeatrs.deleter
+	def OptnFeatrs(self):
+		del self._OptnFeatrs
+		self._OptnFeatrs = None
+
+	@property
 	def ElgblForCollInd(self):
 		return self._ElgblForCollInd
 
@@ -81,6 +159,19 @@ class CorporateActionOption237(base_types._BaseFieldType):
 	def ElgblForCollInd(self):
 		del self._ElgblForCollInd
 		self._ElgblForCollInd = None
+
+	@property
+	def CcyToSell(self):
+		return self._CcyToSell
+
+	@CcyToSell.setter
+	def CcyToSell(self, value):
+		self._CcyToSell = value if type(value) != base_types.auto else self.make_default("CcyToSell")
+
+	@CcyToSell.deleter
+	def CcyToSell(self):
+		del self._CcyToSell
+		self._CcyToSell = None
 
 	@property
 	def SctiesQtyOrInstdAmt(self):
@@ -109,108 +200,30 @@ class CorporateActionOption237(base_types._BaseFieldType):
 		self._PricDtls = None
 
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def CcyToBuy(self):
+		return self._CcyToBuy
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+	@CcyToBuy.setter
+	def CcyToBuy(self, value):
+		self._CcyToBuy = value if type(value) != base_types.auto else self.make_default("CcyToBuy")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
-
-	@property
-	def SlctnDealrFeeInd(self):
-		return self._SlctnDealrFeeInd
-
-	@SlctnDealrFeeInd.setter
-	def SlctnDealrFeeInd(self, value):
-		self._SlctnDealrFeeInd = value if type(value) != base_types.auto else self.make_default("SlctnDealrFeeInd")
-
-	@SlctnDealrFeeInd.deleter
-	def SlctnDealrFeeInd(self):
-		del self._SlctnDealrFeeInd
-		self._SlctnDealrFeeInd = None
+	@CcyToBuy.deleter
+	def CcyToBuy(self):
+		del self._CcyToBuy
+		self._CcyToBuy = None
 
 	@property
-	def FrctnDspstn(self):
-		return self._FrctnDspstn
+	def SctyId(self):
+		return self._SctyId
 
-	@FrctnDspstn.setter
-	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
 
-	@FrctnDspstn.deleter
-	def FrctnDspstn(self):
-		del self._FrctnDspstn
-		self._FrctnDspstn = None
-
-	@property
-	def CcyOptn(self):
-		return self._CcyOptn
-
-	@CcyOptn.setter
-	def CcyOptn(self, value):
-		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
-
-	@CcyOptn.deleter
-	def CcyOptn(self):
-		del self._CcyOptn
-		self._CcyOptn = None
-
-	@property
-	def RateAndAmtDtls(self):
-		return self._RateAndAmtDtls
-
-	@RateAndAmtDtls.setter
-	def RateAndAmtDtls(self, value):
-		self._RateAndAmtDtls = value if type(value) != base_types.auto else self.make_default("RateAndAmtDtls")
-
-	@RateAndAmtDtls.deleter
-	def RateAndAmtDtls(self):
-		del self._RateAndAmtDtls
-		self._RateAndAmtDtls = None
-
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
-	@property
-	def CcyToSell(self):
-		return self._CcyToSell
-
-	@CcyToSell.setter
-	def CcyToSell(self, value):
-		self._CcyToSell = value if type(value) != base_types.auto else self.make_default("CcyToSell")
-
-	@CcyToSell.deleter
-	def CcyToSell(self):
-		del self._CcyToSell
-		self._CcyToSell = None
-
-	@property
-	def ShrhldrNb(self):
-		return self._ShrhldrNb
-
-	@ShrhldrNb.setter
-	def ShrhldrNb(self, value):
-		self._ShrhldrNb = value if type(value) != base_types.auto else self.make_default("ShrhldrNb")
-
-	@ShrhldrNb.deleter
-	def ShrhldrNb(self):
-		del self._ShrhldrNb
-		self._ShrhldrNb = None
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	@property
 	def ExctnReqdDtTm(self):
@@ -225,36 +238,23 @@ class CorporateActionOption237(base_types._BaseFieldType):
 		del self._ExctnReqdDtTm
 		self._ExctnReqdDtTm = None
 
-	@property
-	def CcyToBuy(self):
-		return self._CcyToBuy
-
-	@CcyToBuy.setter
-	def CcyToBuy(self, value):
-		self._CcyToBuy = value if type(value) != base_types.auto else self.make_default("CcyToBuy")
-
-	@CcyToBuy.deleter
-	def CcyToBuy(self):
-		del self._CcyToBuy
-		self._CcyToBuy = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnFeatrs', type=OptionFeaturesFormat25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative32, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateAndAmtDtls', type=CorporateActionRate127, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChngTp', type=CorporateActionChangeTypeFormat6Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType28Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption40Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrhldrNb', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnFeatrs', type=OptionFeaturesFormat25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElgblForCollInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyToSell', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQtyOrInstdAmt', type=SecuritiesQuantityOrAmount6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice88, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType28Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateAndAmtDtls', type=CorporateActionRate127, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption40Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyToSell', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrhldrNb', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctnReqdDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyToBuy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctnReqdDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

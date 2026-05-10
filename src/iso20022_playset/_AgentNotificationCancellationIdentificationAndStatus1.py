@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .NotificationCancellationRequestStatus2Choice import NotificationCancellationRequestStatus2Choice
+from ._Max35Text import Max35Text
+from ._NotificationCancellationRequestStatus2Choice import NotificationCancellationRequestStatus2Choice
+from ._ISODateTime import ISODateTime
 
 class AgentNotificationCancellationIdentificationAndStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CreDtTm", "_Sts"]
+	__slots__ = ["_Sts", "_Id", "_CreDtTm"]
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class AgentNotificationCancellationIdentificationAndStatus1(base_types._BaseFiel
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Sts', type=NotificationCancellationRequestStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=NotificationCancellationRequestStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

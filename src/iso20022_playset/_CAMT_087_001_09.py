@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestToModifyPaymentV09 import RequestToModifyPaymentV09
+from ._RequestToModifyPaymentV09 import RequestToModifyPaymentV09
 
 class CAMT_087_001_09():
 

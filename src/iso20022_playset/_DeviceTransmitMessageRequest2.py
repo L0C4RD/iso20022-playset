@@ -1,7 +1,7 @@
 from . import base_types
-from .Number import Number
-from .Max100KBinary import Max100KBinary
-from .NetworkParameters7 import NetworkParameters7
+from ._NetworkParameters7 import NetworkParameters7
+from ._Number import Number
+from ._Max100KBinary import Max100KBinary
 
 class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .BatchManagementInitiationV03 import BatchManagementInitiationV03
+from ._BatchManagementInitiationV03 import BatchManagementInitiationV03
 
 class CAAD_001_001_03():
 

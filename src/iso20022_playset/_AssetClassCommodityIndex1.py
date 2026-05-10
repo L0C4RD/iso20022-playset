@@ -1,5 +1,5 @@
 from . import base_types
-from .AssetClassProductType16Code import AssetClassProductType16Code
+from ._AssetClassProductType16Code import AssetClassProductType16Code
 
 class AssetClassCommodityIndex1(base_types._BaseFieldType):
 

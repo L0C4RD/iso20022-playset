@@ -1,5 +1,5 @@
 from . import base_types
-from .PaymentStatusCustomerTrackerReportV03 import PaymentStatusCustomerTrackerReportV03
+from ._PaymentStatusCustomerTrackerReportV03 import PaymentStatusCustomerTrackerReportV03
 
 class TRCK_004_001_03():
 

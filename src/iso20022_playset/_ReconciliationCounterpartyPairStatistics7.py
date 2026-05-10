@@ -1,11 +1,24 @@
 from . import base_types
-from .Number import Number
-from .ReconciliationReport15 import ReconciliationReport15
-from .CounterpartyData91 import CounterpartyData91
+from ._ReconciliationReport15 import ReconciliationReport15
+from ._CounterpartyData91 import CounterpartyData91
+from ._Number import Number
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxs", "_RcncltnRpt", "_CtrPtyId"]
+	__slots__ = ["_CtrPtyId", "_TtlNbOfTxs", "_RcncltnRpt"]
+	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
+
 	@property
 	def TtlNbOfTxs(self):
 		return self._TtlNbOfTxs
@@ -32,22 +45,9 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 		del self._RcncltnRpt
 		self._RcncltnRpt = None
 
-	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
-
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
-
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport15, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),
 	))
 

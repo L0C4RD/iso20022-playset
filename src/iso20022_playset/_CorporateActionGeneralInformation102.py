@@ -1,6 +1,6 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .CorporateActionNarrative4Choice import CorporateActionNarrative4Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._CorporateActionNarrative4Choice import CorporateActionNarrative4Choice
 
 class CorporateActionGeneralInformation102(base_types._BaseFieldType):
 

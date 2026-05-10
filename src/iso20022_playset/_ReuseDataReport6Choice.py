@@ -1,37 +1,11 @@
 from . import base_types
-from .ReuseDataReportNew6 import ReuseDataReportNew6
-from .ReuseDataReportCorrection14 import ReuseDataReportCorrection14
-from .ReuseDataReportError5 import ReuseDataReportError5
+from ._ReuseDataReportError5 import ReuseDataReportError5
+from ._ReuseDataReportNew6 import ReuseDataReportNew6
+from ._ReuseDataReportCorrection14 import ReuseDataReportCorrection14
 
 class ReuseDataReport6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CollReuseUpd", "_Err", "_New", "_Crrctn"]
-	@property
-	def CollReuseUpd(self):
-		return self._CollReuseUpd
-
-	@CollReuseUpd.setter
-	def CollReuseUpd(self, value):
-		self._CollReuseUpd = value if type(value) != base_types.auto else self.make_default("CollReuseUpd")
-
-	@CollReuseUpd.deleter
-	def CollReuseUpd(self):
-		del self._CollReuseUpd
-		self._CollReuseUpd = None
-
-	@property
-	def Err(self):
-		return self._Err
-
-	@Err.setter
-	def Err(self, value):
-		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
-
-	@Err.deleter
-	def Err(self):
-		del self._Err
-		self._Err = None
-
+	__slots__ = ["_New", "_Crrctn", "_Err", "_CollReuseUpd"]
 	@property
 	def New(self):
 		return self._New
@@ -58,10 +32,36 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 		del self._Crrctn
 		self._Crrctn = None
 
+	@property
+	def Err(self):
+		return self._Err
+
+	@Err.setter
+	def Err(self, value):
+		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
+
+	@Err.deleter
+	def Err(self):
+		del self._Err
+		self._Err = None
+
+	@property
+	def CollReuseUpd(self):
+		return self._CollReuseUpd
+
+	@CollReuseUpd.setter
+	def CollReuseUpd(self, value):
+		self._CollReuseUpd = value if type(value) != base_types.auto else self.make_default("CollReuseUpd")
+
+	@CollReuseUpd.deleter
+	def CollReuseUpd(self):
+		del self._CollReuseUpd
+		self._CollReuseUpd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollReuseUpd', type=ReuseDataReportCorrection14, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Err', type=ReuseDataReportError5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=ReuseDataReportNew6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Crrctn', type=ReuseDataReportCorrection14, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Err', type=ReuseDataReportError5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollReuseUpd', type=ReuseDataReportCorrection14, min=0, max=1, mutex_group=1, array=False),
 	))
 

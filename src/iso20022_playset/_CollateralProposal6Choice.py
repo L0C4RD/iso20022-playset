@@ -1,6 +1,6 @@
 from . import base_types
-from .CollateralMovement12 import CollateralMovement12
-from .CollateralProposal7 import CollateralProposal7
+from ._CollateralProposal7 import CollateralProposal7
+from ._CollateralMovement12 import CollateralMovement12
 
 class CollateralProposal6Choice(base_types._BaseFieldType):
 

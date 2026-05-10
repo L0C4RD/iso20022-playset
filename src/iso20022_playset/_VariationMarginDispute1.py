@@ -1,6 +1,6 @@
 from . import base_types
-from .DisputeResolutionType2Choice import DisputeResolutionType2Choice
-from .Dispute1 import Dispute1
+from ._Dispute1 import Dispute1
+from ._DisputeResolutionType2Choice import DisputeResolutionType2Choice
 
 class VariationMarginDispute1(base_types._BaseFieldType):
 

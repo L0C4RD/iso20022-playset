@@ -1,11 +1,11 @@
 from . import base_types
-from .ContentInformationType37 import ContentInformationType37
-from .Header70 import Header70
-from .AcceptorAuthorisationRequest14 import AcceptorAuthorisationRequest14
+from ._Header70 import Header70
+from ._AcceptorAuthorisationRequest14 import AcceptorAuthorisationRequest14
+from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_AuthstnReq", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_AuthstnReq"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -20,19 +20,6 @@ class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def AuthstnReq(self):
-		return self._AuthstnReq
-
-	@AuthstnReq.setter
-	def AuthstnReq(self, value):
-		self._AuthstnReq = value if type(value) != base_types.auto else self.make_default("AuthstnReq")
-
-	@AuthstnReq.deleter
-	def AuthstnReq(self):
-		del self._AuthstnReq
-		self._AuthstnReq = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,9 +32,22 @@ class AcceptorAuthorisationRequestV14(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def AuthstnReq(self):
+		return self._AuthstnReq
+
+	@AuthstnReq.setter
+	def AuthstnReq(self, value):
+		self._AuthstnReq = value if type(value) != base_types.auto else self.make_default("AuthstnReq")
+
+	@AuthstnReq.deleter
+	def AuthstnReq(self):
+		del self._AuthstnReq
+		self._AuthstnReq = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthstnReq', type=AcceptorAuthorisationRequest14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnReq', type=AcceptorAuthorisationRequest14, min=1, max=1, mutex_group=None, array=False),
 	))
 

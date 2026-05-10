@@ -1,11 +1,11 @@
 from . import base_types
-from .CollateralMarginCorrection6 import CollateralMarginCorrection6
-from .CollateralMarginError4 import CollateralMarginError4
-from .CollateralMarginMarginUpdate5 import CollateralMarginMarginUpdate5
+from ._CollateralMarginCorrection6 import CollateralMarginCorrection6
+from ._CollateralMarginError4 import CollateralMarginError4
+from ._CollateralMarginMarginUpdate5 import CollateralMarginMarginUpdate5
 
 class TradeReport21Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TradUpd", "_New", "_Crrctn", "_Err"]
+	__slots__ = ["_TradUpd", "_New", "_Err", "_Crrctn"]
 	@property
 	def TradUpd(self):
 		return self._TradUpd
@@ -33,19 +33,6 @@ class TradeReport21Choice(base_types._BaseFieldType):
 		self._New = None
 
 	@property
-	def Crrctn(self):
-		return self._Crrctn
-
-	@Crrctn.setter
-	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
-
-	@Crrctn.deleter
-	def Crrctn(self):
-		del self._Crrctn
-		self._Crrctn = None
-
-	@property
 	def Err(self):
 		return self._Err
 
@@ -58,10 +45,23 @@ class TradeReport21Choice(base_types._BaseFieldType):
 		del self._Err
 		self._Err = None
 
+	@property
+	def Crrctn(self):
+		return self._Crrctn
+
+	@Crrctn.setter
+	def Crrctn(self, value):
+		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+
+	@Crrctn.deleter
+	def Crrctn(self):
+		del self._Crrctn
+		self._Crrctn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TradUpd', type=CollateralMarginMarginUpdate5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=CollateralMarginCorrection6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Crrctn', type=CollateralMarginCorrection6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Err', type=CollateralMarginError4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Crrctn', type=CollateralMarginCorrection6, min=0, max=1, mutex_group=1, array=False),
 	))
 

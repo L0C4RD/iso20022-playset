@@ -1,13 +1,13 @@
 from . import base_types
-from .Number import Number
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ExchangePolicy2Code import ExchangePolicy2Code
-from .ProcessRetry3 import ProcessRetry3
-from .ProcessTiming6 import ProcessTiming6
+from ._Number import Number
+from ._ExchangePolicy2Code import ExchangePolicy2Code
+from ._ProcessRetry3 import ProcessRetry3
+from ._ProcessTiming6 import ProcessTiming6
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ExchangeConfiguration9(base_types._BaseFieldType):
 
-	__slots__ = ["_ReTry", "_XchgPlcy", "_MaxAmt", "_MaxNb", "_TmCond"]
+	__slots__ = ["_ReTry", "_MaxNb", "_XchgPlcy", "_MaxAmt", "_TmCond"]
 	@property
 	def ReTry(self):
 		return self._ReTry
@@ -20,6 +20,19 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 	def ReTry(self):
 		del self._ReTry
 		self._ReTry = None
+
+	@property
+	def MaxNb(self):
+		return self._MaxNb
+
+	@MaxNb.setter
+	def MaxNb(self, value):
+		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
+
+	@MaxNb.deleter
+	def MaxNb(self):
+		del self._MaxNb
+		self._MaxNb = None
 
 	@property
 	def XchgPlcy(self):
@@ -48,19 +61,6 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 		self._MaxAmt = None
 
 	@property
-	def MaxNb(self):
-		return self._MaxNb
-
-	@MaxNb.setter
-	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
-
-	@MaxNb.deleter
-	def MaxNb(self):
-		del self._MaxNb
-		self._MaxNb = None
-
-	@property
 	def TmCond(self):
 		return self._TmCond
 
@@ -75,9 +75,9 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReTry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 	))
 

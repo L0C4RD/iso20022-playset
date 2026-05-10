@@ -1,6 +1,6 @@
 from . import base_types
-from .Frequency6Code import Frequency6Code
-from .Exact2NumericText import Exact2NumericText
+from ._Exact2NumericText import Exact2NumericText
+from ._Frequency6Code import Frequency6Code
 
 class FrequencyAndMoment1(base_types._BaseFieldType):
 

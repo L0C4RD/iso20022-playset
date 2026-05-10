@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling4 import ErrorHandling4
-from .SystemParty6 import SystemParty6
+from ._ErrorHandling4 import ErrorHandling4
+from ._SystemParty6 import SystemParty6
 
 class PartyOrBusinessError4Choice(base_types._BaseFieldType):
 

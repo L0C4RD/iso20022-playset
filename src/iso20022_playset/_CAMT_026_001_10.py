@@ -1,5 +1,5 @@
 from . import base_types
-from .UnableToApplyV10 import UnableToApplyV10
+from ._UnableToApplyV10 import UnableToApplyV10
 
 class CAMT_026_001_10():
 

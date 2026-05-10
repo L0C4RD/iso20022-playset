@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAndAmountRange2
-from .ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
+from ._ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
+from ._ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAndAmountRange2
 
 class ActiveOrHistoricAmountRange2Choice(base_types._BaseFieldType):
 

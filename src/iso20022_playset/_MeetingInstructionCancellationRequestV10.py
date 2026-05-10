@@ -1,25 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CancelInstruction5 import CancelInstruction5
-from .MeetingReference10 import MeetingReference10
-from .Max35Text import Max35Text
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._CancelInstruction5 import CancelInstruction5
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._MeetingReference10 import MeetingReference10
 
 class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_ToBeCancInstr", "_MtgRef", "_FinInstrmId", "_MtgInstrId"]
+	__slots__ = ["_MtgRef", "_ToBeCancInstr", "_SplmtryData", "_FinInstrmId", "_MtgInstrId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MtgRef(self):
+		return self._MtgRef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@MtgRef.setter
+	def MtgRef(self, value):
+		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MtgRef.deleter
+	def MtgRef(self):
+		del self._MtgRef
+		self._MtgRef = None
 
 	@property
 	def ToBeCancInstr(self):
@@ -35,17 +35,17 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 		self._ToBeCancInstr = None
 
 	@property
-	def MtgRef(self):
-		return self._MtgRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MtgRef.setter
-	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MtgRef.deleter
-	def MtgRef(self):
-		del self._MtgRef
-		self._MtgRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def FinInstrmId(self):
@@ -74,9 +74,9 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 		self._MtgInstrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ToBeCancInstr', type=CancelInstruction5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ToBeCancInstr', type=CancelInstruction5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtgInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))

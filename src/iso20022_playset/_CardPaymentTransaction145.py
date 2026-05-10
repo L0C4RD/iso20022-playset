@@ -1,23 +1,10 @@
 from . import base_types
-from .AuthorisationResult19 import AuthorisationResult19
-from .Action17 import Action17
+from ._AuthorisationResult19 import AuthorisationResult19
+from ._Action17 import Action17
 
 class CardPaymentTransaction145(base_types._BaseFieldType):
 
-	__slots__ = ["_Actn", "_AuthstnRslt"]
-	@property
-	def Actn(self):
-		return self._Actn
-
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
-
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
-
+	__slots__ = ["_AuthstnRslt", "_Actn"]
 	@property
 	def AuthstnRslt(self):
 		return self._AuthstnRslt
@@ -31,8 +18,21 @@ class CardPaymentTransaction145(base_types._BaseFieldType):
 		del self._AuthstnRslt
 		self._AuthstnRslt = None
 
+	@property
+	def Actn(self):
+		return self._Actn
+
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AuthstnRslt', type=AuthorisationResult19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Actn', type=Action17, min=0, max=None, mutex_group=None, array=True),
 	))
 

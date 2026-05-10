@@ -1,26 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ValidationStatusInformation1 import ValidationStatusInformation1
-from .CancellationStatusInformation1 import CancellationStatusInformation1
-from .ISODateTime import ISODateTime
-from .PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
-from .FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
+from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
+from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from ._Max35Text import Max35Text
+from ._CancellationStatusInformation1 import CancellationStatusInformation1
+from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from ._ISODateTime import ISODateTime
 
 class OriginalRequestInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CreDtTm", "_FincgRqstr", "_IntrmyAgt", "_CxlStsInf", "_VldtnStsInf", "_FrstAgt"]
+	__slots__ = ["_FrstAgt", "_CreDtTm", "_FincgRqstr", "_IntrmyAgt", "_Id", "_CxlStsInf", "_VldtnStsInf"]
 	@property
-	def Id(self):
-		return self._Id
+	def FrstAgt(self):
+		return self._FrstAgt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@FrstAgt.setter
+	def FrstAgt(self, value):
+		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@FrstAgt.deleter
+	def FrstAgt(self):
+		del self._FrstAgt
+		self._FrstAgt = None
 
 	@property
 	def CreDtTm(self):
@@ -62,6 +62,19 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		self._IntrmyAgt = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def CxlStsInf(self):
 		return self._CxlStsInf
 
@@ -87,26 +100,13 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		del self._VldtnStsInf
 		self._VldtnStsInf = None
 
-	@property
-	def FrstAgt(self):
-		return self._FrstAgt
-
-	@FrstAgt.setter
-	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
-
-	@FrstAgt.deleter
-	def FrstAgt(self):
-		del self._FrstAgt
-		self._FrstAgt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgRqstr', type=PartyIdentificationAndAccount6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlStsInf', type=CancellationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 	))
 

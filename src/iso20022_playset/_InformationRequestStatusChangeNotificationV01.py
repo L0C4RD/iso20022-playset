@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SupplementaryData1 import SupplementaryData1
-from .YesNoIndicator import YesNoIndicator
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
 
 class InformationRequestStatusChangeNotificationV01(base_types._BaseFieldType):
 

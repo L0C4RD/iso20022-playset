@@ -1,12 +1,51 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .GenericIdentification177 import GenericIdentification177
-from .Max6Text import Max6Text
+from ._Max35Text import Max35Text
+from ._GenericIdentification177 import GenericIdentification177
+from ._Max6Text import Max6Text
+from ._ISODateTime import ISODateTime
 
 class Traceability8(base_types._BaseFieldType):
 
-	__slots__ = ["_TracDtTmOut", "_PrtcolVrsn", "_PrtcolNm", "_TracDtTmIn", "_RlayId"]
+	__slots__ = ["_RlayId", "_TracDtTmIn", "_PrtcolNm", "_TracDtTmOut", "_PrtcolVrsn"]
+	@property
+	def RlayId(self):
+		return self._RlayId
+
+	@RlayId.setter
+	def RlayId(self, value):
+		self._RlayId = value if type(value) != base_types.auto else self.make_default("RlayId")
+
+	@RlayId.deleter
+	def RlayId(self):
+		del self._RlayId
+		self._RlayId = None
+
+	@property
+	def TracDtTmIn(self):
+		return self._TracDtTmIn
+
+	@TracDtTmIn.setter
+	def TracDtTmIn(self, value):
+		self._TracDtTmIn = value if type(value) != base_types.auto else self.make_default("TracDtTmIn")
+
+	@TracDtTmIn.deleter
+	def TracDtTmIn(self):
+		del self._TracDtTmIn
+		self._TracDtTmIn = None
+
+	@property
+	def PrtcolNm(self):
+		return self._PrtcolNm
+
+	@PrtcolNm.setter
+	def PrtcolNm(self, value):
+		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
+
+	@PrtcolNm.deleter
+	def PrtcolNm(self):
+		del self._PrtcolNm
+		self._PrtcolNm = None
+
 	@property
 	def TracDtTmOut(self):
 		return self._TracDtTmOut
@@ -33,50 +72,11 @@ class Traceability8(base_types._BaseFieldType):
 		del self._PrtcolVrsn
 		self._PrtcolVrsn = None
 
-	@property
-	def PrtcolNm(self):
-		return self._PrtcolNm
-
-	@PrtcolNm.setter
-	def PrtcolNm(self, value):
-		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
-
-	@PrtcolNm.deleter
-	def PrtcolNm(self):
-		del self._PrtcolNm
-		self._PrtcolNm = None
-
-	@property
-	def TracDtTmIn(self):
-		return self._TracDtTmIn
-
-	@TracDtTmIn.setter
-	def TracDtTmIn(self, value):
-		self._TracDtTmIn = value if type(value) != base_types.auto else self.make_default("TracDtTmIn")
-
-	@TracDtTmIn.deleter
-	def TracDtTmIn(self):
-		del self._TracDtTmIn
-		self._TracDtTmIn = None
-
-	@property
-	def RlayId(self):
-		return self._RlayId
-
-	@RlayId.setter
-	def RlayId(self, value):
-		self._RlayId = value if type(value) != base_types.auto else self.make_default("RlayId")
-
-	@RlayId.deleter
-	def RlayId(self):
-		del self._RlayId
-		self._RlayId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RlayId', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TracDtTmOut', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TracDtTmIn', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RlayId', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 	))
 

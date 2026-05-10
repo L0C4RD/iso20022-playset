@@ -1,22 +1,22 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .YesNoIndicator import YesNoIndicator
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._YesNoIndicator import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters17(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_CmonId", "_RcncltnInd"]
+	__slots__ = ["_RcncltnInd", "_CmonId", "_CorpActnEvtId"]
 	@property
-	def CorpActnEvtId(self):
-		return self._CorpActnEvtId
+	def RcncltnInd(self):
+		return self._RcncltnInd
 
-	@CorpActnEvtId.setter
-	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+	@RcncltnInd.setter
+	def RcncltnInd(self, value):
+		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
 
-	@CorpActnEvtId.deleter
-	def CorpActnEvtId(self):
-		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+	@RcncltnInd.deleter
+	def RcncltnInd(self):
+		del self._RcncltnInd
+		self._RcncltnInd = None
 
 	@property
 	def CmonId(self):
@@ -32,21 +32,21 @@ class SettlementTypeAndAdditionalParameters17(base_types._BaseFieldType):
 		self._CmonId = None
 
 	@property
-	def RcncltnInd(self):
-		return self._RcncltnInd
+	def CorpActnEvtId(self):
+		return self._CorpActnEvtId
 
-	@RcncltnInd.setter
-	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
+	@CorpActnEvtId.setter
+	def CorpActnEvtId(self, value):
+		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
 
-	@RcncltnInd.deleter
-	def RcncltnInd(self):
-		del self._RcncltnInd
-		self._RcncltnInd = None
+	@CorpActnEvtId.deleter
+	def CorpActnEvtId(self):
+		del self._CorpActnEvtId
+		self._CorpActnEvtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

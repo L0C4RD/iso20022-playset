@@ -1,12 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AlternatePartyIdentification8 import AlternatePartyIdentification8
-from .PartyIdentification240Choice import PartyIdentification240Choice
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification240Choice import PartyIdentification240Choice
+from ._Max350Text import Max350Text
+from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
 
 class PartyIdentificationAndAccount218(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_AddtlInf", "_Id", "_AltrnId"]
+	__slots__ = ["_AltrnId", "_SfkpgAcct", "_AddtlInf", "_Id"]
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
@@ -46,23 +59,10 @@ class PartyIdentificationAndAccount218(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

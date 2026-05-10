@@ -1,5 +1,5 @@
 from . import base_types
-from .ForwardDataSetSubmissionReportV05 import ForwardDataSetSubmissionReportV05
+from ._ForwardDataSetSubmissionReportV05 import ForwardDataSetSubmissionReportV05
 
 class TSMT_017_001_05():
 

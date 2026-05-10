@@ -1,5 +1,5 @@
 from . import base_types
-from .DerivativesTradeWarningsReportV01 import DerivativesTradeWarningsReportV01
+from ._DerivativesTradeWarningsReportV01 import DerivativesTradeWarningsReportV01
 
 class AUTH_106_001_01():
 

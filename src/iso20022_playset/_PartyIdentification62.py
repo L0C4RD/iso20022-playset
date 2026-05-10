@@ -1,23 +1,23 @@
 from . import base_types
-from .BICFIIdentifier import BICFIIdentifier
-from .NameAndAddress5 import NameAndAddress5
-from .GenericIdentification1 import GenericIdentification1
+from ._GenericIdentification1 import GenericIdentification1
+from ._NameAndAddress5 import NameAndAddress5
+from ._BICFIIdentifier import BICFIIdentifier
 
 class PartyIdentification62(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_BICFI", "_NmAndAdr"]
+	__slots__ = ["_NmAndAdr", "_BICFI", "_PrtryId"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	@property
 	def BICFI(self):
@@ -33,21 +33,21 @@ class PartyIdentification62(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def PrtryId(self):
+		return self._PrtryId
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

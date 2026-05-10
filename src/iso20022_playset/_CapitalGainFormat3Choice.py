@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .EUCapitalGain2Code import EUCapitalGain2Code
+from ._GenericIdentification30 import GenericIdentification30
+from ._EUCapitalGain2Code import EUCapitalGain2Code
 
 class CapitalGainFormat3Choice(base_types._BaseFieldType):
 

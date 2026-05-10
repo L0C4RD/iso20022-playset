@@ -1,5 +1,5 @@
 from . import base_types
-from .ChargesPaymentNotificationV03 import ChargesPaymentNotificationV03
+from ._ChargesPaymentNotificationV03 import ChargesPaymentNotificationV03
 
 class CAMT_105_001_03():
 

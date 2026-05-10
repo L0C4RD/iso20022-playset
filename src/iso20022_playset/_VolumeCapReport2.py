@@ -1,51 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max35Text import Max35Text
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class VolumeCapReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlTradgVol", "_TtlRefPricTradgVol", "_Ccy", "_TtlNgtdTxsTradgVol", "_Id", "_TechRcrdId"]
-	@property
-	def TtlTradgVol(self):
-		return self._TtlTradgVol
-
-	@TtlTradgVol.setter
-	def TtlTradgVol(self, value):
-		self._TtlTradgVol = value if type(value) != base_types.auto else self.make_default("TtlTradgVol")
-
-	@TtlTradgVol.deleter
-	def TtlTradgVol(self):
-		del self._TtlTradgVol
-		self._TtlTradgVol = None
-
-	@property
-	def TtlRefPricTradgVol(self):
-		return self._TtlRefPricTradgVol
-
-	@TtlRefPricTradgVol.setter
-	def TtlRefPricTradgVol(self, value):
-		self._TtlRefPricTradgVol = value if type(value) != base_types.auto else self.make_default("TtlRefPricTradgVol")
-
-	@TtlRefPricTradgVol.deleter
-	def TtlRefPricTradgVol(self):
-		del self._TtlRefPricTradgVol
-		self._TtlRefPricTradgVol = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
+	__slots__ = ["_TtlNgtdTxsTradgVol", "_Id", "_TechRcrdId", "_TtlRefPricTradgVol", "_TtlTradgVol", "_Ccy"]
 	@property
 	def TtlNgtdTxsTradgVol(self):
 		return self._TtlNgtdTxsTradgVol
@@ -85,12 +46,51 @@ class VolumeCapReport2(base_types._BaseFieldType):
 		del self._TechRcrdId
 		self._TechRcrdId = None
 
+	@property
+	def TtlRefPricTradgVol(self):
+		return self._TtlRefPricTradgVol
+
+	@TtlRefPricTradgVol.setter
+	def TtlRefPricTradgVol(self, value):
+		self._TtlRefPricTradgVol = value if type(value) != base_types.auto else self.make_default("TtlRefPricTradgVol")
+
+	@TtlRefPricTradgVol.deleter
+	def TtlRefPricTradgVol(self):
+		del self._TtlRefPricTradgVol
+		self._TtlRefPricTradgVol = None
+
+	@property
+	def TtlTradgVol(self):
+		return self._TtlTradgVol
+
+	@TtlTradgVol.setter
+	def TtlTradgVol(self, value):
+		self._TtlTradgVol = value if type(value) != base_types.auto else self.make_default("TtlTradgVol")
+
+	@TtlTradgVol.deleter
+	def TtlTradgVol(self):
+		del self._TtlTradgVol
+		self._TtlTradgVol = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNgtdTxsTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

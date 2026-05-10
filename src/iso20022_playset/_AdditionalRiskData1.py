@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max10KText import Max10KText
+from ._Max35Text import Max35Text
+from ._Max10KText import Max10KText
 
 class AdditionalRiskData1(base_types._BaseFieldType):
 

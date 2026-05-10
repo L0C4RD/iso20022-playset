@@ -1,22 +1,9 @@
 from . import base_types
-from .AdditionalReference8 import AdditionalReference8
+from ._AdditionalReference8 import AdditionalReference8
 
 class References61Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRef", "_RltdRef"]
-	@property
-	def OthrRef(self):
-		return self._OthrRef
-
-	@OthrRef.setter
-	def OthrRef(self, value):
-		self._OthrRef = value if type(value) != base_types.auto else self.make_default("OthrRef")
-
-	@OthrRef.deleter
-	def OthrRef(self):
-		del self._OthrRef
-		self._OthrRef = None
-
+	__slots__ = ["_RltdRef", "_OthrRef"]
 	@property
 	def RltdRef(self):
 		return self._RltdRef
@@ -30,8 +17,21 @@ class References61Choice(base_types._BaseFieldType):
 		del self._RltdRef
 		self._RltdRef = None
 
+	@property
+	def OthrRef(self):
+		return self._OthrRef
+
+	@OthrRef.setter
+	def OthrRef(self, value):
+		self._OthrRef = value if type(value) != base_types.auto else self.make_default("OthrRef")
+
+	@OthrRef.deleter
+	def OthrRef(self):
+		del self._OthrRef
+		self._OthrRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OthrRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),
 	))
 

@@ -1,47 +1,34 @@
 from . import base_types
-from .UnitPrice19 import UnitPrice19
-from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from .NetCashForecast4 import NetCashForecast4
-from .Max35Text import Max35Text
-from .CashOutForecast6 import CashOutForecast6
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .CashInForecast6 import CashInForecast6
-from .DateAndDateTimeChoice import DateAndDateTimeChoice
-from .PercentageRate import PercentageRate
-from .ForeignExchangeTerms19 import ForeignExchangeTerms19
-from .CurrencyDesignation1 import CurrencyDesignation1
-from .YesNoIndicator import YesNoIndicator
-from .FinancialInstrument9 import FinancialInstrument9
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._CashOutForecast6 import CashOutForecast6
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CurrencyDesignation1 import CurrencyDesignation1
+from ._PercentageRate import PercentageRate
+from ._UnitPrice19 import UnitPrice19
+from ._CashInForecast6 import CashInForecast6
+from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._FinancialInstrument9 import FinancialInstrument9
+from ._Max35Text import Max35Text
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._YesNoIndicator import YesNoIndicator
+from ._NetCashForecast4 import NetCashForecast4
 
 class EstimatedFundCashForecast6(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtCcy", "_PrvsTtlNAV", "_FXRate", "_XcptnlNetCshFlowInd", "_FinInstrmDtls", "_EstmtdNetCshFcstDtls", "_EstmtdTtlUnitsNb", "_Id", "_EstmtdTtlNAV", "_TradDtTm", "_EstmtdCshOutFcstDtls", "_PrvsTradDtTm", "_PrvsTtlUnitsNb", "_Pric", "_EstmtdPctgOfShrClssTtlNAV", "_EstmtdTtlNAVChngRate", "_CcySts", "_EstmtdCshInFcstDtls"]
+	__slots__ = ["_EstmtdCshInFcstDtls", "_FXRate", "_CcySts", "_PrvsTradDtTm", "_PrvsTtlUnitsNb", "_PrvsTtlNAV", "_XcptnlNetCshFlowInd", "_EstmtdPctgOfShrClssTtlNAV", "_EstmtdTtlNAV", "_TradDtTm", "_EstmtdCshOutFcstDtls", "_EstmtdTtlUnitsNb", "_EstmtdTtlNAVChngRate", "_InvstmtCcy", "_Pric", "_EstmtdNetCshFcstDtls", "_Id", "_FinInstrmDtls"]
 	@property
-	def InvstmtCcy(self):
-		return self._InvstmtCcy
+	def EstmtdCshInFcstDtls(self):
+		return self._EstmtdCshInFcstDtls
 
-	@InvstmtCcy.setter
-	def InvstmtCcy(self, value):
-		self._InvstmtCcy = value if type(value) != base_types.auto else self.make_default("InvstmtCcy")
+	@EstmtdCshInFcstDtls.setter
+	def EstmtdCshInFcstDtls(self, value):
+		self._EstmtdCshInFcstDtls = value if type(value) != base_types.auto else self.make_default("EstmtdCshInFcstDtls")
 
-	@InvstmtCcy.deleter
-	def InvstmtCcy(self):
-		del self._InvstmtCcy
-		self._InvstmtCcy = None
-
-	@property
-	def PrvsTtlNAV(self):
-		return self._PrvsTtlNAV
-
-	@PrvsTtlNAV.setter
-	def PrvsTtlNAV(self, value):
-		self._PrvsTtlNAV = value if type(value) != base_types.auto else self.make_default("PrvsTtlNAV")
-
-	@PrvsTtlNAV.deleter
-	def PrvsTtlNAV(self):
-		del self._PrvsTtlNAV
-		self._PrvsTtlNAV = None
+	@EstmtdCshInFcstDtls.deleter
+	def EstmtdCshInFcstDtls(self):
+		del self._EstmtdCshInFcstDtls
+		self._EstmtdCshInFcstDtls = None
 
 	@property
 	def FXRate(self):
@@ -57,6 +44,58 @@ class EstimatedFundCashForecast6(base_types._BaseFieldType):
 		self._FXRate = None
 
 	@property
+	def CcySts(self):
+		return self._CcySts
+
+	@CcySts.setter
+	def CcySts(self, value):
+		self._CcySts = value if type(value) != base_types.auto else self.make_default("CcySts")
+
+	@CcySts.deleter
+	def CcySts(self):
+		del self._CcySts
+		self._CcySts = None
+
+	@property
+	def PrvsTradDtTm(self):
+		return self._PrvsTradDtTm
+
+	@PrvsTradDtTm.setter
+	def PrvsTradDtTm(self, value):
+		self._PrvsTradDtTm = value if type(value) != base_types.auto else self.make_default("PrvsTradDtTm")
+
+	@PrvsTradDtTm.deleter
+	def PrvsTradDtTm(self):
+		del self._PrvsTradDtTm
+		self._PrvsTradDtTm = None
+
+	@property
+	def PrvsTtlUnitsNb(self):
+		return self._PrvsTtlUnitsNb
+
+	@PrvsTtlUnitsNb.setter
+	def PrvsTtlUnitsNb(self, value):
+		self._PrvsTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("PrvsTtlUnitsNb")
+
+	@PrvsTtlUnitsNb.deleter
+	def PrvsTtlUnitsNb(self):
+		del self._PrvsTtlUnitsNb
+		self._PrvsTtlUnitsNb = None
+
+	@property
+	def PrvsTtlNAV(self):
+		return self._PrvsTtlNAV
+
+	@PrvsTtlNAV.setter
+	def PrvsTtlNAV(self, value):
+		self._PrvsTtlNAV = value if type(value) != base_types.auto else self.make_default("PrvsTtlNAV")
+
+	@PrvsTtlNAV.deleter
+	def PrvsTtlNAV(self):
+		del self._PrvsTtlNAV
+		self._PrvsTtlNAV = None
+
+	@property
 	def XcptnlNetCshFlowInd(self):
 		return self._XcptnlNetCshFlowInd
 
@@ -70,56 +109,17 @@ class EstimatedFundCashForecast6(base_types._BaseFieldType):
 		self._XcptnlNetCshFlowInd = None
 
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def EstmtdPctgOfShrClssTtlNAV(self):
+		return self._EstmtdPctgOfShrClssTtlNAV
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+	@EstmtdPctgOfShrClssTtlNAV.setter
+	def EstmtdPctgOfShrClssTtlNAV(self, value):
+		self._EstmtdPctgOfShrClssTtlNAV = value if type(value) != base_types.auto else self.make_default("EstmtdPctgOfShrClssTtlNAV")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
-	@property
-	def EstmtdNetCshFcstDtls(self):
-		return self._EstmtdNetCshFcstDtls
-
-	@EstmtdNetCshFcstDtls.setter
-	def EstmtdNetCshFcstDtls(self, value):
-		self._EstmtdNetCshFcstDtls = value if type(value) != base_types.auto else self.make_default("EstmtdNetCshFcstDtls")
-
-	@EstmtdNetCshFcstDtls.deleter
-	def EstmtdNetCshFcstDtls(self):
-		del self._EstmtdNetCshFcstDtls
-		self._EstmtdNetCshFcstDtls = None
-
-	@property
-	def EstmtdTtlUnitsNb(self):
-		return self._EstmtdTtlUnitsNb
-
-	@EstmtdTtlUnitsNb.setter
-	def EstmtdTtlUnitsNb(self, value):
-		self._EstmtdTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("EstmtdTtlUnitsNb")
-
-	@EstmtdTtlUnitsNb.deleter
-	def EstmtdTtlUnitsNb(self):
-		del self._EstmtdTtlUnitsNb
-		self._EstmtdTtlUnitsNb = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@EstmtdPctgOfShrClssTtlNAV.deleter
+	def EstmtdPctgOfShrClssTtlNAV(self):
+		del self._EstmtdPctgOfShrClssTtlNAV
+		self._EstmtdPctgOfShrClssTtlNAV = None
 
 	@property
 	def EstmtdTtlNAV(self):
@@ -161,56 +161,17 @@ class EstimatedFundCashForecast6(base_types._BaseFieldType):
 		self._EstmtdCshOutFcstDtls = None
 
 	@property
-	def PrvsTradDtTm(self):
-		return self._PrvsTradDtTm
+	def EstmtdTtlUnitsNb(self):
+		return self._EstmtdTtlUnitsNb
 
-	@PrvsTradDtTm.setter
-	def PrvsTradDtTm(self, value):
-		self._PrvsTradDtTm = value if type(value) != base_types.auto else self.make_default("PrvsTradDtTm")
+	@EstmtdTtlUnitsNb.setter
+	def EstmtdTtlUnitsNb(self, value):
+		self._EstmtdTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("EstmtdTtlUnitsNb")
 
-	@PrvsTradDtTm.deleter
-	def PrvsTradDtTm(self):
-		del self._PrvsTradDtTm
-		self._PrvsTradDtTm = None
-
-	@property
-	def PrvsTtlUnitsNb(self):
-		return self._PrvsTtlUnitsNb
-
-	@PrvsTtlUnitsNb.setter
-	def PrvsTtlUnitsNb(self, value):
-		self._PrvsTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("PrvsTtlUnitsNb")
-
-	@PrvsTtlUnitsNb.deleter
-	def PrvsTtlUnitsNb(self):
-		del self._PrvsTtlUnitsNb
-		self._PrvsTtlUnitsNb = None
-
-	@property
-	def Pric(self):
-		return self._Pric
-
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
-
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
-
-	@property
-	def EstmtdPctgOfShrClssTtlNAV(self):
-		return self._EstmtdPctgOfShrClssTtlNAV
-
-	@EstmtdPctgOfShrClssTtlNAV.setter
-	def EstmtdPctgOfShrClssTtlNAV(self, value):
-		self._EstmtdPctgOfShrClssTtlNAV = value if type(value) != base_types.auto else self.make_default("EstmtdPctgOfShrClssTtlNAV")
-
-	@EstmtdPctgOfShrClssTtlNAV.deleter
-	def EstmtdPctgOfShrClssTtlNAV(self):
-		del self._EstmtdPctgOfShrClssTtlNAV
-		self._EstmtdPctgOfShrClssTtlNAV = None
+	@EstmtdTtlUnitsNb.deleter
+	def EstmtdTtlUnitsNb(self):
+		del self._EstmtdTtlUnitsNb
+		self._EstmtdTtlUnitsNb = None
 
 	@property
 	def EstmtdTtlNAVChngRate(self):
@@ -226,49 +187,88 @@ class EstimatedFundCashForecast6(base_types._BaseFieldType):
 		self._EstmtdTtlNAVChngRate = None
 
 	@property
-	def CcySts(self):
-		return self._CcySts
+	def InvstmtCcy(self):
+		return self._InvstmtCcy
 
-	@CcySts.setter
-	def CcySts(self, value):
-		self._CcySts = value if type(value) != base_types.auto else self.make_default("CcySts")
+	@InvstmtCcy.setter
+	def InvstmtCcy(self, value):
+		self._InvstmtCcy = value if type(value) != base_types.auto else self.make_default("InvstmtCcy")
 
-	@CcySts.deleter
-	def CcySts(self):
-		del self._CcySts
-		self._CcySts = None
+	@InvstmtCcy.deleter
+	def InvstmtCcy(self):
+		del self._InvstmtCcy
+		self._InvstmtCcy = None
 
 	@property
-	def EstmtdCshInFcstDtls(self):
-		return self._EstmtdCshInFcstDtls
+	def Pric(self):
+		return self._Pric
 
-	@EstmtdCshInFcstDtls.setter
-	def EstmtdCshInFcstDtls(self, value):
-		self._EstmtdCshInFcstDtls = value if type(value) != base_types.auto else self.make_default("EstmtdCshInFcstDtls")
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
 
-	@EstmtdCshInFcstDtls.deleter
-	def EstmtdCshInFcstDtls(self):
-		del self._EstmtdCshInFcstDtls
-		self._EstmtdCshInFcstDtls = None
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
+
+	@property
+	def EstmtdNetCshFcstDtls(self):
+		return self._EstmtdNetCshFcstDtls
+
+	@EstmtdNetCshFcstDtls.setter
+	def EstmtdNetCshFcstDtls(self, value):
+		self._EstmtdNetCshFcstDtls = value if type(value) != base_types.auto else self.make_default("EstmtdNetCshFcstDtls")
+
+	@EstmtdNetCshFcstDtls.deleter
+	def EstmtdNetCshFcstDtls(self):
+		del self._EstmtdNetCshFcstDtls
+		self._EstmtdNetCshFcstDtls = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EstmtdCshInFcstDtls', type=CashInForecast6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FXRate', type=ForeignExchangeTerms19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcySts', type=CurrencyDesignation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsTradDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XcptnlNetCshFlowInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdNetCshFcstDtls', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EstmtdTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdPctgOfShrClssTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstmtdTtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstmtdCshOutFcstDtls', type=CashOutForecast6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsTradDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=UnitPrice19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdPctgOfShrClssTtlNAV', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstmtdTtlNAVChngRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcySts', type=CurrencyDesignation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdCshInFcstDtls', type=CashInForecast6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pric', type=UnitPrice19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstmtdNetCshFcstDtls', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument9, min=1, max=1, mutex_group=None, array=False),
 	))
 

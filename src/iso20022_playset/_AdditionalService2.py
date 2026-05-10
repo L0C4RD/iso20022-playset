@@ -1,12 +1,38 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AdditionalServiceType2Code import AdditionalServiceType2Code
-from .AdditionalData1 import AdditionalData1
-from .AdditionalServiceResult1Code import AdditionalServiceResult1Code
+from ._Max35Text import Max35Text
+from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
+from ._AdditionalServiceType2Code import AdditionalServiceType2Code
+from ._AdditionalData1 import AdditionalData1
 
 class AdditionalService2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcDtl", "_OthrTp", "_Rslt", "_Tp", "_OthrRslt"]
+	__slots__ = ["_Tp", "_Rslt", "_SvcDtl", "_OthrTp", "_OthrRslt"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Rslt(self):
+		return self._Rslt
+
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
 	@property
 	def SvcDtl(self):
 		return self._SvcDtl
@@ -34,32 +60,6 @@ class AdditionalService2(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Rslt(self):
-		return self._Rslt
-
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
-
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def OthrRslt(self):
 		return self._OthrRslt
 
@@ -73,10 +73,10 @@ class AdditionalService2(base_types._BaseFieldType):
 		self._OthrRslt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tp', type=AdditionalServiceType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=AdditionalServiceResult1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcDtl', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rslt', type=AdditionalServiceResult1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=AdditionalServiceType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

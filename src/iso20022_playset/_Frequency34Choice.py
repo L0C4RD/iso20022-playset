@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .EventFrequency7Code import EventFrequency7Code
+from ._EventFrequency7Code import EventFrequency7Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class Frequency34Choice(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .Max25Text import Max25Text
+from ._Max25Text import Max25Text
 
 class CommodityDerivative6(base_types._BaseFieldType):
 

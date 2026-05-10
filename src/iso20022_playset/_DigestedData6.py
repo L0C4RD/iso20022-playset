@@ -1,12 +1,12 @@
 from . import base_types
-from .Number import Number
-from .EncapsulatedContent3 import EncapsulatedContent3
-from .Max140Binary import Max140Binary
-from .AlgorithmIdentification36 import AlgorithmIdentification36
+from ._Number import Number
+from ._EncapsulatedContent3 import EncapsulatedContent3
+from ._Max140Binary import Max140Binary
+from ._AlgorithmIdentification36 import AlgorithmIdentification36
 
 class DigestedData6(base_types._BaseFieldType):
 
-	__slots__ = ["_Dgst", "_Vrsn", "_NcpsltdCntt", "_DgstAlgo"]
+	__slots__ = ["_Dgst", "_Vrsn", "_DgstAlgo", "_NcpsltdCntt"]
 	@property
 	def Dgst(self):
 		return self._Dgst
@@ -34,19 +34,6 @@ class DigestedData6(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def NcpsltdCntt(self):
-		return self._NcpsltdCntt
-
-	@NcpsltdCntt.setter
-	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
-
-	@NcpsltdCntt.deleter
-	def NcpsltdCntt(self):
-		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
-
-	@property
 	def DgstAlgo(self):
 		return self._DgstAlgo
 
@@ -59,10 +46,23 @@ class DigestedData6(base_types._BaseFieldType):
 		del self._DgstAlgo
 		self._DgstAlgo = None
 
+	@property
+	def NcpsltdCntt(self):
+		return self._NcpsltdCntt
+
+	@NcpsltdCntt.setter
+	def NcpsltdCntt(self, value):
+		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+
+	@NcpsltdCntt.deleter
+	def NcpsltdCntt(self):
+		del self._NcpsltdCntt
+		self._NcpsltdCntt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dgst', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 	))
 

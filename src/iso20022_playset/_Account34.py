@@ -1,36 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PostalAddress1 import PostalAddress1
-from .PartyIdentification132 import PartyIdentification132
+from ._Max35Text import Max35Text
+from ._PostalAddress1 import PostalAddress1
+from ._PartyIdentification132 import PartyIdentification132
 
 class Account34(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAdr", "_AcctNm", "_AcctSvcr", "_AcctDsgnt", "_AcctId"]
+	__slots__ = ["_AcctId", "_AcctSvcr", "_AcctNm", "_RegnAdr", "_AcctDsgnt"]
 	@property
-	def RegnAdr(self):
-		return self._RegnAdr
+	def AcctId(self):
+		return self._AcctId
 
-	@RegnAdr.setter
-	def RegnAdr(self, value):
-		self._RegnAdr = value if type(value) != base_types.auto else self.make_default("RegnAdr")
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
 
-	@RegnAdr.deleter
-	def RegnAdr(self):
-		del self._RegnAdr
-		self._RegnAdr = None
-
-	@property
-	def AcctNm(self):
-		return self._AcctNm
-
-	@AcctNm.setter
-	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
-
-	@AcctNm.deleter
-	def AcctNm(self):
-		del self._AcctNm
-		self._AcctNm = None
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def AcctSvcr(self):
@@ -46,6 +33,32 @@ class Account34(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
+	def AcctNm(self):
+		return self._AcctNm
+
+	@AcctNm.setter
+	def AcctNm(self, value):
+		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
+
+	@AcctNm.deleter
+	def AcctNm(self):
+		del self._AcctNm
+		self._AcctNm = None
+
+	@property
+	def RegnAdr(self):
+		return self._RegnAdr
+
+	@RegnAdr.setter
+	def RegnAdr(self, value):
+		self._RegnAdr = value if type(value) != base_types.auto else self.make_default("RegnAdr")
+
+	@RegnAdr.deleter
+	def RegnAdr(self):
+		del self._RegnAdr
+		self._RegnAdr = None
+
+	@property
 	def AcctDsgnt(self):
 		return self._AcctDsgnt
 
@@ -58,24 +71,11 @@ class Account34(base_types._BaseFieldType):
 		del self._AcctDsgnt
 		self._AcctDsgnt = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

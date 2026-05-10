@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesSettlementTransactionCounterpartyResponse002V04 import SecuritiesSettlementTransactionCounterpartyResponse002V04
+from ._SecuritiesSettlementTransactionCounterpartyResponse002V04 import SecuritiesSettlementTransactionCounterpartyResponse002V04
 
 class SESE_040_002_04():
 

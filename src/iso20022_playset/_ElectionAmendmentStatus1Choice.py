@@ -1,23 +1,10 @@
 from . import base_types
-from .CorporateActionAmendmentRejectionStatus1 import CorporateActionAmendmentRejectionStatus1
-from .CorporateActionAmendmentProcessingStatus1 import CorporateActionAmendmentProcessingStatus1
+from ._CorporateActionAmendmentProcessingStatus1 import CorporateActionAmendmentProcessingStatus1
+from ._CorporateActionAmendmentRejectionStatus1 import CorporateActionAmendmentRejectionStatus1
 
 class ElectionAmendmentStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcdSts", "_RjctdSts"]
-	@property
-	def PrcdSts(self):
-		return self._PrcdSts
-
-	@PrcdSts.setter
-	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
-
-	@PrcdSts.deleter
-	def PrcdSts(self):
-		del self._PrcdSts
-		self._PrcdSts = None
-
+	__slots__ = ["_RjctdSts", "_PrcdSts"]
 	@property
 	def RjctdSts(self):
 		return self._RjctdSts
@@ -31,8 +18,21 @@ class ElectionAmendmentStatus1Choice(base_types._BaseFieldType):
 		del self._RjctdSts
 		self._RjctdSts = None
 
+	@property
+	def PrcdSts(self):
+		return self._PrcdSts
+
+	@PrcdSts.setter
+	def PrcdSts(self, value):
+		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
+
+	@PrcdSts.deleter
+	def PrcdSts(self):
+		del self._PrcdSts
+		self._PrcdSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcdSts', type=CorporateActionAmendmentProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionAmendmentRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrcdSts', type=CorporateActionAmendmentProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

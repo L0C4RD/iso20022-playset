@@ -1,6 +1,6 @@
 from . import base_types
-from .AssetClassProductType8Code import AssetClassProductType8Code
-from .AssetClassSubProductType35Code import AssetClassSubProductType35Code
+from ._AssetClassSubProductType35Code import AssetClassSubProductType35Code
+from ._AssetClassProductType8Code import AssetClassProductType8Code
 
 class PaperCommodityContainerBoard1(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 from . import base_types
-from .CreditorEnrolmentCancellationReason3 import CreditorEnrolmentCancellationReason3
-from .SupplementaryData1 import SupplementaryData1
-from .OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._SupplementaryData1 import SupplementaryData1
+from ._CreditorEnrolmentCancellationReason3 import CreditorEnrolmentCancellationReason3
+from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
 
 class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_SplmtryData", "_OrgnlEnrlmnt", "_OrgnlBizInstr"]
+	__slots__ = ["_OrgnlEnrlmnt", "_SplmtryData", "_OrgnlBizInstr", "_CxlRsn"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def OrgnlEnrlmnt(self):
+		return self._OrgnlEnrlmnt
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+	@OrgnlEnrlmnt.setter
+	def OrgnlEnrlmnt(self, value):
+		self._OrgnlEnrlmnt = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmnt")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@OrgnlEnrlmnt.deleter
+	def OrgnlEnrlmnt(self):
+		del self._OrgnlEnrlmnt
+		self._OrgnlEnrlmnt = None
 
 	@property
 	def SplmtryData(self):
@@ -34,19 +34,6 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def OrgnlEnrlmnt(self):
-		return self._OrgnlEnrlmnt
-
-	@OrgnlEnrlmnt.setter
-	def OrgnlEnrlmnt(self, value):
-		self._OrgnlEnrlmnt = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmnt")
-
-	@OrgnlEnrlmnt.deleter
-	def OrgnlEnrlmnt(self):
-		del self._OrgnlEnrlmnt
-		self._OrgnlEnrlmnt = None
-
-	@property
 	def OrgnlBizInstr(self):
 		return self._OrgnlBizInstr
 
@@ -59,10 +46,23 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 		del self._OrgnlBizInstr
 		self._OrgnlBizInstr = None
 
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=CreditorEnrolmentCancellationReason3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlEnrlmnt', type=OriginalEnrolment3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CreditorEnrolmentCancellationReason3, min=0, max=1, mutex_group=None, array=False),
 	))
 

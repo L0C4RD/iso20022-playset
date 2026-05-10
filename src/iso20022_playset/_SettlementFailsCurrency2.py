@@ -1,6 +1,6 @@
 from . import base_types
-from .SettlementTotalData1 import SettlementTotalData1
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._SettlementTotalData1 import SettlementTotalData1
 
 class SettlementFailsCurrency2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountSwitchRequestRedirectionV04 import AccountSwitchRequestRedirectionV04
+from ._AccountSwitchRequestRedirectionV04 import AccountSwitchRequestRedirectionV04
 
 class ACMT_030_001_04():
 

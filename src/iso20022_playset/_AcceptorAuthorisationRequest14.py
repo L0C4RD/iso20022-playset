@@ -1,12 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PaymentContext30 import PaymentContext30
-from .CardPaymentTransaction139 import CardPaymentTransaction139
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransaction139 import CardPaymentTransaction139
+from ._SupplementaryData1 import SupplementaryData1
+from ._PaymentContext30 import PaymentContext30
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_Tx"]
+	__slots__ = ["_SplmtryData", "_Envt", "_Cntxt", "_Tx"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	@property
 	def Envt(self):
 		return self._Envt
@@ -34,19 +47,6 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def Tx(self):
 		return self._Tx
 
@@ -60,9 +60,9 @@ class AcceptorAuthorisationRequest14(base_types._BaseFieldType):
 		self._Tx = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction139, min=1, max=1, mutex_group=None, array=False),
 	))
 

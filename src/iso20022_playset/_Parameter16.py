@@ -1,25 +1,12 @@
 from . import base_types
-from .Number import Number
-from .AlgorithmIdentification34 import AlgorithmIdentification34
-from .Algorithm26Code import Algorithm26Code
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Number import Number
+from ._AlgorithmIdentification34 import AlgorithmIdentification34
+from ._Algorithm26Code import Algorithm26Code
 
 class Parameter16(base_types._BaseFieldType):
 
-	__slots__ = ["_SaltLngth", "_TrlrFld", "_OIDCrvNm", "_MskGnrtrAlgo", "_DgstAlgo"]
-	@property
-	def SaltLngth(self):
-		return self._SaltLngth
-
-	@SaltLngth.setter
-	def SaltLngth(self, value):
-		self._SaltLngth = value if type(value) != base_types.auto else self.make_default("SaltLngth")
-
-	@SaltLngth.deleter
-	def SaltLngth(self):
-		del self._SaltLngth
-		self._SaltLngth = None
-
+	__slots__ = ["_TrlrFld", "_OIDCrvNm", "_SaltLngth", "_MskGnrtrAlgo", "_DgstAlgo"]
 	@property
 	def TrlrFld(self):
 		return self._TrlrFld
@@ -45,6 +32,19 @@ class Parameter16(base_types._BaseFieldType):
 	def OIDCrvNm(self):
 		del self._OIDCrvNm
 		self._OIDCrvNm = None
+
+	@property
+	def SaltLngth(self):
+		return self._SaltLngth
+
+	@SaltLngth.setter
+	def SaltLngth(self, value):
+		self._SaltLngth = value if type(value) != base_types.auto else self.make_default("SaltLngth")
+
+	@SaltLngth.deleter
+	def SaltLngth(self):
+		del self._SaltLngth
+		self._SaltLngth = None
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -73,9 +73,9 @@ class Parameter16(base_types._BaseFieldType):
 		self._DgstAlgo = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OIDCrvNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 	))

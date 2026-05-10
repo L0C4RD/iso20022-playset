@@ -1,33 +1,20 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .MandateAdjustment1 import MandateAdjustment1
-from .CashAccount40 import CashAccount40
-from .MandateOccurrences5 import MandateOccurrences5
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max35Text import Max35Text
-from .MandateSetupReason1Choice import MandateSetupReason1Choice
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ReferredMandateDocument2 import ReferredMandateDocument2
-from .MandateTypeInformation2 import MandateTypeInformation2
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .MandateAuthentication1 import MandateAuthentication1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ReferredMandateDocument2 import ReferredMandateDocument2
+from ._MandateTypeInformation2 import MandateTypeInformation2
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._MandateAuthentication1 import MandateAuthentication1
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
+from ._MandateAdjustment1 import MandateAdjustment1
+from ._CashAccount40 import CashAccount40
+from ._MandateOccurrences5 import MandateOccurrences5
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PartyIdentification272 import PartyIdentification272
+from ._Max35Text import Max35Text
 
 class Mandate21(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CdtrAgt", "_Authntcn", "_Adjstmnt", "_MndtReqId", "_MndtRef", "_MaxAmt", "_UltmtDbtr", "_UltmtCdtr", "_RfrdDoc", "_Rsn", "_ColltnAmt", "_FrstColltnAmt", "_MndtId", "_CdtrAcct", "_Cdtr", "_Dbtr", "_Ocrncs", "_DbtrAgt", "_TrckgInd", "_DbtrAcct", "_CdtrSchmeId"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_CdtrAgt", "_MndtReqId", "_RfrdDoc", "_MaxAmt", "_TrckgInd", "_UltmtCdtr", "_Authntcn", "_Rsn", "_UltmtDbtr", "_Dbtr", "_ColltnAmt", "_MndtId", "_MndtRef", "_Tp", "_Adjstmnt", "_DbtrAcct", "_FrstColltnAmt", "_Ocrncs", "_Cdtr", "_DbtrAgt", "_CdtrAcct", "_CdtrSchmeId"]
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
@@ -40,32 +27,6 @@ class Mandate21(base_types._BaseFieldType):
 	def CdtrAgt(self):
 		del self._CdtrAgt
 		self._CdtrAgt = None
-
-	@property
-	def Authntcn(self):
-		return self._Authntcn
-
-	@Authntcn.setter
-	def Authntcn(self, value):
-		self._Authntcn = value if type(value) != base_types.auto else self.make_default("Authntcn")
-
-	@Authntcn.deleter
-	def Authntcn(self):
-		del self._Authntcn
-		self._Authntcn = None
-
-	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
-
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
-
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
 
 	@property
 	def MndtReqId(self):
@@ -81,17 +42,17 @@ class Mandate21(base_types._BaseFieldType):
 		self._MndtReqId = None
 
 	@property
-	def MndtRef(self):
-		return self._MndtRef
+	def RfrdDoc(self):
+		return self._RfrdDoc
 
-	@MndtRef.setter
-	def MndtRef(self, value):
-		self._MndtRef = value if type(value) != base_types.auto else self.make_default("MndtRef")
+	@RfrdDoc.setter
+	def RfrdDoc(self, value):
+		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
 
-	@MndtRef.deleter
-	def MndtRef(self):
-		del self._MndtRef
-		self._MndtRef = None
+	@RfrdDoc.deleter
+	def RfrdDoc(self):
+		del self._RfrdDoc
+		self._RfrdDoc = None
 
 	@property
 	def MaxAmt(self):
@@ -107,17 +68,17 @@ class Mandate21(base_types._BaseFieldType):
 		self._MaxAmt = None
 
 	@property
-	def UltmtDbtr(self):
-		return self._UltmtDbtr
+	def TrckgInd(self):
+		return self._TrckgInd
 
-	@UltmtDbtr.setter
-	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+	@TrckgInd.setter
+	def TrckgInd(self, value):
+		self._TrckgInd = value if type(value) != base_types.auto else self.make_default("TrckgInd")
 
-	@UltmtDbtr.deleter
-	def UltmtDbtr(self):
-		del self._UltmtDbtr
-		self._UltmtDbtr = None
+	@TrckgInd.deleter
+	def TrckgInd(self):
+		del self._TrckgInd
+		self._TrckgInd = None
 
 	@property
 	def UltmtCdtr(self):
@@ -133,17 +94,17 @@ class Mandate21(base_types._BaseFieldType):
 		self._UltmtCdtr = None
 
 	@property
-	def RfrdDoc(self):
-		return self._RfrdDoc
+	def Authntcn(self):
+		return self._Authntcn
 
-	@RfrdDoc.setter
-	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
+	@Authntcn.setter
+	def Authntcn(self, value):
+		self._Authntcn = value if type(value) != base_types.auto else self.make_default("Authntcn")
 
-	@RfrdDoc.deleter
-	def RfrdDoc(self):
-		del self._RfrdDoc
-		self._RfrdDoc = None
+	@Authntcn.deleter
+	def Authntcn(self):
+		del self._Authntcn
+		self._Authntcn = None
 
 	@property
 	def Rsn(self):
@@ -159,69 +120,17 @@ class Mandate21(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def ColltnAmt(self):
-		return self._ColltnAmt
+	def UltmtDbtr(self):
+		return self._UltmtDbtr
 
-	@ColltnAmt.setter
-	def ColltnAmt(self, value):
-		self._ColltnAmt = value if type(value) != base_types.auto else self.make_default("ColltnAmt")
+	@UltmtDbtr.setter
+	def UltmtDbtr(self, value):
+		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
 
-	@ColltnAmt.deleter
-	def ColltnAmt(self):
-		del self._ColltnAmt
-		self._ColltnAmt = None
-
-	@property
-	def FrstColltnAmt(self):
-		return self._FrstColltnAmt
-
-	@FrstColltnAmt.setter
-	def FrstColltnAmt(self, value):
-		self._FrstColltnAmt = value if type(value) != base_types.auto else self.make_default("FrstColltnAmt")
-
-	@FrstColltnAmt.deleter
-	def FrstColltnAmt(self):
-		del self._FrstColltnAmt
-		self._FrstColltnAmt = None
-
-	@property
-	def MndtId(self):
-		return self._MndtId
-
-	@MndtId.setter
-	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
-
-	@MndtId.deleter
-	def MndtId(self):
-		del self._MndtId
-		self._MndtId = None
-
-	@property
-	def CdtrAcct(self):
-		return self._CdtrAcct
-
-	@CdtrAcct.setter
-	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
-
-	@CdtrAcct.deleter
-	def CdtrAcct(self):
-		del self._CdtrAcct
-		self._CdtrAcct = None
-
-	@property
-	def Cdtr(self):
-		return self._Cdtr
-
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
-
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@UltmtDbtr.deleter
+	def UltmtDbtr(self):
+		del self._UltmtDbtr
+		self._UltmtDbtr = None
 
 	@property
 	def Dbtr(self):
@@ -237,43 +146,69 @@ class Mandate21(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def Ocrncs(self):
-		return self._Ocrncs
+	def ColltnAmt(self):
+		return self._ColltnAmt
 
-	@Ocrncs.setter
-	def Ocrncs(self, value):
-		self._Ocrncs = value if type(value) != base_types.auto else self.make_default("Ocrncs")
+	@ColltnAmt.setter
+	def ColltnAmt(self, value):
+		self._ColltnAmt = value if type(value) != base_types.auto else self.make_default("ColltnAmt")
 
-	@Ocrncs.deleter
-	def Ocrncs(self):
-		del self._Ocrncs
-		self._Ocrncs = None
-
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
+	@ColltnAmt.deleter
+	def ColltnAmt(self):
+		del self._ColltnAmt
+		self._ColltnAmt = None
 
 	@property
-	def TrckgInd(self):
-		return self._TrckgInd
+	def MndtId(self):
+		return self._MndtId
 
-	@TrckgInd.setter
-	def TrckgInd(self, value):
-		self._TrckgInd = value if type(value) != base_types.auto else self.make_default("TrckgInd")
+	@MndtId.setter
+	def MndtId(self, value):
+		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
 
-	@TrckgInd.deleter
-	def TrckgInd(self):
-		del self._TrckgInd
-		self._TrckgInd = None
+	@MndtId.deleter
+	def MndtId(self):
+		del self._MndtId
+		self._MndtId = None
+
+	@property
+	def MndtRef(self):
+		return self._MndtRef
+
+	@MndtRef.setter
+	def MndtRef(self, value):
+		self._MndtRef = value if type(value) != base_types.auto else self.make_default("MndtRef")
+
+	@MndtRef.deleter
+	def MndtRef(self):
+		del self._MndtRef
+		self._MndtRef = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
 
 	@property
 	def DbtrAcct(self):
@@ -289,6 +224,71 @@ class Mandate21(base_types._BaseFieldType):
 		self._DbtrAcct = None
 
 	@property
+	def FrstColltnAmt(self):
+		return self._FrstColltnAmt
+
+	@FrstColltnAmt.setter
+	def FrstColltnAmt(self, value):
+		self._FrstColltnAmt = value if type(value) != base_types.auto else self.make_default("FrstColltnAmt")
+
+	@FrstColltnAmt.deleter
+	def FrstColltnAmt(self):
+		del self._FrstColltnAmt
+		self._FrstColltnAmt = None
+
+	@property
+	def Ocrncs(self):
+		return self._Ocrncs
+
+	@Ocrncs.setter
+	def Ocrncs(self, value):
+		self._Ocrncs = value if type(value) != base_types.auto else self.make_default("Ocrncs")
+
+	@Ocrncs.deleter
+	def Ocrncs(self):
+		del self._Ocrncs
+		self._Ocrncs = None
+
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
+	@property
+	def DbtrAgt(self):
+		return self._DbtrAgt
+
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
+
+	@property
+	def CdtrAcct(self):
+		return self._CdtrAcct
+
+	@CdtrAcct.setter
+	def CdtrAcct(self, value):
+		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+
+	@CdtrAcct.deleter
+	def CdtrAcct(self):
+		del self._CdtrAcct
+		self._CdtrAcct = None
+
+	@property
 	def CdtrSchmeId(self):
 		return self._CdtrSchmeId
 
@@ -302,27 +302,27 @@ class Mandate21(base_types._BaseFieldType):
 		self._CdtrSchmeId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=MandateTypeInformation2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authntcn', type=MandateAuthentication1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adjstmnt', type=MandateAdjustment1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RfrdDoc', type=ReferredMandateDocument2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ColltnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstColltnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ocrncs', type=MandateOccurrences5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckgInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtCdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authntcn', type=MandateAuthentication1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ColltnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MndtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=MandateTypeInformation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=MandateAdjustment1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstColltnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ocrncs', type=MandateOccurrences5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

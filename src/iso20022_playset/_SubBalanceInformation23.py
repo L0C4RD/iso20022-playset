@@ -1,25 +1,12 @@
 from . import base_types
-from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from .SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
-from .SubBalanceType13Choice import SubBalanceType13Choice
-from .AdditionalBalanceInformation23 import AdditionalBalanceInformation23
+from ._SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._AdditionalBalanceInformation23 import AdditionalBalanceInformation23
+from ._SubBalanceType13Choice import SubBalanceType13Choice
 
 class SubBalanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_AddtlBalBrkdwnDtls", "_SubBalTp", "_SubBalAddtlDtls"]
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
+	__slots__ = ["_AddtlBalBrkdwnDtls", "_SubBalTp", "_SubBalAddtlDtls", "_Qty"]
 	@property
 	def AddtlBalBrkdwnDtls(self):
 		return self._AddtlBalBrkdwnDtls
@@ -59,10 +46,23 @@ class SubBalanceInformation23(base_types._BaseFieldType):
 		del self._SubBalAddtlDtls
 		self._SubBalAddtlDtls = None
 
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity9Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType13Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity9Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

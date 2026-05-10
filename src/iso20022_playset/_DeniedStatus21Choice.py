@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .DeniedReason16 import DeniedReason16
+from ._NoReasonCode import NoReasonCode
+from ._DeniedReason16 import DeniedReason16
 
 class DeniedStatus21Choice(base_types._BaseFieldType):
 

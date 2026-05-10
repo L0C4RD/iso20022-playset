@@ -1,6 +1,6 @@
 from . import base_types
-from .Quantity54Choice import Quantity54Choice
-from .PendingStatus76Choice import PendingStatus76Choice
+from ._Quantity54Choice import Quantity54Choice
+from ._PendingStatus76Choice import PendingStatus76Choice
 
 class PendingStatus2(base_types._BaseFieldType):
 

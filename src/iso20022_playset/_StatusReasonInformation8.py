@@ -1,7 +1,7 @@
 from . import base_types
-from .PartyIdentification32 import PartyIdentification32
-from .StatusReason6Choice import StatusReason6Choice
-from .Max105Text import Max105Text
+from ._PartyIdentification32 import PartyIdentification32
+from ._StatusReason6Choice import StatusReason6Choice
+from ._Max105Text import Max105Text
 
 class StatusReasonInformation8(base_types._BaseFieldType):
 

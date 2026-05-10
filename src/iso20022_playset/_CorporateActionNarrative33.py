@@ -1,22 +1,9 @@
 from . import base_types
-from .RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 
 class CorporateActionNarrative33(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryDtls", "_InfToCmplyWth", "_InstrAddtlInf", "_FXInstrsAddtlInf"]
-	@property
-	def DlvryDtls(self):
-		return self._DlvryDtls
-
-	@DlvryDtls.setter
-	def DlvryDtls(self, value):
-		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
-
-	@DlvryDtls.deleter
-	def DlvryDtls(self):
-		del self._DlvryDtls
-		self._DlvryDtls = None
-
+	__slots__ = ["_InfToCmplyWth", "_InstrAddtlInf", "_FXInstrsAddtlInf", "_DlvryDtls"]
 	@property
 	def InfToCmplyWth(self):
 		return self._InfToCmplyWth
@@ -56,10 +43,23 @@ class CorporateActionNarrative33(base_types._BaseFieldType):
 		del self._FXInstrsAddtlInf
 		self._FXInstrsAddtlInf = None
 
+	@property
+	def DlvryDtls(self):
+		return self._DlvryDtls
+
+	@DlvryDtls.setter
+	def DlvryDtls(self, value):
+		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
+
+	@DlvryDtls.deleter
+	def DlvryDtls(self):
+		del self._DlvryDtls
+		self._DlvryDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvryDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrAddtlInf', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FXInstrsAddtlInf', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvryDtls', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

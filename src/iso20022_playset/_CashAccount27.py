@@ -1,26 +1,26 @@
 from . import base_types
-from .BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
-from .CashAccountType2 import CashAccountType2
-from .PartyIdentification41 import PartyIdentification41
-from .AccountIdentification4Choice import AccountIdentification4Choice
-from .Max70Text import Max70Text
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._CashAccountType2 import CashAccountType2
+from ._PartyIdentification41 import PartyIdentification41
+from ._Max70Text import Max70Text
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BranchAndFinancialInstitutionIdentification5 import BranchAndFinancialInstitutionIdentification5
+from ._AccountIdentification4Choice import AccountIdentification4Choice
 
 class CashAccount27(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_Svcr", "_Id", "_Ownr", "_Tp", "_Nm"]
+	__slots__ = ["_Tp", "_Svcr", "_Ccy", "_Nm", "_Ownr", "_Id"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def Tp(self):
+		return self._Tp
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Svcr(self):
@@ -36,17 +36,30 @@ class CashAccount27(base_types._BaseFieldType):
 		self._Svcr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Ccy(self):
+		return self._Ccy
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Ownr(self):
@@ -62,37 +75,24 @@ class CashAccount27(base_types._BaseFieldType):
 		self._Ownr = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Id(self):
+		return self._Id
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ownr', type=PartyIdentification41, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ownr', type=PartyIdentification41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

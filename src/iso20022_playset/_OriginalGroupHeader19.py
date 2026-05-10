@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .PaymentReturnReason7 import PaymentReturnReason7
+from ._Max35Text import Max35Text
+from ._PaymentReturnReason7 import PaymentReturnReason7
+from ._ISODateTime import ISODateTime
 
 class OriginalGroupHeader19(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgNmId", "_OrgnlMsgId", "_OrgnlCreDtTm", "_RtrRsnInf"]
-	@property
-	def OrgnlMsgNmId(self):
-		return self._OrgnlMsgNmId
-
-	@OrgnlMsgNmId.setter
-	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
-
-	@OrgnlMsgNmId.deleter
-	def OrgnlMsgNmId(self):
-		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
-
+	__slots__ = ["_OrgnlMsgId", "_OrgnlMsgNmId", "_OrgnlCreDtTm", "_RtrRsnInf"]
 	@property
 	def OrgnlMsgId(self):
 		return self._OrgnlMsgId
@@ -31,6 +18,19 @@ class OriginalGroupHeader19(base_types._BaseFieldType):
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
 		self._OrgnlMsgId = None
+
+	@property
+	def OrgnlMsgNmId(self):
+		return self._OrgnlMsgNmId
+
+	@OrgnlMsgNmId.setter
+	def OrgnlMsgNmId(self, value):
+		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+
+	@OrgnlMsgNmId.deleter
+	def OrgnlMsgNmId(self):
+		del self._OrgnlMsgNmId
+		self._OrgnlMsgNmId = None
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -59,8 +59,8 @@ class OriginalGroupHeader19(base_types._BaseFieldType):
 		self._RtrRsnInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrRsnInf', type=PaymentReturnReason7, min=0, max=None, mutex_group=None, array=True),
 	))

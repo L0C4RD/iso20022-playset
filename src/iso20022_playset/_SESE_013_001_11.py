@@ -1,5 +1,5 @@
 from . import base_types
-from .PortfolioTransferConfirmationV11 import PortfolioTransferConfirmationV11
+from ._PortfolioTransferConfirmationV11 import PortfolioTransferConfirmationV11
 
 class SESE_013_001_11():
 

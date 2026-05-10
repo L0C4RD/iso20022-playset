@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .AccountOpeningType1Code import AccountOpeningType1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._AccountOpeningType1Code import AccountOpeningType1Code
 
 class AccountOpeningType1Choice(base_types._BaseFieldType):
 

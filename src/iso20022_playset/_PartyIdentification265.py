@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._Max35Text import Max35Text
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 
 class PartyIdentification265(base_types._BaseFieldType):
 

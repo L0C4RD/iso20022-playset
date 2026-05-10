@@ -1,5 +1,5 @@
 from . import base_types
-from .ErrorV04 import ErrorV04
+from ._ErrorV04 import ErrorV04
 
 class CAAD_007_001_04():
 

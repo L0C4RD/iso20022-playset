@@ -1,23 +1,23 @@
 from . import base_types
-from .AdministrativeRequest8 import AdministrativeRequest8
-from .ContentInformationType38 import ContentInformationType38
-from .Header41 import Header41
+from ._Header41 import Header41
+from ._AdministrativeRequest8 import AdministrativeRequest8
+from ._ContentInformationType38 import ContentInformationType38
 
 class SaleToPOIAdministrativeRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_AdmstvReq"]
+	__slots__ = ["_AdmstvReq", "_Hdr", "_SctyTrlr"]
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def AdmstvReq(self):
+		return self._AdmstvReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+	@AdmstvReq.setter
+	def AdmstvReq(self, value):
+		self._AdmstvReq = value if type(value) != base_types.auto else self.make_default("AdmstvReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@AdmstvReq.deleter
+	def AdmstvReq(self):
+		del self._AdmstvReq
+		self._AdmstvReq = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class SaleToPOIAdministrativeRequestV07(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def AdmstvReq(self):
-		return self._AdmstvReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@AdmstvReq.setter
-	def AdmstvReq(self, value):
-		self._AdmstvReq = value if type(value) != base_types.auto else self.make_default("AdmstvReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
 
-	@AdmstvReq.deleter
-	def AdmstvReq(self):
-		del self._AdmstvReq
-		self._AdmstvReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdmstvReq', type=AdministrativeRequest8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

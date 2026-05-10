@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralSubstitutionResponseV05 import CollateralSubstitutionResponseV05
+from ._CollateralSubstitutionResponseV05 import CollateralSubstitutionResponseV05
 
 class COLR_011_001_05():
 

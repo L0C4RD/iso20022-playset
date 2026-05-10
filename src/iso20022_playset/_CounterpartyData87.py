@@ -1,9 +1,9 @@
 from . import base_types
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyData87(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_RptSubmitgNtty", "_RptgCtrPty"]
+	__slots__ = ["_NttyRspnsblForRpt", "_RptgCtrPty", "_RptSubmitgNtty"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
@@ -18,19 +18,6 @@ class CounterpartyData87(base_types._BaseFieldType):
 		self._NttyRspnsblForRpt = None
 
 	@property
-	def RptSubmitgNtty(self):
-		return self._RptSubmitgNtty
-
-	@RptSubmitgNtty.setter
-	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
-
-	@RptSubmitgNtty.deleter
-	def RptSubmitgNtty(self):
-		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
-
-	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
 
@@ -43,9 +30,22 @@ class CounterpartyData87(base_types._BaseFieldType):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
 
+	@property
+	def RptSubmitgNtty(self):
+		return self._RptSubmitgNtty
+
+	@RptSubmitgNtty.setter
+	def RptSubmitgNtty(self, value):
+		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
+
+	@RptSubmitgNtty.deleter
+	def RptSubmitgNtty(self):
+		del self._RptSubmitgNtty
+		self._RptSubmitgNtty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

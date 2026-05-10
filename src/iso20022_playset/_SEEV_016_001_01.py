@@ -1,5 +1,5 @@
 from . import base_types
-from .AgentCADistributionBreakdownAdviceV01 import AgentCADistributionBreakdownAdviceV01
+from ._AgentCADistributionBreakdownAdviceV01 import AgentCADistributionBreakdownAdviceV01
 
 class SEEV_016_001_01():
 

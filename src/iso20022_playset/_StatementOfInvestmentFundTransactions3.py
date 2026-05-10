@@ -1,26 +1,13 @@
 from . import base_types
-from .InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
-from .InvestmentAccount43 import InvestmentAccount43
-from .SubAccountIdentification36 import SubAccountIdentification36
-from .Extension1 import Extension1
-from .Statement8 import Statement8
+from ._Statement8 import Statement8
+from ._SubAccountIdentification36 import SubAccountIdentification36
+from ._Extension1 import Extension1
+from ._InvestmentAccount43 import InvestmentAccount43
+from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
 
 class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 
-	__slots__ = ["_SubAcctDtls", "_Xtnsn", "_InvstmtAcctDtls", "_TxOnAcct", "_StmtGnlDtls"]
-	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
-
+	__slots__ = ["_Xtnsn", "_InvstmtAcctDtls", "_TxOnAcct", "_SubAcctDtls", "_StmtGnlDtls"]
 	@property
 	def Xtnsn(self):
 		return self._Xtnsn
@@ -61,6 +48,19 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 		self._TxOnAcct = None
 
 	@property
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
+
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
+
+	@property
 	def StmtGnlDtls(self):
 		return self._StmtGnlDtls
 
@@ -74,10 +74,10 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 		self._StmtGnlDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=0, max=1, mutex_group=None, array=False),
 	))
 

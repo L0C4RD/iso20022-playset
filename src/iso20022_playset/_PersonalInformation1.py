@@ -1,21 +1,21 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class PersonalInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_MdnNmOfMthr", "_NmOfPrtnr", "_NmOfFthr"]
+	__slots__ = ["_NmOfFthr", "_NmOfPrtnr", "_MdnNmOfMthr"]
 	@property
-	def MdnNmOfMthr(self):
-		return self._MdnNmOfMthr
+	def NmOfFthr(self):
+		return self._NmOfFthr
 
-	@MdnNmOfMthr.setter
-	def MdnNmOfMthr(self, value):
-		self._MdnNmOfMthr = value if type(value) != base_types.auto else self.make_default("MdnNmOfMthr")
+	@NmOfFthr.setter
+	def NmOfFthr(self, value):
+		self._NmOfFthr = value if type(value) != base_types.auto else self.make_default("NmOfFthr")
 
-	@MdnNmOfMthr.deleter
-	def MdnNmOfMthr(self):
-		del self._MdnNmOfMthr
-		self._MdnNmOfMthr = None
+	@NmOfFthr.deleter
+	def NmOfFthr(self):
+		del self._NmOfFthr
+		self._NmOfFthr = None
 
 	@property
 	def NmOfPrtnr(self):
@@ -31,21 +31,21 @@ class PersonalInformation1(base_types._BaseFieldType):
 		self._NmOfPrtnr = None
 
 	@property
-	def NmOfFthr(self):
-		return self._NmOfFthr
+	def MdnNmOfMthr(self):
+		return self._MdnNmOfMthr
 
-	@NmOfFthr.setter
-	def NmOfFthr(self, value):
-		self._NmOfFthr = value if type(value) != base_types.auto else self.make_default("NmOfFthr")
+	@MdnNmOfMthr.setter
+	def MdnNmOfMthr(self, value):
+		self._MdnNmOfMthr = value if type(value) != base_types.auto else self.make_default("MdnNmOfMthr")
 
-	@NmOfFthr.deleter
-	def NmOfFthr(self):
-		del self._NmOfFthr
-		self._NmOfFthr = None
+	@MdnNmOfMthr.deleter
+	def MdnNmOfMthr(self):
+		del self._MdnNmOfMthr
+		self._MdnNmOfMthr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MdnNmOfMthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmOfPrtnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmOfFthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmOfPrtnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdnNmOfMthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

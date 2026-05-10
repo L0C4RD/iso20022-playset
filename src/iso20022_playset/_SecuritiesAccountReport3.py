@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .SecuritiesAccountOrBusinessError3Choice import SecuritiesAccountOrBusinessError3Choice
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SecuritiesAccountOrBusinessError3Choice import SecuritiesAccountOrBusinessError3Choice
 
 class SecuritiesAccountReport3(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ATMDepositResponseV02 import ATMDepositResponseV02
+from ._ATMDepositResponseV02 import ATMDepositResponseV02
 
 class CATP_013_001_02():
 

@@ -1,78 +1,13 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .Max140Text import Max140Text
-from .MasterAgreement7 import MasterAgreement7
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .PartyIdentification236Choice import PartyIdentification236Choice
+from ._Max140Text import Max140Text
+from ._MasterAgreement7 import MasterAgreement7
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._Max52Text import Max52Text
+from ._PartyIdentification236Choice import PartyIdentification236Choice
 
 class TradeTransactionIdentification20(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_AgtLndr", "_OthrCtrPty", "_MstrAgrmt", "_TechRcrdId", "_UnqTradIdr", "_NttyRspnsblForRpt", "_TrptyAgt"]
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
-
-	@property
-	def AgtLndr(self):
-		return self._AgtLndr
-
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
-
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
-
-	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
-
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
-
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
-
-	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
-
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
-
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
+	__slots__ = ["_UnqTradIdr", "_NttyRspnsblForRpt", "_RptgCtrPty", "_TrptyAgt", "_OthrCtrPty", "_AgtLndr", "_MstrAgrmt", "_TechRcrdId"]
 	@property
 	def UnqTradIdr(self):
 		return self._UnqTradIdr
@@ -100,6 +35,19 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		self._NttyRspnsblForRpt = None
 
 	@property
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
+
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
+
+	@property
 	def TrptyAgt(self):
 		return self._TrptyAgt
 
@@ -112,14 +60,66 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		del self._TrptyAgt
 		self._TrptyAgt = None
 
+	@property
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
+
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
+
+	@property
+	def AgtLndr(self):
+		return self._AgtLndr
+
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
+
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
+
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

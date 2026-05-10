@@ -1,6 +1,6 @@
 from . import base_types
-from .TimeToMaturityPeriod2 import TimeToMaturityPeriod2
-from .SpecialPurpose2Code import SpecialPurpose2Code
+from ._TimeToMaturityPeriod2 import TimeToMaturityPeriod2
+from ._SpecialPurpose2Code import SpecialPurpose2Code
 
 class TimeToMaturity2Choice(base_types._BaseFieldType):
 

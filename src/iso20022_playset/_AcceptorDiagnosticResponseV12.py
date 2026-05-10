@@ -1,11 +1,11 @@
 from . import base_types
-from .AcceptorDiagnosticResponse11 import AcceptorDiagnosticResponse11
-from .ContentInformationType37 import ContentInformationType37
-from .Header70 import Header70
+from ._Header70 import Header70
+from ._AcceptorDiagnosticResponse11 import AcceptorDiagnosticResponse11
+from ._ContentInformationType37 import ContentInformationType37
 
 class AcceptorDiagnosticResponseV12(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_DgnstcRspn", "_Hdr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_DgnstcRspn"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -20,19 +20,6 @@ class AcceptorDiagnosticResponseV12(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def DgnstcRspn(self):
-		return self._DgnstcRspn
-
-	@DgnstcRspn.setter
-	def DgnstcRspn(self, value):
-		self._DgnstcRspn = value if type(value) != base_types.auto else self.make_default("DgnstcRspn")
-
-	@DgnstcRspn.deleter
-	def DgnstcRspn(self):
-		del self._DgnstcRspn
-		self._DgnstcRspn = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,9 +32,22 @@ class AcceptorDiagnosticResponseV12(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def DgnstcRspn(self):
+		return self._DgnstcRspn
+
+	@DgnstcRspn.setter
+	def DgnstcRspn(self, value):
+		self._DgnstcRspn = value if type(value) != base_types.auto else self.make_default("DgnstcRspn")
+
+	@DgnstcRspn.deleter
+	def DgnstcRspn(self):
+		del self._DgnstcRspn
+		self._DgnstcRspn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgnstcRspn', type=AcceptorDiagnosticResponse11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnstcRspn', type=AcceptorDiagnosticResponse11, min=1, max=1, mutex_group=None, array=False),
 	))
 

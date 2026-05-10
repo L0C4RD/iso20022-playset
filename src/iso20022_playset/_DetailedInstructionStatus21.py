@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .InstructionStatus13Choice import InstructionStatus13Choice
+from ._Max35Text import Max35Text
+from ._InstructionStatus13Choice import InstructionStatus13Choice
 
 class DetailedInstructionStatus21(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .Max3Number import Max3Number
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from .Frequency19Code import Frequency19Code
-from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._Max3Number import Max3Number
+from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._Frequency19Code import Frequency19Code
 
 class QuantityTerm1(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_Val", "_Qty", "_TmUnit"]
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
+	__slots__ = ["_Val", "_UnitOfMeasr", "_TmUnit", "_Qty"]
 	@property
 	def Val(self):
 		return self._Val
@@ -34,17 +21,17 @@ class QuantityTerm1(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def Qty(self):
-		return self._Qty
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
 	def TmUnit(self):
@@ -59,10 +46,23 @@ class QuantityTerm1(base_types._BaseFieldType):
 		del self._TmUnit
 		self._TmUnit = None
 
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max3Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmUnit', type=Frequency19Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 from . import base_types
-from .Number import Number
-from .Max5000Binary import Max5000Binary
-from .Recipient5Choice import Recipient5Choice
-from .AlgorithmIdentification27 import AlgorithmIdentification27
+from ._Max5000Binary import Max5000Binary
+from ._Number import Number
+from ._Recipient5Choice import Recipient5Choice
+from ._AlgorithmIdentification27 import AlgorithmIdentification27
 
 class KeyTransport6(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyNcrptnAlgo", "_RcptId", "_Vrsn", "_NcrptdKey"]
+	__slots__ = ["_Vrsn", "_KeyNcrptnAlgo", "_RcptId", "_NcrptdKey"]
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
@@ -34,19 +47,6 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._RcptId = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
-	@property
 	def NcrptdKey(self):
 		return self._NcrptdKey
 
@@ -60,9 +60,9 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._NcrptdKey = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,22 @@
 from . import base_types
-from .OrganisationIdentificationSchemeName2Choice import OrganisationIdentificationSchemeName2Choice
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._OrganisationIdentificationSchemeName2Choice import OrganisationIdentificationSchemeName2Choice
 
 class GenericOrganisationIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Id", "_Issr"]
+	__slots__ = ["_Issr", "_Id", "_SchmeNm"]
 	@property
-	def SchmeNm(self):
-		return self._SchmeNm
+	def Issr(self):
+		return self._Issr
 
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
 
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Id(self):
@@ -32,21 +32,21 @@ class GenericOrganisationIdentification2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def SchmeNm(self):
+		return self._SchmeNm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=OrganisationIdentificationSchemeName2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=OrganisationIdentificationSchemeName2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

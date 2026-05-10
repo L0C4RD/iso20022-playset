@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FinancialInstrument101 import FinancialInstrument101
-from .FundPortfolio9Choice import FundPortfolio9Choice
-from .AdditionalInformation15 import AdditionalInformation15
+from ._Max35Text import Max35Text
+from ._FinancialInstrument101 import FinancialInstrument101
+from ._FundPortfolio9Choice import FundPortfolio9Choice
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class PortfolioTransfer12(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtfl", "_FinInstrmAsstForTrf", "_AddtlInf", "_MstrRef", "_TrfId"]
-	@property
-	def Prtfl(self):
-		return self._Prtfl
-
-	@Prtfl.setter
-	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
-
-	@Prtfl.deleter
-	def Prtfl(self):
-		del self._Prtfl
-		self._Prtfl = None
-
+	__slots__ = ["_FinInstrmAsstForTrf", "_Prtfl", "_AddtlInf", "_TrfId", "_MstrRef"]
 	@property
 	def FinInstrmAsstForTrf(self):
 		return self._FinInstrmAsstForTrf
@@ -32,6 +19,19 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 	def FinInstrmAsstForTrf(self):
 		del self._FinInstrmAsstForTrf
 		self._FinInstrmAsstForTrf = None
+
+	@property
+	def Prtfl(self):
+		return self._Prtfl
+
+	@Prtfl.setter
+	def Prtfl(self, value):
+		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
+
+	@Prtfl.deleter
+	def Prtfl(self):
+		del self._Prtfl
+		self._Prtfl = None
 
 	@property
 	def AddtlInf(self):
@@ -47,19 +47,6 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
-	@property
 	def TrfId(self):
 		return self._TrfId
 
@@ -72,11 +59,24 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 		del self._TrfId
 		self._TrfId = None
 
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtfl', type=FundPortfolio9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument101, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prtfl', type=FundPortfolio9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

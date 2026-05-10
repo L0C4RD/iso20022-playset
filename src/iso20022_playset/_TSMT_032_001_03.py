@@ -1,5 +1,5 @@
 from . import base_types
-from .StatusExtensionNotificationV03 import StatusExtensionNotificationV03
+from ._StatusExtensionNotificationV03 import StatusExtensionNotificationV03
 
 class TSMT_032_001_03():
 

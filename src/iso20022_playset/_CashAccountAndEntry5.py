@@ -1,6 +1,6 @@
 from . import base_types
-from .CashEntry2 import CashEntry2
-from .CashAccount43 import CashAccount43
+from ._CashEntry2 import CashEntry2
+from ._CashAccount43 import CashAccount43
 
 class CashAccountAndEntry5(base_types._BaseFieldType):
 

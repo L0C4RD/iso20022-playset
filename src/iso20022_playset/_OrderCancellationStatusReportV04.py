@@ -1,12 +1,25 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .Status26Choice import Status26Choice
-from .References61Choice import References61Choice
-from .Extension1 import Extension1
+from ._Status26Choice import Status26Choice
+from ._Extension1 import Extension1
+from ._References61Choice import References61Choice
+from ._MessageIdentification1 import MessageIdentification1
 
 class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Xtnsn", "_StsRpt", "_Ref", "_MsgId"]
+	__slots__ = ["_MsgId", "_Xtnsn", "_StsRpt", "_Ref"]
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	@property
 	def Xtnsn(self):
 		return self._Xtnsn
@@ -46,23 +59,10 @@ class OrderCancellationStatusReportV04(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRpt', type=Status26Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References61Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .MICIdentifier import MICIdentifier
-from .Max35Text import Max35Text
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._MICIdentifier import MICIdentifier
+from ._CountryCode import CountryCode
 
 class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Pty", "_OverTheCntr", "_Xchg"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
+	__slots__ = ["_Pty", "_Xchg", "_Ctry", "_OverTheCntr"]
 	@property
 	def Pty(self):
 		return self._Pty
@@ -34,19 +21,6 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		self._Pty = None
 
 	@property
-	def OverTheCntr(self):
-		return self._OverTheCntr
-
-	@OverTheCntr.setter
-	def OverTheCntr(self, value):
-		self._OverTheCntr = value if type(value) != base_types.auto else self.make_default("OverTheCntr")
-
-	@OverTheCntr.deleter
-	def OverTheCntr(self):
-		del self._OverTheCntr
-		self._OverTheCntr = None
-
-	@property
 	def Xchg(self):
 		return self._Xchg
 
@@ -59,10 +33,36 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		del self._Xchg
 		self._Xchg = None
 
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
+	def OverTheCntr(self):
+		return self._OverTheCntr
+
+	@OverTheCntr.setter
+	def OverTheCntr(self, value):
+		self._OverTheCntr = value if type(value) != base_types.auto else self.make_default("OverTheCntr")
+
+	@OverTheCntr.deleter
+	def OverTheCntr(self):
+		del self._OverTheCntr
+		self._OverTheCntr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pty', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

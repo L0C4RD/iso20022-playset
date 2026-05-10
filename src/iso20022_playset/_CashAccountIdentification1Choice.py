@@ -1,12 +1,12 @@
 from . import base_types
-from .BBANIdentifier import BBANIdentifier
-from .UPICIdentifier import UPICIdentifier
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
-from .IBANIdentifier import IBANIdentifier
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._IBANIdentifier import IBANIdentifier
+from ._UPICIdentifier import UPICIdentifier
+from ._BBANIdentifier import BBANIdentifier
 
 class CashAccountIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DmstAcct", "_UPIC", "_BBAN", "_IBAN"]
+	__slots__ = ["_DmstAcct", "_BBAN", "_IBAN", "_UPIC"]
 	@property
 	def DmstAcct(self):
 		return self._DmstAcct
@@ -19,19 +19,6 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 	def DmstAcct(self):
 		del self._DmstAcct
 		self._DmstAcct = None
-
-	@property
-	def UPIC(self):
-		return self._UPIC
-
-	@UPIC.setter
-	def UPIC(self, value):
-		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
-
-	@UPIC.deleter
-	def UPIC(self):
-		del self._UPIC
-		self._UPIC = None
 
 	@property
 	def BBAN(self):
@@ -59,10 +46,23 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		del self._IBAN
 		self._IBAN = None
 
+	@property
+	def UPIC(self):
+		return self._UPIC
+
+	@UPIC.setter
+	def UPIC(self, value):
+		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
+
+	@UPIC.deleter
+	def UPIC(self):
+		del self._UPIC
+		self._UPIC = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DmstAcct', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

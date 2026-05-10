@@ -1,25 +1,12 @@
 from . import base_types
-from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from .CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from .Exact3NumericText import Exact3NumericText
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
+from ._Exact3NumericText import Exact3NumericText
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
 
 class CorporateActionElection2(base_types._BaseFieldType):
 
-	__slots__ = ["_NewInstdQty", "_OptnNb", "_Rsn", "_OptnTp"]
-	@property
-	def NewInstdQty(self):
-		return self._NewInstdQty
-
-	@NewInstdQty.setter
-	def NewInstdQty(self, value):
-		self._NewInstdQty = value if type(value) != base_types.auto else self.make_default("NewInstdQty")
-
-	@NewInstdQty.deleter
-	def NewInstdQty(self):
-		del self._NewInstdQty
-		self._NewInstdQty = None
-
+	__slots__ = ["_OptnNb", "_Rsn", "_OptnTp", "_NewInstdQty"]
 	@property
 	def OptnNb(self):
 		return self._OptnNb
@@ -59,10 +46,23 @@ class CorporateActionElection2(base_types._BaseFieldType):
 		del self._OptnTp
 		self._OptnTp = None
 
+	@property
+	def NewInstdQty(self):
+		return self._NewInstdQty
+
+	@NewInstdQty.setter
+	def NewInstdQty(self, value):
+		self._NewInstdQty = value if type(value) != base_types.auto else self.make_default("NewInstdQty")
+
+	@NewInstdQty.deleter
+	def NewInstdQty(self):
+		del self._NewInstdQty
+		self._NewInstdQty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewInstdQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewInstdQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

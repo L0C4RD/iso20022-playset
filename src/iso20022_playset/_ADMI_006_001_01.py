@@ -1,5 +1,5 @@
 from . import base_types
-from .ResendRequestV01 import ResendRequestV01
+from ._ResendRequestV01 import ResendRequestV01
 
 class ADMI_006_001_01():
 

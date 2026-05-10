@@ -1,5 +1,5 @@
 from . import base_types
-from .InvestigationRequestV01 import InvestigationRequestV01
+from ._InvestigationRequestV01 import InvestigationRequestV01
 
 class CAMT_110_001_01():
 

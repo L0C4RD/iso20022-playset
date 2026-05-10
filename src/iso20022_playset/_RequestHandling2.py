@@ -1,11 +1,11 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .Max4AlphaNumericText import Max4AlphaNumericText
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._ISODateTime import ISODateTime
 
 class RequestHandling2(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_StsDtTm", "_StsCd"]
+	__slots__ = ["_Desc", "_StsCd", "_StsDtTm"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -20,19 +20,6 @@ class RequestHandling2(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def StsDtTm(self):
-		return self._StsDtTm
-
-	@StsDtTm.setter
-	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
-
-	@StsDtTm.deleter
-	def StsDtTm(self):
-		del self._StsDtTm
-		self._StsDtTm = None
-
-	@property
 	def StsCd(self):
 		return self._StsCd
 
@@ -45,9 +32,22 @@ class RequestHandling2(base_types._BaseFieldType):
 		del self._StsCd
 		self._StsCd = None
 
+	@property
+	def StsDtTm(self):
+		return self._StsDtTm
+
+	@StsDtTm.setter
+	def StsDtTm(self, value):
+		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
+
+	@StsDtTm.deleter
+	def StsDtTm(self):
+		del self._StsDtTm
+		self._StsDtTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsCd', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

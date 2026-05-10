@@ -1,19 +1,71 @@
 from . import base_types
-from .SaleTerminalData1 import SaleTerminalData1
-from .SaleTokenScope1Code import SaleTokenScope1Code
-from .PointOfInteractionComponent17 import PointOfInteractionComponent17
-from .Max35Text import Max35Text
-from .Max2NumericText import Max2NumericText
-from .TrueFalseIndicator import TrueFalseIndicator
-from .LanguageCode import LanguageCode
-from .PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
-from .ISODateTime import ISODateTime
-from .ActionMessage11 import ActionMessage11
-from .CustomerOrderRequest1Code import CustomerOrderRequest1Code
+from ._Max2NumericText import Max2NumericText
+from ._SaleTokenScope1Code import SaleTokenScope1Code
+from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
+from ._ActionMessage11 import ActionMessage11
+from ._SaleTerminalData1 import SaleTerminalData1
+from ._CustomerOrderRequest1Code import CustomerOrderRequest1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
+from ._LanguageCode import LanguageCode
+from ._ISODateTime import ISODateTime
 
 class LoginRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_LgnDtTm", "_POIId", "_CshrId", "_SaleSftwr", "_SaleTermnlData", "_CstmrOrdrReq", "_OutptDisp", "_ShftNb", "_TrngMdFlg", "_TknReqdTp", "_CshrLang", "_TtlsGrpId"]
+	__slots__ = ["_SaleTermnlData", "_TknReqdTp", "_SaleSftwr", "_OutptDisp", "_LgnDtTm", "_TrngMdFlg", "_ShftNb", "_CstmrOrdrReq", "_POIId", "_CshrId", "_TtlsGrpId", "_CshrLang"]
+	@property
+	def SaleTermnlData(self):
+		return self._SaleTermnlData
+
+	@SaleTermnlData.setter
+	def SaleTermnlData(self, value):
+		self._SaleTermnlData = value if type(value) != base_types.auto else self.make_default("SaleTermnlData")
+
+	@SaleTermnlData.deleter
+	def SaleTermnlData(self):
+		del self._SaleTermnlData
+		self._SaleTermnlData = None
+
+	@property
+	def TknReqdTp(self):
+		return self._TknReqdTp
+
+	@TknReqdTp.setter
+	def TknReqdTp(self, value):
+		self._TknReqdTp = value if type(value) != base_types.auto else self.make_default("TknReqdTp")
+
+	@TknReqdTp.deleter
+	def TknReqdTp(self):
+		del self._TknReqdTp
+		self._TknReqdTp = None
+
+	@property
+	def SaleSftwr(self):
+		return self._SaleSftwr
+
+	@SaleSftwr.setter
+	def SaleSftwr(self, value):
+		self._SaleSftwr = value if type(value) != base_types.auto else self.make_default("SaleSftwr")
+
+	@SaleSftwr.deleter
+	def SaleSftwr(self):
+		del self._SaleSftwr
+		self._SaleSftwr = None
+
+	@property
+	def OutptDisp(self):
+		return self._OutptDisp
+
+	@OutptDisp.setter
+	def OutptDisp(self, value):
+		self._OutptDisp = value if type(value) != base_types.auto else self.make_default("OutptDisp")
+
+	@OutptDisp.deleter
+	def OutptDisp(self):
+		del self._OutptDisp
+		self._OutptDisp = None
+
 	@property
 	def LgnDtTm(self):
 		return self._LgnDtTm
@@ -26,6 +78,45 @@ class LoginRequest7(base_types._BaseFieldType):
 	def LgnDtTm(self):
 		del self._LgnDtTm
 		self._LgnDtTm = None
+
+	@property
+	def TrngMdFlg(self):
+		return self._TrngMdFlg
+
+	@TrngMdFlg.setter
+	def TrngMdFlg(self, value):
+		self._TrngMdFlg = value if type(value) != base_types.auto else self.make_default("TrngMdFlg")
+
+	@TrngMdFlg.deleter
+	def TrngMdFlg(self):
+		del self._TrngMdFlg
+		self._TrngMdFlg = None
+
+	@property
+	def ShftNb(self):
+		return self._ShftNb
+
+	@ShftNb.setter
+	def ShftNb(self, value):
+		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
+
+	@ShftNb.deleter
+	def ShftNb(self):
+		del self._ShftNb
+		self._ShftNb = None
+
+	@property
+	def CstmrOrdrReq(self):
+		return self._CstmrOrdrReq
+
+	@CstmrOrdrReq.setter
+	def CstmrOrdrReq(self, value):
+		self._CstmrOrdrReq = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReq")
+
+	@CstmrOrdrReq.deleter
+	def CstmrOrdrReq(self):
+		del self._CstmrOrdrReq
+		self._CstmrOrdrReq = None
 
 	@property
 	def POIId(self):
@@ -54,95 +145,17 @@ class LoginRequest7(base_types._BaseFieldType):
 		self._CshrId = None
 
 	@property
-	def SaleSftwr(self):
-		return self._SaleSftwr
+	def TtlsGrpId(self):
+		return self._TtlsGrpId
 
-	@SaleSftwr.setter
-	def SaleSftwr(self, value):
-		self._SaleSftwr = value if type(value) != base_types.auto else self.make_default("SaleSftwr")
+	@TtlsGrpId.setter
+	def TtlsGrpId(self, value):
+		self._TtlsGrpId = value if type(value) != base_types.auto else self.make_default("TtlsGrpId")
 
-	@SaleSftwr.deleter
-	def SaleSftwr(self):
-		del self._SaleSftwr
-		self._SaleSftwr = None
-
-	@property
-	def SaleTermnlData(self):
-		return self._SaleTermnlData
-
-	@SaleTermnlData.setter
-	def SaleTermnlData(self, value):
-		self._SaleTermnlData = value if type(value) != base_types.auto else self.make_default("SaleTermnlData")
-
-	@SaleTermnlData.deleter
-	def SaleTermnlData(self):
-		del self._SaleTermnlData
-		self._SaleTermnlData = None
-
-	@property
-	def CstmrOrdrReq(self):
-		return self._CstmrOrdrReq
-
-	@CstmrOrdrReq.setter
-	def CstmrOrdrReq(self, value):
-		self._CstmrOrdrReq = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReq")
-
-	@CstmrOrdrReq.deleter
-	def CstmrOrdrReq(self):
-		del self._CstmrOrdrReq
-		self._CstmrOrdrReq = None
-
-	@property
-	def OutptDisp(self):
-		return self._OutptDisp
-
-	@OutptDisp.setter
-	def OutptDisp(self, value):
-		self._OutptDisp = value if type(value) != base_types.auto else self.make_default("OutptDisp")
-
-	@OutptDisp.deleter
-	def OutptDisp(self):
-		del self._OutptDisp
-		self._OutptDisp = None
-
-	@property
-	def ShftNb(self):
-		return self._ShftNb
-
-	@ShftNb.setter
-	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
-
-	@ShftNb.deleter
-	def ShftNb(self):
-		del self._ShftNb
-		self._ShftNb = None
-
-	@property
-	def TrngMdFlg(self):
-		return self._TrngMdFlg
-
-	@TrngMdFlg.setter
-	def TrngMdFlg(self, value):
-		self._TrngMdFlg = value if type(value) != base_types.auto else self.make_default("TrngMdFlg")
-
-	@TrngMdFlg.deleter
-	def TrngMdFlg(self):
-		del self._TrngMdFlg
-		self._TrngMdFlg = None
-
-	@property
-	def TknReqdTp(self):
-		return self._TknReqdTp
-
-	@TknReqdTp.setter
-	def TknReqdTp(self, value):
-		self._TknReqdTp = value if type(value) != base_types.auto else self.make_default("TknReqdTp")
-
-	@TknReqdTp.deleter
-	def TknReqdTp(self):
-		del self._TknReqdTp
-		self._TknReqdTp = None
+	@TtlsGrpId.deleter
+	def TtlsGrpId(self):
+		del self._TtlsGrpId
+		self._TtlsGrpId = None
 
 	@property
 	def CshrLang(self):
@@ -157,31 +170,18 @@ class LoginRequest7(base_types._BaseFieldType):
 		del self._CshrLang
 		self._CshrLang = None
 
-	@property
-	def TtlsGrpId(self):
-		return self._TtlsGrpId
-
-	@TtlsGrpId.setter
-	def TtlsGrpId(self, value):
-		self._TtlsGrpId = value if type(value) != base_types.auto else self.make_default("TtlsGrpId")
-
-	@TtlsGrpId.deleter
-	def TtlsGrpId(self):
-		del self._TtlsGrpId
-		self._TtlsGrpId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SaleTermnlData', type=SaleTerminalData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TknReqdTp', type=SaleTokenScope1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleSftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LgnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrngMdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShftNb', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrOrdrReq', type=CustomerOrderRequest1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIId', type=PointOfInteractionComponentIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleSftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleTermnlData', type=SaleTerminalData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrOrdrReq', type=CustomerOrderRequest1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShftNb', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrngMdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TknReqdTp', type=SaleTokenScope1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshrLang', type=LanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshrLang', type=LanguageCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

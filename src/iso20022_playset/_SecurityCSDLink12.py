@@ -1,52 +1,26 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
-from .SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .IssuanceAccount3 import IssuanceAccount3
-from .SecurityIdentification19 import SecurityIdentification19
+from ._IssuanceAccount3 import IssuanceAccount3
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecurityCSDLink12(base_types._BaseFieldType):
 
-	__slots__ = ["_DfltLk", "_IssncAcct", "_SctyMntnc", "_VldFr", "_IssrInvstrCSD", "_TechIssrCSD", "_VldTo", "_FinInstrmId"]
+	__slots__ = ["_TechIssrCSD", "_VldFr", "_IssncAcct", "_VldTo", "_DfltLk", "_SctyMntnc", "_FinInstrmId", "_IssrInvstrCSD"]
 	@property
-	def DfltLk(self):
-		return self._DfltLk
+	def TechIssrCSD(self):
+		return self._TechIssrCSD
 
-	@DfltLk.setter
-	def DfltLk(self, value):
-		self._DfltLk = value if type(value) != base_types.auto else self.make_default("DfltLk")
+	@TechIssrCSD.setter
+	def TechIssrCSD(self, value):
+		self._TechIssrCSD = value if type(value) != base_types.auto else self.make_default("TechIssrCSD")
 
-	@DfltLk.deleter
-	def DfltLk(self):
-		del self._DfltLk
-		self._DfltLk = None
-
-	@property
-	def IssncAcct(self):
-		return self._IssncAcct
-
-	@IssncAcct.setter
-	def IssncAcct(self, value):
-		self._IssncAcct = value if type(value) != base_types.auto else self.make_default("IssncAcct")
-
-	@IssncAcct.deleter
-	def IssncAcct(self):
-		del self._IssncAcct
-		self._IssncAcct = None
-
-	@property
-	def SctyMntnc(self):
-		return self._SctyMntnc
-
-	@SctyMntnc.setter
-	def SctyMntnc(self, value):
-		self._SctyMntnc = value if type(value) != base_types.auto else self.make_default("SctyMntnc")
-
-	@SctyMntnc.deleter
-	def SctyMntnc(self):
-		del self._SctyMntnc
-		self._SctyMntnc = None
+	@TechIssrCSD.deleter
+	def TechIssrCSD(self):
+		del self._TechIssrCSD
+		self._TechIssrCSD = None
 
 	@property
 	def VldFr(self):
@@ -62,30 +36,17 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		self._VldFr = None
 
 	@property
-	def IssrInvstrCSD(self):
-		return self._IssrInvstrCSD
+	def IssncAcct(self):
+		return self._IssncAcct
 
-	@IssrInvstrCSD.setter
-	def IssrInvstrCSD(self, value):
-		self._IssrInvstrCSD = value if type(value) != base_types.auto else self.make_default("IssrInvstrCSD")
+	@IssncAcct.setter
+	def IssncAcct(self, value):
+		self._IssncAcct = value if type(value) != base_types.auto else self.make_default("IssncAcct")
 
-	@IssrInvstrCSD.deleter
-	def IssrInvstrCSD(self):
-		del self._IssrInvstrCSD
-		self._IssrInvstrCSD = None
-
-	@property
-	def TechIssrCSD(self):
-		return self._TechIssrCSD
-
-	@TechIssrCSD.setter
-	def TechIssrCSD(self, value):
-		self._TechIssrCSD = value if type(value) != base_types.auto else self.make_default("TechIssrCSD")
-
-	@TechIssrCSD.deleter
-	def TechIssrCSD(self):
-		del self._TechIssrCSD
-		self._TechIssrCSD = None
+	@IssncAcct.deleter
+	def IssncAcct(self):
+		del self._IssncAcct
+		self._IssncAcct = None
 
 	@property
 	def VldTo(self):
@@ -101,6 +62,32 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		self._VldTo = None
 
 	@property
+	def DfltLk(self):
+		return self._DfltLk
+
+	@DfltLk.setter
+	def DfltLk(self, value):
+		self._DfltLk = value if type(value) != base_types.auto else self.make_default("DfltLk")
+
+	@DfltLk.deleter
+	def DfltLk(self):
+		del self._DfltLk
+		self._DfltLk = None
+
+	@property
+	def SctyMntnc(self):
+		return self._SctyMntnc
+
+	@SctyMntnc.setter
+	def SctyMntnc(self, value):
+		self._SctyMntnc = value if type(value) != base_types.auto else self.make_default("SctyMntnc")
+
+	@SctyMntnc.deleter
+	def SctyMntnc(self):
+		del self._SctyMntnc
+		self._SctyMntnc = None
+
+	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -113,14 +100,27 @@ class SecurityCSDLink12(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def IssrInvstrCSD(self):
+		return self._IssrInvstrCSD
+
+	@IssrInvstrCSD.setter
+	def IssrInvstrCSD(self, value):
+		self._IssrInvstrCSD = value if type(value) != base_types.auto else self.make_default("IssrInvstrCSD")
+
+	@IssrInvstrCSD.deleter
+	def IssrInvstrCSD(self):
+		del self._IssrInvstrCSD
+		self._IssrInvstrCSD = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DfltLk', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssncAcct', type=IssuanceAccount3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctyMntnc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrInvstrCSD', type=IssuerOrInvestor2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechIssrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncAcct', type=IssuanceAccount3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VldTo', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DfltLk', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyMntnc', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrInvstrCSD', type=IssuerOrInvestor2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

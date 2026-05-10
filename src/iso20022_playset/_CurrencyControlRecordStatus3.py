@@ -1,25 +1,25 @@
 from . import base_types
-from .DocumentIdentification28 import DocumentIdentification28
-from .Max35Text import Max35Text
-from .ValidationStatusReason3 import ValidationStatusReason3
-from .StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from .ISODateTime import ISODateTime
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from ._Max35Text import Max35Text
+from ._ValidationStatusReason3 import ValidationStatusReason3
+from ._ISODateTime import ISODateTime
 
 class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 
-	__slots__ = ["_StsDtTm", "_Sts", "_DocId", "_RcrdId", "_StsRsn"]
+	__slots__ = ["_RcrdId", "_Sts", "_StsDtTm", "_DocId", "_StsRsn"]
 	@property
-	def StsDtTm(self):
-		return self._StsDtTm
+	def RcrdId(self):
+		return self._RcrdId
 
-	@StsDtTm.setter
-	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
+	@RcrdId.setter
+	def RcrdId(self, value):
+		self._RcrdId = value if type(value) != base_types.auto else self.make_default("RcrdId")
 
-	@StsDtTm.deleter
-	def StsDtTm(self):
-		del self._StsDtTm
-		self._StsDtTm = None
+	@RcrdId.deleter
+	def RcrdId(self):
+		del self._RcrdId
+		self._RcrdId = None
 
 	@property
 	def Sts(self):
@@ -35,6 +35,19 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
+	def StsDtTm(self):
+		return self._StsDtTm
+
+	@StsDtTm.setter
+	def StsDtTm(self, value):
+		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
+
+	@StsDtTm.deleter
+	def StsDtTm(self):
+		del self._StsDtTm
+		self._StsDtTm = None
+
+	@property
 	def DocId(self):
 		return self._DocId
 
@@ -46,19 +59,6 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 	def DocId(self):
 		del self._DocId
 		self._DocId = None
-
-	@property
-	def RcrdId(self):
-		return self._RcrdId
-
-	@RcrdId.setter
-	def RcrdId(self, value):
-		self._RcrdId = value if type(value) != base_types.auto else self.make_default("RcrdId")
-
-	@RcrdId.deleter
-	def RcrdId(self):
-		del self._RcrdId
-		self._RcrdId = None
 
 	@property
 	def StsRsn(self):
@@ -74,10 +74,10 @@ class CurrencyControlRecordStatus3(base_types._BaseFieldType):
 		self._StsRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=ValidationStatusReason3, min=0, max=None, mutex_group=None, array=True),
 	))
 

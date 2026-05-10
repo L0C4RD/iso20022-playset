@@ -1,23 +1,10 @@
 from . import base_types
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .ISODate import ISODate
+from ._ISODate import ISODate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class SubscriptionInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfFrstSbcpt", "_EqtyCmpnt", "_TtlAmtYrToDt", "_CshCmpnt"]
-	@property
-	def DtOfFrstSbcpt(self):
-		return self._DtOfFrstSbcpt
-
-	@DtOfFrstSbcpt.setter
-	def DtOfFrstSbcpt(self, value):
-		self._DtOfFrstSbcpt = value if type(value) != base_types.auto else self.make_default("DtOfFrstSbcpt")
-
-	@DtOfFrstSbcpt.deleter
-	def DtOfFrstSbcpt(self):
-		del self._DtOfFrstSbcpt
-		self._DtOfFrstSbcpt = None
-
+	__slots__ = ["_EqtyCmpnt", "_TtlAmtYrToDt", "_DtOfFrstSbcpt", "_CshCmpnt"]
 	@property
 	def EqtyCmpnt(self):
 		return self._EqtyCmpnt
@@ -45,6 +32,19 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 		self._TtlAmtYrToDt = None
 
 	@property
+	def DtOfFrstSbcpt(self):
+		return self._DtOfFrstSbcpt
+
+	@DtOfFrstSbcpt.setter
+	def DtOfFrstSbcpt(self, value):
+		self._DtOfFrstSbcpt = value if type(value) != base_types.auto else self.make_default("DtOfFrstSbcpt")
+
+	@DtOfFrstSbcpt.deleter
+	def DtOfFrstSbcpt(self):
+		del self._DtOfFrstSbcpt
+		self._DtOfFrstSbcpt = None
+
+	@property
 	def CshCmpnt(self):
 		return self._CshCmpnt
 
@@ -58,9 +58,9 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 		self._CshCmpnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EqtyCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmtYrToDt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfFrstSbcpt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

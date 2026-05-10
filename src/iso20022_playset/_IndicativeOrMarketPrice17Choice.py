@@ -1,5 +1,5 @@
 from . import base_types
-from .PriceFormat88Choice import PriceFormat88Choice
+from ._PriceFormat88Choice import PriceFormat88Choice
 
 class IndicativeOrMarketPrice17Choice(base_types._BaseFieldType):
 

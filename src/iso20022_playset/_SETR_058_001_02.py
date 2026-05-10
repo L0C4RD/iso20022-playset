@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestForOrderConfirmationStatusReportV02 import RequestForOrderConfirmationStatusReportV02
+from ._RequestForOrderConfirmationStatusReportV02 import RequestForOrderConfirmationStatusReportV02
 
 class SETR_058_001_02():
 

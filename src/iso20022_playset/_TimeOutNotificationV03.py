@@ -1,27 +1,27 @@
 from . import base_types
-from .TimeOutResult2 import TimeOutResult2
-from .DocumentIdentification3 import DocumentIdentification3
-from .MessageIdentification1 import MessageIdentification1
-from .TransactionStatus4 import TransactionStatus4
-from .DocumentIdentification5 import DocumentIdentification5
-from .PendingActivity2 import PendingActivity2
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._PendingActivity2 import PendingActivity2
+from ._MessageIdentification1 import MessageIdentification1
+from ._TimeOutResult2 import TimeOutResult2
+from ._TransactionStatus4 import TransactionStatus4
+from ._DocumentIdentification5 import DocumentIdentification5
+from ._DocumentIdentification3 import DocumentIdentification3
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
 
 class TimeOutNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TxSts", "_UsrTxRef", "_TxId", "_TmOutDesc", "_NtfctnId", "_EstblishdBaselnId", "_ReqForActn"]
+	__slots__ = ["_TxId", "_UsrTxRef", "_EstblishdBaselnId", "_TmOutDesc", "_ReqForActn", "_TxSts", "_NtfctnId"]
 	@property
-	def TxSts(self):
-		return self._TxSts
+	def TxId(self):
+		return self._TxId
 
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def UsrTxRef(self):
@@ -37,17 +37,17 @@ class TimeOutNotificationV03(base_types._BaseFieldType):
 		self._UsrTxRef = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
 
 	@property
 	def TmOutDesc(self):
@@ -63,32 +63,6 @@ class TimeOutNotificationV03(base_types._BaseFieldType):
 		self._TmOutDesc = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
-	@property
 	def ReqForActn(self):
 		return self._ReqForActn
 
@@ -101,13 +75,39 @@ class TimeOutNotificationV03(base_types._BaseFieldType):
 		del self._ReqForActn
 		self._ReqForActn = None
 
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmOutDesc', type=TimeOutResult2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmOutDesc', type=TimeOutResult2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

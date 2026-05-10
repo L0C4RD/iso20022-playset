@@ -1,10 +1,10 @@
 from . import base_types
-from .ReportingAssetBreakdown2 import ReportingAssetBreakdown2
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ReportingAssetBreakdown2 import ReportingAssetBreakdown2
 
 class AvailableFinancialResourcesAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_CCPSkinInTheGame", "_OthrDfltFndCntrbtn", "_UfnddThrdPtyCmmtmnt", "_TtlPrfnddDfltFnd", "_TtlInitlMrgn", "_UfnddMmbCmmtmnt"]
+	__slots__ = ["_CCPSkinInTheGame", "_OthrDfltFndCntrbtn", "_UfnddThrdPtyCmmtmnt", "_UfnddMmbCmmtmnt", "_TtlInitlMrgn", "_TtlPrfnddDfltFnd"]
 	@property
 	def CCPSkinInTheGame(self):
 		return self._CCPSkinInTheGame
@@ -45,17 +45,17 @@ class AvailableFinancialResourcesAmount2(base_types._BaseFieldType):
 		self._UfnddThrdPtyCmmtmnt = None
 
 	@property
-	def TtlPrfnddDfltFnd(self):
-		return self._TtlPrfnddDfltFnd
+	def UfnddMmbCmmtmnt(self):
+		return self._UfnddMmbCmmtmnt
 
-	@TtlPrfnddDfltFnd.setter
-	def TtlPrfnddDfltFnd(self, value):
-		self._TtlPrfnddDfltFnd = value if type(value) != base_types.auto else self.make_default("TtlPrfnddDfltFnd")
+	@UfnddMmbCmmtmnt.setter
+	def UfnddMmbCmmtmnt(self, value):
+		self._UfnddMmbCmmtmnt = value if type(value) != base_types.auto else self.make_default("UfnddMmbCmmtmnt")
 
-	@TtlPrfnddDfltFnd.deleter
-	def TtlPrfnddDfltFnd(self):
-		del self._TtlPrfnddDfltFnd
-		self._TtlPrfnddDfltFnd = None
+	@UfnddMmbCmmtmnt.deleter
+	def UfnddMmbCmmtmnt(self):
+		del self._UfnddMmbCmmtmnt
+		self._UfnddMmbCmmtmnt = None
 
 	@property
 	def TtlInitlMrgn(self):
@@ -71,24 +71,24 @@ class AvailableFinancialResourcesAmount2(base_types._BaseFieldType):
 		self._TtlInitlMrgn = None
 
 	@property
-	def UfnddMmbCmmtmnt(self):
-		return self._UfnddMmbCmmtmnt
+	def TtlPrfnddDfltFnd(self):
+		return self._TtlPrfnddDfltFnd
 
-	@UfnddMmbCmmtmnt.setter
-	def UfnddMmbCmmtmnt(self, value):
-		self._UfnddMmbCmmtmnt = value if type(value) != base_types.auto else self.make_default("UfnddMmbCmmtmnt")
+	@TtlPrfnddDfltFnd.setter
+	def TtlPrfnddDfltFnd(self, value):
+		self._TtlPrfnddDfltFnd = value if type(value) != base_types.auto else self.make_default("TtlPrfnddDfltFnd")
 
-	@UfnddMmbCmmtmnt.deleter
-	def UfnddMmbCmmtmnt(self):
-		del self._UfnddMmbCmmtmnt
-		self._UfnddMmbCmmtmnt = None
+	@TtlPrfnddDfltFnd.deleter
+	def TtlPrfnddDfltFnd(self):
+		del self._TtlPrfnddDfltFnd
+		self._TtlPrfnddDfltFnd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CCPSkinInTheGame', type=ReportingAssetBreakdown2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrDfltFndCntrbtn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UfnddThrdPtyCmmtmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPrfnddDfltFnd', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UfnddMmbCmmtmnt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInitlMrgn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPrfnddDfltFnd', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

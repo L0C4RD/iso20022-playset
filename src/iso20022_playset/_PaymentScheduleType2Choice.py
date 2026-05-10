@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PaymentScheduleType2Code import PaymentScheduleType2Code
+from ._Max35Text import Max35Text
+from ._PaymentScheduleType2Code import PaymentScheduleType2Code
 
 class PaymentScheduleType2Choice(base_types._BaseFieldType):
 

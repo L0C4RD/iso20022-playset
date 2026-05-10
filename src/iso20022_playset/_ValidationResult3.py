@@ -1,12 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Number import Number
-from .ElementIdentification3 import ElementIdentification3
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._ElementIdentification3 import ElementIdentification3
+from ._Number import Number
+from ._Max350Text import Max350Text
 
 class ValidationResult3(base_types._BaseFieldType):
 
-	__slots__ = ["_Elmt", "_RuleId", "_RuleDesc", "_SeqNb"]
+	__slots__ = ["_Elmt", "_RuleDesc", "_SeqNb", "_RuleId"]
 	@property
 	def Elmt(self):
 		return self._Elmt
@@ -19,19 +19,6 @@ class ValidationResult3(base_types._BaseFieldType):
 	def Elmt(self):
 		del self._Elmt
 		self._Elmt = None
-
-	@property
-	def RuleId(self):
-		return self._RuleId
-
-	@RuleId.setter
-	def RuleId(self, value):
-		self._RuleId = value if type(value) != base_types.auto else self.make_default("RuleId")
-
-	@RuleId.deleter
-	def RuleId(self):
-		del self._RuleId
-		self._RuleId = None
 
 	@property
 	def RuleDesc(self):
@@ -59,10 +46,23 @@ class ValidationResult3(base_types._BaseFieldType):
 		del self._SeqNb
 		self._SeqNb = None
 
+	@property
+	def RuleId(self):
+		return self._RuleId
+
+	@RuleId.setter
+	def RuleId(self, value):
+		self._RuleId = value if type(value) != base_types.auto else self.make_default("RuleId")
+
+	@RuleId.deleter
+	def RuleId(self):
+		del self._RuleId
+		self._RuleId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Elmt', type=ElementIdentification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RuleId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RuleDesc', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RuleId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

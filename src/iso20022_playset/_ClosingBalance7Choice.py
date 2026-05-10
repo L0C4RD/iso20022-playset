@@ -1,5 +1,5 @@
 from . import base_types
-from .BalanceQuantity17Choice import BalanceQuantity17Choice
+from ._BalanceQuantity17Choice import BalanceQuantity17Choice
 
 class ClosingBalance7Choice(base_types._BaseFieldType):
 

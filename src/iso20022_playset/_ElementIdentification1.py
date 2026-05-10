@@ -1,12 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max140Text import Max140Text
-from .Max350Text import Max350Text
-from .Max3NumericText import Max3NumericText
+from ._Max3NumericText import Max3NumericText
+from ._Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max350Text import Max350Text
 
 class ElementIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ElmtPth", "_ElmtNm", "_DocIndx", "_ElmtVal"]
+	__slots__ = ["_ElmtPth", "_ElmtVal", "_DocIndx", "_ElmtNm"]
 	@property
 	def ElmtPth(self):
 		return self._ElmtPth
@@ -21,17 +21,17 @@ class ElementIdentification1(base_types._BaseFieldType):
 		self._ElmtPth = None
 
 	@property
-	def ElmtNm(self):
-		return self._ElmtNm
+	def ElmtVal(self):
+		return self._ElmtVal
 
-	@ElmtNm.setter
-	def ElmtNm(self, value):
-		self._ElmtNm = value if type(value) != base_types.auto else self.make_default("ElmtNm")
+	@ElmtVal.setter
+	def ElmtVal(self, value):
+		self._ElmtVal = value if type(value) != base_types.auto else self.make_default("ElmtVal")
 
-	@ElmtNm.deleter
-	def ElmtNm(self):
-		del self._ElmtNm
-		self._ElmtNm = None
+	@ElmtVal.deleter
+	def ElmtVal(self):
+		del self._ElmtVal
+		self._ElmtVal = None
 
 	@property
 	def DocIndx(self):
@@ -47,22 +47,22 @@ class ElementIdentification1(base_types._BaseFieldType):
 		self._DocIndx = None
 
 	@property
-	def ElmtVal(self):
-		return self._ElmtVal
+	def ElmtNm(self):
+		return self._ElmtNm
 
-	@ElmtVal.setter
-	def ElmtVal(self, value):
-		self._ElmtVal = value if type(value) != base_types.auto else self.make_default("ElmtVal")
+	@ElmtNm.setter
+	def ElmtNm(self, value):
+		self._ElmtNm = value if type(value) != base_types.auto else self.make_default("ElmtNm")
 
-	@ElmtVal.deleter
-	def ElmtVal(self):
-		del self._ElmtVal
-		self._ElmtVal = None
+	@ElmtNm.deleter
+	def ElmtNm(self):
+		del self._ElmtNm
+		self._ElmtNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElmtPth', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ElmtNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocIndx', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ElmtVal', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocIndx', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElmtNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

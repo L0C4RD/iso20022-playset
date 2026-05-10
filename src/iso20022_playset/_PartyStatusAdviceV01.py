@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PartyStatus2 import PartyStatus2
-from .MessageHeader12 import MessageHeader12
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader12 import MessageHeader12
+from ._PartyStatus2 import PartyStatus2
 
 class PartyStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_PtySts"]
+	__slots__ = ["_PtySts", "_MsgHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def PtySts(self):
+		return self._PtySts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@PtySts.setter
+	def PtySts(self, value):
+		self._PtySts = value if type(value) != base_types.auto else self.make_default("PtySts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@PtySts.deleter
+	def PtySts(self):
+		del self._PtySts
+		self._PtySts = None
 
 	@property
 	def MsgHdr(self):
@@ -33,21 +33,21 @@ class PartyStatusAdviceV01(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def PtySts(self):
-		return self._PtySts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@PtySts.setter
-	def PtySts(self, value):
-		self._PtySts = value if type(value) != base_types.auto else self.make_default("PtySts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@PtySts.deleter
-	def PtySts(self):
-		del self._PtySts
-		self._PtySts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtySts', type=PartyStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

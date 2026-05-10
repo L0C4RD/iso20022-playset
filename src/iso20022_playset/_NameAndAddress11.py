@@ -1,6 +1,6 @@
 from . import base_types
-from .RestrictedFINMax35Text import RestrictedFINMax35Text
-from .PostalAddress7 import PostalAddress7
+from ._RestrictedFINMax35Text import RestrictedFINMax35Text
+from ._PostalAddress7 import PostalAddress7
 
 class NameAndAddress11(base_types._BaseFieldType):
 

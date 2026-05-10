@@ -1,7 +1,7 @@
 from . import base_types
-from .Max40Text import Max40Text
-from .ResidenceLocation1Choice import ResidenceLocation1Choice
-from .BillingTaxCalculationMethod1Code import BillingTaxCalculationMethod1Code
+from ._Max40Text import Max40Text
+from ._BillingTaxCalculationMethod1Code import BillingTaxCalculationMethod1Code
+from ._ResidenceLocation1Choice import ResidenceLocation1Choice
 
 class AccountTax1(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from .PriceFormat83Choice import PriceFormat83Choice
-from .IndicativeOrMarketPrice15Choice import IndicativeOrMarketPrice15Choice
-from .PriceFormat84Choice import PriceFormat84Choice
+from ._IndicativeOrMarketPrice15Choice import IndicativeOrMarketPrice15Choice
+from ._PriceFormat84Choice import PriceFormat84Choice
+from ._PriceFormat83Choice import PriceFormat83Choice
 
 class CorporateActionPrice91(base_types._BaseFieldType):
 
-	__slots__ = ["_GncCshPricRcvdPerPdct", "_IndctvOrMktPric", "_GncCshPricPdPerPdct", "_IssePric"]
+	__slots__ = ["_GncCshPricRcvdPerPdct", "_IssePric", "_IndctvOrMktPric", "_GncCshPricPdPerPdct"]
 	@property
 	def GncCshPricRcvdPerPdct(self):
 		return self._GncCshPricRcvdPerPdct
@@ -18,6 +18,19 @@ class CorporateActionPrice91(base_types._BaseFieldType):
 	def GncCshPricRcvdPerPdct(self):
 		del self._GncCshPricRcvdPerPdct
 		self._GncCshPricRcvdPerPdct = None
+
+	@property
+	def IssePric(self):
+		return self._IssePric
+
+	@IssePric.setter
+	def IssePric(self, value):
+		self._IssePric = value if type(value) != base_types.auto else self.make_default("IssePric")
+
+	@IssePric.deleter
+	def IssePric(self):
+		del self._IssePric
+		self._IssePric = None
 
 	@property
 	def IndctvOrMktPric(self):
@@ -45,23 +58,10 @@ class CorporateActionPrice91(base_types._BaseFieldType):
 		del self._GncCshPricPdPerPdct
 		self._GncCshPricPdPerPdct = None
 
-	@property
-	def IssePric(self):
-		return self._IssePric
-
-	@IssePric.setter
-	def IssePric(self, value):
-		self._IssePric = value if type(value) != base_types.auto else self.make_default("IssePric")
-
-	@IssePric.deleter
-	def IssePric(self):
-		del self._IssePric
-		self._IssePric = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat84Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssePric', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssePric', type=PriceFormat83Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

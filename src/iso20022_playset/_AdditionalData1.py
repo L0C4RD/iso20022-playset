@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
+from ._Max2048Text import Max2048Text
 
 class AdditionalData1(base_types._BaseFieldType):
 

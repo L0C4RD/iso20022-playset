@@ -1,25 +1,38 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max35Text import Max35Text
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .PercentageRate import PercentageRate
-from .Max70Text import Max70Text
+from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._PercentageRate import PercentageRate
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Adjustment13(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxOnOrgnlAmt", "_Amt", "_Tp", "_AddtlTp", "_Pctg", "_Rsn", "_PrmtnCd", "_Desc"]
+	__slots__ = ["_Desc", "_Pctg", "_Amt", "_Tp", "_AddtlTp", "_TaxOnOrgnlAmt", "_Rsn", "_PrmtnCd"]
 	@property
-	def TaxOnOrgnlAmt(self):
-		return self._TaxOnOrgnlAmt
+	def Desc(self):
+		return self._Desc
 
-	@TaxOnOrgnlAmt.setter
-	def TaxOnOrgnlAmt(self, value):
-		self._TaxOnOrgnlAmt = value if type(value) != base_types.auto else self.make_default("TaxOnOrgnlAmt")
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
 
-	@TaxOnOrgnlAmt.deleter
-	def TaxOnOrgnlAmt(self):
-		del self._TaxOnOrgnlAmt
-		self._TaxOnOrgnlAmt = None
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	@property
 	def Amt(self):
@@ -61,17 +74,17 @@ class Adjustment13(base_types._BaseFieldType):
 		self._AddtlTp = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def TaxOnOrgnlAmt(self):
+		return self._TaxOnOrgnlAmt
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+	@TaxOnOrgnlAmt.setter
+	def TaxOnOrgnlAmt(self, value):
+		self._TaxOnOrgnlAmt = value if type(value) != base_types.auto else self.make_default("TaxOnOrgnlAmt")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@TaxOnOrgnlAmt.deleter
+	def TaxOnOrgnlAmt(self):
+		del self._TaxOnOrgnlAmt
+		self._TaxOnOrgnlAmt = None
 
 	@property
 	def Rsn(self):
@@ -99,27 +112,14 @@ class Adjustment13(base_types._BaseFieldType):
 		del self._PrmtnCd
 		self._PrmtnCd = None
 
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrmtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

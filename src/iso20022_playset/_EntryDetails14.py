@@ -1,6 +1,6 @@
 from . import base_types
-from .EntryTransaction15 import EntryTransaction15
-from .BatchInformation2 import BatchInformation2
+from ._BatchInformation2 import BatchInformation2
+from ._EntryTransaction15 import EntryTransaction15
 
 class EntryDetails14(base_types._BaseFieldType):
 

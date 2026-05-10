@@ -1,6 +1,6 @@
 from . import base_types
-from .Operator1Code import Operator1Code
-from .Max500Text import Max500Text
+from ._Max500Text import Max500Text
+from ._Operator1Code import Operator1Code
 
 class SearchAnd1(base_types._BaseFieldType):
 

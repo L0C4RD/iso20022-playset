@@ -1,24 +1,37 @@
 from . import base_types
-from .IntentToPay2 import IntentToPay2
-from .MessageIdentification1 import MessageIdentification1
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
-from .BICIdentification1 import BICIdentification1
+from ._MessageIdentification1 import MessageIdentification1
+from ._BICIdentification1 import BICIdentification1
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._IntentToPay2 import IntentToPay2
 
 class IntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_InttToPay", "_SubmitrTxRef", "_BuyrBk", "_TxId", "_NtfctnId", "_SellrBk"]
+	__slots__ = ["_BuyrBk", "_SellrBk", "_SubmitrTxRef", "_TxId", "_InttToPay", "_NtfctnId"]
 	@property
-	def InttToPay(self):
-		return self._InttToPay
+	def BuyrBk(self):
+		return self._BuyrBk
 
-	@InttToPay.setter
-	def InttToPay(self, value):
-		self._InttToPay = value if type(value) != base_types.auto else self.make_default("InttToPay")
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
 
-	@InttToPay.deleter
-	def InttToPay(self):
-		del self._InttToPay
-		self._InttToPay = None
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
+
+	@property
+	def SellrBk(self):
+		return self._SellrBk
+
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
 
 	@property
 	def SubmitrTxRef(self):
@@ -34,19 +47,6 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		self._SubmitrTxRef = None
 
 	@property
-	def BuyrBk(self):
-		return self._BuyrBk
-
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
-
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -58,6 +58,19 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def InttToPay(self):
+		return self._InttToPay
+
+	@InttToPay.setter
+	def InttToPay(self, value):
+		self._InttToPay = value if type(value) != base_types.auto else self.make_default("InttToPay")
+
+	@InttToPay.deleter
+	def InttToPay(self):
+		del self._InttToPay
+		self._InttToPay = None
 
 	@property
 	def NtfctnId(self):
@@ -72,25 +85,12 @@ class IntentToPayNotificationV02(base_types._BaseFieldType):
 		del self._NtfctnId
 		self._NtfctnId = None
 
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

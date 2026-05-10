@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SecurityIdentification7 import SecurityIdentification7
-from .PartyIdentification2Choice import PartyIdentification2Choice
-from .Max350Text import Max350Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._Max350Text import Max350Text
+from ._SecurityIdentification7 import SecurityIdentification7
 
 class SecuritiesAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_SctiesAcctId", "_RegnDtls", "_AcctOwnrId", "_SctyId"]
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
+	__slots__ = ["_SctiesAcctId", "_AcctOwnrId", "_RegnDtls", "_SctyId", "_SfkpgPlc"]
 	@property
 	def SctiesAcctId(self):
 		return self._SctiesAcctId
@@ -32,19 +19,6 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
 		self._SctiesAcctId = None
-
-	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
 
 	@property
 	def AcctOwnrId(self):
@@ -60,6 +34,19 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
+	@property
 	def SctyId(self):
 		return self._SctyId
 
@@ -72,11 +59,24 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		del self._SctyId
 		self._SctyId = None
 
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

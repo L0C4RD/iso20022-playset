@@ -1,11 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader9 import MessageHeader9
-from .ReservationQuery6 import ReservationQuery6
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader9 import MessageHeader9
+from ._ReservationQuery6 import ReservationQuery6
 
 class GetReservationV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_RsvatnQryDef"]
+	__slots__ = ["_RsvatnQryDef", "_MsgHdr", "_SplmtryData"]
+	@property
+	def RsvatnQryDef(self):
+		return self._RsvatnQryDef
+
+	@RsvatnQryDef.setter
+	def RsvatnQryDef(self, value):
+		self._RsvatnQryDef = value if type(value) != base_types.auto else self.make_default("RsvatnQryDef")
+
+	@RsvatnQryDef.deleter
+	def RsvatnQryDef(self):
+		del self._RsvatnQryDef
+		self._RsvatnQryDef = None
+
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -32,22 +45,9 @@ class GetReservationV08(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def RsvatnQryDef(self):
-		return self._RsvatnQryDef
-
-	@RsvatnQryDef.setter
-	def RsvatnQryDef(self, value):
-		self._RsvatnQryDef = value if type(value) != base_types.auto else self.make_default("RsvatnQryDef")
-
-	@RsvatnQryDef.deleter
-	def RsvatnQryDef(self):
-		del self._RsvatnQryDef
-		self._RsvatnQryDef = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RsvatnQryDef', type=ReservationQuery6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RsvatnQryDef', type=ReservationQuery6, min=0, max=1, mutex_group=None, array=False),
 	))
 

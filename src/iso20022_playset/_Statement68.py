@@ -1,25 +1,25 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .UpdateType16Choice import UpdateType16Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .YesNoIndicator import YesNoIndicator
-from .Number3Choice import Number3Choice
+from ._YesNoIndicator import YesNoIndicator
+from ._UpdateType16Choice import UpdateType16Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._Number3Choice import Number3Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class Statement68(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_RptNb", "_StmtDtTm", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp", "_StmtId"]
+	__slots__ = ["_StmtDtTm", "_RptNb", "_ActvtyInd", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp", "_StmtId"]
 	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
+	def StmtDtTm(self):
+		return self._StmtDtTm
 
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
 
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
 
 	@property
 	def RptNb(self):
@@ -35,17 +35,17 @@ class Statement68(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
+	def ActvtyInd(self):
+		return self._ActvtyInd
 
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
 
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
 
 	@property
 	def CtrPtyPrtflTrfNtfctnRef(self):
@@ -87,9 +87,9 @@ class Statement68(base_types._BaseFieldType):
 		self._StmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),

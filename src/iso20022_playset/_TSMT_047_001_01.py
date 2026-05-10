@@ -1,5 +1,5 @@
 from . import base_types
-from .SpecialRequestV01 import SpecialRequestV01
+from ._SpecialRequestV01 import SpecialRequestV01
 
 class TSMT_047_001_01():
 

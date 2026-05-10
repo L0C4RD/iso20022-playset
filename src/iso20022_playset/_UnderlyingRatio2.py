@@ -1,6 +1,6 @@
 from . import base_types
-from .SecurityIdentification19 import SecurityIdentification19
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 

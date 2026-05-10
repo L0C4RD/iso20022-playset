@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .CollateralMovement6Choice import CollateralMovement6Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CollateralMovement6Choice import CollateralMovement6Choice
 
 class CollateralMovement12(base_types._BaseFieldType):
 

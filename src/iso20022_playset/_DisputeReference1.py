@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyType32Code import PartyType32Code
-from .DisputeIdentification1 import DisputeIdentification1
+from ._Max35Text import Max35Text
+from ._DisputeIdentification1 import DisputeIdentification1
+from ._PartyType32Code import PartyType32Code
 
 class DisputeReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_DsptId", "_AssgnrNtty", "_OthrAssgnrNtty"]
+	__slots__ = ["_OthrAssgnrNtty", "_AssgnrNtty", "_DsptId"]
 	@property
-	def DsptId(self):
-		return self._DsptId
+	def OthrAssgnrNtty(self):
+		return self._OthrAssgnrNtty
 
-	@DsptId.setter
-	def DsptId(self, value):
-		self._DsptId = value if type(value) != base_types.auto else self.make_default("DsptId")
+	@OthrAssgnrNtty.setter
+	def OthrAssgnrNtty(self, value):
+		self._OthrAssgnrNtty = value if type(value) != base_types.auto else self.make_default("OthrAssgnrNtty")
 
-	@DsptId.deleter
-	def DsptId(self):
-		del self._DsptId
-		self._DsptId = None
+	@OthrAssgnrNtty.deleter
+	def OthrAssgnrNtty(self):
+		del self._OthrAssgnrNtty
+		self._OthrAssgnrNtty = None
 
 	@property
 	def AssgnrNtty(self):
@@ -33,21 +33,21 @@ class DisputeReference1(base_types._BaseFieldType):
 		self._AssgnrNtty = None
 
 	@property
-	def OthrAssgnrNtty(self):
-		return self._OthrAssgnrNtty
+	def DsptId(self):
+		return self._DsptId
 
-	@OthrAssgnrNtty.setter
-	def OthrAssgnrNtty(self, value):
-		self._OthrAssgnrNtty = value if type(value) != base_types.auto else self.make_default("OthrAssgnrNtty")
+	@DsptId.setter
+	def DsptId(self, value):
+		self._DsptId = value if type(value) != base_types.auto else self.make_default("DsptId")
 
-	@OthrAssgnrNtty.deleter
-	def OthrAssgnrNtty(self):
-		del self._OthrAssgnrNtty
-		self._OthrAssgnrNtty = None
+	@DsptId.deleter
+	def DsptId(self):
+		del self._DsptId
+		self._DsptId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DsptId', type=DisputeIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DsptId', type=DisputeIdentification1, min=1, max=None, mutex_group=None, array=True),
 	))
 

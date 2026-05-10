@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestForDuplicateV07 import RequestForDuplicateV07
+from ._RequestForDuplicateV07 import RequestForDuplicateV07
 
 class CAMT_033_001_07():
 

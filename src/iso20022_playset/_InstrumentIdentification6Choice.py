@@ -1,12 +1,12 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .GenericIdentification184 import GenericIdentification184
-from .UniqueProductIdentifier1Choice import UniqueProductIdentifier1Choice
+from ._GenericIdentification184 import GenericIdentification184
+from ._UniqueProductIdentifier1Choice import UniqueProductIdentifier1Choice
+from ._Max52Text import Max52Text
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UnqPdctIdr", "_OthrId", "_AltrntvInstrmId", "_ISIN"]
+	__slots__ = ["_UnqPdctIdr", "_ISIN", "_OthrId", "_AltrntvInstrmId"]
 	@property
 	def UnqPdctIdr(self):
 		return self._UnqPdctIdr
@@ -19,6 +19,19 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
+
+	@property
+	def ISIN(self):
+		return self._ISIN
+
+	@ISIN.setter
+	def ISIN(self, value):
+		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+
+	@ISIN.deleter
+	def ISIN(self):
+		del self._ISIN
+		self._ISIN = None
 
 	@property
 	def OthrId(self):
@@ -46,23 +59,10 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 		del self._AltrntvInstrmId
 		self._AltrntvInstrmId = None
 
-	@property
-	def ISIN(self):
-		return self._ISIN
-
-	@ISIN.setter
-	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
-
-	@ISIN.deleter
-	def ISIN(self):
-		del self._ISIN
-		self._ISIN = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrId', type=GenericIdentification184, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

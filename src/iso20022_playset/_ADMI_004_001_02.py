@@ -1,5 +1,5 @@
 from . import base_types
-from .SystemEventNotificationV02 import SystemEventNotificationV02
+from ._SystemEventNotificationV02 import SystemEventNotificationV02
 
 class ADMI_004_001_02():
 

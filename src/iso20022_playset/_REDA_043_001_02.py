@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyAuditTrailReportV02 import PartyAuditTrailReportV02
+from ._PartyAuditTrailReportV02 import PartyAuditTrailReportV02
 
 class REDA_043_001_02():
 

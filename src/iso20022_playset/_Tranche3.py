@@ -1,5 +1,5 @@
 from . import base_types
-from .BaseOneRate import BaseOneRate
+from ._BaseOneRate import BaseOneRate
 
 class Tranche3(base_types._BaseFieldType):
 

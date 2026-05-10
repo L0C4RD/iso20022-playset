@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentificationType1Code import PartyIdentificationType1Code
+from ._Max35Text import Max35Text
+from ._PartyIdentificationType1Code import PartyIdentificationType1Code
 
 class PartyIdentification90(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_IdTp"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_IdTp", "_Id"]
 	@property
 	def IdTp(self):
 		return self._IdTp
@@ -31,8 +18,21 @@ class PartyIdentification90(base_types._BaseFieldType):
 		del self._IdTp
 		self._IdTp = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IdTp', type=PartyIdentificationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .AdjustmentDirection1Code import AdjustmentDirection1Code
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._AdjustmentDirection1Code import AdjustmentDirection1Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class Adjustment5(base_types._BaseFieldType):
 

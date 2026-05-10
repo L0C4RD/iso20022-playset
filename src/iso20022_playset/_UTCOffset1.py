@@ -1,6 +1,6 @@
 from . import base_types
-from .PlusOrMinusIndicator import PlusOrMinusIndicator
-from .ISOTime import ISOTime
+from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from ._ISOTime import ISOTime
 
 class UTCOffset1(base_types._BaseFieldType):
 

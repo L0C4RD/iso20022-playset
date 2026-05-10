@@ -1,5 +1,5 @@
 from . import base_types
-from .DataSetMatchReportV03 import DataSetMatchReportV03
+from ._DataSetMatchReportV03 import DataSetMatchReportV03
 
 class TSMT_013_001_03():
 

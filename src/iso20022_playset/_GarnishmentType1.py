@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .GarnishmentType1Choice import GarnishmentType1Choice
+from ._Max35Text import Max35Text
+from ._GarnishmentType1Choice import GarnishmentType1Choice
 
 class GarnishmentType1(base_types._BaseFieldType):
 

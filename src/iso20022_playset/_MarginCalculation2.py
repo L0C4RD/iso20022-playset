@@ -1,28 +1,15 @@
 from . import base_types
-from .MarginResult1Choice import MarginResult1Choice
-from .AmountAndDirection20 import AmountAndDirection20
-from .SecurityIdentification14 import SecurityIdentification14
-from .Collateral6 import Collateral6
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Margin3 import Margin3
-from .Amount2 import Amount2
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Margin3 import Margin3
+from ._Collateral6 import Collateral6
+from ._MarginResult1Choice import MarginResult1Choice
+from ._AmountAndDirection20 import AmountAndDirection20
+from ._Amount2 import Amount2
+from ._SecurityIdentification14 import SecurityIdentification14
 
 class MarginCalculation2(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmId", "_CollOnDpst", "_MrgnRslt", "_TtlMrgnAmt", "_MinRqrmntDpst", "_MrgnTpAmt", "_XpsrAmt"]
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
-
+	__slots__ = ["_CollOnDpst", "_FinInstrmId", "_MrgnTpAmt", "_MrgnRslt", "_MinRqrmntDpst", "_XpsrAmt", "_TtlMrgnAmt"]
 	@property
 	def CollOnDpst(self):
 		return self._CollOnDpst
@@ -37,43 +24,17 @@ class MarginCalculation2(base_types._BaseFieldType):
 		self._CollOnDpst = None
 
 	@property
-	def MrgnRslt(self):
-		return self._MrgnRslt
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@MrgnRslt.setter
-	def MrgnRslt(self, value):
-		self._MrgnRslt = value if type(value) != base_types.auto else self.make_default("MrgnRslt")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
 
-	@MrgnRslt.deleter
-	def MrgnRslt(self):
-		del self._MrgnRslt
-		self._MrgnRslt = None
-
-	@property
-	def TtlMrgnAmt(self):
-		return self._TtlMrgnAmt
-
-	@TtlMrgnAmt.setter
-	def TtlMrgnAmt(self, value):
-		self._TtlMrgnAmt = value if type(value) != base_types.auto else self.make_default("TtlMrgnAmt")
-
-	@TtlMrgnAmt.deleter
-	def TtlMrgnAmt(self):
-		del self._TtlMrgnAmt
-		self._TtlMrgnAmt = None
-
-	@property
-	def MinRqrmntDpst(self):
-		return self._MinRqrmntDpst
-
-	@MinRqrmntDpst.setter
-	def MinRqrmntDpst(self, value):
-		self._MinRqrmntDpst = value if type(value) != base_types.auto else self.make_default("MinRqrmntDpst")
-
-	@MinRqrmntDpst.deleter
-	def MinRqrmntDpst(self):
-		del self._MinRqrmntDpst
-		self._MinRqrmntDpst = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
 	def MrgnTpAmt(self):
@@ -89,6 +50,32 @@ class MarginCalculation2(base_types._BaseFieldType):
 		self._MrgnTpAmt = None
 
 	@property
+	def MrgnRslt(self):
+		return self._MrgnRslt
+
+	@MrgnRslt.setter
+	def MrgnRslt(self, value):
+		self._MrgnRslt = value if type(value) != base_types.auto else self.make_default("MrgnRslt")
+
+	@MrgnRslt.deleter
+	def MrgnRslt(self):
+		del self._MrgnRslt
+		self._MrgnRslt = None
+
+	@property
+	def MinRqrmntDpst(self):
+		return self._MinRqrmntDpst
+
+	@MinRqrmntDpst.setter
+	def MinRqrmntDpst(self, value):
+		self._MinRqrmntDpst = value if type(value) != base_types.auto else self.make_default("MinRqrmntDpst")
+
+	@MinRqrmntDpst.deleter
+	def MinRqrmntDpst(self):
+		del self._MinRqrmntDpst
+		self._MinRqrmntDpst = None
+
+	@property
 	def XpsrAmt(self):
 		return self._XpsrAmt
 
@@ -101,13 +88,26 @@ class MarginCalculation2(base_types._BaseFieldType):
 		del self._XpsrAmt
 		self._XpsrAmt = None
 
+	@property
+	def TtlMrgnAmt(self):
+		return self._TtlMrgnAmt
+
+	@TtlMrgnAmt.setter
+	def TtlMrgnAmt(self, value):
+		self._TtlMrgnAmt = value if type(value) != base_types.auto else self.make_default("TtlMrgnAmt")
+
+	@TtlMrgnAmt.deleter
+	def TtlMrgnAmt(self):
+		del self._TtlMrgnAmt
+		self._TtlMrgnAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollOnDpst', type=Collateral6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrgnRslt', type=MarginResult1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlMrgnAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinRqrmntDpst', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnTpAmt', type=Margin3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnRslt', type=MarginResult1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinRqrmntDpst', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrAmt', type=Amount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlMrgnAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
 	))
 

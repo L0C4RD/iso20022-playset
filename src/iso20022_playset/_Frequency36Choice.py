@@ -1,7 +1,7 @@
 from . import base_types
-from .Frequency6Code import Frequency6Code
-from .FrequencyAndMoment1 import FrequencyAndMoment1
-from .FrequencyPeriod1 import FrequencyPeriod1
+from ._FrequencyAndMoment1 import FrequencyAndMoment1
+from ._FrequencyPeriod1 import FrequencyPeriod1
+from ._Frequency6Code import Frequency6Code
 
 class Frequency36Choice(base_types._BaseFieldType):
 

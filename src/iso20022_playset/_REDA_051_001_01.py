@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountLinkStatusAdviceV01 import AccountLinkStatusAdviceV01
+from ._AccountLinkStatusAdviceV01 import AccountLinkStatusAdviceV01
 
 class REDA_051_001_01():
 

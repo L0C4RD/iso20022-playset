@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Contact13 import Contact13
+from ._Max35Text import Max35Text
+from ._Contact13 import Contact13
 
 class BillingTaxIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_VATRegnNb", "_TaxRegnNb", "_TaxCtct"]
-	@property
-	def VATRegnNb(self):
-		return self._VATRegnNb
-
-	@VATRegnNb.setter
-	def VATRegnNb(self, value):
-		self._VATRegnNb = value if type(value) != base_types.auto else self.make_default("VATRegnNb")
-
-	@VATRegnNb.deleter
-	def VATRegnNb(self):
-		del self._VATRegnNb
-		self._VATRegnNb = None
-
+	__slots__ = ["_TaxRegnNb", "_TaxCtct", "_VATRegnNb"]
 	@property
 	def TaxRegnNb(self):
 		return self._TaxRegnNb
@@ -44,9 +31,22 @@ class BillingTaxIdentification3(base_types._BaseFieldType):
 		del self._TaxCtct
 		self._TaxCtct = None
 
+	@property
+	def VATRegnNb(self):
+		return self._VATRegnNb
+
+	@VATRegnNb.setter
+	def VATRegnNb(self, value):
+		self._VATRegnNb = value if type(value) != base_types.auto else self.make_default("VATRegnNb")
+
+	@VATRegnNb.deleter
+	def VATRegnNb(self):
+		del self._VATRegnNb
+		self._VATRegnNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VATRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxCtct', type=Contact13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VATRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

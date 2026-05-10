@@ -1,67 +1,15 @@
 from . import base_types
-from .DocumentIdentification28 import DocumentIdentification28
-from .SupplementaryData1 import SupplementaryData1
-from .Max35Text import Max35Text
-from .CountryCode import CountryCode
-from .CashAccount40 import CashAccount40
-from .DocumentAmendment1 import DocumentAmendment1
-from .TransactionCertificateRecord2 import TransactionCertificateRecord2
+from ._DocumentAmendment1 import DocumentAmendment1
+from ._Max35Text import Max35Text
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._CountryCode import CountryCode
+from ._TransactionCertificateRecord2 import TransactionCertificateRecord2
+from ._SupplementaryData1 import SupplementaryData1
+from ._CashAccount40 import CashAccount40
 
 class TransactionCertificate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_Amdmnt", "_SplmtryData", "_CertRcrd", "_Acct", "_TxId", "_BkAcctDmcltnCtry"]
-	@property
-	def Cert(self):
-		return self._Cert
-
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
-
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
-
-	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def CertRcrd(self):
-		return self._CertRcrd
-
-	@CertRcrd.setter
-	def CertRcrd(self, value):
-		self._CertRcrd = value if type(value) != base_types.auto else self.make_default("CertRcrd")
-
-	@CertRcrd.deleter
-	def CertRcrd(self):
-		del self._CertRcrd
-		self._CertRcrd = None
-
+	__slots__ = ["_Acct", "_TxId", "_Cert", "_CertRcrd", "_BkAcctDmcltnCtry", "_SplmtryData", "_Amdmnt"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -89,6 +37,32 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
+
+	@property
+	def CertRcrd(self):
+		return self._CertRcrd
+
+	@CertRcrd.setter
+	def CertRcrd(self, value):
+		self._CertRcrd = value if type(value) != base_types.auto else self.make_default("CertRcrd")
+
+	@CertRcrd.deleter
+	def CertRcrd(self):
+		del self._CertRcrd
+		self._CertRcrd = None
+
+	@property
 	def BkAcctDmcltnCtry(self):
 		return self._BkAcctDmcltnCtry
 
@@ -101,13 +75,39 @@ class TransactionCertificate4(base_types._BaseFieldType):
 		del self._BkAcctDmcltnCtry
 		self._BkAcctDmcltnCtry = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def Amdmnt(self):
+		return self._Amdmnt
+
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertRcrd', type=TransactionCertificateRecord2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertRcrd', type=TransactionCertificateRecord2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BkAcctDmcltnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amdmnt', type=DocumentAmendment1, min=0, max=1, mutex_group=None, array=False),
 	))
 

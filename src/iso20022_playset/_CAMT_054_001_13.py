@@ -1,5 +1,5 @@
 from . import base_types
-from .BankToCustomerDebitCreditNotificationV13 import BankToCustomerDebitCreditNotificationV13
+from ._BankToCustomerDebitCreditNotificationV13 import BankToCustomerDebitCreditNotificationV13
 
 class CAMT_054_001_13():
 

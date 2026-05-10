@@ -1,6 +1,6 @@
 from . import base_types
-from .OptionNumber1Code import OptionNumber1Code
-from .Exact3NumericText import Exact3NumericText
+from ._OptionNumber1Code import OptionNumber1Code
+from ._Exact3NumericText import Exact3NumericText
 
 class OptionNumber1Choice(base_types._BaseFieldType):
 

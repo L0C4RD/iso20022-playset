@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentNumber6Choice import DocumentNumber6Choice
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._DocumentNumber6Choice import DocumentNumber6Choice
 
 class GenericDocumentIdentification5(base_types._BaseFieldType):
 

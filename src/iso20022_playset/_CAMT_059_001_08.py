@@ -1,5 +1,5 @@
 from . import base_types
-from .NotificationToReceiveStatusReportV08 import NotificationToReceiveStatusReportV08
+from ._NotificationToReceiveStatusReportV08 import NotificationToReceiveStatusReportV08
 
 class CAMT_059_001_08():
 

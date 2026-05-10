@@ -1,6 +1,6 @@
 from . import base_types
-from .PendingCancellationReason6Choice import PendingCancellationReason6Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._PendingCancellationReason6Choice import PendingCancellationReason6Choice
 
 class PendingCancellationStatusReason8(base_types._BaseFieldType):
 

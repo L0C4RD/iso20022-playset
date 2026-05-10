@@ -1,6 +1,6 @@
 from . import base_types
-from .SystemAndCurrency1 import SystemAndCurrency1
-from .CalendarOrBusinessError1Choice import CalendarOrBusinessError1Choice
+from ._CalendarOrBusinessError1Choice import CalendarOrBusinessError1Choice
+from ._SystemAndCurrency1 import SystemAndCurrency1
 
 class CalendarReport1(base_types._BaseFieldType):
 

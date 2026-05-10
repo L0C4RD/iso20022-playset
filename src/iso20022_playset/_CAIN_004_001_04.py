@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialResponseV04 import FinancialResponseV04
+from ._FinancialResponseV04 import FinancialResponseV04
 
 class CAIN_004_001_04():
 

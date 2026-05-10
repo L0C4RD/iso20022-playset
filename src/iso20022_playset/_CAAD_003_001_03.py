@@ -1,5 +1,5 @@
 from . import base_types
-from .BatchTransferInitiationV03 import BatchTransferInitiationV03
+from ._BatchTransferInitiationV03 import BatchTransferInitiationV03
 
 class CAAD_003_001_03():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max8Text import Max8Text
+from ._Max35Text import Max35Text
+from ._Max8Text import Max8Text
 
 class RateName1(base_types._BaseFieldType):
 

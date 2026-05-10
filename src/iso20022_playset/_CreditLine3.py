@@ -1,25 +1,12 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .CreditLineType1Choice import CreditLineType1Choice
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditLineType1Choice import CreditLineType1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class CreditLine3(base_types._BaseFieldType):
 
-	__slots__ = ["_Incl", "_Tp", "_Amt", "_Dt"]
-	@property
-	def Incl(self):
-		return self._Incl
-
-	@Incl.setter
-	def Incl(self, value):
-		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
-
-	@Incl.deleter
-	def Incl(self):
-		del self._Incl
-		self._Incl = None
-
+	__slots__ = ["_Tp", "_Amt", "_Incl", "_Dt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -47,6 +34,19 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def Incl(self):
+		return self._Incl
+
+	@Incl.setter
+	def Incl(self, value):
+		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
+
+	@Incl.deleter
+	def Incl(self):
+		del self._Incl
+		self._Incl = None
+
+	@property
 	def Dt(self):
 		return self._Dt
 
@@ -60,9 +60,9 @@ class CreditLine3(base_types._BaseFieldType):
 		self._Dt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Incl', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CreditLineType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Incl', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

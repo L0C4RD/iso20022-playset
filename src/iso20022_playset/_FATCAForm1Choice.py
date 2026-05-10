@@ -1,6 +1,6 @@
 from . import base_types
-from .FATCAFormType1Code import FATCAFormType1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._FATCAFormType1Code import FATCAFormType1Code
 
 class FATCAForm1Choice(base_types._BaseFieldType):
 

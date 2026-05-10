@@ -1,5 +1,5 @@
 from . import base_types
-from .ActionReminderV03 import ActionReminderV03
+from ._ActionReminderV03 import ActionReminderV03
 
 class TSMT_024_001_03():
 

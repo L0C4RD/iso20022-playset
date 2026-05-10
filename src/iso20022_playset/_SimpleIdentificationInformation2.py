@@ -1,5 +1,5 @@
 from . import base_types
-from .Max34Text import Max34Text
+from ._Max34Text import Max34Text
 
 class SimpleIdentificationInformation2(base_types._BaseFieldType):
 

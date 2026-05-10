@@ -1,23 +1,23 @@
 from . import base_types
-from .PartyIdentificationAndAccount201 import PartyIdentificationAndAccount201
-from .PartyIdentificationAndAccount200 import PartyIdentificationAndAccount200
-from .PartyIdentification239Choice import PartyIdentification239Choice
+from ._PartyIdentificationAndAccount200 import PartyIdentificationAndAccount200
+from ._PartyIdentification239Choice import PartyIdentification239Choice
+from ._PartyIdentificationAndAccount201 import PartyIdentificationAndAccount201
 
 class DeliveringPartiesAndAccount19(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty1", "_Pty2", "_Dpstry"]
+	__slots__ = ["_Dpstry", "_Pty2", "_Pty1"]
 	@property
-	def Pty1(self):
-		return self._Pty1
+	def Dpstry(self):
+		return self._Dpstry
 
-	@Pty1.setter
-	def Pty1(self, value):
-		self._Pty1 = value if type(value) != base_types.auto else self.make_default("Pty1")
+	@Dpstry.setter
+	def Dpstry(self, value):
+		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
 
-	@Pty1.deleter
-	def Pty1(self):
-		del self._Pty1
-		self._Pty1 = None
+	@Dpstry.deleter
+	def Dpstry(self):
+		del self._Dpstry
+		self._Dpstry = None
 
 	@property
 	def Pty2(self):
@@ -33,21 +33,21 @@ class DeliveringPartiesAndAccount19(base_types._BaseFieldType):
 		self._Pty2 = None
 
 	@property
-	def Dpstry(self):
-		return self._Dpstry
+	def Pty1(self):
+		return self._Pty1
 
-	@Dpstry.setter
-	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
+	@Pty1.setter
+	def Pty1(self, value):
+		self._Pty1 = value if type(value) != base_types.auto else self.make_default("Pty1")
 
-	@Dpstry.deleter
-	def Dpstry(self):
-		del self._Dpstry
-		self._Dpstry = None
+	@Pty1.deleter
+	def Pty1(self):
+		del self._Pty1
+		self._Pty1 = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount200, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount201, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification239Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty2', type=PartyIdentificationAndAccount201, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty1', type=PartyIdentificationAndAccount200, min=1, max=1, mutex_group=None, array=False),
 	))
 

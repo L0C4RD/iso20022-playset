@@ -1,23 +1,10 @@
 from . import base_types
-from .DocumentAmount1 import DocumentAmount1
-from .DocumentAdjustment1 import DocumentAdjustment1
+from ._DocumentAmount1 import DocumentAmount1
+from ._DocumentAdjustment1 import DocumentAdjustment1
 
 class RemittanceAmount4(base_types._BaseFieldType):
 
-	__slots__ = ["_AdjstmntAmtAndRsn", "_RmtAmtAndTp"]
-	@property
-	def AdjstmntAmtAndRsn(self):
-		return self._AdjstmntAmtAndRsn
-
-	@AdjstmntAmtAndRsn.setter
-	def AdjstmntAmtAndRsn(self, value):
-		self._AdjstmntAmtAndRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntAmtAndRsn")
-
-	@AdjstmntAmtAndRsn.deleter
-	def AdjstmntAmtAndRsn(self):
-		del self._AdjstmntAmtAndRsn
-		self._AdjstmntAmtAndRsn = None
-
+	__slots__ = ["_RmtAmtAndTp", "_AdjstmntAmtAndRsn"]
 	@property
 	def RmtAmtAndTp(self):
 		return self._RmtAmtAndTp
@@ -31,8 +18,21 @@ class RemittanceAmount4(base_types._BaseFieldType):
 		del self._RmtAmtAndTp
 		self._RmtAmtAndTp = None
 
+	@property
+	def AdjstmntAmtAndRsn(self):
+		return self._AdjstmntAmtAndRsn
+
+	@AdjstmntAmtAndRsn.setter
+	def AdjstmntAmtAndRsn(self, value):
+		self._AdjstmntAmtAndRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntAmtAndRsn")
+
+	@AdjstmntAmtAndRsn.deleter
+	def AdjstmntAmtAndRsn(self):
+		del self._AdjstmntAmtAndRsn
+		self._AdjstmntAmtAndRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RmtAmtAndTp', type=DocumentAmount1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .DeniedReason6Code import DeniedReason6Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._DeniedReason6Code import DeniedReason6Code
 
 class DeniedReason24Choice(base_types._BaseFieldType):
 

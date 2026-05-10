@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestToPayCreditorEnrolmentRequestV02 import RequestToPayCreditorEnrolmentRequestV02
+from ._RequestToPayCreditorEnrolmentRequestV02 import RequestToPayCreditorEnrolmentRequestV02
 
 class REDA_066_001_02():
 

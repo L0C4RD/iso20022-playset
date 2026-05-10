@@ -1,23 +1,23 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .PartyIdentification118Choice import PartyIdentification118Choice
-from .MarginAccount1 import MarginAccount1
+from ._MarginAccount1 import MarginAccount1
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PartyIdentification118Choice import PartyIdentification118Choice
 
 class CollateralAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdMrgnAcct", "_CollSgrtnByVal", "_TitlTrfCollArrgmnt", "_Id"]
+	__slots__ = ["_TitlTrfCollArrgmnt", "_CollSgrtnByVal", "_RltdMrgnAcct", "_Id"]
 	@property
-	def RltdMrgnAcct(self):
-		return self._RltdMrgnAcct
+	def TitlTrfCollArrgmnt(self):
+		return self._TitlTrfCollArrgmnt
 
-	@RltdMrgnAcct.setter
-	def RltdMrgnAcct(self, value):
-		self._RltdMrgnAcct = value if type(value) != base_types.auto else self.make_default("RltdMrgnAcct")
+	@TitlTrfCollArrgmnt.setter
+	def TitlTrfCollArrgmnt(self, value):
+		self._TitlTrfCollArrgmnt = value if type(value) != base_types.auto else self.make_default("TitlTrfCollArrgmnt")
 
-	@RltdMrgnAcct.deleter
-	def RltdMrgnAcct(self):
-		del self._RltdMrgnAcct
-		self._RltdMrgnAcct = None
+	@TitlTrfCollArrgmnt.deleter
+	def TitlTrfCollArrgmnt(self):
+		del self._TitlTrfCollArrgmnt
+		self._TitlTrfCollArrgmnt = None
 
 	@property
 	def CollSgrtnByVal(self):
@@ -33,17 +33,17 @@ class CollateralAccount5(base_types._BaseFieldType):
 		self._CollSgrtnByVal = None
 
 	@property
-	def TitlTrfCollArrgmnt(self):
-		return self._TitlTrfCollArrgmnt
+	def RltdMrgnAcct(self):
+		return self._RltdMrgnAcct
 
-	@TitlTrfCollArrgmnt.setter
-	def TitlTrfCollArrgmnt(self, value):
-		self._TitlTrfCollArrgmnt = value if type(value) != base_types.auto else self.make_default("TitlTrfCollArrgmnt")
+	@RltdMrgnAcct.setter
+	def RltdMrgnAcct(self, value):
+		self._RltdMrgnAcct = value if type(value) != base_types.auto else self.make_default("RltdMrgnAcct")
 
-	@TitlTrfCollArrgmnt.deleter
-	def TitlTrfCollArrgmnt(self):
-		del self._TitlTrfCollArrgmnt
-		self._TitlTrfCollArrgmnt = None
+	@RltdMrgnAcct.deleter
+	def RltdMrgnAcct(self):
+		del self._RltdMrgnAcct
+		self._RltdMrgnAcct = None
 
 	@property
 	def Id(self):
@@ -59,9 +59,9 @@ class CollateralAccount5(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TitlTrfCollArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdMrgnAcct', type=MarginAccount1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

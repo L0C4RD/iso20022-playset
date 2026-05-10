@@ -1,23 +1,10 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .ProcessingPosition10Choice import ProcessingPosition10Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._ProcessingPosition10Choice import ProcessingPosition10Choice
 
 class DocumentIdentification37(base_types._BaseFieldType):
 
-	__slots__ = ["_LkgTp", "_Id"]
-	@property
-	def LkgTp(self):
-		return self._LkgTp
-
-	@LkgTp.setter
-	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
-
-	@LkgTp.deleter
-	def LkgTp(self):
-		del self._LkgTp
-		self._LkgTp = None
-
+	__slots__ = ["_Id", "_LkgTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class DocumentIdentification37(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def LkgTp(self):
+		return self._LkgTp
+
+	@LkgTp.setter
+	def LkgTp(self, value):
+		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
+
+	@LkgTp.deleter
+	def LkgTp(self):
+		del self._LkgTp
+		self._LkgTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

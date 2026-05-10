@@ -1,24 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .TransactionDetails157 import TransactionDetails157
-from .TransactionIdentification7 import TransactionIdentification7
-from .ResponseStatus8Choice import ResponseStatus8Choice
+from ._TransactionIdentification7 import TransactionIdentification7
+from ._SupplementaryData1 import SupplementaryData1
+from ._TransactionDetails157 import TransactionDetails157
+from ._ResponseStatus8Choice import ResponseStatus8Choice
 
 class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_SplmtryData", "_RspnSts", "_TxDtls"]
+	__slots__ = ["_RspnSts", "_SplmtryData", "_TxId", "_TxDtls"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def RspnSts(self):
+		return self._RspnSts
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@RspnSts.setter
+	def RspnSts(self, value):
+		self._RspnSts = value if type(value) != base_types.auto else self.make_default("RspnSts")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@RspnSts.deleter
+	def RspnSts(self):
+		del self._RspnSts
+		self._RspnSts = None
 
 	@property
 	def SplmtryData(self):
@@ -34,17 +34,17 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		self._SplmtryData = None
 
 	@property
-	def RspnSts(self):
-		return self._RspnSts
+	def TxId(self):
+		return self._TxId
 
-	@RspnSts.setter
-	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != base_types.auto else self.make_default("RspnSts")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
 
-	@RspnSts.deleter
-	def RspnSts(self):
-		del self._RspnSts
-		self._RspnSts = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def TxDtls(self):
@@ -60,9 +60,9 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 		self._TxDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus8Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails157, min=0, max=1, mutex_group=None, array=False),
 	))
 

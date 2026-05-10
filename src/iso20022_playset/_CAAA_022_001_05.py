@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorNonFinancialRequestV05 import AcceptorNonFinancialRequestV05
+from ._AcceptorNonFinancialRequestV05 import AcceptorNonFinancialRequestV05
 
 class CAAA_022_001_05():
 

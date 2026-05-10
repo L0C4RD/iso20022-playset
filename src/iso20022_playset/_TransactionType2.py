@@ -1,7 +1,7 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .Limit2 import Limit2
-from .EntryStatus1Choice import EntryStatus1Choice
+from ._Limit2 import Limit2
+from ._CreditDebitCode import CreditDebitCode
+from ._EntryStatus1Choice import EntryStatus1Choice
 
 class TransactionType2(base_types._BaseFieldType):
 

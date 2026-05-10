@@ -1,12 +1,38 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .Max70Text import Max70Text
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .UnitOfMeasure6Code import UnitOfMeasure6Code
+from ._Max70Text import Max70Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
+from ._UnitOfMeasure6Code import UnitOfMeasure6Code
 
 class Product5(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctCd", "_UnitOfMeasr", "_AddtlPdctCd", "_AmtLmt", "_QtyLmt"]
+	__slots__ = ["_AmtLmt", "_QtyLmt", "_PdctCd", "_UnitOfMeasr", "_AddtlPdctCd"]
+	@property
+	def AmtLmt(self):
+		return self._AmtLmt
+
+	@AmtLmt.setter
+	def AmtLmt(self, value):
+		self._AmtLmt = value if type(value) != base_types.auto else self.make_default("AmtLmt")
+
+	@AmtLmt.deleter
+	def AmtLmt(self):
+		del self._AmtLmt
+		self._AmtLmt = None
+
+	@property
+	def QtyLmt(self):
+		return self._QtyLmt
+
+	@QtyLmt.setter
+	def QtyLmt(self, value):
+		self._QtyLmt = value if type(value) != base_types.auto else self.make_default("QtyLmt")
+
+	@QtyLmt.deleter
+	def QtyLmt(self):
+		del self._QtyLmt
+		self._QtyLmt = None
+
 	@property
 	def PdctCd(self):
 		return self._PdctCd
@@ -46,37 +72,11 @@ class Product5(base_types._BaseFieldType):
 		del self._AddtlPdctCd
 		self._AddtlPdctCd = None
 
-	@property
-	def AmtLmt(self):
-		return self._AmtLmt
-
-	@AmtLmt.setter
-	def AmtLmt(self, value):
-		self._AmtLmt = value if type(value) != base_types.auto else self.make_default("AmtLmt")
-
-	@AmtLmt.deleter
-	def AmtLmt(self):
-		del self._AmtLmt
-		self._AmtLmt = None
-
-	@property
-	def QtyLmt(self):
-		return self._QtyLmt
-
-	@QtyLmt.setter
-	def QtyLmt(self, value):
-		self._QtyLmt = value if type(value) != base_types.auto else self.make_default("QtyLmt")
-
-	@QtyLmt.deleter
-	def QtyLmt(self):
-		del self._QtyLmt
-		self._QtyLmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AmtLmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure6Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtLmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .CardManagementInitiationV03 import CardManagementInitiationV03
+from ._CardManagementInitiationV03 import CardManagementInitiationV03
 
 class CAIN_023_001_03():
 

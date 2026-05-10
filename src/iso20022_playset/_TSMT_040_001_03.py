@@ -1,5 +1,5 @@
 from . import base_types
-from .TimeOutNotificationV03 import TimeOutNotificationV03
+from ._TimeOutNotificationV03 import TimeOutNotificationV03
 
 class TSMT_040_001_03():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .SignedQuantityFormat10 import SignedQuantityFormat10
-from .SignedQuantityFormat11 import SignedQuantityFormat11
+from ._SignedQuantityFormat11 import SignedQuantityFormat11
+from ._SignedQuantityFormat10 import SignedQuantityFormat10
 
 class BalanceFormat11Choice(base_types._BaseFieldType):
 

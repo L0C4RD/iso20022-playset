@@ -1,5 +1,5 @@
 from . import base_types
-from .CCPIncomeStatementAndCapitalAdequacyReportV02 import CCPIncomeStatementAndCapitalAdequacyReportV02
+from ._CCPIncomeStatementAndCapitalAdequacyReportV02 import CCPIncomeStatementAndCapitalAdequacyReportV02
 
 class AUTH_059_001_02():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyAndSignature2 import PartyAndSignature2
-from .UndertakingNonExtensionRequest1 import UndertakingNonExtensionRequest1
+from ._PartyAndSignature2 import PartyAndSignature2
+from ._UndertakingNonExtensionRequest1 import UndertakingNonExtensionRequest1
 
 class UndertakingNonExtensionRequestV01(base_types._BaseFieldType):
 

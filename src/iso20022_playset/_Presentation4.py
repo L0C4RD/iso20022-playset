@@ -1,24 +1,11 @@
 from . import base_types
-from .Document11 import Document11
-from .Max2000Text import Max2000Text
-from .PresentationMedium1Choice import PresentationMedium1Choice
+from ._Document11 import Document11
+from ._PresentationMedium1Choice import PresentationMedium1Choice
+from ._Max2000Text import Max2000Text
 
 class Presentation4(base_types._BaseFieldType):
 
-	__slots__ = ["_Doc", "_Mdm", "_AddtlInf"]
-	@property
-	def Doc(self):
-		return self._Doc
-
-	@Doc.setter
-	def Doc(self, value):
-		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
-
-	@Doc.deleter
-	def Doc(self):
-		del self._Doc
-		self._Doc = None
-
+	__slots__ = ["_Mdm", "_AddtlInf", "_Doc"]
 	@property
 	def Mdm(self):
 		return self._Mdm
@@ -45,9 +32,22 @@ class Presentation4(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Doc(self):
+		return self._Doc
+
+	@Doc.setter
+	def Doc(self, value):
+		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
+
+	@Doc.deleter
+	def Doc(self):
+		del self._Doc
+		self._Doc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Doc', type=Document11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Mdm', type=PresentationMedium1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Doc', type=Document11, min=0, max=None, mutex_group=None, array=True),
 	))
 

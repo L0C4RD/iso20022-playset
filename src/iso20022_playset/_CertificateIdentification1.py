@@ -1,10 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ProprietaryReference1 import ProprietaryReference1
+from ._Max35Text import Max35Text
+from ._ProprietaryReference1 import ProprietaryReference1
 
 class CertificateIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_PmtInfId", "_AcctSvcrRef", "_EndToEndId", "_MsgId", "_Prtry"]
+	__slots__ = ["_InstrId", "_Prtry", "_MsgId", "_EndToEndId", "_PmtInfId", "_AcctSvcrRef"]
 	@property
 	def InstrId(self):
 		return self._InstrId
@@ -17,6 +17,45 @@ class CertificateIdentification1(base_types._BaseFieldType):
 	def InstrId(self):
 		del self._InstrId
 		self._InstrId = None
+
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def EndToEndId(self):
+		return self._EndToEndId
+
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
 
 	@property
 	def PmtInfId(self):
@@ -44,51 +83,12 @@ class CertificateIdentification1(base_types._BaseFieldType):
 		del self._AcctSvcrRef
 		self._AcctSvcrRef = None
 
-	@property
-	def EndToEndId(self):
-		return self._EndToEndId
-
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
-
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
-
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtInfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtry', type=ProprietaryReference1, min=0, max=1, mutex_group=None, array=False),
 	))
 

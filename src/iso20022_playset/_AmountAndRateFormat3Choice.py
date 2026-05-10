@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .RateValueType6FormatChoice import RateValueType6FormatChoice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._RateValueType6FormatChoice import RateValueType6FormatChoice
 
 class AmountAndRateFormat3Choice(base_types._BaseFieldType):
 

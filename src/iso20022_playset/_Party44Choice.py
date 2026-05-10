@@ -1,23 +1,10 @@
 from . import base_types
-from .BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from .PartyIdentification135 import PartyIdentification135
+from ._PartyIdentification135 import PartyIdentification135
+from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 
 class Party44Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgId", "_FIId"]
-	@property
-	def OrgId(self):
-		return self._OrgId
-
-	@OrgId.setter
-	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
-
-	@OrgId.deleter
-	def OrgId(self):
-		del self._OrgId
-		self._OrgId = None
-
+	__slots__ = ["_FIId", "_OrgId"]
 	@property
 	def FIId(self):
 		return self._FIId
@@ -31,8 +18,21 @@ class Party44Choice(base_types._BaseFieldType):
 		del self._FIId
 		self._FIId = None
 
+	@property
+	def OrgId(self):
+		return self._OrgId
+
+	@OrgId.setter
+	def OrgId(self, value):
+		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+
+	@OrgId.deleter
+	def OrgId(self):
+		del self._OrgId
+		self._OrgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgId', type=PartyIdentification135, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FIId', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OrgId', type=PartyIdentification135, min=0, max=1, mutex_group=1, array=False),
 	))
 

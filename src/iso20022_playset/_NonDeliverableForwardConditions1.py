@@ -1,6 +1,6 @@
 from . import base_types
-from .NDFOpeningFixing1Choice import NDFOpeningFixing1Choice
-from .YesNoIndicator import YesNoIndicator
+from ._NDFOpeningFixing1Choice import NDFOpeningFixing1Choice
+from ._YesNoIndicator import YesNoIndicator
 
 class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 

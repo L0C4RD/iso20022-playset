@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityCreationStatusAdviceV01 import SecurityCreationStatusAdviceV01
+from ._SecurityCreationStatusAdviceV01 import SecurityCreationStatusAdviceV01
 
 class REDA_008_001_01():
 

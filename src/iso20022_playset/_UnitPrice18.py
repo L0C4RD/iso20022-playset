@@ -1,7 +1,7 @@
 from . import base_types
-from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
-from .CurrencyAndAmount import CurrencyAndAmount
-from .Max15NumericText import Max15NumericText
+from ._Max15NumericText import Max15NumericText
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._UnitOfMeasure3Choice import UnitOfMeasure3Choice
 
 class UnitPrice18(base_types._BaseFieldType):
 

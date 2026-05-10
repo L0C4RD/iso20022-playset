@@ -1,12 +1,12 @@
 from . import base_types
-from .BICFIDec2014Identifier import BICFIDec2014Identifier
-from .GenericFinancialIdentification1 import GenericFinancialIdentification1
-from .LEIIdentifier import LEIIdentifier
-from .ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from ._LEIIdentifier import LEIIdentifier
+from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
+from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
+from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 
 class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysMmbId", "_Othr", "_BICFI", "_LEI"]
+	__slots__ = ["_ClrSysMmbId", "_LEI", "_BICFI", "_Othr"]
 	@property
 	def ClrSysMmbId(self):
 		return self._ClrSysMmbId
@@ -21,17 +21,17 @@ class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 		self._ClrSysMmbId = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def LEI(self):
+		return self._LEI
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def BICFI(self):
@@ -47,22 +47,22 @@ class FinancialInstitutionIdentification19(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def Othr(self):
+		return self._Othr
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

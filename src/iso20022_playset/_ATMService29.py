@@ -1,11 +1,24 @@
 from . import base_types
-from .ATMService18 import ATMService18
-from .ATMTransactionAmounts6 import ATMTransactionAmounts6
-from .ATMServiceType13Code import ATMServiceType13Code
+from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
+from ._ATMServiceType13Code import ATMServiceType13Code
+from ._ATMService18 import ATMService18
 
 class ATMService29(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcTp", "_Lmts", "_SvcVarnt"]
+	__slots__ = ["_SvcVarnt", "_SvcTp", "_Lmts"]
+	@property
+	def SvcVarnt(self):
+		return self._SvcVarnt
+
+	@SvcVarnt.setter
+	def SvcVarnt(self, value):
+		self._SvcVarnt = value if type(value) != base_types.auto else self.make_default("SvcVarnt")
+
+	@SvcVarnt.deleter
+	def SvcVarnt(self):
+		del self._SvcVarnt
+		self._SvcVarnt = None
+
 	@property
 	def SvcTp(self):
 		return self._SvcTp
@@ -32,22 +45,9 @@ class ATMService29(base_types._BaseFieldType):
 		del self._Lmts
 		self._Lmts = None
 
-	@property
-	def SvcVarnt(self):
-		return self._SvcVarnt
-
-	@SvcVarnt.setter
-	def SvcVarnt(self, value):
-		self._SvcVarnt = value if type(value) != base_types.auto else self.make_default("SvcVarnt")
-
-	@SvcVarnt.deleter
-	def SvcVarnt(self):
-		del self._SvcVarnt
-		self._SvcVarnt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SvcVarnt', type=ATMService18, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcTp', type=ATMServiceType13Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lmts', type=ATMTransactionAmounts6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvcVarnt', type=ATMService18, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .TaxVoucher1 import TaxVoucher1
-from .CashProceeds1 import CashProceeds1
-from .SecuritiesProceeds1 import SecuritiesProceeds1
+from ._CashProceeds1 import CashProceeds1
+from ._TaxVoucher1 import TaxVoucher1
+from ._SecuritiesProceeds1 import SecuritiesProceeds1
 
 class ProceedsMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxDtls", "_SctiesPrcdsMvmntDtls", "_CshPrcdsMvmntDtls"]
-	@property
-	def TaxDtls(self):
-		return self._TaxDtls
-
-	@TaxDtls.setter
-	def TaxDtls(self, value):
-		self._TaxDtls = value if type(value) != base_types.auto else self.make_default("TaxDtls")
-
-	@TaxDtls.deleter
-	def TaxDtls(self):
-		del self._TaxDtls
-		self._TaxDtls = None
-
+	__slots__ = ["_SctiesPrcdsMvmntDtls", "_CshPrcdsMvmntDtls", "_TaxDtls"]
 	@property
 	def SctiesPrcdsMvmntDtls(self):
 		return self._SctiesPrcdsMvmntDtls
@@ -45,9 +32,22 @@ class ProceedsMovement1(base_types._BaseFieldType):
 		del self._CshPrcdsMvmntDtls
 		self._CshPrcdsMvmntDtls = None
 
+	@property
+	def TaxDtls(self):
+		return self._TaxDtls
+
+	@TaxDtls.setter
+	def TaxDtls(self, value):
+		self._TaxDtls = value if type(value) != base_types.auto else self.make_default("TaxDtls")
+
+	@TaxDtls.deleter
+	def TaxDtls(self):
+		del self._TaxDtls
+		self._TaxDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxDtls', type=TaxVoucher1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesPrcdsMvmntDtls', type=SecuritiesProceeds1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshPrcdsMvmntDtls', type=CashProceeds1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxDtls', type=TaxVoucher1, min=0, max=1, mutex_group=None, array=False),
 	))
 

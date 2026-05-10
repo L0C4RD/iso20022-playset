@@ -1,22 +1,9 @@
 from . import base_types
-from .AmountAndDirection14 import AmountAndDirection14
+from ._AmountAndDirection14 import AmountAndDirection14
 
 class BalanceAmounts5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcrdIntrstAmt", "_UrlsdGnLoss", "_HldgVal", "_PrvsHldgVal", "_BookVal"]
-	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
-
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
-
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
-
+	__slots__ = ["_UrlsdGnLoss", "_PrvsHldgVal", "_AcrdIntrstAmt", "_HldgVal", "_BookVal"]
 	@property
 	def UrlsdGnLoss(self):
 		return self._UrlsdGnLoss
@@ -29,19 +16,6 @@ class BalanceAmounts5(base_types._BaseFieldType):
 	def UrlsdGnLoss(self):
 		del self._UrlsdGnLoss
 		self._UrlsdGnLoss = None
-
-	@property
-	def HldgVal(self):
-		return self._HldgVal
-
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
-
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
 
 	@property
 	def PrvsHldgVal(self):
@@ -57,6 +31,32 @@ class BalanceAmounts5(base_types._BaseFieldType):
 		self._PrvsHldgVal = None
 
 	@property
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
+
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
+
+	@property
+	def HldgVal(self):
+		return self._HldgVal
+
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
+
+	@property
 	def BookVal(self):
 		return self._BookVal
 
@@ -70,10 +70,10 @@ class BalanceAmounts5(base_types._BaseFieldType):
 		self._BookVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsHldgVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 	))
 

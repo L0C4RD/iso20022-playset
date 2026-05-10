@@ -1,22 +1,9 @@
 from . import base_types
-from .PartyIdentification136 import PartyIdentification136
+from ._PartyIdentification136 import PartyIdentification136
 
 class SystemPartyIdentification8(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnsblPtyId", "_Id"]
-	@property
-	def RspnsblPtyId(self):
-		return self._RspnsblPtyId
-
-	@RspnsblPtyId.setter
-	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
-
-	@RspnsblPtyId.deleter
-	def RspnsblPtyId(self):
-		del self._RspnsblPtyId
-		self._RspnsblPtyId = None
-
+	__slots__ = ["_Id", "_RspnsblPtyId"]
 	@property
 	def Id(self):
 		return self._Id
@@ -30,8 +17,21 @@ class SystemPartyIdentification8(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def RspnsblPtyId(self):
+		return self._RspnsblPtyId
+
+	@RspnsblPtyId.setter
+	def RspnsblPtyId(self, value):
+		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
+
+	@RspnsblPtyId.deleter
+	def RspnsblPtyId(self):
+		del self._RspnsblPtyId
+		self._RspnsblPtyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnsblPtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnsblPtyId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

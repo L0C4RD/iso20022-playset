@@ -1,6 +1,6 @@
 from . import base_types
-from .Undertaking7 import Undertaking7
-from .PartyIdentification43 import PartyIdentification43
+from ._Undertaking7 import Undertaking7
+from ._PartyIdentification43 import PartyIdentification43
 
 class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 

@@ -1,22 +1,9 @@
 from . import base_types
-from .AmountRangeBoundary1 import AmountRangeBoundary1
+from ._AmountRangeBoundary1 import AmountRangeBoundary1
 
 class FromToAmountRange1(base_types._BaseFieldType):
 
-	__slots__ = ["_ToAmt", "_FrAmt"]
-	@property
-	def ToAmt(self):
-		return self._ToAmt
-
-	@ToAmt.setter
-	def ToAmt(self, value):
-		self._ToAmt = value if type(value) != base_types.auto else self.make_default("ToAmt")
-
-	@ToAmt.deleter
-	def ToAmt(self):
-		del self._ToAmt
-		self._ToAmt = None
-
+	__slots__ = ["_FrAmt", "_ToAmt"]
 	@property
 	def FrAmt(self):
 		return self._FrAmt
@@ -30,8 +17,21 @@ class FromToAmountRange1(base_types._BaseFieldType):
 		del self._FrAmt
 		self._FrAmt = None
 
+	@property
+	def ToAmt(self):
+		return self._ToAmt
+
+	@ToAmt.setter
+	def ToAmt(self, value):
+		self._ToAmt = value if type(value) != base_types.auto else self.make_default("ToAmt")
+
+	@ToAmt.deleter
+	def ToAmt(self):
+		del self._ToAmt
+		self._ToAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ToAmt', type=AmountRangeBoundary1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrAmt', type=AmountRangeBoundary1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ToAmt', type=AmountRangeBoundary1, min=1, max=1, mutex_group=None, array=False),
 	))
 

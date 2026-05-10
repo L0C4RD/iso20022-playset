@@ -1,6 +1,6 @@
 from . import base_types
-from .BranchData5 import BranchData5
-from .FinancialInstitutionIdentification23 import FinancialInstitutionIdentification23
+from ._FinancialInstitutionIdentification23 import FinancialInstitutionIdentification23
+from ._BranchData5 import BranchData5
 
 class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 from . import base_types
-from .ISODate import ISODate
-from .Max350Text import Max350Text
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ISOTime import ISOTime
+from ._ISOTime import ISOTime
+from ._ISODate import ISODate
+from ._Max350Text import Max350Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class AuthorisedAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tm", "_Desc", "_Dt"]
+	__slots__ = ["_Desc", "_Amt", "_Tm", "_Dt"]
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	@property
 	def Amt(self):
 		return self._Amt
@@ -34,19 +47,6 @@ class AuthorisedAmount2(base_types._BaseFieldType):
 		self._Tm = None
 
 	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def Dt(self):
 		return self._Dt
 
@@ -60,9 +60,9 @@ class AuthorisedAmount2(base_types._BaseFieldType):
 		self._Dt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

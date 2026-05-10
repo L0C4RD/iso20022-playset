@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralValueReportV02 import CollateralValueReportV02
+from ._CollateralValueReportV02 import CollateralValueReportV02
 
 class COLR_002_001_02():
 

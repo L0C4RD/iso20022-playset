@@ -1,8 +1,8 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ContentInformationType39 import ContentInformationType39
-from .Max2MBBinary import Max2MBBinary
-from .ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._Max2MBBinary import Max2MBBinary
+from ._ContentInformationType39 import ContentInformationType39
+from ._ISODate import ISODate
 
 class MandateRelatedInformation17(base_types._BaseFieldType):
 

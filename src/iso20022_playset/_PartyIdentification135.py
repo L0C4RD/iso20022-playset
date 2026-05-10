@@ -1,13 +1,13 @@
 from . import base_types
-from .Contact4 import Contact4
-from .Party38Choice import Party38Choice
-from .CountryCode import CountryCode
-from .PostalAddress24 import PostalAddress24
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._CountryCode import CountryCode
+from ._PostalAddress24 import PostalAddress24
+from ._Party38Choice import Party38Choice
+from ._Contact4 import Contact4
 
 class PartyIdentification135(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_Id", "_Nm", "_CtryOfRes", "_CtctDtls"]
+	__slots__ = ["_PstlAdr", "_Id", "_Nm", "_CtctDtls", "_CtryOfRes"]
 	@property
 	def PstlAdr(self):
 		return self._PstlAdr
@@ -48,19 +48,6 @@ class PartyIdentification135(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def CtryOfRes(self):
-		return self._CtryOfRes
-
-	@CtryOfRes.setter
-	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
-
-	@CtryOfRes.deleter
-	def CtryOfRes(self):
-		del self._CtryOfRes
-		self._CtryOfRes = None
-
-	@property
 	def CtctDtls(self):
 		return self._CtctDtls
 
@@ -73,11 +60,24 @@ class PartyIdentification135(base_types._BaseFieldType):
 		del self._CtctDtls
 		self._CtctDtls = None
 
+	@property
+	def CtryOfRes(self):
+		return self._CtryOfRes
+
+	@CtryOfRes.setter
+	def CtryOfRes(self, value):
+		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
+
+	@CtryOfRes.deleter
+	def CtryOfRes(self):
+		del self._CtryOfRes
+		self._CtryOfRes = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Party38Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=Contact4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfRes', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

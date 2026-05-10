@@ -1,6 +1,6 @@
 from . import base_types
-from .AcceptedReason8Choice import AcceptedReason8Choice
-from .Max210Text import Max210Text
+from ._Max210Text import Max210Text
+from ._AcceptedReason8Choice import AcceptedReason8Choice
 
 class AcceptedStatusReason7(base_types._BaseFieldType):
 

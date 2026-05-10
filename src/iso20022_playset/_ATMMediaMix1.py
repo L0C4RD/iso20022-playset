@@ -1,10 +1,10 @@
 from . import base_types
-from .Number import Number
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Number import Number
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMMediaMix1(base_types._BaseFieldType):
 
-	__slots__ = ["_CshUnitNb", "_UnitVal", "_Nb"]
+	__slots__ = ["_CshUnitNb", "_Nb", "_UnitVal"]
 	@property
 	def CshUnitNb(self):
 		return self._CshUnitNb
@@ -19,19 +19,6 @@ class ATMMediaMix1(base_types._BaseFieldType):
 		self._CshUnitNb = None
 
 	@property
-	def UnitVal(self):
-		return self._UnitVal
-
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
-
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
-
-	@property
 	def Nb(self):
 		return self._Nb
 
@@ -44,9 +31,22 @@ class ATMMediaMix1(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
+	@property
+	def UnitVal(self):
+		return self._UnitVal
+
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
+
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshUnitNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

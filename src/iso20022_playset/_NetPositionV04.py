@@ -1,52 +1,13 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .NetPosition4 import NetPosition4
-from .PartyIdentification253Choice import PartyIdentification253Choice
-from .Pagination1 import Pagination1
-from .ReportParameters7 import ReportParameters7
+from ._PartyIdentification253Choice import PartyIdentification253Choice
+from ._ReportParameters7 import ReportParameters7
+from ._Pagination1 import Pagination1
+from ._SupplementaryData1 import SupplementaryData1
+from ._NetPosition4 import NetPosition4
 
 class NetPositionV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Pgntn", "_ClrMmb", "_RptParams", "_ClrSgmt", "_NetPosRpt"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
-	@property
-	def ClrMmb(self):
-		return self._ClrMmb
-
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
-
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
+	__slots__ = ["_RptParams", "_ClrSgmt", "_ClrMmb", "_Pgntn", "_SplmtryData", "_NetPosRpt"]
 	@property
 	def RptParams(self):
 		return self._RptParams
@@ -74,6 +35,45 @@ class NetPositionV04(base_types._BaseFieldType):
 		self._ClrSgmt = None
 
 	@property
+	def ClrMmb(self):
+		return self._ClrMmb
+
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def NetPosRpt(self):
 		return self._NetPosRpt
 
@@ -87,11 +87,11 @@ class NetPositionV04(base_types._BaseFieldType):
 		self._NetPosRpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptParams', type=ReportParameters7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetPosRpt', type=NetPosition4, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesAccountStatusAdviceV01 import SecuritiesAccountStatusAdviceV01
+from ._SecuritiesAccountStatusAdviceV01 import SecuritiesAccountStatusAdviceV01
 
 class REDA_020_001_01():
 

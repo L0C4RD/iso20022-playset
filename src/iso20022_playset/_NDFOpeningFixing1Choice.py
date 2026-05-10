@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .OpeningConditions1 import OpeningConditions1
+from ._Max35Text import Max35Text
+from ._OpeningConditions1 import OpeningConditions1
 
 class NDFOpeningFixing1Choice(base_types._BaseFieldType):
 

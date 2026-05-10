@@ -1,26 +1,26 @@
 from . import base_types
-from .PartyIdentification144 import PartyIdentification144
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from .CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from .SafeKeepingPlace5 import SafeKeepingPlace5
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
+from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._SafeKeepingPlace5 import SafeKeepingPlace5
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class QuantityAndAccount119(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmQty", "_AcctOwnr", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_CshAcct", "_SfkpgPlc"]
+	__slots__ = ["_SfkpgPlc", "_AcctOwnr", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_CshAcct", "_SttlmQty"]
 	@property
-	def SttlmQty(self):
-		return self._SttlmQty
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
 
-	@SttlmQty.setter
-	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
 
-	@SttlmQty.deleter
-	def SttlmQty(self):
-		del self._SttlmQty
-		self._SttlmQty = None
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def AcctOwnr(self):
@@ -36,19 +36,6 @@ class QuantityAndAccount119(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -60,6 +47,19 @@ class QuantityAndAccount119(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def CshAcct(self):
@@ -75,24 +75,24 @@ class QuantityAndAccount119(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
+	def SttlmQty(self):
+		return self._SttlmQty
 
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+	@SttlmQty.setter
+	def SttlmQty(self, value):
+		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
 
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
+	@SttlmQty.deleter
+	def SttlmQty(self):
+		del self._SttlmQty
+		self._SttlmQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

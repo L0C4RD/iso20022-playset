@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectedStatus10 import RejectedStatus10
-from .OrderCancellationStatus2Code import OrderCancellationStatus2Code
+from ._OrderCancellationStatus2Code import OrderCancellationStatus2Code
+from ._RejectedStatus10 import RejectedStatus10
 
 class CancellationStatus22Choice(base_types._BaseFieldType):
 

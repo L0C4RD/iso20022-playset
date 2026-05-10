@@ -1,33 +1,20 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from .TransactionStatus1Code import TransactionStatus1Code
-from .ISODate import ISODate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .TransactionType1Choice import TransactionType1Choice
-from .Max35Text import Max35Text
-from .ReversalCode import ReversalCode
-from .DateAndDateTimeChoice import DateAndDateTimeChoice
-from .ISODateTime import ISODateTime
-from .YesNoIndicator import YesNoIndicator
-from .UnitPrice20 import UnitPrice20
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._DateAndDateTimeChoice import DateAndDateTimeChoice
+from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from ._TransactionStatus1Code import TransactionStatus1Code
+from ._ReversalCode import ReversalCode
+from ._UnitPrice20 import UnitPrice20
+from ._Max35Text import Max35Text
+from ._TransactionType1Choice import TransactionType1Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._YesNoIndicator import YesNoIndicator
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
 
 class InvestmentFundTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_BookgSts", "_OrdrRef", "_LegId", "_PrtlyExctdInd", "_MstrRef", "_SttldTxInd", "_PricDtls", "_CumDvddInd", "_TradDtTm", "_CdtDbt", "_OrdrDtTm", "_SttlmDt", "_LegExctnId", "_UnitsQty", "_RegdTxInd", "_Rvsl", "_SttlmAmt", "_DealRef", "_EvtTp", "_ClntRef"]
-	@property
-	def BookgSts(self):
-		return self._BookgSts
-
-	@BookgSts.setter
-	def BookgSts(self, value):
-		self._BookgSts = value if type(value) != base_types.auto else self.make_default("BookgSts")
-
-	@BookgSts.deleter
-	def BookgSts(self):
-		del self._BookgSts
-		self._BookgSts = None
-
+	__slots__ = ["_OrdrRef", "_LegId", "_SttlmDt", "_CdtDbt", "_PrtlyExctdInd", "_MstrRef", "_OrdrDtTm", "_SttldTxInd", "_PricDtls", "_CumDvddInd", "_UnitsQty", "_TradDtTm", "_DealRef", "_ClntRef", "_BookgSts", "_Rvsl", "_RegdTxInd", "_LegExctnId", "_SttlmAmt", "_EvtTp"]
 	@property
 	def OrdrRef(self):
 		return self._OrdrRef
@@ -55,6 +42,32 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 		self._LegId = None
 
 	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
+	@property
 	def PrtlyExctdInd(self):
 		return self._PrtlyExctdInd
 
@@ -79,6 +92,19 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 	def MstrRef(self):
 		del self._MstrRef
 		self._MstrRef = None
+
+	@property
+	def OrdrDtTm(self):
+		return self._OrdrDtTm
+
+	@OrdrDtTm.setter
+	def OrdrDtTm(self, value):
+		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
+
+	@OrdrDtTm.deleter
+	def OrdrDtTm(self):
+		del self._OrdrDtTm
+		self._OrdrDtTm = None
 
 	@property
 	def SttldTxInd(self):
@@ -120,71 +146,6 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 		self._CumDvddInd = None
 
 	@property
-	def TradDtTm(self):
-		return self._TradDtTm
-
-	@TradDtTm.setter
-	def TradDtTm(self, value):
-		self._TradDtTm = value if type(value) != base_types.auto else self.make_default("TradDtTm")
-
-	@TradDtTm.deleter
-	def TradDtTm(self):
-		del self._TradDtTm
-		self._TradDtTm = None
-
-	@property
-	def CdtDbt(self):
-		return self._CdtDbt
-
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
-
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
-	@property
-	def OrdrDtTm(self):
-		return self._OrdrDtTm
-
-	@OrdrDtTm.setter
-	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
-
-	@OrdrDtTm.deleter
-	def OrdrDtTm(self):
-		del self._OrdrDtTm
-		self._OrdrDtTm = None
-
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
-	@property
-	def LegExctnId(self):
-		return self._LegExctnId
-
-	@LegExctnId.setter
-	def LegExctnId(self, value):
-		self._LegExctnId = value if type(value) != base_types.auto else self.make_default("LegExctnId")
-
-	@LegExctnId.deleter
-	def LegExctnId(self):
-		del self._LegExctnId
-		self._LegExctnId = None
-
-	@property
 	def UnitsQty(self):
 		return self._UnitsQty
 
@@ -198,43 +159,17 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 		self._UnitsQty = None
 
 	@property
-	def RegdTxInd(self):
-		return self._RegdTxInd
+	def TradDtTm(self):
+		return self._TradDtTm
 
-	@RegdTxInd.setter
-	def RegdTxInd(self, value):
-		self._RegdTxInd = value if type(value) != base_types.auto else self.make_default("RegdTxInd")
+	@TradDtTm.setter
+	def TradDtTm(self, value):
+		self._TradDtTm = value if type(value) != base_types.auto else self.make_default("TradDtTm")
 
-	@RegdTxInd.deleter
-	def RegdTxInd(self):
-		del self._RegdTxInd
-		self._RegdTxInd = None
-
-	@property
-	def Rvsl(self):
-		return self._Rvsl
-
-	@Rvsl.setter
-	def Rvsl(self, value):
-		self._Rvsl = value if type(value) != base_types.auto else self.make_default("Rvsl")
-
-	@Rvsl.deleter
-	def Rvsl(self):
-		del self._Rvsl
-		self._Rvsl = None
-
-	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
-
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
-
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@TradDtTm.deleter
+	def TradDtTm(self):
+		del self._TradDtTm
+		self._TradDtTm = None
 
 	@property
 	def DealRef(self):
@@ -250,19 +185,6 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 		self._DealRef = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
 	def ClntRef(self):
 		return self._ClntRef
 
@@ -275,26 +197,104 @@ class InvestmentFundTransaction4(base_types._BaseFieldType):
 		del self._ClntRef
 		self._ClntRef = None
 
+	@property
+	def BookgSts(self):
+		return self._BookgSts
+
+	@BookgSts.setter
+	def BookgSts(self, value):
+		self._BookgSts = value if type(value) != base_types.auto else self.make_default("BookgSts")
+
+	@BookgSts.deleter
+	def BookgSts(self):
+		del self._BookgSts
+		self._BookgSts = None
+
+	@property
+	def Rvsl(self):
+		return self._Rvsl
+
+	@Rvsl.setter
+	def Rvsl(self, value):
+		self._Rvsl = value if type(value) != base_types.auto else self.make_default("Rvsl")
+
+	@Rvsl.deleter
+	def Rvsl(self):
+		del self._Rvsl
+		self._Rvsl = None
+
+	@property
+	def RegdTxInd(self):
+		return self._RegdTxInd
+
+	@RegdTxInd.setter
+	def RegdTxInd(self, value):
+		self._RegdTxInd = value if type(value) != base_types.auto else self.make_default("RegdTxInd")
+
+	@RegdTxInd.deleter
+	def RegdTxInd(self):
+		del self._RegdTxInd
+		self._RegdTxInd = None
+
+	@property
+	def LegExctnId(self):
+		return self._LegExctnId
+
+	@LegExctnId.setter
+	def LegExctnId(self, value):
+		self._LegExctnId = value if type(value) != base_types.auto else self.make_default("LegExctnId")
+
+	@LegExctnId.deleter
+	def LegExctnId(self):
+		del self._LegExctnId
+		self._LegExctnId = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BookgSts', type=TransactionStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlyExctdInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttldTxInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricDtls', type=UnitPrice20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CumDvddInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegExctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsQty', type=FinancialInstrumentQuantity1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdTxInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rvsl', type=ReversalCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=TransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookgSts', type=TransactionStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rvsl', type=ReversalCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdTxInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegExctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=TransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

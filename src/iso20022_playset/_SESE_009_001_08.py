@@ -1,5 +1,5 @@
 from . import base_types
-from .RequestForTransferStatusReportV08 import RequestForTransferStatusReportV08
+from ._RequestForTransferStatusReportV08 import RequestForTransferStatusReportV08
 
 class SESE_009_001_08():
 

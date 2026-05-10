@@ -1,26 +1,13 @@
 from . import base_types
-from .Number import Number
-from .Recipient15Choice import Recipient15Choice
-from .EncapsulatedContent3 import EncapsulatedContent3
-from .AlgorithmIdentification31 import AlgorithmIdentification31
-from .Max140Binary import Max140Binary
+from ._Number import Number
+from ._AlgorithmIdentification31 import AlgorithmIdentification31
+from ._Recipient15Choice import Recipient15Choice
+from ._EncapsulatedContent3 import EncapsulatedContent3
+from ._Max140Binary import Max140Binary
 
 class AuthenticatedData10(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_MACAlgo", "_MAC", "_Vrsn", "_NcpsltdCntt"]
-	@property
-	def Rcpt(self):
-		return self._Rcpt
-
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
-
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
-
+	__slots__ = ["_MACAlgo", "_Rcpt", "_MAC", "_Vrsn", "_NcpsltdCntt"]
 	@property
 	def MACAlgo(self):
 		return self._MACAlgo
@@ -33,6 +20,19 @@ class AuthenticatedData10(base_types._BaseFieldType):
 	def MACAlgo(self):
 		del self._MACAlgo
 		self._MACAlgo = None
+
+	@property
+	def Rcpt(self):
+		return self._Rcpt
+
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
 
 	@property
 	def MAC(self):
@@ -74,8 +74,8 @@ class AuthenticatedData10(base_types._BaseFieldType):
 		self._NcpsltdCntt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MACAlgo', type=AlgorithmIdentification31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),

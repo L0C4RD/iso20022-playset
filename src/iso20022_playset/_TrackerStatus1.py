@@ -1,25 +1,12 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from .PaymentRejectReturnReason1 import PaymentRejectReturnReason1
-from .PaymentStatusReason1 import PaymentStatusReason1
+from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
+from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
+from ._PaymentStatusReason1 import PaymentStatusReason1
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class TrackerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_StsRsn", "_RjctRtrRsn", "_Sts"]
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
+	__slots__ = ["_StsRsn", "_RjctRtrRsn", "_Sts", "_Dt"]
 	@property
 	def StsRsn(self):
 		return self._StsRsn
@@ -59,10 +46,23 @@ class TrackerStatus1(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctRtrRsn', type=PaymentRejectReturnReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

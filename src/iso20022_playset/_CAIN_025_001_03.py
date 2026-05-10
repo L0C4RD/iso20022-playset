@@ -1,5 +1,5 @@
 from . import base_types
-from .AddendumInitiationV03 import AddendumInitiationV03
+from ._AddendumInitiationV03 import AddendumInitiationV03
 
 class CAIN_025_001_03():
 

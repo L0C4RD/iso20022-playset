@@ -1,5 +1,5 @@
 from . import base_types
-from .RetrievalInitiationV03 import RetrievalInitiationV03
+from ._RetrievalInitiationV03 import RetrievalInitiationV03
 
 class CAIN_021_001_03():
 

@@ -1,24 +1,24 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .MarginResult1Choice import MarginResult1Choice
-from .AmountAndDirection20 import AmountAndDirection20
-from .Collateral6 import Collateral6
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Collateral6 import Collateral6
+from ._MarginResult1Choice import MarginResult1Choice
+from ._AmountAndDirection20 import AmountAndDirection20
 
 class MarginCalculation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlMrgnAmt", "_CollOnDpst", "_MinRqrmntDpst", "_MrgnRslt"]
+	__slots__ = ["_MrgnRslt", "_CollOnDpst", "_TtlMrgnAmt", "_MinRqrmntDpst"]
 	@property
-	def TtlMrgnAmt(self):
-		return self._TtlMrgnAmt
+	def MrgnRslt(self):
+		return self._MrgnRslt
 
-	@TtlMrgnAmt.setter
-	def TtlMrgnAmt(self, value):
-		self._TtlMrgnAmt = value if type(value) != base_types.auto else self.make_default("TtlMrgnAmt")
+	@MrgnRslt.setter
+	def MrgnRslt(self, value):
+		self._MrgnRslt = value if type(value) != base_types.auto else self.make_default("MrgnRslt")
 
-	@TtlMrgnAmt.deleter
-	def TtlMrgnAmt(self):
-		del self._TtlMrgnAmt
-		self._TtlMrgnAmt = None
+	@MrgnRslt.deleter
+	def MrgnRslt(self):
+		del self._MrgnRslt
+		self._MrgnRslt = None
 
 	@property
 	def CollOnDpst(self):
@@ -34,6 +34,19 @@ class MarginCalculation1(base_types._BaseFieldType):
 		self._CollOnDpst = None
 
 	@property
+	def TtlMrgnAmt(self):
+		return self._TtlMrgnAmt
+
+	@TtlMrgnAmt.setter
+	def TtlMrgnAmt(self, value):
+		self._TtlMrgnAmt = value if type(value) != base_types.auto else self.make_default("TtlMrgnAmt")
+
+	@TtlMrgnAmt.deleter
+	def TtlMrgnAmt(self):
+		del self._TtlMrgnAmt
+		self._TtlMrgnAmt = None
+
+	@property
 	def MinRqrmntDpst(self):
 		return self._MinRqrmntDpst
 
@@ -46,23 +59,10 @@ class MarginCalculation1(base_types._BaseFieldType):
 		del self._MinRqrmntDpst
 		self._MinRqrmntDpst = None
 
-	@property
-	def MrgnRslt(self):
-		return self._MrgnRslt
-
-	@MrgnRslt.setter
-	def MrgnRslt(self, value):
-		self._MrgnRslt = value if type(value) != base_types.auto else self.make_default("MrgnRslt")
-
-	@MrgnRslt.deleter
-	def MrgnRslt(self):
-		del self._MrgnRslt
-		self._MrgnRslt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlMrgnAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollOnDpst', type=Collateral6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MinRqrmntDpst', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnRslt', type=MarginResult1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollOnDpst', type=Collateral6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlMrgnAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinRqrmntDpst', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

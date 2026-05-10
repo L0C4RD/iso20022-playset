@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DecimalNumber import DecimalNumber
+from ._Max35Text import Max35Text
+from ._DecimalNumber import DecimalNumber
 
 class BPOApplicableRules1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_URBPOVrsn", "_OthrRulesAndVrsn"]
-	@property
-	def URBPOVrsn(self):
-		return self._URBPOVrsn
-
-	@URBPOVrsn.setter
-	def URBPOVrsn(self, value):
-		self._URBPOVrsn = value if type(value) != base_types.auto else self.make_default("URBPOVrsn")
-
-	@URBPOVrsn.deleter
-	def URBPOVrsn(self):
-		del self._URBPOVrsn
-		self._URBPOVrsn = None
-
+	__slots__ = ["_OthrRulesAndVrsn", "_URBPOVrsn"]
 	@property
 	def OthrRulesAndVrsn(self):
 		return self._OthrRulesAndVrsn
@@ -31,8 +18,21 @@ class BPOApplicableRules1Choice(base_types._BaseFieldType):
 		del self._OthrRulesAndVrsn
 		self._OthrRulesAndVrsn = None
 
+	@property
+	def URBPOVrsn(self):
+		return self._URBPOVrsn
+
+	@URBPOVrsn.setter
+	def URBPOVrsn(self, value):
+		self._URBPOVrsn = value if type(value) != base_types.auto else self.make_default("URBPOVrsn")
+
+	@URBPOVrsn.deleter
+	def URBPOVrsn(self):
+		del self._URBPOVrsn
+		self._URBPOVrsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='URBPOVrsn', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrRulesAndVrsn', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='URBPOVrsn', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

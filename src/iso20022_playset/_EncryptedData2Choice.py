@@ -1,6 +1,6 @@
 from . import base_types
-from .Max100KBinary import Max100KBinary
-from .Max9999HexBinaryText import Max9999HexBinaryText
+from ._Max9999HexBinaryText import Max9999HexBinaryText
+from ._Max100KBinary import Max100KBinary
 
 class EncryptedData2Choice(base_types._BaseFieldType):
 

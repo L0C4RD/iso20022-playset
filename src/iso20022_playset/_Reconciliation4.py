@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
 
 class Reconciliation4(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .AmountAndDirection34 import AmountAndDirection34
+from ._AmountAndDirection34 import AmountAndDirection34
 
 class BillingServicesAmount2(base_types._BaseFieldType):
 

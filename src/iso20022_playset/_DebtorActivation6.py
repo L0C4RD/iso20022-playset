@@ -1,15 +1,28 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ContractReference1 import ContractReference1
-from .Party53Choice import Party53Choice
-from .DocumentFormat2Choice import DocumentFormat2Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .RTPPartyIdentification2 import RTPPartyIdentification2
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Party53Choice import Party53Choice
+from ._DocumentFormat2Choice import DocumentFormat2Choice
+from ._ContractReference1 import ContractReference1
+from ._Max35Text import Max35Text
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class DebtorActivation6(base_types._BaseFieldType):
 
-	__slots__ = ["_DdctdActvtnCd", "_DbtrSolPrvdr", "_CtrctFrmtTp", "_EndDt", "_CtrctRef", "_UltmtDbtr", "_DbtrActvtnId", "_DispNm", "_StartDt", "_CstmrId", "_Cdtr", "_Dbtr", "_UltmtCdtr", "_ActvtnReqDlvryPty"]
+	__slots__ = ["_DbtrActvtnId", "_DdctdActvtnCd", "_CstmrId", "_CtrctRef", "_StartDt", "_DispNm", "_UltmtDbtr", "_EndDt", "_ActvtnReqDlvryPty", "_CtrctFrmtTp", "_DbtrSolPrvdr", "_UltmtCdtr", "_Cdtr", "_Dbtr"]
+	@property
+	def DbtrActvtnId(self):
+		return self._DbtrActvtnId
+
+	@DbtrActvtnId.setter
+	def DbtrActvtnId(self, value):
+		self._DbtrActvtnId = value if type(value) != base_types.auto else self.make_default("DbtrActvtnId")
+
+	@DbtrActvtnId.deleter
+	def DbtrActvtnId(self):
+		del self._DbtrActvtnId
+		self._DbtrActvtnId = None
+
 	@property
 	def DdctdActvtnCd(self):
 		return self._DdctdActvtnCd
@@ -24,43 +37,17 @@ class DebtorActivation6(base_types._BaseFieldType):
 		self._DdctdActvtnCd = None
 
 	@property
-	def DbtrSolPrvdr(self):
-		return self._DbtrSolPrvdr
+	def CstmrId(self):
+		return self._CstmrId
 
-	@DbtrSolPrvdr.setter
-	def DbtrSolPrvdr(self, value):
-		self._DbtrSolPrvdr = value if type(value) != base_types.auto else self.make_default("DbtrSolPrvdr")
+	@CstmrId.setter
+	def CstmrId(self, value):
+		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
 
-	@DbtrSolPrvdr.deleter
-	def DbtrSolPrvdr(self):
-		del self._DbtrSolPrvdr
-		self._DbtrSolPrvdr = None
-
-	@property
-	def CtrctFrmtTp(self):
-		return self._CtrctFrmtTp
-
-	@CtrctFrmtTp.setter
-	def CtrctFrmtTp(self, value):
-		self._CtrctFrmtTp = value if type(value) != base_types.auto else self.make_default("CtrctFrmtTp")
-
-	@CtrctFrmtTp.deleter
-	def CtrctFrmtTp(self):
-		del self._CtrctFrmtTp
-		self._CtrctFrmtTp = None
-
-	@property
-	def EndDt(self):
-		return self._EndDt
-
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
-
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
+	@CstmrId.deleter
+	def CstmrId(self):
+		del self._CstmrId
+		self._CstmrId = None
 
 	@property
 	def CtrctRef(self):
@@ -76,30 +63,17 @@ class DebtorActivation6(base_types._BaseFieldType):
 		self._CtrctRef = None
 
 	@property
-	def UltmtDbtr(self):
-		return self._UltmtDbtr
+	def StartDt(self):
+		return self._StartDt
 
-	@UltmtDbtr.setter
-	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
-	@UltmtDbtr.deleter
-	def UltmtDbtr(self):
-		del self._UltmtDbtr
-		self._UltmtDbtr = None
-
-	@property
-	def DbtrActvtnId(self):
-		return self._DbtrActvtnId
-
-	@DbtrActvtnId.setter
-	def DbtrActvtnId(self, value):
-		self._DbtrActvtnId = value if type(value) != base_types.auto else self.make_default("DbtrActvtnId")
-
-	@DbtrActvtnId.deleter
-	def DbtrActvtnId(self):
-		del self._DbtrActvtnId
-		self._DbtrActvtnId = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	@property
 	def DispNm(self):
@@ -115,30 +89,82 @@ class DebtorActivation6(base_types._BaseFieldType):
 		self._DispNm = None
 
 	@property
-	def StartDt(self):
-		return self._StartDt
+	def UltmtDbtr(self):
+		return self._UltmtDbtr
 
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+	@UltmtDbtr.setter
+	def UltmtDbtr(self, value):
+		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
 
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
+	@UltmtDbtr.deleter
+	def UltmtDbtr(self):
+		del self._UltmtDbtr
+		self._UltmtDbtr = None
 
 	@property
-	def CstmrId(self):
-		return self._CstmrId
+	def EndDt(self):
+		return self._EndDt
 
-	@CstmrId.setter
-	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
 
-	@CstmrId.deleter
-	def CstmrId(self):
-		del self._CstmrId
-		self._CstmrId = None
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
+
+	@property
+	def ActvtnReqDlvryPty(self):
+		return self._ActvtnReqDlvryPty
+
+	@ActvtnReqDlvryPty.setter
+	def ActvtnReqDlvryPty(self, value):
+		self._ActvtnReqDlvryPty = value if type(value) != base_types.auto else self.make_default("ActvtnReqDlvryPty")
+
+	@ActvtnReqDlvryPty.deleter
+	def ActvtnReqDlvryPty(self):
+		del self._ActvtnReqDlvryPty
+		self._ActvtnReqDlvryPty = None
+
+	@property
+	def CtrctFrmtTp(self):
+		return self._CtrctFrmtTp
+
+	@CtrctFrmtTp.setter
+	def CtrctFrmtTp(self, value):
+		self._CtrctFrmtTp = value if type(value) != base_types.auto else self.make_default("CtrctFrmtTp")
+
+	@CtrctFrmtTp.deleter
+	def CtrctFrmtTp(self):
+		del self._CtrctFrmtTp
+		self._CtrctFrmtTp = None
+
+	@property
+	def DbtrSolPrvdr(self):
+		return self._DbtrSolPrvdr
+
+	@DbtrSolPrvdr.setter
+	def DbtrSolPrvdr(self, value):
+		self._DbtrSolPrvdr = value if type(value) != base_types.auto else self.make_default("DbtrSolPrvdr")
+
+	@DbtrSolPrvdr.deleter
+	def DbtrSolPrvdr(self):
+		del self._DbtrSolPrvdr
+		self._DbtrSolPrvdr = None
+
+	@property
+	def UltmtCdtr(self):
+		return self._UltmtCdtr
+
+	@UltmtCdtr.setter
+	def UltmtCdtr(self, value):
+		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+
+	@UltmtCdtr.deleter
+	def UltmtCdtr(self):
+		del self._UltmtCdtr
+		self._UltmtCdtr = None
 
 	@property
 	def Cdtr(self):
@@ -166,46 +192,20 @@ class DebtorActivation6(base_types._BaseFieldType):
 		del self._Dbtr
 		self._Dbtr = None
 
-	@property
-	def UltmtCdtr(self):
-		return self._UltmtCdtr
-
-	@UltmtCdtr.setter
-	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
-
-	@UltmtCdtr.deleter
-	def UltmtCdtr(self):
-		del self._UltmtCdtr
-		self._UltmtCdtr = None
-
-	@property
-	def ActvtnReqDlvryPty(self):
-		return self._ActvtnReqDlvryPty
-
-	@ActvtnReqDlvryPty.setter
-	def ActvtnReqDlvryPty(self, value):
-		self._ActvtnReqDlvryPty = value if type(value) != base_types.auto else self.make_default("ActvtnReqDlvryPty")
-
-	@ActvtnReqDlvryPty.deleter
-	def ActvtnReqDlvryPty(self):
-		del self._ActvtnReqDlvryPty
-		self._ActvtnReqDlvryPty = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DdctdActvtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrSolPrvdr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctFrmtTp', type=DocumentFormat2Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctRef', type=ContractReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UltmtDbtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrActvtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DdctdActvtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrId', type=Party53Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrctRef', type=ContractReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StartDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtDbtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnReqDlvryPty', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctFrmtTp', type=DocumentFormat2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DbtrSolPrvdr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UltmtCdtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UltmtCdtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtnReqDlvryPty', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

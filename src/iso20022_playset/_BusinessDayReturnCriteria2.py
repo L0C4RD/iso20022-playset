@@ -1,21 +1,21 @@
 from . import base_types
-from .RequestedIndicator import RequestedIndicator
+from ._RequestedIndicator import RequestedIndicator
 
 class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrPrdInd", "_SysDtInd", "_SsnPrdInd", "_EvtTpInd", "_EvtInd", "_SysStsInd", "_SysCcyInd"]
+	__slots__ = ["_EvtInd", "_SysDtInd", "_ClsrPrdInd", "_SsnPrdInd", "_SysStsInd", "_EvtTpInd", "_SysCcyInd"]
 	@property
-	def ClsrPrdInd(self):
-		return self._ClsrPrdInd
+	def EvtInd(self):
+		return self._EvtInd
 
-	@ClsrPrdInd.setter
-	def ClsrPrdInd(self, value):
-		self._ClsrPrdInd = value if type(value) != base_types.auto else self.make_default("ClsrPrdInd")
+	@EvtInd.setter
+	def EvtInd(self, value):
+		self._EvtInd = value if type(value) != base_types.auto else self.make_default("EvtInd")
 
-	@ClsrPrdInd.deleter
-	def ClsrPrdInd(self):
-		del self._ClsrPrdInd
-		self._ClsrPrdInd = None
+	@EvtInd.deleter
+	def EvtInd(self):
+		del self._EvtInd
+		self._EvtInd = None
 
 	@property
 	def SysDtInd(self):
@@ -31,6 +31,19 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._SysDtInd = None
 
 	@property
+	def ClsrPrdInd(self):
+		return self._ClsrPrdInd
+
+	@ClsrPrdInd.setter
+	def ClsrPrdInd(self, value):
+		self._ClsrPrdInd = value if type(value) != base_types.auto else self.make_default("ClsrPrdInd")
+
+	@ClsrPrdInd.deleter
+	def ClsrPrdInd(self):
+		del self._ClsrPrdInd
+		self._ClsrPrdInd = None
+
+	@property
 	def SsnPrdInd(self):
 		return self._SsnPrdInd
 
@@ -42,32 +55,6 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 	def SsnPrdInd(self):
 		del self._SsnPrdInd
 		self._SsnPrdInd = None
-
-	@property
-	def EvtTpInd(self):
-		return self._EvtTpInd
-
-	@EvtTpInd.setter
-	def EvtTpInd(self, value):
-		self._EvtTpInd = value if type(value) != base_types.auto else self.make_default("EvtTpInd")
-
-	@EvtTpInd.deleter
-	def EvtTpInd(self):
-		del self._EvtTpInd
-		self._EvtTpInd = None
-
-	@property
-	def EvtInd(self):
-		return self._EvtInd
-
-	@EvtInd.setter
-	def EvtInd(self, value):
-		self._EvtInd = value if type(value) != base_types.auto else self.make_default("EvtInd")
-
-	@EvtInd.deleter
-	def EvtInd(self):
-		del self._EvtInd
-		self._EvtInd = None
 
 	@property
 	def SysStsInd(self):
@@ -83,6 +70,19 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._SysStsInd = None
 
 	@property
+	def EvtTpInd(self):
+		return self._EvtTpInd
+
+	@EvtTpInd.setter
+	def EvtTpInd(self, value):
+		self._EvtTpInd = value if type(value) != base_types.auto else self.make_default("EvtTpInd")
+
+	@EvtTpInd.deleter
+	def EvtTpInd(self):
+		del self._EvtTpInd
+		self._EvtTpInd = None
+
+	@property
 	def SysCcyInd(self):
 		return self._SysCcyInd
 
@@ -96,12 +96,12 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._SysCcyInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsrPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

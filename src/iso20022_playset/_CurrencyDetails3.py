@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Number import Number
-from .Exact3NumericText import Exact3NumericText
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Number import Number
+from ._Exact3NumericText import Exact3NumericText
 
 class CurrencyDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_NmrcCd", "_Nm", "_AlphaCd", "_Dcml"]
-	@property
-	def NmrcCd(self):
-		return self._NmrcCd
-
-	@NmrcCd.setter
-	def NmrcCd(self, value):
-		self._NmrcCd = value if type(value) != base_types.auto else self.make_default("NmrcCd")
-
-	@NmrcCd.deleter
-	def NmrcCd(self):
-		del self._NmrcCd
-		self._NmrcCd = None
-
+	__slots__ = ["_Nm", "_NmrcCd", "_AlphaCd", "_Dcml"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -32,6 +19,19 @@ class CurrencyDetails3(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def NmrcCd(self):
+		return self._NmrcCd
+
+	@NmrcCd.setter
+	def NmrcCd(self, value):
+		self._NmrcCd = value if type(value) != base_types.auto else self.make_default("NmrcCd")
+
+	@NmrcCd.deleter
+	def NmrcCd(self):
+		del self._NmrcCd
+		self._NmrcCd = None
 
 	@property
 	def AlphaCd(self):
@@ -60,8 +60,8 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		self._Dcml = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))

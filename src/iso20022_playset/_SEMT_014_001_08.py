@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraPositionMovementStatusAdviceV08 import IntraPositionMovementStatusAdviceV08
+from ._IntraPositionMovementStatusAdviceV08 import IntraPositionMovementStatusAdviceV08
 
 class SEMT_014_001_08():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Max30DecimalNumber import Max30DecimalNumber
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max30DecimalNumber import Max30DecimalNumber
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class NetworkFee1(base_types._BaseFieldType):
 

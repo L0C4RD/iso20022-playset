@@ -1,12 +1,12 @@
 from . import base_types
-from .PlainCardData1 import PlainCardData1
-from .Max70Text import Max70Text
-from .Exact3NumericText import Exact3NumericText
-from .GenericIdentification1 import GenericIdentification1
+from ._PlainCardData1 import PlainCardData1
+from ._GenericIdentification1 import GenericIdentification1
+from ._Exact3NumericText import Exact3NumericText
+from ._Max70Text import Max70Text
 
 class PaymentCard4(base_types._BaseFieldType):
 
-	__slots__ = ["_PlainCardData", "_AddtlCardData", "_CardCtryCd", "_CardBrnd"]
+	__slots__ = ["_PlainCardData", "_AddtlCardData", "_CardBrnd", "_CardCtryCd"]
 	@property
 	def PlainCardData(self):
 		return self._PlainCardData
@@ -34,19 +34,6 @@ class PaymentCard4(base_types._BaseFieldType):
 		self._AddtlCardData = None
 
 	@property
-	def CardCtryCd(self):
-		return self._CardCtryCd
-
-	@CardCtryCd.setter
-	def CardCtryCd(self, value):
-		self._CardCtryCd = value if type(value) != base_types.auto else self.make_default("CardCtryCd")
-
-	@CardCtryCd.deleter
-	def CardCtryCd(self):
-		del self._CardCtryCd
-		self._CardCtryCd = None
-
-	@property
 	def CardBrnd(self):
 		return self._CardBrnd
 
@@ -59,10 +46,23 @@ class PaymentCard4(base_types._BaseFieldType):
 		del self._CardBrnd
 		self._CardBrnd = None
 
+	@property
+	def CardCtryCd(self):
+		return self._CardCtryCd
+
+	@CardCtryCd.setter
+	def CardCtryCd(self, value):
+		self._CardCtryCd = value if type(value) != base_types.auto else self.make_default("CardCtryCd")
+
+	@CardCtryCd.deleter
+	def CardCtryCd(self):
+		del self._CardCtryCd
+		self._CardCtryCd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlainCardData', type=PlainCardData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCardData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardCtryCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardBrnd', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardCtryCd', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

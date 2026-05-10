@@ -1,5 +1,5 @@
 from . import base_types
-from .AuthorisationInitiationV04 import AuthorisationInitiationV04
+from ._AuthorisationInitiationV04 import AuthorisationInitiationV04
 
 class CAIN_001_001_04():
 

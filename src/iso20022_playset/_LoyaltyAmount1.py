@@ -1,7 +1,7 @@
 from . import base_types
-from .AmountUnit1Code import AmountUnit1Code
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._AmountUnit1Code import AmountUnit1Code
 
 class LoyaltyAmount1(base_types._BaseFieldType):
 

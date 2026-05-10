@@ -1,6 +1,6 @@
 from . import base_types
-from .ReconciliationCategory5 import ReconciliationCategory5
-from .ReconciliationCategory4 import ReconciliationCategory4
+from ._ReconciliationCategory5 import ReconciliationCategory5
+from ._ReconciliationCategory4 import ReconciliationCategory4
 
 class ReportingRequirement3Choice(base_types._BaseFieldType):
 

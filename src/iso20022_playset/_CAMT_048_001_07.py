@@ -1,5 +1,5 @@
 from . import base_types
-from .ModifyReservationV07 import ModifyReservationV07
+from ._ModifyReservationV07 import ModifyReservationV07
 
 class CAMT_048_001_07():
 

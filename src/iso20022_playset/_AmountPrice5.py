@@ -1,6 +1,6 @@
 from . import base_types
-from .AmountPriceType1Code import AmountPriceType1Code
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._AmountPriceType1Code import AmountPriceType1Code
 
 class AmountPrice5(base_types._BaseFieldType):
 

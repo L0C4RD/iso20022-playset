@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityIdentification26Choice import SecurityIdentification26Choice
+from ._SecurityIdentification26Choice import SecurityIdentification26Choice
 
 class CompareSecurityIdentification4(base_types._BaseFieldType):
 

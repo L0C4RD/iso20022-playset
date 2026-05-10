@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .TaxType3FormatChoice import TaxType3FormatChoice
+from ._TaxType3FormatChoice import TaxType3FormatChoice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class RelatedTaxType1(base_types._BaseFieldType):
 

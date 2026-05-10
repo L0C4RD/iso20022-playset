@@ -1,12 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentIdentification28 import DocumentIdentification28
-from .Max1025Text import Max1025Text
-from .ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._DocumentIdentification28 import DocumentIdentification28
+from ._Max1025Text import Max1025Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_AddtlInf", "_AmdmntRsn", "_Doc", "_AmdmntDt"]
+	__slots__ = ["_Doc", "_StartDt", "_AddtlInf", "_AmdmntRsn", "_AmdmntDt"]
+	@property
+	def Doc(self):
+		return self._Doc
+
+	@Doc.setter
+	def Doc(self, value):
+		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
+
+	@Doc.deleter
+	def Doc(self):
+		del self._Doc
+		self._Doc = None
+
 	@property
 	def StartDt(self):
 		return self._StartDt
@@ -47,19 +60,6 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._AmdmntRsn = None
 
 	@property
-	def Doc(self):
-		return self._Doc
-
-	@Doc.setter
-	def Doc(self, value):
-		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
-
-	@Doc.deleter
-	def Doc(self):
-		del self._Doc
-		self._Doc = None
-
-	@property
 	def AmdmntDt(self):
 		return self._AmdmntDt
 
@@ -73,10 +73,10 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._AmdmntDt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

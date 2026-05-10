@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyReportV02 import PartyReportV02
+from ._PartyReportV02 import PartyReportV02
 
 class REDA_017_001_02():
 

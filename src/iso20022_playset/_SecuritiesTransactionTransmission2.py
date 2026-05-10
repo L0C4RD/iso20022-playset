@@ -1,10 +1,23 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsmttgBuyr", "_TrnsmssnInd", "_TrnsmttgSellr"]
+	__slots__ = ["_TrnsmttgSellr", "_TrnsmttgBuyr", "_TrnsmssnInd"]
+	@property
+	def TrnsmttgSellr(self):
+		return self._TrnsmttgSellr
+
+	@TrnsmttgSellr.setter
+	def TrnsmttgSellr(self, value):
+		self._TrnsmttgSellr = value if type(value) != base_types.auto else self.make_default("TrnsmttgSellr")
+
+	@TrnsmttgSellr.deleter
+	def TrnsmttgSellr(self):
+		del self._TrnsmttgSellr
+		self._TrnsmttgSellr = None
+
 	@property
 	def TrnsmttgBuyr(self):
 		return self._TrnsmttgBuyr
@@ -31,22 +44,9 @@ class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 		del self._TrnsmssnInd
 		self._TrnsmssnInd = None
 
-	@property
-	def TrnsmttgSellr(self):
-		return self._TrnsmttgSellr
-
-	@TrnsmttgSellr.setter
-	def TrnsmttgSellr(self, value):
-		self._TrnsmttgSellr = value if type(value) != base_types.auto else self.make_default("TrnsmttgSellr")
-
-	@TrnsmttgSellr.deleter
-	def TrnsmttgSellr(self):
-		del self._TrnsmttgSellr
-		self._TrnsmttgSellr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TrnsmttgSellr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmttgBuyr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsmttgSellr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

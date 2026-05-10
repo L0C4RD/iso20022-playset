@@ -1,6 +1,6 @@
 from . import base_types
-from .OriginalPaymentInstruction49 import OriginalPaymentInstruction49
-from .OriginalGroupHeader21 import OriginalGroupHeader21
+from ._OriginalPaymentInstruction49 import OriginalPaymentInstruction49
+from ._OriginalGroupHeader21 import OriginalGroupHeader21
 
 class UnderlyingTransaction33(base_types._BaseFieldType):
 

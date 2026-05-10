@@ -1,5 +1,5 @@
 from . import base_types
-from .RelativeDistinguishedName1 import RelativeDistinguishedName1
+from ._RelativeDistinguishedName1 import RelativeDistinguishedName1
 
 class CertificateIssuer1(base_types._BaseFieldType):
 

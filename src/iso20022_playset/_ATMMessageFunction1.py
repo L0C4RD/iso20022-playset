@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .MessageFunction7Code import MessageFunction7Code
+from ._Max35Text import Max35Text
+from ._MessageFunction7Code import MessageFunction7Code
 
 class ATMMessageFunction1(base_types._BaseFieldType):
 

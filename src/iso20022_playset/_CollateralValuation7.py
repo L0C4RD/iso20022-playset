@@ -1,25 +1,12 @@
 from . import base_types
-from .CollateralPool1Code import CollateralPool1Code
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .SNA2008SectorIdentifier import SNA2008SectorIdentifier
-from .CFIOct2015Identifier import CFIOct2015Identifier
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
+from ._CollateralPool1Code import CollateralPool1Code
+from ._CFIOct2015Identifier import CFIOct2015Identifier
 
 class CollateralValuation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_NmnlAmt", "_Sctr", "_PoolSts"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_NmnlAmt", "_Sctr", "_Tp", "_PoolSts"]
 	@property
 	def NmnlAmt(self):
 		return self._NmnlAmt
@@ -47,6 +34,19 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._Sctr = None
 
 	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def PoolSts(self):
 		return self._PoolSts
 
@@ -60,9 +60,9 @@ class CollateralValuation7(base_types._BaseFieldType):
 		self._PoolSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sctr', type=SNA2008SectorIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PoolSts', type=CollateralPool1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .Modification1Code import Modification1Code
-from .CashAccountType2Choice import CashAccountType2Choice
+from ._Modification1Code import Modification1Code
+from ._CashAccountType2Choice import CashAccountType2Choice
 
 class TypeModification1(base_types._BaseFieldType):
 

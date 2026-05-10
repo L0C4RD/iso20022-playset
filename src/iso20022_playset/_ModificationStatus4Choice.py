@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .ModificationReason4 import ModificationReason4
+from ._ModificationReason4 import ModificationReason4
+from ._NoReasonCode import NoReasonCode
 
 class ModificationStatus4Choice(base_types._BaseFieldType):
 

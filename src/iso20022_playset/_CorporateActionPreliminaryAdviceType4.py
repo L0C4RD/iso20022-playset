@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CorporateActionPreliminaryAdviceType1Code import CorporateActionPreliminaryAdviceType1Code
-from .CorporateActionMovementPreliminaryAdviceFunction1Code import CorporateActionMovementPreliminaryAdviceFunction1Code
+from ._Max35Text import Max35Text
+from ._CorporateActionPreliminaryAdviceType1Code import CorporateActionPreliminaryAdviceType1Code
+from ._CorporateActionMovementPreliminaryAdviceFunction1Code import CorporateActionMovementPreliminaryAdviceFunction1Code
 
 class CorporateActionPreliminaryAdviceType4(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntPrlimryAdvcId", "_Fctn", "_Tp"]
+	__slots__ = ["_MvmntPrlimryAdvcId", "_Tp", "_Fctn"]
 	@property
 	def MvmntPrlimryAdvcId(self):
 		return self._MvmntPrlimryAdvcId
@@ -20,19 +20,6 @@ class CorporateActionPreliminaryAdviceType4(base_types._BaseFieldType):
 		self._MvmntPrlimryAdvcId = None
 
 	@property
-	def Fctn(self):
-		return self._Fctn
-
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
-
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -45,9 +32,22 @@ class CorporateActionPreliminaryAdviceType4(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MvmntPrlimryAdvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctn', type=CorporateActionMovementPreliminaryAdviceFunction1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CorporateActionPreliminaryAdviceType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=CorporateActionMovementPreliminaryAdviceFunction1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

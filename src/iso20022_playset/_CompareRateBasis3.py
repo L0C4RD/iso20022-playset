@@ -1,5 +1,5 @@
 from . import base_types
-from .RateBasis1Code import RateBasis1Code
+from ._RateBasis1Code import RateBasis1Code
 
 class CompareRateBasis3(base_types._BaseFieldType):
 

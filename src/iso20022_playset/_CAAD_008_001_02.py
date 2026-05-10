@@ -1,5 +1,5 @@
 from . import base_types
-from .AdministrativeInitiationV02 import AdministrativeInitiationV02
+from ._AdministrativeInitiationV02 import AdministrativeInitiationV02
 
 class CAAD_008_001_02():
 

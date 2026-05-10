@@ -1,5 +1,5 @@
 from . import base_types
-from .CreateLimitV02 import CreateLimitV02
+from ._CreateLimitV02 import CreateLimitV02
 
 class CAMT_101_001_02():
 

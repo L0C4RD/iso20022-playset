@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .VoteInstructionType2Choice import VoteInstructionType2Choice
+from ._VoteInstructionType2Choice import VoteInstructionType2Choice
+from ._Max35Text import Max35Text
 
 class Vote15(base_types._BaseFieldType):
 

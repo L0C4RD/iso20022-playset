@@ -1,11 +1,11 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from .RateTypeAndPercentageRate16 import RateTypeAndPercentageRate16
+from ._Percentage14Rate import Percentage14Rate
+from ._RateTypeAndPercentageRate16 import RateTypeAndPercentageRate16
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class RateAndAmountFormat66Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_Amt", "_RateTpAndRate"]
+	__slots__ = ["_Rate", "_RateTpAndRate", "_Amt"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -20,19 +20,6 @@ class RateAndAmountFormat66Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def RateTpAndRate(self):
 		return self._RateTpAndRate
 
@@ -45,9 +32,22 @@ class RateAndAmountFormat66Choice(base_types._BaseFieldType):
 		del self._RateTpAndRate
 		self._RateTpAndRate = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate16, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

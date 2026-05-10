@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyUpdate1 import PartyUpdate1
-from .PartyCancellation1 import PartyCancellation1
+from ._PartyCancellation1 import PartyCancellation1
+from ._PartyUpdate1 import PartyUpdate1
 
 class PartyReport1Choice(base_types._BaseFieldType):
 

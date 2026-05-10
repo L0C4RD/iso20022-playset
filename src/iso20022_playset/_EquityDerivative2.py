@@ -1,6 +1,6 @@
 from . import base_types
-from .EquityDerivative3Choice import EquityDerivative3Choice
-from .EquityReturnParameter1Code import EquityReturnParameter1Code
+from ._EquityDerivative3Choice import EquityDerivative3Choice
+from ._EquityReturnParameter1Code import EquityReturnParameter1Code
 
 class EquityDerivative2(base_types._BaseFieldType):
 

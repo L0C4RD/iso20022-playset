@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountAdditionalInformationRequestV04 import AccountAdditionalInformationRequestV04
+from ._AccountAdditionalInformationRequestV04 import AccountAdditionalInformationRequestV04
 
 class ACMT_012_001_04():
 

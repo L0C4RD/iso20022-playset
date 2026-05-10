@@ -1,12 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyType17Code import PartyType17Code
-from .ISOMax3ACountryCode import ISOMax3ACountryCode
-from .PartyType18Code import PartyType18Code
+from ._Max35Text import Max35Text
+from ._PartyType17Code import PartyType17Code
+from ._ISOMax3ACountryCode import ISOMax3ACountryCode
+from ._PartyType18Code import PartyType18Code
 
 class GenericIdentification183(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_Id", "_Tp", "_OthrTp", "_Ctry", "_ShrtNm"]
+	__slots__ = ["_Assgnr", "_ShrtNm", "_Id", "_Ctry", "_OthrTp", "_Tp"]
 	@property
 	def Assgnr(self):
 		return self._Assgnr
@@ -19,6 +19,19 @@ class GenericIdentification183(base_types._BaseFieldType):
 	def Assgnr(self):
 		del self._Assgnr
 		self._Assgnr = None
+
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	@property
 	def Id(self):
@@ -34,17 +47,17 @@ class GenericIdentification183(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Ctry(self):
+		return self._Ctry
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	@property
 	def OthrTp(self):
@@ -60,37 +73,24 @@ class GenericIdentification183(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def Tp(self):
+		return self._Tp
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PartyType17Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PartyType17Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

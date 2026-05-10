@@ -1,26 +1,13 @@
 from . import base_types
-from .Max70Text import Max70Text
-from .TradeCertificateType1Code import TradeCertificateType1Code
-from .YesNoIndicator import YesNoIndicator
-from .PartyIdentification27 import PartyIdentification27
-from .BICIdentification1 import BICIdentification1
+from ._BICIdentification1 import BICIdentification1
+from ._PartyIdentification27 import PartyIdentification27
+from ._Max70Text import Max70Text
+from ._TradeCertificateType1Code import TradeCertificateType1Code
+from ._YesNoIndicator import YesNoIndicator
 
 class RequiredSubmission4(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchManfctr", "_LineItmId", "_AuthrsdInspctrInd", "_MtchInspctnDt", "_Submitr", "_MtchIsseDt", "_CertTp", "_MtchIssr", "_MtchConsgn"]
-	@property
-	def MtchManfctr(self):
-		return self._MtchManfctr
-
-	@MtchManfctr.setter
-	def MtchManfctr(self, value):
-		self._MtchManfctr = value if type(value) != base_types.auto else self.make_default("MtchManfctr")
-
-	@MtchManfctr.deleter
-	def MtchManfctr(self):
-		del self._MtchManfctr
-		self._MtchManfctr = None
-
+	__slots__ = ["_LineItmId", "_MtchInspctnDt", "_MtchIssr", "_MtchIsseDt", "_CertTp", "_Submitr", "_AuthrsdInspctrInd", "_MtchManfctr", "_MtchConsgn"]
 	@property
 	def LineItmId(self):
 		return self._LineItmId
@@ -33,19 +20,6 @@ class RequiredSubmission4(base_types._BaseFieldType):
 	def LineItmId(self):
 		del self._LineItmId
 		self._LineItmId = None
-
-	@property
-	def AuthrsdInspctrInd(self):
-		return self._AuthrsdInspctrInd
-
-	@AuthrsdInspctrInd.setter
-	def AuthrsdInspctrInd(self, value):
-		self._AuthrsdInspctrInd = value if type(value) != base_types.auto else self.make_default("AuthrsdInspctrInd")
-
-	@AuthrsdInspctrInd.deleter
-	def AuthrsdInspctrInd(self):
-		del self._AuthrsdInspctrInd
-		self._AuthrsdInspctrInd = None
 
 	@property
 	def MtchInspctnDt(self):
@@ -61,17 +35,17 @@ class RequiredSubmission4(base_types._BaseFieldType):
 		self._MtchInspctnDt = None
 
 	@property
-	def Submitr(self):
-		return self._Submitr
+	def MtchIssr(self):
+		return self._MtchIssr
 
-	@Submitr.setter
-	def Submitr(self, value):
-		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
+	@MtchIssr.setter
+	def MtchIssr(self, value):
+		self._MtchIssr = value if type(value) != base_types.auto else self.make_default("MtchIssr")
 
-	@Submitr.deleter
-	def Submitr(self):
-		del self._Submitr
-		self._Submitr = None
+	@MtchIssr.deleter
+	def MtchIssr(self):
+		del self._MtchIssr
+		self._MtchIssr = None
 
 	@property
 	def MtchIsseDt(self):
@@ -100,17 +74,43 @@ class RequiredSubmission4(base_types._BaseFieldType):
 		self._CertTp = None
 
 	@property
-	def MtchIssr(self):
-		return self._MtchIssr
+	def Submitr(self):
+		return self._Submitr
 
-	@MtchIssr.setter
-	def MtchIssr(self, value):
-		self._MtchIssr = value if type(value) != base_types.auto else self.make_default("MtchIssr")
+	@Submitr.setter
+	def Submitr(self, value):
+		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
 
-	@MtchIssr.deleter
-	def MtchIssr(self):
-		del self._MtchIssr
-		self._MtchIssr = None
+	@Submitr.deleter
+	def Submitr(self):
+		del self._Submitr
+		self._Submitr = None
+
+	@property
+	def AuthrsdInspctrInd(self):
+		return self._AuthrsdInspctrInd
+
+	@AuthrsdInspctrInd.setter
+	def AuthrsdInspctrInd(self, value):
+		self._AuthrsdInspctrInd = value if type(value) != base_types.auto else self.make_default("AuthrsdInspctrInd")
+
+	@AuthrsdInspctrInd.deleter
+	def AuthrsdInspctrInd(self):
+		del self._AuthrsdInspctrInd
+		self._AuthrsdInspctrInd = None
+
+	@property
+	def MtchManfctr(self):
+		return self._MtchManfctr
+
+	@MtchManfctr.setter
+	def MtchManfctr(self, value):
+		self._MtchManfctr = value if type(value) != base_types.auto else self.make_default("MtchManfctr")
+
+	@MtchManfctr.deleter
+	def MtchManfctr(self):
+		del self._MtchManfctr
+		self._MtchManfctr = None
 
 	@property
 	def MtchConsgn(self):
@@ -126,14 +126,14 @@ class RequiredSubmission4(base_types._BaseFieldType):
 		self._MtchConsgn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchManfctr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItmId', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthrsdInspctrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchInspctnDt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MtchIssr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchIsseDt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertTp', type=TradeCertificateType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchIssr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AuthrsdInspctrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchManfctr', type=PartyIdentification27, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchConsgn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

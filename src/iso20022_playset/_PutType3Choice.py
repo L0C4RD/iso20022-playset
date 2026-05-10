@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .PutType1Code import PutType1Code
+from ._GenericIdentification30 import GenericIdentification30
+from ._PutType1Code import PutType1Code
 
 class PutType3Choice(base_types._BaseFieldType):
 

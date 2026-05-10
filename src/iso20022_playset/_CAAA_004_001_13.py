@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorCompletionAdviceResponseV13 import AcceptorCompletionAdviceResponseV13
+from ._AcceptorCompletionAdviceResponseV13 import AcceptorCompletionAdviceResponseV13
 
 class CAAA_004_001_13():
 

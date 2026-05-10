@@ -1,5 +1,5 @@
 from . import base_types
-from .AcknowledgementV03 import AcknowledgementV03
+from ._AcknowledgementV03 import AcknowledgementV03
 
 class TSMT_001_001_03():
 

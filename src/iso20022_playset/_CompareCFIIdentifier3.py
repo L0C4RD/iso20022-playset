@@ -1,5 +1,5 @@
 from . import base_types
-from .CFIOct2015Identifier import CFIOct2015Identifier
+from ._CFIOct2015Identifier import CFIOct2015Identifier
 
 class CompareCFIIdentifier3(base_types._BaseFieldType):
 

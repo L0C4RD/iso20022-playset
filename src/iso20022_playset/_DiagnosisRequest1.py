@@ -1,6 +1,6 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class DiagnosisRequest1(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 from . import base_types
-from .DocumentIdentification7 import DocumentIdentification7
-from .Max70Text import Max70Text
-from .UserDefinedInformation1 import UserDefinedInformation1
+from ._DocumentIdentification7 import DocumentIdentification7
+from ._Max70Text import Max70Text
+from ._UserDefinedInformation1 import UserDefinedInformation1
 
 class TransportedGoods1(base_types._BaseFieldType):
 
-	__slots__ = ["_PurchsOrdrRef", "_GoodsDesc", "_BuyrDfndInf", "_SellrDfndInf"]
+	__slots__ = ["_PurchsOrdrRef", "_GoodsDesc", "_SellrDfndInf", "_BuyrDfndInf"]
 	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
@@ -33,19 +33,6 @@ class TransportedGoods1(base_types._BaseFieldType):
 		self._GoodsDesc = None
 
 	@property
-	def BuyrDfndInf(self):
-		return self._BuyrDfndInf
-
-	@BuyrDfndInf.setter
-	def BuyrDfndInf(self, value):
-		self._BuyrDfndInf = value if type(value) != base_types.auto else self.make_default("BuyrDfndInf")
-
-	@BuyrDfndInf.deleter
-	def BuyrDfndInf(self):
-		del self._BuyrDfndInf
-		self._BuyrDfndInf = None
-
-	@property
 	def SellrDfndInf(self):
 		return self._SellrDfndInf
 
@@ -58,10 +45,23 @@ class TransportedGoods1(base_types._BaseFieldType):
 		del self._SellrDfndInf
 		self._SellrDfndInf = None
 
+	@property
+	def BuyrDfndInf(self):
+		return self._BuyrDfndInf
+
+	@BuyrDfndInf.setter
+	def BuyrDfndInf(self, value):
+		self._BuyrDfndInf = value if type(value) != base_types.auto else self.make_default("BuyrDfndInf")
+
+	@BuyrDfndInf.deleter
+	def BuyrDfndInf(self):
+		del self._BuyrDfndInf
+		self._BuyrDfndInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SellrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),
 	))
 

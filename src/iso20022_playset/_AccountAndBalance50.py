@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BalanceFormat11Choice import BalanceFormat11Choice
-from .Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._BalanceFormat11Choice import BalanceFormat11Choice
 
 class AccountAndBalance50(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_ConfdBal"]
+	__slots__ = ["_ConfdBal", "_BlckChainAdrOrWllt", "_SfkpgAcct"]
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def ConfdBal(self):
+		return self._ConfdBal
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+	@ConfdBal.setter
+	def ConfdBal(self, value):
+		self._ConfdBal = value if type(value) != base_types.auto else self.make_default("ConfdBal")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@ConfdBal.deleter
+	def ConfdBal(self):
+		del self._ConfdBal
+		self._ConfdBal = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -33,21 +33,21 @@ class AccountAndBalance50(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def ConfdBal(self):
-		return self._ConfdBal
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@ConfdBal.setter
-	def ConfdBal(self, value):
-		self._ConfdBal = value if type(value) != base_types.auto else self.make_default("ConfdBal")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
 
-	@ConfdBal.deleter
-	def ConfdBal(self):
-		del self._ConfdBal
-		self._ConfdBal = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat11Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

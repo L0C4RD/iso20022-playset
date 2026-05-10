@@ -1,6 +1,6 @@
 from . import base_types
-from .PresentationParty1Code import PresentationParty1Code
-from .PlaceOfPresentation1 import PlaceOfPresentation1
+from ._PlaceOfPresentation1 import PlaceOfPresentation1
+from ._PresentationParty1Code import PresentationParty1Code
 
 class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 

@@ -1,24 +1,24 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .AccountingStatementOfHoldings2 import AccountingStatementOfHoldings2
-from .Pagination import Pagination
-from .AdditionalReference2 import AdditionalReference2
+from ._AccountingStatementOfHoldings2 import AccountingStatementOfHoldings2
+from ._Pagination import Pagination
+from ._MessageIdentification1 import MessageIdentification1
+from ._AdditionalReference2 import AdditionalReference2
 
 class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdRef", "_StmtToBeCanc", "_PrvsRef", "_MsgPgntn", "_MsgId"]
+	__slots__ = ["_PrvsRef", "_StmtToBeCanc", "_MsgPgntn", "_RltdRef", "_MsgId"]
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def StmtToBeCanc(self):
@@ -34,19 +34,6 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._StmtToBeCanc = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
-
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
-
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
-
-	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
 
@@ -58,6 +45,19 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 	def MsgPgntn(self):
 		del self._MsgPgntn
 		self._MsgPgntn = None
+
+	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	@property
 	def MsgId(self):
@@ -73,10 +73,10 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtToBeCanc', type=AccountingStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtToBeCanc', type=AccountingStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

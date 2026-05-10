@@ -1,7 +1,7 @@
 from . import base_types
-from .SettlementFailureReason3 import SettlementFailureReason3
-from .SettlementTotalData1 import SettlementTotalData1
-from .SettlementFailsDerogation1 import SettlementFailsDerogation1
+from ._SettlementFailsDerogation1 import SettlementFailsDerogation1
+from ._SettlementFailureReason3 import SettlementFailureReason3
+from ._SettlementTotalData1 import SettlementTotalData1
 
 class SettlementFailsData4(base_types._BaseFieldType):
 

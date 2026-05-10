@@ -1,25 +1,25 @@
 from . import base_types
-from .TransactionIdentifier3 import TransactionIdentifier3
-from .Max35Text import Max35Text
-from .FailureReason8Code import FailureReason8Code
-from .Max70Text import Max70Text
-from .CurrencyAndAmount import CurrencyAndAmount
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._FailureReason8Code import FailureReason8Code
+from ._CurrencyAndAmount import CurrencyAndAmount
+from ._TransactionIdentifier3 import TransactionIdentifier3
 
 class ATMTransaction40(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctrncPrsBal", "_RcncltnId", "_XcptnDtl", "_Xcptn", "_TxId"]
+	__slots__ = ["_Xcptn", "_RcncltnId", "_ElctrncPrsBal", "_TxId", "_XcptnDtl"]
 	@property
-	def ElctrncPrsBal(self):
-		return self._ElctrncPrsBal
+	def Xcptn(self):
+		return self._Xcptn
 
-	@ElctrncPrsBal.setter
-	def ElctrncPrsBal(self, value):
-		self._ElctrncPrsBal = value if type(value) != base_types.auto else self.make_default("ElctrncPrsBal")
+	@Xcptn.setter
+	def Xcptn(self, value):
+		self._Xcptn = value if type(value) != base_types.auto else self.make_default("Xcptn")
 
-	@ElctrncPrsBal.deleter
-	def ElctrncPrsBal(self):
-		del self._ElctrncPrsBal
-		self._ElctrncPrsBal = None
+	@Xcptn.deleter
+	def Xcptn(self):
+		del self._Xcptn
+		self._Xcptn = None
 
 	@property
 	def RcncltnId(self):
@@ -35,30 +35,17 @@ class ATMTransaction40(base_types._BaseFieldType):
 		self._RcncltnId = None
 
 	@property
-	def XcptnDtl(self):
-		return self._XcptnDtl
+	def ElctrncPrsBal(self):
+		return self._ElctrncPrsBal
 
-	@XcptnDtl.setter
-	def XcptnDtl(self, value):
-		self._XcptnDtl = value if type(value) != base_types.auto else self.make_default("XcptnDtl")
+	@ElctrncPrsBal.setter
+	def ElctrncPrsBal(self, value):
+		self._ElctrncPrsBal = value if type(value) != base_types.auto else self.make_default("ElctrncPrsBal")
 
-	@XcptnDtl.deleter
-	def XcptnDtl(self):
-		del self._XcptnDtl
-		self._XcptnDtl = None
-
-	@property
-	def Xcptn(self):
-		return self._Xcptn
-
-	@Xcptn.setter
-	def Xcptn(self, value):
-		self._Xcptn = value if type(value) != base_types.auto else self.make_default("Xcptn")
-
-	@Xcptn.deleter
-	def Xcptn(self):
-		del self._Xcptn
-		self._Xcptn = None
+	@ElctrncPrsBal.deleter
+	def ElctrncPrsBal(self):
+		del self._ElctrncPrsBal
+		self._ElctrncPrsBal = None
 
 	@property
 	def TxId(self):
@@ -73,11 +60,24 @@ class ATMTransaction40(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def XcptnDtl(self):
+		return self._XcptnDtl
+
+	@XcptnDtl.setter
+	def XcptnDtl(self, value):
+		self._XcptnDtl = value if type(value) != base_types.auto else self.make_default("XcptnDtl")
+
+	@XcptnDtl.deleter
+	def XcptnDtl(self):
+		del self._XcptnDtl
+		self._XcptnDtl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElctrncPrsBal', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XcptnDtl', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xcptn', type=FailureReason8Code, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncPrsBal', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XcptnDtl', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

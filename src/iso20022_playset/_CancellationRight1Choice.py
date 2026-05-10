@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .CancellationRight1Code import CancellationRight1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._CancellationRight1Code import CancellationRight1Code
 
 class CancellationRight1Choice(base_types._BaseFieldType):
 

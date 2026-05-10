@@ -1,41 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FormOfSecurity1Code import FormOfSecurity1Code
-from .DistributionPolicy1Code import DistributionPolicy1Code
-from .Max350Text import Max350Text
-from .SecurityIdentification3Choice import SecurityIdentification3Choice
-from .YesNoIndicator import YesNoIndicator
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max35Text import Max35Text
+from ._Max350Text import Max350Text
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._YesNoIndicator import YesNoIndicator
+from ._SecurityIdentification3Choice import SecurityIdentification3Choice
 
 class FinancialInstrument8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssTp", "_DstrbtnPlcy", "_SctiesForm", "_Id", "_Nm", "_SplmtryId", "_DualFndInd", "_DnmtnCcy"]
-	@property
-	def ClssTp(self):
-		return self._ClssTp
-
-	@ClssTp.setter
-	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
-
-	@ClssTp.deleter
-	def ClssTp(self):
-		del self._ClssTp
-		self._ClssTp = None
-
-	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
-
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
-
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
-
+	__slots__ = ["_SctiesForm", "_Nm", "_SplmtryId", "_Id", "_DualFndInd", "_ClssTp", "_DnmtnCcy", "_DstrbtnPlcy"]
 	@property
 	def SctiesForm(self):
 		return self._SctiesForm
@@ -48,19 +22,6 @@ class FinancialInstrument8(base_types._BaseFieldType):
 	def SctiesForm(self):
 		del self._SctiesForm
 		self._SctiesForm = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Nm(self):
@@ -89,6 +50,19 @@ class FinancialInstrument8(base_types._BaseFieldType):
 		self._SplmtryId = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def DualFndInd(self):
 		return self._DualFndInd
 
@@ -100,6 +74,19 @@ class FinancialInstrument8(base_types._BaseFieldType):
 	def DualFndInd(self):
 		del self._DualFndInd
 		self._DualFndInd = None
+
+	@property
+	def ClssTp(self):
+		return self._ClssTp
+
+	@ClssTp.setter
+	def ClssTp(self, value):
+		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+
+	@ClssTp.deleter
+	def ClssTp(self):
+		del self._ClssTp
+		self._ClssTp = None
 
 	@property
 	def DnmtnCcy(self):
@@ -114,14 +101,27 @@ class FinancialInstrument8(base_types._BaseFieldType):
 		del self._DnmtnCcy
 		self._DnmtnCcy = None
 
+	@property
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
+
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DualFndInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DnmtnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

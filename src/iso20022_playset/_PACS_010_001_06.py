@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstitutionDirectDebitV06 import FinancialInstitutionDirectDebitV06
+from ._FinancialInstitutionDirectDebitV06 import FinancialInstitutionDirectDebitV06
 
 class PACS_010_001_06():
 

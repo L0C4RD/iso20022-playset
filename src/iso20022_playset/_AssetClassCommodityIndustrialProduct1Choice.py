@@ -1,23 +1,10 @@
 from . import base_types
-from .IndustrialProductCommodityManufacturing1 import IndustrialProductCommodityManufacturing1
-from .IndustrialProductCommodityConstruction1 import IndustrialProductCommodityConstruction1
+from ._IndustrialProductCommodityManufacturing1 import IndustrialProductCommodityManufacturing1
+from ._IndustrialProductCommodityConstruction1 import IndustrialProductCommodityConstruction1
 
 class AssetClassCommodityIndustrialProduct1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnstrctn", "_Manfctg"]
-	@property
-	def Cnstrctn(self):
-		return self._Cnstrctn
-
-	@Cnstrctn.setter
-	def Cnstrctn(self, value):
-		self._Cnstrctn = value if type(value) != base_types.auto else self.make_default("Cnstrctn")
-
-	@Cnstrctn.deleter
-	def Cnstrctn(self):
-		del self._Cnstrctn
-		self._Cnstrctn = None
-
+	__slots__ = ["_Manfctg", "_Cnstrctn"]
 	@property
 	def Manfctg(self):
 		return self._Manfctg
@@ -31,8 +18,21 @@ class AssetClassCommodityIndustrialProduct1Choice(base_types._BaseFieldType):
 		del self._Manfctg
 		self._Manfctg = None
 
+	@property
+	def Cnstrctn(self):
+		return self._Cnstrctn
+
+	@Cnstrctn.setter
+	def Cnstrctn(self, value):
+		self._Cnstrctn = value if type(value) != base_types.auto else self.make_default("Cnstrctn")
+
+	@Cnstrctn.deleter
+	def Cnstrctn(self):
+		del self._Cnstrctn
+		self._Cnstrctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cnstrctn', type=IndustrialProductCommodityConstruction1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Manfctg', type=IndustrialProductCommodityManufacturing1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cnstrctn', type=IndustrialProductCommodityConstruction1, min=0, max=1, mutex_group=1, array=False),
 	))
 

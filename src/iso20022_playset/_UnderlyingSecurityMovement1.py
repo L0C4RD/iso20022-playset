@@ -1,7 +1,7 @@
 from . import base_types
-from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from .SecuritiesAccount8 import SecuritiesAccount8
-from .SecurityIdentification7 import SecurityIdentification7
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._SecuritiesAccount8 import SecuritiesAccount8
+from ._SecurityIdentification7 import SecurityIdentification7
 
 class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 

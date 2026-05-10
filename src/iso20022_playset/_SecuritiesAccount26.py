@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PurposeCode7Choice import PurposeCode7Choice
-from .Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._PurposeCode7Choice import PurposeCode7Choice
+from ._Max70Text import Max70Text
 
 class SecuritiesAccount26(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_Tp", "_Dsgnt"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Nm", "_Dsgnt", "_Tp", "_Id"]
 	@property
 	def Nm(self):
 		return self._Nm
@@ -31,6 +18,19 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 	def Nm(self):
 		del self._Nm
 		self._Nm = None
+
+	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def Tp(self):
@@ -46,22 +46,22 @@ class SecuritiesAccount26(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
+	def Id(self):
+		return self._Id
 
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

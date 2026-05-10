@@ -1,6 +1,6 @@
 from . import base_types
-from .ProprietaryData6 import ProprietaryData6
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._ProprietaryData6 import ProprietaryData6
 
 class ProprietaryData7(base_types._BaseFieldType):
 

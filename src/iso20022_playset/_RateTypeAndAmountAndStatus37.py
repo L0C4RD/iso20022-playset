@@ -1,7 +1,7 @@
 from . import base_types
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .DeemedRateType1Choice import DeemedRateType1Choice
-from .RateStatus3Choice import RateStatus3Choice
+from ._DeemedRateType1Choice import DeemedRateType1Choice
+from ._RateStatus3Choice import RateStatus3Choice
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class RateTypeAndAmountAndStatus37(base_types._BaseFieldType):
 

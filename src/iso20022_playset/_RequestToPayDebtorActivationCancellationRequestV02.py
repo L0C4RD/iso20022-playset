@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ActivationHeader3 import ActivationHeader3
-from .DebtorActivationCancellation3 import DebtorActivationCancellation3
+from ._SupplementaryData1 import SupplementaryData1
+from ._ActivationHeader3 import ActivationHeader3
+from ._DebtorActivationCancellation3 import DebtorActivationCancellation3
 
 class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldType):
 

@@ -1,15 +1,15 @@
 from . import base_types
-from .PartyTextInformation3 import PartyTextInformation3
-from .AlternatePartyIdentification9 import AlternatePartyIdentification9
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from .PartyIdentification137Choice import PartyIdentification137Choice
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._PartyTextInformation3 import PartyTextInformation3
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._AlternatePartyIdentification9 import AlternatePartyIdentification9
 
 class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_Id", "_PrcgId", "_AltrnId", "_LEI", "_AddtlInf", "_SfkpgAcct"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_PrcgId", "_SfkpgAcct", "_AltrnId", "_Id", "_LEI", "_AddtlInf"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -22,19 +22,6 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def PrcgId(self):
@@ -50,6 +37,19 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -61,6 +61,19 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 	def AltrnId(self):
 		del self._AltrnId
 		self._AltrnId = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def LEI(self):
@@ -88,26 +101,13 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

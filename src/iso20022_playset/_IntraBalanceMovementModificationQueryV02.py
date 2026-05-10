@@ -1,11 +1,11 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .IntraBalanceQueryDefinition12 import IntraBalanceQueryDefinition12
-from .DocumentIdentification51 import DocumentIdentification51
+from ._IntraBalanceQueryDefinition12 import IntraBalanceQueryDefinition12
+from ._SupplementaryData1 import SupplementaryData1
+from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementModificationQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Id", "_QryDef"]
+	__slots__ = ["_SplmtryData", "_QryDef", "_Id"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class IntraBalanceMovementModificationQueryV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def QryDef(self):
 		return self._QryDef
 
@@ -45,9 +32,22 @@ class IntraBalanceMovementModificationQueryV02(base_types._BaseFieldType):
 		del self._QryDef
 		self._QryDef = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryDef', type=IntraBalanceQueryDefinition12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 	))
 

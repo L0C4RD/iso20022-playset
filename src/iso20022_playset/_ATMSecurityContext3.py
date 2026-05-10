@@ -1,7 +1,7 @@
 from . import base_types
-from .ATMEquipment3 import ATMEquipment3
-from .ATMSecurityConfiguration1 import ATMSecurityConfiguration1
-from .ATMSecurityScheme3Code import ATMSecurityScheme3Code
+from ._ATMEquipment3 import ATMEquipment3
+from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
+from ._ATMSecurityScheme3Code import ATMSecurityScheme3Code
 
 class ATMSecurityContext3(base_types._BaseFieldType):
 

@@ -1,22 +1,9 @@
 from . import base_types
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
 
 class CorporateActionNarrative10(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyCtctNrrtv", "_AddtlTxt"]
-	@property
-	def PtyCtctNrrtv(self):
-		return self._PtyCtctNrrtv
-
-	@PtyCtctNrrtv.setter
-	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
-
-	@PtyCtctNrrtv.deleter
-	def PtyCtctNrrtv(self):
-		del self._PtyCtctNrrtv
-		self._PtyCtctNrrtv = None
-
+	__slots__ = ["_AddtlTxt", "_PtyCtctNrrtv"]
 	@property
 	def AddtlTxt(self):
 		return self._AddtlTxt
@@ -30,8 +17,21 @@ class CorporateActionNarrative10(base_types._BaseFieldType):
 		del self._AddtlTxt
 		self._AddtlTxt = None
 
+	@property
+	def PtyCtctNrrtv(self):
+		return self._PtyCtctNrrtv
+
+	@PtyCtctNrrtv.setter
+	def PtyCtctNrrtv(self, value):
+		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
+
+	@PtyCtctNrrtv.deleter
+	def PtyCtctNrrtv(self):
+		del self._PtyCtctNrrtv
+		self._PtyCtctNrrtv = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
+from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
 
 class QuantityToQuantityRatio2(base_types._BaseFieldType):
 

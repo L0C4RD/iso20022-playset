@@ -1,7 +1,7 @@
 from . import base_types
-from .CountryCode import CountryCode
-from .CountrySubDivisionCode import CountrySubDivisionCode
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._CountrySubDivisionCode import CountrySubDivisionCode
+from ._CountryCode import CountryCode
 
 class DerivativePartyIdentification1Choice(base_types._BaseFieldType):
 

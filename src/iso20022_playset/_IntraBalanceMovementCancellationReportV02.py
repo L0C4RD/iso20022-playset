@@ -1,26 +1,13 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Pagination1 import Pagination1
-from .IntraBalanceOrOperationalError10Choice import IntraBalanceOrOperationalError10Choice
-from .DocumentIdentification51 import DocumentIdentification51
-from .IntraBalanceReport5 import IntraBalanceReport5
+from ._IntraBalanceOrOperationalError10Choice import IntraBalanceOrOperationalError10Choice
+from ._Pagination1 import Pagination1
+from ._SupplementaryData1 import SupplementaryData1
+from ._IntraBalanceReport5 import IntraBalanceReport5
+from ._DocumentIdentification51 import DocumentIdentification51
 
 class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Pgntn", "_RptGnlDtls", "_RptOrErr", "_Id"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Pgntn", "_Id", "_RptGnlDtls", "_RptOrErr", "_SplmtryData"]
 	@property
 	def Pgntn(self):
 		return self._Pgntn
@@ -33,6 +20,19 @@ class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 	def Pgntn(self):
 		del self._Pgntn
 		self._Pgntn = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def RptGnlDtls(self):
@@ -61,23 +61,23 @@ class IntraBalanceMovementCancellationReportV02(base_types._BaseFieldType):
 		self._RptOrErr = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=IntraBalanceReport5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptOrErr', type=IntraBalanceOrOperationalError10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

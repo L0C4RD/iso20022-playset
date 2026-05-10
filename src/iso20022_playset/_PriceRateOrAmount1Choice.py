@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount import RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._PercentageRate import PercentageRate
+from ._RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount import RestrictedFINActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceRateOrAmount1Choice(base_types._BaseFieldType):
 

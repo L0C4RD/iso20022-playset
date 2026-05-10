@@ -1,5 +1,5 @@
 from . import base_types
-from .FIToFIPaymentStatusReportV12 import FIToFIPaymentStatusReportV12
+from ._FIToFIPaymentStatusReportV12 import FIToFIPaymentStatusReportV12
 
 class PACS_002_001_12():
 

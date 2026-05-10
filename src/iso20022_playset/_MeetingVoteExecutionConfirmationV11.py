@@ -1,40 +1,27 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max35Text import Max35Text
-from .MeetingReference10 import MeetingReference10
-from .Pagination1 import Pagination1
-from .Max2048Text import Max2048Text
-from .DetailedInstructionStatus19 import DetailedInstructionStatus19
-from .SecurityIdentification19 import SecurityIdentification19
+from ._DetailedInstructionStatus19 import DetailedInstructionStatus19
+from ._Pagination1 import Pagination1
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._Max2048Text import Max2048Text
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._MeetingReference10 import MeetingReference10
 
 class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteExctnConfId", "_SplmtryData", "_VoteInstrs", "_MtgInstrId", "_VoteInstrsConfURLAdr", "_MtgRef", "_FinInstrmId", "_Pgntn"]
+	__slots__ = ["_Pgntn", "_VoteInstrs", "_MtgInstrId", "_VoteExctnConfId", "_MtgRef", "_SplmtryData", "_FinInstrmId", "_VoteInstrsConfURLAdr"]
 	@property
-	def VoteExctnConfId(self):
-		return self._VoteExctnConfId
+	def Pgntn(self):
+		return self._Pgntn
 
-	@VoteExctnConfId.setter
-	def VoteExctnConfId(self, value):
-		self._VoteExctnConfId = value if type(value) != base_types.auto else self.make_default("VoteExctnConfId")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@VoteExctnConfId.deleter
-	def VoteExctnConfId(self):
-		del self._VoteExctnConfId
-		self._VoteExctnConfId = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def VoteInstrs(self):
@@ -63,17 +50,17 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 		self._MtgInstrId = None
 
 	@property
-	def VoteInstrsConfURLAdr(self):
-		return self._VoteInstrsConfURLAdr
+	def VoteExctnConfId(self):
+		return self._VoteExctnConfId
 
-	@VoteInstrsConfURLAdr.setter
-	def VoteInstrsConfURLAdr(self, value):
-		self._VoteInstrsConfURLAdr = value if type(value) != base_types.auto else self.make_default("VoteInstrsConfURLAdr")
+	@VoteExctnConfId.setter
+	def VoteExctnConfId(self, value):
+		self._VoteExctnConfId = value if type(value) != base_types.auto else self.make_default("VoteExctnConfId")
 
-	@VoteInstrsConfURLAdr.deleter
-	def VoteInstrsConfURLAdr(self):
-		del self._VoteInstrsConfURLAdr
-		self._VoteInstrsConfURLAdr = None
+	@VoteExctnConfId.deleter
+	def VoteExctnConfId(self):
+		del self._VoteExctnConfId
+		self._VoteExctnConfId = None
 
 	@property
 	def MtgRef(self):
@@ -89,6 +76,19 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 		self._MtgRef = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -102,26 +102,26 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def VoteInstrsConfURLAdr(self):
+		return self._VoteInstrsConfURLAdr
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@VoteInstrsConfURLAdr.setter
+	def VoteInstrsConfURLAdr(self, value):
+		self._VoteInstrsConfURLAdr = value if type(value) != base_types.auto else self.make_default("VoteInstrsConfURLAdr")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@VoteInstrsConfURLAdr.deleter
+	def VoteInstrsConfURLAdr(self):
+		del self._VoteInstrsConfURLAdr
+		self._VoteInstrsConfURLAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VoteExctnConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteInstrs', type=DetailedInstructionStatus19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtgInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VoteInstrsConfURLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteExctnConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VoteInstrsConfURLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

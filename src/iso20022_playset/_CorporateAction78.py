@@ -1,13 +1,26 @@
 from . import base_types
-from .CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
-from .CorporateActionDate89 import CorporateActionDate89
-from .LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
-from .AdditionalBusinessProcessFormat14Choice import AdditionalBusinessProcessFormat14Choice
-from .IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
+from ._IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
+from ._CorporateActionDate89 import CorporateActionDate89
+from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
+from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from ._AdditionalBusinessProcessFormat14Choice import AdditionalBusinessProcessFormat14Choice
 
 class CorporateAction78(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtStag", "_IntrmdtSctiesDstrbtnTp", "_LtryTp", "_AddtlBizPrcInd", "_DtDtls"]
+	__slots__ = ["_AddtlBizPrcInd", "_EvtStag", "_LtryTp", "_IntrmdtSctiesDstrbtnTp", "_DtDtls"]
+	@property
+	def AddtlBizPrcInd(self):
+		return self._AddtlBizPrcInd
+
+	@AddtlBizPrcInd.setter
+	def AddtlBizPrcInd(self, value):
+		self._AddtlBizPrcInd = value if type(value) != base_types.auto else self.make_default("AddtlBizPrcInd")
+
+	@AddtlBizPrcInd.deleter
+	def AddtlBizPrcInd(self):
+		del self._AddtlBizPrcInd
+		self._AddtlBizPrcInd = None
+
 	@property
 	def EvtStag(self):
 		return self._EvtStag
@@ -20,19 +33,6 @@ class CorporateAction78(base_types._BaseFieldType):
 	def EvtStag(self):
 		del self._EvtStag
 		self._EvtStag = None
-
-	@property
-	def IntrmdtSctiesDstrbtnTp(self):
-		return self._IntrmdtSctiesDstrbtnTp
-
-	@IntrmdtSctiesDstrbtnTp.setter
-	def IntrmdtSctiesDstrbtnTp(self, value):
-		self._IntrmdtSctiesDstrbtnTp = value if type(value) != base_types.auto else self.make_default("IntrmdtSctiesDstrbtnTp")
-
-	@IntrmdtSctiesDstrbtnTp.deleter
-	def IntrmdtSctiesDstrbtnTp(self):
-		del self._IntrmdtSctiesDstrbtnTp
-		self._IntrmdtSctiesDstrbtnTp = None
 
 	@property
 	def LtryTp(self):
@@ -48,17 +48,17 @@ class CorporateAction78(base_types._BaseFieldType):
 		self._LtryTp = None
 
 	@property
-	def AddtlBizPrcInd(self):
-		return self._AddtlBizPrcInd
+	def IntrmdtSctiesDstrbtnTp(self):
+		return self._IntrmdtSctiesDstrbtnTp
 
-	@AddtlBizPrcInd.setter
-	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != base_types.auto else self.make_default("AddtlBizPrcInd")
+	@IntrmdtSctiesDstrbtnTp.setter
+	def IntrmdtSctiesDstrbtnTp(self, value):
+		self._IntrmdtSctiesDstrbtnTp = value if type(value) != base_types.auto else self.make_default("IntrmdtSctiesDstrbtnTp")
 
-	@AddtlBizPrcInd.deleter
-	def AddtlBizPrcInd(self):
-		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
+	@IntrmdtSctiesDstrbtnTp.deleter
+	def IntrmdtSctiesDstrbtnTp(self):
+		del self._IntrmdtSctiesDstrbtnTp
+		self._IntrmdtSctiesDstrbtnTp = None
 
 	@property
 	def DtDtls(self):
@@ -74,10 +74,10 @@ class CorporateAction78(base_types._BaseFieldType):
 		self._DtDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmdtSctiesDstrbtnTp', type=IntermediateSecuritiesDistributionTypeFormat18Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat14Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmdtSctiesDstrbtnTp', type=IntermediateSecuritiesDistributionTypeFormat18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .CorporateActionNarrativeV09 import CorporateActionNarrativeV09
+from ._CorporateActionNarrativeV09 import CorporateActionNarrativeV09
 
 class SEEV_038_001_09():
 

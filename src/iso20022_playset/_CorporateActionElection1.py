@@ -1,11 +1,24 @@
 from . import base_types
-from .UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from .Exact3NumericText import Exact3NumericText
-from .CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
+from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
+from ._Exact3NumericText import Exact3NumericText
 
 class CorporateActionElection1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnNb", "_OptnTp", "_OrgnlInstdQty", "_RmngQty"]
+	__slots__ = ["_RmngQty", "_OptnNb", "_OptnTp", "_OrgnlInstdQty"]
+	@property
+	def RmngQty(self):
+		return self._RmngQty
+
+	@RmngQty.setter
+	def RmngQty(self, value):
+		self._RmngQty = value if type(value) != base_types.auto else self.make_default("RmngQty")
+
+	@RmngQty.deleter
+	def RmngQty(self):
+		del self._RmngQty
+		self._RmngQty = None
+
 	@property
 	def OptnNb(self):
 		return self._OptnNb
@@ -45,23 +58,10 @@ class CorporateActionElection1(base_types._BaseFieldType):
 		del self._OrgnlInstdQty
 		self._OrgnlInstdQty = None
 
-	@property
-	def RmngQty(self):
-		return self._RmngQty
-
-	@RmngQty.setter
-	def RmngQty(self, value):
-		self._RmngQty = value if type(value) != base_types.auto else self.make_default("RmngQty")
-
-	@RmngQty.deleter
-	def RmngQty(self):
-		del self._RmngQty
-		self._RmngQty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RmngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlInstdQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

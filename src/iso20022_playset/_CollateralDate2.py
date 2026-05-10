@@ -1,23 +1,10 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .ISODate import ISODate
+from ._ISODate import ISODate
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class CollateralDate2(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmDt", "_TradDt", "_ReqdExctnDt"]
-	@property
-	def SttlmDt(self):
-		return self._SttlmDt
-
-	@SttlmDt.setter
-	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
-
-	@SttlmDt.deleter
-	def SttlmDt(self):
-		del self._SttlmDt
-		self._SttlmDt = None
-
+	__slots__ = ["_TradDt", "_ReqdExctnDt", "_SttlmDt"]
 	@property
 	def TradDt(self):
 		return self._TradDt
@@ -44,9 +31,22 @@ class CollateralDate2(base_types._BaseFieldType):
 		del self._ReqdExctnDt
 		self._ReqdExctnDt = None
 
+	@property
+	def SttlmDt(self):
+		return self._SttlmDt
+
+	@SttlmDt.setter
+	def SttlmDt(self, value):
+		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+
+	@SttlmDt.deleter
+	def SttlmDt(self):
+		del self._SttlmDt
+		self._SttlmDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

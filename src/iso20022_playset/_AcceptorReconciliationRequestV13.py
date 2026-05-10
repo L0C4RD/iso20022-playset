@@ -1,24 +1,11 @@
 from . import base_types
-from .ContentInformationType37 import ContentInformationType37
-from .AcceptorReconciliationRequest13 import AcceptorReconciliationRequest13
-from .Header70 import Header70
+from ._Header70 import Header70
+from ._ContentInformationType37 import ContentInformationType37
+from ._AcceptorReconciliationRequest13 import AcceptorReconciliationRequest13
 
 class AcceptorReconciliationRequestV13(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnReq", "_SctyTrlr", "_Hdr"]
-	@property
-	def RcncltnReq(self):
-		return self._RcncltnReq
-
-	@RcncltnReq.setter
-	def RcncltnReq(self, value):
-		self._RcncltnReq = value if type(value) != base_types.auto else self.make_default("RcncltnReq")
-
-	@RcncltnReq.deleter
-	def RcncltnReq(self):
-		del self._RcncltnReq
-		self._RcncltnReq = None
-
+	__slots__ = ["_SctyTrlr", "_Hdr", "_RcncltnReq"]
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -45,9 +32,22 @@ class AcceptorReconciliationRequestV13(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def RcncltnReq(self):
+		return self._RcncltnReq
+
+	@RcncltnReq.setter
+	def RcncltnReq(self, value):
+		self._RcncltnReq = value if type(value) != base_types.auto else self.make_default("RcncltnReq")
+
+	@RcncltnReq.deleter
+	def RcncltnReq(self):
+		del self._RcncltnReq
+		self._RcncltnReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnReq', type=AcceptorReconciliationRequest13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnReq', type=AcceptorReconciliationRequest13, min=1, max=1, mutex_group=None, array=False),
 	))
 

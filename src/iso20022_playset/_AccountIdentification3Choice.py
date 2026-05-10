@@ -1,12 +1,12 @@
 from . import base_types
-from .BBANIdentifier import BBANIdentifier
-from .SimpleIdentificationInformation2 import SimpleIdentificationInformation2
-from .UPICIdentifier import UPICIdentifier
-from .IBANIdentifier import IBANIdentifier
+from ._IBANIdentifier import IBANIdentifier
+from ._UPICIdentifier import UPICIdentifier
+from ._BBANIdentifier import BBANIdentifier
+from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
 
 class AccountIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_BBAN", "_UPIC", "_PrtryAcct", "_IBAN"]
+	__slots__ = ["_BBAN", "_PrtryAcct", "_IBAN", "_UPIC"]
 	@property
 	def BBAN(self):
 		return self._BBAN
@@ -19,19 +19,6 @@ class AccountIdentification3Choice(base_types._BaseFieldType):
 	def BBAN(self):
 		del self._BBAN
 		self._BBAN = None
-
-	@property
-	def UPIC(self):
-		return self._UPIC
-
-	@UPIC.setter
-	def UPIC(self, value):
-		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
-
-	@UPIC.deleter
-	def UPIC(self):
-		del self._UPIC
-		self._UPIC = None
 
 	@property
 	def PrtryAcct(self):
@@ -59,10 +46,23 @@ class AccountIdentification3Choice(base_types._BaseFieldType):
 		del self._IBAN
 		self._IBAN = None
 
+	@property
+	def UPIC(self):
+		return self._UPIC
+
+	@UPIC.setter
+	def UPIC(self, value):
+		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
+
+	@UPIC.deleter
+	def UPIC(self):
+		del self._UPIC
+		self._UPIC = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryAcct', type=SimpleIdentificationInformation2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

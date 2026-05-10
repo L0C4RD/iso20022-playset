@@ -1,30 +1,43 @@
 from . import base_types
-from .MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
-from .AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
-from .KEKIdentifier5 import KEKIdentifier5
-from .MaintenanceDelegateAction10 import MaintenanceDelegateAction10
-from .Max3000Binary import Max3000Binary
-from .DataSetCategory19Code import DataSetCategory19Code
-from .Max35Text import Max35Text
-from .TrueFalseIndicator import TrueFalseIndicator
-from .TerminalManagementAction3Code import TerminalManagementAction3Code
-from .Max10KBinary import Max10KBinary
+from ._AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._Max10KBinary import Max10KBinary
+from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
+from ._Max3000Binary import Max3000Binary
+from ._KEKIdentifier5 import KEKIdentifier5
+from ._DataSetCategory19Code import DataSetCategory19Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._MaintenanceDelegateAction10 import MaintenanceDelegateAction10
 
 class MaintenanceDelegation19(base_types._BaseFieldType):
 
-	__slots__ = ["_MntncSvc", "_Cert", "_SmmtrcKey", "_DlgtnScpDef", "_ParamDataSet", "_DlgtnScpId", "_DlgtnTp", "_DlgtdActn", "_POISubset", "_POIIdAssoctn", "_PrtlDlgtn"]
+	__slots__ = ["_POISubset", "_DlgtnScpId", "_Cert", "_MntncSvc", "_DlgtnTp", "_DlgtdActn", "_POIIdAssoctn", "_ParamDataSet", "_DlgtnScpDef", "_PrtlDlgtn", "_SmmtrcKey"]
 	@property
-	def MntncSvc(self):
-		return self._MntncSvc
+	def POISubset(self):
+		return self._POISubset
 
-	@MntncSvc.setter
-	def MntncSvc(self, value):
-		self._MntncSvc = value if type(value) != base_types.auto else self.make_default("MntncSvc")
+	@POISubset.setter
+	def POISubset(self, value):
+		self._POISubset = value if type(value) != base_types.auto else self.make_default("POISubset")
 
-	@MntncSvc.deleter
-	def MntncSvc(self):
-		del self._MntncSvc
-		self._MntncSvc = None
+	@POISubset.deleter
+	def POISubset(self):
+		del self._POISubset
+		self._POISubset = None
+
+	@property
+	def DlgtnScpId(self):
+		return self._DlgtnScpId
+
+	@DlgtnScpId.setter
+	def DlgtnScpId(self, value):
+		self._DlgtnScpId = value if type(value) != base_types.auto else self.make_default("DlgtnScpId")
+
+	@DlgtnScpId.deleter
+	def DlgtnScpId(self):
+		del self._DlgtnScpId
+		self._DlgtnScpId = None
 
 	@property
 	def Cert(self):
@@ -40,56 +53,17 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 		self._Cert = None
 
 	@property
-	def SmmtrcKey(self):
-		return self._SmmtrcKey
+	def MntncSvc(self):
+		return self._MntncSvc
 
-	@SmmtrcKey.setter
-	def SmmtrcKey(self, value):
-		self._SmmtrcKey = value if type(value) != base_types.auto else self.make_default("SmmtrcKey")
+	@MntncSvc.setter
+	def MntncSvc(self, value):
+		self._MntncSvc = value if type(value) != base_types.auto else self.make_default("MntncSvc")
 
-	@SmmtrcKey.deleter
-	def SmmtrcKey(self):
-		del self._SmmtrcKey
-		self._SmmtrcKey = None
-
-	@property
-	def DlgtnScpDef(self):
-		return self._DlgtnScpDef
-
-	@DlgtnScpDef.setter
-	def DlgtnScpDef(self, value):
-		self._DlgtnScpDef = value if type(value) != base_types.auto else self.make_default("DlgtnScpDef")
-
-	@DlgtnScpDef.deleter
-	def DlgtnScpDef(self):
-		del self._DlgtnScpDef
-		self._DlgtnScpDef = None
-
-	@property
-	def ParamDataSet(self):
-		return self._ParamDataSet
-
-	@ParamDataSet.setter
-	def ParamDataSet(self, value):
-		self._ParamDataSet = value if type(value) != base_types.auto else self.make_default("ParamDataSet")
-
-	@ParamDataSet.deleter
-	def ParamDataSet(self):
-		del self._ParamDataSet
-		self._ParamDataSet = None
-
-	@property
-	def DlgtnScpId(self):
-		return self._DlgtnScpId
-
-	@DlgtnScpId.setter
-	def DlgtnScpId(self, value):
-		self._DlgtnScpId = value if type(value) != base_types.auto else self.make_default("DlgtnScpId")
-
-	@DlgtnScpId.deleter
-	def DlgtnScpId(self):
-		del self._DlgtnScpId
-		self._DlgtnScpId = None
+	@MntncSvc.deleter
+	def MntncSvc(self):
+		del self._MntncSvc
+		self._MntncSvc = None
 
 	@property
 	def DlgtnTp(self):
@@ -118,19 +92,6 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 		self._DlgtdActn = None
 
 	@property
-	def POISubset(self):
-		return self._POISubset
-
-	@POISubset.setter
-	def POISubset(self, value):
-		self._POISubset = value if type(value) != base_types.auto else self.make_default("POISubset")
-
-	@POISubset.deleter
-	def POISubset(self):
-		del self._POISubset
-		self._POISubset = None
-
-	@property
 	def POIIdAssoctn(self):
 		return self._POIIdAssoctn
 
@@ -142,6 +103,32 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 	def POIIdAssoctn(self):
 		del self._POIIdAssoctn
 		self._POIIdAssoctn = None
+
+	@property
+	def ParamDataSet(self):
+		return self._ParamDataSet
+
+	@ParamDataSet.setter
+	def ParamDataSet(self, value):
+		self._ParamDataSet = value if type(value) != base_types.auto else self.make_default("ParamDataSet")
+
+	@ParamDataSet.deleter
+	def ParamDataSet(self):
+		del self._ParamDataSet
+		self._ParamDataSet = None
+
+	@property
+	def DlgtnScpDef(self):
+		return self._DlgtnScpDef
+
+	@DlgtnScpDef.setter
+	def DlgtnScpDef(self, value):
+		self._DlgtnScpDef = value if type(value) != base_types.auto else self.make_default("DlgtnScpDef")
+
+	@DlgtnScpDef.deleter
+	def DlgtnScpDef(self):
+		del self._DlgtnScpDef
+		self._DlgtnScpDef = None
 
 	@property
 	def PrtlDlgtn(self):
@@ -156,17 +143,30 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 		del self._PrtlDlgtn
 		self._PrtlDlgtn = None
 
+	@property
+	def SmmtrcKey(self):
+		return self._SmmtrcKey
+
+	@SmmtrcKey.setter
+	def SmmtrcKey(self, value):
+		self._SmmtrcKey = value if type(value) != base_types.auto else self.make_default("SmmtrcKey")
+
+	@SmmtrcKey.deleter
+	def SmmtrcKey(self):
+		del self._SmmtrcKey
+		self._SmmtrcKey = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MntncSvc', type=DataSetCategory19Code, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Cert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SmmtrcKey', type=KEKIdentifier5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlgtnScpDef', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ParamDataSet', type=AcceptorConfigurationDataSet6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POISubset', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlgtnScpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MntncSvc', type=DataSetCategory19Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlgtnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtdActn', type=MaintenanceDelegateAction10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POISubset', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIIdAssoctn', type=MaintenanceIdentificationAssociation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ParamDataSet', type=AcceptorConfigurationDataSet6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlgtnScpDef', type=Max3000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlDlgtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SmmtrcKey', type=KEKIdentifier5, min=0, max=None, mutex_group=None, array=True),
 	))
 

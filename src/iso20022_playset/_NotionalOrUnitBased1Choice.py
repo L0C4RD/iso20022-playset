@@ -1,6 +1,6 @@
 from . import base_types
-from .NotionalOrUnitBased1Code import NotionalOrUnitBased1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._NotionalOrUnitBased1Code import NotionalOrUnitBased1Code
 
 class NotionalOrUnitBased1Choice(base_types._BaseFieldType):
 

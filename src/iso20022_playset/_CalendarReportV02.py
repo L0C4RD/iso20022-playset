@@ -1,11 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CalendarReportOrError1Choice import CalendarReportOrError1Choice
-from .MessageHeader11 import MessageHeader11
+from ._SupplementaryData1 import SupplementaryData1
+from ._CalendarReportOrError1Choice import CalendarReportOrError1Choice
+from ._MessageHeader11 import MessageHeader11
 
 class CalendarReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_RptOrErr", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_RptOrErr", "_SplmtryData"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def RptOrErr(self):
 		return self._RptOrErr
@@ -32,22 +45,9 @@ class CalendarReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptOrErr', type=CalendarReportOrError1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader11, min=1, max=1, mutex_group=None, array=False),
 	))
 

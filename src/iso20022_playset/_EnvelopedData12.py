@@ -1,7 +1,7 @@
 from . import base_types
-from .Number import Number
-from .EncryptedContent8 import EncryptedContent8
-from .Recipient7Choice import Recipient7Choice
+from ._EncryptedContent8 import EncryptedContent8
+from ._Number import Number
+from ._Recipient7Choice import Recipient7Choice
 
 class EnvelopedData12(base_types._BaseFieldType):
 

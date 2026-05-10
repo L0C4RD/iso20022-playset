@@ -1,5 +1,5 @@
 from . import base_types
-from .SimpleIdentificationInformation1 import SimpleIdentificationInformation1
+from ._SimpleIdentificationInformation1 import SimpleIdentificationInformation1
 
 class AccountIdentification4(base_types._BaseFieldType):
 

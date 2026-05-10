@@ -1,11 +1,24 @@
 from . import base_types
-from .IndividualCostOrCharge2 import IndividualCostOrCharge2
-from .ISODate import ISODate
-from .AdditionalInformation15 import AdditionalInformation15
+from ._IndividualCostOrCharge2 import IndividualCostOrCharge2
+from ._ISODate import ISODate
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class CostsAndCharges2(base_types._BaseFieldType):
 
-	__slots__ = ["_ExAnteRefDt", "_IndvCostOrChrg", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_ExAnteRefDt", "_IndvCostOrChrg"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def ExAnteRefDt(self):
 		return self._ExAnteRefDt
@@ -32,22 +45,9 @@ class CostsAndCharges2(base_types._BaseFieldType):
 		del self._IndvCostOrChrg
 		self._IndvCostOrChrg = None
 
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExAnteRefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndvCostOrChrg', type=IndividualCostOrCharge2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 	))
 

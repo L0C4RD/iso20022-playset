@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .PoliticalExposureType2Code import PoliticalExposureType2Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._PoliticalExposureType2Code import PoliticalExposureType2Code
 
 class PoliticalExposureType2Choice(base_types._BaseFieldType):
 

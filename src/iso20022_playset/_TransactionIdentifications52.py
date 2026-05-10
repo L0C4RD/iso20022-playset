@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .References44Choice import References44Choice
+from ._Max35Text import Max35Text
+from ._References44Choice import References44Choice
 
 class TransactionIdentifications52(base_types._BaseFieldType):
 
-	__slots__ = ["_MktInfrstrctrTxId", "_CtrPtyMktInfrstrctrTxId", "_PrcrTxId", "_NonceId", "_AcctSvcrTxId", "_AcctOwnrTxId"]
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
+	__slots__ = ["_CtrPtyMktInfrstrctrTxId", "_PrcrTxId", "_AcctSvcrTxId", "_AcctOwnrTxId", "_MktInfrstrctrTxId", "_NonceId"]
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
 		return self._CtrPtyMktInfrstrctrTxId
@@ -45,19 +32,6 @@ class TransactionIdentifications52(base_types._BaseFieldType):
 		self._PrcrTxId = None
 
 	@property
-	def NonceId(self):
-		return self._NonceId
-
-	@NonceId.setter
-	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
-
-	@NonceId.deleter
-	def NonceId(self):
-		del self._NonceId
-		self._NonceId = None
-
-	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -83,12 +57,38 @@ class TransactionIdentifications52(base_types._BaseFieldType):
 		del self._AcctOwnrTxId
 		self._AcctOwnrTxId = None
 
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def NonceId(self):
+		return self._NonceId
+
+	@NonceId.setter
+	def NonceId(self, value):
+		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+
+	@NonceId.deleter
+	def NonceId(self):
+		del self._NonceId
+		self._NonceId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyMktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=References44Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

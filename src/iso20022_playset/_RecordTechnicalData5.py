@@ -1,23 +1,10 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .ExternalAuthorityExchangeReason1Code import ExternalAuthorityExchangeReason1Code
+from ._ExternalAuthorityExchangeReason1Code import ExternalAuthorityExchangeReason1Code
+from ._ISODateTime import ISODateTime
 
 class RecordTechnicalData5(base_types._BaseFieldType):
 
-	__slots__ = ["_XchgRsn", "_RctDtTm"]
-	@property
-	def XchgRsn(self):
-		return self._XchgRsn
-
-	@XchgRsn.setter
-	def XchgRsn(self, value):
-		self._XchgRsn = value if type(value) != base_types.auto else self.make_default("XchgRsn")
-
-	@XchgRsn.deleter
-	def XchgRsn(self):
-		del self._XchgRsn
-		self._XchgRsn = None
-
+	__slots__ = ["_RctDtTm", "_XchgRsn"]
 	@property
 	def RctDtTm(self):
 		return self._RctDtTm
@@ -31,8 +18,21 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 		del self._RctDtTm
 		self._RctDtTm = None
 
+	@property
+	def XchgRsn(self):
+		return self._XchgRsn
+
+	@XchgRsn.setter
+	def XchgRsn(self, value):
+		self._XchgRsn = value if type(value) != base_types.auto else self.make_default("XchgRsn")
+
+	@XchgRsn.deleter
+	def XchgRsn(self):
+		del self._XchgRsn
+		self._XchgRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='XchgRsn', type=ExternalAuthorityExchangeReason1Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RctDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRsn', type=ExternalAuthorityExchangeReason1Code, min=1, max=None, mutex_group=None, array=True),
 	))
 

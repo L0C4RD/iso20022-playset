@@ -1,5 +1,5 @@
 from . import base_types
-from .InvoiceAssignmentStatusV01 import InvoiceAssignmentStatusV01
+from ._InvoiceAssignmentStatusV01 import InvoiceAssignmentStatusV01
 
 class TSIN_007_001_01():
 

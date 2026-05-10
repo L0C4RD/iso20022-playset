@@ -1,37 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
-from .GenericIdentification4 import GenericIdentification4
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
+from ._GenericIdentification4 import GenericIdentification4
+from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
 
 class PersonIdentification15(base_types._BaseFieldType):
 
-	__slots__ = ["_IdntyCardNb", "_DtAndPlcOfBirth", "_CstmrNb", "_MplyeeIdNb", "_EmailAdr", "_TaxIdNb", "_DrvrLicNb", "_Dept", "_SclSctyNb", "_PsptNb", "_MplyrIdNb", "_DrvrId", "_DrvrLicLctn", "_DrvrLicNm", "_AlnRegnNb", "_Othr", "_JobNb"]
+	__slots__ = ["_SclSctyNb", "_CstmrNb", "_MplyrIdNb", "_EmailAdr", "_DrvrLicNm", "_PsptNb", "_MplyeeIdNb", "_JobNb", "_DrvrLicNb", "_DtAndPlcOfBirth", "_DrvrLicLctn", "_TaxIdNb", "_IdntyCardNb", "_Dept", "_DrvrId", "_AlnRegnNb", "_Othr"]
 	@property
-	def IdntyCardNb(self):
-		return self._IdntyCardNb
+	def SclSctyNb(self):
+		return self._SclSctyNb
 
-	@IdntyCardNb.setter
-	def IdntyCardNb(self, value):
-		self._IdntyCardNb = value if type(value) != base_types.auto else self.make_default("IdntyCardNb")
+	@SclSctyNb.setter
+	def SclSctyNb(self, value):
+		self._SclSctyNb = value if type(value) != base_types.auto else self.make_default("SclSctyNb")
 
-	@IdntyCardNb.deleter
-	def IdntyCardNb(self):
-		del self._IdntyCardNb
-		self._IdntyCardNb = None
-
-	@property
-	def DtAndPlcOfBirth(self):
-		return self._DtAndPlcOfBirth
-
-	@DtAndPlcOfBirth.setter
-	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
-
-	@DtAndPlcOfBirth.deleter
-	def DtAndPlcOfBirth(self):
-		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
+	@SclSctyNb.deleter
+	def SclSctyNb(self):
+		del self._SclSctyNb
+		self._SclSctyNb = None
 
 	@property
 	def CstmrNb(self):
@@ -47,17 +34,17 @@ class PersonIdentification15(base_types._BaseFieldType):
 		self._CstmrNb = None
 
 	@property
-	def MplyeeIdNb(self):
-		return self._MplyeeIdNb
+	def MplyrIdNb(self):
+		return self._MplyrIdNb
 
-	@MplyeeIdNb.setter
-	def MplyeeIdNb(self, value):
-		self._MplyeeIdNb = value if type(value) != base_types.auto else self.make_default("MplyeeIdNb")
+	@MplyrIdNb.setter
+	def MplyrIdNb(self, value):
+		self._MplyrIdNb = value if type(value) != base_types.auto else self.make_default("MplyrIdNb")
 
-	@MplyeeIdNb.deleter
-	def MplyeeIdNb(self):
-		del self._MplyeeIdNb
-		self._MplyeeIdNb = None
+	@MplyrIdNb.deleter
+	def MplyrIdNb(self):
+		del self._MplyrIdNb
+		self._MplyrIdNb = None
 
 	@property
 	def EmailAdr(self):
@@ -73,56 +60,17 @@ class PersonIdentification15(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
+	def DrvrLicNm(self):
+		return self._DrvrLicNm
 
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != base_types.auto else self.make_default("TaxIdNb")
+	@DrvrLicNm.setter
+	def DrvrLicNm(self, value):
+		self._DrvrLicNm = value if type(value) != base_types.auto else self.make_default("DrvrLicNm")
 
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
-
-	@property
-	def DrvrLicNb(self):
-		return self._DrvrLicNb
-
-	@DrvrLicNb.setter
-	def DrvrLicNb(self, value):
-		self._DrvrLicNb = value if type(value) != base_types.auto else self.make_default("DrvrLicNb")
-
-	@DrvrLicNb.deleter
-	def DrvrLicNb(self):
-		del self._DrvrLicNb
-		self._DrvrLicNb = None
-
-	@property
-	def Dept(self):
-		return self._Dept
-
-	@Dept.setter
-	def Dept(self, value):
-		self._Dept = value if type(value) != base_types.auto else self.make_default("Dept")
-
-	@Dept.deleter
-	def Dept(self):
-		del self._Dept
-		self._Dept = None
-
-	@property
-	def SclSctyNb(self):
-		return self._SclSctyNb
-
-	@SclSctyNb.setter
-	def SclSctyNb(self, value):
-		self._SclSctyNb = value if type(value) != base_types.auto else self.make_default("SclSctyNb")
-
-	@SclSctyNb.deleter
-	def SclSctyNb(self):
-		del self._SclSctyNb
-		self._SclSctyNb = None
+	@DrvrLicNm.deleter
+	def DrvrLicNm(self):
+		del self._DrvrLicNm
+		self._DrvrLicNm = None
 
 	@property
 	def PsptNb(self):
@@ -138,30 +86,56 @@ class PersonIdentification15(base_types._BaseFieldType):
 		self._PsptNb = None
 
 	@property
-	def MplyrIdNb(self):
-		return self._MplyrIdNb
+	def MplyeeIdNb(self):
+		return self._MplyeeIdNb
 
-	@MplyrIdNb.setter
-	def MplyrIdNb(self, value):
-		self._MplyrIdNb = value if type(value) != base_types.auto else self.make_default("MplyrIdNb")
+	@MplyeeIdNb.setter
+	def MplyeeIdNb(self, value):
+		self._MplyeeIdNb = value if type(value) != base_types.auto else self.make_default("MplyeeIdNb")
 
-	@MplyrIdNb.deleter
-	def MplyrIdNb(self):
-		del self._MplyrIdNb
-		self._MplyrIdNb = None
+	@MplyeeIdNb.deleter
+	def MplyeeIdNb(self):
+		del self._MplyeeIdNb
+		self._MplyeeIdNb = None
 
 	@property
-	def DrvrId(self):
-		return self._DrvrId
+	def JobNb(self):
+		return self._JobNb
 
-	@DrvrId.setter
-	def DrvrId(self, value):
-		self._DrvrId = value if type(value) != base_types.auto else self.make_default("DrvrId")
+	@JobNb.setter
+	def JobNb(self, value):
+		self._JobNb = value if type(value) != base_types.auto else self.make_default("JobNb")
 
-	@DrvrId.deleter
-	def DrvrId(self):
-		del self._DrvrId
-		self._DrvrId = None
+	@JobNb.deleter
+	def JobNb(self):
+		del self._JobNb
+		self._JobNb = None
+
+	@property
+	def DrvrLicNb(self):
+		return self._DrvrLicNb
+
+	@DrvrLicNb.setter
+	def DrvrLicNb(self, value):
+		self._DrvrLicNb = value if type(value) != base_types.auto else self.make_default("DrvrLicNb")
+
+	@DrvrLicNb.deleter
+	def DrvrLicNb(self):
+		del self._DrvrLicNb
+		self._DrvrLicNb = None
+
+	@property
+	def DtAndPlcOfBirth(self):
+		return self._DtAndPlcOfBirth
+
+	@DtAndPlcOfBirth.setter
+	def DtAndPlcOfBirth(self, value):
+		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
+
+	@DtAndPlcOfBirth.deleter
+	def DtAndPlcOfBirth(self):
+		del self._DtAndPlcOfBirth
+		self._DtAndPlcOfBirth = None
 
 	@property
 	def DrvrLicLctn(self):
@@ -177,17 +151,56 @@ class PersonIdentification15(base_types._BaseFieldType):
 		self._DrvrLicLctn = None
 
 	@property
-	def DrvrLicNm(self):
-		return self._DrvrLicNm
+	def TaxIdNb(self):
+		return self._TaxIdNb
 
-	@DrvrLicNm.setter
-	def DrvrLicNm(self, value):
-		self._DrvrLicNm = value if type(value) != base_types.auto else self.make_default("DrvrLicNm")
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != base_types.auto else self.make_default("TaxIdNb")
 
-	@DrvrLicNm.deleter
-	def DrvrLicNm(self):
-		del self._DrvrLicNm
-		self._DrvrLicNm = None
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
+
+	@property
+	def IdntyCardNb(self):
+		return self._IdntyCardNb
+
+	@IdntyCardNb.setter
+	def IdntyCardNb(self, value):
+		self._IdntyCardNb = value if type(value) != base_types.auto else self.make_default("IdntyCardNb")
+
+	@IdntyCardNb.deleter
+	def IdntyCardNb(self):
+		del self._IdntyCardNb
+		self._IdntyCardNb = None
+
+	@property
+	def Dept(self):
+		return self._Dept
+
+	@Dept.setter
+	def Dept(self, value):
+		self._Dept = value if type(value) != base_types.auto else self.make_default("Dept")
+
+	@Dept.deleter
+	def Dept(self):
+		del self._Dept
+		self._Dept = None
+
+	@property
+	def DrvrId(self):
+		return self._DrvrId
+
+	@DrvrId.setter
+	def DrvrId(self, value):
+		self._DrvrId = value if type(value) != base_types.auto else self.make_default("DrvrId")
+
+	@DrvrId.deleter
+	def DrvrId(self):
+		del self._DrvrId
+		self._DrvrId = None
 
 	@property
 	def AlnRegnNb(self):
@@ -215,36 +228,23 @@ class PersonIdentification15(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
-	@property
-	def JobNb(self):
-		return self._JobNb
-
-	@JobNb.setter
-	def JobNb(self, value):
-		self._JobNb = value if type(value) != base_types.auto else self.make_default("JobNb")
-
-	@JobNb.deleter
-	def JobNb(self):
-		del self._JobNb
-		self._JobNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IdntyCardNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MplyeeIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvrLicNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dept', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SclSctyNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PsptNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MplyrIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrvrLicLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrvrLicNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PsptNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MplyeeIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JobNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvrLicNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvrLicLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IdntyCardNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dept', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrvrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlnRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericIdentification4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='JobNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

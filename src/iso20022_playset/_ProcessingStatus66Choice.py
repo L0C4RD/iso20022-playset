@@ -1,12 +1,25 @@
 from . import base_types
-from .AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
-from .RejectionOrRepairStatus38Choice import RejectionOrRepairStatus38Choice
-from .CancellationStatus14Choice import CancellationStatus14Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
+from ._CancellationStatus14Choice import CancellationStatus14Choice
+from ._RejectionOrRepairStatus38Choice import RejectionOrRepairStatus38Choice
 
 class ProcessingStatus66Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Canc", "_Rpr", "_AckdAccptd"]
+	__slots__ = ["_AckdAccptd", "_Prtry", "_Canc", "_Rpr"]
+	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -46,23 +59,10 @@ class ProcessingStatus66Choice(base_types._BaseFieldType):
 		del self._Rpr
 		self._Rpr = None
 
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancellationStatus14Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

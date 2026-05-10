@@ -1,7 +1,7 @@
 from . import base_types
-from .NotionalAmountLegs5 import NotionalAmountLegs5
-from .NotionalQuantityLegs5 import NotionalQuantityLegs5
-from .TradeTransactionIdentification24 import TradeTransactionIdentification24
+from ._NotionalQuantityLegs5 import NotionalQuantityLegs5
+from ._NotionalAmountLegs5 import NotionalAmountLegs5
+from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
 
 class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 

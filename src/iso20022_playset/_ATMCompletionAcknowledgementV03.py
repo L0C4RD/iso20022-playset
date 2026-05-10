@@ -1,25 +1,12 @@
 from . import base_types
-from .ATMCompletionAcknowledgement3 import ATMCompletionAcknowledgement3
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .Header32 import Header32
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._ATMCompletionAcknowledgement3 import ATMCompletionAcknowledgement3
+from ._Header32 import Header32
 
 class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_ATMCmpltnAck", "_Hdr", "_PrtctdATMCmpltnAck"]
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_ATMCmpltnAck", "_Hdr", "_PrtctdATMCmpltnAck", "_SctyTrlr"]
 	@property
 	def ATMCmpltnAck(self):
 		return self._ATMCmpltnAck
@@ -59,10 +46,23 @@ class ATMCompletionAcknowledgementV03(base_types._BaseFieldType):
 		del self._PrtctdATMCmpltnAck
 		self._PrtctdATMCmpltnAck = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCmpltnAck', type=ATMCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

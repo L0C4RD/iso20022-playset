@@ -1,6 +1,6 @@
 from . import base_types
-from .StructuredLongPostalAddress1 import StructuredLongPostalAddress1
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._StructuredLongPostalAddress1 import StructuredLongPostalAddress1
 
 class LongPostalAddress1Choice(base_types._BaseFieldType):
 

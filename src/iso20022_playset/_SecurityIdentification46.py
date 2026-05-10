@@ -1,12 +1,25 @@
 from . import base_types
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .Max105Text import Max105Text
-from .Max1000Text import Max1000Text
-from .UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
+from ._Max105Text import Max105Text
+from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
+from ._Max1000Text import Max1000Text
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class SecurityIdentification46(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctDesc", "_ISIN", "_UnqPdctIdr", "_AltrntvInstrmId"]
+	__slots__ = ["_AltrntvInstrmId", "_PdctDesc", "_ISIN", "_UnqPdctIdr"]
+	@property
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
+
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
+
 	@property
 	def PdctDesc(self):
 		return self._PdctDesc
@@ -46,23 +59,10 @@ class SecurityIdentification46(base_types._BaseFieldType):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
 
-	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
-
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
-
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

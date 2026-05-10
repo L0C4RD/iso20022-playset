@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader9 import MessageHeader9
-from .BusinessDayQuery2 import BusinessDayQuery2
+from ._SupplementaryData1 import SupplementaryData1
+from ._BusinessDayQuery2 import BusinessDayQuery2
+from ._MessageHeader9 import MessageHeader9
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
 

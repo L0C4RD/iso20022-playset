@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .OtherIdentification4Choice import OtherIdentification4Choice
-from .ISODate import ISODate
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._OtherIdentification4Choice import OtherIdentification4Choice
+from ._ISODate import ISODate
+from ._CountryCode import CountryCode
 
 class AlternateIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_IssrCtry", "_Tp", "_Issr", "_XpryDt", "_IsseDt"]
+	__slots__ = ["_Tp", "_IssrCtry", "_Id", "_IsseDt", "_Issr", "_XpryDt"]
 	@property
-	def Id(self):
-		return self._Id
+	def Tp(self):
+		return self._Tp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def IssrCtry(self):
@@ -34,17 +34,30 @@ class AlternateIdentification4(base_types._BaseFieldType):
 		self._IssrCtry = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def Id(self):
+		return self._Id
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
 
 	@property
 	def Issr(self):
@@ -72,25 +85,12 @@ class AlternateIdentification4(base_types._BaseFieldType):
 		del self._XpryDt
 		self._XpryDt = None
 
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=OtherIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

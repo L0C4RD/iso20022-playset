@@ -1,12 +1,12 @@
 from . import base_types
-from .CancelledStatusReason3Code import CancelledStatusReason3Code
-from .NoReasonCode import NoReasonCode
-from .Extended350Code import Extended350Code
-from .GenericIdentification1 import GenericIdentification1
+from ._CancelledStatusReason3Code import CancelledStatusReason3Code
+from ._GenericIdentification1 import GenericIdentification1
+from ._NoReasonCode import NoReasonCode
+from ._Extended350Code import Extended350Code
 
 class CancelledStatus13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_XtndedRsn", "_DataSrcSchme", "_NoSpcfdRsn"]
+	__slots__ = ["_Rsn", "_DataSrcSchme", "_NoSpcfdRsn", "_XtndedRsn"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -19,19 +19,6 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 	def Rsn(self):
 		del self._Rsn
 		self._Rsn = None
-
-	@property
-	def XtndedRsn(self):
-		return self._XtndedRsn
-
-	@XtndedRsn.setter
-	def XtndedRsn(self, value):
-		self._XtndedRsn = value if type(value) != base_types.auto else self.make_default("XtndedRsn")
-
-	@XtndedRsn.deleter
-	def XtndedRsn(self):
-		del self._XtndedRsn
-		self._XtndedRsn = None
 
 	@property
 	def DataSrcSchme(self):
@@ -59,10 +46,23 @@ class CancelledStatus13Choice(base_types._BaseFieldType):
 		del self._NoSpcfdRsn
 		self._NoSpcfdRsn = None
 
+	@property
+	def XtndedRsn(self):
+		return self._XtndedRsn
+
+	@XtndedRsn.setter
+	def XtndedRsn(self, value):
+		self._XtndedRsn = value if type(value) != base_types.auto else self.make_default("XtndedRsn")
+
+	@XtndedRsn.deleter
+	def XtndedRsn(self):
+		del self._XtndedRsn
+		self._XtndedRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rsn', type=CancelledStatusReason3Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

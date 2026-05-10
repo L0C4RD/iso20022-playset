@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .LegalFramework1Code import LegalFramework1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._LegalFramework1Code import LegalFramework1Code
 
 class LegalFramework4Choice(base_types._BaseFieldType):
 

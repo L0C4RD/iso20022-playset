@@ -1,6 +1,6 @@
 from . import base_types
-from .Number import Number
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._Number import Number
 
 class DocumentAmendment1(base_types._BaseFieldType):
 

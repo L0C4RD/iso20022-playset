@@ -1,24 +1,11 @@
 from . import base_types
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .Max35Text import Max35Text
-from .ISODate import ISODate
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class LetterIntent1(base_types._BaseFieldType):
 
-	__slots__ = ["_StartDt", "_Amt", "_EndDt", "_LttrInttRef"]
-	@property
-	def StartDt(self):
-		return self._StartDt
-
-	@StartDt.setter
-	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
-
-	@StartDt.deleter
-	def StartDt(self):
-		del self._StartDt
-		self._StartDt = None
-
+	__slots__ = ["_Amt", "_StartDt", "_LttrInttRef", "_EndDt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -33,17 +20,17 @@ class LetterIntent1(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def EndDt(self):
-		return self._EndDt
+	def StartDt(self):
+		return self._StartDt
 
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+	@StartDt.setter
+	def StartDt(self, value):
+		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
 
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
+	@StartDt.deleter
+	def StartDt(self):
+		del self._StartDt
+		self._StartDt = None
 
 	@property
 	def LttrInttRef(self):
@@ -58,10 +45,23 @@ class LetterIntent1(base_types._BaseFieldType):
 		del self._LttrInttRef
 		self._LttrInttRef = None
 
+	@property
+	def EndDt(self):
+		return self._EndDt
+
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LttrInttRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

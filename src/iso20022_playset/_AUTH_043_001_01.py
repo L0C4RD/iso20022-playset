@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstrumentReportingReferenceDataIndexReportV01 import FinancialInstrumentReportingReferenceDataIndexReportV01
+from ._FinancialInstrumentReportingReferenceDataIndexReportV01 import FinancialInstrumentReportingReferenceDataIndexReportV01
 
 class AUTH_043_001_01():
 

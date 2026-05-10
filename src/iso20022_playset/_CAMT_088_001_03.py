@@ -1,5 +1,5 @@
 from . import base_types
-from .NetReportV03 import NetReportV03
+from ._NetReportV03 import NetReportV03
 
 class CAMT_088_001_03():
 

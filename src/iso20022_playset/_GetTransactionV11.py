@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader9 import MessageHeader9
-from .TransactionQuery8 import TransactionQuery8
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader9 import MessageHeader9
+from ._TransactionQuery8 import TransactionQuery8
 
 class GetTransactionV11(base_types._BaseFieldType):
 

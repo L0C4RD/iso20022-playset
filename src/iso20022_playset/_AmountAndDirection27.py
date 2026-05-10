@@ -1,12 +1,12 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ForeignExchangeTerms17 import ForeignExchangeTerms17
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._CreditDebitCode import CreditDebitCode
+from ._ForeignExchangeTerms17 import ForeignExchangeTerms17
 
 class AmountAndDirection27(base_types._BaseFieldType):
 
-	__slots__ = ["_FXDtls", "_OrgnlCcyAndOrdrdAmt", "_CdtDbtInd", "_Amt"]
+	__slots__ = ["_FXDtls", "_Amt", "_OrgnlCcyAndOrdrdAmt", "_CdtDbtInd"]
 	@property
 	def FXDtls(self):
 		return self._FXDtls
@@ -19,6 +19,19 @@ class AmountAndDirection27(base_types._BaseFieldType):
 	def FXDtls(self):
 		del self._FXDtls
 		self._FXDtls = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def OrgnlCcyAndOrdrdAmt(self):
@@ -46,23 +59,10 @@ class AmountAndDirection27(base_types._BaseFieldType):
 		del self._CdtDbtInd
 		self._CdtDbtInd = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms17, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCcyAndOrdrdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

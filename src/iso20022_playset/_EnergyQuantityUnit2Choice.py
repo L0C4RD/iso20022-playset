@@ -1,6 +1,6 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .EnergyQuantityUnit2Code import EnergyQuantityUnit2Code
+from ._EnergyQuantityUnit2Code import EnergyQuantityUnit2Code
+from ._Max52Text import Max52Text
 
 class EnergyQuantityUnit2Choice(base_types._BaseFieldType):
 

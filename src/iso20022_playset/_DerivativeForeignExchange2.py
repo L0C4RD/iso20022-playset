@@ -1,5 +1,5 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
 class DerivativeForeignExchange2(base_types._BaseFieldType):
 

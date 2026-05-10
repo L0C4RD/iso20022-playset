@@ -1,23 +1,10 @@
 from . import base_types
-from .InternalisationDataRate1 import InternalisationDataRate1
-from .InternalisationData2 import InternalisationData2
+from ._InternalisationDataRate1 import InternalisationDataRate1
+from ._InternalisationData2 import InternalisationData2
 
 class InternalisationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_FaildRate", "_Aggt"]
-	@property
-	def FaildRate(self):
-		return self._FaildRate
-
-	@FaildRate.setter
-	def FaildRate(self, value):
-		self._FaildRate = value if type(value) != base_types.auto else self.make_default("FaildRate")
-
-	@FaildRate.deleter
-	def FaildRate(self):
-		del self._FaildRate
-		self._FaildRate = None
-
+	__slots__ = ["_Aggt", "_FaildRate"]
 	@property
 	def Aggt(self):
 		return self._Aggt
@@ -31,8 +18,21 @@ class InternalisationData1(base_types._BaseFieldType):
 		del self._Aggt
 		self._Aggt = None
 
+	@property
+	def FaildRate(self):
+		return self._FaildRate
+
+	@FaildRate.setter
+	def FaildRate(self, value):
+		self._FaildRate = value if type(value) != base_types.auto else self.make_default("FaildRate")
+
+	@FaildRate.deleter
+	def FaildRate(self):
+		del self._FaildRate
+		self._FaildRate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FaildRate', type=InternalisationDataRate1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Aggt', type=InternalisationData2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaildRate', type=InternalisationDataRate1, min=1, max=1, mutex_group=None, array=False),
 	))
 

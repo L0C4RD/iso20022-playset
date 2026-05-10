@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstrumentReportingNonWorkingDayReportV01 import FinancialInstrumentReportingNonWorkingDayReportV01
+from ._FinancialInstrumentReportingNonWorkingDayReportV01 import FinancialInstrumentReportingNonWorkingDayReportV01
 
 class AUTH_039_001_01():
 

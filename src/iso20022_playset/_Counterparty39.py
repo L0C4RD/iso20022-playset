@@ -1,10 +1,10 @@
 from . import base_types
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .PartyIdentification236Choice import PartyIdentification236Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class Counterparty39(base_types._BaseFieldType):
 
-	__slots__ = ["_NttyRspnsblForRpt", "_OthrCtrPty", "_RptSubmitgNtty", "_RptgCtrPty"]
+	__slots__ = ["_NttyRspnsblForRpt", "_RptSubmitgNtty", "_OthrCtrPty", "_RptgCtrPty"]
 	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
@@ -19,19 +19,6 @@ class Counterparty39(base_types._BaseFieldType):
 		self._NttyRspnsblForRpt = None
 
 	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
-
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
-
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
-
-	@property
 	def RptSubmitgNtty(self):
 		return self._RptSubmitgNtty
 
@@ -43,6 +30,19 @@ class Counterparty39(base_types._BaseFieldType):
 	def RptSubmitgNtty(self):
 		del self._RptSubmitgNtty
 		self._RptSubmitgNtty = None
+
+	@property
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
+
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
 
 	@property
 	def RptgCtrPty(self):
@@ -59,8 +59,8 @@ class Counterparty39(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

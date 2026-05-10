@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityDeletionStatusAdviceV01 import SecurityDeletionStatusAdviceV01
+from ._SecurityDeletionStatusAdviceV01 import SecurityDeletionStatusAdviceV01
 
 class REDA_030_001_01():
 

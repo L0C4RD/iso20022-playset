@@ -1,12 +1,25 @@
 from . import base_types
-from .TransportByRoad5 import TransportByRoad5
-from .TransportByAir5 import TransportByAir5
-from .TransportByRail5 import TransportByRail5
-from .TransportBySea6 import TransportBySea6
+from ._TransportByRail5 import TransportByRail5
+from ._TransportBySea6 import TransportBySea6
+from ._TransportByAir5 import TransportByAir5
+from ._TransportByRoad5 import TransportByRoad5
 
 class SingleTransport7(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtByRoad", "_TrnsprtByRail", "_TrnsprtBySea", "_TrnsprtByAir"]
+	__slots__ = ["_TrnsprtByAir", "_TrnsprtByRoad", "_TrnsprtByRail", "_TrnsprtBySea"]
+	@property
+	def TrnsprtByAir(self):
+		return self._TrnsprtByAir
+
+	@TrnsprtByAir.setter
+	def TrnsprtByAir(self, value):
+		self._TrnsprtByAir = value if type(value) != base_types.auto else self.make_default("TrnsprtByAir")
+
+	@TrnsprtByAir.deleter
+	def TrnsprtByAir(self):
+		del self._TrnsprtByAir
+		self._TrnsprtByAir = None
+
 	@property
 	def TrnsprtByRoad(self):
 		return self._TrnsprtByRoad
@@ -46,23 +59,10 @@ class SingleTransport7(base_types._BaseFieldType):
 		del self._TrnsprtBySea
 		self._TrnsprtBySea = None
 
-	@property
-	def TrnsprtByAir(self):
-		return self._TrnsprtByAir
-
-	@TrnsprtByAir.setter
-	def TrnsprtByAir(self, value):
-		self._TrnsprtByAir = value if type(value) != base_types.auto else self.make_default("TrnsprtByAir")
-
-	@TrnsprtByAir.deleter
-	def TrnsprtByAir(self):
-		del self._TrnsprtByAir
-		self._TrnsprtByAir = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtByRail', type=TransportByRail5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir5, min=0, max=None, mutex_group=None, array=True),
 	))
 

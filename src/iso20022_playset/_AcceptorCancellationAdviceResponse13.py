@@ -1,7 +1,7 @@
 from . import base_types
-from .CardPaymentTransactionAdviceResponse8 import CardPaymentTransactionAdviceResponse8
-from .TMSTrigger1 import TMSTrigger1
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._TMSTrigger1 import TMSTrigger1
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._CardPaymentTransactionAdviceResponse8 import CardPaymentTransactionAdviceResponse8
 
 class AcceptorCancellationAdviceResponse13(base_types._BaseFieldType):
 

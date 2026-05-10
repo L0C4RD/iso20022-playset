@@ -1,23 +1,23 @@
 from . import base_types
-from .ChequeCancellationReason1Choice import ChequeCancellationReason1Choice
-from .Max140Text import Max140Text
-from .ChequePartyRole1Code import ChequePartyRole1Code
+from ._ChequePartyRole1Code import ChequePartyRole1Code
+from ._Max140Text import Max140Text
+from ._ChequeCancellationReason1Choice import ChequeCancellationReason1Choice
 
 class ChequeCancellationReason1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_AddtlInf", "_Orgtr"]
+	__slots__ = ["_Orgtr", "_AddtlInf", "_Rsn"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Orgtr(self):
+		return self._Orgtr
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class ChequeCancellationReason1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Orgtr(self):
-		return self._Orgtr
+	def Rsn(self):
+		return self._Rsn
 
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
 
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=ChequeCancellationReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Orgtr', type=ChequePartyRole1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=ChequeCancellationReason1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

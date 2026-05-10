@@ -1,6 +1,6 @@
 from . import base_types
-from .Max2000Text import Max2000Text
-from .ISODate import ISODate
+from ._ISODate import ISODate
+from ._Max2000Text import Max2000Text
 
 class BankInstructions1(base_types._BaseFieldType):
 

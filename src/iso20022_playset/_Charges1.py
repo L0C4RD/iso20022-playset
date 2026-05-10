@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .ChargeType2FormatChoice import ChargeType2FormatChoice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ChargeType2FormatChoice import ChargeType2FormatChoice
 
 class Charges1(base_types._BaseFieldType):
 

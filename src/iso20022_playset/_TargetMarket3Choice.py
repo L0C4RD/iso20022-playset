@@ -1,23 +1,23 @@
 from . import base_types
-from .TargetMarket1Code import TargetMarket1Code
-from .GenericIdentification47 import GenericIdentification47
-from .InvestorType2Code import InvestorType2Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._InvestorType2Code import InvestorType2Code
+from ._TargetMarket1Code import TargetMarket1Code
 
 class TargetMarket3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Tp", "_Othr"]
+	__slots__ = ["_Othr", "_Tp", "_Prtry"]
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def Othr(self):
+		return self._Othr
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def Tp(self):
@@ -33,21 +33,21 @@ class TargetMarket3Choice(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def Prtry(self):
+		return self._Prtry
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Tp', type=InvestorType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=TargetMarket1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Tp', type=InvestorType2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
 	))
 

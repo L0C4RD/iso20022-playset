@@ -1,6 +1,6 @@
 from . import base_types
-from .Status38Choice import Status38Choice
-from .Transaction162 import Transaction162
+from ._Status38Choice import Status38Choice
+from ._Transaction162 import Transaction162
 
 class StatusAndReason47(base_types._BaseFieldType):
 

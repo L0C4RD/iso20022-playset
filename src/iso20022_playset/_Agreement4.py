@@ -1,12 +1,25 @@
 from . import base_types
-from .AgreementFramework1Choice import AgreementFramework1Choice
-from .Max140Text import Max140Text
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._ISODate import ISODate
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._AgreementFramework1Choice import AgreementFramework1Choice
 
 class Agreement4(base_types._BaseFieldType):
 
-	__slots__ = ["_BaseCcy", "_AgrmtDt", "_AgrmtFrmwk", "_AgrmtId", "_AgrmtDtls"]
+	__slots__ = ["_AgrmtId", "_BaseCcy", "_AgrmtDtls", "_AgrmtFrmwk", "_AgrmtDt"]
+	@property
+	def AgrmtId(self):
+		return self._AgrmtId
+
+	@AgrmtId.setter
+	def AgrmtId(self, value):
+		self._AgrmtId = value if type(value) != base_types.auto else self.make_default("AgrmtId")
+
+	@AgrmtId.deleter
+	def AgrmtId(self):
+		del self._AgrmtId
+		self._AgrmtId = None
+
 	@property
 	def BaseCcy(self):
 		return self._BaseCcy
@@ -21,17 +34,17 @@ class Agreement4(base_types._BaseFieldType):
 		self._BaseCcy = None
 
 	@property
-	def AgrmtDt(self):
-		return self._AgrmtDt
+	def AgrmtDtls(self):
+		return self._AgrmtDtls
 
-	@AgrmtDt.setter
-	def AgrmtDt(self, value):
-		self._AgrmtDt = value if type(value) != base_types.auto else self.make_default("AgrmtDt")
+	@AgrmtDtls.setter
+	def AgrmtDtls(self, value):
+		self._AgrmtDtls = value if type(value) != base_types.auto else self.make_default("AgrmtDtls")
 
-	@AgrmtDt.deleter
-	def AgrmtDt(self):
-		del self._AgrmtDt
-		self._AgrmtDt = None
+	@AgrmtDtls.deleter
+	def AgrmtDtls(self):
+		del self._AgrmtDtls
+		self._AgrmtDtls = None
 
 	@property
 	def AgrmtFrmwk(self):
@@ -47,36 +60,23 @@ class Agreement4(base_types._BaseFieldType):
 		self._AgrmtFrmwk = None
 
 	@property
-	def AgrmtId(self):
-		return self._AgrmtId
+	def AgrmtDt(self):
+		return self._AgrmtDt
 
-	@AgrmtId.setter
-	def AgrmtId(self, value):
-		self._AgrmtId = value if type(value) != base_types.auto else self.make_default("AgrmtId")
+	@AgrmtDt.setter
+	def AgrmtDt(self, value):
+		self._AgrmtDt = value if type(value) != base_types.auto else self.make_default("AgrmtDt")
 
-	@AgrmtId.deleter
-	def AgrmtId(self):
-		del self._AgrmtId
-		self._AgrmtId = None
-
-	@property
-	def AgrmtDtls(self):
-		return self._AgrmtDtls
-
-	@AgrmtDtls.setter
-	def AgrmtDtls(self, value):
-		self._AgrmtDtls = value if type(value) != base_types.auto else self.make_default("AgrmtDtls")
-
-	@AgrmtDtls.deleter
-	def AgrmtDtls(self):
-		del self._AgrmtDtls
-		self._AgrmtDtls = None
+	@AgrmtDt.deleter
+	def AgrmtDt(self):
+		del self._AgrmtDt
+		self._AgrmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtDtls', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

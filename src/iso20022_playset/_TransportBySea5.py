@@ -1,37 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Exact7NumericText import Exact7NumericText
-from .Max70Text import Max70Text
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._CountryCode import CountryCode
+from ._Exact7NumericText import Exact7NumericText
 
 class TransportBySea5(base_types._BaseFieldType):
 
-	__slots__ = ["_SeaCrrierNm", "_CrrierAgtNm", "_ChrtrrNm", "_PortOfLoadng", "_PortOfDschrge", "_OwnrNm", "_SeaCrrierCtry", "_IMONb", "_CrrierAgtCtry", "_VygNb", "_VsslNm", "_MstrNm"]
+	__slots__ = ["_OwnrNm", "_ChrtrrNm", "_IMONb", "_VsslNm", "_PortOfLoadng", "_SeaCrrierNm", "_PortOfDschrge", "_CrrierAgtNm", "_MstrNm", "_VygNb", "_SeaCrrierCtry", "_CrrierAgtCtry"]
 	@property
-	def SeaCrrierNm(self):
-		return self._SeaCrrierNm
+	def OwnrNm(self):
+		return self._OwnrNm
 
-	@SeaCrrierNm.setter
-	def SeaCrrierNm(self, value):
-		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
+	@OwnrNm.setter
+	def OwnrNm(self, value):
+		self._OwnrNm = value if type(value) != base_types.auto else self.make_default("OwnrNm")
 
-	@SeaCrrierNm.deleter
-	def SeaCrrierNm(self):
-		del self._SeaCrrierNm
-		self._SeaCrrierNm = None
-
-	@property
-	def CrrierAgtNm(self):
-		return self._CrrierAgtNm
-
-	@CrrierAgtNm.setter
-	def CrrierAgtNm(self, value):
-		self._CrrierAgtNm = value if type(value) != base_types.auto else self.make_default("CrrierAgtNm")
-
-	@CrrierAgtNm.deleter
-	def CrrierAgtNm(self):
-		del self._CrrierAgtNm
-		self._CrrierAgtNm = None
+	@OwnrNm.deleter
+	def OwnrNm(self):
+		del self._OwnrNm
+		self._OwnrNm = None
 
 	@property
 	def ChrtrrNm(self):
@@ -47,58 +34,6 @@ class TransportBySea5(base_types._BaseFieldType):
 		self._ChrtrrNm = None
 
 	@property
-	def PortOfLoadng(self):
-		return self._PortOfLoadng
-
-	@PortOfLoadng.setter
-	def PortOfLoadng(self, value):
-		self._PortOfLoadng = value if type(value) != base_types.auto else self.make_default("PortOfLoadng")
-
-	@PortOfLoadng.deleter
-	def PortOfLoadng(self):
-		del self._PortOfLoadng
-		self._PortOfLoadng = None
-
-	@property
-	def PortOfDschrge(self):
-		return self._PortOfDschrge
-
-	@PortOfDschrge.setter
-	def PortOfDschrge(self, value):
-		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
-
-	@PortOfDschrge.deleter
-	def PortOfDschrge(self):
-		del self._PortOfDschrge
-		self._PortOfDschrge = None
-
-	@property
-	def OwnrNm(self):
-		return self._OwnrNm
-
-	@OwnrNm.setter
-	def OwnrNm(self, value):
-		self._OwnrNm = value if type(value) != base_types.auto else self.make_default("OwnrNm")
-
-	@OwnrNm.deleter
-	def OwnrNm(self):
-		del self._OwnrNm
-		self._OwnrNm = None
-
-	@property
-	def SeaCrrierCtry(self):
-		return self._SeaCrrierCtry
-
-	@SeaCrrierCtry.setter
-	def SeaCrrierCtry(self, value):
-		self._SeaCrrierCtry = value if type(value) != base_types.auto else self.make_default("SeaCrrierCtry")
-
-	@SeaCrrierCtry.deleter
-	def SeaCrrierCtry(self):
-		del self._SeaCrrierCtry
-		self._SeaCrrierCtry = None
-
-	@property
 	def IMONb(self):
 		return self._IMONb
 
@@ -110,32 +45,6 @@ class TransportBySea5(base_types._BaseFieldType):
 	def IMONb(self):
 		del self._IMONb
 		self._IMONb = None
-
-	@property
-	def CrrierAgtCtry(self):
-		return self._CrrierAgtCtry
-
-	@CrrierAgtCtry.setter
-	def CrrierAgtCtry(self, value):
-		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
-
-	@CrrierAgtCtry.deleter
-	def CrrierAgtCtry(self):
-		del self._CrrierAgtCtry
-		self._CrrierAgtCtry = None
-
-	@property
-	def VygNb(self):
-		return self._VygNb
-
-	@VygNb.setter
-	def VygNb(self, value):
-		self._VygNb = value if type(value) != base_types.auto else self.make_default("VygNb")
-
-	@VygNb.deleter
-	def VygNb(self):
-		del self._VygNb
-		self._VygNb = None
 
 	@property
 	def VsslNm(self):
@@ -151,6 +60,58 @@ class TransportBySea5(base_types._BaseFieldType):
 		self._VsslNm = None
 
 	@property
+	def PortOfLoadng(self):
+		return self._PortOfLoadng
+
+	@PortOfLoadng.setter
+	def PortOfLoadng(self, value):
+		self._PortOfLoadng = value if type(value) != base_types.auto else self.make_default("PortOfLoadng")
+
+	@PortOfLoadng.deleter
+	def PortOfLoadng(self):
+		del self._PortOfLoadng
+		self._PortOfLoadng = None
+
+	@property
+	def SeaCrrierNm(self):
+		return self._SeaCrrierNm
+
+	@SeaCrrierNm.setter
+	def SeaCrrierNm(self, value):
+		self._SeaCrrierNm = value if type(value) != base_types.auto else self.make_default("SeaCrrierNm")
+
+	@SeaCrrierNm.deleter
+	def SeaCrrierNm(self):
+		del self._SeaCrrierNm
+		self._SeaCrrierNm = None
+
+	@property
+	def PortOfDschrge(self):
+		return self._PortOfDschrge
+
+	@PortOfDschrge.setter
+	def PortOfDschrge(self, value):
+		self._PortOfDschrge = value if type(value) != base_types.auto else self.make_default("PortOfDschrge")
+
+	@PortOfDschrge.deleter
+	def PortOfDschrge(self):
+		del self._PortOfDschrge
+		self._PortOfDschrge = None
+
+	@property
+	def CrrierAgtNm(self):
+		return self._CrrierAgtNm
+
+	@CrrierAgtNm.setter
+	def CrrierAgtNm(self, value):
+		self._CrrierAgtNm = value if type(value) != base_types.auto else self.make_default("CrrierAgtNm")
+
+	@CrrierAgtNm.deleter
+	def CrrierAgtNm(self):
+		del self._CrrierAgtNm
+		self._CrrierAgtNm = None
+
+	@property
 	def MstrNm(self):
 		return self._MstrNm
 
@@ -163,18 +124,57 @@ class TransportBySea5(base_types._BaseFieldType):
 		del self._MstrNm
 		self._MstrNm = None
 
+	@property
+	def VygNb(self):
+		return self._VygNb
+
+	@VygNb.setter
+	def VygNb(self, value):
+		self._VygNb = value if type(value) != base_types.auto else self.make_default("VygNb")
+
+	@VygNb.deleter
+	def VygNb(self):
+		del self._VygNb
+		self._VygNb = None
+
+	@property
+	def SeaCrrierCtry(self):
+		return self._SeaCrrierCtry
+
+	@SeaCrrierCtry.setter
+	def SeaCrrierCtry(self, value):
+		self._SeaCrrierCtry = value if type(value) != base_types.auto else self.make_default("SeaCrrierCtry")
+
+	@SeaCrrierCtry.deleter
+	def SeaCrrierCtry(self):
+		del self._SeaCrrierCtry
+		self._SeaCrrierCtry = None
+
+	@property
+	def CrrierAgtCtry(self):
+		return self._CrrierAgtCtry
+
+	@CrrierAgtCtry.setter
+	def CrrierAgtCtry(self, value):
+		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
+
+	@CrrierAgtCtry.deleter
+	def CrrierAgtCtry(self):
+		del self._CrrierAgtCtry
+		self._CrrierAgtCtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SeaCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrtrrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeaCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrtrrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IMONb', type=Exact7NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VygNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VsslNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PortOfLoadng', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeaCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PortOfDschrge', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VygNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeaCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

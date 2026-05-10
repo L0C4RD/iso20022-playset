@@ -1,6 +1,6 @@
 from . import base_types
-from .Balance29 import Balance29
-from .ISO8583AccountTypeCode import ISO8583AccountTypeCode
+from ._ISO8583AccountTypeCode import ISO8583AccountTypeCode
+from ._Balance29 import Balance29
 
 class AccountBalance3(base_types._BaseFieldType):
 

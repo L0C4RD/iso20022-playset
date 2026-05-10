@@ -1,6 +1,6 @@
 from . import base_types
-from .AdditionalData1 import AdditionalData1
-from .Max20Text import Max20Text
+from ._Max20Text import Max20Text
+from ._AdditionalData1 import AdditionalData1
 
 class PlainCardData23(base_types._BaseFieldType):
 

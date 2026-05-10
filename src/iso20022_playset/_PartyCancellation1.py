@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SupplementaryData1 import SupplementaryData1
-from .PartyIdentification136 import PartyIdentification136
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._PartyIdentification136 import PartyIdentification136
 
 class PartyCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_SplmtryData", "_Id"]
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
+	__slots__ = ["_SplmtryData", "_Id", "_TechRcrdId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class PartyCancellation1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

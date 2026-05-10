@@ -1,27 +1,27 @@
 from . import base_types
-from .PensionSchemeType3Choice import PensionSchemeType3Choice
-from .Max35Text import Max35Text
-from .PensionTransferScope1Choice import PensionTransferScope1Choice
-from .PensionPolicy1 import PensionPolicy1
-from .AdditionalInformation15 import AdditionalInformation15
-from .TaxReference1 import TaxReference1
-from .YesNoIndicator import YesNoIndicator
+from ._TaxReference1 import TaxReference1
+from ._PensionTransferScope1Choice import PensionTransferScope1Choice
+from ._PensionSchemeType3Choice import PensionSchemeType3Choice
+from ._Max35Text import Max35Text
+from ._YesNoIndicator import YesNoIndicator
+from ._PensionPolicy1 import PensionPolicy1
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class Pension6(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfScp", "_TaxRef", "_AddtlInf", "_NonWrpprTrf", "_Id", "_DrwdwnTrchId", "_Tp"]
+	__slots__ = ["_Tp", "_TaxRef", "_AddtlInf", "_DrwdwnTrchId", "_TrfScp", "_NonWrpprTrf", "_Id"]
 	@property
-	def TrfScp(self):
-		return self._TrfScp
+	def Tp(self):
+		return self._Tp
 
-	@TrfScp.setter
-	def TrfScp(self, value):
-		self._TrfScp = value if type(value) != base_types.auto else self.make_default("TrfScp")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
 
-	@TrfScp.deleter
-	def TrfScp(self):
-		del self._TrfScp
-		self._TrfScp = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def TaxRef(self):
@@ -50,6 +50,32 @@ class Pension6(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
+	def DrwdwnTrchId(self):
+		return self._DrwdwnTrchId
+
+	@DrwdwnTrchId.setter
+	def DrwdwnTrchId(self, value):
+		self._DrwdwnTrchId = value if type(value) != base_types.auto else self.make_default("DrwdwnTrchId")
+
+	@DrwdwnTrchId.deleter
+	def DrwdwnTrchId(self):
+		del self._DrwdwnTrchId
+		self._DrwdwnTrchId = None
+
+	@property
+	def TrfScp(self):
+		return self._TrfScp
+
+	@TrfScp.setter
+	def TrfScp(self, value):
+		self._TrfScp = value if type(value) != base_types.auto else self.make_default("TrfScp")
+
+	@TrfScp.deleter
+	def TrfScp(self):
+		del self._TrfScp
+		self._TrfScp = None
+
+	@property
 	def NonWrpprTrf(self):
 		return self._NonWrpprTrf
 
@@ -75,39 +101,13 @@ class Pension6(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def DrwdwnTrchId(self):
-		return self._DrwdwnTrchId
-
-	@DrwdwnTrchId.setter
-	def DrwdwnTrchId(self, value):
-		self._DrwdwnTrchId = value if type(value) != base_types.auto else self.make_default("DrwdwnTrchId")
-
-	@DrwdwnTrchId.deleter
-	def DrwdwnTrchId(self):
-		del self._DrwdwnTrchId
-		self._DrwdwnTrchId = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

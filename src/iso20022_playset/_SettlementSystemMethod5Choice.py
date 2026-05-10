@@ -1,6 +1,6 @@
 from . import base_types
-from .SettlementSystemMethod1Code import SettlementSystemMethod1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._SettlementSystemMethod1Code import SettlementSystemMethod1Code
 
 class SettlementSystemMethod5Choice(base_types._BaseFieldType):
 

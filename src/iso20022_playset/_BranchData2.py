@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PostalAddress6 import PostalAddress6
-from .Max140Text import Max140Text
+from ._Max35Text import Max35Text
+from ._PostalAddress6 import PostalAddress6
+from ._Max140Text import Max140Text
 
 class BranchData2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_PstlAdr"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Id", "_PstlAdr", "_Nm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -45,9 +32,22 @@ class BranchData2(base_types._BaseFieldType):
 		del self._PstlAdr
 		self._PstlAdr = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

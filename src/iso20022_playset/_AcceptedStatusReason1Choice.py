@@ -1,6 +1,6 @@
 from . import base_types
-from .AcceptedStatusReason1Code import AcceptedStatusReason1Code
-from .GenericIdentification36 import GenericIdentification36
+from ._GenericIdentification36 import GenericIdentification36
+from ._AcceptedStatusReason1Code import AcceptedStatusReason1Code
 
 class AcceptedStatusReason1Choice(base_types._BaseFieldType):
 

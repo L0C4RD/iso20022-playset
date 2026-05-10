@@ -1,27 +1,40 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
-from .ISODate import ISODate
-from .UnitPrice23 import UnitPrice23
-from .TotalFeesAndTaxes42 import TotalFeesAndTaxes42
-from .DecimalNumber import DecimalNumber
-from .OtherAmount1 import OtherAmount1
+from ._OtherAmount1 import OtherAmount1
+from ._TotalFeesAndTaxes42 import TotalFeesAndTaxes42
+from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._DecimalNumber import DecimalNumber
+from ._UnitPrice23 import UnitPrice23
 
 class Unit12(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrDt", "_AcqstnDt", "_TxOvrhd", "_Ref", "_PricDtls", "_OthrAmt", "_Grp1Or2Units", "_CertNb", "_UnitsNb"]
+	__slots__ = ["_OthrAmt", "_Grp1Or2Units", "_AcqstnDt", "_UnitsNb", "_CertNb", "_Ref", "_PricDtls", "_TxOvrhd", "_OrdrDt"]
 	@property
-	def OrdrDt(self):
-		return self._OrdrDt
+	def OthrAmt(self):
+		return self._OthrAmt
 
-	@OrdrDt.setter
-	def OrdrDt(self, value):
-		self._OrdrDt = value if type(value) != base_types.auto else self.make_default("OrdrDt")
+	@OthrAmt.setter
+	def OthrAmt(self, value):
+		self._OthrAmt = value if type(value) != base_types.auto else self.make_default("OthrAmt")
 
-	@OrdrDt.deleter
-	def OrdrDt(self):
-		del self._OrdrDt
-		self._OrdrDt = None
+	@OthrAmt.deleter
+	def OthrAmt(self):
+		del self._OthrAmt
+		self._OthrAmt = None
+
+	@property
+	def Grp1Or2Units(self):
+		return self._Grp1Or2Units
+
+	@Grp1Or2Units.setter
+	def Grp1Or2Units(self, value):
+		self._Grp1Or2Units = value if type(value) != base_types.auto else self.make_default("Grp1Or2Units")
+
+	@Grp1Or2Units.deleter
+	def Grp1Or2Units(self):
+		del self._Grp1Or2Units
+		self._Grp1Or2Units = None
 
 	@property
 	def AcqstnDt(self):
@@ -37,17 +50,30 @@ class Unit12(base_types._BaseFieldType):
 		self._AcqstnDt = None
 
 	@property
-	def TxOvrhd(self):
-		return self._TxOvrhd
+	def UnitsNb(self):
+		return self._UnitsNb
 
-	@TxOvrhd.setter
-	def TxOvrhd(self, value):
-		self._TxOvrhd = value if type(value) != base_types.auto else self.make_default("TxOvrhd")
+	@UnitsNb.setter
+	def UnitsNb(self, value):
+		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
 
-	@TxOvrhd.deleter
-	def TxOvrhd(self):
-		del self._TxOvrhd
-		self._TxOvrhd = None
+	@UnitsNb.deleter
+	def UnitsNb(self):
+		del self._UnitsNb
+		self._UnitsNb = None
+
+	@property
+	def CertNb(self):
+		return self._CertNb
+
+	@CertNb.setter
+	def CertNb(self, value):
+		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+
+	@CertNb.deleter
+	def CertNb(self):
+		del self._CertNb
+		self._CertNb = None
 
 	@property
 	def Ref(self):
@@ -76,66 +102,40 @@ class Unit12(base_types._BaseFieldType):
 		self._PricDtls = None
 
 	@property
-	def OthrAmt(self):
-		return self._OthrAmt
+	def TxOvrhd(self):
+		return self._TxOvrhd
 
-	@OthrAmt.setter
-	def OthrAmt(self, value):
-		self._OthrAmt = value if type(value) != base_types.auto else self.make_default("OthrAmt")
+	@TxOvrhd.setter
+	def TxOvrhd(self, value):
+		self._TxOvrhd = value if type(value) != base_types.auto else self.make_default("TxOvrhd")
 
-	@OthrAmt.deleter
-	def OthrAmt(self):
-		del self._OthrAmt
-		self._OthrAmt = None
-
-	@property
-	def Grp1Or2Units(self):
-		return self._Grp1Or2Units
-
-	@Grp1Or2Units.setter
-	def Grp1Or2Units(self, value):
-		self._Grp1Or2Units = value if type(value) != base_types.auto else self.make_default("Grp1Or2Units")
-
-	@Grp1Or2Units.deleter
-	def Grp1Or2Units(self):
-		del self._Grp1Or2Units
-		self._Grp1Or2Units = None
+	@TxOvrhd.deleter
+	def TxOvrhd(self):
+		del self._TxOvrhd
+		self._TxOvrhd = None
 
 	@property
-	def CertNb(self):
-		return self._CertNb
+	def OrdrDt(self):
+		return self._OrdrDt
 
-	@CertNb.setter
-	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+	@OrdrDt.setter
+	def OrdrDt(self, value):
+		self._OrdrDt = value if type(value) != base_types.auto else self.make_default("OrdrDt")
 
-	@CertNb.deleter
-	def CertNb(self):
-		del self._CertNb
-		self._CertNb = None
-
-	@property
-	def UnitsNb(self):
-		return self._UnitsNb
-
-	@UnitsNb.setter
-	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
-
-	@UnitsNb.deleter
-	def UnitsNb(self):
-		del self._UnitsNb
-		self._UnitsNb = None
+	@OrdrDt.deleter
+	def OrdrDt(self):
+		del self._OrdrDt
+		self._OrdrDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcqstnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxOvrhd', type=TotalFeesAndTaxes42, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=UnitPrice23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAmt', type=OtherAmount1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Grp1Or2Units', type=UKTaxGroupUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcqstnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsNb', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertNb', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricDtls', type=UnitPrice23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxOvrhd', type=TotalFeesAndTaxes42, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

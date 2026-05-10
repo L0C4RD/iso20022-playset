@@ -1,5 +1,5 @@
 from . import base_types
-from .ReturnTransactionV11 import ReturnTransactionV11
+from ._ReturnTransactionV11 import ReturnTransactionV11
 
 class CAMT_006_001_11():
 

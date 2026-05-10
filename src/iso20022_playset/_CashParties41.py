@@ -1,23 +1,10 @@
 from . import base_types
-from .PartyIdentificationAndAccount224 import PartyIdentificationAndAccount224
-from .PartyIdentificationAndAccount223 import PartyIdentificationAndAccount223
+from ._PartyIdentificationAndAccount224 import PartyIdentificationAndAccount224
+from ._PartyIdentificationAndAccount223 import PartyIdentificationAndAccount223
 
 class CashParties41(base_types._BaseFieldType):
 
-	__slots__ = ["_Intrmy", "_CdtrAgt", "_Cdtr", "_Dbtr", "_DbtrAgt"]
-	@property
-	def Intrmy(self):
-		return self._Intrmy
-
-	@Intrmy.setter
-	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
-
-	@Intrmy.deleter
-	def Intrmy(self):
-		del self._Intrmy
-		self._Intrmy = None
-
+	__slots__ = ["_CdtrAgt", "_Cdtr", "_Dbtr", "_DbtrAgt", "_Intrmy"]
 	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
@@ -70,11 +57,24 @@ class CashParties41(base_types._BaseFieldType):
 		del self._DbtrAgt
 		self._DbtrAgt = None
 
+	@property
+	def Intrmy(self):
+		return self._Intrmy
+
+	@Intrmy.setter
+	def Intrmy(self, value):
+		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+
+	@Intrmy.deleter
+	def Intrmy(self):
+		del self._Intrmy
+		self._Intrmy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount223, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount223, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount224, min=0, max=1, mutex_group=None, array=False),
 	))
 

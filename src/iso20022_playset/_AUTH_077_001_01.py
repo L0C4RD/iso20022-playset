@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialBenchmarkReportV01 import FinancialBenchmarkReportV01
+from ._FinancialBenchmarkReportV01 import FinancialBenchmarkReportV01
 
 class AUTH_077_001_01():
 

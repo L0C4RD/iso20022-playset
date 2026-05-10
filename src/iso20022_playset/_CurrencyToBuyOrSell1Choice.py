@@ -1,5 +1,5 @@
 from . import base_types
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class CurrencyToBuyOrSell1Choice(base_types._BaseFieldType):
 

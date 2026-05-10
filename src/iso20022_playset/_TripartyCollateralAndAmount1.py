@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .CollateralType22Choice import CollateralType22Choice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._CollateralType22Choice import CollateralType22Choice
 
 class TripartyCollateralAndAmount1(base_types._BaseFieldType):
 

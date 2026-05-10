@@ -1,5 +1,5 @@
 from . import base_types
-from .InformationRequestStatusChangeNotificationV01 import InformationRequestStatusChangeNotificationV01
+from ._InformationRequestStatusChangeNotificationV01 import InformationRequestStatusChangeNotificationV01
 
 class AUTH_003_001_01():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .RemittanceAdviceV06 import RemittanceAdviceV06
+from ._RemittanceAdviceV06 import RemittanceAdviceV06
 
 class REMT_001_001_06():
 

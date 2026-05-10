@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .EventInformation18 import EventInformation18
-from .SecurityIdentification20 import SecurityIdentification20
-from .CorporateActionBalance51 import CorporateActionBalance51
+from ._CorporateActionBalance51 import CorporateActionBalance51
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecurityIdentification20 import SecurityIdentification20
+from ._EventInformation18 import EventInformation18
 
 class CorporateActionEventAndBalance27(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_UndrlygScty", "_SplmtryData", "_GnlInf"]
-	@property
-	def Bal(self):
-		return self._Bal
-
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
-
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
+	__slots__ = ["_UndrlygScty", "_Bal", "_SplmtryData", "_GnlInf"]
 	@property
 	def UndrlygScty(self):
 		return self._UndrlygScty
@@ -32,6 +19,19 @@ class CorporateActionEventAndBalance27(base_types._BaseFieldType):
 	def UndrlygScty(self):
 		del self._UndrlygScty
 		self._UndrlygScty = None
+
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
 
 	@property
 	def SplmtryData(self):
@@ -60,8 +60,8 @@ class CorporateActionEventAndBalance27(base_types._BaseFieldType):
 		self._GnlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Bal', type=CorporateActionBalance51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=CorporateActionBalance51, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GnlInf', type=EventInformation18, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,5 +1,5 @@
 from . import base_types
-from .PartyEventAdviceV01 import PartyEventAdviceV01
+from ._PartyEventAdviceV01 import PartyEventAdviceV01
 
 class TSMT_055_001_01():
 

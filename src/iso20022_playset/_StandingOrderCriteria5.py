@@ -1,11 +1,11 @@
 from . import base_types
-from .StandingOrderReturnCriteria1 import StandingOrderReturnCriteria1
-from .StandingOrderSearchCriteria5 import StandingOrderSearchCriteria5
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._StandingOrderSearchCriteria5 import StandingOrderSearchCriteria5
+from ._StandingOrderReturnCriteria1 import StandingOrderReturnCriteria1
 
 class StandingOrderCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_RtrCrit", "_NewQryNm"]
+	__slots__ = ["_SchCrit", "_NewQryNm", "_RtrCrit"]
 	@property
 	def SchCrit(self):
 		return self._SchCrit
@@ -20,19 +20,6 @@ class StandingOrderCriteria5(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
-	def RtrCrit(self):
-		return self._RtrCrit
-
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
-
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
-
-	@property
 	def NewQryNm(self):
 		return self._NewQryNm
 
@@ -45,9 +32,22 @@ class StandingOrderCriteria5(base_types._BaseFieldType):
 		del self._NewQryNm
 		self._NewQryNm = None
 
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SchCrit', type=StandingOrderSearchCriteria5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RtrCrit', type=StandingOrderReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=StandingOrderReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
 

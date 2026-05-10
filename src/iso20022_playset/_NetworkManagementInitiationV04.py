@@ -1,54 +1,41 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .AdditionalFee3 import AdditionalFee3
-from .Max1000Text import Max1000Text
-from .Exact12Text import Exact12Text
-from .Header71 import Header71
-from .ProcessingResult26 import ProcessingResult26
-from .Max256Text import Max256Text
-from .ISO8583ResponseCode import ISO8583ResponseCode
-from .ISODateTime import ISODateTime
-from .Exact15Text import Exact15Text
-from .Number import Number
-from .Jurisdiction2 import Jurisdiction2
-from .Max35Text import Max35Text
-from .Reconciliation4 import Reconciliation4
-from .NetworkManagementType1Code import NetworkManagementType1Code
-from .SettlementService6 import SettlementService6
-from .ContentInformationType41 import ContentInformationType41
-from .ProgrammeMode5 import ProgrammeMode5
-from .Max12NumericText import Max12NumericText
-from .ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from .AdditionalData2 import AdditionalData2
+from ._Number import Number
+from ._ProgrammeMode5 import ProgrammeMode5
+from ._Exact12Text import Exact12Text
+from ._Max12NumericText import Max12NumericText
+from ._AdditionalFee3 import AdditionalFee3
+from ._Jurisdiction2 import Jurisdiction2
+from ._Reconciliation4 import Reconciliation4
+from ._Max256Text import Max256Text
+from ._ContentInformationType41 import ContentInformationType41
+from ._Exact15Text import Exact15Text
+from ._Max1000Text import Max1000Text
+from ._AdditionalData2 import AdditionalData2
+from ._NetworkManagementType1Code import NetworkManagementType1Code
+from ._SettlementService6 import SettlementService6
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._ProcessingResult26 import ProcessingResult26
+from ._Header71 import Header71
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ISODateTime import ISODateTime
 
 class NetworkManagementInitiationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsmssnDtTm", "_SplmtryData", "_TxDesc", "_AltrnMsgRsn", "_SctyTrlr", "_PrcgRslt", "_RtrvlRefNb", "_LifeCyclId", "_OrgnlRspnCd", "_MaxNbOfMsgs", "_Hdr", "_NtwkMgmtTp", "_AddtlData", "_SysTracAudtNb", "_Rcncltn", "_AddtlFee", "_NbOfMsgs", "_Jursdctn", "_OthrNtwkMgmtTp", "_Prgrmm", "_SttlmSvc", "_MsgRsn"]
+	__slots__ = ["_Prgrmm", "_TxDesc", "_MaxNbOfMsgs", "_Hdr", "_SysTracAudtNb", "_NbOfMsgs", "_OrgnlRspnCd", "_RtrvlRefNb", "_OthrNtwkMgmtTp", "_AltrnMsgRsn", "_Jursdctn", "_AddtlFee", "_SttlmSvc", "_LifeCyclId", "_MsgRsn", "_SctyTrlr", "_PrcgRslt", "_Rcncltn", "_TrnsmssnDtTm", "_AddtlData", "_SplmtryData", "_NtwkMgmtTp"]
 	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
+	def Prgrmm(self):
+		return self._Prgrmm
 
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+	@Prgrmm.setter
+	def Prgrmm(self, value):
+		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
 
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Prgrmm.deleter
+	def Prgrmm(self):
+		del self._Prgrmm
+		self._Prgrmm = None
 
 	@property
 	def TxDesc(self):
@@ -62,84 +49,6 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 	def TxDesc(self):
 		del self._TxDesc
 		self._TxDesc = None
-
-	@property
-	def AltrnMsgRsn(self):
-		return self._AltrnMsgRsn
-
-	@AltrnMsgRsn.setter
-	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
-
-	@AltrnMsgRsn.deleter
-	def AltrnMsgRsn(self):
-		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def PrcgRslt(self):
-		return self._PrcgRslt
-
-	@PrcgRslt.setter
-	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
-
-	@PrcgRslt.deleter
-	def PrcgRslt(self):
-		del self._PrcgRslt
-		self._PrcgRslt = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
-
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
-
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
-
-	@property
-	def OrgnlRspnCd(self):
-		return self._OrgnlRspnCd
-
-	@OrgnlRspnCd.setter
-	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
-
-	@OrgnlRspnCd.deleter
-	def OrgnlRspnCd(self):
-		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
 
 	@property
 	def MaxNbOfMsgs(self):
@@ -168,32 +77,6 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def NtwkMgmtTp(self):
-		return self._NtwkMgmtTp
-
-	@NtwkMgmtTp.setter
-	def NtwkMgmtTp(self, value):
-		self._NtwkMgmtTp = value if type(value) != base_types.auto else self.make_default("NtwkMgmtTp")
-
-	@NtwkMgmtTp.deleter
-	def NtwkMgmtTp(self):
-		del self._NtwkMgmtTp
-		self._NtwkMgmtTp = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
 	def SysTracAudtNb(self):
 		return self._SysTracAudtNb
 
@@ -205,32 +88,6 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
 		self._SysTracAudtNb = None
-
-	@property
-	def Rcncltn(self):
-		return self._Rcncltn
-
-	@Rcncltn.setter
-	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
-
-	@Rcncltn.deleter
-	def Rcncltn(self):
-		del self._Rcncltn
-		self._Rcncltn = None
-
-	@property
-	def AddtlFee(self):
-		return self._AddtlFee
-
-	@AddtlFee.setter
-	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
-
-	@AddtlFee.deleter
-	def AddtlFee(self):
-		del self._AddtlFee
-		self._AddtlFee = None
 
 	@property
 	def NbOfMsgs(self):
@@ -246,17 +103,30 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 		self._NbOfMsgs = None
 
 	@property
-	def Jursdctn(self):
-		return self._Jursdctn
+	def OrgnlRspnCd(self):
+		return self._OrgnlRspnCd
 
-	@Jursdctn.setter
-	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+	@OrgnlRspnCd.setter
+	def OrgnlRspnCd(self, value):
+		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
 
-	@Jursdctn.deleter
-	def Jursdctn(self):
-		del self._Jursdctn
-		self._Jursdctn = None
+	@OrgnlRspnCd.deleter
+	def OrgnlRspnCd(self):
+		del self._OrgnlRspnCd
+		self._OrgnlRspnCd = None
+
+	@property
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
+
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
 
 	@property
 	def OthrNtwkMgmtTp(self):
@@ -272,17 +142,43 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 		self._OthrNtwkMgmtTp = None
 
 	@property
-	def Prgrmm(self):
-		return self._Prgrmm
+	def AltrnMsgRsn(self):
+		return self._AltrnMsgRsn
 
-	@Prgrmm.setter
-	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+	@AltrnMsgRsn.setter
+	def AltrnMsgRsn(self, value):
+		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
 
-	@Prgrmm.deleter
-	def Prgrmm(self):
-		del self._Prgrmm
-		self._Prgrmm = None
+	@AltrnMsgRsn.deleter
+	def AltrnMsgRsn(self):
+		del self._AltrnMsgRsn
+		self._AltrnMsgRsn = None
+
+	@property
+	def Jursdctn(self):
+		return self._Jursdctn
+
+	@Jursdctn.setter
+	def Jursdctn(self, value):
+		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+
+	@Jursdctn.deleter
+	def Jursdctn(self):
+		del self._Jursdctn
+		self._Jursdctn = None
+
+	@property
+	def AddtlFee(self):
+		return self._AddtlFee
+
+	@AddtlFee.setter
+	def AddtlFee(self, value):
+		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+
+	@AddtlFee.deleter
+	def AddtlFee(self):
+		del self._AddtlFee
+		self._AddtlFee = None
 
 	@property
 	def SttlmSvc(self):
@@ -298,6 +194,19 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 		self._SttlmSvc = None
 
 	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
 	def MsgRsn(self):
 		return self._MsgRsn
 
@@ -310,28 +219,119 @@ class NetworkManagementInitiationV04(base_types._BaseFieldType):
 		del self._MsgRsn
 		self._MsgRsn = None
 
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def PrcgRslt(self):
+		return self._PrcgRslt
+
+	@PrcgRslt.setter
+	def PrcgRslt(self, value):
+		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+
+	@PrcgRslt.deleter
+	def PrcgRslt(self):
+		del self._PrcgRslt
+		self._PrcgRslt = None
+
+	@property
+	def Rcncltn(self):
+		return self._Rcncltn
+
+	@Rcncltn.setter
+	def Rcncltn(self, value):
+		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+
+	@Rcncltn.deleter
+	def Rcncltn(self):
+		del self._Rcncltn
+		self._Rcncltn = None
+
+	@property
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
+
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def NtwkMgmtTp(self):
+		return self._NtwkMgmtTp
+
+	@NtwkMgmtTp.setter
+	def NtwkMgmtTp(self, value):
+		self._NtwkMgmtTp = value if type(value) != base_types.auto else self.make_default("NtwkMgmtTp")
+
+	@NtwkMgmtTp.deleter
+	def NtwkMgmtTp(self):
+		del self._NtwkMgmtTp
+		self._NtwkMgmtTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxNbOfMsgs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtwkMgmtTp', type=NetworkManagementType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfMsgs', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtwkMgmtTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NtwkMgmtTp', type=NetworkManagementType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

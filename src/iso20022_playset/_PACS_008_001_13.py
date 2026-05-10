@@ -1,5 +1,5 @@
 from . import base_types
-from .FIToFICustomerCreditTransferV13 import FIToFICustomerCreditTransferV13
+from ._FIToFICustomerCreditTransferV13 import FIToFICustomerCreditTransferV13
 
 class PACS_008_001_13():
 

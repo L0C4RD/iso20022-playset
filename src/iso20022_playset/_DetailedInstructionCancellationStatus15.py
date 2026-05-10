@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CancellationStatus32Choice import CancellationStatus32Choice
+from ._Max35Text import Max35Text
+from ._CancellationStatus32Choice import CancellationStatus32Choice
 
 class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglInstrCxlId", "_InstrCxlSts", "_SubAcctId", "_AcctId"]
-	@property
-	def SnglInstrCxlId(self):
-		return self._SnglInstrCxlId
-
-	@SnglInstrCxlId.setter
-	def SnglInstrCxlId(self, value):
-		self._SnglInstrCxlId = value if type(value) != base_types.auto else self.make_default("SnglInstrCxlId")
-
-	@SnglInstrCxlId.deleter
-	def SnglInstrCxlId(self):
-		del self._SnglInstrCxlId
-		self._SnglInstrCxlId = None
-
+	__slots__ = ["_InstrCxlSts", "_SubAcctId", "_SnglInstrCxlId", "_AcctId"]
 	@property
 	def InstrCxlSts(self):
 		return self._InstrCxlSts
@@ -45,6 +32,19 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 		self._SubAcctId = None
 
 	@property
+	def SnglInstrCxlId(self):
+		return self._SnglInstrCxlId
+
+	@SnglInstrCxlId.setter
+	def SnglInstrCxlId(self, value):
+		self._SnglInstrCxlId = value if type(value) != base_types.auto else self.make_default("SnglInstrCxlId")
+
+	@SnglInstrCxlId.deleter
+	def SnglInstrCxlId(self):
+		del self._SnglInstrCxlId
+		self._SnglInstrCxlId = None
+
+	@property
 	def AcctId(self):
 		return self._AcctId
 
@@ -58,9 +58,9 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 		self._AcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SnglInstrCxlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrCxlSts', type=CancellationStatus32Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SnglInstrCxlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

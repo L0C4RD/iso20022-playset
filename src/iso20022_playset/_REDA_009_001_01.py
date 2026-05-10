@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityActivityAdviceV01 import SecurityActivityAdviceV01
+from ._SecurityActivityAdviceV01 import SecurityActivityAdviceV01
 
 class REDA_009_001_01():
 

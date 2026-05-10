@@ -1,24 +1,11 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .PercentagePrice2 import PercentagePrice2
-from .AmountPrice3 import AmountPrice3
+from ._PercentagePrice2 import PercentagePrice2
+from ._AmountPrice3 import AmountPrice3
+from ._DecimalNumber import DecimalNumber
 
 class PriceFormat75Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_AmtPric", "_PctgPric"]
-	@property
-	def IndxPts(self):
-		return self._IndxPts
-
-	@IndxPts.setter
-	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
-
-	@IndxPts.deleter
-	def IndxPts(self):
-		del self._IndxPts
-		self._IndxPts = None
-
+	__slots__ = ["_AmtPric", "_PctgPric", "_IndxPts"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric
@@ -45,9 +32,22 @@ class PriceFormat75Choice(base_types._BaseFieldType):
 		del self._PctgPric
 		self._PctgPric = None
 
+	@property
+	def IndxPts(self):
+		return self._IndxPts
+
+	@IndxPts.setter
+	def IndxPts(self, value):
+		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
+
+	@IndxPts.deleter
+	def IndxPts(self):
+		del self._IndxPts
+		self._IndxPts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

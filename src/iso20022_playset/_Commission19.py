@@ -1,6 +1,6 @@
 from . import base_types
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class Commission19(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentIdentification3Choice import DocumentIdentification3Choice
-from .DocumentNumber5Choice import DocumentNumber5Choice
+from ._DocumentIdentification3Choice import DocumentIdentification3Choice
+from ._DocumentNumber5Choice import DocumentNumber5Choice
 
 class DocumentIdentification33(base_types._BaseFieldType):
 

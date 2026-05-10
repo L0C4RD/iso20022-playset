@@ -1,23 +1,23 @@
 from . import base_types
-from .Standardisation1Code import Standardisation1Code
-from .Frequency11Code import Frequency11Code
-from .InterestRateContractTerm1 import InterestRateContractTerm1
+from ._Frequency11Code import Frequency11Code
+from ._InterestRateContractTerm1 import InterestRateContractTerm1
+from ._Standardisation1Code import Standardisation1Code
 
 class FinancialInstrumentAttributes88(base_types._BaseFieldType):
 
-	__slots__ = ["_Stdstn", "_PmtFrqcy", "_CtrctTerm"]
+	__slots__ = ["_CtrctTerm", "_PmtFrqcy", "_Stdstn"]
 	@property
-	def Stdstn(self):
-		return self._Stdstn
+	def CtrctTerm(self):
+		return self._CtrctTerm
 
-	@Stdstn.setter
-	def Stdstn(self, value):
-		self._Stdstn = value if type(value) != base_types.auto else self.make_default("Stdstn")
+	@CtrctTerm.setter
+	def CtrctTerm(self, value):
+		self._CtrctTerm = value if type(value) != base_types.auto else self.make_default("CtrctTerm")
 
-	@Stdstn.deleter
-	def Stdstn(self):
-		del self._Stdstn
-		self._Stdstn = None
+	@CtrctTerm.deleter
+	def CtrctTerm(self):
+		del self._CtrctTerm
+		self._CtrctTerm = None
 
 	@property
 	def PmtFrqcy(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentAttributes88(base_types._BaseFieldType):
 		self._PmtFrqcy = None
 
 	@property
-	def CtrctTerm(self):
-		return self._CtrctTerm
+	def Stdstn(self):
+		return self._Stdstn
 
-	@CtrctTerm.setter
-	def CtrctTerm(self, value):
-		self._CtrctTerm = value if type(value) != base_types.auto else self.make_default("CtrctTerm")
+	@Stdstn.setter
+	def Stdstn(self, value):
+		self._Stdstn = value if type(value) != base_types.auto else self.make_default("Stdstn")
 
-	@CtrctTerm.deleter
-	def CtrctTerm(self):
-		del self._CtrctTerm
-		self._CtrctTerm = None
+	@Stdstn.deleter
+	def Stdstn(self):
+		del self._Stdstn
+		self._Stdstn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Stdstn', type=Standardisation1Code, min=0, max=3, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctTerm', type=InterestRateContractTerm1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency11Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Stdstn', type=Standardisation1Code, min=0, max=3, mutex_group=None, array=True),
 	))
 

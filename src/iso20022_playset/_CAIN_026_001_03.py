@@ -1,5 +1,5 @@
 from . import base_types
-from .AddendumResponseV03 import AddendumResponseV03
+from ._AddendumResponseV03 import AddendumResponseV03
 
 class CAIN_026_001_03():
 

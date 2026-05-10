@@ -1,23 +1,10 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .ValidityPeriodType1Code import ValidityPeriodType1Code
+from ._GenericIdentification30 import GenericIdentification30
+from ._ValidityPeriodType1Code import ValidityPeriodType1Code
 
 class ValidityPeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtyPrdCd", "_Prtry"]
-	@property
-	def VldtyPrdCd(self):
-		return self._VldtyPrdCd
-
-	@VldtyPrdCd.setter
-	def VldtyPrdCd(self, value):
-		self._VldtyPrdCd = value if type(value) != base_types.auto else self.make_default("VldtyPrdCd")
-
-	@VldtyPrdCd.deleter
-	def VldtyPrdCd(self):
-		del self._VldtyPrdCd
-		self._VldtyPrdCd = None
-
+	__slots__ = ["_Prtry", "_VldtyPrdCd"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,8 +18,21 @@ class ValidityPeriod1Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def VldtyPrdCd(self):
+		return self._VldtyPrdCd
+
+	@VldtyPrdCd.setter
+	def VldtyPrdCd(self, value):
+		self._VldtyPrdCd = value if type(value) != base_types.auto else self.make_default("VldtyPrdCd")
+
+	@VldtyPrdCd.deleter
+	def VldtyPrdCd(self):
+		del self._VldtyPrdCd
+		self._VldtyPrdCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtyPrdCd', type=ValidityPeriodType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='VldtyPrdCd', type=ValidityPeriodType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

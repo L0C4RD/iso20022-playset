@@ -1,23 +1,23 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CurrencyControlHeader7 import CurrencyControlHeader7
-from .RegisteredContract20 import RegisteredContract20
+from ._CurrencyControlHeader7 import CurrencyControlHeader7
+from ._SupplementaryData1 import SupplementaryData1
+from ._RegisteredContract20 import RegisteredContract20
 
 class ContractRegistrationConfirmationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_RegdCtrct"]
+	__slots__ = ["_RegdCtrct", "_GrpHdr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RegdCtrct(self):
+		return self._RegdCtrct
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@RegdCtrct.setter
+	def RegdCtrct(self, value):
+		self._RegdCtrct = value if type(value) != base_types.auto else self.make_default("RegdCtrct")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@RegdCtrct.deleter
+	def RegdCtrct(self):
+		del self._RegdCtrct
+		self._RegdCtrct = None
 
 	@property
 	def GrpHdr(self):
@@ -33,21 +33,21 @@ class ContractRegistrationConfirmationV04(base_types._BaseFieldType):
 		self._GrpHdr = None
 
 	@property
-	def RegdCtrct(self):
-		return self._RegdCtrct
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RegdCtrct.setter
-	def RegdCtrct(self, value):
-		self._RegdCtrct = value if type(value) != base_types.auto else self.make_default("RegdCtrct")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@RegdCtrct.deleter
-	def RegdCtrct(self):
-		del self._RegdCtrct
-		self._RegdCtrct = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegdCtrct', type=RegisteredContract20, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

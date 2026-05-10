@@ -1,12 +1,25 @@
 from . import base_types
-from .SettlementStatus31Choice import SettlementStatus31Choice
-from .ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from .InstructionProcessingStatus45Choice import InstructionProcessingStatus45Choice
-from .MatchingStatus32Choice import MatchingStatus32Choice
+from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from ._SettlementStatus31Choice import SettlementStatus31Choice
+from ._InstructionProcessingStatus45Choice import InstructionProcessingStatus45Choice
+from ._MatchingStatus32Choice import MatchingStatus32Choice
 
 class Status39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IfrrdMtchgSts", "_SttlmSts", "_InstrPrcgSts", "_MtchgSts", "_Prtry"]
+	__slots__ = ["_Prtry", "_IfrrdMtchgSts", "_MtchgSts", "_InstrPrcgSts", "_SttlmSts"]
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	@property
 	def IfrrdMtchgSts(self):
 		return self._IfrrdMtchgSts
@@ -19,32 +32,6 @@ class Status39Choice(base_types._BaseFieldType):
 	def IfrrdMtchgSts(self):
 		del self._IfrrdMtchgSts
 		self._IfrrdMtchgSts = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
-	@property
-	def InstrPrcgSts(self):
-		return self._InstrPrcgSts
-
-	@InstrPrcgSts.setter
-	def InstrPrcgSts(self, value):
-		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
-
-	@InstrPrcgSts.deleter
-	def InstrPrcgSts(self):
-		del self._InstrPrcgSts
-		self._InstrPrcgSts = None
 
 	@property
 	def MtchgSts(self):
@@ -60,23 +47,36 @@ class Status39Choice(base_types._BaseFieldType):
 		self._MtchgSts = None
 
 	@property
-	def Prtry(self):
-		return self._Prtry
+	def InstrPrcgSts(self):
+		return self._InstrPrcgSts
 
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+	@InstrPrcgSts.setter
+	def InstrPrcgSts(self, value):
+		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
 
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
+	@InstrPrcgSts.deleter
+	def InstrPrcgSts(self):
+		del self._InstrPrcgSts
+		self._InstrPrcgSts = None
+
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus45Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus45Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
-from .CorporateActionEventType112Choice import CorporateActionEventType112Choice
+from ._Max35Text import Max35Text
+from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
+from ._FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
 
 class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_OffclCorpActnEvtId", "_EvtTp", "_CorpActnEvtId"]
-	@property
-	def UndrlygScty(self):
-		return self._UndrlygScty
-
-	@UndrlygScty.setter
-	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
-
-	@UndrlygScty.deleter
-	def UndrlygScty(self):
-		del self._UndrlygScty
-		self._UndrlygScty = None
-
+	__slots__ = ["_OffclCorpActnEvtId", "_UndrlygScty", "_CorpActnEvtId", "_EvtTp"]
 	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
@@ -33,17 +20,17 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
+	def UndrlygScty(self):
+		return self._UndrlygScty
 
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+	@UndrlygScty.setter
+	def UndrlygScty(self, value):
+		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
 
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
+	@UndrlygScty.deleter
+	def UndrlygScty(self):
+		del self._UndrlygScty
+		self._UndrlygScty = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -58,10 +45,23 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
 
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .MeetingInstructionV10 import MeetingInstructionV10
+from ._MeetingInstructionV10 import MeetingInstructionV10
 
 class SEEV_004_001_10():
 

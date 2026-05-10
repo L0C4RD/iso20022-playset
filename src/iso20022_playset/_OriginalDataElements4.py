@@ -1,65 +1,26 @@
 from . import base_types
-from .MessageClass1Code import MessageClass1Code
-from .ISO8583ResponseCode import ISO8583ResponseCode
-from .Max11NumericText import Max11NumericText
-from .OriginalTransactionIdentification1 import OriginalTransactionIdentification1
-from .ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from .MessageFunction16Code import MessageFunction16Code
+from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
+from ._MessageFunction16Code import MessageFunction16Code
+from ._ISO8583ResponseCode import ISO8583ResponseCode
+from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
+from ._MessageClass1Code import MessageClass1Code
+from ._Max11NumericText import Max11NumericText
 
 class OriginalDataElements4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_AcqrrId", "_MsgClss", "_MsgFctn", "_SndrId", "_RspnCd", "_TxId"]
+	__slots__ = ["_RspnCd", "_SndrId", "_AcqrrId", "_MsgFctn", "_TxTp", "_MsgClss", "_TxId"]
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def RspnCd(self):
+		return self._RspnCd
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+	@RspnCd.setter
+	def RspnCd(self, value):
+		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
-
-	@property
-	def AcqrrId(self):
-		return self._AcqrrId
-
-	@AcqrrId.setter
-	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
-
-	@AcqrrId.deleter
-	def AcqrrId(self):
-		del self._AcqrrId
-		self._AcqrrId = None
-
-	@property
-	def MsgClss(self):
-		return self._MsgClss
-
-	@MsgClss.setter
-	def MsgClss(self, value):
-		self._MsgClss = value if type(value) != base_types.auto else self.make_default("MsgClss")
-
-	@MsgClss.deleter
-	def MsgClss(self):
-		del self._MsgClss
-		self._MsgClss = None
-
-	@property
-	def MsgFctn(self):
-		return self._MsgFctn
-
-	@MsgFctn.setter
-	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
-
-	@MsgFctn.deleter
-	def MsgFctn(self):
-		del self._MsgFctn
-		self._MsgFctn = None
+	@RspnCd.deleter
+	def RspnCd(self):
+		del self._RspnCd
+		self._RspnCd = None
 
 	@property
 	def SndrId(self):
@@ -75,17 +36,56 @@ class OriginalDataElements4(base_types._BaseFieldType):
 		self._SndrId = None
 
 	@property
-	def RspnCd(self):
-		return self._RspnCd
+	def AcqrrId(self):
+		return self._AcqrrId
 
-	@RspnCd.setter
-	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
+	@AcqrrId.setter
+	def AcqrrId(self, value):
+		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
 
-	@RspnCd.deleter
-	def RspnCd(self):
-		del self._RspnCd
-		self._RspnCd = None
+	@AcqrrId.deleter
+	def AcqrrId(self):
+		del self._AcqrrId
+		self._AcqrrId = None
+
+	@property
+	def MsgFctn(self):
+		return self._MsgFctn
+
+	@MsgFctn.setter
+	def MsgFctn(self, value):
+		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+
+	@MsgFctn.deleter
+	def MsgFctn(self):
+		del self._MsgFctn
+		self._MsgFctn = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def MsgClss(self):
+		return self._MsgClss
+
+	@MsgClss.setter
+	def MsgClss(self, value):
+		self._MsgClss = value if type(value) != base_types.auto else self.make_default("MsgClss")
+
+	@MsgClss.deleter
+	def MsgClss(self):
+		del self._MsgClss
+		self._MsgClss = None
 
 	@property
 	def TxId(self):
@@ -101,12 +101,12 @@ class OriginalDataElements4(base_types._BaseFieldType):
 		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcqrrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgClss', type=MessageClass1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgFctn', type=MessageFunction16Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcqrrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgFctn', type=MessageFunction16Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgClss', type=MessageClass1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=OriginalTransactionIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

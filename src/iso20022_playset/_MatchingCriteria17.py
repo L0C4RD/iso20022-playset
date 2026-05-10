@@ -1,12 +1,12 @@
 from . import base_types
-from .ValuationMatchingCriteria1 import ValuationMatchingCriteria1
-from .ContractMatchingCriteria3 import ContractMatchingCriteria3
-from .CounterpartyMatchingCriteria6 import CounterpartyMatchingCriteria6
-from .TransactionMatchingCriteria7 import TransactionMatchingCriteria7
+from ._TransactionMatchingCriteria7 import TransactionMatchingCriteria7
+from ._ContractMatchingCriteria3 import ContractMatchingCriteria3
+from ._ValuationMatchingCriteria1 import ValuationMatchingCriteria1
+from ._CounterpartyMatchingCriteria6 import CounterpartyMatchingCriteria6
 
 class MatchingCriteria17(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctMtchgCrit", "_CtrPtyMtchgCrit", "_TxMtchgCrit", "_ValtnMtchgCrit"]
+	__slots__ = ["_CtrctMtchgCrit", "_ValtnMtchgCrit", "_TxMtchgCrit", "_CtrPtyMtchgCrit"]
 	@property
 	def CtrctMtchgCrit(self):
 		return self._CtrctMtchgCrit
@@ -21,17 +21,17 @@ class MatchingCriteria17(base_types._BaseFieldType):
 		self._CtrctMtchgCrit = None
 
 	@property
-	def CtrPtyMtchgCrit(self):
-		return self._CtrPtyMtchgCrit
+	def ValtnMtchgCrit(self):
+		return self._ValtnMtchgCrit
 
-	@CtrPtyMtchgCrit.setter
-	def CtrPtyMtchgCrit(self, value):
-		self._CtrPtyMtchgCrit = value if type(value) != base_types.auto else self.make_default("CtrPtyMtchgCrit")
+	@ValtnMtchgCrit.setter
+	def ValtnMtchgCrit(self, value):
+		self._ValtnMtchgCrit = value if type(value) != base_types.auto else self.make_default("ValtnMtchgCrit")
 
-	@CtrPtyMtchgCrit.deleter
-	def CtrPtyMtchgCrit(self):
-		del self._CtrPtyMtchgCrit
-		self._CtrPtyMtchgCrit = None
+	@ValtnMtchgCrit.deleter
+	def ValtnMtchgCrit(self):
+		del self._ValtnMtchgCrit
+		self._ValtnMtchgCrit = None
 
 	@property
 	def TxMtchgCrit(self):
@@ -47,22 +47,22 @@ class MatchingCriteria17(base_types._BaseFieldType):
 		self._TxMtchgCrit = None
 
 	@property
-	def ValtnMtchgCrit(self):
-		return self._ValtnMtchgCrit
+	def CtrPtyMtchgCrit(self):
+		return self._CtrPtyMtchgCrit
 
-	@ValtnMtchgCrit.setter
-	def ValtnMtchgCrit(self, value):
-		self._ValtnMtchgCrit = value if type(value) != base_types.auto else self.make_default("ValtnMtchgCrit")
+	@CtrPtyMtchgCrit.setter
+	def CtrPtyMtchgCrit(self, value):
+		self._CtrPtyMtchgCrit = value if type(value) != base_types.auto else self.make_default("CtrPtyMtchgCrit")
 
-	@ValtnMtchgCrit.deleter
-	def ValtnMtchgCrit(self):
-		del self._ValtnMtchgCrit
-		self._ValtnMtchgCrit = None
+	@CtrPtyMtchgCrit.deleter
+	def CtrPtyMtchgCrit(self):
+		del self._CtrPtyMtchgCrit
+		self._CtrPtyMtchgCrit = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctMtchgCrit', type=ContractMatchingCriteria3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxMtchgCrit', type=TransactionMatchingCriteria7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnMtchgCrit', type=ValuationMatchingCriteria1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxMtchgCrit', type=TransactionMatchingCriteria7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),
 	))
 

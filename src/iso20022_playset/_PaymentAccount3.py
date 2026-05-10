@@ -1,11 +1,11 @@
 from . import base_types
-from .Acquirer10 import Acquirer10
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Acquirer10 import Acquirer10
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class PaymentAccount3(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAcqrrData", "_Ccy", "_CurBal"]
+	__slots__ = ["_PmtAcqrrData", "_CurBal", "_Ccy"]
 	@property
 	def PmtAcqrrData(self):
 		return self._PmtAcqrrData
@@ -20,19 +20,6 @@ class PaymentAccount3(base_types._BaseFieldType):
 		self._PmtAcqrrData = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def CurBal(self):
 		return self._CurBal
 
@@ -45,9 +32,22 @@ class PaymentAccount3(base_types._BaseFieldType):
 		del self._CurBal
 		self._CurBal = None
 
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtAcqrrData', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

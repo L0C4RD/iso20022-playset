@@ -1,39 +1,13 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .GenericIdentification1 import GenericIdentification1
-from .SecuritiesSearchCriteria4 import SecuritiesSearchCriteria4
-from .SecuritiesReturnCriteria1 import SecuritiesReturnCriteria1
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecuritiesSearchCriteria4 import SecuritiesSearchCriteria4
+from ._SecuritiesReturnCriteria1 import SecuritiesReturnCriteria1
+from ._GenericIdentification1 import GenericIdentification1
+from ._MessageHeader1 import MessageHeader1
 
 class SecurityQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_ReqTp", "_SmlSetRtrCrit", "_SchCrit", "_MsgHdr"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def ReqTp(self):
-		return self._ReqTp
-
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
-
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
-
+	__slots__ = ["_SmlSetRtrCrit", "_SchCrit", "_SplmtryData", "_MsgHdr", "_ReqTp"]
 	@property
 	def SmlSetRtrCrit(self):
 		return self._SmlSetRtrCrit
@@ -61,6 +35,19 @@ class SecurityQueryV01(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def MsgHdr(self):
 		return self._MsgHdr
 
@@ -73,11 +60,24 @@ class SecurityQueryV01(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def ReqTp(self):
+		return self._ReqTp
+
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
+
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqTp', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SmlSetRtrCrit', type=SecuritiesReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=SecuritiesSearchCriteria4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqTp', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

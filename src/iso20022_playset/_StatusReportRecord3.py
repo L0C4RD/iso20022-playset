@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ReportingRecordStatus1Code import ReportingRecordStatus1Code
-from .Max140Text import Max140Text
-from .GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
+from ._ReportingRecordStatus1Code import ReportingRecordStatus1Code
 
 class StatusReportRecord3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlRcrdId", "_SplmtryData", "_VldtnRule", "_Sts"]
+	__slots__ = ["_OrgnlRcrdId", "_VldtnRule", "_SplmtryData", "_Sts"]
 	@property
 	def OrgnlRcrdId(self):
 		return self._OrgnlRcrdId
@@ -21,19 +21,6 @@ class StatusReportRecord3(base_types._BaseFieldType):
 		self._OrgnlRcrdId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def VldtnRule(self):
 		return self._VldtnRule
 
@@ -45,6 +32,19 @@ class StatusReportRecord3(base_types._BaseFieldType):
 	def VldtnRule(self):
 		del self._VldtnRule
 		self._VldtnRule = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Sts(self):
@@ -61,8 +61,8 @@ class StatusReportRecord3(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlRcrdId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=ReportingRecordStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

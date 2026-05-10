@@ -1,25 +1,12 @@
 from . import base_types
-from .Number import Number
-from .Recipient5Choice import Recipient5Choice
-from .AlgorithmIdentification11 import AlgorithmIdentification11
-from .Max5000Binary import Max5000Binary
+from ._Number import Number
+from ._Recipient5Choice import Recipient5Choice
+from ._Max5000Binary import Max5000Binary
+from ._AlgorithmIdentification11 import AlgorithmIdentification11
 
 class KeyTransport4(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptId", "_Vrsn", "_NcrptdKey", "_KeyNcrptnAlgo"]
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
-
+	__slots__ = ["_Vrsn", "_NcrptdKey", "_KeyNcrptnAlgo", "_RcptId"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -59,10 +46,23 @@ class KeyTransport4(base_types._BaseFieldType):
 		del self._KeyNcrptnAlgo
 		self._KeyNcrptnAlgo = None
 
+	@property
+	def RcptId(self):
+		return self._RcptId
+
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
+
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

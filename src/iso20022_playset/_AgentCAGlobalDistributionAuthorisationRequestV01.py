@@ -1,7 +1,7 @@
 from . import base_types
-from .CorporateActionInformation1 import CorporateActionInformation1
-from .DocumentIdentification8 import DocumentIdentification8
-from .GlobalDistributionRequest1 import GlobalDistributionRequest1
+from ._CorporateActionInformation1 import CorporateActionInformation1
+from ._DocumentIdentification8 import DocumentIdentification8
+from ._GlobalDistributionRequest1 import GlobalDistributionRequest1
 
 class AgentCAGlobalDistributionAuthorisationRequestV01(base_types._BaseFieldType):
 

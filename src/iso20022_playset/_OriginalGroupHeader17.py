@@ -1,28 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .StatusReasonInformation12 import StatusReasonInformation12
-from .ISODateTime import ISODateTime
-from .DecimalNumber import DecimalNumber
-from .ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
-from .NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
-from .Max15NumericText import Max15NumericText
+from ._Max15NumericText import Max15NumericText
+from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
+from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
+from ._Max35Text import Max35Text
+from ._StatusReasonInformation12 import StatusReasonInformation12
+from ._DecimalNumber import DecimalNumber
+from ._ISODateTime import ISODateTime
 
 class OriginalGroupHeader17(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNbOfTxs", "_OrgnlMsgId", "_GrpSts", "_OrgnlMsgNmId", "_OrgnlCtrlSum", "_NbOfTxsPerSts", "_StsRsnInf", "_OrgnlCreDtTm"]
-	@property
-	def OrgnlNbOfTxs(self):
-		return self._OrgnlNbOfTxs
-
-	@OrgnlNbOfTxs.setter
-	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != base_types.auto else self.make_default("OrgnlNbOfTxs")
-
-	@OrgnlNbOfTxs.deleter
-	def OrgnlNbOfTxs(self):
-		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
-
+	__slots__ = ["_OrgnlMsgId", "_OrgnlMsgNmId", "_GrpSts", "_OrgnlCreDtTm", "_NbOfTxsPerSts", "_OrgnlNbOfTxs", "_OrgnlCtrlSum", "_StsRsnInf"]
 	@property
 	def OrgnlMsgId(self):
 		return self._OrgnlMsgId
@@ -35,19 +22,6 @@ class OriginalGroupHeader17(base_types._BaseFieldType):
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
 		self._OrgnlMsgId = None
-
-	@property
-	def GrpSts(self):
-		return self._GrpSts
-
-	@GrpSts.setter
-	def GrpSts(self, value):
-		self._GrpSts = value if type(value) != base_types.auto else self.make_default("GrpSts")
-
-	@GrpSts.deleter
-	def GrpSts(self):
-		del self._GrpSts
-		self._GrpSts = None
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -63,17 +37,30 @@ class OriginalGroupHeader17(base_types._BaseFieldType):
 		self._OrgnlMsgNmId = None
 
 	@property
-	def OrgnlCtrlSum(self):
-		return self._OrgnlCtrlSum
+	def GrpSts(self):
+		return self._GrpSts
 
-	@OrgnlCtrlSum.setter
-	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != base_types.auto else self.make_default("OrgnlCtrlSum")
+	@GrpSts.setter
+	def GrpSts(self, value):
+		self._GrpSts = value if type(value) != base_types.auto else self.make_default("GrpSts")
 
-	@OrgnlCtrlSum.deleter
-	def OrgnlCtrlSum(self):
-		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
+	@GrpSts.deleter
+	def GrpSts(self):
+		del self._GrpSts
+		self._GrpSts = None
+
+	@property
+	def OrgnlCreDtTm(self):
+		return self._OrgnlCreDtTm
+
+	@OrgnlCreDtTm.setter
+	def OrgnlCreDtTm(self, value):
+		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+
+	@OrgnlCreDtTm.deleter
+	def OrgnlCreDtTm(self):
+		del self._OrgnlCreDtTm
+		self._OrgnlCreDtTm = None
 
 	@property
 	def NbOfTxsPerSts(self):
@@ -89,6 +76,32 @@ class OriginalGroupHeader17(base_types._BaseFieldType):
 		self._NbOfTxsPerSts = None
 
 	@property
+	def OrgnlNbOfTxs(self):
+		return self._OrgnlNbOfTxs
+
+	@OrgnlNbOfTxs.setter
+	def OrgnlNbOfTxs(self, value):
+		self._OrgnlNbOfTxs = value if type(value) != base_types.auto else self.make_default("OrgnlNbOfTxs")
+
+	@OrgnlNbOfTxs.deleter
+	def OrgnlNbOfTxs(self):
+		del self._OrgnlNbOfTxs
+		self._OrgnlNbOfTxs = None
+
+	@property
+	def OrgnlCtrlSum(self):
+		return self._OrgnlCtrlSum
+
+	@OrgnlCtrlSum.setter
+	def OrgnlCtrlSum(self, value):
+		self._OrgnlCtrlSum = value if type(value) != base_types.auto else self.make_default("OrgnlCtrlSum")
+
+	@OrgnlCtrlSum.deleter
+	def OrgnlCtrlSum(self):
+		del self._OrgnlCtrlSum
+		self._OrgnlCtrlSum = None
+
+	@property
 	def StsRsnInf(self):
 		return self._StsRsnInf
 
@@ -101,27 +114,14 @@ class OriginalGroupHeader17(base_types._BaseFieldType):
 		del self._StsRsnInf
 		self._StsRsnInf = None
 
-	@property
-	def OrgnlCreDtTm(self):
-		return self._OrgnlCreDtTm
-
-	@OrgnlCreDtTm.setter
-	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
-
-	@OrgnlCreDtTm.deleter
-	def OrgnlCreDtTm(self):
-		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrpSts', type=ExternalPaymentGroupStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpSts', type=ExternalPaymentGroupStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsnInf', type=StatusReasonInformation12, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
-from .ISODate import ISODate
+from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
+from ._ISODate import ISODate
 
 class Schedule1(base_types._BaseFieldType):
 

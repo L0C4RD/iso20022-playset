@@ -1,38 +1,51 @@
 from . import base_types
-from .AdditionalReference10 import AdditionalReference10
-from .ForeignExchangeTerms37 import ForeignExchangeTerms37
-from .PartyIdentification139 import PartyIdentification139
-from .PhysicalTransferType1Code import PhysicalTransferType1Code
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Account31 import Account31
-from .YesNoIndicator import YesNoIndicator
-from .IncomePreference2Code import IncomePreference2Code
-from .FormOfSecurity1Code import FormOfSecurity1Code
-from .ISODate import ISODate
-from .Intermediary43 import Intermediary43
-from .BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
-from .DeliveryParameters4 import DeliveryParameters4
-from .FundSettlementParameters15 import FundSettlementParameters15
-from .Tax38 import Tax38
-from .StampDutyType2Code import StampDutyType2Code
-from .Fees2 import Fees2
+from ._PartyIdentification139 import PartyIdentification139
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._PhysicalTransferType1Code import PhysicalTransferType1Code
+from ._IncomePreference2Code import IncomePreference2Code
+from ._Tax38 import Tax38
+from ._DeliveryParameters4 import DeliveryParameters4
+from ._Account31 import Account31
+from ._ISODate import ISODate
+from ._StampDutyType2Code import StampDutyType2Code
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
+from ._Fees2 import Fees2
+from ._ForeignExchangeTerms37 import ForeignExchangeTerms37
+from ._FundSettlementParameters15 import FundSettlementParameters15
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from ._AdditionalReference10 import AdditionalReference10
+from ._Intermediary43 import Intermediary43
+from ._YesNoIndicator import YesNoIndicator
 
 class DeliverInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_FctvSttlmDt", "_PhysTrfDtls", "_IncmPref", "_FXDtls", "_SctiesForm", "_Trfr", "_SttlmPtiesDtls", "_NetAmt", "_TrfrRegdAcct", "_IndvTax", "_BnfcryCertfctnCmpltn", "_PhysTrf", "_ReqdTradDt", "_Fees", "_ReqdSttlmDt", "_ClntRef", "_StmpDty", "_DmtrlsdInd", "_SttlmAmt", "_IntrmyInf"]
+	__slots__ = ["_ReqdTradDt", "_ReqdSttlmDt", "_PhysTrfDtls", "_IncmPref", "_Fees", "_DmtrlsdInd", "_ClntRef", "_IndvTax", "_TrfrRegdAcct", "_SctiesForm", "_NetAmt", "_IntrmyInf", "_FXDtls", "_FctvSttlmDt", "_StmpDty", "_SttlmPtiesDtls", "_PhysTrf", "_Trfr", "_BnfcryCertfctnCmpltn", "_SttlmAmt"]
 	@property
-	def FctvSttlmDt(self):
-		return self._FctvSttlmDt
+	def ReqdTradDt(self):
+		return self._ReqdTradDt
 
-	@FctvSttlmDt.setter
-	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+	@ReqdTradDt.setter
+	def ReqdTradDt(self, value):
+		self._ReqdTradDt = value if type(value) != base_types.auto else self.make_default("ReqdTradDt")
 
-	@FctvSttlmDt.deleter
-	def FctvSttlmDt(self):
-		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
+	@ReqdTradDt.deleter
+	def ReqdTradDt(self):
+		del self._ReqdTradDt
+		self._ReqdTradDt = None
+
+	@property
+	def ReqdSttlmDt(self):
+		return self._ReqdSttlmDt
+
+	@ReqdSttlmDt.setter
+	def ReqdSttlmDt(self, value):
+		self._ReqdSttlmDt = value if type(value) != base_types.auto else self.make_default("ReqdSttlmDt")
+
+	@ReqdSttlmDt.deleter
+	def ReqdSttlmDt(self):
+		del self._ReqdSttlmDt
+		self._ReqdSttlmDt = None
 
 	@property
 	def PhysTrfDtls(self):
@@ -61,136 +74,6 @@ class DeliverInformation20(base_types._BaseFieldType):
 		self._IncmPref = None
 
 	@property
-	def FXDtls(self):
-		return self._FXDtls
-
-	@FXDtls.setter
-	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
-
-	@FXDtls.deleter
-	def FXDtls(self):
-		del self._FXDtls
-		self._FXDtls = None
-
-	@property
-	def SctiesForm(self):
-		return self._SctiesForm
-
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
-
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
-
-	@property
-	def Trfr(self):
-		return self._Trfr
-
-	@Trfr.setter
-	def Trfr(self, value):
-		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
-
-	@Trfr.deleter
-	def Trfr(self):
-		del self._Trfr
-		self._Trfr = None
-
-	@property
-	def SttlmPtiesDtls(self):
-		return self._SttlmPtiesDtls
-
-	@SttlmPtiesDtls.setter
-	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
-
-	@SttlmPtiesDtls.deleter
-	def SttlmPtiesDtls(self):
-		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
-
-	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
-	@property
-	def TrfrRegdAcct(self):
-		return self._TrfrRegdAcct
-
-	@TrfrRegdAcct.setter
-	def TrfrRegdAcct(self, value):
-		self._TrfrRegdAcct = value if type(value) != base_types.auto else self.make_default("TrfrRegdAcct")
-
-	@TrfrRegdAcct.deleter
-	def TrfrRegdAcct(self):
-		del self._TrfrRegdAcct
-		self._TrfrRegdAcct = None
-
-	@property
-	def IndvTax(self):
-		return self._IndvTax
-
-	@IndvTax.setter
-	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
-
-	@IndvTax.deleter
-	def IndvTax(self):
-		del self._IndvTax
-		self._IndvTax = None
-
-	@property
-	def BnfcryCertfctnCmpltn(self):
-		return self._BnfcryCertfctnCmpltn
-
-	@BnfcryCertfctnCmpltn.setter
-	def BnfcryCertfctnCmpltn(self, value):
-		self._BnfcryCertfctnCmpltn = value if type(value) != base_types.auto else self.make_default("BnfcryCertfctnCmpltn")
-
-	@BnfcryCertfctnCmpltn.deleter
-	def BnfcryCertfctnCmpltn(self):
-		del self._BnfcryCertfctnCmpltn
-		self._BnfcryCertfctnCmpltn = None
-
-	@property
-	def PhysTrf(self):
-		return self._PhysTrf
-
-	@PhysTrf.setter
-	def PhysTrf(self, value):
-		self._PhysTrf = value if type(value) != base_types.auto else self.make_default("PhysTrf")
-
-	@PhysTrf.deleter
-	def PhysTrf(self):
-		del self._PhysTrf
-		self._PhysTrf = None
-
-	@property
-	def ReqdTradDt(self):
-		return self._ReqdTradDt
-
-	@ReqdTradDt.setter
-	def ReqdTradDt(self, value):
-		self._ReqdTradDt = value if type(value) != base_types.auto else self.make_default("ReqdTradDt")
-
-	@ReqdTradDt.deleter
-	def ReqdTradDt(self):
-		del self._ReqdTradDt
-		self._ReqdTradDt = None
-
-	@property
 	def Fees(self):
 		return self._Fees
 
@@ -202,45 +85,6 @@ class DeliverInformation20(base_types._BaseFieldType):
 	def Fees(self):
 		del self._Fees
 		self._Fees = None
-
-	@property
-	def ReqdSttlmDt(self):
-		return self._ReqdSttlmDt
-
-	@ReqdSttlmDt.setter
-	def ReqdSttlmDt(self, value):
-		self._ReqdSttlmDt = value if type(value) != base_types.auto else self.make_default("ReqdSttlmDt")
-
-	@ReqdSttlmDt.deleter
-	def ReqdSttlmDt(self):
-		del self._ReqdSttlmDt
-		self._ReqdSttlmDt = None
-
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
-	def StmpDty(self):
-		return self._StmpDty
-
-	@StmpDty.setter
-	def StmpDty(self, value):
-		self._StmpDty = value if type(value) != base_types.auto else self.make_default("StmpDty")
-
-	@StmpDty.deleter
-	def StmpDty(self):
-		del self._StmpDty
-		self._StmpDty = None
 
 	@property
 	def DmtrlsdInd(self):
@@ -256,17 +100,69 @@ class DeliverInformation20(base_types._BaseFieldType):
 		self._DmtrlsdInd = None
 
 	@property
-	def SttlmAmt(self):
-		return self._SttlmAmt
+	def ClntRef(self):
+		return self._ClntRef
 
-	@SttlmAmt.setter
-	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
 
-	@SttlmAmt.deleter
-	def SttlmAmt(self):
-		del self._SttlmAmt
-		self._SttlmAmt = None
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
+	@property
+	def IndvTax(self):
+		return self._IndvTax
+
+	@IndvTax.setter
+	def IndvTax(self, value):
+		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
+
+	@IndvTax.deleter
+	def IndvTax(self):
+		del self._IndvTax
+		self._IndvTax = None
+
+	@property
+	def TrfrRegdAcct(self):
+		return self._TrfrRegdAcct
+
+	@TrfrRegdAcct.setter
+	def TrfrRegdAcct(self, value):
+		self._TrfrRegdAcct = value if type(value) != base_types.auto else self.make_default("TrfrRegdAcct")
+
+	@TrfrRegdAcct.deleter
+	def TrfrRegdAcct(self):
+		del self._TrfrRegdAcct
+		self._TrfrRegdAcct = None
+
+	@property
+	def SctiesForm(self):
+		return self._SctiesForm
+
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
+
+	@property
+	def NetAmt(self):
+		return self._NetAmt
+
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
 	def IntrmyInf(self):
@@ -281,26 +177,130 @@ class DeliverInformation20(base_types._BaseFieldType):
 		del self._IntrmyInf
 		self._IntrmyInf = None
 
+	@property
+	def FXDtls(self):
+		return self._FXDtls
+
+	@FXDtls.setter
+	def FXDtls(self, value):
+		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+
+	@FXDtls.deleter
+	def FXDtls(self):
+		del self._FXDtls
+		self._FXDtls = None
+
+	@property
+	def FctvSttlmDt(self):
+		return self._FctvSttlmDt
+
+	@FctvSttlmDt.setter
+	def FctvSttlmDt(self, value):
+		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+
+	@FctvSttlmDt.deleter
+	def FctvSttlmDt(self):
+		del self._FctvSttlmDt
+		self._FctvSttlmDt = None
+
+	@property
+	def StmpDty(self):
+		return self._StmpDty
+
+	@StmpDty.setter
+	def StmpDty(self, value):
+		self._StmpDty = value if type(value) != base_types.auto else self.make_default("StmpDty")
+
+	@StmpDty.deleter
+	def StmpDty(self):
+		del self._StmpDty
+		self._StmpDty = None
+
+	@property
+	def SttlmPtiesDtls(self):
+		return self._SttlmPtiesDtls
+
+	@SttlmPtiesDtls.setter
+	def SttlmPtiesDtls(self, value):
+		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
+
+	@SttlmPtiesDtls.deleter
+	def SttlmPtiesDtls(self):
+		del self._SttlmPtiesDtls
+		self._SttlmPtiesDtls = None
+
+	@property
+	def PhysTrf(self):
+		return self._PhysTrf
+
+	@PhysTrf.setter
+	def PhysTrf(self, value):
+		self._PhysTrf = value if type(value) != base_types.auto else self.make_default("PhysTrf")
+
+	@PhysTrf.deleter
+	def PhysTrf(self):
+		del self._PhysTrf
+		self._PhysTrf = None
+
+	@property
+	def Trfr(self):
+		return self._Trfr
+
+	@Trfr.setter
+	def Trfr(self, value):
+		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
+
+	@Trfr.deleter
+	def Trfr(self):
+		del self._Trfr
+		self._Trfr = None
+
+	@property
+	def BnfcryCertfctnCmpltn(self):
+		return self._BnfcryCertfctnCmpltn
+
+	@BnfcryCertfctnCmpltn.setter
+	def BnfcryCertfctnCmpltn(self, value):
+		self._BnfcryCertfctnCmpltn = value if type(value) != base_types.auto else self.make_default("BnfcryCertfctnCmpltn")
+
+	@BnfcryCertfctnCmpltn.deleter
+	def BnfcryCertfctnCmpltn(self):
+		del self._BnfcryCertfctnCmpltn
+		self._BnfcryCertfctnCmpltn = None
+
+	@property
+	def SttlmAmt(self):
+		return self._SttlmAmt
+
+	@SttlmAmt.setter
+	def SttlmAmt(self, value):
+		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+
+	@SttlmAmt.deleter
+	def SttlmAmt(self):
+		del self._SttlmAmt
+		self._SttlmAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhysTrfDtls', type=DeliveryParameters4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IncmPref', type=IncomePreference2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms37, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trfr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfrRegdAcct', type=Account31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvTax', type=Tax38, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PhysTrf', type=PhysicalTransferType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdTradDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fees', type=Fees2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmpDty', type=StampDutyType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmtrlsdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvTax', type=Tax38, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfrRegdAcct', type=Account31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary43, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FXDtls', type=ForeignExchangeTerms37, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FctvSttlmDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmpDty', type=StampDutyType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPtiesDtls', type=FundSettlementParameters15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhysTrf', type=PhysicalTransferType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trfr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

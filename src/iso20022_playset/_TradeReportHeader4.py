@@ -1,25 +1,25 @@
 from . import base_types
-from .Number import Number
-from .Pagination1 import Pagination1
-from .Max100Text import Max100Text
-from .ISODate import ISODate
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._Number import Number
+from ._Pagination1 import Pagination1
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from ._ISODate import ISODate
+from ._Max100Text import Max100Text
 
 class TradeReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_RptExctnDt", "_RptgPurp", "_CmptntAuthrty", "_NewTradRpstryIdr", "_NbRcrds"]
+	__slots__ = ["_NewTradRpstryIdr", "_RptExctnDt", "_CmptntAuthrty", "_NbRcrds", "_RptgPurp", "_MsgPgntn"]
 	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
+	def NewTradRpstryIdr(self):
+		return self._NewTradRpstryIdr
 
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+	@NewTradRpstryIdr.setter
+	def NewTradRpstryIdr(self, value):
+		self._NewTradRpstryIdr = value if type(value) != base_types.auto else self.make_default("NewTradRpstryIdr")
 
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
+	@NewTradRpstryIdr.deleter
+	def NewTradRpstryIdr(self):
+		del self._NewTradRpstryIdr
+		self._NewTradRpstryIdr = None
 
 	@property
 	def RptExctnDt(self):
@@ -35,19 +35,6 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		self._RptExctnDt = None
 
 	@property
-	def RptgPurp(self):
-		return self._RptgPurp
-
-	@RptgPurp.setter
-	def RptgPurp(self, value):
-		self._RptgPurp = value if type(value) != base_types.auto else self.make_default("RptgPurp")
-
-	@RptgPurp.deleter
-	def RptgPurp(self):
-		del self._RptgPurp
-		self._RptgPurp = None
-
-	@property
 	def CmptntAuthrty(self):
 		return self._CmptntAuthrty
 
@@ -59,19 +46,6 @@ class TradeReportHeader4(base_types._BaseFieldType):
 	def CmptntAuthrty(self):
 		del self._CmptntAuthrty
 		self._CmptntAuthrty = None
-
-	@property
-	def NewTradRpstryIdr(self):
-		return self._NewTradRpstryIdr
-
-	@NewTradRpstryIdr.setter
-	def NewTradRpstryIdr(self, value):
-		self._NewTradRpstryIdr = value if type(value) != base_types.auto else self.make_default("NewTradRpstryIdr")
-
-	@NewTradRpstryIdr.deleter
-	def NewTradRpstryIdr(self):
-		del self._NewTradRpstryIdr
-		self._NewTradRpstryIdr = None
 
 	@property
 	def NbRcrds(self):
@@ -86,12 +60,38 @@ class TradeReportHeader4(base_types._BaseFieldType):
 		del self._NbRcrds
 		self._NbRcrds = None
 
+	@property
+	def RptgPurp(self):
+		return self._RptgPurp
+
+	@RptgPurp.setter
+	def RptgPurp(self, value):
+		self._RptgPurp = value if type(value) != base_types.auto else self.make_default("RptgPurp")
+
+	@RptgPurp.deleter
+	def RptgPurp(self):
+		del self._RptgPurp
+		self._RptgPurp = None
+
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPurp', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewTradRpstryIdr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptExctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbRcrds', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgPurp', type=Max100Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 	))
 

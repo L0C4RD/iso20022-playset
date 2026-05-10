@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .InvestigationLocationData1 import InvestigationLocationData1
+from ._Max35Text import Max35Text
+from ._InvestigationLocationData1 import InvestigationLocationData1
 
 class RelatedInvestigationData1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lctn", "_InvstgtnId"]
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
+	__slots__ = ["_InvstgtnId", "_Lctn"]
 	@property
 	def InvstgtnId(self):
 		return self._InvstgtnId
@@ -31,8 +18,21 @@ class RelatedInvestigationData1(base_types._BaseFieldType):
 		del self._InvstgtnId
 		self._InvstgtnId = None
 
+	@property
+	def Lctn(self):
+		return self._Lctn
+
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lctn', type=InvestigationLocationData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=InvestigationLocationData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

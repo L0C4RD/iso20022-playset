@@ -1,26 +1,13 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .PartyIdentification137Choice import PartyIdentification137Choice
-from .BlockChainAddressWallet7 import BlockChainAddressWallet7
-from .SecuritiesAccount30 import SecuritiesAccount30
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._PartyIdentification137Choice import PartyIdentification137Choice
+from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
+from ._SecuritiesAccount30 import SecuritiesAccount30
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_PrcgId", "_BlckChainAdrOrWllt", "_LEI", "_SfkpgAcct"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_Id", "_LEI", "_SfkpgAcct"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -46,6 +33,19 @@ class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def LEI(self):
@@ -74,9 +74,9 @@ class PartyIdentificationAndAccount215(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 	))

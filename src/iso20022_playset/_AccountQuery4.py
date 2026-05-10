@@ -1,6 +1,6 @@
 from . import base_types
-from .AccountCriteria4Choice import AccountCriteria4Choice
-from .QueryType2Code import QueryType2Code
+from ._QueryType2Code import QueryType2Code
+from ._AccountCriteria4Choice import AccountCriteria4Choice
 
 class AccountQuery4(base_types._BaseFieldType):
 

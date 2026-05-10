@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BusinessDaySearchCriteria2 import BusinessDaySearchCriteria2
-from .BusinessDayReturnCriteria2 import BusinessDayReturnCriteria2
+from ._Max35Text import Max35Text
+from ._BusinessDaySearchCriteria2 import BusinessDaySearchCriteria2
+from ._BusinessDayReturnCriteria2 import BusinessDayReturnCriteria2
 
 class BusinessDayCriteria2(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .MandateAcceptanceReportV08 import MandateAcceptanceReportV08
+from ._MandateAcceptanceReportV08 import MandateAcceptanceReportV08
 
 class PAIN_012_001_08():
 

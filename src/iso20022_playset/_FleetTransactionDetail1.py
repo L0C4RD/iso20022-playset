@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FleetPurchaseType1Code import FleetPurchaseType1Code
-from .Tax41 import Tax41
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Tax41 import Tax41
+from ._Max35Text import Max35Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._FleetPurchaseType1Code import FleetPurchaseType1Code
 
 class FleetTransactionDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_DscntTtlFuelAmt", "_TaxTtl", "_DscntTtlAmt", "_PurchsTp", "_SummryCmmdtyId", "_DscntTtlNonFuelAmt", "_TtlAmt"]
+	__slots__ = ["_DscntTtlAmt", "_TaxTtl", "_DscntTtlFuelAmt", "_PurchsTp", "_SummryCmmdtyId", "_DscntTtlNonFuelAmt", "_TtlAmt"]
 	@property
-	def DscntTtlFuelAmt(self):
-		return self._DscntTtlFuelAmt
+	def DscntTtlAmt(self):
+		return self._DscntTtlAmt
 
-	@DscntTtlFuelAmt.setter
-	def DscntTtlFuelAmt(self, value):
-		self._DscntTtlFuelAmt = value if type(value) != base_types.auto else self.make_default("DscntTtlFuelAmt")
+	@DscntTtlAmt.setter
+	def DscntTtlAmt(self, value):
+		self._DscntTtlAmt = value if type(value) != base_types.auto else self.make_default("DscntTtlAmt")
 
-	@DscntTtlFuelAmt.deleter
-	def DscntTtlFuelAmt(self):
-		del self._DscntTtlFuelAmt
-		self._DscntTtlFuelAmt = None
+	@DscntTtlAmt.deleter
+	def DscntTtlAmt(self):
+		del self._DscntTtlAmt
+		self._DscntTtlAmt = None
 
 	@property
 	def TaxTtl(self):
@@ -34,17 +34,17 @@ class FleetTransactionDetail1(base_types._BaseFieldType):
 		self._TaxTtl = None
 
 	@property
-	def DscntTtlAmt(self):
-		return self._DscntTtlAmt
+	def DscntTtlFuelAmt(self):
+		return self._DscntTtlFuelAmt
 
-	@DscntTtlAmt.setter
-	def DscntTtlAmt(self, value):
-		self._DscntTtlAmt = value if type(value) != base_types.auto else self.make_default("DscntTtlAmt")
+	@DscntTtlFuelAmt.setter
+	def DscntTtlFuelAmt(self, value):
+		self._DscntTtlFuelAmt = value if type(value) != base_types.auto else self.make_default("DscntTtlFuelAmt")
 
-	@DscntTtlAmt.deleter
-	def DscntTtlAmt(self):
-		del self._DscntTtlAmt
-		self._DscntTtlAmt = None
+	@DscntTtlFuelAmt.deleter
+	def DscntTtlFuelAmt(self):
+		del self._DscntTtlFuelAmt
+		self._DscntTtlFuelAmt = None
 
 	@property
 	def PurchsTp(self):
@@ -99,9 +99,9 @@ class FleetTransactionDetail1(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DscntTtlFuelAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxTtl', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DscntTtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxTtl', type=Tax41, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DscntTtlFuelAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsTp', type=FleetPurchaseType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscntTtlNonFuelAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

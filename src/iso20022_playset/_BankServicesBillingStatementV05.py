@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportHeader6 import ReportHeader6
-from .StatementGroup5 import StatementGroup5
+from ._StatementGroup5 import StatementGroup5
+from ._ReportHeader6 import ReportHeader6
 
 class BankServicesBillingStatementV05(base_types._BaseFieldType):
 

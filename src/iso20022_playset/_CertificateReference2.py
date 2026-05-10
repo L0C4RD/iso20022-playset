@@ -1,6 +1,6 @@
 from . import base_types
-from .ISODate import ISODate
-from .CertificateIdentification1 import CertificateIdentification1
+from ._CertificateIdentification1 import CertificateIdentification1
+from ._ISODate import ISODate
 
 class CertificateReference2(base_types._BaseFieldType):
 

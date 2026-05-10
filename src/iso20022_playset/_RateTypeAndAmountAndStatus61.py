@@ -1,24 +1,11 @@
 from . import base_types
-from .RateType82Choice import RateType82Choice
-from .RateStatus4Choice import RateStatus4Choice
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RateType82Choice import RateType82Choice
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RateStatus4Choice import RateStatus4Choice
 
 class RateTypeAndAmountAndStatus61(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RateSts", "_RateTp"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_RateSts", "_Amt", "_RateTp"]
 	@property
 	def RateSts(self):
 		return self._RateSts
@@ -31,6 +18,19 @@ class RateTypeAndAmountAndStatus61(base_types._BaseFieldType):
 	def RateSts(self):
 		del self._RateSts
 		self._RateSts = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def RateTp(self):
@@ -46,8 +46,8 @@ class RateTypeAndAmountAndStatus61(base_types._BaseFieldType):
 		self._RateTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateSts', type=RateStatus4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=RateType82Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

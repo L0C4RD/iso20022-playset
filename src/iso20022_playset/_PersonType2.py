@@ -1,23 +1,10 @@
 from . import base_types
-from .RequestedIndicator import RequestedIndicator
-from .GenericPersonType1 import GenericPersonType1
+from ._RequestedIndicator import RequestedIndicator
+from ._GenericPersonType1 import GenericPersonType1
 
 class PersonType2(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_Othr", "_DtAndPlcOfBirth"]
-	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
+	__slots__ = ["_Othr", "_DtAndPlcOfBirth", "_EmailAdr"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -44,9 +31,22 @@ class PersonType2(base_types._BaseFieldType):
 		del self._DtAndPlcOfBirth
 		self._DtAndPlcOfBirth = None
 
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericPersonType1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DtAndPlcOfBirth', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

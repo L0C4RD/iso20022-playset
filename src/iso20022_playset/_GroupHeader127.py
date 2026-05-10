@@ -1,32 +1,19 @@
 from . import base_types
-from .Authorisation1Choice import Authorisation1Choice
-from .ISODate import ISODate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .SettlementInstruction15 import SettlementInstruction15
-from .Max35Text import Max35Text
-from .TrueFalseIndicator import TrueFalseIndicator
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .ISODateTime import ISODateTime
-from .DecimalNumber import DecimalNumber
-from .BatchBookingIndicator import BatchBookingIndicator
-from .Max15NumericText import Max15NumericText
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._SettlementInstruction15 import SettlementInstruction15
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._Authorisation1Choice import Authorisation1Choice
+from ._BatchBookingIndicator import BatchBookingIndicator
+from ._Max15NumericText import Max15NumericText
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._ISODate import ISODate
+from ._DecimalNumber import DecimalNumber
+from ._ISODateTime import ISODateTime
 
 class GroupHeader127(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_CreDtTm", "_CtrlSum", "_SttlmInf", "_MsgId", "_GrpRvsl", "_InstdAgt", "_BtchBookg", "_InstgAgt", "_Authstn", "_TtlRvsdIntrBkSttlmAmt", "_IntrBkSttlmDt"]
-	@property
-	def NbOfTxs(self):
-		return self._NbOfTxs
-
-	@NbOfTxs.setter
-	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
-
-	@NbOfTxs.deleter
-	def NbOfTxs(self):
-		del self._NbOfTxs
-		self._NbOfTxs = None
-
+	__slots__ = ["_CreDtTm", "_IntrBkSttlmDt", "_TtlRvsdIntrBkSttlmAmt", "_BtchBookg", "_SttlmInf", "_InstgAgt", "_MsgId", "_NbOfTxs", "_GrpRvsl", "_InstdAgt", "_Authstn", "_CtrlSum"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -41,17 +28,43 @@ class GroupHeader127(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def IntrBkSttlmDt(self):
+		return self._IntrBkSttlmDt
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+	@IntrBkSttlmDt.setter
+	def IntrBkSttlmDt(self, value):
+		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@IntrBkSttlmDt.deleter
+	def IntrBkSttlmDt(self):
+		del self._IntrBkSttlmDt
+		self._IntrBkSttlmDt = None
+
+	@property
+	def TtlRvsdIntrBkSttlmAmt(self):
+		return self._TtlRvsdIntrBkSttlmAmt
+
+	@TtlRvsdIntrBkSttlmAmt.setter
+	def TtlRvsdIntrBkSttlmAmt(self, value):
+		self._TtlRvsdIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("TtlRvsdIntrBkSttlmAmt")
+
+	@TtlRvsdIntrBkSttlmAmt.deleter
+	def TtlRvsdIntrBkSttlmAmt(self):
+		del self._TtlRvsdIntrBkSttlmAmt
+		self._TtlRvsdIntrBkSttlmAmt = None
+
+	@property
+	def BtchBookg(self):
+		return self._BtchBookg
+
+	@BtchBookg.setter
+	def BtchBookg(self, value):
+		self._BtchBookg = value if type(value) != base_types.auto else self.make_default("BtchBookg")
+
+	@BtchBookg.deleter
+	def BtchBookg(self):
+		del self._BtchBookg
+		self._BtchBookg = None
 
 	@property
 	def SttlmInf(self):
@@ -67,6 +80,19 @@ class GroupHeader127(base_types._BaseFieldType):
 		self._SttlmInf = None
 
 	@property
+	def InstgAgt(self):
+		return self._InstgAgt
+
+	@InstgAgt.setter
+	def InstgAgt(self, value):
+		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+
+	@InstgAgt.deleter
+	def InstgAgt(self):
+		del self._InstgAgt
+		self._InstgAgt = None
+
+	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -78,6 +104,19 @@ class GroupHeader127(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
+
+	@property
+	def NbOfTxs(self):
+		return self._NbOfTxs
+
+	@NbOfTxs.setter
+	def NbOfTxs(self, value):
+		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+
+	@NbOfTxs.deleter
+	def NbOfTxs(self):
+		del self._NbOfTxs
+		self._NbOfTxs = None
 
 	@property
 	def GrpRvsl(self):
@@ -106,32 +145,6 @@ class GroupHeader127(base_types._BaseFieldType):
 		self._InstdAgt = None
 
 	@property
-	def BtchBookg(self):
-		return self._BtchBookg
-
-	@BtchBookg.setter
-	def BtchBookg(self, value):
-		self._BtchBookg = value if type(value) != base_types.auto else self.make_default("BtchBookg")
-
-	@BtchBookg.deleter
-	def BtchBookg(self):
-		del self._BtchBookg
-		self._BtchBookg = None
-
-	@property
-	def InstgAgt(self):
-		return self._InstgAgt
-
-	@InstgAgt.setter
-	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
-
-	@InstgAgt.deleter
-	def InstgAgt(self):
-		del self._InstgAgt
-		self._InstgAgt = None
-
-	@property
 	def Authstn(self):
 		return self._Authstn
 
@@ -145,43 +158,30 @@ class GroupHeader127(base_types._BaseFieldType):
 		self._Authstn = None
 
 	@property
-	def TtlRvsdIntrBkSttlmAmt(self):
-		return self._TtlRvsdIntrBkSttlmAmt
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@TtlRvsdIntrBkSttlmAmt.setter
-	def TtlRvsdIntrBkSttlmAmt(self, value):
-		self._TtlRvsdIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("TtlRvsdIntrBkSttlmAmt")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
 
-	@TtlRvsdIntrBkSttlmAmt.deleter
-	def TtlRvsdIntrBkSttlmAmt(self):
-		del self._TtlRvsdIntrBkSttlmAmt
-		self._TtlRvsdIntrBkSttlmAmt = None
-
-	@property
-	def IntrBkSttlmDt(self):
-		return self._IntrBkSttlmDt
-
-	@IntrBkSttlmDt.setter
-	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
-
-	@IntrBkSttlmDt.deleter
-	def IntrBkSttlmDt(self):
-		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlRvsdIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmInf', type=SettlementInstruction15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpRvsl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlRvsdIntrBkSttlmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrBkSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

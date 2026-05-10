@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialSupervisedPartyIdentityReportV01 import FinancialSupervisedPartyIdentityReportV01
+from ._FinancialSupervisedPartyIdentityReportV01 import FinancialSupervisedPartyIdentityReportV01
 
 class AUTH_076_001_01():
 

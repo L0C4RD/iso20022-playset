@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from .TransferOfProceedsType1Code import TransferOfProceedsType1Code
-from .ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
+from ._Max35Text import Max35Text
+from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from ._ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
+from ._TransferOfProceedsType1Code import TransferOfProceedsType1Code
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdSttlmInstrId", "_PrcdsQtyBrkdwn", "_TrfOfPrcdsTpInd", "_RltdSttlmQty"]
+	__slots__ = ["_TrfOfPrcdsTpInd", "_PrcdsQtyBrkdwn", "_RltdSttlmInstrId", "_RltdSttlmQty"]
 	@property
-	def RltdSttlmInstrId(self):
-		return self._RltdSttlmInstrId
+	def TrfOfPrcdsTpInd(self):
+		return self._TrfOfPrcdsTpInd
 
-	@RltdSttlmInstrId.setter
-	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
+	@TrfOfPrcdsTpInd.setter
+	def TrfOfPrcdsTpInd(self, value):
+		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
 
-	@RltdSttlmInstrId.deleter
-	def RltdSttlmInstrId(self):
-		del self._RltdSttlmInstrId
-		self._RltdSttlmInstrId = None
+	@TrfOfPrcdsTpInd.deleter
+	def TrfOfPrcdsTpInd(self):
+		del self._TrfOfPrcdsTpInd
+		self._TrfOfPrcdsTpInd = None
 
 	@property
 	def PrcdsQtyBrkdwn(self):
@@ -34,17 +34,17 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 		self._PrcdsQtyBrkdwn = None
 
 	@property
-	def TrfOfPrcdsTpInd(self):
-		return self._TrfOfPrcdsTpInd
+	def RltdSttlmInstrId(self):
+		return self._RltdSttlmInstrId
 
-	@TrfOfPrcdsTpInd.setter
-	def TrfOfPrcdsTpInd(self, value):
-		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
+	@RltdSttlmInstrId.setter
+	def RltdSttlmInstrId(self, value):
+		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
 
-	@TrfOfPrcdsTpInd.deleter
-	def TrfOfPrcdsTpInd(self):
-		del self._TrfOfPrcdsTpInd
-		self._TrfOfPrcdsTpInd = None
+	@RltdSttlmInstrId.deleter
+	def RltdSttlmInstrId(self):
+		del self._RltdSttlmInstrId
+		self._RltdSttlmInstrId = None
 
 	@property
 	def RltdSttlmQty(self):
@@ -60,9 +60,9 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 		self._RltdSttlmQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdSttlmInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcdsQtyBrkdwn', type=ProceedsQuantityBreakdown1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfOfPrcdsTpInd', type=TransferOfProceedsType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcdsQtyBrkdwn', type=ProceedsQuantityBreakdown1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdSttlmInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdSttlmQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

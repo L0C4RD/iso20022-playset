@@ -1,24 +1,24 @@
 from . import base_types
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from .SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
-from .Schedule1 import Schedule1
-from .UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from ._Schedule1 import Schedule1
 
 class PriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_SchdlPrd", "_Pric", "_PricMltplr"]
+	__slots__ = ["_Pric", "_SchdlPrd", "_UnitOfMeasr", "_PricMltplr"]
 	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
+	def Pric(self):
+		return self._Pric
 
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+	@Pric.setter
+	def Pric(self, value):
+		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
 
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+	@Pric.deleter
+	def Pric(self):
+		del self._Pric
+		self._Pric = None
 
 	@property
 	def SchdlPrd(self):
@@ -34,17 +34,17 @@ class PriceData2(base_types._BaseFieldType):
 		self._SchdlPrd = None
 
 	@property
-	def Pric(self):
-		return self._Pric
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
 
-	@Pric.setter
-	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
 
-	@Pric.deleter
-	def Pric(self):
-		del self._Pric
-		self._Pric = None
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
 
 	@property
 	def PricMltplr(self):
@@ -60,9 +60,9 @@ class PriceData2(base_types._BaseFieldType):
 		self._PricMltplr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricMltplr', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

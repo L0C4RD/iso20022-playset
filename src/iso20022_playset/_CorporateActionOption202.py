@@ -1,7 +1,7 @@
 from . import base_types
-from .CorporateActionOption43Choice import CorporateActionOption43Choice
-from .Quantity55Choice import Quantity55Choice
-from .OptionNumber1Choice import OptionNumber1Choice
+from ._CorporateActionOption43Choice import CorporateActionOption43Choice
+from ._Quantity55Choice import Quantity55Choice
+from ._OptionNumber1Choice import OptionNumber1Choice
 
 class CorporateActionOption202(base_types._BaseFieldType):
 

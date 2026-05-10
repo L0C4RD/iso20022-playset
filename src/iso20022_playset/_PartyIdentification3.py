@@ -1,5 +1,5 @@
 from . import base_types
-from .AnyBICIdentifier import AnyBICIdentifier
+from ._AnyBICIdentifier import AnyBICIdentifier
 
 class PartyIdentification3(base_types._BaseFieldType):
 

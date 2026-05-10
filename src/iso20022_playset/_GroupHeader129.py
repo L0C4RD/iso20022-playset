@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .Party50Choice import Party50Choice
+from ._Max35Text import Max35Text
+from ._Party50Choice import Party50Choice
+from ._ISODateTime import ISODateTime
 
 class GroupHeader129(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm", "_Rcvr", "_Sndr"]
+	__slots__ = ["_Sndr", "_CreDtTm", "_MsgId", "_Rcvr"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def Sndr(self):
+		return self._Sndr
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
 
 	@property
 	def CreDtTm(self):
@@ -33,6 +33,19 @@ class GroupHeader129(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
 	def Rcvr(self):
 		return self._Rcvr
 
@@ -45,23 +58,10 @@ class GroupHeader129(base_types._BaseFieldType):
 		del self._Rcvr
 		self._Rcvr = None
 
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sndr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

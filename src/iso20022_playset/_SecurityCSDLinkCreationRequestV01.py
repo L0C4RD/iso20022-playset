@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SecurityCSDLink12 import SecurityCSDLink12
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._SecurityCSDLink12 import SecurityCSDLink12
 
 class SecurityCSDLinkCreationRequestV01(base_types._BaseFieldType):
 

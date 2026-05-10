@@ -1,6 +1,6 @@
 from . import base_types
-from .PendingProcessingReason15Choice import PendingProcessingReason15Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._PendingProcessingReason15Choice import PendingProcessingReason15Choice
 
 class PendingProcessingReason13(base_types._BaseFieldType):
 

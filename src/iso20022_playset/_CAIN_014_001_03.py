@@ -1,5 +1,5 @@
 from . import base_types
-from .RetrievalFulfilmentInitiationV03 import RetrievalFulfilmentInitiationV03
+from ._RetrievalFulfilmentInitiationV03 import RetrievalFulfilmentInitiationV03
 
 class CAIN_014_001_03():
 

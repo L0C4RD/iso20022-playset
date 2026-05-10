@@ -1,5 +1,5 @@
 from . import base_types
-from .ShareholdersIdentificationDisclosureRequestV04 import ShareholdersIdentificationDisclosureRequestV04
+from ._ShareholdersIdentificationDisclosureRequestV04 import ShareholdersIdentificationDisclosureRequestV04
 
 class SEEV_045_001_04():
 

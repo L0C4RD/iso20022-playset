@@ -1,6 +1,6 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .UnitOfMeasure3Choice import UnitOfMeasure3Choice
+from ._DecimalNumber import DecimalNumber
+from ._UnitOfMeasure3Choice import UnitOfMeasure3Choice
 
 class Quantity10(base_types._BaseFieldType):
 

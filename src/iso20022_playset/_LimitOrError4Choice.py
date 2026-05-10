@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .Limit7 import Limit7
+from ._Limit7 import Limit7
+from ._ErrorHandling5 import ErrorHandling5
 
 class LimitOrError4Choice(base_types._BaseFieldType):
 

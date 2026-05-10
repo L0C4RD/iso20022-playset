@@ -1,6 +1,6 @@
 from . import base_types
-from .PriceRateType3Code import PriceRateType3Code
-from .GenericIdentification13 import GenericIdentification13
+from ._GenericIdentification13 import GenericIdentification13
+from ._PriceRateType3Code import PriceRateType3Code
 
 class PriceRateType3FormatChoice(base_types._BaseFieldType):
 

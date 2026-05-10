@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ProcessingPosition9Choice import ProcessingPosition9Choice
+from ._ProcessingPosition9Choice import ProcessingPosition9Choice
+from ._Max35Text import Max35Text
 
 class Linkages41(base_types._BaseFieldType):
 

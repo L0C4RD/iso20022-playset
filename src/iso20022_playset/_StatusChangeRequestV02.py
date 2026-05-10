@@ -1,12 +1,12 @@
 from . import base_types
-from .Reason2 import Reason2
-from .TransactionStatus3 import TransactionStatus3
-from .MessageIdentification1 import MessageIdentification1
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._TransactionStatus3 import TransactionStatus3
+from ._Reason2 import Reason2
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._MessageIdentification1 import MessageIdentification1
 
 class StatusChangeRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitrTxRef", "_ReqId", "_ReqRsn", "_TxId", "_ReqdSts"]
+	__slots__ = ["_SubmitrTxRef", "_TxId", "_ReqdSts", "_ReqId", "_ReqRsn"]
 	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
@@ -19,32 +19,6 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
 		self._SubmitrTxRef = None
-
-	@property
-	def ReqId(self):
-		return self._ReqId
-
-	@ReqId.setter
-	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
-
-	@ReqId.deleter
-	def ReqId(self):
-		del self._ReqId
-		self._ReqId = None
-
-	@property
-	def ReqRsn(self):
-		return self._ReqRsn
-
-	@ReqRsn.setter
-	def ReqRsn(self, value):
-		self._ReqRsn = value if type(value) != base_types.auto else self.make_default("ReqRsn")
-
-	@ReqRsn.deleter
-	def ReqRsn(self):
-		del self._ReqRsn
-		self._ReqRsn = None
 
 	@property
 	def TxId(self):
@@ -72,11 +46,37 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 		del self._ReqdSts
 		self._ReqdSts = None
 
+	@property
+	def ReqId(self):
+		return self._ReqId
+
+	@ReqId.setter
+	def ReqId(self, value):
+		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+
+	@ReqId.deleter
+	def ReqId(self):
+		del self._ReqId
+		self._ReqId = None
+
+	@property
+	def ReqRsn(self):
+		return self._ReqRsn
+
+	@ReqRsn.setter
+	def ReqRsn(self, value):
+		self._ReqRsn = value if type(value) != base_types.auto else self.make_default("ReqRsn")
+
+	@ReqRsn.deleter
+	def ReqRsn(self):
+		del self._ReqRsn
+		self._ReqRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdSts', type=TransactionStatus3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

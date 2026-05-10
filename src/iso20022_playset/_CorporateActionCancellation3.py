@@ -1,23 +1,23 @@
 from . import base_types
-from .CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
-from .Max140Text import Max140Text
-from .CorporateActionEventStatus1 import CorporateActionEventStatus1
+from ._Max140Text import Max140Text
+from ._CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
+from ._CorporateActionEventStatus1 import CorporateActionEventStatus1
 
 class CorporateActionCancellation3(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_PrcgSts", "_CxlRsnCd"]
+	__slots__ = ["_CxlRsnCd", "_PrcgSts", "_CxlRsn"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def CxlRsnCd(self):
+		return self._CxlRsnCd
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+	@CxlRsnCd.setter
+	def CxlRsnCd(self, value):
+		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@CxlRsnCd.deleter
+	def CxlRsnCd(self):
+		del self._CxlRsnCd
+		self._CxlRsnCd = None
 
 	@property
 	def PrcgSts(self):
@@ -33,21 +33,21 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	@property
-	def CxlRsnCd(self):
-		return self._CxlRsnCd
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@CxlRsnCd.setter
-	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
 
-	@CxlRsnCd.deleter
-	def CxlRsnCd(self):
-		del self._CxlRsnCd
-		self._CxlRsnCd = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

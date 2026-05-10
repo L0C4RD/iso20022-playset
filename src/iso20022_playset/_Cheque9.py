@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FinancialInstitutionIdentification10 import FinancialInstitutionIdentification10
-from .PartyIdentification113 import PartyIdentification113
+from ._Max35Text import Max35Text
+from ._PartyIdentification113 import PartyIdentification113
+from ._FinancialInstitutionIdentification10 import FinancialInstitutionIdentification10
 
 class Cheque9(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwrId", "_DrweeId", "_PyeeId", "_Nb"]
+	__slots__ = ["_DrwrId", "_DrweeId", "_Nb", "_PyeeId"]
 	@property
 	def DrwrId(self):
 		return self._DrwrId
@@ -33,19 +33,6 @@ class Cheque9(base_types._BaseFieldType):
 		self._DrweeId = None
 
 	@property
-	def PyeeId(self):
-		return self._PyeeId
-
-	@PyeeId.setter
-	def PyeeId(self, value):
-		self._PyeeId = value if type(value) != base_types.auto else self.make_default("PyeeId")
-
-	@PyeeId.deleter
-	def PyeeId(self):
-		del self._PyeeId
-		self._PyeeId = None
-
-	@property
 	def Nb(self):
 		return self._Nb
 
@@ -58,10 +45,23 @@ class Cheque9(base_types._BaseFieldType):
 		del self._Nb
 		self._Nb = None
 
+	@property
+	def PyeeId(self):
+		return self._PyeeId
+
+	@PyeeId.setter
+	def PyeeId(self, value):
+		self._PyeeId = value if type(value) != base_types.auto else self.make_default("PyeeId")
+
+	@PyeeId.deleter
+	def PyeeId(self):
+		del self._PyeeId
+		self._PyeeId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DrwrId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PyeeId', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PyeeId', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 	))
 

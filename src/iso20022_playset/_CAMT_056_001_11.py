@@ -1,5 +1,5 @@
 from . import base_types
-from .FIToFIPaymentCancellationRequestV11 import FIToFIPaymentCancellationRequestV11
+from ._FIToFIPaymentCancellationRequestV11 import FIToFIPaymentCancellationRequestV11
 
 class CAMT_056_001_11():
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .TMSTrigger1 import TMSTrigger1
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._TMSTrigger1 import TMSTrigger1
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_AcqrrAvlbl", "_TMSTrggr"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_AcqrrAvlbl", "_Envt", "_TMSTrggr"]
 	@property
 	def AcqrrAvlbl(self):
 		return self._AcqrrAvlbl
@@ -31,6 +18,19 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 	def AcqrrAvlbl(self):
 		del self._AcqrrAvlbl
 		self._AcqrrAvlbl = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def TMSTrggr(self):
@@ -46,8 +46,8 @@ class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 		self._TMSTrggr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqrrAvlbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
 	))
 

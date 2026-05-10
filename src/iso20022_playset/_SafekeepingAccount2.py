@@ -1,38 +1,38 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PartyIdentification2Choice import PartyIdentification2Choice
-from .YesNoIndicator import YesNoIndicator
-from .AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
-from .Intermediary11 import Intermediary11
+from ._PartyIdentification2Choice import PartyIdentification2Choice
+from ._Max35Text import Max35Text
+from ._Intermediary11 import Intermediary11
+from ._YesNoIndicator import YesNoIndicator
+from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SafekeepingAccount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Nm", "_FngbInd", "_AcctSvcr", "_Dsgnt", "_IntrmyInf", "_AcctOwnr"]
+	__slots__ = ["_AcctOwnr", "_Dsgnt", "_FngbInd", "_AcctSvcr", "_Nm", "_IntrmyInf", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Dsgnt(self):
+		return self._Dsgnt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
 
 	@property
 	def FngbInd(self):
@@ -61,17 +61,17 @@ class SafekeepingAccount2(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
+	def Nm(self):
+		return self._Nm
 
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def IntrmyInf(self):
@@ -87,25 +87,25 @@ class SafekeepingAccount2(base_types._BaseFieldType):
 		self._IntrmyInf = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def Id(self):
+		return self._Id
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary11, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

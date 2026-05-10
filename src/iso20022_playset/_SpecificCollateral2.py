@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstrument59 import FinancialInstrument59
+from ._FinancialInstrument59 import FinancialInstrument59
 
 class SpecificCollateral2(base_types._BaseFieldType):
 

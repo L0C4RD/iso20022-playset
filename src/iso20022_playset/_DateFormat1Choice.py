@@ -1,24 +1,11 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .ISODate import ISODate
-from .SettlementDate1Code import SettlementDate1Code
+from ._SettlementDate1Code import SettlementDate1Code
+from ._ISODate import ISODate
+from ._ISODateTime import ISODateTime
 
 class DateFormat1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTm", "_Dt", "_Cd"]
-	@property
-	def DtTm(self):
-		return self._DtTm
-
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
-
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
-
+	__slots__ = ["_Dt", "_Cd", "_DtTm"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -45,9 +32,22 @@ class DateFormat1Choice(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def DtTm(self):
+		return self._DtTm
+
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=SettlementDate1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 	))
 

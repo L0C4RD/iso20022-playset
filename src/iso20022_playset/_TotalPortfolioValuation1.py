@@ -1,24 +1,50 @@
 from . import base_types
-from .AmountAndDirection30 import AmountAndDirection30
-from .AmountAndRate2 import AmountAndRate2
-from .AmountAndDirection31 import AmountAndDirection31
-from .InvestmentFund1 import InvestmentFund1
+from ._AmountAndRate2 import AmountAndRate2
+from ._InvestmentFund1 import InvestmentFund1
+from ._AmountAndDirection30 import AmountAndDirection30
+from ._AmountAndDirection31 import AmountAndDirection31
 
 class TotalPortfolioValuation1(base_types._BaseFieldType):
 
-	__slots__ = ["_IncmRcvd", "_TtlBookVal", "_ExpnssPd", "_TtlPrtflValChng", "_TtlDsbrsmnts", "_PrvsTtlPrtflVal", "_TtlPrtflVal", "_RealsdGnOrLoss", "_InvstmtFndDtls", "_TtlRcts", "_TtlBookValChng", "_PrvsTtlBookVal", "_AcrdIncm", "_UrlsdGnOrLoss"]
+	__slots__ = ["_UrlsdGnOrLoss", "_PrvsTtlBookVal", "_RealsdGnOrLoss", "_TtlBookVal", "_TtlBookValChng", "_TtlDsbrsmnts", "_PrvsTtlPrtflVal", "_AcrdIncm", "_TtlPrtflVal", "_IncmRcvd", "_ExpnssPd", "_TtlRcts", "_TtlPrtflValChng", "_InvstmtFndDtls"]
 	@property
-	def IncmRcvd(self):
-		return self._IncmRcvd
+	def UrlsdGnOrLoss(self):
+		return self._UrlsdGnOrLoss
 
-	@IncmRcvd.setter
-	def IncmRcvd(self, value):
-		self._IncmRcvd = value if type(value) != base_types.auto else self.make_default("IncmRcvd")
+	@UrlsdGnOrLoss.setter
+	def UrlsdGnOrLoss(self, value):
+		self._UrlsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnOrLoss")
 
-	@IncmRcvd.deleter
-	def IncmRcvd(self):
-		del self._IncmRcvd
-		self._IncmRcvd = None
+	@UrlsdGnOrLoss.deleter
+	def UrlsdGnOrLoss(self):
+		del self._UrlsdGnOrLoss
+		self._UrlsdGnOrLoss = None
+
+	@property
+	def PrvsTtlBookVal(self):
+		return self._PrvsTtlBookVal
+
+	@PrvsTtlBookVal.setter
+	def PrvsTtlBookVal(self, value):
+		self._PrvsTtlBookVal = value if type(value) != base_types.auto else self.make_default("PrvsTtlBookVal")
+
+	@PrvsTtlBookVal.deleter
+	def PrvsTtlBookVal(self):
+		del self._PrvsTtlBookVal
+		self._PrvsTtlBookVal = None
+
+	@property
+	def RealsdGnOrLoss(self):
+		return self._RealsdGnOrLoss
+
+	@RealsdGnOrLoss.setter
+	def RealsdGnOrLoss(self, value):
+		self._RealsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("RealsdGnOrLoss")
+
+	@RealsdGnOrLoss.deleter
+	def RealsdGnOrLoss(self):
+		del self._RealsdGnOrLoss
+		self._RealsdGnOrLoss = None
 
 	@property
 	def TtlBookVal(self):
@@ -34,30 +60,17 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 		self._TtlBookVal = None
 
 	@property
-	def ExpnssPd(self):
-		return self._ExpnssPd
+	def TtlBookValChng(self):
+		return self._TtlBookValChng
 
-	@ExpnssPd.setter
-	def ExpnssPd(self, value):
-		self._ExpnssPd = value if type(value) != base_types.auto else self.make_default("ExpnssPd")
+	@TtlBookValChng.setter
+	def TtlBookValChng(self, value):
+		self._TtlBookValChng = value if type(value) != base_types.auto else self.make_default("TtlBookValChng")
 
-	@ExpnssPd.deleter
-	def ExpnssPd(self):
-		del self._ExpnssPd
-		self._ExpnssPd = None
-
-	@property
-	def TtlPrtflValChng(self):
-		return self._TtlPrtflValChng
-
-	@TtlPrtflValChng.setter
-	def TtlPrtflValChng(self, value):
-		self._TtlPrtflValChng = value if type(value) != base_types.auto else self.make_default("TtlPrtflValChng")
-
-	@TtlPrtflValChng.deleter
-	def TtlPrtflValChng(self):
-		del self._TtlPrtflValChng
-		self._TtlPrtflValChng = None
+	@TtlBookValChng.deleter
+	def TtlBookValChng(self):
+		del self._TtlBookValChng
+		self._TtlBookValChng = None
 
 	@property
 	def TtlDsbrsmnts(self):
@@ -86,6 +99,19 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 		self._PrvsTtlPrtflVal = None
 
 	@property
+	def AcrdIncm(self):
+		return self._AcrdIncm
+
+	@AcrdIncm.setter
+	def AcrdIncm(self, value):
+		self._AcrdIncm = value if type(value) != base_types.auto else self.make_default("AcrdIncm")
+
+	@AcrdIncm.deleter
+	def AcrdIncm(self):
+		del self._AcrdIncm
+		self._AcrdIncm = None
+
+	@property
 	def TtlPrtflVal(self):
 		return self._TtlPrtflVal
 
@@ -99,30 +125,30 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 		self._TtlPrtflVal = None
 
 	@property
-	def RealsdGnOrLoss(self):
-		return self._RealsdGnOrLoss
+	def IncmRcvd(self):
+		return self._IncmRcvd
 
-	@RealsdGnOrLoss.setter
-	def RealsdGnOrLoss(self, value):
-		self._RealsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("RealsdGnOrLoss")
+	@IncmRcvd.setter
+	def IncmRcvd(self, value):
+		self._IncmRcvd = value if type(value) != base_types.auto else self.make_default("IncmRcvd")
 
-	@RealsdGnOrLoss.deleter
-	def RealsdGnOrLoss(self):
-		del self._RealsdGnOrLoss
-		self._RealsdGnOrLoss = None
+	@IncmRcvd.deleter
+	def IncmRcvd(self):
+		del self._IncmRcvd
+		self._IncmRcvd = None
 
 	@property
-	def InvstmtFndDtls(self):
-		return self._InvstmtFndDtls
+	def ExpnssPd(self):
+		return self._ExpnssPd
 
-	@InvstmtFndDtls.setter
-	def InvstmtFndDtls(self, value):
-		self._InvstmtFndDtls = value if type(value) != base_types.auto else self.make_default("InvstmtFndDtls")
+	@ExpnssPd.setter
+	def ExpnssPd(self, value):
+		self._ExpnssPd = value if type(value) != base_types.auto else self.make_default("ExpnssPd")
 
-	@InvstmtFndDtls.deleter
-	def InvstmtFndDtls(self):
-		del self._InvstmtFndDtls
-		self._InvstmtFndDtls = None
+	@ExpnssPd.deleter
+	def ExpnssPd(self):
+		del self._ExpnssPd
+		self._ExpnssPd = None
 
 	@property
 	def TtlRcts(self):
@@ -138,71 +164,45 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 		self._TtlRcts = None
 
 	@property
-	def TtlBookValChng(self):
-		return self._TtlBookValChng
+	def TtlPrtflValChng(self):
+		return self._TtlPrtflValChng
 
-	@TtlBookValChng.setter
-	def TtlBookValChng(self, value):
-		self._TtlBookValChng = value if type(value) != base_types.auto else self.make_default("TtlBookValChng")
+	@TtlPrtflValChng.setter
+	def TtlPrtflValChng(self, value):
+		self._TtlPrtflValChng = value if type(value) != base_types.auto else self.make_default("TtlPrtflValChng")
 
-	@TtlBookValChng.deleter
-	def TtlBookValChng(self):
-		del self._TtlBookValChng
-		self._TtlBookValChng = None
-
-	@property
-	def PrvsTtlBookVal(self):
-		return self._PrvsTtlBookVal
-
-	@PrvsTtlBookVal.setter
-	def PrvsTtlBookVal(self, value):
-		self._PrvsTtlBookVal = value if type(value) != base_types.auto else self.make_default("PrvsTtlBookVal")
-
-	@PrvsTtlBookVal.deleter
-	def PrvsTtlBookVal(self):
-		del self._PrvsTtlBookVal
-		self._PrvsTtlBookVal = None
+	@TtlPrtflValChng.deleter
+	def TtlPrtflValChng(self):
+		del self._TtlPrtflValChng
+		self._TtlPrtflValChng = None
 
 	@property
-	def AcrdIncm(self):
-		return self._AcrdIncm
+	def InvstmtFndDtls(self):
+		return self._InvstmtFndDtls
 
-	@AcrdIncm.setter
-	def AcrdIncm(self, value):
-		self._AcrdIncm = value if type(value) != base_types.auto else self.make_default("AcrdIncm")
+	@InvstmtFndDtls.setter
+	def InvstmtFndDtls(self, value):
+		self._InvstmtFndDtls = value if type(value) != base_types.auto else self.make_default("InvstmtFndDtls")
 
-	@AcrdIncm.deleter
-	def AcrdIncm(self):
-		del self._AcrdIncm
-		self._AcrdIncm = None
-
-	@property
-	def UrlsdGnOrLoss(self):
-		return self._UrlsdGnOrLoss
-
-	@UrlsdGnOrLoss.setter
-	def UrlsdGnOrLoss(self, value):
-		self._UrlsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnOrLoss")
-
-	@UrlsdGnOrLoss.deleter
-	def UrlsdGnOrLoss(self):
-		del self._UrlsdGnOrLoss
-		self._UrlsdGnOrLoss = None
+	@InvstmtFndDtls.deleter
+	def InvstmtFndDtls(self):
+		del self._InvstmtFndDtls
+		self._InvstmtFndDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IncmRcvd', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UrlsdGnOrLoss', type=AmountAndDirection31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsTtlBookVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RealsdGnOrLoss', type=AmountAndDirection31, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlBookVal', type=AmountAndDirection30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExpnssPd', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPrtflValChng', type=AmountAndRate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlBookValChng', type=AmountAndRate2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlDsbrsmnts', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsTtlPrtflVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPrtflVal', type=AmountAndDirection30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RealsdGnOrLoss', type=AmountAndDirection31, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtFndDtls', type=InvestmentFund1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlRcts', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlBookValChng', type=AmountAndRate2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsTtlBookVal', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIncm', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UrlsdGnOrLoss', type=AmountAndDirection31, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPrtflVal', type=AmountAndDirection30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmRcvd', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExpnssPd', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlRcts', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPrtflValChng', type=AmountAndRate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtFndDtls', type=InvestmentFund1, min=0, max=None, mutex_group=None, array=True),
 	))
 

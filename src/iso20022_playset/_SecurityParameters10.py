@@ -1,23 +1,23 @@
 from . import base_types
-from .Max140Binary import Max140Binary
-from .CryptographicKey12 import CryptographicKey12
-from .ATMSignature2Choice import ATMSignature2Choice
+from ._CryptographicKey12 import CryptographicKey12
+from ._Max140Binary import Max140Binary
+from ._ATMSignature2Choice import ATMSignature2Choice
 
 class SecurityParameters10(base_types._BaseFieldType):
 
-	__slots__ = ["_HstChllng", "_SgntrChc", "_Key"]
+	__slots__ = ["_Key", "_SgntrChc", "_HstChllng"]
 	@property
-	def HstChllng(self):
-		return self._HstChllng
+	def Key(self):
+		return self._Key
 
-	@HstChllng.setter
-	def HstChllng(self, value):
-		self._HstChllng = value if type(value) != base_types.auto else self.make_default("HstChllng")
+	@Key.setter
+	def Key(self, value):
+		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
 
-	@HstChllng.deleter
-	def HstChllng(self):
-		del self._HstChllng
-		self._HstChllng = None
+	@Key.deleter
+	def Key(self):
+		del self._Key
+		self._Key = None
 
 	@property
 	def SgntrChc(self):
@@ -33,21 +33,21 @@ class SecurityParameters10(base_types._BaseFieldType):
 		self._SgntrChc = None
 
 	@property
-	def Key(self):
-		return self._Key
+	def HstChllng(self):
+		return self._HstChllng
 
-	@Key.setter
-	def Key(self, value):
-		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
+	@HstChllng.setter
+	def HstChllng(self, value):
+		self._HstChllng = value if type(value) != base_types.auto else self.make_default("HstChllng")
 
-	@Key.deleter
-	def Key(self):
-		del self._Key
-		self._Key = None
+	@HstChllng.deleter
+	def HstChllng(self):
+		del self._HstChllng
+		self._HstChllng = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

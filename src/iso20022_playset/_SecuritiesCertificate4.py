@@ -1,22 +1,9 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class SecuritiesCertificate4(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_SchmeNm", "_Issr"]
-	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
+	__slots__ = ["_SchmeNm", "_Issr", "_Nb"]
 	@property
 	def SchmeNm(self):
 		return self._SchmeNm
@@ -43,9 +30,22 @@ class SecuritiesCertificate4(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

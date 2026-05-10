@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .SettlementInstruction16 import SettlementInstruction16
+from ._YesNoIndicator import YesNoIndicator
+from ._SettlementInstruction16 import SettlementInstruction16
 
 class MissingCover6(base_types._BaseFieldType):
 

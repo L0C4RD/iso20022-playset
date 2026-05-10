@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesFinancingReportingMissingCollateralRequestV02 import SecuritiesFinancingReportingMissingCollateralRequestV02
+from ._SecuritiesFinancingReportingMissingCollateralRequestV02 import SecuritiesFinancingReportingMissingCollateralRequestV02
 
 class AUTH_083_001_02():
 

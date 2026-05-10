@@ -1,5 +1,5 @@
 from . import base_types
-from .ReceiptAcknowledgementV01 import ReceiptAcknowledgementV01
+from ._ReceiptAcknowledgementV01 import ReceiptAcknowledgementV01
 
 class ADMI_007_001_01():
 

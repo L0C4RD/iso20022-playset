@@ -1,14 +1,14 @@
 from . import base_types
-from .ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from .TaxType12Code import TaxType12Code
-from .PercentageRate import PercentageRate
-from .CountryCode import CountryCode
-from .TaxCalculationInformation4 import TaxCalculationInformation4
-from .Extended350Code import Extended350Code
+from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from ._TaxType12Code import TaxType12Code
+from ._CountryCode import CountryCode
+from ._Extended350Code import Extended350Code
+from ._PercentageRate import PercentageRate
+from ._TaxCalculationInformation4 import TaxCalculationInformation4
 
 class Tax17(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_TaxClctnDtls", "_XtndedTp", "_Rate", "_Ctry"]
+	__slots__ = ["_Amt", "_Tp", "_Rate", "_TaxClctnDtls", "_Ctry", "_XtndedTp"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -36,32 +36,6 @@ class Tax17(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def TaxClctnDtls(self):
-		return self._TaxClctnDtls
-
-	@TaxClctnDtls.setter
-	def TaxClctnDtls(self, value):
-		self._TaxClctnDtls = value if type(value) != base_types.auto else self.make_default("TaxClctnDtls")
-
-	@TaxClctnDtls.deleter
-	def TaxClctnDtls(self):
-		del self._TaxClctnDtls
-		self._TaxClctnDtls = None
-
-	@property
-	def XtndedTp(self):
-		return self._XtndedTp
-
-	@XtndedTp.setter
-	def XtndedTp(self, value):
-		self._XtndedTp = value if type(value) != base_types.auto else self.make_default("XtndedTp")
-
-	@XtndedTp.deleter
-	def XtndedTp(self):
-		del self._XtndedTp
-		self._XtndedTp = None
-
-	@property
 	def Rate(self):
 		return self._Rate
 
@@ -73,6 +47,19 @@ class Tax17(base_types._BaseFieldType):
 	def Rate(self):
 		del self._Rate
 		self._Rate = None
+
+	@property
+	def TaxClctnDtls(self):
+		return self._TaxClctnDtls
+
+	@TaxClctnDtls.setter
+	def TaxClctnDtls(self, value):
+		self._TaxClctnDtls = value if type(value) != base_types.auto else self.make_default("TaxClctnDtls")
+
+	@TaxClctnDtls.deleter
+	def TaxClctnDtls(self):
+		del self._TaxClctnDtls
+		self._TaxClctnDtls = None
 
 	@property
 	def Ctry(self):
@@ -87,12 +74,25 @@ class Tax17(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def XtndedTp(self):
+		return self._XtndedTp
+
+	@XtndedTp.setter
+	def XtndedTp(self, value):
+		self._XtndedTp = value if type(value) != base_types.auto else self.make_default("XtndedTp")
+
+	@XtndedTp.deleter
+	def XtndedTp(self):
+		del self._XtndedTp
+		self._XtndedTp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=7, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=TaxType12Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

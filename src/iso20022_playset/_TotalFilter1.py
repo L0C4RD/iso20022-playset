@@ -1,21 +1,21 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
-	__slots__ = ["_ShftNb", "_CshrId", "_POIId", "_TtlsGrpId", "_SaleId"]
+	__slots__ = ["_SaleId", "_CshrId", "_TtlsGrpId", "_ShftNb", "_POIId"]
 	@property
-	def ShftNb(self):
-		return self._ShftNb
+	def SaleId(self):
+		return self._SaleId
 
-	@ShftNb.setter
-	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
+	@SaleId.setter
+	def SaleId(self, value):
+		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
 
-	@ShftNb.deleter
-	def ShftNb(self):
-		del self._ShftNb
-		self._ShftNb = None
+	@SaleId.deleter
+	def SaleId(self):
+		del self._SaleId
+		self._SaleId = None
 
 	@property
 	def CshrId(self):
@@ -31,19 +31,6 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._CshrId = None
 
 	@property
-	def POIId(self):
-		return self._POIId
-
-	@POIId.setter
-	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
-
-	@POIId.deleter
-	def POIId(self):
-		del self._POIId
-		self._POIId = None
-
-	@property
 	def TtlsGrpId(self):
 		return self._TtlsGrpId
 
@@ -57,23 +44,36 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._TtlsGrpId = None
 
 	@property
-	def SaleId(self):
-		return self._SaleId
+	def ShftNb(self):
+		return self._ShftNb
 
-	@SaleId.setter
-	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+	@ShftNb.setter
+	def ShftNb(self, value):
+		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
 
-	@SaleId.deleter
-	def SaleId(self):
-		del self._SaleId
-		self._SaleId = None
+	@ShftNb.deleter
+	def ShftNb(self):
+		del self._ShftNb
+		self._ShftNb = None
+
+	@property
+	def POIId(self):
+		return self._POIId
+
+	@POIId.setter
+	def POIId(self, value):
+		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+
+	@POIId.deleter
+	def POIId(self):
+		del self._POIId
+		self._POIId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

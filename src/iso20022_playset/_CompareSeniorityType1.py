@@ -1,5 +1,5 @@
 from . import base_types
-from .DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
+from ._DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
 
 class CompareSeniorityType1(base_types._BaseFieldType):
 

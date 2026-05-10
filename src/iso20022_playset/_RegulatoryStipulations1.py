@@ -1,6 +1,6 @@
 from . import base_types
-from .Max350Text import Max350Text
-from .CountryCode import CountryCode
+from ._Max350Text import Max350Text
+from ._CountryCode import CountryCode
 
 class RegulatoryStipulations1(base_types._BaseFieldType):
 

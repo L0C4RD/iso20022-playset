@@ -1,5 +1,5 @@
 from . import base_types
-from .SaleToPOIEventNotificationV07 import SaleToPOIEventNotificationV07
+from ._SaleToPOIEventNotificationV07 import SaleToPOIEventNotificationV07
 
 class CASP_012_001_07():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .DateFormat45Choice import DateFormat45Choice
+from ._DateFormat45Choice import DateFormat45Choice
 
 class Period11(base_types._BaseFieldType):
 

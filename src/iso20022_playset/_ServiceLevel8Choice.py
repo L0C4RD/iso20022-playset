@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ExternalServiceLevel1Code import ExternalServiceLevel1Code
+from ._Max35Text import Max35Text
+from ._ExternalServiceLevel1Code import ExternalServiceLevel1Code
 
 class ServiceLevel8Choice(base_types._BaseFieldType):
 

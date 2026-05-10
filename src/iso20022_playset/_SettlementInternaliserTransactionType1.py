@@ -1,21 +1,21 @@
 from . import base_types
-from .InternalisationData1 import InternalisationData1
+from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTxs", "_RpAgrmt", "_SctiesLndgOrBrrwg", "_CollMgmtOpr", "_SctiesBuyOrSell"]
+	__slots__ = ["_CollMgmtOpr", "_RpAgrmt", "_OthrTxs", "_SctiesLndgOrBrrwg", "_SctiesBuyOrSell"]
 	@property
-	def OthrTxs(self):
-		return self._OthrTxs
+	def CollMgmtOpr(self):
+		return self._CollMgmtOpr
 
-	@OthrTxs.setter
-	def OthrTxs(self, value):
-		self._OthrTxs = value if type(value) != base_types.auto else self.make_default("OthrTxs")
+	@CollMgmtOpr.setter
+	def CollMgmtOpr(self, value):
+		self._CollMgmtOpr = value if type(value) != base_types.auto else self.make_default("CollMgmtOpr")
 
-	@OthrTxs.deleter
-	def OthrTxs(self):
-		del self._OthrTxs
-		self._OthrTxs = None
+	@CollMgmtOpr.deleter
+	def CollMgmtOpr(self):
+		del self._CollMgmtOpr
+		self._CollMgmtOpr = None
 
 	@property
 	def RpAgrmt(self):
@@ -31,6 +31,19 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		self._RpAgrmt = None
 
 	@property
+	def OthrTxs(self):
+		return self._OthrTxs
+
+	@OthrTxs.setter
+	def OthrTxs(self, value):
+		self._OthrTxs = value if type(value) != base_types.auto else self.make_default("OthrTxs")
+
+	@OthrTxs.deleter
+	def OthrTxs(self):
+		del self._OthrTxs
+		self._OthrTxs = None
+
+	@property
 	def SctiesLndgOrBrrwg(self):
 		return self._SctiesLndgOrBrrwg
 
@@ -42,19 +55,6 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 	def SctiesLndgOrBrrwg(self):
 		del self._SctiesLndgOrBrrwg
 		self._SctiesLndgOrBrrwg = None
-
-	@property
-	def CollMgmtOpr(self):
-		return self._CollMgmtOpr
-
-	@CollMgmtOpr.setter
-	def CollMgmtOpr(self, value):
-		self._CollMgmtOpr = value if type(value) != base_types.auto else self.make_default("CollMgmtOpr")
-
-	@CollMgmtOpr.deleter
-	def CollMgmtOpr(self):
-		del self._CollMgmtOpr
-		self._CollMgmtOpr = None
 
 	@property
 	def SctiesBuyOrSell(self):
@@ -70,10 +70,10 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 		self._SctiesBuyOrSell = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTxs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesLndgOrBrrwg', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyOrSell', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .AssetClassProductType12Code import AssetClassProductType12Code
+from ._AssetClassProductType12Code import AssetClassProductType12Code
 
 class AssetClassCommodityInflation1(base_types._BaseFieldType):
 

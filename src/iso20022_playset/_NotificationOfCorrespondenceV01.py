@@ -1,24 +1,11 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CorrespondenceNotification1 import CorrespondenceNotification1
-from .GroupHeader129 import GroupHeader129
+from ._CorrespondenceNotification1 import CorrespondenceNotification1
+from ._SupplementaryData1 import SupplementaryData1
+from ._GroupHeader129 import GroupHeader129
 
 class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnData", "_SplmtryData", "_GrpHdr"]
-	@property
-	def NtfctnData(self):
-		return self._NtfctnData
-
-	@NtfctnData.setter
-	def NtfctnData(self, value):
-		self._NtfctnData = value if type(value) != base_types.auto else self.make_default("NtfctnData")
-
-	@NtfctnData.deleter
-	def NtfctnData(self):
-		del self._NtfctnData
-		self._NtfctnData = None
-
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_NtfctnData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
+	@property
+	def NtfctnData(self):
+		return self._NtfctnData
+
+	@NtfctnData.setter
+	def NtfctnData(self, value):
+		self._NtfctnData = value if type(value) != base_types.auto else self.make_default("NtfctnData")
+
+	@NtfctnData.deleter
+	def NtfctnData(self):
+		del self._NtfctnData
+		self._NtfctnData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnData', type=CorrespondenceNotification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader129, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnData', type=CorrespondenceNotification1, min=1, max=None, mutex_group=None, array=True),
 	))
 

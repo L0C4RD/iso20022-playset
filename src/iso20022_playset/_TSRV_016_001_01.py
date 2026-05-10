@@ -1,5 +1,5 @@
 from . import base_types
-from .DemandRefusalNotificationV01 import DemandRefusalNotificationV01
+from ._DemandRefusalNotificationV01 import DemandRefusalNotificationV01
 
 class TSRV_016_001_01():
 

@@ -1,14 +1,40 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max256Text import Max256Text
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .ISODate import ISODate
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .Max70Text import Max70Text
+from ._ISODate import ISODate
+from ._Max70Text import Max70Text
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max256Text import Max256Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 
 class ATMAccountStatement2(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtTxt", "_CdtTx", "_Amt", "_TxDt", "_Ccy", "_ValDt", "_LngTxt"]
+	__slots__ = ["_LngTxt", "_Amt", "_ShrtTxt", "_CdtTx", "_Ccy", "_TxDt", "_ValDt"]
+	@property
+	def LngTxt(self):
+		return self._LngTxt
+
+	@LngTxt.setter
+	def LngTxt(self, value):
+		self._LngTxt = value if type(value) != base_types.auto else self.make_default("LngTxt")
+
+	@LngTxt.deleter
+	def LngTxt(self):
+		del self._LngTxt
+		self._LngTxt = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def ShrtTxt(self):
 		return self._ShrtTxt
@@ -36,17 +62,17 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 		self._CdtTx = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Ccy(self):
+		return self._Ccy
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
 
 	@property
 	def TxDt(self):
@@ -62,19 +88,6 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 		self._TxDt = None
 
 	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
 	def ValDt(self):
 		return self._ValDt
 
@@ -87,26 +100,13 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 		del self._ValDt
 		self._ValDt = None
 
-	@property
-	def LngTxt(self):
-		return self._LngTxt
-
-	@LngTxt.setter
-	def LngTxt(self, value):
-		self._LngTxt = value if type(value) != base_types.auto else self.make_default("LngTxt")
-
-	@LngTxt.deleter
-	def LngTxt(self):
-		del self._LngTxt
-		self._LngTxt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LngTxt', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtTxt', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LngTxt', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

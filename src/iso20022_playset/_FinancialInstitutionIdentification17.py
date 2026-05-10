@@ -1,23 +1,10 @@
 from . import base_types
-from .LEIIdentifier import LEIIdentifier
-from .FinancialInstitutionIdentification10Choice import FinancialInstitutionIdentification10Choice
+from ._LEIIdentifier import LEIIdentifier
+from ._FinancialInstitutionIdentification10Choice import FinancialInstitutionIdentification10Choice
 
 class FinancialInstitutionIdentification17(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_LEI"]
-	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
+	__slots__ = ["_LEI", "_Pty"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -31,8 +18,21 @@ class FinancialInstitutionIdentification17(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=FinancialInstitutionIdentification10Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=FinancialInstitutionIdentification10Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

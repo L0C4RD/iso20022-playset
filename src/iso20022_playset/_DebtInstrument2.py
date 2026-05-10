@@ -1,12 +1,25 @@
 from . import base_types
-from .DebtInstrumentSeniorityType1Code import DebtInstrumentSeniorityType1Code
-from .InterestRate6Choice import InterestRate6Choice
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._ISODate import ISODate
+from ._DebtInstrumentSeniorityType1Code import DebtInstrumentSeniorityType1Code
+from ._InterestRate6Choice import InterestRate6Choice
 
 class DebtInstrument2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlIssdNmnlAmt", "_DebtSnrty", "_IntrstRate", "_NmnlValPerUnit", "_MtrtyDt"]
+	__slots__ = ["_NmnlValPerUnit", "_TtlIssdNmnlAmt", "_IntrstRate", "_MtrtyDt", "_DebtSnrty"]
+	@property
+	def NmnlValPerUnit(self):
+		return self._NmnlValPerUnit
+
+	@NmnlValPerUnit.setter
+	def NmnlValPerUnit(self, value):
+		self._NmnlValPerUnit = value if type(value) != base_types.auto else self.make_default("NmnlValPerUnit")
+
+	@NmnlValPerUnit.deleter
+	def NmnlValPerUnit(self):
+		del self._NmnlValPerUnit
+		self._NmnlValPerUnit = None
+
 	@property
 	def TtlIssdNmnlAmt(self):
 		return self._TtlIssdNmnlAmt
@@ -19,19 +32,6 @@ class DebtInstrument2(base_types._BaseFieldType):
 	def TtlIssdNmnlAmt(self):
 		del self._TtlIssdNmnlAmt
 		self._TtlIssdNmnlAmt = None
-
-	@property
-	def DebtSnrty(self):
-		return self._DebtSnrty
-
-	@DebtSnrty.setter
-	def DebtSnrty(self, value):
-		self._DebtSnrty = value if type(value) != base_types.auto else self.make_default("DebtSnrty")
-
-	@DebtSnrty.deleter
-	def DebtSnrty(self):
-		del self._DebtSnrty
-		self._DebtSnrty = None
 
 	@property
 	def IntrstRate(self):
@@ -47,19 +47,6 @@ class DebtInstrument2(base_types._BaseFieldType):
 		self._IntrstRate = None
 
 	@property
-	def NmnlValPerUnit(self):
-		return self._NmnlValPerUnit
-
-	@NmnlValPerUnit.setter
-	def NmnlValPerUnit(self, value):
-		self._NmnlValPerUnit = value if type(value) != base_types.auto else self.make_default("NmnlValPerUnit")
-
-	@NmnlValPerUnit.deleter
-	def NmnlValPerUnit(self):
-		del self._NmnlValPerUnit
-		self._NmnlValPerUnit = None
-
-	@property
 	def MtrtyDt(self):
 		return self._MtrtyDt
 
@@ -72,11 +59,24 @@ class DebtInstrument2(base_types._BaseFieldType):
 		del self._MtrtyDt
 		self._MtrtyDt = None
 
+	@property
+	def DebtSnrty(self):
+		return self._DebtSnrty
+
+	@DebtSnrty.setter
+	def DebtSnrty(self, value):
+		self._DebtSnrty = value if type(value) != base_types.auto else self.make_default("DebtSnrty")
+
+	@DebtSnrty.deleter
+	def DebtSnrty(self):
+		del self._DebtSnrty
+		self._DebtSnrty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlIssdNmnlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DebtSnrty', type=DebtInstrumentSeniorityType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=InterestRate6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmnlValPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlIssdNmnlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=InterestRate6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DebtSnrty', type=DebtInstrumentSeniorityType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

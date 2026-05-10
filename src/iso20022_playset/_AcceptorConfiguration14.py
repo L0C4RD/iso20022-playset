@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
-from .GenericIdentification176 import GenericIdentification176
+from ._Max35Text import Max35Text
+from ._GenericIdentification176 import GenericIdentification176
+from ._AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
 
 class AcceptorConfiguration14(base_types._BaseFieldType):
 

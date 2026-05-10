@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageBoundedRate import PercentageBoundedRate
-from .ISODate import ISODate
+from ._PercentageBoundedRate import PercentageBoundedRate
+from ._ISODate import ISODate
 
 class PercentageAndPeriod1(base_types._BaseFieldType):
 

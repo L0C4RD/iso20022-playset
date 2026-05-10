@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .GenericIdentification1 import GenericIdentification1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._GenericIdentification1 import GenericIdentification1
 
 class OtherAmount3(base_types._BaseFieldType):
 

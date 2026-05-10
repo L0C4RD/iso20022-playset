@@ -1,6 +1,6 @@
 from . import base_types
-from .AccountAndBalance65 import AccountAndBalance65
-from .AccountIdentification10 import AccountIdentification10
+from ._AccountIdentification10 import AccountIdentification10
+from ._AccountAndBalance65 import AccountAndBalance65
 
 class AccountIdentification78Choice(base_types._BaseFieldType):
 

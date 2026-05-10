@@ -1,6 +1,6 @@
 from . import base_types
-from .Max2000Text import Max2000Text
-from .ExpiryTerms2 import ExpiryTerms2
+from ._ExpiryTerms2 import ExpiryTerms2
+from ._Max2000Text import Max2000Text
 
 class ExpiryDetails2(base_types._BaseFieldType):
 

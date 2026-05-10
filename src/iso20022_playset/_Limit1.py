@@ -1,5 +1,5 @@
 from . import base_types
-from .Max3NumericText import Max3NumericText
+from ._Max3NumericText import Max3NumericText
 
 class Limit1(base_types._BaseFieldType):
 

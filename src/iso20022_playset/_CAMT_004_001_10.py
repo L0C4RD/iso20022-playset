@@ -1,5 +1,5 @@
 from . import base_types
-from .ReturnAccountV10 import ReturnAccountV10
+from ._ReturnAccountV10 import ReturnAccountV10
 
 class CAMT_004_001_10():
 

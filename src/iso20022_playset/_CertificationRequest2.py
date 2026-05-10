@@ -1,12 +1,25 @@
 from . import base_types
-from .Number import Number
-from .RelativeDistinguishedName2 import RelativeDistinguishedName2
-from .PublicRSAKey2 import PublicRSAKey2
-from .CertificateIssuer1 import CertificateIssuer1
+from ._RelativeDistinguishedName2 import RelativeDistinguishedName2
+from ._Number import Number
+from ._PublicRSAKey2 import PublicRSAKey2
+from ._CertificateIssuer1 import CertificateIssuer1
 
 class CertificationRequest2(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_SbjtPblcKeyInf", "_Attr", "_SbjtNm"]
+	__slots__ = ["_SbjtNm", "_Vrsn", "_Attr", "_SbjtPblcKeyInf"]
+	@property
+	def SbjtNm(self):
+		return self._SbjtNm
+
+	@SbjtNm.setter
+	def SbjtNm(self, value):
+		self._SbjtNm = value if type(value) != base_types.auto else self.make_default("SbjtNm")
+
+	@SbjtNm.deleter
+	def SbjtNm(self):
+		del self._SbjtNm
+		self._SbjtNm = None
+
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -19,19 +32,6 @@ class CertificationRequest2(base_types._BaseFieldType):
 	def Vrsn(self):
 		del self._Vrsn
 		self._Vrsn = None
-
-	@property
-	def SbjtPblcKeyInf(self):
-		return self._SbjtPblcKeyInf
-
-	@SbjtPblcKeyInf.setter
-	def SbjtPblcKeyInf(self, value):
-		self._SbjtPblcKeyInf = value if type(value) != base_types.auto else self.make_default("SbjtPblcKeyInf")
-
-	@SbjtPblcKeyInf.deleter
-	def SbjtPblcKeyInf(self):
-		del self._SbjtPblcKeyInf
-		self._SbjtPblcKeyInf = None
 
 	@property
 	def Attr(self):
@@ -47,22 +47,22 @@ class CertificationRequest2(base_types._BaseFieldType):
 		self._Attr = None
 
 	@property
-	def SbjtNm(self):
-		return self._SbjtNm
+	def SbjtPblcKeyInf(self):
+		return self._SbjtPblcKeyInf
 
-	@SbjtNm.setter
-	def SbjtNm(self, value):
-		self._SbjtNm = value if type(value) != base_types.auto else self.make_default("SbjtNm")
+	@SbjtPblcKeyInf.setter
+	def SbjtPblcKeyInf(self, value):
+		self._SbjtPblcKeyInf = value if type(value) != base_types.auto else self.make_default("SbjtPblcKeyInf")
 
-	@SbjtNm.deleter
-	def SbjtNm(self):
-		del self._SbjtNm
-		self._SbjtNm = None
+	@SbjtPblcKeyInf.deleter
+	def SbjtPblcKeyInf(self):
+		del self._SbjtPblcKeyInf
+		self._SbjtPblcKeyInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SbjtPblcKeyInf', type=PublicRSAKey2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Attr', type=RelativeDistinguishedName2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SbjtNm', type=CertificateIssuer1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Attr', type=RelativeDistinguishedName2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SbjtPblcKeyInf', type=PublicRSAKey2, min=1, max=1, mutex_group=None, array=False),
 	))
 

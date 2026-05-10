@@ -1,25 +1,12 @@
 from . import base_types
-from .ProductType6Code import ProductType6Code
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from .DebtIssuerType1Code import DebtIssuerType1Code
+from ._ProductType6Code import ProductType6Code
+from ._DebtIssuerType1Code import DebtIssuerType1Code
+from ._ISINOct2015Identifier import ISINOct2015Identifier
+from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 
 class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_MktVal", "_FinInstrmTp", "_DebtIssrTp", "_Id"]
-	@property
-	def MktVal(self):
-		return self._MktVal
-
-	@MktVal.setter
-	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
-
-	@MktVal.deleter
-	def MktVal(self):
-		del self._MktVal
-		self._MktVal = None
-
+	__slots__ = ["_FinInstrmTp", "_DebtIssrTp", "_MktVal", "_Id"]
 	@property
 	def FinInstrmTp(self):
 		return self._FinInstrmTp
@@ -47,6 +34,19 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		self._DebtIssrTp = None
 
 	@property
+	def MktVal(self):
+		return self._MktVal
+
+	@MktVal.setter
+	def MktVal(self, value):
+		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+
+	@MktVal.deleter
+	def MktVal(self):
+		del self._MktVal
+		self._MktVal = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -60,9 +60,9 @@ class SecurityIdentificationAndAmount2(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

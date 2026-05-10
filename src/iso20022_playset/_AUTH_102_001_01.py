@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstrumentReportingCancellationReportV01 import FinancialInstrumentReportingCancellationReportV01
+from ._FinancialInstrumentReportingCancellationReportV01 import FinancialInstrumentReportingCancellationReportV01
 
 class AUTH_102_001_01():
 

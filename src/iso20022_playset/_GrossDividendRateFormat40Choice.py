@@ -1,24 +1,11 @@
 from . import base_types
-from .AmountAndRateStatus2 import AmountAndRateStatus2
-from .RateTypeAndAmountAndStatus61 import RateTypeAndAmountAndStatus61
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._RateTypeAndAmountAndStatus61 import RateTypeAndAmountAndStatus61
+from ._AmountAndRateStatus2 import AmountAndRateStatus2
 
 class GrossDividendRateFormat40Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtAndRateSts", "_RateTpAndAmtAndRateSts", "_Amt"]
-	@property
-	def AmtAndRateSts(self):
-		return self._AmtAndRateSts
-
-	@AmtAndRateSts.setter
-	def AmtAndRateSts(self, value):
-		self._AmtAndRateSts = value if type(value) != base_types.auto else self.make_default("AmtAndRateSts")
-
-	@AmtAndRateSts.deleter
-	def AmtAndRateSts(self):
-		del self._AmtAndRateSts
-		self._AmtAndRateSts = None
-
+	__slots__ = ["_RateTpAndAmtAndRateSts", "_Amt", "_AmtAndRateSts"]
 	@property
 	def RateTpAndAmtAndRateSts(self):
 		return self._RateTpAndAmtAndRateSts
@@ -45,9 +32,22 @@ class GrossDividendRateFormat40Choice(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def AmtAndRateSts(self):
+		return self._AmtAndRateSts
+
+	@AmtAndRateSts.setter
+	def AmtAndRateSts(self, value):
+		self._AmtAndRateSts = value if type(value) != base_types.auto else self.make_default("AmtAndRateSts")
+
+	@AmtAndRateSts.deleter
+	def AmtAndRateSts(self):
+		del self._AmtAndRateSts
+		self._AmtAndRateSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus61, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus2, min=0, max=1, mutex_group=1, array=False),
 	))
 

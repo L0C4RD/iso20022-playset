@@ -1,24 +1,24 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .Pagination1 import Pagination1
-from .SecurityStatement3 import SecurityStatement3
+from ._SecurityStatement3 import SecurityStatement3
+from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
+from ._MessageHeader1 import MessageHeader1
 
 class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyActvty", "_SplmtryData", "_Pgntn", "_MsgHdr"]
+	__slots__ = ["_Pgntn", "_SplmtryData", "_SctyActvty", "_MsgHdr"]
 	@property
-	def SctyActvty(self):
-		return self._SctyActvty
+	def Pgntn(self):
+		return self._Pgntn
 
-	@SctyActvty.setter
-	def SctyActvty(self, value):
-		self._SctyActvty = value if type(value) != base_types.auto else self.make_default("SctyActvty")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
 
-	@SctyActvty.deleter
-	def SctyActvty(self):
-		del self._SctyActvty
-		self._SctyActvty = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def SplmtryData(self):
@@ -34,17 +34,17 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def SctyActvty(self):
+		return self._SctyActvty
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+	@SctyActvty.setter
+	def SctyActvty(self, value):
+		self._SctyActvty = value if type(value) != base_types.auto else self.make_default("SctyActvty")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@SctyActvty.deleter
+	def SctyActvty(self):
+		del self._SctyActvty
+		self._SctyActvty = None
 
 	@property
 	def MsgHdr(self):
@@ -60,9 +60,9 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyActvty', type=SecurityStatement3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SctyActvty', type=SecurityStatement3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

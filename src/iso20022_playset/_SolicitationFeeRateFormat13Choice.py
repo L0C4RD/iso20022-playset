@@ -1,7 +1,7 @@
 from . import base_types
-from .Percentage14Rate import Percentage14Rate
-from .AmountAndQuantityRatio5 import AmountAndQuantityRatio5
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._Percentage14Rate import Percentage14Rate
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._AmountAndQuantityRatio5 import AmountAndQuantityRatio5
 
 class SolicitationFeeRateFormat13Choice(base_types._BaseFieldType):
 

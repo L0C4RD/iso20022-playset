@@ -1,5 +1,5 @@
 from . import base_types
-from .ReceiptV09 import ReceiptV09
+from ._ReceiptV09 import ReceiptV09
 
 class CAMT_025_001_09():
 

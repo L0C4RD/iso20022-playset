@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BillingSubServiceIdentification1 import BillingSubServiceIdentification1
-from .Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
+from ._Max70Text import Max70Text
 
 class BillingServiceIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_SubSvc", "_Desc"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_SubSvc", "_Desc", "_Id"]
 	@property
 	def SubSvc(self):
 		return self._SubSvc
@@ -45,9 +32,22 @@ class BillingServiceIdentification2(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubSvc', type=BillingSubServiceIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 from . import base_types
-from .NameAndAddress11 import NameAndAddress11
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .GenericIdentification18 import GenericIdentification18
+from ._NameAndAddress11 import NameAndAddress11
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._GenericIdentification18 import GenericIdentification18
 
 class PartyIdentification152Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_NmAndAdr", "_AnyBIC"]
-	@property
-	def PrtryId(self):
-		return self._PrtryId
-
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
-
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
-
+	__slots__ = ["_NmAndAdr", "_PrtryId", "_AnyBIC"]
 	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
@@ -31,6 +18,19 @@ class PartyIdentification152Choice(base_types._BaseFieldType):
 	def NmAndAdr(self):
 		del self._NmAndAdr
 		self._NmAndAdr = None
+
+	@property
+	def PrtryId(self):
+		return self._PrtryId
+
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	@property
 	def AnyBIC(self):
@@ -46,8 +46,8 @@ class PartyIdentification152Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification18, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification18, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

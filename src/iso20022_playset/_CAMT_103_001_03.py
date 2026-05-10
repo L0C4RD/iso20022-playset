@@ -1,5 +1,5 @@
 from . import base_types
-from .CreateReservationV03 import CreateReservationV03
+from ._CreateReservationV03 import CreateReservationV03
 
 class CAMT_103_001_03():
 

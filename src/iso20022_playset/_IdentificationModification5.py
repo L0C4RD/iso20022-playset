@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max140Text import Max140Text
-from .IdentificationInformation5 import IdentificationInformation5
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._IdentificationInformation5 import IdentificationInformation5
 
 class IdentificationModification5(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_OrgnlPtyAndAcctId", "_AddtlInf", "_UpdtdPtyAndAcctId"]
+	__slots__ = ["_AddtlInf", "_OrgnlPtyAndAcctId", "_Id", "_UpdtdPtyAndAcctId"]
 	@property
-	def Id(self):
-		return self._Id
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def OrgnlPtyAndAcctId(self):
@@ -33,17 +33,17 @@ class IdentificationModification5(base_types._BaseFieldType):
 		self._OrgnlPtyAndAcctId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Id(self):
+		return self._Id
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def UpdtdPtyAndAcctId(self):
@@ -59,9 +59,9 @@ class IdentificationModification5(base_types._BaseFieldType):
 		self._UpdtdPtyAndAcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=1, max=1, mutex_group=None, array=False),
 	))
 

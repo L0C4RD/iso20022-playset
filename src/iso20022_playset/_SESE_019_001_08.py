@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountHoldingInformationRequestV08 import AccountHoldingInformationRequestV08
+from ._AccountHoldingInformationRequestV08 import AccountHoldingInformationRequestV08
 
 class SESE_019_001_08():
 

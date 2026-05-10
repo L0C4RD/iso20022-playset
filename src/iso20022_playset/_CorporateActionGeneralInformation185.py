@@ -1,10 +1,10 @@
 from . import base_types
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .CorporateActionEventType114Choice import CorporateActionEventType114Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._CorporateActionEventType114Choice import CorporateActionEventType114Choice
 
 class CorporateActionGeneralInformation185(base_types._BaseFieldType):
 
-	__slots__ = ["_CorpActnEvtId", "_EvtTp", "_ClssActnNb", "_OffclCorpActnEvtId"]
+	__slots__ = ["_CorpActnEvtId", "_ClssActnNb", "_EvtTp", "_OffclCorpActnEvtId"]
 	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
@@ -19,19 +19,6 @@ class CorporateActionGeneralInformation185(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
 	def ClssActnNb(self):
 		return self._ClssActnNb
 
@@ -43,6 +30,19 @@ class CorporateActionGeneralInformation185(base_types._BaseFieldType):
 	def ClssActnNb(self):
 		del self._ClssActnNb
 		self._ClssActnNb = None
+
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -59,8 +59,8 @@ class CorporateActionGeneralInformation185(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType114Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssActnNb', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType114Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

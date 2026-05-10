@@ -1,5 +1,5 @@
 from . import base_types
-from .OrderBookReportV01 import OrderBookReportV01
+from ._OrderBookReportV01 import OrderBookReportV01
 
 class AUTH_113_001_01():
 

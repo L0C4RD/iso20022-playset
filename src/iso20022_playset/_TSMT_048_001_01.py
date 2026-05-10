@@ -1,5 +1,5 @@
 from . import base_types
-from .SpecialNotificationV01 import SpecialNotificationV01
+from ._SpecialNotificationV01 import SpecialNotificationV01
 
 class TSMT_048_001_01():
 

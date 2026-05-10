@@ -1,6 +1,6 @@
 from . import base_types
-from .UndertakingStatus2Code import UndertakingStatus2Code
-from .Amendment8 import Amendment8
+from ._UndertakingStatus2Code import UndertakingStatus2Code
+from ._Amendment8 import Amendment8
 
 class Amendment7(base_types._BaseFieldType):
 

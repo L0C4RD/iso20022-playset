@@ -1,13 +1,13 @@
 from . import base_types
-from .CardDataReading1Code import CardDataReading1Code
-from .Max3NumericText import Max3NumericText
-from .DisplayCapabilities1 import DisplayCapabilities1
-from .CardholderVerificationCapability1Code import CardholderVerificationCapability1Code
-from .OnLineCapability1Code import OnLineCapability1Code
+from ._CardholderVerificationCapability1Code import CardholderVerificationCapability1Code
+from ._DisplayCapabilities1 import DisplayCapabilities1
+from ._Max3NumericText import Max3NumericText
+from ._OnLineCapability1Code import OnLineCapability1Code
+from ._CardDataReading1Code import CardDataReading1Code
 
 class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_DispCpblties", "_CrdhldrVrfctnCpblties", "_PrtLineWidth", "_CardRdngCpblties", "_OnLineCpblties"]
+	__slots__ = ["_DispCpblties", "_OnLineCpblties", "_CrdhldrVrfctnCpblties", "_CardRdngCpblties", "_PrtLineWidth"]
 	@property
 	def DispCpblties(self):
 		return self._DispCpblties
@@ -20,6 +20,19 @@ class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 	def DispCpblties(self):
 		del self._DispCpblties
 		self._DispCpblties = None
+
+	@property
+	def OnLineCpblties(self):
+		return self._OnLineCpblties
+
+	@OnLineCpblties.setter
+	def OnLineCpblties(self, value):
+		self._OnLineCpblties = value if type(value) != base_types.auto else self.make_default("OnLineCpblties")
+
+	@OnLineCpblties.deleter
+	def OnLineCpblties(self):
+		del self._OnLineCpblties
+		self._OnLineCpblties = None
 
 	@property
 	def CrdhldrVrfctnCpblties(self):
@@ -35,19 +48,6 @@ class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 		self._CrdhldrVrfctnCpblties = None
 
 	@property
-	def PrtLineWidth(self):
-		return self._PrtLineWidth
-
-	@PrtLineWidth.setter
-	def PrtLineWidth(self, value):
-		self._PrtLineWidth = value if type(value) != base_types.auto else self.make_default("PrtLineWidth")
-
-	@PrtLineWidth.deleter
-	def PrtLineWidth(self):
-		del self._PrtLineWidth
-		self._PrtLineWidth = None
-
-	@property
 	def CardRdngCpblties(self):
 		return self._CardRdngCpblties
 
@@ -61,23 +61,23 @@ class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 		self._CardRdngCpblties = None
 
 	@property
-	def OnLineCpblties(self):
-		return self._OnLineCpblties
+	def PrtLineWidth(self):
+		return self._PrtLineWidth
 
-	@OnLineCpblties.setter
-	def OnLineCpblties(self, value):
-		self._OnLineCpblties = value if type(value) != base_types.auto else self.make_default("OnLineCpblties")
+	@PrtLineWidth.setter
+	def PrtLineWidth(self, value):
+		self._PrtLineWidth = value if type(value) != base_types.auto else self.make_default("PrtLineWidth")
 
-	@OnLineCpblties.deleter
-	def OnLineCpblties(self):
-		del self._OnLineCpblties
-		self._OnLineCpblties = None
+	@PrtLineWidth.deleter
+	def PrtLineWidth(self):
+		del self._PrtLineWidth
+		self._PrtLineWidth = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispCpblties', type=DisplayCapabilities1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CrdhldrVrfctnCpblties', type=CardholderVerificationCapability1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtLineWidth', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardRdngCpblties', type=CardDataReading1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OnLineCpblties', type=OnLineCapability1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrVrfctnCpblties', type=CardholderVerificationCapability1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CardRdngCpblties', type=CardDataReading1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtLineWidth', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

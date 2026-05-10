@@ -1,5 +1,5 @@
 from . import base_types
-from .MandateSuspensionRequestV04 import MandateSuspensionRequestV04
+from ._MandateSuspensionRequestV04 import MandateSuspensionRequestV04
 
 class PAIN_018_001_04():
 

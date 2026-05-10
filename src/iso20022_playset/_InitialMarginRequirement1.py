@@ -1,6 +1,6 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .InitialMarginExposure1 import InitialMarginExposure1
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._InitialMarginExposure1 import InitialMarginExposure1
 
 class InitialMarginRequirement1(base_types._BaseFieldType):
 

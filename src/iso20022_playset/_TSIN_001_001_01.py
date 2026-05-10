@@ -1,5 +1,5 @@
 from . import base_types
-from .InvoiceFinancingRequestV01 import InvoiceFinancingRequestV01
+from ._InvoiceFinancingRequestV01 import InvoiceFinancingRequestV01
 
 class TSIN_001_001_01():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ISODateTime import ISODateTime
+from ._ISODateTime import ISODateTime
 
 class SettlementDateTimeIndication1(base_types._BaseFieldType):
 

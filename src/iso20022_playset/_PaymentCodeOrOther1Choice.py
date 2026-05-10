@@ -1,7 +1,7 @@
 from . import base_types
-from .PaymentPeriod3 import PaymentPeriod3
-from .Max140Text import Max140Text
-from .ISODate import ISODate
+from ._Max140Text import Max140Text
+from ._PaymentPeriod3 import PaymentPeriod3
+from ._ISODate import ISODate
 
 class PaymentCodeOrOther1Choice(base_types._BaseFieldType):
 

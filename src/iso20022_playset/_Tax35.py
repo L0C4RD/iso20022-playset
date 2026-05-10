@@ -1,26 +1,26 @@
 from . import base_types
-from .PartyIdentification139 import PartyIdentification139
-from .TaxType3Choice import TaxType3Choice
-from .TaxCalculationInformation10 import TaxCalculationInformation10
-from .CountryCode import CountryCode
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._PartyIdentification139 import PartyIdentification139
+from ._TaxCalculationInformation10 import TaxCalculationInformation10
+from ._CountryCode import CountryCode
+from ._TaxType3Choice import TaxType3Choice
+from ._PercentageRate import PercentageRate
 
 class Tax35(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_TaxClctnDtls", "_RcptId", "_ApldAmt", "_ApldRate", "_Tp"]
+	__slots__ = ["_RcptId", "_TaxClctnDtls", "_ApldAmt", "_ApldRate", "_Tp", "_Ctry"]
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def RcptId(self):
+		return self._RcptId
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	@property
 	def TaxClctnDtls(self):
@@ -34,19 +34,6 @@ class Tax35(base_types._BaseFieldType):
 	def TaxClctnDtls(self):
 		del self._TaxClctnDtls
 		self._TaxClctnDtls = None
-
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
 
 	@property
 	def ApldAmt(self):
@@ -87,12 +74,25 @@ class Tax35(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptId', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxClctnDtls', type=TaxCalculationInformation10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApldRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TaxType3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

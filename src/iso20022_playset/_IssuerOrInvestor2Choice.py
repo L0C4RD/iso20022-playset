@@ -1,5 +1,5 @@
 from . import base_types
-from .SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
 
 class IssuerOrInvestor2Choice(base_types._BaseFieldType):
 

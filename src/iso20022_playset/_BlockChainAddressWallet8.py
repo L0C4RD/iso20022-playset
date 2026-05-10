@@ -1,8 +1,8 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from .RestrictedFINXMax70Text import RestrictedFINXMax70Text
+from ._GenericIdentification47 import GenericIdentification47
+from ._RestrictedFINXMax70Text import RestrictedFINXMax70Text
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 
 class BlockChainAddressWallet8(base_types._BaseFieldType):
 

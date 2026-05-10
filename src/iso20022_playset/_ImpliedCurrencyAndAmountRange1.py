@@ -1,6 +1,6 @@
 from . import base_types
-from .CreditDebitCode import CreditDebitCode
-from .ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
+from ._CreditDebitCode import CreditDebitCode
+from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
 
 class ImpliedCurrencyAndAmountRange1(base_types._BaseFieldType):
 

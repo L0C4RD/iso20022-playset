@@ -1,26 +1,26 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max140Text import Max140Text
-from .ContactIdentification2 import ContactIdentification2
-from .PartyIdentification178Choice import PartyIdentification178Choice
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .SubAccount5 import SubAccount5
+from ._Max140Text import Max140Text
+from ._ContactIdentification2 import ContactIdentification2
+from ._Max35Text import Max35Text
+from ._SubAccount5 import SubAccount5
+from ._PartyIdentification178Choice import PartyIdentification178Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_PtyId", "_SubAcct", "_PrcgId", "_AcctId", "_BlckChainAdrOrWllt", "_PrcgDt"]
+	__slots__ = ["_PrcgDt", "_PtyId", "_CtctPrsn", "_SubAcct", "_PrcgId", "_AcctId", "_BlckChainAdrOrWllt"]
 	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
+	def PrcgDt(self):
+		return self._PrcgDt
 
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+	@PrcgDt.setter
+	def PrcgDt(self, value):
+		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
 
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
+	@PrcgDt.deleter
+	def PrcgDt(self):
+		del self._PrcgDt
+		self._PrcgDt = None
 
 	@property
 	def PtyId(self):
@@ -34,6 +34,19 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 	def PtyId(self):
 		del self._PtyId
 		self._PtyId = None
+
+	@property
+	def CtctPrsn(self):
+		return self._CtctPrsn
+
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
 
 	@property
 	def SubAcct(self):
@@ -87,26 +100,13 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
 
-	@property
-	def PrcgDt(self):
-		return self._PrcgDt
-
-	@PrcgDt.setter
-	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
-
-	@PrcgDt.deleter
-	def PrcgDt(self):
-		del self._PrcgDt
-		self._PrcgDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification178Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=SubAccount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

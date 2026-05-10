@@ -1,6 +1,6 @@
 from . import base_types
-from .TotalNumber2 import TotalNumber2
-from .Max6NumericText import Max6NumericText
+from ._Max6NumericText import Max6NumericText
+from ._TotalNumber2 import TotalNumber2
 
 class NumberCount2Choice(base_types._BaseFieldType):
 

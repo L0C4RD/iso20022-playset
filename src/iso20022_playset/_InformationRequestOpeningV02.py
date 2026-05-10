@@ -1,27 +1,27 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .DueDate1 import DueDate1
-from .Max35Text import Max35Text
-from .LegalMandate1 import LegalMandate1
-from .SearchCriteria2Choice import SearchCriteria2Choice
-from .DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from .YesNoIndicator import YesNoIndicator
+from ._SearchCriteria2Choice import SearchCriteria2Choice
+from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
+from ._LegalMandate1 import LegalMandate1
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._YesNoIndicator import YesNoIndicator
+from ._DueDate1 import DueDate1
 
 class InformationRequestOpeningV02(base_types._BaseFieldType):
 
-	__slots__ = ["_LglMndtBsis", "_SchCrit", "_CnfdtltySts", "_InvstgtnId", "_SplmtryData", "_DueDt", "_InvstgtnPrd"]
+	__slots__ = ["_CnfdtltySts", "_SchCrit", "_InvstgtnId", "_LglMndtBsis", "_DueDt", "_InvstgtnPrd", "_SplmtryData"]
 	@property
-	def LglMndtBsis(self):
-		return self._LglMndtBsis
+	def CnfdtltySts(self):
+		return self._CnfdtltySts
 
-	@LglMndtBsis.setter
-	def LglMndtBsis(self, value):
-		self._LglMndtBsis = value if type(value) != base_types.auto else self.make_default("LglMndtBsis")
+	@CnfdtltySts.setter
+	def CnfdtltySts(self, value):
+		self._CnfdtltySts = value if type(value) != base_types.auto else self.make_default("CnfdtltySts")
 
-	@LglMndtBsis.deleter
-	def LglMndtBsis(self):
-		del self._LglMndtBsis
-		self._LglMndtBsis = None
+	@CnfdtltySts.deleter
+	def CnfdtltySts(self):
+		del self._CnfdtltySts
+		self._CnfdtltySts = None
 
 	@property
 	def SchCrit(self):
@@ -37,19 +37,6 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
-	def CnfdtltySts(self):
-		return self._CnfdtltySts
-
-	@CnfdtltySts.setter
-	def CnfdtltySts(self, value):
-		self._CnfdtltySts = value if type(value) != base_types.auto else self.make_default("CnfdtltySts")
-
-	@CnfdtltySts.deleter
-	def CnfdtltySts(self):
-		del self._CnfdtltySts
-		self._CnfdtltySts = None
-
-	@property
 	def InvstgtnId(self):
 		return self._InvstgtnId
 
@@ -63,17 +50,17 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		self._InvstgtnId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def LglMndtBsis(self):
+		return self._LglMndtBsis
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@LglMndtBsis.setter
+	def LglMndtBsis(self, value):
+		self._LglMndtBsis = value if type(value) != base_types.auto else self.make_default("LglMndtBsis")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@LglMndtBsis.deleter
+	def LglMndtBsis(self):
+		del self._LglMndtBsis
+		self._LglMndtBsis = None
 
 	@property
 	def DueDt(self):
@@ -101,13 +88,26 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		del self._InvstgtnPrd
 		self._InvstgtnPrd = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LglMndtBsis', type=LegalMandate1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchCrit', type=SearchCriteria2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnfdtltySts', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=SearchCriteria2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglMndtBsis', type=LegalMandate1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueDt', type=DueDate1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtnPrd', type=DateOrDateTimePeriod1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

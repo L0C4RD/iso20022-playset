@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification27 import GenericIdentification27
-from .TransferReason1Code import TransferReason1Code
+from ._GenericIdentification27 import GenericIdentification27
+from ._TransferReason1Code import TransferReason1Code
 
 class TransferReason1Choice(base_types._BaseFieldType):
 

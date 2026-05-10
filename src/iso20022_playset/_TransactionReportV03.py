@@ -1,23 +1,10 @@
 from . import base_types
-from .TransactionReportItems3 import TransactionReportItems3
-from .MessageIdentification1 import MessageIdentification1
+from ._TransactionReportItems3 import TransactionReportItems3
+from ._MessageIdentification1 import MessageIdentification1
 
 class TransactionReportV03(base_types._BaseFieldType):
 
-	__slots__ = ["_RptId", "_RltdMsgRef", "_RptdItms"]
-	@property
-	def RptId(self):
-		return self._RptId
-
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
-
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
-
+	__slots__ = ["_RltdMsgRef", "_RptdItms", "_RptId"]
 	@property
 	def RltdMsgRef(self):
 		return self._RltdMsgRef
@@ -44,9 +31,22 @@ class TransactionReportV03(base_types._BaseFieldType):
 		del self._RptdItms
 		self._RptdItms = None
 
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptdItms', type=TransactionReportItems3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

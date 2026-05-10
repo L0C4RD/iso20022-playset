@@ -1,25 +1,12 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Frequency37Choice import Frequency37Choice
-from .TrueFalseIndicator import TrueFalseIndicator
+from ._Frequency37Choice import Frequency37Choice
+from ._PercentageRate import PercentageRate
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class MandateAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rate", "_DtAdjstmntRuleInd", "_Ctgy", "_Amt"]
-	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
+	__slots__ = ["_DtAdjstmntRuleInd", "_Rate", "_Ctgy", "_Amt"]
 	@property
 	def DtAdjstmntRuleInd(self):
 		return self._DtAdjstmntRuleInd
@@ -32,6 +19,19 @@ class MandateAdjustment1(base_types._BaseFieldType):
 	def DtAdjstmntRuleInd(self):
 		del self._DtAdjstmntRuleInd
 		self._DtAdjstmntRuleInd = None
+
+	@property
+	def Rate(self):
+		return self._Rate
+
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	@property
 	def Ctgy(self):
@@ -60,8 +60,8 @@ class MandateAdjustment1(base_types._BaseFieldType):
 		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtAdjstmntRuleInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctgy', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))

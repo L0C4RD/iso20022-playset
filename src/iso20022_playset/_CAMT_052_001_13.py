@@ -1,5 +1,5 @@
 from . import base_types
-from .BankToCustomerAccountReportV13 import BankToCustomerAccountReportV13
+from ._BankToCustomerAccountReportV13 import BankToCustomerAccountReportV13
 
 class CAMT_052_001_13():
 

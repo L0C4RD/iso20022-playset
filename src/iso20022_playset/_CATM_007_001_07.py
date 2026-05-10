@@ -1,5 +1,5 @@
 from . import base_types
-from .CertificateManagementRequestV07 import CertificateManagementRequestV07
+from ._CertificateManagementRequestV07 import CertificateManagementRequestV07
 
 class CATM_007_001_07():
 

@@ -1,13 +1,13 @@
 from . import base_types
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from .PartyIdentification136Choice import PartyIdentification136Choice
-from .SafekeepingPlaceFormat54Choice import SafekeepingPlaceFormat54Choice
-from .BalanceFormat14Choice import BalanceFormat14Choice
+from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._BalanceFormat14Choice import BalanceFormat14Choice
+from ._SafekeepingPlaceFormat54Choice import SafekeepingPlaceFormat54Choice
 
 class AccountIdentification76(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_ConfdBal", "_SfkpgPlc", "_SfkpgAcct", "_AcctOwnr"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_ConfdBal", "_SfkpgAcct", "_SfkpgPlc", "_AcctOwnr"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -35,19 +35,6 @@ class AccountIdentification76(base_types._BaseFieldType):
 		self._ConfdBal = None
 
 	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -59,6 +46,19 @@ class AccountIdentification76(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
 
 	@property
 	def AcctOwnr(self):
@@ -76,8 +76,8 @@ class AccountIdentification76(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat54Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat54Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

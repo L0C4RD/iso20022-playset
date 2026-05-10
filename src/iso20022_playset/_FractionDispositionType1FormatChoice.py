@@ -1,6 +1,6 @@
 from . import base_types
-from .FractionDispositionType1Code import FractionDispositionType1Code
-from .GenericIdentification13 import GenericIdentification13
+from ._GenericIdentification13 import GenericIdentification13
+from ._FractionDispositionType1Code import FractionDispositionType1Code
 
 class FractionDispositionType1FormatChoice(base_types._BaseFieldType):
 

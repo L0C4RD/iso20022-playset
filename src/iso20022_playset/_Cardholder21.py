@@ -1,43 +1,30 @@
 from . import base_types
-from .PostalAddress22 import PostalAddress22
-from .Vehicle1 import Vehicle1
-from .TransactionVerificationResult4 import TransactionVerificationResult4
-from .Max45Text import Max45Text
-from .PersonIdentification15 import PersonIdentification15
-from .Max35Text import Max35Text
-from .CardholderAuthentication17 import CardholderAuthentication17
-from .MobileData6 import MobileData6
-from .LanguageCode import LanguageCode
-from .Max70Text import Max70Text
+from ._PersonIdentification15 import PersonIdentification15
+from ._Max70Text import Max70Text
+from ._CardholderAuthentication17 import CardholderAuthentication17
+from ._Max45Text import Max45Text
+from ._Vehicle1 import Vehicle1
+from ._MobileData6 import MobileData6
+from ._PostalAddress22 import PostalAddress22
+from ._Max35Text import Max35Text
+from ._TransactionVerificationResult4 import TransactionVerificationResult4
+from ._LanguageCode import LanguageCode
 
 class Cardholder21(base_types._BaseFieldType):
 
-	__slots__ = ["_MobData", "_Nm", "_ShppgAdr", "_PrsnlData", "_Lang", "_TripNb", "_Authntcn", "_Id", "_BllgAdr", "_Vhcl", "_TxVrfctnRslt"]
+	__slots__ = ["_PrsnlData", "_ShppgAdr", "_BllgAdr", "_TripNb", "_Authntcn", "_Id", "_Lang", "_Nm", "_MobData", "_TxVrfctnRslt", "_Vhcl"]
 	@property
-	def MobData(self):
-		return self._MobData
+	def PrsnlData(self):
+		return self._PrsnlData
 
-	@MobData.setter
-	def MobData(self, value):
-		self._MobData = value if type(value) != base_types.auto else self.make_default("MobData")
+	@PrsnlData.setter
+	def PrsnlData(self, value):
+		self._PrsnlData = value if type(value) != base_types.auto else self.make_default("PrsnlData")
 
-	@MobData.deleter
-	def MobData(self):
-		del self._MobData
-		self._MobData = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PrsnlData.deleter
+	def PrsnlData(self):
+		del self._PrsnlData
+		self._PrsnlData = None
 
 	@property
 	def ShppgAdr(self):
@@ -53,30 +40,17 @@ class Cardholder21(base_types._BaseFieldType):
 		self._ShppgAdr = None
 
 	@property
-	def PrsnlData(self):
-		return self._PrsnlData
+	def BllgAdr(self):
+		return self._BllgAdr
 
-	@PrsnlData.setter
-	def PrsnlData(self, value):
-		self._PrsnlData = value if type(value) != base_types.auto else self.make_default("PrsnlData")
+	@BllgAdr.setter
+	def BllgAdr(self, value):
+		self._BllgAdr = value if type(value) != base_types.auto else self.make_default("BllgAdr")
 
-	@PrsnlData.deleter
-	def PrsnlData(self):
-		del self._PrsnlData
-		self._PrsnlData = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
+	@BllgAdr.deleter
+	def BllgAdr(self):
+		del self._BllgAdr
+		self._BllgAdr = None
 
 	@property
 	def TripNb(self):
@@ -118,30 +92,43 @@ class Cardholder21(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def BllgAdr(self):
-		return self._BllgAdr
+	def Lang(self):
+		return self._Lang
 
-	@BllgAdr.setter
-	def BllgAdr(self, value):
-		self._BllgAdr = value if type(value) != base_types.auto else self.make_default("BllgAdr")
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
 
-	@BllgAdr.deleter
-	def BllgAdr(self):
-		del self._BllgAdr
-		self._BllgAdr = None
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
 
 	@property
-	def Vhcl(self):
-		return self._Vhcl
+	def Nm(self):
+		return self._Nm
 
-	@Vhcl.setter
-	def Vhcl(self, value):
-		self._Vhcl = value if type(value) != base_types.auto else self.make_default("Vhcl")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
 
-	@Vhcl.deleter
-	def Vhcl(self):
-		del self._Vhcl
-		self._Vhcl = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def MobData(self):
+		return self._MobData
+
+	@MobData.setter
+	def MobData(self, value):
+		self._MobData = value if type(value) != base_types.auto else self.make_default("MobData")
+
+	@MobData.deleter
+	def MobData(self):
+		del self._MobData
+		self._MobData = None
 
 	@property
 	def TxVrfctnRslt(self):
@@ -156,17 +143,30 @@ class Cardholder21(base_types._BaseFieldType):
 		del self._TxVrfctnRslt
 		self._TxVrfctnRslt = None
 
+	@property
+	def Vhcl(self):
+		return self._Vhcl
+
+	@Vhcl.setter
+	def Vhcl(self, value):
+		self._Vhcl = value if type(value) != base_types.auto else self.make_default("Vhcl")
+
+	@Vhcl.deleter
+	def Vhcl(self):
+		del self._Vhcl
+		self._Vhcl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MobData', type=MobileData6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Nm', type=Max45Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShppgAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrsnlData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShppgAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BllgAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TripNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authntcn', type=CardholderAuthentication17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=PersonIdentification15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BllgAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vhcl', type=Vehicle1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max45Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MobData', type=MobileData6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxVrfctnRslt', type=TransactionVerificationResult4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Vhcl', type=Vehicle1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .CertificationFormatType1Code import CertificationFormatType1Code
+from ._CertificationFormatType1Code import CertificationFormatType1Code
+from ._GenericIdentification47 import GenericIdentification47
 
 class CertificationTypeFormat4Choice(base_types._BaseFieldType):
 

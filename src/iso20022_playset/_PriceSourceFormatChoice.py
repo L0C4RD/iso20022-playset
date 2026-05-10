@@ -1,23 +1,23 @@
 from . import base_types
-from .PriceSource import PriceSource
-from .GenericIdentification5 import GenericIdentification5
-from .MICIdentifier import MICIdentifier
+from ._GenericIdentification5 import GenericIdentification5
+from ._PriceSource import PriceSource
+from ._MICIdentifier import MICIdentifier
 
 class PriceSourceFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_LclMktPlc", "_NonLclMktPlc", "_PlcAsDSS"]
+	__slots__ = ["_PlcAsDSS", "_NonLclMktPlc", "_LclMktPlc"]
 	@property
-	def LclMktPlc(self):
-		return self._LclMktPlc
+	def PlcAsDSS(self):
+		return self._PlcAsDSS
 
-	@LclMktPlc.setter
-	def LclMktPlc(self, value):
-		self._LclMktPlc = value if type(value) != base_types.auto else self.make_default("LclMktPlc")
+	@PlcAsDSS.setter
+	def PlcAsDSS(self, value):
+		self._PlcAsDSS = value if type(value) != base_types.auto else self.make_default("PlcAsDSS")
 
-	@LclMktPlc.deleter
-	def LclMktPlc(self):
-		del self._LclMktPlc
-		self._LclMktPlc = None
+	@PlcAsDSS.deleter
+	def PlcAsDSS(self):
+		del self._PlcAsDSS
+		self._PlcAsDSS = None
 
 	@property
 	def NonLclMktPlc(self):
@@ -33,21 +33,21 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 		self._NonLclMktPlc = None
 
 	@property
-	def PlcAsDSS(self):
-		return self._PlcAsDSS
+	def LclMktPlc(self):
+		return self._LclMktPlc
 
-	@PlcAsDSS.setter
-	def PlcAsDSS(self, value):
-		self._PlcAsDSS = value if type(value) != base_types.auto else self.make_default("PlcAsDSS")
+	@LclMktPlc.setter
+	def LclMktPlc(self, value):
+		self._LclMktPlc = value if type(value) != base_types.auto else self.make_default("LclMktPlc")
 
-	@PlcAsDSS.deleter
-	def PlcAsDSS(self):
-		del self._PlcAsDSS
-		self._PlcAsDSS = None
+	@LclMktPlc.deleter
+	def LclMktPlc(self):
+		del self._LclMktPlc
+		self._LclMktPlc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LclMktPlc', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NonLclMktPlc', type=PriceSource, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PlcAsDSS', type=GenericIdentification5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NonLclMktPlc', type=PriceSource, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LclMktPlc', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

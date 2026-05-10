@@ -1,7 +1,7 @@
 from . import base_types
-from .ATMCommandIdentification1 import ATMCommandIdentification1
-from .MessageFunction8Code import MessageFunction8Code
-from .ATMEnvironment9 import ATMEnvironment9
+from ._MessageFunction8Code import MessageFunction8Code
+from ._ATMEnvironment9 import ATMEnvironment9
+from ._ATMCommandIdentification1 import ATMCommandIdentification1
 
 class HostToATMRequest1(base_types._BaseFieldType):
 

@@ -1,9 +1,9 @@
 from . import base_types
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
 
 class KEKIdentifier4(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyId", "_Nm", "_KeyVrsn"]
+	__slots__ = ["_KeyId", "_KeyVrsn", "_Nm"]
 	@property
 	def KeyId(self):
 		return self._KeyId
@@ -18,19 +18,6 @@ class KEKIdentifier4(base_types._BaseFieldType):
 		self._KeyId = None
 
 	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
 	def KeyVrsn(self):
 		return self._KeyVrsn
 
@@ -43,9 +30,22 @@ class KEKIdentifier4(base_types._BaseFieldType):
 		del self._KeyVrsn
 		self._KeyVrsn = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

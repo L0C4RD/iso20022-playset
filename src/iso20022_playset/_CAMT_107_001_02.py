@@ -1,5 +1,5 @@
 from . import base_types
-from .ChequePresentmentNotificationV02 import ChequePresentmentNotificationV02
+from ._ChequePresentmentNotificationV02 import ChequePresentmentNotificationV02
 
 class CAMT_107_001_02():
 

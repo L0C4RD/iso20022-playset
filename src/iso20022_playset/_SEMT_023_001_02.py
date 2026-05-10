@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesEndOfProcessReportV02 import SecuritiesEndOfProcessReportV02
+from ._SecuritiesEndOfProcessReportV02 import SecuritiesEndOfProcessReportV02
 
 class SEMT_023_001_02():
 

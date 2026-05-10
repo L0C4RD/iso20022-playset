@@ -1,12 +1,38 @@
 from . import base_types
-from .Number import Number
-from .YesNoIndicator import YesNoIndicator
-from .Max35Text import Max35Text
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._Max35Text import Max35Text
+from ._Number import Number
+from ._YesNoIndicator import YesNoIndicator
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class BuyIn3(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDays", "_ReqForDelyInd", "_UcvrdQty", "_CvrdQty", "_InitlQty", "_BuyInNtfctnId"]
+	__slots__ = ["_InitlQty", "_CvrdQty", "_NbOfDays", "_BuyInNtfctnId", "_ReqForDelyInd", "_UcvrdQty"]
+	@property
+	def InitlQty(self):
+		return self._InitlQty
+
+	@InitlQty.setter
+	def InitlQty(self, value):
+		self._InitlQty = value if type(value) != base_types.auto else self.make_default("InitlQty")
+
+	@InitlQty.deleter
+	def InitlQty(self):
+		del self._InitlQty
+		self._InitlQty = None
+
+	@property
+	def CvrdQty(self):
+		return self._CvrdQty
+
+	@CvrdQty.setter
+	def CvrdQty(self, value):
+		self._CvrdQty = value if type(value) != base_types.auto else self.make_default("CvrdQty")
+
+	@CvrdQty.deleter
+	def CvrdQty(self):
+		del self._CvrdQty
+		self._CvrdQty = None
+
 	@property
 	def NbOfDays(self):
 		return self._NbOfDays
@@ -19,6 +45,19 @@ class BuyIn3(base_types._BaseFieldType):
 	def NbOfDays(self):
 		del self._NbOfDays
 		self._NbOfDays = None
+
+	@property
+	def BuyInNtfctnId(self):
+		return self._BuyInNtfctnId
+
+	@BuyInNtfctnId.setter
+	def BuyInNtfctnId(self, value):
+		self._BuyInNtfctnId = value if type(value) != base_types.auto else self.make_default("BuyInNtfctnId")
+
+	@BuyInNtfctnId.deleter
+	def BuyInNtfctnId(self):
+		del self._BuyInNtfctnId
+		self._BuyInNtfctnId = None
 
 	@property
 	def ReqForDelyInd(self):
@@ -46,51 +85,12 @@ class BuyIn3(base_types._BaseFieldType):
 		del self._UcvrdQty
 		self._UcvrdQty = None
 
-	@property
-	def CvrdQty(self):
-		return self._CvrdQty
-
-	@CvrdQty.setter
-	def CvrdQty(self, value):
-		self._CvrdQty = value if type(value) != base_types.auto else self.make_default("CvrdQty")
-
-	@CvrdQty.deleter
-	def CvrdQty(self):
-		del self._CvrdQty
-		self._CvrdQty = None
-
-	@property
-	def InitlQty(self):
-		return self._InitlQty
-
-	@InitlQty.setter
-	def InitlQty(self, value):
-		self._InitlQty = value if type(value) != base_types.auto else self.make_default("InitlQty")
-
-	@InitlQty.deleter
-	def InitlQty(self):
-		del self._InitlQty
-		self._InitlQty = None
-
-	@property
-	def BuyInNtfctnId(self):
-		return self._BuyInNtfctnId
-
-	@BuyInNtfctnId.setter
-	def BuyInNtfctnId(self, value):
-		self._BuyInNtfctnId = value if type(value) != base_types.auto else self.make_default("BuyInNtfctnId")
-
-	@BuyInNtfctnId.deleter
-	def BuyInNtfctnId(self):
-		del self._BuyInNtfctnId
-		self._BuyInNtfctnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='InitlQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDays', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForDelyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UcvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CvrdQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

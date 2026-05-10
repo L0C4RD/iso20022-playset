@@ -1,6 +1,6 @@
 from . import base_types
-from .OptionFeatures13Code import OptionFeatures13Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._OptionFeatures13Code import OptionFeatures13Code
 
 class OptionFeaturesFormat31Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .ExternalChequeAgentInstruction1Code import ExternalChequeAgentInstruction1Code
-from .Max140Text import Max140Text
+from ._ExternalChequeAgentInstruction1Code import ExternalChequeAgentInstruction1Code
+from ._Max140Text import Max140Text
 
 class InstructionForChequeAgent1(base_types._BaseFieldType):
 

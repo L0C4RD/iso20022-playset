@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .POIComponentAssessment1Code import POIComponentAssessment1Code
+from ._POIComponentAssessment1Code import POIComponentAssessment1Code
+from ._Max35Text import Max35Text
+from ._ISODateTime import ISODateTime
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Assgnr", "_Tp", "_DlvryDt", "_Nb", "_XprtnDt"]
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
+	__slots__ = ["_Tp", "_DlvryDt", "_Nb", "_Assgnr", "_XprtnDt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -59,6 +46,19 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._Nb = None
 
 	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
+	@property
 	def XprtnDt(self):
 		return self._XprtnDt
 
@@ -72,10 +72,10 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 		self._XprtnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=POIComponentAssessment1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XprtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

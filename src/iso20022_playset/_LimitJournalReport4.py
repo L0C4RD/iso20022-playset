@@ -1,6 +1,6 @@
 from . import base_types
-from .LimitJournalReportOrError8Choice import LimitJournalReportOrError8Choice
-from .LimitIdentification7 import LimitIdentification7
+from ._LimitIdentification7 import LimitIdentification7
+from ._LimitJournalReportOrError8Choice import LimitJournalReportOrError8Choice
 
 class LimitJournalReport4(base_types._BaseFieldType):
 

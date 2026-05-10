@@ -1,6 +1,6 @@
 from . import base_types
-from .OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from .CollateralRole1Code import CollateralRole1Code
+from ._CollateralRole1Code import CollateralRole1Code
+from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 
 class CounterpartyIdentification10(base_types._BaseFieldType):
 

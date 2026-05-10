@@ -1,6 +1,6 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
-from .SignatureType1Code import SignatureType1Code
+from ._YesNoIndicator import YesNoIndicator
+from ._SignatureType1Code import SignatureType1Code
 
 class Forms1(base_types._BaseFieldType):
 

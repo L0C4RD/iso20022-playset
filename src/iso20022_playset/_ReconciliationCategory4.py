@@ -1,5 +1,5 @@
 from . import base_types
-from .YesNoIndicator import YesNoIndicator
+from ._YesNoIndicator import YesNoIndicator
 
 class ReconciliationCategory4(base_types._BaseFieldType):
 

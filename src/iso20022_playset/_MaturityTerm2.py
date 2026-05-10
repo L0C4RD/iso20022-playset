@@ -1,6 +1,6 @@
 from . import base_types
-from .Max3Number import Max3Number
-from .RateBasis1Code import RateBasis1Code
+from ._Max3Number import Max3Number
+from ._RateBasis1Code import RateBasis1Code
 
 class MaturityTerm2(base_types._BaseFieldType):
 

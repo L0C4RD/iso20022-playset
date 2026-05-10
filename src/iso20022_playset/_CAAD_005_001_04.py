@@ -1,5 +1,5 @@
 from . import base_types
-from .ReconciliationInitiationV04 import ReconciliationInitiationV04
+from ._ReconciliationInitiationV04 import ReconciliationInitiationV04
 
 class CAAD_005_001_04():
 

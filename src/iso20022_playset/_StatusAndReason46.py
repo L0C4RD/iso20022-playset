@@ -1,11 +1,11 @@
 from . import base_types
-from .AffirmationStatus10Choice import AffirmationStatus10Choice
-from .UnaffirmedReason3Choice import UnaffirmedReason3Choice
-from .Max210Text import Max210Text
+from ._AffirmationStatus10Choice import AffirmationStatus10Choice
+from ._Max210Text import Max210Text
+from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
 
 class StatusAndReason46(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRsnInf", "_UaffrmdRsn", "_AffirmSts"]
+	__slots__ = ["_AddtlRsnInf", "_AffirmSts", "_UaffrmdRsn"]
 	@property
 	def AddtlRsnInf(self):
 		return self._AddtlRsnInf
@@ -20,19 +20,6 @@ class StatusAndReason46(base_types._BaseFieldType):
 		self._AddtlRsnInf = None
 
 	@property
-	def UaffrmdRsn(self):
-		return self._UaffrmdRsn
-
-	@UaffrmdRsn.setter
-	def UaffrmdRsn(self, value):
-		self._UaffrmdRsn = value if type(value) != base_types.auto else self.make_default("UaffrmdRsn")
-
-	@UaffrmdRsn.deleter
-	def UaffrmdRsn(self):
-		del self._UaffrmdRsn
-		self._UaffrmdRsn = None
-
-	@property
 	def AffirmSts(self):
 		return self._AffirmSts
 
@@ -45,9 +32,22 @@ class StatusAndReason46(base_types._BaseFieldType):
 		del self._AffirmSts
 		self._AffirmSts = None
 
+	@property
+	def UaffrmdRsn(self):
+		return self._UaffrmdRsn
+
+	@UaffrmdRsn.setter
+	def UaffrmdRsn(self, value):
+		self._UaffrmdRsn = value if type(value) != base_types.auto else self.make_default("UaffrmdRsn")
+
+	@UaffrmdRsn.deleter
+	def UaffrmdRsn(self):
+		del self._UaffrmdRsn
+		self._UaffrmdRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UaffrmdRsn', type=UnaffirmedReason3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus10Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UaffrmdRsn', type=UnaffirmedReason3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

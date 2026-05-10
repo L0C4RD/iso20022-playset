@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._Max35Text import Max35Text
+from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
+from ._ISODateTime import ISODateTime
 
 class MessageHeader12(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm", "_OrgnlBizInstr"]
+	__slots__ = ["_OrgnlBizInstr", "_MsgId", "_CreDtTm"]
+	@property
+	def OrgnlBizInstr(self):
+		return self._OrgnlBizInstr
+
+	@OrgnlBizInstr.setter
+	def OrgnlBizInstr(self, value):
+		self._OrgnlBizInstr = value if type(value) != base_types.auto else self.make_default("OrgnlBizInstr")
+
+	@OrgnlBizInstr.deleter
+	def OrgnlBizInstr(self):
+		del self._OrgnlBizInstr
+		self._OrgnlBizInstr = None
+
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -32,22 +45,9 @@ class MessageHeader12(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
-	@property
-	def OrgnlBizInstr(self):
-		return self._OrgnlBizInstr
-
-	@OrgnlBizInstr.setter
-	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != base_types.auto else self.make_default("OrgnlBizInstr")
-
-	@OrgnlBizInstr.deleter
-	def OrgnlBizInstr(self):
-		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlBizInstr', type=OriginalBusinessInstruction1, min=0, max=1, mutex_group=None, array=False),
 	))
 

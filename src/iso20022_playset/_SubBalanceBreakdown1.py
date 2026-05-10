@@ -1,6 +1,6 @@
 from . import base_types
-from .SubBalanceQuantity5Choice import SubBalanceQuantity5Choice
-from .SubBalanceType9Choice import SubBalanceType9Choice
+from ._SubBalanceType9Choice import SubBalanceType9Choice
+from ._SubBalanceQuantity5Choice import SubBalanceQuantity5Choice
 
 class SubBalanceBreakdown1(base_types._BaseFieldType):
 

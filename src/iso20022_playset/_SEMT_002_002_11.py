@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesBalanceCustodyReport002V11 import SecuritiesBalanceCustodyReport002V11
+from ._SecuritiesBalanceCustodyReport002V11 import SecuritiesBalanceCustodyReport002V11
 
 class SEMT_002_002_11():
 

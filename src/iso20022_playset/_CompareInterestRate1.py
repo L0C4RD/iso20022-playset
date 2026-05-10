@@ -1,54 +1,28 @@
 from . import base_types
-from .CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
-from .CompareAmountAndDirection1 import CompareAmountAndDirection1
-from .CompareNumber5 import CompareNumber5
-from .CompareDecimalNumber3 import CompareDecimalNumber3
-from .CompareRateBasis3 import CompareRateBasis3
-from .CompareInterestComputationMethod3 import CompareInterestComputationMethod3
-from .ComparePercentageRate3 import ComparePercentageRate3
-from .CompareNumber6 import CompareNumber6
+from ._CompareDecimalNumber3 import CompareDecimalNumber3
+from ._ComparePercentageRate3 import ComparePercentageRate3
+from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
+from ._CompareNumber5 import CompareNumber5
+from ._CompareRateBasis3 import CompareRateBasis3
+from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
+from ._CompareAmountAndDirection1 import CompareAmountAndDirection1
+from ._CompareNumber6 import CompareNumber6
 
 class CompareInterestRate1(base_types._BaseFieldType):
 
-	__slots__ = ["_FxdIntrstRate", "_BsisPtSprd", "_FltgIntrstRefRate", "_FltgIntrstRatePmtFrqcyUnit", "_FltgIntrstRatePmtFrqcyVal", "_FltgIntrstRateTermUnit", "_FltgIntrstRateTermVal", "_DayCntBsis", "_FltgIntrstRateRstFrqcyUnit", "_FltgIntrstRateRstFrqcyVal", "_MrgnLnAmt"]
+	__slots__ = ["_DayCntBsis", "_FltgIntrstRatePmtFrqcyUnit", "_FltgIntrstRefRate", "_FxdIntrstRate", "_FltgIntrstRateTermUnit", "_BsisPtSprd", "_FltgIntrstRateTermVal", "_FltgIntrstRateRstFrqcyVal", "_FltgIntrstRatePmtFrqcyVal", "_MrgnLnAmt", "_FltgIntrstRateRstFrqcyUnit"]
 	@property
-	def FxdIntrstRate(self):
-		return self._FxdIntrstRate
+	def DayCntBsis(self):
+		return self._DayCntBsis
 
-	@FxdIntrstRate.setter
-	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+	@DayCntBsis.setter
+	def DayCntBsis(self, value):
+		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
 
-	@FxdIntrstRate.deleter
-	def FxdIntrstRate(self):
-		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
-
-	@property
-	def BsisPtSprd(self):
-		return self._BsisPtSprd
-
-	@BsisPtSprd.setter
-	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
-
-	@BsisPtSprd.deleter
-	def BsisPtSprd(self):
-		del self._BsisPtSprd
-		self._BsisPtSprd = None
-
-	@property
-	def FltgIntrstRefRate(self):
-		return self._FltgIntrstRefRate
-
-	@FltgIntrstRefRate.setter
-	def FltgIntrstRefRate(self, value):
-		self._FltgIntrstRefRate = value if type(value) != base_types.auto else self.make_default("FltgIntrstRefRate")
-
-	@FltgIntrstRefRate.deleter
-	def FltgIntrstRefRate(self):
-		del self._FltgIntrstRefRate
-		self._FltgIntrstRefRate = None
+	@DayCntBsis.deleter
+	def DayCntBsis(self):
+		del self._DayCntBsis
+		self._DayCntBsis = None
 
 	@property
 	def FltgIntrstRatePmtFrqcyUnit(self):
@@ -64,17 +38,30 @@ class CompareInterestRate1(base_types._BaseFieldType):
 		self._FltgIntrstRatePmtFrqcyUnit = None
 
 	@property
-	def FltgIntrstRatePmtFrqcyVal(self):
-		return self._FltgIntrstRatePmtFrqcyVal
+	def FltgIntrstRefRate(self):
+		return self._FltgIntrstRefRate
 
-	@FltgIntrstRatePmtFrqcyVal.setter
-	def FltgIntrstRatePmtFrqcyVal(self, value):
-		self._FltgIntrstRatePmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyVal")
+	@FltgIntrstRefRate.setter
+	def FltgIntrstRefRate(self, value):
+		self._FltgIntrstRefRate = value if type(value) != base_types.auto else self.make_default("FltgIntrstRefRate")
 
-	@FltgIntrstRatePmtFrqcyVal.deleter
-	def FltgIntrstRatePmtFrqcyVal(self):
-		del self._FltgIntrstRatePmtFrqcyVal
-		self._FltgIntrstRatePmtFrqcyVal = None
+	@FltgIntrstRefRate.deleter
+	def FltgIntrstRefRate(self):
+		del self._FltgIntrstRefRate
+		self._FltgIntrstRefRate = None
+
+	@property
+	def FxdIntrstRate(self):
+		return self._FxdIntrstRate
+
+	@FxdIntrstRate.setter
+	def FxdIntrstRate(self, value):
+		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+
+	@FxdIntrstRate.deleter
+	def FxdIntrstRate(self):
+		del self._FxdIntrstRate
+		self._FxdIntrstRate = None
 
 	@property
 	def FltgIntrstRateTermUnit(self):
@@ -90,6 +77,19 @@ class CompareInterestRate1(base_types._BaseFieldType):
 		self._FltgIntrstRateTermUnit = None
 
 	@property
+	def BsisPtSprd(self):
+		return self._BsisPtSprd
+
+	@BsisPtSprd.setter
+	def BsisPtSprd(self, value):
+		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+
+	@BsisPtSprd.deleter
+	def BsisPtSprd(self):
+		del self._BsisPtSprd
+		self._BsisPtSprd = None
+
+	@property
 	def FltgIntrstRateTermVal(self):
 		return self._FltgIntrstRateTermVal
 
@@ -101,32 +101,6 @@ class CompareInterestRate1(base_types._BaseFieldType):
 	def FltgIntrstRateTermVal(self):
 		del self._FltgIntrstRateTermVal
 		self._FltgIntrstRateTermVal = None
-
-	@property
-	def DayCntBsis(self):
-		return self._DayCntBsis
-
-	@DayCntBsis.setter
-	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
-
-	@DayCntBsis.deleter
-	def DayCntBsis(self):
-		del self._DayCntBsis
-		self._DayCntBsis = None
-
-	@property
-	def FltgIntrstRateRstFrqcyUnit(self):
-		return self._FltgIntrstRateRstFrqcyUnit
-
-	@FltgIntrstRateRstFrqcyUnit.setter
-	def FltgIntrstRateRstFrqcyUnit(self, value):
-		self._FltgIntrstRateRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyUnit")
-
-	@FltgIntrstRateRstFrqcyUnit.deleter
-	def FltgIntrstRateRstFrqcyUnit(self):
-		del self._FltgIntrstRateRstFrqcyUnit
-		self._FltgIntrstRateRstFrqcyUnit = None
 
 	@property
 	def FltgIntrstRateRstFrqcyVal(self):
@@ -142,6 +116,19 @@ class CompareInterestRate1(base_types._BaseFieldType):
 		self._FltgIntrstRateRstFrqcyVal = None
 
 	@property
+	def FltgIntrstRatePmtFrqcyVal(self):
+		return self._FltgIntrstRatePmtFrqcyVal
+
+	@FltgIntrstRatePmtFrqcyVal.setter
+	def FltgIntrstRatePmtFrqcyVal(self, value):
+		self._FltgIntrstRatePmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyVal")
+
+	@FltgIntrstRatePmtFrqcyVal.deleter
+	def FltgIntrstRatePmtFrqcyVal(self):
+		del self._FltgIntrstRatePmtFrqcyVal
+		self._FltgIntrstRatePmtFrqcyVal = None
+
+	@property
 	def MrgnLnAmt(self):
 		return self._MrgnLnAmt
 
@@ -154,17 +141,30 @@ class CompareInterestRate1(base_types._BaseFieldType):
 		del self._MrgnLnAmt
 		self._MrgnLnAmt = None
 
+	@property
+	def FltgIntrstRateRstFrqcyUnit(self):
+		return self._FltgIntrstRateRstFrqcyUnit
+
+	@FltgIntrstRateRstFrqcyUnit.setter
+	def FltgIntrstRateRstFrqcyUnit(self, value):
+		self._FltgIntrstRateRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyUnit")
+
+	@FltgIntrstRateRstFrqcyUnit.deleter
+	def FltgIntrstRateRstFrqcyUnit(self):
+		del self._FltgIntrstRateRstFrqcyUnit
+		self._FltgIntrstRateRstFrqcyUnit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FxdIntrstRate', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BsisPtSprd', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRefRate', type=CompareBenchmarkCurveName3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRatePmtFrqcyUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRatePmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRateTermUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRateTermVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DayCntBsis', type=CompareInterestComputationMethod3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FltgIntrstRateRstFrqcyUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRatePmtFrqcyUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRefRate', type=CompareBenchmarkCurveName3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FxdIntrstRate', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRateTermUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BsisPtSprd', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRateTermVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FltgIntrstRateRstFrqcyVal', type=CompareNumber6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRatePmtFrqcyVal', type=CompareNumber5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnLnAmt', type=CompareAmountAndDirection1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FltgIntrstRateRstFrqcyUnit', type=CompareRateBasis3, min=0, max=1, mutex_group=None, array=False),
 	))
 

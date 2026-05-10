@@ -1,23 +1,23 @@
 from . import base_types
-from .PartyAddress1 import PartyAddress1
-from .PartyIdentification203Choice import PartyIdentification203Choice
-from .Max350Text import Max350Text
+from ._PartyAddress1 import PartyAddress1
+from ._PartyIdentification203Choice import PartyIdentification203Choice
+from ._Max350Text import Max350Text
 
 class PartyIdentification214(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RspnRcptAdr", "_RcptNm"]
+	__slots__ = ["_RcptNm", "_RspnRcptAdr", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def RcptNm(self):
+		return self._RcptNm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@RcptNm.setter
+	def RcptNm(self, value):
+		self._RcptNm = value if type(value) != base_types.auto else self.make_default("RcptNm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@RcptNm.deleter
+	def RcptNm(self):
+		del self._RcptNm
+		self._RcptNm = None
 
 	@property
 	def RspnRcptAdr(self):
@@ -33,21 +33,21 @@ class PartyIdentification214(base_types._BaseFieldType):
 		self._RspnRcptAdr = None
 
 	@property
-	def RcptNm(self):
-		return self._RcptNm
+	def Id(self):
+		return self._Id
 
-	@RcptNm.setter
-	def RcptNm(self, value):
-		self._RcptNm = value if type(value) != base_types.auto else self.make_default("RcptNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@RcptNm.deleter
-	def RcptNm(self):
-		del self._RcptNm
-		self._RcptNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

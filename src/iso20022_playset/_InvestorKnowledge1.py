@@ -1,35 +1,22 @@
 from . import base_types
-from .OtherTargetMarketInvestorKnowledge1 import OtherTargetMarketInvestorKnowledge1
-from .TargetMarket1Code import TargetMarket1Code
+from ._OtherTargetMarketInvestorKnowledge1 import OtherTargetMarketInvestorKnowledge1
+from ._TargetMarket1Code import TargetMarket1Code
 
 class InvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_AdvncdInvstr", "_InfrmdInvstr", "_ExprtInvstrDE", "_BsicInvstr", "_Othr"]
+	__slots__ = ["_BsicInvstr", "_ExprtInvstrDE", "_Othr", "_InfrmdInvstr", "_AdvncdInvstr"]
 	@property
-	def AdvncdInvstr(self):
-		return self._AdvncdInvstr
+	def BsicInvstr(self):
+		return self._BsicInvstr
 
-	@AdvncdInvstr.setter
-	def AdvncdInvstr(self, value):
-		self._AdvncdInvstr = value if type(value) != base_types.auto else self.make_default("AdvncdInvstr")
+	@BsicInvstr.setter
+	def BsicInvstr(self, value):
+		self._BsicInvstr = value if type(value) != base_types.auto else self.make_default("BsicInvstr")
 
-	@AdvncdInvstr.deleter
-	def AdvncdInvstr(self):
-		del self._AdvncdInvstr
-		self._AdvncdInvstr = None
-
-	@property
-	def InfrmdInvstr(self):
-		return self._InfrmdInvstr
-
-	@InfrmdInvstr.setter
-	def InfrmdInvstr(self, value):
-		self._InfrmdInvstr = value if type(value) != base_types.auto else self.make_default("InfrmdInvstr")
-
-	@InfrmdInvstr.deleter
-	def InfrmdInvstr(self):
-		del self._InfrmdInvstr
-		self._InfrmdInvstr = None
+	@BsicInvstr.deleter
+	def BsicInvstr(self):
+		del self._BsicInvstr
+		self._BsicInvstr = None
 
 	@property
 	def ExprtInvstrDE(self):
@@ -45,19 +32,6 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 		self._ExprtInvstrDE = None
 
 	@property
-	def BsicInvstr(self):
-		return self._BsicInvstr
-
-	@BsicInvstr.setter
-	def BsicInvstr(self, value):
-		self._BsicInvstr = value if type(value) != base_types.auto else self.make_default("BsicInvstr")
-
-	@BsicInvstr.deleter
-	def BsicInvstr(self):
-		del self._BsicInvstr
-		self._BsicInvstr = None
-
-	@property
 	def Othr(self):
 		return self._Othr
 
@@ -70,11 +44,37 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 		del self._Othr
 		self._Othr = None
 
+	@property
+	def InfrmdInvstr(self):
+		return self._InfrmdInvstr
+
+	@InfrmdInvstr.setter
+	def InfrmdInvstr(self, value):
+		self._InfrmdInvstr = value if type(value) != base_types.auto else self.make_default("InfrmdInvstr")
+
+	@InfrmdInvstr.deleter
+	def InfrmdInvstr(self):
+		del self._InfrmdInvstr
+		self._InfrmdInvstr = None
+
+	@property
+	def AdvncdInvstr(self):
+		return self._AdvncdInvstr
+
+	@AdvncdInvstr.setter
+	def AdvncdInvstr(self, value):
+		self._AdvncdInvstr = value if type(value) != base_types.auto else self.make_default("AdvncdInvstr")
+
+	@AdvncdInvstr.deleter
+	def AdvncdInvstr(self):
+		del self._AdvncdInvstr
+		self._AdvncdInvstr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AdvncdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfrmdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExprtInvstrDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsicInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExprtInvstrDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarketInvestorKnowledge1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InfrmdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvncdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

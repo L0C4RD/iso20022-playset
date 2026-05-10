@@ -1,23 +1,10 @@
 from . import base_types
-from .OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class Quantity6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlAndCurFace", "_Qty"]
-	@property
-	def OrgnlAndCurFace(self):
-		return self._OrgnlAndCurFace
-
-	@OrgnlAndCurFace.setter
-	def OrgnlAndCurFace(self, value):
-		self._OrgnlAndCurFace = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFace")
-
-	@OrgnlAndCurFace.deleter
-	def OrgnlAndCurFace(self):
-		del self._OrgnlAndCurFace
-		self._OrgnlAndCurFace = None
-
+	__slots__ = ["_Qty", "_OrgnlAndCurFace"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -31,8 +18,21 @@ class Quantity6Choice(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def OrgnlAndCurFace(self):
+		return self._OrgnlAndCurFace
+
+	@OrgnlAndCurFace.setter
+	def OrgnlAndCurFace(self, value):
+		self._OrgnlAndCurFace = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFace")
+
+	@OrgnlAndCurFace.deleter
+	def OrgnlAndCurFace(self):
+		del self._OrgnlAndCurFace
+		self._OrgnlAndCurFace = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlAndCurFace', type=OriginalAndCurrentQuantities1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OrgnlAndCurFace', type=OriginalAndCurrentQuantities1, min=0, max=1, mutex_group=1, array=False),
 	))
 

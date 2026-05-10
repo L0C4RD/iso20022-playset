@@ -1,6 +1,6 @@
 from . import base_types
-from .SystemIdentification2Choice import SystemIdentification2Choice
-from .MemberIdentification3Choice import MemberIdentification3Choice
+from ._MemberIdentification3Choice import MemberIdentification3Choice
+from ._SystemIdentification2Choice import SystemIdentification2Choice
 
 class SystemMember3(base_types._BaseFieldType):
 

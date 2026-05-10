@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .SystemSecuritiesAccount6 import SystemSecuritiesAccount6
+from ._SystemSecuritiesAccount6 import SystemSecuritiesAccount6
+from ._ErrorHandling5 import ErrorHandling5
 
 class SecuritiesAccountOrBusinessError3Choice(base_types._BaseFieldType):
 

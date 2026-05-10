@@ -1,12 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .StatusAdviceReport3 import StatusAdviceReport3
-from .StatusReportRecord3 import StatusReportRecord3
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._StatusReportRecord3 import StatusReportRecord3
+from ._StatusAdviceReport3 import StatusAdviceReport3
 
 class MessageReportHeader4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgSts", "_SplmtryData", "_MsgRptIdr", "_RcrdSts"]
+	__slots__ = ["_MsgSts", "_SplmtryData", "_RcrdSts", "_MsgRptIdr"]
 	@property
 	def MsgSts(self):
 		return self._MsgSts
@@ -34,19 +34,6 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MsgRptIdr(self):
-		return self._MsgRptIdr
-
-	@MsgRptIdr.setter
-	def MsgRptIdr(self, value):
-		self._MsgRptIdr = value if type(value) != base_types.auto else self.make_default("MsgRptIdr")
-
-	@MsgRptIdr.deleter
-	def MsgRptIdr(self):
-		del self._MsgRptIdr
-		self._MsgRptIdr = None
-
-	@property
 	def RcrdSts(self):
 		return self._RcrdSts
 
@@ -59,10 +46,23 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		del self._RcrdSts
 		self._RcrdSts = None
 
+	@property
+	def MsgRptIdr(self):
+		return self._MsgRptIdr
+
+	@MsgRptIdr.setter
+	def MsgRptIdr(self, value):
+		self._MsgRptIdr = value if type(value) != base_types.auto else self.make_default("MsgRptIdr")
+
+	@MsgRptIdr.deleter
+	def MsgRptIdr(self):
+		del self._MsgRptIdr
+		self._MsgRptIdr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgSts', type=StatusAdviceReport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdSts', type=StatusReportRecord3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

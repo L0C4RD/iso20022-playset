@@ -1,37 +1,11 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .DecimalNumber import DecimalNumber
-from .AmountAndDirection61 import AmountAndDirection61
+from ._AmountAndDirection61 import AmountAndDirection61
+from ._PercentageRate import PercentageRate
+from ._DecimalNumber import DecimalNumber
 
 class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pctg", "_Yld", "_BsisPts", "_MntryVal"]
-	@property
-	def Pctg(self):
-		return self._Pctg
-
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
-
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
-
-	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
+	__slots__ = ["_BsisPts", "_MntryVal", "_Yld", "_Pctg"]
 	@property
 	def BsisPts(self):
 		return self._BsisPts
@@ -58,10 +32,36 @@ class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 		del self._MntryVal
 		self._MntryVal = None
 
+	@property
+	def Yld(self):
+		return self._Yld
+
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
+
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
+
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection61, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

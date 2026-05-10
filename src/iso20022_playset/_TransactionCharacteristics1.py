@@ -1,29 +1,29 @@
 from . import base_types
-from .Max1000Text import Max1000Text
-from .Max6NumericText import Max6NumericText
-from .ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .TrueFalseIndicator import TrueFalseIndicator
-from .TransactionAttribute2Code import TransactionAttribute2Code
-from .ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from .AdditionalData1 import AdditionalData1
+from ._TransactionAttribute2Code import TransactionAttribute2Code
+from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
+from ._Max1000Text import Max1000Text
+from ._Max6NumericText import Max6NumericText
+from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
+from ._AdditionalData1 import AdditionalData1
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
 
 class TransactionCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_TxTp", "_OthrTxAttr", "_TxDesc", "_AltrnMsgRsn", "_AddtlData", "_TxAttr", "_TxSubTp", "_Cxl", "_PreAuthstnTmLmt", "_MsgRsn"]
+	__slots__ = ["_TxAttr", "_OthrTxAttr", "_TxDesc", "_AddtlData", "_PreAuthstnTmLmt", "_TxTp", "_AltrnMsgRsn", "_TxSubTp", "_Cxl", "_MsgRsn"]
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def TxAttr(self):
+		return self._TxAttr
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+	@TxAttr.setter
+	def TxAttr(self, value):
+		self._TxAttr = value if type(value) != base_types.auto else self.make_default("TxAttr")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@TxAttr.deleter
+	def TxAttr(self):
+		del self._TxAttr
+		self._TxAttr = None
 
 	@property
 	def OthrTxAttr(self):
@@ -52,19 +52,6 @@ class TransactionCharacteristics1(base_types._BaseFieldType):
 		self._TxDesc = None
 
 	@property
-	def AltrnMsgRsn(self):
-		return self._AltrnMsgRsn
-
-	@AltrnMsgRsn.setter
-	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
-
-	@AltrnMsgRsn.deleter
-	def AltrnMsgRsn(self):
-		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
-
-	@property
 	def AddtlData(self):
 		return self._AddtlData
 
@@ -78,17 +65,43 @@ class TransactionCharacteristics1(base_types._BaseFieldType):
 		self._AddtlData = None
 
 	@property
-	def TxAttr(self):
-		return self._TxAttr
+	def PreAuthstnTmLmt(self):
+		return self._PreAuthstnTmLmt
 
-	@TxAttr.setter
-	def TxAttr(self, value):
-		self._TxAttr = value if type(value) != base_types.auto else self.make_default("TxAttr")
+	@PreAuthstnTmLmt.setter
+	def PreAuthstnTmLmt(self, value):
+		self._PreAuthstnTmLmt = value if type(value) != base_types.auto else self.make_default("PreAuthstnTmLmt")
 
-	@TxAttr.deleter
-	def TxAttr(self):
-		del self._TxAttr
-		self._TxAttr = None
+	@PreAuthstnTmLmt.deleter
+	def PreAuthstnTmLmt(self):
+		del self._PreAuthstnTmLmt
+		self._PreAuthstnTmLmt = None
+
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def AltrnMsgRsn(self):
+		return self._AltrnMsgRsn
+
+	@AltrnMsgRsn.setter
+	def AltrnMsgRsn(self, value):
+		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
+
+	@AltrnMsgRsn.deleter
+	def AltrnMsgRsn(self):
+		del self._AltrnMsgRsn
+		self._AltrnMsgRsn = None
 
 	@property
 	def TxSubTp(self):
@@ -117,19 +130,6 @@ class TransactionCharacteristics1(base_types._BaseFieldType):
 		self._Cxl = None
 
 	@property
-	def PreAuthstnTmLmt(self):
-		return self._PreAuthstnTmLmt
-
-	@PreAuthstnTmLmt.setter
-	def PreAuthstnTmLmt(self, value):
-		self._PreAuthstnTmLmt = value if type(value) != base_types.auto else self.make_default("PreAuthstnTmLmt")
-
-	@PreAuthstnTmLmt.deleter
-	def PreAuthstnTmLmt(self):
-		del self._PreAuthstnTmLmt
-		self._PreAuthstnTmLmt = None
-
-	@property
 	def MsgRsn(self):
 		return self._MsgRsn
 
@@ -143,15 +143,15 @@ class TransactionCharacteristics1(base_types._BaseFieldType):
 		self._MsgRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxAttr', type=TransactionAttribute2Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrTxAttr', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxAttr', type=TransactionAttribute2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PreAuthstnTmLmt', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cxl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreAuthstnTmLmt', type=Max6NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
 	))
 

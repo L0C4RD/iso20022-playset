@@ -1,5 +1,5 @@
 from . import base_types
-from .CustomReportV02 import CustomReportV02
+from ._CustomReportV02 import CustomReportV02
 
 class CAAD_010_001_02():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .VariableInterest1Rate import VariableInterest1Rate
+from ._VariableInterest1Rate import VariableInterest1Rate
+from ._PercentageRate import PercentageRate
 
 class InterestRate1Choice(base_types._BaseFieldType):
 

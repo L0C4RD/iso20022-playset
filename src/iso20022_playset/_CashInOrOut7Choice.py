@@ -1,23 +1,10 @@
 from . import base_types
-from .PaymentInstrument21Choice import PaymentInstrument21Choice
-from .PaymentInstrument20Choice import PaymentInstrument20Choice
+from ._PaymentInstrument21Choice import PaymentInstrument21Choice
+from ._PaymentInstrument20Choice import PaymentInstrument20Choice
 
 class CashInOrOut7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CshOutPmtInstrm", "_CshInPmtInstrm"]
-	@property
-	def CshOutPmtInstrm(self):
-		return self._CshOutPmtInstrm
-
-	@CshOutPmtInstrm.setter
-	def CshOutPmtInstrm(self, value):
-		self._CshOutPmtInstrm = value if type(value) != base_types.auto else self.make_default("CshOutPmtInstrm")
-
-	@CshOutPmtInstrm.deleter
-	def CshOutPmtInstrm(self):
-		del self._CshOutPmtInstrm
-		self._CshOutPmtInstrm = None
-
+	__slots__ = ["_CshInPmtInstrm", "_CshOutPmtInstrm"]
 	@property
 	def CshInPmtInstrm(self):
 		return self._CshInPmtInstrm
@@ -31,8 +18,21 @@ class CashInOrOut7Choice(base_types._BaseFieldType):
 		del self._CshInPmtInstrm
 		self._CshInPmtInstrm = None
 
+	@property
+	def CshOutPmtInstrm(self):
+		return self._CshOutPmtInstrm
+
+	@CshOutPmtInstrm.setter
+	def CshOutPmtInstrm(self, value):
+		self._CshOutPmtInstrm = value if type(value) != base_types.auto else self.make_default("CshOutPmtInstrm")
+
+	@CshOutPmtInstrm.deleter
+	def CshOutPmtInstrm(self):
+		del self._CshOutPmtInstrm
+		self._CshOutPmtInstrm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshOutPmtInstrm', type=PaymentInstrument21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshInPmtInstrm', type=PaymentInstrument20Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshOutPmtInstrm', type=PaymentInstrument21Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

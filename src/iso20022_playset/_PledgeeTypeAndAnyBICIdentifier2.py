@@ -1,6 +1,6 @@
 from . import base_types
-from .AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from .PledgeeType1Code import PledgeeType1Code
+from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
+from ._PledgeeType1Code import PledgeeType1Code
 
 class PledgeeTypeAndAnyBICIdentifier2(base_types._BaseFieldType):
 

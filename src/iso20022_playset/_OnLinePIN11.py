@@ -1,7 +1,7 @@
 from . import base_types
-from .ContentInformationType40 import ContentInformationType40
-from .PINFormat3Code import PINFormat3Code
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._PINFormat3Code import PINFormat3Code
+from ._ContentInformationType40 import ContentInformationType40
 
 class OnLinePIN11(base_types._BaseFieldType):
 

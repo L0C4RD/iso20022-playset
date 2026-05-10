@@ -1,5 +1,5 @@
 from . import base_types
-from .BuyInConfirmationV03 import BuyInConfirmationV03
+from ._BuyInConfirmationV03 import BuyInConfirmationV03
 
 class SECL_009_001_03():
 

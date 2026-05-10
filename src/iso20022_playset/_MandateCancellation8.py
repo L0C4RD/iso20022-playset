@@ -1,12 +1,25 @@
 from . import base_types
-from .OriginalMessageInformation1 import OriginalMessageInformation1
-from .MandateCancellationReason2 import MandateCancellationReason2
-from .SupplementaryData1 import SupplementaryData1
-from .OriginalMandate10Choice import OriginalMandate10Choice
+from ._OriginalMandate10Choice import OriginalMandate10Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._MandateCancellationReason2 import MandateCancellationReason2
+from ._OriginalMessageInformation1 import OriginalMessageInformation1
 
 class MandateCancellation8(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlMsgInf", "_SplmtryData", "_CxlRsn", "_OrgnlMndt"]
+	__slots__ = ["_OrgnlMndt", "_OrgnlMsgInf", "_SplmtryData", "_CxlRsn"]
+	@property
+	def OrgnlMndt(self):
+		return self._OrgnlMndt
+
+	@OrgnlMndt.setter
+	def OrgnlMndt(self, value):
+		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
+
+	@OrgnlMndt.deleter
+	def OrgnlMndt(self):
+		del self._OrgnlMndt
+		self._OrgnlMndt = None
+
 	@property
 	def OrgnlMsgInf(self):
 		return self._OrgnlMsgInf
@@ -46,23 +59,10 @@ class MandateCancellation8(base_types._BaseFieldType):
 		del self._CxlRsn
 		self._CxlRsn = None
 
-	@property
-	def OrgnlMndt(self):
-		return self._OrgnlMndt
-
-	@OrgnlMndt.setter
-	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
-
-	@OrgnlMndt.deleter
-	def OrgnlMndt(self):
-		del self._OrgnlMndt
-		self._OrgnlMndt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CxlRsn', type=MandateCancellationReason2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMndt', type=OriginalMandate10Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

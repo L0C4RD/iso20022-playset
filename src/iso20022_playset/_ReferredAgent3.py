@@ -1,6 +1,6 @@
 from . import base_types
-from .Referred1Code import Referred1Code
-from .PartyIdentification125Choice import PartyIdentification125Choice
+from ._Referred1Code import Referred1Code
+from ._PartyIdentification125Choice import PartyIdentification125Choice
 
 class ReferredAgent3(base_types._BaseFieldType):
 

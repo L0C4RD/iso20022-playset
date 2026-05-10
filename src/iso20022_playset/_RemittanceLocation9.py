@@ -1,38 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
-from .NameAndAddress18 import NameAndAddress18
-from .Max2048Text import Max2048Text
+from ._Max35Text import Max35Text
+from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
+from ._Max2048Text import Max2048Text
+from ._NameAndAddress18 import NameAndAddress18
 
 class RemittanceLocation9(base_types._BaseFieldType):
 
-	__slots__ = ["_RmtLctnMtd", "_RmtId", "_RmtLctnPstlAdr", "_RmtLctnElctrncAdr"]
-	@property
-	def RmtLctnMtd(self):
-		return self._RmtLctnMtd
-
-	@RmtLctnMtd.setter
-	def RmtLctnMtd(self, value):
-		self._RmtLctnMtd = value if type(value) != base_types.auto else self.make_default("RmtLctnMtd")
-
-	@RmtLctnMtd.deleter
-	def RmtLctnMtd(self):
-		del self._RmtLctnMtd
-		self._RmtLctnMtd = None
-
-	@property
-	def RmtId(self):
-		return self._RmtId
-
-	@RmtId.setter
-	def RmtId(self, value):
-		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
-
-	@RmtId.deleter
-	def RmtId(self):
-		del self._RmtId
-		self._RmtId = None
-
+	__slots__ = ["_RmtLctnPstlAdr", "_RmtLctnElctrncAdr", "_RmtId", "_RmtLctnMtd"]
 	@property
 	def RmtLctnPstlAdr(self):
 		return self._RmtLctnPstlAdr
@@ -59,10 +33,36 @@ class RemittanceLocation9(base_types._BaseFieldType):
 		del self._RmtLctnElctrncAdr
 		self._RmtLctnElctrncAdr = None
 
+	@property
+	def RmtId(self):
+		return self._RmtId
+
+	@RmtId.setter
+	def RmtId(self, value):
+		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
+
+	@RmtId.deleter
+	def RmtId(self):
+		del self._RmtId
+		self._RmtId = None
+
+	@property
+	def RmtLctnMtd(self):
+		return self._RmtLctnMtd
+
+	@RmtLctnMtd.setter
+	def RmtLctnMtd(self, value):
+		self._RmtLctnMtd = value if type(value) != base_types.auto else self.make_default("RmtLctnMtd")
+
+	@RmtLctnMtd.deleter
+	def RmtLctnMtd(self):
+		del self._RmtLctnMtd
+		self._RmtLctnMtd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RmtLctnMtd', type=RemittanceLocationMethod2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtLctnPstlAdr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtLctnElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtLctnMtd', type=RemittanceLocationMethod2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

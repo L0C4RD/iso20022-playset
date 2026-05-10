@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Number import Number
-from .Max3NumericText import Max3NumericText
+from ._Max3NumericText import Max3NumericText
+from ._Number import Number
+from ._Max35Text import Max35Text
 
 class DocumentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AmdmntSeqNb", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_AmdmntSeqNb", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def AmdmntSeqNb(self):
@@ -33,21 +33,21 @@ class DocumentIdentification6(base_types._BaseFieldType):
 		self._AmdmntSeqNb = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def Id(self):
+		return self._Id
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmdmntSeqNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntSeqNb', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

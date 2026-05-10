@@ -1,12 +1,12 @@
 from . import base_types
-from .FormOfSecurity1Code import FormOfSecurity1Code
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .DistributionPolicy1Code import DistributionPolicy1Code
-from .SecurityClassificationType3Choice import SecurityClassificationType3Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._SecurityClassificationType3Choice import SecurityClassificationType3Choice
 
 class FinancialInstrument76(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_DstrbtnPlcy", "_ClssTp", "_ClssfctnTp", "_SplmtryId"]
+	__slots__ = ["_SctiesForm", "_ClssTp", "_ClssfctnTp", "_DstrbtnPlcy", "_SplmtryId"]
 	@property
 	def SctiesForm(self):
 		return self._SctiesForm
@@ -19,19 +19,6 @@ class FinancialInstrument76(base_types._BaseFieldType):
 	def SctiesForm(self):
 		del self._SctiesForm
 		self._SctiesForm = None
-
-	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
-
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
-
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
 
 	@property
 	def ClssTp(self):
@@ -60,6 +47,19 @@ class FinancialInstrument76(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
+
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
+
+	@property
 	def SplmtryId(self):
 		return self._SplmtryId
 
@@ -74,9 +74,9 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryId', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

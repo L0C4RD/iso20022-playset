@@ -1,13 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .UnitOfMeasure1Code import UnitOfMeasure1Code
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .DecimalNumber import DecimalNumber
-from .Max70Text import Max70Text
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._UnitOfMeasure1Code import UnitOfMeasure1Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._DecimalNumber import DecimalNumber
 
 class Product2(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctAmt", "_PdctCd", "_PdctQty", "_UnitPric", "_UnitOfMeasr", "_TaxTp", "_AddtlPdctInf"]
+	__slots__ = ["_PdctAmt", "_UnitPric", "_PdctCd", "_TaxTp", "_AddtlPdctInf", "_UnitOfMeasr", "_PdctQty"]
 	@property
 	def PdctAmt(self):
 		return self._PdctAmt
@@ -20,32 +20,6 @@ class Product2(base_types._BaseFieldType):
 	def PdctAmt(self):
 		del self._PdctAmt
 		self._PdctAmt = None
-
-	@property
-	def PdctCd(self):
-		return self._PdctCd
-
-	@PdctCd.setter
-	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
-
-	@PdctCd.deleter
-	def PdctCd(self):
-		del self._PdctCd
-		self._PdctCd = None
-
-	@property
-	def PdctQty(self):
-		return self._PdctQty
-
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
-
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
 
 	@property
 	def UnitPric(self):
@@ -61,17 +35,17 @@ class Product2(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
+	def PdctCd(self):
+		return self._PdctCd
 
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+	@PdctCd.setter
+	def PdctCd(self, value):
+		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
 
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+	@PdctCd.deleter
+	def PdctCd(self):
+		del self._PdctCd
+		self._PdctCd = None
 
 	@property
 	def TaxTp(self):
@@ -99,13 +73,39 @@ class Product2(base_types._BaseFieldType):
 		del self._AddtlPdctInf
 		self._AddtlPdctInf = None
 
+	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
+	def PdctQty(self):
+		return self._PdctQty
+
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
+
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PdctAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlPdctInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .FXAmountType1Code import FXAmountType1Code
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._FXAmountType1Code import FXAmountType1Code
 
 class FXAmountType1Choice(base_types._BaseFieldType):
 

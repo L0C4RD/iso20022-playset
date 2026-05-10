@@ -1,23 +1,10 @@
 from . import base_types
-from .ClosingBalance3Choice import ClosingBalance3Choice
-from .OpeningBalance3Choice import OpeningBalance3Choice
+from ._OpeningBalance3Choice import OpeningBalance3Choice
+from ._ClosingBalance3Choice import ClosingBalance3Choice
 
 class PaginationBalance2(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsgBal", "_OpngBal"]
-	@property
-	def ClsgBal(self):
-		return self._ClsgBal
-
-	@ClsgBal.setter
-	def ClsgBal(self, value):
-		self._ClsgBal = value if type(value) != base_types.auto else self.make_default("ClsgBal")
-
-	@ClsgBal.deleter
-	def ClsgBal(self):
-		del self._ClsgBal
-		self._ClsgBal = None
-
+	__slots__ = ["_OpngBal", "_ClsgBal"]
 	@property
 	def OpngBal(self):
 		return self._OpngBal
@@ -31,8 +18,21 @@ class PaginationBalance2(base_types._BaseFieldType):
 		del self._OpngBal
 		self._OpngBal = None
 
+	@property
+	def ClsgBal(self):
+		return self._ClsgBal
+
+	@ClsgBal.setter
+	def ClsgBal(self, value):
+		self._ClsgBal = value if type(value) != base_types.auto else self.make_default("ClsgBal")
+
+	@ClsgBal.deleter
+	def ClsgBal(self):
+		del self._ClsgBal
+		self._ClsgBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngBal', type=OpeningBalance3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

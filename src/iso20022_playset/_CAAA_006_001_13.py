@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorCancellationResponseV13 import AcceptorCancellationResponseV13
+from ._AcceptorCancellationResponseV13 import AcceptorCancellationResponseV13
 
 class CAAA_006_001_13():
 

@@ -1,26 +1,13 @@
 from . import base_types
-from .NetCashForecast4 import NetCashForecast4
-from .CashInForecast5 import CashInForecast5
-from .InvestmentAccount42 import InvestmentAccount42
-from .AdditionalParameters1 import AdditionalParameters1
-from .CashOutForecast5 import CashOutForecast5
+from ._AdditionalParameters1 import AdditionalParameters1
+from ._CashInForecast5 import CashInForecast5
+from ._InvestmentAccount42 import InvestmentAccount42
+from ._NetCashForecast4 import NetCashForecast4
+from ._CashOutForecast5 import CashOutForecast5
 
 class BreakdownByParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlParams", "_CshOutFcst", "_CshInFcst", "_NetCshFcst", "_Pty"]
-	@property
-	def AddtlParams(self):
-		return self._AddtlParams
-
-	@AddtlParams.setter
-	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
-
-	@AddtlParams.deleter
-	def AddtlParams(self):
-		del self._AddtlParams
-		self._AddtlParams = None
-
+	__slots__ = ["_CshOutFcst", "_Pty", "_CshInFcst", "_NetCshFcst", "_AddtlParams"]
 	@property
 	def CshOutFcst(self):
 		return self._CshOutFcst
@@ -33,6 +20,19 @@ class BreakdownByParty3(base_types._BaseFieldType):
 	def CshOutFcst(self):
 		del self._CshOutFcst
 		self._CshOutFcst = None
+
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	@property
 	def CshInFcst(self):
@@ -61,23 +61,23 @@ class BreakdownByParty3(base_types._BaseFieldType):
 		self._NetCshFcst = None
 
 	@property
-	def Pty(self):
-		return self._Pty
+	def AddtlParams(self):
+		return self._AddtlParams
 
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+	@AddtlParams.setter
+	def AddtlParams(self, value):
+		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
 
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
+	@AddtlParams.deleter
+	def AddtlParams(self):
+		del self._AddtlParams
+		self._AddtlParams = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),
 	))
 

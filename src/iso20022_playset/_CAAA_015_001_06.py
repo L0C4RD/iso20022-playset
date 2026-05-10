@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorRejectionV06 import AcceptorRejectionV06
+from ._AcceptorRejectionV06 import AcceptorRejectionV06
 
 class CAAA_015_001_06():
 

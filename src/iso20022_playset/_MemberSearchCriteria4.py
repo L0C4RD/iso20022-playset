@@ -1,24 +1,11 @@
 from . import base_types
-from .SystemMemberType1Choice import SystemMemberType1Choice
-from .SystemMemberStatus1Choice import SystemMemberStatus1Choice
-from .MemberIdentification3Choice import MemberIdentification3Choice
+from ._MemberIdentification3Choice import MemberIdentification3Choice
+from ._SystemMemberStatus1Choice import SystemMemberStatus1Choice
+from ._SystemMemberType1Choice import SystemMemberType1Choice
 
 class MemberSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Sts"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Id", "_Tp", "_Sts"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class MemberSearchCriteria4(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Sts(self):
@@ -46,8 +46,8 @@ class MemberSearchCriteria4(base_types._BaseFieldType):
 		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=SystemMemberType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Tp', type=SystemMemberType1Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=SystemMemberStatus1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

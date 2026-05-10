@@ -1,11 +1,11 @@
 from . import base_types
-from .Max52Text import Max52Text
-from .ISODate import ISODate
-from .MasterAgreement7 import MasterAgreement7
+from ._MasterAgreement7 import MasterAgreement7
+from ._Max52Text import Max52Text
+from ._ISODate import ISODate
 
 class LoanData120(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtDt", "_MstrAgrmt", "_UnqTradIdr"]
+	__slots__ = ["_EvtDt", "_UnqTradIdr", "_MstrAgrmt"]
 	@property
 	def EvtDt(self):
 		return self._EvtDt
@@ -20,19 +20,6 @@ class LoanData120(base_types._BaseFieldType):
 		self._EvtDt = None
 
 	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
-
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
-
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
-
-	@property
 	def UnqTradIdr(self):
 		return self._UnqTradIdr
 
@@ -45,9 +32,22 @@ class LoanData120(base_types._BaseFieldType):
 		del self._UnqTradIdr
 		self._UnqTradIdr = None
 
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
 	))
 

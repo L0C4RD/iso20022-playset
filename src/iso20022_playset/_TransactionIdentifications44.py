@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max52Text import Max52Text
+from ._Max35Text import Max35Text
+from ._Max52Text import Max52Text
 
 class TransactionIdentifications44(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntCollTxId", "_ClntCollInstrId", "_CtrPtyCollTxId", "_CtrPtyCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_TrptyAgtSvcPrvdrCollInstrId", "_CmonTxId"]
-	@property
-	def ClntCollTxId(self):
-		return self._ClntCollTxId
-
-	@ClntCollTxId.setter
-	def ClntCollTxId(self, value):
-		self._ClntCollTxId = value if type(value) != base_types.auto else self.make_default("ClntCollTxId")
-
-	@ClntCollTxId.deleter
-	def ClntCollTxId(self):
-		del self._ClntCollTxId
-		self._ClntCollTxId = None
-
+	__slots__ = ["_ClntCollInstrId", "_TrptyAgtSvcPrvdrCollTxId", "_ClntCollTxId", "_CmonTxId", "_CtrPtyCollInstrId", "_CtrPtyCollTxId", "_TrptyAgtSvcPrvdrCollInstrId"]
 	@property
 	def ClntCollInstrId(self):
 		return self._ClntCollInstrId
@@ -30,32 +17,6 @@ class TransactionIdentifications44(base_types._BaseFieldType):
 	def ClntCollInstrId(self):
 		del self._ClntCollInstrId
 		self._ClntCollInstrId = None
-
-	@property
-	def CtrPtyCollTxId(self):
-		return self._CtrPtyCollTxId
-
-	@CtrPtyCollTxId.setter
-	def CtrPtyCollTxId(self, value):
-		self._CtrPtyCollTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollTxId")
-
-	@CtrPtyCollTxId.deleter
-	def CtrPtyCollTxId(self):
-		del self._CtrPtyCollTxId
-		self._CtrPtyCollTxId = None
-
-	@property
-	def CtrPtyCollInstrId(self):
-		return self._CtrPtyCollInstrId
-
-	@CtrPtyCollInstrId.setter
-	def CtrPtyCollInstrId(self, value):
-		self._CtrPtyCollInstrId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollInstrId")
-
-	@CtrPtyCollInstrId.deleter
-	def CtrPtyCollInstrId(self):
-		del self._CtrPtyCollInstrId
-		self._CtrPtyCollInstrId = None
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -71,17 +32,17 @@ class TransactionIdentifications44(base_types._BaseFieldType):
 		self._TrptyAgtSvcPrvdrCollTxId = None
 
 	@property
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		return self._TrptyAgtSvcPrvdrCollInstrId
+	def ClntCollTxId(self):
+		return self._ClntCollTxId
 
-	@TrptyAgtSvcPrvdrCollInstrId.setter
-	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+	@ClntCollTxId.setter
+	def ClntCollTxId(self, value):
+		self._ClntCollTxId = value if type(value) != base_types.auto else self.make_default("ClntCollTxId")
 
-	@TrptyAgtSvcPrvdrCollInstrId.deleter
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+	@ClntCollTxId.deleter
+	def ClntCollTxId(self):
+		del self._ClntCollTxId
+		self._ClntCollTxId = None
 
 	@property
 	def CmonTxId(self):
@@ -96,13 +57,52 @@ class TransactionIdentifications44(base_types._BaseFieldType):
 		del self._CmonTxId
 		self._CmonTxId = None
 
+	@property
+	def CtrPtyCollInstrId(self):
+		return self._CtrPtyCollInstrId
+
+	@CtrPtyCollInstrId.setter
+	def CtrPtyCollInstrId(self, value):
+		self._CtrPtyCollInstrId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollInstrId")
+
+	@CtrPtyCollInstrId.deleter
+	def CtrPtyCollInstrId(self):
+		del self._CtrPtyCollInstrId
+		self._CtrPtyCollInstrId = None
+
+	@property
+	def CtrPtyCollTxId(self):
+		return self._CtrPtyCollTxId
+
+	@CtrPtyCollTxId.setter
+	def CtrPtyCollTxId(self, value):
+		self._CtrPtyCollTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollTxId")
+
+	@CtrPtyCollTxId.deleter
+	def CtrPtyCollTxId(self):
+		del self._CtrPtyCollTxId
+		self._CtrPtyCollTxId = None
+
+	@property
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		return self._TrptyAgtSvcPrvdrCollInstrId
+
+	@TrptyAgtSvcPrvdrCollInstrId.setter
+	def TrptyAgtSvcPrvdrCollInstrId(self, value):
+		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+
+	@TrptyAgtSvcPrvdrCollInstrId.deleter
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		del self._TrptyAgtSvcPrvdrCollInstrId
+		self._TrptyAgtSvcPrvdrCollInstrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyCollTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

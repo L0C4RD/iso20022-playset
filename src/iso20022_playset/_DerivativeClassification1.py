@@ -1,9 +1,22 @@
 from . import base_types
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
 
 class DerivativeClassification1(base_types._BaseFieldType):
 
-	__slots__ = ["_SubPdct", "_BasePdct", "_TxTp", "_AsstClss", "_SubCmmdty"]
+	__slots__ = ["_AsstClss", "_SubPdct", "_BasePdct", "_TxTp", "_SubCmmdty"]
+	@property
+	def AsstClss(self):
+		return self._AsstClss
+
+	@AsstClss.setter
+	def AsstClss(self, value):
+		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
+
+	@AsstClss.deleter
+	def AsstClss(self):
+		del self._AsstClss
+		self._AsstClss = None
+
 	@property
 	def SubPdct(self):
 		return self._SubPdct
@@ -44,19 +57,6 @@ class DerivativeClassification1(base_types._BaseFieldType):
 		self._TxTp = None
 
 	@property
-	def AsstClss(self):
-		return self._AsstClss
-
-	@AsstClss.setter
-	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
-
-	@AsstClss.deleter
-	def AsstClss(self):
-		del self._AsstClss
-		self._AsstClss = None
-
-	@property
 	def SubCmmdty(self):
 		return self._SubCmmdty
 
@@ -70,10 +70,10 @@ class DerivativeClassification1(base_types._BaseFieldType):
 		self._SubCmmdty = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BasePdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubCmmdty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

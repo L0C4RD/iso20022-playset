@@ -1,13 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CashCompensation1 import CashCompensation1
-from .ISODate import ISODate
-from .Price4 import Price4
-from .SecuritiesCompensation1 import SecuritiesCompensation1
+from ._Max35Text import Max35Text
+from ._CashCompensation1 import CashCompensation1
+from ._Price4 import Price4
+from ._ISODate import ISODate
+from ._SecuritiesCompensation1 import SecuritiesCompensation1
 
 class BuyIn2(base_types._BaseFieldType):
 
-	__slots__ = ["_BuyInNtfctnId", "_BuyInId", "_SctiesBuyIn", "_Pric", "_Dt", "_ReqrdCshCompstn"]
+	__slots__ = ["_BuyInNtfctnId", "_ReqrdCshCompstn", "_Dt", "_BuyInId", "_SctiesBuyIn", "_Pric"]
 	@property
 	def BuyInNtfctnId(self):
 		return self._BuyInNtfctnId
@@ -20,6 +20,32 @@ class BuyIn2(base_types._BaseFieldType):
 	def BuyInNtfctnId(self):
 		del self._BuyInNtfctnId
 		self._BuyInNtfctnId = None
+
+	@property
+	def ReqrdCshCompstn(self):
+		return self._ReqrdCshCompstn
+
+	@ReqrdCshCompstn.setter
+	def ReqrdCshCompstn(self, value):
+		self._ReqrdCshCompstn = value if type(value) != base_types.auto else self.make_default("ReqrdCshCompstn")
+
+	@ReqrdCshCompstn.deleter
+	def ReqrdCshCompstn(self):
+		del self._ReqrdCshCompstn
+		self._ReqrdCshCompstn = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
 
 	@property
 	def BuyInId(self):
@@ -60,38 +86,12 @@ class BuyIn2(base_types._BaseFieldType):
 		del self._Pric
 		self._Pric = None
 
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
-	@property
-	def ReqrdCshCompstn(self):
-		return self._ReqrdCshCompstn
-
-	@ReqrdCshCompstn.setter
-	def ReqrdCshCompstn(self, value):
-		self._ReqrdCshCompstn = value if type(value) != base_types.auto else self.make_default("ReqrdCshCompstn")
-
-	@ReqrdCshCompstn.deleter
-	def ReqrdCshCompstn(self):
-		del self._ReqrdCshCompstn
-		self._ReqrdCshCompstn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdCshCompstn', type=CashCompensation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyIn', type=SecuritiesCompensation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=Price4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqrdCshCompstn', type=CashCompensation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

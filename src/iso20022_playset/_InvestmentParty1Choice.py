@@ -1,23 +1,10 @@
 from . import base_types
-from .PersonIdentification12 import PersonIdentification12
-from .Max50Text import Max50Text
+from ._PersonIdentification12 import PersonIdentification12
+from ._Max50Text import Max50Text
 
 class InvestmentParty1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prsn", "_Algo"]
-	@property
-	def Prsn(self):
-		return self._Prsn
-
-	@Prsn.setter
-	def Prsn(self, value):
-		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
-
-	@Prsn.deleter
-	def Prsn(self):
-		del self._Prsn
-		self._Prsn = None
-
+	__slots__ = ["_Algo", "_Prsn"]
 	@property
 	def Algo(self):
 		return self._Algo
@@ -31,8 +18,21 @@ class InvestmentParty1Choice(base_types._BaseFieldType):
 		del self._Algo
 		self._Algo = None
 
+	@property
+	def Prsn(self):
+		return self._Prsn
+
+	@Prsn.setter
+	def Prsn(self, value):
+		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
+
+	@Prsn.deleter
+	def Prsn(self):
+		del self._Prsn
+		self._Prsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prsn', type=PersonIdentification12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Algo', type=Max50Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prsn', type=PersonIdentification12, min=0, max=1, mutex_group=1, array=False),
 	))
 

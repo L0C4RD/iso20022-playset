@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .BusinessDayCriteria2 import BusinessDayCriteria2
+from ._Max35Text import Max35Text
+from ._BusinessDayCriteria2 import BusinessDayCriteria2
 
 class BusinessDayCriteria3Choice(base_types._BaseFieldType):
 

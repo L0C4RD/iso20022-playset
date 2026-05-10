@@ -1,5 +1,5 @@
 from . import base_types
-from .AmendmentV03 import AmendmentV03
+from ._AmendmentV03 import AmendmentV03
 
 class CAIN_020_001_03():
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .InvestmentPlan16 import InvestmentPlan16
-from .DataModification1Code import DataModification1Code
+from ._InvestmentPlan16 import InvestmentPlan16
+from ._DataModification1Code import DataModification1Code
 
 class ModificationScope41(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstmtPlan", "_ModScpIndctn"]
-	@property
-	def InvstmtPlan(self):
-		return self._InvstmtPlan
-
-	@InvstmtPlan.setter
-	def InvstmtPlan(self, value):
-		self._InvstmtPlan = value if type(value) != base_types.auto else self.make_default("InvstmtPlan")
-
-	@InvstmtPlan.deleter
-	def InvstmtPlan(self):
-		del self._InvstmtPlan
-		self._InvstmtPlan = None
-
+	__slots__ = ["_ModScpIndctn", "_InvstmtPlan"]
 	@property
 	def ModScpIndctn(self):
 		return self._ModScpIndctn
@@ -31,8 +18,21 @@ class ModificationScope41(base_types._BaseFieldType):
 		del self._ModScpIndctn
 		self._ModScpIndctn = None
 
+	@property
+	def InvstmtPlan(self):
+		return self._InvstmtPlan
+
+	@InvstmtPlan.setter
+	def InvstmtPlan(self, value):
+		self._InvstmtPlan = value if type(value) != base_types.auto else self.make_default("InvstmtPlan")
+
+	@InvstmtPlan.deleter
+	def InvstmtPlan(self):
+		del self._InvstmtPlan
+		self._InvstmtPlan = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstmtPlan', type=InvestmentPlan16, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtPlan', type=InvestmentPlan16, min=1, max=1, mutex_group=None, array=False),
 	))
 

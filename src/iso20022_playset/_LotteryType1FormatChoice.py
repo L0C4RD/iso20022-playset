@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification13 import GenericIdentification13
-from .LotteryType1Code import LotteryType1Code
+from ._GenericIdentification13 import GenericIdentification13
+from ._LotteryType1Code import LotteryType1Code
 
 class LotteryType1FormatChoice(base_types._BaseFieldType):
 

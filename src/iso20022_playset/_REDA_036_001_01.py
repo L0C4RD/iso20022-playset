@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesAccountAuditTrailQueryV01 import SecuritiesAccountAuditTrailQueryV01
+from ._SecuritiesAccountAuditTrailQueryV01 import SecuritiesAccountAuditTrailQueryV01
 
 class REDA_036_001_01():
 

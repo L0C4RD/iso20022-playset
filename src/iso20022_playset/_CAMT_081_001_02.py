@@ -1,5 +1,5 @@
 from . import base_types
-from .IntraBalanceMovementModificationReportV02 import IntraBalanceMovementModificationReportV02
+from ._IntraBalanceMovementModificationReportV02 import IntraBalanceMovementModificationReportV02
 
 class CAMT_081_001_02():
 

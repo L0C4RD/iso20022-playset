@@ -1,5 +1,5 @@
 from . import base_types
-from .xs:IDREF import xs:IDREF
+from ._xs:IDREF import xs:IDREF
 
 class FinancingNotificationParties1(base_types._BaseFieldType):
 

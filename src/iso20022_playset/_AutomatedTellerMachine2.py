@@ -1,11 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .PostalAddress17 import PostalAddress17
-from .ActiveCurrencyCode import ActiveCurrencyCode
+from ._Max35Text import Max35Text
+from ._PostalAddress17 import PostalAddress17
+from ._ActiveCurrencyCode import ActiveCurrencyCode
 
 class AutomatedTellerMachine2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AddtlId", "_SeqNb", "_BaseCcy", "_Lctn"]
+	__slots__ = ["_Id", "_Lctn", "_AddtlId", "_SeqNb", "_BaseCcy"]
 	@property
 	def Id(self):
 		return self._Id
@@ -18,6 +18,19 @@ class AutomatedTellerMachine2(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Lctn(self):
+		return self._Lctn
+
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	@property
 	def AddtlId(self):
@@ -58,24 +71,11 @@ class AutomatedTellerMachine2(base_types._BaseFieldType):
 		del self._BaseCcy
 		self._BaseCcy = None
 
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
 	))
 

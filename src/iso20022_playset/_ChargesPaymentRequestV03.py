@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .GroupHeader130 import GroupHeader130
-from .Charges6Choice import Charges6Choice
+from ._GroupHeader130 import GroupHeader130
+from ._SupplementaryData1 import SupplementaryData1
+from ._Charges6Choice import Charges6Choice
 
 class ChargesPaymentRequestV03(base_types._BaseFieldType):
 

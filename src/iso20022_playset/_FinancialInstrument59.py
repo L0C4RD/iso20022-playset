@@ -1,7 +1,7 @@
 from . import base_types
-from .ISINOct2015Identifier import ISINOct2015Identifier
-from .SNA2008SectorIdentifier import SNA2008SectorIdentifier
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
+from ._ISINOct2015Identifier import ISINOct2015Identifier
 
 class FinancialInstrument59(base_types._BaseFieldType):
 

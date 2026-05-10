@@ -1,10 +1,23 @@
 from . import base_types
-from .MessageIdentification1 import MessageIdentification1
-from .SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from ._MessageIdentification1 import MessageIdentification1
 
 class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdMsgRef", "_TxId", "_AccptncId"]
+	__slots__ = ["_AccptncId", "_RltdMsgRef", "_TxId"]
+	@property
+	def AccptncId(self):
+		return self._AccptncId
+
+	@AccptncId.setter
+	def AccptncId(self, value):
+		self._AccptncId = value if type(value) != base_types.auto else self.make_default("AccptncId")
+
+	@AccptncId.deleter
+	def AccptncId(self):
+		del self._AccptncId
+		self._AccptncId = None
+
 	@property
 	def RltdMsgRef(self):
 		return self._RltdMsgRef
@@ -31,22 +44,9 @@ class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def AccptncId(self):
-		return self._AccptncId
-
-	@AccptncId.setter
-	def AccptncId(self, value):
-		self._AccptncId = value if type(value) != base_types.auto else self.make_default("AccptncId")
-
-	@AccptncId.deleter
-	def AccptncId(self):
-		del self._AccptncId
-		self._AccptncId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

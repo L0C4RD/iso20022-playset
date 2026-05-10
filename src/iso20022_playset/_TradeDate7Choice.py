@@ -1,6 +1,6 @@
 from . import base_types
-from .DateAndDateTime1Choice import DateAndDateTime1Choice
-from .TradingDateCode2Choice import TradingDateCode2Choice
+from ._TradingDateCode2Choice import TradingDateCode2Choice
+from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 
 class TradeDate7Choice(base_types._BaseFieldType):
 

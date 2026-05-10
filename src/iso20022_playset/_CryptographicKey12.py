@@ -1,70 +1,18 @@
 from . import base_types
-from .Number import Number
-from .KeyUsage1Code import KeyUsage1Code
-from .KeyChoiceValue2 import KeyChoiceValue2
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .PublicRSAKey1 import PublicRSAKey1
-from .CryptographicKeyType3Code import CryptographicKeyType3Code
-from .ISODateTime import ISODateTime
-from .Max35Binary import Max35Binary
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._Number import Number
+from ._PublicRSAKey1 import PublicRSAKey1
+from ._CryptographicKeyType3Code import CryptographicKeyType3Code
+from ._KeyChoiceValue2 import KeyChoiceValue2
+from ._Max35Binary import Max35Binary
+from ._Max35Text import Max35Text
+from ._KeyUsage1Code import KeyUsage1Code
+from ._Max256Text import Max256Text
+from ._ISODateTime import ISODateTime
 
 class CryptographicKey12(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlId", "_KeyChcVal", "_DeactvtnDt", "_ActvtnDt", "_PblcKeyVal", "_Id", "_Nm", "_SeqCntr", "_Fctn", "_SctyDomnId", "_Vrsn", "_Tp", "_KeyChckVal"]
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
-	@property
-	def KeyChcVal(self):
-		return self._KeyChcVal
-
-	@KeyChcVal.setter
-	def KeyChcVal(self, value):
-		self._KeyChcVal = value if type(value) != base_types.auto else self.make_default("KeyChcVal")
-
-	@KeyChcVal.deleter
-	def KeyChcVal(self):
-		del self._KeyChcVal
-		self._KeyChcVal = None
-
-	@property
-	def DeactvtnDt(self):
-		return self._DeactvtnDt
-
-	@DeactvtnDt.setter
-	def DeactvtnDt(self, value):
-		self._DeactvtnDt = value if type(value) != base_types.auto else self.make_default("DeactvtnDt")
-
-	@DeactvtnDt.deleter
-	def DeactvtnDt(self):
-		del self._DeactvtnDt
-		self._DeactvtnDt = None
-
-	@property
-	def ActvtnDt(self):
-		return self._ActvtnDt
-
-	@ActvtnDt.setter
-	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != base_types.auto else self.make_default("ActvtnDt")
-
-	@ActvtnDt.deleter
-	def ActvtnDt(self):
-		del self._ActvtnDt
-		self._ActvtnDt = None
-
+	__slots__ = ["_PblcKeyVal", "_Tp", "_DeactvtnDt", "_AddtlId", "_Vrsn", "_KeyChcVal", "_SeqCntr", "_KeyChckVal", "_Nm", "_Fctn", "_Id", "_ActvtnDt", "_SctyDomnId"]
 	@property
 	def PblcKeyVal(self):
 		return self._PblcKeyVal
@@ -77,84 +25,6 @@ class CryptographicKey12(base_types._BaseFieldType):
 	def PblcKeyVal(self):
 		del self._PblcKeyVal
 		self._PblcKeyVal = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def SeqCntr(self):
-		return self._SeqCntr
-
-	@SeqCntr.setter
-	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != base_types.auto else self.make_default("SeqCntr")
-
-	@SeqCntr.deleter
-	def SeqCntr(self):
-		del self._SeqCntr
-		self._SeqCntr = None
-
-	@property
-	def Fctn(self):
-		return self._Fctn
-
-	@Fctn.setter
-	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
-
-	@Fctn.deleter
-	def Fctn(self):
-		del self._Fctn
-		self._Fctn = None
-
-	@property
-	def SctyDomnId(self):
-		return self._SctyDomnId
-
-	@SctyDomnId.setter
-	def SctyDomnId(self, value):
-		self._SctyDomnId = value if type(value) != base_types.auto else self.make_default("SctyDomnId")
-
-	@SctyDomnId.deleter
-	def SctyDomnId(self):
-		del self._SctyDomnId
-		self._SctyDomnId = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
 
 	@property
 	def Tp(self):
@@ -170,6 +40,71 @@ class CryptographicKey12(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def DeactvtnDt(self):
+		return self._DeactvtnDt
+
+	@DeactvtnDt.setter
+	def DeactvtnDt(self, value):
+		self._DeactvtnDt = value if type(value) != base_types.auto else self.make_default("DeactvtnDt")
+
+	@DeactvtnDt.deleter
+	def DeactvtnDt(self):
+		del self._DeactvtnDt
+		self._DeactvtnDt = None
+
+	@property
+	def AddtlId(self):
+		return self._AddtlId
+
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def KeyChcVal(self):
+		return self._KeyChcVal
+
+	@KeyChcVal.setter
+	def KeyChcVal(self, value):
+		self._KeyChcVal = value if type(value) != base_types.auto else self.make_default("KeyChcVal")
+
+	@KeyChcVal.deleter
+	def KeyChcVal(self):
+		del self._KeyChcVal
+		self._KeyChcVal = None
+
+	@property
+	def SeqCntr(self):
+		return self._SeqCntr
+
+	@SeqCntr.setter
+	def SeqCntr(self, value):
+		self._SeqCntr = value if type(value) != base_types.auto else self.make_default("SeqCntr")
+
+	@SeqCntr.deleter
+	def SeqCntr(self):
+		del self._SeqCntr
+		self._SeqCntr = None
+
+	@property
 	def KeyChckVal(self):
 		return self._KeyChckVal
 
@@ -182,19 +117,84 @@ class CryptographicKey12(base_types._BaseFieldType):
 		del self._KeyChckVal
 		self._KeyChckVal = None
 
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def Fctn(self):
+		return self._Fctn
+
+	@Fctn.setter
+	def Fctn(self, value):
+		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+
+	@Fctn.deleter
+	def Fctn(self):
+		del self._Fctn
+		self._Fctn = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ActvtnDt(self):
+		return self._ActvtnDt
+
+	@ActvtnDt.setter
+	def ActvtnDt(self, value):
+		self._ActvtnDt = value if type(value) != base_types.auto else self.make_default("ActvtnDt")
+
+	@ActvtnDt.deleter
+	def ActvtnDt(self):
+		del self._ActvtnDt
+		self._ActvtnDt = None
+
+	@property
+	def SctyDomnId(self):
+		return self._SctyDomnId
+
+	@SctyDomnId.setter
+	def SctyDomnId(self, value):
+		self._SctyDomnId = value if type(value) != base_types.auto else self.make_default("SctyDomnId")
+
+	@SctyDomnId.deleter
+	def SctyDomnId(self):
+		del self._SctyDomnId
+		self._SctyDomnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlId', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyChcVal', type=KeyChoiceValue2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DeactvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PblcKeyVal', type=PublicRSAKey1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqCntr', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctyDomnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DeactvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyChcVal', type=KeyChoiceValue2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqCntr', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyChckVal', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyDomnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

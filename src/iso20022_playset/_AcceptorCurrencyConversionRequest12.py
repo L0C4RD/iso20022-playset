@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentTransaction165 import PaymentTransaction165
-from .CardPaymentEnvironment81 import CardPaymentEnvironment81
+from ._PaymentTransaction165 import PaymentTransaction165
+from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 
 class AcceptorCurrencyConversionRequest12(base_types._BaseFieldType):
 

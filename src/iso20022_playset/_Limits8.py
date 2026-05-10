@@ -1,5 +1,5 @@
 from . import base_types
-from .LimitReport8 import LimitReport8
+from ._LimitReport8 import LimitReport8
 
 class Limits8(base_types._BaseFieldType):
 

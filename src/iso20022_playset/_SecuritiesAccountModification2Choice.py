@@ -1,23 +1,23 @@
 from . import base_types
-from .SystemRestriction1 import SystemRestriction1
-from .SystemSecuritiesAccount5 import SystemSecuritiesAccount5
-from .MarketSpecificAttribute1 import MarketSpecificAttribute1
+from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
+from ._SystemRestriction1 import SystemRestriction1
+from ._SystemSecuritiesAccount5 import SystemSecuritiesAccount5
 
 class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SysRstrctn", "_MktSpcfcAttr", "_SysSctiesAcct"]
+	__slots__ = ["_SysSctiesAcct", "_MktSpcfcAttr", "_SysRstrctn"]
 	@property
-	def SysRstrctn(self):
-		return self._SysRstrctn
+	def SysSctiesAcct(self):
+		return self._SysSctiesAcct
 
-	@SysRstrctn.setter
-	def SysRstrctn(self, value):
-		self._SysRstrctn = value if type(value) != base_types.auto else self.make_default("SysRstrctn")
+	@SysSctiesAcct.setter
+	def SysSctiesAcct(self, value):
+		self._SysSctiesAcct = value if type(value) != base_types.auto else self.make_default("SysSctiesAcct")
 
-	@SysRstrctn.deleter
-	def SysRstrctn(self):
-		del self._SysRstrctn
-		self._SysRstrctn = None
+	@SysSctiesAcct.deleter
+	def SysSctiesAcct(self):
+		del self._SysSctiesAcct
+		self._SysSctiesAcct = None
 
 	@property
 	def MktSpcfcAttr(self):
@@ -33,21 +33,21 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 		self._MktSpcfcAttr = None
 
 	@property
-	def SysSctiesAcct(self):
-		return self._SysSctiesAcct
+	def SysRstrctn(self):
+		return self._SysRstrctn
 
-	@SysSctiesAcct.setter
-	def SysSctiesAcct(self, value):
-		self._SysSctiesAcct = value if type(value) != base_types.auto else self.make_default("SysSctiesAcct")
+	@SysRstrctn.setter
+	def SysRstrctn(self, value):
+		self._SysRstrctn = value if type(value) != base_types.auto else self.make_default("SysRstrctn")
 
-	@SysSctiesAcct.deleter
-	def SysSctiesAcct(self):
-		del self._SysSctiesAcct
-		self._SysSctiesAcct = None
+	@SysRstrctn.deleter
+	def SysRstrctn(self):
+		del self._SysRstrctn
+		self._SysRstrctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SysSctiesAcct', type=SystemSecuritiesAccount5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
 	))
 

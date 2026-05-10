@@ -1,5 +1,5 @@
 from . import base_types
-from .Cleared4Choice import Cleared4Choice
+from ._Cleared4Choice import Cleared4Choice
 
 class CompareClearingStatus3(base_types._BaseFieldType):
 

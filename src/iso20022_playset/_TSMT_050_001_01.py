@@ -1,5 +1,5 @@
 from . import base_types
-from .RoleAndBaselineRejectionV01 import RoleAndBaselineRejectionV01
+from ._RoleAndBaselineRejectionV01 import RoleAndBaselineRejectionV01
 
 class TSMT_050_001_01():
 

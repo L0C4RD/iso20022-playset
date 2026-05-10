@@ -1,5 +1,5 @@
 from . import base_types
-from .CollateralValueQueryV02 import CollateralValueQueryV02
+from ._CollateralValueQueryV02 import CollateralValueQueryV02
 
 class COLR_001_001_02():
 

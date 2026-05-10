@@ -1,5 +1,5 @@
 from . import base_types
-from .BuyInRegulatoryAdviceV02 import BuyInRegulatoryAdviceV02
+from ._BuyInRegulatoryAdviceV02 import BuyInRegulatoryAdviceV02
 
 class SESE_041_001_02():
 

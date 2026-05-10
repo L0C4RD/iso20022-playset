@@ -1,6 +1,6 @@
 from . import base_types
-from .DocumentIdentification28 import DocumentIdentification28
-from .Number import Number
+from ._Number import Number
+from ._DocumentIdentification28 import DocumentIdentification28
 
 class DocumentEntryAmendment1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .BICIdentifier import BICIdentifier
+from ._BICIdentifier import BICIdentifier
 
 class BICIdentification1(base_types._BaseFieldType):
 

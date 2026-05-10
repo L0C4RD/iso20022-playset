@@ -1,37 +1,24 @@
 from . import base_types
-from .Modification1Code import Modification1Code
-from .Period4Choice import Period4Choice
-from .CFIOct2015Identifier import CFIOct2015Identifier
-from .ISODate import ISODate
+from ._CFIOct2015Identifier import CFIOct2015Identifier
+from ._Period4Choice import Period4Choice
+from ._ISODate import ISODate
+from ._Modification1Code import Modification1Code
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_VldtyPrd", "_LastUpdtd", "_Idr"]
+	__slots__ = ["_Idr", "_LastUpdtd", "_VldtyPrd", "_Mod"]
 	@property
-	def Mod(self):
-		return self._Mod
+	def Idr(self):
+		return self._Idr
 
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
 
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
-	@property
-	def VldtyPrd(self):
-		return self._VldtyPrd
-
-	@VldtyPrd.setter
-	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
-
-	@VldtyPrd.deleter
-	def VldtyPrd(self):
-		del self._VldtyPrd
-		self._VldtyPrd = None
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
 
 	@property
 	def LastUpdtd(self):
@@ -47,22 +34,35 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 		self._LastUpdtd = None
 
 	@property
-	def Idr(self):
-		return self._Idr
+	def VldtyPrd(self):
+		return self._VldtyPrd
 
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+	@VldtyPrd.setter
+	def VldtyPrd(self, value):
+		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
 
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
+	@VldtyPrd.deleter
+	def VldtyPrd(self):
+		del self._VldtyPrd
+		self._VldtyPrd = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Idr', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpdtd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

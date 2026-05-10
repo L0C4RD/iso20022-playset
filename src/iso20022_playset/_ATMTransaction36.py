@@ -1,5 +1,5 @@
 from . import base_types
-from .ATMReconciliationOperation1 import ATMReconciliationOperation1
+from ._ATMReconciliationOperation1 import ATMReconciliationOperation1
 
 class ATMTransaction36(base_types._BaseFieldType):
 

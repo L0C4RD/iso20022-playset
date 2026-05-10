@@ -1,24 +1,11 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SaleItemRebate1 import SaleItemRebate1
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._Max35Text import Max35Text
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._SaleItemRebate1 import SaleItemRebate1
 
 class LoyaltyRebates1(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleItmRbt", "_TtlRbt", "_RbtLabl"]
-	@property
-	def SaleItmRbt(self):
-		return self._SaleItmRbt
-
-	@SaleItmRbt.setter
-	def SaleItmRbt(self, value):
-		self._SaleItmRbt = value if type(value) != base_types.auto else self.make_default("SaleItmRbt")
-
-	@SaleItmRbt.deleter
-	def SaleItmRbt(self):
-		del self._SaleItmRbt
-		self._SaleItmRbt = None
-
+	__slots__ = ["_TtlRbt", "_RbtLabl", "_SaleItmRbt"]
 	@property
 	def TtlRbt(self):
 		return self._TtlRbt
@@ -45,9 +32,22 @@ class LoyaltyRebates1(base_types._BaseFieldType):
 		del self._RbtLabl
 		self._RbtLabl = None
 
+	@property
+	def SaleItmRbt(self):
+		return self._SaleItmRbt
+
+	@SaleItmRbt.setter
+	def SaleItmRbt(self, value):
+		self._SaleItmRbt = value if type(value) != base_types.auto else self.make_default("SaleItmRbt")
+
+	@SaleItmRbt.deleter
+	def SaleItmRbt(self):
+		del self._SaleItmRbt
+		self._SaleItmRbt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleItmRbt', type=SaleItemRebate1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlRbt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RbtLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleItmRbt', type=SaleItemRebate1, min=0, max=None, mutex_group=None, array=True),
 	))
 

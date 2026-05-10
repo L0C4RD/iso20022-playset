@@ -1,6 +1,6 @@
 from . import base_types
-from .ExpectedCollateralMovement2 import ExpectedCollateralMovement2
-from .ExpectedCollateral2 import ExpectedCollateral2
+from ._ExpectedCollateral2 import ExpectedCollateral2
+from ._ExpectedCollateralMovement2 import ExpectedCollateralMovement2
 
 class ExpectedCollateral2Choice(base_types._BaseFieldType):
 

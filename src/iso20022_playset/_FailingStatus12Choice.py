@@ -1,6 +1,6 @@
 from . import base_types
-from .NoReasonCode import NoReasonCode
-from .FailingReason10 import FailingReason10
+from ._NoReasonCode import NoReasonCode
+from ._FailingReason10 import FailingReason10
 
 class FailingStatus12Choice(base_types._BaseFieldType):
 

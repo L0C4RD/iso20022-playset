@@ -1,13 +1,13 @@
 from . import base_types
-from .CardDataReading8Code import CardDataReading8Code
-from .ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from .ISODateTime import ISODateTime
-from .Max10000Binary import Max10000Binary
-from .Max140Text import Max140Text
+from ._Max10000Binary import Max10000Binary
+from ._Max140Text import Max140Text
+from ._CardDataReading8Code import CardDataReading8Code
+from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from ._ISODateTime import ISODateTime
 
 class DetailedAmount21(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Labl", "_ICCRltdData", "_DtTm", "_CardDataNtryMd"]
+	__slots__ = ["_Amt", "_DtTm", "_ICCRltdData", "_Labl", "_CardDataNtryMd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -22,17 +22,17 @@ class DetailedAmount21(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Labl(self):
-		return self._Labl
+	def DtTm(self):
+		return self._DtTm
 
-	@Labl.setter
-	def Labl(self, value):
-		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
 
-	@Labl.deleter
-	def Labl(self):
-		del self._Labl
-		self._Labl = None
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
 
 	@property
 	def ICCRltdData(self):
@@ -48,17 +48,17 @@ class DetailedAmount21(base_types._BaseFieldType):
 		self._ICCRltdData = None
 
 	@property
-	def DtTm(self):
-		return self._DtTm
+	def Labl(self):
+		return self._Labl
 
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+	@Labl.setter
+	def Labl(self, value):
+		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
 
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
+	@Labl.deleter
+	def Labl(self):
+		del self._Labl
+		self._Labl = None
 
 	@property
 	def CardDataNtryMd(self):
@@ -75,9 +75,9 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

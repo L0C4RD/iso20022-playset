@@ -1,6 +1,6 @@
 from . import base_types
-from .PartyIdentification129Choice import PartyIdentification129Choice
-from .Max2048Text import Max2048Text
+from ._PartyIdentification129Choice import PartyIdentification129Choice
+from ._Max2048Text import Max2048Text
 
 class IssuerInformation3(base_types._BaseFieldType):
 

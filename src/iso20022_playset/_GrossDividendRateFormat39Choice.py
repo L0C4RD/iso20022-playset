@@ -1,23 +1,23 @@
 from . import base_types
-from .AmountAndRateStatus2 import AmountAndRateStatus2
-from .RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
-from .RateTypeAndAmountAndStatus59 import RateTypeAndAmountAndStatus59
+from ._RateTypeAndAmountAndStatus59 import RateTypeAndAmountAndStatus59
+from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from ._AmountAndRateStatus2 import AmountAndRateStatus2
 
 class GrossDividendRateFormat39Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtAndRateSts", "_RateTpAndAmtAndRateSts", "_Amt"]
+	__slots__ = ["_Amt", "_RateTpAndAmtAndRateSts", "_AmtAndRateSts"]
 	@property
-	def AmtAndRateSts(self):
-		return self._AmtAndRateSts
+	def Amt(self):
+		return self._Amt
 
-	@AmtAndRateSts.setter
-	def AmtAndRateSts(self, value):
-		self._AmtAndRateSts = value if type(value) != base_types.auto else self.make_default("AmtAndRateSts")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
 
-	@AmtAndRateSts.deleter
-	def AmtAndRateSts(self):
-		del self._AmtAndRateSts
-		self._AmtAndRateSts = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def RateTpAndAmtAndRateSts(self):
@@ -33,21 +33,21 @@ class GrossDividendRateFormat39Choice(base_types._BaseFieldType):
 		self._RateTpAndAmtAndRateSts = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def AmtAndRateSts(self):
+		return self._AmtAndRateSts
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@AmtAndRateSts.setter
+	def AmtAndRateSts(self, value):
+		self._AmtAndRateSts = value if type(value) != base_types.auto else self.make_default("AmtAndRateSts")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@AmtAndRateSts.deleter
+	def AmtAndRateSts(self):
+		del self._AmtAndRateSts
+		self._AmtAndRateSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus59, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus59, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus2, min=0, max=1, mutex_group=1, array=False),
 	))
 

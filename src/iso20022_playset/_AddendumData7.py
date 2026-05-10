@@ -1,6 +1,6 @@
 from . import base_types
-from .FleetLineItem6 import FleetLineItem6
-from .AdditionalData2 import AdditionalData2
+from ._AdditionalData2 import AdditionalData2
+from ._FleetLineItem6 import FleetLineItem6
 
 class AddendumData7(base_types._BaseFieldType):
 

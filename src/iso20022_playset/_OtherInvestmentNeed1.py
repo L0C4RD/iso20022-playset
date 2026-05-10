@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AdditionalInformation15 import AdditionalInformation15
-from .TargetMarket1Choice import TargetMarket1Choice
+from ._TargetMarket1Choice import TargetMarket1Choice
+from ._Max35Text import Max35Text
+from ._AdditionalInformation15 import AdditionalInformation15
 
 class OtherInvestmentNeed1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntObjctvsAndNeedsTp", "_Trgt", "_AddtlInf"]
+	__slots__ = ["_AddtlInf", "_Trgt", "_ClntObjctvsAndNeedsTp"]
 	@property
-	def ClntObjctvsAndNeedsTp(self):
-		return self._ClntObjctvsAndNeedsTp
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@ClntObjctvsAndNeedsTp.setter
-	def ClntObjctvsAndNeedsTp(self, value):
-		self._ClntObjctvsAndNeedsTp = value if type(value) != base_types.auto else self.make_default("ClntObjctvsAndNeedsTp")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@ClntObjctvsAndNeedsTp.deleter
-	def ClntObjctvsAndNeedsTp(self):
-		del self._ClntObjctvsAndNeedsTp
-		self._ClntObjctvsAndNeedsTp = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def Trgt(self):
@@ -33,21 +33,21 @@ class OtherInvestmentNeed1(base_types._BaseFieldType):
 		self._Trgt = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def ClntObjctvsAndNeedsTp(self):
+		return self._ClntObjctvsAndNeedsTp
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@ClntObjctvsAndNeedsTp.setter
+	def ClntObjctvsAndNeedsTp(self, value):
+		self._ClntObjctvsAndNeedsTp = value if type(value) != base_types.auto else self.make_default("ClntObjctvsAndNeedsTp")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@ClntObjctvsAndNeedsTp.deleter
+	def ClntObjctvsAndNeedsTp(self):
+		del self._ClntObjctvsAndNeedsTp
+		self._ClntObjctvsAndNeedsTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntObjctvsAndNeedsTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntObjctvsAndNeedsTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

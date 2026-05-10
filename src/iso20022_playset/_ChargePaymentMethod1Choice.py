@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .ChargePaymentMethod1Code import ChargePaymentMethod1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._ChargePaymentMethod1Code import ChargePaymentMethod1Code
 
 class ChargePaymentMethod1Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 from . import base_types
-from .AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
-from .AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
+from ._AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
+from ._AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
 
 class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtCANtfctnCxlReqIdAndSts", "_AgtCANtfctnAdvcIdAndSts"]
-	@property
-	def AgtCANtfctnCxlReqIdAndSts(self):
-		return self._AgtCANtfctnCxlReqIdAndSts
-
-	@AgtCANtfctnCxlReqIdAndSts.setter
-	def AgtCANtfctnCxlReqIdAndSts(self, value):
-		self._AgtCANtfctnCxlReqIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnCxlReqIdAndSts")
-
-	@AgtCANtfctnCxlReqIdAndSts.deleter
-	def AgtCANtfctnCxlReqIdAndSts(self):
-		del self._AgtCANtfctnCxlReqIdAndSts
-		self._AgtCANtfctnCxlReqIdAndSts = None
-
+	__slots__ = ["_AgtCANtfctnAdvcIdAndSts", "_AgtCANtfctnCxlReqIdAndSts"]
 	@property
 	def AgtCANtfctnAdvcIdAndSts(self):
 		return self._AgtCANtfctnAdvcIdAndSts
@@ -31,8 +18,21 @@ class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 		del self._AgtCANtfctnAdvcIdAndSts
 		self._AgtCANtfctnAdvcIdAndSts = None
 
+	@property
+	def AgtCANtfctnCxlReqIdAndSts(self):
+		return self._AgtCANtfctnCxlReqIdAndSts
+
+	@AgtCANtfctnCxlReqIdAndSts.setter
+	def AgtCANtfctnCxlReqIdAndSts(self, value):
+		self._AgtCANtfctnCxlReqIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnCxlReqIdAndSts")
+
+	@AgtCANtfctnCxlReqIdAndSts.deleter
+	def AgtCANtfctnCxlReqIdAndSts(self):
+		del self._AgtCANtfctnCxlReqIdAndSts
+		self._AgtCANtfctnCxlReqIdAndSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AgtCANtfctnCxlReqIdAndSts', type=AgentNotificationCancellationIdentificationAndStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AgtCANtfctnAdvcIdAndSts', type=AgentNotificationIdentificationAndStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AgtCANtfctnCxlReqIdAndSts', type=AgentNotificationCancellationIdentificationAndStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

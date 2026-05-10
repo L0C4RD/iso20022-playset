@@ -1,6 +1,6 @@
 from . import base_types
-from .PositionSetMetrics12 import PositionSetMetrics12
-from .PositionSetDimensions14 import PositionSetDimensions14
+from ._PositionSetDimensions14 import PositionSetDimensions14
+from ._PositionSetMetrics12 import PositionSetMetrics12
 
 class PositionSet18(base_types._BaseFieldType):
 

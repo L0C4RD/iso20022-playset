@@ -1,6 +1,6 @@
 from . import base_types
-from .OrganisationIdentification39 import OrganisationIdentification39
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
+from ._OrganisationIdentification39 import OrganisationIdentification39
 
 class Organisation44(base_types._BaseFieldType):
 

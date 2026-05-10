@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentType2Choice import DocumentType2Choice
+from ._Max35Text import Max35Text
+from ._DocumentType2Choice import DocumentType2Choice
 
 class DocumentType1(base_types._BaseFieldType):
 

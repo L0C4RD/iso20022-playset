@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ProductCharacteristics1Code import ProductCharacteristics1Code
+from ._Max35Text import Max35Text
+from ._ProductCharacteristics1Code import ProductCharacteristics1Code
 
 class ProductCharacteristics1(base_types._BaseFieldType):
 

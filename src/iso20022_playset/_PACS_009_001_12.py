@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInstitutionCreditTransferV12 import FinancialInstitutionCreditTransferV12
+from ._FinancialInstitutionCreditTransferV12 import FinancialInstitutionCreditTransferV12
 
 class PACS_009_001_12():
 

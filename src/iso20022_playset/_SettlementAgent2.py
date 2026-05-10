@@ -1,6 +1,6 @@
 from . import base_types
-from .PaymentAccount4 import PaymentAccount4
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._PaymentAccount4 import PaymentAccount4
 
 class SettlementAgent2(base_types._BaseFieldType):
 

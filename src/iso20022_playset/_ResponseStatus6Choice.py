@@ -1,23 +1,23 @@
 from . import base_types
-from .RejectionStatus20Choice import RejectionStatus20Choice
-from .ConsentStatus4Choice import ConsentStatus4Choice
-from .PendingStatus20Choice import PendingStatus20Choice
+from ._PendingStatus20Choice import PendingStatus20Choice
+from ._ConsentStatus4Choice import ConsentStatus4Choice
+from ._RejectionStatus20Choice import RejectionStatus20Choice
 
 class ResponseStatus6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnsntd", "_Pdg", "_Rjctd"]
+	__slots__ = ["_Rjctd", "_Pdg", "_Cnsntd"]
 	@property
-	def Cnsntd(self):
-		return self._Cnsntd
+	def Rjctd(self):
+		return self._Rjctd
 
-	@Cnsntd.setter
-	def Cnsntd(self, value):
-		self._Cnsntd = value if type(value) != base_types.auto else self.make_default("Cnsntd")
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
 
-	@Cnsntd.deleter
-	def Cnsntd(self):
-		del self._Cnsntd
-		self._Cnsntd = None
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
 
 	@property
 	def Pdg(self):
@@ -33,21 +33,21 @@ class ResponseStatus6Choice(base_types._BaseFieldType):
 		self._Pdg = None
 
 	@property
-	def Rjctd(self):
-		return self._Rjctd
+	def Cnsntd(self):
+		return self._Cnsntd
 
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+	@Cnsntd.setter
+	def Cnsntd(self, value):
+		self._Cnsntd = value if type(value) != base_types.auto else self.make_default("Cnsntd")
 
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
+	@Cnsntd.deleter
+	def Cnsntd(self):
+		del self._Cnsntd
+		self._Cnsntd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus20Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus4Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

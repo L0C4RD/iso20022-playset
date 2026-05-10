@@ -1,12 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max3Text import Max3Text
-from .TrackData2 import TrackData2
-from .CheckType1Code import CheckType1Code
+from ._Max35Text import Max35Text
+from ._CheckType1Code import CheckType1Code
+from ._Max3Text import Max3Text
+from ._TrackData2 import TrackData2
 
 class Check1(base_types._BaseFieldType):
 
-	__slots__ = ["_ChckTrckData2", "_AcctNb", "_ChckNb", "_BkId", "_Ctry", "_ChckTp", "_ChckCardNb"]
+	__slots__ = ["_BkId", "_ChckTrckData2", "_ChckNb", "_Ctry", "_ChckCardNb", "_ChckTp", "_AcctNb"]
+	@property
+	def BkId(self):
+		return self._BkId
+
+	@BkId.setter
+	def BkId(self, value):
+		self._BkId = value if type(value) != base_types.auto else self.make_default("BkId")
+
+	@BkId.deleter
+	def BkId(self):
+		del self._BkId
+		self._BkId = None
+
 	@property
 	def ChckTrckData2(self):
 		return self._ChckTrckData2
@@ -19,19 +32,6 @@ class Check1(base_types._BaseFieldType):
 	def ChckTrckData2(self):
 		del self._ChckTrckData2
 		self._ChckTrckData2 = None
-
-	@property
-	def AcctNb(self):
-		return self._AcctNb
-
-	@AcctNb.setter
-	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != base_types.auto else self.make_default("AcctNb")
-
-	@AcctNb.deleter
-	def AcctNb(self):
-		del self._AcctNb
-		self._AcctNb = None
 
 	@property
 	def ChckNb(self):
@@ -47,19 +47,6 @@ class Check1(base_types._BaseFieldType):
 		self._ChckNb = None
 
 	@property
-	def BkId(self):
-		return self._BkId
-
-	@BkId.setter
-	def BkId(self, value):
-		self._BkId = value if type(value) != base_types.auto else self.make_default("BkId")
-
-	@BkId.deleter
-	def BkId(self):
-		del self._BkId
-		self._BkId = None
-
-	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -71,6 +58,19 @@ class Check1(base_types._BaseFieldType):
 	def Ctry(self):
 		del self._Ctry
 		self._Ctry = None
+
+	@property
+	def ChckCardNb(self):
+		return self._ChckCardNb
+
+	@ChckCardNb.setter
+	def ChckCardNb(self, value):
+		self._ChckCardNb = value if type(value) != base_types.auto else self.make_default("ChckCardNb")
+
+	@ChckCardNb.deleter
+	def ChckCardNb(self):
+		del self._ChckCardNb
+		self._ChckCardNb = None
 
 	@property
 	def ChckTp(self):
@@ -86,25 +86,25 @@ class Check1(base_types._BaseFieldType):
 		self._ChckTp = None
 
 	@property
-	def ChckCardNb(self):
-		return self._ChckCardNb
+	def AcctNb(self):
+		return self._AcctNb
 
-	@ChckCardNb.setter
-	def ChckCardNb(self, value):
-		self._ChckCardNb = value if type(value) != base_types.auto else self.make_default("ChckCardNb")
+	@AcctNb.setter
+	def AcctNb(self, value):
+		self._AcctNb = value if type(value) != base_types.auto else self.make_default("AcctNb")
 
-	@ChckCardNb.deleter
-	def ChckCardNb(self):
-		del self._ChckCardNb
-		self._ChckCardNb = None
+	@AcctNb.deleter
+	def AcctNb(self):
+		del self._AcctNb
+		self._AcctNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ChckTrckData2', type=TrackData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckTrckData2', type=TrackData2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=Max3Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckTp', type=CheckType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChckCardNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckTp', type=CheckType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .ReportPeriodActivity1Code import ReportPeriodActivity1Code
-from .ReconciliationStatisticsPerCounterparty4 import ReconciliationStatisticsPerCounterparty4
+from ._ReconciliationStatisticsPerCounterparty4 import ReconciliationStatisticsPerCounterparty4
+from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 
 class StatisticsPerCounterparty19Choice(base_types._BaseFieldType):
 

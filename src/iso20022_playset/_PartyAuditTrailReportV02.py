@@ -1,7 +1,7 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PartyAuditTrailOrError3Choice import PartyAuditTrailOrError3Choice
-from .MessageHeader12 import MessageHeader12
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader12 import MessageHeader12
+from ._PartyAuditTrailOrError3Choice import PartyAuditTrailOrError3Choice
 
 class PartyAuditTrailReportV02(base_types._BaseFieldType):
 

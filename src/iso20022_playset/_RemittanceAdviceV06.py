@@ -1,24 +1,11 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .GroupHeader122 import GroupHeader122
-from .RemittanceInformation23 import RemittanceInformation23
+from ._SupplementaryData1 import SupplementaryData1
+from ._GroupHeader122 import GroupHeader122
+from ._RemittanceInformation23 import RemittanceInformation23
 
 class RemittanceAdviceV06(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_RmtInf"]
-	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
+	__slots__ = ["_SplmtryData", "_GrpHdr", "_RmtInf"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -31,6 +18,19 @@ class RemittanceAdviceV06(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def RmtInf(self):
@@ -46,8 +46,8 @@ class RemittanceAdviceV06(base_types._BaseFieldType):
 		self._RmtInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtInf', type=RemittanceInformation23, min=1, max=None, mutex_group=None, array=True),
 	))
 

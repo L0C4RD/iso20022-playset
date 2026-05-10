@@ -1,25 +1,12 @@
 from . import base_types
-from .ContentInformationType10 import ContentInformationType10
-from .ContentInformationType15 import ContentInformationType15
-from .ATMDepositCompletionAcknowledgement2 import ATMDepositCompletionAcknowledgement2
-from .Header32 import Header32
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._ATMDepositCompletionAcknowledgement2 import ATMDepositCompletionAcknowledgement2
+from ._Header32 import Header32
 
 class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMDpstCmpltnAck", "_ATMDpstCmpltnAck", "_SctyTrlr", "_Hdr"]
-	@property
-	def PrtctdATMDpstCmpltnAck(self):
-		return self._PrtctdATMDpstCmpltnAck
-
-	@PrtctdATMDpstCmpltnAck.setter
-	def PrtctdATMDpstCmpltnAck(self, value):
-		self._PrtctdATMDpstCmpltnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMDpstCmpltnAck")
-
-	@PrtctdATMDpstCmpltnAck.deleter
-	def PrtctdATMDpstCmpltnAck(self):
-		del self._PrtctdATMDpstCmpltnAck
-		self._PrtctdATMDpstCmpltnAck = None
-
+	__slots__ = ["_ATMDpstCmpltnAck", "_Hdr", "_PrtctdATMDpstCmpltnAck", "_SctyTrlr"]
 	@property
 	def ATMDpstCmpltnAck(self):
 		return self._ATMDpstCmpltnAck
@@ -34,19 +21,6 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 		self._ATMDpstCmpltnAck = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -59,10 +33,36 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
+	@property
+	def PrtctdATMDpstCmpltnAck(self):
+		return self._PrtctdATMDpstCmpltnAck
+
+	@PrtctdATMDpstCmpltnAck.setter
+	def PrtctdATMDpstCmpltnAck(self, value):
+		self._PrtctdATMDpstCmpltnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMDpstCmpltnAck")
+
+	@PrtctdATMDpstCmpltnAck.deleter
+	def PrtctdATMDpstCmpltnAck(self):
+		del self._PrtctdATMDpstCmpltnAck
+		self._PrtctdATMDpstCmpltnAck = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdATMDpstCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMDpstCmpltnAck', type=ATMDepositCompletionAcknowledgement2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMDpstCmpltnAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

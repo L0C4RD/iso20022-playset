@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .DeliveryReturn1Code import DeliveryReturn1Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._DeliveryReturn1Code import DeliveryReturn1Code
 
 class DeliveryReturn4Choice(base_types._BaseFieldType):
 

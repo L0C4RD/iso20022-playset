@@ -1,12 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PartyIdentification215 import PartyIdentification215
-from .DisclosureRequestIdentification1 import DisclosureRequestIdentification1
-from .Max35Text import Max35Text
+from ._Max35Text import Max35Text
+from ._PartyIdentification215 import PartyIdentification215
+from ._SupplementaryData1 import SupplementaryData1
+from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
 
 class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RspndgIntrmy", "_DsclsrRspnId", "_IssrDsclsrReqRef"]
+	__slots__ = ["_IssrDsclsrReqRef", "_SplmtryData", "_DsclsrRspnId", "_RspndgIntrmy"]
+	@property
+	def IssrDsclsrReqRef(self):
+		return self._IssrDsclsrReqRef
+
+	@IssrDsclsrReqRef.setter
+	def IssrDsclsrReqRef(self, value):
+		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+
+	@IssrDsclsrReqRef.deleter
+	def IssrDsclsrReqRef(self):
+		del self._IssrDsclsrReqRef
+		self._IssrDsclsrReqRef = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -19,19 +32,6 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
-
-	@property
-	def RspndgIntrmy(self):
-		return self._RspndgIntrmy
-
-	@RspndgIntrmy.setter
-	def RspndgIntrmy(self, value):
-		self._RspndgIntrmy = value if type(value) != base_types.auto else self.make_default("RspndgIntrmy")
-
-	@RspndgIntrmy.deleter
-	def RspndgIntrmy(self):
-		del self._RspndgIntrmy
-		self._RspndgIntrmy = None
 
 	@property
 	def DsclsrRspnId(self):
@@ -47,22 +47,22 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 		self._DsclsrRspnId = None
 
 	@property
-	def IssrDsclsrReqRef(self):
-		return self._IssrDsclsrReqRef
+	def RspndgIntrmy(self):
+		return self._RspndgIntrmy
 
-	@IssrDsclsrReqRef.setter
-	def IssrDsclsrReqRef(self, value):
-		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+	@RspndgIntrmy.setter
+	def RspndgIntrmy(self, value):
+		self._RspndgIntrmy = value if type(value) != base_types.auto else self.make_default("RspndgIntrmy")
 
-	@IssrDsclsrReqRef.deleter
-	def IssrDsclsrReqRef(self):
-		del self._IssrDsclsrReqRef
-		self._IssrDsclsrReqRef = None
+	@RspndgIntrmy.deleter
+	def RspndgIntrmy(self):
+		del self._RspndgIntrmy
+		self._RspndgIntrmy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification215, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspndgIntrmy', type=PartyIdentification215, min=1, max=1, mutex_group=None, array=False),
 	))
 

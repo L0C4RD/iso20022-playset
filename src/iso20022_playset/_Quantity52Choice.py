@@ -1,24 +1,11 @@
 from . import base_types
-from .FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from .Quantity1Code import Quantity1Code
-from .OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
+from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
+from ._Quantity1Code import Quantity1Code
+from ._OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
 
 class Quantity52Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_OrgnlAndCurFaceAmt", "_Cd"]
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
-
+	__slots__ = ["_OrgnlAndCurFaceAmt", "_Cd", "_Qty"]
 	@property
 	def OrgnlAndCurFaceAmt(self):
 		return self._OrgnlAndCurFaceAmt
@@ -45,9 +32,22 @@ class Quantity52Choice(base_types._BaseFieldType):
 		del self._Cd
 		self._Cd = None
 
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgnlAndCurFaceAmt', type=OriginalAndCurrentQuantities1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

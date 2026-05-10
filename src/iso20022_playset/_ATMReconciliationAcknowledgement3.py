@@ -1,6 +1,6 @@
 from . import base_types
-from .AutomatedTellerMachine3 import AutomatedTellerMachine3
-from .ATMTransaction52 import ATMTransaction52
+from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
+from ._ATMTransaction52 import ATMTransaction52
 
 class ATMReconciliationAcknowledgement3(base_types._BaseFieldType):
 

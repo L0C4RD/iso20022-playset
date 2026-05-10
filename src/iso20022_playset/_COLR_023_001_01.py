@@ -1,5 +1,5 @@
 from . import base_types
-from .TripartyCollateralStatusAdviceV01 import TripartyCollateralStatusAdviceV01
+from ._TripartyCollateralStatusAdviceV01 import TripartyCollateralStatusAdviceV01
 
 class COLR_023_001_01():
 

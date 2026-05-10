@@ -1,50 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TaxPeriod3 import TaxPeriod3
-from .Max140Text import Max140Text
-from .TaxAmount3 import TaxAmount3
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._TaxAmount3 import TaxAmount3
+from ._TaxPeriod3 import TaxPeriod3
 
 class TaxRecord3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtgyDtls", "_Prd", "_FrmsCd", "_Tp", "_CertId", "_AddtlInf", "_TaxAmt", "_Ctgy", "_DbtrSts"]
+	__slots__ = ["_TaxAmt", "_Tp", "_CertId", "_Ctgy", "_FrmsCd", "_Prd", "_DbtrSts", "_CtgyDtls", "_AddtlInf"]
 	@property
-	def CtgyDtls(self):
-		return self._CtgyDtls
+	def TaxAmt(self):
+		return self._TaxAmt
 
-	@CtgyDtls.setter
-	def CtgyDtls(self, value):
-		self._CtgyDtls = value if type(value) != base_types.auto else self.make_default("CtgyDtls")
+	@TaxAmt.setter
+	def TaxAmt(self, value):
+		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
 
-	@CtgyDtls.deleter
-	def CtgyDtls(self):
-		del self._CtgyDtls
-		self._CtgyDtls = None
-
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def FrmsCd(self):
-		return self._FrmsCd
-
-	@FrmsCd.setter
-	def FrmsCd(self, value):
-		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
-
-	@FrmsCd.deleter
-	def FrmsCd(self):
-		del self._FrmsCd
-		self._FrmsCd = None
+	@TaxAmt.deleter
+	def TaxAmt(self):
+		del self._TaxAmt
+		self._TaxAmt = None
 
 	@property
 	def Tp(self):
@@ -73,32 +47,6 @@ class TaxRecord3(base_types._BaseFieldType):
 		self._CertId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def TaxAmt(self):
-		return self._TaxAmt
-
-	@TaxAmt.setter
-	def TaxAmt(self, value):
-		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
-
-	@TaxAmt.deleter
-	def TaxAmt(self):
-		del self._TaxAmt
-		self._TaxAmt = None
-
-	@property
 	def Ctgy(self):
 		return self._Ctgy
 
@@ -110,6 +58,32 @@ class TaxRecord3(base_types._BaseFieldType):
 	def Ctgy(self):
 		del self._Ctgy
 		self._Ctgy = None
+
+	@property
+	def FrmsCd(self):
+		return self._FrmsCd
+
+	@FrmsCd.setter
+	def FrmsCd(self, value):
+		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
+
+	@FrmsCd.deleter
+	def FrmsCd(self):
+		del self._FrmsCd
+		self._FrmsCd = None
+
+	@property
+	def Prd(self):
+		return self._Prd
+
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
 
 	@property
 	def DbtrSts(self):
@@ -124,15 +98,41 @@ class TaxRecord3(base_types._BaseFieldType):
 		del self._DbtrSts
 		self._DbtrSts = None
 
+	@property
+	def CtgyDtls(self):
+		return self._CtgyDtls
+
+	@CtgyDtls.setter
+	def CtgyDtls(self, value):
+		self._CtgyDtls = value if type(value) != base_types.auto else self.make_default("CtgyDtls")
+
+	@CtgyDtls.deleter
+	def CtgyDtls(self):
+		del self._CtgyDtls
+		self._CtgyDtls = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtgyDtls', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prd', type=TaxPeriod3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmsCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxAmt', type=TaxAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxAmt', type=TaxAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctgy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmsCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=TaxPeriod3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrSts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtgyDtls', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

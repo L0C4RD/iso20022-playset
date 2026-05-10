@@ -1,6 +1,6 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ReservationCriteria7 import ReservationCriteria7
+from ._Max35Text import Max35Text
+from ._ReservationCriteria7 import ReservationCriteria7
 
 class ReservationCriteria6Choice(base_types._BaseFieldType):
 

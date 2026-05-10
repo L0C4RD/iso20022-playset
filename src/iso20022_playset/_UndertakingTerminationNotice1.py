@@ -1,12 +1,25 @@
 from . import base_types
-from .UndertakingTermination3 import UndertakingTermination3
-from .Document9 import Document9
-from .Max2000Text import Max2000Text
-from .Undertaking9 import Undertaking9
+from ._UndertakingTermination3 import UndertakingTermination3
+from ._Max2000Text import Max2000Text
+from ._Undertaking9 import Undertaking9
+from ._Document9 import Document9
 
 class UndertakingTerminationNotice1(base_types._BaseFieldType):
 
-	__slots__ = ["_NclsdFile", "_AddtlInf", "_TermntnDtls", "_UdrtkgId"]
+	__slots__ = ["_UdrtkgId", "_NclsdFile", "_AddtlInf", "_TermntnDtls"]
+	@property
+	def UdrtkgId(self):
+		return self._UdrtkgId
+
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
 	@property
 	def NclsdFile(self):
 		return self._NclsdFile
@@ -46,23 +59,10 @@ class UndertakingTerminationNotice1(base_types._BaseFieldType):
 		del self._TermntnDtls
 		self._TermntnDtls = None
 
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TermntnDtls', type=UndertakingTermination3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
 

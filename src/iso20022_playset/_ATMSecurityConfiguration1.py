@@ -1,27 +1,27 @@
 from . import base_types
-from .MessageProtection1Code import MessageProtection1Code
-from .ATMSecurityConfiguration2 import ATMSecurityConfiguration2
-from .Algorithm11Code import Algorithm11Code
-from .ATMSecurityConfiguration4 import ATMSecurityConfiguration4
-from .Algorithm12Code import Algorithm12Code
-from .ATMSecurityConfiguration3 import ATMSecurityConfiguration3
-from .ATMSecurityConfiguration5 import ATMSecurityConfiguration5
+from ._ATMSecurityConfiguration3 import ATMSecurityConfiguration3
+from ._Algorithm12Code import Algorithm12Code
+from ._Algorithm11Code import Algorithm11Code
+from ._ATMSecurityConfiguration4 import ATMSecurityConfiguration4
+from ._ATMSecurityConfiguration5 import ATMSecurityConfiguration5
+from ._MessageProtection1Code import MessageProtection1Code
+from ._ATMSecurityConfiguration2 import ATMSecurityConfiguration2
 
 class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
-	__slots__ = ["_PIN", "_DgtlSgntr", "_Keys", "_MACAlgo", "_DgstAlgo", "_Ncrptn", "_MsgPrtcn"]
+	__slots__ = ["_MACAlgo", "_DgtlSgntr", "_PIN", "_Ncrptn", "_DgstAlgo", "_MsgPrtcn", "_Keys"]
 	@property
-	def PIN(self):
-		return self._PIN
+	def MACAlgo(self):
+		return self._MACAlgo
 
-	@PIN.setter
-	def PIN(self, value):
-		self._PIN = value if type(value) != base_types.auto else self.make_default("PIN")
+	@MACAlgo.setter
+	def MACAlgo(self, value):
+		self._MACAlgo = value if type(value) != base_types.auto else self.make_default("MACAlgo")
 
-	@PIN.deleter
-	def PIN(self):
-		del self._PIN
-		self._PIN = None
+	@MACAlgo.deleter
+	def MACAlgo(self):
+		del self._MACAlgo
+		self._MACAlgo = None
 
 	@property
 	def DgtlSgntr(self):
@@ -37,43 +37,17 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 		self._DgtlSgntr = None
 
 	@property
-	def Keys(self):
-		return self._Keys
+	def PIN(self):
+		return self._PIN
 
-	@Keys.setter
-	def Keys(self, value):
-		self._Keys = value if type(value) != base_types.auto else self.make_default("Keys")
+	@PIN.setter
+	def PIN(self, value):
+		self._PIN = value if type(value) != base_types.auto else self.make_default("PIN")
 
-	@Keys.deleter
-	def Keys(self):
-		del self._Keys
-		self._Keys = None
-
-	@property
-	def MACAlgo(self):
-		return self._MACAlgo
-
-	@MACAlgo.setter
-	def MACAlgo(self, value):
-		self._MACAlgo = value if type(value) != base_types.auto else self.make_default("MACAlgo")
-
-	@MACAlgo.deleter
-	def MACAlgo(self):
-		del self._MACAlgo
-		self._MACAlgo = None
-
-	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
+	@PIN.deleter
+	def PIN(self):
+		del self._PIN
+		self._PIN = None
 
 	@property
 	def Ncrptn(self):
@@ -89,6 +63,19 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 		self._Ncrptn = None
 
 	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
+	@property
 	def MsgPrtcn(self):
 		return self._MsgPrtcn
 
@@ -101,13 +88,26 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 		del self._MsgPrtcn
 		self._MsgPrtcn = None
 
+	@property
+	def Keys(self):
+		return self._Keys
+
+	@Keys.setter
+	def Keys(self, value):
+		self._Keys = value if type(value) != base_types.auto else self.make_default("Keys")
+
+	@Keys.deleter
+	def Keys(self):
+		del self._Keys
+		self._Keys = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PIN', type=ATMSecurityConfiguration5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntr', type=ATMSecurityConfiguration4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Keys', type=ATMSecurityConfiguration2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MACAlgo', type=Algorithm12Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DgtlSgntr', type=ATMSecurityConfiguration4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PIN', type=ATMSecurityConfiguration5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ncrptn', type=ATMSecurityConfiguration3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPrtcn', type=MessageProtection1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Keys', type=ATMSecurityConfiguration2, min=0, max=1, mutex_group=None, array=False),
 	))
 

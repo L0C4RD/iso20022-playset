@@ -1,12 +1,25 @@
 from . import base_types
-from .Number import Number
-from .ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
-from .Max350Text import Max350Text
-from .BusinessDayConvention1Code import BusinessDayConvention1Code
+from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
+from ._Number import Number
+from ._Max350Text import Max350Text
+from ._BusinessDayConvention1Code import BusinessDayConvention1Code
 
 class TimeFrame9(base_types._BaseFieldType):
 
-	__slots__ = ["_TMns", "_RefrToOrdrDsk", "_OthrTmFrameDesc", "_NonWorkgDayAdjstmnt"]
+	__slots__ = ["_OthrTmFrameDesc", "_TMns", "_RefrToOrdrDsk", "_NonWorkgDayAdjstmnt"]
+	@property
+	def OthrTmFrameDesc(self):
+		return self._OthrTmFrameDesc
+
+	@OthrTmFrameDesc.setter
+	def OthrTmFrameDesc(self, value):
+		self._OthrTmFrameDesc = value if type(value) != base_types.auto else self.make_default("OthrTmFrameDesc")
+
+	@OthrTmFrameDesc.deleter
+	def OthrTmFrameDesc(self):
+		del self._OthrTmFrameDesc
+		self._OthrTmFrameDesc = None
+
 	@property
 	def TMns(self):
 		return self._TMns
@@ -34,19 +47,6 @@ class TimeFrame9(base_types._BaseFieldType):
 		self._RefrToOrdrDsk = None
 
 	@property
-	def OthrTmFrameDesc(self):
-		return self._OthrTmFrameDesc
-
-	@OthrTmFrameDesc.setter
-	def OthrTmFrameDesc(self, value):
-		self._OthrTmFrameDesc = value if type(value) != base_types.auto else self.make_default("OthrTmFrameDesc")
-
-	@OthrTmFrameDesc.deleter
-	def OthrTmFrameDesc(self):
-		del self._OthrTmFrameDesc
-		self._OthrTmFrameDesc = None
-
-	@property
 	def NonWorkgDayAdjstmnt(self):
 		return self._NonWorkgDayAdjstmnt
 
@@ -60,9 +60,9 @@ class TimeFrame9(base_types._BaseFieldType):
 		self._NonWorkgDayAdjstmnt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMns', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefrToOrdrDsk', type=ReferToFundOrderDesk1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTmFrameDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

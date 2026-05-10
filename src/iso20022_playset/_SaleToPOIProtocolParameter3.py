@@ -1,55 +1,16 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .RetailerMessage1Code import RetailerMessage1Code
-from .Max256Text import Max256Text
-from .TerminalManagementAction3Code import TerminalManagementAction3Code
-from .Max1025Text import Max1025Text
-from .Organisation26 import Organisation26
-from .RetailerService8Code import RetailerService8Code
-from .RetailerService2Code import RetailerService2Code
+from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from ._RetailerMessage1Code import RetailerMessage1Code
+from ._Max1025Text import Max1025Text
+from ._RetailerService8Code import RetailerService8Code
+from ._RetailerService2Code import RetailerService2Code
+from ._Max35Text import Max35Text
+from ._Max256Text import Max256Text
+from ._Organisation26 import Organisation26
 
 class SaleToPOIProtocolParameter3(base_types._BaseFieldType):
 
-	__slots__ = ["_AllwdSaleMsg", "_SaleId", "_ActnTp", "_AllwdSaleDvc", "_MrchntId", "_XtrnlyTpSpprtd", "_HstId", "_Vrsn", "_AllwdPOISvc", "_AllwdPOIMsg", "_MrchntPOIId"]
-	@property
-	def AllwdSaleMsg(self):
-		return self._AllwdSaleMsg
-
-	@AllwdSaleMsg.setter
-	def AllwdSaleMsg(self, value):
-		self._AllwdSaleMsg = value if type(value) != base_types.auto else self.make_default("AllwdSaleMsg")
-
-	@AllwdSaleMsg.deleter
-	def AllwdSaleMsg(self):
-		del self._AllwdSaleMsg
-		self._AllwdSaleMsg = None
-
-	@property
-	def SaleId(self):
-		return self._SaleId
-
-	@SaleId.setter
-	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
-
-	@SaleId.deleter
-	def SaleId(self):
-		del self._SaleId
-		self._SaleId = None
-
-	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
+	__slots__ = ["_AllwdSaleDvc", "_AllwdPOIMsg", "_Vrsn", "_AllwdPOISvc", "_MrchntPOIId", "_XtrnlyTpSpprtd", "_HstId", "_MrchntId", "_SaleId", "_AllwdSaleMsg", "_ActnTp"]
 	@property
 	def AllwdSaleDvc(self):
 		return self._AllwdSaleDvc
@@ -64,43 +25,17 @@ class SaleToPOIProtocolParameter3(base_types._BaseFieldType):
 		self._AllwdSaleDvc = None
 
 	@property
-	def MrchntId(self):
-		return self._MrchntId
+	def AllwdPOIMsg(self):
+		return self._AllwdPOIMsg
 
-	@MrchntId.setter
-	def MrchntId(self, value):
-		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+	@AllwdPOIMsg.setter
+	def AllwdPOIMsg(self, value):
+		self._AllwdPOIMsg = value if type(value) != base_types.auto else self.make_default("AllwdPOIMsg")
 
-	@MrchntId.deleter
-	def MrchntId(self):
-		del self._MrchntId
-		self._MrchntId = None
-
-	@property
-	def XtrnlyTpSpprtd(self):
-		return self._XtrnlyTpSpprtd
-
-	@XtrnlyTpSpprtd.setter
-	def XtrnlyTpSpprtd(self, value):
-		self._XtrnlyTpSpprtd = value if type(value) != base_types.auto else self.make_default("XtrnlyTpSpprtd")
-
-	@XtrnlyTpSpprtd.deleter
-	def XtrnlyTpSpprtd(self):
-		del self._XtrnlyTpSpprtd
-		self._XtrnlyTpSpprtd = None
-
-	@property
-	def HstId(self):
-		return self._HstId
-
-	@HstId.setter
-	def HstId(self, value):
-		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
-
-	@HstId.deleter
-	def HstId(self):
-		del self._HstId
-		self._HstId = None
+	@AllwdPOIMsg.deleter
+	def AllwdPOIMsg(self):
+		del self._AllwdPOIMsg
+		self._AllwdPOIMsg = None
 
 	@property
 	def Vrsn(self):
@@ -129,19 +64,6 @@ class SaleToPOIProtocolParameter3(base_types._BaseFieldType):
 		self._AllwdPOISvc = None
 
 	@property
-	def AllwdPOIMsg(self):
-		return self._AllwdPOIMsg
-
-	@AllwdPOIMsg.setter
-	def AllwdPOIMsg(self, value):
-		self._AllwdPOIMsg = value if type(value) != base_types.auto else self.make_default("AllwdPOIMsg")
-
-	@AllwdPOIMsg.deleter
-	def AllwdPOIMsg(self):
-		del self._AllwdPOIMsg
-		self._AllwdPOIMsg = None
-
-	@property
 	def MrchntPOIId(self):
 		return self._MrchntPOIId
 
@@ -154,17 +76,95 @@ class SaleToPOIProtocolParameter3(base_types._BaseFieldType):
 		del self._MrchntPOIId
 		self._MrchntPOIId = None
 
+	@property
+	def XtrnlyTpSpprtd(self):
+		return self._XtrnlyTpSpprtd
+
+	@XtrnlyTpSpprtd.setter
+	def XtrnlyTpSpprtd(self, value):
+		self._XtrnlyTpSpprtd = value if type(value) != base_types.auto else self.make_default("XtrnlyTpSpprtd")
+
+	@XtrnlyTpSpprtd.deleter
+	def XtrnlyTpSpprtd(self):
+		del self._XtrnlyTpSpprtd
+		self._XtrnlyTpSpprtd = None
+
+	@property
+	def HstId(self):
+		return self._HstId
+
+	@HstId.setter
+	def HstId(self, value):
+		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
+
+	@HstId.deleter
+	def HstId(self):
+		del self._HstId
+		self._HstId = None
+
+	@property
+	def MrchntId(self):
+		return self._MrchntId
+
+	@MrchntId.setter
+	def MrchntId(self, value):
+		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+
+	@MrchntId.deleter
+	def MrchntId(self):
+		del self._MrchntId
+		self._MrchntId = None
+
+	@property
+	def SaleId(self):
+		return self._SaleId
+
+	@SaleId.setter
+	def SaleId(self, value):
+		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+
+	@SaleId.deleter
+	def SaleId(self):
+		del self._SaleId
+		self._SaleId = None
+
+	@property
+	def AllwdSaleMsg(self):
+		return self._AllwdSaleMsg
+
+	@AllwdSaleMsg.setter
+	def AllwdSaleMsg(self, value):
+		self._AllwdSaleMsg = value if type(value) != base_types.auto else self.make_default("AllwdSaleMsg")
+
+	@AllwdSaleMsg.deleter
+	def AllwdSaleMsg(self):
+		del self._AllwdSaleMsg
+		self._AllwdSaleMsg = None
+
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AllwdSaleMsg', type=RetailerMessage1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdSaleDvc', type=RetailerService8Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrchntId', type=Organisation26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XtrnlyTpSpprtd', type=Max1025Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='HstId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllwdPOIMsg', type=RetailerMessage1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AllwdPOISvc', type=RetailerService2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AllwdPOIMsg', type=RetailerMessage1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MrchntPOIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtrnlyTpSpprtd', type=Max1025Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='HstId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntId', type=Organisation26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllwdSaleMsg', type=RetailerMessage1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

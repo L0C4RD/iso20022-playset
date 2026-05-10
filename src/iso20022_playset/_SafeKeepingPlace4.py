@@ -1,6 +1,6 @@
 from . import base_types
-from .SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
-from .LEIIdentifier import LEIIdentifier
+from ._LEIIdentifier import LEIIdentifier
+from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
 
 class SafeKeepingPlace4(base_types._BaseFieldType):
 

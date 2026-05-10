@@ -1,25 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .FormOfSecurity1Code import FormOfSecurity1Code
-from .DistributionPolicy1Code import DistributionPolicy1Code
-from .SecurityClassificationType2Choice import SecurityClassificationType2Choice
+from ._Max35Text import Max35Text
+from ._DistributionPolicy1Code import DistributionPolicy1Code
+from ._FormOfSecurity1Code import FormOfSecurity1Code
+from ._SecurityClassificationType2Choice import SecurityClassificationType2Choice
 
 class FinancialInstrument72(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_ClssTp", "_DstrbtnPlcy", "_ClssfctnTp", "_SplmtryId"]
-	@property
-	def SctiesForm(self):
-		return self._SctiesForm
-
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
-
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
-
+	__slots__ = ["_ClssTp", "_SctiesForm", "_ClssfctnTp", "_SplmtryId", "_DstrbtnPlcy"]
 	@property
 	def ClssTp(self):
 		return self._ClssTp
@@ -34,17 +21,17 @@ class FinancialInstrument72(base_types._BaseFieldType):
 		self._ClssTp = None
 
 	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
+	def SctiesForm(self):
+		return self._SctiesForm
 
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
 
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
 
 	@property
 	def ClssfctnTp(self):
@@ -72,11 +59,24 @@ class FinancialInstrument72(base_types._BaseFieldType):
 		del self._SplmtryId
 		self._SplmtryId = None
 
+	@property
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
+
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

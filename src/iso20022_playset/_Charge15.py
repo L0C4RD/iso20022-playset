@@ -1,13 +1,13 @@
 from . import base_types
-from .CalculationBasis2Code import CalculationBasis2Code
-from .ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from .Extended350Code import Extended350Code
-from .PercentageRate import PercentageRate
-from .ChargeType9Code import ChargeType9Code
+from ._CalculationBasis2Code import CalculationBasis2Code
+from ._ChargeType9Code import ChargeType9Code
+from ._Extended350Code import Extended350Code
+from ._PercentageRate import PercentageRate
+from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 
 class Charge15(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Rate", "_XtndedClctnBsis", "_ClctnBsis", "_XtndedTp", "_Amt"]
+	__slots__ = ["_Tp", "_XtndedClctnBsis", "_Amt", "_ClctnBsis", "_XtndedTp", "_Rate"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -22,19 +22,6 @@ class Charge15(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Rate(self):
-		return self._Rate
-
-	@Rate.setter
-	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
-
-	@Rate.deleter
-	def Rate(self):
-		del self._Rate
-		self._Rate = None
-
-	@property
 	def XtndedClctnBsis(self):
 		return self._XtndedClctnBsis
 
@@ -46,6 +33,19 @@ class Charge15(base_types._BaseFieldType):
 	def XtndedClctnBsis(self):
 		del self._XtndedClctnBsis
 		self._XtndedClctnBsis = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def ClctnBsis(self):
@@ -74,24 +74,24 @@ class Charge15(base_types._BaseFieldType):
 		self._XtndedTp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Rate(self):
+		return self._Rate
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+	@Rate.setter
+	def Rate(self, value):
+		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Rate.deleter
+	def Rate(self):
+		del self._Rate
+		self._Rate = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=ChargeType9Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='XtndedClctnBsis', type=Extended350Code, min=0, max=1, mutex_group=3, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='ClctnBsis', type=CalculationBasis2Code, min=0, max=1, mutex_group=3, array=False),
 		base_types.FieldEntry(name='XtndedTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=2, array=False),
 	))
 

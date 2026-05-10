@@ -1,6 +1,6 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CollateralAccount4 import CollateralAccount4
+from ._SupplementaryData1 import SupplementaryData1
+from ._CollateralAccount4 import CollateralAccount4
 
 class CCPCollateralReportV01(base_types._BaseFieldType):
 

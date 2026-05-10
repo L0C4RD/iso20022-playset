@@ -1,55 +1,16 @@
 from . import base_types
-from .OperationMandate7 import OperationMandate7
-from .AccountContract3 import AccountContract3
-from .Group6 import Group6
-from .ContractDocument1 import ContractDocument1
-from .AccountForAction1 import AccountForAction1
-from .CustomerAccount5 import CustomerAccount5
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .CashAccount40 import CashAccount40
+from ._Group6 import Group6
+from ._AccountForAction1 import AccountForAction1
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._ContractDocument1 import ContractDocument1
+from ._AccountContract3 import AccountContract3
+from ._CustomerAccount5 import CustomerAccount5
+from ._OperationMandate7 import OperationMandate7
 
 class AccountReport36(base_types._BaseFieldType):
 
-	__slots__ = ["_BalTrfAcct", "_Mndt", "_Grp", "_CtrctDts", "_TrfAcctSvcrId", "_RefAcct", "_UndrlygMstrAgrmt", "_Acct"]
-	@property
-	def BalTrfAcct(self):
-		return self._BalTrfAcct
-
-	@BalTrfAcct.setter
-	def BalTrfAcct(self, value):
-		self._BalTrfAcct = value if type(value) != base_types.auto else self.make_default("BalTrfAcct")
-
-	@BalTrfAcct.deleter
-	def BalTrfAcct(self):
-		del self._BalTrfAcct
-		self._BalTrfAcct = None
-
-	@property
-	def Mndt(self):
-		return self._Mndt
-
-	@Mndt.setter
-	def Mndt(self, value):
-		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
-
-	@Mndt.deleter
-	def Mndt(self):
-		del self._Mndt
-		self._Mndt = None
-
-	@property
-	def Grp(self):
-		return self._Grp
-
-	@Grp.setter
-	def Grp(self, value):
-		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
-
-	@Grp.deleter
-	def Grp(self):
-		del self._Grp
-		self._Grp = None
-
+	__slots__ = ["_CtrctDts", "_TrfAcctSvcrId", "_Acct", "_Mndt", "_RefAcct", "_BalTrfAcct", "_UndrlygMstrAgrmt", "_Grp"]
 	@property
 	def CtrctDts(self):
 		return self._CtrctDts
@@ -77,6 +38,32 @@ class AccountReport36(base_types._BaseFieldType):
 		self._TrfAcctSvcrId = None
 
 	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
+	@property
+	def Mndt(self):
+		return self._Mndt
+
+	@Mndt.setter
+	def Mndt(self, value):
+		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
+
+	@Mndt.deleter
+	def Mndt(self):
+		del self._Mndt
+		self._Mndt = None
+
+	@property
 	def RefAcct(self):
 		return self._RefAcct
 
@@ -88,6 +75,19 @@ class AccountReport36(base_types._BaseFieldType):
 	def RefAcct(self):
 		del self._RefAcct
 		self._RefAcct = None
+
+	@property
+	def BalTrfAcct(self):
+		return self._BalTrfAcct
+
+	@BalTrfAcct.setter
+	def BalTrfAcct(self, value):
+		self._BalTrfAcct = value if type(value) != base_types.auto else self.make_default("BalTrfAcct")
+
+	@BalTrfAcct.deleter
+	def BalTrfAcct(self):
+		del self._BalTrfAcct
+		self._BalTrfAcct = None
 
 	@property
 	def UndrlygMstrAgrmt(self):
@@ -103,26 +103,26 @@ class AccountReport36(base_types._BaseFieldType):
 		self._UndrlygMstrAgrmt = None
 
 	@property
-	def Acct(self):
-		return self._Acct
+	def Grp(self):
+		return self._Grp
 
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+	@Grp.setter
+	def Grp(self, value):
+		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
 
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@Grp.deleter
+	def Grp(self):
+		del self._Grp
+		self._Grp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalTrfAcct', type=AccountForAction1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mndt', type=OperationMandate7, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Grp', type=Group6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctDts', type=AccountContract3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfAcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CustomerAccount5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mndt', type=OperationMandate7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RefAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalTrfAcct', type=AccountForAction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grp', type=Group6, min=0, max=None, mutex_group=None, array=True),
 	))
 

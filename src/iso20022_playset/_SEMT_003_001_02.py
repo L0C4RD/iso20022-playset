@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountingStatementOfHoldingsV02 import AccountingStatementOfHoldingsV02
+from ._AccountingStatementOfHoldingsV02 import AccountingStatementOfHoldingsV02
 
 class SEMT_003_001_02():
 

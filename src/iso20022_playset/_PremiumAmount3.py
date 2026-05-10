@@ -1,27 +1,14 @@
 from . import base_types
-from .Number import Number
-from .Max35Text import Max35Text
-from .ISODate import ISODate
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .PremiumQuote1Choice import PremiumQuote1Choice
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Number import Number
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._PremiumQuote1Choice import PremiumQuote1Choice
+from ._ISODate import ISODate
 
 class PremiumAmount3(base_types._BaseFieldType):
 
-	__slots__ = ["_PrmCcy", "_PyerPtyRef", "_RcvrPtyRef", "_Amt", "_DcmlPlcs", "_PrmSttlmDt", "_PrmQt"]
-	@property
-	def PrmCcy(self):
-		return self._PrmCcy
-
-	@PrmCcy.setter
-	def PrmCcy(self, value):
-		self._PrmCcy = value if type(value) != base_types.auto else self.make_default("PrmCcy")
-
-	@PrmCcy.deleter
-	def PrmCcy(self):
-		del self._PrmCcy
-		self._PrmCcy = None
-
+	__slots__ = ["_PyerPtyRef", "_PrmSttlmDt", "_RcvrPtyRef", "_PrmQt", "_Amt", "_DcmlPlcs", "_PrmCcy"]
 	@property
 	def PyerPtyRef(self):
 		return self._PyerPtyRef
@@ -36,6 +23,19 @@ class PremiumAmount3(base_types._BaseFieldType):
 		self._PyerPtyRef = None
 
 	@property
+	def PrmSttlmDt(self):
+		return self._PrmSttlmDt
+
+	@PrmSttlmDt.setter
+	def PrmSttlmDt(self, value):
+		self._PrmSttlmDt = value if type(value) != base_types.auto else self.make_default("PrmSttlmDt")
+
+	@PrmSttlmDt.deleter
+	def PrmSttlmDt(self):
+		del self._PrmSttlmDt
+		self._PrmSttlmDt = None
+
+	@property
 	def RcvrPtyRef(self):
 		return self._RcvrPtyRef
 
@@ -47,6 +47,19 @@ class PremiumAmount3(base_types._BaseFieldType):
 	def RcvrPtyRef(self):
 		del self._RcvrPtyRef
 		self._RcvrPtyRef = None
+
+	@property
+	def PrmQt(self):
+		return self._PrmQt
+
+	@PrmQt.setter
+	def PrmQt(self, value):
+		self._PrmQt = value if type(value) != base_types.auto else self.make_default("PrmQt")
+
+	@PrmQt.deleter
+	def PrmQt(self):
+		del self._PrmQt
+		self._PrmQt = None
 
 	@property
 	def Amt(self):
@@ -75,38 +88,25 @@ class PremiumAmount3(base_types._BaseFieldType):
 		self._DcmlPlcs = None
 
 	@property
-	def PrmSttlmDt(self):
-		return self._PrmSttlmDt
+	def PrmCcy(self):
+		return self._PrmCcy
 
-	@PrmSttlmDt.setter
-	def PrmSttlmDt(self, value):
-		self._PrmSttlmDt = value if type(value) != base_types.auto else self.make_default("PrmSttlmDt")
+	@PrmCcy.setter
+	def PrmCcy(self, value):
+		self._PrmCcy = value if type(value) != base_types.auto else self.make_default("PrmCcy")
 
-	@PrmSttlmDt.deleter
-	def PrmSttlmDt(self):
-		del self._PrmSttlmDt
-		self._PrmSttlmDt = None
-
-	@property
-	def PrmQt(self):
-		return self._PrmQt
-
-	@PrmQt.setter
-	def PrmQt(self, value):
-		self._PrmQt = value if type(value) != base_types.auto else self.make_default("PrmQt")
-
-	@PrmQt.deleter
-	def PrmQt(self):
-		del self._PrmQt
-		self._PrmQt = None
+	@PrmCcy.deleter
+	def PrmCcy(self):
+		del self._PrmCcy
+		self._PrmCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrmCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyerPtyRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrPtyRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmQt', type=PremiumQuote1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DcmlPlcs', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmQt', type=PremiumQuote1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

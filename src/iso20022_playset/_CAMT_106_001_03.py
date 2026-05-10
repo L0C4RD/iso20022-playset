@@ -1,5 +1,5 @@
 from . import base_types
-from .ChargesPaymentRequestV03 import ChargesPaymentRequestV03
+from ._ChargesPaymentRequestV03 import ChargesPaymentRequestV03
 
 class CAMT_106_001_03():
 

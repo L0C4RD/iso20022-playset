@@ -1,23 +1,10 @@
 from . import base_types
-from .InvestigationStatus1Code import InvestigationStatus1Code
-from .SupplementaryDataEnvelope1 import SupplementaryDataEnvelope1
+from ._SupplementaryDataEnvelope1 import SupplementaryDataEnvelope1
+from ._InvestigationStatus1Code import InvestigationStatus1Code
 
 class InvestigationResult1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtnSts", "_Rslt"]
-	@property
-	def InvstgtnSts(self):
-		return self._InvstgtnSts
-
-	@InvstgtnSts.setter
-	def InvstgtnSts(self, value):
-		self._InvstgtnSts = value if type(value) != base_types.auto else self.make_default("InvstgtnSts")
-
-	@InvstgtnSts.deleter
-	def InvstgtnSts(self):
-		del self._InvstgtnSts
-		self._InvstgtnSts = None
-
+	__slots__ = ["_Rslt", "_InvstgtnSts"]
 	@property
 	def Rslt(self):
 		return self._Rslt
@@ -31,8 +18,21 @@ class InvestigationResult1Choice(base_types._BaseFieldType):
 		del self._Rslt
 		self._Rslt = None
 
+	@property
+	def InvstgtnSts(self):
+		return self._InvstgtnSts
+
+	@InvstgtnSts.setter
+	def InvstgtnSts(self, value):
+		self._InvstgtnSts = value if type(value) != base_types.auto else self.make_default("InvstgtnSts")
+
+	@InvstgtnSts.deleter
+	def InvstgtnSts(self):
+		del self._InvstgtnSts
+		self._InvstgtnSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstgtnSts', type=InvestigationStatus1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rslt', type=SupplementaryDataEnvelope1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='InvstgtnSts', type=InvestigationStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

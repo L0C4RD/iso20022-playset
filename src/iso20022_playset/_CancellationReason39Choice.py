@@ -1,6 +1,6 @@
 from . import base_types
-from .AwaitingCancellationReason2 import AwaitingCancellationReason2
-from .NoReasonCode import NoReasonCode
+from ._NoReasonCode import NoReasonCode
+from ._AwaitingCancellationReason2 import AwaitingCancellationReason2
 
 class CancellationReason39Choice(base_types._BaseFieldType):
 

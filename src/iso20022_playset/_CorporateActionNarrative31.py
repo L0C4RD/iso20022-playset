@@ -1,21 +1,21 @@
 from . import base_types
-from .Max350Text import Max350Text
+from ._Max350Text import Max350Text
 
 class CorporateActionNarrative31(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxtnConds", "_PtyCtctNrrtv", "_AddtlTxt", "_NrrtvVrsn"]
+	__slots__ = ["_AddtlTxt", "_PtyCtctNrrtv", "_TaxtnConds", "_NrrtvVrsn"]
 	@property
-	def TaxtnConds(self):
-		return self._TaxtnConds
+	def AddtlTxt(self):
+		return self._AddtlTxt
 
-	@TaxtnConds.setter
-	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
 
-	@TaxtnConds.deleter
-	def TaxtnConds(self):
-		del self._TaxtnConds
-		self._TaxtnConds = None
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
 
 	@property
 	def PtyCtctNrrtv(self):
@@ -31,17 +31,17 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 		self._PtyCtctNrrtv = None
 
 	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
+	def TaxtnConds(self):
+		return self._TaxtnConds
 
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+	@TaxtnConds.setter
+	def TaxtnConds(self, value):
+		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
 
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
+	@TaxtnConds.deleter
+	def TaxtnConds(self):
+		del self._TaxtnConds
+		self._TaxtnConds = None
 
 	@property
 	def NrrtvVrsn(self):
@@ -57,9 +57,9 @@ class CorporateActionNarrative31(base_types._BaseFieldType):
 		self._NrrtvVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PtyCtctNrrtv', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NrrtvVrsn', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

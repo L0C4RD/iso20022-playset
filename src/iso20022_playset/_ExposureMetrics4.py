@@ -1,36 +1,23 @@
 from . import base_types
-from .PrincipalAmount3 import PrincipalAmount3
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .AmountAndDirection53 import AmountAndDirection53
+from ._PrincipalAmount3 import PrincipalAmount3
+from ._AmountAndDirection53 import AmountAndDirection53
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 
 class ExposureMetrics4(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtMktValAmt", "_MrgnLn", "_CshCollAmt", "_PrncplAmt", "_CollMktVal", "_MktVal", "_OutsdngMrgnLnAmt", "_LnVal"]
+	__slots__ = ["_CollMktVal", "_CshCollAmt", "_MrgnLn", "_MktVal", "_LnVal", "_OutsdngMrgnLnAmt", "_ShrtMktValAmt", "_PrncplAmt"]
 	@property
-	def ShrtMktValAmt(self):
-		return self._ShrtMktValAmt
+	def CollMktVal(self):
+		return self._CollMktVal
 
-	@ShrtMktValAmt.setter
-	def ShrtMktValAmt(self, value):
-		self._ShrtMktValAmt = value if type(value) != base_types.auto else self.make_default("ShrtMktValAmt")
+	@CollMktVal.setter
+	def CollMktVal(self, value):
+		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
 
-	@ShrtMktValAmt.deleter
-	def ShrtMktValAmt(self):
-		del self._ShrtMktValAmt
-		self._ShrtMktValAmt = None
-
-	@property
-	def MrgnLn(self):
-		return self._MrgnLn
-
-	@MrgnLn.setter
-	def MrgnLn(self, value):
-		self._MrgnLn = value if type(value) != base_types.auto else self.make_default("MrgnLn")
-
-	@MrgnLn.deleter
-	def MrgnLn(self):
-		del self._MrgnLn
-		self._MrgnLn = None
+	@CollMktVal.deleter
+	def CollMktVal(self):
+		del self._CollMktVal
+		self._CollMktVal = None
 
 	@property
 	def CshCollAmt(self):
@@ -46,30 +33,17 @@ class ExposureMetrics4(base_types._BaseFieldType):
 		self._CshCollAmt = None
 
 	@property
-	def PrncplAmt(self):
-		return self._PrncplAmt
+	def MrgnLn(self):
+		return self._MrgnLn
 
-	@PrncplAmt.setter
-	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmt")
+	@MrgnLn.setter
+	def MrgnLn(self, value):
+		self._MrgnLn = value if type(value) != base_types.auto else self.make_default("MrgnLn")
 
-	@PrncplAmt.deleter
-	def PrncplAmt(self):
-		del self._PrncplAmt
-		self._PrncplAmt = None
-
-	@property
-	def CollMktVal(self):
-		return self._CollMktVal
-
-	@CollMktVal.setter
-	def CollMktVal(self, value):
-		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
-
-	@CollMktVal.deleter
-	def CollMktVal(self):
-		del self._CollMktVal
-		self._CollMktVal = None
+	@MrgnLn.deleter
+	def MrgnLn(self):
+		del self._MrgnLn
+		self._MrgnLn = None
 
 	@property
 	def MktVal(self):
@@ -85,6 +59,19 @@ class ExposureMetrics4(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
+	def LnVal(self):
+		return self._LnVal
+
+	@LnVal.setter
+	def LnVal(self, value):
+		self._LnVal = value if type(value) != base_types.auto else self.make_default("LnVal")
+
+	@LnVal.deleter
+	def LnVal(self):
+		del self._LnVal
+		self._LnVal = None
+
+	@property
 	def OutsdngMrgnLnAmt(self):
 		return self._OutsdngMrgnLnAmt
 
@@ -98,26 +85,39 @@ class ExposureMetrics4(base_types._BaseFieldType):
 		self._OutsdngMrgnLnAmt = None
 
 	@property
-	def LnVal(self):
-		return self._LnVal
+	def ShrtMktValAmt(self):
+		return self._ShrtMktValAmt
 
-	@LnVal.setter
-	def LnVal(self, value):
-		self._LnVal = value if type(value) != base_types.auto else self.make_default("LnVal")
+	@ShrtMktValAmt.setter
+	def ShrtMktValAmt(self, value):
+		self._ShrtMktValAmt = value if type(value) != base_types.auto else self.make_default("ShrtMktValAmt")
 
-	@LnVal.deleter
-	def LnVal(self):
-		del self._LnVal
-		self._LnVal = None
+	@ShrtMktValAmt.deleter
+	def ShrtMktValAmt(self):
+		del self._ShrtMktValAmt
+		self._ShrtMktValAmt = None
+
+	@property
+	def PrncplAmt(self):
+		return self._PrncplAmt
+
+	@PrncplAmt.setter
+	def PrncplAmt(self, value):
+		self._PrncplAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmt")
+
+	@PrncplAmt.deleter
+	def PrncplAmt(self):
+		del self._PrncplAmt
+		self._PrncplAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtMktValAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnLn', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshCollAmt', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMktVal', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshCollAmt', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnLn', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutsdngMrgnLnAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutsdngMrgnLnAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtMktValAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrncplAmt', type=PrincipalAmount3, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,25 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISO3NumericCountryCode import ISO3NumericCountryCode
-from .Max70Text import Max70Text
-from .Max140Text import Max140Text
-from .Min3Max4Text import Min3Max4Text
+from ._Max140Text import Max140Text
+from ._Max70Text import Max70Text
+from ._Max35Text import Max35Text
+from ._Min3Max4Text import Min3Max4Text
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
 
 class Organisation26(base_types._BaseFieldType):
 
-	__slots__ = ["_RegdIdr", "_CmonNm", "_MrchntCtgyCd", "_CtryCd", "_Adr"]
+	__slots__ = ["_MrchntCtgyCd", "_CmonNm", "_Adr", "_RegdIdr", "_CtryCd"]
 	@property
-	def RegdIdr(self):
-		return self._RegdIdr
+	def MrchntCtgyCd(self):
+		return self._MrchntCtgyCd
 
-	@RegdIdr.setter
-	def RegdIdr(self, value):
-		self._RegdIdr = value if type(value) != base_types.auto else self.make_default("RegdIdr")
+	@MrchntCtgyCd.setter
+	def MrchntCtgyCd(self, value):
+		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
 
-	@RegdIdr.deleter
-	def RegdIdr(self):
-		del self._RegdIdr
-		self._RegdIdr = None
+	@MrchntCtgyCd.deleter
+	def MrchntCtgyCd(self):
+		del self._MrchntCtgyCd
+		self._MrchntCtgyCd = None
 
 	@property
 	def CmonNm(self):
@@ -35,17 +35,30 @@ class Organisation26(base_types._BaseFieldType):
 		self._CmonNm = None
 
 	@property
-	def MrchntCtgyCd(self):
-		return self._MrchntCtgyCd
+	def Adr(self):
+		return self._Adr
 
-	@MrchntCtgyCd.setter
-	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
 
-	@MrchntCtgyCd.deleter
-	def MrchntCtgyCd(self):
-		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
+	@property
+	def RegdIdr(self):
+		return self._RegdIdr
+
+	@RegdIdr.setter
+	def RegdIdr(self, value):
+		self._RegdIdr = value if type(value) != base_types.auto else self.make_default("RegdIdr")
+
+	@RegdIdr.deleter
+	def RegdIdr(self):
+		del self._RegdIdr
+		self._RegdIdr = None
 
 	@property
 	def CtryCd(self):
@@ -60,24 +73,11 @@ class Organisation26(base_types._BaseFieldType):
 		del self._CtryCd
 		self._CtryCd = None
 
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegdIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

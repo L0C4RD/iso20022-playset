@@ -1,12 +1,25 @@
 from . import base_types
-from .PartyIdentification136Choice import PartyIdentification136Choice
-from .RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from .Max140Text import Max140Text
-from .SafekeepingPlaceFormat45Choice import SafekeepingPlaceFormat45Choice
+from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from ._Max140Text import Max140Text
+from ._PartyIdentification136Choice import PartyIdentification136Choice
+from ._SafekeepingPlaceFormat45Choice import SafekeepingPlaceFormat45Choice
 
 class AccountIdentification73(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr", "_SfkpgPlc"]
+	__slots__ = ["_SfkpgPlc", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr"]
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -46,23 +59,10 @@ class AccountIdentification73(base_types._BaseFieldType):
 		del self._AcctOwnr
 		self._AcctOwnr = None
 
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat45Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat45Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

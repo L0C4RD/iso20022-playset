@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectionReason6Format1Choice import RejectionReason6Format1Choice
-from .Max350Text import Max350Text
+from ._RejectionReason6Format1Choice import RejectionReason6Format1Choice
+from ._Max350Text import Max350Text
 
 class NotificationRejectionReason2(base_types._BaseFieldType):
 

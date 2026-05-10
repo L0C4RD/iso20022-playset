@@ -1,23 +1,10 @@
 from . import base_types
-from .Modification1Code import Modification1Code
-from .Max5NumericText import Max5NumericText
+from ._Modification1Code import Modification1Code
+from ._Max5NumericText import Max5NumericText
 
 class NumberModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_ModCd"]
-	@property
-	def Nb(self):
-		return self._Nb
-
-	@Nb.setter
-	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
-
-	@Nb.deleter
-	def Nb(self):
-		del self._Nb
-		self._Nb = None
-
+	__slots__ = ["_ModCd", "_Nb"]
 	@property
 	def ModCd(self):
 		return self._ModCd
@@ -31,8 +18,21 @@ class NumberModification1(base_types._BaseFieldType):
 		del self._ModCd
 		self._ModCd = None
 
+	@property
+	def Nb(self):
+		return self._Nb
+
+	@Nb.setter
+	def Nb(self, value):
+		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+
+	@Nb.deleter
+	def Nb(self):
+		del self._Nb
+		self._Nb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nb', type=Max5NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max5NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

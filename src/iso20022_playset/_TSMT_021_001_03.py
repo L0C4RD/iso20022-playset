@@ -1,5 +1,5 @@
 from . import base_types
-from .MisMatchAcceptanceNotificationV03 import MisMatchAcceptanceNotificationV03
+from ._MisMatchAcceptanceNotificationV03 import MisMatchAcceptanceNotificationV03
 
 class TSMT_021_001_03():
 

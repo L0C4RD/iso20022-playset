@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification13 import GenericIdentification13
-from .MeetingTypeClassification2Code import MeetingTypeClassification2Code
+from ._GenericIdentification13 import GenericIdentification13
+from ._MeetingTypeClassification2Code import MeetingTypeClassification2Code
 
 class MeetingTypeClassification2Choice(base_types._BaseFieldType):
 

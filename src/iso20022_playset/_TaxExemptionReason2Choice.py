@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification47 import GenericIdentification47
-from .TaxExemptReason3Code import TaxExemptReason3Code
+from ._GenericIdentification47 import GenericIdentification47
+from ._TaxExemptReason3Code import TaxExemptReason3Code
 
 class TaxExemptionReason2Choice(base_types._BaseFieldType):
 

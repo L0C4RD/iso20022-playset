@@ -1,10 +1,23 @@
 from . import base_types
-from .ReportItemStatus1 import ReportItemStatus1
-from .NoReasonCode import NoReasonCode
+from ._ReportItemStatus1 import ReportItemStatus1
+from ._NoReasonCode import NoReasonCode
 
 class ReportItemStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AccptdWthXcptn", "_Rjctd", "_Accptd"]
+	__slots__ = ["_Accptd", "_AccptdWthXcptn", "_Rjctd"]
+	@property
+	def Accptd(self):
+		return self._Accptd
+
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
+
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
+
 	@property
 	def AccptdWthXcptn(self):
 		return self._AccptdWthXcptn
@@ -31,22 +44,9 @@ class ReportItemStatus1Choice(base_types._BaseFieldType):
 		del self._Rjctd
 		self._Rjctd = None
 
-	@property
-	def Accptd(self):
-		return self._Accptd
-
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
-
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Accptd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AccptdWthXcptn', type=ReportItemStatus1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Rjctd', type=ReportItemStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Accptd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

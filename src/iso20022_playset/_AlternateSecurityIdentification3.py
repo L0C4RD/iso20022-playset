@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max70Text import Max70Text
-from .CountryCode import CountryCode
+from ._Max35Text import Max35Text
+from ._Max70Text import Max70Text
+from ._CountryCode import CountryCode
 
 class AlternateSecurityIdentification3(base_types._BaseFieldType):
 

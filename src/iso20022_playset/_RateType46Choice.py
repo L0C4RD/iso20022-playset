@@ -1,6 +1,6 @@
 from . import base_types
-from .WithholdingTaxRateType1Code import WithholdingTaxRateType1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._WithholdingTaxRateType1Code import WithholdingTaxRateType1Code
 
 class RateType46Choice(base_types._BaseFieldType):
 

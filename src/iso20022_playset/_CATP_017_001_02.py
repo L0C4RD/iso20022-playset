@@ -1,5 +1,5 @@
 from . import base_types
-from .ATMTransferResponseV02 import ATMTransferResponseV02
+from ._ATMTransferResponseV02 import ATMTransferResponseV02
 
 class CATP_017_001_02():
 

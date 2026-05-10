@@ -1,6 +1,6 @@
 from . import base_types
-from .ReturnedReason1Choice import ReturnedReason1Choice
-from .RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
+from ._ReturnedReason1Choice import ReturnedReason1Choice
 
 class ReturnedStatusReason1(base_types._BaseFieldType):
 

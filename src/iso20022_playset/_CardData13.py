@@ -1,28 +1,28 @@
 from . import base_types
-from .ISO3NumericCountryCode import ISO3NumericCountryCode
-from .Min2Max3NumericText import Min2Max3NumericText
-from .Max35Text import Max35Text
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Max19NumericText import Max19NumericText
-from .ISOYearMonth import ISOYearMonth
-from .AdditionalData1 import AdditionalData1
-from .Track2Data1Choice import Track2Data1Choice
+from ._Min2Max3NumericText import Min2Max3NumericText
+from ._Max19NumericText import Max19NumericText
+from ._ISO3NumericCountryCode import ISO3NumericCountryCode
+from ._Track2Data1Choice import Track2Data1Choice
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._AdditionalData1 import AdditionalData1
+from ._Max35Text import Max35Text
+from ._ISOYearMonth import ISOYearMonth
 
 class CardData13(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtAcctRef", "_FctvDt", "_PAN", "_PrtctdPAN", "_AddtlCardData", "_CtryCd", "_CardSeqNb", "_PrtflIdr", "_Trck2", "_PANAcctRg", "_PdctSubTp", "_PdctTp", "_XpryDt"]
+	__slots__ = ["_CardSeqNb", "_FctvDt", "_PmtAcctRef", "_PAN", "_PrtctdPAN", "_XpryDt", "_PdctTp", "_Trck2", "_PrtflIdr", "_PANAcctRg", "_CtryCd", "_PdctSubTp", "_AddtlCardData"]
 	@property
-	def PmtAcctRef(self):
-		return self._PmtAcctRef
+	def CardSeqNb(self):
+		return self._CardSeqNb
 
-	@PmtAcctRef.setter
-	def PmtAcctRef(self, value):
-		self._PmtAcctRef = value if type(value) != base_types.auto else self.make_default("PmtAcctRef")
+	@CardSeqNb.setter
+	def CardSeqNb(self, value):
+		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
 
-	@PmtAcctRef.deleter
-	def PmtAcctRef(self):
-		del self._PmtAcctRef
-		self._PmtAcctRef = None
+	@CardSeqNb.deleter
+	def CardSeqNb(self):
+		del self._CardSeqNb
+		self._CardSeqNb = None
 
 	@property
 	def FctvDt(self):
@@ -36,6 +36,19 @@ class CardData13(base_types._BaseFieldType):
 	def FctvDt(self):
 		del self._FctvDt
 		self._FctvDt = None
+
+	@property
+	def PmtAcctRef(self):
+		return self._PmtAcctRef
+
+	@PmtAcctRef.setter
+	def PmtAcctRef(self, value):
+		self._PmtAcctRef = value if type(value) != base_types.auto else self.make_default("PmtAcctRef")
+
+	@PmtAcctRef.deleter
+	def PmtAcctRef(self):
+		del self._PmtAcctRef
+		self._PmtAcctRef = None
 
 	@property
 	def PAN(self):
@@ -64,95 +77,17 @@ class CardData13(base_types._BaseFieldType):
 		self._PrtctdPAN = None
 
 	@property
-	def AddtlCardData(self):
-		return self._AddtlCardData
+	def XpryDt(self):
+		return self._XpryDt
 
-	@AddtlCardData.setter
-	def AddtlCardData(self, value):
-		self._AddtlCardData = value if type(value) != base_types.auto else self.make_default("AddtlCardData")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
 
-	@AddtlCardData.deleter
-	def AddtlCardData(self):
-		del self._AddtlCardData
-		self._AddtlCardData = None
-
-	@property
-	def CtryCd(self):
-		return self._CtryCd
-
-	@CtryCd.setter
-	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
-
-	@CtryCd.deleter
-	def CtryCd(self):
-		del self._CtryCd
-		self._CtryCd = None
-
-	@property
-	def CardSeqNb(self):
-		return self._CardSeqNb
-
-	@CardSeqNb.setter
-	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
-
-	@CardSeqNb.deleter
-	def CardSeqNb(self):
-		del self._CardSeqNb
-		self._CardSeqNb = None
-
-	@property
-	def PrtflIdr(self):
-		return self._PrtflIdr
-
-	@PrtflIdr.setter
-	def PrtflIdr(self, value):
-		self._PrtflIdr = value if type(value) != base_types.auto else self.make_default("PrtflIdr")
-
-	@PrtflIdr.deleter
-	def PrtflIdr(self):
-		del self._PrtflIdr
-		self._PrtflIdr = None
-
-	@property
-	def Trck2(self):
-		return self._Trck2
-
-	@Trck2.setter
-	def Trck2(self, value):
-		self._Trck2 = value if type(value) != base_types.auto else self.make_default("Trck2")
-
-	@Trck2.deleter
-	def Trck2(self):
-		del self._Trck2
-		self._Trck2 = None
-
-	@property
-	def PANAcctRg(self):
-		return self._PANAcctRg
-
-	@PANAcctRg.setter
-	def PANAcctRg(self, value):
-		self._PANAcctRg = value if type(value) != base_types.auto else self.make_default("PANAcctRg")
-
-	@PANAcctRg.deleter
-	def PANAcctRg(self):
-		del self._PANAcctRg
-		self._PANAcctRg = None
-
-	@property
-	def PdctSubTp(self):
-		return self._PdctSubTp
-
-	@PdctSubTp.setter
-	def PdctSubTp(self, value):
-		self._PdctSubTp = value if type(value) != base_types.auto else self.make_default("PdctSubTp")
-
-	@PdctSubTp.deleter
-	def PdctSubTp(self):
-		del self._PdctSubTp
-		self._PdctSubTp = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
 
 	@property
 	def PdctTp(self):
@@ -168,31 +103,96 @@ class CardData13(base_types._BaseFieldType):
 		self._PdctTp = None
 
 	@property
-	def XpryDt(self):
-		return self._XpryDt
+	def Trck2(self):
+		return self._Trck2
 
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+	@Trck2.setter
+	def Trck2(self, value):
+		self._Trck2 = value if type(value) != base_types.auto else self.make_default("Trck2")
 
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
+	@Trck2.deleter
+	def Trck2(self):
+		del self._Trck2
+		self._Trck2 = None
+
+	@property
+	def PrtflIdr(self):
+		return self._PrtflIdr
+
+	@PrtflIdr.setter
+	def PrtflIdr(self, value):
+		self._PrtflIdr = value if type(value) != base_types.auto else self.make_default("PrtflIdr")
+
+	@PrtflIdr.deleter
+	def PrtflIdr(self):
+		del self._PrtflIdr
+		self._PrtflIdr = None
+
+	@property
+	def PANAcctRg(self):
+		return self._PANAcctRg
+
+	@PANAcctRg.setter
+	def PANAcctRg(self, value):
+		self._PANAcctRg = value if type(value) != base_types.auto else self.make_default("PANAcctRg")
+
+	@PANAcctRg.deleter
+	def PANAcctRg(self):
+		del self._PANAcctRg
+		self._PANAcctRg = None
+
+	@property
+	def CtryCd(self):
+		return self._CtryCd
+
+	@CtryCd.setter
+	def CtryCd(self, value):
+		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
+
+	@CtryCd.deleter
+	def CtryCd(self):
+		del self._CtryCd
+		self._CtryCd = None
+
+	@property
+	def PdctSubTp(self):
+		return self._PdctSubTp
+
+	@PdctSubTp.setter
+	def PdctSubTp(self, value):
+		self._PdctSubTp = value if type(value) != base_types.auto else self.make_default("PdctSubTp")
+
+	@PdctSubTp.deleter
+	def PdctSubTp(self):
+		del self._PdctSubTp
+		self._PdctSubTp = None
+
+	@property
+	def AddtlCardData(self):
+		return self._AddtlCardData
+
+	@AddtlCardData.setter
+	def AddtlCardData(self, value):
+		self._AddtlCardData = value if type(value) != base_types.auto else self.make_default("AddtlCardData")
+
+	@AddtlCardData.deleter
+	def AddtlCardData(self):
+		del self._AddtlCardData
+		self._AddtlCardData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtAcctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FctvDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtAcctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PAN', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdPAN', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlCardData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtflIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trck2', type=Track2Data1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PANAcctRg', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trck2', type=Track2Data1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtflIdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PANAcctRg', type=Max19NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlCardData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

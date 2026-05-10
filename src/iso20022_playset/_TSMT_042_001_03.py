@@ -1,5 +1,5 @@
 from . import base_types
-from .TransactionReportRequestV03 import TransactionReportRequestV03
+from ._TransactionReportRequestV03 import TransactionReportRequestV03
 
 class TSMT_042_001_03():
 

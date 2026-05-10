@@ -1,7 +1,7 @@
 from . import base_types
-from .RTPPartyIdentification2 import RTPPartyIdentification2
-from .Max105Text import Max105Text
-from .DebtorActivationCancellationReason1Choice import DebtorActivationCancellationReason1Choice
+from ._Max105Text import Max105Text
+from ._DebtorActivationCancellationReason1Choice import DebtorActivationCancellationReason1Choice
+from ._RTPPartyIdentification2 import RTPPartyIdentification2
 
 class DebtorActivationCancellationReason3(base_types._BaseFieldType):
 

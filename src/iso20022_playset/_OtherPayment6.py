@@ -1,24 +1,24 @@
 from . import base_types
-from .PartyIdentification236Choice import PartyIdentification236Choice
-from .ISODate import ISODate
-from .PaymentType5Choice import PaymentType5Choice
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._PaymentType5Choice import PaymentType5Choice
+from ._PartyIdentification236Choice import PartyIdentification236Choice
+from ._ISODate import ISODate
 
 class OtherPayment6(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtTp", "_PmtRcvr", "_PmtDt", "_PmtPyer", "_PmtCcy"]
+	__slots__ = ["_PmtCcy", "_PmtRcvr", "_PmtTp", "_PmtPyer", "_PmtDt"]
 	@property
-	def PmtTp(self):
-		return self._PmtTp
+	def PmtCcy(self):
+		return self._PmtCcy
 
-	@PmtTp.setter
-	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
+	@PmtCcy.setter
+	def PmtCcy(self, value):
+		self._PmtCcy = value if type(value) != base_types.auto else self.make_default("PmtCcy")
 
-	@PmtTp.deleter
-	def PmtTp(self):
-		del self._PmtTp
-		self._PmtTp = None
+	@PmtCcy.deleter
+	def PmtCcy(self):
+		del self._PmtCcy
+		self._PmtCcy = None
 
 	@property
 	def PmtRcvr(self):
@@ -34,17 +34,17 @@ class OtherPayment6(base_types._BaseFieldType):
 		self._PmtRcvr = None
 
 	@property
-	def PmtDt(self):
-		return self._PmtDt
+	def PmtTp(self):
+		return self._PmtTp
 
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+	@PmtTp.setter
+	def PmtTp(self, value):
+		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
 
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
+	@PmtTp.deleter
+	def PmtTp(self):
+		del self._PmtTp
+		self._PmtTp = None
 
 	@property
 	def PmtPyer(self):
@@ -60,23 +60,23 @@ class OtherPayment6(base_types._BaseFieldType):
 		self._PmtPyer = None
 
 	@property
-	def PmtCcy(self):
-		return self._PmtCcy
+	def PmtDt(self):
+		return self._PmtDt
 
-	@PmtCcy.setter
-	def PmtCcy(self, value):
-		self._PmtCcy = value if type(value) != base_types.auto else self.make_default("PmtCcy")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
 
-	@PmtCcy.deleter
-	def PmtCcy(self):
-		del self._PmtCcy
-		self._PmtCcy = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtTp', type=PaymentType5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtRcvr', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtPyer', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtRcvr', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtTp', type=PaymentType5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtPyer', type=PartyIdentification236Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

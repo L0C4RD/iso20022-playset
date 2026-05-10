@@ -1,13 +1,13 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ServiceLevel8Choice import ServiceLevel8Choice
-from .ISODateTime import ISODateTime
-from .TrackerPartyIdentification2 import TrackerPartyIdentification2
-from .Max15NumericText import Max15NumericText
+from ._ServiceLevel8Choice import ServiceLevel8Choice
+from ._Max15NumericText import Max15NumericText
+from ._Max35Text import Max35Text
+from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
+from ._ISODateTime import ISODateTime
 
 class TrackerHeader6(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfTxs", "_TrckrInfrmdPty", "_SvcLvl", "_MsgId", "_TrckrInfrmgPty", "_CreDtTm"]
+	__slots__ = ["_NbOfTxs", "_TrckrInfrmgPty", "_SvcLvl", "_TrckrInfrmdPty", "_MsgId", "_CreDtTm"]
 	@property
 	def NbOfTxs(self):
 		return self._NbOfTxs
@@ -22,17 +22,17 @@ class TrackerHeader6(base_types._BaseFieldType):
 		self._NbOfTxs = None
 
 	@property
-	def TrckrInfrmdPty(self):
-		return self._TrckrInfrmdPty
+	def TrckrInfrmgPty(self):
+		return self._TrckrInfrmgPty
 
-	@TrckrInfrmdPty.setter
-	def TrckrInfrmdPty(self, value):
-		self._TrckrInfrmdPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmdPty")
+	@TrckrInfrmgPty.setter
+	def TrckrInfrmgPty(self, value):
+		self._TrckrInfrmgPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmgPty")
 
-	@TrckrInfrmdPty.deleter
-	def TrckrInfrmdPty(self):
-		del self._TrckrInfrmdPty
-		self._TrckrInfrmdPty = None
+	@TrckrInfrmgPty.deleter
+	def TrckrInfrmgPty(self):
+		del self._TrckrInfrmgPty
+		self._TrckrInfrmgPty = None
 
 	@property
 	def SvcLvl(self):
@@ -48,6 +48,19 @@ class TrackerHeader6(base_types._BaseFieldType):
 		self._SvcLvl = None
 
 	@property
+	def TrckrInfrmdPty(self):
+		return self._TrckrInfrmdPty
+
+	@TrckrInfrmdPty.setter
+	def TrckrInfrmdPty(self, value):
+		self._TrckrInfrmdPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmdPty")
+
+	@TrckrInfrmdPty.deleter
+	def TrckrInfrmdPty(self):
+		del self._TrckrInfrmdPty
+		self._TrckrInfrmdPty = None
+
+	@property
 	def MsgId(self):
 		return self._MsgId
 
@@ -59,19 +72,6 @@ class TrackerHeader6(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def TrckrInfrmgPty(self):
-		return self._TrckrInfrmgPty
-
-	@TrckrInfrmgPty.setter
-	def TrckrInfrmgPty(self, value):
-		self._TrckrInfrmgPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmgPty")
-
-	@TrckrInfrmgPty.deleter
-	def TrckrInfrmgPty(self):
-		del self._TrckrInfrmgPty
-		self._TrckrInfrmgPty = None
 
 	@property
 	def CreDtTm(self):
@@ -88,10 +88,10 @@ class TrackerHeader6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrckrInfrmdPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckrInfrmgPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckrInfrmdPty', type=TrackerPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

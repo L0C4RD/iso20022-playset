@@ -1,5 +1,5 @@
 from . import base_types
-from .FinancialInitiationV04 import FinancialInitiationV04
+from ._FinancialInitiationV04 import FinancialInitiationV04
 
 class CAIN_003_001_04():
 

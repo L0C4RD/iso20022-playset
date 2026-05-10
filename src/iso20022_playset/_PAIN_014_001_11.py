@@ -1,5 +1,5 @@
 from . import base_types
-from .CreditorPaymentActivationRequestStatusReportV11 import CreditorPaymentActivationRequestStatusReportV11
+from ._CreditorPaymentActivationRequestStatusReportV11 import CreditorPaymentActivationRequestStatusReportV11
 
 class PAIN_014_001_11():
 

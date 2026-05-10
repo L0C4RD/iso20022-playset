@@ -1,9 +1,9 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Max8000Text import Max8000Text
-from .CorporateActionGeneralInformation92 import CorporateActionGeneralInformation92
-from .AccountIdentification72Choice import AccountIdentification72Choice
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max8000Text import Max8000Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._CorporateActionGeneralInformation92 import CorporateActionGeneralInformation92
+from ._AccountIdentification72Choice import AccountIdentification72Choice
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class CorporateActionNarrativeV09(base_types._BaseFieldType):
 

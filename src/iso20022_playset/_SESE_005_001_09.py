@@ -1,5 +1,5 @@
 from . import base_types
-from .TransferInInstructionV09 import TransferInInstructionV09
+from ._TransferInInstructionV09 import TransferInInstructionV09
 
 class SESE_005_001_09():
 

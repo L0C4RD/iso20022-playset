@@ -1,6 +1,6 @@
 from . import base_types
-from .DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from .SecuritiesAccount19 import SecuritiesAccount19
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 
 class SecuritiesAccountAuditTrailSearchCriteria3(base_types._BaseFieldType):
 

@@ -1,9 +1,22 @@
 from . import base_types
-from .InternalisationData1 import InternalisationData1
+from ._InternalisationData1 import InternalisationData1
 
 class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrTrfblScties", "_CllctvInvstmtUdrtkgs", "_EmssnAllwnc", "_SvrgnDebt", "_MnyMktInstrm", "_OthrFinInstrms", "_Eqty", "_XchgTradgFnds", "_Bd"]
+	__slots__ = ["_Eqty", "_OthrTrfblScties", "_SvrgnDebt", "_OthrFinInstrms", "_EmssnAllwnc", "_XchgTradgFnds", "_MnyMktInstrm", "_Bd", "_CllctvInvstmtUdrtkgs"]
+	@property
+	def Eqty(self):
+		return self._Eqty
+
+	@Eqty.setter
+	def Eqty(self, value):
+		self._Eqty = value if type(value) != base_types.auto else self.make_default("Eqty")
+
+	@Eqty.deleter
+	def Eqty(self):
+		del self._Eqty
+		self._Eqty = None
+
 	@property
 	def OthrTrfblScties(self):
 		return self._OthrTrfblScties
@@ -16,32 +29,6 @@ class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 	def OthrTrfblScties(self):
 		del self._OthrTrfblScties
 		self._OthrTrfblScties = None
-
-	@property
-	def CllctvInvstmtUdrtkgs(self):
-		return self._CllctvInvstmtUdrtkgs
-
-	@CllctvInvstmtUdrtkgs.setter
-	def CllctvInvstmtUdrtkgs(self, value):
-		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
-
-	@CllctvInvstmtUdrtkgs.deleter
-	def CllctvInvstmtUdrtkgs(self):
-		del self._CllctvInvstmtUdrtkgs
-		self._CllctvInvstmtUdrtkgs = None
-
-	@property
-	def EmssnAllwnc(self):
-		return self._EmssnAllwnc
-
-	@EmssnAllwnc.setter
-	def EmssnAllwnc(self, value):
-		self._EmssnAllwnc = value if type(value) != base_types.auto else self.make_default("EmssnAllwnc")
-
-	@EmssnAllwnc.deleter
-	def EmssnAllwnc(self):
-		del self._EmssnAllwnc
-		self._EmssnAllwnc = None
 
 	@property
 	def SvrgnDebt(self):
@@ -57,19 +44,6 @@ class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 		self._SvrgnDebt = None
 
 	@property
-	def MnyMktInstrm(self):
-		return self._MnyMktInstrm
-
-	@MnyMktInstrm.setter
-	def MnyMktInstrm(self, value):
-		self._MnyMktInstrm = value if type(value) != base_types.auto else self.make_default("MnyMktInstrm")
-
-	@MnyMktInstrm.deleter
-	def MnyMktInstrm(self):
-		del self._MnyMktInstrm
-		self._MnyMktInstrm = None
-
-	@property
 	def OthrFinInstrms(self):
 		return self._OthrFinInstrms
 
@@ -83,17 +57,17 @@ class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 		self._OthrFinInstrms = None
 
 	@property
-	def Eqty(self):
-		return self._Eqty
+	def EmssnAllwnc(self):
+		return self._EmssnAllwnc
 
-	@Eqty.setter
-	def Eqty(self, value):
-		self._Eqty = value if type(value) != base_types.auto else self.make_default("Eqty")
+	@EmssnAllwnc.setter
+	def EmssnAllwnc(self, value):
+		self._EmssnAllwnc = value if type(value) != base_types.auto else self.make_default("EmssnAllwnc")
 
-	@Eqty.deleter
-	def Eqty(self):
-		del self._Eqty
-		self._Eqty = None
+	@EmssnAllwnc.deleter
+	def EmssnAllwnc(self):
+		del self._EmssnAllwnc
+		self._EmssnAllwnc = None
 
 	@property
 	def XchgTradgFnds(self):
@@ -109,6 +83,19 @@ class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 		self._XchgTradgFnds = None
 
 	@property
+	def MnyMktInstrm(self):
+		return self._MnyMktInstrm
+
+	@MnyMktInstrm.setter
+	def MnyMktInstrm(self, value):
+		self._MnyMktInstrm = value if type(value) != base_types.auto else self.make_default("MnyMktInstrm")
+
+	@MnyMktInstrm.deleter
+	def MnyMktInstrm(self):
+		del self._MnyMktInstrm
+		self._MnyMktInstrm = None
+
+	@property
 	def Bd(self):
 		return self._Bd
 
@@ -121,15 +108,28 @@ class SettlementInternaliserFinancialInstrument1(base_types._BaseFieldType):
 		del self._Bd
 		self._Bd = None
 
+	@property
+	def CllctvInvstmtUdrtkgs(self):
+		return self._CllctvInvstmtUdrtkgs
+
+	@CllctvInvstmtUdrtkgs.setter
+	def CllctvInvstmtUdrtkgs(self, value):
+		self._CllctvInvstmtUdrtkgs = value if type(value) != base_types.auto else self.make_default("CllctvInvstmtUdrtkgs")
+
+	@CllctvInvstmtUdrtkgs.deleter
+	def CllctvInvstmtUdrtkgs(self):
+		del self._CllctvInvstmtUdrtkgs
+		self._CllctvInvstmtUdrtkgs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrTrfblScties', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmssnAllwnc', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvrgnDebt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MnyMktInstrm', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrFinInstrms', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Eqty', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTrfblScties', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrgnDebt', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrFinInstrms', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmssnAllwnc', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgTradgFnds', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MnyMktInstrm', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bd', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CllctvInvstmtUdrtkgs', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

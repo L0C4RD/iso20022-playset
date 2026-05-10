@@ -1,27 +1,27 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .PartyIdentification144 import PartyIdentification144
-from .Max35Text import Max35Text
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .ProcessingStatus85Choice import ProcessingStatus85Choice
-from .RequestDetails32 import RequestDetails32
+from ._SupplementaryData1 import SupplementaryData1
+from ._RequestDetails32 import RequestDetails32
+from ._Max35Text import Max35Text
+from ._PartyIdentification144 import PartyIdentification144
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._ProcessingStatus85Choice import ProcessingStatus85Choice
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 
 class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_AcctOwnr", "_PrcgSts", "_SfkpgAcct", "_ReqDtls", "_BlckChainAdrOrWllt", "_ReqRef"]
+	__slots__ = ["_ReqRef", "_AcctOwnr", "_ReqDtls", "_SfkpgAcct", "_SplmtryData", "_BlckChainAdrOrWllt", "_PrcgSts"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ReqRef(self):
+		return self._ReqRef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@ReqRef.setter
+	def ReqRef(self, value):
+		self._ReqRef = value if type(value) != base_types.auto else self.make_default("ReqRef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ReqRef.deleter
+	def ReqRef(self):
+		del self._ReqRef
+		self._ReqRef = None
 
 	@property
 	def AcctOwnr(self):
@@ -37,17 +37,17 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._AcctOwnr = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def ReqDtls(self):
+		return self._ReqDtls
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+	@ReqDtls.setter
+	def ReqDtls(self, value):
+		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@ReqDtls.deleter
+	def ReqDtls(self):
+		del self._ReqDtls
+		self._ReqDtls = None
 
 	@property
 	def SfkpgAcct(self):
@@ -63,17 +63,17 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._SfkpgAcct = None
 
 	@property
-	def ReqDtls(self):
-		return self._ReqDtls
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ReqDtls.setter
-	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@ReqDtls.deleter
-	def ReqDtls(self):
-		del self._ReqDtls
-		self._ReqDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -89,25 +89,25 @@ class SecuritiesSettlementConditionModificationStatusAdviceV10(base_types._BaseF
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def ReqRef(self):
-		return self._ReqRef
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@ReqRef.setter
-	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != base_types.auto else self.make_default("ReqRef")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
-	@ReqRef.deleter
-	def ReqRef(self):
-		del self._ReqRef
-		self._ReqRef = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus85Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqDtls', type=RequestDetails32, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqDtls', type=RequestDetails32, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus85Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

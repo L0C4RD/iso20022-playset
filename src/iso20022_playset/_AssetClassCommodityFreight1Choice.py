@@ -1,24 +1,11 @@
 from . import base_types
-from .FreightCommodityContainerShip1 import FreightCommodityContainerShip1
-from .FreightCommodityWet1 import FreightCommodityWet1
-from .FreightCommodityDry1 import FreightCommodityDry1
+from ._FreightCommodityDry1 import FreightCommodityDry1
+from ._FreightCommodityContainerShip1 import FreightCommodityContainerShip1
+from ._FreightCommodityWet1 import FreightCommodityWet1
 
 class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Wet", "_Dry", "_CntnrShip"]
-	@property
-	def Wet(self):
-		return self._Wet
-
-	@Wet.setter
-	def Wet(self, value):
-		self._Wet = value if type(value) != base_types.auto else self.make_default("Wet")
-
-	@Wet.deleter
-	def Wet(self):
-		del self._Wet
-		self._Wet = None
-
+	__slots__ = ["_Dry", "_CntnrShip", "_Wet"]
 	@property
 	def Dry(self):
 		return self._Dry
@@ -45,9 +32,22 @@ class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 		del self._CntnrShip
 		self._CntnrShip = None
 
+	@property
+	def Wet(self):
+		return self._Wet
+
+	@Wet.setter
+	def Wet(self, value):
+		self._Wet = value if type(value) != base_types.auto else self.make_default("Wet")
+
+	@Wet.deleter
+	def Wet(self):
+		del self._Wet
+		self._Wet = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Wet', type=FreightCommodityWet1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dry', type=FreightCommodityDry1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CntnrShip', type=FreightCommodityContainerShip1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Wet', type=FreightCommodityWet1, min=0, max=1, mutex_group=1, array=False),
 	))
 

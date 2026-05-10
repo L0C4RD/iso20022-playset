@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .ISODateTime import ISODateTime
-from .CounterpartyData87 import CounterpartyData87
-from .Max140Text import Max140Text
+from ._CounterpartyData87 import CounterpartyData87
+from ._Max140Text import Max140Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._ISODateTime import ISODateTime
 
 class ReuseDataReportError5(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_SplmtryData", "_RptgDtTm", "_TechRcrdId"]
-	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
-
+	__slots__ = ["_SplmtryData", "_RptgDtTm", "_CtrPty", "_TechRcrdId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -47,6 +34,19 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		self._RptgDtTm = None
 
 	@property
+	def CtrPty(self):
+		return self._CtrPty
+
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
+	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
 
@@ -60,9 +60,9 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

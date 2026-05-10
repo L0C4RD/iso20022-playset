@@ -1,5 +1,5 @@
 from . import base_types
-from .Amount1 import Amount1
+from ._Amount1 import Amount1
 
 class AgreedAmount1(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesFinancingReportingPairingRequestV02 import SecuritiesFinancingReportingPairingRequestV02
+from ._SecuritiesFinancingReportingPairingRequestV02 import SecuritiesFinancingReportingPairingRequestV02
 
 class AUTH_078_001_02():
 

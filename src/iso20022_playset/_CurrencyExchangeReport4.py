@@ -1,6 +1,6 @@
 from . import base_types
-from .ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
-from .CurrencySourceTarget1 import CurrencySourceTarget1
+from ._CurrencySourceTarget1 import CurrencySourceTarget1
+from ._ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
 
 class CurrencyExchangeReport4(base_types._BaseFieldType):
 

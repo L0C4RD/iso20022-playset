@@ -1,15 +1,28 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .AttendanceContext1Code import AttendanceContext1Code
-from .CardDataReading1Code import CardDataReading1Code
-from .CardholderAuthentication2 import CardholderAuthentication2
-from .ISO2ALanguageCode import ISO2ALanguageCode
-from .TransactionChannel1Code import TransactionChannel1Code
-from .TransactionEnvironment1Code import TransactionEnvironment1Code
+from ._ISO2ALanguageCode import ISO2ALanguageCode
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._TransactionChannel1Code import TransactionChannel1Code
+from ._TransactionEnvironment1Code import TransactionEnvironment1Code
+from ._CardholderAuthentication2 import CardholderAuthentication2
+from ._AttendanceContext1Code import AttendanceContext1Code
+from ._CardDataReading1Code import CardDataReading1Code
 
 class PaymentContext3(base_types._BaseFieldType):
 
-	__slots__ = ["_OnLineCntxt", "_FllbckInd", "_CardPres", "_AttndncCntxt", "_AuthntcnMtd", "_TxEnvt", "_CardDataNtryMd", "_CrdhldrPres", "_TxChanl", "_AttndntMsgCpbl", "_AttndntLang"]
+	__slots__ = ["_CardDataNtryMd", "_OnLineCntxt", "_CrdhldrPres", "_FllbckInd", "_TxEnvt", "_AttndntMsgCpbl", "_TxChanl", "_AuthntcnMtd", "_CardPres", "_AttndncCntxt", "_AttndntLang"]
+	@property
+	def CardDataNtryMd(self):
+		return self._CardDataNtryMd
+
+	@CardDataNtryMd.setter
+	def CardDataNtryMd(self, value):
+		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+
+	@CardDataNtryMd.deleter
+	def CardDataNtryMd(self):
+		del self._CardDataNtryMd
+		self._CardDataNtryMd = None
+
 	@property
 	def OnLineCntxt(self):
 		return self._OnLineCntxt
@@ -24,6 +37,19 @@ class PaymentContext3(base_types._BaseFieldType):
 		self._OnLineCntxt = None
 
 	@property
+	def CrdhldrPres(self):
+		return self._CrdhldrPres
+
+	@CrdhldrPres.setter
+	def CrdhldrPres(self, value):
+		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
+
+	@CrdhldrPres.deleter
+	def CrdhldrPres(self):
+		del self._CrdhldrPres
+		self._CrdhldrPres = None
+
+	@property
 	def FllbckInd(self):
 		return self._FllbckInd
 
@@ -35,6 +61,58 @@ class PaymentContext3(base_types._BaseFieldType):
 	def FllbckInd(self):
 		del self._FllbckInd
 		self._FllbckInd = None
+
+	@property
+	def TxEnvt(self):
+		return self._TxEnvt
+
+	@TxEnvt.setter
+	def TxEnvt(self, value):
+		self._TxEnvt = value if type(value) != base_types.auto else self.make_default("TxEnvt")
+
+	@TxEnvt.deleter
+	def TxEnvt(self):
+		del self._TxEnvt
+		self._TxEnvt = None
+
+	@property
+	def AttndntMsgCpbl(self):
+		return self._AttndntMsgCpbl
+
+	@AttndntMsgCpbl.setter
+	def AttndntMsgCpbl(self, value):
+		self._AttndntMsgCpbl = value if type(value) != base_types.auto else self.make_default("AttndntMsgCpbl")
+
+	@AttndntMsgCpbl.deleter
+	def AttndntMsgCpbl(self):
+		del self._AttndntMsgCpbl
+		self._AttndntMsgCpbl = None
+
+	@property
+	def TxChanl(self):
+		return self._TxChanl
+
+	@TxChanl.setter
+	def TxChanl(self, value):
+		self._TxChanl = value if type(value) != base_types.auto else self.make_default("TxChanl")
+
+	@TxChanl.deleter
+	def TxChanl(self):
+		del self._TxChanl
+		self._TxChanl = None
+
+	@property
+	def AuthntcnMtd(self):
+		return self._AuthntcnMtd
+
+	@AuthntcnMtd.setter
+	def AuthntcnMtd(self, value):
+		self._AuthntcnMtd = value if type(value) != base_types.auto else self.make_default("AuthntcnMtd")
+
+	@AuthntcnMtd.deleter
+	def AuthntcnMtd(self):
+		del self._AuthntcnMtd
+		self._AuthntcnMtd = None
 
 	@property
 	def CardPres(self):
@@ -63,84 +141,6 @@ class PaymentContext3(base_types._BaseFieldType):
 		self._AttndncCntxt = None
 
 	@property
-	def AuthntcnMtd(self):
-		return self._AuthntcnMtd
-
-	@AuthntcnMtd.setter
-	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != base_types.auto else self.make_default("AuthntcnMtd")
-
-	@AuthntcnMtd.deleter
-	def AuthntcnMtd(self):
-		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
-
-	@property
-	def TxEnvt(self):
-		return self._TxEnvt
-
-	@TxEnvt.setter
-	def TxEnvt(self, value):
-		self._TxEnvt = value if type(value) != base_types.auto else self.make_default("TxEnvt")
-
-	@TxEnvt.deleter
-	def TxEnvt(self):
-		del self._TxEnvt
-		self._TxEnvt = None
-
-	@property
-	def CardDataNtryMd(self):
-		return self._CardDataNtryMd
-
-	@CardDataNtryMd.setter
-	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
-
-	@CardDataNtryMd.deleter
-	def CardDataNtryMd(self):
-		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
-
-	@property
-	def CrdhldrPres(self):
-		return self._CrdhldrPres
-
-	@CrdhldrPres.setter
-	def CrdhldrPres(self, value):
-		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
-
-	@CrdhldrPres.deleter
-	def CrdhldrPres(self):
-		del self._CrdhldrPres
-		self._CrdhldrPres = None
-
-	@property
-	def TxChanl(self):
-		return self._TxChanl
-
-	@TxChanl.setter
-	def TxChanl(self, value):
-		self._TxChanl = value if type(value) != base_types.auto else self.make_default("TxChanl")
-
-	@TxChanl.deleter
-	def TxChanl(self):
-		del self._TxChanl
-		self._TxChanl = None
-
-	@property
-	def AttndntMsgCpbl(self):
-		return self._AttndntMsgCpbl
-
-	@AttndntMsgCpbl.setter
-	def AttndntMsgCpbl(self, value):
-		self._AttndntMsgCpbl = value if type(value) != base_types.auto else self.make_default("AttndntMsgCpbl")
-
-	@AttndntMsgCpbl.deleter
-	def AttndntMsgCpbl(self):
-		del self._AttndntMsgCpbl
-		self._AttndntMsgCpbl = None
-
-	@property
 	def AttndntLang(self):
 		return self._AttndntLang
 
@@ -154,16 +154,16 @@ class PaymentContext3(base_types._BaseFieldType):
 		self._AttndntLang = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OnLineCntxt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FllbckInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxEnvt', type=TransactionEnvironment1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttndntMsgCpbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxChanl', type=TransactionChannel1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnMtd', type=CardholderAuthentication2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndncCntxt', type=AttendanceContext1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnMtd', type=CardholderAuthentication2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxEnvt', type=TransactionEnvironment1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CardDataNtryMd', type=CardDataReading1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrPres', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxChanl', type=TransactionChannel1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttndntMsgCpbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttndntLang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

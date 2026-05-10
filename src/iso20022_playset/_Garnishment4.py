@@ -1,14 +1,53 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from .ISODate import ISODate
-from .GarnishmentType1 import GarnishmentType1
-from .Max140Text import Max140Text
+from ._Max140Text import Max140Text
+from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._PartyIdentification272 import PartyIdentification272
+from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from ._GarnishmentType1 import GarnishmentType1
 
 class Garnishment4(base_types._BaseFieldType):
 
-	__slots__ = ["_GrnshmtAdmstr", "_MplyeeTermntnInd", "_RefNb", "_RmtdAmt", "_FmlyMdclInsrncInd", "_Grnshee", "_Dt", "_Tp"]
+	__slots__ = ["_Tp", "_Grnshee", "_RmtdAmt", "_GrnshmtAdmstr", "_MplyeeTermntnInd", "_FmlyMdclInsrncInd", "_RefNb", "_Dt"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Grnshee(self):
+		return self._Grnshee
+
+	@Grnshee.setter
+	def Grnshee(self, value):
+		self._Grnshee = value if type(value) != base_types.auto else self.make_default("Grnshee")
+
+	@Grnshee.deleter
+	def Grnshee(self):
+		del self._Grnshee
+		self._Grnshee = None
+
+	@property
+	def RmtdAmt(self):
+		return self._RmtdAmt
+
+	@RmtdAmt.setter
+	def RmtdAmt(self, value):
+		self._RmtdAmt = value if type(value) != base_types.auto else self.make_default("RmtdAmt")
+
+	@RmtdAmt.deleter
+	def RmtdAmt(self):
+		del self._RmtdAmt
+		self._RmtdAmt = None
+
 	@property
 	def GrnshmtAdmstr(self):
 		return self._GrnshmtAdmstr
@@ -36,32 +75,6 @@ class Garnishment4(base_types._BaseFieldType):
 		self._MplyeeTermntnInd = None
 
 	@property
-	def RefNb(self):
-		return self._RefNb
-
-	@RefNb.setter
-	def RefNb(self, value):
-		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
-
-	@RefNb.deleter
-	def RefNb(self):
-		del self._RefNb
-		self._RefNb = None
-
-	@property
-	def RmtdAmt(self):
-		return self._RmtdAmt
-
-	@RmtdAmt.setter
-	def RmtdAmt(self, value):
-		self._RmtdAmt = value if type(value) != base_types.auto else self.make_default("RmtdAmt")
-
-	@RmtdAmt.deleter
-	def RmtdAmt(self):
-		del self._RmtdAmt
-		self._RmtdAmt = None
-
-	@property
 	def FmlyMdclInsrncInd(self):
 		return self._FmlyMdclInsrncInd
 
@@ -75,17 +88,17 @@ class Garnishment4(base_types._BaseFieldType):
 		self._FmlyMdclInsrncInd = None
 
 	@property
-	def Grnshee(self):
-		return self._Grnshee
+	def RefNb(self):
+		return self._RefNb
 
-	@Grnshee.setter
-	def Grnshee(self, value):
-		self._Grnshee = value if type(value) != base_types.auto else self.make_default("Grnshee")
+	@RefNb.setter
+	def RefNb(self, value):
+		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
 
-	@Grnshee.deleter
-	def Grnshee(self):
-		del self._Grnshee
-		self._Grnshee = None
+	@RefNb.deleter
+	def RefNb(self):
+		del self._RefNb
+		self._RefNb = None
 
 	@property
 	def Dt(self):
@@ -100,27 +113,14 @@ class Garnishment4(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tp', type=GarnishmentType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grnshee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmtdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrnshmtAdmstr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MplyeeTermntnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefNb', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmtdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FmlyMdclInsrncInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Grnshee', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefNb', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GarnishmentType1, min=1, max=1, mutex_group=None, array=False),
 	))
 

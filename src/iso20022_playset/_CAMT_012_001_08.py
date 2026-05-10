@@ -1,5 +1,5 @@
 from . import base_types
-from .DeleteLimitV08 import DeleteLimitV08
+from ._DeleteLimitV08 import DeleteLimitV08
 
 class CAMT_012_001_08():
 

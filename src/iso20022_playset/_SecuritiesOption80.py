@@ -1,12 +1,12 @@
 from . import base_types
-from .DateAndDateTime2Choice import DateAndDateTime2Choice
-from .Quantity51Choice import Quantity51Choice
-from .CreditDebitCode import CreditDebitCode
-from .SecurityIdentification19 import SecurityIdentification19
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._CreditDebitCode import CreditDebitCode
+from ._Quantity51Choice import Quantity51Choice
+from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 
 class SecuritiesOption80(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlPstngDt", "_PstngQty", "_PstngDt", "_CdtDbtInd", "_FinInstrmId"]
+	__slots__ = ["_OrgnlPstngDt", "_PstngQty", "_PstngDt", "_FinInstrmId", "_CdtDbtInd"]
 	@property
 	def OrgnlPstngDt(self):
 		return self._OrgnlPstngDt
@@ -47,19 +47,6 @@ class SecuritiesOption80(base_types._BaseFieldType):
 		self._PstngDt = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
-
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
-
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -72,11 +59,24 @@ class SecuritiesOption80(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

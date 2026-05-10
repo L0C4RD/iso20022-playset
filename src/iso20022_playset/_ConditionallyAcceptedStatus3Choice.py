@@ -1,6 +1,6 @@
 from . import base_types
-from .ConditionallyAcceptedStatusReason3 import ConditionallyAcceptedStatusReason3
-from .NoReasonCode import NoReasonCode
+from ._NoReasonCode import NoReasonCode
+from ._ConditionallyAcceptedStatusReason3 import ConditionallyAcceptedStatusReason3
 
 class ConditionallyAcceptedStatus3Choice(base_types._BaseFieldType):
 

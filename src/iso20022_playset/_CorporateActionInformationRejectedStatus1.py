@@ -1,6 +1,6 @@
 from . import base_types
-from .RejectionReason15FormatChoice import RejectionReason15FormatChoice
-from .Max350Text import Max350Text
+from ._RejectionReason15FormatChoice import RejectionReason15FormatChoice
+from ._Max350Text import Max350Text
 
 class CorporateActionInformationRejectedStatus1(base_types._BaseFieldType):
 

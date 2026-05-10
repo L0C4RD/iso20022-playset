@@ -1,23 +1,23 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .Exact4AlphaNumericText import Exact4AlphaNumericText
-from .ISODate import ISODate
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._ISODate import ISODate
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_PricgSchme", "_NegPos", "_HldInd", "_EndInvstrFlg", "_ClsgDt"]
+	__slots__ = ["_HldInd", "_NegPos", "_ClsgDt", "_EndInvstrFlg", "_PricgSchme"]
 	@property
-	def PricgSchme(self):
-		return self._PricgSchme
+	def HldInd(self):
+		return self._HldInd
 
-	@PricgSchme.setter
-	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+	@HldInd.setter
+	def HldInd(self, value):
+		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
 
-	@PricgSchme.deleter
-	def PricgSchme(self):
-		del self._PricgSchme
-		self._PricgSchme = None
+	@HldInd.deleter
+	def HldInd(self):
+		del self._HldInd
+		self._HldInd = None
 
 	@property
 	def NegPos(self):
@@ -33,17 +33,17 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 		self._NegPos = None
 
 	@property
-	def HldInd(self):
-		return self._HldInd
+	def ClsgDt(self):
+		return self._ClsgDt
 
-	@HldInd.setter
-	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
 
-	@HldInd.deleter
-	def HldInd(self):
-		del self._HldInd
-		self._HldInd = None
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
 
 	@property
 	def EndInvstrFlg(self):
@@ -59,23 +59,23 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 		self._EndInvstrFlg = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def PricgSchme(self):
+		return self._PricgSchme
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+	@PricgSchme.setter
+	def PricgSchme(self, value):
+		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
+	@PricgSchme.deleter
+	def PricgSchme(self):
+		del self._PricgSchme
+		self._PricgSchme = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

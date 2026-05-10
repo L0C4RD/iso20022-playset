@@ -1,41 +1,15 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .LocalAddress1 import LocalAddress1
-from .ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from .AdditionalInformation22 import AdditionalInformation22
-from .CardholderName2 import CardholderName2
-from .AdditionalData1 import AdditionalData1
-from .Max512Text import Max512Text
+from ._Max35Text import Max35Text
+from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
+from ._Max512Text import Max512Text
+from ._AdditionalData1 import AdditionalData1
+from ._CardholderName2 import CardholderName2
+from ._AdditionalInformation22 import AdditionalInformation22
+from ._LocalAddress1 import LocalAddress1
 
 class LocalData16(base_types._BaseFieldType):
 
-	__slots__ = ["_NcodgFrmt", "_Lang", "_MlngAdr", "_AddtlInf", "_MldFrPstlCd", "_MlngAdrUstrd", "_CrdhldrNm", "_AddtlData"]
-	@property
-	def NcodgFrmt(self):
-		return self._NcodgFrmt
-
-	@NcodgFrmt.setter
-	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
-
-	@NcodgFrmt.deleter
-	def NcodgFrmt(self):
-		del self._NcodgFrmt
-		self._NcodgFrmt = None
-
-	@property
-	def Lang(self):
-		return self._Lang
-
-	@Lang.setter
-	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
-
-	@Lang.deleter
-	def Lang(self):
-		del self._Lang
-		self._Lang = None
-
+	__slots__ = ["_MlngAdr", "_NcodgFrmt", "_AddtlData", "_MlngAdrUstrd", "_CrdhldrNm", "_AddtlInf", "_Lang", "_MldFrPstlCd"]
 	@property
 	def MlngAdr(self):
 		return self._MlngAdr
@@ -50,30 +24,30 @@ class LocalData16(base_types._BaseFieldType):
 		self._MlngAdr = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def NcodgFrmt(self):
+		return self._NcodgFrmt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+	@NcodgFrmt.setter
+	def NcodgFrmt(self, value):
+		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@NcodgFrmt.deleter
+	def NcodgFrmt(self):
+		del self._NcodgFrmt
+		self._NcodgFrmt = None
 
 	@property
-	def MldFrPstlCd(self):
-		return self._MldFrPstlCd
+	def AddtlData(self):
+		return self._AddtlData
 
-	@MldFrPstlCd.setter
-	def MldFrPstlCd(self, value):
-		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
 
-	@MldFrPstlCd.deleter
-	def MldFrPstlCd(self):
-		del self._MldFrPstlCd
-		self._MldFrPstlCd = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
 	def MlngAdrUstrd(self):
@@ -102,26 +76,52 @@ class LocalData16(base_types._BaseFieldType):
 		self._CrdhldrNm = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Lang(self):
+		return self._Lang
+
+	@Lang.setter
+	def Lang(self, value):
+		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+
+	@Lang.deleter
+	def Lang(self):
+		del self._Lang
+		self._Lang = None
+
+	@property
+	def MldFrPstlCd(self):
+		return self._MldFrPstlCd
+
+	@MldFrPstlCd.setter
+	def MldFrPstlCd(self, value):
+		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+
+	@MldFrPstlCd.deleter
+	def MldFrPstlCd(self):
+		del self._MldFrPstlCd
+		self._MldFrPstlCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MlngAdr', type=LocalAddress1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation22, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MldFrPstlCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcodgFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MlngAdrUstrd', type=Max512Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrNm', type=CardholderName2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MldFrPstlCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

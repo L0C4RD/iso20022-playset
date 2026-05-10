@@ -1,7 +1,7 @@
 from . import base_types
-from .CancellationProcessingStatus2 import CancellationProcessingStatus2
-from .RejectedStatus31Choice import RejectedStatus31Choice
-from .PendingCancellationStatus12Choice import PendingCancellationStatus12Choice
+from ._RejectedStatus31Choice import RejectedStatus31Choice
+from ._CancellationProcessingStatus2 import CancellationProcessingStatus2
+from ._PendingCancellationStatus12Choice import PendingCancellationStatus12Choice
 
 class CancellationStatus32Choice(base_types._BaseFieldType):
 

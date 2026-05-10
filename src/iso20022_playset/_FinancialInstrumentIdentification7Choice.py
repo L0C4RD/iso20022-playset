@@ -1,6 +1,6 @@
 from . import base_types
-from .FinancialInstrumentIdentification6Choice import FinancialInstrumentIdentification6Choice
-from .BasketDescription3 import BasketDescription3
+from ._FinancialInstrumentIdentification6Choice import FinancialInstrumentIdentification6Choice
+from ._BasketDescription3 import BasketDescription3
 
 class FinancialInstrumentIdentification7Choice(base_types._BaseFieldType):
 

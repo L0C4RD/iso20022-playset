@@ -1,38 +1,12 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ISODateTime import ISODateTime
-from .Max4AlphaNumericText import Max4AlphaNumericText
-from .Max1000Text import Max1000Text
+from ._Max35Text import Max35Text
+from ._Max4AlphaNumericText import Max4AlphaNumericText
+from ._Max1000Text import Max1000Text
+from ._ISODateTime import ISODateTime
 
 class Event2(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtParam", "_EvtDesc", "_EvtTm", "_EvtCd"]
-	@property
-	def EvtParam(self):
-		return self._EvtParam
-
-	@EvtParam.setter
-	def EvtParam(self, value):
-		self._EvtParam = value if type(value) != base_types.auto else self.make_default("EvtParam")
-
-	@EvtParam.deleter
-	def EvtParam(self):
-		del self._EvtParam
-		self._EvtParam = None
-
-	@property
-	def EvtDesc(self):
-		return self._EvtDesc
-
-	@EvtDesc.setter
-	def EvtDesc(self, value):
-		self._EvtDesc = value if type(value) != base_types.auto else self.make_default("EvtDesc")
-
-	@EvtDesc.deleter
-	def EvtDesc(self):
-		del self._EvtDesc
-		self._EvtDesc = None
-
+	__slots__ = ["_EvtTm", "_EvtCd", "_EvtDesc", "_EvtParam"]
 	@property
 	def EvtTm(self):
 		return self._EvtTm
@@ -59,10 +33,36 @@ class Event2(base_types._BaseFieldType):
 		del self._EvtCd
 		self._EvtCd = None
 
+	@property
+	def EvtDesc(self):
+		return self._EvtDesc
+
+	@EvtDesc.setter
+	def EvtDesc(self, value):
+		self._EvtDesc = value if type(value) != base_types.auto else self.make_default("EvtDesc")
+
+	@EvtDesc.deleter
+	def EvtDesc(self):
+		del self._EvtDesc
+		self._EvtDesc = None
+
+	@property
+	def EvtParam(self):
+		return self._EvtParam
+
+	@EvtParam.setter
+	def EvtParam(self, value):
+		self._EvtParam = value if type(value) != base_types.auto else self.make_default("EvtParam")
+
+	@EvtParam.deleter
+	def EvtParam(self):
+		del self._EvtParam
+		self._EvtParam = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtParam', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='EvtDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtCd', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtParam', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

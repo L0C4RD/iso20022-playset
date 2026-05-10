@@ -1,5 +1,5 @@
 from . import base_types
-from .MaintenanceDelegationRequestV11 import MaintenanceDelegationRequestV11
+from ._MaintenanceDelegationRequestV11 import MaintenanceDelegationRequestV11
 
 class CATM_005_001_11():
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .ExposureType10Code import ExposureType10Code
+from ._ExposureType10Code import ExposureType10Code
 
 class CompareExposureType3(base_types._BaseFieldType):
 

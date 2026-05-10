@@ -1,25 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CounterpartySpecificData36 import CounterpartySpecificData36
-from .TechnicalAttributes5 import TechnicalAttributes5
-from .CommonTradeDataReport72 import CommonTradeDataReport72
-from .DisseminationData1 import DisseminationData1
+from ._CounterpartySpecificData36 import CounterpartySpecificData36
+from ._CommonTradeDataReport72 import CommonTradeDataReport72
+from ._TechnicalAttributes5 import TechnicalAttributes5
+from ._DisseminationData1 import DisseminationData1
+from ._SupplementaryData1 import SupplementaryData1
 
 class TradeStateReport23(base_types._BaseFieldType):
 
-	__slots__ = ["_PblcDssmntnData", "_CtrPtySpcfcData", "_SplmtryData", "_TechAttrbts", "_CmonTradData"]
+	__slots__ = ["_TechAttrbts", "_CtrPtySpcfcData", "_SplmtryData", "_CmonTradData", "_PblcDssmntnData"]
 	@property
-	def PblcDssmntnData(self):
-		return self._PblcDssmntnData
+	def TechAttrbts(self):
+		return self._TechAttrbts
 
-	@PblcDssmntnData.setter
-	def PblcDssmntnData(self, value):
-		self._PblcDssmntnData = value if type(value) != base_types.auto else self.make_default("PblcDssmntnData")
+	@TechAttrbts.setter
+	def TechAttrbts(self, value):
+		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
 
-	@PblcDssmntnData.deleter
-	def PblcDssmntnData(self):
-		del self._PblcDssmntnData
-		self._PblcDssmntnData = None
+	@TechAttrbts.deleter
+	def TechAttrbts(self):
+		del self._TechAttrbts
+		self._TechAttrbts = None
 
 	@property
 	def CtrPtySpcfcData(self):
@@ -48,19 +48,6 @@ class TradeStateReport23(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TechAttrbts(self):
-		return self._TechAttrbts
-
-	@TechAttrbts.setter
-	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
-
-	@TechAttrbts.deleter
-	def TechAttrbts(self):
-		del self._TechAttrbts
-		self._TechAttrbts = None
-
-	@property
 	def CmonTradData(self):
 		return self._CmonTradData
 
@@ -73,11 +60,24 @@ class TradeStateReport23(base_types._BaseFieldType):
 		del self._CmonTradData
 		self._CmonTradData = None
 
+	@property
+	def PblcDssmntnData(self):
+		return self._PblcDssmntnData
+
+	@PblcDssmntnData.setter
+	def PblcDssmntnData(self, value):
+		self._PblcDssmntnData = value if type(value) != base_types.auto else self.make_default("PblcDssmntnData")
+
+	@PblcDssmntnData.deleter
+	def PblcDssmntnData(self):
+		del self._PblcDssmntnData
+		self._PblcDssmntnData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport72, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
 	))
 

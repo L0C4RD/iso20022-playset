@@ -1,6 +1,6 @@
 from . import base_types
-from .AggregateHoldingBalance1 import AggregateHoldingBalance1
-from .Intermediary29 import Intermediary29
+from ._AggregateHoldingBalance1 import AggregateHoldingBalance1
+from ._Intermediary29 import Intermediary29
 
 class AggregateHoldingBalance3(base_types._BaseFieldType):
 

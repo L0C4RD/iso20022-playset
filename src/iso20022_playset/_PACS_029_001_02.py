@@ -1,5 +1,5 @@
 from . import base_types
-from .MultilateralSettlementRequestV02 import MultilateralSettlementRequestV02
+from ._MultilateralSettlementRequestV02 import MultilateralSettlementRequestV02
 
 class PACS_029_001_02():
 

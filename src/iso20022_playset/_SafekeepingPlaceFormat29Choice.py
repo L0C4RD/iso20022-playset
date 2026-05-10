@@ -1,25 +1,12 @@
 from . import base_types
-from .GenericIdentification78 import GenericIdentification78
-from .SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
-from .SafekeepingPlaceTypeAndText8 import SafekeepingPlaceTypeAndText8
-from .CountryCode import CountryCode
+from ._SafekeepingPlaceTypeAndText8 import SafekeepingPlaceTypeAndText8
+from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
+from ._CountryCode import CountryCode
+from ._GenericIdentification78 import GenericIdentification78
 
 class SafekeepingPlaceFormat29Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TpAndId", "_Ctry", "_Id", "_Prtry"]
-	@property
-	def TpAndId(self):
-		return self._TpAndId
-
-	@TpAndId.setter
-	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
-
-	@TpAndId.deleter
-	def TpAndId(self):
-		del self._TpAndId
-		self._TpAndId = None
-
+	__slots__ = ["_Ctry", "_Id", "_Prtry", "_TpAndId"]
 	@property
 	def Ctry(self):
 		return self._Ctry
@@ -59,10 +46,23 @@ class SafekeepingPlaceFormat29Choice(base_types._BaseFieldType):
 		del self._Prtry
 		self._Prtry = None
 
+	@property
+	def TpAndId(self):
+		return self._TpAndId
+
+	@TpAndId.setter
+	def TpAndId(self, value):
+		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
+
+	@TpAndId.deleter
+	def TpAndId(self):
+		del self._TpAndId
+		self._TpAndId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,10 +1,23 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .Max15NumericText import Max15NumericText
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._Max15NumericText import Max15NumericText
 
 class CashDeposit1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_NoteDnmtn", "_NbOfNotes"]
+	__slots__ = ["_NbOfNotes", "_Amt", "_NoteDnmtn"]
+	@property
+	def NbOfNotes(self):
+		return self._NbOfNotes
+
+	@NbOfNotes.setter
+	def NbOfNotes(self, value):
+		self._NbOfNotes = value if type(value) != base_types.auto else self.make_default("NbOfNotes")
+
+	@NbOfNotes.deleter
+	def NbOfNotes(self):
+		del self._NbOfNotes
+		self._NbOfNotes = None
+
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,22 +44,9 @@ class CashDeposit1(base_types._BaseFieldType):
 		del self._NoteDnmtn
 		self._NoteDnmtn = None
 
-	@property
-	def NbOfNotes(self):
-		return self._NbOfNotes
-
-	@NbOfNotes.setter
-	def NbOfNotes(self, value):
-		self._NbOfNotes = value if type(value) != base_types.auto else self.make_default("NbOfNotes")
-
-	@NbOfNotes.deleter
-	def NbOfNotes(self):
-		del self._NbOfNotes
-		self._NbOfNotes = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NbOfNotes', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NoteDnmtn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfNotes', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

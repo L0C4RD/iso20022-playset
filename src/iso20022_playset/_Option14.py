@@ -1,13 +1,13 @@
 from . import base_types
-from .OptionEvent2 import OptionEvent2
-from .OptionType1Code import OptionType1Code
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ExoticOptionStyle1Code import ExoticOptionStyle1Code
-from .OptionStyle5Code import OptionStyle5Code
+from ._OptionEvent2 import OptionEvent2
+from ._OptionType1Code import OptionType1Code
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._OptionStyle5Code import OptionStyle5Code
+from ._ExoticOptionStyle1Code import ExoticOptionStyle1Code
 
 class Option14(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTp", "_BrrrInd", "_XprtnStyle", "_OptnStyle", "_OptnTp"]
+	__slots__ = ["_EvtTp", "_XprtnStyle", "_BrrrInd", "_OptnStyle", "_OptnTp"]
 	@property
 	def EvtTp(self):
 		return self._EvtTp
@@ -22,19 +22,6 @@ class Option14(base_types._BaseFieldType):
 		self._EvtTp = None
 
 	@property
-	def BrrrInd(self):
-		return self._BrrrInd
-
-	@BrrrInd.setter
-	def BrrrInd(self, value):
-		self._BrrrInd = value if type(value) != base_types.auto else self.make_default("BrrrInd")
-
-	@BrrrInd.deleter
-	def BrrrInd(self):
-		del self._BrrrInd
-		self._BrrrInd = None
-
-	@property
 	def XprtnStyle(self):
 		return self._XprtnStyle
 
@@ -46,6 +33,19 @@ class Option14(base_types._BaseFieldType):
 	def XprtnStyle(self):
 		del self._XprtnStyle
 		self._XprtnStyle = None
+
+	@property
+	def BrrrInd(self):
+		return self._BrrrInd
+
+	@BrrrInd.setter
+	def BrrrInd(self, value):
+		self._BrrrInd = value if type(value) != base_types.auto else self.make_default("BrrrInd")
+
+	@BrrrInd.deleter
+	def BrrrInd(self):
+		del self._BrrrInd
+		self._BrrrInd = None
 
 	@property
 	def OptnStyle(self):
@@ -75,8 +75,8 @@ class Option14(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtTp', type=OptionEvent2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrrrInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnStyle', type=OptionStyle5Code, min=1, max=4, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BrrrInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnStyle', type=ExoticOptionStyle1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=OptionType1Code, min=0, max=1, mutex_group=None, array=False),
 	))

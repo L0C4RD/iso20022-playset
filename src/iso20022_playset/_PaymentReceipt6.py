@@ -1,11 +1,11 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ActionMessage11 import ActionMessage11
-from .DocumentType7Code import DocumentType7Code
+from ._ActionMessage11 import ActionMessage11
+from ._DocumentType7Code import DocumentType7Code
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class PaymentReceipt6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntgrtdPrtFlg", "_ReqrdSgntrFlg", "_OutptCntt", "_DocQlfr"]
+	__slots__ = ["_IntgrtdPrtFlg", "_OutptCntt", "_ReqrdSgntrFlg", "_DocQlfr"]
 	@property
 	def IntgrtdPrtFlg(self):
 		return self._IntgrtdPrtFlg
@@ -20,19 +20,6 @@ class PaymentReceipt6(base_types._BaseFieldType):
 		self._IntgrtdPrtFlg = None
 
 	@property
-	def ReqrdSgntrFlg(self):
-		return self._ReqrdSgntrFlg
-
-	@ReqrdSgntrFlg.setter
-	def ReqrdSgntrFlg(self, value):
-		self._ReqrdSgntrFlg = value if type(value) != base_types.auto else self.make_default("ReqrdSgntrFlg")
-
-	@ReqrdSgntrFlg.deleter
-	def ReqrdSgntrFlg(self):
-		del self._ReqrdSgntrFlg
-		self._ReqrdSgntrFlg = None
-
-	@property
 	def OutptCntt(self):
 		return self._OutptCntt
 
@@ -44,6 +31,19 @@ class PaymentReceipt6(base_types._BaseFieldType):
 	def OutptCntt(self):
 		del self._OutptCntt
 		self._OutptCntt = None
+
+	@property
+	def ReqrdSgntrFlg(self):
+		return self._ReqrdSgntrFlg
+
+	@ReqrdSgntrFlg.setter
+	def ReqrdSgntrFlg(self, value):
+		self._ReqrdSgntrFlg = value if type(value) != base_types.auto else self.make_default("ReqrdSgntrFlg")
+
+	@ReqrdSgntrFlg.deleter
+	def ReqrdSgntrFlg(self):
+		del self._ReqrdSgntrFlg
+		self._ReqrdSgntrFlg = None
 
 	@property
 	def DocQlfr(self):
@@ -60,8 +60,8 @@ class PaymentReceipt6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntgrtdPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

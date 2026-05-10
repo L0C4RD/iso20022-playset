@@ -1,12 +1,12 @@
 from . import base_types
-from .CancellationStatus14Choice import CancellationStatus14Choice
-from .RejectionOrRepairStatus38Choice import RejectionOrRepairStatus38Choice
-from .AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
-from .ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from ._AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
+from ._CancellationStatus14Choice import CancellationStatus14Choice
+from ._RejectionOrRepairStatus38Choice import RejectionOrRepairStatus38Choice
 
 class ProcessingStatus67Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Rjctd", "_AckdAccptd", "_Prtry", "_Rpr", "_Canc"]
+	__slots__ = ["_Rjctd", "_Prtry", "_Canc", "_AckdAccptd", "_Rpr"]
 	@property
 	def Rjctd(self):
 		return self._Rjctd
@@ -19,19 +19,6 @@ class ProcessingStatus67Choice(base_types._BaseFieldType):
 	def Rjctd(self):
 		del self._Rjctd
 		self._Rjctd = None
-
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
 
 	@property
 	def Prtry(self):
@@ -47,19 +34,6 @@ class ProcessingStatus67Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Rpr(self):
-		return self._Rpr
-
-	@Rpr.setter
-	def Rpr(self, value):
-		self._Rpr = value if type(value) != base_types.auto else self.make_default("Rpr")
-
-	@Rpr.deleter
-	def Rpr(self):
-		del self._Rpr
-		self._Rpr = None
-
-	@property
 	def Canc(self):
 		return self._Canc
 
@@ -72,11 +46,37 @@ class ProcessingStatus67Choice(base_types._BaseFieldType):
 		del self._Canc
 		self._Canc = None
 
+	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
+	@property
+	def Rpr(self):
+		return self._Rpr
+
+	@Rpr.setter
+	def Rpr(self, value):
+		self._Rpr = value if type(value) != base_types.auto else self.make_default("Rpr")
+
+	@Rpr.deleter
+	def Rpr(self):
+		del self._Rpr
+		self._Rpr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Canc', type=CancellationStatus14Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,11 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .GenericIdentification165 import GenericIdentification165
+from ._Max35Text import Max35Text
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._GenericIdentification165 import GenericIdentification165
 
 class DefaultFundRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrMmbId", "_Amt", "_SvcId"]
+	__slots__ = ["_SvcId", "_ClrMmbId", "_Amt"]
+	@property
+	def SvcId(self):
+		return self._SvcId
+
+	@SvcId.setter
+	def SvcId(self, value):
+		self._SvcId = value if type(value) != base_types.auto else self.make_default("SvcId")
+
+	@SvcId.deleter
+	def SvcId(self):
+		del self._SvcId
+		self._SvcId = None
+
 	@property
 	def ClrMmbId(self):
 		return self._ClrMmbId
@@ -32,22 +45,9 @@ class DefaultFundRequirement1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def SvcId(self):
-		return self._SvcId
-
-	@SvcId.setter
-	def SvcId(self, value):
-		self._SvcId = value if type(value) != base_types.auto else self.make_default("SvcId")
-
-	@SvcId.deleter
-	def SvcId(self):
-		del self._SvcId
-		self._SvcId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrMmbId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

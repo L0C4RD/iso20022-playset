@@ -1,5 +1,5 @@
 from . import base_types
-from .CCPBackTestingDefinitionReportV01 import CCPBackTestingDefinitionReportV01
+from ._CCPBackTestingDefinitionReportV01 import CCPBackTestingDefinitionReportV01
 
 class AUTH_065_001_01():
 

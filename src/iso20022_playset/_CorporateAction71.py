@@ -1,11 +1,24 @@
 from . import base_types
-from .CorporateActionEventStageFormat14Choice import CorporateActionEventStageFormat14Choice
-from .CorporateActionDate86 import CorporateActionDate86
-from .LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
+from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
+from ._CorporateActionDate86 import CorporateActionDate86
+from ._CorporateActionEventStageFormat14Choice import CorporateActionEventStageFormat14Choice
 
 class CorporateAction71(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtStag", "_DtDtls", "_LtryTp"]
+	__slots__ = ["_LtryTp", "_EvtStag", "_DtDtls"]
+	@property
+	def LtryTp(self):
+		return self._LtryTp
+
+	@LtryTp.setter
+	def LtryTp(self, value):
+		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
+
+	@LtryTp.deleter
+	def LtryTp(self):
+		del self._LtryTp
+		self._LtryTp = None
+
 	@property
 	def EvtStag(self):
 		return self._EvtStag
@@ -32,22 +45,9 @@ class CorporateAction71(base_types._BaseFieldType):
 		del self._DtDtls
 		self._DtDtls = None
 
-	@property
-	def LtryTp(self):
-		return self._LtryTp
-
-	@LtryTp.setter
-	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
-
-	@LtryTp.deleter
-	def LtryTp(self):
-		del self._LtryTp
-		self._LtryTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat14Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate86, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .AcceptorCurrencyConversionResponseV12 import AcceptorCurrencyConversionResponseV12
+from ._AcceptorCurrencyConversionResponseV12 import AcceptorCurrencyConversionResponseV12
 
 class CAAA_017_001_12():
 

@@ -1,6 +1,6 @@
 from . import base_types
-from .GenericIdentification30 import GenericIdentification30
-from .DateType1Code import DateType1Code
+from ._GenericIdentification30 import GenericIdentification30
+from ._DateType1Code import DateType1Code
 
 class DateCode20Choice(base_types._BaseFieldType):
 

@@ -1,37 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .TransactionIdentifier1 import TransactionIdentifier1
-from .Max140Text import Max140Text
-from .Response9Code import Response9Code
+from ._Max35Text import Max35Text
+from ._Max140Text import Max140Text
+from ._Response9Code import Response9Code
+from ._TransactionIdentifier1 import TransactionIdentifier1
 
 class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnId", "_SaleRefId", "_TxId", "_Rspn", "_InitrTxId", "_RcptTxId"]
+	__slots__ = ["_InitrTxId", "_TxId", "_RcncltnId", "_Rspn", "_SaleRefId", "_RcptTxId"]
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
+	def InitrTxId(self):
+		return self._InitrTxId
 
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+	@InitrTxId.setter
+	def InitrTxId(self, value):
+		self._InitrTxId = value if type(value) != base_types.auto else self.make_default("InitrTxId")
 
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
-
-	@property
-	def SaleRefId(self):
-		return self._SaleRefId
-
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
-
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
+	@InitrTxId.deleter
+	def InitrTxId(self):
+		del self._InitrTxId
+		self._InitrTxId = None
 
 	@property
 	def TxId(self):
@@ -47,6 +34,19 @@ class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
+	def RcncltnId(self):
+		return self._RcncltnId
+
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
+
+	@property
 	def Rspn(self):
 		return self._Rspn
 
@@ -60,17 +60,17 @@ class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 		self._Rspn = None
 
 	@property
-	def InitrTxId(self):
-		return self._InitrTxId
+	def SaleRefId(self):
+		return self._SaleRefId
 
-	@InitrTxId.setter
-	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != base_types.auto else self.make_default("InitrTxId")
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
 
-	@InitrTxId.deleter
-	def InitrTxId(self):
-		del self._InitrTxId
-		self._InitrTxId = None
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
 
 	@property
 	def RcptTxId(self):
@@ -86,11 +86,11 @@ class CardPaymentTransactionAdviceResponse8(base_types._BaseFieldType):
 		self._RcptTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rspn', type=Response9Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=Response9Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptTxId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

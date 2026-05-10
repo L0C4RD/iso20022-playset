@@ -1,6 +1,6 @@
 from . import base_types
-from .ChargesDetails3 import ChargesDetails3
-from .FreightCharges1Code import FreightCharges1Code
+from ._ChargesDetails3 import ChargesDetails3
+from ._FreightCharges1Code import FreightCharges1Code
 
 class Charge24(base_types._BaseFieldType):
 

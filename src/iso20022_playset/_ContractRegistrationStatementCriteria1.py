@@ -1,9 +1,9 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_RgltryRuleVldtn", "_TxJrnl", "_AddtlSpprtgDocJrnl", "_SpprtgDocJrnl"]
+	__slots__ = ["_RgltryRuleVldtn", "_SpprtgDocJrnl", "_AddtlSpprtgDocJrnl", "_TxJrnl"]
 	@property
 	def RgltryRuleVldtn(self):
 		return self._RgltryRuleVldtn
@@ -18,17 +18,17 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._RgltryRuleVldtn = None
 
 	@property
-	def TxJrnl(self):
-		return self._TxJrnl
+	def SpprtgDocJrnl(self):
+		return self._SpprtgDocJrnl
 
-	@TxJrnl.setter
-	def TxJrnl(self, value):
-		self._TxJrnl = value if type(value) != base_types.auto else self.make_default("TxJrnl")
+	@SpprtgDocJrnl.setter
+	def SpprtgDocJrnl(self, value):
+		self._SpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("SpprtgDocJrnl")
 
-	@TxJrnl.deleter
-	def TxJrnl(self):
-		del self._TxJrnl
-		self._TxJrnl = None
+	@SpprtgDocJrnl.deleter
+	def SpprtgDocJrnl(self):
+		del self._SpprtgDocJrnl
+		self._SpprtgDocJrnl = None
 
 	@property
 	def AddtlSpprtgDocJrnl(self):
@@ -44,22 +44,22 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._AddtlSpprtgDocJrnl = None
 
 	@property
-	def SpprtgDocJrnl(self):
-		return self._SpprtgDocJrnl
+	def TxJrnl(self):
+		return self._TxJrnl
 
-	@SpprtgDocJrnl.setter
-	def SpprtgDocJrnl(self, value):
-		self._SpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("SpprtgDocJrnl")
+	@TxJrnl.setter
+	def TxJrnl(self, value):
+		self._TxJrnl = value if type(value) != base_types.auto else self.make_default("TxJrnl")
 
-	@SpprtgDocJrnl.deleter
-	def SpprtgDocJrnl(self):
-		del self._SpprtgDocJrnl
-		self._SpprtgDocJrnl = None
+	@TxJrnl.deleter
+	def TxJrnl(self):
+		del self._TxJrnl
+		self._TxJrnl = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

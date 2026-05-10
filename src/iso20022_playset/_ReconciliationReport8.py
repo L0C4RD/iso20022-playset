@@ -1,25 +1,12 @@
 from . import base_types
-from .TrueFalseIndicator import TrueFalseIndicator
-from .ReconciliationStatus8Choice import ReconciliationStatus8Choice
-from .Max140Text import Max140Text
-from .TradeTransactionIdentification19 import TradeTransactionIdentification19
+from ._ReconciliationStatus8Choice import ReconciliationStatus8Choice
+from ._Max140Text import Max140Text
+from ._TradeTransactionIdentification19 import TradeTransactionIdentification19
+from ._TrueFalseIndicator import TrueFalseIndicator
 
 class ReconciliationReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnSts", "_TxId", "_TechRcrdId", "_Modfd"]
-	@property
-	def RcncltnSts(self):
-		return self._RcncltnSts
-
-	@RcncltnSts.setter
-	def RcncltnSts(self, value):
-		self._RcncltnSts = value if type(value) != base_types.auto else self.make_default("RcncltnSts")
-
-	@RcncltnSts.deleter
-	def RcncltnSts(self):
-		del self._RcncltnSts
-		self._RcncltnSts = None
-
+	__slots__ = ["_TxId", "_RcncltnSts", "_Modfd", "_TechRcrdId"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -34,17 +21,17 @@ class ReconciliationReport8(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def RcncltnSts(self):
+		return self._RcncltnSts
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+	@RcncltnSts.setter
+	def RcncltnSts(self, value):
+		self._RcncltnSts = value if type(value) != base_types.auto else self.make_default("RcncltnSts")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@RcncltnSts.deleter
+	def RcncltnSts(self):
+		del self._RcncltnSts
+		self._RcncltnSts = None
 
 	@property
 	def Modfd(self):
@@ -59,10 +46,23 @@ class ReconciliationReport8(base_types._BaseFieldType):
 		del self._Modfd
 		self._Modfd = None
 
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnSts', type=ReconciliationStatus8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnSts', type=ReconciliationStatus8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Modfd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

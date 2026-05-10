@@ -1,7 +1,7 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from .ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._Max35Text import Max35Text
+from ._ReceiveDelivery1Code import ReceiveDelivery1Code
+from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 
 class SettlementTypeAndAdditionalParameters12(base_types._BaseFieldType):
 

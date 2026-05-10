@@ -1,6 +1,6 @@
 from . import base_types
-from .Price7 import Price7
-from .ProprietaryPrice2 import ProprietaryPrice2
+from ._Price7 import Price7
+from ._ProprietaryPrice2 import ProprietaryPrice2
 
 class TransactionPrice4Choice(base_types._BaseFieldType):
 

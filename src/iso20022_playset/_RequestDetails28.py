@@ -1,26 +1,26 @@
 from . import base_types
-from .CollateralParties4 import CollateralParties4
-from .Reference21 import Reference21
-from .SecuritiesAccount19 import SecuritiesAccount19
-from .BlockChainAddressWallet3 import BlockChainAddressWallet3
-from .RemovalProcessing2Choice import RemovalProcessing2Choice
-from .RemovalTypeAndReason1 import RemovalTypeAndReason1
+from ._RemovalProcessing2Choice import RemovalProcessing2Choice
+from ._CollateralParties4 import CollateralParties4
+from ._Reference21 import Reference21
+from ._SecuritiesAccount19 import SecuritiesAccount19
+from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
+from ._RemovalTypeAndReason1 import RemovalTypeAndReason1
 
 class RequestDetails28(base_types._BaseFieldType):
 
-	__slots__ = ["_Rmvl", "_SfkpgAcct", "_Ref", "_BlckChainAdrOrWllt", "_CtrPty", "_FinInstrmAndAttrbts"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_FinInstrmAndAttrbts", "_CtrPty", "_Ref", "_Rmvl"]
 	@property
-	def Rmvl(self):
-		return self._Rmvl
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@Rmvl.setter
-	def Rmvl(self, value):
-		self._Rmvl = value if type(value) != base_types.auto else self.make_default("Rmvl")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
 
-	@Rmvl.deleter
-	def Rmvl(self):
-		del self._Rmvl
-		self._Rmvl = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
 
 	@property
 	def SfkpgAcct(self):
@@ -36,30 +36,17 @@ class RequestDetails28(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def Ref(self):
-		return self._Ref
+	def FinInstrmAndAttrbts(self):
+		return self._FinInstrmAndAttrbts
 
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+	@FinInstrmAndAttrbts.setter
+	def FinInstrmAndAttrbts(self, value):
+		self._FinInstrmAndAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAndAttrbts")
 
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@FinInstrmAndAttrbts.deleter
+	def FinInstrmAndAttrbts(self):
+		del self._FinInstrmAndAttrbts
+		self._FinInstrmAndAttrbts = None
 
 	@property
 	def CtrPty(self):
@@ -75,24 +62,37 @@ class RequestDetails28(base_types._BaseFieldType):
 		self._CtrPty = None
 
 	@property
-	def FinInstrmAndAttrbts(self):
-		return self._FinInstrmAndAttrbts
+	def Ref(self):
+		return self._Ref
 
-	@FinInstrmAndAttrbts.setter
-	def FinInstrmAndAttrbts(self, value):
-		self._FinInstrmAndAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAndAttrbts")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
 
-	@FinInstrmAndAttrbts.deleter
-	def FinInstrmAndAttrbts(self):
-		del self._FinInstrmAndAttrbts
-		self._FinInstrmAndAttrbts = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def Rmvl(self):
+		return self._Rmvl
+
+	@Rmvl.setter
+	def Rmvl(self, value):
+		self._Rmvl = value if type(value) != base_types.auto else self.make_default("Rmvl")
+
+	@Rmvl.deleter
+	def Rmvl(self):
+		del self._Rmvl
+		self._Rmvl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rmvl', type=RemovalTypeAndReason1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Reference21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty', type=CollateralParties4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmAndAttrbts', type=RemovalProcessing2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrPty', type=CollateralParties4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Reference21, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rmvl', type=RemovalTypeAndReason1, min=1, max=1, mutex_group=None, array=False),
 	))
 

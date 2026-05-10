@@ -1,5 +1,5 @@
 from . import base_types
-from .DerivativesTradeRejectionStatisticalReportV04 import DerivativesTradeRejectionStatisticalReportV04
+from ._DerivativesTradeRejectionStatisticalReportV04 import DerivativesTradeRejectionStatisticalReportV04
 
 class AUTH_092_001_04():
 

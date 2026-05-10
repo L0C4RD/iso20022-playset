@@ -1,24 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .AcknowledgementDetails1Choice import AcknowledgementDetails1Choice
-from .Exact4AlphaNumericText import Exact4AlphaNumericText
-from .SupplementaryData1 import SupplementaryData1
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._Exact4AlphaNumericText import Exact4AlphaNumericText
+from ._AcknowledgementDetails1Choice import AcknowledgementDetails1Choice
 
 class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_AckDtls", "_SplmtryData", "_SttlmSsnIdr"]
+	__slots__ = ["_SplmtryData", "_AckDtls", "_MsgId", "_SttlmSsnIdr"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def AckDtls(self):
@@ -34,17 +34,17 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 		self._AckDtls = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MsgId(self):
+		return self._MsgId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -60,9 +60,9 @@ class PayInEventAcknowledgementV02(base_types._BaseFieldType):
 		self._SttlmSsnIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AckDtls', type=AcknowledgementDetails1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AckDtls', type=AcknowledgementDetails1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

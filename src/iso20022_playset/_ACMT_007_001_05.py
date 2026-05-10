@@ -1,5 +1,5 @@
 from . import base_types
-from .AccountOpeningRequestV05 import AccountOpeningRequestV05
+from ._AccountOpeningRequestV05 import AccountOpeningRequestV05
 
 class ACMT_007_001_05():
 

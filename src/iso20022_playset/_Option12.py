@@ -1,6 +1,6 @@
 from . import base_types
-from .OptionType1Code import OptionType1Code
-from .OptionDateOrPeriod1Choice import OptionDateOrPeriod1Choice
+from ._OptionType1Code import OptionType1Code
+from ._OptionDateOrPeriod1Choice import OptionDateOrPeriod1Choice
 
 class Option12(base_types._BaseFieldType):
 

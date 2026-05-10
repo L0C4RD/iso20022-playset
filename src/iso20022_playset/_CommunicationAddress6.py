@@ -1,50 +1,24 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .Max256Text import Max256Text
-from .AddressType1Choice import AddressType1Choice
-from .PhoneNumber import PhoneNumber
+from ._Max35Text import Max35Text
+from ._AddressType1Choice import AddressType1Choice
+from ._Max256Text import Max256Text
+from ._PhoneNumber import PhoneNumber
 
 class CommunicationAddress6(base_types._BaseFieldType):
 
-	__slots__ = ["_Phne", "_AdrTp", "_Email", "_TlxAdr", "_Mob", "_FaxNb", "_URLAdr"]
+	__slots__ = ["_Mob", "_TlxAdr", "_URLAdr", "_Phne", "_Email", "_FaxNb", "_AdrTp"]
 	@property
-	def Phne(self):
-		return self._Phne
+	def Mob(self):
+		return self._Mob
 
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != base_types.auto else self.make_default("Phne")
+	@Mob.setter
+	def Mob(self, value):
+		self._Mob = value if type(value) != base_types.auto else self.make_default("Mob")
 
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
-
-	@property
-	def AdrTp(self):
-		return self._AdrTp
-
-	@AdrTp.setter
-	def AdrTp(self, value):
-		self._AdrTp = value if type(value) != base_types.auto else self.make_default("AdrTp")
-
-	@AdrTp.deleter
-	def AdrTp(self):
-		del self._AdrTp
-		self._AdrTp = None
-
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
+	@Mob.deleter
+	def Mob(self):
+		del self._Mob
+		self._Mob = None
 
 	@property
 	def TlxAdr(self):
@@ -60,17 +34,43 @@ class CommunicationAddress6(base_types._BaseFieldType):
 		self._TlxAdr = None
 
 	@property
-	def Mob(self):
-		return self._Mob
+	def URLAdr(self):
+		return self._URLAdr
 
-	@Mob.setter
-	def Mob(self, value):
-		self._Mob = value if type(value) != base_types.auto else self.make_default("Mob")
+	@URLAdr.setter
+	def URLAdr(self, value):
+		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
 
-	@Mob.deleter
-	def Mob(self):
-		del self._Mob
-		self._Mob = None
+	@URLAdr.deleter
+	def URLAdr(self):
+		del self._URLAdr
+		self._URLAdr = None
+
+	@property
+	def Phne(self):
+		return self._Phne
+
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != base_types.auto else self.make_default("Phne")
+
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
+
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
 
 	@property
 	def FaxNb(self):
@@ -86,25 +86,25 @@ class CommunicationAddress6(base_types._BaseFieldType):
 		self._FaxNb = None
 
 	@property
-	def URLAdr(self):
-		return self._URLAdr
+	def AdrTp(self):
+		return self._AdrTp
 
-	@URLAdr.setter
-	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+	@AdrTp.setter
+	def AdrTp(self, value):
+		self._AdrTp = value if type(value) != base_types.auto else self.make_default("AdrTp")
 
-	@URLAdr.deleter
-	def URLAdr(self):
-		del self._URLAdr
-		self._URLAdr = None
+	@AdrTp.deleter
+	def AdrTp(self):
+		del self._AdrTp
+		self._AdrTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrTp', type=AddressType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TlxAdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mob', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TlxAdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrTp', type=AddressType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

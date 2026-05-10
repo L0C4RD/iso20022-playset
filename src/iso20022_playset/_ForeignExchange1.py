@@ -1,7 +1,7 @@
 from . import base_types
-from .DecimalNumber import DecimalNumber
-from .BaseOneRate import BaseOneRate
-from .ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from ._BaseOneRate import BaseOneRate
+from ._DecimalNumber import DecimalNumber
 
 class ForeignExchange1(base_types._BaseFieldType):
 

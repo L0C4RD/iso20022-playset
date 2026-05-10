@@ -1,6 +1,6 @@
 from . import base_types
-from .ErrorHandling5 import ErrorHandling5
-from .SecurityIdentification39 import SecurityIdentification39
+from ._ErrorHandling5 import ErrorHandling5
+from ._SecurityIdentification39 import SecurityIdentification39
 
 class BusinessError4(base_types._BaseFieldType):
 

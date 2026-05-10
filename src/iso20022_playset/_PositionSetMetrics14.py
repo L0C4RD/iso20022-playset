@@ -1,5 +1,5 @@
 from . import base_types
-from .PositionSetBuyerAndSeller2 import PositionSetBuyerAndSeller2
+from ._PositionSetBuyerAndSeller2 import PositionSetBuyerAndSeller2
 
 class PositionSetMetrics14(base_types._BaseFieldType):
 

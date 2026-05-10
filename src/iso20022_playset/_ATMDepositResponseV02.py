@@ -1,12 +1,12 @@
 from . import base_types
-from .Header31 import Header31
-from .ContentInformationType10 import ContentInformationType10
-from .ATMDepositResponse2 import ATMDepositResponse2
-from .ContentInformationType15 import ContentInformationType15
+from ._ContentInformationType10 import ContentInformationType10
+from ._ContentInformationType15 import ContentInformationType15
+from ._Header31 import Header31
+from ._ATMDepositResponse2 import ATMDepositResponse2
 
 class ATMDepositResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMDpstRspn", "_ATMDpstRspn", "_SctyTrlr", "_Hdr"]
+	__slots__ = ["_PrtctdATMDpstRspn", "_Hdr", "_ATMDpstRspn", "_SctyTrlr"]
 	@property
 	def PrtctdATMDpstRspn(self):
 		return self._PrtctdATMDpstRspn
@@ -19,6 +19,19 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 	def PrtctdATMDpstRspn(self):
 		del self._PrtctdATMDpstRspn
 		self._PrtctdATMDpstRspn = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def ATMDpstRspn(self):
@@ -46,23 +59,10 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdATMDpstRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMDpstRspn', type=ATMDepositResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 from . import base_types
-from .AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
-from .YesNoIndicator import YesNoIndicator
-from .AggregateBalanceInformation3 import AggregateBalanceInformation3
+from ._YesNoIndicator import YesNoIndicator
+from ._AggregateBalanceInformation3 import AggregateBalanceInformation3
+from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 
 class SubAccountIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_ActvtyInd", "_Id", "_BalForSubAcct", "_FngbInd"]
+	__slots__ = ["_ActvtyInd", "_FngbInd", "_Id", "_BalForSubAcct"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -18,6 +18,19 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 	def ActvtyInd(self):
 		del self._ActvtyInd
 		self._ActvtyInd = None
+
+	@property
+	def FngbInd(self):
+		return self._FngbInd
+
+	@FngbInd.setter
+	def FngbInd(self, value):
+		self._FngbInd = value if type(value) != base_types.auto else self.make_default("FngbInd")
+
+	@FngbInd.deleter
+	def FngbInd(self):
+		del self._FngbInd
+		self._FngbInd = None
 
 	@property
 	def Id(self):
@@ -45,23 +58,10 @@ class SubAccountIdentification3(base_types._BaseFieldType):
 		del self._BalForSubAcct
 		self._BalForSubAcct = None
 
-	@property
-	def FngbInd(self):
-		return self._FngbInd
-
-	@FngbInd.setter
-	def FngbInd(self, value):
-		self._FngbInd = value if type(value) != base_types.auto else self.make_default("FngbInd")
-
-	@FngbInd.deleter
-	def FngbInd(self):
-		del self._FngbInd
-		self._FngbInd = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

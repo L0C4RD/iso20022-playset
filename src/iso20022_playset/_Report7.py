@@ -1,23 +1,10 @@
 from . import base_types
-from .PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
-from .SettlementObligation9 import SettlementObligation9
+from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
+from ._SettlementObligation9 import SettlementObligation9
 
 class Report7(base_types._BaseFieldType):
 
-	__slots__ = ["_NonClrMmb", "_SttlmOblgtnDtls"]
-	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
-
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
-
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
-
+	__slots__ = ["_SttlmOblgtnDtls", "_NonClrMmb"]
 	@property
 	def SttlmOblgtnDtls(self):
 		return self._SttlmOblgtnDtls
@@ -31,8 +18,21 @@ class Report7(base_types._BaseFieldType):
 		del self._SttlmOblgtnDtls
 		self._SttlmOblgtnDtls = None
 
+	@property
+	def NonClrMmb(self):
+		return self._NonClrMmb
+
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmOblgtnDtls', type=SettlementObligation9, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=None, mutex_group=None, array=True),
 	))
 

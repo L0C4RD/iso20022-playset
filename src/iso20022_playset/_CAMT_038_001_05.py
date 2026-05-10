@@ -1,5 +1,5 @@
 from . import base_types
-from .CaseStatusReportRequestV05 import CaseStatusReportRequestV05
+from ._CaseStatusReportRequestV05 import CaseStatusReportRequestV05
 
 class CAMT_038_001_05():
 

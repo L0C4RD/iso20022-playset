@@ -1,12 +1,25 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .Pagination1 import Pagination1
-from .Statement75 import Statement75
-from .AccountIdentification74 import AccountIdentification74
+from ._AccountIdentification74 import AccountIdentification74
+from ._SupplementaryData1 import SupplementaryData1
+from ._Pagination1 import Pagination1
+from ._Statement75 import Statement75
 
 class CorporateActionInstructionStatementReport002V13(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_StmtGnlDtls", "_AcctAndStmtDtls", "_Pgntn"]
+	__slots__ = ["_Pgntn", "_SplmtryData", "_StmtGnlDtls", "_AcctAndStmtDtls"]
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -46,23 +59,10 @@ class CorporateActionInstructionStatementReport002V13(base_types._BaseFieldType)
 		del self._AcctAndStmtDtls
 		self._AcctAndStmtDtls = None
 
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement75, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctAndStmtDtls', type=AccountIdentification74, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 	))
 

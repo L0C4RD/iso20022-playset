@@ -1,5 +1,5 @@
 from . import base_types
-from .SecuritiesSettlementTransactionModificationRequest002V09 import SecuritiesSettlementTransactionModificationRequest002V09
+from ._SecuritiesSettlementTransactionModificationRequest002V09 import SecuritiesSettlementTransactionModificationRequest002V09
 
 class SESE_038_002_09():
 

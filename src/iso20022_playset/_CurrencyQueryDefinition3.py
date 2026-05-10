@@ -1,6 +1,6 @@
 from . import base_types
-from .CurrencyCriteriaDefinition1Choice import CurrencyCriteriaDefinition1Choice
-from .QueryType2Code import QueryType2Code
+from ._CurrencyCriteriaDefinition1Choice import CurrencyCriteriaDefinition1Choice
+from ._QueryType2Code import QueryType2Code
 
 class CurrencyQueryDefinition3(base_types._BaseFieldType):
 

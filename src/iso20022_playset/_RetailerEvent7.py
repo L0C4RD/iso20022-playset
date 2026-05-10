@@ -1,25 +1,12 @@
 from . import base_types
-from .ISODateTime import ISODateTime
-from .EventToNotify2Code import EventToNotify2Code
-from .Max1025Text import Max1025Text
-from .EventContext7 import EventContext7
+from ._Max1025Text import Max1025Text
+from ._ISODateTime import ISODateTime
+from ._EventContext7 import EventContext7
+from ._EventToNotify2Code import EventToNotify2Code
 
 class RetailerEvent7(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtTmStmp", "_EvtCntxt", "_EvtToNtfy", "_AddtlEvtInf"]
-	@property
-	def EvtTmStmp(self):
-		return self._EvtTmStmp
-
-	@EvtTmStmp.setter
-	def EvtTmStmp(self, value):
-		self._EvtTmStmp = value if type(value) != base_types.auto else self.make_default("EvtTmStmp")
-
-	@EvtTmStmp.deleter
-	def EvtTmStmp(self):
-		del self._EvtTmStmp
-		self._EvtTmStmp = None
-
+	__slots__ = ["_EvtCntxt", "_EvtToNtfy", "_EvtTmStmp", "_AddtlEvtInf"]
 	@property
 	def EvtCntxt(self):
 		return self._EvtCntxt
@@ -47,6 +34,19 @@ class RetailerEvent7(base_types._BaseFieldType):
 		self._EvtToNtfy = None
 
 	@property
+	def EvtTmStmp(self):
+		return self._EvtTmStmp
+
+	@EvtTmStmp.setter
+	def EvtTmStmp(self, value):
+		self._EvtTmStmp = value if type(value) != base_types.auto else self.make_default("EvtTmStmp")
+
+	@EvtTmStmp.deleter
+	def EvtTmStmp(self):
+		del self._EvtTmStmp
+		self._EvtTmStmp = None
+
+	@property
 	def AddtlEvtInf(self):
 		return self._AddtlEvtInf
 
@@ -60,9 +60,9 @@ class RetailerEvent7(base_types._BaseFieldType):
 		self._AddtlEvtInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EvtTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtCntxt', type=EventContext7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtToNtfy', type=EventToNotify2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlEvtInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

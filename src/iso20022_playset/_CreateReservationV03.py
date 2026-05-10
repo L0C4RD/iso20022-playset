@@ -1,12 +1,25 @@
 from . import base_types
-from .Reservation4 import Reservation4
-from .MessageHeader1 import MessageHeader1
-from .ReservationIdentification4 import ReservationIdentification4
-from .SupplementaryData1 import SupplementaryData1
+from ._SupplementaryData1 import SupplementaryData1
+from ._ReservationIdentification4 import ReservationIdentification4
+from ._MessageHeader1 import MessageHeader1
+from ._Reservation4 import Reservation4
 
 class CreateReservationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ValSet", "_RsvatnId", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_MsgHdr", "_ValSet", "_SplmtryData", "_RsvatnId"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
 	@property
 	def ValSet(self):
 		return self._ValSet
@@ -19,19 +32,6 @@ class CreateReservationV03(base_types._BaseFieldType):
 	def ValSet(self):
 		del self._ValSet
 		self._ValSet = None
-
-	@property
-	def RsvatnId(self):
-		return self._RsvatnId
-
-	@RsvatnId.setter
-	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != base_types.auto else self.make_default("RsvatnId")
-
-	@RsvatnId.deleter
-	def RsvatnId(self):
-		del self._RsvatnId
-		self._RsvatnId = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class CreateReservationV03(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def MsgHdr(self):
-		return self._MsgHdr
+	def RsvatnId(self):
+		return self._RsvatnId
 
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+	@RsvatnId.setter
+	def RsvatnId(self, value):
+		self._RsvatnId = value if type(value) != base_types.auto else self.make_default("RsvatnId")
 
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
+	@RsvatnId.deleter
+	def RsvatnId(self):
+		del self._RsvatnId
+		self._RsvatnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnId', type=ReservationIdentification4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RsvatnId', type=ReservationIdentification4, min=1, max=1, mutex_group=None, array=False),
 	))
 

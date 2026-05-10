@@ -1,6 +1,6 @@
 from . import base_types
-from .DutchAuctionType1Code import DutchAuctionType1Code
-from .GenericIdentification47 import GenericIdentification47
+from ._GenericIdentification47 import GenericIdentification47
+from ._DutchAuctionType1Code import DutchAuctionType1Code
 
 class DutchAuctionTypeFormat2Choice(base_types._BaseFieldType):
 

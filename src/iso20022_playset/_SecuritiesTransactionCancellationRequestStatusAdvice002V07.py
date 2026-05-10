@@ -1,13 +1,26 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from .TransactionDetails162 import TransactionDetails162
-from .TransactionIdentifications50 import TransactionIdentifications50
-from .ProcessingStatus96Choice import ProcessingStatus96Choice
+from ._SupplementaryData1 import SupplementaryData1
+from ._ProcessingStatus96Choice import ProcessingStatus96Choice
+from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from ._TransactionDetails162 import TransactionDetails162
+from ._TransactionIdentifications50 import TransactionIdentifications50
 
 class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlReqRef", "_TxDtls", "_SplmtryData", "_TxId", "_PrcgSts"]
+	__slots__ = ["_TxId", "_CxlReqRef", "_PrcgSts", "_SplmtryData", "_TxDtls"]
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	@property
 	def CxlReqRef(self):
 		return self._CxlReqRef
@@ -22,17 +35,17 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 		self._CxlReqRef = None
 
 	@property
-	def TxDtls(self):
-		return self._TxDtls
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
 
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def SplmtryData(self):
@@ -48,36 +61,23 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 		self._SplmtryData = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def TxDtls(self):
+		return self._TxDtls
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def PrcgSts(self):
-		return self._PrcgSts
-
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
-
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=TransactionDetails162, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications50, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus96Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxDtls', type=TransactionDetails162, min=0, max=1, mutex_group=None, array=False),
 	))
 

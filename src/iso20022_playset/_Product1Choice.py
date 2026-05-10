@@ -1,7 +1,7 @@
 from . import base_types
-from .RepurchaseAgreement3 import RepurchaseAgreement3
-from .FinancialInstrument59 import FinancialInstrument59
-from .Derivative3 import Derivative3
+from ._Derivative3 import Derivative3
+from ._RepurchaseAgreement3 import RepurchaseAgreement3
+from ._FinancialInstrument59 import FinancialInstrument59
 
 class Product1Choice(base_types._BaseFieldType):
 

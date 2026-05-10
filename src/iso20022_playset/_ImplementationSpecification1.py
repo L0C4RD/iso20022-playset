@@ -1,6 +1,6 @@
 from . import base_types
-from .Max350Text import Max350Text
-from .Max2048Text import Max2048Text
+from ._Max350Text import Max350Text
+from ._Max2048Text import Max2048Text
 
 class ImplementationSpecification1(base_types._BaseFieldType):
 

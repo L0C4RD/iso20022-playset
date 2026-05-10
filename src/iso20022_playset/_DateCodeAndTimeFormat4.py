@@ -1,6 +1,6 @@
 from . import base_types
-from .DateCode26Choice import DateCode26Choice
-from .ISOTime import ISOTime
+from ._DateCode26Choice import DateCode26Choice
+from ._ISOTime import ISOTime
 
 class DateCodeAndTimeFormat4(base_types._BaseFieldType):
 

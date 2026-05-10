@@ -1,5 +1,5 @@
 from . import base_types
-from .PayInEventAcknowledgementV02 import PayInEventAcknowledgementV02
+from ._PayInEventAcknowledgementV02 import PayInEventAcknowledgementV02
 
 class CAMT_063_001_02():
 

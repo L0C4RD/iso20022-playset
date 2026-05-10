@@ -1,5 +1,5 @@
 from . import base_types
-from .ReconciliationResponseV04 import ReconciliationResponseV04
+from ._ReconciliationResponseV04 import ReconciliationResponseV04
 
 class CAAD_006_001_04():
 

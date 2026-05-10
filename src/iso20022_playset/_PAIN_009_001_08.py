@@ -1,5 +1,5 @@
 from . import base_types
-from .MandateInitiationRequestV08 import MandateInitiationRequestV08
+from ._MandateInitiationRequestV08 import MandateInitiationRequestV08
 
 class PAIN_009_001_08():
 

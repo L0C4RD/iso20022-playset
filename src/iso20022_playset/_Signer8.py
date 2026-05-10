@@ -1,40 +1,14 @@
 from . import base_types
-from .Number import Number
-from .AlgorithmIdentification36 import AlgorithmIdentification36
-from .Recipient13Choice import Recipient13Choice
-from .GenericInformation1 import GenericInformation1
-from .Max3000Binary import Max3000Binary
-from .AlgorithmIdentification33 import AlgorithmIdentification33
+from ._AlgorithmIdentification33 import AlgorithmIdentification33
+from ._Number import Number
+from ._Max3000Binary import Max3000Binary
+from ._AlgorithmIdentification36 import AlgorithmIdentification36
+from ._GenericInformation1 import GenericInformation1
+from ._Recipient13Choice import Recipient13Choice
 
 class Signer8(base_types._BaseFieldType):
 
-	__slots__ = ["_SgntrAlgo", "_SgndAttrbts", "_SgnrId", "_Vrsn", "_DgstAlgo", "_Sgntr"]
-	@property
-	def SgntrAlgo(self):
-		return self._SgntrAlgo
-
-	@SgntrAlgo.setter
-	def SgntrAlgo(self, value):
-		self._SgntrAlgo = value if type(value) != base_types.auto else self.make_default("SgntrAlgo")
-
-	@SgntrAlgo.deleter
-	def SgntrAlgo(self):
-		del self._SgntrAlgo
-		self._SgntrAlgo = None
-
-	@property
-	def SgndAttrbts(self):
-		return self._SgndAttrbts
-
-	@SgndAttrbts.setter
-	def SgndAttrbts(self, value):
-		self._SgndAttrbts = value if type(value) != base_types.auto else self.make_default("SgndAttrbts")
-
-	@SgndAttrbts.deleter
-	def SgndAttrbts(self):
-		del self._SgndAttrbts
-		self._SgndAttrbts = None
-
+	__slots__ = ["_SgnrId", "_DgstAlgo", "_SgntrAlgo", "_Vrsn", "_SgndAttrbts", "_Sgntr"]
 	@property
 	def SgnrId(self):
 		return self._SgnrId
@@ -47,19 +21,6 @@ class Signer8(base_types._BaseFieldType):
 	def SgnrId(self):
 		del self._SgnrId
 		self._SgnrId = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
 
 	@property
 	def DgstAlgo(self):
@@ -75,6 +36,45 @@ class Signer8(base_types._BaseFieldType):
 		self._DgstAlgo = None
 
 	@property
+	def SgntrAlgo(self):
+		return self._SgntrAlgo
+
+	@SgntrAlgo.setter
+	def SgntrAlgo(self, value):
+		self._SgntrAlgo = value if type(value) != base_types.auto else self.make_default("SgntrAlgo")
+
+	@SgntrAlgo.deleter
+	def SgntrAlgo(self):
+		del self._SgntrAlgo
+		self._SgntrAlgo = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def SgndAttrbts(self):
+		return self._SgndAttrbts
+
+	@SgndAttrbts.setter
+	def SgndAttrbts(self, value):
+		self._SgndAttrbts = value if type(value) != base_types.auto else self.make_default("SgndAttrbts")
+
+	@SgndAttrbts.deleter
+	def SgndAttrbts(self):
+		del self._SgndAttrbts
+		self._SgndAttrbts = None
+
+	@property
 	def Sgntr(self):
 		return self._Sgntr
 
@@ -88,11 +88,11 @@ class Signer8(base_types._BaseFieldType):
 		self._Sgntr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SgnrId', type=Recipient13Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sgntr', type=Max3000Binary, min=1, max=1, mutex_group=None, array=False),
 	))
 

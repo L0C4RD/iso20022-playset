@@ -1,6 +1,6 @@
 from . import base_types
-from .TradeContract4 import TradeContract4
-from .LoanContract4 import LoanContract4
+from ._LoanContract4 import LoanContract4
+from ._TradeContract4 import TradeContract4
 
 class UnderlyingContract4Choice(base_types._BaseFieldType):
 

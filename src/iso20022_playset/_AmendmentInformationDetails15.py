@@ -1,54 +1,28 @@
 from . import base_types
-from .PartyIdentification272 import PartyIdentification272
-from .ISODate import ISODate
-from .Exact2NumericText import Exact2NumericText
-from .Frequency36Choice import Frequency36Choice
-from .MandateSetupReason1Choice import MandateSetupReason1Choice
-from .Max35Text import Max35Text
-from .BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from .CashAccount40 import CashAccount40
+from ._MandateSetupReason1Choice import MandateSetupReason1Choice
+from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
+from ._CashAccount40 import CashAccount40
+from ._PartyIdentification272 import PartyIdentification272
+from ._Max35Text import Max35Text
+from ._Exact2NumericText import Exact2NumericText
+from ._Frequency36Choice import Frequency36Choice
+from ._ISODate import ISODate
 
 class AmendmentInformationDetails15(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlFrqcy", "_OrgnlCdtrAgt", "_OrgnlDbtrAcct", "_OrgnlRsn", "_OrgnlDbtrAgt", "_OrgnlMndtId", "_OrgnlCdtrAgtAcct", "_OrgnlTrckgDays", "_OrgnlFnlColltnDt", "_OrgnlDbtr", "_OrgnlDbtrAgtAcct", "_OrgnlCdtrSchmeId"]
+	__slots__ = ["_OrgnlDbtrAgtAcct", "_OrgnlRsn", "_OrgnlFrqcy", "_OrgnlFnlColltnDt", "_OrgnlDbtrAgt", "_OrgnlCdtrAgt", "_OrgnlCdtrAgtAcct", "_OrgnlDbtrAcct", "_OrgnlCdtrSchmeId", "_OrgnlTrckgDays", "_OrgnlMndtId", "_OrgnlDbtr"]
 	@property
-	def OrgnlFrqcy(self):
-		return self._OrgnlFrqcy
+	def OrgnlDbtrAgtAcct(self):
+		return self._OrgnlDbtrAgtAcct
 
-	@OrgnlFrqcy.setter
-	def OrgnlFrqcy(self, value):
-		self._OrgnlFrqcy = value if type(value) != base_types.auto else self.make_default("OrgnlFrqcy")
+	@OrgnlDbtrAgtAcct.setter
+	def OrgnlDbtrAgtAcct(self, value):
+		self._OrgnlDbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgtAcct")
 
-	@OrgnlFrqcy.deleter
-	def OrgnlFrqcy(self):
-		del self._OrgnlFrqcy
-		self._OrgnlFrqcy = None
-
-	@property
-	def OrgnlCdtrAgt(self):
-		return self._OrgnlCdtrAgt
-
-	@OrgnlCdtrAgt.setter
-	def OrgnlCdtrAgt(self, value):
-		self._OrgnlCdtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgt")
-
-	@OrgnlCdtrAgt.deleter
-	def OrgnlCdtrAgt(self):
-		del self._OrgnlCdtrAgt
-		self._OrgnlCdtrAgt = None
-
-	@property
-	def OrgnlDbtrAcct(self):
-		return self._OrgnlDbtrAcct
-
-	@OrgnlDbtrAcct.setter
-	def OrgnlDbtrAcct(self, value):
-		self._OrgnlDbtrAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAcct")
-
-	@OrgnlDbtrAcct.deleter
-	def OrgnlDbtrAcct(self):
-		del self._OrgnlDbtrAcct
-		self._OrgnlDbtrAcct = None
+	@OrgnlDbtrAgtAcct.deleter
+	def OrgnlDbtrAgtAcct(self):
+		del self._OrgnlDbtrAgtAcct
+		self._OrgnlDbtrAgtAcct = None
 
 	@property
 	def OrgnlRsn(self):
@@ -64,56 +38,17 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 		self._OrgnlRsn = None
 
 	@property
-	def OrgnlDbtrAgt(self):
-		return self._OrgnlDbtrAgt
+	def OrgnlFrqcy(self):
+		return self._OrgnlFrqcy
 
-	@OrgnlDbtrAgt.setter
-	def OrgnlDbtrAgt(self, value):
-		self._OrgnlDbtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgt")
+	@OrgnlFrqcy.setter
+	def OrgnlFrqcy(self, value):
+		self._OrgnlFrqcy = value if type(value) != base_types.auto else self.make_default("OrgnlFrqcy")
 
-	@OrgnlDbtrAgt.deleter
-	def OrgnlDbtrAgt(self):
-		del self._OrgnlDbtrAgt
-		self._OrgnlDbtrAgt = None
-
-	@property
-	def OrgnlMndtId(self):
-		return self._OrgnlMndtId
-
-	@OrgnlMndtId.setter
-	def OrgnlMndtId(self, value):
-		self._OrgnlMndtId = value if type(value) != base_types.auto else self.make_default("OrgnlMndtId")
-
-	@OrgnlMndtId.deleter
-	def OrgnlMndtId(self):
-		del self._OrgnlMndtId
-		self._OrgnlMndtId = None
-
-	@property
-	def OrgnlCdtrAgtAcct(self):
-		return self._OrgnlCdtrAgtAcct
-
-	@OrgnlCdtrAgtAcct.setter
-	def OrgnlCdtrAgtAcct(self, value):
-		self._OrgnlCdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgtAcct")
-
-	@OrgnlCdtrAgtAcct.deleter
-	def OrgnlCdtrAgtAcct(self):
-		del self._OrgnlCdtrAgtAcct
-		self._OrgnlCdtrAgtAcct = None
-
-	@property
-	def OrgnlTrckgDays(self):
-		return self._OrgnlTrckgDays
-
-	@OrgnlTrckgDays.setter
-	def OrgnlTrckgDays(self, value):
-		self._OrgnlTrckgDays = value if type(value) != base_types.auto else self.make_default("OrgnlTrckgDays")
-
-	@OrgnlTrckgDays.deleter
-	def OrgnlTrckgDays(self):
-		del self._OrgnlTrckgDays
-		self._OrgnlTrckgDays = None
+	@OrgnlFrqcy.deleter
+	def OrgnlFrqcy(self):
+		del self._OrgnlFrqcy
+		self._OrgnlFrqcy = None
 
 	@property
 	def OrgnlFnlColltnDt(self):
@@ -129,30 +64,56 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 		self._OrgnlFnlColltnDt = None
 
 	@property
-	def OrgnlDbtr(self):
-		return self._OrgnlDbtr
+	def OrgnlDbtrAgt(self):
+		return self._OrgnlDbtrAgt
 
-	@OrgnlDbtr.setter
-	def OrgnlDbtr(self, value):
-		self._OrgnlDbtr = value if type(value) != base_types.auto else self.make_default("OrgnlDbtr")
+	@OrgnlDbtrAgt.setter
+	def OrgnlDbtrAgt(self, value):
+		self._OrgnlDbtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgt")
 
-	@OrgnlDbtr.deleter
-	def OrgnlDbtr(self):
-		del self._OrgnlDbtr
-		self._OrgnlDbtr = None
+	@OrgnlDbtrAgt.deleter
+	def OrgnlDbtrAgt(self):
+		del self._OrgnlDbtrAgt
+		self._OrgnlDbtrAgt = None
 
 	@property
-	def OrgnlDbtrAgtAcct(self):
-		return self._OrgnlDbtrAgtAcct
+	def OrgnlCdtrAgt(self):
+		return self._OrgnlCdtrAgt
 
-	@OrgnlDbtrAgtAcct.setter
-	def OrgnlDbtrAgtAcct(self, value):
-		self._OrgnlDbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgtAcct")
+	@OrgnlCdtrAgt.setter
+	def OrgnlCdtrAgt(self, value):
+		self._OrgnlCdtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgt")
 
-	@OrgnlDbtrAgtAcct.deleter
-	def OrgnlDbtrAgtAcct(self):
-		del self._OrgnlDbtrAgtAcct
-		self._OrgnlDbtrAgtAcct = None
+	@OrgnlCdtrAgt.deleter
+	def OrgnlCdtrAgt(self):
+		del self._OrgnlCdtrAgt
+		self._OrgnlCdtrAgt = None
+
+	@property
+	def OrgnlCdtrAgtAcct(self):
+		return self._OrgnlCdtrAgtAcct
+
+	@OrgnlCdtrAgtAcct.setter
+	def OrgnlCdtrAgtAcct(self, value):
+		self._OrgnlCdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgtAcct")
+
+	@OrgnlCdtrAgtAcct.deleter
+	def OrgnlCdtrAgtAcct(self):
+		del self._OrgnlCdtrAgtAcct
+		self._OrgnlCdtrAgtAcct = None
+
+	@property
+	def OrgnlDbtrAcct(self):
+		return self._OrgnlDbtrAcct
+
+	@OrgnlDbtrAcct.setter
+	def OrgnlDbtrAcct(self, value):
+		self._OrgnlDbtrAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAcct")
+
+	@OrgnlDbtrAcct.deleter
+	def OrgnlDbtrAcct(self):
+		del self._OrgnlDbtrAcct
+		self._OrgnlDbtrAcct = None
 
 	@property
 	def OrgnlCdtrSchmeId(self):
@@ -167,18 +128,57 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 		del self._OrgnlCdtrSchmeId
 		self._OrgnlCdtrSchmeId = None
 
+	@property
+	def OrgnlTrckgDays(self):
+		return self._OrgnlTrckgDays
+
+	@OrgnlTrckgDays.setter
+	def OrgnlTrckgDays(self, value):
+		self._OrgnlTrckgDays = value if type(value) != base_types.auto else self.make_default("OrgnlTrckgDays")
+
+	@OrgnlTrckgDays.deleter
+	def OrgnlTrckgDays(self):
+		del self._OrgnlTrckgDays
+		self._OrgnlTrckgDays = None
+
+	@property
+	def OrgnlMndtId(self):
+		return self._OrgnlMndtId
+
+	@OrgnlMndtId.setter
+	def OrgnlMndtId(self, value):
+		self._OrgnlMndtId = value if type(value) != base_types.auto else self.make_default("OrgnlMndtId")
+
+	@OrgnlMndtId.deleter
+	def OrgnlMndtId(self):
+		del self._OrgnlMndtId
+		self._OrgnlMndtId = None
+
+	@property
+	def OrgnlDbtr(self):
+		return self._OrgnlDbtr
+
+	@OrgnlDbtr.setter
+	def OrgnlDbtr(self, value):
+		self._OrgnlDbtr = value if type(value) != base_types.auto else self.make_default("OrgnlDbtr")
+
+	@OrgnlDbtr.deleter
+	def OrgnlDbtr(self):
+		del self._OrgnlDbtr
+		self._OrgnlDbtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlFrqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlDbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlRsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlDbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlFnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlDbtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlRsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlFrqcy', type=Frequency36Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlFnlColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlDbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCdtrAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlDbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlCdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlDbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 	))
 

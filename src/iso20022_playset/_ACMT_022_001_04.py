@@ -1,5 +1,5 @@
 from . import base_types
-from .IdentificationModificationAdviceV04 import IdentificationModificationAdviceV04
+from ._IdentificationModificationAdviceV04 import IdentificationModificationAdviceV04
 
 class ACMT_022_001_04():
 

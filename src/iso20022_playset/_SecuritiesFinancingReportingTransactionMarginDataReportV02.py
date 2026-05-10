@@ -1,6 +1,6 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .TradeData39Choice import TradeData39Choice
+from ._TradeData39Choice import TradeData39Choice
+from ._SupplementaryData1 import SupplementaryData1
 
 class SecuritiesFinancingReportingTransactionMarginDataReportV02(base_types._BaseFieldType):
 

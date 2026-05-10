@@ -1,11 +1,11 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .NetDividendRate2 import NetDividendRate2
-from .RateValueType6FormatChoice import RateValueType6FormatChoice
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from ._NetDividendRate2 import NetDividendRate2
+from ._RateValueType6FormatChoice import RateValueType6FormatChoice
 
 class NetDividendRate1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RateTpAmt", "_NotSpcfdRate"]
+	__slots__ = ["_Amt", "_NotSpcfdRate", "_RateTpAmt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -20,19 +20,6 @@ class NetDividendRate1Choice(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def RateTpAmt(self):
-		return self._RateTpAmt
-
-	@RateTpAmt.setter
-	def RateTpAmt(self, value):
-		self._RateTpAmt = value if type(value) != base_types.auto else self.make_default("RateTpAmt")
-
-	@RateTpAmt.deleter
-	def RateTpAmt(self):
-		del self._RateTpAmt
-		self._RateTpAmt = None
-
-	@property
 	def NotSpcfdRate(self):
 		return self._NotSpcfdRate
 
@@ -45,9 +32,22 @@ class NetDividendRate1Choice(base_types._BaseFieldType):
 		del self._NotSpcfdRate
 		self._NotSpcfdRate = None
 
+	@property
+	def RateTpAmt(self):
+		return self._RateTpAmt
+
+	@RateTpAmt.setter
+	def RateTpAmt(self, value):
+		self._RateTpAmt = value if type(value) != base_types.auto else self.make_default("RateTpAmt")
+
+	@RateTpAmt.deleter
+	def RateTpAmt(self):
+		del self._RateTpAmt
+		self._RateTpAmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RateTpAmt', type=NetDividendRate2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType6FormatChoice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateTpAmt', type=NetDividendRate2, min=0, max=1, mutex_group=1, array=False),
 	))
 

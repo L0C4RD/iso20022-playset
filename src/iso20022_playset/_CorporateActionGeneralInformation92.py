@@ -1,23 +1,10 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .CorporateActionNarrative3Choice import CorporateActionNarrative3Choice
+from ._Max35Text import Max35Text
+from ._CorporateActionNarrative3Choice import CorporateActionNarrative3Choice
 
 class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 
-	__slots__ = ["_NrrtvTp", "_OffclCorpActnEvtId", "_CorpActnEvtId"]
-	@property
-	def NrrtvTp(self):
-		return self._NrrtvTp
-
-	@NrrtvTp.setter
-	def NrrtvTp(self, value):
-		self._NrrtvTp = value if type(value) != base_types.auto else self.make_default("NrrtvTp")
-
-	@NrrtvTp.deleter
-	def NrrtvTp(self):
-		del self._NrrtvTp
-		self._NrrtvTp = None
-
+	__slots__ = ["_OffclCorpActnEvtId", "_CorpActnEvtId", "_NrrtvTp"]
 	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
@@ -44,9 +31,22 @@ class CorporateActionGeneralInformation92(base_types._BaseFieldType):
 		del self._CorpActnEvtId
 		self._CorpActnEvtId = None
 
+	@property
+	def NrrtvTp(self):
+		return self._NrrtvTp
+
+	@NrrtvTp.setter
+	def NrrtvTp(self, value):
+		self._NrrtvTp = value if type(value) != base_types.auto else self.make_default("NrrtvTp")
+
+	@NrrtvTp.deleter
+	def NrrtvTp(self):
+		del self._NrrtvTp
+		self._NrrtvTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NrrtvTp', type=CorporateActionNarrative3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrrtvTp', type=CorporateActionNarrative3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

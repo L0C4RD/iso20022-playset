@@ -1,6 +1,6 @@
 from . import base_types
-from .SubBalanceBreakdown1 import SubBalanceBreakdown1
-from .FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
+from ._SubBalanceBreakdown1 import SubBalanceBreakdown1
+from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 
 class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 

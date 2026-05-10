@@ -1,23 +1,23 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .SupplementaryData1 import SupplementaryData1
-from .SecurityIdentification19 import SecurityIdentification19
+from ._Max35Text import Max35Text
+from ._SupplementaryData1 import SupplementaryData1
+from ._SecurityIdentification19 import SecurityIdentification19
 
 class BenchmarkCancellation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TechRcrdId", "_SplmtryData"]
+	__slots__ = ["_SplmtryData", "_TechRcrdId", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TechRcrdId(self):
@@ -33,21 +33,21 @@ class BenchmarkCancellation1(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Id(self):
+		return self._Id
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 	))
 

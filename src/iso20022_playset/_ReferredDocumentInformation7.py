@@ -1,8 +1,8 @@
 from . import base_types
-from .Max35Text import Max35Text
-from .DocumentLineInformation1 import DocumentLineInformation1
-from .ISODate import ISODate
-from .ReferredDocumentType4 import ReferredDocumentType4
+from ._Max35Text import Max35Text
+from ._ReferredDocumentType4 import ReferredDocumentType4
+from ._DocumentLineInformation1 import DocumentLineInformation1
+from ._ISODate import ISODate
 
 class ReferredDocumentInformation7(base_types._BaseFieldType):
 

@@ -1,5 +1,5 @@
 from . import base_types
-from .SecurityQueryV01 import SecurityQueryV01
+from ._SecurityQueryV01 import SecurityQueryV01
 
 class REDA_010_001_01():
 

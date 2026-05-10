@@ -1,5 +1,5 @@
 from . import base_types
-from .DatePeriod4 import DatePeriod4
+from ._DatePeriod4 import DatePeriod4
 
 class CompareDatePeriod2(base_types._BaseFieldType):
 

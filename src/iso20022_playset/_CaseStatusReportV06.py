@@ -1,13 +1,13 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .CaseStatus2 import CaseStatus2
-from .CaseAssignment6 import CaseAssignment6
-from .Case6 import Case6
-from .ReportHeader7 import ReportHeader7
+from ._ReportHeader7 import ReportHeader7
+from ._Case6 import Case6
+from ._CaseAssignment6 import CaseAssignment6
+from ._SupplementaryData1 import SupplementaryData1
+from ._CaseStatus2 import CaseStatus2
 
 class CaseStatusReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SplmtryData", "_NewAssgnmt", "_Sts", "_Case"]
+	__slots__ = ["_Hdr", "_Case", "_Sts", "_NewAssgnmt", "_SplmtryData"]
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -22,30 +22,17 @@ class CaseStatusReportV06(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Case(self):
+		return self._Case
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def NewAssgnmt(self):
-		return self._NewAssgnmt
-
-	@NewAssgnmt.setter
-	def NewAssgnmt(self, value):
-		self._NewAssgnmt = value if type(value) != base_types.auto else self.make_default("NewAssgnmt")
-
-	@NewAssgnmt.deleter
-	def NewAssgnmt(self):
-		del self._NewAssgnmt
-		self._NewAssgnmt = None
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def Sts(self):
@@ -61,23 +48,36 @@ class CaseStatusReportV06(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def Case(self):
-		return self._Case
+	def NewAssgnmt(self):
+		return self._NewAssgnmt
 
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+	@NewAssgnmt.setter
+	def NewAssgnmt(self, value):
+		self._NewAssgnmt = value if type(value) != base_types.auto else self.make_default("NewAssgnmt")
 
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
+	@NewAssgnmt.deleter
+	def NewAssgnmt(self):
+		del self._NewAssgnmt
+		self._NewAssgnmt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NewAssgnmt', type=CaseAssignment6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=CaseStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=CaseStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewAssgnmt', type=CaseAssignment6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

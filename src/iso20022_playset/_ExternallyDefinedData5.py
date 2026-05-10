@@ -1,24 +1,11 @@
 from . import base_types
-from .ContentInformationType39 import ContentInformationType39
-from .Max100KBinary import Max100KBinary
-from .Max1025Text import Max1025Text
+from ._Max100KBinary import Max100KBinary
+from ._ContentInformationType39 import ContentInformationType39
+from ._Max1025Text import Max1025Text
 
 class ExternallyDefinedData5(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Tp", "_PrtctdVal", "_Val"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Tp", "_Val", "_PrtctdVal", "_Id"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,6 +18,19 @@ class ExternallyDefinedData5(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def Val(self):
+		return self._Val
+
+	@Val.setter
+	def Val(self, value):
+		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+
+	@Val.deleter
+	def Val(self):
+		del self._Val
+		self._Val = None
 
 	@property
 	def PrtctdVal(self):
@@ -46,22 +46,22 @@ class ExternallyDefinedData5(base_types._BaseFieldType):
 		self._PrtctdVal = None
 
 	@property
-	def Val(self):
-		return self._Val
+	def Id(self):
+		return self._Id
 
-	@Val.setter
-	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
 
-	@Val.deleter
-	def Val(self):
-		del self._Val
-		self._Val = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max1025Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdVal', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max1025Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

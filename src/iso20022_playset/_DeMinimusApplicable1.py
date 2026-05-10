@@ -1,6 +1,6 @@
 from . import base_types
-from .PercentageRate import PercentageRate
-from .YesNoIndicator import YesNoIndicator
+from ._YesNoIndicator import YesNoIndicator
+from ._PercentageRate import PercentageRate
 
 class DeMinimusApplicable1(base_types._BaseFieldType):
 

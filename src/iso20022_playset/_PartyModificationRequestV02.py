@@ -1,25 +1,12 @@
 from . import base_types
-from .SupplementaryData1 import SupplementaryData1
-from .MessageHeader1 import MessageHeader1
-from .SystemPartyModification3 import SystemPartyModification3
-from .SystemPartyIdentification8 import SystemPartyIdentification8
+from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from ._SupplementaryData1 import SupplementaryData1
+from ._MessageHeader1 import MessageHeader1
+from ._SystemPartyModification3 import SystemPartyModification3
 
 class PartyModificationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_Mod", "_SplmtryData", "_SysPtyId", "_MsgHdr"]
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
+	__slots__ = ["_SplmtryData", "_Mod", "_MsgHdr", "_SysPtyId"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,17 +21,17 @@ class PartyModificationRequestV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def SysPtyId(self):
-		return self._SysPtyId
+	def Mod(self):
+		return self._Mod
 
-	@SysPtyId.setter
-	def SysPtyId(self, value):
-		self._SysPtyId = value if type(value) != base_types.auto else self.make_default("SysPtyId")
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
 
-	@SysPtyId.deleter
-	def SysPtyId(self):
-		del self._SysPtyId
-		self._SysPtyId = None
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
 
 	@property
 	def MsgHdr(self):
@@ -59,10 +46,23 @@ class PartyModificationRequestV02(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def SysPtyId(self):
+		return self._SysPtyId
+
+	@SysPtyId.setter
+	def SysPtyId(self, value):
+		self._SysPtyId = value if type(value) != base_types.auto else self.make_default("SysPtyId")
+
+	@SysPtyId.deleter
+	def SysPtyId(self):
+		del self._SysPtyId
+		self._SysPtyId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mod', type=SystemPartyModification3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SysPtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=SystemPartyModification3, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysPtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

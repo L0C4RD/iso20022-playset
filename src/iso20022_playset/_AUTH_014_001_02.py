@@ -1,5 +1,5 @@
 from . import base_types
-from .MoneyMarketForeignExchangeSwapsStatisticalReportV02 import MoneyMarketForeignExchangeSwapsStatisticalReportV02
+from ._MoneyMarketForeignExchangeSwapsStatisticalReportV02 import MoneyMarketForeignExchangeSwapsStatisticalReportV02
 
 class AUTH_014_001_02():
 

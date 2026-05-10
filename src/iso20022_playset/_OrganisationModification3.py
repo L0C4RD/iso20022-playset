@@ -1,28 +1,15 @@
 from . import base_types
-from .PartyModification3 import PartyModification3
-from .FullLegalNameModification1 import FullLegalNameModification1
-from .ISODate import ISODate
-from .CountryCode import CountryCode
-from .AddressModification3 import AddressModification3
-from .OrganisationIdentification39 import OrganisationIdentification39
-from .TradingNameModification1 import TradingNameModification1
+from ._PartyModification3 import PartyModification3
+from ._AddressModification3 import AddressModification3
+from ._CountryCode import CountryCode
+from ._FullLegalNameModification1 import FullLegalNameModification1
+from ._TradingNameModification1 import TradingNameModification1
+from ._OrganisationIdentification39 import OrganisationIdentification39
+from ._ISODate import ISODate
 
 class OrganisationModification3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfOpr", "_OrgId", "_BllgAdr", "_TrsrMgr", "_MainMndtHldr", "_Sndr", "_RprtvOffcr", "_FullLglNm", "_LglAdr", "_RegnDt", "_OprlAdr", "_LglRprtv", "_BizAdr", "_TradgNm"]
-	@property
-	def CtryOfOpr(self):
-		return self._CtryOfOpr
-
-	@CtryOfOpr.setter
-	def CtryOfOpr(self, value):
-		self._CtryOfOpr = value if type(value) != base_types.auto else self.make_default("CtryOfOpr")
-
-	@CtryOfOpr.deleter
-	def CtryOfOpr(self):
-		del self._CtryOfOpr
-		self._CtryOfOpr = None
-
+	__slots__ = ["_OrgId", "_BllgAdr", "_TrsrMgr", "_CtryOfOpr", "_MainMndtHldr", "_TradgNm", "_Sndr", "_OprlAdr", "_FullLglNm", "_BizAdr", "_LglAdr", "_RprtvOffcr", "_LglRprtv", "_RegnDt"]
 	@property
 	def OrgId(self):
 		return self._OrgId
@@ -63,6 +50,19 @@ class OrganisationModification3(base_types._BaseFieldType):
 		self._TrsrMgr = None
 
 	@property
+	def CtryOfOpr(self):
+		return self._CtryOfOpr
+
+	@CtryOfOpr.setter
+	def CtryOfOpr(self, value):
+		self._CtryOfOpr = value if type(value) != base_types.auto else self.make_default("CtryOfOpr")
+
+	@CtryOfOpr.deleter
+	def CtryOfOpr(self):
+		del self._CtryOfOpr
+		self._CtryOfOpr = None
+
+	@property
 	def MainMndtHldr(self):
 		return self._MainMndtHldr
 
@@ -74,6 +74,19 @@ class OrganisationModification3(base_types._BaseFieldType):
 	def MainMndtHldr(self):
 		del self._MainMndtHldr
 		self._MainMndtHldr = None
+
+	@property
+	def TradgNm(self):
+		return self._TradgNm
+
+	@TradgNm.setter
+	def TradgNm(self, value):
+		self._TradgNm = value if type(value) != base_types.auto else self.make_default("TradgNm")
+
+	@TradgNm.deleter
+	def TradgNm(self):
+		del self._TradgNm
+		self._TradgNm = None
 
 	@property
 	def Sndr(self):
@@ -89,17 +102,17 @@ class OrganisationModification3(base_types._BaseFieldType):
 		self._Sndr = None
 
 	@property
-	def RprtvOffcr(self):
-		return self._RprtvOffcr
+	def OprlAdr(self):
+		return self._OprlAdr
 
-	@RprtvOffcr.setter
-	def RprtvOffcr(self, value):
-		self._RprtvOffcr = value if type(value) != base_types.auto else self.make_default("RprtvOffcr")
+	@OprlAdr.setter
+	def OprlAdr(self, value):
+		self._OprlAdr = value if type(value) != base_types.auto else self.make_default("OprlAdr")
 
-	@RprtvOffcr.deleter
-	def RprtvOffcr(self):
-		del self._RprtvOffcr
-		self._RprtvOffcr = None
+	@OprlAdr.deleter
+	def OprlAdr(self):
+		del self._OprlAdr
+		self._OprlAdr = None
 
 	@property
 	def FullLglNm(self):
@@ -115,6 +128,19 @@ class OrganisationModification3(base_types._BaseFieldType):
 		self._FullLglNm = None
 
 	@property
+	def BizAdr(self):
+		return self._BizAdr
+
+	@BizAdr.setter
+	def BizAdr(self, value):
+		self._BizAdr = value if type(value) != base_types.auto else self.make_default("BizAdr")
+
+	@BizAdr.deleter
+	def BizAdr(self):
+		del self._BizAdr
+		self._BizAdr = None
+
+	@property
 	def LglAdr(self):
 		return self._LglAdr
 
@@ -128,30 +154,17 @@ class OrganisationModification3(base_types._BaseFieldType):
 		self._LglAdr = None
 
 	@property
-	def RegnDt(self):
-		return self._RegnDt
+	def RprtvOffcr(self):
+		return self._RprtvOffcr
 
-	@RegnDt.setter
-	def RegnDt(self, value):
-		self._RegnDt = value if type(value) != base_types.auto else self.make_default("RegnDt")
+	@RprtvOffcr.setter
+	def RprtvOffcr(self, value):
+		self._RprtvOffcr = value if type(value) != base_types.auto else self.make_default("RprtvOffcr")
 
-	@RegnDt.deleter
-	def RegnDt(self):
-		del self._RegnDt
-		self._RegnDt = None
-
-	@property
-	def OprlAdr(self):
-		return self._OprlAdr
-
-	@OprlAdr.setter
-	def OprlAdr(self, value):
-		self._OprlAdr = value if type(value) != base_types.auto else self.make_default("OprlAdr")
-
-	@OprlAdr.deleter
-	def OprlAdr(self):
-		del self._OprlAdr
-		self._OprlAdr = None
+	@RprtvOffcr.deleter
+	def RprtvOffcr(self):
+		del self._RprtvOffcr
+		self._RprtvOffcr = None
 
 	@property
 	def LglRprtv(self):
@@ -167,45 +180,32 @@ class OrganisationModification3(base_types._BaseFieldType):
 		self._LglRprtv = None
 
 	@property
-	def BizAdr(self):
-		return self._BizAdr
+	def RegnDt(self):
+		return self._RegnDt
 
-	@BizAdr.setter
-	def BizAdr(self, value):
-		self._BizAdr = value if type(value) != base_types.auto else self.make_default("BizAdr")
+	@RegnDt.setter
+	def RegnDt(self, value):
+		self._RegnDt = value if type(value) != base_types.auto else self.make_default("RegnDt")
 
-	@BizAdr.deleter
-	def BizAdr(self):
-		del self._BizAdr
-		self._BizAdr = None
-
-	@property
-	def TradgNm(self):
-		return self._TradgNm
-
-	@TradgNm.setter
-	def TradgNm(self, value):
-		self._TradgNm = value if type(value) != base_types.auto else self.make_default("TradgNm")
-
-	@TradgNm.deleter
-	def TradgNm(self):
-		del self._TradgNm
-		self._TradgNm = None
+	@RegnDt.deleter
+	def RegnDt(self):
+		del self._RegnDt
+		self._RegnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfOpr', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BllgAdr', type=AddressModification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrsrMgr', type=PartyModification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfOpr', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MainMndtHldr', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sndr', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RprtvOffcr', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FullLglNm', type=FullLegalNameModification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglAdr', type=AddressModification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OprlAdr', type=AddressModification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRprtv', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BizAdr', type=AddressModification3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgNm', type=TradingNameModification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OprlAdr', type=AddressModification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullLglNm', type=FullLegalNameModification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizAdr', type=AddressModification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglAdr', type=AddressModification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprtvOffcr', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglRprtv', type=PartyModification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

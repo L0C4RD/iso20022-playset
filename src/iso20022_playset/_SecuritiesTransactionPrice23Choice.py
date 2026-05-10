@@ -1,39 +1,13 @@
 from . import base_types
-from .AmountAndDirection106 import AmountAndDirection106
-from .BaseOneRate import BaseOneRate
-from .SecuritiesTransactionPrice5 import SecuritiesTransactionPrice5
-from .PercentageRate import PercentageRate
-from .LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._AmountAndDirection106 import AmountAndDirection106
+from ._BaseOneRate import BaseOneRate
+from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
+from ._SecuritiesTransactionPrice5 import SecuritiesTransactionPrice5
+from ._PercentageRate import PercentageRate
 
 class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_Yld", "_MntryVal", "_Dcml", "_Pctg", "_Othr"]
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
-	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
+	__slots__ = ["_MntryVal", "_Pctg", "_Unit", "_Dcml", "_Yld", "_Othr"]
 	@property
 	def MntryVal(self):
 		return self._MntryVal
@@ -46,19 +20,6 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 	def MntryVal(self):
 		del self._MntryVal
 		self._MntryVal = None
-
-	@property
-	def Dcml(self):
-		return self._Dcml
-
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
-
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
 
 	@property
 	def Pctg(self):
@@ -74,6 +35,45 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
+	@property
+	def Dcml(self):
+		return self._Dcml
+
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
+
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
+
+	@property
+	def Yld(self):
+		return self._Yld
+
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
+
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
+
+	@property
 	def Othr(self):
 		return self._Othr
 
@@ -87,11 +87,11 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection106, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=SecuritiesTransactionPrice5, min=0, max=1, mutex_group=1, array=False),
 	))
 

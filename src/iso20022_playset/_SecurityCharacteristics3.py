@@ -1,12 +1,25 @@
 from . import base_types
-from .ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from .SecurityIdentification19 import SecurityIdentification19
-from .AmountPricePerFinancialInstrumentQuantity9 import AmountPricePerFinancialInstrumentQuantity9
-from .SecuritiesPosition1 import SecuritiesPosition1
+from ._SecuritiesPosition1 import SecuritiesPosition1
+from ._AmountPricePerFinancialInstrumentQuantity9 import AmountPricePerFinancialInstrumentQuantity9
+from ._SecurityIdentification19 import SecurityIdentification19
+from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 
 class SecurityCharacteristics3(base_types._BaseFieldType):
 
-	__slots__ = ["_Pos", "_Id", "_CollVal", "_ValtnPric"]
+	__slots__ = ["_ValtnPric", "_Pos", "_Id", "_CollVal"]
+	@property
+	def ValtnPric(self):
+		return self._ValtnPric
+
+	@ValtnPric.setter
+	def ValtnPric(self, value):
+		self._ValtnPric = value if type(value) != base_types.auto else self.make_default("ValtnPric")
+
+	@ValtnPric.deleter
+	def ValtnPric(self):
+		del self._ValtnPric
+		self._ValtnPric = None
+
 	@property
 	def Pos(self):
 		return self._Pos
@@ -46,23 +59,10 @@ class SecurityCharacteristics3(base_types._BaseFieldType):
 		del self._CollVal
 		self._CollVal = None
 
-	@property
-	def ValtnPric(self):
-		return self._ValtnPric
-
-	@ValtnPric.setter
-	def ValtnPric(self, value):
-		self._ValtnPric = value if type(value) != base_types.auto else self.make_default("ValtnPric")
-
-	@ValtnPric.deleter
-	def ValtnPric(self):
-		del self._ValtnPric
-		self._ValtnPric = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ValtnPric', type=AmountPricePerFinancialInstrumentQuantity9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pos', type=SecuritiesPosition1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnPric', type=AmountPricePerFinancialInstrumentQuantity9, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,77 +1,25 @@
 from . import base_types
-from .NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
-from .CorporateActionRate128 import CorporateActionRate128
-from .CountryCode import CountryCode
-from .Period6Choice import Period6Choice
-from .IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
-from .CorporateActionAmounts60 import CorporateActionAmounts60
-from .FinancialInstrumentAttributes131 import FinancialInstrumentAttributes131
-from .ActiveCurrencyCode import ActiveCurrencyCode
-from .CorporateActionPrice89 import CorporateActionPrice89
-from .CreditDebitCode import CreditDebitCode
-from .GenericIdentification30 import GenericIdentification30
-from .Quantity51Choice import Quantity51Choice
-from .TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
-from .NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
-from .SecurityDate20 import SecurityDate20
-from .SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
-from .FractionDispositionType26Choice import FractionDispositionType26Choice
+from ._GenericIdentification30 import GenericIdentification30
+from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
+from ._Period6Choice import Period6Choice
+from ._FinancialInstrumentAttributes131 import FinancialInstrumentAttributes131
+from ._CorporateActionPrice89 import CorporateActionPrice89
+from ._FractionDispositionType26Choice import FractionDispositionType26Choice
+from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
+from ._Quantity51Choice import Quantity51Choice
+from ._CorporateActionRate128 import CorporateActionRate128
+from ._ActiveCurrencyCode import ActiveCurrencyCode
+from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
+from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
+from ._SecurityDate20 import SecurityDate20
+from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
+from ._CorporateActionAmounts60 import CorporateActionAmounts60
+from ._CountryCode import CountryCode
+from ._CreditDebitCode import CreditDebitCode
 
 class SecuritiesOption113(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfIncmSrc", "_SfkpgPlc", "_NonElgblPrcdsInd", "_IncmTp", "_EntitldQty", "_RateDtls", "_XmptnTp", "_TempFinInstrmInd", "_IssrOfferrTaxbltyInd", "_PricDtls", "_AmtDtls", "_OthrIncmTp", "_TradgPrd", "_NewSctiesIssncInd", "_CdtDbtInd", "_SctyDtls", "_FrctnDspstn", "_DtDtls", "_CcyOptn"]
-	@property
-	def CtryOfIncmSrc(self):
-		return self._CtryOfIncmSrc
-
-	@CtryOfIncmSrc.setter
-	def CtryOfIncmSrc(self, value):
-		self._CtryOfIncmSrc = value if type(value) != base_types.auto else self.make_default("CtryOfIncmSrc")
-
-	@CtryOfIncmSrc.deleter
-	def CtryOfIncmSrc(self):
-		del self._CtryOfIncmSrc
-		self._CtryOfIncmSrc = None
-
-	@property
-	def SfkpgPlc(self):
-		return self._SfkpgPlc
-
-	@SfkpgPlc.setter
-	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
-
-	@SfkpgPlc.deleter
-	def SfkpgPlc(self):
-		del self._SfkpgPlc
-		self._SfkpgPlc = None
-
-	@property
-	def NonElgblPrcdsInd(self):
-		return self._NonElgblPrcdsInd
-
-	@NonElgblPrcdsInd.setter
-	def NonElgblPrcdsInd(self, value):
-		self._NonElgblPrcdsInd = value if type(value) != base_types.auto else self.make_default("NonElgblPrcdsInd")
-
-	@NonElgblPrcdsInd.deleter
-	def NonElgblPrcdsInd(self):
-		del self._NonElgblPrcdsInd
-		self._NonElgblPrcdsInd = None
-
-	@property
-	def IncmTp(self):
-		return self._IncmTp
-
-	@IncmTp.setter
-	def IncmTp(self, value):
-		self._IncmTp = value if type(value) != base_types.auto else self.make_default("IncmTp")
-
-	@IncmTp.deleter
-	def IncmTp(self):
-		del self._IncmTp
-		self._IncmTp = None
-
+	__slots__ = ["_EntitldQty", "_NewSctiesIssncInd", "_CcyOptn", "_OthrIncmTp", "_PricDtls", "_IncmTp", "_XmptnTp", "_CdtDbtInd", "_SctyDtls", "_RateDtls", "_SfkpgPlc", "_TempFinInstrmInd", "_CtryOfIncmSrc", "_AmtDtls", "_DtDtls", "_TradgPrd", "_NonElgblPrcdsInd", "_IssrOfferrTaxbltyInd", "_FrctnDspstn"]
 	@property
 	def EntitldQty(self):
 		return self._EntitldQty
@@ -86,82 +34,30 @@ class SecuritiesOption113(base_types._BaseFieldType):
 		self._EntitldQty = None
 
 	@property
-	def RateDtls(self):
-		return self._RateDtls
+	def NewSctiesIssncInd(self):
+		return self._NewSctiesIssncInd
 
-	@RateDtls.setter
-	def RateDtls(self, value):
-		self._RateDtls = value if type(value) != base_types.auto else self.make_default("RateDtls")
+	@NewSctiesIssncInd.setter
+	def NewSctiesIssncInd(self, value):
+		self._NewSctiesIssncInd = value if type(value) != base_types.auto else self.make_default("NewSctiesIssncInd")
 
-	@RateDtls.deleter
-	def RateDtls(self):
-		del self._RateDtls
-		self._RateDtls = None
-
-	@property
-	def XmptnTp(self):
-		return self._XmptnTp
-
-	@XmptnTp.setter
-	def XmptnTp(self, value):
-		self._XmptnTp = value if type(value) != base_types.auto else self.make_default("XmptnTp")
-
-	@XmptnTp.deleter
-	def XmptnTp(self):
-		del self._XmptnTp
-		self._XmptnTp = None
+	@NewSctiesIssncInd.deleter
+	def NewSctiesIssncInd(self):
+		del self._NewSctiesIssncInd
+		self._NewSctiesIssncInd = None
 
 	@property
-	def TempFinInstrmInd(self):
-		return self._TempFinInstrmInd
+	def CcyOptn(self):
+		return self._CcyOptn
 
-	@TempFinInstrmInd.setter
-	def TempFinInstrmInd(self, value):
-		self._TempFinInstrmInd = value if type(value) != base_types.auto else self.make_default("TempFinInstrmInd")
+	@CcyOptn.setter
+	def CcyOptn(self, value):
+		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
 
-	@TempFinInstrmInd.deleter
-	def TempFinInstrmInd(self):
-		del self._TempFinInstrmInd
-		self._TempFinInstrmInd = None
-
-	@property
-	def IssrOfferrTaxbltyInd(self):
-		return self._IssrOfferrTaxbltyInd
-
-	@IssrOfferrTaxbltyInd.setter
-	def IssrOfferrTaxbltyInd(self, value):
-		self._IssrOfferrTaxbltyInd = value if type(value) != base_types.auto else self.make_default("IssrOfferrTaxbltyInd")
-
-	@IssrOfferrTaxbltyInd.deleter
-	def IssrOfferrTaxbltyInd(self):
-		del self._IssrOfferrTaxbltyInd
-		self._IssrOfferrTaxbltyInd = None
-
-	@property
-	def PricDtls(self):
-		return self._PricDtls
-
-	@PricDtls.setter
-	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
-
-	@PricDtls.deleter
-	def PricDtls(self):
-		del self._PricDtls
-		self._PricDtls = None
-
-	@property
-	def AmtDtls(self):
-		return self._AmtDtls
-
-	@AmtDtls.setter
-	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
-
-	@AmtDtls.deleter
-	def AmtDtls(self):
-		del self._AmtDtls
-		self._AmtDtls = None
+	@CcyOptn.deleter
+	def CcyOptn(self):
+		del self._CcyOptn
+		self._CcyOptn = None
 
 	@property
 	def OthrIncmTp(self):
@@ -177,30 +73,43 @@ class SecuritiesOption113(base_types._BaseFieldType):
 		self._OthrIncmTp = None
 
 	@property
-	def TradgPrd(self):
-		return self._TradgPrd
+	def PricDtls(self):
+		return self._PricDtls
 
-	@TradgPrd.setter
-	def TradgPrd(self, value):
-		self._TradgPrd = value if type(value) != base_types.auto else self.make_default("TradgPrd")
+	@PricDtls.setter
+	def PricDtls(self, value):
+		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
 
-	@TradgPrd.deleter
-	def TradgPrd(self):
-		del self._TradgPrd
-		self._TradgPrd = None
+	@PricDtls.deleter
+	def PricDtls(self):
+		del self._PricDtls
+		self._PricDtls = None
 
 	@property
-	def NewSctiesIssncInd(self):
-		return self._NewSctiesIssncInd
+	def IncmTp(self):
+		return self._IncmTp
 
-	@NewSctiesIssncInd.setter
-	def NewSctiesIssncInd(self, value):
-		self._NewSctiesIssncInd = value if type(value) != base_types.auto else self.make_default("NewSctiesIssncInd")
+	@IncmTp.setter
+	def IncmTp(self, value):
+		self._IncmTp = value if type(value) != base_types.auto else self.make_default("IncmTp")
 
-	@NewSctiesIssncInd.deleter
-	def NewSctiesIssncInd(self):
-		del self._NewSctiesIssncInd
-		self._NewSctiesIssncInd = None
+	@IncmTp.deleter
+	def IncmTp(self):
+		del self._IncmTp
+		self._IncmTp = None
+
+	@property
+	def XmptnTp(self):
+		return self._XmptnTp
+
+	@XmptnTp.setter
+	def XmptnTp(self, value):
+		self._XmptnTp = value if type(value) != base_types.auto else self.make_default("XmptnTp")
+
+	@XmptnTp.deleter
+	def XmptnTp(self):
+		del self._XmptnTp
+		self._XmptnTp = None
 
 	@property
 	def CdtDbtInd(self):
@@ -229,17 +138,69 @@ class SecuritiesOption113(base_types._BaseFieldType):
 		self._SctyDtls = None
 
 	@property
-	def FrctnDspstn(self):
-		return self._FrctnDspstn
+	def RateDtls(self):
+		return self._RateDtls
 
-	@FrctnDspstn.setter
-	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+	@RateDtls.setter
+	def RateDtls(self, value):
+		self._RateDtls = value if type(value) != base_types.auto else self.make_default("RateDtls")
 
-	@FrctnDspstn.deleter
-	def FrctnDspstn(self):
-		del self._FrctnDspstn
-		self._FrctnDspstn = None
+	@RateDtls.deleter
+	def RateDtls(self):
+		del self._RateDtls
+		self._RateDtls = None
+
+	@property
+	def SfkpgPlc(self):
+		return self._SfkpgPlc
+
+	@SfkpgPlc.setter
+	def SfkpgPlc(self, value):
+		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+
+	@SfkpgPlc.deleter
+	def SfkpgPlc(self):
+		del self._SfkpgPlc
+		self._SfkpgPlc = None
+
+	@property
+	def TempFinInstrmInd(self):
+		return self._TempFinInstrmInd
+
+	@TempFinInstrmInd.setter
+	def TempFinInstrmInd(self, value):
+		self._TempFinInstrmInd = value if type(value) != base_types.auto else self.make_default("TempFinInstrmInd")
+
+	@TempFinInstrmInd.deleter
+	def TempFinInstrmInd(self):
+		del self._TempFinInstrmInd
+		self._TempFinInstrmInd = None
+
+	@property
+	def CtryOfIncmSrc(self):
+		return self._CtryOfIncmSrc
+
+	@CtryOfIncmSrc.setter
+	def CtryOfIncmSrc(self, value):
+		self._CtryOfIncmSrc = value if type(value) != base_types.auto else self.make_default("CtryOfIncmSrc")
+
+	@CtryOfIncmSrc.deleter
+	def CtryOfIncmSrc(self):
+		del self._CtryOfIncmSrc
+		self._CtryOfIncmSrc = None
+
+	@property
+	def AmtDtls(self):
+		return self._AmtDtls
+
+	@AmtDtls.setter
+	def AmtDtls(self, value):
+		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+
+	@AmtDtls.deleter
+	def AmtDtls(self):
+		del self._AmtDtls
+		self._AmtDtls = None
 
 	@property
 	def DtDtls(self):
@@ -255,37 +216,76 @@ class SecuritiesOption113(base_types._BaseFieldType):
 		self._DtDtls = None
 
 	@property
-	def CcyOptn(self):
-		return self._CcyOptn
+	def TradgPrd(self):
+		return self._TradgPrd
 
-	@CcyOptn.setter
-	def CcyOptn(self, value):
-		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
+	@TradgPrd.setter
+	def TradgPrd(self, value):
+		self._TradgPrd = value if type(value) != base_types.auto else self.make_default("TradgPrd")
 
-	@CcyOptn.deleter
-	def CcyOptn(self):
-		del self._CcyOptn
-		self._CcyOptn = None
+	@TradgPrd.deleter
+	def TradgPrd(self):
+		del self._TradgPrd
+		self._TradgPrd = None
+
+	@property
+	def NonElgblPrcdsInd(self):
+		return self._NonElgblPrcdsInd
+
+	@NonElgblPrcdsInd.setter
+	def NonElgblPrcdsInd(self, value):
+		self._NonElgblPrcdsInd = value if type(value) != base_types.auto else self.make_default("NonElgblPrcdsInd")
+
+	@NonElgblPrcdsInd.deleter
+	def NonElgblPrcdsInd(self):
+		del self._NonElgblPrcdsInd
+		self._NonElgblPrcdsInd = None
+
+	@property
+	def IssrOfferrTaxbltyInd(self):
+		return self._IssrOfferrTaxbltyInd
+
+	@IssrOfferrTaxbltyInd.setter
+	def IssrOfferrTaxbltyInd(self, value):
+		self._IssrOfferrTaxbltyInd = value if type(value) != base_types.auto else self.make_default("IssrOfferrTaxbltyInd")
+
+	@IssrOfferrTaxbltyInd.deleter
+	def IssrOfferrTaxbltyInd(self):
+		del self._IssrOfferrTaxbltyInd
+		self._IssrOfferrTaxbltyInd = None
+
+	@property
+	def FrctnDspstn(self):
+		return self._FrctnDspstn
+
+	@FrctnDspstn.setter
+	def FrctnDspstn(self, value):
+		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+
+	@FrctnDspstn.deleter
+	def FrctnDspstn(self):
+		del self._FrctnDspstn
+		self._FrctnDspstn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfIncmSrc', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonElgblPrcdsInd', type=NonEligibleProceedsIndicator5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EntitldQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RateDtls', type=CorporateActionRate128, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TempFinInstrmInd', type=TemporaryFinancialInstrumentIndicator3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrOfferrTaxbltyInd', type=IssuerOfferorTaxabilityIndicator2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice89, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts60, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrIncmTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradgPrd', type=Period6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewSctiesIssncInd', type=NewSecuritiesIssuanceType5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrIncmTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PricDtls', type=CorporateActionPrice89, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyDtls', type=FinancialInstrumentAttributes131, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType26Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RateDtls', type=CorporateActionRate128, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TempFinInstrmInd', type=TemporaryFinancialInstrumentIndicator3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfIncmSrc', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts60, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtDtls', type=SecurityDate20, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPrd', type=Period6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonElgblPrcdsInd', type=NonEligibleProceedsIndicator5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrOfferrTaxbltyInd', type=IssuerOfferorTaxabilityIndicator2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrctnDspstn', type=FractionDispositionType26Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 
