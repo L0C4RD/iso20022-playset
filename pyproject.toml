@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 name = "iso20022-playset"
 version = "0.1.0"
 authors = [
-  { name="Ed Wilson-Shah", email="L0C4RD@gmail.com" },
+  { name="Ed Wilson-Shah", email="L0C4RD@users.noreply.github.com" },
 ]
 description = "Easy, intuitive module for ISO20022 message experimentation."
 readme = "README.md"
