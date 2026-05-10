@@ -1,0 +1,25 @@
+import base_types
+import ATMDeviceReportV04
+
+class CAAM_001_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ATMDvcRpt"]
+		@property
+		def ATMDvcRpt(self):
+			return self._ATMDvcRpt
+
+		@ATMDvcRpt.setter
+		def ATMDvcRpt(self, value):
+			self._ATMDvcRpt = value if type(value) != auto else self.make_default("ATMDvcRpt")
+
+		@ATMDvcRpt.deleter
+		def ATMDvcRpt(self):
+			del self._ATMDvcRpt
+			self._ATMDvcRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ATMDvcRpt', type=ATMDeviceReportV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

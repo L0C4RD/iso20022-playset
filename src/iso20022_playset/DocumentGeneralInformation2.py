@@ -1,0 +1,98 @@
+import base_types
+import Max35Text
+import ExternalDocumentType1Code
+import Max256Text
+import BinaryFile1
+import ISODate
+import Max140Text
+
+class DocumentGeneralInformation2(base_types._BaseFieldType):
+
+	__slots__ = ["_DocTp", "_URL", "_DocNb", "_IsseDt", "_SndrRcvrSeqId", "_AttchdBinryFile"]
+	@property
+	def DocTp(self):
+		return self._DocTp
+
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
+
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
+
+	@property
+	def URL(self):
+		return self._URL
+
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
+
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
+
+	@property
+	def DocNb(self):
+		return self._DocNb
+
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
+
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def SndrRcvrSeqId(self):
+		return self._SndrRcvrSeqId
+
+	@SndrRcvrSeqId.setter
+	def SndrRcvrSeqId(self, value):
+		self._SndrRcvrSeqId = value if type(value) != auto else self.make_default("SndrRcvrSeqId")
+
+	@SndrRcvrSeqId.deleter
+	def SndrRcvrSeqId(self):
+		del self._SndrRcvrSeqId
+		self._SndrRcvrSeqId = None
+
+	@property
+	def AttchdBinryFile(self):
+		return self._AttchdBinryFile
+
+	@AttchdBinryFile.setter
+	def AttchdBinryFile(self, value):
+		self._AttchdBinryFile = value if type(value) != auto else self.make_default("AttchdBinryFile")
+
+	@AttchdBinryFile.deleter
+	def AttchdBinryFile(self):
+		del self._AttchdBinryFile
+		self._AttchdBinryFile = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdBinryFile', type=BinaryFile1, min=0, max=None, mutex_group=None, array=True),
+	))
+

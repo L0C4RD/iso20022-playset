@@ -1,0 +1,25 @@
+import base_types
+import FullPushThroughReportV05
+
+class TSMT_018_001_05():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_FullPushThrghRpt"]
+		@property
+		def FullPushThrghRpt(self):
+			return self._FullPushThrghRpt
+
+		@FullPushThrghRpt.setter
+		def FullPushThrghRpt(self, value):
+			self._FullPushThrghRpt = value if type(value) != auto else self.make_default("FullPushThrghRpt")
+
+		@FullPushThrghRpt.deleter
+		def FullPushThrghRpt(self):
+			del self._FullPushThrghRpt
+			self._FullPushThrghRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='FullPushThrghRpt', type=FullPushThroughReportV05, min=1, max=1, mutex_group=None, array=False),
+		))
+

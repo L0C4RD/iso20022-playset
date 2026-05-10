@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "iso20022-playset"
+version = "0.1.0"
+authors = [
+  { name="Ed Wilson-Shah", email="L0C4RD@gmail.com" },
+]
+description = "Easy, intuitive module for ISO20022 message experimentation."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-only"
+license-files = ["LICENCE.md"]
+
+[project.urls]
+Homepage = "https://github.com/L0C4RD/iso20022-playset"
+Issues = "https://github.com/L0C4RD/iso20022-playset/issues"

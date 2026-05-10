@@ -1,0 +1,25 @@
+import base_types
+import NetworkManagementInitiationV04
+
+class CANM_001_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_NtwkMgmtInitn"]
+		@property
+		def NtwkMgmtInitn(self):
+			return self._NtwkMgmtInitn
+
+		@NtwkMgmtInitn.setter
+		def NtwkMgmtInitn(self, value):
+			self._NtwkMgmtInitn = value if type(value) != auto else self.make_default("NtwkMgmtInitn")
+
+		@NtwkMgmtInitn.deleter
+		def NtwkMgmtInitn(self):
+			del self._NtwkMgmtInitn
+			self._NtwkMgmtInitn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='NtwkMgmtInitn', type=NetworkManagementInitiationV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

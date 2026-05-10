@@ -1,0 +1,43 @@
+import base_types
+
+class ExposureType11Code(base_types._BaseDataType_String):
+
+	_values = {
+		"BFWD",
+		"PAYM",
+		"CBCO",
+		"COMM",
+		"CRDS",
+		"CRTL",
+		"CRSP",
+		"CCIR",
+		"CRPR",
+		"EQPT",
+		"EQUS",
+		"EXTD",
+		"EXPT",
+		"FIXI",
+		"FORX",
+		"FORW",
+		"FUTR",
+		"OPTN",
+		"LIQU",
+		"OTCD",
+		"RVPO",
+		"SLOA",
+		"SBSC",
+		"SCRP",
+		"SLEB",
+		"SCIR",
+		"SCIE",
+		"SWPT",
+		"TBAS",
+		"TRCP",
+		"UDMS",
+		"CCPC",
+		"EQUI",
+		"TRBD",
+		"REPO",
+		"SHSL",
+	}
+

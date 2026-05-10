@@ -1,0 +1,43 @@
+import base_types
+
+class NonEquitySubClassSegmentationCriteria1Code(base_types._BaseDataType_String):
+
+	_values = {
+		"ASCL",
+		"BSPD",
+		"CNC1",
+		"CNC2",
+		"NCCO",
+		"CTYP",
+		"NCCR",
+		"DCSL",
+		"DTYP",
+		"EQUT",
+		"FNC1",
+		"FNC2",
+		"FSPD",
+		"IIND",
+		"IRTC",
+		"INC1",
+		"INC2",
+		"ISIN",
+		"TTMO",
+		"PRMT",
+		"SSRF",
+		"ISPT",
+		"SRTC",
+		"SACL",
+		"SBPD",
+		"TTMS",
+		"NCSW",
+		"TTMB",
+		"IOUB",
+		"TOUB",
+		"UISC",
+		"UIDX",
+		"UINS",
+		"UIRT",
+		"REOU",
+		"UTYP",
+	}
+

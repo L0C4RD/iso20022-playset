@@ -1,0 +1,25 @@
+import base_types
+import ForeignExchangeTradeConfirmationRequestAmendmentRequestV02
+
+class FXTR_035_001_02():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_FXTradConfReqAmdmntReq"]
+		@property
+		def FXTradConfReqAmdmntReq(self):
+			return self._FXTradConfReqAmdmntReq
+
+		@FXTradConfReqAmdmntReq.setter
+		def FXTradConfReqAmdmntReq(self, value):
+			self._FXTradConfReqAmdmntReq = value if type(value) != auto else self.make_default("FXTradConfReqAmdmntReq")
+
+		@FXTradConfReqAmdmntReq.deleter
+		def FXTradConfReqAmdmntReq(self):
+			del self._FXTradConfReqAmdmntReq
+			self._FXTradConfReqAmdmntReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='FXTradConfReqAmdmntReq', type=ForeignExchangeTradeConfirmationRequestAmendmentRequestV02, min=1, max=1, mutex_group=None, array=False),
+		))
+

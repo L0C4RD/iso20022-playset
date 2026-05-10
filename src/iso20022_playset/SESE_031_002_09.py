@@ -1,0 +1,25 @@
+import base_types
+import SecuritiesSettlementConditionModificationStatusAdvice002V09
+
+class SESE_031_002_09():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_SctiesSttlmCondModStsAdvc"]
+		@property
+		def SctiesSttlmCondModStsAdvc(self):
+			return self._SctiesSttlmCondModStsAdvc
+
+		@SctiesSttlmCondModStsAdvc.setter
+		def SctiesSttlmCondModStsAdvc(self, value):
+			self._SctiesSttlmCondModStsAdvc = value if type(value) != auto else self.make_default("SctiesSttlmCondModStsAdvc")
+
+		@SctiesSttlmCondModStsAdvc.deleter
+		def SctiesSttlmCondModStsAdvc(self):
+			del self._SctiesSttlmCondModStsAdvc
+			self._SctiesSttlmCondModStsAdvc = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='SctiesSttlmCondModStsAdvc', type=SecuritiesSettlementConditionModificationStatusAdvice002V09, min=1, max=1, mutex_group=None, array=False),
+		))
+

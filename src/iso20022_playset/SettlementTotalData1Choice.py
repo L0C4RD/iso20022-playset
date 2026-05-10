@@ -1,0 +1,38 @@
+import base_types
+import ReportPeriodActivity1Code
+import SettlementTotalData1
+
+class SettlementTotalData1Choice(base_types._BaseFieldType):
+
+	__slots__ = ["_Data", "_DataSetActn"]
+	@property
+	def Data(self):
+		return self._Data
+
+	@Data.setter
+	def Data(self, value):
+		self._Data = value if type(value) != auto else self.make_default("Data")
+
+	@Data.deleter
+	def Data(self):
+		del self._Data
+		self._Data = None
+
+	@property
+	def DataSetActn(self):
+		return self._DataSetActn
+
+	@DataSetActn.setter
+	def DataSetActn(self, value):
+		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+
+	@DataSetActn.deleter
+	def DataSetActn(self):
+		del self._DataSetActn
+		self._DataSetActn = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Data', type=SettlementTotalData1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
+	))
+

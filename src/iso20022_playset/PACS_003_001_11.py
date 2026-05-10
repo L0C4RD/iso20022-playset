@@ -1,0 +1,25 @@
+import base_types
+import FIToFICustomerDirectDebitV11
+
+class PACS_003_001_11():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_FIToFICstmrDrctDbt"]
+		@property
+		def FIToFICstmrDrctDbt(self):
+			return self._FIToFICstmrDrctDbt
+
+		@FIToFICstmrDrctDbt.setter
+		def FIToFICstmrDrctDbt(self, value):
+			self._FIToFICstmrDrctDbt = value if type(value) != auto else self.make_default("FIToFICstmrDrctDbt")
+
+		@FIToFICstmrDrctDbt.deleter
+		def FIToFICstmrDrctDbt(self):
+			del self._FIToFICstmrDrctDbt
+			self._FIToFICstmrDrctDbt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='FIToFICstmrDrctDbt', type=FIToFICustomerDirectDebitV11, min=1, max=1, mutex_group=None, array=False),
+		))
+

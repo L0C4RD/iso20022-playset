@@ -1,0 +1,25 @@
+import base_types
+import AcceptorReconciliationResponseV12
+
+class CAAA_010_001_12():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AccptrRcncltnRspn"]
+		@property
+		def AccptrRcncltnRspn(self):
+			return self._AccptrRcncltnRspn
+
+		@AccptrRcncltnRspn.setter
+		def AccptrRcncltnRspn(self, value):
+			self._AccptrRcncltnRspn = value if type(value) != auto else self.make_default("AccptrRcncltnRspn")
+
+		@AccptrRcncltnRspn.deleter
+		def AccptrRcncltnRspn(self):
+			del self._AccptrRcncltnRspn
+			self._AccptrRcncltnRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AccptrRcncltnRspn', type=AcceptorReconciliationResponseV12, min=1, max=1, mutex_group=None, array=False),
+		))
+

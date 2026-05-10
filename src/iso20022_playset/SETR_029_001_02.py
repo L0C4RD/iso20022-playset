@@ -1,0 +1,25 @@
+import base_types
+import SecuritiesTradeConfirmationCancellationV02
+
+class SETR_029_001_02():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_SctiesTradConfCxl"]
+		@property
+		def SctiesTradConfCxl(self):
+			return self._SctiesTradConfCxl
+
+		@SctiesTradConfCxl.setter
+		def SctiesTradConfCxl(self, value):
+			self._SctiesTradConfCxl = value if type(value) != auto else self.make_default("SctiesTradConfCxl")
+
+		@SctiesTradConfCxl.deleter
+		def SctiesTradConfCxl(self):
+			del self._SctiesTradConfCxl
+			self._SctiesTradConfCxl = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='SctiesTradConfCxl', type=SecuritiesTradeConfirmationCancellationV02, min=1, max=1, mutex_group=None, array=False),
+		))
+

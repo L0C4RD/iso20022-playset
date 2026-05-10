@@ -1,0 +1,25 @@
+import base_types
+import AccountClosingAmendmentRequestV04
+
+class ACMT_020_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AcctClsgAmdmntReq"]
+		@property
+		def AcctClsgAmdmntReq(self):
+			return self._AcctClsgAmdmntReq
+
+		@AcctClsgAmdmntReq.setter
+		def AcctClsgAmdmntReq(self, value):
+			self._AcctClsgAmdmntReq = value if type(value) != auto else self.make_default("AcctClsgAmdmntReq")
+
+		@AcctClsgAmdmntReq.deleter
+		def AcctClsgAmdmntReq(self):
+			del self._AcctClsgAmdmntReq
+			self._AcctClsgAmdmntReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AcctClsgAmdmntReq', type=AccountClosingAmendmentRequestV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

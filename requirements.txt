@@ -1,2 +1,2 @@
-hypothesis
-defusedxml
+hypothesis >= 6.98.15
+defusedxml >= 0.7.1

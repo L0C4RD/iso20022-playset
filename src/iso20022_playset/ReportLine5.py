@@ -1,0 +1,53 @@
+import base_types
+import DocumentIdentification7
+import Adjustment6
+import CurrencyAndAmount
+
+class ReportLine5(base_types._BaseFieldType):
+
+	__slots__ = ["_NetAmt", "_PurchsOrdrRef", "_Adjstmnt"]
+	@property
+	def NetAmt(self):
+		return self._NetAmt
+
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
+
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
+
+	@property
+	def PurchsOrdrRef(self):
+		return self._PurchsOrdrRef
+
+	@PurchsOrdrRef.setter
+	def PurchsOrdrRef(self, value):
+		self._PurchsOrdrRef = value if type(value) != auto else self.make_default("PurchsOrdrRef")
+
+	@PurchsOrdrRef.deleter
+	def PurchsOrdrRef(self):
+		del self._PurchsOrdrRef
+		self._PurchsOrdrRef = None
+
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
+	))
+

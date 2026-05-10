@@ -1,0 +1,25 @@
+import base_types
+import RequestToModifyPaymentV09
+
+class CAMT_087_001_09():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ReqToModfyPmt"]
+		@property
+		def ReqToModfyPmt(self):
+			return self._ReqToModfyPmt
+
+		@ReqToModfyPmt.setter
+		def ReqToModfyPmt(self, value):
+			self._ReqToModfyPmt = value if type(value) != auto else self.make_default("ReqToModfyPmt")
+
+		@ReqToModfyPmt.deleter
+		def ReqToModfyPmt(self):
+			del self._ReqToModfyPmt
+			self._ReqToModfyPmt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ReqToModfyPmt', type=RequestToModifyPaymentV09, min=1, max=1, mutex_group=None, array=False),
+		))
+

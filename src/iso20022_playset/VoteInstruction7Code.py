@@ -1,0 +1,18 @@
+import base_types
+
+class VoteInstruction7Code(base_types._BaseDataType_String):
+
+	_values = {
+		"ABST",
+		"CAGS",
+		"AMGT",
+		"BLNK",
+		"CFOR",
+		"NOAC",
+		"ONEY",
+		"THRY",
+		"TWOY",
+		"WTHH",
+		"WMGT",
+	}
+

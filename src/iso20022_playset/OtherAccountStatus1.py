@@ -1,0 +1,37 @@
+import base_types
+import GenericIdentification36
+
+class OtherAccountStatus1(base_types._BaseFieldType):
+
+	__slots__ = ["_Sts", "_Rsn"]
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Sts', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
+	))
+

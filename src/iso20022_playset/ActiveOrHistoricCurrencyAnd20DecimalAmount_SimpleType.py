@@ -1,0 +1,8 @@
+import base_types
+
+class ActiveOrHistoricCurrencyAnd20DecimalAmount_SimpleType(base_types._BaseDataType_Decimal):
+
+	_max_totaldigits = 25
+	_max_fractiondigits = 20
+	_min_inclusive = 0
+

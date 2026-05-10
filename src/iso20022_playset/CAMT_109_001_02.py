@@ -1,0 +1,25 @@
+import base_types
+import ChequeCancellationOrStopReportV02
+
+class CAMT_109_001_02():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ChqCxlOrStopRpt"]
+		@property
+		def ChqCxlOrStopRpt(self):
+			return self._ChqCxlOrStopRpt
+
+		@ChqCxlOrStopRpt.setter
+		def ChqCxlOrStopRpt(self, value):
+			self._ChqCxlOrStopRpt = value if type(value) != auto else self.make_default("ChqCxlOrStopRpt")
+
+		@ChqCxlOrStopRpt.deleter
+		def ChqCxlOrStopRpt(self):
+			del self._ChqCxlOrStopRpt
+			self._ChqCxlOrStopRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ChqCxlOrStopRpt', type=ChequeCancellationOrStopReportV02, min=1, max=1, mutex_group=None, array=False),
+		))
+

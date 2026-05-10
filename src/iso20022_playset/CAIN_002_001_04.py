@@ -1,0 +1,25 @@
+import base_types
+import AuthorisationResponseV04
+
+class CAIN_002_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AuthstnRspn"]
+		@property
+		def AuthstnRspn(self):
+			return self._AuthstnRspn
+
+		@AuthstnRspn.setter
+		def AuthstnRspn(self, value):
+			self._AuthstnRspn = value if type(value) != auto else self.make_default("AuthstnRspn")
+
+		@AuthstnRspn.deleter
+		def AuthstnRspn(self):
+			del self._AuthstnRspn
+			self._AuthstnRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AuthstnRspn', type=AuthorisationResponseV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

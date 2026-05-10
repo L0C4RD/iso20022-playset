@@ -781,7 +781,6 @@ The **ISO20022 Playset** supports the following message classes:
 * colr.022.001.01
 * colr.023.001.01
 * colr.024.001.01
-* reda.074.001.01
 
 </details>
 
@@ -907,6 +906,7 @@ The **ISO20022 Playset** supports the following message classes:
 * reda.071.001.02
 * reda.072.001.02
 * reda.073.001.02
+* reda.074.001.01
 
 </details>
 
@@ -1110,13 +1110,13 @@ The **ISO20022 Playset** supports the following message classes:
 * sese.040.002.04
 * sese.041.001.02
 * sese.042.001.02
+* sese.043.001.01
 
 </details>
 
 <details>
 <summary><b>SETR</b> (Securities Trade)</summary>
 
-* sese.043.001.01
 * setr.001.001.04
 * setr.002.001.04
 * setr.003.001.04

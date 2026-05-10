@@ -1,0 +1,25 @@
+import base_types
+import NotificationToReceiveV08
+
+class CAMT_057_001_08():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_NtfctnToRcv"]
+		@property
+		def NtfctnToRcv(self):
+			return self._NtfctnToRcv
+
+		@NtfctnToRcv.setter
+		def NtfctnToRcv(self, value):
+			self._NtfctnToRcv = value if type(value) != auto else self.make_default("NtfctnToRcv")
+
+		@NtfctnToRcv.deleter
+		def NtfctnToRcv(self):
+			del self._NtfctnToRcv
+			self._NtfctnToRcv = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='NtfctnToRcv', type=NotificationToReceiveV08, min=1, max=1, mutex_group=None, array=False),
+		))
+

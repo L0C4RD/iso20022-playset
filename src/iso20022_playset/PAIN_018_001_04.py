@@ -1,0 +1,25 @@
+import base_types
+import MandateSuspensionRequestV04
+
+class PAIN_018_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_MndtSspnsnReq"]
+		@property
+		def MndtSspnsnReq(self):
+			return self._MndtSspnsnReq
+
+		@MndtSspnsnReq.setter
+		def MndtSspnsnReq(self, value):
+			self._MndtSspnsnReq = value if type(value) != auto else self.make_default("MndtSspnsnReq")
+
+		@MndtSspnsnReq.deleter
+		def MndtSspnsnReq(self):
+			del self._MndtSspnsnReq
+			self._MndtSspnsnReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='MndtSspnsnReq', type=MandateSuspensionRequestV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

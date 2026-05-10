@@ -1,0 +1,38 @@
+import base_types
+import Quantity54Choice
+import CancelledStatus17Choice
+
+class CancelledStatus6(base_types._BaseFieldType):
+
+	__slots__ = ["_CxlRsn", "_CancQty"]
+	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
+	def CancQty(self):
+		return self._CancQty
+
+	@CancQty.setter
+	def CancQty(self, value):
+		self._CancQty = value if type(value) != auto else self.make_default("CancQty")
+
+	@CancQty.deleter
+	def CancQty(self):
+		del self._CancQty
+		self._CancQty = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='CxlRsn', type=CancelledStatus17Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CancQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
+	))
+

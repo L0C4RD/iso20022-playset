@@ -1,0 +1,53 @@
+import base_types
+import SupplementaryData1
+import MessageHeader1
+import LiquidityCreditTransfer4
+
+class LiquidityCreditTransferV07(base_types._BaseFieldType):
+
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_LqdtyCdtTrf"]
+	@property
+	def MsgHdr(self):
+		return self._MsgHdr
+
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
+
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def LqdtyCdtTrf(self):
+		return self._LqdtyCdtTrf
+
+	@LqdtyCdtTrf.setter
+	def LqdtyCdtTrf(self, value):
+		self._LqdtyCdtTrf = value if type(value) != auto else self.make_default("LqdtyCdtTrf")
+
+	@LqdtyCdtTrf.deleter
+	def LqdtyCdtTrf(self):
+		del self._LqdtyCdtTrf
+		self._LqdtyCdtTrf = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LqdtyCdtTrf', type=LiquidityCreditTransfer4, min=1, max=1, mutex_group=None, array=False),
+	))
+

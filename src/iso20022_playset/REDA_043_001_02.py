@@ -1,0 +1,25 @@
+import base_types
+import PartyAuditTrailReportV02
+
+class REDA_043_001_02():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_PtyAudtTrlRpt"]
+		@property
+		def PtyAudtTrlRpt(self):
+			return self._PtyAudtTrlRpt
+
+		@PtyAudtTrlRpt.setter
+		def PtyAudtTrlRpt(self, value):
+			self._PtyAudtTrlRpt = value if type(value) != auto else self.make_default("PtyAudtTrlRpt")
+
+		@PtyAudtTrlRpt.deleter
+		def PtyAudtTrlRpt(self):
+			del self._PtyAudtTrlRpt
+			self._PtyAudtTrlRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='PtyAudtTrlRpt', type=PartyAuditTrailReportV02, min=1, max=1, mutex_group=None, array=False),
+		))
+

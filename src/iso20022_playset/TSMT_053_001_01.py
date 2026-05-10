@@ -1,0 +1,25 @@
+import base_types
+import InvoicePaymentReconciliationAdviceV01
+
+class TSMT_053_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_InvcPmtRcncltnAdvc"]
+		@property
+		def InvcPmtRcncltnAdvc(self):
+			return self._InvcPmtRcncltnAdvc
+
+		@InvcPmtRcncltnAdvc.setter
+		def InvcPmtRcncltnAdvc(self, value):
+			self._InvcPmtRcncltnAdvc = value if type(value) != auto else self.make_default("InvcPmtRcncltnAdvc")
+
+		@InvcPmtRcncltnAdvc.deleter
+		def InvcPmtRcncltnAdvc(self):
+			del self._InvcPmtRcncltnAdvc
+			self._InvcPmtRcncltnAdvc = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='InvcPmtRcncltnAdvc', type=InvoicePaymentReconciliationAdviceV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

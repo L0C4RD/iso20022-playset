@@ -1,0 +1,25 @@
+import base_types
+import CorporateActionInstructionCancellationRequest002V13
+
+class SEEV_040_002_13():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_CorpActnInstrCxlReq"]
+		@property
+		def CorpActnInstrCxlReq(self):
+			return self._CorpActnInstrCxlReq
+
+		@CorpActnInstrCxlReq.setter
+		def CorpActnInstrCxlReq(self, value):
+			self._CorpActnInstrCxlReq = value if type(value) != auto else self.make_default("CorpActnInstrCxlReq")
+
+		@CorpActnInstrCxlReq.deleter
+		def CorpActnInstrCxlReq(self):
+			del self._CorpActnInstrCxlReq
+			self._CorpActnInstrCxlReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='CorpActnInstrCxlReq', type=CorporateActionInstructionCancellationRequest002V13, min=1, max=1, mutex_group=None, array=False),
+		))
+

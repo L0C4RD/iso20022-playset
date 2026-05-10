@@ -1,0 +1,25 @@
+import base_types
+import GetStandingOrderV05
+
+class CAMT_069_001_05():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_GetStgOrdr"]
+		@property
+		def GetStgOrdr(self):
+			return self._GetStgOrdr
+
+		@GetStgOrdr.setter
+		def GetStgOrdr(self, value):
+			self._GetStgOrdr = value if type(value) != auto else self.make_default("GetStgOrdr")
+
+		@GetStgOrdr.deleter
+		def GetStgOrdr(self):
+			del self._GetStgOrdr
+			self._GetStgOrdr = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='GetStgOrdr', type=GetStandingOrderV05, min=1, max=1, mutex_group=None, array=False),
+		))
+

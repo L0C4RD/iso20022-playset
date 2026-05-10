@@ -1,0 +1,25 @@
+import base_types
+import InformationRequestResponseV02
+
+class AUTH_002_001_02():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_InfReqRspn"]
+		@property
+		def InfReqRspn(self):
+			return self._InfReqRspn
+
+		@InfReqRspn.setter
+		def InfReqRspn(self, value):
+			self._InfReqRspn = value if type(value) != auto else self.make_default("InfReqRspn")
+
+		@InfReqRspn.deleter
+		def InfReqRspn(self):
+			del self._InfReqRspn
+			self._InfReqRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='InfReqRspn', type=InformationRequestResponseV02, min=1, max=1, mutex_group=None, array=False),
+		))
+

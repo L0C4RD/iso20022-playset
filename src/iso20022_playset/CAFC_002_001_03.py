@@ -1,0 +1,25 @@
+import base_types
+import FeeCollectionResponseV03
+
+class CAFC_002_001_03():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_FeeColltnRspn"]
+		@property
+		def FeeColltnRspn(self):
+			return self._FeeColltnRspn
+
+		@FeeColltnRspn.setter
+		def FeeColltnRspn(self, value):
+			self._FeeColltnRspn = value if type(value) != auto else self.make_default("FeeColltnRspn")
+
+		@FeeColltnRspn.deleter
+		def FeeColltnRspn(self):
+			del self._FeeColltnRspn
+			self._FeeColltnRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='FeeColltnRspn', type=FeeCollectionResponseV03, min=1, max=1, mutex_group=None, array=False),
+		))
+

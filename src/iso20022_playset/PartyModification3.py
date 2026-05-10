@@ -1,0 +1,38 @@
+import base_types
+import Modification1Code
+import PartyIdentification274
+
+class PartyModification3(base_types._BaseFieldType):
+
+	__slots__ = ["_ModCd", "_PtyId"]
+	@property
+	def ModCd(self):
+		return self._ModCd
+
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
+
+	@property
+	def PtyId(self):
+		return self._PtyId
+
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification274, min=1, max=1, mutex_group=None, array=False),
+	))
+

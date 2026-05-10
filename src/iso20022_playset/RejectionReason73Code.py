@@ -1,0 +1,42 @@
+import base_types
+
+class RejectionReason73Code(base_types._BaseDataType_String):
+
+	_values = {
+		"SAFE",
+		"DQUA",
+		"ADEA",
+		"DSEC",
+		"LATE",
+		"CASH",
+		"DDEA",
+		"DTRD",
+		"PLCE",
+		"RTGS",
+		"NCRR",
+		"PHYS",
+		"REFE",
+		"DMON",
+		"MINO",
+		"BATC",
+		"MUNO",
+		"TXST",
+		"SETS",
+		"IIND",
+		"CAEV",
+		"CASY",
+		"DDAT",
+		"SETR",
+		"SDUT",
+		"INPS",
+		"OTHR",
+		"ICUS",
+		"ICAG",
+		"DEPT",
+		"IEXE",
+		"INVB",
+		"INVL",
+		"INVN",
+		"VALR",
+	}
+

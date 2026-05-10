@@ -1,0 +1,7 @@
+import base_types
+
+class Max1000Text(base_types._BaseDataType_String):
+
+	_max = 1000
+	_min = 1
+
