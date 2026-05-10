@@ -1,12 +1,12 @@
 import base_types
+import Max140Text
 import TradeTransactionIdentification19
 import TrueFalseIndicator
-import Max140Text
 import ReconciliationStatus8Choice
 
 class ReconciliationReport8(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnSts", "_Modfd", "_TxId", "_TechRcrdId"]
+	__slots__ = ["_RcncltnSts", "_TxId", "_Modfd", "_TechRcrdId"]
 	@property
 	def RcncltnSts(self):
 		return self._RcncltnSts
@@ -21,19 +21,6 @@ class ReconciliationReport8(base_types._BaseFieldType):
 		self._RcncltnSts = None
 
 	@property
-	def Modfd(self):
-		return self._Modfd
-
-	@Modfd.setter
-	def Modfd(self, value):
-		self._Modfd = value if type(value) != auto else self.make_default("Modfd")
-
-	@Modfd.deleter
-	def Modfd(self):
-		del self._Modfd
-		self._Modfd = None
-
-	@property
 	def TxId(self):
 		return self._TxId
 
@@ -45,6 +32,19 @@ class ReconciliationReport8(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def Modfd(self):
+		return self._Modfd
+
+	@Modfd.setter
+	def Modfd(self, value):
+		self._Modfd = value if type(value) != auto else self.make_default("Modfd")
+
+	@Modfd.deleter
+	def Modfd(self):
+		del self._Modfd
+		self._Modfd = None
 
 	@property
 	def TechRcrdId(self):
@@ -61,8 +61,8 @@ class ReconciliationReport8(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcncltnSts', type=ReconciliationStatus8Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Modfd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Modfd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ReplacementProcessingStatus1Code
+import GenericIdentification30
 
 class ReplacementProcessingStatus8Choice(base_types._BaseFieldType):
 

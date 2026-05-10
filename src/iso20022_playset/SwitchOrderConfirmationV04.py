@@ -1,39 +1,26 @@
 import base_types
-import SwitchExecution7
 import AdditionalReference8
-import CopyInformation4
+import Extension1
 import AdditionalReference9
 import MessageIdentification1
-import Extension1
+import CopyInformation4
+import SwitchExecution7
 
 class SwitchOrderConfirmationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_PoolRef", "_CpyDtls", "_PrvsRef", "_SwtchExctnDtls", "_Xtnsn", "_RltdRef"]
+	__slots__ = ["_SwtchExctnDtls", "_CpyDtls", "_RltdRef", "_PrvsRef", "_PoolRef", "_Xtnsn", "_MsgId"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def SwtchExctnDtls(self):
+		return self._SwtchExctnDtls
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@SwtchExctnDtls.setter
+	def SwtchExctnDtls(self, value):
+		self._SwtchExctnDtls = value if type(value) != auto else self.make_default("SwtchExctnDtls")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
+	@SwtchExctnDtls.deleter
+	def SwtchExctnDtls(self):
+		del self._SwtchExctnDtls
+		self._SwtchExctnDtls = None
 
 	@property
 	def CpyDtls(self):
@@ -49,6 +36,19 @@ class SwitchOrderConfirmationV04(base_types._BaseFieldType):
 		self._CpyDtls = None
 
 	@property
+	def RltdRef(self):
+		return self._RltdRef
+
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -62,17 +62,17 @@ class SwitchOrderConfirmationV04(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def SwtchExctnDtls(self):
-		return self._SwtchExctnDtls
+	def PoolRef(self):
+		return self._PoolRef
 
-	@SwtchExctnDtls.setter
-	def SwtchExctnDtls(self, value):
-		self._SwtchExctnDtls = value if type(value) != auto else self.make_default("SwtchExctnDtls")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
 
-	@SwtchExctnDtls.deleter
-	def SwtchExctnDtls(self):
-		del self._SwtchExctnDtls
-		self._SwtchExctnDtls = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	@property
 	def Xtnsn(self):
@@ -88,25 +88,25 @@ class SwitchOrderConfirmationV04(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def MsgId(self):
+		return self._MsgId
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SwtchExctnDtls', type=SwitchExecution7, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

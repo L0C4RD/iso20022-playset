@@ -1,7 +1,7 @@
 import base_types
 import ISODate
-import ISOTime
 import AccountStatementDetails3
+import ISOTime
 
 class AccountStatementData3(base_types._BaseFieldType):
 

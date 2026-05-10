@@ -1,51 +1,12 @@
 import base_types
-import Commodity2
 import Guarantee1
 import SecurityIdentificationAndAmount1
 import ActiveCurrencyAndAmount
+import Commodity2
 
 class AssetHolding1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Gold", "_Scty", "_Trpty", "_Grnt", "_Csh", "_Cmmdty"]
-	@property
-	def Gold(self):
-		return self._Gold
-
-	@Gold.setter
-	def Gold(self, value):
-		self._Gold = value if type(value) != auto else self.make_default("Gold")
-
-	@Gold.deleter
-	def Gold(self):
-		del self._Gold
-		self._Gold = None
-
-	@property
-	def Scty(self):
-		return self._Scty
-
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
-
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
-
-	@property
-	def Trpty(self):
-		return self._Trpty
-
-	@Trpty.setter
-	def Trpty(self, value):
-		self._Trpty = value if type(value) != auto else self.make_default("Trpty")
-
-	@Trpty.deleter
-	def Trpty(self):
-		del self._Trpty
-		self._Trpty = None
-
+	__slots__ = ["_Grnt", "_Csh", "_Cmmdty", "_Trpty", "_Gold", "_Scty"]
 	@property
 	def Grnt(self):
 		return self._Grnt
@@ -85,12 +46,51 @@ class AssetHolding1Choice(base_types._BaseFieldType):
 		del self._Cmmdty
 		self._Cmmdty = None
 
+	@property
+	def Trpty(self):
+		return self._Trpty
+
+	@Trpty.setter
+	def Trpty(self, value):
+		self._Trpty = value if type(value) != auto else self.make_default("Trpty")
+
+	@Trpty.deleter
+	def Trpty(self):
+		del self._Trpty
+		self._Trpty = None
+
+	@property
+	def Gold(self):
+		return self._Gold
+
+	@Gold.setter
+	def Gold(self, value):
+		self._Gold = value if type(value) != auto else self.make_default("Gold")
+
+	@Gold.deleter
+	def Gold(self):
+		del self._Gold
+		self._Gold = None
+
+	@property
+	def Scty(self):
+		return self._Scty
+
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != auto else self.make_default("Scty")
+
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Trpty', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Grnt', type=Guarantee1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Csh', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Trpty', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Gold', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Scty', type=SecurityIdentificationAndAmount1, min=0, max=1, mutex_group=1, array=False),
 	))
 

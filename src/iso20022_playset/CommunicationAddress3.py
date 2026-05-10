@@ -1,11 +1,11 @@
 import base_types
-import Max256Text
 import PhoneNumber
 import Max35Text
+import Max256Text
 
 class CommunicationAddress3(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_TlxAdr", "_Phne", "_URLAdr", "_Email", "_Mob"]
+	__slots__ = ["_FaxNb", "_Email", "_Mob", "_TlxAdr", "_Phne", "_URLAdr"]
 	@property
 	def FaxNb(self):
 		return self._FaxNb
@@ -18,6 +18,32 @@ class CommunicationAddress3(base_types._BaseFieldType):
 	def FaxNb(self):
 		del self._FaxNb
 		self._FaxNb = None
+
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
+
+	@property
+	def Mob(self):
+		return self._Mob
+
+	@Mob.setter
+	def Mob(self, value):
+		self._Mob = value if type(value) != auto else self.make_default("Mob")
+
+	@Mob.deleter
+	def Mob(self):
+		del self._Mob
+		self._Mob = None
 
 	@property
 	def TlxAdr(self):
@@ -58,38 +84,12 @@ class CommunicationAddress3(base_types._BaseFieldType):
 		del self._URLAdr
 		self._URLAdr = None
 
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
-
-	@property
-	def Mob(self):
-		return self._Mob
-
-	@Mob.setter
-	def Mob(self, value):
-		self._Mob = value if type(value) != auto else self.make_default("Mob")
-
-	@Mob.deleter
-	def Mob(self):
-		del self._Mob
-		self._Mob = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mob', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TlxAdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mob', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

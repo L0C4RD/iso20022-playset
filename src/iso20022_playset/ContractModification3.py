@@ -1,6 +1,6 @@
 import base_types
-import ModificationLevel1Code
 import TransactionOperationType6Code
+import ModificationLevel1Code
 
 class ContractModification3(base_types._BaseFieldType):
 

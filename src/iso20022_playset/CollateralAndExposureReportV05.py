@@ -1,14 +1,14 @@
 import base_types
-import Collateral53
-import Obligation11
 import Pagination1
 import SupplementaryData1
 import Agreement4
+import Obligation11
 import ReportParameters6
+import Collateral53
 
 class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptParams", "_CollRpt", "_Agrmt", "_Oblgtn", "_Pgntn"]
+	__slots__ = ["_SplmtryData", "_Pgntn", "_CollRpt", "_Agrmt", "_Oblgtn", "_RptParams"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -23,17 +23,17 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def RptParams(self):
-		return self._RptParams
+	def Pgntn(self):
+		return self._Pgntn
 
-	@RptParams.setter
-	def RptParams(self, value):
-		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@RptParams.deleter
-	def RptParams(self):
-		del self._RptParams
-		self._RptParams = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def CollRpt(self):
@@ -75,24 +75,24 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 		self._Oblgtn = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def RptParams(self):
+		return self._RptParams
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@RptParams.setter
+	def RptParams(self, value):
+		self._RptParams = value if type(value) != auto else self.make_default("RptParams")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@RptParams.deleter
+	def RptParams(self):
+		del self._RptParams
+		self._RptParams = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptParams', type=ReportParameters6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollRpt', type=Collateral53, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oblgtn', type=Obligation11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptParams', type=ReportParameters6, min=1, max=1, mutex_group=None, array=False),
 	))
 

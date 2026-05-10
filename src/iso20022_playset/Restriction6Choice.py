@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import OwnershipLegalRestrictions1Code
+import GenericIdentification47
 
 class Restriction6Choice(base_types._BaseFieldType):
 

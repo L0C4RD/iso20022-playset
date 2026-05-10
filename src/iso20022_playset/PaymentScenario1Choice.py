@@ -1,6 +1,6 @@
 import base_types
-import ExternalPaymentScenario1Code
 import Max35Text
+import ExternalPaymentScenario1Code
 
 class PaymentScenario1Choice(base_types._BaseFieldType):
 

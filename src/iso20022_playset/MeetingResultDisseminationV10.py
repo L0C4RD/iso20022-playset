@@ -1,42 +1,29 @@
 import base_types
+import Participation6
 import Vote20
-import SecurityPosition22
-import Pagination1
-import CommunicationAddress11
-import Max35Text
 import SupplementaryData1
 import MeetingReference10
 import NotificationType2Code
-import Participation6
+import Max35Text
+import CommunicationAddress11
+import Pagination1
+import SecurityPosition22
 
 class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_VoteRslt", "_SplmtryData", "_MtgRsltsDssmntnTp", "_Scty", "_PrvsMtgRsltsDssmntnId", "_Pgntn", "_AddtlInf", "_MtgRsltDssmntnId", "_MtgRef", "_Prtcptn"]
+	__slots__ = ["_Pgntn", "_MtgRsltsDssmntnTp", "_Prtcptn", "_MtgRef", "_Scty", "_VoteRslt", "_AddtlInf", "_MtgRsltDssmntnId", "_SplmtryData", "_PrvsMtgRsltsDssmntnId"]
 	@property
-	def VoteRslt(self):
-		return self._VoteRslt
+	def Pgntn(self):
+		return self._Pgntn
 
-	@VoteRslt.setter
-	def VoteRslt(self, value):
-		self._VoteRslt = value if type(value) != auto else self.make_default("VoteRslt")
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
 
-	@VoteRslt.deleter
-	def VoteRslt(self):
-		del self._VoteRslt
-		self._VoteRslt = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def MtgRsltsDssmntnTp(self):
@@ -52,6 +39,32 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 		self._MtgRsltsDssmntnTp = None
 
 	@property
+	def Prtcptn(self):
+		return self._Prtcptn
+
+	@Prtcptn.setter
+	def Prtcptn(self, value):
+		self._Prtcptn = value if type(value) != auto else self.make_default("Prtcptn")
+
+	@Prtcptn.deleter
+	def Prtcptn(self):
+		del self._Prtcptn
+		self._Prtcptn = None
+
+	@property
+	def MtgRef(self):
+		return self._MtgRef
+
+	@MtgRef.setter
+	def MtgRef(self, value):
+		self._MtgRef = value if type(value) != auto else self.make_default("MtgRef")
+
+	@MtgRef.deleter
+	def MtgRef(self):
+		del self._MtgRef
+		self._MtgRef = None
+
+	@property
 	def Scty(self):
 		return self._Scty
 
@@ -65,30 +78,17 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 		self._Scty = None
 
 	@property
-	def PrvsMtgRsltsDssmntnId(self):
-		return self._PrvsMtgRsltsDssmntnId
+	def VoteRslt(self):
+		return self._VoteRslt
 
-	@PrvsMtgRsltsDssmntnId.setter
-	def PrvsMtgRsltsDssmntnId(self, value):
-		self._PrvsMtgRsltsDssmntnId = value if type(value) != auto else self.make_default("PrvsMtgRsltsDssmntnId")
+	@VoteRslt.setter
+	def VoteRslt(self, value):
+		self._VoteRslt = value if type(value) != auto else self.make_default("VoteRslt")
 
-	@PrvsMtgRsltsDssmntnId.deleter
-	def PrvsMtgRsltsDssmntnId(self):
-		del self._PrvsMtgRsltsDssmntnId
-		self._PrvsMtgRsltsDssmntnId = None
-
-	@property
-	def Pgntn(self):
-		return self._Pgntn
-
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
-
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@VoteRslt.deleter
+	def VoteRslt(self):
+		del self._VoteRslt
+		self._VoteRslt = None
 
 	@property
 	def AddtlInf(self):
@@ -117,41 +117,41 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 		self._MtgRsltDssmntnId = None
 
 	@property
-	def MtgRef(self):
-		return self._MtgRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MtgRef.setter
-	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != auto else self.make_default("MtgRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@MtgRef.deleter
-	def MtgRef(self):
-		del self._MtgRef
-		self._MtgRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
-	def Prtcptn(self):
-		return self._Prtcptn
+	def PrvsMtgRsltsDssmntnId(self):
+		return self._PrvsMtgRsltsDssmntnId
 
-	@Prtcptn.setter
-	def Prtcptn(self, value):
-		self._Prtcptn = value if type(value) != auto else self.make_default("Prtcptn")
+	@PrvsMtgRsltsDssmntnId.setter
+	def PrvsMtgRsltsDssmntnId(self, value):
+		self._PrvsMtgRsltsDssmntnId = value if type(value) != auto else self.make_default("PrvsMtgRsltsDssmntnId")
 
-	@Prtcptn.deleter
-	def Prtcptn(self):
-		del self._Prtcptn
-		self._Prtcptn = None
+	@PrvsMtgRsltsDssmntnId.deleter
+	def PrvsMtgRsltsDssmntnId(self):
+		del self._PrvsMtgRsltsDssmntnId
+		self._PrvsMtgRsltsDssmntnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VoteRslt', type=Vote20, min=1, max=1000, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtgRsltsDssmntnTp', type=NotificationType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Scty', type=SecurityPosition22, min=1, max=200, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrvsMtgRsltsDssmntnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgRsltsDssmntnTp', type=NotificationType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prtcptn', type=Participation6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Scty', type=SecurityPosition22, min=1, max=200, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VoteRslt', type=Vote20, min=1, max=1000, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=CommunicationAddress11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtgRsltDssmntnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prtcptn', type=Participation6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsMtgRsltsDssmntnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

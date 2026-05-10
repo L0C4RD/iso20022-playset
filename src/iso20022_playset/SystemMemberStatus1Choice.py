@@ -1,6 +1,6 @@
 import base_types
-import MemberStatus1Code
 import Max35Text
+import MemberStatus1Code
 
 class SystemMemberStatus1Choice(base_types._BaseFieldType):
 

@@ -1,8 +1,8 @@
 import base_types
-import PercentageRate
 import ExchangeRate1
-import ActiveCurrencyAndAmount
+import PercentageRate
 import TradeParty6
+import ActiveCurrencyAndAmount
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 

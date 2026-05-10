@@ -1,15 +1,15 @@
 import base_types
-import PartyTextInformation3
-import RestrictedFINXMax35Text
-import LEIIdentifier
-import RestrictedFINXMax16Text
-import RestrictedFINXMax140Text
 import PartyIdentification137Choice
 import AlternatePartyIdentification9
+import RestrictedFINXMax35Text
+import PartyTextInformation3
+import RestrictedFINXMax16Text
+import RestrictedFINXMax140Text
+import LEIIdentifier
 
 class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_AddtlInf", "_Id", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_LEI", "_AltrnId"]
+	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_AddtlInf", "_LEI", "_Id", "_SfkpgAcct", "_AltrnId"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -24,6 +24,19 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -35,6 +48,19 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def Id(self):
@@ -63,32 +89,6 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
-	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -103,11 +103,11 @@ class PartyIdentificationAndAccount209(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
 

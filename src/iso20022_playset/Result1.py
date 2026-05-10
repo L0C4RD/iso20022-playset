@@ -4,20 +4,7 @@ import ActiveCurrencyAndAmount
 
 class Result1(base_types._BaseFieldType):
 
-	__slots__ = ["_DueToPtyA", "_AddtlInf", "_DueToPtyB"]
-	@property
-	def DueToPtyA(self):
-		return self._DueToPtyA
-
-	@DueToPtyA.setter
-	def DueToPtyA(self, value):
-		self._DueToPtyA = value if type(value) != auto else self.make_default("DueToPtyA")
-
-	@DueToPtyA.deleter
-	def DueToPtyA(self):
-		del self._DueToPtyA
-		self._DueToPtyA = None
-
+	__slots__ = ["_AddtlInf", "_DueToPtyA", "_DueToPtyB"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -30,6 +17,19 @@ class Result1(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def DueToPtyA(self):
+		return self._DueToPtyA
+
+	@DueToPtyA.setter
+	def DueToPtyA(self, value):
+		self._DueToPtyA = value if type(value) != auto else self.make_default("DueToPtyA")
+
+	@DueToPtyA.deleter
+	def DueToPtyA(self):
+		del self._DueToPtyA
+		self._DueToPtyA = None
 
 	@property
 	def DueToPtyB(self):
@@ -45,8 +45,8 @@ class Result1(base_types._BaseFieldType):
 		self._DueToPtyB = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DueToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueToPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DueToPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

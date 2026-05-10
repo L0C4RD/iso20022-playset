@@ -3,20 +3,7 @@ import RequestedIndicator
 
 class LimitReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_UsdPctgInd", "_StartDtTmInd", "_StsInd", "_UsdAmtInd"]
-	@property
-	def UsdPctgInd(self):
-		return self._UsdPctgInd
-
-	@UsdPctgInd.setter
-	def UsdPctgInd(self, value):
-		self._UsdPctgInd = value if type(value) != auto else self.make_default("UsdPctgInd")
-
-	@UsdPctgInd.deleter
-	def UsdPctgInd(self):
-		del self._UsdPctgInd
-		self._UsdPctgInd = None
-
+	__slots__ = ["_StartDtTmInd", "_StsInd", "_UsdAmtInd", "_UsdPctgInd"]
 	@property
 	def StartDtTmInd(self):
 		return self._StartDtTmInd
@@ -56,10 +43,23 @@ class LimitReturnCriteria2(base_types._BaseFieldType):
 		del self._UsdAmtInd
 		self._UsdAmtInd = None
 
+	@property
+	def UsdPctgInd(self):
+		return self._UsdPctgInd
+
+	@UsdPctgInd.setter
+	def UsdPctgInd(self, value):
+		self._UsdPctgInd = value if type(value) != auto else self.make_default("UsdPctgInd")
+
+	@UsdPctgInd.deleter
+	def UsdPctgInd(self):
+		del self._UsdPctgInd
+		self._UsdPctgInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UsdPctgInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDtTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsdAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsdPctgInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

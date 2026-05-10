@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import SettlementTransactionCondition12Code
+import GenericIdentification47
 
 class SettlementTransactionCondition37Choice(base_types._BaseFieldType):
 

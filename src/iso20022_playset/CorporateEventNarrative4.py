@@ -1,6 +1,6 @@
 import base_types
-import Max8000Text
 import LanguageSpecifiedNarrative1
+import Max8000Text
 
 class CorporateEventNarrative4(base_types._BaseFieldType):
 

@@ -1,16 +1,29 @@
 import base_types
-import Max70Text
-import AdditionalData1
-import TelecomServicesLineItem3
 import PhoneNumber
-import Max35Text
-import ISODate
+import AdditionalData1
+import Max70Text
 import Amount22
+import ISODate
+import Max35Text
 import Tax41
+import TelecomServicesLineItem3
 
 class TelecomServices3(base_types._BaseFieldType):
 
-	__slots__ = ["_BllgEvt", "_BllgStart", "_CstmrPhne", "_CstmrAcctNb", "_BllgEnd", "_LineItm", "_AddtlData", "_TtlTax", "_CstmrNm"]
+	__slots__ = ["_TtlTax", "_BllgEvt", "_BllgStart", "_CstmrNm", "_BllgEnd", "_CstmrAcctNb", "_CstmrPhne", "_LineItm", "_AddtlData"]
+	@property
+	def TtlTax(self):
+		return self._TtlTax
+
+	@TtlTax.setter
+	def TtlTax(self, value):
+		self._TtlTax = value if type(value) != auto else self.make_default("TtlTax")
+
+	@TtlTax.deleter
+	def TtlTax(self):
+		del self._TtlTax
+		self._TtlTax = None
+
 	@property
 	def BllgEvt(self):
 		return self._BllgEvt
@@ -38,17 +51,30 @@ class TelecomServices3(base_types._BaseFieldType):
 		self._BllgStart = None
 
 	@property
-	def CstmrPhne(self):
-		return self._CstmrPhne
+	def CstmrNm(self):
+		return self._CstmrNm
 
-	@CstmrPhne.setter
-	def CstmrPhne(self, value):
-		self._CstmrPhne = value if type(value) != auto else self.make_default("CstmrPhne")
+	@CstmrNm.setter
+	def CstmrNm(self, value):
+		self._CstmrNm = value if type(value) != auto else self.make_default("CstmrNm")
 
-	@CstmrPhne.deleter
-	def CstmrPhne(self):
-		del self._CstmrPhne
-		self._CstmrPhne = None
+	@CstmrNm.deleter
+	def CstmrNm(self):
+		del self._CstmrNm
+		self._CstmrNm = None
+
+	@property
+	def BllgEnd(self):
+		return self._BllgEnd
+
+	@BllgEnd.setter
+	def BllgEnd(self, value):
+		self._BllgEnd = value if type(value) != auto else self.make_default("BllgEnd")
+
+	@BllgEnd.deleter
+	def BllgEnd(self):
+		del self._BllgEnd
+		self._BllgEnd = None
 
 	@property
 	def CstmrAcctNb(self):
@@ -64,17 +90,17 @@ class TelecomServices3(base_types._BaseFieldType):
 		self._CstmrAcctNb = None
 
 	@property
-	def BllgEnd(self):
-		return self._BllgEnd
+	def CstmrPhne(self):
+		return self._CstmrPhne
 
-	@BllgEnd.setter
-	def BllgEnd(self, value):
-		self._BllgEnd = value if type(value) != auto else self.make_default("BllgEnd")
+	@CstmrPhne.setter
+	def CstmrPhne(self, value):
+		self._CstmrPhne = value if type(value) != auto else self.make_default("CstmrPhne")
 
-	@BllgEnd.deleter
-	def BllgEnd(self):
-		del self._BllgEnd
-		self._BllgEnd = None
+	@CstmrPhne.deleter
+	def CstmrPhne(self):
+		del self._CstmrPhne
+		self._CstmrPhne = None
 
 	@property
 	def LineItm(self):
@@ -102,41 +128,15 @@ class TelecomServices3(base_types._BaseFieldType):
 		del self._AddtlData
 		self._AddtlData = None
 
-	@property
-	def TtlTax(self):
-		return self._TtlTax
-
-	@TtlTax.setter
-	def TtlTax(self, value):
-		self._TtlTax = value if type(value) != auto else self.make_default("TtlTax")
-
-	@TtlTax.deleter
-	def TtlTax(self):
-		del self._TtlTax
-		self._TtlTax = None
-
-	@property
-	def CstmrNm(self):
-		return self._CstmrNm
-
-	@CstmrNm.setter
-	def CstmrNm(self, value):
-		self._CstmrNm = value if type(value) != auto else self.make_default("CstmrNm")
-
-	@CstmrNm.deleter
-	def CstmrNm(self):
-		del self._CstmrNm
-		self._CstmrNm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TtlTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BllgEvt', type=Amount22, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BllgStart', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrPhne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrAcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BllgEnd', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrAcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrPhne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItm', type=TelecomServicesLineItem3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CstmrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

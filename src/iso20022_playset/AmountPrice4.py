@@ -1,6 +1,6 @@
 import base_types
-import AmountPriceType2Code
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
+import AmountPriceType2Code
 
 class AmountPrice4(base_types._BaseFieldType):
 

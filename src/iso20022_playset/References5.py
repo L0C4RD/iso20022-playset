@@ -1,25 +1,12 @@
 import base_types
-import Max70Text
-import UseCases1Code
-import MessageIdentification1
 import Max35Text
+import MessageIdentification1
+import UseCases1Code
+import Max70Text
 
 class References5(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Sts", "_ReqTp", "_PrcId", "_AttchdDocNm", "_AckdMsgId"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_Sts", "_PrcId", "_AckdMsgId", "_ReqTp", "_AttchdDocNm", "_MsgId"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -32,19 +19,6 @@ class References5(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
-
-	@property
-	def ReqTp(self):
-		return self._ReqTp
-
-	@ReqTp.setter
-	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
-
-	@ReqTp.deleter
-	def ReqTp(self):
-		del self._ReqTp
-		self._ReqTp = None
 
 	@property
 	def PrcId(self):
@@ -60,6 +34,32 @@ class References5(base_types._BaseFieldType):
 		self._PrcId = None
 
 	@property
+	def AckdMsgId(self):
+		return self._AckdMsgId
+
+	@AckdMsgId.setter
+	def AckdMsgId(self, value):
+		self._AckdMsgId = value if type(value) != auto else self.make_default("AckdMsgId")
+
+	@AckdMsgId.deleter
+	def AckdMsgId(self):
+		del self._AckdMsgId
+		self._AckdMsgId = None
+
+	@property
+	def ReqTp(self):
+		return self._ReqTp
+
+	@ReqTp.setter
+	def ReqTp(self, value):
+		self._ReqTp = value if type(value) != auto else self.make_default("ReqTp")
+
+	@ReqTp.deleter
+	def ReqTp(self):
+		del self._ReqTp
+		self._ReqTp = None
+
+	@property
 	def AttchdDocNm(self):
 		return self._AttchdDocNm
 
@@ -73,24 +73,24 @@ class References5(base_types._BaseFieldType):
 		self._AttchdDocNm = None
 
 	@property
-	def AckdMsgId(self):
-		return self._AckdMsgId
+	def MsgId(self):
+		return self._MsgId
 
-	@AckdMsgId.setter
-	def AckdMsgId(self, value):
-		self._AckdMsgId = value if type(value) != auto else self.make_default("AckdMsgId")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@AckdMsgId.deleter
-	def AckdMsgId(self):
-		del self._AckdMsgId
-		self._AckdMsgId = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqTp', type=UseCases1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AckdMsgId', type=MessageIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReqTp', type=UseCases1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

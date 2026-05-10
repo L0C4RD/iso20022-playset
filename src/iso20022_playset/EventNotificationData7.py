@@ -1,37 +1,24 @@
 import base_types
-import RetailerEvent7
 import ActionMessage11
 import TrueFalseIndicator
 import LanguageCode
+import RetailerEvent7
 
 class EventNotificationData7(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrLang", "_DispOutpt", "_MntncReqrdFlg", "_RtlrEvt"]
+	__slots__ = ["_RtlrEvt", "_MntncReqrdFlg", "_DispOutpt", "_CstmrLang"]
 	@property
-	def CstmrLang(self):
-		return self._CstmrLang
+	def RtlrEvt(self):
+		return self._RtlrEvt
 
-	@CstmrLang.setter
-	def CstmrLang(self, value):
-		self._CstmrLang = value if type(value) != auto else self.make_default("CstmrLang")
+	@RtlrEvt.setter
+	def RtlrEvt(self, value):
+		self._RtlrEvt = value if type(value) != auto else self.make_default("RtlrEvt")
 
-	@CstmrLang.deleter
-	def CstmrLang(self):
-		del self._CstmrLang
-		self._CstmrLang = None
-
-	@property
-	def DispOutpt(self):
-		return self._DispOutpt
-
-	@DispOutpt.setter
-	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
-
-	@DispOutpt.deleter
-	def DispOutpt(self):
-		del self._DispOutpt
-		self._DispOutpt = None
+	@RtlrEvt.deleter
+	def RtlrEvt(self):
+		del self._RtlrEvt
+		self._RtlrEvt = None
 
 	@property
 	def MntncReqrdFlg(self):
@@ -47,22 +34,35 @@ class EventNotificationData7(base_types._BaseFieldType):
 		self._MntncReqrdFlg = None
 
 	@property
-	def RtlrEvt(self):
-		return self._RtlrEvt
+	def DispOutpt(self):
+		return self._DispOutpt
 
-	@RtlrEvt.setter
-	def RtlrEvt(self, value):
-		self._RtlrEvt = value if type(value) != auto else self.make_default("RtlrEvt")
+	@DispOutpt.setter
+	def DispOutpt(self, value):
+		self._DispOutpt = value if type(value) != auto else self.make_default("DispOutpt")
 
-	@RtlrEvt.deleter
-	def RtlrEvt(self):
-		del self._RtlrEvt
-		self._RtlrEvt = None
+	@DispOutpt.deleter
+	def DispOutpt(self):
+		del self._DispOutpt
+		self._DispOutpt = None
+
+	@property
+	def CstmrLang(self):
+		return self._CstmrLang
+
+	@CstmrLang.setter
+	def CstmrLang(self, value):
+		self._CstmrLang = value if type(value) != auto else self.make_default("CstmrLang")
+
+	@CstmrLang.deleter
+	def CstmrLang(self):
+		del self._CstmrLang
+		self._CstmrLang = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MntncReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtlrEvt', type=RetailerEvent7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncReqrdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

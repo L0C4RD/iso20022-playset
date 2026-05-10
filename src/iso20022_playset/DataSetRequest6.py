@@ -1,38 +1,25 @@
 import base_types
-import DataSetIdentification11
 import Max5000Binary
-import Max140Binary
-import ContentInformationType39
 import CryptographicKey18
+import Max140Binary
+import DataSetIdentification11
+import ContentInformationType39
 
 class DataSetRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnKey", "_Id", "_PrtctdDlgtnProof", "_POIChllng", "_DlgtnProof", "_TMChllng"]
+	__slots__ = ["_TMChllng", "_PrtctdDlgtnProof", "_Id", "_POIChllng", "_DlgtnProof", "_SsnKey"]
 	@property
-	def SsnKey(self):
-		return self._SsnKey
+	def TMChllng(self):
+		return self._TMChllng
 
-	@SsnKey.setter
-	def SsnKey(self, value):
-		self._SsnKey = value if type(value) != auto else self.make_default("SsnKey")
+	@TMChllng.setter
+	def TMChllng(self, value):
+		self._TMChllng = value if type(value) != auto else self.make_default("TMChllng")
 
-	@SsnKey.deleter
-	def SsnKey(self):
-		del self._SsnKey
-		self._SsnKey = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TMChllng.deleter
+	def TMChllng(self):
+		del self._TMChllng
+		self._TMChllng = None
 
 	@property
 	def PrtctdDlgtnProof(self):
@@ -46,6 +33,19 @@ class DataSetRequest6(base_types._BaseFieldType):
 	def PrtctdDlgtnProof(self):
 		del self._PrtctdDlgtnProof
 		self._PrtctdDlgtnProof = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def POIChllng(self):
@@ -74,24 +74,24 @@ class DataSetRequest6(base_types._BaseFieldType):
 		self._DlgtnProof = None
 
 	@property
-	def TMChllng(self):
-		return self._TMChllng
+	def SsnKey(self):
+		return self._SsnKey
 
-	@TMChllng.setter
-	def TMChllng(self, value):
-		self._TMChllng = value if type(value) != auto else self.make_default("TMChllng")
+	@SsnKey.setter
+	def SsnKey(self, value):
+		self._SsnKey = value if type(value) != auto else self.make_default("SsnKey")
 
-	@TMChllng.deleter
-	def TMChllng(self):
-		del self._TMChllng
-		self._TMChllng = None
+	@SsnKey.deleter
+	def SsnKey(self):
+		del self._SsnKey
+		self._SsnKey = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SsnKey', type=CryptographicKey18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdDlgtnProof', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DataSetIdentification11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtnProof', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnKey', type=CryptographicKey18, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ErrorHandling5
 import PartyReport4
+import ErrorHandling5
 
 class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 

@@ -1,48 +1,22 @@
 import base_types
-import Max52Text
 import Max35Text
+import Max52Text
 
 class Reference3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntCollInstrId", "_CollSbstitnReqId", "_CollSbstitnRspnId", "_TrptyAgtSvcPrvdrCollTxId", "_IntrstPmtRspnId", "_TrptyAgtSvcPrvdrCollInstrId", "_CollPrpslId", "_CollPrpslRspnId", "_DsptNtfctnId", "_IntrstPmtReqId", "_CmonTxId", "_MrgnCallReqId", "_CollSbstitnConfId", "_IntrstPmtStmtId", "_ClntCollTxId", "_MrgnCallRspnId"]
+	__slots__ = ["_IntrstPmtStmtId", "_TrptyAgtSvcPrvdrCollTxId", "_ClntCollInstrId", "_IntrstPmtReqId", "_CmonTxId", "_MrgnCallReqId", "_DsptNtfctnId", "_MrgnCallRspnId", "_CollPrpslRspnId", "_ClntCollTxId", "_CollSbstitnReqId", "_CollSbstitnConfId", "_CollPrpslId", "_TrptyAgtSvcPrvdrCollInstrId", "_IntrstPmtRspnId", "_CollSbstitnRspnId"]
 	@property
-	def ClntCollInstrId(self):
-		return self._ClntCollInstrId
+	def IntrstPmtStmtId(self):
+		return self._IntrstPmtStmtId
 
-	@ClntCollInstrId.setter
-	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != auto else self.make_default("ClntCollInstrId")
+	@IntrstPmtStmtId.setter
+	def IntrstPmtStmtId(self, value):
+		self._IntrstPmtStmtId = value if type(value) != auto else self.make_default("IntrstPmtStmtId")
 
-	@ClntCollInstrId.deleter
-	def ClntCollInstrId(self):
-		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
-
-	@property
-	def CollSbstitnReqId(self):
-		return self._CollSbstitnReqId
-
-	@CollSbstitnReqId.setter
-	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != auto else self.make_default("CollSbstitnReqId")
-
-	@CollSbstitnReqId.deleter
-	def CollSbstitnReqId(self):
-		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
-
-	@property
-	def CollSbstitnRspnId(self):
-		return self._CollSbstitnRspnId
-
-	@CollSbstitnRspnId.setter
-	def CollSbstitnRspnId(self, value):
-		self._CollSbstitnRspnId = value if type(value) != auto else self.make_default("CollSbstitnRspnId")
-
-	@CollSbstitnRspnId.deleter
-	def CollSbstitnRspnId(self):
-		del self._CollSbstitnRspnId
-		self._CollSbstitnRspnId = None
+	@IntrstPmtStmtId.deleter
+	def IntrstPmtStmtId(self):
+		del self._IntrstPmtStmtId
+		self._IntrstPmtStmtId = None
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -58,69 +32,17 @@ class Reference3Choice(base_types._BaseFieldType):
 		self._TrptyAgtSvcPrvdrCollTxId = None
 
 	@property
-	def IntrstPmtRspnId(self):
-		return self._IntrstPmtRspnId
+	def ClntCollInstrId(self):
+		return self._ClntCollInstrId
 
-	@IntrstPmtRspnId.setter
-	def IntrstPmtRspnId(self, value):
-		self._IntrstPmtRspnId = value if type(value) != auto else self.make_default("IntrstPmtRspnId")
+	@ClntCollInstrId.setter
+	def ClntCollInstrId(self, value):
+		self._ClntCollInstrId = value if type(value) != auto else self.make_default("ClntCollInstrId")
 
-	@IntrstPmtRspnId.deleter
-	def IntrstPmtRspnId(self):
-		del self._IntrstPmtRspnId
-		self._IntrstPmtRspnId = None
-
-	@property
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		return self._TrptyAgtSvcPrvdrCollInstrId
-
-	@TrptyAgtSvcPrvdrCollInstrId.setter
-	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
-
-	@TrptyAgtSvcPrvdrCollInstrId.deleter
-	def TrptyAgtSvcPrvdrCollInstrId(self):
-		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
-
-	@property
-	def CollPrpslId(self):
-		return self._CollPrpslId
-
-	@CollPrpslId.setter
-	def CollPrpslId(self, value):
-		self._CollPrpslId = value if type(value) != auto else self.make_default("CollPrpslId")
-
-	@CollPrpslId.deleter
-	def CollPrpslId(self):
-		del self._CollPrpslId
-		self._CollPrpslId = None
-
-	@property
-	def CollPrpslRspnId(self):
-		return self._CollPrpslRspnId
-
-	@CollPrpslRspnId.setter
-	def CollPrpslRspnId(self, value):
-		self._CollPrpslRspnId = value if type(value) != auto else self.make_default("CollPrpslRspnId")
-
-	@CollPrpslRspnId.deleter
-	def CollPrpslRspnId(self):
-		del self._CollPrpslRspnId
-		self._CollPrpslRspnId = None
-
-	@property
-	def DsptNtfctnId(self):
-		return self._DsptNtfctnId
-
-	@DsptNtfctnId.setter
-	def DsptNtfctnId(self, value):
-		self._DsptNtfctnId = value if type(value) != auto else self.make_default("DsptNtfctnId")
-
-	@DsptNtfctnId.deleter
-	def DsptNtfctnId(self):
-		del self._DsptNtfctnId
-		self._DsptNtfctnId = None
+	@ClntCollInstrId.deleter
+	def ClntCollInstrId(self):
+		del self._ClntCollInstrId
+		self._ClntCollInstrId = None
 
 	@property
 	def IntrstPmtReqId(self):
@@ -162,30 +84,43 @@ class Reference3Choice(base_types._BaseFieldType):
 		self._MrgnCallReqId = None
 
 	@property
-	def CollSbstitnConfId(self):
-		return self._CollSbstitnConfId
+	def DsptNtfctnId(self):
+		return self._DsptNtfctnId
 
-	@CollSbstitnConfId.setter
-	def CollSbstitnConfId(self, value):
-		self._CollSbstitnConfId = value if type(value) != auto else self.make_default("CollSbstitnConfId")
+	@DsptNtfctnId.setter
+	def DsptNtfctnId(self, value):
+		self._DsptNtfctnId = value if type(value) != auto else self.make_default("DsptNtfctnId")
 
-	@CollSbstitnConfId.deleter
-	def CollSbstitnConfId(self):
-		del self._CollSbstitnConfId
-		self._CollSbstitnConfId = None
+	@DsptNtfctnId.deleter
+	def DsptNtfctnId(self):
+		del self._DsptNtfctnId
+		self._DsptNtfctnId = None
 
 	@property
-	def IntrstPmtStmtId(self):
-		return self._IntrstPmtStmtId
+	def MrgnCallRspnId(self):
+		return self._MrgnCallRspnId
 
-	@IntrstPmtStmtId.setter
-	def IntrstPmtStmtId(self, value):
-		self._IntrstPmtStmtId = value if type(value) != auto else self.make_default("IntrstPmtStmtId")
+	@MrgnCallRspnId.setter
+	def MrgnCallRspnId(self, value):
+		self._MrgnCallRspnId = value if type(value) != auto else self.make_default("MrgnCallRspnId")
 
-	@IntrstPmtStmtId.deleter
-	def IntrstPmtStmtId(self):
-		del self._IntrstPmtStmtId
-		self._IntrstPmtStmtId = None
+	@MrgnCallRspnId.deleter
+	def MrgnCallRspnId(self):
+		del self._MrgnCallRspnId
+		self._MrgnCallRspnId = None
+
+	@property
+	def CollPrpslRspnId(self):
+		return self._CollPrpslRspnId
+
+	@CollPrpslRspnId.setter
+	def CollPrpslRspnId(self, value):
+		self._CollPrpslRspnId = value if type(value) != auto else self.make_default("CollPrpslRspnId")
+
+	@CollPrpslRspnId.deleter
+	def CollPrpslRspnId(self):
+		del self._CollPrpslRspnId
+		self._CollPrpslRspnId = None
 
 	@property
 	def ClntCollTxId(self):
@@ -201,34 +136,99 @@ class Reference3Choice(base_types._BaseFieldType):
 		self._ClntCollTxId = None
 
 	@property
-	def MrgnCallRspnId(self):
-		return self._MrgnCallRspnId
+	def CollSbstitnReqId(self):
+		return self._CollSbstitnReqId
 
-	@MrgnCallRspnId.setter
-	def MrgnCallRspnId(self, value):
-		self._MrgnCallRspnId = value if type(value) != auto else self.make_default("MrgnCallRspnId")
+	@CollSbstitnReqId.setter
+	def CollSbstitnReqId(self, value):
+		self._CollSbstitnReqId = value if type(value) != auto else self.make_default("CollSbstitnReqId")
 
-	@MrgnCallRspnId.deleter
-	def MrgnCallRspnId(self):
-		del self._MrgnCallRspnId
-		self._MrgnCallRspnId = None
+	@CollSbstitnReqId.deleter
+	def CollSbstitnReqId(self):
+		del self._CollSbstitnReqId
+		self._CollSbstitnReqId = None
+
+	@property
+	def CollSbstitnConfId(self):
+		return self._CollSbstitnConfId
+
+	@CollSbstitnConfId.setter
+	def CollSbstitnConfId(self, value):
+		self._CollSbstitnConfId = value if type(value) != auto else self.make_default("CollSbstitnConfId")
+
+	@CollSbstitnConfId.deleter
+	def CollSbstitnConfId(self):
+		del self._CollSbstitnConfId
+		self._CollSbstitnConfId = None
+
+	@property
+	def CollPrpslId(self):
+		return self._CollPrpslId
+
+	@CollPrpslId.setter
+	def CollPrpslId(self, value):
+		self._CollPrpslId = value if type(value) != auto else self.make_default("CollPrpslId")
+
+	@CollPrpslId.deleter
+	def CollPrpslId(self):
+		del self._CollPrpslId
+		self._CollPrpslId = None
+
+	@property
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		return self._TrptyAgtSvcPrvdrCollInstrId
+
+	@TrptyAgtSvcPrvdrCollInstrId.setter
+	def TrptyAgtSvcPrvdrCollInstrId(self, value):
+		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+
+	@TrptyAgtSvcPrvdrCollInstrId.deleter
+	def TrptyAgtSvcPrvdrCollInstrId(self):
+		del self._TrptyAgtSvcPrvdrCollInstrId
+		self._TrptyAgtSvcPrvdrCollInstrId = None
+
+	@property
+	def IntrstPmtRspnId(self):
+		return self._IntrstPmtRspnId
+
+	@IntrstPmtRspnId.setter
+	def IntrstPmtRspnId(self, value):
+		self._IntrstPmtRspnId = value if type(value) != auto else self.make_default("IntrstPmtRspnId")
+
+	@IntrstPmtRspnId.deleter
+	def IntrstPmtRspnId(self):
+		del self._IntrstPmtRspnId
+		self._IntrstPmtRspnId = None
+
+	@property
+	def CollSbstitnRspnId(self):
+		return self._CollSbstitnRspnId
+
+	@CollSbstitnRspnId.setter
+	def CollSbstitnRspnId(self, value):
+		self._CollSbstitnRspnId = value if type(value) != auto else self.make_default("CollSbstitnRspnId")
+
+	@CollSbstitnRspnId.deleter
+	def CollSbstitnRspnId(self):
+		del self._CollSbstitnRspnId
+		self._CollSbstitnRspnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntrstPmtStmtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntrstPmtRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollPrpslId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='DsptNtfctnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollSbstitnConfId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='IntrstPmtStmtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ClntCollTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DsptNtfctnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MrgnCallRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClntCollTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollSbstitnConfId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollPrpslId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IntrstPmtRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,64 +1,25 @@
 import base_types
-import Max70Text
 import Max35Text
-import ISODate
-import OtherIdentification3Choice
 import CountryCode
+import OtherIdentification3Choice
+import Max70Text
+import ISODate
 
 class GenericIdentification82(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrCtry", "_Stat", "_Id", "_IsseDt", "_XpryDt", "_Tp", "_Issr"]
+	__slots__ = ["_Issr", "_XpryDt", "_IsseDt", "_IssrCtry", "_Id", "_Tp", "_Stat"]
 	@property
-	def IssrCtry(self):
-		return self._IssrCtry
+	def Issr(self):
+		return self._Issr
 
-	@IssrCtry.setter
-	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != auto else self.make_default("IssrCtry")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@IssrCtry.deleter
-	def IssrCtry(self):
-		del self._IssrCtry
-		self._IssrCtry = None
-
-	@property
-	def Stat(self):
-		return self._Stat
-
-	@Stat.setter
-	def Stat(self, value):
-		self._Stat = value if type(value) != auto else self.make_default("Stat")
-
-	@Stat.deleter
-	def Stat(self):
-		del self._Stat
-		self._Stat = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def XpryDt(self):
@@ -74,6 +35,45 @@ class GenericIdentification82(base_types._BaseFieldType):
 		self._XpryDt = None
 
 	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def IssrCtry(self):
+		return self._IssrCtry
+
+	@IssrCtry.setter
+	def IssrCtry(self, value):
+		self._IssrCtry = value if type(value) != auto else self.make_default("IssrCtry")
+
+	@IssrCtry.deleter
+	def IssrCtry(self):
+		del self._IssrCtry
+		self._IssrCtry = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Tp(self):
 		return self._Tp
 
@@ -87,25 +87,25 @@ class GenericIdentification82(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def Stat(self):
+		return self._Stat
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Stat.setter
+	def Stat(self, value):
+		self._Stat = value if type(value) != auto else self.make_default("Stat")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Stat.deleter
+	def Stat(self):
+		del self._Stat
+		self._Stat = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Stat', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=OtherIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=OtherIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Stat', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

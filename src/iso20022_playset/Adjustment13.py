@@ -1,13 +1,13 @@
 import base_types
-import Max70Text
-import ImpliedCurrencyAndAmount
 import Max35Text
+import ImpliedCurrencyAndAmount
 import PercentageRate
+import Max70Text
 import TrueFalseIndicator
 
 class Adjustment13(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Rsn", "_TaxOnOrgnlAmt", "_PrmtnCd", "_Amt", "_AddtlTp", "_Pctg", "_Desc"]
+	__slots__ = ["_Tp", "_Amt", "_Desc", "_TaxOnOrgnlAmt", "_AddtlTp", "_Pctg", "_PrmtnCd", "_Rsn"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -22,17 +22,30 @@ class Adjustment13(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Amt(self):
+		return self._Amt
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
 
 	@property
 	def TaxOnOrgnlAmt(self):
@@ -46,32 +59,6 @@ class Adjustment13(base_types._BaseFieldType):
 	def TaxOnOrgnlAmt(self):
 		del self._TaxOnOrgnlAmt
 		self._TaxOnOrgnlAmt = None
-
-	@property
-	def PrmtnCd(self):
-		return self._PrmtnCd
-
-	@PrmtnCd.setter
-	def PrmtnCd(self, value):
-		self._PrmtnCd = value if type(value) != auto else self.make_default("PrmtnCd")
-
-	@PrmtnCd.deleter
-	def PrmtnCd(self):
-		del self._PrmtnCd
-		self._PrmtnCd = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def AddtlTp(self):
@@ -100,26 +87,39 @@ class Adjustment13(base_types._BaseFieldType):
 		self._Pctg = None
 
 	@property
-	def Desc(self):
-		return self._Desc
+	def PrmtnCd(self):
+		return self._PrmtnCd
 
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
+	@PrmtnCd.setter
+	def PrmtnCd(self, value):
+		self._PrmtnCd = value if type(value) != auto else self.make_default("PrmtnCd")
 
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
+	@PrmtnCd.deleter
+	def PrmtnCd(self):
+		del self._PrmtnCd
+		self._PrmtnCd = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrmtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxOnOrgnlAmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrmtnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

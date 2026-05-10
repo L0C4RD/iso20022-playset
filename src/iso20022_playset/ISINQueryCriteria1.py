@@ -1,23 +1,10 @@
 import base_types
-import NotReported1Code
 import ISINOct2015Identifier
+import NotReported1Code
 
 class ISINQueryCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_Idr", "_NotRptd"]
-	@property
-	def Idr(self):
-		return self._Idr
-
-	@Idr.setter
-	def Idr(self, value):
-		self._Idr = value if type(value) != auto else self.make_default("Idr")
-
-	@Idr.deleter
-	def Idr(self):
-		del self._Idr
-		self._Idr = None
-
+	__slots__ = ["_NotRptd", "_Idr"]
 	@property
 	def NotRptd(self):
 		return self._NotRptd
@@ -31,8 +18,21 @@ class ISINQueryCriteria1(base_types._BaseFieldType):
 		del self._NotRptd
 		self._NotRptd = None
 
+	@property
+	def Idr(self):
+		return self._Idr
+
+	@Idr.setter
+	def Idr(self, value):
+		self._Idr = value if type(value) != auto else self.make_default("Idr")
+
+	@Idr.deleter
+	def Idr(self):
+		del self._Idr
+		self._Idr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Idr', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Idr', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,18 +1,18 @@
 import base_types
-import TransactionStatus4
-import BICIdentification1
-import MessageIdentification1
-import PendingActivity2
-import DocumentIdentification5
+import ReportType2
 import LineItem14
 import SimpleIdentificationInformation
-import DocumentIdentification6
-import ReportType2
+import MessageIdentification1
+import BICIdentification1
+import DocumentIdentification5
+import PendingActivity2
 import PartyIdentification26
+import TransactionStatus4
+import DocumentIdentification6
 
 class BaselineReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqForActn", "_Sellr", "_SellrBk", "_Buyr", "_BuyrBk", "_RptdLineItm", "_TxId", "_EstblishdBaselnId", "_UsrTxRef", "_RptTp", "_RltdMsgRef", "_TxSts", "_RptId"]
+	__slots__ = ["_ReqForActn", "_TxId", "_RptId", "_RptTp", "_SellrBk", "_Buyr", "_UsrTxRef", "_EstblishdBaselnId", "_RptdLineItm", "_RltdMsgRef", "_TxSts", "_BuyrBk", "_Sellr"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -27,17 +27,43 @@ class BaselineReportV04(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
-	def Sellr(self):
-		return self._Sellr
+	def TxId(self):
+		return self._TxId
 
-	@Sellr.setter
-	def Sellr(self, value):
-		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Sellr.deleter
-	def Sellr(self):
-		del self._Sellr
-		self._Sellr = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def RptTp(self):
+		return self._RptTp
+
+	@RptTp.setter
+	def RptTp(self, value):
+		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
+
+	@RptTp.deleter
+	def RptTp(self):
+		del self._RptTp
+		self._RptTp = None
 
 	@property
 	def SellrBk(self):
@@ -66,43 +92,17 @@ class BaselineReportV04(base_types._BaseFieldType):
 		self._Buyr = None
 
 	@property
-	def BuyrBk(self):
-		return self._BuyrBk
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
 
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
-
-	@property
-	def RptdLineItm(self):
-		return self._RptdLineItm
-
-	@RptdLineItm.setter
-	def RptdLineItm(self, value):
-		self._RptdLineItm = value if type(value) != auto else self.make_default("RptdLineItm")
-
-	@RptdLineItm.deleter
-	def RptdLineItm(self):
-		del self._RptdLineItm
-		self._RptdLineItm = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -118,30 +118,17 @@ class BaselineReportV04(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
+	def RptdLineItm(self):
+		return self._RptdLineItm
 
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+	@RptdLineItm.setter
+	def RptdLineItm(self, value):
+		self._RptdLineItm = value if type(value) != auto else self.make_default("RptdLineItm")
 
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
-	@property
-	def RptTp(self):
-		return self._RptTp
-
-	@RptTp.setter
-	def RptTp(self, value):
-		self._RptTp = value if type(value) != auto else self.make_default("RptTp")
-
-	@RptTp.deleter
-	def RptTp(self):
-		del self._RptTp
-		self._RptTp = None
+	@RptdLineItm.deleter
+	def RptdLineItm(self):
+		del self._RptdLineItm
+		self._RptdLineItm = None
 
 	@property
 	def RltdMsgRef(self):
@@ -170,31 +157,44 @@ class BaselineReportV04(base_types._BaseFieldType):
 		self._TxSts = None
 
 	@property
-	def RptId(self):
-		return self._RptId
+	def BuyrBk(self):
+		return self._BuyrBk
 
-	@RptId.setter
-	def RptId(self, value):
-		self._RptId = value if type(value) != auto else self.make_default("RptId")
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
 
-	@RptId.deleter
-	def RptId(self):
-		del self._RptId
-		self._RptId = None
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
+
+	@property
+	def Sellr(self):
+		return self._Sellr
+
+	@Sellr.setter
+	def Sellr(self, value):
+		self._Sellr = value if type(value) != auto else self.make_default("Sellr")
+
+	@Sellr.deleter
+	def Sellr(self):
+		del self._Sellr
+		self._Sellr = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptTp', type=ReportType2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdLineItm', type=LineItem14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptTp', type=ReportType2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdLineItm', type=LineItem14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 	))
 

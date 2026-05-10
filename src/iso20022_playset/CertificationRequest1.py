@@ -1,6 +1,6 @@
 import base_types
-import CertificationRequest2
 import Max140Text
+import CertificationRequest2
 
 class CertificationRequest1(base_types._BaseFieldType):
 

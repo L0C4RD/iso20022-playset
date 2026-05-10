@@ -1,7 +1,7 @@
 import base_types
-import PostedMarginOrCollateral6
 import Max20PositiveNumber
 import ReceivedMarginOrCollateral6
+import PostedMarginOrCollateral6
 
 class PositionSetCollateralTotal2(base_types._BaseFieldType):
 

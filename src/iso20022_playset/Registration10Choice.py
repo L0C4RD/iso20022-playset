@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import Registration2Code
+import GenericIdentification30
 
 class Registration10Choice(base_types._BaseFieldType):
 

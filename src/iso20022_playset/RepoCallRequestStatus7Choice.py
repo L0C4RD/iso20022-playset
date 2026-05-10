@@ -5,7 +5,20 @@ import DeniedStatus17Choice
 
 class RepoCallRequestStatus7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Dnd", "_AckdAccptd"]
+	__slots__ = ["_AckdAccptd", "_Prtry", "_Dnd"]
+	@property
+	def AckdAccptd(self):
+		return self._AckdAccptd
+
+	@AckdAccptd.setter
+	def AckdAccptd(self, value):
+		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
+
+	@AckdAccptd.deleter
+	def AckdAccptd(self):
+		del self._AckdAccptd
+		self._AckdAccptd = None
+
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -32,22 +45,9 @@ class RepoCallRequestStatus7Choice(base_types._BaseFieldType):
 		del self._Dnd
 		self._Dnd = None
 
-	@property
-	def AckdAccptd(self):
-		return self._AckdAccptd
-
-	@AckdAccptd.setter
-	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != auto else self.make_default("AckdAccptd")
-
-	@AckdAccptd.deleter
-	def AckdAccptd(self):
-		del self._AckdAccptd
-		self._AckdAccptd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus22Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dnd', type=DeniedStatus17Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus22Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

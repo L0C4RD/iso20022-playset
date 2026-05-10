@@ -1,25 +1,12 @@
 import base_types
-import MasterAgreement7
+import PartyIdentification236Choice
 import Max52Text
 import OrganisationIdentification15Choice
-import PartyIdentification236Choice
+import MasterAgreement7
 
 class TradeTransactionIdentification18(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_RptgCtrPty", "_MstrAgrmt", "_UnqTradIdr"]
-	@property
-	def OthrCtrPty(self):
-		return self._OthrCtrPty
-
-	@OthrCtrPty.setter
-	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
-
-	@OthrCtrPty.deleter
-	def OthrCtrPty(self):
-		del self._OthrCtrPty
-		self._OthrCtrPty = None
-
+	__slots__ = ["_RptgCtrPty", "_OthrCtrPty", "_UnqTradIdr", "_MstrAgrmt"]
 	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
@@ -34,17 +21,17 @@ class TradeTransactionIdentification18(base_types._BaseFieldType):
 		self._RptgCtrPty = None
 
 	@property
-	def MstrAgrmt(self):
-		return self._MstrAgrmt
+	def OthrCtrPty(self):
+		return self._OthrCtrPty
 
-	@MstrAgrmt.setter
-	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
+	@OthrCtrPty.setter
+	def OthrCtrPty(self, value):
+		self._OthrCtrPty = value if type(value) != auto else self.make_default("OthrCtrPty")
 
-	@MstrAgrmt.deleter
-	def MstrAgrmt(self):
-		del self._MstrAgrmt
-		self._MstrAgrmt = None
+	@OthrCtrPty.deleter
+	def OthrCtrPty(self):
+		del self._OthrCtrPty
+		self._OthrCtrPty = None
 
 	@property
 	def UnqTradIdr(self):
@@ -59,10 +46,23 @@ class TradeTransactionIdentification18(base_types._BaseFieldType):
 		del self._UnqTradIdr
 		self._UnqTradIdr = None
 
+	@property
+	def MstrAgrmt(self):
+		return self._MstrAgrmt
+
+	@MstrAgrmt.setter
+	def MstrAgrmt(self, value):
+		self._MstrAgrmt = value if type(value) != auto else self.make_default("MstrAgrmt")
+
+	@MstrAgrmt.deleter
+	def MstrAgrmt(self):
+		del self._MstrAgrmt
+		self._MstrAgrmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=PartyIdentification236Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrAgrmt', type=MasterAgreement7, min=0, max=1, mutex_group=None, array=False),
 	))
 

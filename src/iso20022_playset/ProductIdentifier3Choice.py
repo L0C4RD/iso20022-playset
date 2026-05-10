@@ -1,6 +1,6 @@
 import base_types
-import UnderlyingProductIdentifier1Code
 import Max12Text
+import UnderlyingProductIdentifier1Code
 
 class ProductIdentifier3Choice(base_types._BaseFieldType):
 

@@ -1,43 +1,30 @@
 import base_types
-import TrueFalseIndicator
-import FinancialInstrumentContractType2Code
 import CountryCode
-import SecurityIdentification46
-import ProductType4Code
 import MICIdentifier
-import SecurityIdentification41Choice
-import Max50Text
-import CFIOct2015Identifier
 import CurrencyExchange23
+import FinancialInstrumentContractType2Code
+import ProductType4Code
+import CFIOct2015Identifier
+import SecurityIdentification46
+import SecurityIdentification41Choice
+import TrueFalseIndicator
+import Max50Text
 
 class ContractType15(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygAsstTradgPltfmIdr", "_UndrlygInstrm", "_PdctId", "_SttlmCcyScndLeg", "_PlcOfSttlm", "_AsstClss", "_PdctClssfctn", "_SttlmCcy", "_UndrlygAsstPricSrc", "_DerivBasedOnCrptAsst", "_CtrctTp"]
+	__slots__ = ["_UndrlygAsstPricSrc", "_PdctId", "_SttlmCcy", "_PlcOfSttlm", "_CtrctTp", "_SttlmCcyScndLeg", "_AsstClss", "_UndrlygAsstTradgPltfmIdr", "_PdctClssfctn", "_DerivBasedOnCrptAsst", "_UndrlygInstrm"]
 	@property
-	def UndrlygAsstTradgPltfmIdr(self):
-		return self._UndrlygAsstTradgPltfmIdr
+	def UndrlygAsstPricSrc(self):
+		return self._UndrlygAsstPricSrc
 
-	@UndrlygAsstTradgPltfmIdr.setter
-	def UndrlygAsstTradgPltfmIdr(self, value):
-		self._UndrlygAsstTradgPltfmIdr = value if type(value) != auto else self.make_default("UndrlygAsstTradgPltfmIdr")
+	@UndrlygAsstPricSrc.setter
+	def UndrlygAsstPricSrc(self, value):
+		self._UndrlygAsstPricSrc = value if type(value) != auto else self.make_default("UndrlygAsstPricSrc")
 
-	@UndrlygAsstTradgPltfmIdr.deleter
-	def UndrlygAsstTradgPltfmIdr(self):
-		del self._UndrlygAsstTradgPltfmIdr
-		self._UndrlygAsstTradgPltfmIdr = None
-
-	@property
-	def UndrlygInstrm(self):
-		return self._UndrlygInstrm
-
-	@UndrlygInstrm.setter
-	def UndrlygInstrm(self, value):
-		self._UndrlygInstrm = value if type(value) != auto else self.make_default("UndrlygInstrm")
-
-	@UndrlygInstrm.deleter
-	def UndrlygInstrm(self):
-		del self._UndrlygInstrm
-		self._UndrlygInstrm = None
+	@UndrlygAsstPricSrc.deleter
+	def UndrlygAsstPricSrc(self):
+		del self._UndrlygAsstPricSrc
+		self._UndrlygAsstPricSrc = None
 
 	@property
 	def PdctId(self):
@@ -53,17 +40,17 @@ class ContractType15(base_types._BaseFieldType):
 		self._PdctId = None
 
 	@property
-	def SttlmCcyScndLeg(self):
-		return self._SttlmCcyScndLeg
+	def SttlmCcy(self):
+		return self._SttlmCcy
 
-	@SttlmCcyScndLeg.setter
-	def SttlmCcyScndLeg(self, value):
-		self._SttlmCcyScndLeg = value if type(value) != auto else self.make_default("SttlmCcyScndLeg")
+	@SttlmCcy.setter
+	def SttlmCcy(self, value):
+		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
 
-	@SttlmCcyScndLeg.deleter
-	def SttlmCcyScndLeg(self):
-		del self._SttlmCcyScndLeg
-		self._SttlmCcyScndLeg = None
+	@SttlmCcy.deleter
+	def SttlmCcy(self):
+		del self._SttlmCcy
+		self._SttlmCcy = None
 
 	@property
 	def PlcOfSttlm(self):
@@ -79,6 +66,32 @@ class ContractType15(base_types._BaseFieldType):
 		self._PlcOfSttlm = None
 
 	@property
+	def CtrctTp(self):
+		return self._CtrctTp
+
+	@CtrctTp.setter
+	def CtrctTp(self, value):
+		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
+
+	@CtrctTp.deleter
+	def CtrctTp(self):
+		del self._CtrctTp
+		self._CtrctTp = None
+
+	@property
+	def SttlmCcyScndLeg(self):
+		return self._SttlmCcyScndLeg
+
+	@SttlmCcyScndLeg.setter
+	def SttlmCcyScndLeg(self, value):
+		self._SttlmCcyScndLeg = value if type(value) != auto else self.make_default("SttlmCcyScndLeg")
+
+	@SttlmCcyScndLeg.deleter
+	def SttlmCcyScndLeg(self):
+		del self._SttlmCcyScndLeg
+		self._SttlmCcyScndLeg = None
+
+	@property
 	def AsstClss(self):
 		return self._AsstClss
 
@@ -90,6 +103,19 @@ class ContractType15(base_types._BaseFieldType):
 	def AsstClss(self):
 		del self._AsstClss
 		self._AsstClss = None
+
+	@property
+	def UndrlygAsstTradgPltfmIdr(self):
+		return self._UndrlygAsstTradgPltfmIdr
+
+	@UndrlygAsstTradgPltfmIdr.setter
+	def UndrlygAsstTradgPltfmIdr(self, value):
+		self._UndrlygAsstTradgPltfmIdr = value if type(value) != auto else self.make_default("UndrlygAsstTradgPltfmIdr")
+
+	@UndrlygAsstTradgPltfmIdr.deleter
+	def UndrlygAsstTradgPltfmIdr(self):
+		del self._UndrlygAsstTradgPltfmIdr
+		self._UndrlygAsstTradgPltfmIdr = None
 
 	@property
 	def PdctClssfctn(self):
@@ -105,32 +131,6 @@ class ContractType15(base_types._BaseFieldType):
 		self._PdctClssfctn = None
 
 	@property
-	def SttlmCcy(self):
-		return self._SttlmCcy
-
-	@SttlmCcy.setter
-	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != auto else self.make_default("SttlmCcy")
-
-	@SttlmCcy.deleter
-	def SttlmCcy(self):
-		del self._SttlmCcy
-		self._SttlmCcy = None
-
-	@property
-	def UndrlygAsstPricSrc(self):
-		return self._UndrlygAsstPricSrc
-
-	@UndrlygAsstPricSrc.setter
-	def UndrlygAsstPricSrc(self, value):
-		self._UndrlygAsstPricSrc = value if type(value) != auto else self.make_default("UndrlygAsstPricSrc")
-
-	@UndrlygAsstPricSrc.deleter
-	def UndrlygAsstPricSrc(self):
-		del self._UndrlygAsstPricSrc
-		self._UndrlygAsstPricSrc = None
-
-	@property
 	def DerivBasedOnCrptAsst(self):
 		return self._DerivBasedOnCrptAsst
 
@@ -144,29 +144,29 @@ class ContractType15(base_types._BaseFieldType):
 		self._DerivBasedOnCrptAsst = None
 
 	@property
-	def CtrctTp(self):
-		return self._CtrctTp
+	def UndrlygInstrm(self):
+		return self._UndrlygInstrm
 
-	@CtrctTp.setter
-	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != auto else self.make_default("CtrctTp")
+	@UndrlygInstrm.setter
+	def UndrlygInstrm(self, value):
+		self._UndrlygInstrm = value if type(value) != auto else self.make_default("UndrlygInstrm")
 
-	@CtrctTp.deleter
-	def CtrctTp(self):
-		del self._CtrctTp
-		self._CtrctTp = None
+	@UndrlygInstrm.deleter
+	def UndrlygInstrm(self):
+		del self._UndrlygInstrm
+		self._UndrlygInstrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygAsstTradgPltfmIdr', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygInstrm', type=SecurityIdentification41Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctId', type=SecurityIdentification46, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcyScndLeg', type=CurrencyExchange23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfSttlm', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctClssfctn', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcy', type=CurrencyExchange23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygAsstPricSrc', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DerivBasedOnCrptAsst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctId', type=SecurityIdentification46, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcy', type=CurrencyExchange23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfSttlm', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcyScndLeg', type=CurrencyExchange23, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygAsstTradgPltfmIdr', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctClssfctn', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DerivBasedOnCrptAsst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygInstrm', type=SecurityIdentification41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AgreementType2Choice
 import Max350Text
+import AgreementType2Choice
 import Max50Text
 
 class MasterAgreement8(base_types._BaseFieldType):

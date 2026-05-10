@@ -1,25 +1,25 @@
 import base_types
-import DatePeriod2
 import Max35Text
-import ISODate
+import DatePeriod2
 import InterestCalculation5
+import ISODate
 import ActiveCurrencyAndAmount
 
 class InterestStatement5(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrstPrd", "_ValDt", "_TtlIntrstAmtDueToA", "_IntrstClctn", "_IntrstPmtReqId", "_TtlIntrstAmtDueToB"]
+	__slots__ = ["_IntrstClctn", "_ValDt", "_TtlIntrstAmtDueToA", "_TtlIntrstAmtDueToB", "_IntrstPrd", "_IntrstPmtReqId"]
 	@property
-	def IntrstPrd(self):
-		return self._IntrstPrd
+	def IntrstClctn(self):
+		return self._IntrstClctn
 
-	@IntrstPrd.setter
-	def IntrstPrd(self, value):
-		self._IntrstPrd = value if type(value) != auto else self.make_default("IntrstPrd")
+	@IntrstClctn.setter
+	def IntrstClctn(self, value):
+		self._IntrstClctn = value if type(value) != auto else self.make_default("IntrstClctn")
 
-	@IntrstPrd.deleter
-	def IntrstPrd(self):
-		del self._IntrstPrd
-		self._IntrstPrd = None
+	@IntrstClctn.deleter
+	def IntrstClctn(self):
+		del self._IntrstClctn
+		self._IntrstClctn = None
 
 	@property
 	def ValDt(self):
@@ -48,17 +48,30 @@ class InterestStatement5(base_types._BaseFieldType):
 		self._TtlIntrstAmtDueToA = None
 
 	@property
-	def IntrstClctn(self):
-		return self._IntrstClctn
+	def TtlIntrstAmtDueToB(self):
+		return self._TtlIntrstAmtDueToB
 
-	@IntrstClctn.setter
-	def IntrstClctn(self, value):
-		self._IntrstClctn = value if type(value) != auto else self.make_default("IntrstClctn")
+	@TtlIntrstAmtDueToB.setter
+	def TtlIntrstAmtDueToB(self, value):
+		self._TtlIntrstAmtDueToB = value if type(value) != auto else self.make_default("TtlIntrstAmtDueToB")
 
-	@IntrstClctn.deleter
-	def IntrstClctn(self):
-		del self._IntrstClctn
-		self._IntrstClctn = None
+	@TtlIntrstAmtDueToB.deleter
+	def TtlIntrstAmtDueToB(self):
+		del self._TtlIntrstAmtDueToB
+		self._TtlIntrstAmtDueToB = None
+
+	@property
+	def IntrstPrd(self):
+		return self._IntrstPrd
+
+	@IntrstPrd.setter
+	def IntrstPrd(self, value):
+		self._IntrstPrd = value if type(value) != auto else self.make_default("IntrstPrd")
+
+	@IntrstPrd.deleter
+	def IntrstPrd(self):
+		del self._IntrstPrd
+		self._IntrstPrd = None
 
 	@property
 	def IntrstPmtReqId(self):
@@ -73,25 +86,12 @@ class InterestStatement5(base_types._BaseFieldType):
 		del self._IntrstPmtReqId
 		self._IntrstPmtReqId = None
 
-	@property
-	def TtlIntrstAmtDueToB(self):
-		return self._TtlIntrstAmtDueToB
-
-	@TtlIntrstAmtDueToB.setter
-	def TtlIntrstAmtDueToB(self, value):
-		self._TtlIntrstAmtDueToB = value if type(value) != auto else self.make_default("TtlIntrstAmtDueToB")
-
-	@TtlIntrstAmtDueToB.deleter
-	def TtlIntrstAmtDueToB(self):
-		del self._TtlIntrstAmtDueToB
-		self._TtlIntrstAmtDueToB = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrstPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstClctn', type=InterestCalculation5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlIntrstAmtDueToA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstClctn', type=InterestCalculation5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlIntrstAmtDueToB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

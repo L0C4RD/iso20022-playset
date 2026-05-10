@@ -1,23 +1,10 @@
 import base_types
-import FixedAmountOrUnlimited1Choice
 import MaximumAmountByPeriod1
+import FixedAmountOrUnlimited1Choice
 
 class Authorisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxAmtByTx", "_MaxAmtByPrd", "_MaxAmtByBlkSubmissn"]
-	@property
-	def MaxAmtByTx(self):
-		return self._MaxAmtByTx
-
-	@MaxAmtByTx.setter
-	def MaxAmtByTx(self, value):
-		self._MaxAmtByTx = value if type(value) != auto else self.make_default("MaxAmtByTx")
-
-	@MaxAmtByTx.deleter
-	def MaxAmtByTx(self):
-		del self._MaxAmtByTx
-		self._MaxAmtByTx = None
-
+	__slots__ = ["_MaxAmtByPrd", "_MaxAmtByTx", "_MaxAmtByBlkSubmissn"]
 	@property
 	def MaxAmtByPrd(self):
 		return self._MaxAmtByPrd
@@ -30,6 +17,19 @@ class Authorisation2(base_types._BaseFieldType):
 	def MaxAmtByPrd(self):
 		del self._MaxAmtByPrd
 		self._MaxAmtByPrd = None
+
+	@property
+	def MaxAmtByTx(self):
+		return self._MaxAmtByTx
+
+	@MaxAmtByTx.setter
+	def MaxAmtByTx(self, value):
+		self._MaxAmtByTx = value if type(value) != auto else self.make_default("MaxAmtByTx")
+
+	@MaxAmtByTx.deleter
+	def MaxAmtByTx(self):
+		del self._MaxAmtByTx
+		self._MaxAmtByTx = None
 
 	@property
 	def MaxAmtByBlkSubmissn(self):
@@ -45,8 +45,8 @@ class Authorisation2(base_types._BaseFieldType):
 		self._MaxAmtByBlkSubmissn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxAmtByTx', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxAmtByPrd', type=MaximumAmountByPeriod1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MaxAmtByTx', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxAmtByBlkSubmissn', type=FixedAmountOrUnlimited1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

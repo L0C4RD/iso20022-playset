@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import ISODate
 import OtherIdentification1Choice
-import Max35Text
 
 class GenericIdentification44(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_IsseDt", "_XpryDt", "_Tp", "_Issr"]
+	__slots__ = ["_XpryDt", "_IsseDt", "_Tp", "_Id", "_Issr"]
 	@property
-	def Id(self):
-		return self._Id
+	def XpryDt(self):
+		return self._XpryDt
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
 
 	@property
 	def IsseDt(self):
@@ -33,19 +33,6 @@ class GenericIdentification44(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
 	def Tp(self):
 		return self._Tp
 
@@ -57,6 +44,19 @@ class GenericIdentification44(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Issr(self):
@@ -72,10 +72,10 @@ class GenericIdentification44(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=OtherIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

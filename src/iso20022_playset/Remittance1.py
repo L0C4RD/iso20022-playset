@@ -1,11 +1,24 @@
 import base_types
-import StructuredRemittanceInformation16
 import Max140Text
+import StructuredRemittanceInformation16
 import RemittanceLocation7
 
 class Remittance1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ustrd", "_Rltd", "_Strd"]
+	__slots__ = ["_Strd", "_Ustrd", "_Rltd"]
+	@property
+	def Strd(self):
+		return self._Strd
+
+	@Strd.setter
+	def Strd(self, value):
+		self._Strd = value if type(value) != auto else self.make_default("Strd")
+
+	@Strd.deleter
+	def Strd(self):
+		del self._Strd
+		self._Strd = None
+
 	@property
 	def Ustrd(self):
 		return self._Ustrd
@@ -32,22 +45,9 @@ class Remittance1(base_types._BaseFieldType):
 		del self._Rltd
 		self._Rltd = None
 
-	@property
-	def Strd(self):
-		return self._Strd
-
-	@Strd.setter
-	def Strd(self, value):
-		self._Strd = value if type(value) != auto else self.make_default("Strd")
-
-	@Strd.deleter
-	def Strd(self):
-		del self._Strd
-		self._Strd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Strd', type=StructuredRemittanceInformation16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ustrd', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rltd', type=RemittanceLocation7, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Strd', type=StructuredRemittanceInformation16, min=0, max=None, mutex_group=None, array=True),
 	))
 

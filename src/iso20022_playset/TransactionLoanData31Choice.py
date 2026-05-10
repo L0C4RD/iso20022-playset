@@ -1,24 +1,24 @@
 import base_types
-import LoanData139
 import LoanData140
 import LoanData142
+import LoanData139
 import LoanData141
 
 class TransactionLoanData31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesLndg", "_RpTrad", "_BuySellBck", "_MrgnLndg"]
+	__slots__ = ["_MrgnLndg", "_RpTrad", "_BuySellBck", "_SctiesLndg"]
 	@property
-	def SctiesLndg(self):
-		return self._SctiesLndg
+	def MrgnLndg(self):
+		return self._MrgnLndg
 
-	@SctiesLndg.setter
-	def SctiesLndg(self, value):
-		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
+	@MrgnLndg.setter
+	def MrgnLndg(self, value):
+		self._MrgnLndg = value if type(value) != auto else self.make_default("MrgnLndg")
 
-	@SctiesLndg.deleter
-	def SctiesLndg(self):
-		del self._SctiesLndg
-		self._SctiesLndg = None
+	@MrgnLndg.deleter
+	def MrgnLndg(self):
+		del self._MrgnLndg
+		self._MrgnLndg = None
 
 	@property
 	def RpTrad(self):
@@ -47,22 +47,22 @@ class TransactionLoanData31Choice(base_types._BaseFieldType):
 		self._BuySellBck = None
 
 	@property
-	def MrgnLndg(self):
-		return self._MrgnLndg
+	def SctiesLndg(self):
+		return self._SctiesLndg
 
-	@MrgnLndg.setter
-	def MrgnLndg(self, value):
-		self._MrgnLndg = value if type(value) != auto else self.make_default("MrgnLndg")
+	@SctiesLndg.setter
+	def SctiesLndg(self, value):
+		self._SctiesLndg = value if type(value) != auto else self.make_default("SctiesLndg")
 
-	@MrgnLndg.deleter
-	def MrgnLndg(self):
-		del self._MrgnLndg
-		self._MrgnLndg = None
+	@SctiesLndg.deleter
+	def SctiesLndg(self):
+		del self._SctiesLndg
+		self._SctiesLndg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesLndg', type=LoanData141, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MrgnLndg', type=LoanData142, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RpTrad', type=LoanData139, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BuySellBck', type=LoanData140, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MrgnLndg', type=LoanData142, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SctiesLndg', type=LoanData141, min=0, max=1, mutex_group=1, array=False),
 	))
 

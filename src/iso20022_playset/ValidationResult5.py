@@ -1,24 +1,24 @@
 import base_types
-import Max350Text
 import ElementIdentification1
+import Max350Text
 import Number
 import Max35Text
 
 class ValidationResult5(base_types._BaseFieldType):
 
-	__slots__ = ["_RuleId", "_RuleDesc", "_SeqNb", "_MisMtchdElmt"]
+	__slots__ = ["_SeqNb", "_RuleDesc", "_MisMtchdElmt", "_RuleId"]
 	@property
-	def RuleId(self):
-		return self._RuleId
+	def SeqNb(self):
+		return self._SeqNb
 
-	@RuleId.setter
-	def RuleId(self, value):
-		self._RuleId = value if type(value) != auto else self.make_default("RuleId")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@RuleId.deleter
-	def RuleId(self):
-		del self._RuleId
-		self._RuleId = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def RuleDesc(self):
@@ -34,19 +34,6 @@ class ValidationResult5(base_types._BaseFieldType):
 		self._RuleDesc = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
-	@property
 	def MisMtchdElmt(self):
 		return self._MisMtchdElmt
 
@@ -59,10 +46,23 @@ class ValidationResult5(base_types._BaseFieldType):
 		del self._MisMtchdElmt
 		self._MisMtchdElmt = None
 
+	@property
+	def RuleId(self):
+		return self._RuleId
+
+	@RuleId.setter
+	def RuleId(self, value):
+		self._RuleId = value if type(value) != auto else self.make_default("RuleId")
+
+	@RuleId.deleter
+	def RuleId(self):
+		del self._RuleId
+		self._RuleId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RuleId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RuleDesc', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RuleDesc', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MisMtchdElmt', type=ElementIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RuleId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import ISODate
-import Max350Text
 import Max35Text
+import Max350Text
+import ISODate
 
 class PartyName3(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 import base_types
+import ReconciliationReport8
 import SupplementaryData1
 import NumberOfReportsPerStatus4
-import ReconciliationReport8
 
 class TradeData28(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_PairgRcncltnSts", "_RcncltnRpt"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_PairgRcncltnSts", "_SplmtryData", "_RcncltnRpt"]
 	@property
 	def PairgRcncltnSts(self):
 		return self._PairgRcncltnSts
@@ -31,6 +18,19 @@ class TradeData28(base_types._BaseFieldType):
 	def PairgRcncltnSts(self):
 		del self._PairgRcncltnSts
 		self._PairgRcncltnSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def RcncltnRpt(self):
@@ -46,8 +46,8 @@ class TradeData28(base_types._BaseFieldType):
 		self._RcncltnRpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PairgRcncltnSts', type=NumberOfReportsPerStatus4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RcncltnRpt', type=ReconciliationReport8, min=1, max=None, mutex_group=None, array=True),
 	))
 

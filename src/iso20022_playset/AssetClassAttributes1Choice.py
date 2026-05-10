@@ -1,24 +1,11 @@
 import base_types
+import DerivativeForeignExchange2
 import DerivativeInterest2
 import AssetClassAttributes1
-import DerivativeForeignExchange2
 
 class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Both", "_FX", "_Intrst"]
-	@property
-	def Both(self):
-		return self._Both
-
-	@Both.setter
-	def Both(self, value):
-		self._Both = value if type(value) != auto else self.make_default("Both")
-
-	@Both.deleter
-	def Both(self):
-		del self._Both
-		self._Both = None
-
+	__slots__ = ["_FX", "_Intrst", "_Both"]
 	@property
 	def FX(self):
 		return self._FX
@@ -45,9 +32,22 @@ class AssetClassAttributes1Choice(base_types._BaseFieldType):
 		del self._Intrst
 		self._Intrst = None
 
+	@property
+	def Both(self):
+		return self._Both
+
+	@Both.setter
+	def Both(self, value):
+		self._Both = value if type(value) != auto else self.make_default("Both")
+
+	@Both.deleter
+	def Both(self):
+		del self._Both
+		self._Both = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Both', type=AssetClassAttributes1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Intrst', type=DerivativeInterest2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Both', type=AssetClassAttributes1, min=0, max=1, mutex_group=1, array=False),
 	))
 

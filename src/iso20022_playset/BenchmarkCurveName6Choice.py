@@ -1,7 +1,7 @@
 import base_types
+import ISINOct2015Identifier
 import BenchmarkCurveName2Code
 import Max25Text
-import ISINOct2015Identifier
 
 class BenchmarkCurveName6Choice(base_types._BaseFieldType):
 

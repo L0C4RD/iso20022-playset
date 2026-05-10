@@ -1,29 +1,16 @@
 import base_types
-import TransactionType2
-import SequenceRange1Choice
-import CashAccount40
-import Party50Choice
-import BalanceType13
-import Max35Text
-import BranchAndFinancialInstitutionIdentification8
 import ReportingPeriod5
+import TransactionType2
+import Party50Choice
+import Max35Text
+import SequenceRange1Choice
+import BalanceType13
+import CashAccount40
+import BranchAndFinancialInstitutionIdentification8
 
 class ReportingRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_ReqdTxTp", "_RptgSeq", "_ReqdBalTp", "_RptgPrd", "_AcctSvcr", "_ReqdMsgNmId", "_AcctOwnr"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Acct", "_ReqdTxTp", "_AcctOwnr", "_ReqdMsgNmId", "_RptgPrd", "_AcctSvcr", "_Id", "_ReqdBalTp", "_RptgSeq"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -51,30 +38,30 @@ class ReportingRequest7(base_types._BaseFieldType):
 		self._ReqdTxTp = None
 
 	@property
-	def RptgSeq(self):
-		return self._RptgSeq
+	def AcctOwnr(self):
+		return self._AcctOwnr
 
-	@RptgSeq.setter
-	def RptgSeq(self, value):
-		self._RptgSeq = value if type(value) != auto else self.make_default("RptgSeq")
+	@AcctOwnr.setter
+	def AcctOwnr(self, value):
+		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
 
-	@RptgSeq.deleter
-	def RptgSeq(self):
-		del self._RptgSeq
-		self._RptgSeq = None
+	@AcctOwnr.deleter
+	def AcctOwnr(self):
+		del self._AcctOwnr
+		self._AcctOwnr = None
 
 	@property
-	def ReqdBalTp(self):
-		return self._ReqdBalTp
+	def ReqdMsgNmId(self):
+		return self._ReqdMsgNmId
 
-	@ReqdBalTp.setter
-	def ReqdBalTp(self, value):
-		self._ReqdBalTp = value if type(value) != auto else self.make_default("ReqdBalTp")
+	@ReqdMsgNmId.setter
+	def ReqdMsgNmId(self, value):
+		self._ReqdMsgNmId = value if type(value) != auto else self.make_default("ReqdMsgNmId")
 
-	@ReqdBalTp.deleter
-	def ReqdBalTp(self):
-		del self._ReqdBalTp
-		self._ReqdBalTp = None
+	@ReqdMsgNmId.deleter
+	def ReqdMsgNmId(self):
+		del self._ReqdMsgNmId
+		self._ReqdMsgNmId = None
 
 	@property
 	def RptgPrd(self):
@@ -103,40 +90,53 @@ class ReportingRequest7(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def ReqdMsgNmId(self):
-		return self._ReqdMsgNmId
+	def Id(self):
+		return self._Id
 
-	@ReqdMsgNmId.setter
-	def ReqdMsgNmId(self, value):
-		self._ReqdMsgNmId = value if type(value) != auto else self.make_default("ReqdMsgNmId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@ReqdMsgNmId.deleter
-	def ReqdMsgNmId(self):
-		del self._ReqdMsgNmId
-		self._ReqdMsgNmId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
-	def AcctOwnr(self):
-		return self._AcctOwnr
+	def ReqdBalTp(self):
+		return self._ReqdBalTp
 
-	@AcctOwnr.setter
-	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != auto else self.make_default("AcctOwnr")
+	@ReqdBalTp.setter
+	def ReqdBalTp(self, value):
+		self._ReqdBalTp = value if type(value) != auto else self.make_default("ReqdBalTp")
 
-	@AcctOwnr.deleter
-	def AcctOwnr(self):
-		del self._AcctOwnr
-		self._AcctOwnr = None
+	@ReqdBalTp.deleter
+	def ReqdBalTp(self):
+		del self._ReqdBalTp
+		self._ReqdBalTp = None
+
+	@property
+	def RptgSeq(self):
+		return self._RptgSeq
+
+	@RptgSeq.setter
+	def RptgSeq(self, value):
+		self._RptgSeq = value if type(value) != auto else self.make_default("RptgSeq")
+
+	@RptgSeq.deleter
+	def RptgSeq(self):
+		del self._RptgSeq
+		self._RptgSeq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdTxTp', type=TransactionType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgSeq', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdBalTp', type=BalanceType13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgPrd', type=ReportingPeriod5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdMsgNmId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdBalTp', type=BalanceType13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptgSeq', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

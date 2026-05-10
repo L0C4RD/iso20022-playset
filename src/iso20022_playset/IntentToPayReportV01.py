@@ -1,6 +1,6 @@
 import base_types
-import ReportLine1
 import MessageIdentification1
+import ReportLine1
 
 class IntentToPayReportV01(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import Max100KBinary
 import TR34Command1Code
+import Max100KBinary
 
 class TRRelatedData2(base_types._BaseFieldType):
 

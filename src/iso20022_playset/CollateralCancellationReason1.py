@@ -1,6 +1,6 @@
 import base_types
-import CollateralCancellationType1Choice
 import Max35Text
+import CollateralCancellationType1Choice
 
 class CollateralCancellationReason1(base_types._BaseFieldType):
 

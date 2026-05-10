@@ -1,12 +1,38 @@
 import base_types
-import ISODate
-import PartyIdentification139
 import CountryCode
+import ISODate
 import FinancialInstrument71
+import PartyIdentification139
 
 class FundParameters5(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfDmcl", "_DtFr", "_RegdDstrbtnCtry", "_FndMgmtCpny", "_FinInstrmDtls"]
+	__slots__ = ["_RegdDstrbtnCtry", "_FinInstrmDtls", "_CtryOfDmcl", "_DtFr", "_FndMgmtCpny"]
+	@property
+	def RegdDstrbtnCtry(self):
+		return self._RegdDstrbtnCtry
+
+	@RegdDstrbtnCtry.setter
+	def RegdDstrbtnCtry(self, value):
+		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
+
+	@RegdDstrbtnCtry.deleter
+	def RegdDstrbtnCtry(self):
+		del self._RegdDstrbtnCtry
+		self._RegdDstrbtnCtry = None
+
+	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
 	@property
 	def CtryOfDmcl(self):
 		return self._CtryOfDmcl
@@ -34,19 +60,6 @@ class FundParameters5(base_types._BaseFieldType):
 		self._DtFr = None
 
 	@property
-	def RegdDstrbtnCtry(self):
-		return self._RegdDstrbtnCtry
-
-	@RegdDstrbtnCtry.setter
-	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
-
-	@RegdDstrbtnCtry.deleter
-	def RegdDstrbtnCtry(self):
-		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
-
-	@property
 	def FndMgmtCpny(self):
 		return self._FndMgmtCpny
 
@@ -59,24 +72,11 @@ class FundParameters5(base_types._BaseFieldType):
 		del self._FndMgmtCpny
 		self._FndMgmtCpny = None
 
-	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
-
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
-
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument71, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FndMgmtCpny', type=PartyIdentification139, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument71, min=0, max=None, mutex_group=None, array=True),
 	))
 

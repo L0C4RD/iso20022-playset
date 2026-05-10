@@ -1,36 +1,23 @@
 import base_types
-import InvestmentAccount58
-import FinancialInstrument57
 import Max35Text
+import FinancialInstrument57
+import InvestmentAccount58
 
 class InvestmentFundOrder8(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_DealRef", "_CxlRef", "_ClntRef", "_OrdrRef", "_InvstmtAcctDtls", "_MstrRef"]
+	__slots__ = ["_MstrRef", "_CxlRef", "_ClntRef", "_FinInstrmDtls", "_OrdrRef", "_InvstmtAcctDtls", "_DealRef"]
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def MstrRef(self):
+		return self._MstrRef
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
-	@property
-	def DealRef(self):
-		return self._DealRef
-
-	@DealRef.setter
-	def DealRef(self, value):
-		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
-
-	@DealRef.deleter
-	def DealRef(self):
-		del self._DealRef
-		self._DealRef = None
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	@property
 	def CxlRef(self):
@@ -59,6 +46,19 @@ class InvestmentFundOrder8(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
 	def OrdrRef(self):
 		return self._OrdrRef
 
@@ -85,25 +85,25 @@ class InvestmentFundOrder8(base_types._BaseFieldType):
 		self._InvstmtAcctDtls = None
 
 	@property
-	def MstrRef(self):
-		return self._MstrRef
+	def DealRef(self):
+		return self._DealRef
 
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+	@DealRef.setter
+	def DealRef(self, value):
+		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
 
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
+	@DealRef.deleter
+	def DealRef(self):
+		del self._DealRef
+		self._DealRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 import base_types
-import RestrictedFINImpliedCurrencyAndAmount
 import RestrictedFINDecimalNumber
+import RestrictedFINImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_FaceAmt"]
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
+	__slots__ = ["_FaceAmt", "_Unit"]
 	@property
 	def FaceAmt(self):
 		return self._FaceAmt
@@ -31,8 +18,21 @@ class FinancialInstrumentQuantity31Choice(base_types._BaseFieldType):
 		del self._FaceAmt
 		self._FaceAmt = None
 
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
 

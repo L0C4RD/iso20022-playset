@@ -1,23 +1,23 @@
 import base_types
-import SecurityIdentification19
 import Reason19Choice
+import SecurityIdentification19
 import Status19Choice
 
 class AdditionalQueryParameters13(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_FinInstrmId", "_Sts"]
+	__slots__ = ["_Sts", "_FinInstrmId", "_Rsn"]
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def Sts(self):
+		return self._Sts
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def FinInstrmId(self):
@@ -33,21 +33,21 @@ class AdditionalQueryParameters13(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def Rsn(self):
+		return self._Rsn
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=Reason19Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=Status19Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=Reason19Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

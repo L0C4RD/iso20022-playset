@@ -1,31 +1,18 @@
 import base_types
+import CopyInformation5
+import InvestmentAccount70
+import Extension1
 import Transfer37
 import MarketPracticeVersion1
 import MessageIdentification1
 import AdditionalReference11
-import ReceiveInformation20
 import Max35Text
+import ReceiveInformation20
 import AdditionalReference10
-import CopyInformation5
-import InvestmentAccount70
-import Extension1
 
 class TransferOutConfirmationV09(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_TrfDtls", "_PoolRef", "_AcctDtls", "_MstrRef", "_PrvsRef", "_MktPrctcVrsn", "_Xtnsn", "_SttlmDtls", "_CpyDtls", "_RltdRef"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_TrfDtls", "_CpyDtls", "_AcctDtls", "_MstrRef", "_SttlmDtls", "_PrvsRef", "_MktPrctcVrsn", "_PoolRef", "_RltdRef", "_Xtnsn", "_MsgId"]
 	@property
 	def TrfDtls(self):
 		return self._TrfDtls
@@ -40,17 +27,17 @@ class TransferOutConfirmationV09(base_types._BaseFieldType):
 		self._TrfDtls = None
 
 	@property
-	def PoolRef(self):
-		return self._PoolRef
+	def CpyDtls(self):
+		return self._CpyDtls
 
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+	@CpyDtls.setter
+	def CpyDtls(self, value):
+		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
 
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
+	@CpyDtls.deleter
+	def CpyDtls(self):
+		del self._CpyDtls
+		self._CpyDtls = None
 
 	@property
 	def AcctDtls(self):
@@ -79,6 +66,19 @@ class TransferOutConfirmationV09(base_types._BaseFieldType):
 		self._MstrRef = None
 
 	@property
+	def SttlmDtls(self):
+		return self._SttlmDtls
+
+	@SttlmDtls.setter
+	def SttlmDtls(self, value):
+		self._SttlmDtls = value if type(value) != auto else self.make_default("SttlmDtls")
+
+	@SttlmDtls.deleter
+	def SttlmDtls(self):
+		del self._SttlmDtls
+		self._SttlmDtls = None
+
+	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -105,43 +105,17 @@ class TransferOutConfirmationV09(base_types._BaseFieldType):
 		self._MktPrctcVrsn = None
 
 	@property
-	def Xtnsn(self):
-		return self._Xtnsn
+	def PoolRef(self):
+		return self._PoolRef
 
-	@Xtnsn.setter
-	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
 
-	@Xtnsn.deleter
-	def Xtnsn(self):
-		del self._Xtnsn
-		self._Xtnsn = None
-
-	@property
-	def SttlmDtls(self):
-		return self._SttlmDtls
-
-	@SttlmDtls.setter
-	def SttlmDtls(self, value):
-		self._SttlmDtls = value if type(value) != auto else self.make_default("SttlmDtls")
-
-	@SttlmDtls.deleter
-	def SttlmDtls(self):
-		del self._SttlmDtls
-		self._SttlmDtls = None
-
-	@property
-	def CpyDtls(self):
-		return self._CpyDtls
-
-	@CpyDtls.setter
-	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != auto else self.make_default("CpyDtls")
-
-	@CpyDtls.deleter
-	def CpyDtls(self):
-		del self._CpyDtls
-		self._CpyDtls = None
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
 
 	@property
 	def RltdRef(self):
@@ -156,17 +130,43 @@ class TransferOutConfirmationV09(base_types._BaseFieldType):
 		del self._RltdRef
 		self._RltdRef = None
 
+	@property
+	def Xtnsn(self):
+		return self._Xtnsn
+
+	@Xtnsn.setter
+	def Xtnsn(self, value):
+		self._Xtnsn = value if type(value) != auto else self.make_default("Xtnsn")
+
+	@Xtnsn.deleter
+	def Xtnsn(self):
+		del self._Xtnsn
+		self._Xtnsn = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfDtls', type=Transfer37, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=InvestmentAccount70, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmDtls', type=ReceiveInformation20, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SttlmDtls', type=ReceiveInformation20, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

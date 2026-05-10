@@ -1,6 +1,6 @@
 import base_types
-import PaymentInstruction33
 import PaymentIdentification8Choice
+import PaymentInstruction33
 
 class TransactionModification7(base_types._BaseFieldType):
 

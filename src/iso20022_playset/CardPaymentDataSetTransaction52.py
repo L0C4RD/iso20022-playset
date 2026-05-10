@@ -1,13 +1,13 @@
 import base_types
-import CardPaymentEnvironment81
 import PaymentContext30
+import CardPaymentEnvironment81
 import Max9NumericText
 import CardPaymentTransaction139
 import Traceability8
 
 class CardPaymentDataSetTransaction52(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TxSeqCntr", "_Cntxt", "_Tx", "_Tracblt"]
+	__slots__ = ["_Envt", "_Cntxt", "_TxSeqCntr", "_Tx", "_Tracblt"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -22,19 +22,6 @@ class CardPaymentDataSetTransaction52(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def TxSeqCntr(self):
-		return self._TxSeqCntr
-
-	@TxSeqCntr.setter
-	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
-
-	@TxSeqCntr.deleter
-	def TxSeqCntr(self):
-		del self._TxSeqCntr
-		self._TxSeqCntr = None
-
-	@property
 	def Cntxt(self):
 		return self._Cntxt
 
@@ -46,6 +33,19 @@ class CardPaymentDataSetTransaction52(base_types._BaseFieldType):
 	def Cntxt(self):
 		del self._Cntxt
 		self._Cntxt = None
+
+	@property
+	def TxSeqCntr(self):
+		return self._TxSeqCntr
+
+	@TxSeqCntr.setter
+	def TxSeqCntr(self, value):
+		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
+
+	@TxSeqCntr.deleter
+	def TxSeqCntr(self):
+		del self._TxSeqCntr
+		self._TxSeqCntr = None
 
 	@property
 	def Tx(self):
@@ -75,8 +75,8 @@ class CardPaymentDataSetTransaction52(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction139, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
 	))

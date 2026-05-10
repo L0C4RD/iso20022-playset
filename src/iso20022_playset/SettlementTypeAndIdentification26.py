@@ -1,7 +1,7 @@
 import base_types
 import RestrictedFINXMax16Text
-import DeliveryReceiptType2Code
 import DateAndDateTime2Choice
+import DeliveryReceiptType2Code
 
 class SettlementTypeAndIdentification26(base_types._BaseFieldType):
 

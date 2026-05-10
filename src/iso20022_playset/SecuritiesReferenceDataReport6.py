@@ -1,15 +1,15 @@
 import base_types
-import DebtInstrument2
 import Max35Text
-import SecurityInstrumentDescription9
-import LEIIdentifier
-import TradingVenueAttributes1
+import DebtInstrument2
 import DerivativeInstrument5
+import LEIIdentifier
 import RecordTechnicalData4
+import SecurityInstrumentDescription9
+import TradingVenueAttributes1
 
 class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgVnRltdAttrbts", "_TechRcrdId", "_TechAttrbts", "_DebtInstrmAttrbts", "_Issr", "_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts"]
+	__slots__ = ["_TradgVnRltdAttrbts", "_Issr", "_TechAttrbts", "_TechRcrdId", "_DebtInstrmAttrbts", "_DerivInstrmAttrbts", "_FinInstrmGnlAttrbts"]
 	@property
 	def TradgVnRltdAttrbts(self):
 		return self._TradgVnRltdAttrbts
@@ -24,17 +24,17 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 		self._TradgVnRltdAttrbts = None
 
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def Issr(self):
+		return self._Issr
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def TechAttrbts(self):
@@ -50,6 +50,19 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 		self._TechAttrbts = None
 
 	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
+
+	@property
 	def DebtInstrmAttrbts(self):
 		return self._DebtInstrmAttrbts
 
@@ -61,19 +74,6 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 	def DebtInstrmAttrbts(self):
 		del self._DebtInstrmAttrbts
 		self._DebtInstrmAttrbts = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
 
 	@property
 	def DerivInstrmAttrbts(self):
@@ -103,10 +103,10 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TradgVnRltdAttrbts', type=TradingVenueAttributes1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivInstrmAttrbts', type=DerivativeInstrument5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmGnlAttrbts', type=SecurityInstrumentDescription9, min=1, max=1, mutex_group=None, array=False),
 	))

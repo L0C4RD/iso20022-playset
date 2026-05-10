@@ -1,8 +1,8 @@
 import base_types
-import UndertakingConfirmation1
 import UndertakingAmendmentMessage1
-import AdvisingPartyAdditionalInformation1
 import PartyAndSignature2
+import AdvisingPartyAdditionalInformation1
+import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 

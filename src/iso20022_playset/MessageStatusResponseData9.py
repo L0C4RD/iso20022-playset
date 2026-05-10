@@ -1,29 +1,29 @@
 import base_types
 import ReversalResponse9
-import GenericIdentification177
-import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
 import StoredValueResponse8
-import Max35Text
-import LoyaltyResponse3
-import CardAcquisitionResponse3
 import PaymentResponse7
+import Max35Text
+import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+import CardAcquisitionResponse3
+import GenericIdentification177
 import ResponseType11
+import LoyaltyResponse3
 
 class MessageStatusResponseData9(base_types._BaseFieldType):
 
-	__slots__ = ["_InitgPty", "_RpeatdPmtRspn", "_XchgId", "_RpeatdCardAcqstnRspn", "_TxRspn", "_RpeatdSndApplPrtcolDataUnitCardRdrRspn", "_RpeatdLltyRspn", "_RpeatdStordValRspn", "_RpeatdRvslRspn"]
+	__slots__ = ["_RpeatdLltyRspn", "_RpeatdPmtRspn", "_RpeatdRvslRspn", "_RpeatdStordValRspn", "_RpeatdCardAcqstnRspn", "_TxRspn", "_RpeatdSndApplPrtcolDataUnitCardRdrRspn", "_XchgId", "_InitgPty"]
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def RpeatdLltyRspn(self):
+		return self._RpeatdLltyRspn
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+	@RpeatdLltyRspn.setter
+	def RpeatdLltyRspn(self, value):
+		self._RpeatdLltyRspn = value if type(value) != auto else self.make_default("RpeatdLltyRspn")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@RpeatdLltyRspn.deleter
+	def RpeatdLltyRspn(self):
+		del self._RpeatdLltyRspn
+		self._RpeatdLltyRspn = None
 
 	@property
 	def RpeatdPmtRspn(self):
@@ -39,17 +39,30 @@ class MessageStatusResponseData9(base_types._BaseFieldType):
 		self._RpeatdPmtRspn = None
 
 	@property
-	def XchgId(self):
-		return self._XchgId
+	def RpeatdRvslRspn(self):
+		return self._RpeatdRvslRspn
 
-	@XchgId.setter
-	def XchgId(self, value):
-		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
+	@RpeatdRvslRspn.setter
+	def RpeatdRvslRspn(self, value):
+		self._RpeatdRvslRspn = value if type(value) != auto else self.make_default("RpeatdRvslRspn")
 
-	@XchgId.deleter
-	def XchgId(self):
-		del self._XchgId
-		self._XchgId = None
+	@RpeatdRvslRspn.deleter
+	def RpeatdRvslRspn(self):
+		del self._RpeatdRvslRspn
+		self._RpeatdRvslRspn = None
+
+	@property
+	def RpeatdStordValRspn(self):
+		return self._RpeatdStordValRspn
+
+	@RpeatdStordValRspn.setter
+	def RpeatdStordValRspn(self, value):
+		self._RpeatdStordValRspn = value if type(value) != auto else self.make_default("RpeatdStordValRspn")
+
+	@RpeatdStordValRspn.deleter
+	def RpeatdStordValRspn(self):
+		del self._RpeatdStordValRspn
+		self._RpeatdStordValRspn = None
 
 	@property
 	def RpeatdCardAcqstnRspn(self):
@@ -91,53 +104,40 @@ class MessageStatusResponseData9(base_types._BaseFieldType):
 		self._RpeatdSndApplPrtcolDataUnitCardRdrRspn = None
 
 	@property
-	def RpeatdLltyRspn(self):
-		return self._RpeatdLltyRspn
+	def XchgId(self):
+		return self._XchgId
 
-	@RpeatdLltyRspn.setter
-	def RpeatdLltyRspn(self, value):
-		self._RpeatdLltyRspn = value if type(value) != auto else self.make_default("RpeatdLltyRspn")
+	@XchgId.setter
+	def XchgId(self, value):
+		self._XchgId = value if type(value) != auto else self.make_default("XchgId")
 
-	@RpeatdLltyRspn.deleter
-	def RpeatdLltyRspn(self):
-		del self._RpeatdLltyRspn
-		self._RpeatdLltyRspn = None
-
-	@property
-	def RpeatdStordValRspn(self):
-		return self._RpeatdStordValRspn
-
-	@RpeatdStordValRspn.setter
-	def RpeatdStordValRspn(self, value):
-		self._RpeatdStordValRspn = value if type(value) != auto else self.make_default("RpeatdStordValRspn")
-
-	@RpeatdStordValRspn.deleter
-	def RpeatdStordValRspn(self):
-		del self._RpeatdStordValRspn
-		self._RpeatdStordValRspn = None
+	@XchgId.deleter
+	def XchgId(self):
+		del self._XchgId
+		self._XchgId = None
 
 	@property
-	def RpeatdRvslRspn(self):
-		return self._RpeatdRvslRspn
+	def InitgPty(self):
+		return self._InitgPty
 
-	@RpeatdRvslRspn.setter
-	def RpeatdRvslRspn(self, value):
-		self._RpeatdRvslRspn = value if type(value) != auto else self.make_default("RpeatdRvslRspn")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
 
-	@RpeatdRvslRspn.deleter
-	def RpeatdRvslRspn(self):
-		del self._RpeatdRvslRspn
-		self._RpeatdRvslRspn = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitgPty', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpeatdLltyRspn', type=LoyaltyResponse3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpeatdPmtRspn', type=PaymentResponse7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpeatdRvslRspn', type=ReversalResponse9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpeatdStordValRspn', type=StoredValueResponse8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpeatdCardAcqstnRspn', type=CardAcquisitionResponse3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpeatdSndApplPrtcolDataUnitCardRdrRspn', type=DeviceSendApplicationProtocolDataUnitCardReaderResponse1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpeatdLltyRspn', type=LoyaltyResponse3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpeatdStordValRspn', type=StoredValueResponse8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpeatdRvslRspn', type=ReversalResponse9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitgPty', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
 	))
 

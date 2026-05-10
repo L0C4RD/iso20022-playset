@@ -1,52 +1,26 @@
 import base_types
-import DocumentFormat1Choice
-import DateAndDateTime2Choice
-import DocumentType1Choice
-import Max2048Text
-import Max35Text
 import Max140Text
+import Max35Text
+import Max2048Text
+import DocumentFormat1Choice
+import DocumentType1Choice
+import DateAndDateTime2Choice
 
 class FileData1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtwkRef", "_Id", "_Tp", "_FileNm", "_FileLctnElctrncAdr", "_Frmt", "_IsseDt"]
+	__slots__ = ["_FileLctnElctrncAdr", "_FileNm", "_NtwkRef", "_Tp", "_Id", "_Frmt", "_IsseDt"]
 	@property
-	def NtwkRef(self):
-		return self._NtwkRef
+	def FileLctnElctrncAdr(self):
+		return self._FileLctnElctrncAdr
 
-	@NtwkRef.setter
-	def NtwkRef(self, value):
-		self._NtwkRef = value if type(value) != auto else self.make_default("NtwkRef")
+	@FileLctnElctrncAdr.setter
+	def FileLctnElctrncAdr(self, value):
+		self._FileLctnElctrncAdr = value if type(value) != auto else self.make_default("FileLctnElctrncAdr")
 
-	@NtwkRef.deleter
-	def NtwkRef(self):
-		del self._NtwkRef
-		self._NtwkRef = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@FileLctnElctrncAdr.deleter
+	def FileLctnElctrncAdr(self):
+		del self._FileLctnElctrncAdr
+		self._FileLctnElctrncAdr = None
 
 	@property
 	def FileNm(self):
@@ -62,17 +36,43 @@ class FileData1(base_types._BaseFieldType):
 		self._FileNm = None
 
 	@property
-	def FileLctnElctrncAdr(self):
-		return self._FileLctnElctrncAdr
+	def NtwkRef(self):
+		return self._NtwkRef
 
-	@FileLctnElctrncAdr.setter
-	def FileLctnElctrncAdr(self, value):
-		self._FileLctnElctrncAdr = value if type(value) != auto else self.make_default("FileLctnElctrncAdr")
+	@NtwkRef.setter
+	def NtwkRef(self, value):
+		self._NtwkRef = value if type(value) != auto else self.make_default("NtwkRef")
 
-	@FileLctnElctrncAdr.deleter
-	def FileLctnElctrncAdr(self):
-		del self._FileLctnElctrncAdr
-		self._FileLctnElctrncAdr = None
+	@NtwkRef.deleter
+	def NtwkRef(self):
+		del self._NtwkRef
+		self._NtwkRef = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Frmt(self):
@@ -101,11 +101,11 @@ class FileData1(base_types._BaseFieldType):
 		self._IsseDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtwkRef', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FileLctnElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtwkRef', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,15 +1,15 @@
 import base_types
+import PendingStatus1
+import NoSpecifiedReason1
+import RejectedStatus11
+import ReturnedStatus2Choice
+import CancelledStatus5
 import ProprietaryStatusAndReason6
 import AcceptedStatus2
-import CancelledStatus5
-import RejectedStatus11
-import PendingStatus1
-import ReturnedStatus2Choice
-import NoSpecifiedReason1
 
 class InstructionProcessingStatus55Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_StgInstr", "_Canc", "_Rtrd", "_Rjctd", "_AccptdForFrthrPrcg", "_PrtrySts", "_RcvdByIssrOrOfferr", "_DfltActn", "_Fwdd"]
+	__slots__ = ["_Pdg", "_StgInstr", "_DfltActn", "_RcvdByIssrOrOfferr", "_Fwdd", "_Rjctd", "_PrtrySts", "_AccptdForFrthrPrcg", "_Rtrd", "_Canc"]
 	@property
 	def Pdg(self):
 		return self._Pdg
@@ -37,69 +37,17 @@ class InstructionProcessingStatus55Choice(base_types._BaseFieldType):
 		self._StgInstr = None
 
 	@property
-	def Canc(self):
-		return self._Canc
+	def DfltActn(self):
+		return self._DfltActn
 
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
+	@DfltActn.setter
+	def DfltActn(self, value):
+		self._DfltActn = value if type(value) != auto else self.make_default("DfltActn")
 
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
-
-	@property
-	def Rtrd(self):
-		return self._Rtrd
-
-	@Rtrd.setter
-	def Rtrd(self, value):
-		self._Rtrd = value if type(value) != auto else self.make_default("Rtrd")
-
-	@Rtrd.deleter
-	def Rtrd(self):
-		del self._Rtrd
-		self._Rtrd = None
-
-	@property
-	def Rjctd(self):
-		return self._Rjctd
-
-	@Rjctd.setter
-	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
-
-	@Rjctd.deleter
-	def Rjctd(self):
-		del self._Rjctd
-		self._Rjctd = None
-
-	@property
-	def AccptdForFrthrPrcg(self):
-		return self._AccptdForFrthrPrcg
-
-	@AccptdForFrthrPrcg.setter
-	def AccptdForFrthrPrcg(self, value):
-		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
-
-	@AccptdForFrthrPrcg.deleter
-	def AccptdForFrthrPrcg(self):
-		del self._AccptdForFrthrPrcg
-		self._AccptdForFrthrPrcg = None
-
-	@property
-	def PrtrySts(self):
-		return self._PrtrySts
-
-	@PrtrySts.setter
-	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
-
-	@PrtrySts.deleter
-	def PrtrySts(self):
-		del self._PrtrySts
-		self._PrtrySts = None
+	@DfltActn.deleter
+	def DfltActn(self):
+		del self._DfltActn
+		self._DfltActn = None
 
 	@property
 	def RcvdByIssrOrOfferr(self):
@@ -115,19 +63,6 @@ class InstructionProcessingStatus55Choice(base_types._BaseFieldType):
 		self._RcvdByIssrOrOfferr = None
 
 	@property
-	def DfltActn(self):
-		return self._DfltActn
-
-	@DfltActn.setter
-	def DfltActn(self, value):
-		self._DfltActn = value if type(value) != auto else self.make_default("DfltActn")
-
-	@DfltActn.deleter
-	def DfltActn(self):
-		del self._DfltActn
-		self._DfltActn = None
-
-	@property
 	def Fwdd(self):
 		return self._Fwdd
 
@@ -140,16 +75,81 @@ class InstructionProcessingStatus55Choice(base_types._BaseFieldType):
 		del self._Fwdd
 		self._Fwdd = None
 
+	@property
+	def Rjctd(self):
+		return self._Rjctd
+
+	@Rjctd.setter
+	def Rjctd(self, value):
+		self._Rjctd = value if type(value) != auto else self.make_default("Rjctd")
+
+	@Rjctd.deleter
+	def Rjctd(self):
+		del self._Rjctd
+		self._Rjctd = None
+
+	@property
+	def PrtrySts(self):
+		return self._PrtrySts
+
+	@PrtrySts.setter
+	def PrtrySts(self, value):
+		self._PrtrySts = value if type(value) != auto else self.make_default("PrtrySts")
+
+	@PrtrySts.deleter
+	def PrtrySts(self):
+		del self._PrtrySts
+		self._PrtrySts = None
+
+	@property
+	def AccptdForFrthrPrcg(self):
+		return self._AccptdForFrthrPrcg
+
+	@AccptdForFrthrPrcg.setter
+	def AccptdForFrthrPrcg(self, value):
+		self._AccptdForFrthrPrcg = value if type(value) != auto else self.make_default("AccptdForFrthrPrcg")
+
+	@AccptdForFrthrPrcg.deleter
+	def AccptdForFrthrPrcg(self):
+		del self._AccptdForFrthrPrcg
+		self._AccptdForFrthrPrcg = None
+
+	@property
+	def Rtrd(self):
+		return self._Rtrd
+
+	@Rtrd.setter
+	def Rtrd(self, value):
+		self._Rtrd = value if type(value) != auto else self.make_default("Rtrd")
+
+	@Rtrd.deleter
+	def Rtrd(self):
+		del self._Rtrd
+		self._Rtrd = None
+
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pdg', type=PendingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StgInstr', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancelledStatus5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rtrd', type=ReturnedStatus2Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectedStatus11, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RcvdByIssrOrOfferr', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DfltActn', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RcvdByIssrOrOfferr', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Fwdd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectedStatus11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rtrd', type=ReturnedStatus2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancelledStatus5, min=0, max=1, mutex_group=1, array=False),
 	))
 

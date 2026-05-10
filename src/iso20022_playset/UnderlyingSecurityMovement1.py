@@ -1,23 +1,23 @@
 import base_types
-import UnitOrFaceAmount1Choice
 import SecuritiesAccount8
+import UnitOrFaceAmount1Choice
 import SecurityIdentification7
 
 class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_SctyId", "_SctiesQty"]
+	__slots__ = ["_SctiesQty", "_SctyId", "_AcctDtls"]
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def SctiesQty(self):
+		return self._SctiesQty
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
 
 	@property
 	def SctyId(self):
@@ -33,21 +33,21 @@ class UnderlyingSecurityMovement1(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
-	def SctiesQty(self):
-		return self._SctiesQty
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount8, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount8, min=1, max=2, mutex_group=None, array=False),
 	))
 

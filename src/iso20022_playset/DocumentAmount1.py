@@ -1,6 +1,6 @@
 import base_types
-import DocumentAmountType1Choice
 import ActiveOrHistoricCurrencyAndAmount
+import DocumentAmountType1Choice
 
 class DocumentAmount1(base_types._BaseFieldType):
 

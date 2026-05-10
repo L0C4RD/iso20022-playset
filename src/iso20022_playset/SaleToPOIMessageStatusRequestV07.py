@@ -1,11 +1,24 @@
 import base_types
+import ContentInformationType38
 import Header41
 import MessageStatusRequest8
-import ContentInformationType38
 
 class SaleToPOIMessageStatusRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_StsReq"]
+	__slots__ = ["_StsReq", "_Hdr", "_SctyTrlr"]
+	@property
+	def StsReq(self):
+		return self._StsReq
+
+	@StsReq.setter
+	def StsReq(self, value):
+		self._StsReq = value if type(value) != auto else self.make_default("StsReq")
+
+	@StsReq.deleter
+	def StsReq(self):
+		del self._StsReq
+		self._StsReq = None
+
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -32,22 +45,9 @@ class SaleToPOIMessageStatusRequestV07(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def StsReq(self):
-		return self._StsReq
-
-	@StsReq.setter
-	def StsReq(self, value):
-		self._StsReq = value if type(value) != auto else self.make_default("StsReq")
-
-	@StsReq.deleter
-	def StsReq(self):
-		del self._StsReq
-		self._StsReq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StsReq', type=MessageStatusRequest8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsReq', type=MessageStatusRequest8, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
 import ISODate
-import IndividualCostOrCharge2
 import AdditionalInformation15
+import IndividualCostOrCharge2
 
 class CostsAndCharges2(base_types._BaseFieldType):
 
-	__slots__ = ["_ExAnteRefDt", "_IndvCostOrChrg", "_AddtlInf"]
+	__slots__ = ["_ExAnteRefDt", "_AddtlInf", "_IndvCostOrChrg"]
 	@property
 	def ExAnteRefDt(self):
 		return self._ExAnteRefDt
@@ -20,19 +20,6 @@ class CostsAndCharges2(base_types._BaseFieldType):
 		self._ExAnteRefDt = None
 
 	@property
-	def IndvCostOrChrg(self):
-		return self._IndvCostOrChrg
-
-	@IndvCostOrChrg.setter
-	def IndvCostOrChrg(self, value):
-		self._IndvCostOrChrg = value if type(value) != auto else self.make_default("IndvCostOrChrg")
-
-	@IndvCostOrChrg.deleter
-	def IndvCostOrChrg(self):
-		del self._IndvCostOrChrg
-		self._IndvCostOrChrg = None
-
-	@property
 	def AddtlInf(self):
 		return self._AddtlInf
 
@@ -45,9 +32,22 @@ class CostsAndCharges2(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def IndvCostOrChrg(self):
+		return self._IndvCostOrChrg
+
+	@IndvCostOrChrg.setter
+	def IndvCostOrChrg(self, value):
+		self._IndvCostOrChrg = value if type(value) != auto else self.make_default("IndvCostOrChrg")
+
+	@IndvCostOrChrg.deleter
+	def IndvCostOrChrg(self):
+		del self._IndvCostOrChrg
+		self._IndvCostOrChrg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ExAnteRefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndvCostOrChrg', type=IndividualCostOrCharge2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndvCostOrChrg', type=IndividualCostOrCharge2, min=1, max=None, mutex_group=None, array=True),
 	))
 

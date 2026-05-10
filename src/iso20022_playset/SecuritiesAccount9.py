@@ -1,15 +1,15 @@
 import base_types
+import Max35Text
 import CreditDebitCode
 import FormOfSecurity1Code
+import PartyIdentification2Choice
 import CorporateActionOption1FormatChoice
 import Exact3NumericText
-import PartyIdentification2Choice
 import SecuritiesBalanceType10FormatChoice
-import Max35Text
 
 class SecuritiesAccount9(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_OptnNb", "_AcctOwnrId", "_BalTp", "_CdtDbtInd", "_AcctId", "_SctyHldgForm"]
+	__slots__ = ["_OptnTp", "_SctyHldgForm", "_AcctId", "_CdtDbtInd", "_AcctOwnrId", "_BalTp", "_OptnNb"]
 	@property
 	def OptnTp(self):
 		return self._OptnTp
@@ -24,17 +24,43 @@ class SecuritiesAccount9(base_types._BaseFieldType):
 		self._OptnTp = None
 
 	@property
-	def OptnNb(self):
-		return self._OptnNb
+	def SctyHldgForm(self):
+		return self._SctyHldgForm
 
-	@OptnNb.setter
-	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
+	@SctyHldgForm.setter
+	def SctyHldgForm(self, value):
+		self._SctyHldgForm = value if type(value) != auto else self.make_default("SctyHldgForm")
 
-	@OptnNb.deleter
-	def OptnNb(self):
-		del self._OptnNb
-		self._OptnNb = None
+	@SctyHldgForm.deleter
+	def SctyHldgForm(self):
+		del self._SctyHldgForm
+		self._SctyHldgForm = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	@property
 	def AcctOwnrId(self):
@@ -63,51 +89,25 @@ class SecuritiesAccount9(base_types._BaseFieldType):
 		self._BalTp = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def OptnNb(self):
+		return self._OptnNb
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@OptnNb.setter
+	def OptnNb(self, value):
+		self._OptnNb = value if type(value) != auto else self.make_default("OptnNb")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
-
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
-	def SctyHldgForm(self):
-		return self._SctyHldgForm
-
-	@SctyHldgForm.setter
-	def SctyHldgForm(self, value):
-		self._SctyHldgForm = value if type(value) != auto else self.make_default("SctyHldgForm")
-
-	@SctyHldgForm.deleter
-	def SctyHldgForm(self):
-		del self._SctyHldgForm
-		self._SctyHldgForm = None
+	@OptnNb.deleter
+	def OptnNb(self):
+		del self._OptnNb
+		self._OptnNb = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=SecuritiesBalanceType10FormatChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyHldgForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,36 @@
 import base_types
-import AmountAndCurrencyExchangeDetails6
 import AmountAndCurrencyExchangeDetails5
+import AmountAndCurrencyExchangeDetails6
 
 class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
-	__slots__ = ["_TxAmt", "_InstdAmt", "_AnncdPstngAmt", "_PrtryAmt", "_CntrValAmt"]
+	__slots__ = ["_CntrValAmt", "_AnncdPstngAmt", "_TxAmt", "_InstdAmt", "_PrtryAmt"]
+	@property
+	def CntrValAmt(self):
+		return self._CntrValAmt
+
+	@CntrValAmt.setter
+	def CntrValAmt(self, value):
+		self._CntrValAmt = value if type(value) != auto else self.make_default("CntrValAmt")
+
+	@CntrValAmt.deleter
+	def CntrValAmt(self):
+		del self._CntrValAmt
+		self._CntrValAmt = None
+
+	@property
+	def AnncdPstngAmt(self):
+		return self._AnncdPstngAmt
+
+	@AnncdPstngAmt.setter
+	def AnncdPstngAmt(self, value):
+		self._AnncdPstngAmt = value if type(value) != auto else self.make_default("AnncdPstngAmt")
+
+	@AnncdPstngAmt.deleter
+	def AnncdPstngAmt(self):
+		del self._AnncdPstngAmt
+		self._AnncdPstngAmt = None
+
 	@property
 	def TxAmt(self):
 		return self._TxAmt
@@ -32,19 +58,6 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 		self._InstdAmt = None
 
 	@property
-	def AnncdPstngAmt(self):
-		return self._AnncdPstngAmt
-
-	@AnncdPstngAmt.setter
-	def AnncdPstngAmt(self, value):
-		self._AnncdPstngAmt = value if type(value) != auto else self.make_default("AnncdPstngAmt")
-
-	@AnncdPstngAmt.deleter
-	def AnncdPstngAmt(self):
-		del self._AnncdPstngAmt
-		self._AnncdPstngAmt = None
-
-	@property
 	def PrtryAmt(self):
 		return self._PrtryAmt
 
@@ -57,24 +70,11 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 		del self._PrtryAmt
 		self._PrtryAmt = None
 
-	@property
-	def CntrValAmt(self):
-		return self._CntrValAmt
-
-	@CntrValAmt.setter
-	def CntrValAmt(self, value):
-		self._CntrValAmt = value if type(value) != auto else self.make_default("CntrValAmt")
-
-	@CntrValAmt.deleter
-	def CntrValAmt(self):
-		del self._CntrValAmt
-		self._CntrValAmt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CntrValAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnncdPstngAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnncdPstngAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryAmt', type=AmountAndCurrencyExchangeDetails6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CntrValAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import DateAndDateTime2Choice
 import TrueFalseIndicator
+import DateAndDateTime2Choice
 
 class SecurityCSDLinkUpdate3(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import ResponseStatus1Code
 import GenericIdentification47
+import ResponseStatus1Code
 
 class ResponseStatus7Choice(base_types._BaseFieldType):
 

@@ -1,13 +1,13 @@
 import base_types
+import PartyIdentification137Choice
+import AlternatePartyIdentification9
 import RestrictedFINXMax35Text
 import RestrictedFINXMax16Text
 import RestrictedFINXMax140Text
-import PartyIdentification137Choice
-import AlternatePartyIdentification9
 
 class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgId", "_Id", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_AltrnId"]
+	__slots__ = ["_PrcgId", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AltrnId", "_Id"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -20,32 +20,6 @@ class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 	def PrcgId(self):
 		del self._PrcgId
 		self._PrcgId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -61,6 +35,19 @@ class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -73,11 +60,24 @@ class PartyIdentificationAndAccount205(base_types._BaseFieldType):
 		del self._AltrnId
 		self._AltrnId = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcgId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import InterestRejectionReason1Code
+import GenericIdentification30
 
 class RejectionReason21FormatChoice(base_types._BaseFieldType):
 

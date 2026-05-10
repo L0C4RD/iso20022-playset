@@ -1,12 +1,12 @@
 import base_types
+import AccountLink8
+import MessageHeader1
 import SupplementaryData1
 import AccountLinkUpdate2
-import MessageHeader1
-import AccountLink8
 
 class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Upd", "_SplmtryData", "_AcctLkId", "_MsgHdr"]
+	__slots__ = ["_Upd", "_AcctLkId", "_SplmtryData", "_MsgHdr"]
 	@property
 	def Upd(self):
 		return self._Upd
@@ -21,19 +21,6 @@ class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 		self._Upd = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def AcctLkId(self):
 		return self._AcctLkId
 
@@ -45,6 +32,19 @@ class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 	def AcctLkId(self):
 		del self._AcctLkId
 		self._AcctLkId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MsgHdr(self):
@@ -61,8 +61,8 @@ class AccountLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Upd', type=AccountLinkUpdate2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctLkId', type=AccountLink8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 import base_types
-import ActiveOrHistoricCurrencyCode
-import FloatingInterestRate8
 import InterestRate8Choice
+import FloatingInterestRate8
+import ActiveOrHistoricCurrencyCode
 
 class DerivativeInterest3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrNtnlCcy", "_OthrLegIntrstRate", "_FrstLegIntrstRate", "_IntrstRate"]
+	__slots__ = ["_IntrstRate", "_OthrNtnlCcy", "_FrstLegIntrstRate", "_OthrLegIntrstRate"]
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
 	@property
 	def OthrNtnlCcy(self):
 		return self._OthrNtnlCcy
@@ -18,19 +31,6 @@ class DerivativeInterest3(base_types._BaseFieldType):
 	def OthrNtnlCcy(self):
 		del self._OthrNtnlCcy
 		self._OthrNtnlCcy = None
-
-	@property
-	def OthrLegIntrstRate(self):
-		return self._OthrLegIntrstRate
-
-	@OthrLegIntrstRate.setter
-	def OthrLegIntrstRate(self, value):
-		self._OthrLegIntrstRate = value if type(value) != auto else self.make_default("OthrLegIntrstRate")
-
-	@OthrLegIntrstRate.deleter
-	def OthrLegIntrstRate(self):
-		del self._OthrLegIntrstRate
-		self._OthrLegIntrstRate = None
 
 	@property
 	def FrstLegIntrstRate(self):
@@ -46,22 +46,22 @@ class DerivativeInterest3(base_types._BaseFieldType):
 		self._FrstLegIntrstRate = None
 
 	@property
-	def IntrstRate(self):
-		return self._IntrstRate
+	def OthrLegIntrstRate(self):
+		return self._OthrLegIntrstRate
 
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+	@OthrLegIntrstRate.setter
+	def OthrLegIntrstRate(self, value):
+		self._OthrLegIntrstRate = value if type(value) != auto else self.make_default("OthrLegIntrstRate")
 
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
+	@OthrLegIntrstRate.deleter
+	def OthrLegIntrstRate(self):
+		del self._OthrLegIntrstRate
+		self._OthrLegIntrstRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=FloatingInterestRate8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

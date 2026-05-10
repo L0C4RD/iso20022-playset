@@ -5,20 +5,7 @@ import DateAndDateTime2Choice
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
-	__slots__ = ["_ValtnAmt", "_ValtnTmStmp", "_TxId"]
-	@property
-	def ValtnAmt(self):
-		return self._ValtnAmt
-
-	@ValtnAmt.setter
-	def ValtnAmt(self, value):
-		self._ValtnAmt = value if type(value) != auto else self.make_default("ValtnAmt")
-
-	@ValtnAmt.deleter
-	def ValtnAmt(self):
-		del self._ValtnAmt
-		self._ValtnAmt = None
-
+	__slots__ = ["_ValtnTmStmp", "_TxId", "_ValtnAmt"]
 	@property
 	def ValtnTmStmp(self):
 		return self._ValtnTmStmp
@@ -45,9 +32,22 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def ValtnAmt(self):
+		return self._ValtnAmt
+
+	@ValtnAmt.setter
+	def ValtnAmt(self, value):
+		self._ValtnAmt = value if type(value) != auto else self.make_default("ValtnAmt")
+
+	@ValtnAmt.deleter
+	def ValtnAmt(self):
+		del self._ValtnAmt
+		self._ValtnAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import TradeData37Choice
+import SupplementaryData1
 
 class SecuritiesFinancingReportingReusedCollateralDataTransactionStateReportV02(base_types._BaseFieldType):
 

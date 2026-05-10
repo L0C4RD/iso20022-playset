@@ -6,20 +6,7 @@ import DistributionPolicy1Code
 
 class FinancialInstrument76(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_SplmtryId", "_DstrbtnPlcy", "_ClssTp", "_ClssfctnTp"]
-	@property
-	def SctiesForm(self):
-		return self._SctiesForm
-
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != auto else self.make_default("SctiesForm")
-
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
-
+	__slots__ = ["_SplmtryId", "_SctiesForm", "_DstrbtnPlcy", "_ClssTp", "_ClssfctnTp"]
 	@property
 	def SplmtryId(self):
 		return self._SplmtryId
@@ -32,6 +19,19 @@ class FinancialInstrument76(base_types._BaseFieldType):
 	def SplmtryId(self):
 		del self._SplmtryId
 		self._SplmtryId = None
+
+	@property
+	def SctiesForm(self):
+		return self._SctiesForm
+
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != auto else self.make_default("SctiesForm")
+
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
 
 	@property
 	def DstrbtnPlcy(self):
@@ -73,8 +73,8 @@ class FinancialInstrument76(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryId', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssTp', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType3Choice, min=0, max=1, mutex_group=None, array=False),

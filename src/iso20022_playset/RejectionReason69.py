@@ -1,23 +1,23 @@
 import base_types
-import Max350Text
-import LinkedMessage6Choice
 import MessageRejectedReason2Code
+import LinkedMessage6Choice
+import Max350Text
 
 class RejectionReason69(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdMsg", "_AddtlInf", "_Rsn"]
+	__slots__ = ["_Rsn", "_AddtlInf", "_LkdMsg"]
 	@property
-	def LkdMsg(self):
-		return self._LkdMsg
+	def Rsn(self):
+		return self._Rsn
 
-	@LkdMsg.setter
-	def LkdMsg(self, value):
-		self._LkdMsg = value if type(value) != auto else self.make_default("LkdMsg")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@LkdMsg.deleter
-	def LkdMsg(self):
-		del self._LkdMsg
-		self._LkdMsg = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class RejectionReason69(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def LkdMsg(self):
+		return self._LkdMsg
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@LkdMsg.setter
+	def LkdMsg(self, value):
+		self._LkdMsg = value if type(value) != auto else self.make_default("LkdMsg")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@LkdMsg.deleter
+	def LkdMsg(self):
+		del self._LkdMsg
+		self._LkdMsg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LkdMsg', type=LinkedMessage6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=MessageRejectedReason2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkdMsg', type=LinkedMessage6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

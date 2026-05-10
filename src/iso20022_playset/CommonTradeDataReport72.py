@@ -1,23 +1,23 @@
 import base_types
+import ContractModification9
 import TradeTransaction50
 import ContractType15
-import ContractModification9
 
 class CommonTradeDataReport72(base_types._BaseFieldType):
 
-	__slots__ = ["_TxData", "_CtrctMod", "_CtrctData"]
+	__slots__ = ["_CtrctData", "_CtrctMod", "_TxData"]
 	@property
-	def TxData(self):
-		return self._TxData
+	def CtrctData(self):
+		return self._CtrctData
 
-	@TxData.setter
-	def TxData(self, value):
-		self._TxData = value if type(value) != auto else self.make_default("TxData")
+	@CtrctData.setter
+	def CtrctData(self, value):
+		self._CtrctData = value if type(value) != auto else self.make_default("CtrctData")
 
-	@TxData.deleter
-	def TxData(self):
-		del self._TxData
-		self._TxData = None
+	@CtrctData.deleter
+	def CtrctData(self):
+		del self._CtrctData
+		self._CtrctData = None
 
 	@property
 	def CtrctMod(self):
@@ -33,21 +33,21 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 		self._CtrctMod = None
 
 	@property
-	def CtrctData(self):
-		return self._CtrctData
+	def TxData(self):
+		return self._TxData
 
-	@CtrctData.setter
-	def CtrctData(self, value):
-		self._CtrctData = value if type(value) != auto else self.make_default("CtrctData")
+	@TxData.setter
+	def TxData(self, value):
+		self._TxData = value if type(value) != auto else self.make_default("TxData")
 
-	@CtrctData.deleter
-	def CtrctData(self):
-		del self._CtrctData
-		self._CtrctData = None
+	@TxData.deleter
+	def TxData(self):
+		del self._TxData
+		self._TxData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxData', type=TradeTransaction50, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctMod', type=ContractModification9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctData', type=ContractType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctMod', type=ContractModification9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxData', type=TradeTransaction50, min=1, max=1, mutex_group=None, array=False),
 	))
 

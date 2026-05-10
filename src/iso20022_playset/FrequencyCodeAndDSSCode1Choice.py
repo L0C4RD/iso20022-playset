@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification7
 import EventFrequency1Code
+import GenericIdentification7
 
 class FrequencyCodeAndDSSCode1Choice(base_types._BaseFieldType):
 

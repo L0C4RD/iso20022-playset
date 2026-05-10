@@ -1,23 +1,23 @@
 import base_types
-import Number
 import DecimalNumber
 import ActiveCurrencyAndAmount
+import Number
 
 class StatisticsTransparency3(base_types._BaseFieldType):
 
-	__slots__ = ["_AvrgTxVal", "_StdMktSz", "_TtlVolOfTxsExctd", "_AvrgDalyNbOfTxs", "_TtlNbOfTxsExctd", "_TtlNbOfTradgDays", "_AvrgDalyTrnvr", "_LrgInScale"]
+	__slots__ = ["_TtlNbOfTradgDays", "_StdMktSz", "_AvrgDalyTrnvr", "_AvrgTxVal", "_LrgInScale", "_AvrgDalyNbOfTxs", "_TtlVolOfTxsExctd", "_TtlNbOfTxsExctd"]
 	@property
-	def AvrgTxVal(self):
-		return self._AvrgTxVal
+	def TtlNbOfTradgDays(self):
+		return self._TtlNbOfTradgDays
 
-	@AvrgTxVal.setter
-	def AvrgTxVal(self, value):
-		self._AvrgTxVal = value if type(value) != auto else self.make_default("AvrgTxVal")
+	@TtlNbOfTradgDays.setter
+	def TtlNbOfTradgDays(self, value):
+		self._TtlNbOfTradgDays = value if type(value) != auto else self.make_default("TtlNbOfTradgDays")
 
-	@AvrgTxVal.deleter
-	def AvrgTxVal(self):
-		del self._AvrgTxVal
-		self._AvrgTxVal = None
+	@TtlNbOfTradgDays.deleter
+	def TtlNbOfTradgDays(self):
+		del self._TtlNbOfTradgDays
+		self._TtlNbOfTradgDays = None
 
 	@property
 	def StdMktSz(self):
@@ -33,17 +33,43 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 		self._StdMktSz = None
 
 	@property
-	def TtlVolOfTxsExctd(self):
-		return self._TtlVolOfTxsExctd
+	def AvrgDalyTrnvr(self):
+		return self._AvrgDalyTrnvr
 
-	@TtlVolOfTxsExctd.setter
-	def TtlVolOfTxsExctd(self, value):
-		self._TtlVolOfTxsExctd = value if type(value) != auto else self.make_default("TtlVolOfTxsExctd")
+	@AvrgDalyTrnvr.setter
+	def AvrgDalyTrnvr(self, value):
+		self._AvrgDalyTrnvr = value if type(value) != auto else self.make_default("AvrgDalyTrnvr")
 
-	@TtlVolOfTxsExctd.deleter
-	def TtlVolOfTxsExctd(self):
-		del self._TtlVolOfTxsExctd
-		self._TtlVolOfTxsExctd = None
+	@AvrgDalyTrnvr.deleter
+	def AvrgDalyTrnvr(self):
+		del self._AvrgDalyTrnvr
+		self._AvrgDalyTrnvr = None
+
+	@property
+	def AvrgTxVal(self):
+		return self._AvrgTxVal
+
+	@AvrgTxVal.setter
+	def AvrgTxVal(self, value):
+		self._AvrgTxVal = value if type(value) != auto else self.make_default("AvrgTxVal")
+
+	@AvrgTxVal.deleter
+	def AvrgTxVal(self):
+		del self._AvrgTxVal
+		self._AvrgTxVal = None
+
+	@property
+	def LrgInScale(self):
+		return self._LrgInScale
+
+	@LrgInScale.setter
+	def LrgInScale(self, value):
+		self._LrgInScale = value if type(value) != auto else self.make_default("LrgInScale")
+
+	@LrgInScale.deleter
+	def LrgInScale(self):
+		del self._LrgInScale
+		self._LrgInScale = None
 
 	@property
 	def AvrgDalyNbOfTxs(self):
@@ -59,6 +85,19 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 		self._AvrgDalyNbOfTxs = None
 
 	@property
+	def TtlVolOfTxsExctd(self):
+		return self._TtlVolOfTxsExctd
+
+	@TtlVolOfTxsExctd.setter
+	def TtlVolOfTxsExctd(self, value):
+		self._TtlVolOfTxsExctd = value if type(value) != auto else self.make_default("TtlVolOfTxsExctd")
+
+	@TtlVolOfTxsExctd.deleter
+	def TtlVolOfTxsExctd(self):
+		del self._TtlVolOfTxsExctd
+		self._TtlVolOfTxsExctd = None
+
+	@property
 	def TtlNbOfTxsExctd(self):
 		return self._TtlNbOfTxsExctd
 
@@ -71,53 +110,14 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 		del self._TtlNbOfTxsExctd
 		self._TtlNbOfTxsExctd = None
 
-	@property
-	def TtlNbOfTradgDays(self):
-		return self._TtlNbOfTradgDays
-
-	@TtlNbOfTradgDays.setter
-	def TtlNbOfTradgDays(self, value):
-		self._TtlNbOfTradgDays = value if type(value) != auto else self.make_default("TtlNbOfTradgDays")
-
-	@TtlNbOfTradgDays.deleter
-	def TtlNbOfTradgDays(self):
-		del self._TtlNbOfTradgDays
-		self._TtlNbOfTradgDays = None
-
-	@property
-	def AvrgDalyTrnvr(self):
-		return self._AvrgDalyTrnvr
-
-	@AvrgDalyTrnvr.setter
-	def AvrgDalyTrnvr(self, value):
-		self._AvrgDalyTrnvr = value if type(value) != auto else self.make_default("AvrgDalyTrnvr")
-
-	@AvrgDalyTrnvr.deleter
-	def AvrgDalyTrnvr(self):
-		del self._AvrgDalyTrnvr
-		self._AvrgDalyTrnvr = None
-
-	@property
-	def LrgInScale(self):
-		return self._LrgInScale
-
-	@LrgInScale.setter
-	def LrgInScale(self, value):
-		self._LrgInScale = value if type(value) != auto else self.make_default("LrgInScale")
-
-	@LrgInScale.deleter
-	def LrgInScale(self):
-		del self._LrgInScale
-		self._LrgInScale = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AvrgTxVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StdMktSz', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlVolOfTxsExctd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvrgDalyNbOfTxs', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfTxsExctd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTradgDays', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StdMktSz', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvrgDalyTrnvr', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgTxVal', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LrgInScale', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AvrgDalyNbOfTxs', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlVolOfTxsExctd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxsExctd', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

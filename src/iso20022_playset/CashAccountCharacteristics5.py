@@ -1,32 +1,19 @@
 import base_types
-import ActiveOrHistoricCurrencyCode
-import ParentCashAccount5
 import Max105Text
+import Contact13
+import CompensationMethod1Code
+import ISODate
 import AccountLevel2Code
-import AccountIdentification4Choice
+import ActiveOrHistoricCurrencyCode
 import AccountTax1
 import CashAccount40
-import Contact13
-import ISODate
-import CompensationMethod1Code
+import AccountIdentification4Choice
+import ParentCashAccount5
 import BranchAndFinancialInstitutionIdentification8
 
 class CashAccountCharacteristics5(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmAdvc", "_DelydDbtDt", "_AcctBalCcyCd", "_SttlmCcyCd", "_HstCcyCd", "_DbtAcct", "_Tax", "_AcctSvcr", "_CompstnMtd", "_PrntAcct", "_AcctSvcrCtct", "_CshAcct", "_AcctLvl"]
-	@property
-	def SttlmAdvc(self):
-		return self._SttlmAdvc
-
-	@SttlmAdvc.setter
-	def SttlmAdvc(self, value):
-		self._SttlmAdvc = value if type(value) != auto else self.make_default("SttlmAdvc")
-
-	@SttlmAdvc.deleter
-	def SttlmAdvc(self):
-		del self._SttlmAdvc
-		self._SttlmAdvc = None
-
+	__slots__ = ["_DelydDbtDt", "_AcctBalCcyCd", "_Tax", "_HstCcyCd", "_SttlmCcyCd", "_AcctLvl", "_AcctSvcrCtct", "_CshAcct", "_DbtAcct", "_PrntAcct", "_SttlmAdvc", "_AcctSvcr", "_CompstnMtd"]
 	@property
 	def DelydDbtDt(self):
 		return self._DelydDbtDt
@@ -54,17 +41,17 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 		self._AcctBalCcyCd = None
 
 	@property
-	def SttlmCcyCd(self):
-		return self._SttlmCcyCd
+	def Tax(self):
+		return self._Tax
 
-	@SttlmCcyCd.setter
-	def SttlmCcyCd(self, value):
-		self._SttlmCcyCd = value if type(value) != auto else self.make_default("SttlmCcyCd")
+	@Tax.setter
+	def Tax(self, value):
+		self._Tax = value if type(value) != auto else self.make_default("Tax")
 
-	@SttlmCcyCd.deleter
-	def SttlmCcyCd(self):
-		del self._SttlmCcyCd
-		self._SttlmCcyCd = None
+	@Tax.deleter
+	def Tax(self):
+		del self._Tax
+		self._Tax = None
 
 	@property
 	def HstCcyCd(self):
@@ -80,69 +67,30 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 		self._HstCcyCd = None
 
 	@property
-	def DbtAcct(self):
-		return self._DbtAcct
+	def SttlmCcyCd(self):
+		return self._SttlmCcyCd
 
-	@DbtAcct.setter
-	def DbtAcct(self, value):
-		self._DbtAcct = value if type(value) != auto else self.make_default("DbtAcct")
+	@SttlmCcyCd.setter
+	def SttlmCcyCd(self, value):
+		self._SttlmCcyCd = value if type(value) != auto else self.make_default("SttlmCcyCd")
 
-	@DbtAcct.deleter
-	def DbtAcct(self):
-		del self._DbtAcct
-		self._DbtAcct = None
-
-	@property
-	def Tax(self):
-		return self._Tax
-
-	@Tax.setter
-	def Tax(self, value):
-		self._Tax = value if type(value) != auto else self.make_default("Tax")
-
-	@Tax.deleter
-	def Tax(self):
-		del self._Tax
-		self._Tax = None
+	@SttlmCcyCd.deleter
+	def SttlmCcyCd(self):
+		del self._SttlmCcyCd
+		self._SttlmCcyCd = None
 
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
+	def AcctLvl(self):
+		return self._AcctLvl
 
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+	@AcctLvl.setter
+	def AcctLvl(self, value):
+		self._AcctLvl = value if type(value) != auto else self.make_default("AcctLvl")
 
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
-	@property
-	def CompstnMtd(self):
-		return self._CompstnMtd
-
-	@CompstnMtd.setter
-	def CompstnMtd(self, value):
-		self._CompstnMtd = value if type(value) != auto else self.make_default("CompstnMtd")
-
-	@CompstnMtd.deleter
-	def CompstnMtd(self):
-		del self._CompstnMtd
-		self._CompstnMtd = None
-
-	@property
-	def PrntAcct(self):
-		return self._PrntAcct
-
-	@PrntAcct.setter
-	def PrntAcct(self, value):
-		self._PrntAcct = value if type(value) != auto else self.make_default("PrntAcct")
-
-	@PrntAcct.deleter
-	def PrntAcct(self):
-		del self._PrntAcct
-		self._PrntAcct = None
+	@AcctLvl.deleter
+	def AcctLvl(self):
+		del self._AcctLvl
+		self._AcctLvl = None
 
 	@property
 	def AcctSvcrCtct(self):
@@ -171,31 +119,83 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 		self._CshAcct = None
 
 	@property
-	def AcctLvl(self):
-		return self._AcctLvl
+	def DbtAcct(self):
+		return self._DbtAcct
 
-	@AcctLvl.setter
-	def AcctLvl(self, value):
-		self._AcctLvl = value if type(value) != auto else self.make_default("AcctLvl")
+	@DbtAcct.setter
+	def DbtAcct(self, value):
+		self._DbtAcct = value if type(value) != auto else self.make_default("DbtAcct")
 
-	@AcctLvl.deleter
-	def AcctLvl(self):
-		del self._AcctLvl
-		self._AcctLvl = None
+	@DbtAcct.deleter
+	def DbtAcct(self):
+		del self._DbtAcct
+		self._DbtAcct = None
+
+	@property
+	def PrntAcct(self):
+		return self._PrntAcct
+
+	@PrntAcct.setter
+	def PrntAcct(self, value):
+		self._PrntAcct = value if type(value) != auto else self.make_default("PrntAcct")
+
+	@PrntAcct.deleter
+	def PrntAcct(self):
+		del self._PrntAcct
+		self._PrntAcct = None
+
+	@property
+	def SttlmAdvc(self):
+		return self._SttlmAdvc
+
+	@SttlmAdvc.setter
+	def SttlmAdvc(self, value):
+		self._SttlmAdvc = value if type(value) != auto else self.make_default("SttlmAdvc")
+
+	@SttlmAdvc.deleter
+	def SttlmAdvc(self):
+		del self._SttlmAdvc
+		self._SttlmAdvc = None
+
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
+	@property
+	def CompstnMtd(self):
+		return self._CompstnMtd
+
+	@CompstnMtd.setter
+	def CompstnMtd(self, value):
+		self._CompstnMtd = value if type(value) != auto else self.make_default("CompstnMtd")
+
+	@CompstnMtd.deleter
+	def CompstnMtd(self):
+		del self._CompstnMtd
+		self._CompstnMtd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmAdvc', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DelydDbtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctBalCcyCd', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCcyCd', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstCcyCd', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=AccountTax1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CompstnMtd', type=CompensationMethod1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrntAcct', type=ParentCashAccount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstCcyCd', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmCcyCd', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctLvl', type=AccountLevel2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrCtct', type=Contact13, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctLvl', type=AccountLevel2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtAcct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrntAcct', type=ParentCashAccount5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAdvc', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CompstnMtd', type=CompensationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

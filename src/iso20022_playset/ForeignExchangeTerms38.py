@@ -1,6 +1,6 @@
 import base_types
-import BaseOne14Rate
 import ActiveCurrencyCode
+import BaseOne14Rate
 
 class ForeignExchangeTerms38(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 import base_types
+import Max35Text
 import IdentificationInformation5
 import Max140Text
-import Max35Text
 
 class IdentificationModification5(base_types._BaseFieldType):
 
-	__slots__ = ["_UpdtdPtyAndAcctId", "_AddtlInf", "_OrgnlPtyAndAcctId", "_Id"]
+	__slots__ = ["_UpdtdPtyAndAcctId", "_Id", "_AddtlInf", "_OrgnlPtyAndAcctId"]
 	@property
 	def UpdtdPtyAndAcctId(self):
 		return self._UpdtdPtyAndAcctId
@@ -18,6 +18,19 @@ class IdentificationModification5(base_types._BaseFieldType):
 	def UpdtdPtyAndAcctId(self):
 		del self._UpdtdPtyAndAcctId
 		self._UpdtdPtyAndAcctId = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AddtlInf(self):
@@ -45,23 +58,10 @@ class IdentificationModification5(base_types._BaseFieldType):
 		del self._OrgnlPtyAndAcctId
 		self._OrgnlPtyAndAcctId = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

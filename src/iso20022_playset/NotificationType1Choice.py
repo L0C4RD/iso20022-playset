@@ -1,6 +1,6 @@
 import base_types
-import ExternalNotificationType1Code
 import Max35Text
+import ExternalNotificationType1Code
 
 class NotificationType1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import TrueFalseIndicator
 import Max35Text
+import TrueFalseIndicator
 
 class Jurisdiction2(base_types._BaseFieldType):
 

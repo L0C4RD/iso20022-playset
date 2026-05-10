@@ -1,24 +1,11 @@
 import base_types
-import AuthenticationChannel1Choice
 import Max16Text
+import AuthenticationChannel1Choice
 import ISODate
 
 class MandateAuthentication1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgAuthntcnCd", "_Chanl", "_Dt"]
-	@property
-	def MsgAuthntcnCd(self):
-		return self._MsgAuthntcnCd
-
-	@MsgAuthntcnCd.setter
-	def MsgAuthntcnCd(self, value):
-		self._MsgAuthntcnCd = value if type(value) != auto else self.make_default("MsgAuthntcnCd")
-
-	@MsgAuthntcnCd.deleter
-	def MsgAuthntcnCd(self):
-		del self._MsgAuthntcnCd
-		self._MsgAuthntcnCd = None
-
+	__slots__ = ["_Chanl", "_Dt", "_MsgAuthntcnCd"]
 	@property
 	def Chanl(self):
 		return self._Chanl
@@ -45,9 +32,22 @@ class MandateAuthentication1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def MsgAuthntcnCd(self):
+		return self._MsgAuthntcnCd
+
+	@MsgAuthntcnCd.setter
+	def MsgAuthntcnCd(self, value):
+		self._MsgAuthntcnCd = value if type(value) != auto else self.make_default("MsgAuthntcnCd")
+
+	@MsgAuthntcnCd.deleter
+	def MsgAuthntcnCd(self):
+		del self._MsgAuthntcnCd
+		self._MsgAuthntcnCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgAuthntcnCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chanl', type=AuthenticationChannel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgAuthntcnCd', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

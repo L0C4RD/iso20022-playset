@@ -1,7 +1,7 @@
 import base_types
-import CustomerOrder1
-import PaymentTransaction165
 import Max35Text
+import PaymentTransaction165
+import CustomerOrder1
 
 class RetailerReversalResult7(base_types._BaseFieldType):
 

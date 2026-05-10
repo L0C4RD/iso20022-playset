@@ -1,24 +1,11 @@
 import base_types
-import TaxOrganisationIdentification1
 import MessageIdentification1
+import TaxOrganisationIdentification1
 import Number
 
 class TaxReportHeader1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_NbOfTaxRpts", "_TaxAuthrty"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_NbOfTaxRpts", "_TaxAuthrty", "_MsgId"]
 	@property
 	def NbOfTaxRpts(self):
 		return self._NbOfTaxRpts
@@ -45,9 +32,22 @@ class TaxReportHeader1(base_types._BaseFieldType):
 		del self._TaxAuthrty
 		self._TaxAuthrty = None
 
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfTaxRpts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAuthrty', type=TaxOrganisationIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

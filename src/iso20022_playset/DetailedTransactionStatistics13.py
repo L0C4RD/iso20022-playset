@@ -4,20 +4,7 @@ import RejectionReason53
 
 class DetailedTransactionStatistics13(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsRjctd", "_TtlNbOfTxsAccptd", "_TtlNbOfTxs", "_TxsRjctnsRsn"]
-	@property
-	def TtlNbOfTxsRjctd(self):
-		return self._TtlNbOfTxsRjctd
-
-	@TtlNbOfTxsRjctd.setter
-	def TtlNbOfTxsRjctd(self, value):
-		self._TtlNbOfTxsRjctd = value if type(value) != auto else self.make_default("TtlNbOfTxsRjctd")
-
-	@TtlNbOfTxsRjctd.deleter
-	def TtlNbOfTxsRjctd(self):
-		del self._TtlNbOfTxsRjctd
-		self._TtlNbOfTxsRjctd = None
-
+	__slots__ = ["_TtlNbOfTxsAccptd", "_TxsRjctnsRsn", "_TtlNbOfTxs", "_TtlNbOfTxsRjctd"]
 	@property
 	def TtlNbOfTxsAccptd(self):
 		return self._TtlNbOfTxsAccptd
@@ -30,6 +17,19 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 	def TtlNbOfTxsAccptd(self):
 		del self._TtlNbOfTxsAccptd
 		self._TtlNbOfTxsAccptd = None
+
+	@property
+	def TxsRjctnsRsn(self):
+		return self._TxsRjctnsRsn
+
+	@TxsRjctnsRsn.setter
+	def TxsRjctnsRsn(self, value):
+		self._TxsRjctnsRsn = value if type(value) != auto else self.make_default("TxsRjctnsRsn")
+
+	@TxsRjctnsRsn.deleter
+	def TxsRjctnsRsn(self):
+		del self._TxsRjctnsRsn
+		self._TxsRjctnsRsn = None
 
 	@property
 	def TtlNbOfTxs(self):
@@ -45,22 +45,22 @@ class DetailedTransactionStatistics13(base_types._BaseFieldType):
 		self._TtlNbOfTxs = None
 
 	@property
-	def TxsRjctnsRsn(self):
-		return self._TxsRjctnsRsn
+	def TtlNbOfTxsRjctd(self):
+		return self._TtlNbOfTxsRjctd
 
-	@TxsRjctnsRsn.setter
-	def TxsRjctnsRsn(self, value):
-		self._TxsRjctnsRsn = value if type(value) != auto else self.make_default("TxsRjctnsRsn")
+	@TtlNbOfTxsRjctd.setter
+	def TtlNbOfTxsRjctd(self, value):
+		self._TtlNbOfTxsRjctd = value if type(value) != auto else self.make_default("TtlNbOfTxsRjctd")
 
-	@TxsRjctnsRsn.deleter
-	def TxsRjctnsRsn(self):
-		del self._TxsRjctnsRsn
-		self._TxsRjctnsRsn = None
+	@TtlNbOfTxsRjctd.deleter
+	def TtlNbOfTxsRjctd(self):
+		del self._TtlNbOfTxsRjctd
+		self._TtlNbOfTxsRjctd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsRjctnsRsn', type=RejectionReason53, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfTxs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

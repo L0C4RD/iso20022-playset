@@ -1,10 +1,23 @@
 import base_types
-import Max70Text
 import Max140Text
+import Max70Text
 
 class CardholderName2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_LastNm", "_MddlNm", "_GvnNm"]
+	__slots__ = ["_MddlNm", "_Nm", "_LastNm", "_GvnNm"]
+	@property
+	def MddlNm(self):
+		return self._MddlNm
+
+	@MddlNm.setter
+	def MddlNm(self, value):
+		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
+
+	@MddlNm.deleter
+	def MddlNm(self):
+		del self._MddlNm
+		self._MddlNm = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -32,19 +45,6 @@ class CardholderName2(base_types._BaseFieldType):
 		self._LastNm = None
 
 	@property
-	def MddlNm(self):
-		return self._MddlNm
-
-	@MddlNm.setter
-	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != auto else self.make_default("MddlNm")
-
-	@MddlNm.deleter
-	def MddlNm(self):
-		del self._MddlNm
-		self._MddlNm = None
-
-	@property
 	def GvnNm(self):
 		return self._GvnNm
 
@@ -58,9 +58,9 @@ class CardholderName2(base_types._BaseFieldType):
 		self._GvnNm = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='MddlNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MddlNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

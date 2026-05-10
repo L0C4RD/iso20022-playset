@@ -1,26 +1,26 @@
 import base_types
-import AlternatePartyIdentification8
-import TradingPartyCapacity4Choice
-import PartyTextInformation5
-import InvestorCapacity4Choice
 import Max35Text
 import PartyIdentification117Choice
+import AlternatePartyIdentification8
+import TradingPartyCapacity4Choice
+import InvestorCapacity4Choice
+import PartyTextInformation5
 
 class ConfirmationPartyDetails7(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgPtyCpcty", "_AddtlInf", "_PrcgId", "_InvstrCpcty", "_AltrnId", "_Id"]
+	__slots__ = ["_PrcgId", "_AddtlInf", "_TradgPtyCpcty", "_AltrnId", "_Id", "_InvstrCpcty"]
 	@property
-	def TradgPtyCpcty(self):
-		return self._TradgPtyCpcty
+	def PrcgId(self):
+		return self._PrcgId
 
-	@TradgPtyCpcty.setter
-	def TradgPtyCpcty(self, value):
-		self._TradgPtyCpcty = value if type(value) != auto else self.make_default("TradgPtyCpcty")
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
 
-	@TradgPtyCpcty.deleter
-	def TradgPtyCpcty(self):
-		del self._TradgPtyCpcty
-		self._TradgPtyCpcty = None
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def AddtlInf(self):
@@ -36,30 +36,17 @@ class ConfirmationPartyDetails7(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def TradgPtyCpcty(self):
+		return self._TradgPtyCpcty
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@TradgPtyCpcty.setter
+	def TradgPtyCpcty(self, value):
+		self._TradgPtyCpcty = value if type(value) != auto else self.make_default("TradgPtyCpcty")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
-
-	@property
-	def InvstrCpcty(self):
-		return self._InvstrCpcty
-
-	@InvstrCpcty.setter
-	def InvstrCpcty(self, value):
-		self._InvstrCpcty = value if type(value) != auto else self.make_default("InvstrCpcty")
-
-	@InvstrCpcty.deleter
-	def InvstrCpcty(self):
-		del self._InvstrCpcty
-		self._InvstrCpcty = None
+	@TradgPtyCpcty.deleter
+	def TradgPtyCpcty(self):
+		del self._TradgPtyCpcty
+		self._TradgPtyCpcty = None
 
 	@property
 	def AltrnId(self):
@@ -87,12 +74,25 @@ class ConfirmationPartyDetails7(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def InvstrCpcty(self):
+		return self._InvstrCpcty
+
+	@InvstrCpcty.setter
+	def InvstrCpcty(self, value):
+		self._InvstrCpcty = value if type(value) != auto else self.make_default("InvstrCpcty")
+
+	@InvstrCpcty.deleter
+	def InvstrCpcty(self):
+		del self._InvstrCpcty
+		self._InvstrCpcty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingPartyCapacity4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrCpcty', type=InvestorCapacity4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingPartyCapacity4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrCpcty', type=InvestorCapacity4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

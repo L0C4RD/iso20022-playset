@@ -1,12 +1,25 @@
 import base_types
-import ISODate
-import BaseOneRate
-import ActiveOrHistoricCurrencyAndAmount
 import Max35Text
+import ISODate
+import ActiveOrHistoricCurrencyAndAmount
+import BaseOneRate
 
 class FixingConditions1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgSdSellAmt", "_OrgtrRef", "_TradDt", "_RltdRef", "_XchgRate", "_CmonRef", "_TradgSdBuyAmt"]
+	__slots__ = ["_CmonRef", "_TradgSdSellAmt", "_TradDt", "_TradgSdBuyAmt", "_XchgRate", "_OrgtrRef", "_RltdRef"]
+	@property
+	def CmonRef(self):
+		return self._CmonRef
+
+	@CmonRef.setter
+	def CmonRef(self, value):
+		self._CmonRef = value if type(value) != auto else self.make_default("CmonRef")
+
+	@CmonRef.deleter
+	def CmonRef(self):
+		del self._CmonRef
+		self._CmonRef = None
+
 	@property
 	def TradgSdSellAmt(self):
 		return self._TradgSdSellAmt
@@ -19,19 +32,6 @@ class FixingConditions1(base_types._BaseFieldType):
 	def TradgSdSellAmt(self):
 		del self._TradgSdSellAmt
 		self._TradgSdSellAmt = None
-
-	@property
-	def OrgtrRef(self):
-		return self._OrgtrRef
-
-	@OrgtrRef.setter
-	def OrgtrRef(self, value):
-		self._OrgtrRef = value if type(value) != auto else self.make_default("OrgtrRef")
-
-	@OrgtrRef.deleter
-	def OrgtrRef(self):
-		del self._OrgtrRef
-		self._OrgtrRef = None
 
 	@property
 	def TradDt(self):
@@ -47,17 +47,17 @@ class FixingConditions1(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
+	def TradgSdBuyAmt(self):
+		return self._TradgSdBuyAmt
 
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
+	@TradgSdBuyAmt.setter
+	def TradgSdBuyAmt(self, value):
+		self._TradgSdBuyAmt = value if type(value) != auto else self.make_default("TradgSdBuyAmt")
 
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
+	@TradgSdBuyAmt.deleter
+	def TradgSdBuyAmt(self):
+		del self._TradgSdBuyAmt
+		self._TradgSdBuyAmt = None
 
 	@property
 	def XchgRate(self):
@@ -73,38 +73,38 @@ class FixingConditions1(base_types._BaseFieldType):
 		self._XchgRate = None
 
 	@property
-	def CmonRef(self):
-		return self._CmonRef
+	def OrgtrRef(self):
+		return self._OrgtrRef
 
-	@CmonRef.setter
-	def CmonRef(self, value):
-		self._CmonRef = value if type(value) != auto else self.make_default("CmonRef")
+	@OrgtrRef.setter
+	def OrgtrRef(self, value):
+		self._OrgtrRef = value if type(value) != auto else self.make_default("OrgtrRef")
 
-	@CmonRef.deleter
-	def CmonRef(self):
-		del self._CmonRef
-		self._CmonRef = None
+	@OrgtrRef.deleter
+	def OrgtrRef(self):
+		del self._OrgtrRef
+		self._OrgtrRef = None
 
 	@property
-	def TradgSdBuyAmt(self):
-		return self._TradgSdBuyAmt
+	def RltdRef(self):
+		return self._RltdRef
 
-	@TradgSdBuyAmt.setter
-	def TradgSdBuyAmt(self, value):
-		self._TradgSdBuyAmt = value if type(value) != auto else self.make_default("TradgSdBuyAmt")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@TradgSdBuyAmt.deleter
-	def TradgSdBuyAmt(self):
-		del self._TradgSdBuyAmt
-		self._TradgSdBuyAmt = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgSdSellAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgSdSellAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgSdBuyAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgtrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

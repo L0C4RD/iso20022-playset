@@ -1,26 +1,26 @@
 import base_types
-import PartyDetail1
-import StatusDetail1
 import Max35Text
 import SupplementaryData1
+import StatusDetail1
 import PartyIdentification136
+import PartyDetail1
 import Period4Choice
 
 class PartyUpdate1(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_Sts", "_TechRcrdId", "_SplmtryData", "_TechVldtyPrd", "_Id", "_PrvsId"]
+	__slots__ = ["_SplmtryData", "_Sts", "_TechRcrdId", "_PrvsId", "_Othr", "_TechVldtyPrd", "_Id"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Sts(self):
@@ -49,17 +49,30 @@ class PartyUpdate1(base_types._BaseFieldType):
 		self._TechRcrdId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def PrvsId(self):
+		return self._PrvsId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@PrvsId.setter
+	def PrvsId(self, value):
+		self._PrvsId = value if type(value) != auto else self.make_default("PrvsId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@PrvsId.deleter
+	def PrvsId(self):
+		del self._PrvsId
+		self._PrvsId = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def TechVldtyPrd(self):
@@ -87,26 +100,13 @@ class PartyUpdate1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def PrvsId(self):
-		return self._PrvsId
-
-	@PrvsId.setter
-	def PrvsId(self, value):
-		self._PrvsId = value if type(value) != auto else self.make_default("PrvsId")
-
-	@PrvsId.deleter
-	def PrvsId(self):
-		del self._PrvsId
-		self._PrvsId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=PartyDetail1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=StatusDetail1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=PartyDetail1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechVldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsId', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

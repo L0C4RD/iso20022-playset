@@ -4,7 +4,7 @@ import DateAndDateTime2Choice
 
 class SecurityDate25(base_types._BaseFieldType):
 
-	__slots__ = ["_AvlblDt", "_PstngDt", "_PrpssDt", "_EarlstPmtDt", "_PmtDt", "_DvddRnkgDt"]
+	__slots__ = ["_AvlblDt", "_PrpssDt", "_PstngDt", "_PmtDt", "_EarlstPmtDt", "_DvddRnkgDt"]
 	@property
 	def AvlblDt(self):
 		return self._AvlblDt
@@ -17,19 +17,6 @@ class SecurityDate25(base_types._BaseFieldType):
 	def AvlblDt(self):
 		del self._AvlblDt
 		self._AvlblDt = None
-
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
 
 	@property
 	def PrpssDt(self):
@@ -45,17 +32,17 @@ class SecurityDate25(base_types._BaseFieldType):
 		self._PrpssDt = None
 
 	@property
-	def EarlstPmtDt(self):
-		return self._EarlstPmtDt
+	def PstngDt(self):
+		return self._PstngDt
 
-	@EarlstPmtDt.setter
-	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
 
-	@EarlstPmtDt.deleter
-	def EarlstPmtDt(self):
-		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
 
 	@property
 	def PmtDt(self):
@@ -69,6 +56,19 @@ class SecurityDate25(base_types._BaseFieldType):
 	def PmtDt(self):
 		del self._PmtDt
 		self._PmtDt = None
+
+	@property
+	def EarlstPmtDt(self):
+		return self._EarlstPmtDt
+
+	@EarlstPmtDt.setter
+	def EarlstPmtDt(self, value):
+		self._EarlstPmtDt = value if type(value) != auto else self.make_default("EarlstPmtDt")
+
+	@EarlstPmtDt.deleter
+	def EarlstPmtDt(self):
+		del self._EarlstPmtDt
+		self._EarlstPmtDt = None
 
 	@property
 	def DvddRnkgDt(self):
@@ -85,10 +85,10 @@ class SecurityDate25(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrpssDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

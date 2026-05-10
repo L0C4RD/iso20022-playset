@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import EventFrequency1Code
+import GenericIdentification30
 
 class Frequency8Choice(base_types._BaseFieldType):
 

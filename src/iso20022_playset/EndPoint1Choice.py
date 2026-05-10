@@ -1,23 +1,10 @@
 import base_types
-import ISODate
 import Max35Text
+import ISODate
 
 class EndPoint1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfPmts", "_LastPmtDt"]
-	@property
-	def NbOfPmts(self):
-		return self._NbOfPmts
-
-	@NbOfPmts.setter
-	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
-
-	@NbOfPmts.deleter
-	def NbOfPmts(self):
-		del self._NbOfPmts
-		self._NbOfPmts = None
-
+	__slots__ = ["_LastPmtDt", "_NbOfPmts"]
 	@property
 	def LastPmtDt(self):
 		return self._LastPmtDt
@@ -31,8 +18,21 @@ class EndPoint1Choice(base_types._BaseFieldType):
 		del self._LastPmtDt
 		self._LastPmtDt = None
 
+	@property
+	def NbOfPmts(self):
+		return self._NbOfPmts
+
+	@NbOfPmts.setter
+	def NbOfPmts(self, value):
+		self._NbOfPmts = value if type(value) != auto else self.make_default("NbOfPmts")
+
+	@NbOfPmts.deleter
+	def NbOfPmts(self):
+		del self._NbOfPmts
+		self._NbOfPmts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfPmts', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='LastPmtDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NbOfPmts', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

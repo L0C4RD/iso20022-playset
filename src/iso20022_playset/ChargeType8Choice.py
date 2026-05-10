@@ -1,6 +1,6 @@
 import base_types
-import InvestmentFundMiFIDFee2Code
 import GenericIdentification47
+import InvestmentFundMiFIDFee2Code
 
 class ChargeType8Choice(base_types._BaseFieldType):
 

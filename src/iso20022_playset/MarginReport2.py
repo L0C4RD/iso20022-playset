@@ -1,14 +1,40 @@
 import base_types
-import MarginProductType1Choice
-import SecuritiesAccount18
 import YesNoIndicator
-import PartyIdentificationAndAccount31
-import MarginCalculation2
+import SecuritiesAccount18
 import MarginCalculation1
+import MarginCalculation2
+import MarginProductType1Choice
+import PartyIdentificationAndAccount31
 
 class MarginReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_MrgnPdct", "_MrgnAcct", "_MrgnClctn", "_MrgnClctnSummry", "_CollsdMrgnAcctInd", "_NonClrMmb"]
+	__slots__ = ["_CollsdMrgnAcctInd", "_NonClrMmb", "_MrgnPdct", "_MrgnClctn", "_MrgnClctnSummry", "_MrgnAcct"]
+	@property
+	def CollsdMrgnAcctInd(self):
+		return self._CollsdMrgnAcctInd
+
+	@CollsdMrgnAcctInd.setter
+	def CollsdMrgnAcctInd(self, value):
+		self._CollsdMrgnAcctInd = value if type(value) != auto else self.make_default("CollsdMrgnAcctInd")
+
+	@CollsdMrgnAcctInd.deleter
+	def CollsdMrgnAcctInd(self):
+		del self._CollsdMrgnAcctInd
+		self._CollsdMrgnAcctInd = None
+
+	@property
+	def NonClrMmb(self):
+		return self._NonClrMmb
+
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
+
 	@property
 	def MrgnPdct(self):
 		return self._MrgnPdct
@@ -21,19 +47,6 @@ class MarginReport2(base_types._BaseFieldType):
 	def MrgnPdct(self):
 		del self._MrgnPdct
 		self._MrgnPdct = None
-
-	@property
-	def MrgnAcct(self):
-		return self._MrgnAcct
-
-	@MrgnAcct.setter
-	def MrgnAcct(self, value):
-		self._MrgnAcct = value if type(value) != auto else self.make_default("MrgnAcct")
-
-	@MrgnAcct.deleter
-	def MrgnAcct(self):
-		del self._MrgnAcct
-		self._MrgnAcct = None
 
 	@property
 	def MrgnClctn(self):
@@ -62,37 +75,24 @@ class MarginReport2(base_types._BaseFieldType):
 		self._MrgnClctnSummry = None
 
 	@property
-	def CollsdMrgnAcctInd(self):
-		return self._CollsdMrgnAcctInd
+	def MrgnAcct(self):
+		return self._MrgnAcct
 
-	@CollsdMrgnAcctInd.setter
-	def CollsdMrgnAcctInd(self, value):
-		self._CollsdMrgnAcctInd = value if type(value) != auto else self.make_default("CollsdMrgnAcctInd")
+	@MrgnAcct.setter
+	def MrgnAcct(self, value):
+		self._MrgnAcct = value if type(value) != auto else self.make_default("MrgnAcct")
 
-	@CollsdMrgnAcctInd.deleter
-	def CollsdMrgnAcctInd(self):
-		del self._CollsdMrgnAcctInd
-		self._CollsdMrgnAcctInd = None
-
-	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
-
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
-
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
+	@MrgnAcct.deleter
+	def MrgnAcct(self):
+		del self._MrgnAcct
+		self._MrgnAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MrgnPdct', type=MarginProductType1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrgnAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnClctn', type=MarginCalculation2, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MrgnClctnSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollsdMrgnAcctInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount31, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnPdct', type=MarginProductType1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnClctn', type=MarginCalculation2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MrgnClctnSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),
 	))
 

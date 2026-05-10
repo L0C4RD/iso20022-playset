@@ -1,34 +1,34 @@
 import base_types
-import BaseOneRate
-import ISODateTime
-import Price8
-import Standardisation3Choice
-import SettleStyle2Choice
-import OptionStyle1Choice
-import FinancialInstrumentQuantity1Choice
+import DateTimePeriod1Choice
 import OptionParty3Choice
+import Standardisation3Choice
 import AssignmentMethod2Choice
 import OptionType8Choice
-import Max4AlphaNumericText
+import SettleStyle2Choice
+import FinancialInstrumentQuantity1Choice
 import Number
-import DateTimePeriod1Choice
+import OptionStyle1Choice
+import ISODateTime
+import BaseOneRate
+import Max4AlphaNumericText
+import Price8
 import UnderlyingAttributes4
 
 class Option15(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrmAssgnmtMtd", "_MinExrcblQty", "_CtrctSz", "_ConvsDt", "_OptnSttlmStyle", "_StrkPric", "_VrsnNb", "_ConvsPrd", "_XpryLctn", "_Stdstn", "_TradgPtyRole", "_StrkVal", "_AddtlUndrlygAttrbts", "_StrkMltplr", "_OptnTp", "_OptnStyle"]
+	__slots__ = ["_Stdstn", "_MinExrcblQty", "_TradgPtyRole", "_InstrmAssgnmtMtd", "_StrkPric", "_StrkVal", "_ConvsDt", "_CtrctSz", "_AddtlUndrlygAttrbts", "_OptnTp", "_OptnStyle", "_ConvsPrd", "_StrkMltplr", "_OptnSttlmStyle", "_VrsnNb", "_XpryLctn"]
 	@property
-	def InstrmAssgnmtMtd(self):
-		return self._InstrmAssgnmtMtd
+	def Stdstn(self):
+		return self._Stdstn
 
-	@InstrmAssgnmtMtd.setter
-	def InstrmAssgnmtMtd(self, value):
-		self._InstrmAssgnmtMtd = value if type(value) != auto else self.make_default("InstrmAssgnmtMtd")
+	@Stdstn.setter
+	def Stdstn(self, value):
+		self._Stdstn = value if type(value) != auto else self.make_default("Stdstn")
 
-	@InstrmAssgnmtMtd.deleter
-	def InstrmAssgnmtMtd(self):
-		del self._InstrmAssgnmtMtd
-		self._InstrmAssgnmtMtd = None
+	@Stdstn.deleter
+	def Stdstn(self):
+		del self._Stdstn
+		self._Stdstn = None
 
 	@property
 	def MinExrcblQty(self):
@@ -44,43 +44,30 @@ class Option15(base_types._BaseFieldType):
 		self._MinExrcblQty = None
 
 	@property
-	def CtrctSz(self):
-		return self._CtrctSz
+	def TradgPtyRole(self):
+		return self._TradgPtyRole
 
-	@CtrctSz.setter
-	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
+	@TradgPtyRole.setter
+	def TradgPtyRole(self, value):
+		self._TradgPtyRole = value if type(value) != auto else self.make_default("TradgPtyRole")
 
-	@CtrctSz.deleter
-	def CtrctSz(self):
-		del self._CtrctSz
-		self._CtrctSz = None
-
-	@property
-	def ConvsDt(self):
-		return self._ConvsDt
-
-	@ConvsDt.setter
-	def ConvsDt(self, value):
-		self._ConvsDt = value if type(value) != auto else self.make_default("ConvsDt")
-
-	@ConvsDt.deleter
-	def ConvsDt(self):
-		del self._ConvsDt
-		self._ConvsDt = None
+	@TradgPtyRole.deleter
+	def TradgPtyRole(self):
+		del self._TradgPtyRole
+		self._TradgPtyRole = None
 
 	@property
-	def OptnSttlmStyle(self):
-		return self._OptnSttlmStyle
+	def InstrmAssgnmtMtd(self):
+		return self._InstrmAssgnmtMtd
 
-	@OptnSttlmStyle.setter
-	def OptnSttlmStyle(self, value):
-		self._OptnSttlmStyle = value if type(value) != auto else self.make_default("OptnSttlmStyle")
+	@InstrmAssgnmtMtd.setter
+	def InstrmAssgnmtMtd(self, value):
+		self._InstrmAssgnmtMtd = value if type(value) != auto else self.make_default("InstrmAssgnmtMtd")
 
-	@OptnSttlmStyle.deleter
-	def OptnSttlmStyle(self):
-		del self._OptnSttlmStyle
-		self._OptnSttlmStyle = None
+	@InstrmAssgnmtMtd.deleter
+	def InstrmAssgnmtMtd(self):
+		del self._InstrmAssgnmtMtd
+		self._InstrmAssgnmtMtd = None
 
 	@property
 	def StrkPric(self):
@@ -96,71 +83,6 @@ class Option15(base_types._BaseFieldType):
 		self._StrkPric = None
 
 	@property
-	def VrsnNb(self):
-		return self._VrsnNb
-
-	@VrsnNb.setter
-	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != auto else self.make_default("VrsnNb")
-
-	@VrsnNb.deleter
-	def VrsnNb(self):
-		del self._VrsnNb
-		self._VrsnNb = None
-
-	@property
-	def ConvsPrd(self):
-		return self._ConvsPrd
-
-	@ConvsPrd.setter
-	def ConvsPrd(self, value):
-		self._ConvsPrd = value if type(value) != auto else self.make_default("ConvsPrd")
-
-	@ConvsPrd.deleter
-	def ConvsPrd(self):
-		del self._ConvsPrd
-		self._ConvsPrd = None
-
-	@property
-	def XpryLctn(self):
-		return self._XpryLctn
-
-	@XpryLctn.setter
-	def XpryLctn(self, value):
-		self._XpryLctn = value if type(value) != auto else self.make_default("XpryLctn")
-
-	@XpryLctn.deleter
-	def XpryLctn(self):
-		del self._XpryLctn
-		self._XpryLctn = None
-
-	@property
-	def Stdstn(self):
-		return self._Stdstn
-
-	@Stdstn.setter
-	def Stdstn(self, value):
-		self._Stdstn = value if type(value) != auto else self.make_default("Stdstn")
-
-	@Stdstn.deleter
-	def Stdstn(self):
-		del self._Stdstn
-		self._Stdstn = None
-
-	@property
-	def TradgPtyRole(self):
-		return self._TradgPtyRole
-
-	@TradgPtyRole.setter
-	def TradgPtyRole(self, value):
-		self._TradgPtyRole = value if type(value) != auto else self.make_default("TradgPtyRole")
-
-	@TradgPtyRole.deleter
-	def TradgPtyRole(self):
-		del self._TradgPtyRole
-		self._TradgPtyRole = None
-
-	@property
 	def StrkVal(self):
 		return self._StrkVal
 
@@ -174,6 +96,32 @@ class Option15(base_types._BaseFieldType):
 		self._StrkVal = None
 
 	@property
+	def ConvsDt(self):
+		return self._ConvsDt
+
+	@ConvsDt.setter
+	def ConvsDt(self, value):
+		self._ConvsDt = value if type(value) != auto else self.make_default("ConvsDt")
+
+	@ConvsDt.deleter
+	def ConvsDt(self):
+		del self._ConvsDt
+		self._ConvsDt = None
+
+	@property
+	def CtrctSz(self):
+		return self._CtrctSz
+
+	@CtrctSz.setter
+	def CtrctSz(self, value):
+		self._CtrctSz = value if type(value) != auto else self.make_default("CtrctSz")
+
+	@CtrctSz.deleter
+	def CtrctSz(self):
+		del self._CtrctSz
+		self._CtrctSz = None
+
+	@property
 	def AddtlUndrlygAttrbts(self):
 		return self._AddtlUndrlygAttrbts
 
@@ -185,19 +133,6 @@ class Option15(base_types._BaseFieldType):
 	def AddtlUndrlygAttrbts(self):
 		del self._AddtlUndrlygAttrbts
 		self._AddtlUndrlygAttrbts = None
-
-	@property
-	def StrkMltplr(self):
-		return self._StrkMltplr
-
-	@StrkMltplr.setter
-	def StrkMltplr(self, value):
-		self._StrkMltplr = value if type(value) != auto else self.make_default("StrkMltplr")
-
-	@StrkMltplr.deleter
-	def StrkMltplr(self):
-		del self._StrkMltplr
-		self._StrkMltplr = None
 
 	@property
 	def OptnTp(self):
@@ -225,22 +160,87 @@ class Option15(base_types._BaseFieldType):
 		del self._OptnStyle
 		self._OptnStyle = None
 
+	@property
+	def ConvsPrd(self):
+		return self._ConvsPrd
+
+	@ConvsPrd.setter
+	def ConvsPrd(self, value):
+		self._ConvsPrd = value if type(value) != auto else self.make_default("ConvsPrd")
+
+	@ConvsPrd.deleter
+	def ConvsPrd(self):
+		del self._ConvsPrd
+		self._ConvsPrd = None
+
+	@property
+	def StrkMltplr(self):
+		return self._StrkMltplr
+
+	@StrkMltplr.setter
+	def StrkMltplr(self, value):
+		self._StrkMltplr = value if type(value) != auto else self.make_default("StrkMltplr")
+
+	@StrkMltplr.deleter
+	def StrkMltplr(self):
+		del self._StrkMltplr
+		self._StrkMltplr = None
+
+	@property
+	def OptnSttlmStyle(self):
+		return self._OptnSttlmStyle
+
+	@OptnSttlmStyle.setter
+	def OptnSttlmStyle(self, value):
+		self._OptnSttlmStyle = value if type(value) != auto else self.make_default("OptnSttlmStyle")
+
+	@OptnSttlmStyle.deleter
+	def OptnSttlmStyle(self):
+		del self._OptnSttlmStyle
+		self._OptnSttlmStyle = None
+
+	@property
+	def VrsnNb(self):
+		return self._VrsnNb
+
+	@VrsnNb.setter
+	def VrsnNb(self, value):
+		self._VrsnNb = value if type(value) != auto else self.make_default("VrsnNb")
+
+	@VrsnNb.deleter
+	def VrsnNb(self):
+		del self._VrsnNb
+		self._VrsnNb = None
+
+	@property
+	def XpryLctn(self):
+		return self._XpryLctn
+
+	@XpryLctn.setter
+	def XpryLctn(self, value):
+		self._XpryLctn = value if type(value) != auto else self.make_default("XpryLctn")
+
+	@XpryLctn.deleter
+	def XpryLctn(self):
+		del self._XpryLctn
+		self._XpryLctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrmAssgnmtMtd', type=AssignmentMethod2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinExrcblQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctSz', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OptnSttlmStyle', type=SettleStyle2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrkPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VrsnNb', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConvsPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryLctn', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Stdstn', type=Standardisation3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinExrcblQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPtyRole', type=OptionParty3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrmAssgnmtMtd', type=AssignmentMethod2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrkPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrkVal', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctSz', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlUndrlygAttrbts', type=UnderlyingAttributes4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StrkMltplr', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=OptionType8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnStyle', type=OptionStyle1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConvsPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrkMltplr', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnSttlmStyle', type=SettleStyle2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VrsnNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpryLctn', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

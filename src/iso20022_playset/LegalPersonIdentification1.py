@@ -1,6 +1,6 @@
 import base_types
-import OrganisationIdentification15Choice
 import CountryCode
+import OrganisationIdentification15Choice
 
 class LegalPersonIdentification1(base_types._BaseFieldType):
 

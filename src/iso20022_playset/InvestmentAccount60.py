@@ -1,6 +1,6 @@
 import base_types
-import InvestmentAccountType1Choice
 import Max35Text
+import InvestmentAccountType1Choice
 
 class InvestmentAccount60(base_types._BaseFieldType):
 

@@ -1,11 +1,11 @@
 import base_types
-import RoundingMethod1Code
 import ThresholdType1Code
 import ActiveCurrencyAndAmount
+import RoundingMethod1Code
 
 class VariationMargin1(base_types._BaseFieldType):
 
-	__slots__ = ["_RndgMtd", "_ThrshldAmt", "_RndgAmt", "_ThrshldTp", "_MinTrfAmt"]
+	__slots__ = ["_RndgMtd", "_ThrshldAmt", "_ThrshldTp", "_RndgAmt", "_MinTrfAmt"]
 	@property
 	def RndgMtd(self):
 		return self._RndgMtd
@@ -33,19 +33,6 @@ class VariationMargin1(base_types._BaseFieldType):
 		self._ThrshldAmt = None
 
 	@property
-	def RndgAmt(self):
-		return self._RndgAmt
-
-	@RndgAmt.setter
-	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
-
-	@RndgAmt.deleter
-	def RndgAmt(self):
-		del self._RndgAmt
-		self._RndgAmt = None
-
-	@property
 	def ThrshldTp(self):
 		return self._ThrshldTp
 
@@ -57,6 +44,19 @@ class VariationMargin1(base_types._BaseFieldType):
 	def ThrshldTp(self):
 		del self._ThrshldTp
 		self._ThrshldTp = None
+
+	@property
+	def RndgAmt(self):
+		return self._RndgAmt
+
+	@RndgAmt.setter
+	def RndgAmt(self, value):
+		self._RndgAmt = value if type(value) != auto else self.make_default("RndgAmt")
+
+	@RndgAmt.deleter
+	def RndgAmt(self):
+		del self._RndgAmt
+		self._RndgAmt = None
 
 	@property
 	def MinTrfAmt(self):
@@ -74,8 +74,8 @@ class VariationMargin1(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RndgMtd', type=RoundingMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldTp', type=ThresholdType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RndgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinTrfAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

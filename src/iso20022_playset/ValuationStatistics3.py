@@ -1,14 +1,53 @@
 import base_types
-import StatisticsByPredefinedTimePeriods2
+import StatisticsByUserDefinedTimePeriod2
 import PriceType2
-import PriceValueChange1
 import ActiveOrHistoricCurrencyCode
 import PercentageRate
-import StatisticsByUserDefinedTimePeriod2
+import PriceValueChange1
+import StatisticsByPredefinedTimePeriods2
 
 class ValuationStatistics3(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_PricTpChngBsis", "_PricChng", "_ByPrdfndTmPrds", "_Yld", "_ByUsrDfndTmPrd"]
+	__slots__ = ["_Yld", "_PricChng", "_ByUsrDfndTmPrd", "_Ccy", "_PricTpChngBsis", "_ByPrdfndTmPrds"]
+	@property
+	def Yld(self):
+		return self._Yld
+
+	@Yld.setter
+	def Yld(self, value):
+		self._Yld = value if type(value) != auto else self.make_default("Yld")
+
+	@Yld.deleter
+	def Yld(self):
+		del self._Yld
+		self._Yld = None
+
+	@property
+	def PricChng(self):
+		return self._PricChng
+
+	@PricChng.setter
+	def PricChng(self, value):
+		self._PricChng = value if type(value) != auto else self.make_default("PricChng")
+
+	@PricChng.deleter
+	def PricChng(self):
+		del self._PricChng
+		self._PricChng = None
+
+	@property
+	def ByUsrDfndTmPrd(self):
+		return self._ByUsrDfndTmPrd
+
+	@ByUsrDfndTmPrd.setter
+	def ByUsrDfndTmPrd(self, value):
+		self._ByUsrDfndTmPrd = value if type(value) != auto else self.make_default("ByUsrDfndTmPrd")
+
+	@ByUsrDfndTmPrd.deleter
+	def ByUsrDfndTmPrd(self):
+		del self._ByUsrDfndTmPrd
+		self._ByUsrDfndTmPrd = None
+
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -36,19 +75,6 @@ class ValuationStatistics3(base_types._BaseFieldType):
 		self._PricTpChngBsis = None
 
 	@property
-	def PricChng(self):
-		return self._PricChng
-
-	@PricChng.setter
-	def PricChng(self, value):
-		self._PricChng = value if type(value) != auto else self.make_default("PricChng")
-
-	@PricChng.deleter
-	def PricChng(self):
-		del self._PricChng
-		self._PricChng = None
-
-	@property
 	def ByPrdfndTmPrds(self):
 		return self._ByPrdfndTmPrds
 
@@ -61,38 +87,12 @@ class ValuationStatistics3(base_types._BaseFieldType):
 		del self._ByPrdfndTmPrds
 		self._ByPrdfndTmPrds = None
 
-	@property
-	def Yld(self):
-		return self._Yld
-
-	@Yld.setter
-	def Yld(self, value):
-		self._Yld = value if type(value) != auto else self.make_default("Yld")
-
-	@Yld.deleter
-	def Yld(self):
-		del self._Yld
-		self._Yld = None
-
-	@property
-	def ByUsrDfndTmPrd(self):
-		return self._ByUsrDfndTmPrd
-
-	@ByUsrDfndTmPrd.setter
-	def ByUsrDfndTmPrd(self, value):
-		self._ByUsrDfndTmPrd = value if type(value) != auto else self.make_default("ByUsrDfndTmPrd")
-
-	@ByUsrDfndTmPrd.deleter
-	def ByUsrDfndTmPrd(self):
-		del self._ByUsrDfndTmPrd
-		self._ByUsrDfndTmPrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ByUsrDfndTmPrd', type=StatisticsByUserDefinedTimePeriod2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricTpChngBsis', type=PriceType2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ByPrdfndTmPrds', type=StatisticsByPredefinedTimePeriods2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ByUsrDfndTmPrd', type=StatisticsByUserDefinedTimePeriod2, min=0, max=None, mutex_group=None, array=True),
 	))
 

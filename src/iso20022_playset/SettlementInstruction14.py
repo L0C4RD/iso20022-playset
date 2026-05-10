@@ -1,23 +1,23 @@
 import base_types
-import CashAccount40
-import ClearingSystemIdentification3Choice
 import SettlementMethod2Code
+import ClearingSystemIdentification3Choice
+import CashAccount40
 
 class SettlementInstruction14(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSys", "_SttlmAcct", "_SttlmMtd"]
+	__slots__ = ["_SttlmMtd", "_SttlmAcct", "_ClrSys"]
 	@property
-	def ClrSys(self):
-		return self._ClrSys
+	def SttlmMtd(self):
+		return self._SttlmMtd
 
-	@ClrSys.setter
-	def ClrSys(self, value):
-		self._ClrSys = value if type(value) != auto else self.make_default("ClrSys")
+	@SttlmMtd.setter
+	def SttlmMtd(self, value):
+		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
 
-	@ClrSys.deleter
-	def ClrSys(self):
-		del self._ClrSys
-		self._ClrSys = None
+	@SttlmMtd.deleter
+	def SttlmMtd(self):
+		del self._SttlmMtd
+		self._SttlmMtd = None
 
 	@property
 	def SttlmAcct(self):
@@ -33,21 +33,21 @@ class SettlementInstruction14(base_types._BaseFieldType):
 		self._SttlmAcct = None
 
 	@property
-	def SttlmMtd(self):
-		return self._SttlmMtd
+	def ClrSys(self):
+		return self._ClrSys
 
-	@SttlmMtd.setter
-	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != auto else self.make_default("SttlmMtd")
+	@ClrSys.setter
+	def ClrSys(self, value):
+		self._ClrSys = value if type(value) != auto else self.make_default("ClrSys")
 
-	@SttlmMtd.deleter
-	def SttlmMtd(self):
-		del self._SttlmMtd
-		self._SttlmMtd = None
+	@ClrSys.deleter
+	def ClrSys(self):
+		del self._ClrSys
+		self._ClrSys = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmMtd', type=SettlementMethod2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

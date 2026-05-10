@@ -1,7 +1,7 @@
 import base_types
+import MessageHeader1
 import SupplementaryData1
 import SecuritiesAccount19
-import MessageHeader1
 
 class SecuritiesAccountDeletionRequestV01(base_types._BaseFieldType):
 

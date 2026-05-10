@@ -1,25 +1,12 @@
 import base_types
-import ISODate
-import PaymentInstrument25Choice
 import ActiveCurrencyAnd13DecimalAmount
 import Max35Text
+import PaymentInstrument25Choice
+import ISODate
 
 class PaymentInstrument18(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_Amt", "_CshSttlmDtls", "_Ref"]
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
+	__slots__ = ["_Amt", "_CshSttlmDtls", "_Ref", "_PmtDt"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -59,10 +46,23 @@ class PaymentInstrument18(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDtls', type=PaymentInstrument25Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

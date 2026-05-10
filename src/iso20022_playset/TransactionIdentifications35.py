@@ -3,7 +3,7 @@ import RestrictedFINXMax16Text
 
 class TransactionIdentifications35(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctOwnrTxId", "_CmonId", "_AcctSvcrTxId"]
+	__slots__ = ["_AcctOwnrTxId", "_AcctSvcrTxId", "_CmonId"]
 	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
@@ -18,19 +18,6 @@ class TransactionIdentifications35(base_types._BaseFieldType):
 		self._AcctOwnrTxId = None
 
 	@property
-	def CmonId(self):
-		return self._CmonId
-
-	@CmonId.setter
-	def CmonId(self, value):
-		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
-
-	@CmonId.deleter
-	def CmonId(self):
-		del self._CmonId
-		self._CmonId = None
-
-	@property
 	def AcctSvcrTxId(self):
 		return self._AcctSvcrTxId
 
@@ -43,9 +30,22 @@ class TransactionIdentifications35(base_types._BaseFieldType):
 		del self._AcctSvcrTxId
 		self._AcctSvcrTxId = None
 
+	@property
+	def CmonId(self):
+		return self._CmonId
+
+	@CmonId.setter
+	def CmonId(self, value):
+		self._CmonId = value if type(value) != auto else self.make_default("CmonId")
+
+	@CmonId.deleter
+	def CmonId(self):
+		del self._CmonId
+		self._CmonId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

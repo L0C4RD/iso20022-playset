@@ -1,7 +1,7 @@
 import base_types
-import Max9NumericText
 import DataSetIdentification11
 import TrueFalseIndicator
+import Max9NumericText
 import ManagementPlanContent13
 
 class TerminalManagementDataSet34(base_types._BaseFieldType):

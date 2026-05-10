@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import MessageHeader1
+import SupplementaryData1
 import AccountLink7
 
 class AccountLinkCreationRequestV01(base_types._BaseFieldType):

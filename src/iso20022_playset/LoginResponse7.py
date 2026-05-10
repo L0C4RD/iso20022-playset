@@ -1,12 +1,12 @@
 import base_types
-import ActionMessage11
 import ISODateTime
-import PointOfInteractionComponent17
 import PointOfInteractionCapabilities9
+import ActionMessage11
+import PointOfInteractionComponent17
 
 class LoginResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_POISftwr", "_POICpblties", "_OutptDisp", "_POIDtTm"]
+	__slots__ = ["_POISftwr", "_OutptDisp", "_POIDtTm", "_POICpblties"]
 	@property
 	def POISftwr(self):
 		return self._POISftwr
@@ -19,19 +19,6 @@ class LoginResponse7(base_types._BaseFieldType):
 	def POISftwr(self):
 		del self._POISftwr
 		self._POISftwr = None
-
-	@property
-	def POICpblties(self):
-		return self._POICpblties
-
-	@POICpblties.setter
-	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != auto else self.make_default("POICpblties")
-
-	@POICpblties.deleter
-	def POICpblties(self):
-		del self._POICpblties
-		self._POICpblties = None
 
 	@property
 	def OutptDisp(self):
@@ -59,10 +46,23 @@ class LoginResponse7(base_types._BaseFieldType):
 		del self._POIDtTm
 		self._POIDtTm = None
 
+	@property
+	def POICpblties(self):
+		return self._POICpblties
+
+	@POICpblties.setter
+	def POICpblties(self, value):
+		self._POICpblties = value if type(value) != auto else self.make_default("POICpblties")
+
+	@POICpblties.deleter
+	def POICpblties(self):
+		del self._POICpblties
+		self._POICpblties = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent17, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptDisp', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 	))
 

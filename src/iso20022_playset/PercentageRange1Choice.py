@@ -1,23 +1,36 @@
 import base_types
-import PercentageRate
-import PercentageRangeBoundary1
 import FromToPercentageRange1
+import PercentageRangeBoundary1
+import PercentageRate
 
 class PercentageRange1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NEQ", "_FrTo", "_To", "_Fr", "_EQ"]
+	__slots__ = ["_To", "_EQ", "_FrTo", "_Fr", "_NEQ"]
 	@property
-	def NEQ(self):
-		return self._NEQ
+	def To(self):
+		return self._To
 
-	@NEQ.setter
-	def NEQ(self, value):
-		self._NEQ = value if type(value) != auto else self.make_default("NEQ")
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != auto else self.make_default("To")
 
-	@NEQ.deleter
-	def NEQ(self):
-		del self._NEQ
-		self._NEQ = None
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
+
+	@property
+	def EQ(self):
+		return self._EQ
+
+	@EQ.setter
+	def EQ(self, value):
+		self._EQ = value if type(value) != auto else self.make_default("EQ")
+
+	@EQ.deleter
+	def EQ(self):
+		del self._EQ
+		self._EQ = None
 
 	@property
 	def FrTo(self):
@@ -33,19 +46,6 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 		self._FrTo = None
 
 	@property
-	def To(self):
-		return self._To
-
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != auto else self.make_default("To")
-
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
-
-	@property
 	def Fr(self):
 		return self._Fr
 
@@ -59,23 +59,23 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 		self._Fr = None
 
 	@property
-	def EQ(self):
-		return self._EQ
+	def NEQ(self):
+		return self._NEQ
 
-	@EQ.setter
-	def EQ(self, value):
-		self._EQ = value if type(value) != auto else self.make_default("EQ")
+	@NEQ.setter
+	def NEQ(self, value):
+		self._NEQ = value if type(value) != auto else self.make_default("NEQ")
 
-	@EQ.deleter
-	def EQ(self):
-		del self._EQ
-		self._EQ = None
+	@NEQ.deleter
+	def NEQ(self):
+		del self._NEQ
+		self._NEQ = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NEQ', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FrTo', type=FromToPercentageRange1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='To', type=PercentageRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Fr', type=PercentageRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='EQ', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FrTo', type=FromToPercentageRange1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Fr', type=PercentageRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NEQ', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 	))
 

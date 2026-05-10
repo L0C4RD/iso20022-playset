@@ -1,12 +1,12 @@
 import base_types
-import Warrant4
-import Derivative4
-import Equity3
 import Debt5
+import Warrant4
+import Equity3
+import Derivative4
 
 class FinancialInstrument97(base_types._BaseFieldType):
 
-	__slots__ = ["_Eqty", "_Deriv", "_Debt", "_Warrt"]
+	__slots__ = ["_Eqty", "_Warrt", "_Deriv", "_Debt"]
 	@property
 	def Eqty(self):
 		return self._Eqty
@@ -19,6 +19,19 @@ class FinancialInstrument97(base_types._BaseFieldType):
 	def Eqty(self):
 		del self._Eqty
 		self._Eqty = None
+
+	@property
+	def Warrt(self):
+		return self._Warrt
+
+	@Warrt.setter
+	def Warrt(self, value):
+		self._Warrt = value if type(value) != auto else self.make_default("Warrt")
+
+	@Warrt.deleter
+	def Warrt(self):
+		del self._Warrt
+		self._Warrt = None
 
 	@property
 	def Deriv(self):
@@ -46,23 +59,10 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		del self._Debt
 		self._Debt = None
 
-	@property
-	def Warrt(self):
-		return self._Warrt
-
-	@Warrt.setter
-	def Warrt(self, value):
-		self._Warrt = value if type(value) != auto else self.make_default("Warrt")
-
-	@Warrt.deleter
-	def Warrt(self):
-		del self._Warrt
-		self._Warrt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Eqty', type=Equity3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Warrt', type=Warrant4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Deriv', type=Derivative4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Debt', type=Debt5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Warrt', type=Warrant4, min=0, max=1, mutex_group=None, array=False),
 	))
 

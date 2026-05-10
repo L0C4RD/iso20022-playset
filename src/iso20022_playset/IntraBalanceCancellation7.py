@@ -1,25 +1,25 @@
 import base_types
-import CashAccount40
 import ProcessingStatus69Choice
 import SystemPartyIdentification8
-import BranchAndFinancialInstitutionIdentification8
+import CashAccount40
 import IntraBalanceCancellation8
+import BranchAndFinancialInstitutionIdentification8
 
 class IntraBalanceCancellation7(base_types._BaseFieldType):
 
-	__slots__ = ["_Cxl", "_CshAcctSvcr", "_PrcgSts", "_CshAcctOwnr", "_CshAcct"]
+	__slots__ = ["_CshAcct", "_CshAcctSvcr", "_PrcgSts", "_Cxl", "_CshAcctOwnr"]
 	@property
-	def Cxl(self):
-		return self._Cxl
+	def CshAcct(self):
+		return self._CshAcct
 
-	@Cxl.setter
-	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
 
-	@Cxl.deleter
-	def Cxl(self):
-		del self._Cxl
-		self._Cxl = None
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
 
 	@property
 	def CshAcctSvcr(self):
@@ -48,6 +48,19 @@ class IntraBalanceCancellation7(base_types._BaseFieldType):
 		self._PrcgSts = None
 
 	@property
+	def Cxl(self):
+		return self._Cxl
+
+	@Cxl.setter
+	def Cxl(self, value):
+		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+
+	@Cxl.deleter
+	def Cxl(self):
+		del self._Cxl
+		self._Cxl = None
+
+	@property
 	def CshAcctOwnr(self):
 		return self._CshAcctOwnr
 
@@ -60,24 +73,11 @@ class IntraBalanceCancellation7(base_types._BaseFieldType):
 		del self._CshAcctOwnr
 		self._CshAcctOwnr = None
 
-	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cxl', type=IntraBalanceCancellation8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus69Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cxl', type=IntraBalanceCancellation8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

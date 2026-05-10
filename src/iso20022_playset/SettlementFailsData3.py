@@ -1,68 +1,16 @@
 import base_types
-import SettlementFailureReason3
+import SettlementDataVolume2
 import SettlementTotalData1
 import SettlementFailsSecuritiesRange1
-import SettlementFailsTransactionType2
-import SettlementFailsInstrument2
 import SettlementFailsParticipantRange1
+import SettlementFailsTransactionType2
 import SettlementFailsCurrency2
-import SettlementDataVolume2
+import SettlementFailureReason3
+import SettlementFailsInstrument2
 
 class SettlementFailsData3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesInFail", "_FlsPerCcy", "_FlsPerTxTp", "_PtcptInFail", "_FlsPerFinInstrmTp", "_TtlSttlmPnlties", "_Ttl", "_FailrRsn"]
-	@property
-	def SctiesInFail(self):
-		return self._SctiesInFail
-
-	@SctiesInFail.setter
-	def SctiesInFail(self, value):
-		self._SctiesInFail = value if type(value) != auto else self.make_default("SctiesInFail")
-
-	@SctiesInFail.deleter
-	def SctiesInFail(self):
-		del self._SctiesInFail
-		self._SctiesInFail = None
-
-	@property
-	def FlsPerCcy(self):
-		return self._FlsPerCcy
-
-	@FlsPerCcy.setter
-	def FlsPerCcy(self, value):
-		self._FlsPerCcy = value if type(value) != auto else self.make_default("FlsPerCcy")
-
-	@FlsPerCcy.deleter
-	def FlsPerCcy(self):
-		del self._FlsPerCcy
-		self._FlsPerCcy = None
-
-	@property
-	def FlsPerTxTp(self):
-		return self._FlsPerTxTp
-
-	@FlsPerTxTp.setter
-	def FlsPerTxTp(self, value):
-		self._FlsPerTxTp = value if type(value) != auto else self.make_default("FlsPerTxTp")
-
-	@FlsPerTxTp.deleter
-	def FlsPerTxTp(self):
-		del self._FlsPerTxTp
-		self._FlsPerTxTp = None
-
-	@property
-	def PtcptInFail(self):
-		return self._PtcptInFail
-
-	@PtcptInFail.setter
-	def PtcptInFail(self, value):
-		self._PtcptInFail = value if type(value) != auto else self.make_default("PtcptInFail")
-
-	@PtcptInFail.deleter
-	def PtcptInFail(self):
-		del self._PtcptInFail
-		self._PtcptInFail = None
-
+	__slots__ = ["_FlsPerFinInstrmTp", "_TtlSttlmPnlties", "_FailrRsn", "_PtcptInFail", "_FlsPerCcy", "_Ttl", "_SctiesInFail", "_FlsPerTxTp"]
 	@property
 	def FlsPerFinInstrmTp(self):
 		return self._FlsPerFinInstrmTp
@@ -90,6 +38,45 @@ class SettlementFailsData3(base_types._BaseFieldType):
 		self._TtlSttlmPnlties = None
 
 	@property
+	def FailrRsn(self):
+		return self._FailrRsn
+
+	@FailrRsn.setter
+	def FailrRsn(self, value):
+		self._FailrRsn = value if type(value) != auto else self.make_default("FailrRsn")
+
+	@FailrRsn.deleter
+	def FailrRsn(self):
+		del self._FailrRsn
+		self._FailrRsn = None
+
+	@property
+	def PtcptInFail(self):
+		return self._PtcptInFail
+
+	@PtcptInFail.setter
+	def PtcptInFail(self, value):
+		self._PtcptInFail = value if type(value) != auto else self.make_default("PtcptInFail")
+
+	@PtcptInFail.deleter
+	def PtcptInFail(self):
+		del self._PtcptInFail
+		self._PtcptInFail = None
+
+	@property
+	def FlsPerCcy(self):
+		return self._FlsPerCcy
+
+	@FlsPerCcy.setter
+	def FlsPerCcy(self, value):
+		self._FlsPerCcy = value if type(value) != auto else self.make_default("FlsPerCcy")
+
+	@FlsPerCcy.deleter
+	def FlsPerCcy(self):
+		del self._FlsPerCcy
+		self._FlsPerCcy = None
+
+	@property
 	def Ttl(self):
 		return self._Ttl
 
@@ -103,26 +90,39 @@ class SettlementFailsData3(base_types._BaseFieldType):
 		self._Ttl = None
 
 	@property
-	def FailrRsn(self):
-		return self._FailrRsn
+	def SctiesInFail(self):
+		return self._SctiesInFail
 
-	@FailrRsn.setter
-	def FailrRsn(self, value):
-		self._FailrRsn = value if type(value) != auto else self.make_default("FailrRsn")
+	@SctiesInFail.setter
+	def SctiesInFail(self, value):
+		self._SctiesInFail = value if type(value) != auto else self.make_default("SctiesInFail")
 
-	@FailrRsn.deleter
-	def FailrRsn(self):
-		del self._FailrRsn
-		self._FailrRsn = None
+	@SctiesInFail.deleter
+	def SctiesInFail(self):
+		del self._SctiesInFail
+		self._SctiesInFail = None
+
+	@property
+	def FlsPerTxTp(self):
+		return self._FlsPerTxTp
+
+	@FlsPerTxTp.setter
+	def FlsPerTxTp(self, value):
+		self._FlsPerTxTp = value if type(value) != auto else self.make_default("FlsPerTxTp")
+
+	@FlsPerTxTp.deleter
+	def FlsPerTxTp(self):
+		del self._FlsPerTxTp
+		self._FlsPerTxTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesInFail', type=SettlementFailsSecuritiesRange1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FlsPerCcy', type=SettlementFailsCurrency2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FlsPerTxTp', type=SettlementFailsTransactionType2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtcptInFail', type=SettlementFailsParticipantRange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FlsPerFinInstrmTp', type=SettlementFailsInstrument2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlSttlmPnlties', type=SettlementDataVolume2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FailrRsn', type=SettlementFailureReason3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtcptInFail', type=SettlementFailsParticipantRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlsPerCcy', type=SettlementFailsCurrency2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesInFail', type=SettlementFailsSecuritiesRange1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlsPerTxTp', type=SettlementFailsTransactionType2, min=0, max=1, mutex_group=None, array=False),
 	))
 

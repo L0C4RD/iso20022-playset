@@ -1,23 +1,23 @@
 import base_types
-import CollateralOwnership4
-import SettlementParties35Choice
 import ISODateTime
+import SettlementParties35Choice
+import CollateralOwnership4
 
 class SettlementDetails205(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPties", "_TradDt", "_CollOwnrsh"]
+	__slots__ = ["_CollOwnrsh", "_TradDt", "_SttlmPties"]
 	@property
-	def SttlmPties(self):
-		return self._SttlmPties
+	def CollOwnrsh(self):
+		return self._CollOwnrsh
 
-	@SttlmPties.setter
-	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != auto else self.make_default("SttlmPties")
+	@CollOwnrsh.setter
+	def CollOwnrsh(self, value):
+		self._CollOwnrsh = value if type(value) != auto else self.make_default("CollOwnrsh")
 
-	@SttlmPties.deleter
-	def SttlmPties(self):
-		del self._SttlmPties
-		self._SttlmPties = None
+	@CollOwnrsh.deleter
+	def CollOwnrsh(self):
+		del self._CollOwnrsh
+		self._CollOwnrsh = None
 
 	@property
 	def TradDt(self):
@@ -33,21 +33,21 @@ class SettlementDetails205(base_types._BaseFieldType):
 		self._TradDt = None
 
 	@property
-	def CollOwnrsh(self):
-		return self._CollOwnrsh
+	def SttlmPties(self):
+		return self._SttlmPties
 
-	@CollOwnrsh.setter
-	def CollOwnrsh(self, value):
-		self._CollOwnrsh = value if type(value) != auto else self.make_default("CollOwnrsh")
+	@SttlmPties.setter
+	def SttlmPties(self, value):
+		self._SttlmPties = value if type(value) != auto else self.make_default("SttlmPties")
 
-	@CollOwnrsh.deleter
-	def CollOwnrsh(self):
-		del self._CollOwnrsh
-		self._CollOwnrsh = None
+	@SttlmPties.deleter
+	def SttlmPties(self):
+		del self._SttlmPties
+		self._SttlmPties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmPties', type=SettlementParties35Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollOwnrsh', type=CollateralOwnership4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPties', type=SettlementParties35Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

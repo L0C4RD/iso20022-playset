@@ -1,6 +1,6 @@
 import base_types
-import Max70Text
 import Max35Text
+import Max70Text
 
 class Product8(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ReturnExcessCash1Code
+import GenericIdentification30
 
 class ReturnExcessCash1Choice(base_types._BaseFieldType):
 

@@ -1,13 +1,26 @@
 import base_types
-import HoldingBalance14
-import Max35Text
 import PartyIdentification231Choice
 import Max140Text
+import Max35Text
 import PartyIdentification246Choice
+import HoldingBalance14
 
 class EligiblePosition21(base_types._BaseFieldType):
 
-	__slots__ = ["_RghtsHldr", "_HldgBal", "_AcctId", "_AcctOwnr", "_BlckChainAdrOrWllt"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_RghtsHldr", "_AcctId", "_AcctOwnr", "_HldgBal"]
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
 	@property
 	def RghtsHldr(self):
 		return self._RghtsHldr
@@ -20,19 +33,6 @@ class EligiblePosition21(base_types._BaseFieldType):
 	def RghtsHldr(self):
 		del self._RghtsHldr
 		self._RghtsHldr = None
-
-	@property
-	def HldgBal(self):
-		return self._HldgBal
-
-	@HldgBal.setter
-	def HldgBal(self, value):
-		self._HldgBal = value if type(value) != auto else self.make_default("HldgBal")
-
-	@HldgBal.deleter
-	def HldgBal(self):
-		del self._HldgBal
-		self._HldgBal = None
 
 	@property
 	def AcctId(self):
@@ -61,23 +61,23 @@ class EligiblePosition21(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def HldgBal(self):
+		return self._HldgBal
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@HldgBal.setter
+	def HldgBal(self, value):
+		self._HldgBal = value if type(value) != auto else self.make_default("HldgBal")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@HldgBal.deleter
+	def HldgBal(self):
+		del self._HldgBal
+		self._HldgBal = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RghtsHldr', type=PartyIdentification246Choice, min=0, max=250, mutex_group=None, array=True),
-		base_types.FieldEntry(name='HldgBal', type=HoldingBalance14, min=0, max=15, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification231Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgBal', type=HoldingBalance14, min=0, max=15, mutex_group=None, array=True),
 	))
 

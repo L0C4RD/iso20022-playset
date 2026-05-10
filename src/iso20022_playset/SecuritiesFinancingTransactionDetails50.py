@@ -1,45 +1,19 @@
 import base_types
-import AmountAndDirection59
-import Rate2
-import TerminationDate7Choice
-import RestrictedFINXMax52Text
-import RateType67Choice
-import Exact3NumericText
-import LegalFramework4Choice
-import RateName2
 import YesNoIndicator
-import RestrictedFINXMax16Text
+import Rate2
+import RestrictedFINXMax52Text
+import LegalFramework4Choice
 import RestrictedFINXMax140Text
+import AmountAndDirection59
+import RateType67Choice
+import TerminationDate7Choice
+import RestrictedFINXMax16Text
+import Exact3NumericText
+import RateName2
 
 class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
-	__slots__ = ["_TxCallDely", "_VarblRateSpprt", "_LglFrmwk", "_TermntnTxAmt", "_MtrtyDtMod", "_ScndLegNrrtv", "_RateTp", "_SctiesFincgTradId", "_IntrstPmt", "_AcrdIntrstAmt", "_ClsgLegId", "_RpRate", "_TermntnDt"]
-	@property
-	def TxCallDely(self):
-		return self._TxCallDely
-
-	@TxCallDely.setter
-	def TxCallDely(self, value):
-		self._TxCallDely = value if type(value) != auto else self.make_default("TxCallDely")
-
-	@TxCallDely.deleter
-	def TxCallDely(self):
-		del self._TxCallDely
-		self._TxCallDely = None
-
-	@property
-	def VarblRateSpprt(self):
-		return self._VarblRateSpprt
-
-	@VarblRateSpprt.setter
-	def VarblRateSpprt(self, value):
-		self._VarblRateSpprt = value if type(value) != auto else self.make_default("VarblRateSpprt")
-
-	@VarblRateSpprt.deleter
-	def VarblRateSpprt(self):
-		del self._VarblRateSpprt
-		self._VarblRateSpprt = None
-
+	__slots__ = ["_LglFrmwk", "_TxCallDely", "_ScndLegNrrtv", "_VarblRateSpprt", "_RateTp", "_ClsgLegId", "_TermntnTxAmt", "_IntrstPmt", "_TermntnDt", "_AcrdIntrstAmt", "_RpRate", "_MtrtyDtMod", "_SctiesFincgTradId"]
 	@property
 	def LglFrmwk(self):
 		return self._LglFrmwk
@@ -54,30 +28,17 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 		self._LglFrmwk = None
 
 	@property
-	def TermntnTxAmt(self):
-		return self._TermntnTxAmt
+	def TxCallDely(self):
+		return self._TxCallDely
 
-	@TermntnTxAmt.setter
-	def TermntnTxAmt(self, value):
-		self._TermntnTxAmt = value if type(value) != auto else self.make_default("TermntnTxAmt")
+	@TxCallDely.setter
+	def TxCallDely(self, value):
+		self._TxCallDely = value if type(value) != auto else self.make_default("TxCallDely")
 
-	@TermntnTxAmt.deleter
-	def TermntnTxAmt(self):
-		del self._TermntnTxAmt
-		self._TermntnTxAmt = None
-
-	@property
-	def MtrtyDtMod(self):
-		return self._MtrtyDtMod
-
-	@MtrtyDtMod.setter
-	def MtrtyDtMod(self, value):
-		self._MtrtyDtMod = value if type(value) != auto else self.make_default("MtrtyDtMod")
-
-	@MtrtyDtMod.deleter
-	def MtrtyDtMod(self):
-		del self._MtrtyDtMod
-		self._MtrtyDtMod = None
+	@TxCallDely.deleter
+	def TxCallDely(self):
+		del self._TxCallDely
+		self._TxCallDely = None
 
 	@property
 	def ScndLegNrrtv(self):
@@ -93,6 +54,19 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 		self._ScndLegNrrtv = None
 
 	@property
+	def VarblRateSpprt(self):
+		return self._VarblRateSpprt
+
+	@VarblRateSpprt.setter
+	def VarblRateSpprt(self, value):
+		self._VarblRateSpprt = value if type(value) != auto else self.make_default("VarblRateSpprt")
+
+	@VarblRateSpprt.deleter
+	def VarblRateSpprt(self):
+		del self._VarblRateSpprt
+		self._VarblRateSpprt = None
+
+	@property
 	def RateTp(self):
 		return self._RateTp
 
@@ -104,45 +78,6 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 	def RateTp(self):
 		del self._RateTp
 		self._RateTp = None
-
-	@property
-	def SctiesFincgTradId(self):
-		return self._SctiesFincgTradId
-
-	@SctiesFincgTradId.setter
-	def SctiesFincgTradId(self, value):
-		self._SctiesFincgTradId = value if type(value) != auto else self.make_default("SctiesFincgTradId")
-
-	@SctiesFincgTradId.deleter
-	def SctiesFincgTradId(self):
-		del self._SctiesFincgTradId
-		self._SctiesFincgTradId = None
-
-	@property
-	def IntrstPmt(self):
-		return self._IntrstPmt
-
-	@IntrstPmt.setter
-	def IntrstPmt(self, value):
-		self._IntrstPmt = value if type(value) != auto else self.make_default("IntrstPmt")
-
-	@IntrstPmt.deleter
-	def IntrstPmt(self):
-		del self._IntrstPmt
-		self._IntrstPmt = None
-
-	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
-
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
-
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
 
 	@property
 	def ClsgLegId(self):
@@ -158,17 +93,30 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 		self._ClsgLegId = None
 
 	@property
-	def RpRate(self):
-		return self._RpRate
+	def TermntnTxAmt(self):
+		return self._TermntnTxAmt
 
-	@RpRate.setter
-	def RpRate(self, value):
-		self._RpRate = value if type(value) != auto else self.make_default("RpRate")
+	@TermntnTxAmt.setter
+	def TermntnTxAmt(self, value):
+		self._TermntnTxAmt = value if type(value) != auto else self.make_default("TermntnTxAmt")
 
-	@RpRate.deleter
-	def RpRate(self):
-		del self._RpRate
-		self._RpRate = None
+	@TermntnTxAmt.deleter
+	def TermntnTxAmt(self):
+		del self._TermntnTxAmt
+		self._TermntnTxAmt = None
+
+	@property
+	def IntrstPmt(self):
+		return self._IntrstPmt
+
+	@IntrstPmt.setter
+	def IntrstPmt(self, value):
+		self._IntrstPmt = value if type(value) != auto else self.make_default("IntrstPmt")
+
+	@IntrstPmt.deleter
+	def IntrstPmt(self):
+		del self._IntrstPmt
+		self._IntrstPmt = None
 
 	@property
 	def TermntnDt(self):
@@ -183,19 +131,71 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 		del self._TermntnDt
 		self._TermntnDt = None
 
+	@property
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
+
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
+
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
+
+	@property
+	def RpRate(self):
+		return self._RpRate
+
+	@RpRate.setter
+	def RpRate(self, value):
+		self._RpRate = value if type(value) != auto else self.make_default("RpRate")
+
+	@RpRate.deleter
+	def RpRate(self):
+		del self._RpRate
+		self._RpRate = None
+
+	@property
+	def MtrtyDtMod(self):
+		return self._MtrtyDtMod
+
+	@MtrtyDtMod.setter
+	def MtrtyDtMod(self, value):
+		self._MtrtyDtMod = value if type(value) != auto else self.make_default("MtrtyDtMod")
+
+	@MtrtyDtMod.deleter
+	def MtrtyDtMod(self):
+		del self._MtrtyDtMod
+		self._MtrtyDtMod = None
+
+	@property
+	def SctiesFincgTradId(self):
+		return self._SctiesFincgTradId
+
+	@SctiesFincgTradId.setter
+	def SctiesFincgTradId(self, value):
+		self._SctiesFincgTradId = value if type(value) != auto else self.make_default("SctiesFincgTradId")
+
+	@SctiesFincgTradId.deleter
+	def SctiesFincgTradId(self):
+		del self._SctiesFincgTradId
+		self._SctiesFincgTradId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxCallDely', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VarblRateSpprt', type=RateName2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglFrmwk', type=LegalFramework4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TermntnTxAmt', type=AmountAndDirection59, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDtMod', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxCallDely', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndLegNrrtv', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VarblRateSpprt', type=RateName2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=RateType67Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesFincgTradId', type=RestrictedFINXMax52Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstPmt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection59, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgLegId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpRate', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnTxAmt', type=AmountAndDirection59, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstPmt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=TerminationDate7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection59, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpRate', type=Rate2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDtMod', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesFincgTradId', type=RestrictedFINXMax52Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

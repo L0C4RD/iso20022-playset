@@ -1,148 +1,18 @@
 import base_types
-import ValidationStatusInformation1
-import GovernanceRules2
-import QualifiedDocumentInformation1
 import Max350Text
-import Max2000Text
-import Max35Text
-import ISODate
-import Priority3Code
 import QualifiedPartyIdentification1
+import ISODate
+import GovernanceRules2
+import Priority3Code
+import ValidationStatusInformation1
 import QualifiedPartyAndXMLSignature1
+import Max35Text
+import Max2000Text
+import QualifiedDocumentInformation1
 
 class BusinessLetter1(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnRcpt", "_ApplCntxt", "_GovngCtrct", "_CpyRcpt", "_Ntce", "_AddtlInf", "_Sndr", "_AuthstnUsr", "_VldtnStsInf", "_RltdLttr", "_InstrPrty", "_DgtlSgntr", "_LglCntxt", "_Orgtr", "_LttrIdr", "_OthrPty", "_AssoctdDoc", "_RltdMsg", "_CnttIdr", "_PmryRcpt", "_Dt"]
-	@property
-	def RspnRcpt(self):
-		return self._RspnRcpt
-
-	@RspnRcpt.setter
-	def RspnRcpt(self, value):
-		self._RspnRcpt = value if type(value) != auto else self.make_default("RspnRcpt")
-
-	@RspnRcpt.deleter
-	def RspnRcpt(self):
-		del self._RspnRcpt
-		self._RspnRcpt = None
-
-	@property
-	def ApplCntxt(self):
-		return self._ApplCntxt
-
-	@ApplCntxt.setter
-	def ApplCntxt(self, value):
-		self._ApplCntxt = value if type(value) != auto else self.make_default("ApplCntxt")
-
-	@ApplCntxt.deleter
-	def ApplCntxt(self):
-		del self._ApplCntxt
-		self._ApplCntxt = None
-
-	@property
-	def GovngCtrct(self):
-		return self._GovngCtrct
-
-	@GovngCtrct.setter
-	def GovngCtrct(self, value):
-		self._GovngCtrct = value if type(value) != auto else self.make_default("GovngCtrct")
-
-	@GovngCtrct.deleter
-	def GovngCtrct(self):
-		del self._GovngCtrct
-		self._GovngCtrct = None
-
-	@property
-	def CpyRcpt(self):
-		return self._CpyRcpt
-
-	@CpyRcpt.setter
-	def CpyRcpt(self, value):
-		self._CpyRcpt = value if type(value) != auto else self.make_default("CpyRcpt")
-
-	@CpyRcpt.deleter
-	def CpyRcpt(self):
-		del self._CpyRcpt
-		self._CpyRcpt = None
-
-	@property
-	def Ntce(self):
-		return self._Ntce
-
-	@Ntce.setter
-	def Ntce(self, value):
-		self._Ntce = value if type(value) != auto else self.make_default("Ntce")
-
-	@Ntce.deleter
-	def Ntce(self):
-		del self._Ntce
-		self._Ntce = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
-	@property
-	def AuthstnUsr(self):
-		return self._AuthstnUsr
-
-	@AuthstnUsr.setter
-	def AuthstnUsr(self, value):
-		self._AuthstnUsr = value if type(value) != auto else self.make_default("AuthstnUsr")
-
-	@AuthstnUsr.deleter
-	def AuthstnUsr(self):
-		del self._AuthstnUsr
-		self._AuthstnUsr = None
-
-	@property
-	def VldtnStsInf(self):
-		return self._VldtnStsInf
-
-	@VldtnStsInf.setter
-	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
-
-	@VldtnStsInf.deleter
-	def VldtnStsInf(self):
-		del self._VldtnStsInf
-		self._VldtnStsInf = None
-
-	@property
-	def RltdLttr(self):
-		return self._RltdLttr
-
-	@RltdLttr.setter
-	def RltdLttr(self, value):
-		self._RltdLttr = value if type(value) != auto else self.make_default("RltdLttr")
-
-	@RltdLttr.deleter
-	def RltdLttr(self):
-		del self._RltdLttr
-		self._RltdLttr = None
-
+	__slots__ = ["_InstrPrty", "_AssoctdDoc", "_Ntce", "_DgtlSgntr", "_Sndr", "_RltdMsg", "_CpyRcpt", "_Dt", "_ApplCntxt", "_Orgtr", "_LglCntxt", "_RspnRcpt", "_OthrPty", "_RltdLttr", "_LttrIdr", "_VldtnStsInf", "_CnttIdr", "_PmryRcpt", "_AddtlInf", "_GovngCtrct", "_AuthstnUsr"]
 	@property
 	def InstrPrty(self):
 		return self._InstrPrty
@@ -155,71 +25,6 @@ class BusinessLetter1(base_types._BaseFieldType):
 	def InstrPrty(self):
 		del self._InstrPrty
 		self._InstrPrty = None
-
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
-	@property
-	def LglCntxt(self):
-		return self._LglCntxt
-
-	@LglCntxt.setter
-	def LglCntxt(self, value):
-		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
-
-	@LglCntxt.deleter
-	def LglCntxt(self):
-		del self._LglCntxt
-		self._LglCntxt = None
-
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
-	@property
-	def LttrIdr(self):
-		return self._LttrIdr
-
-	@LttrIdr.setter
-	def LttrIdr(self, value):
-		self._LttrIdr = value if type(value) != auto else self.make_default("LttrIdr")
-
-	@LttrIdr.deleter
-	def LttrIdr(self):
-		del self._LttrIdr
-		self._LttrIdr = None
-
-	@property
-	def OthrPty(self):
-		return self._OthrPty
-
-	@OthrPty.setter
-	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != auto else self.make_default("OthrPty")
-
-	@OthrPty.deleter
-	def OthrPty(self):
-		del self._OthrPty
-		self._OthrPty = None
 
 	@property
 	def AssoctdDoc(self):
@@ -235,6 +40,45 @@ class BusinessLetter1(base_types._BaseFieldType):
 		self._AssoctdDoc = None
 
 	@property
+	def Ntce(self):
+		return self._Ntce
+
+	@Ntce.setter
+	def Ntce(self, value):
+		self._Ntce = value if type(value) != auto else self.make_default("Ntce")
+
+	@Ntce.deleter
+	def Ntce(self):
+		del self._Ntce
+		self._Ntce = None
+
+	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
+
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
 	def RltdMsg(self):
 		return self._RltdMsg
 
@@ -246,6 +90,136 @@ class BusinessLetter1(base_types._BaseFieldType):
 	def RltdMsg(self):
 		del self._RltdMsg
 		self._RltdMsg = None
+
+	@property
+	def CpyRcpt(self):
+		return self._CpyRcpt
+
+	@CpyRcpt.setter
+	def CpyRcpt(self, value):
+		self._CpyRcpt = value if type(value) != auto else self.make_default("CpyRcpt")
+
+	@CpyRcpt.deleter
+	def CpyRcpt(self):
+		del self._CpyRcpt
+		self._CpyRcpt = None
+
+	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
+	@property
+	def ApplCntxt(self):
+		return self._ApplCntxt
+
+	@ApplCntxt.setter
+	def ApplCntxt(self, value):
+		self._ApplCntxt = value if type(value) != auto else self.make_default("ApplCntxt")
+
+	@ApplCntxt.deleter
+	def ApplCntxt(self):
+		del self._ApplCntxt
+		self._ApplCntxt = None
+
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
+	@property
+	def LglCntxt(self):
+		return self._LglCntxt
+
+	@LglCntxt.setter
+	def LglCntxt(self, value):
+		self._LglCntxt = value if type(value) != auto else self.make_default("LglCntxt")
+
+	@LglCntxt.deleter
+	def LglCntxt(self):
+		del self._LglCntxt
+		self._LglCntxt = None
+
+	@property
+	def RspnRcpt(self):
+		return self._RspnRcpt
+
+	@RspnRcpt.setter
+	def RspnRcpt(self, value):
+		self._RspnRcpt = value if type(value) != auto else self.make_default("RspnRcpt")
+
+	@RspnRcpt.deleter
+	def RspnRcpt(self):
+		del self._RspnRcpt
+		self._RspnRcpt = None
+
+	@property
+	def OthrPty(self):
+		return self._OthrPty
+
+	@OthrPty.setter
+	def OthrPty(self, value):
+		self._OthrPty = value if type(value) != auto else self.make_default("OthrPty")
+
+	@OthrPty.deleter
+	def OthrPty(self):
+		del self._OthrPty
+		self._OthrPty = None
+
+	@property
+	def RltdLttr(self):
+		return self._RltdLttr
+
+	@RltdLttr.setter
+	def RltdLttr(self, value):
+		self._RltdLttr = value if type(value) != auto else self.make_default("RltdLttr")
+
+	@RltdLttr.deleter
+	def RltdLttr(self):
+		del self._RltdLttr
+		self._RltdLttr = None
+
+	@property
+	def LttrIdr(self):
+		return self._LttrIdr
+
+	@LttrIdr.setter
+	def LttrIdr(self, value):
+		self._LttrIdr = value if type(value) != auto else self.make_default("LttrIdr")
+
+	@LttrIdr.deleter
+	def LttrIdr(self):
+		del self._LttrIdr
+		self._LttrIdr = None
+
+	@property
+	def VldtnStsInf(self):
+		return self._VldtnStsInf
+
+	@VldtnStsInf.setter
+	def VldtnStsInf(self, value):
+		self._VldtnStsInf = value if type(value) != auto else self.make_default("VldtnStsInf")
+
+	@VldtnStsInf.deleter
+	def VldtnStsInf(self):
+		del self._VldtnStsInf
+		self._VldtnStsInf = None
 
 	@property
 	def CnttIdr(self):
@@ -274,39 +248,65 @@ class BusinessLetter1(base_types._BaseFieldType):
 		self._PmryRcpt = None
 
 	@property
-	def Dt(self):
-		return self._Dt
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def GovngCtrct(self):
+		return self._GovngCtrct
+
+	@GovngCtrct.setter
+	def GovngCtrct(self, value):
+		self._GovngCtrct = value if type(value) != auto else self.make_default("GovngCtrct")
+
+	@GovngCtrct.deleter
+	def GovngCtrct(self):
+		del self._GovngCtrct
+		self._GovngCtrct = None
+
+	@property
+	def AuthstnUsr(self):
+		return self._AuthstnUsr
+
+	@AuthstnUsr.setter
+	def AuthstnUsr(self, value):
+		self._AuthstnUsr = value if type(value) != auto else self.make_default("AuthstnUsr")
+
+	@AuthstnUsr.deleter
+	def AuthstnUsr(self):
+		del self._AuthstnUsr
+		self._AuthstnUsr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnRcpt', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApplCntxt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GovngCtrct', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CpyRcpt', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ntce', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sndr', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthstnUsr', type=QualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdLttr', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InstrPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntr', type=QualifiedPartyAndXMLSignature1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LglCntxt', type=GovernanceRules2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Orgtr', type=QualifiedPartyIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LttrIdr', type=QualifiedDocumentInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPty', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AssoctdDoc', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ntce', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=QualifiedPartyAndXMLSignature1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sndr', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdMsg', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CpyRcpt', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplCntxt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=QualifiedPartyIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LglCntxt', type=GovernanceRules2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RspnRcpt', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrPty', type=QualifiedPartyIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdLttr', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LttrIdr', type=QualifiedDocumentInformation1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttIdr', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmryRcpt', type=QualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GovngCtrct', type=QualifiedDocumentInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AuthstnUsr', type=QualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import RequestHandling2
 import MessageReference1
+import RequestHandling2
 
 class ReceiptAcknowledgementReport2(base_types._BaseFieldType):
 

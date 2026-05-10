@@ -1,15 +1,15 @@
 import base_types
+import BICIdentification1
 import DocumentIdentification5
 import PendingActivity2
-import TransactionStatus5
-import BICIdentification1
-import MessageIdentification1
 import SimpleIdentificationInformation
+import MessageIdentification1
+import TransactionStatus5
 import DocumentIdentification3
 
 class StatusExtensionRequestNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqForActn", "_NtfctnId", "_StsToBeXtnded", "_Initr", "_EstblishdBaselnId", "_TxId", "_UsrTxRef"]
+	__slots__ = ["_ReqForActn", "_UsrTxRef", "_StsToBeXtnded", "_TxId", "_NtfctnId", "_Initr", "_EstblishdBaselnId"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -24,17 +24,17 @@ class StatusExtensionRequestNotificationV03(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
 
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def StsToBeXtnded(self):
@@ -48,6 +48,32 @@ class StatusExtensionRequestNotificationV03(base_types._BaseFieldType):
 	def StsToBeXtnded(self):
 		del self._StsToBeXtnded
 		self._StsToBeXtnded = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
 
 	@property
 	def Initr(self):
@@ -75,39 +101,13 @@ class StatusExtensionRequestNotificationV03(base_types._BaseFieldType):
 		del self._EstblishdBaselnId
 		self._EstblishdBaselnId = None
 
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsToBeXtnded', type=TransactionStatus5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
 

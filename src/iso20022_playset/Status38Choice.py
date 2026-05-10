@@ -1,12 +1,12 @@
 import base_types
+import InstructionProcessingStatus42Choice
 import ProprietaryStatusAndReason6
 import MatchingStatus24Choice
 import SettlementStatus30Choice
-import InstructionProcessingStatus42Choice
 
 class Status38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrPrcgSts", "_SttlmSts", "_Prtry", "_IfrrdMtchgSts", "_MtchgSts"]
+	__slots__ = ["_InstrPrcgSts", "_Prtry", "_IfrrdMtchgSts", "_SttlmSts", "_MtchgSts"]
 	@property
 	def InstrPrcgSts(self):
 		return self._InstrPrcgSts
@@ -19,19 +19,6 @@ class Status38Choice(base_types._BaseFieldType):
 	def InstrPrcgSts(self):
 		del self._InstrPrcgSts
 		self._InstrPrcgSts = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
 
 	@property
 	def Prtry(self):
@@ -60,6 +47,19 @@ class Status38Choice(base_types._BaseFieldType):
 		self._IfrrdMtchgSts = None
 
 	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
+	@property
 	def MtchgSts(self):
 		return self._MtchgSts
 
@@ -74,9 +74,9 @@ class Status38Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrPrcgSts', type=InstructionProcessingStatus42Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus30Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

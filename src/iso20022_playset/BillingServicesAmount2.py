@@ -3,20 +3,7 @@ import AmountAndDirection34
 
 class BillingServicesAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricgAmt", "_SttlmAmt", "_HstAmt"]
-	@property
-	def PricgAmt(self):
-		return self._PricgAmt
-
-	@PricgAmt.setter
-	def PricgAmt(self, value):
-		self._PricgAmt = value if type(value) != auto else self.make_default("PricgAmt")
-
-	@PricgAmt.deleter
-	def PricgAmt(self):
-		del self._PricgAmt
-		self._PricgAmt = None
-
+	__slots__ = ["_SttlmAmt", "_PricgAmt", "_HstAmt"]
 	@property
 	def SttlmAmt(self):
 		return self._SttlmAmt
@@ -29,6 +16,19 @@ class BillingServicesAmount2(base_types._BaseFieldType):
 	def SttlmAmt(self):
 		del self._SttlmAmt
 		self._SttlmAmt = None
+
+	@property
+	def PricgAmt(self):
+		return self._PricgAmt
+
+	@PricgAmt.setter
+	def PricgAmt(self, value):
+		self._PricgAmt = value if type(value) != auto else self.make_default("PricgAmt")
+
+	@PricgAmt.deleter
+	def PricgAmt(self):
+		del self._PricgAmt
+		self._PricgAmt = None
 
 	@property
 	def HstAmt(self):
@@ -44,8 +44,8 @@ class BillingServicesAmount2(base_types._BaseFieldType):
 		self._HstAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

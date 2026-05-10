@@ -1,12 +1,12 @@
 import base_types
-import ISODate
 import GenericIdentification164
 import CountryAndResidentialStatusType2
 import Max350Text
+import ISODate
 
 class IndividualPerson32(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrId", "_BirthDt", "_CtryAndResdtlSts", "_Nm"]
+	__slots__ = ["_OthrId", "_Nm", "_CtryAndResdtlSts", "_BirthDt"]
 	@property
 	def OthrId(self):
 		return self._OthrId
@@ -21,17 +21,17 @@ class IndividualPerson32(base_types._BaseFieldType):
 		self._OthrId = None
 
 	@property
-	def BirthDt(self):
-		return self._BirthDt
+	def Nm(self):
+		return self._Nm
 
-	@BirthDt.setter
-	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@BirthDt.deleter
-	def BirthDt(self):
-		del self._BirthDt
-		self._BirthDt = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def CtryAndResdtlSts(self):
@@ -47,22 +47,22 @@ class IndividualPerson32(base_types._BaseFieldType):
 		self._CtryAndResdtlSts = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def BirthDt(self):
+		return self._BirthDt
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@BirthDt.setter
+	def BirthDt(self, value):
+		self._BirthDt = value if type(value) != auto else self.make_default("BirthDt")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@BirthDt.deleter
+	def BirthDt(self):
+		del self._BirthDt
+		self._BirthDt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrId', type=GenericIdentification164, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryAndResdtlSts', type=CountryAndResidentialStatusType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

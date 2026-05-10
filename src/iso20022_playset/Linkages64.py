@@ -1,25 +1,25 @@
 import base_types
-import DocumentNumber5Choice
-import ProcessingPosition7Choice
-import PairedOrTurnedQuantity5Choice
-import References41Choice
 import PartyIdentification127Choice
+import DocumentNumber5Choice
+import References41Choice
+import PairedOrTurnedQuantity5Choice
+import ProcessingPosition7Choice
 
 class Linkages64(base_types._BaseFieldType):
 
-	__slots__ = ["_LkdQty", "_RefOwnr", "_MsgNb", "_PrcgPos", "_Ref"]
+	__slots__ = ["_MsgNb", "_RefOwnr", "_Ref", "_LkdQty", "_PrcgPos"]
 	@property
-	def LkdQty(self):
-		return self._LkdQty
+	def MsgNb(self):
+		return self._MsgNb
 
-	@LkdQty.setter
-	def LkdQty(self, value):
-		self._LkdQty = value if type(value) != auto else self.make_default("LkdQty")
+	@MsgNb.setter
+	def MsgNb(self, value):
+		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
 
-	@LkdQty.deleter
-	def LkdQty(self):
-		del self._LkdQty
-		self._LkdQty = None
+	@MsgNb.deleter
+	def MsgNb(self):
+		del self._MsgNb
+		self._MsgNb = None
 
 	@property
 	def RefOwnr(self):
@@ -35,17 +35,30 @@ class Linkages64(base_types._BaseFieldType):
 		self._RefOwnr = None
 
 	@property
-	def MsgNb(self):
-		return self._MsgNb
+	def Ref(self):
+		return self._Ref
 
-	@MsgNb.setter
-	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != auto else self.make_default("MsgNb")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@MsgNb.deleter
-	def MsgNb(self):
-		del self._MsgNb
-		self._MsgNb = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def LkdQty(self):
+		return self._LkdQty
+
+	@LkdQty.setter
+	def LkdQty(self, value):
+		self._LkdQty = value if type(value) != auto else self.make_default("LkdQty")
+
+	@LkdQty.deleter
+	def LkdQty(self):
+		del self._LkdQty
+		self._LkdQty = None
 
 	@property
 	def PrcgPos(self):
@@ -60,24 +73,11 @@ class Linkages64(base_types._BaseFieldType):
 		del self._PrcgPos
 		self._PrcgPos = None
 
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References41Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

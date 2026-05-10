@@ -1,23 +1,23 @@
 import base_types
-import FailedMovement1
-import PartyIdentification2Choice
 import Max35Text
+import PartyIdentification2Choice
+import FailedMovement1
 
 class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtAcctId", "_ClntAcctId", "_AcctOwnrId", "_RsrcDtls"]
+	__slots__ = ["_RsrcDtls", "_ClntAcctId", "_AcctOwnrId", "_AgtAcctId"]
 	@property
-	def AgtAcctId(self):
-		return self._AgtAcctId
+	def RsrcDtls(self):
+		return self._RsrcDtls
 
-	@AgtAcctId.setter
-	def AgtAcctId(self, value):
-		self._AgtAcctId = value if type(value) != auto else self.make_default("AgtAcctId")
+	@RsrcDtls.setter
+	def RsrcDtls(self, value):
+		self._RsrcDtls = value if type(value) != auto else self.make_default("RsrcDtls")
 
-	@AgtAcctId.deleter
-	def AgtAcctId(self):
-		del self._AgtAcctId
-		self._AgtAcctId = None
+	@RsrcDtls.deleter
+	def RsrcDtls(self):
+		del self._RsrcDtls
+		self._RsrcDtls = None
 
 	@property
 	def ClntAcctId(self):
@@ -46,22 +46,22 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 		self._AcctOwnrId = None
 
 	@property
-	def RsrcDtls(self):
-		return self._RsrcDtls
+	def AgtAcctId(self):
+		return self._AgtAcctId
 
-	@RsrcDtls.setter
-	def RsrcDtls(self, value):
-		self._RsrcDtls = value if type(value) != auto else self.make_default("RsrcDtls")
+	@AgtAcctId.setter
+	def AgtAcctId(self, value):
+		self._AgtAcctId = value if type(value) != auto else self.make_default("AgtAcctId")
 
-	@RsrcDtls.deleter
-	def RsrcDtls(self):
-		del self._RsrcDtls
-		self._RsrcDtls = None
+	@AgtAcctId.deleter
+	def AgtAcctId(self):
+		del self._AgtAcctId
+		self._AgtAcctId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AgtAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsrcDtls', type=FailedMovement1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntAcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsrcDtls', type=FailedMovement1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AgtAcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

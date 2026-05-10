@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstrument58
 import ISINOct2015Identifier
+import FinancialInstrument58
 
 class FinancialInstrumentIdentification6Choice(base_types._BaseFieldType):
 

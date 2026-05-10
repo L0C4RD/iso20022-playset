@@ -1,7 +1,7 @@
 import base_types
-import PurposeCode7Choice
 import Max140Text
 import Max70Text
+import PurposeCode7Choice
 
 class BlockChainAddressWallet2(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 import base_types
 import Max35Text
-import CashEntitlement1
 import SecuritiesEntitlement1
+import CashEntitlement1
 import PartyIdentification2Choice
 
 class Entitlement1(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesDstrbtnDtls", "_CshDstrbtnDtls", "_AcctOwnrId", "_AcctId"]
+	__slots__ = ["_SctiesDstrbtnDtls", "_AcctId", "_CshDstrbtnDtls", "_AcctOwnrId"]
 	@property
 	def SctiesDstrbtnDtls(self):
 		return self._SctiesDstrbtnDtls
@@ -19,6 +19,19 @@ class Entitlement1(base_types._BaseFieldType):
 	def SctiesDstrbtnDtls(self):
 		del self._SctiesDstrbtnDtls
 		self._SctiesDstrbtnDtls = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def CshDstrbtnDtls(self):
@@ -46,23 +59,10 @@ class Entitlement1(base_types._BaseFieldType):
 		del self._AcctOwnrId
 		self._AcctOwnrId = None
 
-	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesEntitlement1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashEntitlement1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

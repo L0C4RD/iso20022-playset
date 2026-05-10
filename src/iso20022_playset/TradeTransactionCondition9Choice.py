@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ExternalTradeTransactionCondition1Code
+import GenericIdentification30
 
 class TradeTransactionCondition9Choice(base_types._BaseFieldType):
 

@@ -3,20 +3,7 @@ import Max35Text
 
 class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
-	__slots__ = ["_UTMEstwrd", "_UTMZone", "_UTMNrthwrd"]
-	@property
-	def UTMEstwrd(self):
-		return self._UTMEstwrd
-
-	@UTMEstwrd.setter
-	def UTMEstwrd(self, value):
-		self._UTMEstwrd = value if type(value) != auto else self.make_default("UTMEstwrd")
-
-	@UTMEstwrd.deleter
-	def UTMEstwrd(self):
-		del self._UTMEstwrd
-		self._UTMEstwrd = None
-
+	__slots__ = ["_UTMZone", "_UTMNrthwrd", "_UTMEstwrd"]
 	@property
 	def UTMZone(self):
 		return self._UTMZone
@@ -43,9 +30,22 @@ class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 		del self._UTMNrthwrd
 		self._UTMNrthwrd = None
 
+	@property
+	def UTMEstwrd(self):
+		return self._UTMEstwrd
+
+	@UTMEstwrd.setter
+	def UTMEstwrd(self, value):
+		self._UTMEstwrd = value if type(value) != auto else self.make_default("UTMEstwrd")
+
+	@UTMEstwrd.deleter
+	def UTMEstwrd(self):
+		del self._UTMEstwrd
+		self._UTMEstwrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UTMEstwrd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMZone', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMNrthwrd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UTMEstwrd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

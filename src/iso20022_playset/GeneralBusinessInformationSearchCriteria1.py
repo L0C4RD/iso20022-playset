@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import CharacterSearch1Choice
 import InformationQualifierType1
-import Max35Text
 
 class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 

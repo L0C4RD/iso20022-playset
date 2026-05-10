@@ -1,7 +1,7 @@
 import base_types
+import TMSTrigger1
 import CardPaymentEnvironment81
 import TrueFalseIndicator
-import TMSTrigger1
 
 class AcceptorDiagnosticResponse11(base_types._BaseFieldType):
 

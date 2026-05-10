@@ -1,7 +1,7 @@
 import base_types
-import OrganisationIdentification15Choice
-import TrueFalseIndicator
 import CollateralData33
+import TrueFalseIndicator
+import OrganisationIdentification15Choice
 
 class PositionSetDimensions12(base_types._BaseFieldType):
 

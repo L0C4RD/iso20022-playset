@@ -1,6 +1,6 @@
 import base_types
-import ExternalContractClosureReason1Code
 import Max35Text
+import ExternalContractClosureReason1Code
 
 class ContractClosureReason1Choice(base_types._BaseFieldType):
 

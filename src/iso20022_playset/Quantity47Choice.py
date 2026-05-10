@@ -1,6 +1,6 @@
 import base_types
-import Max52Text
 import LongFraction19DecimalNumber
+import Max52Text
 
 class Quantity47Choice(base_types._BaseFieldType):
 

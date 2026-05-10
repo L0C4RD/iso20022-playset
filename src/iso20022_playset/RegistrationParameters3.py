@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import SecuritiesCertificate3
 import DateAndDateTime1Choice
-import Max35Text
 
 class RegistrationParameters3(base_types._BaseFieldType):
 

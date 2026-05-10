@@ -1,25 +1,25 @@
 import base_types
+import Max140Text
 import Max35Text
 import CashCollateral3
-import Max140Text
 import SecuritiesCollateral10
 import OtherCollateral9
 
 class Collateral55(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesColl", "_CollPrpslRspnId", "_MrgnCallReqId", "_CshColl", "_MrgnCallRspnId", "_OthrColl", "_StdSttlmInstrs"]
+	__slots__ = ["_StdSttlmInstrs", "_CollPrpslRspnId", "_MrgnCallReqId", "_CshColl", "_MrgnCallRspnId", "_SctiesColl", "_OthrColl"]
 	@property
-	def SctiesColl(self):
-		return self._SctiesColl
+	def StdSttlmInstrs(self):
+		return self._StdSttlmInstrs
 
-	@SctiesColl.setter
-	def SctiesColl(self, value):
-		self._SctiesColl = value if type(value) != auto else self.make_default("SctiesColl")
+	@StdSttlmInstrs.setter
+	def StdSttlmInstrs(self, value):
+		self._StdSttlmInstrs = value if type(value) != auto else self.make_default("StdSttlmInstrs")
 
-	@SctiesColl.deleter
-	def SctiesColl(self):
-		del self._SctiesColl
-		self._SctiesColl = None
+	@StdSttlmInstrs.deleter
+	def StdSttlmInstrs(self):
+		del self._StdSttlmInstrs
+		self._StdSttlmInstrs = None
 
 	@property
 	def CollPrpslRspnId(self):
@@ -74,6 +74,19 @@ class Collateral55(base_types._BaseFieldType):
 		self._MrgnCallRspnId = None
 
 	@property
+	def SctiesColl(self):
+		return self._SctiesColl
+
+	@SctiesColl.setter
+	def SctiesColl(self, value):
+		self._SctiesColl = value if type(value) != auto else self.make_default("SctiesColl")
+
+	@SctiesColl.deleter
+	def SctiesColl(self):
+		del self._SctiesColl
+		self._SctiesColl = None
+
+	@property
 	def OthrColl(self):
 		return self._OthrColl
 
@@ -86,26 +99,13 @@ class Collateral55(base_types._BaseFieldType):
 		del self._OthrColl
 		self._OthrColl = None
 
-	@property
-	def StdSttlmInstrs(self):
-		return self._StdSttlmInstrs
-
-	@StdSttlmInstrs.setter
-	def StdSttlmInstrs(self, value):
-		self._StdSttlmInstrs = value if type(value) != auto else self.make_default("StdSttlmInstrs")
-
-	@StdSttlmInstrs.deleter
-	def StdSttlmInstrs(self):
-		del self._StdSttlmInstrs
-		self._StdSttlmInstrs = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MrgnCallReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshColl', type=CashCollateral3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MrgnCallRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrColl', type=OtherCollateral9, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import Max210Text
 import CancellationReason21Choice
+import Max210Text
 
 class CancellationReason10(base_types._BaseFieldType):
 

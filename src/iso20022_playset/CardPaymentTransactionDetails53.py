@@ -1,38 +1,38 @@
 import base_types
-import ActiveCurrencyCode
-import Instalment5
-import CurrencyConversion30
-import AggregationTransaction3
-import DetailedAmount15
 import Product6
-import ExternallyDefinedData5
+import RecurringTransaction6
 import Max10000Binary
 import OnLineReason2Code
-import PositiveNumber
-import CardAccountType3Code
-import Max10Text
-import RecurringTransaction6
-import TypeOfAmount8Code
-import Max35NumericText
-import ImpliedCurrencyAndAmount
+import AggregationTransaction3
 import Max35Text
+import ImpliedCurrencyAndAmount
+import TypeOfAmount8Code
+import DetailedAmount15
+import Max35NumericText
+import CurrencyConversion30
+import PositiveNumber
+import Max10Text
+import CardAccountType3Code
+import Instalment5
+import ActiveCurrencyCode
 import ISODate
+import ExternallyDefinedData5
 
 class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_CmpltnSeqNb", "_CmltvAmt", "_OnLineRsn", "_Instlmt", "_CcyConvsRslt", "_CmpltnSeqCntr", "_AcctTp", "_UattnddLvlCtgy", "_Rcrng", "_AggtnTx", "_AddtlInf", "_TtlAmt", "_AmtQlfr", "_DlvryLctn", "_Ccy", "_TtlAuthrsdAmt", "_ReSubmissnCntr", "_AuthrsdAmt", "_ReqdAmt", "_InvcAmt", "_PdctCdSetId", "_SaleItm", "_VldtyDt", "_DtldAmt"]
+	__slots__ = ["_ReqdAmt", "_CmpltnSeqNb", "_Rcrng", "_Instlmt", "_AmtQlfr", "_CmltvAmt", "_CmpltnSeqCntr", "_AggtnTx", "_CcyConvsRslt", "_TtlAuthrsdAmt", "_DtldAmt", "_SaleItm", "_ReSubmissnCntr", "_TtlAmt", "_Ccy", "_AcctTp", "_ICCRltdData", "_PdctCdSetId", "_OnLineRsn", "_AuthrsdAmt", "_InvcAmt", "_UattnddLvlCtgy", "_DlvryLctn", "_VldtyDt", "_AddtlInf"]
 	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
+	def ReqdAmt(self):
+		return self._ReqdAmt
 
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+	@ReqdAmt.setter
+	def ReqdAmt(self, value):
+		self._ReqdAmt = value if type(value) != auto else self.make_default("ReqdAmt")
 
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
+	@ReqdAmt.deleter
+	def ReqdAmt(self):
+		del self._ReqdAmt
+		self._ReqdAmt = None
 
 	@property
 	def CmpltnSeqNb(self):
@@ -48,30 +48,17 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._CmpltnSeqNb = None
 
 	@property
-	def CmltvAmt(self):
-		return self._CmltvAmt
+	def Rcrng(self):
+		return self._Rcrng
 
-	@CmltvAmt.setter
-	def CmltvAmt(self, value):
-		self._CmltvAmt = value if type(value) != auto else self.make_default("CmltvAmt")
+	@Rcrng.setter
+	def Rcrng(self, value):
+		self._Rcrng = value if type(value) != auto else self.make_default("Rcrng")
 
-	@CmltvAmt.deleter
-	def CmltvAmt(self):
-		del self._CmltvAmt
-		self._CmltvAmt = None
-
-	@property
-	def OnLineRsn(self):
-		return self._OnLineRsn
-
-	@OnLineRsn.setter
-	def OnLineRsn(self, value):
-		self._OnLineRsn = value if type(value) != auto else self.make_default("OnLineRsn")
-
-	@OnLineRsn.deleter
-	def OnLineRsn(self):
-		del self._OnLineRsn
-		self._OnLineRsn = None
+	@Rcrng.deleter
+	def Rcrng(self):
+		del self._Rcrng
+		self._Rcrng = None
 
 	@property
 	def Instlmt(self):
@@ -87,17 +74,30 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._Instlmt = None
 
 	@property
-	def CcyConvsRslt(self):
-		return self._CcyConvsRslt
+	def AmtQlfr(self):
+		return self._AmtQlfr
 
-	@CcyConvsRslt.setter
-	def CcyConvsRslt(self, value):
-		self._CcyConvsRslt = value if type(value) != auto else self.make_default("CcyConvsRslt")
+	@AmtQlfr.setter
+	def AmtQlfr(self, value):
+		self._AmtQlfr = value if type(value) != auto else self.make_default("AmtQlfr")
 
-	@CcyConvsRslt.deleter
-	def CcyConvsRslt(self):
-		del self._CcyConvsRslt
-		self._CcyConvsRslt = None
+	@AmtQlfr.deleter
+	def AmtQlfr(self):
+		del self._AmtQlfr
+		self._AmtQlfr = None
+
+	@property
+	def CmltvAmt(self):
+		return self._CmltvAmt
+
+	@CmltvAmt.setter
+	def CmltvAmt(self, value):
+		self._CmltvAmt = value if type(value) != auto else self.make_default("CmltvAmt")
+
+	@CmltvAmt.deleter
+	def CmltvAmt(self):
+		del self._CmltvAmt
+		self._CmltvAmt = None
 
 	@property
 	def CmpltnSeqCntr(self):
@@ -113,45 +113,6 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._CmpltnSeqCntr = None
 
 	@property
-	def AcctTp(self):
-		return self._AcctTp
-
-	@AcctTp.setter
-	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != auto else self.make_default("AcctTp")
-
-	@AcctTp.deleter
-	def AcctTp(self):
-		del self._AcctTp
-		self._AcctTp = None
-
-	@property
-	def UattnddLvlCtgy(self):
-		return self._UattnddLvlCtgy
-
-	@UattnddLvlCtgy.setter
-	def UattnddLvlCtgy(self, value):
-		self._UattnddLvlCtgy = value if type(value) != auto else self.make_default("UattnddLvlCtgy")
-
-	@UattnddLvlCtgy.deleter
-	def UattnddLvlCtgy(self):
-		del self._UattnddLvlCtgy
-		self._UattnddLvlCtgy = None
-
-	@property
-	def Rcrng(self):
-		return self._Rcrng
-
-	@Rcrng.setter
-	def Rcrng(self, value):
-		self._Rcrng = value if type(value) != auto else self.make_default("Rcrng")
-
-	@Rcrng.deleter
-	def Rcrng(self):
-		del self._Rcrng
-		self._Rcrng = None
-
-	@property
 	def AggtnTx(self):
 		return self._AggtnTx
 
@@ -165,69 +126,17 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._AggtnTx = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def CcyConvsRslt(self):
+		return self._CcyConvsRslt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@CcyConvsRslt.setter
+	def CcyConvsRslt(self, value):
+		self._CcyConvsRslt = value if type(value) != auto else self.make_default("CcyConvsRslt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
-	@property
-	def AmtQlfr(self):
-		return self._AmtQlfr
-
-	@AmtQlfr.setter
-	def AmtQlfr(self, value):
-		self._AmtQlfr = value if type(value) != auto else self.make_default("AmtQlfr")
-
-	@AmtQlfr.deleter
-	def AmtQlfr(self):
-		del self._AmtQlfr
-		self._AmtQlfr = None
-
-	@property
-	def DlvryLctn(self):
-		return self._DlvryLctn
-
-	@DlvryLctn.setter
-	def DlvryLctn(self, value):
-		self._DlvryLctn = value if type(value) != auto else self.make_default("DlvryLctn")
-
-	@DlvryLctn.deleter
-	def DlvryLctn(self):
-		del self._DlvryLctn
-		self._DlvryLctn = None
-
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
+	@CcyConvsRslt.deleter
+	def CcyConvsRslt(self):
+		del self._CcyConvsRslt
+		self._CcyConvsRslt = None
 
 	@property
 	def TtlAuthrsdAmt(self):
@@ -243,69 +152,17 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._TtlAuthrsdAmt = None
 
 	@property
-	def ReSubmissnCntr(self):
-		return self._ReSubmissnCntr
+	def DtldAmt(self):
+		return self._DtldAmt
 
-	@ReSubmissnCntr.setter
-	def ReSubmissnCntr(self, value):
-		self._ReSubmissnCntr = value if type(value) != auto else self.make_default("ReSubmissnCntr")
+	@DtldAmt.setter
+	def DtldAmt(self, value):
+		self._DtldAmt = value if type(value) != auto else self.make_default("DtldAmt")
 
-	@ReSubmissnCntr.deleter
-	def ReSubmissnCntr(self):
-		del self._ReSubmissnCntr
-		self._ReSubmissnCntr = None
-
-	@property
-	def AuthrsdAmt(self):
-		return self._AuthrsdAmt
-
-	@AuthrsdAmt.setter
-	def AuthrsdAmt(self, value):
-		self._AuthrsdAmt = value if type(value) != auto else self.make_default("AuthrsdAmt")
-
-	@AuthrsdAmt.deleter
-	def AuthrsdAmt(self):
-		del self._AuthrsdAmt
-		self._AuthrsdAmt = None
-
-	@property
-	def ReqdAmt(self):
-		return self._ReqdAmt
-
-	@ReqdAmt.setter
-	def ReqdAmt(self, value):
-		self._ReqdAmt = value if type(value) != auto else self.make_default("ReqdAmt")
-
-	@ReqdAmt.deleter
-	def ReqdAmt(self):
-		del self._ReqdAmt
-		self._ReqdAmt = None
-
-	@property
-	def InvcAmt(self):
-		return self._InvcAmt
-
-	@InvcAmt.setter
-	def InvcAmt(self, value):
-		self._InvcAmt = value if type(value) != auto else self.make_default("InvcAmt")
-
-	@InvcAmt.deleter
-	def InvcAmt(self):
-		del self._InvcAmt
-		self._InvcAmt = None
-
-	@property
-	def PdctCdSetId(self):
-		return self._PdctCdSetId
-
-	@PdctCdSetId.setter
-	def PdctCdSetId(self, value):
-		self._PdctCdSetId = value if type(value) != auto else self.make_default("PdctCdSetId")
-
-	@PdctCdSetId.deleter
-	def PdctCdSetId(self):
-		del self._PdctCdSetId
-		self._PdctCdSetId = None
+	@DtldAmt.deleter
+	def DtldAmt(self):
+		del self._DtldAmt
+		self._DtldAmt = None
 
 	@property
 	def SaleItm(self):
@@ -321,6 +178,149 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._SaleItm = None
 
 	@property
+	def ReSubmissnCntr(self):
+		return self._ReSubmissnCntr
+
+	@ReSubmissnCntr.setter
+	def ReSubmissnCntr(self, value):
+		self._ReSubmissnCntr = value if type(value) != auto else self.make_default("ReSubmissnCntr")
+
+	@ReSubmissnCntr.deleter
+	def ReSubmissnCntr(self):
+		del self._ReSubmissnCntr
+		self._ReSubmissnCntr = None
+
+	@property
+	def TtlAmt(self):
+		return self._TtlAmt
+
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
+
+	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def AcctTp(self):
+		return self._AcctTp
+
+	@AcctTp.setter
+	def AcctTp(self, value):
+		self._AcctTp = value if type(value) != auto else self.make_default("AcctTp")
+
+	@AcctTp.deleter
+	def AcctTp(self):
+		del self._AcctTp
+		self._AcctTp = None
+
+	@property
+	def ICCRltdData(self):
+		return self._ICCRltdData
+
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
+
+	@property
+	def PdctCdSetId(self):
+		return self._PdctCdSetId
+
+	@PdctCdSetId.setter
+	def PdctCdSetId(self, value):
+		self._PdctCdSetId = value if type(value) != auto else self.make_default("PdctCdSetId")
+
+	@PdctCdSetId.deleter
+	def PdctCdSetId(self):
+		del self._PdctCdSetId
+		self._PdctCdSetId = None
+
+	@property
+	def OnLineRsn(self):
+		return self._OnLineRsn
+
+	@OnLineRsn.setter
+	def OnLineRsn(self, value):
+		self._OnLineRsn = value if type(value) != auto else self.make_default("OnLineRsn")
+
+	@OnLineRsn.deleter
+	def OnLineRsn(self):
+		del self._OnLineRsn
+		self._OnLineRsn = None
+
+	@property
+	def AuthrsdAmt(self):
+		return self._AuthrsdAmt
+
+	@AuthrsdAmt.setter
+	def AuthrsdAmt(self, value):
+		self._AuthrsdAmt = value if type(value) != auto else self.make_default("AuthrsdAmt")
+
+	@AuthrsdAmt.deleter
+	def AuthrsdAmt(self):
+		del self._AuthrsdAmt
+		self._AuthrsdAmt = None
+
+	@property
+	def InvcAmt(self):
+		return self._InvcAmt
+
+	@InvcAmt.setter
+	def InvcAmt(self, value):
+		self._InvcAmt = value if type(value) != auto else self.make_default("InvcAmt")
+
+	@InvcAmt.deleter
+	def InvcAmt(self):
+		del self._InvcAmt
+		self._InvcAmt = None
+
+	@property
+	def UattnddLvlCtgy(self):
+		return self._UattnddLvlCtgy
+
+	@UattnddLvlCtgy.setter
+	def UattnddLvlCtgy(self, value):
+		self._UattnddLvlCtgy = value if type(value) != auto else self.make_default("UattnddLvlCtgy")
+
+	@UattnddLvlCtgy.deleter
+	def UattnddLvlCtgy(self):
+		del self._UattnddLvlCtgy
+		self._UattnddLvlCtgy = None
+
+	@property
+	def DlvryLctn(self):
+		return self._DlvryLctn
+
+	@DlvryLctn.setter
+	def DlvryLctn(self, value):
+		self._DlvryLctn = value if type(value) != auto else self.make_default("DlvryLctn")
+
+	@DlvryLctn.deleter
+	def DlvryLctn(self):
+		del self._DlvryLctn
+		self._DlvryLctn = None
+
+	@property
 	def VldtyDt(self):
 		return self._VldtyDt
 
@@ -334,43 +334,43 @@ class CardPaymentTransactionDetails53(base_types._BaseFieldType):
 		self._VldtyDt = None
 
 	@property
-	def DtldAmt(self):
-		return self._DtldAmt
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@DtldAmt.setter
-	def DtldAmt(self, value):
-		self._DtldAmt = value if type(value) != auto else self.make_default("DtldAmt")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@DtldAmt.deleter
-	def DtldAmt(self):
-		del self._DtldAmt
-		self._DtldAmt = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnSeqNb', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OnLineRsn', type=OnLineReason2Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Instlmt', type=Instalment5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmpltnSeqCntr', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UattnddLvlCtgy', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcrng', type=RecurringTransaction6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AggtnTx', type=AggregationTransaction3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=ExternallyDefinedData5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtQlfr', type=TypeOfAmount8Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAuthrsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReSubmissnCntr', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctCdSetId', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleItm', type=Product6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnSeqNb', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcrng', type=RecurringTransaction6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instlmt', type=Instalment5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AmtQlfr', type=TypeOfAmount8Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmpltnSeqCntr', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AggtnTx', type=AggregationTransaction3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAuthrsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldAmt', type=DetailedAmount15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleItm', type=Product6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ReSubmissnCntr', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctCdSetId', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OnLineRsn', type=OnLineReason2Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AuthrsdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UattnddLvlCtgy', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryLctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=ExternallyDefinedData5, min=0, max=None, mutex_group=None, array=True),
 	))
 

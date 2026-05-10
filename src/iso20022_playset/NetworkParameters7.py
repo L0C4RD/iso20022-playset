@@ -1,13 +1,13 @@
 import base_types
-import Max35Binary
-import Max140Binary
 import Max35Text
 import NetworkParameters9
+import Max35Binary
+import Max140Binary
 import Max10KBinary
 
 class NetworkParameters7(base_types._BaseFieldType):
 
-	__slots__ = ["_AccsCd", "_SctyPrfl", "_ClntCert", "_SvrCert", "_UsrNm", "_Adr", "_SvrCertIdr"]
+	__slots__ = ["_AccsCd", "_SvrCertIdr", "_SctyPrfl", "_ClntCert", "_SvrCert", "_UsrNm", "_Adr"]
 	@property
 	def AccsCd(self):
 		return self._AccsCd
@@ -20,6 +20,19 @@ class NetworkParameters7(base_types._BaseFieldType):
 	def AccsCd(self):
 		del self._AccsCd
 		self._AccsCd = None
+
+	@property
+	def SvrCertIdr(self):
+		return self._SvrCertIdr
+
+	@SvrCertIdr.setter
+	def SvrCertIdr(self, value):
+		self._SvrCertIdr = value if type(value) != auto else self.make_default("SvrCertIdr")
+
+	@SvrCertIdr.deleter
+	def SvrCertIdr(self):
+		del self._SvrCertIdr
+		self._SvrCertIdr = None
 
 	@property
 	def SctyPrfl(self):
@@ -86,26 +99,13 @@ class NetworkParameters7(base_types._BaseFieldType):
 		del self._Adr
 		self._Adr = None
 
-	@property
-	def SvrCertIdr(self):
-		return self._SvrCertIdr
-
-	@SvrCertIdr.setter
-	def SvrCertIdr(self, value):
-		self._SvrCertIdr = value if type(value) != auto else self.make_default("SvrCertIdr")
-
-	@SvrCertIdr.deleter
-	def SvrCertIdr(self):
-		del self._SvrCertIdr
-		self._SvrCertIdr = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvrCertIdr', type=Max140Binary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvrCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=NetworkParameters9, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SvrCertIdr', type=Max140Binary, min=0, max=None, mutex_group=None, array=True),
 	))
 

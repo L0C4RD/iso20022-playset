@@ -1,40 +1,14 @@
 import base_types
 import Statement86
-import SecuritiesAccount18
-import Pagination1
-import SupplementaryData1
 import PartyIdentification253Choice
+import SupplementaryData1
+import Pagination1
+import SecuritiesAccount18
 import TradeLegStatement4
 
 class TradeLegStatementV04(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtParams", "_SplmtryData", "_StmtDtls", "_ClrAcct", "_ClrMmb", "_Pgntn"]
-	@property
-	def StmtParams(self):
-		return self._StmtParams
-
-	@StmtParams.setter
-	def StmtParams(self, value):
-		self._StmtParams = value if type(value) != auto else self.make_default("StmtParams")
-
-	@StmtParams.deleter
-	def StmtParams(self):
-		del self._StmtParams
-		self._StmtParams = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_StmtDtls", "_ClrAcct", "_Pgntn", "_ClrMmb", "_SplmtryData", "_StmtParams"]
 	@property
 	def StmtDtls(self):
 		return self._StmtDtls
@@ -62,6 +36,19 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		self._ClrAcct = None
 
 	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
+	@property
 	def ClrMmb(self):
 		return self._ClrMmb
 
@@ -75,24 +62,37 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		self._ClrMmb = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def StmtParams(self):
+		return self._StmtParams
+
+	@StmtParams.setter
+	def StmtParams(self, value):
+		self._StmtParams = value if type(value) != auto else self.make_default("StmtParams")
+
+	@StmtParams.deleter
+	def StmtParams(self):
+		del self._StmtParams
+		self._StmtParams = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtParams', type=Statement86, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StmtParams', type=Statement86, min=1, max=1, mutex_group=None, array=False),
 	))
 

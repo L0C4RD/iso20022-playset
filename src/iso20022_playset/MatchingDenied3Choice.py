@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import MatchingProcess1Code
+import GenericIdentification30
 
 class MatchingDenied3Choice(base_types._BaseFieldType):
 

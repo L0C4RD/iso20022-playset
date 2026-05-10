@@ -1,25 +1,12 @@
 import base_types
-import Max140Binary
-import ISODateTime
 import GenericIdentification176
 import MaintenanceDelegation17
+import Max140Binary
+import ISODateTime
 
 class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_TMId", "_MstrTMId", "_DlgtnRspn", "_TMDtTm", "_TMChllngVal"]
-	@property
-	def TMId(self):
-		return self._TMId
-
-	@TMId.setter
-	def TMId(self, value):
-		self._TMId = value if type(value) != auto else self.make_default("TMId")
-
-	@TMId.deleter
-	def TMId(self):
-		del self._TMId
-		self._TMId = None
-
+	__slots__ = ["_MstrTMId", "_TMId", "_DlgtnRspn", "_TMDtTm", "_TMChllngVal"]
 	@property
 	def MstrTMId(self):
 		return self._MstrTMId
@@ -32,6 +19,19 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 	def MstrTMId(self):
 		del self._MstrTMId
 		self._MstrTMId = None
+
+	@property
+	def TMId(self):
+		return self._TMId
+
+	@TMId.setter
+	def TMId(self, value):
+		self._TMId = value if type(value) != auto else self.make_default("TMId")
+
+	@TMId.deleter
+	def TMId(self):
+		del self._TMId
+		self._TMId = None
 
 	@property
 	def DlgtnRspn(self):
@@ -73,8 +73,8 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 		self._TMChllngVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrTMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlgtnRspn', type=MaintenanceDelegation17, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TMDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMChllngVal', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),

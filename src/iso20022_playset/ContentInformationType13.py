@@ -1,7 +1,7 @@
 import base_types
-import ContentType2Code
 import SignedData4
 import AuthenticatedData4
+import ContentType2Code
 
 class ContentInformationType13(base_types._BaseFieldType):
 

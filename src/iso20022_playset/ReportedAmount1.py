@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import ExternalUndertakingAmountType1Code
 import ActiveCurrencyAndAmount
-import Max35Text
 
 class ReportedAmount1(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 import base_types
-import SupplementaryData1
 import MoneyMarketReportHeader1
+import SupplementaryData1
 import OvernightIndexSwap4Choice
 
 class MoneyMarketOvernightIndexSwapsStatisticalReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_OvrnghtIndxSwpsRpt", "_SplmtryData", "_RptHdr"]
-	@property
-	def OvrnghtIndxSwpsRpt(self):
-		return self._OvrnghtIndxSwpsRpt
-
-	@OvrnghtIndxSwpsRpt.setter
-	def OvrnghtIndxSwpsRpt(self, value):
-		self._OvrnghtIndxSwpsRpt = value if type(value) != auto else self.make_default("OvrnghtIndxSwpsRpt")
-
-	@OvrnghtIndxSwpsRpt.deleter
-	def OvrnghtIndxSwpsRpt(self):
-		del self._OvrnghtIndxSwpsRpt
-		self._OvrnghtIndxSwpsRpt = None
-
+	__slots__ = ["_SplmtryData", "_RptHdr", "_OvrnghtIndxSwpsRpt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -45,9 +32,22 @@ class MoneyMarketOvernightIndexSwapsStatisticalReportV02(base_types._BaseFieldTy
 		del self._RptHdr
 		self._RptHdr = None
 
+	@property
+	def OvrnghtIndxSwpsRpt(self):
+		return self._OvrnghtIndxSwpsRpt
+
+	@OvrnghtIndxSwpsRpt.setter
+	def OvrnghtIndxSwpsRpt(self, value):
+		self._OvrnghtIndxSwpsRpt = value if type(value) != auto else self.make_default("OvrnghtIndxSwpsRpt")
+
+	@OvrnghtIndxSwpsRpt.deleter
+	def OvrnghtIndxSwpsRpt(self):
+		del self._OvrnghtIndxSwpsRpt
+		self._OvrnghtIndxSwpsRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OvrnghtIndxSwpsRpt', type=OvernightIndexSwap4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrnghtIndxSwpsRpt', type=OvernightIndexSwap4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ContactIdentification4
 import PartyIdentification2Choice
+import ContactIdentification4
 
 class ContactPerson1(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import Number
-import Recipient4Choice
 import EncryptedContent3
+import Recipient4Choice
+import Number
 
 class EnvelopedData4(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_NcrptdCntt", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_NcrptdCntt", "_Rcpt"]
 	@property
-	def Rcpt(self):
-		return self._Rcpt
+	def Vrsn(self):
+		return self._Vrsn
 
-	@Rcpt.setter
-	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@Rcpt.deleter
-	def Rcpt(self):
-		del self._Rcpt
-		self._Rcpt = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def NcrptdCntt(self):
@@ -33,21 +33,21 @@ class EnvelopedData4(base_types._BaseFieldType):
 		self._NcrptdCntt = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def Rcpt(self):
+		return self._Rcpt
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@Rcpt.setter
+	def Rcpt(self, value):
+		self._Rcpt = value if type(value) != auto else self.make_default("Rcpt")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@Rcpt.deleter
+	def Rcpt(self):
+		del self._Rcpt
+		self._Rcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcpt', type=Recipient4Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient4Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

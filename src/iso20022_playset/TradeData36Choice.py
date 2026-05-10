@@ -1,6 +1,6 @@
 import base_types
-import ReportPeriodActivity1Code
 import ReuseDataReport6Choice
+import ReportPeriodActivity1Code
 
 class TradeData36Choice(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 import base_types
+import Max140Text
 import ChequeCancellationReason1Choice
 import ChequePartyRole1Code
-import Max140Text
 
 class ChequeCancellationReason1(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 import base_types
-import ISODate
-import CollateralType21
 import TrueFalseIndicator
 import SecurityIdentification26Choice
+import CollateralType21
+import ISODate
 
 class Collateral52(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstTp", "_NetXpsrCollstnInd", "_CollValDt", "_BsktIdr"]
-	@property
-	def AsstTp(self):
-		return self._AsstTp
-
-	@AsstTp.setter
-	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
-
-	@AsstTp.deleter
-	def AsstTp(self):
-		del self._AsstTp
-		self._AsstTp = None
-
+	__slots__ = ["_NetXpsrCollstnInd", "_CollValDt", "_AsstTp", "_BsktIdr"]
 	@property
 	def NetXpsrCollstnInd(self):
 		return self._NetXpsrCollstnInd
@@ -47,6 +34,19 @@ class Collateral52(base_types._BaseFieldType):
 		self._CollValDt = None
 
 	@property
+	def AsstTp(self):
+		return self._AsstTp
+
+	@AsstTp.setter
+	def AsstTp(self, value):
+		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+
+	@AsstTp.deleter
+	def AsstTp(self):
+		del self._AsstTp
+		self._AsstTp = None
+
+	@property
 	def BsktIdr(self):
 		return self._BsktIdr
 
@@ -60,9 +60,9 @@ class Collateral52(base_types._BaseFieldType):
 		self._BsktIdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BsktIdr', type=SecurityIdentification26Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

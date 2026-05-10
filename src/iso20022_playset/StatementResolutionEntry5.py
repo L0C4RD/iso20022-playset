@@ -1,52 +1,26 @@
 import base_types
-import OriginalGroupInformation29
-import UUIDv4Identifier
-import Purpose2Choice
+import Max35Text
 import Charges15
 import ActiveOrHistoricCurrencyAndAmount
-import Max35Text
+import UUIDv4Identifier
+import OriginalGroupInformation29
+import Purpose2Choice
 
 class StatementResolutionEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_CrrctdAmt", "_Chrgs", "_UETR", "_OrgnlStmtId", "_Purp", "_AcctSvcrRef", "_OrgnlGrpInf"]
+	__slots__ = ["_AcctSvcrRef", "_OrgnlStmtId", "_UETR", "_Chrgs", "_CrrctdAmt", "_OrgnlGrpInf", "_Purp"]
 	@property
-	def CrrctdAmt(self):
-		return self._CrrctdAmt
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
 
-	@CrrctdAmt.setter
-	def CrrctdAmt(self, value):
-		self._CrrctdAmt = value if type(value) != auto else self.make_default("CrrctdAmt")
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
 
-	@CrrctdAmt.deleter
-	def CrrctdAmt(self):
-		del self._CrrctdAmt
-		self._CrrctdAmt = None
-
-	@property
-	def Chrgs(self):
-		return self._Chrgs
-
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
-
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
-
-	@property
-	def UETR(self):
-		return self._UETR
-
-	@UETR.setter
-	def UETR(self, value):
-		self._UETR = value if type(value) != auto else self.make_default("UETR")
-
-	@UETR.deleter
-	def UETR(self):
-		del self._UETR
-		self._UETR = None
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
 
 	@property
 	def OrgnlStmtId(self):
@@ -62,30 +36,43 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 		self._OrgnlStmtId = None
 
 	@property
-	def Purp(self):
-		return self._Purp
+	def UETR(self):
+		return self._UETR
 
-	@Purp.setter
-	def Purp(self, value):
-		self._Purp = value if type(value) != auto else self.make_default("Purp")
+	@UETR.setter
+	def UETR(self, value):
+		self._UETR = value if type(value) != auto else self.make_default("UETR")
 
-	@Purp.deleter
-	def Purp(self):
-		del self._Purp
-		self._Purp = None
+	@UETR.deleter
+	def UETR(self):
+		del self._UETR
+		self._UETR = None
 
 	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
+	def Chrgs(self):
+		return self._Chrgs
 
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
 
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
+
+	@property
+	def CrrctdAmt(self):
+		return self._CrrctdAmt
+
+	@CrrctdAmt.setter
+	def CrrctdAmt(self, value):
+		self._CrrctdAmt = value if type(value) != auto else self.make_default("CrrctdAmt")
+
+	@CrrctdAmt.deleter
+	def CrrctdAmt(self):
+		del self._CrrctdAmt
+		self._CrrctdAmt = None
 
 	@property
 	def OrgnlGrpInf(self):
@@ -100,13 +87,26 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 		del self._OrgnlGrpInf
 		self._OrgnlGrpInf = None
 
+	@property
+	def Purp(self):
+		return self._Purp
+
+	@Purp.setter
+	def Purp(self, value):
+		self._Purp = value if type(value) != auto else self.make_default("Purp")
+
+	@Purp.deleter
+	def Purp(self):
+		del self._Purp
+		self._Purp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CrrctdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chrgs', type=Charges15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chrgs', type=Charges15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CrrctdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Purp', type=Purpose2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

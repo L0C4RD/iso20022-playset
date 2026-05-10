@@ -1,11 +1,24 @@
 import base_types
+import PartyAndSignature2
 import Max2000Text
 import Demand1
-import PartyAndSignature2
 
 class UndertakingDemandV01(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgDmndDtls", "_BkToBkInf", "_DgtlSgntr"]
+	__slots__ = ["_DgtlSgntr", "_UdrtkgDmndDtls", "_BkToBkInf"]
+	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
+
 	@property
 	def UdrtkgDmndDtls(self):
 		return self._UdrtkgDmndDtls
@@ -32,22 +45,9 @@ class UndertakingDemandV01(base_types._BaseFieldType):
 		del self._BkToBkInf
 		self._BkToBkInf = None
 
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgDmndDtls', type=Demand1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 	))
 

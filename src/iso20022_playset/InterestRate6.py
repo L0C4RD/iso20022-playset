@@ -4,20 +4,7 @@ import AmountAndDirection53
 
 class InterestRate6(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_IntrstRate"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_IntrstRate", "_Amt"]
 	@property
 	def IntrstRate(self):
 		return self._IntrstRate
@@ -31,8 +18,21 @@ class InterestRate6(base_types._BaseFieldType):
 		del self._IntrstRate
 		self._IntrstRate = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=AmountAndDirection53, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRate27Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=AmountAndDirection53, min=1, max=1, mutex_group=None, array=False),
 	))
 

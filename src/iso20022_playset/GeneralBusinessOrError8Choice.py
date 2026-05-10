@@ -1,6 +1,6 @@
 import base_types
-import ErrorHandling5
 import GeneralBusinessInformation1
+import ErrorHandling5
 
 class GeneralBusinessOrError8Choice(base_types._BaseFieldType):
 

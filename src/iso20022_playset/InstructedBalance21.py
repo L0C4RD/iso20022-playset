@@ -1,23 +1,23 @@
 import base_types
-import BalanceFormat14Choice
 import SignedQuantityFormat13
 import InstructedCorporateActionOption22
+import BalanceFormat14Choice
 
 class InstructedBalance21(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCancInstrBal", "_TtlRjctdInstrBal", "_TtlPrtctInstrBal", "_OptnDtls", "_TtlPdgInstrBal", "_TtlInstdBal", "_TtlAccptdInstrBal"]
+	__slots__ = ["_OptnDtls", "_TtlRjctdInstrBal", "_TtlPdgInstrBal", "_TtlAccptdInstrBal", "_TtlPrtctInstrBal", "_TtlCancInstrBal", "_TtlInstdBal"]
 	@property
-	def TtlCancInstrBal(self):
-		return self._TtlCancInstrBal
+	def OptnDtls(self):
+		return self._OptnDtls
 
-	@TtlCancInstrBal.setter
-	def TtlCancInstrBal(self, value):
-		self._TtlCancInstrBal = value if type(value) != auto else self.make_default("TtlCancInstrBal")
+	@OptnDtls.setter
+	def OptnDtls(self, value):
+		self._OptnDtls = value if type(value) != auto else self.make_default("OptnDtls")
 
-	@TtlCancInstrBal.deleter
-	def TtlCancInstrBal(self):
-		del self._TtlCancInstrBal
-		self._TtlCancInstrBal = None
+	@OptnDtls.deleter
+	def OptnDtls(self):
+		del self._OptnDtls
+		self._OptnDtls = None
 
 	@property
 	def TtlRjctdInstrBal(self):
@@ -33,32 +33,6 @@ class InstructedBalance21(base_types._BaseFieldType):
 		self._TtlRjctdInstrBal = None
 
 	@property
-	def TtlPrtctInstrBal(self):
-		return self._TtlPrtctInstrBal
-
-	@TtlPrtctInstrBal.setter
-	def TtlPrtctInstrBal(self, value):
-		self._TtlPrtctInstrBal = value if type(value) != auto else self.make_default("TtlPrtctInstrBal")
-
-	@TtlPrtctInstrBal.deleter
-	def TtlPrtctInstrBal(self):
-		del self._TtlPrtctInstrBal
-		self._TtlPrtctInstrBal = None
-
-	@property
-	def OptnDtls(self):
-		return self._OptnDtls
-
-	@OptnDtls.setter
-	def OptnDtls(self, value):
-		self._OptnDtls = value if type(value) != auto else self.make_default("OptnDtls")
-
-	@OptnDtls.deleter
-	def OptnDtls(self):
-		del self._OptnDtls
-		self._OptnDtls = None
-
-	@property
 	def TtlPdgInstrBal(self):
 		return self._TtlPdgInstrBal
 
@@ -70,19 +44,6 @@ class InstructedBalance21(base_types._BaseFieldType):
 	def TtlPdgInstrBal(self):
 		del self._TtlPdgInstrBal
 		self._TtlPdgInstrBal = None
-
-	@property
-	def TtlInstdBal(self):
-		return self._TtlInstdBal
-
-	@TtlInstdBal.setter
-	def TtlInstdBal(self, value):
-		self._TtlInstdBal = value if type(value) != auto else self.make_default("TtlInstdBal")
-
-	@TtlInstdBal.deleter
-	def TtlInstdBal(self):
-		del self._TtlInstdBal
-		self._TtlInstdBal = None
 
 	@property
 	def TtlAccptdInstrBal(self):
@@ -97,13 +58,52 @@ class InstructedBalance21(base_types._BaseFieldType):
 		del self._TtlAccptdInstrBal
 		self._TtlAccptdInstrBal = None
 
+	@property
+	def TtlPrtctInstrBal(self):
+		return self._TtlPrtctInstrBal
+
+	@TtlPrtctInstrBal.setter
+	def TtlPrtctInstrBal(self, value):
+		self._TtlPrtctInstrBal = value if type(value) != auto else self.make_default("TtlPrtctInstrBal")
+
+	@TtlPrtctInstrBal.deleter
+	def TtlPrtctInstrBal(self):
+		del self._TtlPrtctInstrBal
+		self._TtlPrtctInstrBal = None
+
+	@property
+	def TtlCancInstrBal(self):
+		return self._TtlCancInstrBal
+
+	@TtlCancInstrBal.setter
+	def TtlCancInstrBal(self, value):
+		self._TtlCancInstrBal = value if type(value) != auto else self.make_default("TtlCancInstrBal")
+
+	@TtlCancInstrBal.deleter
+	def TtlCancInstrBal(self):
+		del self._TtlCancInstrBal
+		self._TtlCancInstrBal = None
+
+	@property
+	def TtlInstdBal(self):
+		return self._TtlInstdBal
+
+	@TtlInstdBal.setter
+	def TtlInstdBal(self, value):
+		self._TtlInstdBal = value if type(value) != auto else self.make_default("TtlInstdBal")
+
+	@TtlInstdBal.deleter
+	def TtlInstdBal(self):
+		del self._TtlInstdBal
+		self._TtlInstdBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCancInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlRjctdInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlPrtctInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnDtls', type=InstructedCorporateActionOption22, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlRjctdInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlPdgInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlInstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAccptdInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlPrtctInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCancInstrBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlInstdBal', type=BalanceFormat14Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import SettlementAccount1
+import SupplementaryData1
 
 class CCPMemberObligationsReportV01(base_types._BaseFieldType):
 

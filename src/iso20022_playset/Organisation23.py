@@ -1,23 +1,23 @@
 import base_types
-import Max350Text
-import PostalAddress21
 import Max35Text
+import PostalAddress21
+import Max350Text
 
 class Organisation23(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_Nm", "_PstlAdr"]
+	__slots__ = ["_PstlAdr", "_Nm", "_ShrtNm"]
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
 
 	@property
 	def Nm(self):
@@ -33,21 +33,21 @@ class Organisation23(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=1, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

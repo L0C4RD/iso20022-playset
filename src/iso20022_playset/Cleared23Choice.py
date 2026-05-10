@@ -1,24 +1,11 @@
 import base_types
-import ClearingPartyAndTime21Choice
-import ClearingPartyAndTime22Choice
 import ClearingExceptionOrExemption3Choice
+import ClearingPartyAndTime22Choice
+import ClearingPartyAndTime21Choice
 
 class Cleared23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Clrd", "_NonClrd", "_IntndToClear"]
-	@property
-	def Clrd(self):
-		return self._Clrd
-
-	@Clrd.setter
-	def Clrd(self, value):
-		self._Clrd = value if type(value) != auto else self.make_default("Clrd")
-
-	@Clrd.deleter
-	def Clrd(self):
-		del self._Clrd
-		self._Clrd = None
-
+	__slots__ = ["_NonClrd", "_Clrd", "_IntndToClear"]
 	@property
 	def NonClrd(self):
 		return self._NonClrd
@@ -31,6 +18,19 @@ class Cleared23Choice(base_types._BaseFieldType):
 	def NonClrd(self):
 		del self._NonClrd
 		self._NonClrd = None
+
+	@property
+	def Clrd(self):
+		return self._Clrd
+
+	@Clrd.setter
+	def Clrd(self, value):
+		self._Clrd = value if type(value) != auto else self.make_default("Clrd")
+
+	@Clrd.deleter
+	def Clrd(self):
+		del self._Clrd
+		self._Clrd = None
 
 	@property
 	def IntndToClear(self):
@@ -46,8 +46,8 @@ class Cleared23Choice(base_types._BaseFieldType):
 		self._IntndToClear = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NonClrd', type=ClearingExceptionOrExemption3Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntndToClear', type=ClearingPartyAndTime22Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

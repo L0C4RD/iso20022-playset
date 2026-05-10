@@ -1,7 +1,7 @@
 import base_types
-import NotificationCancellationRequestStatus2Choice
-import ISODateTime
 import Max35Text
+import ISODateTime
+import NotificationCancellationRequestStatus2Choice
 
 class AgentNotificationCancellationIdentificationAndStatus1(base_types._BaseFieldType):
 

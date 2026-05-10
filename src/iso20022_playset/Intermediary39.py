@@ -1,13 +1,13 @@
 import base_types
-import OrderOriginatorEligibility1Code
+import Account22
 import PartyIdentification113
+import OrderOriginatorEligibility1Code
 import InvestmentFundRole2Choice
 import TradingCapacity8Code
-import Account22
 
 class Intermediary39(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_TradgPtyCpcty", "_OrdrOrgtrElgblty", "_Role"]
+	__slots__ = ["_Id", "_TradgPtyCpcty", "_OrdrOrgtrElgblty", "_Acct", "_Role"]
 	@property
 	def Id(self):
 		return self._Id
@@ -20,19 +20,6 @@ class Intermediary39(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
 
 	@property
 	def TradgPtyCpcty(self):
@@ -61,6 +48,19 @@ class Intermediary39(base_types._BaseFieldType):
 		self._OrdrOrgtrElgblty = None
 
 	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
+	@property
 	def Role(self):
 		return self._Role
 
@@ -75,9 +75,9 @@ class Intermediary39(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingCapacity8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

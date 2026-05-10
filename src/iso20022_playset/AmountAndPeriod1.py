@@ -4,19 +4,19 @@ import ActiveCurrencyAndAmount
 
 class AmountAndPeriod1(base_types._BaseFieldType):
 
-	__slots__ = ["_EndDt", "_StartDt", "_Amt"]
+	__slots__ = ["_Amt", "_StartDt", "_EndDt"]
 	@property
-	def EndDt(self):
-		return self._EndDt
+	def Amt(self):
+		return self._Amt
 
-	@EndDt.setter
-	def EndDt(self, value):
-		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@EndDt.deleter
-	def EndDt(self):
-		del self._EndDt
-		self._EndDt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def StartDt(self):
@@ -32,21 +32,21 @@ class AmountAndPeriod1(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def EndDt(self):
+		return self._EndDt
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@EndDt.setter
+	def EndDt(self, value):
+		self._EndDt = value if type(value) != auto else self.make_default("EndDt")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@EndDt.deleter
+	def EndDt(self):
+		del self._EndDt
+		self._EndDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import CardDataWriting1Code
 import Max35Text
+import CardDataWriting1Code
 
 class CardWritingCapabilities1(base_types._BaseFieldType):
 

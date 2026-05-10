@@ -1,25 +1,12 @@
 import base_types
-import ReceiveDelivery1Code
-import DeliveryReceiptType2Code
-import YesNoIndicator
 import Max35Text
+import ReceiveDelivery1Code
+import YesNoIndicator
+import DeliveryReceiptType2Code
 
 class SettlementTypeAndAdditionalParameters14(base_types._BaseFieldType):
 
-	__slots__ = ["_Pmt", "_CmonId", "_SctiesMvmntTp", "_CorpActnEvtId", "_RcncltnInd"]
-	@property
-	def Pmt(self):
-		return self._Pmt
-
-	@Pmt.setter
-	def Pmt(self, value):
-		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
-
-	@Pmt.deleter
-	def Pmt(self):
-		del self._Pmt
-		self._Pmt = None
-
+	__slots__ = ["_CmonId", "_RcncltnInd", "_SctiesMvmntTp", "_CorpActnEvtId", "_Pmt"]
 	@property
 	def CmonId(self):
 		return self._CmonId
@@ -32,6 +19,19 @@ class SettlementTypeAndAdditionalParameters14(base_types._BaseFieldType):
 	def CmonId(self):
 		del self._CmonId
 		self._CmonId = None
+
+	@property
+	def RcncltnInd(self):
+		return self._RcncltnInd
+
+	@RcncltnInd.setter
+	def RcncltnInd(self, value):
+		self._RcncltnInd = value if type(value) != auto else self.make_default("RcncltnInd")
+
+	@RcncltnInd.deleter
+	def RcncltnInd(self):
+		del self._RcncltnInd
+		self._RcncltnInd = None
 
 	@property
 	def SctiesMvmntTp(self):
@@ -60,23 +60,23 @@ class SettlementTypeAndAdditionalParameters14(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	@property
-	def RcncltnInd(self):
-		return self._RcncltnInd
+	def Pmt(self):
+		return self._Pmt
 
-	@RcncltnInd.setter
-	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != auto else self.make_default("RcncltnInd")
+	@Pmt.setter
+	def Pmt(self, value):
+		self._Pmt = value if type(value) != auto else self.make_default("Pmt")
 
-	@RcncltnInd.deleter
-	def RcncltnInd(self):
-		del self._RcncltnInd
-		self._RcncltnInd = None
+	@Pmt.deleter
+	def Pmt(self):
+		del self._Pmt
+		self._Pmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pmt', type=DeliveryReceiptType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import PositionSetReport3Choice
+import SupplementaryData1
 
 class SecuritiesFinancingReportingPositionSetReportV01(base_types._BaseFieldType):
 

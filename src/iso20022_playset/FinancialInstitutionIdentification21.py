@@ -1,25 +1,12 @@
 import base_types
-import GenericFinancialIdentification1
 import BICFIDec2014Identifier
-import LEIIdentifier
 import ClearingSystemMemberIdentification2
+import GenericFinancialIdentification1
+import LEIIdentifier
 
 class FinancialInstitutionIdentification21(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysMmbId", "_LEI", "_BICFI", "_Othr"]
-	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
-
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
-
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
-
+	__slots__ = ["_LEI", "_BICFI", "_ClrSysMmbId", "_Othr"]
 	@property
 	def LEI(self):
 		return self._LEI
@@ -47,6 +34,19 @@ class FinancialInstitutionIdentification21(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
+
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
+
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
+
+	@property
 	def Othr(self):
 		return self._Othr
 
@@ -60,9 +60,9 @@ class FinancialInstitutionIdentification21(base_types._BaseFieldType):
 		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
 

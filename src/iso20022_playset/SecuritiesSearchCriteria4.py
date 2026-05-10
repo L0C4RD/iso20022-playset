@@ -1,15 +1,28 @@
 import base_types
-import ActiveOrHistoricCurrencyCode
 import SystemPartyIdentification2Choice
-import SecurityStatus3Choice
-import SecurityIdentification39
-import CFIOct2015Identifier
-import DatePeriodSearch1Choice
 import CountryCode
+import ActiveOrHistoricCurrencyCode
+import DatePeriodSearch1Choice
+import CFIOct2015Identifier
+import SecurityIdentification39
+import SecurityStatus3Choice
 
 class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_CSD", "_TechIssrCSD", "_FinInstrmId", "_IsseDt", "_CtryOfIsse", "_MntngCSD", "_SctySts", "_IsseCcy", "_ClssfctnFinInstrm", "_IssrCSD", "_MtrtyDt", "_InvstrCSD"]
+	__slots__ = ["_ClssfctnFinInstrm", "_CSD", "_IsseDt", "_CtryOfIsse", "_IssrCSD", "_InvstrCSD", "_IsseCcy", "_MntngCSD", "_FinInstrmId", "_SctySts", "_MtrtyDt", "_TechIssrCSD"]
+	@property
+	def ClssfctnFinInstrm(self):
+		return self._ClssfctnFinInstrm
+
+	@ClssfctnFinInstrm.setter
+	def ClssfctnFinInstrm(self, value):
+		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
+
+	@ClssfctnFinInstrm.deleter
+	def ClssfctnFinInstrm(self):
+		del self._ClssfctnFinInstrm
+		self._ClssfctnFinInstrm = None
+
 	@property
 	def CSD(self):
 		return self._CSD
@@ -22,32 +35,6 @@ class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 	def CSD(self):
 		del self._CSD
 		self._CSD = None
-
-	@property
-	def TechIssrCSD(self):
-		return self._TechIssrCSD
-
-	@TechIssrCSD.setter
-	def TechIssrCSD(self, value):
-		self._TechIssrCSD = value if type(value) != auto else self.make_default("TechIssrCSD")
-
-	@TechIssrCSD.deleter
-	def TechIssrCSD(self):
-		del self._TechIssrCSD
-		self._TechIssrCSD = None
-
-	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
-
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
-
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
 
 	@property
 	def IsseDt(self):
@@ -76,30 +63,30 @@ class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 		self._CtryOfIsse = None
 
 	@property
-	def MntngCSD(self):
-		return self._MntngCSD
+	def IssrCSD(self):
+		return self._IssrCSD
 
-	@MntngCSD.setter
-	def MntngCSD(self, value):
-		self._MntngCSD = value if type(value) != auto else self.make_default("MntngCSD")
+	@IssrCSD.setter
+	def IssrCSD(self, value):
+		self._IssrCSD = value if type(value) != auto else self.make_default("IssrCSD")
 
-	@MntngCSD.deleter
-	def MntngCSD(self):
-		del self._MntngCSD
-		self._MntngCSD = None
+	@IssrCSD.deleter
+	def IssrCSD(self):
+		del self._IssrCSD
+		self._IssrCSD = None
 
 	@property
-	def SctySts(self):
-		return self._SctySts
+	def InvstrCSD(self):
+		return self._InvstrCSD
 
-	@SctySts.setter
-	def SctySts(self, value):
-		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
+	@InvstrCSD.setter
+	def InvstrCSD(self, value):
+		self._InvstrCSD = value if type(value) != auto else self.make_default("InvstrCSD")
 
-	@SctySts.deleter
-	def SctySts(self):
-		del self._SctySts
-		self._SctySts = None
+	@InvstrCSD.deleter
+	def InvstrCSD(self):
+		del self._InvstrCSD
+		self._InvstrCSD = None
 
 	@property
 	def IsseCcy(self):
@@ -115,30 +102,43 @@ class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 		self._IsseCcy = None
 
 	@property
-	def ClssfctnFinInstrm(self):
-		return self._ClssfctnFinInstrm
+	def MntngCSD(self):
+		return self._MntngCSD
 
-	@ClssfctnFinInstrm.setter
-	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
+	@MntngCSD.setter
+	def MntngCSD(self, value):
+		self._MntngCSD = value if type(value) != auto else self.make_default("MntngCSD")
 
-	@ClssfctnFinInstrm.deleter
-	def ClssfctnFinInstrm(self):
-		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
+	@MntngCSD.deleter
+	def MntngCSD(self):
+		del self._MntngCSD
+		self._MntngCSD = None
 
 	@property
-	def IssrCSD(self):
-		return self._IssrCSD
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@IssrCSD.setter
-	def IssrCSD(self, value):
-		self._IssrCSD = value if type(value) != auto else self.make_default("IssrCSD")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@IssrCSD.deleter
-	def IssrCSD(self):
-		del self._IssrCSD
-		self._IssrCSD = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def SctySts(self):
+		return self._SctySts
+
+	@SctySts.setter
+	def SctySts(self, value):
+		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
+
+	@SctySts.deleter
+	def SctySts(self):
+		del self._SctySts
+		self._SctySts = None
 
 	@property
 	def MtrtyDt(self):
@@ -154,30 +154,30 @@ class SecuritiesSearchCriteria4(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	@property
-	def InvstrCSD(self):
-		return self._InvstrCSD
+	def TechIssrCSD(self):
+		return self._TechIssrCSD
 
-	@InvstrCSD.setter
-	def InvstrCSD(self, value):
-		self._InvstrCSD = value if type(value) != auto else self.make_default("InvstrCSD")
+	@TechIssrCSD.setter
+	def TechIssrCSD(self, value):
+		self._TechIssrCSD = value if type(value) != auto else self.make_default("TechIssrCSD")
 
-	@InvstrCSD.deleter
-	def InvstrCSD(self):
-		del self._InvstrCSD
-		self._InvstrCSD = None
+	@TechIssrCSD.deleter
+	def TechIssrCSD(self):
+		del self._TechIssrCSD
+		self._TechIssrCSD = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ClssfctnFinInstrm', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechIssrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfIsse', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MntngCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctySts', type=SecurityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnFinInstrm', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntngCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctySts', type=SecurityStatus3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechIssrCSD', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

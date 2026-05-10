@@ -1,24 +1,11 @@
 import base_types
-import FinancialInstrument58
 import ISINOct2015Identifier
+import FinancialInstrument58
 import LEIIdentifier
 
 class FinancialInstrument48Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_ISIN", "_Indx"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_ISIN", "_Indx", "_LEI"]
 	@property
 	def ISIN(self):
 		return self._ISIN
@@ -45,9 +32,22 @@ class FinancialInstrument48Choice(base_types._BaseFieldType):
 		del self._Indx
 		self._Indx = None
 
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indx', type=FinancialInstrument58, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
 

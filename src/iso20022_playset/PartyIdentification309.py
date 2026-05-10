@@ -1,26 +1,13 @@
 import base_types
-import NameAndAddress5
-import AnyBICDec2014Identifier
 import GenericIdentification1
-import LEIIdentifier
 import ClearingSystemMemberIdentification2Choice
+import AnyBICDec2014Identifier
+import NameAndAddress5
+import LEIIdentifier
 
 class PartyIdentification309(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_PrtryId", "_AnyBIC", "_ClrSysMmbId", "_NmAndAdr"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_PrtryId", "_AnyBIC", "_LEI", "_ClrSysMmbId", "_NmAndAdr"]
 	@property
 	def PrtryId(self):
 		return self._PrtryId
@@ -46,6 +33,19 @@ class PartyIdentification309(base_types._BaseFieldType):
 	def AnyBIC(self):
 		del self._AnyBIC
 		self._AnyBIC = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def ClrSysMmbId(self):
@@ -74,9 +74,9 @@ class PartyIdentification309(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 	))

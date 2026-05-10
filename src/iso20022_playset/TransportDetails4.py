@@ -1,28 +1,15 @@
 import base_types
-import Incoterms4
 import TransportedGoods1
-import Consignment3
 import DocumentIdentification7
-import TransportMeans6
-import Charge25
+import Consignment3
 import ShipmentDate1Choice
+import TransportMeans6
+import Incoterms4
+import Charge25
 
 class TransportDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_TrnsprtDocRef", "_FrghtChrgs", "_ShipmntDt", "_Consgnmt", "_RtgSummry", "_Incotrms", "_TrnsprtdGoods"]
-	@property
-	def TrnsprtDocRef(self):
-		return self._TrnsprtDocRef
-
-	@TrnsprtDocRef.setter
-	def TrnsprtDocRef(self, value):
-		self._TrnsprtDocRef = value if type(value) != auto else self.make_default("TrnsprtDocRef")
-
-	@TrnsprtDocRef.deleter
-	def TrnsprtDocRef(self):
-		del self._TrnsprtDocRef
-		self._TrnsprtDocRef = None
-
+	__slots__ = ["_FrghtChrgs", "_TrnsprtdGoods", "_Consgnmt", "_Incotrms", "_ShipmntDt", "_TrnsprtDocRef", "_RtgSummry"]
 	@property
 	def FrghtChrgs(self):
 		return self._FrghtChrgs
@@ -37,17 +24,17 @@ class TransportDetails4(base_types._BaseFieldType):
 		self._FrghtChrgs = None
 
 	@property
-	def ShipmntDt(self):
-		return self._ShipmntDt
+	def TrnsprtdGoods(self):
+		return self._TrnsprtdGoods
 
-	@ShipmntDt.setter
-	def ShipmntDt(self, value):
-		self._ShipmntDt = value if type(value) != auto else self.make_default("ShipmntDt")
+	@TrnsprtdGoods.setter
+	def TrnsprtdGoods(self, value):
+		self._TrnsprtdGoods = value if type(value) != auto else self.make_default("TrnsprtdGoods")
 
-	@ShipmntDt.deleter
-	def ShipmntDt(self):
-		del self._ShipmntDt
-		self._ShipmntDt = None
+	@TrnsprtdGoods.deleter
+	def TrnsprtdGoods(self):
+		del self._TrnsprtdGoods
+		self._TrnsprtdGoods = None
 
 	@property
 	def Consgnmt(self):
@@ -63,19 +50,6 @@ class TransportDetails4(base_types._BaseFieldType):
 		self._Consgnmt = None
 
 	@property
-	def RtgSummry(self):
-		return self._RtgSummry
-
-	@RtgSummry.setter
-	def RtgSummry(self, value):
-		self._RtgSummry = value if type(value) != auto else self.make_default("RtgSummry")
-
-	@RtgSummry.deleter
-	def RtgSummry(self):
-		del self._RtgSummry
-		self._RtgSummry = None
-
-	@property
 	def Incotrms(self):
 		return self._Incotrms
 
@@ -89,25 +63,51 @@ class TransportDetails4(base_types._BaseFieldType):
 		self._Incotrms = None
 
 	@property
-	def TrnsprtdGoods(self):
-		return self._TrnsprtdGoods
+	def ShipmntDt(self):
+		return self._ShipmntDt
 
-	@TrnsprtdGoods.setter
-	def TrnsprtdGoods(self, value):
-		self._TrnsprtdGoods = value if type(value) != auto else self.make_default("TrnsprtdGoods")
+	@ShipmntDt.setter
+	def ShipmntDt(self, value):
+		self._ShipmntDt = value if type(value) != auto else self.make_default("ShipmntDt")
 
-	@TrnsprtdGoods.deleter
-	def TrnsprtdGoods(self):
-		del self._TrnsprtdGoods
-		self._TrnsprtdGoods = None
+	@ShipmntDt.deleter
+	def ShipmntDt(self):
+		del self._ShipmntDt
+		self._ShipmntDt = None
+
+	@property
+	def TrnsprtDocRef(self):
+		return self._TrnsprtDocRef
+
+	@TrnsprtDocRef.setter
+	def TrnsprtDocRef(self, value):
+		self._TrnsprtDocRef = value if type(value) != auto else self.make_default("TrnsprtDocRef")
+
+	@TrnsprtDocRef.deleter
+	def TrnsprtDocRef(self):
+		del self._TrnsprtDocRef
+		self._TrnsprtDocRef = None
+
+	@property
+	def RtgSummry(self):
+		return self._RtgSummry
+
+	@RtgSummry.setter
+	def RtgSummry(self, value):
+		self._RtgSummry = value if type(value) != auto else self.make_default("RtgSummry")
+
+	@RtgSummry.deleter
+	def RtgSummry(self):
+		del self._RtgSummry
+		self._RtgSummry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrnsprtDocRef', type=DocumentIdentification7, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FrghtChrgs', type=Charge25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShipmntDt', type=ShipmentDate1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Consgnmt', type=Consignment3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtgSummry', type=TransportMeans6, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Incotrms', type=Incoterms4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsprtdGoods', type=TransportedGoods1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Consgnmt', type=Consignment3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Incotrms', type=Incoterms4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShipmntDt', type=ShipmentDate1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsprtDocRef', type=DocumentIdentification7, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtgSummry', type=TransportMeans6, min=1, max=1, mutex_group=None, array=False),
 	))
 

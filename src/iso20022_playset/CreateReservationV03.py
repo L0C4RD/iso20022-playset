@@ -1,24 +1,24 @@
 import base_types
-import SupplementaryData1
-import ReservationIdentification4
-import MessageHeader1
 import Reservation4
+import ReservationIdentification4
+import SupplementaryData1
+import MessageHeader1
 
 class CreateReservationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_ValSet", "_RsvatnId"]
+	__slots__ = ["_RsvatnId", "_MsgHdr", "_ValSet", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def RsvatnId(self):
+		return self._RsvatnId
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@RsvatnId.setter
+	def RsvatnId(self, value):
+		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@RsvatnId.deleter
+	def RsvatnId(self):
+		del self._RsvatnId
+		self._RsvatnId = None
 
 	@property
 	def MsgHdr(self):
@@ -47,22 +47,22 @@ class CreateReservationV03(base_types._BaseFieldType):
 		self._ValSet = None
 
 	@property
-	def RsvatnId(self):
-		return self._RsvatnId
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@RsvatnId.setter
-	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != auto else self.make_default("RsvatnId")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@RsvatnId.deleter
-	def RsvatnId(self):
-		del self._RsvatnId
-		self._RsvatnId = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RsvatnId', type=ReservationIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnId', type=ReservationIdentification4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

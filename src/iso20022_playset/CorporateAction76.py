@@ -1,7 +1,7 @@
 import base_types
-import CorporateActionEventStageFormat15Choice
-import CorporateActionDate89
 import LotteryTypeFormat5Choice
+import CorporateActionDate89
+import CorporateActionEventStageFormat15Choice
 
 class CorporateAction76(base_types._BaseFieldType):
 

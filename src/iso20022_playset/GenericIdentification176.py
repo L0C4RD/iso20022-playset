@@ -1,11 +1,11 @@
 import base_types
+import Max35Text
 import Min2Max3AlphaText
 import PartyType33Code
-import Max35Text
 
 class GenericIdentification176(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Id", "_Ctry", "_ShrtNm", "_Issr"]
+	__slots__ = ["_Tp", "_Ctry", "_Id", "_Issr", "_ShrtNm"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -18,19 +18,6 @@ class GenericIdentification176(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Ctry(self):
@@ -46,17 +33,17 @@ class GenericIdentification176(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def Id(self):
+		return self._Id
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Issr(self):
@@ -71,11 +58,24 @@ class GenericIdentification176(base_types._BaseFieldType):
 		del self._Issr
 		self._Issr = None
 
+	@property
+	def ShrtNm(self):
+		return self._ShrtNm
+
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

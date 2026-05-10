@@ -1,7 +1,7 @@
 import base_types
 import ATMTransaction39
-import ATMContext19
 import ATMEnvironment21
+import ATMContext19
 
 class ATMTransferResponse2(base_types._BaseFieldType):
 

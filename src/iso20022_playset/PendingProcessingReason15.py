@@ -1,6 +1,6 @@
 import base_types
-import PendingProcessingReason17Choice
 import Max210Text
+import PendingProcessingReason17Choice
 
 class PendingProcessingReason15(base_types._BaseFieldType):
 

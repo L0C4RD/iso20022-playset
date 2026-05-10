@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import ISODate
 import NonTradingDayReason1Code
-import Max35Text
 
 class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_Dt", "_Rsn"]
+	__slots__ = ["_Rsn", "_Dt", "_TechRcrdId"]
 	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
+	def Rsn(self):
+		return self._Rsn
 
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
 
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Dt(self):
@@ -33,21 +33,21 @@ class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Rsn(self):
-		return self._Rsn
+	def TechRcrdId(self):
+		return self._TechRcrdId
 
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
 
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=NonTradingDayReason1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

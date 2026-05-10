@@ -1,23 +1,23 @@
 import base_types
-import Reason20Choice
 import Status22Choice
 import SecurityIdentification20
+import Reason20Choice
 
 class AdditionalQueryParameters14(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Rsn", "_FinInstrmId"]
+	__slots__ = ["_FinInstrmId", "_Rsn", "_Sts"]
 	@property
-	def Sts(self):
-		return self._Sts
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
 
 	@property
 	def Rsn(self):
@@ -33,21 +33,21 @@ class AdditionalQueryParameters14(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def Sts(self):
+		return self._Sts
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=Status22Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=Reason20Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=Reason20Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=Status22Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

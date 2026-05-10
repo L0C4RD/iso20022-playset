@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import MovementProcessingStatus1
 import DistributionRejectionStatus1
-import Max35Text
 
 class IndividualMovementStatus1(base_types._BaseFieldType):
 

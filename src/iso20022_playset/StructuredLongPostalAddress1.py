@@ -1,36 +1,23 @@
 import base_types
-import Max16Text
-import CountryCode
 import Max35Text
+import CountryCode
+import Max16Text
 
 class StructuredLongPostalAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_POB", "_StrtBldgId", "_RgnId", "_TwnNm", "_Flr", "_CtyId", "_Ctry", "_StrtNm", "_Stat", "_DstrctNm", "_BldgNm", "_PstCdId"]
+	__slots__ = ["_BldgNm", "_RgnId", "_TwnNm", "_CtyId", "_POB", "_Flr", "_StrtBldgId", "_Ctry", "_PstCdId", "_StrtNm", "_DstrctNm", "_Stat"]
 	@property
-	def POB(self):
-		return self._POB
+	def BldgNm(self):
+		return self._BldgNm
 
-	@POB.setter
-	def POB(self, value):
-		self._POB = value if type(value) != auto else self.make_default("POB")
+	@BldgNm.setter
+	def BldgNm(self, value):
+		self._BldgNm = value if type(value) != auto else self.make_default("BldgNm")
 
-	@POB.deleter
-	def POB(self):
-		del self._POB
-		self._POB = None
-
-	@property
-	def StrtBldgId(self):
-		return self._StrtBldgId
-
-	@StrtBldgId.setter
-	def StrtBldgId(self, value):
-		self._StrtBldgId = value if type(value) != auto else self.make_default("StrtBldgId")
-
-	@StrtBldgId.deleter
-	def StrtBldgId(self):
-		del self._StrtBldgId
-		self._StrtBldgId = None
+	@BldgNm.deleter
+	def BldgNm(self):
+		del self._BldgNm
+		self._BldgNm = None
 
 	@property
 	def RgnId(self):
@@ -59,6 +46,32 @@ class StructuredLongPostalAddress1(base_types._BaseFieldType):
 		self._TwnNm = None
 
 	@property
+	def CtyId(self):
+		return self._CtyId
+
+	@CtyId.setter
+	def CtyId(self, value):
+		self._CtyId = value if type(value) != auto else self.make_default("CtyId")
+
+	@CtyId.deleter
+	def CtyId(self):
+		del self._CtyId
+		self._CtyId = None
+
+	@property
+	def POB(self):
+		return self._POB
+
+	@POB.setter
+	def POB(self, value):
+		self._POB = value if type(value) != auto else self.make_default("POB")
+
+	@POB.deleter
+	def POB(self):
+		del self._POB
+		self._POB = None
+
+	@property
 	def Flr(self):
 		return self._Flr
 
@@ -72,17 +85,17 @@ class StructuredLongPostalAddress1(base_types._BaseFieldType):
 		self._Flr = None
 
 	@property
-	def CtyId(self):
-		return self._CtyId
+	def StrtBldgId(self):
+		return self._StrtBldgId
 
-	@CtyId.setter
-	def CtyId(self, value):
-		self._CtyId = value if type(value) != auto else self.make_default("CtyId")
+	@StrtBldgId.setter
+	def StrtBldgId(self, value):
+		self._StrtBldgId = value if type(value) != auto else self.make_default("StrtBldgId")
 
-	@CtyId.deleter
-	def CtyId(self):
-		del self._CtyId
-		self._CtyId = None
+	@StrtBldgId.deleter
+	def StrtBldgId(self):
+		del self._StrtBldgId
+		self._StrtBldgId = None
 
 	@property
 	def Ctry(self):
@@ -98,6 +111,19 @@ class StructuredLongPostalAddress1(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
+	def PstCdId(self):
+		return self._PstCdId
+
+	@PstCdId.setter
+	def PstCdId(self, value):
+		self._PstCdId = value if type(value) != auto else self.make_default("PstCdId")
+
+	@PstCdId.deleter
+	def PstCdId(self):
+		del self._PstCdId
+		self._PstCdId = None
+
+	@property
 	def StrtNm(self):
 		return self._StrtNm
 
@@ -109,19 +135,6 @@ class StructuredLongPostalAddress1(base_types._BaseFieldType):
 	def StrtNm(self):
 		del self._StrtNm
 		self._StrtNm = None
-
-	@property
-	def Stat(self):
-		return self._Stat
-
-	@Stat.setter
-	def Stat(self, value):
-		self._Stat = value if type(value) != auto else self.make_default("Stat")
-
-	@Stat.deleter
-	def Stat(self):
-		del self._Stat
-		self._Stat = None
 
 	@property
 	def DstrctNm(self):
@@ -137,43 +150,30 @@ class StructuredLongPostalAddress1(base_types._BaseFieldType):
 		self._DstrctNm = None
 
 	@property
-	def BldgNm(self):
-		return self._BldgNm
+	def Stat(self):
+		return self._Stat
 
-	@BldgNm.setter
-	def BldgNm(self, value):
-		self._BldgNm = value if type(value) != auto else self.make_default("BldgNm")
+	@Stat.setter
+	def Stat(self, value):
+		self._Stat = value if type(value) != auto else self.make_default("Stat")
 
-	@BldgNm.deleter
-	def BldgNm(self):
-		del self._BldgNm
-		self._BldgNm = None
-
-	@property
-	def PstCdId(self):
-		return self._PstCdId
-
-	@PstCdId.setter
-	def PstCdId(self, value):
-		self._PstCdId = value if type(value) != auto else self.make_default("PstCdId")
-
-	@PstCdId.deleter
-	def PstCdId(self):
-		del self._PstCdId
-		self._PstCdId = None
+	@Stat.deleter
+	def Stat(self):
+		del self._Stat
+		self._Stat = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POB', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtBldgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BldgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RgnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Flr', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POB', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Flr', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtBldgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Stat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BldgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstCdId', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Stat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

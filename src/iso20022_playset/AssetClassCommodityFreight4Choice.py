@@ -1,38 +1,12 @@
 import base_types
-import FreightCommodityContainerShip2
 import FreightCommodityOther2
-import FreightCommodityWet3
 import FreightCommodityDry3
+import FreightCommodityContainerShip2
+import FreightCommodityWet3
 
 class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_CntnrShip", "_Wet", "_Dry"]
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
-	def CntnrShip(self):
-		return self._CntnrShip
-
-	@CntnrShip.setter
-	def CntnrShip(self, value):
-		self._CntnrShip = value if type(value) != auto else self.make_default("CntnrShip")
-
-	@CntnrShip.deleter
-	def CntnrShip(self):
-		del self._CntnrShip
-		self._CntnrShip = None
-
+	__slots__ = ["_Wet", "_Othr", "_Dry", "_CntnrShip"]
 	@property
 	def Wet(self):
 		return self._Wet
@@ -47,6 +21,19 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 		self._Wet = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def Dry(self):
 		return self._Dry
 
@@ -59,10 +46,23 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 		del self._Dry
 		self._Dry = None
 
+	@property
+	def CntnrShip(self):
+		return self._CntnrShip
+
+	@CntnrShip.setter
+	def CntnrShip(self, value):
+		self._CntnrShip = value if type(value) != auto else self.make_default("CntnrShip")
+
+	@CntnrShip.deleter
+	def CntnrShip(self):
+		del self._CntnrShip
+		self._CntnrShip = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=FreightCommodityOther2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CntnrShip', type=FreightCommodityContainerShip2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Wet', type=FreightCommodityWet3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=FreightCommodityOther2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dry', type=FreightCommodityDry3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CntnrShip', type=FreightCommodityContainerShip2, min=0, max=1, mutex_group=1, array=False),
 	))
 

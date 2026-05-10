@@ -4,19 +4,19 @@ import Max35Text
 
 class MessageReference1(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgNm", "_Ref", "_RefIssr"]
+	__slots__ = ["_RefIssr", "_Ref", "_MsgNm"]
 	@property
-	def MsgNm(self):
-		return self._MsgNm
+	def RefIssr(self):
+		return self._RefIssr
 
-	@MsgNm.setter
-	def MsgNm(self, value):
-		self._MsgNm = value if type(value) != auto else self.make_default("MsgNm")
+	@RefIssr.setter
+	def RefIssr(self, value):
+		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
 
-	@MsgNm.deleter
-	def MsgNm(self):
-		del self._MsgNm
-		self._MsgNm = None
+	@RefIssr.deleter
+	def RefIssr(self):
+		del self._RefIssr
+		self._RefIssr = None
 
 	@property
 	def Ref(self):
@@ -32,21 +32,21 @@ class MessageReference1(base_types._BaseFieldType):
 		self._Ref = None
 
 	@property
-	def RefIssr(self):
-		return self._RefIssr
+	def MsgNm(self):
+		return self._MsgNm
 
-	@RefIssr.setter
-	def RefIssr(self, value):
-		self._RefIssr = value if type(value) != auto else self.make_default("RefIssr")
+	@MsgNm.setter
+	def MsgNm(self, value):
+		self._MsgNm = value if type(value) != auto else self.make_default("MsgNm")
 
-	@RefIssr.deleter
-	def RefIssr(self):
-		del self._RefIssr
-		self._RefIssr = None
+	@MsgNm.deleter
+	def MsgNm(self):
+		del self._MsgNm
+		self._MsgNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefIssr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

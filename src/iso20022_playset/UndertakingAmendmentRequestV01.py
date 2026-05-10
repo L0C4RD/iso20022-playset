@@ -1,7 +1,7 @@
 import base_types
-import Max2000Text
 import Amendment3
 import PartyAndSignature2
+import Max2000Text
 
 class UndertakingAmendmentRequestV01(base_types._BaseFieldType):
 

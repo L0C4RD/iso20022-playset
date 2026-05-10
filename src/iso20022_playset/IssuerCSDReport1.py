@@ -1,13 +1,13 @@
 import base_types
-import IssuerCSDIdentification1
 import SettlementInternaliserTransactionType1
-import SettlementInternaliserClientType1
-import InternalisationData1
 import SettlementInternaliserFinancialInstrument1
+import IssuerCSDIdentification1
+import InternalisationData1
+import SettlementInternaliserClientType1
 
 class IssuerCSDReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_TtlCshTrf", "_FinInstrm", "_ClntTp", "_TxTp", "_OvrllTtl"]
+	__slots__ = ["_Id", "_OvrllTtl", "_FinInstrm", "_TtlCshTrf", "_ClntTp", "_TxTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -22,17 +22,17 @@ class IssuerCSDReport1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TtlCshTrf(self):
-		return self._TtlCshTrf
+	def OvrllTtl(self):
+		return self._OvrllTtl
 
-	@TtlCshTrf.setter
-	def TtlCshTrf(self, value):
-		self._TtlCshTrf = value if type(value) != auto else self.make_default("TtlCshTrf")
+	@OvrllTtl.setter
+	def OvrllTtl(self, value):
+		self._OvrllTtl = value if type(value) != auto else self.make_default("OvrllTtl")
 
-	@TtlCshTrf.deleter
-	def TtlCshTrf(self):
-		del self._TtlCshTrf
-		self._TtlCshTrf = None
+	@OvrllTtl.deleter
+	def OvrllTtl(self):
+		del self._OvrllTtl
+		self._OvrllTtl = None
 
 	@property
 	def FinInstrm(self):
@@ -46,6 +46,19 @@ class IssuerCSDReport1(base_types._BaseFieldType):
 	def FinInstrm(self):
 		del self._FinInstrm
 		self._FinInstrm = None
+
+	@property
+	def TtlCshTrf(self):
+		return self._TtlCshTrf
+
+	@TtlCshTrf.setter
+	def TtlCshTrf(self, value):
+		self._TtlCshTrf = value if type(value) != auto else self.make_default("TtlCshTrf")
+
+	@TtlCshTrf.deleter
+	def TtlCshTrf(self):
+		del self._TtlCshTrf
+		self._TtlCshTrf = None
 
 	@property
 	def ClntTp(self):
@@ -73,25 +86,12 @@ class IssuerCSDReport1(base_types._BaseFieldType):
 		del self._TxTp
 		self._TxTp = None
 
-	@property
-	def OvrllTtl(self):
-		return self._OvrllTtl
-
-	@OvrllTtl.setter
-	def OvrllTtl(self, value):
-		self._OvrllTtl = value if type(value) != auto else self.make_default("OvrllTtl")
-
-	@OvrllTtl.deleter
-	def OvrllTtl(self):
-		del self._OvrllTtl
-		self._OvrllTtl = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=IssuerCSDIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrm', type=SettlementInternaliserFinancialInstrument1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntTp', type=SettlementInternaliserClientType1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OvrllTtl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

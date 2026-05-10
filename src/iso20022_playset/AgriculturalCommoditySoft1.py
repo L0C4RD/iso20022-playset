@@ -1,24 +1,11 @@
 import base_types
+import AssetClassProductType1Code
 import AssetClassSubProductType2Code
 import AssetClassDetailedSubProductType2Code
-import AssetClassProductType1Code
 
 class AgriculturalCommoditySoft1(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_AddtlSubPdct", "_SubPdct"]
-	@property
-	def BasePdct(self):
-		return self._BasePdct
-
-	@BasePdct.setter
-	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
-
-	@BasePdct.deleter
-	def BasePdct(self):
-		del self._BasePdct
-		self._BasePdct = None
-
+	__slots__ = ["_AddtlSubPdct", "_BasePdct", "_SubPdct"]
 	@property
 	def AddtlSubPdct(self):
 		return self._AddtlSubPdct
@@ -31,6 +18,19 @@ class AgriculturalCommoditySoft1(base_types._BaseFieldType):
 	def AddtlSubPdct(self):
 		del self._AddtlSubPdct
 		self._AddtlSubPdct = None
+
+	@property
+	def BasePdct(self):
+		return self._BasePdct
+
+	@BasePdct.setter
+	def BasePdct(self, value):
+		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
+
+	@BasePdct.deleter
+	def BasePdct(self):
+		del self._BasePdct
+		self._BasePdct = None
 
 	@property
 	def SubPdct(self):
@@ -46,8 +46,8 @@ class AgriculturalCommoditySoft1(base_types._BaseFieldType):
 		self._SubPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

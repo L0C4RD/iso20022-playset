@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import AgreementFramework1Code
+import GenericIdentification30
 
 class AgreementFramework1Choice(base_types._BaseFieldType):
 

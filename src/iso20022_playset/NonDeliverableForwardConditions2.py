@@ -1,6 +1,6 @@
 import base_types
-import FixingConditions1
 import OpeningConditions1
+import FixingConditions1
 
 class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 

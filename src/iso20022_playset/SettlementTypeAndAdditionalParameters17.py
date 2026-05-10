@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax16Text
 import YesNoIndicator
+import RestrictedFINXMax16Text
 
 class SettlementTypeAndAdditionalParameters17(base_types._BaseFieldType):
 

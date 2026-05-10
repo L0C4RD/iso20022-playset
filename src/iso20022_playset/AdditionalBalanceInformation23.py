@@ -1,24 +1,11 @@
 import base_types
-import RestrictedFINXMax140Text
-import SubBalanceQuantity9Choice
 import SubBalanceType14Choice
+import SubBalanceQuantity9Choice
+import RestrictedFINXMax140Text
 
 class AdditionalBalanceInformation23(base_types._BaseFieldType):
 
-	__slots__ = ["_SubBalAddtlDtls", "_SubBalTp", "_Qty"]
-	@property
-	def SubBalAddtlDtls(self):
-		return self._SubBalAddtlDtls
-
-	@SubBalAddtlDtls.setter
-	def SubBalAddtlDtls(self, value):
-		self._SubBalAddtlDtls = value if type(value) != auto else self.make_default("SubBalAddtlDtls")
-
-	@SubBalAddtlDtls.deleter
-	def SubBalAddtlDtls(self):
-		del self._SubBalAddtlDtls
-		self._SubBalAddtlDtls = None
-
+	__slots__ = ["_SubBalTp", "_Qty", "_SubBalAddtlDtls"]
 	@property
 	def SubBalTp(self):
 		return self._SubBalTp
@@ -45,9 +32,22 @@ class AdditionalBalanceInformation23(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def SubBalAddtlDtls(self):
+		return self._SubBalAddtlDtls
+
+	@SubBalAddtlDtls.setter
+	def SubBalAddtlDtls(self, value):
+		self._SubBalAddtlDtls = value if type(value) != auto else self.make_default("SubBalAddtlDtls")
+
+	@SubBalAddtlDtls.deleter
+	def SubBalAddtlDtls(self):
+		del self._SubBalAddtlDtls
+		self._SubBalAddtlDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType14Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity9Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

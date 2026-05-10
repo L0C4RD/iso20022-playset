@@ -1,43 +1,43 @@
 import base_types
-import Max70Text
-import Frequency17Code
 import AdditionalData1
-import Max140Text
-import OutputFormat5Code
-import ISOTime
-import Max35Text
+import Max70Text
 import ISODate
+import ISOTime
+import Max140Text
+import Max35Text
+import OutputFormat5Code
 import TrueFalseIndicator
 import Max5NumericText
+import Frequency17Code
 
 class ReportData7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tm", "_Frmt", "_Dt", "_Id", "_Nm", "_ConttnInd", "_AddtlData", "_Seq", "_OthrFrmt", "_TtlOcrncs", "_Frqcy", "_Qlfr"]
+	__slots__ = ["_Nm", "_Qlfr", "_Dt", "_Tm", "_OthrFrmt", "_ConttnInd", "_Seq", "_TtlOcrncs", "_Frmt", "_Frqcy", "_Id", "_AddtlData"]
 	@property
-	def Tm(self):
-		return self._Tm
+	def Nm(self):
+		return self._Nm
 
-	@Tm.setter
-	def Tm(self, value):
-		self._Tm = value if type(value) != auto else self.make_default("Tm")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Tm.deleter
-	def Tm(self):
-		del self._Tm
-		self._Tm = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def Qlfr(self):
+		return self._Qlfr
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+	@Qlfr.setter
+	def Qlfr(self, value):
+		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@Qlfr.deleter
+	def Qlfr(self):
+		del self._Qlfr
+		self._Qlfr = None
 
 	@property
 	def Dt(self):
@@ -53,69 +53,17 @@ class ReportData7(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Tm(self):
+		return self._Tm
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Tm.setter
+	def Tm(self, value):
+		self._Tm = value if type(value) != auto else self.make_default("Tm")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def ConttnInd(self):
-		return self._ConttnInd
-
-	@ConttnInd.setter
-	def ConttnInd(self, value):
-		self._ConttnInd = value if type(value) != auto else self.make_default("ConttnInd")
-
-	@ConttnInd.deleter
-	def ConttnInd(self):
-		del self._ConttnInd
-		self._ConttnInd = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def Seq(self):
-		return self._Seq
-
-	@Seq.setter
-	def Seq(self, value):
-		self._Seq = value if type(value) != auto else self.make_default("Seq")
-
-	@Seq.deleter
-	def Seq(self):
-		del self._Seq
-		self._Seq = None
+	@Tm.deleter
+	def Tm(self):
+		del self._Tm
+		self._Tm = None
 
 	@property
 	def OthrFrmt(self):
@@ -131,6 +79,32 @@ class ReportData7(base_types._BaseFieldType):
 		self._OthrFrmt = None
 
 	@property
+	def ConttnInd(self):
+		return self._ConttnInd
+
+	@ConttnInd.setter
+	def ConttnInd(self, value):
+		self._ConttnInd = value if type(value) != auto else self.make_default("ConttnInd")
+
+	@ConttnInd.deleter
+	def ConttnInd(self):
+		del self._ConttnInd
+		self._ConttnInd = None
+
+	@property
+	def Seq(self):
+		return self._Seq
+
+	@Seq.setter
+	def Seq(self, value):
+		self._Seq = value if type(value) != auto else self.make_default("Seq")
+
+	@Seq.deleter
+	def Seq(self):
+		del self._Seq
+		self._Seq = None
+
+	@property
 	def TtlOcrncs(self):
 		return self._TtlOcrncs
 
@@ -142,6 +116,19 @@ class ReportData7(base_types._BaseFieldType):
 	def TtlOcrncs(self):
 		del self._TtlOcrncs
 		self._TtlOcrncs = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
 
 	@property
 	def Frqcy(self):
@@ -157,30 +144,43 @@ class ReportData7(base_types._BaseFieldType):
 		self._Frqcy = None
 
 	@property
-	def Qlfr(self):
-		return self._Qlfr
+	def Id(self):
+		return self._Id
 
-	@Qlfr.setter
-	def Qlfr(self, value):
-		self._Qlfr = value if type(value) != auto else self.make_default("Qlfr")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Qlfr.deleter
-	def Qlfr(self):
-		del self._Qlfr
-		self._Qlfr = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConttnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Seq', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlOcrncs', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frqcy', type=Frequency17Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qlfr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrFrmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConttnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Seq', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlOcrncs', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frqcy', type=Frequency17Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

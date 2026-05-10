@@ -1,24 +1,24 @@
 import base_types
 import SystemClosure2
+import ActiveCurrencyCode
 import TimePeriod1
 import SystemEvent3
-import ActiveCurrencyCode
 
 class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnPrd", "_Evt", "_SysCcy", "_ClsrInf"]
+	__slots__ = ["_SysCcy", "_Evt", "_ClsrInf", "_SsnPrd"]
 	@property
-	def SsnPrd(self):
-		return self._SsnPrd
+	def SysCcy(self):
+		return self._SysCcy
 
-	@SsnPrd.setter
-	def SsnPrd(self, value):
-		self._SsnPrd = value if type(value) != auto else self.make_default("SsnPrd")
+	@SysCcy.setter
+	def SysCcy(self, value):
+		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
 
-	@SsnPrd.deleter
-	def SsnPrd(self):
-		del self._SsnPrd
-		self._SsnPrd = None
+	@SysCcy.deleter
+	def SysCcy(self):
+		del self._SysCcy
+		self._SysCcy = None
 
 	@property
 	def Evt(self):
@@ -34,19 +34,6 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 		self._Evt = None
 
 	@property
-	def SysCcy(self):
-		return self._SysCcy
-
-	@SysCcy.setter
-	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != auto else self.make_default("SysCcy")
-
-	@SysCcy.deleter
-	def SysCcy(self):
-		del self._SysCcy
-		self._SysCcy = None
-
-	@property
 	def ClsrInf(self):
 		return self._ClsrInf
 
@@ -59,10 +46,23 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 		del self._ClsrInf
 		self._ClsrInf = None
 
+	@property
+	def SsnPrd(self):
+		return self._SsnPrd
+
+	@SsnPrd.setter
+	def SsnPrd(self, value):
+		self._SsnPrd = value if type(value) != auto else self.make_default("SsnPrd")
+
+	@SsnPrd.deleter
+	def SsnPrd(self):
+		del self._SsnPrd
+		self._SsnPrd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SsnPrd', type=TimePeriod1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Evt', type=SystemEvent3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Evt', type=SystemEvent3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClsrInf', type=SystemClosure2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SsnPrd', type=TimePeriod1, min=0, max=1, mutex_group=None, array=False),
 	))
 

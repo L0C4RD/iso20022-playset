@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType5Code
 import AssetClassSubProductType39Code
+import AssetClassProductType5Code
 
 class FertilizerCommodityAmmonia2(base_types._BaseFieldType):
 

@@ -1,14 +1,14 @@
 import base_types
-import YesNoIndicator
-import FundBalance1
 import FinancialInstrumentQuantity1
-import ISODate
-import FundCashInBreakdown3
 import ActiveOrHistoricCurrencyAndAmount
+import FundBalance1
+import YesNoIndicator
+import FundCashInBreakdown3
+import ISODate
 
 class CashInForecast5(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTtlAmt", "_XcptnlCshFlowInd", "_CshInBrkdwnDtls", "_SubTtlUnitsNb", "_CshSttlmDt", "_AddtlBal"]
+	__slots__ = ["_SubTtlAmt", "_XcptnlCshFlowInd", "_CshSttlmDt", "_SubTtlUnitsNb", "_AddtlBal", "_CshInBrkdwnDtls"]
 	@property
 	def SubTtlAmt(self):
 		return self._SubTtlAmt
@@ -36,17 +36,17 @@ class CashInForecast5(base_types._BaseFieldType):
 		self._XcptnlCshFlowInd = None
 
 	@property
-	def CshInBrkdwnDtls(self):
-		return self._CshInBrkdwnDtls
+	def CshSttlmDt(self):
+		return self._CshSttlmDt
 
-	@CshInBrkdwnDtls.setter
-	def CshInBrkdwnDtls(self, value):
-		self._CshInBrkdwnDtls = value if type(value) != auto else self.make_default("CshInBrkdwnDtls")
+	@CshSttlmDt.setter
+	def CshSttlmDt(self, value):
+		self._CshSttlmDt = value if type(value) != auto else self.make_default("CshSttlmDt")
 
-	@CshInBrkdwnDtls.deleter
-	def CshInBrkdwnDtls(self):
-		del self._CshInBrkdwnDtls
-		self._CshInBrkdwnDtls = None
+	@CshSttlmDt.deleter
+	def CshSttlmDt(self):
+		del self._CshSttlmDt
+		self._CshSttlmDt = None
 
 	@property
 	def SubTtlUnitsNb(self):
@@ -62,19 +62,6 @@ class CashInForecast5(base_types._BaseFieldType):
 		self._SubTtlUnitsNb = None
 
 	@property
-	def CshSttlmDt(self):
-		return self._CshSttlmDt
-
-	@CshSttlmDt.setter
-	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != auto else self.make_default("CshSttlmDt")
-
-	@CshSttlmDt.deleter
-	def CshSttlmDt(self):
-		del self._CshSttlmDt
-		self._CshSttlmDt = None
-
-	@property
 	def AddtlBal(self):
 		return self._AddtlBal
 
@@ -87,12 +74,25 @@ class CashInForecast5(base_types._BaseFieldType):
 		del self._AddtlBal
 		self._AddtlBal = None
 
+	@property
+	def CshInBrkdwnDtls(self):
+		return self._CshInBrkdwnDtls
+
+	@CshInBrkdwnDtls.setter
+	def CshInBrkdwnDtls(self, value):
+		self._CshInBrkdwnDtls = value if type(value) != auto else self.make_default("CshInBrkdwnDtls")
+
+	@CshInBrkdwnDtls.deleter
+	def CshInBrkdwnDtls(self):
+		del self._CshInBrkdwnDtls
+		self._CshInBrkdwnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubTtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcptnlCshFlowInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInBrkdwnDtls', type=FundCashInBreakdown3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SubTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInBrkdwnDtls', type=FundCashInBreakdown3, min=0, max=None, mutex_group=None, array=True),
 	))
 

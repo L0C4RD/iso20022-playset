@@ -1,6 +1,6 @@
 import base_types
-import RoundingMethod1Code
 import ActiveCurrencyAndAmount
+import RoundingMethod1Code
 
 class SegregatedIndependentAmountMargin1(base_types._BaseFieldType):
 

@@ -3,20 +3,7 @@ import ImpliedCurrencyAndAmount
 
 class OriginalAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_MinAmt", "_MaxAmt", "_ActlAmt"]
-	@property
-	def MinAmt(self):
-		return self._MinAmt
-
-	@MinAmt.setter
-	def MinAmt(self, value):
-		self._MinAmt = value if type(value) != auto else self.make_default("MinAmt")
-
-	@MinAmt.deleter
-	def MinAmt(self):
-		del self._MinAmt
-		self._MinAmt = None
-
+	__slots__ = ["_MaxAmt", "_ActlAmt", "_MinAmt"]
 	@property
 	def MaxAmt(self):
 		return self._MaxAmt
@@ -43,9 +30,22 @@ class OriginalAmountDetails1(base_types._BaseFieldType):
 		del self._ActlAmt
 		self._ActlAmt = None
 
+	@property
+	def MinAmt(self):
+		return self._MinAmt
+
+	@MinAmt.setter
+	def MinAmt(self, value):
+		self._MinAmt = value if type(value) != auto else self.make_default("MinAmt")
+
+	@MinAmt.deleter
+	def MinAmt(self):
+		del self._MinAmt
+		self._MinAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

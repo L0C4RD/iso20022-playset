@@ -1,11 +1,24 @@
 import base_types
-import YesNoIndicator
 import AccountIdentificationFormatChoice
 import AggregateBalanceInformation4
+import YesNoIndicator
 
 class SubAccountIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_BalForSubAcct", "_FngbInd", "_Id", "_ActvtyInd"]
+	__slots__ = ["_ActvtyInd", "_BalForSubAcct", "_FngbInd", "_Id"]
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
 	@property
 	def BalForSubAcct(self):
 		return self._BalForSubAcct
@@ -45,23 +58,10 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
-	@property
-	def ActvtyInd(self):
-		return self._ActvtyInd
-
-	@ActvtyInd.setter
-	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != auto else self.make_default("ActvtyInd")
-
-	@ActvtyInd.deleter
-	def ActvtyInd(self):
-		del self._ActvtyInd
-		self._ActvtyInd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FngbInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentificationFormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

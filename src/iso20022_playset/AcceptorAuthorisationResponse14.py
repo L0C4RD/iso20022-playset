@@ -6,33 +6,7 @@ import CardPaymentTransaction144
 
 class AcceptorAuthorisationResponse14(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TxRspn", "_Tx", "_SplmtryData"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
-	@property
-	def TxRspn(self):
-		return self._TxRspn
-
-	@TxRspn.setter
-	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
-
-	@TxRspn.deleter
-	def TxRspn(self):
-		del self._TxRspn
-		self._TxRspn = None
-
+	__slots__ = ["_Tx", "_Envt", "_SplmtryData", "_TxRspn"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -47,6 +21,19 @@ class AcceptorAuthorisationResponse14(base_types._BaseFieldType):
 		self._Tx = None
 
 	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -59,10 +46,23 @@ class AcceptorAuthorisationResponse14(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def TxRspn(self):
+		return self._TxRspn
+
+	@TxRspn.setter
+	def TxRspn(self, value):
+		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
+
+	@TxRspn.deleter
+	def TxRspn(self):
+		del self._TxRspn
+		self._TxRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction144, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction137, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction144, min=1, max=1, mutex_group=None, array=False),
 	))
 

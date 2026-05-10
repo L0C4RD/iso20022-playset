@@ -1,11 +1,24 @@
 import base_types
-import PurposeCode7Choice
-import RestrictedFINXMax140Text
 import RestrictedFINXMax70Text
+import RestrictedFINXMax140Text
+import PurposeCode7Choice
 
 class BlockChainAddressWallet6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Id"]
+	__slots__ = ["_Id", "_Tp", "_Nm"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -32,22 +45,9 @@ class BlockChainAddressWallet6(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=RestrictedFINXMax140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=RestrictedFINXMax70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=RestrictedFINXMax140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

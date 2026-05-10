@@ -1,6 +1,6 @@
 import base_types
-import AdditionalData1
 import Max35Text
+import AdditionalData1
 
 class ProgrammeMode5(base_types._BaseFieldType):
 

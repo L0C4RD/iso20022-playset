@@ -1,12 +1,12 @@
 import base_types
-import ReportingWaiverType3Code
-import Side5Code
 import TrueFalseIndicator
+import Side5Code
+import ReportingWaiverType3Code
 import ReportingWaiverType1Code
 
 class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 
-	__slots__ = ["_RskRdcgTx", "_ShrtSellgInd", "_SctiesFincgTxInd", "_OTCPstTradInd", "_WvrInd"]
+	__slots__ = ["_RskRdcgTx", "_SctiesFincgTxInd", "_OTCPstTradInd", "_WvrInd", "_ShrtSellgInd"]
 	@property
 	def RskRdcgTx(self):
 		return self._RskRdcgTx
@@ -19,19 +19,6 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 	def RskRdcgTx(self):
 		del self._RskRdcgTx
 		self._RskRdcgTx = None
-
-	@property
-	def ShrtSellgInd(self):
-		return self._ShrtSellgInd
-
-	@ShrtSellgInd.setter
-	def ShrtSellgInd(self, value):
-		self._ShrtSellgInd = value if type(value) != auto else self.make_default("ShrtSellgInd")
-
-	@ShrtSellgInd.deleter
-	def ShrtSellgInd(self):
-		del self._ShrtSellgInd
-		self._ShrtSellgInd = None
 
 	@property
 	def SctiesFincgTxInd(self):
@@ -72,11 +59,24 @@ class SecuritiesTransactionIndicator2(base_types._BaseFieldType):
 		del self._WvrInd
 		self._WvrInd = None
 
+	@property
+	def ShrtSellgInd(self):
+		return self._ShrtSellgInd
+
+	@ShrtSellgInd.setter
+	def ShrtSellgInd(self, value):
+		self._ShrtSellgInd = value if type(value) != auto else self.make_default("ShrtSellgInd")
+
+	@ShrtSellgInd.deleter
+	def ShrtSellgInd(self):
+		del self._ShrtSellgInd
+		self._ShrtSellgInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RskRdcgTx', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtSellgInd', type=Side5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesFincgTxInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OTCPstTradInd', type=ReportingWaiverType3Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WvrInd', type=ReportingWaiverType1Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ShrtSellgInd', type=Side5Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

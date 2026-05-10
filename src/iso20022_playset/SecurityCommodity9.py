@@ -1,23 +1,10 @@
 import base_types
-import Security51
 import Commodity43
+import Security51
 
 class SecurityCommodity9(base_types._BaseFieldType):
 
-	__slots__ = ["_Scty", "_Cmmdty"]
-	@property
-	def Scty(self):
-		return self._Scty
-
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
-
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
-
+	__slots__ = ["_Cmmdty", "_Scty"]
 	@property
 	def Cmmdty(self):
 		return self._Cmmdty
@@ -31,8 +18,21 @@ class SecurityCommodity9(base_types._BaseFieldType):
 		del self._Cmmdty
 		self._Cmmdty = None
 
+	@property
+	def Scty(self):
+		return self._Scty
+
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != auto else self.make_default("Scty")
+
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Scty', type=Security51, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Cmmdty', type=Commodity43, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Scty', type=Security51, min=0, max=None, mutex_group=None, array=True),
 	))
 

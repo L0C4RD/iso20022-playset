@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import ConsentType1Code
+import GenericIdentification47
 
 class ConsentTypeFormat5Choice(base_types._BaseFieldType):
 

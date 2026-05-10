@@ -1,6 +1,6 @@
 import base_types
-import AssetClassSubProductType47Code
 import AssetClassProductType11Code
+import AssetClassSubProductType47Code
 
 class OtherC10CommodityDeliverable2(base_types._BaseFieldType):
 

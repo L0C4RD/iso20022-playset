@@ -1,6 +1,6 @@
 import base_types
-import DerivativeInterest2
 import DerivativeForeignExchange2
+import DerivativeInterest2
 
 class AssetClassAttributes1(base_types._BaseFieldType):
 

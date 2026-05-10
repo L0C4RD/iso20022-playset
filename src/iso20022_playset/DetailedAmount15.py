@@ -1,36 +1,10 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import DetailedAmount4
+import ImpliedCurrencyAndAmount
 
 class DetailedAmount15(base_types._BaseFieldType):
 
-	__slots__ = ["_Srchrg", "_Rbt", "_Fees", "_Grtty", "_AmtGoodsAndSvcs", "_ValAddedTax", "_CshBck"]
-	@property
-	def Srchrg(self):
-		return self._Srchrg
-
-	@Srchrg.setter
-	def Srchrg(self, value):
-		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
-
-	@Srchrg.deleter
-	def Srchrg(self):
-		del self._Srchrg
-		self._Srchrg = None
-
-	@property
-	def Rbt(self):
-		return self._Rbt
-
-	@Rbt.setter
-	def Rbt(self, value):
-		self._Rbt = value if type(value) != auto else self.make_default("Rbt")
-
-	@Rbt.deleter
-	def Rbt(self):
-		del self._Rbt
-		self._Rbt = None
-
+	__slots__ = ["_Fees", "_Srchrg", "_AmtGoodsAndSvcs", "_Grtty", "_ValAddedTax", "_Rbt", "_CshBck"]
 	@property
 	def Fees(self):
 		return self._Fees
@@ -45,17 +19,17 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
-	def Grtty(self):
-		return self._Grtty
+	def Srchrg(self):
+		return self._Srchrg
 
-	@Grtty.setter
-	def Grtty(self, value):
-		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
+	@Srchrg.setter
+	def Srchrg(self, value):
+		self._Srchrg = value if type(value) != auto else self.make_default("Srchrg")
 
-	@Grtty.deleter
-	def Grtty(self):
-		del self._Grtty
-		self._Grtty = None
+	@Srchrg.deleter
+	def Srchrg(self):
+		del self._Srchrg
+		self._Srchrg = None
 
 	@property
 	def AmtGoodsAndSvcs(self):
@@ -71,6 +45,19 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._AmtGoodsAndSvcs = None
 
 	@property
+	def Grtty(self):
+		return self._Grtty
+
+	@Grtty.setter
+	def Grtty(self, value):
+		self._Grtty = value if type(value) != auto else self.make_default("Grtty")
+
+	@Grtty.deleter
+	def Grtty(self):
+		del self._Grtty
+		self._Grtty = None
+
+	@property
 	def ValAddedTax(self):
 		return self._ValAddedTax
 
@@ -82,6 +69,19 @@ class DetailedAmount15(base_types._BaseFieldType):
 	def ValAddedTax(self):
 		del self._ValAddedTax
 		self._ValAddedTax = None
+
+	@property
+	def Rbt(self):
+		return self._Rbt
+
+	@Rbt.setter
+	def Rbt(self, value):
+		self._Rbt = value if type(value) != auto else self.make_default("Rbt")
+
+	@Rbt.deleter
+	def Rbt(self):
+		del self._Rbt
+		self._Rbt = None
 
 	@property
 	def CshBck(self):
@@ -97,12 +97,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 		self._CshBck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fees', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Grtty', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AmtGoodsAndSvcs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grtty', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAddedTax', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rbt', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshBck', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

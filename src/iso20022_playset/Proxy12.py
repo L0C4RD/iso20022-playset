@@ -1,23 +1,10 @@
 import base_types
-import ProxyType3Code
 import IndividualPerson42
+import ProxyType3Code
 
 class Proxy12(base_types._BaseFieldType):
 
-	__slots__ = ["_PrxyTp", "_PrsnDtls"]
-	@property
-	def PrxyTp(self):
-		return self._PrxyTp
-
-	@PrxyTp.setter
-	def PrxyTp(self, value):
-		self._PrxyTp = value if type(value) != auto else self.make_default("PrxyTp")
-
-	@PrxyTp.deleter
-	def PrxyTp(self):
-		del self._PrxyTp
-		self._PrxyTp = None
-
+	__slots__ = ["_PrsnDtls", "_PrxyTp"]
 	@property
 	def PrsnDtls(self):
 		return self._PrsnDtls
@@ -31,8 +18,21 @@ class Proxy12(base_types._BaseFieldType):
 		del self._PrsnDtls
 		self._PrsnDtls = None
 
+	@property
+	def PrxyTp(self):
+		return self._PrxyTp
+
+	@PrxyTp.setter
+	def PrxyTp(self, value):
+		self._PrxyTp = value if type(value) != auto else self.make_default("PrxyTp")
+
+	@PrxyTp.deleter
+	def PrxyTp(self):
+		del self._PrxyTp
+		self._PrxyTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrxyTp', type=ProxyType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrsnDtls', type=IndividualPerson42, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrxyTp', type=ProxyType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

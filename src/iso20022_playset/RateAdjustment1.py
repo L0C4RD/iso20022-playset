@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import ISODate
+import PercentageRate
 
 class RateAdjustment1(base_types._BaseFieldType):
 

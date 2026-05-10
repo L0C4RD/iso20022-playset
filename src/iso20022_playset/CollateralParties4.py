@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification37
 import PartyIdentification232
+import GenericIdentification37
 
 class CollateralParties4(base_types._BaseFieldType):
 

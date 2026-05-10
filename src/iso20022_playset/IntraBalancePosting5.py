@@ -1,6 +1,6 @@
 import base_types
-import IntraBalancePosting6
 import CashSubBalanceTypeAndQuantityBreakdown3
+import IntraBalancePosting6
 
 class IntraBalancePosting5(base_types._BaseFieldType):
 

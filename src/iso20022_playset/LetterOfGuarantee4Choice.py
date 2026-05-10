@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import YesNoIndicator
+import GenericIdentification30
 
 class LetterOfGuarantee4Choice(base_types._BaseFieldType):
 

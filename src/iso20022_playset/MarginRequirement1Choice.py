@@ -1,6 +1,6 @@
 import base_types
-import MarginRequirement1
 import Requirement1
+import MarginRequirement1
 
 class MarginRequirement1Choice(base_types._BaseFieldType):
 

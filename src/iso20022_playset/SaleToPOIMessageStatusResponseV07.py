@@ -1,11 +1,24 @@
 import base_types
-import Header41
-import MessageStatusResponse9
 import ContentInformationType38
+import MessageStatusResponse9
+import Header41
 
 class SaleToPOIMessageStatusResponseV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_SctyTrlr", "_StsRspn"]
+	__slots__ = ["_StsRspn", "_Hdr", "_SctyTrlr"]
+	@property
+	def StsRspn(self):
+		return self._StsRspn
+
+	@StsRspn.setter
+	def StsRspn(self, value):
+		self._StsRspn = value if type(value) != auto else self.make_default("StsRspn")
+
+	@StsRspn.deleter
+	def StsRspn(self):
+		del self._StsRspn
+		self._StsRspn = None
+
 	@property
 	def Hdr(self):
 		return self._Hdr
@@ -32,22 +45,9 @@ class SaleToPOIMessageStatusResponseV07(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
-	@property
-	def StsRspn(self):
-		return self._StsRspn
-
-	@StsRspn.setter
-	def StsRspn(self, value):
-		self._StsRspn = value if type(value) != auto else self.make_default("StsRspn")
-
-	@StsRspn.deleter
-	def StsRspn(self):
-		del self._StsRspn
-		self._StsRspn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StsRspn', type=MessageStatusResponse9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRspn', type=MessageStatusResponse9, min=1, max=1, mutex_group=None, array=False),
 	))
 

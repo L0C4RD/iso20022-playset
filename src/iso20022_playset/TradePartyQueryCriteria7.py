@@ -1,11 +1,37 @@
 import base_types
-import TradePartyIdentificationQuery11Choice
 import Operation3Code
 import TradePartyIdentificationQuery10Choice
+import TradePartyIdentificationQuery11Choice
 
 class TradePartyQueryCriteria7(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCtrPty", "_Oprtr", "_SubmitgAgt", "_ClrMmb", "_RptgCtrPty", "_Brkr", "_CCP", "_NttyRspnsblForRpt", "_Bnfcry"]
+	__slots__ = ["_Bnfcry", "_RptgCtrPty", "_OthrCtrPty", "_ClrMmb", "_Brkr", "_CCP", "_SubmitgAgt", "_Oprtr", "_NttyRspnsblForRpt"]
+	@property
+	def Bnfcry(self):
+		return self._Bnfcry
+
+	@Bnfcry.setter
+	def Bnfcry(self, value):
+		self._Bnfcry = value if type(value) != auto else self.make_default("Bnfcry")
+
+	@Bnfcry.deleter
+	def Bnfcry(self):
+		del self._Bnfcry
+		self._Bnfcry = None
+
+	@property
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
+
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
+
 	@property
 	def OthrCtrPty(self):
 		return self._OthrCtrPty
@@ -20,32 +46,6 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 		self._OthrCtrPty = None
 
 	@property
-	def Oprtr(self):
-		return self._Oprtr
-
-	@Oprtr.setter
-	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
-
-	@Oprtr.deleter
-	def Oprtr(self):
-		del self._Oprtr
-		self._Oprtr = None
-
-	@property
-	def SubmitgAgt(self):
-		return self._SubmitgAgt
-
-	@SubmitgAgt.setter
-	def SubmitgAgt(self, value):
-		self._SubmitgAgt = value if type(value) != auto else self.make_default("SubmitgAgt")
-
-	@SubmitgAgt.deleter
-	def SubmitgAgt(self):
-		del self._SubmitgAgt
-		self._SubmitgAgt = None
-
-	@property
 	def ClrMmb(self):
 		return self._ClrMmb
 
@@ -57,19 +57,6 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 	def ClrMmb(self):
 		del self._ClrMmb
 		self._ClrMmb = None
-
-	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
-
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
-
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
 
 	@property
 	def Brkr(self):
@@ -98,6 +85,32 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 		self._CCP = None
 
 	@property
+	def SubmitgAgt(self):
+		return self._SubmitgAgt
+
+	@SubmitgAgt.setter
+	def SubmitgAgt(self, value):
+		self._SubmitgAgt = value if type(value) != auto else self.make_default("SubmitgAgt")
+
+	@SubmitgAgt.deleter
+	def SubmitgAgt(self):
+		del self._SubmitgAgt
+		self._SubmitgAgt = None
+
+	@property
+	def Oprtr(self):
+		return self._Oprtr
+
+	@Oprtr.setter
+	def Oprtr(self, value):
+		self._Oprtr = value if type(value) != auto else self.make_default("Oprtr")
+
+	@Oprtr.deleter
+	def Oprtr(self):
+		del self._Oprtr
+		self._Oprtr = None
+
+	@property
 	def NttyRspnsblForRpt(self):
 		return self._NttyRspnsblForRpt
 
@@ -110,28 +123,15 @@ class TradePartyQueryCriteria7(base_types._BaseFieldType):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
 
-	@property
-	def Bnfcry(self):
-		return self._Bnfcry
-
-	@Bnfcry.setter
-	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != auto else self.make_default("Bnfcry")
-
-	@Bnfcry.deleter
-	def Bnfcry(self):
-		del self._Bnfcry
-		self._Bnfcry = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitgAgt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bnfcry', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrCtrPty', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrMmb', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Brkr', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CCP', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgAgt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oprtr', type=Operation3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=TradePartyIdentificationQuery11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Bnfcry', type=TradePartyIdentificationQuery10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

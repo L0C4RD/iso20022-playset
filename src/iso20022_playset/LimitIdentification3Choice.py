@@ -4,7 +4,7 @@ import LimitIdentification8
 
 class LimitIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Dflt", "_AllDflt", "_AllCur", "_Cur"]
+	__slots__ = ["_Dflt", "_Cur", "_AllCur", "_AllDflt"]
 	@property
 	def Dflt(self):
 		return self._Dflt
@@ -19,17 +19,17 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 		self._Dflt = None
 
 	@property
-	def AllDflt(self):
-		return self._AllDflt
+	def Cur(self):
+		return self._Cur
 
-	@AllDflt.setter
-	def AllDflt(self, value):
-		self._AllDflt = value if type(value) != auto else self.make_default("AllDflt")
+	@Cur.setter
+	def Cur(self, value):
+		self._Cur = value if type(value) != auto else self.make_default("Cur")
 
-	@AllDflt.deleter
-	def AllDflt(self):
-		del self._AllDflt
-		self._AllDflt = None
+	@Cur.deleter
+	def Cur(self):
+		del self._Cur
+		self._Cur = None
 
 	@property
 	def AllCur(self):
@@ -45,22 +45,22 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 		self._AllCur = None
 
 	@property
-	def Cur(self):
-		return self._Cur
+	def AllDflt(self):
+		return self._AllDflt
 
-	@Cur.setter
-	def Cur(self, value):
-		self._Cur = value if type(value) != auto else self.make_default("Cur")
+	@AllDflt.setter
+	def AllDflt(self, value):
+		self._AllDflt = value if type(value) != auto else self.make_default("AllDflt")
 
-	@Cur.deleter
-	def Cur(self):
-		del self._Cur
-		self._Cur = None
+	@AllDflt.deleter
+	def AllDflt(self):
+		del self._AllDflt
+		self._AllDflt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dflt', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AllDflt', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AllCur', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cur', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AllCur', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AllDflt', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),
 	))
 

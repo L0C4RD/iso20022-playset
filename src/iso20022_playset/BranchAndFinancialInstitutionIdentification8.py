@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstitutionIdentification23
 import BranchData5
+import FinancialInstitutionIdentification23
 
 class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 

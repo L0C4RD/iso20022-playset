@@ -5,20 +5,7 @@ import SecuritiesCollateralResponse2
 
 class CollateralResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrCollRspn", "_CshCollRspn", "_SctiesCollRspn"]
-	@property
-	def OthrCollRspn(self):
-		return self._OthrCollRspn
-
-	@OthrCollRspn.setter
-	def OthrCollRspn(self, value):
-		self._OthrCollRspn = value if type(value) != auto else self.make_default("OthrCollRspn")
-
-	@OthrCollRspn.deleter
-	def OthrCollRspn(self):
-		del self._OthrCollRspn
-		self._OthrCollRspn = None
-
+	__slots__ = ["_CshCollRspn", "_SctiesCollRspn", "_OthrCollRspn"]
 	@property
 	def CshCollRspn(self):
 		return self._CshCollRspn
@@ -45,9 +32,22 @@ class CollateralResponse3(base_types._BaseFieldType):
 		del self._SctiesCollRspn
 		self._SctiesCollRspn = None
 
+	@property
+	def OthrCollRspn(self):
+		return self._OthrCollRspn
+
+	@OthrCollRspn.setter
+	def OthrCollRspn(self, value):
+		self._OthrCollRspn = value if type(value) != auto else self.make_default("OthrCollRspn")
+
+	@OthrCollRspn.deleter
+	def OthrCollRspn(self):
+		del self._OthrCollRspn
+		self._OthrCollRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrCollRspn', type=OtherCollateralResponse3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshCollRspn', type=CashCollateralResponse3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesCollRspn', type=SecuritiesCollateralResponse2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrCollRspn', type=OtherCollateralResponse3, min=0, max=None, mutex_group=None, array=True),
 	))
 

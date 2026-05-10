@@ -1,6 +1,6 @@
 import base_types
-import ExternalChequeCancellationStatus1Code
 import Max35Text
+import ExternalChequeCancellationStatus1Code
 
 class ChequeCancellationStatus1Choice(base_types._BaseFieldType):
 

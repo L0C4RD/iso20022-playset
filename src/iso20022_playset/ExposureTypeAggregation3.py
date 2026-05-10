@@ -1,26 +1,13 @@
 import base_types
-import GenericIdentification30
-import CollateralStatus1Code
-import ExposureType23Choice
-import CollateralAmount16
 import PercentageRate
+import CollateralAmount16
+import ExposureType23Choice
+import CollateralStatus1Code
+import GenericIdentification30
 
 class ExposureTypeAggregation3(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmPrc", "_XpsrTp", "_ValtnAmts", "_GblXpsrTpSts", "_MrgnRate"]
-	@property
-	def SttlmPrc(self):
-		return self._SttlmPrc
-
-	@SttlmPrc.setter
-	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != auto else self.make_default("SttlmPrc")
-
-	@SttlmPrc.deleter
-	def SttlmPrc(self):
-		del self._SttlmPrc
-		self._SttlmPrc = None
-
+	__slots__ = ["_XpsrTp", "_MrgnRate", "_ValtnAmts", "_GblXpsrTpSts", "_SttlmPrc"]
 	@property
 	def XpsrTp(self):
 		return self._XpsrTp
@@ -33,6 +20,19 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 	def XpsrTp(self):
 		del self._XpsrTp
 		self._XpsrTp = None
+
+	@property
+	def MrgnRate(self):
+		return self._MrgnRate
+
+	@MrgnRate.setter
+	def MrgnRate(self, value):
+		self._MrgnRate = value if type(value) != auto else self.make_default("MrgnRate")
+
+	@MrgnRate.deleter
+	def MrgnRate(self):
+		del self._MrgnRate
+		self._MrgnRate = None
 
 	@property
 	def ValtnAmts(self):
@@ -61,23 +61,23 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		self._GblXpsrTpSts = None
 
 	@property
-	def MrgnRate(self):
-		return self._MrgnRate
+	def SttlmPrc(self):
+		return self._SttlmPrc
 
-	@MrgnRate.setter
-	def MrgnRate(self, value):
-		self._MrgnRate = value if type(value) != auto else self.make_default("MrgnRate")
+	@SttlmPrc.setter
+	def SttlmPrc(self, value):
+		self._SttlmPrc = value if type(value) != auto else self.make_default("SttlmPrc")
 
-	@MrgnRate.deleter
-	def MrgnRate(self):
-		del self._MrgnRate
-		self._MrgnRate = None
+	@SttlmPrc.deleter
+	def SttlmPrc(self):
+		del self._SttlmPrc
+		self._SttlmPrc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GblXpsrTpSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

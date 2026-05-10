@@ -3,7 +3,7 @@ import DateFormat30Choice
 
 class SecurityDate20(base_types._BaseFieldType):
 
-	__slots__ = ["_LastTradgDt", "_AvlblDt", "_PmtDt", "_PrpssDt", "_EarlstPmtDt", "_DvddRnkgDt"]
+	__slots__ = ["_LastTradgDt", "_AvlblDt", "_PrpssDt", "_PmtDt", "_EarlstPmtDt", "_DvddRnkgDt"]
 	@property
 	def LastTradgDt(self):
 		return self._LastTradgDt
@@ -31,19 +31,6 @@ class SecurityDate20(base_types._BaseFieldType):
 		self._AvlblDt = None
 
 	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
-	@property
 	def PrpssDt(self):
 		return self._PrpssDt
 
@@ -55,6 +42,19 @@ class SecurityDate20(base_types._BaseFieldType):
 	def PrpssDt(self):
 		del self._PrpssDt
 		self._PrpssDt = None
+
+	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
 
 	@property
 	def EarlstPmtDt(self):
@@ -85,8 +85,8 @@ class SecurityDate20(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LastTradgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AvlblDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrpssDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvddRnkgDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,13 +1,13 @@
 import base_types
-import RestrictedFINZMax8000Text
+import AccountIdentification77Choice
 import CorporateActionGeneralInformation102
 import SupplementaryData1
-import AccountIdentification77Choice
+import RestrictedFINZMax8000Text
 import SecurityIdentification20
 
 class CorporateActionNarrative002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_SplmtryData", "_AddtlInf", "_CorpActnGnlInf", "_UndrlygScty"]
+	__slots__ = ["_AcctDtls", "_AddtlInf", "_CorpActnGnlInf", "_SplmtryData", "_UndrlygScty"]
 	@property
 	def AcctDtls(self):
 		return self._AcctDtls
@@ -20,19 +20,6 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 	def AcctDtls(self):
 		del self._AcctDtls
 		self._AcctDtls = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def AddtlInf(self):
@@ -61,6 +48,19 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def UndrlygScty(self):
 		return self._UndrlygScty
 
@@ -75,9 +75,9 @@ class CorporateActionNarrative002V09(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification77Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINZMax8000Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation102, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygScty', type=SecurityIdentification20, min=0, max=1, mutex_group=None, array=False),
 	))
 

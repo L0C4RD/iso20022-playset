@@ -1,31 +1,31 @@
 import base_types
-import ISODateTime
-import Organisation38
-import FinancialInstrumentQuantity1Choice
-import PriceValue1
-import SecuritiesTransactionType31Choice
-import ActiveCurrencyAndAmount
-import Jurisdiction1
-import MICIdentifier
-import Number
-import ISODate
 import CountryCode
+import PriceValue1
+import Jurisdiction1
+import ISODate
+import FinancialInstrumentQuantity1Choice
+import Number
+import SecuritiesTransactionType31Choice
+import ISODateTime
+import ActiveCurrencyAndAmount
+import Organisation38
+import MICIdentifier
 
 class Issuance5(base_types._BaseFieldType):
 
-	__slots__ = ["_IssncDstrbtn", "_AnncmntDt", "_IssePric", "_IsseNmnlAmt", "_ISINVldFr", "_IsseDt", "_IssePlc", "_CtryOfIsse", "_IsseSz", "_FullIssdAmt", "_GovngLaw", "_IssrOrg"]
+	__slots__ = ["_CtryOfIsse", "_AnncmntDt", "_IssrOrg", "_GovngLaw", "_IssePlc", "_IssncDstrbtn", "_IsseNmnlAmt", "_IsseDt", "_IsseSz", "_ISINVldFr", "_FullIssdAmt", "_IssePric"]
 	@property
-	def IssncDstrbtn(self):
-		return self._IssncDstrbtn
+	def CtryOfIsse(self):
+		return self._CtryOfIsse
 
-	@IssncDstrbtn.setter
-	def IssncDstrbtn(self, value):
-		self._IssncDstrbtn = value if type(value) != auto else self.make_default("IssncDstrbtn")
+	@CtryOfIsse.setter
+	def CtryOfIsse(self, value):
+		self._CtryOfIsse = value if type(value) != auto else self.make_default("CtryOfIsse")
 
-	@IssncDstrbtn.deleter
-	def IssncDstrbtn(self):
-		del self._IssncDstrbtn
-		self._IssncDstrbtn = None
+	@CtryOfIsse.deleter
+	def CtryOfIsse(self):
+		del self._CtryOfIsse
+		self._CtryOfIsse = None
 
 	@property
 	def AnncmntDt(self):
@@ -41,108 +41,17 @@ class Issuance5(base_types._BaseFieldType):
 		self._AnncmntDt = None
 
 	@property
-	def IssePric(self):
-		return self._IssePric
+	def IssrOrg(self):
+		return self._IssrOrg
 
-	@IssePric.setter
-	def IssePric(self, value):
-		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
+	@IssrOrg.setter
+	def IssrOrg(self, value):
+		self._IssrOrg = value if type(value) != auto else self.make_default("IssrOrg")
 
-	@IssePric.deleter
-	def IssePric(self):
-		del self._IssePric
-		self._IssePric = None
-
-	@property
-	def IsseNmnlAmt(self):
-		return self._IsseNmnlAmt
-
-	@IsseNmnlAmt.setter
-	def IsseNmnlAmt(self, value):
-		self._IsseNmnlAmt = value if type(value) != auto else self.make_default("IsseNmnlAmt")
-
-	@IsseNmnlAmt.deleter
-	def IsseNmnlAmt(self):
-		del self._IsseNmnlAmt
-		self._IsseNmnlAmt = None
-
-	@property
-	def ISINVldFr(self):
-		return self._ISINVldFr
-
-	@ISINVldFr.setter
-	def ISINVldFr(self, value):
-		self._ISINVldFr = value if type(value) != auto else self.make_default("ISINVldFr")
-
-	@ISINVldFr.deleter
-	def ISINVldFr(self):
-		del self._ISINVldFr
-		self._ISINVldFr = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def IssePlc(self):
-		return self._IssePlc
-
-	@IssePlc.setter
-	def IssePlc(self, value):
-		self._IssePlc = value if type(value) != auto else self.make_default("IssePlc")
-
-	@IssePlc.deleter
-	def IssePlc(self):
-		del self._IssePlc
-		self._IssePlc = None
-
-	@property
-	def CtryOfIsse(self):
-		return self._CtryOfIsse
-
-	@CtryOfIsse.setter
-	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != auto else self.make_default("CtryOfIsse")
-
-	@CtryOfIsse.deleter
-	def CtryOfIsse(self):
-		del self._CtryOfIsse
-		self._CtryOfIsse = None
-
-	@property
-	def IsseSz(self):
-		return self._IsseSz
-
-	@IsseSz.setter
-	def IsseSz(self, value):
-		self._IsseSz = value if type(value) != auto else self.make_default("IsseSz")
-
-	@IsseSz.deleter
-	def IsseSz(self):
-		del self._IsseSz
-		self._IsseSz = None
-
-	@property
-	def FullIssdAmt(self):
-		return self._FullIssdAmt
-
-	@FullIssdAmt.setter
-	def FullIssdAmt(self, value):
-		self._FullIssdAmt = value if type(value) != auto else self.make_default("FullIssdAmt")
-
-	@FullIssdAmt.deleter
-	def FullIssdAmt(self):
-		del self._FullIssdAmt
-		self._FullIssdAmt = None
+	@IssrOrg.deleter
+	def IssrOrg(self):
+		del self._IssrOrg
+		self._IssrOrg = None
 
 	@property
 	def GovngLaw(self):
@@ -158,30 +67,121 @@ class Issuance5(base_types._BaseFieldType):
 		self._GovngLaw = None
 
 	@property
-	def IssrOrg(self):
-		return self._IssrOrg
+	def IssePlc(self):
+		return self._IssePlc
 
-	@IssrOrg.setter
-	def IssrOrg(self, value):
-		self._IssrOrg = value if type(value) != auto else self.make_default("IssrOrg")
+	@IssePlc.setter
+	def IssePlc(self, value):
+		self._IssePlc = value if type(value) != auto else self.make_default("IssePlc")
 
-	@IssrOrg.deleter
-	def IssrOrg(self):
-		del self._IssrOrg
-		self._IssrOrg = None
+	@IssePlc.deleter
+	def IssePlc(self):
+		del self._IssePlc
+		self._IssePlc = None
+
+	@property
+	def IssncDstrbtn(self):
+		return self._IssncDstrbtn
+
+	@IssncDstrbtn.setter
+	def IssncDstrbtn(self, value):
+		self._IssncDstrbtn = value if type(value) != auto else self.make_default("IssncDstrbtn")
+
+	@IssncDstrbtn.deleter
+	def IssncDstrbtn(self):
+		del self._IssncDstrbtn
+		self._IssncDstrbtn = None
+
+	@property
+	def IsseNmnlAmt(self):
+		return self._IsseNmnlAmt
+
+	@IsseNmnlAmt.setter
+	def IsseNmnlAmt(self, value):
+		self._IsseNmnlAmt = value if type(value) != auto else self.make_default("IsseNmnlAmt")
+
+	@IsseNmnlAmt.deleter
+	def IsseNmnlAmt(self):
+		del self._IsseNmnlAmt
+		self._IsseNmnlAmt = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def IsseSz(self):
+		return self._IsseSz
+
+	@IsseSz.setter
+	def IsseSz(self, value):
+		self._IsseSz = value if type(value) != auto else self.make_default("IsseSz")
+
+	@IsseSz.deleter
+	def IsseSz(self):
+		del self._IsseSz
+		self._IsseSz = None
+
+	@property
+	def ISINVldFr(self):
+		return self._ISINVldFr
+
+	@ISINVldFr.setter
+	def ISINVldFr(self, value):
+		self._ISINVldFr = value if type(value) != auto else self.make_default("ISINVldFr")
+
+	@ISINVldFr.deleter
+	def ISINVldFr(self):
+		del self._ISINVldFr
+		self._ISINVldFr = None
+
+	@property
+	def FullIssdAmt(self):
+		return self._FullIssdAmt
+
+	@FullIssdAmt.setter
+	def FullIssdAmt(self, value):
+		self._FullIssdAmt = value if type(value) != auto else self.make_default("FullIssdAmt")
+
+	@FullIssdAmt.deleter
+	def FullIssdAmt(self):
+		del self._FullIssdAmt
+		self._FullIssdAmt = None
+
+	@property
+	def IssePric(self):
+		return self._IssePric
+
+	@IssePric.setter
+	def IssePric(self, value):
+		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
+
+	@IssePric.deleter
+	def IssePric(self):
+		del self._IssePric
+		self._IssePric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssncDstrbtn', type=SecuritiesTransactionType31Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssePric', type=PriceValue1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseNmnlAmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISINVldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssePlc', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfIsse', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseSz', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullIssdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GovngLaw', type=Jurisdiction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrOrg', type=Organisation38, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GovngLaw', type=Jurisdiction1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IssePlc', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssncDstrbtn', type=SecuritiesTransactionType31Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseNmnlAmt', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseSz', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISINVldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullIssdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssePric', type=PriceValue1, min=0, max=1, mutex_group=None, array=False),
 	))
 

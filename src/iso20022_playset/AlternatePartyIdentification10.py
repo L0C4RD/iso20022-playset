@@ -1,23 +1,23 @@
 import base_types
-import IdentificationType42Choice
-import CountryCode
 import Max35Text
+import CountryCode
+import IdentificationType42Choice
 
 class AlternatePartyIdentification10(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_AltrnId", "_TpOfId"]
+	__slots__ = ["_TpOfId", "_AltrnId", "_Ctry"]
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def TpOfId(self):
+		return self._TpOfId
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@TpOfId.setter
+	def TpOfId(self, value):
+		self._TpOfId = value if type(value) != auto else self.make_default("TpOfId")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@TpOfId.deleter
+	def TpOfId(self):
+		del self._TpOfId
+		self._TpOfId = None
 
 	@property
 	def AltrnId(self):
@@ -33,21 +33,21 @@ class AlternatePartyIdentification10(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def TpOfId(self):
-		return self._TpOfId
+	def Ctry(self):
+		return self._Ctry
 
-	@TpOfId.setter
-	def TpOfId(self, value):
-		self._TpOfId = value if type(value) != auto else self.make_default("TpOfId")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
 
-	@TpOfId.deleter
-	def TpOfId(self):
-		del self._TpOfId
-		self._TpOfId = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfId', type=IdentificationType42Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

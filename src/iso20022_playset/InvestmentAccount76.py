@@ -1,40 +1,14 @@
 import base_types
-import Max350Text
-import Intermediary47
-import FinancialInstrument55
 import Max35Text
 import PartyIdentification125Choice
+import Max350Text
+import FinancialInstrument55
 import AccountOwner3Choice
+import Intermediary47
 
 class InvestmentAccount76(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_AcctSvcr", "_Intrmy", "_SctyDtls", "_Dsgnt", "_AcctOwnr", "_FndFmlyNm", "_FndTp"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
-
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
-
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
-
+	__slots__ = ["_Intrmy", "_Nm", "_Dsgnt", "_AcctOwnr", "_SctyDtls", "_FndFmlyNm", "_FndTp", "_AcctSvcr"]
 	@property
 	def Intrmy(self):
 		return self._Intrmy
@@ -49,17 +23,17 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		self._Intrmy = None
 
 	@property
-	def SctyDtls(self):
-		return self._SctyDtls
+	def Nm(self):
+		return self._Nm
 
-	@SctyDtls.setter
-	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != auto else self.make_default("SctyDtls")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@SctyDtls.deleter
-	def SctyDtls(self):
-		del self._SctyDtls
-		self._SctyDtls = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Dsgnt(self):
@@ -88,6 +62,19 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def SctyDtls(self):
+		return self._SctyDtls
+
+	@SctyDtls.setter
+	def SctyDtls(self, value):
+		self._SctyDtls = value if type(value) != auto else self.make_default("SctyDtls")
+
+	@SctyDtls.deleter
+	def SctyDtls(self):
+		del self._SctyDtls
+		self._SctyDtls = None
+
+	@property
 	def FndFmlyNm(self):
 		return self._FndFmlyNm
 
@@ -113,14 +100,27 @@ class InvestmentAccount76(base_types._BaseFieldType):
 		del self._FndTp
 		self._FndTp = None
 
+	@property
+	def AcctSvcr(self):
+		return self._AcctSvcr
+
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=Intermediary47, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctyDtls', type=FinancialInstrument55, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=AccountOwner3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyDtls', type=FinancialInstrument55, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndFmlyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

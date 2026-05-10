@@ -1,23 +1,23 @@
 import base_types
-import VariationMargin3
 import Margin4
+import VariationMargin3
 import Amount2
 
 class Margin3(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrMrgn", "_InitlMrgn", "_VartnMrgn"]
+	__slots__ = ["_VartnMrgn", "_InitlMrgn", "_OthrMrgn"]
 	@property
-	def OthrMrgn(self):
-		return self._OthrMrgn
+	def VartnMrgn(self):
+		return self._VartnMrgn
 
-	@OthrMrgn.setter
-	def OthrMrgn(self, value):
-		self._OthrMrgn = value if type(value) != auto else self.make_default("OthrMrgn")
+	@VartnMrgn.setter
+	def VartnMrgn(self, value):
+		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
 
-	@OthrMrgn.deleter
-	def OthrMrgn(self):
-		del self._OthrMrgn
-		self._OthrMrgn = None
+	@VartnMrgn.deleter
+	def VartnMrgn(self):
+		del self._VartnMrgn
+		self._VartnMrgn = None
 
 	@property
 	def InitlMrgn(self):
@@ -33,21 +33,21 @@ class Margin3(base_types._BaseFieldType):
 		self._InitlMrgn = None
 
 	@property
-	def VartnMrgn(self):
-		return self._VartnMrgn
+	def OthrMrgn(self):
+		return self._OthrMrgn
 
-	@VartnMrgn.setter
-	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != auto else self.make_default("VartnMrgn")
+	@OthrMrgn.setter
+	def OthrMrgn(self, value):
+		self._OthrMrgn = value if type(value) != auto else self.make_default("OthrMrgn")
 
-	@VartnMrgn.deleter
-	def VartnMrgn(self):
-		del self._VartnMrgn
-		self._VartnMrgn = None
+	@OthrMrgn.deleter
+	def OthrMrgn(self):
+		del self._OthrMrgn
+		self._OthrMrgn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrMrgn', type=Margin4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InitlMrgn', type=Amount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InitlMrgn', type=Amount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrMrgn', type=Margin4, min=0, max=None, mutex_group=None, array=True),
 	))
 

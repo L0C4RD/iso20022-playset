@@ -1,24 +1,11 @@
 import base_types
-import PercentageRate
-import ISODate
 import PartyRole5Choice
+import ISODate
+import PercentageRate
 
 class TreasuryProfile1(base_types._BaseFieldType):
 
-	__slots__ = ["_TradrTp", "_Rate", "_Dt"]
-	@property
-	def TradrTp(self):
-		return self._TradrTp
-
-	@TradrTp.setter
-	def TradrTp(self, value):
-		self._TradrTp = value if type(value) != auto else self.make_default("TradrTp")
-
-	@TradrTp.deleter
-	def TradrTp(self):
-		del self._TradrTp
-		self._TradrTp = None
-
+	__slots__ = ["_Rate", "_Dt", "_TradrTp"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -45,9 +32,22 @@ class TreasuryProfile1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def TradrTp(self):
+		return self._TradrTp
+
+	@TradrTp.setter
+	def TradrTp(self, value):
+		self._TradrTp = value if type(value) != auto else self.make_default("TradrTp")
+
+	@TradrTp.deleter
+	def TradrTp(self):
+		del self._TradrTp
+		self._TradrTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradrTp', type=PartyRole5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradrTp', type=PartyRole5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

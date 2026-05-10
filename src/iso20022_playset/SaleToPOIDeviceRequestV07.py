@@ -1,24 +1,11 @@
 import base_types
-import Header41
-import DeviceRequest8
 import ContentInformationType38
+import DeviceRequest8
+import Header41
 
 class SaleToPOIDeviceRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_DvcReq", "_SctyTrlr"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_DvcReq", "_Hdr", "_SctyTrlr"]
 	@property
 	def DvcReq(self):
 		return self._DvcReq
@@ -31,6 +18,19 @@ class SaleToPOIDeviceRequestV07(base_types._BaseFieldType):
 	def DvcReq(self):
 		del self._DvcReq
 		self._DvcReq = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,8 +46,8 @@ class SaleToPOIDeviceRequestV07(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DvcReq', type=DeviceRequest8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

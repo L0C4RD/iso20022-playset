@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import GrossDividendRateType1FormatChoice
+import ActiveCurrencyAndAmount
 
 class GrossDividendRate2(base_types._BaseFieldType):
 

@@ -1,26 +1,13 @@
 import base_types
 import OutputFormat2Code
-import ATMDevice1Code
-import Max35Text
 import Max20000Text
+import Max35Text
+import ATMDevice1Code
 import Max35Binary
 
 class ActionMessage4(base_types._BaseFieldType):
 
-	__slots__ = ["_Ref", "_Dvc", "_Frmt", "_MsgCnttSgntr", "_Msg"]
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
+	__slots__ = ["_Dvc", "_Msg", "_MsgCnttSgntr", "_Ref", "_Frmt"]
 	@property
 	def Dvc(self):
 		return self._Dvc
@@ -35,17 +22,17 @@ class ActionMessage4(base_types._BaseFieldType):
 		self._Dvc = None
 
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def Msg(self):
+		return self._Msg
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+	@Msg.setter
+	def Msg(self, value):
+		self._Msg = value if type(value) != auto else self.make_default("Msg")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@Msg.deleter
+	def Msg(self):
+		del self._Msg
+		self._Msg = None
 
 	@property
 	def MsgCnttSgntr(self):
@@ -61,23 +48,36 @@ class ActionMessage4(base_types._BaseFieldType):
 		self._MsgCnttSgntr = None
 
 	@property
-	def Msg(self):
-		return self._Msg
+	def Ref(self):
+		return self._Ref
 
-	@Msg.setter
-	def Msg(self, value):
-		self._Msg = value if type(value) != auto else self.make_default("Msg")
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
 
-	@Msg.deleter
-	def Msg(self):
-		del self._Msg
-		self._Msg = None
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Msg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgCnttSgntr', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

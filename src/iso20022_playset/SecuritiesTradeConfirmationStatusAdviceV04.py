@@ -1,45 +1,19 @@
 import base_types
-import MatchingStatus35Choice
-import Order23
-import SupplementaryData1
-import CancellationProcessingStatus10Choice
 import ConfirmationParties9
-import ReplacementProcessingStatus10Choice
-import AffirmationStatus11Choice
-import TransactiontIdentification4
-import Linkages77
-import ProcessingStatus98Choice
 import SettlementParties121
+import SupplementaryData1
+import TransactiontIdentification4
+import MatchingStatus35Choice
+import Linkages77
+import ReplacementProcessingStatus10Choice
+import CancellationProcessingStatus10Choice
+import AffirmationStatus11Choice
+import Order23
+import ProcessingStatus98Choice
 
 class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_RcvgSttlmPties", "_SplmtryData", "_PtyTradgDtls", "_AffirmSts", "_CtrPtyTradgDtls", "_CxlPrcgSts", "_ConfPties", "_DlvrgSttlmPties", "_MtchgSts", "_Id", "_RplcmntPrcgSts", "_Refs"]
-	@property
-	def PrcgSts(self):
-		return self._PrcgSts
-
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
-
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
-
-	@property
-	def RcvgSttlmPties(self):
-		return self._RcvgSttlmPties
-
-	@RcvgSttlmPties.setter
-	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
-
-	@RcvgSttlmPties.deleter
-	def RcvgSttlmPties(self):
-		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
-
+	__slots__ = ["_SplmtryData", "_PtyTradgDtls", "_RcvgSttlmPties", "_CtrPtyTradgDtls", "_DlvrgSttlmPties", "_AffirmSts", "_ConfPties", "_MtchgSts", "_Id", "_PrcgSts", "_RplcmntPrcgSts", "_Refs", "_CxlPrcgSts"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -67,17 +41,17 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 		self._PtyTradgDtls = None
 
 	@property
-	def AffirmSts(self):
-		return self._AffirmSts
+	def RcvgSttlmPties(self):
+		return self._RcvgSttlmPties
 
-	@AffirmSts.setter
-	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != auto else self.make_default("AffirmSts")
+	@RcvgSttlmPties.setter
+	def RcvgSttlmPties(self, value):
+		self._RcvgSttlmPties = value if type(value) != auto else self.make_default("RcvgSttlmPties")
 
-	@AffirmSts.deleter
-	def AffirmSts(self):
-		del self._AffirmSts
-		self._AffirmSts = None
+	@RcvgSttlmPties.deleter
+	def RcvgSttlmPties(self):
+		del self._RcvgSttlmPties
+		self._RcvgSttlmPties = None
 
 	@property
 	def CtrPtyTradgDtls(self):
@@ -93,17 +67,30 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 		self._CtrPtyTradgDtls = None
 
 	@property
-	def CxlPrcgSts(self):
-		return self._CxlPrcgSts
+	def DlvrgSttlmPties(self):
+		return self._DlvrgSttlmPties
 
-	@CxlPrcgSts.setter
-	def CxlPrcgSts(self, value):
-		self._CxlPrcgSts = value if type(value) != auto else self.make_default("CxlPrcgSts")
+	@DlvrgSttlmPties.setter
+	def DlvrgSttlmPties(self, value):
+		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
 
-	@CxlPrcgSts.deleter
-	def CxlPrcgSts(self):
-		del self._CxlPrcgSts
-		self._CxlPrcgSts = None
+	@DlvrgSttlmPties.deleter
+	def DlvrgSttlmPties(self):
+		del self._DlvrgSttlmPties
+		self._DlvrgSttlmPties = None
+
+	@property
+	def AffirmSts(self):
+		return self._AffirmSts
+
+	@AffirmSts.setter
+	def AffirmSts(self, value):
+		self._AffirmSts = value if type(value) != auto else self.make_default("AffirmSts")
+
+	@AffirmSts.deleter
+	def AffirmSts(self):
+		del self._AffirmSts
+		self._AffirmSts = None
 
 	@property
 	def ConfPties(self):
@@ -117,19 +104,6 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 	def ConfPties(self):
 		del self._ConfPties
 		self._ConfPties = None
-
-	@property
-	def DlvrgSttlmPties(self):
-		return self._DlvrgSttlmPties
-
-	@DlvrgSttlmPties.setter
-	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
-
-	@DlvrgSttlmPties.deleter
-	def DlvrgSttlmPties(self):
-		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
 
 	@property
 	def MtchgSts(self):
@@ -158,6 +132,19 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def PrcgSts(self):
+		return self._PrcgSts
+
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
+
+	@property
 	def RplcmntPrcgSts(self):
 		return self._RplcmntPrcgSts
 
@@ -183,19 +170,32 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 		del self._Refs
 		self._Refs = None
 
+	@property
+	def CxlPrcgSts(self):
+		return self._CxlPrcgSts
+
+	@CxlPrcgSts.setter
+	def CxlPrcgSts(self, value):
+		self._CxlPrcgSts = value if type(value) != auto else self.make_default("CxlPrcgSts")
+
+	@CxlPrcgSts.deleter
+	def CxlPrcgSts(self):
+		del self._CxlPrcgSts
+		self._CxlPrcgSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus98Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties121, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyTradgDtls', type=Order23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties121, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyTradgDtls', type=Order23, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties121, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus11Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus35Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus98Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RplcmntPrcgSts', type=ReplacementProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=Linkages77, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlPrcgSts', type=CancellationProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
 import ATMTransaction42
-import ATMEnvironment17
 import ATMContext26
+import ATMEnvironment17
 
 class ATMInquiryRequest3(base_types._BaseFieldType):
 

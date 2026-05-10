@@ -3,19 +3,19 @@ import PartyIdentification242Choice
 
 class SettlementParties120(base_types._BaseFieldType):
 
-	__slots__ = ["_Intrmy", "_BnfcryInstn", "_DlvryAgt", "_RcvgAgt"]
+	__slots__ = ["_DlvryAgt", "_BnfcryInstn", "_Intrmy", "_RcvgAgt"]
 	@property
-	def Intrmy(self):
-		return self._Intrmy
+	def DlvryAgt(self):
+		return self._DlvryAgt
 
-	@Intrmy.setter
-	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
+	@DlvryAgt.setter
+	def DlvryAgt(self, value):
+		self._DlvryAgt = value if type(value) != auto else self.make_default("DlvryAgt")
 
-	@Intrmy.deleter
-	def Intrmy(self):
-		del self._Intrmy
-		self._Intrmy = None
+	@DlvryAgt.deleter
+	def DlvryAgt(self):
+		del self._DlvryAgt
+		self._DlvryAgt = None
 
 	@property
 	def BnfcryInstn(self):
@@ -31,17 +31,17 @@ class SettlementParties120(base_types._BaseFieldType):
 		self._BnfcryInstn = None
 
 	@property
-	def DlvryAgt(self):
-		return self._DlvryAgt
+	def Intrmy(self):
+		return self._Intrmy
 
-	@DlvryAgt.setter
-	def DlvryAgt(self, value):
-		self._DlvryAgt = value if type(value) != auto else self.make_default("DlvryAgt")
+	@Intrmy.setter
+	def Intrmy(self, value):
+		self._Intrmy = value if type(value) != auto else self.make_default("Intrmy")
 
-	@DlvryAgt.deleter
-	def DlvryAgt(self):
-		del self._DlvryAgt
-		self._DlvryAgt = None
+	@Intrmy.deleter
+	def Intrmy(self):
+		del self._Intrmy
+		self._Intrmy = None
 
 	@property
 	def RcvgAgt(self):
@@ -57,9 +57,9 @@ class SettlementParties120(base_types._BaseFieldType):
 		self._RcvgAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Intrmy', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnfcryInstn', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAgt', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryInstn', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Intrmy', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgAgt', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

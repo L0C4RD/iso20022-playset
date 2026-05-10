@@ -1,12 +1,12 @@
 import base_types
-import Extension1
 import Fund4
-import FundCashForecast6
 import NetCashForecast3
+import FundCashForecast6
+import Extension1
 
 class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 
-	__slots__ = ["_FndOrSubFndDtls", "_FndCshFcstDtls", "_Xtnsn", "_CnsltdNetCshFcst"]
+	__slots__ = ["_FndOrSubFndDtls", "_CnsltdNetCshFcst", "_Xtnsn", "_FndCshFcstDtls"]
 	@property
 	def FndOrSubFndDtls(self):
 		return self._FndOrSubFndDtls
@@ -21,17 +21,17 @@ class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 		self._FndOrSubFndDtls = None
 
 	@property
-	def FndCshFcstDtls(self):
-		return self._FndCshFcstDtls
+	def CnsltdNetCshFcst(self):
+		return self._CnsltdNetCshFcst
 
-	@FndCshFcstDtls.setter
-	def FndCshFcstDtls(self, value):
-		self._FndCshFcstDtls = value if type(value) != auto else self.make_default("FndCshFcstDtls")
+	@CnsltdNetCshFcst.setter
+	def CnsltdNetCshFcst(self, value):
+		self._CnsltdNetCshFcst = value if type(value) != auto else self.make_default("CnsltdNetCshFcst")
 
-	@FndCshFcstDtls.deleter
-	def FndCshFcstDtls(self):
-		del self._FndCshFcstDtls
-		self._FndCshFcstDtls = None
+	@CnsltdNetCshFcst.deleter
+	def CnsltdNetCshFcst(self):
+		del self._CnsltdNetCshFcst
+		self._CnsltdNetCshFcst = None
 
 	@property
 	def Xtnsn(self):
@@ -47,22 +47,22 @@ class FundDetailedConfirmedCashForecastReport3(base_types._BaseFieldType):
 		self._Xtnsn = None
 
 	@property
-	def CnsltdNetCshFcst(self):
-		return self._CnsltdNetCshFcst
+	def FndCshFcstDtls(self):
+		return self._FndCshFcstDtls
 
-	@CnsltdNetCshFcst.setter
-	def CnsltdNetCshFcst(self, value):
-		self._CnsltdNetCshFcst = value if type(value) != auto else self.make_default("CnsltdNetCshFcst")
+	@FndCshFcstDtls.setter
+	def FndCshFcstDtls(self, value):
+		self._FndCshFcstDtls = value if type(value) != auto else self.make_default("FndCshFcstDtls")
 
-	@CnsltdNetCshFcst.deleter
-	def CnsltdNetCshFcst(self):
-		del self._CnsltdNetCshFcst
-		self._CnsltdNetCshFcst = None
+	@FndCshFcstDtls.deleter
+	def FndCshFcstDtls(self):
+		del self._FndCshFcstDtls
+		self._FndCshFcstDtls = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FndOrSubFndDtls', type=Fund4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FndCshFcstDtls', type=FundCashForecast6, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FndCshFcstDtls', type=FundCashForecast6, min=1, max=None, mutex_group=None, array=True),
 	))
 

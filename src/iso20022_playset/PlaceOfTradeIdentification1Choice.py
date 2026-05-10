@@ -1,8 +1,8 @@
 import base_types
+import Max35Text
+import CountryCode
 import AnyBICIdentifier
 import MICIdentifier
-import CountryCode
-import Max35Text
 
 class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 

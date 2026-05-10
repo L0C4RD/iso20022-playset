@@ -1,6 +1,6 @@
 import base_types
-import MandateClassification1Code
 import Max35Text
+import MandateClassification1Code
 
 class MandateClassification1Choice(base_types._BaseFieldType):
 

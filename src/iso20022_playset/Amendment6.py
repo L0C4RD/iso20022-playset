@@ -1,7 +1,7 @@
 import base_types
-import Max2000Text
-import UndertakingAmendmentMessage1
 import Max35Text
+import UndertakingAmendmentMessage1
+import Max2000Text
 
 class Amendment6(base_types._BaseFieldType):
 

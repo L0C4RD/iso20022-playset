@@ -1,13 +1,13 @@
 import base_types
-import OnLineCapability1Code
-import CardDataReading1Code
 import DisplayCapabilities1
-import Max3NumericText
+import CardDataReading1Code
 import CardholderVerificationCapability1Code
+import Max3NumericText
+import OnLineCapability1Code
 
 class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 
-	__slots__ = ["_CardRdngCpblties", "_CrdhldrVrfctnCpblties", "_PrtLineWidth", "_OnLineCpblties", "_DispCpblties"]
+	__slots__ = ["_CardRdngCpblties", "_CrdhldrVrfctnCpblties", "_PrtLineWidth", "_DispCpblties", "_OnLineCpblties"]
 	@property
 	def CardRdngCpblties(self):
 		return self._CardRdngCpblties
@@ -48,19 +48,6 @@ class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 		self._PrtLineWidth = None
 
 	@property
-	def OnLineCpblties(self):
-		return self._OnLineCpblties
-
-	@OnLineCpblties.setter
-	def OnLineCpblties(self, value):
-		self._OnLineCpblties = value if type(value) != auto else self.make_default("OnLineCpblties")
-
-	@OnLineCpblties.deleter
-	def OnLineCpblties(self):
-		del self._OnLineCpblties
-		self._OnLineCpblties = None
-
-	@property
 	def DispCpblties(self):
 		return self._DispCpblties
 
@@ -73,11 +60,24 @@ class PointOfInteractionCapabilities1(base_types._BaseFieldType):
 		del self._DispCpblties
 		self._DispCpblties = None
 
+	@property
+	def OnLineCpblties(self):
+		return self._OnLineCpblties
+
+	@OnLineCpblties.setter
+	def OnLineCpblties(self, value):
+		self._OnLineCpblties = value if type(value) != auto else self.make_default("OnLineCpblties")
+
+	@OnLineCpblties.deleter
+	def OnLineCpblties(self):
+		del self._OnLineCpblties
+		self._OnLineCpblties = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardRdngCpblties', type=CardDataReading1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CrdhldrVrfctnCpblties', type=CardholderVerificationCapability1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrtLineWidth', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OnLineCpblties', type=OnLineCapability1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispCpblties', type=DisplayCapabilities1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OnLineCpblties', type=OnLineCapability1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

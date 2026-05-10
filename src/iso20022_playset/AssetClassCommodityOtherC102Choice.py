@@ -1,6 +1,6 @@
 import base_types
-import OtherC10CommodityDeliverable2
 import OtherC10CommodityNonDeliverable2
+import OtherC10CommodityDeliverable2
 
 class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 

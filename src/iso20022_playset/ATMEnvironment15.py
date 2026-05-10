@@ -1,12 +1,25 @@
 import base_types
-import Acquirer7
-import AutomatedTellerMachine6
-import TerminalHosting1
 import Max35Text
+import AutomatedTellerMachine6
+import Acquirer7
+import TerminalHosting1
 
 class ATMEnvironment15(base_types._BaseFieldType):
 
-	__slots__ = ["_HstgNtty", "_ATMMgrId", "_ATM", "_Acqrr"]
+	__slots__ = ["_ATM", "_HstgNtty", "_ATMMgrId", "_Acqrr"]
+	@property
+	def ATM(self):
+		return self._ATM
+
+	@ATM.setter
+	def ATM(self, value):
+		self._ATM = value if type(value) != auto else self.make_default("ATM")
+
+	@ATM.deleter
+	def ATM(self):
+		del self._ATM
+		self._ATM = None
+
 	@property
 	def HstgNtty(self):
 		return self._HstgNtty
@@ -34,19 +47,6 @@ class ATMEnvironment15(base_types._BaseFieldType):
 		self._ATMMgrId = None
 
 	@property
-	def ATM(self):
-		return self._ATM
-
-	@ATM.setter
-	def ATM(self, value):
-		self._ATM = value if type(value) != auto else self.make_default("ATM")
-
-	@ATM.deleter
-	def ATM(self):
-		del self._ATM
-		self._ATM = None
-
-	@property
 	def Acqrr(self):
 		return self._Acqrr
 
@@ -60,9 +60,9 @@ class ATMEnvironment15(base_types._BaseFieldType):
 		self._Acqrr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
 	))
 

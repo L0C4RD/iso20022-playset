@@ -1,27 +1,14 @@
 import base_types
 import OriginalItemAndStatus8
+import ActiveOrHistoricCurrencyAndAmount
 import CashAccount40
+import ISODate
 import Party50Choice
 import BranchAndFinancialInstitutionIdentification8
-import ISODate
-import ActiveOrHistoricCurrencyAndAmount
 
 class OriginalNotificationReference13(base_types._BaseFieldType):
 
-	__slots__ = ["_RltdAcct", "_AcctOwnr", "_Acct", "_XpctdValDt", "_IntrmyAgt", "_TtlAmt", "_AcctSvcr", "_Dbtr", "_DbtrAgt", "_OrgnlItmAndSts"]
-	@property
-	def RltdAcct(self):
-		return self._RltdAcct
-
-	@RltdAcct.setter
-	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != auto else self.make_default("RltdAcct")
-
-	@RltdAcct.deleter
-	def RltdAcct(self):
-		del self._RltdAcct
-		self._RltdAcct = None
-
+	__slots__ = ["_AcctOwnr", "_Acct", "_DbtrAgt", "_IntrmyAgt", "_Dbtr", "_RltdAcct", "_XpctdValDt", "_OrgnlItmAndSts", "_AcctSvcr", "_TtlAmt"]
 	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
@@ -49,17 +36,17 @@ class OriginalNotificationReference13(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def XpctdValDt(self):
-		return self._XpctdValDt
+	def DbtrAgt(self):
+		return self._DbtrAgt
 
-	@XpctdValDt.setter
-	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
 
-	@XpctdValDt.deleter
-	def XpctdValDt(self):
-		del self._XpctdValDt
-		self._XpctdValDt = None
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
 
 	@property
 	def IntrmyAgt(self):
@@ -75,17 +62,56 @@ class OriginalNotificationReference13(base_types._BaseFieldType):
 		self._IntrmyAgt = None
 
 	@property
-	def TtlAmt(self):
-		return self._TtlAmt
+	def Dbtr(self):
+		return self._Dbtr
 
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+	@Dbtr.setter
+	def Dbtr(self, value):
+		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
 
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
+	@Dbtr.deleter
+	def Dbtr(self):
+		del self._Dbtr
+		self._Dbtr = None
+
+	@property
+	def RltdAcct(self):
+		return self._RltdAcct
+
+	@RltdAcct.setter
+	def RltdAcct(self, value):
+		self._RltdAcct = value if type(value) != auto else self.make_default("RltdAcct")
+
+	@RltdAcct.deleter
+	def RltdAcct(self):
+		del self._RltdAcct
+		self._RltdAcct = None
+
+	@property
+	def XpctdValDt(self):
+		return self._XpctdValDt
+
+	@XpctdValDt.setter
+	def XpctdValDt(self, value):
+		self._XpctdValDt = value if type(value) != auto else self.make_default("XpctdValDt")
+
+	@XpctdValDt.deleter
+	def XpctdValDt(self):
+		del self._XpctdValDt
+		self._XpctdValDt = None
+
+	@property
+	def OrgnlItmAndSts(self):
+		return self._OrgnlItmAndSts
+
+	@OrgnlItmAndSts.setter
+	def OrgnlItmAndSts(self, value):
+		self._OrgnlItmAndSts = value if type(value) != auto else self.make_default("OrgnlItmAndSts")
+
+	@OrgnlItmAndSts.deleter
+	def OrgnlItmAndSts(self):
+		del self._OrgnlItmAndSts
+		self._OrgnlItmAndSts = None
 
 	@property
 	def AcctSvcr(self):
@@ -101,54 +127,28 @@ class OriginalNotificationReference13(base_types._BaseFieldType):
 		self._AcctSvcr = None
 
 	@property
-	def Dbtr(self):
-		return self._Dbtr
+	def TtlAmt(self):
+		return self._TtlAmt
 
-	@Dbtr.setter
-	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != auto else self.make_default("Dbtr")
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
 
-	@Dbtr.deleter
-	def Dbtr(self):
-		del self._Dbtr
-		self._Dbtr = None
-
-	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
-	@property
-	def OrgnlItmAndSts(self):
-		return self._OrgnlItmAndSts
-
-	@OrgnlItmAndSts.setter
-	def OrgnlItmAndSts(self, value):
-		self._OrgnlItmAndSts = value if type(value) != auto else self.make_default("OrgnlItmAndSts")
-
-	@OrgnlItmAndSts.deleter
-	def OrgnlItmAndSts(self):
-		del self._OrgnlItmAndSts
-		self._OrgnlItmAndSts = None
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrmyAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlItmAndSts', type=OriginalItemAndStatus8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,17 +1,17 @@
 import base_types
-import CustomerAccountModification1
-import OrganisationModification3
-import OrganisationIdentification39
 import SupplementaryData1
-import References4
+import OrganisationIdentification39
 import ContractDocument1
 import PartyAndSignature4
-import BranchAndFinancialInstitutionIdentification8
 import AccountContract2
+import References4
+import OrganisationModification3
+import CustomerAccountModification1
+import BranchAndFinancialInstitutionIdentification8
 
 class AccountExcludedMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygMstrAgrmt", "_DgtlSgntr", "_SplmtryData", "_Fr", "_Refs", "_AcctSvcrId", "_Acct", "_Org", "_CtrctDts"]
+	__slots__ = ["_UndrlygMstrAgrmt", "_Acct", "_Fr", "_Refs", "_CtrctDts", "_Org", "_AcctSvcrId", "_DgtlSgntr", "_SplmtryData"]
 	@property
 	def UndrlygMstrAgrmt(self):
 		return self._UndrlygMstrAgrmt
@@ -26,30 +26,17 @@ class AccountExcludedMandateMaintenanceAmendmentRequestV04(base_types._BaseField
 		self._UndrlygMstrAgrmt = None
 
 	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
+	def Acct(self):
+		return self._Acct
 
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
 
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def Fr(self):
@@ -78,30 +65,17 @@ class AccountExcludedMandateMaintenanceAmendmentRequestV04(base_types._BaseField
 		self._Refs = None
 
 	@property
-	def AcctSvcrId(self):
-		return self._AcctSvcrId
+	def CtrctDts(self):
+		return self._CtrctDts
 
-	@AcctSvcrId.setter
-	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != auto else self.make_default("AcctSvcrId")
+	@CtrctDts.setter
+	def CtrctDts(self, value):
+		self._CtrctDts = value if type(value) != auto else self.make_default("CtrctDts")
 
-	@AcctSvcrId.deleter
-	def AcctSvcrId(self):
-		del self._AcctSvcrId
-		self._AcctSvcrId = None
-
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
+	@CtrctDts.deleter
+	def CtrctDts(self):
+		del self._CtrctDts
+		self._CtrctDts = None
 
 	@property
 	def Org(self):
@@ -117,27 +91,53 @@ class AccountExcludedMandateMaintenanceAmendmentRequestV04(base_types._BaseField
 		self._Org = None
 
 	@property
-	def CtrctDts(self):
-		return self._CtrctDts
+	def AcctSvcrId(self):
+		return self._AcctSvcrId
 
-	@CtrctDts.setter
-	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != auto else self.make_default("CtrctDts")
+	@AcctSvcrId.setter
+	def AcctSvcrId(self, value):
+		self._AcctSvcrId = value if type(value) != auto else self.make_default("AcctSvcrId")
 
-	@CtrctDts.deleter
-	def CtrctDts(self):
-		del self._CtrctDts
-		self._CtrctDts = None
+	@AcctSvcrId.deleter
+	def AcctSvcrId(self):
+		del self._AcctSvcrId
+		self._AcctSvcrId = None
+
+	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Acct', type=CustomerAccountModification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=References4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acct', type=CustomerAccountModification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Org', type=OrganisationModification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctDts', type=AccountContract2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Org', type=OrganisationModification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

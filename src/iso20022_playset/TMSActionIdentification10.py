@@ -1,6 +1,6 @@
 import base_types
-import DataSetIdentification11
 import TerminalManagementAction5Code
+import DataSetIdentification11
 
 class TMSActionIdentification10(base_types._BaseFieldType):
 

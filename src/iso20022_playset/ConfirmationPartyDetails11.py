@@ -1,12 +1,25 @@
 import base_types
-import AlternatePartyIdentification8
-import PartyIdentification240Choice
-import PartyTextInformation5
 import Max35Text
+import AlternatePartyIdentification8
+import PartyTextInformation5
+import PartyIdentification240Choice
 
 class ConfirmationPartyDetails11(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_AddtlInf", "_AltrnId", "_PrcgId"]
+	__slots__ = ["_AltrnId", "_Id", "_AddtlInf", "_PrcgId"]
+	@property
+	def AltrnId(self):
+		return self._AltrnId
+
+	@AltrnId.setter
+	def AltrnId(self, value):
+		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
+
+	@AltrnId.deleter
+	def AltrnId(self):
+		del self._AltrnId
+		self._AltrnId = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -34,19 +47,6 @@ class ConfirmationPartyDetails11(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def AltrnId(self):
-		return self._AltrnId
-
-	@AltrnId.setter
-	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != auto else self.make_default("AltrnId")
-
-	@AltrnId.deleter
-	def AltrnId(self):
-		del self._AltrnId
-		self._AltrnId = None
-
-	@property
 	def PrcgId(self):
 		return self._PrcgId
 
@@ -60,9 +60,9 @@ class ConfirmationPartyDetails11(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification240Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

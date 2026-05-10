@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import PendingReason29Code
+import GenericIdentification30
 
 class PendingReason70Choice(base_types._BaseFieldType):
 

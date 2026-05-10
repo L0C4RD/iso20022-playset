@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import BenchmarkReport1Choice
+import SupplementaryData1
 
 class FinancialBenchmarkReportV01(base_types._BaseFieldType):
 

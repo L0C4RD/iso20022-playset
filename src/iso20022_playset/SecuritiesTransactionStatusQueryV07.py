@@ -1,25 +1,25 @@
 import base_types
-import DocumentNumber20
-import SecuritiesAccount22
+import SupplementaryData1
 import PartyIdentification144
 import BlockChainAddressWallet3
-import SupplementaryData1
+import DocumentNumber20
+import SecuritiesAccount22
 
 class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr", "_StsAdvcReqd"]
+	__slots__ = ["_SfkpgAcct", "_BlckChainAdrOrWllt", "_StsAdvcReqd", "_AcctOwnr", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -35,17 +35,17 @@ class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def StsAdvcReqd(self):
+		return self._StsAdvcReqd
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@StsAdvcReqd.setter
+	def StsAdvcReqd(self, value):
+		self._StsAdvcReqd = value if type(value) != auto else self.make_default("StsAdvcReqd")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@StsAdvcReqd.deleter
+	def StsAdvcReqd(self):
+		del self._StsAdvcReqd
+		self._StsAdvcReqd = None
 
 	@property
 	def AcctOwnr(self):
@@ -61,23 +61,23 @@ class SecuritiesTransactionStatusQueryV07(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def StsAdvcReqd(self):
-		return self._StsAdvcReqd
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@StsAdvcReqd.setter
-	def StsAdvcReqd(self, value):
-		self._StsAdvcReqd = value if type(value) != auto else self.make_default("StsAdvcReqd")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@StsAdvcReqd.deleter
-	def StsAdvcReqd(self):
-		del self._StsAdvcReqd
-		self._StsAdvcReqd = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsAdvcReqd', type=DocumentNumber20, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

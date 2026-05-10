@@ -1,12 +1,12 @@
 import base_types
-import AlternatePartyIdentification4
 import PartyIdentification33Choice
+import AlternatePartyIdentification4
 import SecuritiesAccount18
 import PartyTextInformation1
 
 class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrAcct", "_AddtlInf", "_AltrnId", "_Id"]
+	__slots__ = ["_ClrAcct", "_Id", "_AltrnId", "_AddtlInf"]
 	@property
 	def ClrAcct(self):
 		return self._ClrAcct
@@ -21,17 +21,17 @@ class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 		self._ClrAcct = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def Id(self):
+		return self._Id
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AltrnId(self):
@@ -47,22 +47,22 @@ class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
 	))
 

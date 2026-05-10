@@ -1,24 +1,11 @@
 import base_types
 import RejectedStatus55Choice
-import PendingStatus70Choice
 import InstructionProcessingStatus6
+import PendingStatus70Choice
 
 class InstructionStatus13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_PrcgSts", "_Rjctd"]
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
+	__slots__ = ["_PrcgSts", "_Rjctd", "_Pdg"]
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -45,9 +32,22 @@ class InstructionStatus13Choice(base_types._BaseFieldType):
 		del self._Rjctd
 		self._Rjctd = None
 
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=PendingStatus70Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=InstructionProcessingStatus6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus55Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus70Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

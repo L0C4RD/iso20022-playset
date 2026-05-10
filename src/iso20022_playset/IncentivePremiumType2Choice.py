@@ -1,7 +1,7 @@
 import base_types
 import VoteTypeAndQuantity1
-import Number
 import YesNoIndicator
+import Number
 
 class IncentivePremiumType2Choice(base_types._BaseFieldType):
 

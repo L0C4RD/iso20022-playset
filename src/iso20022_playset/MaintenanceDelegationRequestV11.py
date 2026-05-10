@@ -1,23 +1,23 @@
 import base_types
-import MaintenanceDelegationRequest11
-import TMSHeader1
 import ContentInformationType38
+import TMSHeader1
+import MaintenanceDelegationRequest11
 
 class MaintenanceDelegationRequestV11(base_types._BaseFieldType):
 
-	__slots__ = ["_MntncDlgtnReq", "_Hdr", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_Hdr", "_MntncDlgtnReq"]
 	@property
-	def MntncDlgtnReq(self):
-		return self._MntncDlgtnReq
+	def SctyTrlr(self):
+		return self._SctyTrlr
 
-	@MntncDlgtnReq.setter
-	def MntncDlgtnReq(self, value):
-		self._MntncDlgtnReq = value if type(value) != auto else self.make_default("MntncDlgtnReq")
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
 
-	@MntncDlgtnReq.deleter
-	def MntncDlgtnReq(self):
-		del self._MntncDlgtnReq
-		self._MntncDlgtnReq = None
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -33,21 +33,21 @@ class MaintenanceDelegationRequestV11(base_types._BaseFieldType):
 		self._Hdr = None
 
 	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
+	def MntncDlgtnReq(self):
+		return self._MntncDlgtnReq
 
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+	@MntncDlgtnReq.setter
+	def MntncDlgtnReq(self, value):
+		self._MntncDlgtnReq = value if type(value) != auto else self.make_default("MntncDlgtnReq")
 
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@MntncDlgtnReq.deleter
+	def MntncDlgtnReq(self):
+		del self._MntncDlgtnReq
+		self._MntncDlgtnReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MntncDlgtnReq', type=MaintenanceDelegationRequest11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MntncDlgtnReq', type=MaintenanceDelegationRequest11, min=1, max=1, mutex_group=None, array=False),
 	))
 

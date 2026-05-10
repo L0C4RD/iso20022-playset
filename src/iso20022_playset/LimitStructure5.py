@@ -1,24 +1,24 @@
 import base_types
-import LimitIdentification3Choice
 import Amount4Choice
-import Limit10
 import Limit8
+import Limit10
+import LimitIdentification3Choice
 
 class LimitStructure5(base_types._BaseFieldType):
 
-	__slots__ = ["_LmtId", "_NewLmtValSet", "_OdLmtValSet", "_LmtValAmdmnt"]
+	__slots__ = ["_LmtValAmdmnt", "_NewLmtValSet", "_OdLmtValSet", "_LmtId"]
 	@property
-	def LmtId(self):
-		return self._LmtId
+	def LmtValAmdmnt(self):
+		return self._LmtValAmdmnt
 
-	@LmtId.setter
-	def LmtId(self, value):
-		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
+	@LmtValAmdmnt.setter
+	def LmtValAmdmnt(self, value):
+		self._LmtValAmdmnt = value if type(value) != auto else self.make_default("LmtValAmdmnt")
 
-	@LmtId.deleter
-	def LmtId(self):
-		del self._LmtId
-		self._LmtId = None
+	@LmtValAmdmnt.deleter
+	def LmtValAmdmnt(self):
+		del self._LmtValAmdmnt
+		self._LmtValAmdmnt = None
 
 	@property
 	def NewLmtValSet(self):
@@ -47,22 +47,22 @@ class LimitStructure5(base_types._BaseFieldType):
 		self._OdLmtValSet = None
 
 	@property
-	def LmtValAmdmnt(self):
-		return self._LmtValAmdmnt
+	def LmtId(self):
+		return self._LmtId
 
-	@LmtValAmdmnt.setter
-	def LmtValAmdmnt(self, value):
-		self._LmtValAmdmnt = value if type(value) != auto else self.make_default("LmtValAmdmnt")
+	@LmtId.setter
+	def LmtId(self, value):
+		self._LmtId = value if type(value) != auto else self.make_default("LmtId")
 
-	@LmtValAmdmnt.deleter
-	def LmtValAmdmnt(self):
-		del self._LmtValAmdmnt
-		self._LmtValAmdmnt = None
+	@LmtId.deleter
+	def LmtId(self):
+		del self._LmtId
+		self._LmtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LmtId', type=LimitIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtValAmdmnt', type=Amount4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewLmtValSet', type=Limit8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OdLmtValSet', type=Limit10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtValAmdmnt', type=Amount4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtId', type=LimitIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

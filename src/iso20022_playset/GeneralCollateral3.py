@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstrument59
 import ISINOct2015Identifier
+import FinancialInstrument59
 
 class GeneralCollateral3(base_types._BaseFieldType):
 

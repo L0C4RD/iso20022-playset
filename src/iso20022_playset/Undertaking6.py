@@ -1,23 +1,10 @@
 import base_types
-import PartyIdentification43
 import Max35Text
+import PartyIdentification43
 
 class Undertaking6(base_types._BaseFieldType):
 
-	__slots__ = ["_BnfcryRefNb", "_Id", "_Issr"]
-	@property
-	def BnfcryRefNb(self):
-		return self._BnfcryRefNb
-
-	@BnfcryRefNb.setter
-	def BnfcryRefNb(self, value):
-		self._BnfcryRefNb = value if type(value) != auto else self.make_default("BnfcryRefNb")
-
-	@BnfcryRefNb.deleter
-	def BnfcryRefNb(self):
-		del self._BnfcryRefNb
-		self._BnfcryRefNb = None
-
+	__slots__ = ["_Id", "_BnfcryRefNb", "_Issr"]
 	@property
 	def Id(self):
 		return self._Id
@@ -30,6 +17,19 @@ class Undertaking6(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def BnfcryRefNb(self):
+		return self._BnfcryRefNb
+
+	@BnfcryRefNb.setter
+	def BnfcryRefNb(self, value):
+		self._BnfcryRefNb = value if type(value) != auto else self.make_default("BnfcryRefNb")
+
+	@BnfcryRefNb.deleter
+	def BnfcryRefNb(self):
+		del self._BnfcryRefNb
+		self._BnfcryRefNb = None
 
 	@property
 	def Issr(self):
@@ -45,8 +45,8 @@ class Undertaking6(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 	))
 

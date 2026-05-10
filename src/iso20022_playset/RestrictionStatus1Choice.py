@@ -1,6 +1,6 @@
 import base_types
-import RestrictionStatus1Code
 import GenericIdentification47
+import RestrictionStatus1Code
 
 class RestrictionStatus1Choice(base_types._BaseFieldType):
 

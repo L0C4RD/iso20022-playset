@@ -1,25 +1,12 @@
 import base_types
 import ProprietaryStatusAndReason6
 import ProprietaryReason4
-import MatchingReason6Choice
 import MatchingReason5Choice
+import MatchingReason6Choice
 
 class MatchingStatus35Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_MtchdWthTlrnce", "_PrtrySts", "_Umtchd", "_Mtchd", "_MtchgAllgd"]
-	@property
-	def MtchdWthTlrnce(self):
-		return self._MtchdWthTlrnce
-
-	@MtchdWthTlrnce.setter
-	def MtchdWthTlrnce(self, value):
-		self._MtchdWthTlrnce = value if type(value) != auto else self.make_default("MtchdWthTlrnce")
-
-	@MtchdWthTlrnce.deleter
-	def MtchdWthTlrnce(self):
-		del self._MtchdWthTlrnce
-		self._MtchdWthTlrnce = None
-
+	__slots__ = ["_PrtrySts", "_Umtchd", "_Mtchd", "_MtchdWthTlrnce", "_MtchgAllgd"]
 	@property
 	def PrtrySts(self):
 		return self._PrtrySts
@@ -60,6 +47,19 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		self._Mtchd = None
 
 	@property
+	def MtchdWthTlrnce(self):
+		return self._MtchdWthTlrnce
+
+	@MtchdWthTlrnce.setter
+	def MtchdWthTlrnce(self, value):
+		self._MtchdWthTlrnce = value if type(value) != auto else self.make_default("MtchdWthTlrnce")
+
+	@MtchdWthTlrnce.deleter
+	def MtchdWthTlrnce(self):
+		del self._MtchdWthTlrnce
+		self._MtchdWthTlrnce = None
+
+	@property
 	def MtchgAllgd(self):
 		return self._MtchgAllgd
 
@@ -73,10 +73,10 @@ class MatchingStatus35Choice(base_types._BaseFieldType):
 		self._MtchgAllgd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Umtchd', type=MatchingReason6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mtchd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MtchdWthTlrnce', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtchgAllgd', type=MatchingReason5Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

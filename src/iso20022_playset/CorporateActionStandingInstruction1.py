@@ -1,12 +1,12 @@
 import base_types
-import CashAccount17
-import SecuritiesAccount6
 import Max350Text
+import SecuritiesAccount6
 import StandingInstructionGrossNet1Code
+import CashAccount17
 
 class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_NetOrGrss", "_CshDstrbtnDtls", "_AddtlInf", "_SctiesDstrbtnDtls"]
+	__slots__ = ["_NetOrGrss", "_AddtlInf", "_SctiesDstrbtnDtls", "_CshDstrbtnDtls"]
 	@property
 	def NetOrGrss(self):
 		return self._NetOrGrss
@@ -19,19 +19,6 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 	def NetOrGrss(self):
 		del self._NetOrGrss
 		self._NetOrGrss = None
-
-	@property
-	def CshDstrbtnDtls(self):
-		return self._CshDstrbtnDtls
-
-	@CshDstrbtnDtls.setter
-	def CshDstrbtnDtls(self, value):
-		self._CshDstrbtnDtls = value if type(value) != auto else self.make_default("CshDstrbtnDtls")
-
-	@CshDstrbtnDtls.deleter
-	def CshDstrbtnDtls(self):
-		del self._CshDstrbtnDtls
-		self._CshDstrbtnDtls = None
 
 	@property
 	def AddtlInf(self):
@@ -59,10 +46,23 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		del self._SctiesDstrbtnDtls
 		self._SctiesDstrbtnDtls = None
 
+	@property
+	def CshDstrbtnDtls(self):
+		return self._CshDstrbtnDtls
+
+	@CshDstrbtnDtls.setter
+	def CshDstrbtnDtls(self, value):
+		self._CshDstrbtnDtls = value if type(value) != auto else self.make_default("CshDstrbtnDtls")
+
+	@CshDstrbtnDtls.deleter
+	def CshDstrbtnDtls(self):
+		del self._CshDstrbtnDtls
+		self._CshDstrbtnDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashAccount17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshDstrbtnDtls', type=CashAccount17, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
-import GenericPersonIdentification1
 import PartyExceptionType1Code
+import GenericPersonIdentification1
 import LEIIdentifier
 
 class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_Prsn", "_XcptnId"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_Prsn", "_LEI", "_XcptnId"]
 	@property
 	def Prsn(self):
 		return self._Prsn
@@ -31,6 +18,19 @@ class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 	def Prsn(self):
 		del self._Prsn
 		self._Prsn = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def XcptnId(self):
@@ -46,8 +46,8 @@ class PersonOrOrganisation4Choice(base_types._BaseFieldType):
 		self._XcptnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prsn', type=GenericPersonIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XcptnId', type=PartyExceptionType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

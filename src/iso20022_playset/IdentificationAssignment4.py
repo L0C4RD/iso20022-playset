@@ -1,12 +1,12 @@
 import base_types
-import ISODateTime
+import Max35Text
 import Party50Choice
 import BranchAndFinancialInstitutionIdentification8
-import Max35Text
+import ISODateTime
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Assgne", "_CreDtTm", "_Assgnr", "_Cretr", "_FrstAgt"]
+	__slots__ = ["_MsgId", "_Cretr", "_CreDtTm", "_Assgnr", "_Assgne", "_FrstAgt"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -21,17 +21,17 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Assgne(self):
-		return self._Assgne
+	def Cretr(self):
+		return self._Cretr
 
-	@Assgne.setter
-	def Assgne(self, value):
-		self._Assgne = value if type(value) != auto else self.make_default("Assgne")
+	@Cretr.setter
+	def Cretr(self, value):
+		self._Cretr = value if type(value) != auto else self.make_default("Cretr")
 
-	@Assgne.deleter
-	def Assgne(self):
-		del self._Assgne
-		self._Assgne = None
+	@Cretr.deleter
+	def Cretr(self):
+		del self._Cretr
+		self._Cretr = None
 
 	@property
 	def CreDtTm(self):
@@ -60,17 +60,17 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 		self._Assgnr = None
 
 	@property
-	def Cretr(self):
-		return self._Cretr
+	def Assgne(self):
+		return self._Assgne
 
-	@Cretr.setter
-	def Cretr(self, value):
-		self._Cretr = value if type(value) != auto else self.make_default("Cretr")
+	@Assgne.setter
+	def Assgne(self, value):
+		self._Assgne = value if type(value) != auto else self.make_default("Assgne")
 
-	@Cretr.deleter
-	def Cretr(self):
-		del self._Cretr
-		self._Cretr = None
+	@Assgne.deleter
+	def Assgne(self):
+		del self._Assgne
+		self._Assgne = None
 
 	@property
 	def FrstAgt(self):
@@ -87,10 +87,10 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Assgnr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cretr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

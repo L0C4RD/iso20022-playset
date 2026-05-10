@@ -1,24 +1,24 @@
 import base_types
-import SupplementaryData1
-import SettlementObligation7
-import BuyIn3
 import Max35Text
+import BuyIn3
+import SettlementObligation7
+import SupplementaryData1
 
 class BuyInResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_BuyInRspnDtls", "_TxId", "_OrgnlSttlmOblgtnDtls"]
+	__slots__ = ["_OrgnlSttlmOblgtnDtls", "_BuyInRspnDtls", "_SplmtryData", "_TxId"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def OrgnlSttlmOblgtnDtls(self):
+		return self._OrgnlSttlmOblgtnDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@OrgnlSttlmOblgtnDtls.setter
+	def OrgnlSttlmOblgtnDtls(self, value):
+		self._OrgnlSttlmOblgtnDtls = value if type(value) != auto else self.make_default("OrgnlSttlmOblgtnDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@OrgnlSttlmOblgtnDtls.deleter
+	def OrgnlSttlmOblgtnDtls(self):
+		del self._OrgnlSttlmOblgtnDtls
+		self._OrgnlSttlmOblgtnDtls = None
 
 	@property
 	def BuyInRspnDtls(self):
@@ -34,6 +34,19 @@ class BuyInResponseV03(base_types._BaseFieldType):
 		self._BuyInRspnDtls = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def TxId(self):
 		return self._TxId
 
@@ -46,23 +59,10 @@ class BuyInResponseV03(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
-	@property
-	def OrgnlSttlmOblgtnDtls(self):
-		return self._OrgnlSttlmOblgtnDtls
-
-	@OrgnlSttlmOblgtnDtls.setter
-	def OrgnlSttlmOblgtnDtls(self, value):
-		self._OrgnlSttlmOblgtnDtls = value if type(value) != auto else self.make_default("OrgnlSttlmOblgtnDtls")
-
-	@OrgnlSttlmOblgtnDtls.deleter
-	def OrgnlSttlmOblgtnDtls(self):
-		del self._OrgnlSttlmOblgtnDtls
-		self._OrgnlSttlmOblgtnDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BuyInRspnDtls', type=BuyIn3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlSttlmOblgtnDtls', type=SettlementObligation7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyInRspnDtls', type=BuyIn3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

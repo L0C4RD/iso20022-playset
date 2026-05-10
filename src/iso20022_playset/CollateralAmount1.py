@@ -3,20 +3,7 @@ import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_CollAmt", "_MktValAmt", "_AcrdIntrstAmt", "_RptdCcyAndAmt", "_FeesAndComssns"]
-	@property
-	def CollAmt(self):
-		return self._CollAmt
-
-	@CollAmt.setter
-	def CollAmt(self, value):
-		self._CollAmt = value if type(value) != auto else self.make_default("CollAmt")
-
-	@CollAmt.deleter
-	def CollAmt(self):
-		del self._CollAmt
-		self._CollAmt = None
-
+	__slots__ = ["_MktValAmt", "_AcrdIntrstAmt", "_CollAmt", "_FeesAndComssns", "_RptdCcyAndAmt"]
 	@property
 	def MktValAmt(self):
 		return self._MktValAmt
@@ -44,17 +31,17 @@ class CollateralAmount1(base_types._BaseFieldType):
 		self._AcrdIntrstAmt = None
 
 	@property
-	def RptdCcyAndAmt(self):
-		return self._RptdCcyAndAmt
+	def CollAmt(self):
+		return self._CollAmt
 
-	@RptdCcyAndAmt.setter
-	def RptdCcyAndAmt(self, value):
-		self._RptdCcyAndAmt = value if type(value) != auto else self.make_default("RptdCcyAndAmt")
+	@CollAmt.setter
+	def CollAmt(self, value):
+		self._CollAmt = value if type(value) != auto else self.make_default("CollAmt")
 
-	@RptdCcyAndAmt.deleter
-	def RptdCcyAndAmt(self):
-		del self._RptdCcyAndAmt
-		self._RptdCcyAndAmt = None
+	@CollAmt.deleter
+	def CollAmt(self):
+		del self._CollAmt
+		self._CollAmt = None
 
 	@property
 	def FeesAndComssns(self):
@@ -69,11 +56,24 @@ class CollateralAmount1(base_types._BaseFieldType):
 		del self._FeesAndComssns
 		self._FeesAndComssns = None
 
+	@property
+	def RptdCcyAndAmt(self):
+		return self._RptdCcyAndAmt
+
+	@RptdCcyAndAmt.setter
+	def RptdCcyAndAmt(self, value):
+		self._RptdCcyAndAmt = value if type(value) != auto else self.make_default("RptdCcyAndAmt")
+
+	@RptdCcyAndAmt.deleter
+	def RptdCcyAndAmt(self):
+		del self._RptdCcyAndAmt
+		self._RptdCcyAndAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktValAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FeesAndComssns', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdCcyAndAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

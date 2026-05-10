@@ -1,8 +1,8 @@
 import base_types
-import CurrencyConversion31
+import Max35Text
 import TransactionIdentifier1
 import GenericIdentification32
-import Max35Text
+import CurrencyConversion31
 
 class CardPaymentTransaction131(base_types._BaseFieldType):
 

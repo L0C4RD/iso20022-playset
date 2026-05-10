@@ -1,24 +1,11 @@
 import base_types
-import Max2048Text
 import Max140Text
+import Max2048Text
 import PhoneNumber
 
 class ContactDetails4(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Fctn", "_PhneNb", "_EmailAdr"]
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
+	__slots__ = ["_Fctn", "_PhneNb", "_Nm", "_EmailAdr"]
 	@property
 	def Fctn(self):
 		return self._Fctn
@@ -46,6 +33,19 @@ class ContactDetails4(base_types._BaseFieldType):
 		self._PhneNb = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -59,9 +59,9 @@ class ContactDetails4(base_types._BaseFieldType):
 		self._EmailAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

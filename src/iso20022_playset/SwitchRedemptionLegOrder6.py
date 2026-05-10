@@ -1,60 +1,34 @@
 import base_types
-import FinancialInstrumentQuantity29Choice
-import ActiveOrHistoricCurrencyCode
-import FeeAndTax1
-import FinancialInstrument57
-import ActiveCurrencyCode
-import Max350Text
-import InvestmentAccount58
-import FundSettlementParameters12
-import UKTaxGroupUnit1Code
-import YesNoIndicator
 import DeliveryParameters3
-import Max35Text
+import FeeAndTax1
+import YesNoIndicator
+import FundSettlementParameters12
+import FinancialInstrumentQuantity29Choice
+import Max350Text
 import Equalisation1
+import ActiveCurrencyCode
+import Max35Text
+import FinancialInstrument57
+import ActiveOrHistoricCurrencyCode
 import IncomePreference1Code
+import InvestmentAccount58
+import UKTaxGroupUnit1Code
 
 class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 
-	__slots__ = ["_PhysDlvryDtls", "_PhysDlvryInd", "_TxOvrhd", "_IncmPref", "_Equlstn", "_Grp1Or2Units", "_ReqdSttlmCcy", "_FinInstrmQtyChc", "_NonStdSttlmInf", "_SttlmAndCtdyDtls", "_ReqdNAVCcy", "_InvstmtAcctDtls", "_LegId", "_FinInstrmDtls"]
+	__slots__ = ["_Grp1Or2Units", "_IncmPref", "_FinInstrmDtls", "_Equlstn", "_PhysDlvryDtls", "_SttlmAndCtdyDtls", "_TxOvrhd", "_LegId", "_ReqdNAVCcy", "_ReqdSttlmCcy", "_NonStdSttlmInf", "_InvstmtAcctDtls", "_FinInstrmQtyChc", "_PhysDlvryInd"]
 	@property
-	def PhysDlvryDtls(self):
-		return self._PhysDlvryDtls
+	def Grp1Or2Units(self):
+		return self._Grp1Or2Units
 
-	@PhysDlvryDtls.setter
-	def PhysDlvryDtls(self, value):
-		self._PhysDlvryDtls = value if type(value) != auto else self.make_default("PhysDlvryDtls")
+	@Grp1Or2Units.setter
+	def Grp1Or2Units(self, value):
+		self._Grp1Or2Units = value if type(value) != auto else self.make_default("Grp1Or2Units")
 
-	@PhysDlvryDtls.deleter
-	def PhysDlvryDtls(self):
-		del self._PhysDlvryDtls
-		self._PhysDlvryDtls = None
-
-	@property
-	def PhysDlvryInd(self):
-		return self._PhysDlvryInd
-
-	@PhysDlvryInd.setter
-	def PhysDlvryInd(self, value):
-		self._PhysDlvryInd = value if type(value) != auto else self.make_default("PhysDlvryInd")
-
-	@PhysDlvryInd.deleter
-	def PhysDlvryInd(self):
-		del self._PhysDlvryInd
-		self._PhysDlvryInd = None
-
-	@property
-	def TxOvrhd(self):
-		return self._TxOvrhd
-
-	@TxOvrhd.setter
-	def TxOvrhd(self, value):
-		self._TxOvrhd = value if type(value) != auto else self.make_default("TxOvrhd")
-
-	@TxOvrhd.deleter
-	def TxOvrhd(self):
-		del self._TxOvrhd
-		self._TxOvrhd = None
+	@Grp1Or2Units.deleter
+	def Grp1Or2Units(self):
+		del self._Grp1Or2Units
+		self._Grp1Or2Units = None
 
 	@property
 	def IncmPref(self):
@@ -70,6 +44,19 @@ class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 		self._IncmPref = None
 
 	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
 	def Equlstn(self):
 		return self._Equlstn
 
@@ -83,56 +70,17 @@ class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 		self._Equlstn = None
 
 	@property
-	def Grp1Or2Units(self):
-		return self._Grp1Or2Units
+	def PhysDlvryDtls(self):
+		return self._PhysDlvryDtls
 
-	@Grp1Or2Units.setter
-	def Grp1Or2Units(self, value):
-		self._Grp1Or2Units = value if type(value) != auto else self.make_default("Grp1Or2Units")
+	@PhysDlvryDtls.setter
+	def PhysDlvryDtls(self, value):
+		self._PhysDlvryDtls = value if type(value) != auto else self.make_default("PhysDlvryDtls")
 
-	@Grp1Or2Units.deleter
-	def Grp1Or2Units(self):
-		del self._Grp1Or2Units
-		self._Grp1Or2Units = None
-
-	@property
-	def ReqdSttlmCcy(self):
-		return self._ReqdSttlmCcy
-
-	@ReqdSttlmCcy.setter
-	def ReqdSttlmCcy(self, value):
-		self._ReqdSttlmCcy = value if type(value) != auto else self.make_default("ReqdSttlmCcy")
-
-	@ReqdSttlmCcy.deleter
-	def ReqdSttlmCcy(self):
-		del self._ReqdSttlmCcy
-		self._ReqdSttlmCcy = None
-
-	@property
-	def FinInstrmQtyChc(self):
-		return self._FinInstrmQtyChc
-
-	@FinInstrmQtyChc.setter
-	def FinInstrmQtyChc(self, value):
-		self._FinInstrmQtyChc = value if type(value) != auto else self.make_default("FinInstrmQtyChc")
-
-	@FinInstrmQtyChc.deleter
-	def FinInstrmQtyChc(self):
-		del self._FinInstrmQtyChc
-		self._FinInstrmQtyChc = None
-
-	@property
-	def NonStdSttlmInf(self):
-		return self._NonStdSttlmInf
-
-	@NonStdSttlmInf.setter
-	def NonStdSttlmInf(self, value):
-		self._NonStdSttlmInf = value if type(value) != auto else self.make_default("NonStdSttlmInf")
-
-	@NonStdSttlmInf.deleter
-	def NonStdSttlmInf(self):
-		del self._NonStdSttlmInf
-		self._NonStdSttlmInf = None
+	@PhysDlvryDtls.deleter
+	def PhysDlvryDtls(self):
+		del self._PhysDlvryDtls
+		self._PhysDlvryDtls = None
 
 	@property
 	def SttlmAndCtdyDtls(self):
@@ -148,30 +96,17 @@ class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 		self._SttlmAndCtdyDtls = None
 
 	@property
-	def ReqdNAVCcy(self):
-		return self._ReqdNAVCcy
+	def TxOvrhd(self):
+		return self._TxOvrhd
 
-	@ReqdNAVCcy.setter
-	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
+	@TxOvrhd.setter
+	def TxOvrhd(self, value):
+		self._TxOvrhd = value if type(value) != auto else self.make_default("TxOvrhd")
 
-	@ReqdNAVCcy.deleter
-	def ReqdNAVCcy(self):
-		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
-
-	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
-
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
-
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+	@TxOvrhd.deleter
+	def TxOvrhd(self):
+		del self._TxOvrhd
+		self._TxOvrhd = None
 
 	@property
 	def LegId(self):
@@ -187,32 +122,97 @@ class SwitchRedemptionLegOrder6(base_types._BaseFieldType):
 		self._LegId = None
 
 	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
+	def ReqdNAVCcy(self):
+		return self._ReqdNAVCcy
 
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+	@ReqdNAVCcy.setter
+	def ReqdNAVCcy(self, value):
+		self._ReqdNAVCcy = value if type(value) != auto else self.make_default("ReqdNAVCcy")
 
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+	@ReqdNAVCcy.deleter
+	def ReqdNAVCcy(self):
+		del self._ReqdNAVCcy
+		self._ReqdNAVCcy = None
+
+	@property
+	def ReqdSttlmCcy(self):
+		return self._ReqdSttlmCcy
+
+	@ReqdSttlmCcy.setter
+	def ReqdSttlmCcy(self, value):
+		self._ReqdSttlmCcy = value if type(value) != auto else self.make_default("ReqdSttlmCcy")
+
+	@ReqdSttlmCcy.deleter
+	def ReqdSttlmCcy(self):
+		del self._ReqdSttlmCcy
+		self._ReqdSttlmCcy = None
+
+	@property
+	def NonStdSttlmInf(self):
+		return self._NonStdSttlmInf
+
+	@NonStdSttlmInf.setter
+	def NonStdSttlmInf(self, value):
+		self._NonStdSttlmInf = value if type(value) != auto else self.make_default("NonStdSttlmInf")
+
+	@NonStdSttlmInf.deleter
+	def NonStdSttlmInf(self):
+		del self._NonStdSttlmInf
+		self._NonStdSttlmInf = None
+
+	@property
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
+
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
+
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
+	def FinInstrmQtyChc(self):
+		return self._FinInstrmQtyChc
+
+	@FinInstrmQtyChc.setter
+	def FinInstrmQtyChc(self, value):
+		self._FinInstrmQtyChc = value if type(value) != auto else self.make_default("FinInstrmQtyChc")
+
+	@FinInstrmQtyChc.deleter
+	def FinInstrmQtyChc(self):
+		del self._FinInstrmQtyChc
+		self._FinInstrmQtyChc = None
+
+	@property
+	def PhysDlvryInd(self):
+		return self._PhysDlvryInd
+
+	@PhysDlvryInd.setter
+	def PhysDlvryInd(self, value):
+		self._PhysDlvryInd = value if type(value) != auto else self.make_default("PhysDlvryInd")
+
+	@PhysDlvryInd.deleter
+	def PhysDlvryInd(self):
+		del self._PhysDlvryInd
+		self._PhysDlvryInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PhysDlvryDtls', type=DeliveryParameters3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PhysDlvryInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxOvrhd', type=FeeAndTax1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmPref', type=IncomePreference1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Equlstn', type=Equalisation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Grp1Or2Units', type=UKTaxGroupUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdSttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmQtyChc', type=FinancialInstrumentQuantity29Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonStdSttlmInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAndCtdyDtls', type=FundSettlementParameters12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmPref', type=IncomePreference1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Equlstn', type=Equalisation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhysDlvryDtls', type=DeliveryParameters3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAndCtdyDtls', type=FundSettlementParameters12, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxOvrhd', type=FeeAndTax1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonStdSttlmInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmQtyChc', type=FinancialInstrumentQuantity29Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhysDlvryInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

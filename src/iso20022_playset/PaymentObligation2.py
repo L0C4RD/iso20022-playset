@@ -1,17 +1,30 @@
 import base_types
-import BPOApplicableRules1Choice
-import BICIdentification1
-import AmountOrPercentage2Choice
-import Location2
-import SettlementTerms3
-import ISODate
-import PaymentTerms4
 import CountryCode
+import SettlementTerms3
+import AmountOrPercentage2Choice
+import ISODate
 import Charges5
+import BICIdentification1
+import Location2
+import PaymentTerms4
+import BPOApplicableRules1Choice
 
 class PaymentObligation2(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfJursdctn", "_AplblLaw", "_SttlmTerms", "_PmtOblgtnAmt", "_XpryDt", "_AplblRules", "_PmtTerms", "_RcptBk", "_OblgrBk", "_Chrgs"]
+	__slots__ = ["_SttlmTerms", "_PlcOfJursdctn", "_PmtTerms", "_Chrgs", "_AplblLaw", "_AplblRules", "_RcptBk", "_OblgrBk", "_XpryDt", "_PmtOblgtnAmt"]
+	@property
+	def SttlmTerms(self):
+		return self._SttlmTerms
+
+	@SttlmTerms.setter
+	def SttlmTerms(self, value):
+		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
+
+	@SttlmTerms.deleter
+	def SttlmTerms(self):
+		del self._SttlmTerms
+		self._SttlmTerms = None
+
 	@property
 	def PlcOfJursdctn(self):
 		return self._PlcOfJursdctn
@@ -24,6 +37,32 @@ class PaymentObligation2(base_types._BaseFieldType):
 	def PlcOfJursdctn(self):
 		del self._PlcOfJursdctn
 		self._PlcOfJursdctn = None
+
+	@property
+	def PmtTerms(self):
+		return self._PmtTerms
+
+	@PmtTerms.setter
+	def PmtTerms(self, value):
+		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
+
+	@PmtTerms.deleter
+	def PmtTerms(self):
+		del self._PmtTerms
+		self._PmtTerms = None
+
+	@property
+	def Chrgs(self):
+		return self._Chrgs
+
+	@Chrgs.setter
+	def Chrgs(self, value):
+		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+
+	@Chrgs.deleter
+	def Chrgs(self):
+		del self._Chrgs
+		self._Chrgs = None
 
 	@property
 	def AplblLaw(self):
@@ -39,45 +78,6 @@ class PaymentObligation2(base_types._BaseFieldType):
 		self._AplblLaw = None
 
 	@property
-	def SttlmTerms(self):
-		return self._SttlmTerms
-
-	@SttlmTerms.setter
-	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != auto else self.make_default("SttlmTerms")
-
-	@SttlmTerms.deleter
-	def SttlmTerms(self):
-		del self._SttlmTerms
-		self._SttlmTerms = None
-
-	@property
-	def PmtOblgtnAmt(self):
-		return self._PmtOblgtnAmt
-
-	@PmtOblgtnAmt.setter
-	def PmtOblgtnAmt(self, value):
-		self._PmtOblgtnAmt = value if type(value) != auto else self.make_default("PmtOblgtnAmt")
-
-	@PmtOblgtnAmt.deleter
-	def PmtOblgtnAmt(self):
-		del self._PmtOblgtnAmt
-		self._PmtOblgtnAmt = None
-
-	@property
-	def XpryDt(self):
-		return self._XpryDt
-
-	@XpryDt.setter
-	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
-
-	@XpryDt.deleter
-	def XpryDt(self):
-		del self._XpryDt
-		self._XpryDt = None
-
-	@property
 	def AplblRules(self):
 		return self._AplblRules
 
@@ -89,19 +89,6 @@ class PaymentObligation2(base_types._BaseFieldType):
 	def AplblRules(self):
 		del self._AplblRules
 		self._AplblRules = None
-
-	@property
-	def PmtTerms(self):
-		return self._PmtTerms
-
-	@PmtTerms.setter
-	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != auto else self.make_default("PmtTerms")
-
-	@PmtTerms.deleter
-	def PmtTerms(self):
-		del self._PmtTerms
-		self._PmtTerms = None
 
 	@property
 	def RcptBk(self):
@@ -130,28 +117,41 @@ class PaymentObligation2(base_types._BaseFieldType):
 		self._OblgrBk = None
 
 	@property
-	def Chrgs(self):
-		return self._Chrgs
+	def XpryDt(self):
+		return self._XpryDt
 
-	@Chrgs.setter
-	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != auto else self.make_default("Chrgs")
+	@XpryDt.setter
+	def XpryDt(self, value):
+		self._XpryDt = value if type(value) != auto else self.make_default("XpryDt")
 
-	@Chrgs.deleter
-	def Chrgs(self):
-		del self._Chrgs
-		self._Chrgs = None
+	@XpryDt.deleter
+	def XpryDt(self):
+		del self._XpryDt
+		self._XpryDt = None
+
+	@property
+	def PmtOblgtnAmt(self):
+		return self._PmtOblgtnAmt
+
+	@PmtOblgtnAmt.setter
+	def PmtOblgtnAmt(self, value):
+		self._PmtOblgtnAmt = value if type(value) != auto else self.make_default("PmtOblgtnAmt")
+
+	@PmtOblgtnAmt.deleter
+	def PmtOblgtnAmt(self):
+		del self._PmtOblgtnAmt
+		self._PmtOblgtnAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfJursdctn', type=Location2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AplblLaw', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTerms', type=SettlementTerms3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtOblgtnAmt', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AplblRules', type=BPOApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfJursdctn', type=Location2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTerms', type=PaymentTerms4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Chrgs', type=Charges5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AplblLaw', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AplblRules', type=BPOApplicableRules1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chrgs', type=Charges5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='XpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtOblgtnAmt', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

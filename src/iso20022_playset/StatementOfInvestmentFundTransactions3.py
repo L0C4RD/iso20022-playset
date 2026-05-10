@@ -1,26 +1,13 @@
 import base_types
-import SubAccountIdentification36
-import InvestmentFundTransactionsByFund3
-import Statement8
 import Extension1
 import InvestmentAccount43
+import Statement8
+import SubAccountIdentification36
+import InvestmentFundTransactionsByFund3
 
 class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxOnAcct", "_SubAcctDtls", "_Xtnsn", "_StmtGnlDtls", "_InvstmtAcctDtls"]
-	@property
-	def TxOnAcct(self):
-		return self._TxOnAcct
-
-	@TxOnAcct.setter
-	def TxOnAcct(self, value):
-		self._TxOnAcct = value if type(value) != auto else self.make_default("TxOnAcct")
-
-	@TxOnAcct.deleter
-	def TxOnAcct(self):
-		del self._TxOnAcct
-		self._TxOnAcct = None
-
+	__slots__ = ["_SubAcctDtls", "_InvstmtAcctDtls", "_TxOnAcct", "_Xtnsn", "_StmtGnlDtls"]
 	@property
 	def SubAcctDtls(self):
 		return self._SubAcctDtls
@@ -33,6 +20,32 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
 		self._SubAcctDtls = None
+
+	@property
+	def InvstmtAcctDtls(self):
+		return self._InvstmtAcctDtls
+
+	@InvstmtAcctDtls.setter
+	def InvstmtAcctDtls(self, value):
+		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
+
+	@InvstmtAcctDtls.deleter
+	def InvstmtAcctDtls(self):
+		del self._InvstmtAcctDtls
+		self._InvstmtAcctDtls = None
+
+	@property
+	def TxOnAcct(self):
+		return self._TxOnAcct
+
+	@TxOnAcct.setter
+	def TxOnAcct(self, value):
+		self._TxOnAcct = value if type(value) != auto else self.make_default("TxOnAcct")
+
+	@TxOnAcct.deleter
+	def TxOnAcct(self):
+		del self._TxOnAcct
+		self._TxOnAcct = None
 
 	@property
 	def Xtnsn(self):
@@ -60,24 +73,11 @@ class StatementOfInvestmentFundTransactions3(base_types._BaseFieldType):
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
 
-	@property
-	def InvstmtAcctDtls(self):
-		return self._InvstmtAcctDtls
-
-	@InvstmtAcctDtls.setter
-	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != auto else self.make_default("InvstmtAcctDtls")
-
-	@InvstmtAcctDtls.deleter
-	def InvstmtAcctDtls(self):
-		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification36, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxOnAcct', type=InvestmentFundTransactionsByFund3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=0, max=1, mutex_group=None, array=False),
 	))
 

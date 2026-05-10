@@ -3,7 +3,7 @@ import AmountAndDirection49
 
 class CollateralAmount14(base_types._BaseFieldType):
 
-	__slots__ = ["_Tx", "_UdsptdTx", "_ValSght", "_Termntn", "_Acrd"]
+	__slots__ = ["_Tx", "_Termntn", "_Acrd", "_ValSght", "_UdsptdTx"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -16,32 +16,6 @@ class CollateralAmount14(base_types._BaseFieldType):
 	def Tx(self):
 		del self._Tx
 		self._Tx = None
-
-	@property
-	def UdsptdTx(self):
-		return self._UdsptdTx
-
-	@UdsptdTx.setter
-	def UdsptdTx(self, value):
-		self._UdsptdTx = value if type(value) != auto else self.make_default("UdsptdTx")
-
-	@UdsptdTx.deleter
-	def UdsptdTx(self):
-		del self._UdsptdTx
-		self._UdsptdTx = None
-
-	@property
-	def ValSght(self):
-		return self._ValSght
-
-	@ValSght.setter
-	def ValSght(self, value):
-		self._ValSght = value if type(value) != auto else self.make_default("ValSght")
-
-	@ValSght.deleter
-	def ValSght(self):
-		del self._ValSght
-		self._ValSght = None
 
 	@property
 	def Termntn(self):
@@ -69,11 +43,37 @@ class CollateralAmount14(base_types._BaseFieldType):
 		del self._Acrd
 		self._Acrd = None
 
+	@property
+	def ValSght(self):
+		return self._ValSght
+
+	@ValSght.setter
+	def ValSght(self, value):
+		self._ValSght = value if type(value) != auto else self.make_default("ValSght")
+
+	@ValSght.deleter
+	def ValSght(self):
+		del self._ValSght
+		self._ValSght = None
+
+	@property
+	def UdsptdTx(self):
+		return self._UdsptdTx
+
+	@UdsptdTx.setter
+	def UdsptdTx(self, value):
+		self._UdsptdTx = value if type(value) != auto else self.make_default("UdsptdTx")
+
+	@UdsptdTx.deleter
+	def UdsptdTx(self):
+		del self._UdsptdTx
+		self._UdsptdTx = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdsptdTx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Termntn', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdsptdTx', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 	))
 

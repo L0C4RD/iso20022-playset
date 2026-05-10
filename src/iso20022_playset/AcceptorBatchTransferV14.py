@@ -1,24 +1,11 @@
 import base_types
-import Header56
 import ContentInformationType37
 import CardPaymentBatchTransfer13
+import Header56
 
 class AcceptorBatchTransferV14(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_BtchTrf", "_Hdr"]
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
+	__slots__ = ["_BtchTrf", "_SctyTrlr", "_Hdr"]
 	@property
 	def BtchTrf(self):
 		return self._BtchTrf
@@ -31,6 +18,19 @@ class AcceptorBatchTransferV14(base_types._BaseFieldType):
 	def BtchTrf(self):
 		del self._BtchTrf
 		self._BtchTrf = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
 
 	@property
 	def Hdr(self):
@@ -46,8 +46,8 @@ class AcceptorBatchTransferV14(base_types._BaseFieldType):
 		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType37, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header56, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
+import MessageHeader7
 import SupplementaryData1
 import GeneralBusinessOrError7Choice
-import MessageHeader7
 
 class ReturnGeneralBusinessInformationV06(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 import base_types
-import ISODateTime
-import Party50Choice
 import Max35Text
+import Party50Choice
+import ISODateTime
 
 class GroupHeader129(base_types._BaseFieldType):
 
-	__slots__ = ["_Sndr", "_MsgId", "_Rcvr", "_CreDtTm"]
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
+	__slots__ = ["_MsgId", "_CreDtTm", "_Sndr", "_Rcvr"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -33,19 +20,6 @@ class GroupHeader129(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def Rcvr(self):
-		return self._Rcvr
-
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
-
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -58,10 +32,36 @@ class GroupHeader129(base_types._BaseFieldType):
 		del self._CreDtTm
 		self._CreDtTm = None
 
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
+	def Rcvr(self):
+		return self._Rcvr
+
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sndr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

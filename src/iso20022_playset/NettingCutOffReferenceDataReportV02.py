@@ -1,24 +1,11 @@
 import base_types
+import CutOffData2
 import SupplementaryData1
 import NettingCutOffReportData2
-import CutOffData2
 
 class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PtcptNetgCutOffData", "_RptData", "_SplmtryData"]
-	@property
-	def PtcptNetgCutOffData(self):
-		return self._PtcptNetgCutOffData
-
-	@PtcptNetgCutOffData.setter
-	def PtcptNetgCutOffData(self, value):
-		self._PtcptNetgCutOffData = value if type(value) != auto else self.make_default("PtcptNetgCutOffData")
-
-	@PtcptNetgCutOffData.deleter
-	def PtcptNetgCutOffData(self):
-		del self._PtcptNetgCutOffData
-		self._PtcptNetgCutOffData = None
-
+	__slots__ = ["_RptData", "_SplmtryData", "_PtcptNetgCutOffData"]
 	@property
 	def RptData(self):
 		return self._RptData
@@ -45,9 +32,22 @@ class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def PtcptNetgCutOffData(self):
+		return self._PtcptNetgCutOffData
+
+	@PtcptNetgCutOffData.setter
+	def PtcptNetgCutOffData(self, value):
+		self._PtcptNetgCutOffData = value if type(value) != auto else self.make_default("PtcptNetgCutOffData")
+
+	@PtcptNetgCutOffData.deleter
+	def PtcptNetgCutOffData(self):
+		del self._PtcptNetgCutOffData
+		self._PtcptNetgCutOffData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtcptNetgCutOffData', type=CutOffData2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptData', type=NettingCutOffReportData2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PtcptNetgCutOffData', type=CutOffData2, min=1, max=None, mutex_group=None, array=True),
 	))
 

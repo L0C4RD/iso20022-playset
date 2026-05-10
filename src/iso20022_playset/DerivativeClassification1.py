@@ -3,7 +3,20 @@ import Max35Text
 
 class DerivativeClassification1(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_SubPdct", "_SubCmmdty", "_AsstClss", "_TxTp"]
+	__slots__ = ["_TxTp", "_BasePdct", "_AsstClss", "_SubCmmdty", "_SubPdct"]
+	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
 	@property
 	def BasePdct(self):
 		return self._BasePdct
@@ -16,32 +29,6 @@ class DerivativeClassification1(base_types._BaseFieldType):
 	def BasePdct(self):
 		del self._BasePdct
 		self._BasePdct = None
-
-	@property
-	def SubPdct(self):
-		return self._SubPdct
-
-	@SubPdct.setter
-	def SubPdct(self, value):
-		self._SubPdct = value if type(value) != auto else self.make_default("SubPdct")
-
-	@SubPdct.deleter
-	def SubPdct(self):
-		del self._SubPdct
-		self._SubPdct = None
-
-	@property
-	def SubCmmdty(self):
-		return self._SubCmmdty
-
-	@SubCmmdty.setter
-	def SubCmmdty(self, value):
-		self._SubCmmdty = value if type(value) != auto else self.make_default("SubCmmdty")
-
-	@SubCmmdty.deleter
-	def SubCmmdty(self):
-		del self._SubCmmdty
-		self._SubCmmdty = None
 
 	@property
 	def AsstClss(self):
@@ -57,23 +44,36 @@ class DerivativeClassification1(base_types._BaseFieldType):
 		self._AsstClss = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def SubCmmdty(self):
+		return self._SubCmmdty
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@SubCmmdty.setter
+	def SubCmmdty(self, value):
+		self._SubCmmdty = value if type(value) != auto else self.make_default("SubCmmdty")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@SubCmmdty.deleter
+	def SubCmmdty(self):
+		del self._SubCmmdty
+		self._SubCmmdty = None
+
+	@property
+	def SubPdct(self):
+		return self._SubPdct
+
+	@SubPdct.setter
+	def SubPdct(self, value):
+		self._SubPdct = value if type(value) != auto else self.make_default("SubPdct")
+
+	@SubPdct.deleter
+	def SubPdct(self):
+		del self._SubPdct
+		self._SubPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BasePdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubPdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubCmmdty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BasePdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstClss', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubCmmdty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubPdct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

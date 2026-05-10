@@ -1,23 +1,10 @@
 import base_types
-import ATMService10
 import Max35Text
+import ATMService10
 
 class ATMContext9(base_types._BaseFieldType):
 
-	__slots__ = ["_SsnRef", "_Svc"]
-	@property
-	def SsnRef(self):
-		return self._SsnRef
-
-	@SsnRef.setter
-	def SsnRef(self, value):
-		self._SsnRef = value if type(value) != auto else self.make_default("SsnRef")
-
-	@SsnRef.deleter
-	def SsnRef(self):
-		del self._SsnRef
-		self._SsnRef = None
-
+	__slots__ = ["_Svc", "_SsnRef"]
 	@property
 	def Svc(self):
 		return self._Svc
@@ -31,8 +18,21 @@ class ATMContext9(base_types._BaseFieldType):
 		del self._Svc
 		self._Svc = None
 
+	@property
+	def SsnRef(self):
+		return self._SsnRef
+
+	@SsnRef.setter
+	def SsnRef(self, value):
+		self._SsnRef = value if type(value) != auto else self.make_default("SsnRef")
+
+	@SsnRef.deleter
+	def SsnRef(self):
+		del self._SsnRef
+		self._SsnRef = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SsnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svc', type=ATMService10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -3,37 +3,37 @@ import Max35Text
 import ExpectedExecutionDetails2
 import PartyIdentification113
 import FundOrderData6
-import OrderStatus4Choice
 import SwitchLegReferences2
+import OrderStatus4Choice
 
 class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrSts", "_MstrRef", "_DealRef", "_OrdrData", "_StsInitr", "_CxlRef", "_ClntRef", "_OrdrRef", "_NewDtls", "_LegInf"]
+	__slots__ = ["_OrdrData", "_OrdrRef", "_DealRef", "_MstrRef", "_NewDtls", "_CxlRef", "_ClntRef", "_LegInf", "_StsInitr", "_OrdrSts"]
 	@property
-	def OrdrSts(self):
-		return self._OrdrSts
+	def OrdrData(self):
+		return self._OrdrData
 
-	@OrdrSts.setter
-	def OrdrSts(self, value):
-		self._OrdrSts = value if type(value) != auto else self.make_default("OrdrSts")
+	@OrdrData.setter
+	def OrdrData(self, value):
+		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
 
-	@OrdrSts.deleter
-	def OrdrSts(self):
-		del self._OrdrSts
-		self._OrdrSts = None
+	@OrdrData.deleter
+	def OrdrData(self):
+		del self._OrdrData
+		self._OrdrData = None
 
 	@property
-	def MstrRef(self):
-		return self._MstrRef
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
 
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
 	def DealRef(self):
@@ -49,30 +49,30 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		self._DealRef = None
 
 	@property
-	def OrdrData(self):
-		return self._OrdrData
+	def MstrRef(self):
+		return self._MstrRef
 
-	@OrdrData.setter
-	def OrdrData(self, value):
-		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
 
-	@OrdrData.deleter
-	def OrdrData(self):
-		del self._OrdrData
-		self._OrdrData = None
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
 
 	@property
-	def StsInitr(self):
-		return self._StsInitr
+	def NewDtls(self):
+		return self._NewDtls
 
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+	@NewDtls.setter
+	def NewDtls(self, value):
+		self._NewDtls = value if type(value) != auto else self.make_default("NewDtls")
 
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
+	@NewDtls.deleter
+	def NewDtls(self):
+		del self._NewDtls
+		self._NewDtls = None
 
 	@property
 	def CxlRef(self):
@@ -101,32 +101,6 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
-	def OrdrRef(self):
-		return self._OrdrRef
-
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
-
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
-
-	@property
-	def NewDtls(self):
-		return self._NewDtls
-
-	@NewDtls.setter
-	def NewDtls(self, value):
-		self._NewDtls = value if type(value) != auto else self.make_default("NewDtls")
-
-	@NewDtls.deleter
-	def NewDtls(self):
-		del self._NewDtls
-		self._NewDtls = None
-
-	@property
 	def LegInf(self):
 		return self._LegInf
 
@@ -139,16 +113,42 @@ class SwitchOrderStatusAndReason2(base_types._BaseFieldType):
 		del self._LegInf
 		self._LegInf = None
 
+	@property
+	def StsInitr(self):
+		return self._StsInitr
+
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
+
+	@property
+	def OrdrSts(self):
+		return self._OrdrSts
+
+	@OrdrSts.setter
+	def OrdrSts(self, value):
+		self._OrdrSts = value if type(value) != auto else self.make_default("OrdrSts")
+
+	@OrdrSts.deleter
+	def OrdrSts(self):
+		del self._OrdrSts
+		self._OrdrSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrSts', type=OrderStatus4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrData', type=FundOrderData6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewDtls', type=ExpectedExecutionDetails2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewDtls', type=ExpectedExecutionDetails2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LegInf', type=SwitchLegReferences2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrSts', type=OrderStatus4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

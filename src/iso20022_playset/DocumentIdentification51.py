@@ -1,25 +1,12 @@
 import base_types
-import CopyDuplicate1Code
-import DateAndDateTime2Choice
-import PartyIdentification136
 import Max35Text
+import CopyDuplicate1Code
+import PartyIdentification136
+import DateAndDateTime2Choice
 
 class DocumentIdentification51(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CreDtTm", "_CpyDplct", "_MsgOrgtr", "_MsgRcpt"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_CreDtTm", "_CpyDplct", "_Id", "_MsgOrgtr", "_MsgRcpt"]
 	@property
 	def CreDtTm(self):
 		return self._CreDtTm
@@ -45,6 +32,19 @@ class DocumentIdentification51(base_types._BaseFieldType):
 	def CpyDplct(self):
 		del self._CpyDplct
 		self._CpyDplct = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def MsgOrgtr(self):
@@ -73,9 +73,9 @@ class DocumentIdentification51(base_types._BaseFieldType):
 		self._MsgRcpt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgOrgtr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))

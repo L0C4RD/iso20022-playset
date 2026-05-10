@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import IntermediateSecurityDistributionType5Code
+import GenericIdentification30
 
 class IntermediateSecuritiesDistributionTypeFormat15Choice(base_types._BaseFieldType):
 

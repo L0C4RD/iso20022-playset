@@ -1,12 +1,12 @@
 import base_types
-import Max500Binary
 import AlgorithmIdentification28
-import KEKIdentifier6
+import Max500Binary
 import Number
+import KEKIdentifier6
 
 class KEK6(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyNcrptnAlgo", "_KEKId", "_NcrptdKey", "_Vrsn"]
+	__slots__ = ["_KeyNcrptnAlgo", "_Vrsn", "_KEKId", "_NcrptdKey"]
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
@@ -19,6 +19,19 @@ class KEK6(base_types._BaseFieldType):
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
 		self._KeyNcrptnAlgo = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def KEKId(self):
@@ -46,23 +59,10 @@ class KEK6(base_types._BaseFieldType):
 		del self._NcrptdKey
 		self._NcrptdKey = None
 
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KEKId', type=KEKIdentifier6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

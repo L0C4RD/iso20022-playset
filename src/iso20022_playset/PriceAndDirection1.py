@@ -1,6 +1,6 @@
 import base_types
-import ActiveOrHistoricCurrencyAnd13DecimalAmount
 import PlusOrMinusIndicator
+import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class PriceAndDirection1(base_types._BaseFieldType):
 

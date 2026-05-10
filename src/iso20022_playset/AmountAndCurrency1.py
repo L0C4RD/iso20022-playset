@@ -1,6 +1,6 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class AmountAndCurrency1(base_types._BaseFieldType):
 

@@ -1,7 +1,7 @@
 import base_types
 import SupplementaryData1
-import MessageHeader10
 import ReceiptAcknowledgementReport2
+import MessageHeader10
 
 class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 import base_types
-import Quantity54Choice
 import CreditDebitCode
-import DateAndDateTime2Choice
+import Quantity54Choice
 import SecurityIdentification20
+import DateAndDateTime2Choice
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
-	__slots__ = ["_PstngQty", "_PstngDt", "_OrgnlPstngDt", "_CdtDbtInd", "_FinInstrmId"]
+	__slots__ = ["_CdtDbtInd", "_PstngQty", "_OrgnlPstngDt", "_PstngDt", "_FinInstrmId"]
+	@property
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
+
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
+
 	@property
 	def PstngQty(self):
 		return self._PstngQty
@@ -19,19 +32,6 @@ class SecuritiesOption86(base_types._BaseFieldType):
 	def PstngQty(self):
 		del self._PstngQty
 		self._PstngQty = None
-
-	@property
-	def PstngDt(self):
-		return self._PstngDt
-
-	@PstngDt.setter
-	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
-
-	@PstngDt.deleter
-	def PstngDt(self):
-		del self._PstngDt
-		self._PstngDt = None
 
 	@property
 	def OrgnlPstngDt(self):
@@ -47,17 +47,17 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		self._OrgnlPstngDt = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def PstngDt(self):
+		return self._PstngDt
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@PstngDt.setter
+	def PstngDt(self, value):
+		self._PstngDt = value if type(value) != auto else self.make_default("PstngDt")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@PstngDt.deleter
+	def PstngDt(self):
+		del self._PstngDt
+		self._PstngDt = None
 
 	@property
 	def FinInstrmId(self):
@@ -73,10 +73,10 @@ class SecuritiesOption86(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngQty', type=Quantity54Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPstngDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,23 @@
 import base_types
-import DateCode22Choice
-import DateAndDateTime2Choice
 import DateCodeAndTimeFormat4
+import DateAndDateTime2Choice
+import DateCode22Choice
 
 class DateFormat54Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtCd", "_Dt", "_DtCdAndTm"]
+	__slots__ = ["_DtCdAndTm", "_Dt", "_DtCd"]
 	@property
-	def DtCd(self):
-		return self._DtCd
+	def DtCdAndTm(self):
+		return self._DtCdAndTm
 
-	@DtCd.setter
-	def DtCd(self, value):
-		self._DtCd = value if type(value) != auto else self.make_default("DtCd")
+	@DtCdAndTm.setter
+	def DtCdAndTm(self, value):
+		self._DtCdAndTm = value if type(value) != auto else self.make_default("DtCdAndTm")
 
-	@DtCd.deleter
-	def DtCd(self):
-		del self._DtCd
-		self._DtCd = None
+	@DtCdAndTm.deleter
+	def DtCdAndTm(self):
+		del self._DtCdAndTm
+		self._DtCdAndTm = None
 
 	@property
 	def Dt(self):
@@ -33,21 +33,21 @@ class DateFormat54Choice(base_types._BaseFieldType):
 		self._Dt = None
 
 	@property
-	def DtCdAndTm(self):
-		return self._DtCdAndTm
+	def DtCd(self):
+		return self._DtCd
 
-	@DtCdAndTm.setter
-	def DtCdAndTm(self, value):
-		self._DtCdAndTm = value if type(value) != auto else self.make_default("DtCdAndTm")
+	@DtCd.setter
+	def DtCd(self, value):
+		self._DtCd = value if type(value) != auto else self.make_default("DtCd")
 
-	@DtCdAndTm.deleter
-	def DtCdAndTm(self):
-		del self._DtCdAndTm
-		self._DtCdAndTm = None
+	@DtCd.deleter
+	def DtCd(self):
+		del self._DtCd
+		self._DtCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtCd', type=DateCode22Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtCdAndTm', type=DateCodeAndTimeFormat4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtCd', type=DateCode22Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

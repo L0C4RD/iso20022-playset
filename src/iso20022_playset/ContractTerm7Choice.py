@@ -3,20 +3,7 @@ import FixedOpenTermContract2
 
 class ContractTerm7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Fxd", "_Opn"]
-	@property
-	def Fxd(self):
-		return self._Fxd
-
-	@Fxd.setter
-	def Fxd(self, value):
-		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
-
-	@Fxd.deleter
-	def Fxd(self):
-		del self._Fxd
-		self._Fxd = None
-
+	__slots__ = ["_Opn", "_Fxd"]
 	@property
 	def Opn(self):
 		return self._Opn
@@ -30,8 +17,21 @@ class ContractTerm7Choice(base_types._BaseFieldType):
 		del self._Opn
 		self._Opn = None
 
+	@property
+	def Fxd(self):
+		return self._Fxd
+
+	@Fxd.setter
+	def Fxd(self, value):
+		self._Fxd = value if type(value) != auto else self.make_default("Fxd")
+
+	@Fxd.deleter
+	def Fxd(self):
+		del self._Fxd
+		self._Fxd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Fxd', type=FixedOpenTermContract2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Opn', type=FixedOpenTermContract2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Fxd', type=FixedOpenTermContract2, min=0, max=1, mutex_group=1, array=False),
 	))
 

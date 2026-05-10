@@ -1,12 +1,12 @@
 import base_types
-import Max350Text
 import BlockedReason2Choice
+import Max350Text
 import TransactionType5Choice
 import YesNoIndicator
 
 class BlockedStatusReason2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_TxTp", "_Rsn", "_Blckd"]
+	__slots__ = ["_AddtlInf", "_Blckd", "_Rsn", "_TxTp"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -21,17 +21,17 @@ class BlockedStatusReason2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def Blckd(self):
+		return self._Blckd
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@Blckd.setter
+	def Blckd(self, value):
+		self._Blckd = value if type(value) != auto else self.make_default("Blckd")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@Blckd.deleter
+	def Blckd(self):
+		del self._Blckd
+		self._Blckd = None
 
 	@property
 	def Rsn(self):
@@ -47,22 +47,22 @@ class BlockedStatusReason2(base_types._BaseFieldType):
 		self._Rsn = None
 
 	@property
-	def Blckd(self):
-		return self._Blckd
+	def TxTp(self):
+		return self._TxTp
 
-	@Blckd.setter
-	def Blckd(self, value):
-		self._Blckd = value if type(value) != auto else self.make_default("Blckd")
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
 
-	@Blckd.deleter
-	def Blckd(self):
-		del self._Blckd
-		self._Blckd = None
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=TransactionType5Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rsn', type=BlockedReason2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Blckd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=BlockedReason2Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxTp', type=TransactionType5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

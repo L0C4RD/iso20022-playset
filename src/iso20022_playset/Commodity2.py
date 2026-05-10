@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAnd24Amount
 import AssetClassDetailedSubProductType1Choice
+import ActiveCurrencyAnd24Amount
 
 class Commodity2(base_types._BaseFieldType):
 

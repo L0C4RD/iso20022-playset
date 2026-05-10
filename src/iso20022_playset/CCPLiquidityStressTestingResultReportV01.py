@@ -1,6 +1,6 @@
 import base_types
-import SupplementaryData1
 import LiquidityStressTestResult1
+import SupplementaryData1
 
 class CCPLiquidityStressTestingResultReportV01(base_types._BaseFieldType):
 

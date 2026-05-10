@@ -1,22 +1,22 @@
 import base_types
-import CancellationReason32Choice
 import Max35Text
+import CancellationReason32Choice
 
 class InvestmentFundOrder9(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRsn", "_CxlRef", "_ClntRef", "_OrdrRef"]
+	__slots__ = ["_OrdrRef", "_CxlRef", "_ClntRef", "_CxlRsn"]
 	@property
-	def CxlRsn(self):
-		return self._CxlRsn
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
 
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
 	def CxlRef(self):
@@ -45,22 +45,22 @@ class InvestmentFundOrder9(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
-	def OrdrRef(self):
-		return self._OrdrRef
+	def CxlRsn(self):
+		return self._CxlRsn
 
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
 
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason32Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason32Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

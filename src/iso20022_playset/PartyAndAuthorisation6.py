@@ -1,24 +1,24 @@
 import base_types
 import Max15PlusSignedNumericText
 import Authorisation2
-import Modification1Code
 import PartyOrGroup3Choice
+import Modification1Code
 
 class PartyAndAuthorisation6(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_SgntrOrdr", "_Authstn", "_PtyOrGrp"]
+	__slots__ = ["_PtyOrGrp", "_SgntrOrdr", "_ModCd", "_Authstn"]
 	@property
-	def ModCd(self):
-		return self._ModCd
+	def PtyOrGrp(self):
+		return self._PtyOrGrp
 
-	@ModCd.setter
-	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+	@PtyOrGrp.setter
+	def PtyOrGrp(self, value):
+		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
 
-	@ModCd.deleter
-	def ModCd(self):
-		del self._ModCd
-		self._ModCd = None
+	@PtyOrGrp.deleter
+	def PtyOrGrp(self):
+		del self._PtyOrGrp
+		self._PtyOrGrp = None
 
 	@property
 	def SgntrOrdr(self):
@@ -34,6 +34,19 @@ class PartyAndAuthorisation6(base_types._BaseFieldType):
 		self._SgntrOrdr = None
 
 	@property
+	def ModCd(self):
+		return self._ModCd
+
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
+
+	@property
 	def Authstn(self):
 		return self._Authstn
 
@@ -46,23 +59,10 @@ class PartyAndAuthorisation6(base_types._BaseFieldType):
 		del self._Authstn
 		self._Authstn = None
 
-	@property
-	def PtyOrGrp(self):
-		return self._PtyOrGrp
-
-	@PtyOrGrp.setter
-	def PtyOrGrp(self, value):
-		self._PtyOrGrp = value if type(value) != auto else self.make_default("PtyOrGrp")
-
-	@PtyOrGrp.deleter
-	def PtyOrGrp(self):
-		del self._PtyOrGrp
-		self._PtyOrGrp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Authstn', type=Authorisation2, min=1, max=1, mutex_group=None, array=False),
 	))
 

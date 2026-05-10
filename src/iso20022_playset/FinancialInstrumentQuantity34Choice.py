@@ -1,12 +1,25 @@
 import base_types
+import Quantity4Code
+import DecimalNumber
 import ImpliedCurrencyAndAmount
 import Max30DecimalNumber
-import DecimalNumber
-import Quantity4Code
 
 class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_DgtlTknUnit", "_Cd", "_FaceAmt", "_AmtsdVal"]
+	__slots__ = ["_Cd", "_Unit", "_DgtlTknUnit", "_AmtsdVal", "_FaceAmt"]
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	@property
 	def Unit(self):
 		return self._Unit
@@ -34,17 +47,17 @@ class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 		self._DgtlTknUnit = None
 
 	@property
-	def Cd(self):
-		return self._Cd
+	def AmtsdVal(self):
+		return self._AmtsdVal
 
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
+	@AmtsdVal.setter
+	def AmtsdVal(self, value):
+		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
 
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
+	@AmtsdVal.deleter
+	def AmtsdVal(self):
+		del self._AmtsdVal
+		self._AmtsdVal = None
 
 	@property
 	def FaceAmt(self):
@@ -59,24 +72,11 @@ class FinancialInstrumentQuantity34Choice(base_types._BaseFieldType):
 		del self._FaceAmt
 		self._FaceAmt = None
 
-	@property
-	def AmtsdVal(self):
-		return self._AmtsdVal
-
-	@AmtsdVal.setter
-	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
-
-	@AmtsdVal.deleter
-	def AmtsdVal(self):
-		del self._AmtsdVal
-		self._AmtsdVal = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cd', type=Quantity4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cd', type=Quantity4Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

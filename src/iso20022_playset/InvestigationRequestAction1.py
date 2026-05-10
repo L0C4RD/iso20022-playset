@@ -1,23 +1,10 @@
 import base_types
-import InvestigationActionReason1
 import InvestigationRequestAction1Choice
+import InvestigationActionReason1
 
 class InvestigationRequestAction1(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnRsn", "_Actn"]
-	@property
-	def ActnRsn(self):
-		return self._ActnRsn
-
-	@ActnRsn.setter
-	def ActnRsn(self, value):
-		self._ActnRsn = value if type(value) != auto else self.make_default("ActnRsn")
-
-	@ActnRsn.deleter
-	def ActnRsn(self):
-		del self._ActnRsn
-		self._ActnRsn = None
-
+	__slots__ = ["_Actn", "_ActnRsn"]
 	@property
 	def Actn(self):
 		return self._Actn
@@ -31,8 +18,21 @@ class InvestigationRequestAction1(base_types._BaseFieldType):
 		del self._Actn
 		self._Actn = None
 
+	@property
+	def ActnRsn(self):
+		return self._ActnRsn
+
+	@ActnRsn.setter
+	def ActnRsn(self, value):
+		self._ActnRsn = value if type(value) != auto else self.make_default("ActnRsn")
+
+	@ActnRsn.deleter
+	def ActnRsn(self):
+		del self._ActnRsn
+		self._ActnRsn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnRsn', type=InvestigationActionReason1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Actn', type=InvestigationRequestAction1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnRsn', type=InvestigationActionReason1, min=0, max=1, mutex_group=None, array=False),
 	))
 

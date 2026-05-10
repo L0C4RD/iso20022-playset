@@ -1,36 +1,10 @@
 import base_types
-import AdditionalReference10
 import Max35Text
+import AdditionalReference10
 
 class TransferReference15(base_types._BaseFieldType):
 
-	__slots__ = ["_TrfRef", "_CxlRsn", "_CxlRef", "_ClntRef", "_CtrPtyRef"]
-	@property
-	def TrfRef(self):
-		return self._TrfRef
-
-	@TrfRef.setter
-	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != auto else self.make_default("TrfRef")
-
-	@TrfRef.deleter
-	def TrfRef(self):
-		del self._TrfRef
-		self._TrfRef = None
-
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
+	__slots__ = ["_CxlRef", "_ClntRef", "_CxlRsn", "_TrfRef", "_CtrPtyRef"]
 	@property
 	def CxlRef(self):
 		return self._CxlRef
@@ -58,6 +32,32 @@ class TransferReference15(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
+	def TrfRef(self):
+		return self._TrfRef
+
+	@TrfRef.setter
+	def TrfRef(self, value):
+		self._TrfRef = value if type(value) != auto else self.make_default("TrfRef")
+
+	@TrfRef.deleter
+	def TrfRef(self):
+		del self._TrfRef
+		self._TrfRef = None
+
+	@property
 	def CtrPtyRef(self):
 		return self._CtrPtyRef
 
@@ -71,10 +71,10 @@ class TransferReference15(base_types._BaseFieldType):
 		self._CtrPtyRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 	))
 

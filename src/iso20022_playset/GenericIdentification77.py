@@ -1,23 +1,23 @@
 import base_types
-import Min2Max3AlphaText
-import PartyType12Code
 import Max35Text
+import PartyType12Code
+import Min2Max3AlphaText
 
 class GenericIdentification77(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctry", "_ShrtNm", "_Tp", "_Issr"]
+	__slots__ = ["_Issr", "_Ctry", "_Id", "_Tp", "_ShrtNm"]
 	@property
-	def Id(self):
-		return self._Id
+	def Issr(self):
+		return self._Issr
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def Ctry(self):
@@ -33,17 +33,17 @@ class GenericIdentification77(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def ShrtNm(self):
-		return self._ShrtNm
+	def Id(self):
+		return self._Id
 
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Tp(self):
@@ -59,23 +59,23 @@ class GenericIdentification77(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=PartyType12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyType12Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PartyType12Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

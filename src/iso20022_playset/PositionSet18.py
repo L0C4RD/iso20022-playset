@@ -1,23 +1,10 @@
 import base_types
-import PositionSetMetrics12
 import PositionSetDimensions14
+import PositionSetMetrics12
 
 class PositionSet18(base_types._BaseFieldType):
 
-	__slots__ = ["_Dmnsns", "_Mtrcs"]
-	@property
-	def Dmnsns(self):
-		return self._Dmnsns
-
-	@Dmnsns.setter
-	def Dmnsns(self, value):
-		self._Dmnsns = value if type(value) != auto else self.make_default("Dmnsns")
-
-	@Dmnsns.deleter
-	def Dmnsns(self):
-		del self._Dmnsns
-		self._Dmnsns = None
-
+	__slots__ = ["_Mtrcs", "_Dmnsns"]
 	@property
 	def Mtrcs(self):
 		return self._Mtrcs
@@ -31,8 +18,21 @@ class PositionSet18(base_types._BaseFieldType):
 		del self._Mtrcs
 		self._Mtrcs = None
 
+	@property
+	def Dmnsns(self):
+		return self._Dmnsns
+
+	@Dmnsns.setter
+	def Dmnsns(self, value):
+		self._Dmnsns = value if type(value) != auto else self.make_default("Dmnsns")
+
+	@Dmnsns.deleter
+	def Dmnsns(self):
+		del self._Dmnsns
+		self._Dmnsns = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dmnsns', type=PositionSetDimensions14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtrcs', type=PositionSetMetrics12, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dmnsns', type=PositionSetDimensions14, min=1, max=1, mutex_group=None, array=False),
 	))
 

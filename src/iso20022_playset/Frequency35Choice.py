@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import Frequency5Code
+import GenericIdentification30
 
 class Frequency35Choice(base_types._BaseFieldType):
 

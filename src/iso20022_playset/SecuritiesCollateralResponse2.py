@@ -1,11 +1,37 @@
 import base_types
-import Status4Code
-import RejectionReason68Code
 import Max35Text
+import RejectionReason68Code
+import Status4Code
 
 class SecuritiesCollateralResponse2(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_AsstNb", "_RjctnInf", "_RspnTp", "_CollId"]
+	__slots__ = ["_CollId", "_RjctnInf", "_RjctnRsn", "_AsstNb", "_RspnTp"]
+	@property
+	def CollId(self):
+		return self._CollId
+
+	@CollId.setter
+	def CollId(self, value):
+		self._CollId = value if type(value) != auto else self.make_default("CollId")
+
+	@CollId.deleter
+	def CollId(self):
+		del self._CollId
+		self._CollId = None
+
+	@property
+	def RjctnInf(self):
+		return self._RjctnInf
+
+	@RjctnInf.setter
+	def RjctnInf(self, value):
+		self._RjctnInf = value if type(value) != auto else self.make_default("RjctnInf")
+
+	@RjctnInf.deleter
+	def RjctnInf(self):
+		del self._RjctnInf
+		self._RjctnInf = None
+
 	@property
 	def RjctnRsn(self):
 		return self._RjctnRsn
@@ -33,19 +59,6 @@ class SecuritiesCollateralResponse2(base_types._BaseFieldType):
 		self._AsstNb = None
 
 	@property
-	def RjctnInf(self):
-		return self._RjctnInf
-
-	@RjctnInf.setter
-	def RjctnInf(self, value):
-		self._RjctnInf = value if type(value) != auto else self.make_default("RjctnInf")
-
-	@RjctnInf.deleter
-	def RjctnInf(self):
-		del self._RjctnInf
-		self._RjctnInf = None
-
-	@property
 	def RspnTp(self):
 		return self._RspnTp
 
@@ -58,24 +71,11 @@ class SecuritiesCollateralResponse2(base_types._BaseFieldType):
 		del self._RspnTp
 		self._RspnTp = None
 
-	@property
-	def CollId(self):
-		return self._CollId
-
-	@CollId.setter
-	def CollId(self, value):
-		self._CollId = value if type(value) != auto else self.make_default("CollId")
-
-	@CollId.deleter
-	def CollId(self):
-		del self._CollId
-		self._CollId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnTp', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

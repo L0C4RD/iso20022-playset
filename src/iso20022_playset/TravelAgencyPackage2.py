@@ -1,39 +1,26 @@
 import base_types
-import Max70Text
-import ImpliedCurrencyAndAmount
-import CustomerReference1
-import Max10NumericText
 import Max35Text
+import CustomerReference1
+import ImpliedCurrencyAndAmount
+import Max70Text
 import TrueFalseIndicator
+import Max10NumericText
 
 class TravelAgencyPackage2(base_types._BaseFieldType):
 
-	__slots__ = ["_NbInPty", "_InsrncAmt", "_RsvatnNb", "_Fee", "_Tp", "_DlvryOrdrNb", "_Insrnc", "_CdtCardSlipNb", "_CstmrRef", "_DataSrc"]
+	__slots__ = ["_CstmrRef", "_RsvatnNb", "_DlvryOrdrNb", "_InsrncAmt", "_Tp", "_Fee", "_Insrnc", "_DataSrc", "_CdtCardSlipNb", "_NbInPty"]
 	@property
-	def NbInPty(self):
-		return self._NbInPty
+	def CstmrRef(self):
+		return self._CstmrRef
 
-	@NbInPty.setter
-	def NbInPty(self, value):
-		self._NbInPty = value if type(value) != auto else self.make_default("NbInPty")
+	@CstmrRef.setter
+	def CstmrRef(self, value):
+		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
 
-	@NbInPty.deleter
-	def NbInPty(self):
-		del self._NbInPty
-		self._NbInPty = None
-
-	@property
-	def InsrncAmt(self):
-		return self._InsrncAmt
-
-	@InsrncAmt.setter
-	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
-
-	@InsrncAmt.deleter
-	def InsrncAmt(self):
-		del self._InsrncAmt
-		self._InsrncAmt = None
+	@CstmrRef.deleter
+	def CstmrRef(self):
+		del self._CstmrRef
+		self._CstmrRef = None
 
 	@property
 	def RsvatnNb(self):
@@ -49,17 +36,30 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._RsvatnNb = None
 
 	@property
-	def Fee(self):
-		return self._Fee
+	def DlvryOrdrNb(self):
+		return self._DlvryOrdrNb
 
-	@Fee.setter
-	def Fee(self, value):
-		self._Fee = value if type(value) != auto else self.make_default("Fee")
+	@DlvryOrdrNb.setter
+	def DlvryOrdrNb(self, value):
+		self._DlvryOrdrNb = value if type(value) != auto else self.make_default("DlvryOrdrNb")
 
-	@Fee.deleter
-	def Fee(self):
-		del self._Fee
-		self._Fee = None
+	@DlvryOrdrNb.deleter
+	def DlvryOrdrNb(self):
+		del self._DlvryOrdrNb
+		self._DlvryOrdrNb = None
+
+	@property
+	def InsrncAmt(self):
+		return self._InsrncAmt
+
+	@InsrncAmt.setter
+	def InsrncAmt(self, value):
+		self._InsrncAmt = value if type(value) != auto else self.make_default("InsrncAmt")
+
+	@InsrncAmt.deleter
+	def InsrncAmt(self):
+		del self._InsrncAmt
+		self._InsrncAmt = None
 
 	@property
 	def Tp(self):
@@ -75,17 +75,17 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def DlvryOrdrNb(self):
-		return self._DlvryOrdrNb
+	def Fee(self):
+		return self._Fee
 
-	@DlvryOrdrNb.setter
-	def DlvryOrdrNb(self, value):
-		self._DlvryOrdrNb = value if type(value) != auto else self.make_default("DlvryOrdrNb")
+	@Fee.setter
+	def Fee(self, value):
+		self._Fee = value if type(value) != auto else self.make_default("Fee")
 
-	@DlvryOrdrNb.deleter
-	def DlvryOrdrNb(self):
-		del self._DlvryOrdrNb
-		self._DlvryOrdrNb = None
+	@Fee.deleter
+	def Fee(self):
+		del self._Fee
+		self._Fee = None
 
 	@property
 	def Insrnc(self):
@@ -101,6 +101,19 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._Insrnc = None
 
 	@property
+	def DataSrc(self):
+		return self._DataSrc
+
+	@DataSrc.setter
+	def DataSrc(self, value):
+		self._DataSrc = value if type(value) != auto else self.make_default("DataSrc")
+
+	@DataSrc.deleter
+	def DataSrc(self):
+		del self._DataSrc
+		self._DataSrc = None
+
+	@property
 	def CdtCardSlipNb(self):
 		return self._CdtCardSlipNb
 
@@ -114,41 +127,28 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		self._CdtCardSlipNb = None
 
 	@property
-	def CstmrRef(self):
-		return self._CstmrRef
+	def NbInPty(self):
+		return self._NbInPty
 
-	@CstmrRef.setter
-	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != auto else self.make_default("CstmrRef")
+	@NbInPty.setter
+	def NbInPty(self, value):
+		self._NbInPty = value if type(value) != auto else self.make_default("NbInPty")
 
-	@CstmrRef.deleter
-	def CstmrRef(self):
-		del self._CstmrRef
-		self._CstmrRef = None
-
-	@property
-	def DataSrc(self):
-		return self._DataSrc
-
-	@DataSrc.setter
-	def DataSrc(self, value):
-		self._DataSrc = value if type(value) != auto else self.make_default("DataSrc")
-
-	@DataSrc.deleter
-	def DataSrc(self):
-		del self._DataSrc
-		self._DataSrc = None
+	@NbInPty.deleter
+	def NbInPty(self):
+		del self._NbInPty
+		self._NbInPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbInPty', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fee', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtCardSlipNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrRef', type=CustomerReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryOrdrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fee', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataSrc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtCardSlipNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbInPty', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

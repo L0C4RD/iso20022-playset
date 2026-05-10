@@ -1,23 +1,23 @@
 import base_types
-import SupplementaryData1
 import SecuritiesMarketReportHeader1
+import SupplementaryData1
 import SecuritiesNonTradingDayReport1
 
 class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RptHdr", "_SplmtryData", "_NonWorkgDay"]
+	__slots__ = ["_NonWorkgDay", "_SplmtryData", "_RptHdr"]
 	@property
-	def RptHdr(self):
-		return self._RptHdr
+	def NonWorkgDay(self):
+		return self._NonWorkgDay
 
-	@RptHdr.setter
-	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
+	@NonWorkgDay.setter
+	def NonWorkgDay(self, value):
+		self._NonWorkgDay = value if type(value) != auto else self.make_default("NonWorkgDay")
 
-	@RptHdr.deleter
-	def RptHdr(self):
-		del self._RptHdr
-		self._RptHdr = None
+	@NonWorkgDay.deleter
+	def NonWorkgDay(self):
+		del self._NonWorkgDay
+		self._NonWorkgDay = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentReportingNonWorkingDayReportV01(base_types._BaseFieldTy
 		self._SplmtryData = None
 
 	@property
-	def NonWorkgDay(self):
-		return self._NonWorkgDay
+	def RptHdr(self):
+		return self._RptHdr
 
-	@NonWorkgDay.setter
-	def NonWorkgDay(self, value):
-		self._NonWorkgDay = value if type(value) != auto else self.make_default("NonWorkgDay")
+	@RptHdr.setter
+	def RptHdr(self, value):
+		self._RptHdr = value if type(value) != auto else self.make_default("RptHdr")
 
-	@NonWorkgDay.deleter
-	def NonWorkgDay(self):
-		del self._NonWorkgDay
-		self._NonWorkgDay = None
+	@RptHdr.deleter
+	def RptHdr(self):
+		del self._RptHdr
+		self._RptHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonWorkgDay', type=SecuritiesNonTradingDayReport1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 	))
 

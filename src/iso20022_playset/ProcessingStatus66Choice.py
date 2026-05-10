@@ -1,12 +1,12 @@
 import base_types
-import ProprietaryStatusAndReason6
 import AcknowledgedAcceptedStatus21Choice
+import ProprietaryStatusAndReason6
 import CancellationStatus14Choice
 import RejectionOrRepairStatus38Choice
 
 class ProcessingStatus66Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Canc", "_AckdAccptd", "_Rpr"]
+	__slots__ = ["_Prtry", "_Rpr", "_AckdAccptd", "_Canc"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -21,17 +21,17 @@ class ProcessingStatus66Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	@property
-	def Canc(self):
-		return self._Canc
+	def Rpr(self):
+		return self._Rpr
 
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
+	@Rpr.setter
+	def Rpr(self, value):
+		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
 
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
+	@Rpr.deleter
+	def Rpr(self):
+		del self._Rpr
+		self._Rpr = None
 
 	@property
 	def AckdAccptd(self):
@@ -47,22 +47,22 @@ class ProcessingStatus66Choice(base_types._BaseFieldType):
 		self._AckdAccptd = None
 
 	@property
-	def Rpr(self):
-		return self._Rpr
+	def Canc(self):
+		return self._Canc
 
-	@Rpr.setter
-	def Rpr(self, value):
-		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
 
-	@Rpr.deleter
-	def Rpr(self):
-		del self._Rpr
-		self._Rpr = None
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus14Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus38Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancellationStatus14Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

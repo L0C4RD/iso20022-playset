@@ -1,13 +1,39 @@
 import base_types
-import OrderOriginatorEligibility1Code
-import Account35
-import InvestmentFundRole2Choice
-import PartyIdentification139
 import TradingCapacity8Code
+import PartyIdentification139
+import OrderOriginatorEligibility1Code
+import InvestmentFundRole2Choice
+import Account35
 
 class Intermediary49(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_TradgPtyCpcty", "_OrdrOrgtrElgblty", "_Role"]
+	__slots__ = ["_OrdrOrgtrElgblty", "_TradgPtyCpcty", "_Id", "_Acct", "_Role"]
+	@property
+	def OrdrOrgtrElgblty(self):
+		return self._OrdrOrgtrElgblty
+
+	@OrdrOrgtrElgblty.setter
+	def OrdrOrgtrElgblty(self, value):
+		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
+
+	@OrdrOrgtrElgblty.deleter
+	def OrdrOrgtrElgblty(self):
+		del self._OrdrOrgtrElgblty
+		self._OrdrOrgtrElgblty = None
+
+	@property
+	def TradgPtyCpcty(self):
+		return self._TradgPtyCpcty
+
+	@TradgPtyCpcty.setter
+	def TradgPtyCpcty(self, value):
+		self._TradgPtyCpcty = value if type(value) != auto else self.make_default("TradgPtyCpcty")
+
+	@TradgPtyCpcty.deleter
+	def TradgPtyCpcty(self):
+		del self._TradgPtyCpcty
+		self._TradgPtyCpcty = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -35,32 +61,6 @@ class Intermediary49(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def TradgPtyCpcty(self):
-		return self._TradgPtyCpcty
-
-	@TradgPtyCpcty.setter
-	def TradgPtyCpcty(self, value):
-		self._TradgPtyCpcty = value if type(value) != auto else self.make_default("TradgPtyCpcty")
-
-	@TradgPtyCpcty.deleter
-	def TradgPtyCpcty(self):
-		del self._TradgPtyCpcty
-		self._TradgPtyCpcty = None
-
-	@property
-	def OrdrOrgtrElgblty(self):
-		return self._OrdrOrgtrElgblty
-
-	@OrdrOrgtrElgblty.setter
-	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != auto else self.make_default("OrdrOrgtrElgblty")
-
-	@OrdrOrgtrElgblty.deleter
-	def OrdrOrgtrElgblty(self):
-		del self._OrdrOrgtrElgblty
-		self._OrdrOrgtrElgblty = None
-
-	@property
 	def Role(self):
 		return self._Role
 
@@ -74,10 +74,10 @@ class Intermediary49(base_types._BaseFieldType):
 		self._Role = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingCapacity8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification139, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account35, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgPtyCpcty', type=TradingCapacity8Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

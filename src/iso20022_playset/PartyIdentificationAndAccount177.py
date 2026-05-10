@@ -1,13 +1,13 @@
 import base_types
-import CashAccountIdentification6Choice
-import LEIIdentifier
-import PartyTextInformation4
 import PartyIdentification137Choice
+import CashAccountIdentification6Choice
 import AlternatePartyIdentification9
+import PartyTextInformation4
+import LEIIdentifier
 
 class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 
-	__slots__ = ["_ChrgsAcct", "_Id", "_ComssnAcct", "_AddtlInf", "_CshAcct", "_AltrnId", "_TaxAcct", "_LEI"]
+	__slots__ = ["_ChrgsAcct", "_ComssnAcct", "_CshAcct", "_AltrnId", "_TaxAcct", "_LEI", "_AddtlInf", "_Id"]
 	@property
 	def ChrgsAcct(self):
 		return self._ChrgsAcct
@@ -22,19 +22,6 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		self._ChrgsAcct = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def ComssnAcct(self):
 		return self._ComssnAcct
 
@@ -46,19 +33,6 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 	def ComssnAcct(self):
 		del self._ComssnAcct
 		self._ComssnAcct = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
 
 	@property
 	def CshAcct(self):
@@ -112,14 +86,40 @@ class PartyIdentificationAndAccount177(base_types._BaseFieldType):
 		del self._LEI
 		self._LEI = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ComssnAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

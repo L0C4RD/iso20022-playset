@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import DistributionStrategy1Choice
 import AdditionalInformation15
-import Max35Text
 
 class OtherDistributionStrategy1(base_types._BaseFieldType):
 

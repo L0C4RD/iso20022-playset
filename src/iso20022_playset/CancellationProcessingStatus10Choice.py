@@ -1,24 +1,11 @@
 import base_types
-import CancellationReason39Choice
-import ProprietaryReason4
 import ProprietaryStatusAndReason6
+import ProprietaryReason4
+import CancellationReason39Choice
 
 class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlPdg", "_PrtrySts", "_CxlReqd", "_CxlCmpltd"]
-	@property
-	def CxlPdg(self):
-		return self._CxlPdg
-
-	@CxlPdg.setter
-	def CxlPdg(self, value):
-		self._CxlPdg = value if type(value) != auto else self.make_default("CxlPdg")
-
-	@CxlPdg.deleter
-	def CxlPdg(self):
-		del self._CxlPdg
-		self._CxlPdg = None
-
+	__slots__ = ["_PrtrySts", "_CxlReqd", "_CxlPdg", "_CxlCmpltd"]
 	@property
 	def PrtrySts(self):
 		return self._PrtrySts
@@ -46,6 +33,19 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 		self._CxlReqd = None
 
 	@property
+	def CxlPdg(self):
+		return self._CxlPdg
+
+	@CxlPdg.setter
+	def CxlPdg(self, value):
+		self._CxlPdg = value if type(value) != auto else self.make_default("CxlPdg")
+
+	@CxlPdg.deleter
+	def CxlPdg(self):
+		del self._CxlPdg
+		self._CxlPdg = None
+
+	@property
 	def CxlCmpltd(self):
 		return self._CxlCmpltd
 
@@ -59,9 +59,9 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 		self._CxlCmpltd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CxlPdg', type=CancellationReason39Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlPdg', type=CancellationReason39Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlCmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

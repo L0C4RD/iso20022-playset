@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import AccountUsageType2Code
+import GenericIdentification47
 
 class AccountUsageType2Choice(base_types._BaseFieldType):
 

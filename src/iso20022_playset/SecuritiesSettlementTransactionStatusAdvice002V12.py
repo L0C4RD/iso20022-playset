@@ -1,15 +1,41 @@
 import base_types
-import Linkages50
-import TransactionIdentifications49
 import SupplementaryData1
 import MatchingStatus32Choice
+import Linkages50
 import TransactionDetails161
 import ProcessingStatus94Choice
+import TransactionIdentifications49
 import SettlementStatus31Choice
 
 class SecuritiesSettlementTransactionStatusAdvice002V12(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_SplmtryData", "_TxId", "_Lnkgs", "_IfrrdMtchgSts", "_MtchgSts", "_TxDtls", "_SttlmSts"]
+	__slots__ = ["_SplmtryData", "_TxDtls", "_PrcgSts", "_SttlmSts", "_TxId", "_Lnkgs", "_IfrrdMtchgSts", "_MtchgSts"]
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
+	def TxDtls(self):
+		return self._TxDtls
+
+	@TxDtls.setter
+	def TxDtls(self, value):
+		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
+
+	@TxDtls.deleter
+	def TxDtls(self):
+		del self._TxDtls
+		self._TxDtls = None
+
 	@property
 	def PrcgSts(self):
 		return self._PrcgSts
@@ -24,17 +50,17 @@ class SecuritiesSettlementTransactionStatusAdvice002V12(base_types._BaseFieldTyp
 		self._PrcgSts = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def SttlmSts(self):
+		return self._SttlmSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
 
 	@property
 	def TxId(self):
@@ -88,40 +114,14 @@ class SecuritiesSettlementTransactionStatusAdvice002V12(base_types._BaseFieldTyp
 		del self._MtchgSts
 		self._MtchgSts = None
 
-	@property
-	def TxDtls(self):
-		return self._TxDtls
-
-	@TxDtls.setter
-	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != auto else self.make_default("TxDtls")
-
-	@TxDtls.deleter
-	def TxDtls(self):
-		del self._TxDtls
-		self._TxDtls = None
-
-	@property
-	def SttlmSts(self):
-		return self._SttlmSts
-
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
-
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus94Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxDtls', type=TransactionDetails161, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus94Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications49, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lnkgs', type=Linkages50, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSts', type=MatchingStatus32Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxDtls', type=TransactionDetails161, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

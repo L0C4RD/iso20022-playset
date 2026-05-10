@@ -1,25 +1,12 @@
 import base_types
-import PendingStatus4Code
-import Max4AlphaNumericText
 import Max35Text
+import Max4AlphaNumericText
 import FinalStatus1Code
+import PendingStatus4Code
 
 class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Sttlm", "_RTGS", "_Fnl", "_Prtry"]
-	@property
-	def Pdg(self):
-		return self._Pdg
-
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
-
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
+	__slots__ = ["_Sttlm", "_RTGS", "_Pdg", "_Fnl", "_Prtry"]
 	@property
 	def Sttlm(self):
 		return self._Sttlm
@@ -45,6 +32,19 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 	def RTGS(self):
 		del self._RTGS
 		self._RTGS = None
+
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	@property
 	def Fnl(self):
@@ -73,9 +73,9 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=PendingStatus4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sttlm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RTGS', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatus4Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Fnl', type=FinalStatus1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))

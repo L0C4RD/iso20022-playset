@@ -1,6 +1,6 @@
 import base_types
-import AmountPriceType3Code
 import ActiveCurrencyAnd13DecimalAmount
+import AmountPriceType3Code
 
 class AmountPrice6(base_types._BaseFieldType):
 

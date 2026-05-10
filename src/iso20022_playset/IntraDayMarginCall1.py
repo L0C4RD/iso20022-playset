@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import ISODateTime
+import ActiveCurrencyAndAmount
 import GenericIdentification165
 
 class IntraDayMarginCall1(base_types._BaseFieldType):

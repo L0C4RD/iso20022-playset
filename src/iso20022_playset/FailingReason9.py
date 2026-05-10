@@ -1,6 +1,6 @@
 import base_types
-import FailingReason10Choice
 import RestrictedFINXMax210Text
+import FailingReason10Choice
 
 class FailingReason9(base_types._BaseFieldType):
 

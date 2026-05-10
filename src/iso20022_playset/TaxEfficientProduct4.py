@@ -1,37 +1,24 @@
 import base_types
-import PreviousYear2Choice
 import TaxEfficientProductType2Choice
-import YesNoIndicator
+import PreviousYear2Choice
 import AdditionalInformation15
+import YesNoIndicator
 
 class TaxEfficientProduct4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvsYrs", "_AddtlInf", "_TaxEffcntPdctTp", "_CurYr"]
+	__slots__ = ["_CurYr", "_TaxEffcntPdctTp", "_AddtlInf", "_PrvsYrs"]
 	@property
-	def PrvsYrs(self):
-		return self._PrvsYrs
+	def CurYr(self):
+		return self._CurYr
 
-	@PrvsYrs.setter
-	def PrvsYrs(self, value):
-		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+	@CurYr.setter
+	def CurYr(self, value):
+		self._CurYr = value if type(value) != auto else self.make_default("CurYr")
 
-	@PrvsYrs.deleter
-	def PrvsYrs(self):
-		del self._PrvsYrs
-		self._PrvsYrs = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@CurYr.deleter
+	def CurYr(self):
+		del self._CurYr
+		self._CurYr = None
 
 	@property
 	def TaxEffcntPdctTp(self):
@@ -47,22 +34,35 @@ class TaxEfficientProduct4(base_types._BaseFieldType):
 		self._TaxEffcntPdctTp = None
 
 	@property
-	def CurYr(self):
-		return self._CurYr
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@CurYr.setter
-	def CurYr(self, value):
-		self._CurYr = value if type(value) != auto else self.make_default("CurYr")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@CurYr.deleter
-	def CurYr(self):
-		del self._CurYr
-		self._CurYr = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def PrvsYrs(self):
+		return self._PrvsYrs
+
+	@PrvsYrs.setter
+	def PrvsYrs(self, value):
+		self._PrvsYrs = value if type(value) != auto else self.make_default("PrvsYrs")
+
+	@PrvsYrs.deleter
+	def PrvsYrs(self):
+		del self._PrvsYrs
+		self._PrvsYrs = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurYr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

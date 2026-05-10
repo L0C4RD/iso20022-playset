@@ -1,24 +1,11 @@
 import base_types
 import PercentageRate
-import Max2000Text
 import ActiveCurrencyAndAmount
+import Max2000Text
 
 class UndertakingAmount1(base_types._BaseFieldType):
 
-	__slots__ = ["_PlusTlrnce", "_AddtlInf", "_Amt"]
-	@property
-	def PlusTlrnce(self):
-		return self._PlusTlrnce
-
-	@PlusTlrnce.setter
-	def PlusTlrnce(self, value):
-		self._PlusTlrnce = value if type(value) != auto else self.make_default("PlusTlrnce")
-
-	@PlusTlrnce.deleter
-	def PlusTlrnce(self):
-		del self._PlusTlrnce
-		self._PlusTlrnce = None
-
+	__slots__ = ["_AddtlInf", "_Amt", "_PlusTlrnce"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -45,9 +32,22 @@ class UndertakingAmount1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def PlusTlrnce(self):
+		return self._PlusTlrnce
+
+	@PlusTlrnce.setter
+	def PlusTlrnce(self, value):
+		self._PlusTlrnce = value if type(value) != auto else self.make_default("PlusTlrnce")
+
+	@PlusTlrnce.deleter
+	def PlusTlrnce(self):
+		del self._PlusTlrnce
+		self._PlusTlrnce = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlusTlrnce', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlusTlrnce', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

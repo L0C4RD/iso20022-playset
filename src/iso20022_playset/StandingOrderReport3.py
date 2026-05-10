@@ -1,6 +1,6 @@
 import base_types
-import StandingOrderIdentification8
 import StandingOrderOrError10Choice
+import StandingOrderIdentification8
 
 class StandingOrderReport3(base_types._BaseFieldType):
 

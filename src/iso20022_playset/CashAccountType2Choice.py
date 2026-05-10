@@ -1,6 +1,6 @@
 import base_types
-import ExternalCashAccountType1Code
 import Max35Text
+import ExternalCashAccountType1Code
 
 class CashAccountType2Choice(base_types._BaseFieldType):
 

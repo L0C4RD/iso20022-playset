@@ -1,23 +1,23 @@
 import base_types
-import FinancialInstrumentQuantity1Choice
-import SettlementUnitType3Choice
 import ISOYearMonth
+import SettlementUnitType3Choice
+import FinancialInstrumentQuantity1Choice
 
 class SettlementInformation17(base_types._BaseFieldType):
 
-	__slots__ = ["_DevtgSttlmUnit", "_SctiesQtyTp", "_MinDnmtn", "_CtrctSttlmMnth", "_MinMltplQty"]
+	__slots__ = ["_MinDnmtn", "_SctiesQtyTp", "_MinMltplQty", "_CtrctSttlmMnth", "_DevtgSttlmUnit"]
 	@property
-	def DevtgSttlmUnit(self):
-		return self._DevtgSttlmUnit
+	def MinDnmtn(self):
+		return self._MinDnmtn
 
-	@DevtgSttlmUnit.setter
-	def DevtgSttlmUnit(self, value):
-		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
+	@MinDnmtn.setter
+	def MinDnmtn(self, value):
+		self._MinDnmtn = value if type(value) != auto else self.make_default("MinDnmtn")
 
-	@DevtgSttlmUnit.deleter
-	def DevtgSttlmUnit(self):
-		del self._DevtgSttlmUnit
-		self._DevtgSttlmUnit = None
+	@MinDnmtn.deleter
+	def MinDnmtn(self):
+		del self._MinDnmtn
+		self._MinDnmtn = None
 
 	@property
 	def SctiesQtyTp(self):
@@ -33,17 +33,17 @@ class SettlementInformation17(base_types._BaseFieldType):
 		self._SctiesQtyTp = None
 
 	@property
-	def MinDnmtn(self):
-		return self._MinDnmtn
+	def MinMltplQty(self):
+		return self._MinMltplQty
 
-	@MinDnmtn.setter
-	def MinDnmtn(self, value):
-		self._MinDnmtn = value if type(value) != auto else self.make_default("MinDnmtn")
+	@MinMltplQty.setter
+	def MinMltplQty(self, value):
+		self._MinMltplQty = value if type(value) != auto else self.make_default("MinMltplQty")
 
-	@MinDnmtn.deleter
-	def MinDnmtn(self):
-		del self._MinDnmtn
-		self._MinDnmtn = None
+	@MinMltplQty.deleter
+	def MinMltplQty(self):
+		del self._MinMltplQty
+		self._MinMltplQty = None
 
 	@property
 	def CtrctSttlmMnth(self):
@@ -59,23 +59,23 @@ class SettlementInformation17(base_types._BaseFieldType):
 		self._CtrctSttlmMnth = None
 
 	@property
-	def MinMltplQty(self):
-		return self._MinMltplQty
+	def DevtgSttlmUnit(self):
+		return self._DevtgSttlmUnit
 
-	@MinMltplQty.setter
-	def MinMltplQty(self, value):
-		self._MinMltplQty = value if type(value) != auto else self.make_default("MinMltplQty")
+	@DevtgSttlmUnit.setter
+	def DevtgSttlmUnit(self, value):
+		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
 
-	@MinMltplQty.deleter
-	def MinMltplQty(self):
-		del self._MinMltplQty
-		self._MinMltplQty = None
+	@DevtgSttlmUnit.deleter
+	def DevtgSttlmUnit(self):
+		del self._DevtgSttlmUnit
+		self._DevtgSttlmUnit = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DevtgSttlmUnit', type=FinancialInstrumentQuantity1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctiesQtyTp', type=SettlementUnitType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinDnmtn', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQtyTp', type=SettlementUnitType3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplQty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DevtgSttlmUnit', type=FinancialInstrumentQuantity1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

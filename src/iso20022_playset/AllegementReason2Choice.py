@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import AllegementReason1Code
+import GenericIdentification30
 
 class AllegementReason2Choice(base_types._BaseFieldType):
 

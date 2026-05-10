@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import TradingDate1Code
+import GenericIdentification30
 
 class TradingDateCode2Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import FundType2Code
 import FinancialPartySectorType2Code
+import FundType2Code
 
 class FinancialPartyClassification1(base_types._BaseFieldType):
 

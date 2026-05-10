@@ -1,6 +1,6 @@
 import base_types
-import FinancialInstrument48Choice
 import FinancialInstrument53
+import FinancialInstrument48Choice
 
 class FinancialInstrumentIdentification5Choice(base_types._BaseFieldType):
 

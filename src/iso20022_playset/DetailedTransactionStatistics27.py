@@ -4,20 +4,7 @@ import Number
 
 class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfOutsdngDerivs", "_NbOfOutsdngDerivsWthOutdtdValtn", "_Wrnngs", "_NbOfOutsdngDerivsWthNoValtn"]
-	@property
-	def NbOfOutsdngDerivs(self):
-		return self._NbOfOutsdngDerivs
-
-	@NbOfOutsdngDerivs.setter
-	def NbOfOutsdngDerivs(self, value):
-		self._NbOfOutsdngDerivs = value if type(value) != auto else self.make_default("NbOfOutsdngDerivs")
-
-	@NbOfOutsdngDerivs.deleter
-	def NbOfOutsdngDerivs(self):
-		del self._NbOfOutsdngDerivs
-		self._NbOfOutsdngDerivs = None
-
+	__slots__ = ["_NbOfOutsdngDerivsWthOutdtdValtn", "_NbOfOutsdngDerivsWthNoValtn", "_NbOfOutsdngDerivs", "_Wrnngs"]
 	@property
 	def NbOfOutsdngDerivsWthOutdtdValtn(self):
 		return self._NbOfOutsdngDerivsWthOutdtdValtn
@@ -32,19 +19,6 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 		self._NbOfOutsdngDerivsWthOutdtdValtn = None
 
 	@property
-	def Wrnngs(self):
-		return self._Wrnngs
-
-	@Wrnngs.setter
-	def Wrnngs(self, value):
-		self._Wrnngs = value if type(value) != auto else self.make_default("Wrnngs")
-
-	@Wrnngs.deleter
-	def Wrnngs(self):
-		del self._Wrnngs
-		self._Wrnngs = None
-
-	@property
 	def NbOfOutsdngDerivsWthNoValtn(self):
 		return self._NbOfOutsdngDerivsWthNoValtn
 
@@ -57,10 +31,36 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 		del self._NbOfOutsdngDerivsWthNoValtn
 		self._NbOfOutsdngDerivsWthNoValtn = None
 
+	@property
+	def NbOfOutsdngDerivs(self):
+		return self._NbOfOutsdngDerivs
+
+	@NbOfOutsdngDerivs.setter
+	def NbOfOutsdngDerivs(self, value):
+		self._NbOfOutsdngDerivs = value if type(value) != auto else self.make_default("NbOfOutsdngDerivs")
+
+	@NbOfOutsdngDerivs.deleter
+	def NbOfOutsdngDerivs(self):
+		del self._NbOfOutsdngDerivs
+		self._NbOfOutsdngDerivs = None
+
+	@property
+	def Wrnngs(self):
+		return self._Wrnngs
+
+	@Wrnngs.setter
+	def Wrnngs(self, value):
+		self._Wrnngs = value if type(value) != auto else self.make_default("Wrnngs")
+
+	@Wrnngs.deleter
+	def Wrnngs(self):
+		del self._Wrnngs
+		self._Wrnngs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wrnngs', type=MissingValuationsData2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthNoValtn', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wrnngs', type=MissingValuationsData2, min=1, max=None, mutex_group=None, array=True),
 	))
 

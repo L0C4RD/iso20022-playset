@@ -1,6 +1,6 @@
 import base_types
-import ExternalTypeOfParty1Code
 import CountryCode
+import ExternalTypeOfParty1Code
 
 class PlaceOfPresentation1(base_types._BaseFieldType):
 

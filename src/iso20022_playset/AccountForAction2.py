@@ -1,7 +1,7 @@
 import base_types
-import Max70Text
 import AccountIdentification4Choice
 import ActiveCurrencyCode
+import Max70Text
 
 class AccountForAction2(base_types._BaseFieldType):
 

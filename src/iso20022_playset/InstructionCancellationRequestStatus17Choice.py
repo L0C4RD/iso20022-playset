@@ -1,13 +1,13 @@
 import base_types
+import NoSpecifiedReason1
+import PendingCancellationStatus13Choice
 import ProprietaryStatusAndReason6
 import CancelledStatus11Choice
 import RejectedStatus53Choice
-import NoSpecifiedReason1
-import PendingCancellationStatus13Choice
 
 class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtrySts", "_Rjctd", "_Accptd", "_CxlCmpltd", "_PdgCxl"]
+	__slots__ = ["_PrtrySts", "_Rjctd", "_CxlCmpltd", "_PdgCxl", "_Accptd"]
 	@property
 	def PrtrySts(self):
 		return self._PrtrySts
@@ -35,19 +35,6 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def Accptd(self):
-		return self._Accptd
-
-	@Accptd.setter
-	def Accptd(self, value):
-		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
-
-	@Accptd.deleter
-	def Accptd(self):
-		del self._Accptd
-		self._Accptd = None
-
-	@property
 	def CxlCmpltd(self):
 		return self._CxlCmpltd
 
@@ -73,11 +60,24 @@ class InstructionCancellationRequestStatus17Choice(base_types._BaseFieldType):
 		del self._PdgCxl
 		self._PdgCxl = None
 
+	@property
+	def Accptd(self):
+		return self._Accptd
+
+	@Accptd.setter
+	def Accptd(self, value):
+		self._Accptd = value if type(value) != auto else self.make_default("Accptd")
+
+	@Accptd.deleter
+	def Accptd(self):
+		del self._Accptd
+		self._Accptd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus53Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CxlCmpltd', type=CancelledStatus11Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingCancellationStatus13Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Accptd', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),
 	))
 

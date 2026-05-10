@@ -1,36 +1,10 @@
 import base_types
-import PriceFormat62Choice
 import PriceFormat88Choice
+import PriceFormat62Choice
 
 class CorporateActionPrice94(base_types._BaseFieldType):
 
-	__slots__ = ["_MinCshToInst", "_MaxCshToInst", "_MinMltplCshToInst", "_CshInLieuOfShrPric", "_OverSbcptDpstPric"]
-	@property
-	def MinCshToInst(self):
-		return self._MinCshToInst
-
-	@MinCshToInst.setter
-	def MinCshToInst(self, value):
-		self._MinCshToInst = value if type(value) != auto else self.make_default("MinCshToInst")
-
-	@MinCshToInst.deleter
-	def MinCshToInst(self):
-		del self._MinCshToInst
-		self._MinCshToInst = None
-
-	@property
-	def MaxCshToInst(self):
-		return self._MaxCshToInst
-
-	@MaxCshToInst.setter
-	def MaxCshToInst(self, value):
-		self._MaxCshToInst = value if type(value) != auto else self.make_default("MaxCshToInst")
-
-	@MaxCshToInst.deleter
-	def MaxCshToInst(self):
-		del self._MaxCshToInst
-		self._MaxCshToInst = None
-
+	__slots__ = ["_MinMltplCshToInst", "_CshInLieuOfShrPric", "_MaxCshToInst", "_OverSbcptDpstPric", "_MinCshToInst"]
 	@property
 	def MinMltplCshToInst(self):
 		return self._MinMltplCshToInst
@@ -58,6 +32,19 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		self._CshInLieuOfShrPric = None
 
 	@property
+	def MaxCshToInst(self):
+		return self._MaxCshToInst
+
+	@MaxCshToInst.setter
+	def MaxCshToInst(self, value):
+		self._MaxCshToInst = value if type(value) != auto else self.make_default("MaxCshToInst")
+
+	@MaxCshToInst.deleter
+	def MaxCshToInst(self):
+		del self._MaxCshToInst
+		self._MaxCshToInst = None
+
+	@property
 	def OverSbcptDpstPric(self):
 		return self._OverSbcptDpstPric
 
@@ -70,11 +57,24 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		del self._OverSbcptDpstPric
 		self._OverSbcptDpstPric = None
 
+	@property
+	def MinCshToInst(self):
+		return self._MinCshToInst
+
+	@MinCshToInst.setter
+	def MinCshToInst(self, value):
+		self._MinCshToInst = value if type(value) != auto else self.make_default("MinCshToInst")
+
+	@MinCshToInst.deleter
+	def MinCshToInst(self):
+		del self._MinCshToInst
+		self._MinCshToInst = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

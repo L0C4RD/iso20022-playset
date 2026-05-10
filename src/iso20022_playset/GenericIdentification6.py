@@ -1,11 +1,11 @@
 import base_types
+import Exact4AlphaNumericText
 import Max8Text
 import Number
-import Exact4AlphaNumericText
 
 class GenericIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_Issr", "_Inf"]
+	__slots__ = ["_Bal", "_Inf", "_Issr"]
 	@property
 	def Bal(self):
 		return self._Bal
@@ -20,19 +20,6 @@ class GenericIdentification6(base_types._BaseFieldType):
 		self._Bal = None
 
 	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
 	def Inf(self):
 		return self._Inf
 
@@ -45,9 +32,22 @@ class GenericIdentification6(base_types._BaseFieldType):
 		del self._Inf
 		self._Inf = None
 
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

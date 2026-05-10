@@ -1,11 +1,11 @@
 import base_types
-import Max70Text
-import ATMService28
 import Max35Text
+import ATMService28
+import Max70Text
 
 class ATMCustomerProfile7(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrId", "_AllwdSvcs", "_PrflRef", "_PrflDesc"]
+	__slots__ = ["_CstmrId", "_PrflRef", "_PrflDesc", "_AllwdSvcs"]
 	@property
 	def CstmrId(self):
 		return self._CstmrId
@@ -18,19 +18,6 @@ class ATMCustomerProfile7(base_types._BaseFieldType):
 	def CstmrId(self):
 		del self._CstmrId
 		self._CstmrId = None
-
-	@property
-	def AllwdSvcs(self):
-		return self._AllwdSvcs
-
-	@AllwdSvcs.setter
-	def AllwdSvcs(self, value):
-		self._AllwdSvcs = value if type(value) != auto else self.make_default("AllwdSvcs")
-
-	@AllwdSvcs.deleter
-	def AllwdSvcs(self):
-		del self._AllwdSvcs
-		self._AllwdSvcs = None
 
 	@property
 	def PrflRef(self):
@@ -58,10 +45,23 @@ class ATMCustomerProfile7(base_types._BaseFieldType):
 		del self._PrflDesc
 		self._PrflDesc = None
 
+	@property
+	def AllwdSvcs(self):
+		return self._AllwdSvcs
+
+	@AllwdSvcs.setter
+	def AllwdSvcs(self, value):
+		self._AllwdSvcs = value if type(value) != auto else self.make_default("AllwdSvcs")
+
+	@AllwdSvcs.deleter
+	def AllwdSvcs(self):
+		del self._AllwdSvcs
+		self._AllwdSvcs = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AllwdSvcs', type=ATMService28, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrflRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrflDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AllwdSvcs', type=ATMService28, min=0, max=None, mutex_group=None, array=True),
 	))
 

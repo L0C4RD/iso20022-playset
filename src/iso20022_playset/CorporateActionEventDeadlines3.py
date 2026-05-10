@@ -4,46 +4,7 @@ import DateFormat44Choice
 
 class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 
-	__slots__ = ["_MktDdln", "_PrtctDdln", "_RspnDdln", "_CoverPrtctDdln", "_EarlyRspnDdln"]
-	@property
-	def MktDdln(self):
-		return self._MktDdln
-
-	@MktDdln.setter
-	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
-
-	@MktDdln.deleter
-	def MktDdln(self):
-		del self._MktDdln
-		self._MktDdln = None
-
-	@property
-	def PrtctDdln(self):
-		return self._PrtctDdln
-
-	@PrtctDdln.setter
-	def PrtctDdln(self, value):
-		self._PrtctDdln = value if type(value) != auto else self.make_default("PrtctDdln")
-
-	@PrtctDdln.deleter
-	def PrtctDdln(self):
-		del self._PrtctDdln
-		self._PrtctDdln = None
-
-	@property
-	def RspnDdln(self):
-		return self._RspnDdln
-
-	@RspnDdln.setter
-	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
-
-	@RspnDdln.deleter
-	def RspnDdln(self):
-		del self._RspnDdln
-		self._RspnDdln = None
-
+	__slots__ = ["_CoverPrtctDdln", "_EarlyRspnDdln", "_RspnDdln", "_PrtctDdln", "_MktDdln"]
 	@property
 	def CoverPrtctDdln(self):
 		return self._CoverPrtctDdln
@@ -70,11 +31,50 @@ class CorporateActionEventDeadlines3(base_types._BaseFieldType):
 		del self._EarlyRspnDdln
 		self._EarlyRspnDdln = None
 
+	@property
+	def RspnDdln(self):
+		return self._RspnDdln
+
+	@RspnDdln.setter
+	def RspnDdln(self, value):
+		self._RspnDdln = value if type(value) != auto else self.make_default("RspnDdln")
+
+	@RspnDdln.deleter
+	def RspnDdln(self):
+		del self._RspnDdln
+		self._RspnDdln = None
+
+	@property
+	def PrtctDdln(self):
+		return self._PrtctDdln
+
+	@PrtctDdln.setter
+	def PrtctDdln(self, value):
+		self._PrtctDdln = value if type(value) != auto else self.make_default("PrtctDdln")
+
+	@PrtctDdln.deleter
+	def PrtctDdln(self):
+		del self._PrtctDdln
+		self._PrtctDdln = None
+
+	@property
+	def MktDdln(self):
+		return self._MktDdln
+
+	@MktDdln.setter
+	def MktDdln(self, value):
+		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
+
+	@MktDdln.deleter
+	def MktDdln(self):
+		del self._MktDdln
+		self._MktDdln = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MktDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnDdln', type=DateFormat44Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CoverPrtctDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyRspnDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnDdln', type=DateFormat44Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktDdln', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

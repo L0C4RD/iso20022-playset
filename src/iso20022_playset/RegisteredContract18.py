@@ -1,21 +1,47 @@
 import base_types
-import TrueFalseIndicator
-import RegisteredContractCommunication1
-import ActiveCurrencyAndAmount
-import RegisteredContractAmendment1
-import PaymentScheduleType2Choice
 import DocumentIdentification29
-import DocumentIdentification22
-import RegisteredContractJournal3
 import Max1025Text
-import UnderlyingContract4Choice
-import ContractBalance1
+import RegisteredContractAmendment1
 import BranchAndFinancialInstitutionIdentification8
+import ContractBalance1
+import ActiveCurrencyAndAmount
+import DocumentIdentification22
+import RegisteredContractCommunication1
+import PaymentScheduleType2Choice
 import Max35Text
+import TrueFalseIndicator
+import UnderlyingContract4Choice
+import RegisteredContractJournal3
 
 class RegisteredContract18(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CtrctBal", "_PmtSchdlTp", "_LnPrncplAmt", "_IssrFI", "_EstmtdDtInd", "_PrvsRegdCtrctId", "_RegdCtrctId", "_RegdCtrctJrnl", "_Dlvry", "_Ctrct", "_OrgnlCtrctRegnReq", "_Amdmnt", "_Submissn", "_IntrCpnyLn"]
+	__slots__ = ["_Ctrct", "_Amdmnt", "_AddtlInf", "_RegdCtrctJrnl", "_Dlvry", "_IssrFI", "_CtrctBal", "_PmtSchdlTp", "_LnPrncplAmt", "_EstmtdDtInd", "_IntrCpnyLn", "_RegdCtrctId", "_Submissn", "_PrvsRegdCtrctId", "_OrgnlCtrctRegnReq"]
+	@property
+	def Ctrct(self):
+		return self._Ctrct
+
+	@Ctrct.setter
+	def Ctrct(self, value):
+		self._Ctrct = value if type(value) != auto else self.make_default("Ctrct")
+
+	@Ctrct.deleter
+	def Ctrct(self):
+		del self._Ctrct
+		self._Ctrct = None
+
+	@property
+	def Amdmnt(self):
+		return self._Amdmnt
+
+	@Amdmnt.setter
+	def Amdmnt(self, value):
+		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
+
+	@Amdmnt.deleter
+	def Amdmnt(self):
+		del self._Amdmnt
+		self._Amdmnt = None
+
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -28,6 +54,45 @@ class RegisteredContract18(base_types._BaseFieldType):
 	def AddtlInf(self):
 		del self._AddtlInf
 		self._AddtlInf = None
+
+	@property
+	def RegdCtrctJrnl(self):
+		return self._RegdCtrctJrnl
+
+	@RegdCtrctJrnl.setter
+	def RegdCtrctJrnl(self, value):
+		self._RegdCtrctJrnl = value if type(value) != auto else self.make_default("RegdCtrctJrnl")
+
+	@RegdCtrctJrnl.deleter
+	def RegdCtrctJrnl(self):
+		del self._RegdCtrctJrnl
+		self._RegdCtrctJrnl = None
+
+	@property
+	def Dlvry(self):
+		return self._Dlvry
+
+	@Dlvry.setter
+	def Dlvry(self, value):
+		self._Dlvry = value if type(value) != auto else self.make_default("Dlvry")
+
+	@Dlvry.deleter
+	def Dlvry(self):
+		del self._Dlvry
+		self._Dlvry = None
+
+	@property
+	def IssrFI(self):
+		return self._IssrFI
+
+	@IssrFI.setter
+	def IssrFI(self, value):
+		self._IssrFI = value if type(value) != auto else self.make_default("IssrFI")
+
+	@IssrFI.deleter
+	def IssrFI(self):
+		del self._IssrFI
+		self._IssrFI = None
 
 	@property
 	def CtrctBal(self):
@@ -69,19 +134,6 @@ class RegisteredContract18(base_types._BaseFieldType):
 		self._LnPrncplAmt = None
 
 	@property
-	def IssrFI(self):
-		return self._IssrFI
-
-	@IssrFI.setter
-	def IssrFI(self, value):
-		self._IssrFI = value if type(value) != auto else self.make_default("IssrFI")
-
-	@IssrFI.deleter
-	def IssrFI(self):
-		del self._IssrFI
-		self._IssrFI = None
-
-	@property
 	def EstmtdDtInd(self):
 		return self._EstmtdDtInd
 
@@ -95,17 +147,17 @@ class RegisteredContract18(base_types._BaseFieldType):
 		self._EstmtdDtInd = None
 
 	@property
-	def PrvsRegdCtrctId(self):
-		return self._PrvsRegdCtrctId
+	def IntrCpnyLn(self):
+		return self._IntrCpnyLn
 
-	@PrvsRegdCtrctId.setter
-	def PrvsRegdCtrctId(self, value):
-		self._PrvsRegdCtrctId = value if type(value) != auto else self.make_default("PrvsRegdCtrctId")
+	@IntrCpnyLn.setter
+	def IntrCpnyLn(self, value):
+		self._IntrCpnyLn = value if type(value) != auto else self.make_default("IntrCpnyLn")
 
-	@PrvsRegdCtrctId.deleter
-	def PrvsRegdCtrctId(self):
-		del self._PrvsRegdCtrctId
-		self._PrvsRegdCtrctId = None
+	@IntrCpnyLn.deleter
+	def IntrCpnyLn(self):
+		del self._IntrCpnyLn
+		self._IntrCpnyLn = None
 
 	@property
 	def RegdCtrctId(self):
@@ -121,43 +173,30 @@ class RegisteredContract18(base_types._BaseFieldType):
 		self._RegdCtrctId = None
 
 	@property
-	def RegdCtrctJrnl(self):
-		return self._RegdCtrctJrnl
+	def Submissn(self):
+		return self._Submissn
 
-	@RegdCtrctJrnl.setter
-	def RegdCtrctJrnl(self, value):
-		self._RegdCtrctJrnl = value if type(value) != auto else self.make_default("RegdCtrctJrnl")
+	@Submissn.setter
+	def Submissn(self, value):
+		self._Submissn = value if type(value) != auto else self.make_default("Submissn")
 
-	@RegdCtrctJrnl.deleter
-	def RegdCtrctJrnl(self):
-		del self._RegdCtrctJrnl
-		self._RegdCtrctJrnl = None
-
-	@property
-	def Dlvry(self):
-		return self._Dlvry
-
-	@Dlvry.setter
-	def Dlvry(self, value):
-		self._Dlvry = value if type(value) != auto else self.make_default("Dlvry")
-
-	@Dlvry.deleter
-	def Dlvry(self):
-		del self._Dlvry
-		self._Dlvry = None
+	@Submissn.deleter
+	def Submissn(self):
+		del self._Submissn
+		self._Submissn = None
 
 	@property
-	def Ctrct(self):
-		return self._Ctrct
+	def PrvsRegdCtrctId(self):
+		return self._PrvsRegdCtrctId
 
-	@Ctrct.setter
-	def Ctrct(self, value):
-		self._Ctrct = value if type(value) != auto else self.make_default("Ctrct")
+	@PrvsRegdCtrctId.setter
+	def PrvsRegdCtrctId(self, value):
+		self._PrvsRegdCtrctId = value if type(value) != auto else self.make_default("PrvsRegdCtrctId")
 
-	@Ctrct.deleter
-	def Ctrct(self):
-		del self._Ctrct
-		self._Ctrct = None
+	@PrvsRegdCtrctId.deleter
+	def PrvsRegdCtrctId(self):
+		del self._PrvsRegdCtrctId
+		self._PrvsRegdCtrctId = None
 
 	@property
 	def OrgnlCtrctRegnReq(self):
@@ -172,60 +211,21 @@ class RegisteredContract18(base_types._BaseFieldType):
 		del self._OrgnlCtrctRegnReq
 		self._OrgnlCtrctRegnReq = None
 
-	@property
-	def Amdmnt(self):
-		return self._Amdmnt
-
-	@Amdmnt.setter
-	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != auto else self.make_default("Amdmnt")
-
-	@Amdmnt.deleter
-	def Amdmnt(self):
-		del self._Amdmnt
-		self._Amdmnt = None
-
-	@property
-	def Submissn(self):
-		return self._Submissn
-
-	@Submissn.setter
-	def Submissn(self, value):
-		self._Submissn = value if type(value) != auto else self.make_default("Submissn")
-
-	@Submissn.deleter
-	def Submissn(self):
-		del self._Submissn
-		self._Submissn = None
-
-	@property
-	def IntrCpnyLn(self):
-		return self._IntrCpnyLn
-
-	@IntrCpnyLn.setter
-	def IntrCpnyLn(self, value):
-		self._IntrCpnyLn = value if type(value) != auto else self.make_default("IntrCpnyLn")
-
-	@IntrCpnyLn.deleter
-	def IntrCpnyLn(self):
-		del self._IntrCpnyLn
-		self._IntrCpnyLn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Ctrct', type=UnderlyingContract4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amdmnt', type=RegisteredContractAmendment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdCtrctJrnl', type=RegisteredContractJournal3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Dlvry', type=RegisteredContractCommunication1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrFI', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctBal', type=ContractBalance1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmtSchdlTp', type=PaymentScheduleType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LnPrncplAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrFI', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstmtdDtInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRegdCtrctId', type=DocumentIdentification22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdCtrctId', type=DocumentIdentification29, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdCtrctJrnl', type=RegisteredContractJournal3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dlvry', type=RegisteredContractCommunication1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctrct', type=UnderlyingContract4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlCtrctRegnReq', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amdmnt', type=RegisteredContractAmendment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Submissn', type=RegisteredContractCommunication1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrCpnyLn', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdCtrctId', type=DocumentIdentification29, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Submissn', type=RegisteredContractCommunication1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRegdCtrctId', type=DocumentIdentification22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlCtrctRegnReq', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

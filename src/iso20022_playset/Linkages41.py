@@ -1,23 +1,10 @@
 import base_types
-import ProcessingPosition9Choice
 import Max35Text
+import ProcessingPosition9Choice
 
 class Linkages41(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgPos", "_SctiesSttlmTxId"]
-	@property
-	def PrcgPos(self):
-		return self._PrcgPos
-
-	@PrcgPos.setter
-	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != auto else self.make_default("PrcgPos")
-
-	@PrcgPos.deleter
-	def PrcgPos(self):
-		del self._PrcgPos
-		self._PrcgPos = None
-
+	__slots__ = ["_SctiesSttlmTxId", "_PrcgPos"]
 	@property
 	def SctiesSttlmTxId(self):
 		return self._SctiesSttlmTxId
@@ -31,8 +18,21 @@ class Linkages41(base_types._BaseFieldType):
 		del self._SctiesSttlmTxId
 		self._SctiesSttlmTxId = None
 
+	@property
+	def PrcgPos(self):
+		return self._PrcgPos
+
+	@PrcgPos.setter
+	def PrcgPos(self, value):
+		self._PrcgPos = value if type(value) != auto else self.make_default("PrcgPos")
+
+	@PrcgPos.deleter
+	def PrcgPos(self):
+		del self._PrcgPos
+		self._PrcgPos = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition9Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

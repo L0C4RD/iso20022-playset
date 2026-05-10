@@ -6,20 +6,7 @@ import AlgorithmIdentification27
 
 class KeyTransport6(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptId", "_NcrptdKey", "_KeyNcrptnAlgo", "_Vrsn"]
-	@property
-	def RcptId(self):
-		return self._RcptId
-
-	@RcptId.setter
-	def RcptId(self, value):
-		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
-
-	@RcptId.deleter
-	def RcptId(self):
-		del self._RcptId
-		self._RcptId = None
-
+	__slots__ = ["_NcrptdKey", "_Vrsn", "_KeyNcrptnAlgo", "_RcptId"]
 	@property
 	def NcrptdKey(self):
 		return self._NcrptdKey
@@ -32,6 +19,19 @@ class KeyTransport6(base_types._BaseFieldType):
 	def NcrptdKey(self):
 		del self._NcrptdKey
 		self._NcrptdKey = None
+
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def KeyNcrptnAlgo(self):
@@ -47,22 +47,22 @@ class KeyTransport6(base_types._BaseFieldType):
 		self._KeyNcrptnAlgo = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def RcptId(self):
+		return self._RcptId
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@RcptId.setter
+	def RcptId(self, value):
+		self._RcptId = value if type(value) != auto else self.make_default("RcptId")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@RcptId.deleter
+	def RcptId(self):
+		del self._RcptId
+		self._RcptId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdKey', type=Max5000Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification27, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptId', type=Recipient5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

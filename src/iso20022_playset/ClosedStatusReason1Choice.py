@@ -1,6 +1,6 @@
 import base_types
-import ClosedStatusReason1
 import NoReasonCode
+import ClosedStatusReason1
 
 class ClosedStatusReason1Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import Max8Text
-import Exact4AlphaNumericText
 import Max35Text
+import Exact4AlphaNumericText
+import Max8Text
 
 class GenericIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_Issr", "_Inf", "_Nrrtv"]
+	__slots__ = ["_Nrrtv", "_Inf", "_Issr"]
 	@property
-	def Issr(self):
-		return self._Issr
+	def Nrrtv(self):
+		return self._Nrrtv
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@Nrrtv.setter
+	def Nrrtv(self, value):
+		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@Nrrtv.deleter
+	def Nrrtv(self):
+		del self._Nrrtv
+		self._Nrrtv = None
 
 	@property
 	def Inf(self):
@@ -33,21 +33,21 @@ class GenericIdentification5(base_types._BaseFieldType):
 		self._Inf = None
 
 	@property
-	def Nrrtv(self):
-		return self._Nrrtv
+	def Issr(self):
+		return self._Issr
 
-	@Nrrtv.setter
-	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Nrrtv.deleter
-	def Nrrtv(self):
-		del self._Nrrtv
-		self._Nrrtv = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nrrtv', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

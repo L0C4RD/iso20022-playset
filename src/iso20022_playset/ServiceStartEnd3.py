@@ -1,40 +1,14 @@
 import base_types
-import JourneyType1Code
-import Max35Text
 import ISODateTime
-import TimeSegment1Code
+import Max35Text
 import ContactBusiness1
+import JourneyType1Code
 import Address2
+import TimeSegment1Code
 
 class ServiceStartEnd3(base_types._BaseFieldType):
 
-	__slots__ = ["_JrnyData", "_Lctn", "_JrnyDtAndTm", "_DtAndTm", "_Adr", "_Ctct", "_TmSgmt", "_JrnyTp", "_LctnCd"]
-	@property
-	def JrnyData(self):
-		return self._JrnyData
-
-	@JrnyData.setter
-	def JrnyData(self, value):
-		self._JrnyData = value if type(value) != auto else self.make_default("JrnyData")
-
-	@JrnyData.deleter
-	def JrnyData(self):
-		del self._JrnyData
-		self._JrnyData = None
-
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
+	__slots__ = ["_JrnyDtAndTm", "_Adr", "_TmSgmt", "_Lctn", "_LctnCd", "_JrnyData", "_Ctct", "_JrnyTp", "_DtAndTm"]
 	@property
 	def JrnyDtAndTm(self):
 		return self._JrnyDtAndTm
@@ -47,19 +21,6 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 	def JrnyDtAndTm(self):
 		del self._JrnyDtAndTm
 		self._JrnyDtAndTm = None
-
-	@property
-	def DtAndTm(self):
-		return self._DtAndTm
-
-	@DtAndTm.setter
-	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
-
-	@DtAndTm.deleter
-	def DtAndTm(self):
-		del self._DtAndTm
-		self._DtAndTm = None
 
 	@property
 	def Adr(self):
@@ -75,19 +36,6 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
-	def Ctct(self):
-		return self._Ctct
-
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
-
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
-
-	@property
 	def TmSgmt(self):
 		return self._TmSgmt
 
@@ -99,6 +47,58 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 	def TmSgmt(self):
 		del self._TmSgmt
 		self._TmSgmt = None
+
+	@property
+	def Lctn(self):
+		return self._Lctn
+
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
+
+	@property
+	def LctnCd(self):
+		return self._LctnCd
+
+	@LctnCd.setter
+	def LctnCd(self, value):
+		self._LctnCd = value if type(value) != auto else self.make_default("LctnCd")
+
+	@LctnCd.deleter
+	def LctnCd(self):
+		del self._LctnCd
+		self._LctnCd = None
+
+	@property
+	def JrnyData(self):
+		return self._JrnyData
+
+	@JrnyData.setter
+	def JrnyData(self, value):
+		self._JrnyData = value if type(value) != auto else self.make_default("JrnyData")
+
+	@JrnyData.deleter
+	def JrnyData(self):
+		del self._JrnyData
+		self._JrnyData = None
+
+	@property
+	def Ctct(self):
+		return self._Ctct
+
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
+
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
 
 	@property
 	def JrnyTp(self):
@@ -114,27 +114,27 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 		self._JrnyTp = None
 
 	@property
-	def LctnCd(self):
-		return self._LctnCd
+	def DtAndTm(self):
+		return self._DtAndTm
 
-	@LctnCd.setter
-	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != auto else self.make_default("LctnCd")
+	@DtAndTm.setter
+	def DtAndTm(self, value):
+		self._DtAndTm = value if type(value) != auto else self.make_default("DtAndTm")
 
-	@LctnCd.deleter
-	def LctnCd(self):
-		del self._LctnCd
-		self._LctnCd = None
+	@DtAndTm.deleter
+	def DtAndTm(self):
+		del self._DtAndTm
+		self._DtAndTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='JrnyData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='JrnyDtAndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtAndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmSgmt', type=TimeSegment1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='JrnyTp', type=JourneyType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnyData', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='JrnyTp', type=JourneyType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtAndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

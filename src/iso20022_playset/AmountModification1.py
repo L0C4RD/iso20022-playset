@@ -1,23 +1,10 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import Modification1Code
+import ImpliedCurrencyAndAmount
 
 class AmountModification1(base_types._BaseFieldType):
 
-	__slots__ = ["_ModCd", "_Amt"]
-	@property
-	def ModCd(self):
-		return self._ModCd
-
-	@ModCd.setter
-	def ModCd(self, value):
-		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
-
-	@ModCd.deleter
-	def ModCd(self):
-		del self._ModCd
-		self._ModCd = None
-
+	__slots__ = ["_Amt", "_ModCd"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class AmountModification1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def ModCd(self):
+		return self._ModCd
+
+	@ModCd.setter
+	def ModCd(self, value):
+		self._ModCd = value if type(value) != auto else self.make_default("ModCd")
+
+	@ModCd.deleter
+	def ModCd(self):
+		del self._ModCd
+		self._ModCd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

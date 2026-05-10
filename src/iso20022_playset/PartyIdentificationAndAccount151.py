@@ -1,25 +1,12 @@
 import base_types
+import Max35Text
 import AlternatePartyIdentification8
 import PartyIdentification117Choice
 import PartyTextInformation1
-import Max35Text
 
 class PartyIdentificationAndAccount151(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgAcct", "_PrcgId", "_AddtlInf", "_AltrnId", "_Id"]
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
-
+	__slots__ = ["_PrcgId", "_SfkpgAcct", "_AltrnId", "_AddtlInf", "_Id"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -34,17 +21,17 @@ class PartyIdentificationAndAccount151(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def AltrnId(self):
@@ -60,6 +47,19 @@ class PartyIdentificationAndAccount151(base_types._BaseFieldType):
 		self._AltrnId = None
 
 	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -73,10 +73,10 @@ class PartyIdentificationAndAccount151(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

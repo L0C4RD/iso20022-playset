@@ -1,22 +1,22 @@
 import base_types
-import UUIDv4Identifier
 import Max35Text
+import UUIDv4Identifier
 
 class PaymentIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrId", "_UETR", "_EndToEndId"]
+	__slots__ = ["_EndToEndId", "_UETR", "_InstrId"]
 	@property
-	def InstrId(self):
-		return self._InstrId
+	def EndToEndId(self):
+		return self._EndToEndId
 
-	@InstrId.setter
-	def InstrId(self, value):
-		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
+	@EndToEndId.setter
+	def EndToEndId(self, value):
+		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
 
-	@InstrId.deleter
-	def InstrId(self):
-		del self._InstrId
-		self._InstrId = None
+	@EndToEndId.deleter
+	def EndToEndId(self):
+		del self._EndToEndId
+		self._EndToEndId = None
 
 	@property
 	def UETR(self):
@@ -32,21 +32,21 @@ class PaymentIdentification6(base_types._BaseFieldType):
 		self._UETR = None
 
 	@property
-	def EndToEndId(self):
-		return self._EndToEndId
+	def InstrId(self):
+		return self._InstrId
 
-	@EndToEndId.setter
-	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != auto else self.make_default("EndToEndId")
+	@InstrId.setter
+	def InstrId(self, value):
+		self._InstrId = value if type(value) != auto else self.make_default("InstrId")
 
-	@EndToEndId.deleter
-	def EndToEndId(self):
-		del self._EndToEndId
-		self._EndToEndId = None
+	@InstrId.deleter
+	def InstrId(self):
+		del self._InstrId
+		self._InstrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

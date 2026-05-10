@@ -1,6 +1,6 @@
 import base_types
-import DataSetCategory7Code
 import Max35Text
+import DataSetCategory7Code
 
 class ATMConfigurationParameter1(base_types._BaseFieldType):
 

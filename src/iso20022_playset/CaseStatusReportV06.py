@@ -1,13 +1,26 @@
 import base_types
-import ReportHeader7
 import SupplementaryData1
+import CaseAssignment6
+import ReportHeader7
 import Case6
 import CaseStatus2
-import CaseAssignment6
 
 class CaseStatusReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_NewAssgnmt", "_SplmtryData", "_Hdr", "_Case"]
+	__slots__ = ["_NewAssgnmt", "_Sts", "_Case", "_SplmtryData", "_Hdr"]
+	@property
+	def NewAssgnmt(self):
+		return self._NewAssgnmt
+
+	@NewAssgnmt.setter
+	def NewAssgnmt(self, value):
+		self._NewAssgnmt = value if type(value) != auto else self.make_default("NewAssgnmt")
+
+	@NewAssgnmt.deleter
+	def NewAssgnmt(self):
+		del self._NewAssgnmt
+		self._NewAssgnmt = None
+
 	@property
 	def Sts(self):
 		return self._Sts
@@ -22,17 +35,17 @@ class CaseStatusReportV06(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def NewAssgnmt(self):
-		return self._NewAssgnmt
+	def Case(self):
+		return self._Case
 
-	@NewAssgnmt.setter
-	def NewAssgnmt(self, value):
-		self._NewAssgnmt = value if type(value) != auto else self.make_default("NewAssgnmt")
+	@Case.setter
+	def Case(self, value):
+		self._Case = value if type(value) != auto else self.make_default("Case")
 
-	@NewAssgnmt.deleter
-	def NewAssgnmt(self):
-		del self._NewAssgnmt
-		self._NewAssgnmt = None
+	@Case.deleter
+	def Case(self):
+		del self._Case
+		self._Case = None
 
 	@property
 	def SplmtryData(self):
@@ -60,24 +73,11 @@ class CaseStatusReportV06(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def Case(self):
-		return self._Case
-
-	@Case.setter
-	def Case(self, value):
-		self._Case = value if type(value) != auto else self.make_default("Case")
-
-	@Case.deleter
-	def Case(self):
-		del self._Case
-		self._Case = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=CaseStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewAssgnmt', type=CaseAssignment6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=CaseStatus2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hdr', type=ReportHeader7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Case', type=Case6, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 import base_types
-import TradeStateReport23
 import ReportPeriodActivity1Code
+import TradeStateReport23
 
 class TradeData60Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DataSetActn", "_Stat"]
-	@property
-	def DataSetActn(self):
-		return self._DataSetActn
-
-	@DataSetActn.setter
-	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
-
-	@DataSetActn.deleter
-	def DataSetActn(self):
-		del self._DataSetActn
-		self._DataSetActn = None
-
+	__slots__ = ["_Stat", "_DataSetActn"]
 	@property
 	def Stat(self):
 		return self._Stat
@@ -31,8 +18,21 @@ class TradeData60Choice(base_types._BaseFieldType):
 		del self._Stat
 		self._Stat = None
 
+	@property
+	def DataSetActn(self):
+		return self._DataSetActn
+
+	@DataSetActn.setter
+	def DataSetActn(self, value):
+		self._DataSetActn = value if type(value) != auto else self.make_default("DataSetActn")
+
+	@DataSetActn.deleter
+	def DataSetActn(self):
+		del self._DataSetActn
+		self._DataSetActn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Stat', type=TradeStateReport23, min=1, max=None, mutex_group=1, array=True),
+		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

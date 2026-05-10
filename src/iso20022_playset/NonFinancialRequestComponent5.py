@@ -1,8 +1,8 @@
 import base_types
-import SupplementaryData1
-import CardPaymentEnvironment81
-import NonFinancialRequestContentComponent5
 import PaymentContext30
+import CardPaymentEnvironment81
+import SupplementaryData1
+import NonFinancialRequestContentComponent5
 
 class NonFinancialRequestComponent5(base_types._BaseFieldType):
 

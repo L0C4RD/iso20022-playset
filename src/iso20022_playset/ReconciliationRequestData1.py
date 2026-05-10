@@ -1,10 +1,23 @@
 import base_types
-import ReconciliationType1Code
 import Max35Text
+import ReconciliationType1Code
 
 class ReconciliationRequestData1(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnTp", "_AcqrrId", "_POIRcncltnId"]
+	__slots__ = ["_POIRcncltnId", "_RcncltnTp", "_AcqrrId"]
+	@property
+	def POIRcncltnId(self):
+		return self._POIRcncltnId
+
+	@POIRcncltnId.setter
+	def POIRcncltnId(self, value):
+		self._POIRcncltnId = value if type(value) != auto else self.make_default("POIRcncltnId")
+
+	@POIRcncltnId.deleter
+	def POIRcncltnId(self):
+		del self._POIRcncltnId
+		self._POIRcncltnId = None
+
 	@property
 	def RcncltnTp(self):
 		return self._RcncltnTp
@@ -31,22 +44,9 @@ class ReconciliationRequestData1(base_types._BaseFieldType):
 		del self._AcqrrId
 		self._AcqrrId = None
 
-	@property
-	def POIRcncltnId(self):
-		return self._POIRcncltnId
-
-	@POIRcncltnId.setter
-	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != auto else self.make_default("POIRcncltnId")
-
-	@POIRcncltnId.deleter
-	def POIRcncltnId(self):
-		del self._POIRcncltnId
-		self._POIRcncltnId = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnTp', type=ReconciliationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcqrrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

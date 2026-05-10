@@ -1,14 +1,14 @@
 import base_types
+import Product6
 import ImpliedCurrencyAndAmount
-import LoyaltyTransactionType1Code
+import PaymentTransaction165
 import TransactionIdentifier1
 import ActiveCurrencyCode
-import Product6
-import PaymentTransaction165
+import LoyaltyTransactionType1Code
 
 class LoyaltyTransaction7(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleItm", "_TtlAmt", "_LltyTxTp", "_SaleTxId", "_Ccy", "_OrgnlPOITx"]
+	__slots__ = ["_SaleItm", "_LltyTxTp", "_TtlAmt", "_SaleTxId", "_Ccy", "_OrgnlPOITx"]
 	@property
 	def SaleItm(self):
 		return self._SaleItm
@@ -23,19 +23,6 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 		self._SaleItm = None
 
 	@property
-	def TtlAmt(self):
-		return self._TtlAmt
-
-	@TtlAmt.setter
-	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
-
-	@TtlAmt.deleter
-	def TtlAmt(self):
-		del self._TtlAmt
-		self._TtlAmt = None
-
-	@property
 	def LltyTxTp(self):
 		return self._LltyTxTp
 
@@ -47,6 +34,19 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 	def LltyTxTp(self):
 		del self._LltyTxTp
 		self._LltyTxTp = None
+
+	@property
+	def TtlAmt(self):
+		return self._TtlAmt
+
+	@TtlAmt.setter
+	def TtlAmt(self, value):
+		self._TtlAmt = value if type(value) != auto else self.make_default("TtlAmt")
+
+	@TtlAmt.deleter
+	def TtlAmt(self):
+		del self._TtlAmt
+		self._TtlAmt = None
 
 	@property
 	def SaleTxId(self):
@@ -89,8 +89,8 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SaleItm', type=Product6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyTxTp', type=LoyaltyTransactionType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPOITx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),

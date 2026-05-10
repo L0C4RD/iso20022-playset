@@ -1,11 +1,11 @@
 import base_types
-import ATMServiceType6Code
-import TrueFalseIndicator
 import Max35Text
+import TrueFalseIndicator
+import ATMServiceType6Code
 
 class ATMService12(base_types._BaseFieldType):
 
-	__slots__ = ["_MultiAcct", "_ATMSvcCd", "_HstSvcCd", "_SvcTp", "_CshBck", "_SvcVarntId", "_SvcRef"]
+	__slots__ = ["_MultiAcct", "_SvcVarntId", "_ATMSvcCd", "_SvcTp", "_CshBck", "_SvcRef", "_HstSvcCd"]
 	@property
 	def MultiAcct(self):
 		return self._MultiAcct
@@ -20,6 +20,19 @@ class ATMService12(base_types._BaseFieldType):
 		self._MultiAcct = None
 
 	@property
+	def SvcVarntId(self):
+		return self._SvcVarntId
+
+	@SvcVarntId.setter
+	def SvcVarntId(self, value):
+		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
+
+	@SvcVarntId.deleter
+	def SvcVarntId(self):
+		del self._SvcVarntId
+		self._SvcVarntId = None
+
+	@property
 	def ATMSvcCd(self):
 		return self._ATMSvcCd
 
@@ -31,19 +44,6 @@ class ATMService12(base_types._BaseFieldType):
 	def ATMSvcCd(self):
 		del self._ATMSvcCd
 		self._ATMSvcCd = None
-
-	@property
-	def HstSvcCd(self):
-		return self._HstSvcCd
-
-	@HstSvcCd.setter
-	def HstSvcCd(self, value):
-		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
-
-	@HstSvcCd.deleter
-	def HstSvcCd(self):
-		del self._HstSvcCd
-		self._HstSvcCd = None
 
 	@property
 	def SvcTp(self):
@@ -72,19 +72,6 @@ class ATMService12(base_types._BaseFieldType):
 		self._CshBck = None
 
 	@property
-	def SvcVarntId(self):
-		return self._SvcVarntId
-
-	@SvcVarntId.setter
-	def SvcVarntId(self, value):
-		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
-
-	@SvcVarntId.deleter
-	def SvcVarntId(self):
-		del self._SvcVarntId
-		self._SvcVarntId = None
-
-	@property
 	def SvcRef(self):
 		return self._SvcRef
 
@@ -97,13 +84,26 @@ class ATMService12(base_types._BaseFieldType):
 		del self._SvcRef
 		self._SvcRef = None
 
+	@property
+	def HstSvcCd(self):
+		return self._HstSvcCd
+
+	@HstSvcCd.setter
+	def HstSvcCd(self, value):
+		self._HstSvcCd = value if type(value) != auto else self.make_default("HstSvcCd")
+
+	@HstSvcCd.deleter
+	def HstSvcCd(self):
+		del self._HstSvcCd
+		self._HstSvcCd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MultiAcct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcTp', type=ATMServiceType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshBck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

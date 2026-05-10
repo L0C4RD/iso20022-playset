@@ -1,6 +1,6 @@
 import base_types
-import Max140Binary
 import Max35Binary
+import Max140Binary
 
 class ICCResetData1(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 import base_types
+import Pagination1
+import TradeDataReport2
 import SupplementaryData1
 import TradeData45
-import TradeDataReport2
-import Pagination1
 
 class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_SplmtryData", "_TradDataRpt", "_StsDtls"]
+	__slots__ = ["_TradDataRpt", "_MsgPgntn", "_SplmtryData", "_StsDtls"]
+	@property
+	def TradDataRpt(self):
+		return self._TradDataRpt
+
+	@TradDataRpt.setter
+	def TradDataRpt(self, value):
+		self._TradDataRpt = value if type(value) != auto else self.make_default("TradDataRpt")
+
+	@TradDataRpt.deleter
+	def TradDataRpt(self):
+		del self._TradDataRpt
+		self._TradDataRpt = None
+
 	@property
 	def MsgPgntn(self):
 		return self._MsgPgntn
@@ -34,19 +47,6 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def TradDataRpt(self):
-		return self._TradDataRpt
-
-	@TradDataRpt.setter
-	def TradDataRpt(self, value):
-		self._TradDataRpt = value if type(value) != auto else self.make_default("TradDataRpt")
-
-	@TradDataRpt.deleter
-	def TradDataRpt(self):
-		del self._TradDataRpt
-		self._TradDataRpt = None
-
-	@property
 	def StsDtls(self):
 		return self._StsDtls
 
@@ -60,9 +60,9 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		self._StsDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsDtls', type=TradeData45, min=1, max=1, mutex_group=None, array=False),
 	))
 

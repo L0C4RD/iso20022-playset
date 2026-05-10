@@ -1,6 +1,6 @@
 import base_types
-import NotAvailable1Code
 import ISINOct2015Identifier
+import NotAvailable1Code
 
 class SecurityIdentification26Choice(base_types._BaseFieldType):
 

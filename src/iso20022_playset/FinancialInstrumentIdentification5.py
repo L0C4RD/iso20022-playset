@@ -1,11 +1,11 @@
 import base_types
-import SecurityIdentification25Choice
-import Max350Text
 import Max35Text
+import Max350Text
+import SecurityIdentification25Choice
 
 class FinancialInstrumentIdentification5(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrtNm", "_Id", "_Nm"]
+	__slots__ = ["_ShrtNm", "_Nm", "_Id"]
 	@property
 	def ShrtNm(self):
 		return self._ShrtNm
@@ -20,19 +20,6 @@ class FinancialInstrumentIdentification5(base_types._BaseFieldType):
 		self._ShrtNm = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -45,9 +32,22 @@ class FinancialInstrumentIdentification5(base_types._BaseFieldType):
 		del self._Nm
 		self._Nm = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification25Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,19 +5,19 @@ import Derivative3
 
 class Product1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Scty", "_Deriv", "_SctiesFincgTx"]
+	__slots__ = ["_SctiesFincgTx", "_Deriv", "_Scty"]
 	@property
-	def Scty(self):
-		return self._Scty
+	def SctiesFincgTx(self):
+		return self._SctiesFincgTx
 
-	@Scty.setter
-	def Scty(self, value):
-		self._Scty = value if type(value) != auto else self.make_default("Scty")
+	@SctiesFincgTx.setter
+	def SctiesFincgTx(self, value):
+		self._SctiesFincgTx = value if type(value) != auto else self.make_default("SctiesFincgTx")
 
-	@Scty.deleter
-	def Scty(self):
-		del self._Scty
-		self._Scty = None
+	@SctiesFincgTx.deleter
+	def SctiesFincgTx(self):
+		del self._SctiesFincgTx
+		self._SctiesFincgTx = None
 
 	@property
 	def Deriv(self):
@@ -33,21 +33,21 @@ class Product1Choice(base_types._BaseFieldType):
 		self._Deriv = None
 
 	@property
-	def SctiesFincgTx(self):
-		return self._SctiesFincgTx
+	def Scty(self):
+		return self._Scty
 
-	@SctiesFincgTx.setter
-	def SctiesFincgTx(self, value):
-		self._SctiesFincgTx = value if type(value) != auto else self.make_default("SctiesFincgTx")
+	@Scty.setter
+	def Scty(self, value):
+		self._Scty = value if type(value) != auto else self.make_default("Scty")
 
-	@SctiesFincgTx.deleter
-	def SctiesFincgTx(self):
-		del self._SctiesFincgTx
-		self._SctiesFincgTx = None
+	@Scty.deleter
+	def Scty(self):
+		del self._Scty
+		self._Scty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Scty', type=FinancialInstrument59, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Deriv', type=Derivative3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesFincgTx', type=RepurchaseAgreement3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Deriv', type=Derivative3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Scty', type=FinancialInstrument59, min=0, max=1, mutex_group=1, array=False),
 	))
 

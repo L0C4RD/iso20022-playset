@@ -1,6 +1,6 @@
 import base_types
-import DataModification2Code
 import CitizenshipInformation2
+import DataModification2Code
 
 class ModificationScope39(base_types._BaseFieldType):
 

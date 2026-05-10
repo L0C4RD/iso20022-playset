@@ -1,25 +1,25 @@
 import base_types
+import Max35Text
 import ImpliedCurrencyAndAmount
 import CreditDebit3Code
-import CarRentalServiceType2Code
 import TrueFalseIndicator
-import Max35Text
+import CarRentalServiceType2Code
 
 class Amount21(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbt", "_Tp", "_Amt", "_OthrTp", "_CstmrNtfd"]
+	__slots__ = ["_Amt", "_Tp", "_OthrTp", "_CstmrNtfd", "_CdtDbt"]
 	@property
-	def CdtDbt(self):
-		return self._CdtDbt
+	def Amt(self):
+		return self._Amt
 
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Tp(self):
@@ -33,19 +33,6 @@ class Amount21(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
 
 	@property
 	def OthrTp(self):
@@ -73,11 +60,24 @@ class Amount21(base_types._BaseFieldType):
 		del self._CstmrNtfd
 		self._CstmrNtfd = None
 
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CarRentalServiceType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrNtfd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

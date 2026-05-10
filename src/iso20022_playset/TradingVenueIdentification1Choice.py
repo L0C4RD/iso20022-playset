@@ -1,23 +1,23 @@
 import base_types
-import MICIdentifier
-import TradingVenueIdentification2
 import CountryCode
+import TradingVenueIdentification2
+import MICIdentifier
 
 class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Othr", "_MktIdCd", "_NtlCmptntAuthrty"]
+	__slots__ = ["_NtlCmptntAuthrty", "_MktIdCd", "_Othr"]
 	@property
-	def Othr(self):
-		return self._Othr
+	def NtlCmptntAuthrty(self):
+		return self._NtlCmptntAuthrty
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@NtlCmptntAuthrty.setter
+	def NtlCmptntAuthrty(self, value):
+		self._NtlCmptntAuthrty = value if type(value) != auto else self.make_default("NtlCmptntAuthrty")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@NtlCmptntAuthrty.deleter
+	def NtlCmptntAuthrty(self):
+		del self._NtlCmptntAuthrty
+		self._NtlCmptntAuthrty = None
 
 	@property
 	def MktIdCd(self):
@@ -33,21 +33,21 @@ class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 		self._MktIdCd = None
 
 	@property
-	def NtlCmptntAuthrty(self):
-		return self._NtlCmptntAuthrty
+	def Othr(self):
+		return self._Othr
 
-	@NtlCmptntAuthrty.setter
-	def NtlCmptntAuthrty(self, value):
-		self._NtlCmptntAuthrty = value if type(value) != auto else self.make_default("NtlCmptntAuthrty")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@NtlCmptntAuthrty.deleter
-	def NtlCmptntAuthrty(self):
-		del self._NtlCmptntAuthrty
-		self._NtlCmptntAuthrty = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Othr', type=TradingVenueIdentification2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktIdCd', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NtlCmptntAuthrty', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktIdCd', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=TradingVenueIdentification2, min=0, max=1, mutex_group=1, array=False),
 	))
 

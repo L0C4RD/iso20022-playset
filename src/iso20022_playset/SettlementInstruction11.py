@@ -1,24 +1,24 @@
 import base_types
 import BranchAndFinancialInstitutionIdentification6
-import CashAccount40
-import SettlementMethod1Code
 import ClearingSystemIdentification3Choice
+import SettlementMethod1Code
+import CashAccount40
 
 class SettlementInstruction11(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSys", "_SttlmAcct", "_InstdRmbrsmntAgt", "_InstdRmbrsmntAgtAcct", "_InstgRmbrsmntAgt", "_ThrdRmbrsmntAgt", "_SttlmMtd", "_ThrdRmbrsmntAgtAcct", "_InstgRmbrsmntAgtAcct"]
+	__slots__ = ["_InstgRmbrsmntAgtAcct", "_SttlmAcct", "_ThrdRmbrsmntAgtAcct", "_SttlmMtd", "_ClrSys", "_ThrdRmbrsmntAgt", "_InstdRmbrsmntAgt", "_InstgRmbrsmntAgt", "_InstdRmbrsmntAgtAcct"]
 	@property
-	def ClrSys(self):
-		return self._ClrSys
+	def InstgRmbrsmntAgtAcct(self):
+		return self._InstgRmbrsmntAgtAcct
 
-	@ClrSys.setter
-	def ClrSys(self, value):
-		self._ClrSys = value if type(value) != auto else self.make_default("ClrSys")
+	@InstgRmbrsmntAgtAcct.setter
+	def InstgRmbrsmntAgtAcct(self, value):
+		self._InstgRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtAcct")
 
-	@ClrSys.deleter
-	def ClrSys(self):
-		del self._ClrSys
-		self._ClrSys = None
+	@InstgRmbrsmntAgtAcct.deleter
+	def InstgRmbrsmntAgtAcct(self):
+		del self._InstgRmbrsmntAgtAcct
+		self._InstgRmbrsmntAgtAcct = None
 
 	@property
 	def SttlmAcct(self):
@@ -34,56 +34,17 @@ class SettlementInstruction11(base_types._BaseFieldType):
 		self._SttlmAcct = None
 
 	@property
-	def InstdRmbrsmntAgt(self):
-		return self._InstdRmbrsmntAgt
+	def ThrdRmbrsmntAgtAcct(self):
+		return self._ThrdRmbrsmntAgtAcct
 
-	@InstdRmbrsmntAgt.setter
-	def InstdRmbrsmntAgt(self, value):
-		self._InstdRmbrsmntAgt = value if type(value) != auto else self.make_default("InstdRmbrsmntAgt")
+	@ThrdRmbrsmntAgtAcct.setter
+	def ThrdRmbrsmntAgtAcct(self, value):
+		self._ThrdRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("ThrdRmbrsmntAgtAcct")
 
-	@InstdRmbrsmntAgt.deleter
-	def InstdRmbrsmntAgt(self):
-		del self._InstdRmbrsmntAgt
-		self._InstdRmbrsmntAgt = None
-
-	@property
-	def InstdRmbrsmntAgtAcct(self):
-		return self._InstdRmbrsmntAgtAcct
-
-	@InstdRmbrsmntAgtAcct.setter
-	def InstdRmbrsmntAgtAcct(self, value):
-		self._InstdRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstdRmbrsmntAgtAcct")
-
-	@InstdRmbrsmntAgtAcct.deleter
-	def InstdRmbrsmntAgtAcct(self):
-		del self._InstdRmbrsmntAgtAcct
-		self._InstdRmbrsmntAgtAcct = None
-
-	@property
-	def InstgRmbrsmntAgt(self):
-		return self._InstgRmbrsmntAgt
-
-	@InstgRmbrsmntAgt.setter
-	def InstgRmbrsmntAgt(self, value):
-		self._InstgRmbrsmntAgt = value if type(value) != auto else self.make_default("InstgRmbrsmntAgt")
-
-	@InstgRmbrsmntAgt.deleter
-	def InstgRmbrsmntAgt(self):
-		del self._InstgRmbrsmntAgt
-		self._InstgRmbrsmntAgt = None
-
-	@property
-	def ThrdRmbrsmntAgt(self):
-		return self._ThrdRmbrsmntAgt
-
-	@ThrdRmbrsmntAgt.setter
-	def ThrdRmbrsmntAgt(self, value):
-		self._ThrdRmbrsmntAgt = value if type(value) != auto else self.make_default("ThrdRmbrsmntAgt")
-
-	@ThrdRmbrsmntAgt.deleter
-	def ThrdRmbrsmntAgt(self):
-		del self._ThrdRmbrsmntAgt
-		self._ThrdRmbrsmntAgt = None
+	@ThrdRmbrsmntAgtAcct.deleter
+	def ThrdRmbrsmntAgtAcct(self):
+		del self._ThrdRmbrsmntAgtAcct
+		self._ThrdRmbrsmntAgtAcct = None
 
 	@property
 	def SttlmMtd(self):
@@ -99,40 +60,79 @@ class SettlementInstruction11(base_types._BaseFieldType):
 		self._SttlmMtd = None
 
 	@property
-	def ThrdRmbrsmntAgtAcct(self):
-		return self._ThrdRmbrsmntAgtAcct
+	def ClrSys(self):
+		return self._ClrSys
 
-	@ThrdRmbrsmntAgtAcct.setter
-	def ThrdRmbrsmntAgtAcct(self, value):
-		self._ThrdRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("ThrdRmbrsmntAgtAcct")
+	@ClrSys.setter
+	def ClrSys(self, value):
+		self._ClrSys = value if type(value) != auto else self.make_default("ClrSys")
 
-	@ThrdRmbrsmntAgtAcct.deleter
-	def ThrdRmbrsmntAgtAcct(self):
-		del self._ThrdRmbrsmntAgtAcct
-		self._ThrdRmbrsmntAgtAcct = None
+	@ClrSys.deleter
+	def ClrSys(self):
+		del self._ClrSys
+		self._ClrSys = None
 
 	@property
-	def InstgRmbrsmntAgtAcct(self):
-		return self._InstgRmbrsmntAgtAcct
+	def ThrdRmbrsmntAgt(self):
+		return self._ThrdRmbrsmntAgt
 
-	@InstgRmbrsmntAgtAcct.setter
-	def InstgRmbrsmntAgtAcct(self, value):
-		self._InstgRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstgRmbrsmntAgtAcct")
+	@ThrdRmbrsmntAgt.setter
+	def ThrdRmbrsmntAgt(self, value):
+		self._ThrdRmbrsmntAgt = value if type(value) != auto else self.make_default("ThrdRmbrsmntAgt")
 
-	@InstgRmbrsmntAgtAcct.deleter
-	def InstgRmbrsmntAgtAcct(self):
-		del self._InstgRmbrsmntAgtAcct
-		self._InstgRmbrsmntAgtAcct = None
+	@ThrdRmbrsmntAgt.deleter
+	def ThrdRmbrsmntAgt(self):
+		del self._ThrdRmbrsmntAgt
+		self._ThrdRmbrsmntAgt = None
+
+	@property
+	def InstdRmbrsmntAgt(self):
+		return self._InstdRmbrsmntAgt
+
+	@InstdRmbrsmntAgt.setter
+	def InstdRmbrsmntAgt(self, value):
+		self._InstdRmbrsmntAgt = value if type(value) != auto else self.make_default("InstdRmbrsmntAgt")
+
+	@InstdRmbrsmntAgt.deleter
+	def InstdRmbrsmntAgt(self):
+		del self._InstdRmbrsmntAgt
+		self._InstdRmbrsmntAgt = None
+
+	@property
+	def InstgRmbrsmntAgt(self):
+		return self._InstgRmbrsmntAgt
+
+	@InstgRmbrsmntAgt.setter
+	def InstgRmbrsmntAgt(self, value):
+		self._InstgRmbrsmntAgt = value if type(value) != auto else self.make_default("InstgRmbrsmntAgt")
+
+	@InstgRmbrsmntAgt.deleter
+	def InstgRmbrsmntAgt(self):
+		del self._InstgRmbrsmntAgt
+		self._InstgRmbrsmntAgt = None
+
+	@property
+	def InstdRmbrsmntAgtAcct(self):
+		return self._InstdRmbrsmntAgtAcct
+
+	@InstdRmbrsmntAgtAcct.setter
+	def InstdRmbrsmntAgtAcct(self, value):
+		self._InstdRmbrsmntAgtAcct = value if type(value) != auto else self.make_default("InstdRmbrsmntAgtAcct")
+
+	@InstdRmbrsmntAgtAcct.deleter
+	def InstdRmbrsmntAgtAcct(self):
+		del self._InstdRmbrsmntAgtAcct
+		self._InstdRmbrsmntAgtAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstgRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmMtd', type=SettlementMethod1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ThrdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmMtd', type=SettlementMethod1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ThrdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstgRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdRmbrsmntAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
+import Max2048Text
 import RemittanceAmount3
 import DocumentLineIdentification1
-import Max2048Text
 
 class DocumentLineInformation1(base_types._BaseFieldType):
 

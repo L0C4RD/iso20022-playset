@@ -6,33 +6,7 @@ import FinancialInstrument101
 
 class PortfolioTransfer12(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmAsstForTrf", "_TrfId", "_Prtfl", "_MstrRef", "_AddtlInf"]
-	@property
-	def FinInstrmAsstForTrf(self):
-		return self._FinInstrmAsstForTrf
-
-	@FinInstrmAsstForTrf.setter
-	def FinInstrmAsstForTrf(self, value):
-		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
-
-	@FinInstrmAsstForTrf.deleter
-	def FinInstrmAsstForTrf(self):
-		del self._FinInstrmAsstForTrf
-		self._FinInstrmAsstForTrf = None
-
-	@property
-	def TrfId(self):
-		return self._TrfId
-
-	@TrfId.setter
-	def TrfId(self, value):
-		self._TrfId = value if type(value) != auto else self.make_default("TrfId")
-
-	@TrfId.deleter
-	def TrfId(self):
-		del self._TrfId
-		self._TrfId = None
-
+	__slots__ = ["_Prtfl", "_MstrRef", "_AddtlInf", "_TrfId", "_FinInstrmAsstForTrf"]
 	@property
 	def Prtfl(self):
 		return self._Prtfl
@@ -72,11 +46,37 @@ class PortfolioTransfer12(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def TrfId(self):
+		return self._TrfId
+
+	@TrfId.setter
+	def TrfId(self, value):
+		self._TrfId = value if type(value) != auto else self.make_default("TrfId")
+
+	@TrfId.deleter
+	def TrfId(self):
+		del self._TrfId
+		self._TrfId = None
+
+	@property
+	def FinInstrmAsstForTrf(self):
+		return self._FinInstrmAsstForTrf
+
+	@FinInstrmAsstForTrf.setter
+	def FinInstrmAsstForTrf(self, value):
+		self._FinInstrmAsstForTrf = value if type(value) != auto else self.make_default("FinInstrmAsstForTrf")
+
+	@FinInstrmAsstForTrf.deleter
+	def FinInstrmAsstForTrf(self):
+		del self._FinInstrmAsstForTrf
+		self._FinInstrmAsstForTrf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument101, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtfl', type=FundPortfolio9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmAsstForTrf', type=FinancialInstrument101, min=0, max=None, mutex_group=None, array=True),
 	))
 

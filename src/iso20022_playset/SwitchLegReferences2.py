@@ -1,13 +1,39 @@
 import base_types
 import FinancialInstrument57
-import Fee3
+import LegIdentification1Choice
 import Max350Text
 import InvestmentAccount58
-import LegIdentification1Choice
+import Fee3
 
 class SwitchLegReferences2(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_InvstmtAcctDtls", "_LegId", "_RprdFee", "_LegRjctnRsn"]
+	__slots__ = ["_LegId", "_LegRjctnRsn", "_FinInstrmDtls", "_InvstmtAcctDtls", "_RprdFee"]
+	@property
+	def LegId(self):
+		return self._LegId
+
+	@LegId.setter
+	def LegId(self, value):
+		self._LegId = value if type(value) != auto else self.make_default("LegId")
+
+	@LegId.deleter
+	def LegId(self):
+		del self._LegId
+		self._LegId = None
+
+	@property
+	def LegRjctnRsn(self):
+		return self._LegRjctnRsn
+
+	@LegRjctnRsn.setter
+	def LegRjctnRsn(self, value):
+		self._LegRjctnRsn = value if type(value) != auto else self.make_default("LegRjctnRsn")
+
+	@LegRjctnRsn.deleter
+	def LegRjctnRsn(self):
+		del self._LegRjctnRsn
+		self._LegRjctnRsn = None
+
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls
@@ -35,19 +61,6 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		self._InvstmtAcctDtls = None
 
 	@property
-	def LegId(self):
-		return self._LegId
-
-	@LegId.setter
-	def LegId(self, value):
-		self._LegId = value if type(value) != auto else self.make_default("LegId")
-
-	@LegId.deleter
-	def LegId(self):
-		del self._LegId
-		self._LegId = None
-
-	@property
 	def RprdFee(self):
 		return self._RprdFee
 
@@ -60,24 +73,11 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		del self._RprdFee
 		self._RprdFee = None
 
-	@property
-	def LegRjctnRsn(self):
-		return self._LegRjctnRsn
-
-	@LegRjctnRsn.setter
-	def LegRjctnRsn(self, value):
-		self._LegRjctnRsn = value if type(value) != auto else self.make_default("LegRjctnRsn")
-
-	@LegRjctnRsn.deleter
-	def LegRjctnRsn(self):
-		del self._LegRjctnRsn
-		self._LegRjctnRsn = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='LegId', type=LegIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LegId', type=LegIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

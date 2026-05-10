@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ValidityPeriodType1Code
+import GenericIdentification30
 
 class ValidityPeriod1Choice(base_types._BaseFieldType):
 

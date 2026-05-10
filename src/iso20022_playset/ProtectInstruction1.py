@@ -1,25 +1,12 @@
 import base_types
-import ISODate
-import ProtectTransactionType2Code
-import Max15Text
 import Max35Text
+import ISODate
+import Max15Text
+import ProtectTransactionType2Code
 
 class ProtectInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctSfkpgAcct", "_PrtctDt", "_TxId", "_TxTp"]
-	@property
-	def PrtctSfkpgAcct(self):
-		return self._PrtctSfkpgAcct
-
-	@PrtctSfkpgAcct.setter
-	def PrtctSfkpgAcct(self, value):
-		self._PrtctSfkpgAcct = value if type(value) != auto else self.make_default("PrtctSfkpgAcct")
-
-	@PrtctSfkpgAcct.deleter
-	def PrtctSfkpgAcct(self):
-		del self._PrtctSfkpgAcct
-		self._PrtctSfkpgAcct = None
-
+	__slots__ = ["_PrtctDt", "_TxTp", "_PrtctSfkpgAcct", "_TxId"]
 	@property
 	def PrtctDt(self):
 		return self._PrtctDt
@@ -34,19 +21,6 @@ class ProtectInstruction1(base_types._BaseFieldType):
 		self._PrtctDt = None
 
 	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
 	def TxTp(self):
 		return self._TxTp
 
@@ -59,10 +33,36 @@ class ProtectInstruction1(base_types._BaseFieldType):
 		del self._TxTp
 		self._TxTp = None
 
+	@property
+	def PrtctSfkpgAcct(self):
+		return self._PrtctSfkpgAcct
+
+	@PrtctSfkpgAcct.setter
+	def PrtctSfkpgAcct(self, value):
+		self._PrtctSfkpgAcct = value if type(value) != auto else self.make_default("PrtctSfkpgAcct")
+
+	@PrtctSfkpgAcct.deleter
+	def PrtctSfkpgAcct(self):
+		del self._PrtctSfkpgAcct
+		self._PrtctSfkpgAcct = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ProtectTransactionType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctSfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max15Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

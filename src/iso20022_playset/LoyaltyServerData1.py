@@ -1,7 +1,7 @@
 import base_types
-import Min6Max8Text
-import TransactionIdentifier1
 import Max35Text
+import TransactionIdentifier1
+import Min6Max8Text
 
 class LoyaltyServerData1(base_types._BaseFieldType):
 

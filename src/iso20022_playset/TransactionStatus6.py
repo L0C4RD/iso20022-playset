@@ -1,6 +1,6 @@
 import base_types
-import CollateralStatus1Code
 import CollateralStatus2Choice
+import CollateralStatus1Code
 
 class TransactionStatus6(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 import base_types
-import CurrencyConversion29
 import TrueFalseIndicator
+import CurrencyConversion29
 
 class CurrencyConversion30(base_types._BaseFieldType):
 
-	__slots__ = ["_Convs", "_AccptdByCrdhldr"]
-	@property
-	def Convs(self):
-		return self._Convs
-
-	@Convs.setter
-	def Convs(self, value):
-		self._Convs = value if type(value) != auto else self.make_default("Convs")
-
-	@Convs.deleter
-	def Convs(self):
-		del self._Convs
-		self._Convs = None
-
+	__slots__ = ["_AccptdByCrdhldr", "_Convs"]
 	@property
 	def AccptdByCrdhldr(self):
 		return self._AccptdByCrdhldr
@@ -31,8 +18,21 @@ class CurrencyConversion30(base_types._BaseFieldType):
 		del self._AccptdByCrdhldr
 		self._AccptdByCrdhldr = None
 
+	@property
+	def Convs(self):
+		return self._Convs
+
+	@Convs.setter
+	def Convs(self, value):
+		self._Convs = value if type(value) != auto else self.make_default("Convs")
+
+	@Convs.deleter
+	def Convs(self):
+		del self._Convs
+		self._Convs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Convs', type=CurrencyConversion29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdByCrdhldr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Convs', type=CurrencyConversion29, min=0, max=1, mutex_group=None, array=False),
 	))
 

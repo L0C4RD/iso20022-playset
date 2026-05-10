@@ -1,13 +1,13 @@
 import base_types
-import InvestmentAccount77
-import Account23
-import LinkedMessage5Choice
 import AccountManagementType3Code
 import Max35Text
+import Account23
+import InvestmentAccount77
+import LinkedMessage5Choice
 
 class AccountManagementMessageReference5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctApplId", "_ExstgAcctId", "_StsReqTp", "_LkdRef", "_InvstmtAcct"]
+	__slots__ = ["_AcctApplId", "_ExstgAcctId", "_StsReqTp", "_InvstmtAcct", "_LkdRef"]
 	@property
 	def AcctApplId(self):
 		return self._AcctApplId
@@ -48,19 +48,6 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 		self._StsReqTp = None
 
 	@property
-	def LkdRef(self):
-		return self._LkdRef
-
-	@LkdRef.setter
-	def LkdRef(self, value):
-		self._LkdRef = value if type(value) != auto else self.make_default("LkdRef")
-
-	@LkdRef.deleter
-	def LkdRef(self):
-		del self._LkdRef
-		self._LkdRef = None
-
-	@property
 	def InvstmtAcct(self):
 		return self._InvstmtAcct
 
@@ -73,11 +60,24 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 		del self._InvstmtAcct
 		self._InvstmtAcct = None
 
+	@property
+	def LkdRef(self):
+		return self._LkdRef
+
+	@LkdRef.setter
+	def LkdRef(self, value):
+		self._LkdRef = value if type(value) != auto else self.make_default("LkdRef")
+
+	@LkdRef.deleter
+	def LkdRef(self):
+		del self._LkdRef
+		self._LkdRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsReqTp', type=AccountManagementType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LkdRef', type=LinkedMessage5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcct', type=InvestmentAccount77, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LkdRef', type=LinkedMessage5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

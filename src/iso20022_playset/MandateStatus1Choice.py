@@ -1,6 +1,6 @@
 import base_types
-import ExternalMandateStatus1Code
 import Max35Text
+import ExternalMandateStatus1Code
 
 class MandateStatus1Choice(base_types._BaseFieldType):
 

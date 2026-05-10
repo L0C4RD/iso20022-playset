@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import StatementSource1Code
+import GenericIdentification30
 
 class StatementSource1Choice(base_types._BaseFieldType):
 

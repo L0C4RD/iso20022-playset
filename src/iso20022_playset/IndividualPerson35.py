@@ -1,12 +1,12 @@
 import base_types
-import ISODate
-import Max350Text
-import Gender1Code
 import Max35Text
+import Max350Text
+import ISODate
+import Gender1Code
 
 class IndividualPerson35(base_types._BaseFieldType):
 
-	__slots__ = ["_MddlNm", "_Nm", "_BirthDt", "_GvnNm", "_Gndr"]
+	__slots__ = ["_MddlNm", "_GvnNm", "_Nm", "_BirthDt", "_Gndr"]
 	@property
 	def MddlNm(self):
 		return self._MddlNm
@@ -19,6 +19,19 @@ class IndividualPerson35(base_types._BaseFieldType):
 	def MddlNm(self):
 		del self._MddlNm
 		self._MddlNm = None
+
+	@property
+	def GvnNm(self):
+		return self._GvnNm
+
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
 
 	@property
 	def Nm(self):
@@ -47,19 +60,6 @@ class IndividualPerson35(base_types._BaseFieldType):
 		self._BirthDt = None
 
 	@property
-	def GvnNm(self):
-		return self._GvnNm
-
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
-
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
-
-	@property
 	def Gndr(self):
 		return self._Gndr
 
@@ -74,9 +74,9 @@ class IndividualPerson35(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MddlNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Gndr', type=Gender1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

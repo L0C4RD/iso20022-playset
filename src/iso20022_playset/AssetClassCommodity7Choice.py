@@ -1,23 +1,23 @@
 import base_types
-import AssetClassCommodityMetal2Choice
-import AssetClassCommodityIndex1
-import AssetClassCommodityAgricultural6Choice
-import AssetClassCommodityFreight4Choice
-import AssetClassCommodityOther1
-import AssetClassCommodityFertilizer4Choice
-import AssetClassCommodityEnergy3Choice
+import AssetClassCommodityPaper5Choice
 import AssetClassCommodityInflation1
+import AssetClassCommodityFertilizer4Choice
+import AssetClassCommodityIndex1
+import AssetClassCommodityFreight4Choice
+import AssetClassCommodityOfficialEconomicStatistics1
+import AssetClassCommodityAgricultural6Choice
+import AssetClassCommodityIndustrialProduct2Choice
+import AssetClassCommodityMetal2Choice
+import AssetClassCommodityEnergy3Choice
+import AssetClassCommodityPolypropylene4Choice
 import AssetClassCommodityEnvironmental3Choice
 import AssetClassCommodityMultiCommodityExotic1
-import AssetClassCommodityPolypropylene4Choice
 import AssetClassCommodityC10Other1
-import AssetClassCommodityOfficialEconomicStatistics1
-import AssetClassCommodityIndustrialProduct2Choice
-import AssetClassCommodityPaper5Choice
+import AssetClassCommodityOther1
 
 class AssetClassCommodity7Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Indx", "_Nrgy", "_MultiCmmdtyExtc", "_Frtlzr", "_Envttl", "_Frght", "_Othr", "_OffclEcnmcSttstcs", "_Infltn", "_OthrC10", "_Ppr", "_Agrcltrl", "_Metl", "_Plprpln", "_IndstrlPdct"]
+	__slots__ = ["_Indx", "_Nrgy", "_Frtlzr", "_OthrC10", "_Metl", "_Ppr", "_MultiCmmdtyExtc", "_Plprpln", "_IndstrlPdct", "_Othr", "_Agrcltrl", "_Frght", "_OffclEcnmcSttstcs", "_Envttl", "_Infltn"]
 	@property
 	def Indx(self):
 		return self._Indx
@@ -45,19 +45,6 @@ class AssetClassCommodity7Choice(base_types._BaseFieldType):
 		self._Nrgy = None
 
 	@property
-	def MultiCmmdtyExtc(self):
-		return self._MultiCmmdtyExtc
-
-	@MultiCmmdtyExtc.setter
-	def MultiCmmdtyExtc(self, value):
-		self._MultiCmmdtyExtc = value if type(value) != auto else self.make_default("MultiCmmdtyExtc")
-
-	@MultiCmmdtyExtc.deleter
-	def MultiCmmdtyExtc(self):
-		del self._MultiCmmdtyExtc
-		self._MultiCmmdtyExtc = None
-
-	@property
 	def Frtlzr(self):
 		return self._Frtlzr
 
@@ -69,71 +56,6 @@ class AssetClassCommodity7Choice(base_types._BaseFieldType):
 	def Frtlzr(self):
 		del self._Frtlzr
 		self._Frtlzr = None
-
-	@property
-	def Envttl(self):
-		return self._Envttl
-
-	@Envttl.setter
-	def Envttl(self, value):
-		self._Envttl = value if type(value) != auto else self.make_default("Envttl")
-
-	@Envttl.deleter
-	def Envttl(self):
-		del self._Envttl
-		self._Envttl = None
-
-	@property
-	def Frght(self):
-		return self._Frght
-
-	@Frght.setter
-	def Frght(self, value):
-		self._Frght = value if type(value) != auto else self.make_default("Frght")
-
-	@Frght.deleter
-	def Frght(self):
-		del self._Frght
-		self._Frght = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
-	def OffclEcnmcSttstcs(self):
-		return self._OffclEcnmcSttstcs
-
-	@OffclEcnmcSttstcs.setter
-	def OffclEcnmcSttstcs(self, value):
-		self._OffclEcnmcSttstcs = value if type(value) != auto else self.make_default("OffclEcnmcSttstcs")
-
-	@OffclEcnmcSttstcs.deleter
-	def OffclEcnmcSttstcs(self):
-		del self._OffclEcnmcSttstcs
-		self._OffclEcnmcSttstcs = None
-
-	@property
-	def Infltn(self):
-		return self._Infltn
-
-	@Infltn.setter
-	def Infltn(self, value):
-		self._Infltn = value if type(value) != auto else self.make_default("Infltn")
-
-	@Infltn.deleter
-	def Infltn(self):
-		del self._Infltn
-		self._Infltn = None
 
 	@property
 	def OthrC10(self):
@@ -149,6 +71,19 @@ class AssetClassCommodity7Choice(base_types._BaseFieldType):
 		self._OthrC10 = None
 
 	@property
+	def Metl(self):
+		return self._Metl
+
+	@Metl.setter
+	def Metl(self, value):
+		self._Metl = value if type(value) != auto else self.make_default("Metl")
+
+	@Metl.deleter
+	def Metl(self):
+		del self._Metl
+		self._Metl = None
+
+	@property
 	def Ppr(self):
 		return self._Ppr
 
@@ -162,30 +97,17 @@ class AssetClassCommodity7Choice(base_types._BaseFieldType):
 		self._Ppr = None
 
 	@property
-	def Agrcltrl(self):
-		return self._Agrcltrl
+	def MultiCmmdtyExtc(self):
+		return self._MultiCmmdtyExtc
 
-	@Agrcltrl.setter
-	def Agrcltrl(self, value):
-		self._Agrcltrl = value if type(value) != auto else self.make_default("Agrcltrl")
+	@MultiCmmdtyExtc.setter
+	def MultiCmmdtyExtc(self, value):
+		self._MultiCmmdtyExtc = value if type(value) != auto else self.make_default("MultiCmmdtyExtc")
 
-	@Agrcltrl.deleter
-	def Agrcltrl(self):
-		del self._Agrcltrl
-		self._Agrcltrl = None
-
-	@property
-	def Metl(self):
-		return self._Metl
-
-	@Metl.setter
-	def Metl(self, value):
-		self._Metl = value if type(value) != auto else self.make_default("Metl")
-
-	@Metl.deleter
-	def Metl(self):
-		del self._Metl
-		self._Metl = None
+	@MultiCmmdtyExtc.deleter
+	def MultiCmmdtyExtc(self):
+		del self._MultiCmmdtyExtc
+		self._MultiCmmdtyExtc = None
 
 	@property
 	def Plprpln(self):
@@ -213,21 +135,99 @@ class AssetClassCommodity7Choice(base_types._BaseFieldType):
 		del self._IndstrlPdct
 		self._IndstrlPdct = None
 
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def Agrcltrl(self):
+		return self._Agrcltrl
+
+	@Agrcltrl.setter
+	def Agrcltrl(self, value):
+		self._Agrcltrl = value if type(value) != auto else self.make_default("Agrcltrl")
+
+	@Agrcltrl.deleter
+	def Agrcltrl(self):
+		del self._Agrcltrl
+		self._Agrcltrl = None
+
+	@property
+	def Frght(self):
+		return self._Frght
+
+	@Frght.setter
+	def Frght(self, value):
+		self._Frght = value if type(value) != auto else self.make_default("Frght")
+
+	@Frght.deleter
+	def Frght(self):
+		del self._Frght
+		self._Frght = None
+
+	@property
+	def OffclEcnmcSttstcs(self):
+		return self._OffclEcnmcSttstcs
+
+	@OffclEcnmcSttstcs.setter
+	def OffclEcnmcSttstcs(self, value):
+		self._OffclEcnmcSttstcs = value if type(value) != auto else self.make_default("OffclEcnmcSttstcs")
+
+	@OffclEcnmcSttstcs.deleter
+	def OffclEcnmcSttstcs(self):
+		del self._OffclEcnmcSttstcs
+		self._OffclEcnmcSttstcs = None
+
+	@property
+	def Envttl(self):
+		return self._Envttl
+
+	@Envttl.setter
+	def Envttl(self, value):
+		self._Envttl = value if type(value) != auto else self.make_default("Envttl")
+
+	@Envttl.deleter
+	def Envttl(self):
+		del self._Envttl
+		self._Envttl = None
+
+	@property
+	def Infltn(self):
+		return self._Infltn
+
+	@Infltn.setter
+	def Infltn(self, value):
+		self._Infltn = value if type(value) != auto else self.make_default("Infltn")
+
+	@Infltn.deleter
+	def Infltn(self):
+		del self._Infltn
+		self._Infltn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Indx', type=AssetClassCommodityIndex1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nrgy', type=AssetClassCommodityEnergy3Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MultiCmmdtyExtc', type=AssetClassCommodityMultiCommodityExotic1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Frtlzr', type=AssetClassCommodityFertilizer4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Envttl', type=AssetClassCommodityEnvironmental3Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Frght', type=AssetClassCommodityFreight4Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Othr', type=AssetClassCommodityOther1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='OffclEcnmcSttstcs', type=AssetClassCommodityOfficialEconomicStatistics1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Infltn', type=AssetClassCommodityInflation1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrC10', type=AssetClassCommodityC10Other1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Ppr', type=AssetClassCommodityPaper5Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Agrcltrl', type=AssetClassCommodityAgricultural6Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Metl', type=AssetClassCommodityMetal2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Ppr', type=AssetClassCommodityPaper5Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MultiCmmdtyExtc', type=AssetClassCommodityMultiCommodityExotic1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Plprpln', type=AssetClassCommodityPolypropylene4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndstrlPdct', type=AssetClassCommodityIndustrialProduct2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Othr', type=AssetClassCommodityOther1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Agrcltrl', type=AssetClassCommodityAgricultural6Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Frght', type=AssetClassCommodityFreight4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='OffclEcnmcSttstcs', type=AssetClassCommodityOfficialEconomicStatistics1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Envttl', type=AssetClassCommodityEnvironmental3Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Infltn', type=AssetClassCommodityInflation1, min=0, max=1, mutex_group=1, array=False),
 	))
 

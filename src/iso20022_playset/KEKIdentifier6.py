@@ -1,7 +1,7 @@
 import base_types
+import Max140Text
 import Min5Max16Binary
 import Number
-import Max140Text
 
 class KEKIdentifier6(base_types._BaseFieldType):
 

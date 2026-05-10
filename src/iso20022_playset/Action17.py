@@ -1,39 +1,13 @@
 import base_types
-import NetworkParameters7
-import ActionType15Code
 import ProcessRetry3
-import ProcessTiming6
+import ActionType15Code
 import ActionMessage11
+import NetworkParameters7
+import ProcessTiming6
 
 class Action17(base_types._BaseFieldType):
 
-	__slots__ = ["_ActnTp", "_RmotAccs", "_Rtry", "_MsgToPres", "_TmCond"]
-	@property
-	def ActnTp(self):
-		return self._ActnTp
-
-	@ActnTp.setter
-	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
-
-	@ActnTp.deleter
-	def ActnTp(self):
-		del self._ActnTp
-		self._ActnTp = None
-
-	@property
-	def RmotAccs(self):
-		return self._RmotAccs
-
-	@RmotAccs.setter
-	def RmotAccs(self, value):
-		self._RmotAccs = value if type(value) != auto else self.make_default("RmotAccs")
-
-	@RmotAccs.deleter
-	def RmotAccs(self):
-		del self._RmotAccs
-		self._RmotAccs = None
-
+	__slots__ = ["_Rtry", "_MsgToPres", "_RmotAccs", "_ActnTp", "_TmCond"]
 	@property
 	def Rtry(self):
 		return self._Rtry
@@ -61,6 +35,32 @@ class Action17(base_types._BaseFieldType):
 		self._MsgToPres = None
 
 	@property
+	def RmotAccs(self):
+		return self._RmotAccs
+
+	@RmotAccs.setter
+	def RmotAccs(self, value):
+		self._RmotAccs = value if type(value) != auto else self.make_default("RmotAccs")
+
+	@RmotAccs.deleter
+	def RmotAccs(self):
+		del self._RmotAccs
+		self._RmotAccs = None
+
+	@property
+	def ActnTp(self):
+		return self._ActnTp
+
+	@ActnTp.setter
+	def ActnTp(self, value):
+		self._ActnTp = value if type(value) != auto else self.make_default("ActnTp")
+
+	@ActnTp.deleter
+	def ActnTp(self):
+		del self._ActnTp
+		self._ActnTp = None
+
+	@property
 	def TmCond(self):
 		return self._TmCond
 
@@ -74,10 +74,10 @@ class Action17(base_types._BaseFieldType):
 		self._TmCond = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rtry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgToPres', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RmotAccs', type=NetworkParameters7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,31 +1,18 @@
 import base_types
 import SettlementParties123
-import References25
-import RelatedSettlementInstruction2
 import CorporateActionOption234
-import CorporateAction59
-import AccountIdentification70
 import SupplementaryData1
 import MarketClaimType1Code
 import SettlementParties124
+import RelatedSettlementInstruction2
+import AccountIdentification70
+import CorporateAction59
 import CorporateActionGeneralInformation181
+import References25
 
 class MarketClaimCreationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrgSttlmPties", "_SplmtryData", "_TxRef", "_MktClmDtls", "_RcvgSttlmPties", "_RltdSttlmInstrDtls", "_CorpActnGnlInf", "_CorpActnDtls", "_AcctDtls", "_MktClmTp"]
-	@property
-	def DlvrgSttlmPties(self):
-		return self._DlvrgSttlmPties
-
-	@DlvrgSttlmPties.setter
-	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
-
-	@DlvrgSttlmPties.deleter
-	def DlvrgSttlmPties(self):
-		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
-
+	__slots__ = ["_SplmtryData", "_DlvrgSttlmPties", "_TxRef", "_AcctDtls", "_CorpActnGnlInf", "_RcvgSttlmPties", "_RltdSttlmInstrDtls", "_MktClmDtls", "_MktClmTp", "_CorpActnDtls"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -38,6 +25,19 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def DlvrgSttlmPties(self):
+		return self._DlvrgSttlmPties
+
+	@DlvrgSttlmPties.setter
+	def DlvrgSttlmPties(self, value):
+		self._DlvrgSttlmPties = value if type(value) != auto else self.make_default("DlvrgSttlmPties")
+
+	@DlvrgSttlmPties.deleter
+	def DlvrgSttlmPties(self):
+		del self._DlvrgSttlmPties
+		self._DlvrgSttlmPties = None
 
 	@property
 	def TxRef(self):
@@ -53,17 +53,30 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 		self._TxRef = None
 
 	@property
-	def MktClmDtls(self):
-		return self._MktClmDtls
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@MktClmDtls.setter
-	def MktClmDtls(self, value):
-		self._MktClmDtls = value if type(value) != auto else self.make_default("MktClmDtls")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@MktClmDtls.deleter
-	def MktClmDtls(self):
-		del self._MktClmDtls
-		self._MktClmDtls = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
 
 	@property
 	def RcvgSttlmPties(self):
@@ -92,43 +105,17 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 		self._RltdSttlmInstrDtls = None
 
 	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
+	def MktClmDtls(self):
+		return self._MktClmDtls
 
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+	@MktClmDtls.setter
+	def MktClmDtls(self, value):
+		self._MktClmDtls = value if type(value) != auto else self.make_default("MktClmDtls")
 
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def CorpActnDtls(self):
-		return self._CorpActnDtls
-
-	@CorpActnDtls.setter
-	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
-
-	@CorpActnDtls.deleter
-	def CorpActnDtls(self):
-		del self._CorpActnDtls
-		self._CorpActnDtls = None
-
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@MktClmDtls.deleter
+	def MktClmDtls(self):
+		del self._MktClmDtls
+		self._MktClmDtls = None
 
 	@property
 	def MktClmTp(self):
@@ -143,16 +130,29 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 		del self._MktClmTp
 		self._MktClmTp = None
 
+	@property
+	def CorpActnDtls(self):
+		return self._CorpActnDtls
+
+	@CorpActnDtls.setter
+	def CorpActnDtls(self, value):
+		self._CorpActnDtls = value if type(value) != auto else self.make_default("CorpActnDtls")
+
+	@CorpActnDtls.deleter
+	def CorpActnDtls(self):
+		del self._CorpActnDtls
+		self._CorpActnDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties123, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DlvrgSttlmPties', type=SettlementParties123, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRef', type=References25, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvgSttlmPties', type=SettlementParties124, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdSttlmInstrDtls', type=RelatedSettlementInstruction2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction59, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmTp', type=MarketClaimType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction59, min=0, max=1, mutex_group=None, array=False),
 	))
 

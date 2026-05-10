@@ -1,24 +1,24 @@
 import base_types
-import CompareOtherPaymentType1
-import CompareOrganisationIdentification7
 import CompareAmountAndDirection3
 import CompareDate3
+import CompareOrganisationIdentification7
+import CompareOtherPaymentType1
 
 class CompareOtherPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrPmtDt", "_OthrPmtPyer", "_OthrPmtAmt", "_OthrPmtRcvr", "_OthrPmtTp"]
+	__slots__ = ["_OthrPmtAmt", "_OthrPmtPyer", "_OthrPmtTp", "_OthrPmtDt", "_OthrPmtRcvr"]
 	@property
-	def OthrPmtDt(self):
-		return self._OthrPmtDt
+	def OthrPmtAmt(self):
+		return self._OthrPmtAmt
 
-	@OthrPmtDt.setter
-	def OthrPmtDt(self, value):
-		self._OthrPmtDt = value if type(value) != auto else self.make_default("OthrPmtDt")
+	@OthrPmtAmt.setter
+	def OthrPmtAmt(self, value):
+		self._OthrPmtAmt = value if type(value) != auto else self.make_default("OthrPmtAmt")
 
-	@OthrPmtDt.deleter
-	def OthrPmtDt(self):
-		del self._OthrPmtDt
-		self._OthrPmtDt = None
+	@OthrPmtAmt.deleter
+	def OthrPmtAmt(self):
+		del self._OthrPmtAmt
+		self._OthrPmtAmt = None
 
 	@property
 	def OthrPmtPyer(self):
@@ -34,17 +34,30 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 		self._OthrPmtPyer = None
 
 	@property
-	def OthrPmtAmt(self):
-		return self._OthrPmtAmt
+	def OthrPmtTp(self):
+		return self._OthrPmtTp
 
-	@OthrPmtAmt.setter
-	def OthrPmtAmt(self, value):
-		self._OthrPmtAmt = value if type(value) != auto else self.make_default("OthrPmtAmt")
+	@OthrPmtTp.setter
+	def OthrPmtTp(self, value):
+		self._OthrPmtTp = value if type(value) != auto else self.make_default("OthrPmtTp")
 
-	@OthrPmtAmt.deleter
-	def OthrPmtAmt(self):
-		del self._OthrPmtAmt
-		self._OthrPmtAmt = None
+	@OthrPmtTp.deleter
+	def OthrPmtTp(self):
+		del self._OthrPmtTp
+		self._OthrPmtTp = None
+
+	@property
+	def OthrPmtDt(self):
+		return self._OthrPmtDt
+
+	@OthrPmtDt.setter
+	def OthrPmtDt(self, value):
+		self._OthrPmtDt = value if type(value) != auto else self.make_default("OthrPmtDt")
+
+	@OthrPmtDt.deleter
+	def OthrPmtDt(self):
+		del self._OthrPmtDt
+		self._OthrPmtDt = None
 
 	@property
 	def OthrPmtRcvr(self):
@@ -59,24 +72,11 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 		del self._OthrPmtRcvr
 		self._OthrPmtRcvr = None
 
-	@property
-	def OthrPmtTp(self):
-		return self._OthrPmtTp
-
-	@OthrPmtTp.setter
-	def OthrPmtTp(self, value):
-		self._OthrPmtTp = value if type(value) != auto else self.make_default("OthrPmtTp")
-
-	@OthrPmtTp.deleter
-	def OthrPmtTp(self):
-		del self._OthrPmtTp
-		self._OthrPmtTp = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrPmtDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPmtPyer', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtAmt', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPmtRcvr', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPmtPyer', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtTp', type=CompareOtherPaymentType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPmtDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPmtRcvr', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
 

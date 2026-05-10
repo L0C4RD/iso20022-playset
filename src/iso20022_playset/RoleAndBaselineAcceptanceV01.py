@@ -1,6 +1,6 @@
 import base_types
-import MessageIdentification1
 import SimpleIdentificationInformation
+import MessageIdentification1
 
 class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 

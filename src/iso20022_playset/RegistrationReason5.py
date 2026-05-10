@@ -1,6 +1,6 @@
 import base_types
-import Registration10Choice
 import Max210Text
+import Registration10Choice
 
 class RegistrationReason5(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification4
 import ProductCharacteristics1
+import GenericIdentification4
 
 class ProductCharacteristics1Choice(base_types._BaseFieldType):
 

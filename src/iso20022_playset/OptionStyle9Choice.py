@@ -1,6 +1,6 @@
 import base_types
-import OptionStyle2Code
 import GenericIdentification47
+import OptionStyle2Code
 
 class OptionStyle9Choice(base_types._BaseFieldType):
 

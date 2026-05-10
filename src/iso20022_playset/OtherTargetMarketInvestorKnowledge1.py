@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import TargetMarket1Choice
 import AdditionalInformation15
-import Max35Text
 
 class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstrKnwldgTp", "_AddtlInf", "_Trgt"]
+	__slots__ = ["_Trgt", "_AddtlInf", "_InvstrKnwldgTp"]
 	@property
-	def InvstrKnwldgTp(self):
-		return self._InvstrKnwldgTp
+	def Trgt(self):
+		return self._Trgt
 
-	@InvstrKnwldgTp.setter
-	def InvstrKnwldgTp(self, value):
-		self._InvstrKnwldgTp = value if type(value) != auto else self.make_default("InvstrKnwldgTp")
+	@Trgt.setter
+	def Trgt(self, value):
+		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
 
-	@InvstrKnwldgTp.deleter
-	def InvstrKnwldgTp(self):
-		del self._InvstrKnwldgTp
-		self._InvstrKnwldgTp = None
+	@Trgt.deleter
+	def Trgt(self):
+		del self._Trgt
+		self._Trgt = None
 
 	@property
 	def AddtlInf(self):
@@ -33,21 +33,21 @@ class OtherTargetMarketInvestorKnowledge1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Trgt(self):
-		return self._Trgt
+	def InvstrKnwldgTp(self):
+		return self._InvstrKnwldgTp
 
-	@Trgt.setter
-	def Trgt(self, value):
-		self._Trgt = value if type(value) != auto else self.make_default("Trgt")
+	@InvstrKnwldgTp.setter
+	def InvstrKnwldgTp(self, value):
+		self._InvstrKnwldgTp = value if type(value) != auto else self.make_default("InvstrKnwldgTp")
 
-	@Trgt.deleter
-	def Trgt(self):
-		del self._Trgt
-		self._Trgt = None
+	@InvstrKnwldgTp.deleter
+	def InvstrKnwldgTp(self):
+		del self._InvstrKnwldgTp
+		self._InvstrKnwldgTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstrKnwldgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=TargetMarket1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrKnwldgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

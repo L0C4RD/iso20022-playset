@@ -1,12 +1,12 @@
 import base_types
 import OriginalMessage1
-import StatusReasonInformation8
-import UndertakingStatus1Code
 import Max35Text
+import UndertakingStatus1Code
+import StatusReasonInformation8
 
 class TradeStatusReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_AddtlInf", "_StsRsn", "_OrgnlMsgDtls"]
+	__slots__ = ["_Sts", "_OrgnlMsgDtls", "_AddtlInf", "_StsRsn"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -19,6 +19,19 @@ class TradeStatusReport1(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
+
+	@property
+	def OrgnlMsgDtls(self):
+		return self._OrgnlMsgDtls
+
+	@OrgnlMsgDtls.setter
+	def OrgnlMsgDtls(self, value):
+		self._OrgnlMsgDtls = value if type(value) != auto else self.make_default("OrgnlMsgDtls")
+
+	@OrgnlMsgDtls.deleter
+	def OrgnlMsgDtls(self):
+		del self._OrgnlMsgDtls
+		self._OrgnlMsgDtls = None
 
 	@property
 	def AddtlInf(self):
@@ -46,23 +59,10 @@ class TradeStatusReport1(base_types._BaseFieldType):
 		del self._StsRsn
 		self._StsRsn = None
 
-	@property
-	def OrgnlMsgDtls(self):
-		return self._OrgnlMsgDtls
-
-	@OrgnlMsgDtls.setter
-	def OrgnlMsgDtls(self, value):
-		self._OrgnlMsgDtls = value if type(value) != auto else self.make_default("OrgnlMsgDtls")
-
-	@OrgnlMsgDtls.deleter
-	def OrgnlMsgDtls(self):
-		del self._OrgnlMsgDtls
-		self._OrgnlMsgDtls = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=UndertakingStatus1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgDtls', type=OriginalMessage1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=StatusReasonInformation8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlMsgDtls', type=OriginalMessage1, min=1, max=1, mutex_group=None, array=False),
 	))
 

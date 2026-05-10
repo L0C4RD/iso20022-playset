@@ -1,24 +1,11 @@
 import base_types
 import Max105Text
-import StatusReason4Choice
 import CancellationStatus4Code
+import StatusReason4Choice
 
 class CancellationStatusInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_AddtlStsRsnInf", "_Sts"]
-	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
+	__slots__ = ["_AddtlStsRsnInf", "_StsRsn", "_Sts"]
 	@property
 	def AddtlStsRsnInf(self):
 		return self._AddtlStsRsnInf
@@ -31,6 +18,19 @@ class CancellationStatusInformation1(base_types._BaseFieldType):
 	def AddtlStsRsnInf(self):
 		del self._AddtlStsRsnInf
 		self._AddtlStsRsnInf = None
+
+	@property
+	def StsRsn(self):
+		return self._StsRsn
+
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
+
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	@property
 	def Sts(self):
@@ -46,8 +46,8 @@ class CancellationStatusInformation1(base_types._BaseFieldType):
 		self._Sts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=CancellationStatus4Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

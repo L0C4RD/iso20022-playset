@@ -1,6 +1,6 @@
 import base_types
-import CollateralAmount9
 import BaseOneRate
+import CollateralAmount9
 
 class ValuationsDetails2(base_types._BaseFieldType):
 

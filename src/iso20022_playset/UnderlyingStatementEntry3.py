@@ -1,37 +1,11 @@
 import base_types
-import OriginalGroupInformation29
 import Max35Text
 import UUIDv4Identifier
+import OriginalGroupInformation29
 
 class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlUETR", "_OrgnlNtryId", "_OrgnlStmtId", "_OrgnlGrpInf"]
-	@property
-	def OrgnlUETR(self):
-		return self._OrgnlUETR
-
-	@OrgnlUETR.setter
-	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
-
-	@OrgnlUETR.deleter
-	def OrgnlUETR(self):
-		del self._OrgnlUETR
-		self._OrgnlUETR = None
-
-	@property
-	def OrgnlNtryId(self):
-		return self._OrgnlNtryId
-
-	@OrgnlNtryId.setter
-	def OrgnlNtryId(self, value):
-		self._OrgnlNtryId = value if type(value) != auto else self.make_default("OrgnlNtryId")
-
-	@OrgnlNtryId.deleter
-	def OrgnlNtryId(self):
-		del self._OrgnlNtryId
-		self._OrgnlNtryId = None
-
+	__slots__ = ["_OrgnlStmtId", "_OrgnlGrpInf", "_OrgnlUETR", "_OrgnlNtryId"]
 	@property
 	def OrgnlStmtId(self):
 		return self._OrgnlStmtId
@@ -58,10 +32,36 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 		del self._OrgnlGrpInf
 		self._OrgnlGrpInf = None
 
+	@property
+	def OrgnlUETR(self):
+		return self._OrgnlUETR
+
+	@OrgnlUETR.setter
+	def OrgnlUETR(self, value):
+		self._OrgnlUETR = value if type(value) != auto else self.make_default("OrgnlUETR")
+
+	@OrgnlUETR.deleter
+	def OrgnlUETR(self):
+		del self._OrgnlUETR
+		self._OrgnlUETR = None
+
+	@property
+	def OrgnlNtryId(self):
+		return self._OrgnlNtryId
+
+	@OrgnlNtryId.setter
+	def OrgnlNtryId(self, value):
+		self._OrgnlNtryId = value if type(value) != auto else self.make_default("OrgnlNtryId")
+
+	@OrgnlNtryId.deleter
+	def OrgnlNtryId(self):
+		del self._OrgnlNtryId
+		self._OrgnlNtryId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlNtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlStmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

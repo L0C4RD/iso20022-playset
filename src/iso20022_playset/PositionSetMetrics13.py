@@ -1,6 +1,6 @@
 import base_types
-import VolumeMetrics5
 import PriceMetrics3
+import VolumeMetrics5
 
 class PositionSetMetrics13(base_types._BaseFieldType):
 

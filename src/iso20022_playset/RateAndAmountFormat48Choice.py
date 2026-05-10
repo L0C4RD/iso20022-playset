@@ -1,6 +1,6 @@
 import base_types
-import RateValueType7Code
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
+import RateValueType7Code
 
 class RateAndAmountFormat48Choice(base_types._BaseFieldType):
 

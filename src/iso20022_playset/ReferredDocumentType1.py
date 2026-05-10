@@ -4,20 +4,7 @@ import DocumentType2Code
 
 class ReferredDocumentType1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cd", "_Issr", "_Prtry"]
-	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
+	__slots__ = ["_Issr", "_Cd", "_Prtry"]
 	@property
 	def Issr(self):
 		return self._Issr
@@ -30,6 +17,19 @@ class ReferredDocumentType1(base_types._BaseFieldType):
 	def Issr(self):
 		del self._Issr
 		self._Issr = None
+
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
 
 	@property
 	def Prtry(self):
@@ -45,8 +45,8 @@ class ReferredDocumentType1(base_types._BaseFieldType):
 		self._Prtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cd', type=DocumentType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=DocumentType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ReservationStatus1Code
 import Max35Text
+import ReservationStatus1Code
 
 class ReservationStatus1Choice(base_types._BaseFieldType):
 

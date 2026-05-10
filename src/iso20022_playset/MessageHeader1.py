@@ -1,6 +1,6 @@
 import base_types
-import ISODateTime
 import Max35Text
+import ISODateTime
 
 class MessageHeader1(base_types._BaseFieldType):
 

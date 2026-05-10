@@ -1,15 +1,15 @@
 import base_types
-import ConsolidatedTapeAssociationIdentifier
-import Bloomberg2Identifier
-import TickerIdentifier
-import ISINOct2015Identifier
-import AlternateIdentification1
 import EuroclearClearstreamIdentifier
 import RICIdentifier
+import AlternateIdentification1
+import ISINOct2015Identifier
+import Bloomberg2Identifier
+import ConsolidatedTapeAssociationIdentifier
+import TickerIdentifier
 
 class SecurityIdentification38Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrnId", "_Cmon", "_TckrSymb", "_ISIN", "_Blmbrg", "_CTA", "_RIC"]
+	__slots__ = ["_AltrnId", "_ISIN", "_Blmbrg", "_TckrSymb", "_Cmon", "_CTA", "_RIC"]
 	@property
 	def AltrnId(self):
 		return self._AltrnId
@@ -22,32 +22,6 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 	def AltrnId(self):
 		del self._AltrnId
 		self._AltrnId = None
-
-	@property
-	def Cmon(self):
-		return self._Cmon
-
-	@Cmon.setter
-	def Cmon(self, value):
-		self._Cmon = value if type(value) != auto else self.make_default("Cmon")
-
-	@Cmon.deleter
-	def Cmon(self):
-		del self._Cmon
-		self._Cmon = None
-
-	@property
-	def TckrSymb(self):
-		return self._TckrSymb
-
-	@TckrSymb.setter
-	def TckrSymb(self, value):
-		self._TckrSymb = value if type(value) != auto else self.make_default("TckrSymb")
-
-	@TckrSymb.deleter
-	def TckrSymb(self):
-		del self._TckrSymb
-		self._TckrSymb = None
 
 	@property
 	def ISIN(self):
@@ -74,6 +48,32 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 	def Blmbrg(self):
 		del self._Blmbrg
 		self._Blmbrg = None
+
+	@property
+	def TckrSymb(self):
+		return self._TckrSymb
+
+	@TckrSymb.setter
+	def TckrSymb(self, value):
+		self._TckrSymb = value if type(value) != auto else self.make_default("TckrSymb")
+
+	@TckrSymb.deleter
+	def TckrSymb(self):
+		del self._TckrSymb
+		self._TckrSymb = None
+
+	@property
+	def Cmon(self):
+		return self._Cmon
+
+	@Cmon.setter
+	def Cmon(self, value):
+		self._Cmon = value if type(value) != auto else self.make_default("Cmon")
+
+	@Cmon.deleter
+	def Cmon(self):
+		del self._Cmon
+		self._Cmon = None
 
 	@property
 	def CTA(self):
@@ -103,10 +103,10 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=AlternateIdentification1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Blmbrg', type=Bloomberg2Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TckrSymb', type=TickerIdentifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmon', type=EuroclearClearstreamIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CTA', type=ConsolidatedTapeAssociationIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RIC', type=RICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))

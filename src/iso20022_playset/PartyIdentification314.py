@@ -1,23 +1,23 @@
 import base_types
 import Max35Text
-import LEIIdentifier
 import PartyIdentification257Choice
+import LEIIdentifier
 
 class PartyIdentification314(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_LEI", "_PrcgId"]
+	__slots__ = ["_PrcgId", "_LEI", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def PrcgId(self):
+		return self._PrcgId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@PrcgId.setter
+	def PrcgId(self, value):
+		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@PrcgId.deleter
+	def PrcgId(self):
+		del self._PrcgId
+		self._PrcgId = None
 
 	@property
 	def LEI(self):
@@ -33,21 +33,21 @@ class PartyIdentification314(base_types._BaseFieldType):
 		self._LEI = None
 
 	@property
-	def PrcgId(self):
-		return self._PrcgId
+	def Id(self):
+		return self._Id
 
-	@PrcgId.setter
-	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != auto else self.make_default("PrcgId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@PrcgId.deleter
-	def PrcgId(self):
-		del self._PrcgId
-		self._PrcgId = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification257Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

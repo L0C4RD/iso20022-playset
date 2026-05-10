@@ -1,11 +1,24 @@
 import base_types
-import Max2NumericText
-import CountryCode
 import Max35Text
+import CountryCode
+import Max2NumericText
 
 class TaxCategory1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Ctry", "_Desc"]
+	__slots__ = ["_Desc", "_Id", "_Ctry"]
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class TaxCategory1(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

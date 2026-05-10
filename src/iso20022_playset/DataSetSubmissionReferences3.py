@@ -1,24 +1,11 @@
 import base_types
-import YesNoIndicator
-import DocumentIdentification7
 import Max35Text
+import DocumentIdentification7
+import YesNoIndicator
 
 class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
-	__slots__ = ["_ForcdMtch", "_TxId", "_PurchsOrdrRef", "_SubmitrTxRef"]
-	@property
-	def ForcdMtch(self):
-		return self._ForcdMtch
-
-	@ForcdMtch.setter
-	def ForcdMtch(self, value):
-		self._ForcdMtch = value if type(value) != auto else self.make_default("ForcdMtch")
-
-	@ForcdMtch.deleter
-	def ForcdMtch(self):
-		del self._ForcdMtch
-		self._ForcdMtch = None
-
+	__slots__ = ["_TxId", "_PurchsOrdrRef", "_ForcdMtch", "_SubmitrTxRef"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -46,6 +33,19 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 		self._PurchsOrdrRef = None
 
 	@property
+	def ForcdMtch(self):
+		return self._ForcdMtch
+
+	@ForcdMtch.setter
+	def ForcdMtch(self, value):
+		self._ForcdMtch = value if type(value) != auto else self.make_default("ForcdMtch")
+
+	@ForcdMtch.deleter
+	def ForcdMtch(self):
+		del self._ForcdMtch
+		self._ForcdMtch = None
+
+	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
 
@@ -59,9 +59,9 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 		self._SubmitrTxRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

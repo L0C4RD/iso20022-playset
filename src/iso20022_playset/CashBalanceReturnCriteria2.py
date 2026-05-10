@@ -3,20 +3,7 @@ import RequestedIndicator
 
 class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgDtInd", "_StsInd", "_NbOfPmtsInd", "_TpInd", "_ValDtInd"]
-	@property
-	def PrcgDtInd(self):
-		return self._PrcgDtInd
-
-	@PrcgDtInd.setter
-	def PrcgDtInd(self, value):
-		self._PrcgDtInd = value if type(value) != auto else self.make_default("PrcgDtInd")
-
-	@PrcgDtInd.deleter
-	def PrcgDtInd(self):
-		del self._PrcgDtInd
-		self._PrcgDtInd = None
-
+	__slots__ = ["_StsInd", "_ValDtInd", "_PrcgDtInd", "_NbOfPmtsInd", "_TpInd"]
 	@property
 	def StsInd(self):
 		return self._StsInd
@@ -29,6 +16,32 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 	def StsInd(self):
 		del self._StsInd
 		self._StsInd = None
+
+	@property
+	def ValDtInd(self):
+		return self._ValDtInd
+
+	@ValDtInd.setter
+	def ValDtInd(self, value):
+		self._ValDtInd = value if type(value) != auto else self.make_default("ValDtInd")
+
+	@ValDtInd.deleter
+	def ValDtInd(self):
+		del self._ValDtInd
+		self._ValDtInd = None
+
+	@property
+	def PrcgDtInd(self):
+		return self._PrcgDtInd
+
+	@PrcgDtInd.setter
+	def PrcgDtInd(self, value):
+		self._PrcgDtInd = value if type(value) != auto else self.make_default("PrcgDtInd")
+
+	@PrcgDtInd.deleter
+	def PrcgDtInd(self):
+		del self._PrcgDtInd
+		self._PrcgDtInd = None
 
 	@property
 	def NbOfPmtsInd(self):
@@ -56,24 +69,11 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 		del self._TpInd
 		self._TpInd = None
 
-	@property
-	def ValDtInd(self):
-		return self._ValDtInd
-
-	@ValDtInd.setter
-	def ValDtInd(self, value):
-		self._ValDtInd = value if type(value) != auto else self.make_default("ValDtInd")
-
-	@ValDtInd.deleter
-	def ValDtInd(self):
-		del self._ValDtInd
-		self._ValDtInd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgDtInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDtInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDtInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfPmtsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDtInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 import base_types
-import Header31
-import ContentInformationType15
 import ATMReconciliationRequestComponent1
+import ContentInformationType15
+import Header31
 import ContentInformationType10
 
 class ATMReconciliationResponseV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_PrtctdATMRcncltnRspn", "_ATMRcncltnRspn", "_SctyTrlr"]
+	__slots__ = ["_ATMRcncltnRspn", "_PrtctdATMRcncltnRspn", "_SctyTrlr", "_Hdr"]
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ATMRcncltnRspn(self):
+		return self._ATMRcncltnRspn
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@ATMRcncltnRspn.setter
+	def ATMRcncltnRspn(self, value):
+		self._ATMRcncltnRspn = value if type(value) != auto else self.make_default("ATMRcncltnRspn")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@ATMRcncltnRspn.deleter
+	def ATMRcncltnRspn(self):
+		del self._ATMRcncltnRspn
+		self._ATMRcncltnRspn = None
 
 	@property
 	def PrtctdATMRcncltnRspn(self):
@@ -34,19 +34,6 @@ class ATMReconciliationResponseV01(base_types._BaseFieldType):
 		self._PrtctdATMRcncltnRspn = None
 
 	@property
-	def ATMRcncltnRspn(self):
-		return self._ATMRcncltnRspn
-
-	@ATMRcncltnRspn.setter
-	def ATMRcncltnRspn(self, value):
-		self._ATMRcncltnRspn = value if type(value) != auto else self.make_default("ATMRcncltnRspn")
-
-	@ATMRcncltnRspn.deleter
-	def ATMRcncltnRspn(self):
-		del self._ATMRcncltnRspn
-		self._ATMRcncltnRspn = None
-
-	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
 
@@ -59,10 +46,23 @@ class ATMReconciliationResponseV01(base_types._BaseFieldType):
 		del self._SctyTrlr
 		self._SctyTrlr = None
 
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMRcncltnRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMRcncltnRspn', type=ATMReconciliationRequestComponent1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMRcncltnRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))
 

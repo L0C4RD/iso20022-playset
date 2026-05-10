@@ -4,7 +4,7 @@ import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 
-	__slots__ = ["_OwnrshTp", "_OwnrshPctg", "_UsfrctPctg"]
+	__slots__ = ["_OwnrshTp", "_UsfrctPctg", "_OwnrshPctg"]
 	@property
 	def OwnrshTp(self):
 		return self._OwnrshTp
@@ -19,19 +19,6 @@ class Ownership1(base_types._BaseFieldType):
 		self._OwnrshTp = None
 
 	@property
-	def OwnrshPctg(self):
-		return self._OwnrshPctg
-
-	@OwnrshPctg.setter
-	def OwnrshPctg(self, value):
-		self._OwnrshPctg = value if type(value) != auto else self.make_default("OwnrshPctg")
-
-	@OwnrshPctg.deleter
-	def OwnrshPctg(self):
-		del self._OwnrshPctg
-		self._OwnrshPctg = None
-
-	@property
 	def UsfrctPctg(self):
 		return self._UsfrctPctg
 
@@ -44,9 +31,22 @@ class Ownership1(base_types._BaseFieldType):
 		del self._UsfrctPctg
 		self._UsfrctPctg = None
 
+	@property
+	def OwnrshPctg(self):
+		return self._OwnrshPctg
+
+	@OwnrshPctg.setter
+	def OwnrshPctg(self, value):
+		self._OwnrshPctg = value if type(value) != auto else self.make_default("OwnrshPctg")
+
+	@OwnrshPctg.deleter
+	def OwnrshPctg(self):
+		del self._OwnrshPctg
+		self._OwnrshPctg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OwnrshTp', type=OwnershipType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsfrctPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

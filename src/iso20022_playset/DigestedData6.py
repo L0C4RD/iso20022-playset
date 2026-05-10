@@ -1,12 +1,12 @@
 import base_types
-import AlgorithmIdentification36
 import EncapsulatedContent3
 import Max140Binary
+import AlgorithmIdentification36
 import Number
 
 class DigestedData6(base_types._BaseFieldType):
 
-	__slots__ = ["_Dgst", "_DgstAlgo", "_NcpsltdCntt", "_Vrsn"]
+	__slots__ = ["_Dgst", "_Vrsn", "_NcpsltdCntt", "_DgstAlgo"]
 	@property
 	def Dgst(self):
 		return self._Dgst
@@ -21,17 +21,17 @@ class DigestedData6(base_types._BaseFieldType):
 		self._Dgst = None
 
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
+	def Vrsn(self):
+		return self._Vrsn
 
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
 
 	@property
 	def NcpsltdCntt(self):
@@ -47,22 +47,22 @@ class DigestedData6(base_types._BaseFieldType):
 		self._NcpsltdCntt = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def DgstAlgo(self):
+		return self._DgstAlgo
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dgst', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcpsltdCntt', type=EncapsulatedContent3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,50 +1,24 @@
 import base_types
-import Max70Text
 import YesNoIndicator
 import CountryCode
 import Quantity9
+import Max70Text
 
 class CertifiedCharacteristics2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HlthIndctn", "_PhytosntryIndctn", "_Orgn", "_Qty", "_Qlty", "_Anlys", "_Wght"]
+	__slots__ = ["_Anlys", "_Qty", "_Orgn", "_HlthIndctn", "_Wght", "_Qlty", "_PhytosntryIndctn"]
 	@property
-	def HlthIndctn(self):
-		return self._HlthIndctn
+	def Anlys(self):
+		return self._Anlys
 
-	@HlthIndctn.setter
-	def HlthIndctn(self, value):
-		self._HlthIndctn = value if type(value) != auto else self.make_default("HlthIndctn")
+	@Anlys.setter
+	def Anlys(self, value):
+		self._Anlys = value if type(value) != auto else self.make_default("Anlys")
 
-	@HlthIndctn.deleter
-	def HlthIndctn(self):
-		del self._HlthIndctn
-		self._HlthIndctn = None
-
-	@property
-	def PhytosntryIndctn(self):
-		return self._PhytosntryIndctn
-
-	@PhytosntryIndctn.setter
-	def PhytosntryIndctn(self, value):
-		self._PhytosntryIndctn = value if type(value) != auto else self.make_default("PhytosntryIndctn")
-
-	@PhytosntryIndctn.deleter
-	def PhytosntryIndctn(self):
-		del self._PhytosntryIndctn
-		self._PhytosntryIndctn = None
-
-	@property
-	def Orgn(self):
-		return self._Orgn
-
-	@Orgn.setter
-	def Orgn(self, value):
-		self._Orgn = value if type(value) != auto else self.make_default("Orgn")
-
-	@Orgn.deleter
-	def Orgn(self):
-		del self._Orgn
-		self._Orgn = None
+	@Anlys.deleter
+	def Anlys(self):
+		del self._Anlys
+		self._Anlys = None
 
 	@property
 	def Qty(self):
@@ -60,30 +34,30 @@ class CertifiedCharacteristics2Choice(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def Qlty(self):
-		return self._Qlty
+	def Orgn(self):
+		return self._Orgn
 
-	@Qlty.setter
-	def Qlty(self, value):
-		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
+	@Orgn.setter
+	def Orgn(self, value):
+		self._Orgn = value if type(value) != auto else self.make_default("Orgn")
 
-	@Qlty.deleter
-	def Qlty(self):
-		del self._Qlty
-		self._Qlty = None
+	@Orgn.deleter
+	def Orgn(self):
+		del self._Orgn
+		self._Orgn = None
 
 	@property
-	def Anlys(self):
-		return self._Anlys
+	def HlthIndctn(self):
+		return self._HlthIndctn
 
-	@Anlys.setter
-	def Anlys(self, value):
-		self._Anlys = value if type(value) != auto else self.make_default("Anlys")
+	@HlthIndctn.setter
+	def HlthIndctn(self, value):
+		self._HlthIndctn = value if type(value) != auto else self.make_default("HlthIndctn")
 
-	@Anlys.deleter
-	def Anlys(self):
-		del self._Anlys
-		self._Anlys = None
+	@HlthIndctn.deleter
+	def HlthIndctn(self):
+		del self._HlthIndctn
+		self._HlthIndctn = None
 
 	@property
 	def Wght(self):
@@ -98,13 +72,39 @@ class CertifiedCharacteristics2Choice(base_types._BaseFieldType):
 		del self._Wght
 		self._Wght = None
 
+	@property
+	def Qlty(self):
+		return self._Qlty
+
+	@Qlty.setter
+	def Qlty(self, value):
+		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
+
+	@Qlty.deleter
+	def Qlty(self):
+		del self._Qlty
+		self._Qlty = None
+
+	@property
+	def PhytosntryIndctn(self):
+		return self._PhytosntryIndctn
+
+	@PhytosntryIndctn.setter
+	def PhytosntryIndctn(self, value):
+		self._PhytosntryIndctn = value if type(value) != auto else self.make_default("PhytosntryIndctn")
+
+	@PhytosntryIndctn.deleter
+	def PhytosntryIndctn(self):
+		del self._PhytosntryIndctn
+		self._PhytosntryIndctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HlthIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PhytosntryIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Orgn', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Qty', type=Quantity9, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Qlty', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Anlys', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Qty', type=Quantity9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Orgn', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='HlthIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Wght', type=Quantity9, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Qlty', type=Max70Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PhytosntryIndctn', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
 

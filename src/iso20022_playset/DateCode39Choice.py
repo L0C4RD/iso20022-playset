@@ -1,6 +1,6 @@
 import base_types
-import DateType9Code
 import GenericIdentification47
+import DateType9Code
 
 class DateCode39Choice(base_types._BaseFieldType):
 

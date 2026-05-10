@@ -1,26 +1,26 @@
 import base_types
-import UnderlyingProductIdentifier1Code
-import SupplementaryData1
 import Max35Text
-import TradePartyIdentification9
-import MessageIdentification1
+import SupplementaryData1
 import Header23
+import UnderlyingProductIdentifier1Code
+import MessageIdentification1
+import TradePartyIdentification9
 
 class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradgSdId", "_CxlReqId", "_UndrlygPdctTp", "_TradId", "_CtrPtyRoleId", "_Hdr"]
+	__slots__ = ["_Hdr", "_TradgSdId", "_CxlReqId", "_CtrPtyRoleId", "_SplmtryData", "_TradId", "_UndrlygPdctTp"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def Hdr(self):
+		return self._Hdr
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def TradgSdId(self):
@@ -49,17 +49,30 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 		self._CxlReqId = None
 
 	@property
-	def UndrlygPdctTp(self):
-		return self._UndrlygPdctTp
+	def CtrPtyRoleId(self):
+		return self._CtrPtyRoleId
 
-	@UndrlygPdctTp.setter
-	def UndrlygPdctTp(self, value):
-		self._UndrlygPdctTp = value if type(value) != auto else self.make_default("UndrlygPdctTp")
+	@CtrPtyRoleId.setter
+	def CtrPtyRoleId(self, value):
+		self._CtrPtyRoleId = value if type(value) != auto else self.make_default("CtrPtyRoleId")
 
-	@UndrlygPdctTp.deleter
-	def UndrlygPdctTp(self):
-		del self._UndrlygPdctTp
-		self._UndrlygPdctTp = None
+	@CtrPtyRoleId.deleter
+	def CtrPtyRoleId(self):
+		del self._CtrPtyRoleId
+		self._CtrPtyRoleId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TradId(self):
@@ -75,38 +88,25 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 		self._TradId = None
 
 	@property
-	def CtrPtyRoleId(self):
-		return self._CtrPtyRoleId
+	def UndrlygPdctTp(self):
+		return self._UndrlygPdctTp
 
-	@CtrPtyRoleId.setter
-	def CtrPtyRoleId(self, value):
-		self._CtrPtyRoleId = value if type(value) != auto else self.make_default("CtrPtyRoleId")
+	@UndrlygPdctTp.setter
+	def UndrlygPdctTp(self, value):
+		self._UndrlygPdctTp = value if type(value) != auto else self.make_default("UndrlygPdctTp")
 
-	@CtrPtyRoleId.deleter
-	def CtrPtyRoleId(self):
-		del self._CtrPtyRoleId
-		self._CtrPtyRoleId = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@UndrlygPdctTp.deleter
+	def UndrlygPdctTp(self):
+		del self._UndrlygPdctTp
+		self._UndrlygPdctTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UndrlygPdctTp', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyRoleId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header23, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygPdctTp', type=UnderlyingProductIdentifier1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

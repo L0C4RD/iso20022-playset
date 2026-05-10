@@ -1,24 +1,24 @@
 import base_types
-import NameAndAddress5
-import BICFIDec2014Identifier
-import ClearingSystemMemberIdentification2Choice
 import Max35Text
+import ClearingSystemMemberIdentification2Choice
+import BICFIDec2014Identifier
+import NameAndAddress5
 
 class FinancialInstitutionIdentification10Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NmAndAdr", "_PrtryId", "_BICFI", "_ClrSysMmbId"]
+	__slots__ = ["_ClrSysMmbId", "_PrtryId", "_BICFI", "_NmAndAdr"]
 	@property
-	def NmAndAdr(self):
-		return self._NmAndAdr
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
 
-	@NmAndAdr.setter
-	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
 
-	@NmAndAdr.deleter
-	def NmAndAdr(self):
-		del self._NmAndAdr
-		self._NmAndAdr = None
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
 
 	@property
 	def PrtryId(self):
@@ -47,22 +47,22 @@ class FinancialInstitutionIdentification10Choice(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
+	def NmAndAdr(self):
+		return self._NmAndAdr
 
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
+	@NmAndAdr.setter
+	def NmAndAdr(self, value):
+		self._NmAndAdr = value if type(value) != auto else self.make_default("NmAndAdr")
 
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+	@NmAndAdr.deleter
+	def NmAndAdr(self):
+		del self._NmAndAdr
+		self._NmAndAdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress5, min=0, max=1, mutex_group=1, array=False),
 	))
 

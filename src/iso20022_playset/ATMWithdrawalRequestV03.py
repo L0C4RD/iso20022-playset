@@ -6,7 +6,20 @@ import ContentInformationType10
 
 class ATMWithdrawalRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_PrtctdATMWdrwlReq", "_Hdr", "_ATMWdrwlReq"]
+	__slots__ = ["_ATMWdrwlReq", "_SctyTrlr", "_PrtctdATMWdrwlReq", "_Hdr"]
+	@property
+	def ATMWdrwlReq(self):
+		return self._ATMWdrwlReq
+
+	@ATMWdrwlReq.setter
+	def ATMWdrwlReq(self, value):
+		self._ATMWdrwlReq = value if type(value) != auto else self.make_default("ATMWdrwlReq")
+
+	@ATMWdrwlReq.deleter
+	def ATMWdrwlReq(self):
+		del self._ATMWdrwlReq
+		self._ATMWdrwlReq = None
+
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -46,23 +59,10 @@ class ATMWithdrawalRequestV03(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def ATMWdrwlReq(self):
-		return self._ATMWdrwlReq
-
-	@ATMWdrwlReq.setter
-	def ATMWdrwlReq(self, value):
-		self._ATMWdrwlReq = value if type(value) != auto else self.make_default("ATMWdrwlReq")
-
-	@ATMWdrwlReq.deleter
-	def ATMWdrwlReq(self):
-		del self._ATMWdrwlReq
-		self._ATMWdrwlReq = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ATMWdrwlReq', type=ATMWithdrawalRequest3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMWdrwlReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMWdrwlReq', type=ATMWithdrawalRequest3, min=0, max=1, mutex_group=None, array=False),
 	))
 

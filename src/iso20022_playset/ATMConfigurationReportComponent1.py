@@ -1,7 +1,7 @@
 import base_types
-import ATMVersionReport1
-import ATMEnvironment7
 import Max35Text
+import ATMEnvironment7
+import ATMVersionReport1
 
 class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 

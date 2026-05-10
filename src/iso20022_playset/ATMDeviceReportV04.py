@@ -6,19 +6,19 @@ import ATMDeviceReport4
 
 class ATMDeviceReportV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_PrtctdATMDvcRpt", "_SctyTrlr", "_ATMDvcRpt"]
+	__slots__ = ["_ATMDvcRpt", "_PrtctdATMDvcRpt", "_SctyTrlr", "_Hdr"]
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def ATMDvcRpt(self):
+		return self._ATMDvcRpt
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@ATMDvcRpt.setter
+	def ATMDvcRpt(self, value):
+		self._ATMDvcRpt = value if type(value) != auto else self.make_default("ATMDvcRpt")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@ATMDvcRpt.deleter
+	def ATMDvcRpt(self):
+		del self._ATMDvcRpt
+		self._ATMDvcRpt = None
 
 	@property
 	def PrtctdATMDvcRpt(self):
@@ -47,22 +47,22 @@ class ATMDeviceReportV04(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	@property
-	def ATMDvcRpt(self):
-		return self._ATMDvcRpt
+	def Hdr(self):
+		return self._Hdr
 
-	@ATMDvcRpt.setter
-	def ATMDvcRpt(self, value):
-		self._ATMDvcRpt = value if type(value) != auto else self.make_default("ATMDvcRpt")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@ATMDvcRpt.deleter
-	def ATMDvcRpt(self):
-		del self._ATMDvcRpt
-		self._ATMDvcRpt = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMDvcRpt', type=ATMDeviceReport4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDvcRpt', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMDvcRpt', type=ATMDeviceReport4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))
 

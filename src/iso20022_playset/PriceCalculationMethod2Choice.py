@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import PriceCalculationMethod1Code
+import GenericIdentification30
 
 class PriceCalculationMethod2Choice(base_types._BaseFieldType):
 

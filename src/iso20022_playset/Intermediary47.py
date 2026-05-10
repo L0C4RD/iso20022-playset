@@ -1,24 +1,11 @@
 import base_types
+import LEIIdentifier
 import PartyIdentification125Choice
 import Account32
-import LEIIdentifier
 
 class Intermediary47(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Acct", "_LglNttyIdr"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Acct", "_LglNttyIdr", "_Id"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -45,9 +32,22 @@ class Intermediary47(base_types._BaseFieldType):
 		del self._LglNttyIdr
 		self._LglNttyIdr = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

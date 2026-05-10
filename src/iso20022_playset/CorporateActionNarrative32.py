@@ -3,7 +3,7 @@ import Max350Text
 
 class CorporateActionNarrative32(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvryDtls", "_InfToCmplyWth", "_InstrAddtlInf", "_FXInstrsAddtlInf"]
+	__slots__ = ["_DlvryDtls", "_InfToCmplyWth", "_FXInstrsAddtlInf", "_InstrAddtlInf"]
 	@property
 	def DlvryDtls(self):
 		return self._DlvryDtls
@@ -31,19 +31,6 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 		self._InfToCmplyWth = None
 
 	@property
-	def InstrAddtlInf(self):
-		return self._InstrAddtlInf
-
-	@InstrAddtlInf.setter
-	def InstrAddtlInf(self, value):
-		self._InstrAddtlInf = value if type(value) != auto else self.make_default("InstrAddtlInf")
-
-	@InstrAddtlInf.deleter
-	def InstrAddtlInf(self):
-		del self._InstrAddtlInf
-		self._InstrAddtlInf = None
-
-	@property
 	def FXInstrsAddtlInf(self):
 		return self._FXInstrsAddtlInf
 
@@ -56,10 +43,23 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 		del self._FXInstrsAddtlInf
 		self._FXInstrsAddtlInf = None
 
+	@property
+	def InstrAddtlInf(self):
+		return self._InstrAddtlInf
+
+	@InstrAddtlInf.setter
+	def InstrAddtlInf(self, value):
+		self._InstrAddtlInf = value if type(value) != auto else self.make_default("InstrAddtlInf")
+
+	@InstrAddtlInf.deleter
+	def InstrAddtlInf(self):
+		del self._InstrAddtlInf
+		self._InstrAddtlInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InstrAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FXInstrsAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InstrAddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

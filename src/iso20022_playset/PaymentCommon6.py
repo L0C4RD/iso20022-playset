@@ -1,13 +1,13 @@
 import base_types
+import PaymentStatus6
 import CreditDebitCode
+import PaymentOrigin1Choice
 import DateAndDateTime2Choice
 import System3
-import PaymentOrigin1Choice
-import PaymentStatus6
 
 class PaymentCommon6(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqdExctnDt", "_PmtTo", "_PmtFr", "_CdtDbtInd", "_CmonSts", "_NtryDt", "_PmtMtd"]
+	__slots__ = ["_ReqdExctnDt", "_PmtFr", "_PmtMtd", "_CmonSts", "_PmtTo", "_NtryDt", "_CdtDbtInd"]
 	@property
 	def ReqdExctnDt(self):
 		return self._ReqdExctnDt
@@ -20,19 +20,6 @@ class PaymentCommon6(base_types._BaseFieldType):
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
 		self._ReqdExctnDt = None
-
-	@property
-	def PmtTo(self):
-		return self._PmtTo
-
-	@PmtTo.setter
-	def PmtTo(self, value):
-		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
-
-	@PmtTo.deleter
-	def PmtTo(self):
-		del self._PmtTo
-		self._PmtTo = None
 
 	@property
 	def PmtFr(self):
@@ -48,17 +35,17 @@ class PaymentCommon6(base_types._BaseFieldType):
 		self._PmtFr = None
 
 	@property
-	def CdtDbtInd(self):
-		return self._CdtDbtInd
+	def PmtMtd(self):
+		return self._PmtMtd
 
-	@CdtDbtInd.setter
-	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
+	@PmtMtd.setter
+	def PmtMtd(self, value):
+		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
 
-	@CdtDbtInd.deleter
-	def CdtDbtInd(self):
-		del self._CdtDbtInd
-		self._CdtDbtInd = None
+	@PmtMtd.deleter
+	def PmtMtd(self):
+		del self._PmtMtd
+		self._PmtMtd = None
 
 	@property
 	def CmonSts(self):
@@ -74,6 +61,19 @@ class PaymentCommon6(base_types._BaseFieldType):
 		self._CmonSts = None
 
 	@property
+	def PmtTo(self):
+		return self._PmtTo
+
+	@PmtTo.setter
+	def PmtTo(self, value):
+		self._PmtTo = value if type(value) != auto else self.make_default("PmtTo")
+
+	@PmtTo.deleter
+	def PmtTo(self):
+		del self._PmtTo
+		self._PmtTo = None
+
+	@property
 	def NtryDt(self):
 		return self._NtryDt
 
@@ -87,25 +87,25 @@ class PaymentCommon6(base_types._BaseFieldType):
 		self._NtryDt = None
 
 	@property
-	def PmtMtd(self):
-		return self._PmtMtd
+	def CdtDbtInd(self):
+		return self._CdtDbtInd
 
-	@PmtMtd.setter
-	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != auto else self.make_default("PmtMtd")
+	@CdtDbtInd.setter
+	def CdtDbtInd(self, value):
+		self._CdtDbtInd = value if type(value) != auto else self.make_default("CdtDbtInd")
 
-	@PmtMtd.deleter
-	def PmtMtd(self):
-		del self._PmtMtd
-		self._PmtMtd = None
+	@CdtDbtInd.deleter
+	def CdtDbtInd(self):
+		del self._CdtDbtInd
+		self._CdtDbtInd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtTo', type=System3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFr', type=System3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonSts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=PaymentOrigin1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonSts', type=PaymentStatus6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PmtTo', type=System3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

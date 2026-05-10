@@ -1,6 +1,6 @@
 import base_types
-import YesNoIndicator
 import PriceValueType1Code
+import YesNoIndicator
 
 class YieldedOrValueType1Choice(base_types._BaseFieldType):
 

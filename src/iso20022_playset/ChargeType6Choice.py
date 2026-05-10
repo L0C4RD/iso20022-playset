@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import InvestmentFundFee2Code
+import GenericIdentification47
 
 class ChargeType6Choice(base_types._BaseFieldType):
 

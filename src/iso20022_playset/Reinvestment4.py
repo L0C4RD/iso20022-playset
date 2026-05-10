@@ -1,11 +1,11 @@
 import base_types
-import PercentageRate
 import FinancialInstrument87
 import ActiveCurrencyCode
+import PercentageRate
 
 class Reinvestment4(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_RinvstmtPctg", "_ReqdNAVCcy"]
+	__slots__ = ["_FinInstrmDtls", "_ReqdNAVCcy", "_RinvstmtPctg"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls
@@ -20,19 +20,6 @@ class Reinvestment4(base_types._BaseFieldType):
 		self._FinInstrmDtls = None
 
 	@property
-	def RinvstmtPctg(self):
-		return self._RinvstmtPctg
-
-	@RinvstmtPctg.setter
-	def RinvstmtPctg(self, value):
-		self._RinvstmtPctg = value if type(value) != auto else self.make_default("RinvstmtPctg")
-
-	@RinvstmtPctg.deleter
-	def RinvstmtPctg(self):
-		del self._RinvstmtPctg
-		self._RinvstmtPctg = None
-
-	@property
 	def ReqdNAVCcy(self):
 		return self._ReqdNAVCcy
 
@@ -45,9 +32,22 @@ class Reinvestment4(base_types._BaseFieldType):
 		del self._ReqdNAVCcy
 		self._ReqdNAVCcy = None
 
+	@property
+	def RinvstmtPctg(self):
+		return self._RinvstmtPctg
+
+	@RinvstmtPctg.setter
+	def RinvstmtPctg(self, value):
+		self._RinvstmtPctg = value if type(value) != auto else self.make_default("RinvstmtPctg")
+
+	@RinvstmtPctg.deleter
+	def RinvstmtPctg(self):
+		del self._RinvstmtPctg
+		self._RinvstmtPctg = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RinvstmtPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdNAVCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstmtPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

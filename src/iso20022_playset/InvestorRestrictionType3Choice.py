@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import InvestorRestrictionType1Code
+import GenericIdentification30
 
 class InvestorRestrictionType3Choice(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 import base_types
-import EventToNotify2Code
 import ISODateTime
-import EventContext7
 import Max1025Text
+import EventToNotify2Code
+import EventContext7
 
 class RetailerEvent7(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtToNtfy", "_EvtTmStmp", "_AddtlEvtInf", "_EvtCntxt"]
+	__slots__ = ["_EvtToNtfy", "_EvtTmStmp", "_EvtCntxt", "_AddtlEvtInf"]
 	@property
 	def EvtToNtfy(self):
 		return self._EvtToNtfy
@@ -34,19 +34,6 @@ class RetailerEvent7(base_types._BaseFieldType):
 		self._EvtTmStmp = None
 
 	@property
-	def AddtlEvtInf(self):
-		return self._AddtlEvtInf
-
-	@AddtlEvtInf.setter
-	def AddtlEvtInf(self, value):
-		self._AddtlEvtInf = value if type(value) != auto else self.make_default("AddtlEvtInf")
-
-	@AddtlEvtInf.deleter
-	def AddtlEvtInf(self):
-		del self._AddtlEvtInf
-		self._AddtlEvtInf = None
-
-	@property
 	def EvtCntxt(self):
 		return self._EvtCntxt
 
@@ -59,10 +46,23 @@ class RetailerEvent7(base_types._BaseFieldType):
 		del self._EvtCntxt
 		self._EvtCntxt = None
 
+	@property
+	def AddtlEvtInf(self):
+		return self._AddtlEvtInf
+
+	@AddtlEvtInf.setter
+	def AddtlEvtInf(self, value):
+		self._AddtlEvtInf = value if type(value) != auto else self.make_default("AddtlEvtInf")
+
+	@AddtlEvtInf.deleter
+	def AddtlEvtInf(self):
+		del self._AddtlEvtInf
+		self._AddtlEvtInf = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtToNtfy', type=EventToNotify2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlEvtInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtCntxt', type=EventContext7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlEvtInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

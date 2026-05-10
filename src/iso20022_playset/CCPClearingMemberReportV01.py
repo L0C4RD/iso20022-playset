@@ -4,20 +4,7 @@ import ClearingMember1
 
 class CCPClearingMemberReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_ClrMmb"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_ClrMmb", "_SplmtryData"]
 	@property
 	def ClrMmb(self):
 		return self._ClrMmb
@@ -31,8 +18,21 @@ class CCPClearingMemberReportV01(base_types._BaseFieldType):
 		del self._ClrMmb
 		self._ClrMmb = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrMmb', type=ClearingMember1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

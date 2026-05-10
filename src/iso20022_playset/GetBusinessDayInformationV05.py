@@ -1,11 +1,11 @@
 import base_types
+import MessageHeader9
 import SupplementaryData1
 import BusinessDayQuery2
-import MessageHeader9
 
 class GetBusinessDayInformationV05(base_types._BaseFieldType):
 
-	__slots__ = ["_BizDayInfQryDef", "_SplmtryData", "_MsgHdr"]
+	__slots__ = ["_BizDayInfQryDef", "_MsgHdr", "_SplmtryData"]
 	@property
 	def BizDayInfQryDef(self):
 		return self._BizDayInfQryDef
@@ -20,19 +20,6 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 		self._BizDayInfQryDef = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def MsgHdr(self):
 		return self._MsgHdr
 
@@ -45,9 +32,22 @@ class GetBusinessDayInformationV05(base_types._BaseFieldType):
 		del self._MsgHdr
 		self._MsgHdr = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizDayInfQryDef', type=BusinessDayQuery2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,26 +1,13 @@
 import base_types
-import TypeTransactionTotals2Code
-import ImpliedCurrencyAndAmount
-import Number
-import ActiveCurrencyCode
 import Max35Text
+import ImpliedCurrencyAndAmount
+import ActiveCurrencyCode
+import TypeTransactionTotals2Code
+import Number
 
 class TransactionTotals12(base_types._BaseFieldType):
 
-	__slots__ = ["_CardPdctPrfl", "_CmltvAmt", "_CardBrnd", "_TtlNb", "_Ccy", "_Tp", "_POIGrpId"]
-	@property
-	def CardPdctPrfl(self):
-		return self._CardPdctPrfl
-
-	@CardPdctPrfl.setter
-	def CardPdctPrfl(self, value):
-		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
-
-	@CardPdctPrfl.deleter
-	def CardPdctPrfl(self):
-		del self._CardPdctPrfl
-		self._CardPdctPrfl = None
-
+	__slots__ = ["_CmltvAmt", "_CardBrnd", "_TtlNb", "_POIGrpId", "_Ccy", "_CardPdctPrfl", "_Tp"]
 	@property
 	def CmltvAmt(self):
 		return self._CmltvAmt
@@ -61,6 +48,19 @@ class TransactionTotals12(base_types._BaseFieldType):
 		self._TtlNb = None
 
 	@property
+	def POIGrpId(self):
+		return self._POIGrpId
+
+	@POIGrpId.setter
+	def POIGrpId(self, value):
+		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
+
+	@POIGrpId.deleter
+	def POIGrpId(self):
+		del self._POIGrpId
+		self._POIGrpId = None
+
+	@property
 	def Ccy(self):
 		return self._Ccy
 
@@ -72,6 +72,19 @@ class TransactionTotals12(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
+
+	@property
+	def CardPdctPrfl(self):
+		return self._CardPdctPrfl
+
+	@CardPdctPrfl.setter
+	def CardPdctPrfl(self, value):
+		self._CardPdctPrfl = value if type(value) != auto else self.make_default("CardPdctPrfl")
+
+	@CardPdctPrfl.deleter
+	def CardPdctPrfl(self):
+		del self._CardPdctPrfl
+		self._CardPdctPrfl = None
 
 	@property
 	def Tp(self):
@@ -86,26 +99,13 @@ class TransactionTotals12(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
-	@property
-	def POIGrpId(self):
-		return self._POIGrpId
-
-	@POIGrpId.setter
-	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != auto else self.make_default("POIGrpId")
-
-	@POIGrpId.deleter
-	def POIGrpId(self):
-		del self._POIGrpId
-		self._POIGrpId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardBrnd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=TypeTransactionTotals2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TypeTransactionTotals2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

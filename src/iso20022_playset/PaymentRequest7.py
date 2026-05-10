@@ -4,20 +4,7 @@ import LoyaltyRequestData3
 
 class PaymentRequest7(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyData", "_PmtTx"]
-	@property
-	def LltyData(self):
-		return self._LltyData
-
-	@LltyData.setter
-	def LltyData(self, value):
-		self._LltyData = value if type(value) != auto else self.make_default("LltyData")
-
-	@LltyData.deleter
-	def LltyData(self):
-		del self._LltyData
-		self._LltyData = None
-
+	__slots__ = ["_PmtTx", "_LltyData"]
 	@property
 	def PmtTx(self):
 		return self._PmtTx
@@ -31,8 +18,21 @@ class PaymentRequest7(base_types._BaseFieldType):
 		del self._PmtTx
 		self._PmtTx = None
 
+	@property
+	def LltyData(self):
+		return self._LltyData
+
+	@LltyData.setter
+	def LltyData(self, value):
+		self._LltyData = value if type(value) != auto else self.make_default("LltyData")
+
+	@LltyData.deleter
+	def LltyData(self):
+		del self._LltyData
+		self._LltyData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LltyData', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PmtTx', type=PaymentTransaction165, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyData', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),
 	))
 

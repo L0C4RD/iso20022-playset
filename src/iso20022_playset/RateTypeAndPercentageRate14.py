@@ -1,6 +1,6 @@
 import base_types
-import Percentage14Rate
 import DeemedRateType1Choice
+import Percentage14Rate
 
 class RateTypeAndPercentageRate14(base_types._BaseFieldType):
 

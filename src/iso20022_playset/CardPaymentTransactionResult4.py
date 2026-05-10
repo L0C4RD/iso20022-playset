@@ -1,6 +1,6 @@
 import base_types
-import Min6Max8Text
 import GenericIdentification90
+import Min6Max8Text
 import ResponseType10
 
 class CardPaymentTransactionResult4(base_types._BaseFieldType):

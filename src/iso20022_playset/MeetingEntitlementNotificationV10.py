@@ -1,41 +1,28 @@
 import base_types
-import MeetingReference10
-import PartyIdentification129Choice
-import Max35Text
 import SupplementaryData1
-import SecurityPosition21
+import MeetingReference10
 import PartyIdentification232Choice
 import NotificationType2Code
+import SecurityPosition21
+import Max35Text
+import PartyIdentification129Choice
 import EligibilityDates1
 
 class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Elgblty", "_NtfctnTp", "_MtgAttndee", "_SplmtryData", "_Prxy", "_PrvsEntitlmntNtfctnId", "_Scty", "_MtgRef", "_Issr"]
+	__slots__ = ["_Prxy", "_MtgAttndee", "_Scty", "_Issr", "_MtgRef", "_NtfctnTp", "_Elgblty", "_PrvsEntitlmntNtfctnId", "_SplmtryData"]
 	@property
-	def Elgblty(self):
-		return self._Elgblty
+	def Prxy(self):
+		return self._Prxy
 
-	@Elgblty.setter
-	def Elgblty(self, value):
-		self._Elgblty = value if type(value) != auto else self.make_default("Elgblty")
+	@Prxy.setter
+	def Prxy(self, value):
+		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
 
-	@Elgblty.deleter
-	def Elgblty(self):
-		del self._Elgblty
-		self._Elgblty = None
-
-	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
-
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
-
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
+	@Prxy.deleter
+	def Prxy(self):
+		del self._Prxy
+		self._Prxy = None
 
 	@property
 	def MtgAttndee(self):
@@ -51,45 +38,6 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 		self._MtgAttndee = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Prxy(self):
-		return self._Prxy
-
-	@Prxy.setter
-	def Prxy(self, value):
-		self._Prxy = value if type(value) != auto else self.make_default("Prxy")
-
-	@Prxy.deleter
-	def Prxy(self):
-		del self._Prxy
-		self._Prxy = None
-
-	@property
-	def PrvsEntitlmntNtfctnId(self):
-		return self._PrvsEntitlmntNtfctnId
-
-	@PrvsEntitlmntNtfctnId.setter
-	def PrvsEntitlmntNtfctnId(self, value):
-		self._PrvsEntitlmntNtfctnId = value if type(value) != auto else self.make_default("PrvsEntitlmntNtfctnId")
-
-	@PrvsEntitlmntNtfctnId.deleter
-	def PrvsEntitlmntNtfctnId(self):
-		del self._PrvsEntitlmntNtfctnId
-		self._PrvsEntitlmntNtfctnId = None
-
-	@property
 	def Scty(self):
 		return self._Scty
 
@@ -101,6 +49,19 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 	def Scty(self):
 		del self._Scty
 		self._Scty = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def MtgRef(self):
@@ -116,27 +77,66 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 		self._MtgRef = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def NtfctnTp(self):
+		return self._NtfctnTp
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
+
+	@property
+	def Elgblty(self):
+		return self._Elgblty
+
+	@Elgblty.setter
+	def Elgblty(self, value):
+		self._Elgblty = value if type(value) != auto else self.make_default("Elgblty")
+
+	@Elgblty.deleter
+	def Elgblty(self):
+		del self._Elgblty
+		self._Elgblty = None
+
+	@property
+	def PrvsEntitlmntNtfctnId(self):
+		return self._PrvsEntitlmntNtfctnId
+
+	@PrvsEntitlmntNtfctnId.setter
+	def PrvsEntitlmntNtfctnId(self, value):
+		self._PrvsEntitlmntNtfctnId = value if type(value) != auto else self.make_default("PrvsEntitlmntNtfctnId")
+
+	@PrvsEntitlmntNtfctnId.deleter
+	def PrvsEntitlmntNtfctnId(self):
+		del self._PrvsEntitlmntNtfctnId
+		self._PrvsEntitlmntNtfctnId = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Elgblty', type=EligibilityDates1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnTp', type=NotificationType2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtgAttndee', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prxy', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsEntitlmntNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgAttndee', type=PartyIdentification232Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Scty', type=SecurityPosition21, min=1, max=200, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=NotificationType2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Elgblty', type=EligibilityDates1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsEntitlmntNtfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

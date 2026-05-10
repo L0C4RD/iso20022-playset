@@ -1,52 +1,26 @@
 import base_types
-import SecurityIdentification25Choice
 import RedemptionCompletion1Code
-import ISODate
-import Max350Text
 import GateHoldBack1Code
+import Max350Text
+import ISODate
 import ActiveCurrencyAndAmount
+import SecurityIdentification25Choice
 
 class HoldBackInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_RedCmpltn", "_FinInstrmNm", "_Amt", "_XpctdRlsDt", "_Tp", "_FinInstrmId"]
+	__slots__ = ["_Tp", "_XpctdRlsDt", "_FinInstrmId", "_Amt", "_FinInstrmNm", "_RedCmpltn"]
 	@property
-	def RedCmpltn(self):
-		return self._RedCmpltn
+	def Tp(self):
+		return self._Tp
 
-	@RedCmpltn.setter
-	def RedCmpltn(self, value):
-		self._RedCmpltn = value if type(value) != auto else self.make_default("RedCmpltn")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@RedCmpltn.deleter
-	def RedCmpltn(self):
-		del self._RedCmpltn
-		self._RedCmpltn = None
-
-	@property
-	def FinInstrmNm(self):
-		return self._FinInstrmNm
-
-	@FinInstrmNm.setter
-	def FinInstrmNm(self, value):
-		self._FinInstrmNm = value if type(value) != auto else self.make_default("FinInstrmNm")
-
-	@FinInstrmNm.deleter
-	def FinInstrmNm(self):
-		del self._FinInstrmNm
-		self._FinInstrmNm = None
-
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def XpctdRlsDt(self):
@@ -62,19 +36,6 @@ class HoldBackInformation3(base_types._BaseFieldType):
 		self._XpctdRlsDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -87,12 +48,51 @@ class HoldBackInformation3(base_types._BaseFieldType):
 		del self._FinInstrmId
 		self._FinInstrmId = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def FinInstrmNm(self):
+		return self._FinInstrmNm
+
+	@FinInstrmNm.setter
+	def FinInstrmNm(self, value):
+		self._FinInstrmNm = value if type(value) != auto else self.make_default("FinInstrmNm")
+
+	@FinInstrmNm.deleter
+	def FinInstrmNm(self):
+		del self._FinInstrmNm
+		self._FinInstrmNm = None
+
+	@property
+	def RedCmpltn(self):
+		return self._RedCmpltn
+
+	@RedCmpltn.setter
+	def RedCmpltn(self, value):
+		self._RedCmpltn = value if type(value) != auto else self.make_default("RedCmpltn")
+
+	@RedCmpltn.deleter
+	def RedCmpltn(self):
+		del self._RedCmpltn
+		self._RedCmpltn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RedCmpltn', type=RedemptionCompletion1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdRlsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GateHoldBack1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdRlsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification25Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedCmpltn', type=RedemptionCompletion1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

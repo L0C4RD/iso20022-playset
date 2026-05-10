@@ -1,6 +1,6 @@
 import base_types
-import PendingCancellationReason6Code
 import GenericIdentification30
+import PendingCancellationReason6Code
 
 class PendingCancellationReason7Choice(base_types._BaseFieldType):
 

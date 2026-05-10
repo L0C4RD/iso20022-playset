@@ -1,45 +1,19 @@
 import base_types
-import ISODateTime
-import Max450Text
-import Modification1Code
-import MICEntityType1Code
-import MICIdentifier
-import Period4Choice
-import ISODate
-import Max210Text
-import Max35Text
 import CountryCodeAndName3
+import ISODate
+import Period4Choice
+import Max35Text
+import ISODateTime
+import Modification1Code
 import MarketIdentification1Code
+import MICEntityType1Code
+import Max210Text
+import Max450Text
+import MICIdentifier
 
 class MarketIdentification95(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_Tp", "_VldtyPrd", "_Sgmt", "_StsDt", "_Mod", "_City", "_Oprg", "_InstnNm", "_CreDt", "_Ctgy", "_LastUpdtdDt", "_AuthrtyNm", "_WebSite", "_Acrnm", "_Note"]
-	@property
-	def Ctry(self):
-		return self._Ctry
-
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
-
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_VldtyPrd", "_Oprg", "_StsDt", "_WebSite", "_Note", "_CreDt", "_City", "_Ctry", "_Acrnm", "_Ctgy", "_Mod", "_AuthrtyNm", "_LastUpdtdDt", "_InstnNm", "_Tp", "_Sgmt"]
 	@property
 	def VldtyPrd(self):
 		return self._VldtyPrd
@@ -52,58 +26,6 @@ class MarketIdentification95(base_types._BaseFieldType):
 	def VldtyPrd(self):
 		del self._VldtyPrd
 		self._VldtyPrd = None
-
-	@property
-	def Sgmt(self):
-		return self._Sgmt
-
-	@Sgmt.setter
-	def Sgmt(self, value):
-		self._Sgmt = value if type(value) != auto else self.make_default("Sgmt")
-
-	@Sgmt.deleter
-	def Sgmt(self):
-		del self._Sgmt
-		self._Sgmt = None
-
-	@property
-	def StsDt(self):
-		return self._StsDt
-
-	@StsDt.setter
-	def StsDt(self, value):
-		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
-
-	@StsDt.deleter
-	def StsDt(self):
-		del self._StsDt
-		self._StsDt = None
-
-	@property
-	def Mod(self):
-		return self._Mod
-
-	@Mod.setter
-	def Mod(self, value):
-		self._Mod = value if type(value) != auto else self.make_default("Mod")
-
-	@Mod.deleter
-	def Mod(self):
-		del self._Mod
-		self._Mod = None
-
-	@property
-	def City(self):
-		return self._City
-
-	@City.setter
-	def City(self, value):
-		self._City = value if type(value) != auto else self.make_default("City")
-
-	@City.deleter
-	def City(self):
-		del self._City
-		self._City = None
 
 	@property
 	def Oprg(self):
@@ -119,69 +41,17 @@ class MarketIdentification95(base_types._BaseFieldType):
 		self._Oprg = None
 
 	@property
-	def InstnNm(self):
-		return self._InstnNm
+	def StsDt(self):
+		return self._StsDt
 
-	@InstnNm.setter
-	def InstnNm(self, value):
-		self._InstnNm = value if type(value) != auto else self.make_default("InstnNm")
+	@StsDt.setter
+	def StsDt(self, value):
+		self._StsDt = value if type(value) != auto else self.make_default("StsDt")
 
-	@InstnNm.deleter
-	def InstnNm(self):
-		del self._InstnNm
-		self._InstnNm = None
-
-	@property
-	def CreDt(self):
-		return self._CreDt
-
-	@CreDt.setter
-	def CreDt(self, value):
-		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
-
-	@CreDt.deleter
-	def CreDt(self):
-		del self._CreDt
-		self._CreDt = None
-
-	@property
-	def Ctgy(self):
-		return self._Ctgy
-
-	@Ctgy.setter
-	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != auto else self.make_default("Ctgy")
-
-	@Ctgy.deleter
-	def Ctgy(self):
-		del self._Ctgy
-		self._Ctgy = None
-
-	@property
-	def LastUpdtdDt(self):
-		return self._LastUpdtdDt
-
-	@LastUpdtdDt.setter
-	def LastUpdtdDt(self, value):
-		self._LastUpdtdDt = value if type(value) != auto else self.make_default("LastUpdtdDt")
-
-	@LastUpdtdDt.deleter
-	def LastUpdtdDt(self):
-		del self._LastUpdtdDt
-		self._LastUpdtdDt = None
-
-	@property
-	def AuthrtyNm(self):
-		return self._AuthrtyNm
-
-	@AuthrtyNm.setter
-	def AuthrtyNm(self, value):
-		self._AuthrtyNm = value if type(value) != auto else self.make_default("AuthrtyNm")
-
-	@AuthrtyNm.deleter
-	def AuthrtyNm(self):
-		del self._AuthrtyNm
-		self._AuthrtyNm = None
+	@StsDt.deleter
+	def StsDt(self):
+		del self._StsDt
+		self._StsDt = None
 
 	@property
 	def WebSite(self):
@@ -197,6 +67,58 @@ class MarketIdentification95(base_types._BaseFieldType):
 		self._WebSite = None
 
 	@property
+	def Note(self):
+		return self._Note
+
+	@Note.setter
+	def Note(self, value):
+		self._Note = value if type(value) != auto else self.make_default("Note")
+
+	@Note.deleter
+	def Note(self):
+		del self._Note
+		self._Note = None
+
+	@property
+	def CreDt(self):
+		return self._CreDt
+
+	@CreDt.setter
+	def CreDt(self, value):
+		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+
+	@CreDt.deleter
+	def CreDt(self):
+		del self._CreDt
+		self._CreDt = None
+
+	@property
+	def City(self):
+		return self._City
+
+	@City.setter
+	def City(self, value):
+		self._City = value if type(value) != auto else self.make_default("City")
+
+	@City.deleter
+	def City(self):
+		del self._City
+		self._City = None
+
+	@property
+	def Ctry(self):
+		return self._Ctry
+
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
+
+	@property
 	def Acrnm(self):
 		return self._Acrnm
 
@@ -210,34 +132,112 @@ class MarketIdentification95(base_types._BaseFieldType):
 		self._Acrnm = None
 
 	@property
-	def Note(self):
-		return self._Note
+	def Ctgy(self):
+		return self._Ctgy
 
-	@Note.setter
-	def Note(self, value):
-		self._Note = value if type(value) != auto else self.make_default("Note")
+	@Ctgy.setter
+	def Ctgy(self, value):
+		self._Ctgy = value if type(value) != auto else self.make_default("Ctgy")
 
-	@Note.deleter
-	def Note(self):
-		del self._Note
-		self._Note = None
+	@Ctgy.deleter
+	def Ctgy(self):
+		del self._Ctgy
+		self._Ctgy = None
+
+	@property
+	def Mod(self):
+		return self._Mod
+
+	@Mod.setter
+	def Mod(self, value):
+		self._Mod = value if type(value) != auto else self.make_default("Mod")
+
+	@Mod.deleter
+	def Mod(self):
+		del self._Mod
+		self._Mod = None
+
+	@property
+	def AuthrtyNm(self):
+		return self._AuthrtyNm
+
+	@AuthrtyNm.setter
+	def AuthrtyNm(self, value):
+		self._AuthrtyNm = value if type(value) != auto else self.make_default("AuthrtyNm")
+
+	@AuthrtyNm.deleter
+	def AuthrtyNm(self):
+		del self._AuthrtyNm
+		self._AuthrtyNm = None
+
+	@property
+	def LastUpdtdDt(self):
+		return self._LastUpdtdDt
+
+	@LastUpdtdDt.setter
+	def LastUpdtdDt(self, value):
+		self._LastUpdtdDt = value if type(value) != auto else self.make_default("LastUpdtdDt")
+
+	@LastUpdtdDt.deleter
+	def LastUpdtdDt(self):
+		del self._LastUpdtdDt
+		self._LastUpdtdDt = None
+
+	@property
+	def InstnNm(self):
+		return self._InstnNm
+
+	@InstnNm.setter
+	def InstnNm(self, value):
+		self._InstnNm = value if type(value) != auto else self.make_default("InstnNm")
+
+	@InstnNm.deleter
+	def InstnNm(self):
+		del self._InstnNm
+		self._InstnNm = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def Sgmt(self):
+		return self._Sgmt
+
+	@Sgmt.setter
+	def Sgmt(self, value):
+		self._Sgmt = value if type(value) != auto else self.make_default("Sgmt")
+
+	@Sgmt.deleter
+	def Sgmt(self):
+		del self._Sgmt
+		self._Sgmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=MarketIdentification1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgmt', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='City', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Oprg', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InstnNm', type=Max450Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctgy', type=MICEntityType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastUpdtdDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrtyNm', type=Max450Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WebSite', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acrnm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Note', type=Max450Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='City', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acrnm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctgy', type=MICEntityType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mod', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrtyNm', type=Max450Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastUpdtdDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstnNm', type=Max450Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=MarketIdentification1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgmt', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

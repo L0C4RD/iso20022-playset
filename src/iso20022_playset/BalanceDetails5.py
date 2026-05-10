@@ -1,25 +1,12 @@
 import base_types
-import BalanceType6Choice
 import AmountAndDirection31
+import BalanceType6Choice
 import BalanceDetails6
 import Unrealised1Code
 
 class BalanceDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Tp", "_DtldBal", "_Urlsd"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_Tp", "_Amt", "_Urlsd", "_DtldBal"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -34,17 +21,17 @@ class BalanceDetails5(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def DtldBal(self):
-		return self._DtldBal
+	def Amt(self):
+		return self._Amt
 
-	@DtldBal.setter
-	def DtldBal(self, value):
-		self._DtldBal = value if type(value) != auto else self.make_default("DtldBal")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@DtldBal.deleter
-	def DtldBal(self):
-		del self._DtldBal
-		self._DtldBal = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Urlsd(self):
@@ -59,10 +46,23 @@ class BalanceDetails5(base_types._BaseFieldType):
 		del self._Urlsd
 		self._Urlsd = None
 
+	@property
+	def DtldBal(self):
+		return self._DtldBal
+
+	@DtldBal.setter
+	def DtldBal(self, value):
+		self._DtldBal = value if type(value) != auto else self.make_default("DtldBal")
+
+	@DtldBal.deleter
+	def DtldBal(self):
+		del self._DtldBal
+		self._DtldBal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType6Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtldBal', type=BalanceDetails6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtldBal', type=BalanceDetails6, min=0, max=None, mutex_group=None, array=True),
 	))
 

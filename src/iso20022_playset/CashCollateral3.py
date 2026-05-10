@@ -1,28 +1,15 @@
 import base_types
-import BaseOneRate
-import ISODate
 import Max35Text
+import BaseOneRate
 import PercentageRate
 import AccountIdentification4Choice
-import DepositType1Code
+import ISODate
 import ActiveCurrencyAndAmount
+import DepositType1Code
 
 class CashCollateral3(base_types._BaseFieldType):
 
-	__slots__ = ["_MtrtyDt", "_CollId", "_DpstAmt", "_Hrcut", "_ValDt", "_CshAcctId", "_XchgRate", "_CollVal", "_DpstTp"]
-	@property
-	def MtrtyDt(self):
-		return self._MtrtyDt
-
-	@MtrtyDt.setter
-	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
-
-	@MtrtyDt.deleter
-	def MtrtyDt(self):
-		del self._MtrtyDt
-		self._MtrtyDt = None
-
+	__slots__ = ["_CollId", "_ValDt", "_CshAcctId", "_MtrtyDt", "_DpstTp", "_CollVal", "_XchgRate", "_Hrcut", "_DpstAmt"]
 	@property
 	def CollId(self):
 		return self._CollId
@@ -35,32 +22,6 @@ class CashCollateral3(base_types._BaseFieldType):
 	def CollId(self):
 		del self._CollId
 		self._CollId = None
-
-	@property
-	def DpstAmt(self):
-		return self._DpstAmt
-
-	@DpstAmt.setter
-	def DpstAmt(self, value):
-		self._DpstAmt = value if type(value) != auto else self.make_default("DpstAmt")
-
-	@DpstAmt.deleter
-	def DpstAmt(self):
-		del self._DpstAmt
-		self._DpstAmt = None
-
-	@property
-	def Hrcut(self):
-		return self._Hrcut
-
-	@Hrcut.setter
-	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
-
-	@Hrcut.deleter
-	def Hrcut(self):
-		del self._Hrcut
-		self._Hrcut = None
 
 	@property
 	def ValDt(self):
@@ -89,17 +50,30 @@ class CashCollateral3(base_types._BaseFieldType):
 		self._CshAcctId = None
 
 	@property
-	def XchgRate(self):
-		return self._XchgRate
+	def MtrtyDt(self):
+		return self._MtrtyDt
 
-	@XchgRate.setter
-	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
+	@MtrtyDt.setter
+	def MtrtyDt(self, value):
+		self._MtrtyDt = value if type(value) != auto else self.make_default("MtrtyDt")
 
-	@XchgRate.deleter
-	def XchgRate(self):
-		del self._XchgRate
-		self._XchgRate = None
+	@MtrtyDt.deleter
+	def MtrtyDt(self):
+		del self._MtrtyDt
+		self._MtrtyDt = None
+
+	@property
+	def DpstTp(self):
+		return self._DpstTp
+
+	@DpstTp.setter
+	def DpstTp(self, value):
+		self._DpstTp = value if type(value) != auto else self.make_default("DpstTp")
+
+	@DpstTp.deleter
+	def DpstTp(self):
+		del self._DpstTp
+		self._DpstTp = None
 
 	@property
 	def CollVal(self):
@@ -115,27 +89,53 @@ class CashCollateral3(base_types._BaseFieldType):
 		self._CollVal = None
 
 	@property
-	def DpstTp(self):
-		return self._DpstTp
+	def XchgRate(self):
+		return self._XchgRate
 
-	@DpstTp.setter
-	def DpstTp(self, value):
-		self._DpstTp = value if type(value) != auto else self.make_default("DpstTp")
+	@XchgRate.setter
+	def XchgRate(self, value):
+		self._XchgRate = value if type(value) != auto else self.make_default("XchgRate")
 
-	@DpstTp.deleter
-	def DpstTp(self):
-		del self._DpstTp
-		self._DpstTp = None
+	@XchgRate.deleter
+	def XchgRate(self):
+		del self._XchgRate
+		self._XchgRate = None
+
+	@property
+	def Hrcut(self):
+		return self._Hrcut
+
+	@Hrcut.setter
+	def Hrcut(self, value):
+		self._Hrcut = value if type(value) != auto else self.make_default("Hrcut")
+
+	@Hrcut.deleter
+	def Hrcut(self):
+		del self._Hrcut
+		self._Hrcut = None
+
+	@property
+	def DpstAmt(self):
+		return self._DpstAmt
+
+	@DpstAmt.setter
+	def DpstAmt(self, value):
+		self._DpstAmt = value if type(value) != auto else self.make_default("DpstAmt")
+
+	@DpstAmt.deleter
+	def DpstAmt(self):
+		del self._DpstAmt
+		self._DpstAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DpstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DpstTp', type=DepositType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DpstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

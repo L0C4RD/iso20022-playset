@@ -1,24 +1,11 @@
 import base_types
-import ExternallyDefinedData5
-import PositiveNumber
 import GenericIdentification176
+import PositiveNumber
+import ExternallyDefinedData5
 
 class PackageType5(base_types._BaseFieldType):
 
-	__slots__ = ["_OffsetStart", "_PackgLngth", "_PackgId", "_OffsetEnd", "_PackgBlck"]
-	@property
-	def OffsetStart(self):
-		return self._OffsetStart
-
-	@OffsetStart.setter
-	def OffsetStart(self, value):
-		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
-
-	@OffsetStart.deleter
-	def OffsetStart(self):
-		del self._OffsetStart
-		self._OffsetStart = None
-
+	__slots__ = ["_PackgLngth", "_OffsetEnd", "_OffsetStart", "_PackgId", "_PackgBlck"]
 	@property
 	def PackgLngth(self):
 		return self._PackgLngth
@@ -31,19 +18,6 @@ class PackageType5(base_types._BaseFieldType):
 	def PackgLngth(self):
 		del self._PackgLngth
 		self._PackgLngth = None
-
-	@property
-	def PackgId(self):
-		return self._PackgId
-
-	@PackgId.setter
-	def PackgId(self, value):
-		self._PackgId = value if type(value) != auto else self.make_default("PackgId")
-
-	@PackgId.deleter
-	def PackgId(self):
-		del self._PackgId
-		self._PackgId = None
 
 	@property
 	def OffsetEnd(self):
@@ -59,6 +33,32 @@ class PackageType5(base_types._BaseFieldType):
 		self._OffsetEnd = None
 
 	@property
+	def OffsetStart(self):
+		return self._OffsetStart
+
+	@OffsetStart.setter
+	def OffsetStart(self, value):
+		self._OffsetStart = value if type(value) != auto else self.make_default("OffsetStart")
+
+	@OffsetStart.deleter
+	def OffsetStart(self):
+		del self._OffsetStart
+		self._OffsetStart = None
+
+	@property
+	def PackgId(self):
+		return self._PackgId
+
+	@PackgId.setter
+	def PackgId(self, value):
+		self._PackgId = value if type(value) != auto else self.make_default("PackgId")
+
+	@PackgId.deleter
+	def PackgId(self):
+		del self._PackgId
+		self._PackgId = None
+
+	@property
 	def PackgBlck(self):
 		return self._PackgBlck
 
@@ -72,10 +72,10 @@ class PackageType5(base_types._BaseFieldType):
 		self._PackgBlck = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PackgLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PackgId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffsetEnd', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffsetStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PackgId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PackgBlck', type=ExternallyDefinedData5, min=0, max=None, mutex_group=None, array=True),
 	))
 

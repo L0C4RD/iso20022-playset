@@ -1,24 +1,24 @@
 import base_types
-import ISODate
 import ContractClosureReason1Choice
 import DocumentIdentification28
+import ISODate
 import BranchAndFinancialInstitutionIdentification8
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsrRsn", "_UnqId", "_RegnAgt", "_ClsrDt"]
+	__slots__ = ["_ClsrDt", "_UnqId", "_ClsrRsn", "_RegnAgt"]
 	@property
-	def ClsrRsn(self):
-		return self._ClsrRsn
+	def ClsrDt(self):
+		return self._ClsrDt
 
-	@ClsrRsn.setter
-	def ClsrRsn(self, value):
-		self._ClsrRsn = value if type(value) != auto else self.make_default("ClsrRsn")
+	@ClsrDt.setter
+	def ClsrDt(self, value):
+		self._ClsrDt = value if type(value) != auto else self.make_default("ClsrDt")
 
-	@ClsrRsn.deleter
-	def ClsrRsn(self):
-		del self._ClsrRsn
-		self._ClsrRsn = None
+	@ClsrDt.deleter
+	def ClsrDt(self):
+		del self._ClsrDt
+		self._ClsrDt = None
 
 	@property
 	def UnqId(self):
@@ -34,6 +34,19 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		self._UnqId = None
 
 	@property
+	def ClsrRsn(self):
+		return self._ClsrRsn
+
+	@ClsrRsn.setter
+	def ClsrRsn(self, value):
+		self._ClsrRsn = value if type(value) != auto else self.make_default("ClsrRsn")
+
+	@ClsrRsn.deleter
+	def ClsrRsn(self):
+		del self._ClsrRsn
+		self._ClsrRsn = None
+
+	@property
 	def RegnAgt(self):
 		return self._RegnAgt
 
@@ -46,23 +59,10 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 		del self._RegnAgt
 		self._RegnAgt = None
 
-	@property
-	def ClsrDt(self):
-		return self._ClsrDt
-
-	@ClsrDt.setter
-	def ClsrDt(self, value):
-		self._ClsrDt = value if type(value) != auto else self.make_default("ClsrDt")
-
-	@ClsrDt.deleter
-	def ClsrDt(self):
-		del self._ClsrDt
-		self._ClsrDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqId', type=DocumentIdentification28, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrRsn', type=ContractClosureReason1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

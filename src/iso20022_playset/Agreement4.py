@@ -1,12 +1,25 @@
 import base_types
-import AgreementFramework1Choice
 import Max140Text
+import AgreementFramework1Choice
 import ActiveCurrencyCode
 import ISODate
 
 class Agreement4(base_types._BaseFieldType):
 
-	__slots__ = ["_AgrmtFrmwk", "_AgrmtDtls", "_AgrmtDt", "_BaseCcy", "_AgrmtId"]
+	__slots__ = ["_BaseCcy", "_AgrmtFrmwk", "_AgrmtDtls", "_AgrmtId", "_AgrmtDt"]
+	@property
+	def BaseCcy(self):
+		return self._BaseCcy
+
+	@BaseCcy.setter
+	def BaseCcy(self, value):
+		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
+
+	@BaseCcy.deleter
+	def BaseCcy(self):
+		del self._BaseCcy
+		self._BaseCcy = None
+
 	@property
 	def AgrmtFrmwk(self):
 		return self._AgrmtFrmwk
@@ -34,32 +47,6 @@ class Agreement4(base_types._BaseFieldType):
 		self._AgrmtDtls = None
 
 	@property
-	def AgrmtDt(self):
-		return self._AgrmtDt
-
-	@AgrmtDt.setter
-	def AgrmtDt(self, value):
-		self._AgrmtDt = value if type(value) != auto else self.make_default("AgrmtDt")
-
-	@AgrmtDt.deleter
-	def AgrmtDt(self):
-		del self._AgrmtDt
-		self._AgrmtDt = None
-
-	@property
-	def BaseCcy(self):
-		return self._BaseCcy
-
-	@BaseCcy.setter
-	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
-
-	@BaseCcy.deleter
-	def BaseCcy(self):
-		del self._BaseCcy
-		self._BaseCcy = None
-
-	@property
 	def AgrmtId(self):
 		return self._AgrmtId
 
@@ -72,11 +59,24 @@ class Agreement4(base_types._BaseFieldType):
 		del self._AgrmtId
 		self._AgrmtId = None
 
+	@property
+	def AgrmtDt(self):
+		return self._AgrmtDt
+
+	@AgrmtDt.setter
+	def AgrmtDt(self, value):
+		self._AgrmtDt = value if type(value) != auto else self.make_default("AgrmtDt")
+
+	@AgrmtDt.deleter
+	def AgrmtDt(self):
+		del self._AgrmtDt
+		self._AgrmtDt = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtFrmwk', type=AgreementFramework1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtDtls', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgrmtId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

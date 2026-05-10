@@ -1,10 +1,10 @@
 import base_types
-import PartyIdentification149
 import PartyIdentification136
+import PartyIdentification149
 
 class OtherParties34(base_types._BaseFieldType):
 
-	__slots__ = ["_StockXchg", "_TradRgltr", "_QlfdFrgnIntrmy", "_Invstr", "_TrptyAgt"]
+	__slots__ = ["_StockXchg", "_Invstr", "_TrptyAgt", "_TradRgltr", "_QlfdFrgnIntrmy"]
 	@property
 	def StockXchg(self):
 		return self._StockXchg
@@ -17,32 +17,6 @@ class OtherParties34(base_types._BaseFieldType):
 	def StockXchg(self):
 		del self._StockXchg
 		self._StockXchg = None
-
-	@property
-	def TradRgltr(self):
-		return self._TradRgltr
-
-	@TradRgltr.setter
-	def TradRgltr(self, value):
-		self._TradRgltr = value if type(value) != auto else self.make_default("TradRgltr")
-
-	@TradRgltr.deleter
-	def TradRgltr(self):
-		del self._TradRgltr
-		self._TradRgltr = None
-
-	@property
-	def QlfdFrgnIntrmy(self):
-		return self._QlfdFrgnIntrmy
-
-	@QlfdFrgnIntrmy.setter
-	def QlfdFrgnIntrmy(self, value):
-		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
-
-	@QlfdFrgnIntrmy.deleter
-	def QlfdFrgnIntrmy(self):
-		del self._QlfdFrgnIntrmy
-		self._QlfdFrgnIntrmy = None
 
 	@property
 	def Invstr(self):
@@ -70,11 +44,37 @@ class OtherParties34(base_types._BaseFieldType):
 		del self._TrptyAgt
 		self._TrptyAgt = None
 
+	@property
+	def TradRgltr(self):
+		return self._TradRgltr
+
+	@TradRgltr.setter
+	def TradRgltr(self, value):
+		self._TradRgltr = value if type(value) != auto else self.make_default("TradRgltr")
+
+	@TradRgltr.deleter
+	def TradRgltr(self):
+		del self._TradRgltr
+		self._TradRgltr = None
+
+	@property
+	def QlfdFrgnIntrmy(self):
+		return self._QlfdFrgnIntrmy
+
+	@QlfdFrgnIntrmy.setter
+	def QlfdFrgnIntrmy(self, value):
+		self._QlfdFrgnIntrmy = value if type(value) != auto else self.make_default("QlfdFrgnIntrmy")
+
+	@QlfdFrgnIntrmy.deleter
+	def QlfdFrgnIntrmy(self):
+		del self._QlfdFrgnIntrmy
+		self._QlfdFrgnIntrmy = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StockXchg', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradRgltr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QlfdFrgnIntrmy', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

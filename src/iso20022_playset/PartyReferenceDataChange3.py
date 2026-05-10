@@ -1,11 +1,24 @@
 import base_types
-import ISODateTime
 import UpdateLogPartyRecord2Choice
 import SystemPartyIdentification8
+import ISODateTime
 
 class PartyReferenceDataChange3(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_OprTmStmp", "_Rcrd"]
+	__slots__ = ["_Rcrd", "_PtyId", "_OprTmStmp"]
+	@property
+	def Rcrd(self):
+		return self._Rcrd
+
+	@Rcrd.setter
+	def Rcrd(self, value):
+		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
+
+	@Rcrd.deleter
+	def Rcrd(self):
+		del self._Rcrd
+		self._Rcrd = None
+
 	@property
 	def PtyId(self):
 		return self._PtyId
@@ -32,22 +45,9 @@ class PartyReferenceDataChange3(base_types._BaseFieldType):
 		del self._OprTmStmp
 		self._OprTmStmp = None
 
-	@property
-	def Rcrd(self):
-		return self._Rcrd
-
-	@Rcrd.setter
-	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != auto else self.make_default("Rcrd")
-
-	@Rcrd.deleter
-	def Rcrd(self):
-		del self._Rcrd
-		self._Rcrd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcrd', type=UpdateLogPartyRecord2Choice, min=1, max=None, mutex_group=None, array=True),
 	))
 

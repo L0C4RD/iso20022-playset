@@ -4,20 +4,7 @@ import GenericIdentification165
 
 class IntraDayRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_AggtPeakLblty", "_IntraDayMrgnCall", "_MrgnAcctId", "_PeakInitlMrgnLblty", "_PeakVartnMrgnLblty"]
-	@property
-	def AggtPeakLblty(self):
-		return self._AggtPeakLblty
-
-	@AggtPeakLblty.setter
-	def AggtPeakLblty(self, value):
-		self._AggtPeakLblty = value if type(value) != auto else self.make_default("AggtPeakLblty")
-
-	@AggtPeakLblty.deleter
-	def AggtPeakLblty(self):
-		del self._AggtPeakLblty
-		self._AggtPeakLblty = None
-
+	__slots__ = ["_IntraDayMrgnCall", "_PeakInitlMrgnLblty", "_AggtPeakLblty", "_MrgnAcctId", "_PeakVartnMrgnLblty"]
 	@property
 	def IntraDayMrgnCall(self):
 		return self._IntraDayMrgnCall
@@ -30,19 +17,6 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 	def IntraDayMrgnCall(self):
 		del self._IntraDayMrgnCall
 		self._IntraDayMrgnCall = None
-
-	@property
-	def MrgnAcctId(self):
-		return self._MrgnAcctId
-
-	@MrgnAcctId.setter
-	def MrgnAcctId(self, value):
-		self._MrgnAcctId = value if type(value) != auto else self.make_default("MrgnAcctId")
-
-	@MrgnAcctId.deleter
-	def MrgnAcctId(self):
-		del self._MrgnAcctId
-		self._MrgnAcctId = None
 
 	@property
 	def PeakInitlMrgnLblty(self):
@@ -58,6 +32,32 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 		self._PeakInitlMrgnLblty = None
 
 	@property
+	def AggtPeakLblty(self):
+		return self._AggtPeakLblty
+
+	@AggtPeakLblty.setter
+	def AggtPeakLblty(self, value):
+		self._AggtPeakLblty = value if type(value) != auto else self.make_default("AggtPeakLblty")
+
+	@AggtPeakLblty.deleter
+	def AggtPeakLblty(self):
+		del self._AggtPeakLblty
+		self._AggtPeakLblty = None
+
+	@property
+	def MrgnAcctId(self):
+		return self._MrgnAcctId
+
+	@MrgnAcctId.setter
+	def MrgnAcctId(self, value):
+		self._MrgnAcctId = value if type(value) != auto else self.make_default("MrgnAcctId")
+
+	@MrgnAcctId.deleter
+	def MrgnAcctId(self):
+		del self._MrgnAcctId
+		self._MrgnAcctId = None
+
+	@property
 	def PeakVartnMrgnLblty(self):
 		return self._PeakVartnMrgnLblty
 
@@ -71,10 +71,10 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 		self._PeakVartnMrgnLblty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AggtPeakLblty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraDayMrgnCall', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PeakInitlMrgnLblty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AggtPeakLblty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgnAcctId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PeakVartnMrgnLblty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

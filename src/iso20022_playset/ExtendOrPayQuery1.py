@@ -1,15 +1,15 @@
 import base_types
 import BankInstructions1
-import Max2000Text
-import Contacts3
-import Demand2
-import ISODate
 import Document9
 import Undertaking9
+import Max2000Text
+import ISODate
+import Demand2
+import Contacts3
 
 class ExtendOrPayQuery1(base_types._BaseFieldType):
 
-	__slots__ = ["_DmndDtls", "_BkInstrs", "_BkCtct", "_UdrtkgId", "_ReqdXpryDt", "_AddtlInf", "_NclsdFile"]
+	__slots__ = ["_DmndDtls", "_AddtlInf", "_NclsdFile", "_UdrtkgId", "_BkInstrs", "_ReqdXpryDt", "_BkCtct"]
 	@property
 	def DmndDtls(self):
 		return self._DmndDtls
@@ -22,58 +22,6 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 	def DmndDtls(self):
 		del self._DmndDtls
 		self._DmndDtls = None
-
-	@property
-	def BkInstrs(self):
-		return self._BkInstrs
-
-	@BkInstrs.setter
-	def BkInstrs(self, value):
-		self._BkInstrs = value if type(value) != auto else self.make_default("BkInstrs")
-
-	@BkInstrs.deleter
-	def BkInstrs(self):
-		del self._BkInstrs
-		self._BkInstrs = None
-
-	@property
-	def BkCtct(self):
-		return self._BkCtct
-
-	@BkCtct.setter
-	def BkCtct(self, value):
-		self._BkCtct = value if type(value) != auto else self.make_default("BkCtct")
-
-	@BkCtct.deleter
-	def BkCtct(self):
-		del self._BkCtct
-		self._BkCtct = None
-
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
-
-	@property
-	def ReqdXpryDt(self):
-		return self._ReqdXpryDt
-
-	@ReqdXpryDt.setter
-	def ReqdXpryDt(self, value):
-		self._ReqdXpryDt = value if type(value) != auto else self.make_default("ReqdXpryDt")
-
-	@ReqdXpryDt.deleter
-	def ReqdXpryDt(self):
-		del self._ReqdXpryDt
-		self._ReqdXpryDt = None
 
 	@property
 	def AddtlInf(self):
@@ -101,13 +49,65 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 		del self._NclsdFile
 		self._NclsdFile = None
 
+	@property
+	def UdrtkgId(self):
+		return self._UdrtkgId
+
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
+
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
+	@property
+	def BkInstrs(self):
+		return self._BkInstrs
+
+	@BkInstrs.setter
+	def BkInstrs(self, value):
+		self._BkInstrs = value if type(value) != auto else self.make_default("BkInstrs")
+
+	@BkInstrs.deleter
+	def BkInstrs(self):
+		del self._BkInstrs
+		self._BkInstrs = None
+
+	@property
+	def ReqdXpryDt(self):
+		return self._ReqdXpryDt
+
+	@ReqdXpryDt.setter
+	def ReqdXpryDt(self, value):
+		self._ReqdXpryDt = value if type(value) != auto else self.make_default("ReqdXpryDt")
+
+	@ReqdXpryDt.deleter
+	def ReqdXpryDt(self):
+		del self._ReqdXpryDt
+		self._ReqdXpryDt = None
+
+	@property
+	def BkCtct(self):
+		return self._BkCtct
+
+	@BkCtct.setter
+	def BkCtct(self, value):
+		self._BkCtct = value if type(value) != auto else self.make_default("BkCtct")
+
+	@BkCtct.deleter
+	def BkCtct(self):
+		del self._BkCtct
+		self._BkCtct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DmndDtls', type=Demand2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkInstrs', type=BankInstructions1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkCtct', type=Contacts3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdXpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkInstrs', type=BankInstructions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdXpryDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkCtct', type=Contacts3, min=0, max=None, mutex_group=None, array=True),
 	))
 

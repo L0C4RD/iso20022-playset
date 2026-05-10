@@ -1,22 +1,22 @@
 import base_types
-import StressSize1Choice
 import GenericIdentification168
+import StressSize1Choice
 
 class StressedProduct1(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_MinStrssSz", "_MaxStrssSz"]
+	__slots__ = ["_MaxStrssSz", "_MinStrssSz", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def MaxStrssSz(self):
+		return self._MaxStrssSz
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@MaxStrssSz.setter
+	def MaxStrssSz(self, value):
+		self._MaxStrssSz = value if type(value) != auto else self.make_default("MaxStrssSz")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@MaxStrssSz.deleter
+	def MaxStrssSz(self):
+		del self._MaxStrssSz
+		self._MaxStrssSz = None
 
 	@property
 	def MinStrssSz(self):
@@ -32,21 +32,21 @@ class StressedProduct1(base_types._BaseFieldType):
 		self._MinStrssSz = None
 
 	@property
-	def MaxStrssSz(self):
-		return self._MaxStrssSz
+	def Id(self):
+		return self._Id
 
-	@MaxStrssSz.setter
-	def MaxStrssSz(self, value):
-		self._MaxStrssSz = value if type(value) != auto else self.make_default("MaxStrssSz")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@MaxStrssSz.deleter
-	def MaxStrssSz(self):
-		del self._MaxStrssSz
-		self._MaxStrssSz = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MaxStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinStrssSz', type=StressSize1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),
 	))
 

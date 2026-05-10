@@ -1,72 +1,20 @@
 import base_types
 import CompareISINIdentifier4
-import CompareCountryCode3
-import CompareCFIIdentifier3
-import CompareSecuritiesLendingType3
-import CompareUnitPrice6
-import CompareTrueFalseIndicator3
 import ComparePercentageRate3
+import CompareOrganisationIdentification6
+import CompareCountryCode3
+import CompareAmountAndDirection2
+import CompareUnitPrice6
+import CompareDecimalNumber3
+import CompareTrueFalseIndicator3
+import CompareCFIIdentifier3
 import CompareDate3
 import CompareCollateralQualityType3
-import CompareOrganisationIdentification6
-import CompareDecimalNumber3
-import CompareAmountAndDirection2
+import CompareSecuritiesLendingType3
 
 class Security48(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitPric", "_HrcutOrMrgn", "_ClssfctnTp", "_Mtrty", "_ExclsvArrgmnt", "_MktVal", "_IssrCtry", "_Id", "_AvlblForCollReuse", "_Qty", "_NmnlVal", "_Qlty", "_Tp", "_IssrId"]
-	@property
-	def UnitPric(self):
-		return self._UnitPric
-
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
-
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
-
-	@property
-	def HrcutOrMrgn(self):
-		return self._HrcutOrMrgn
-
-	@HrcutOrMrgn.setter
-	def HrcutOrMrgn(self, value):
-		self._HrcutOrMrgn = value if type(value) != auto else self.make_default("HrcutOrMrgn")
-
-	@HrcutOrMrgn.deleter
-	def HrcutOrMrgn(self):
-		del self._HrcutOrMrgn
-		self._HrcutOrMrgn = None
-
-	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
-
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
-
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
-
-	@property
-	def Mtrty(self):
-		return self._Mtrty
-
-	@Mtrty.setter
-	def Mtrty(self, value):
-		self._Mtrty = value if type(value) != auto else self.make_default("Mtrty")
-
-	@Mtrty.deleter
-	def Mtrty(self):
-		del self._Mtrty
-		self._Mtrty = None
-
+	__slots__ = ["_ExclsvArrgmnt", "_MktVal", "_Id", "_Mtrty", "_Qty", "_NmnlVal", "_HrcutOrMrgn", "_Tp", "_AvlblForCollReuse", "_ClssfctnTp", "_IssrCtry", "_Qlty", "_IssrId", "_UnitPric"]
 	@property
 	def ExclsvArrgmnt(self):
 		return self._ExclsvArrgmnt
@@ -94,19 +42,6 @@ class Security48(base_types._BaseFieldType):
 		self._MktVal = None
 
 	@property
-	def IssrCtry(self):
-		return self._IssrCtry
-
-	@IssrCtry.setter
-	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != auto else self.make_default("IssrCtry")
-
-	@IssrCtry.deleter
-	def IssrCtry(self):
-		del self._IssrCtry
-		self._IssrCtry = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -120,17 +55,17 @@ class Security48(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def AvlblForCollReuse(self):
-		return self._AvlblForCollReuse
+	def Mtrty(self):
+		return self._Mtrty
 
-	@AvlblForCollReuse.setter
-	def AvlblForCollReuse(self, value):
-		self._AvlblForCollReuse = value if type(value) != auto else self.make_default("AvlblForCollReuse")
+	@Mtrty.setter
+	def Mtrty(self, value):
+		self._Mtrty = value if type(value) != auto else self.make_default("Mtrty")
 
-	@AvlblForCollReuse.deleter
-	def AvlblForCollReuse(self):
-		del self._AvlblForCollReuse
-		self._AvlblForCollReuse = None
+	@Mtrty.deleter
+	def Mtrty(self):
+		del self._Mtrty
+		self._Mtrty = None
 
 	@property
 	def Qty(self):
@@ -159,17 +94,17 @@ class Security48(base_types._BaseFieldType):
 		self._NmnlVal = None
 
 	@property
-	def Qlty(self):
-		return self._Qlty
+	def HrcutOrMrgn(self):
+		return self._HrcutOrMrgn
 
-	@Qlty.setter
-	def Qlty(self, value):
-		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
+	@HrcutOrMrgn.setter
+	def HrcutOrMrgn(self, value):
+		self._HrcutOrMrgn = value if type(value) != auto else self.make_default("HrcutOrMrgn")
 
-	@Qlty.deleter
-	def Qlty(self):
-		del self._Qlty
-		self._Qlty = None
+	@HrcutOrMrgn.deleter
+	def HrcutOrMrgn(self):
+		del self._HrcutOrMrgn
+		self._HrcutOrMrgn = None
 
 	@property
 	def Tp(self):
@@ -185,6 +120,58 @@ class Security48(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
+	def AvlblForCollReuse(self):
+		return self._AvlblForCollReuse
+
+	@AvlblForCollReuse.setter
+	def AvlblForCollReuse(self, value):
+		self._AvlblForCollReuse = value if type(value) != auto else self.make_default("AvlblForCollReuse")
+
+	@AvlblForCollReuse.deleter
+	def AvlblForCollReuse(self):
+		del self._AvlblForCollReuse
+		self._AvlblForCollReuse = None
+
+	@property
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
+
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
+
+	@property
+	def IssrCtry(self):
+		return self._IssrCtry
+
+	@IssrCtry.setter
+	def IssrCtry(self, value):
+		self._IssrCtry = value if type(value) != auto else self.make_default("IssrCtry")
+
+	@IssrCtry.deleter
+	def IssrCtry(self):
+		del self._IssrCtry
+		self._IssrCtry = None
+
+	@property
+	def Qlty(self):
+		return self._Qlty
+
+	@Qlty.setter
+	def Qlty(self, value):
+		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
+
+	@Qlty.deleter
+	def Qlty(self):
+		del self._Qlty
+		self._Qlty = None
+
+	@property
 	def IssrId(self):
 		return self._IssrId
 
@@ -197,20 +184,33 @@ class Security48(base_types._BaseFieldType):
 		del self._IssrId
 		self._IssrId = None
 
+	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='HrcutOrMrgn', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=CompareCFIIdentifier3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Mtrty', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExclsvArrgmnt', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrCtry', type=CompareCountryCode3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=CompareISINIdentifier4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AvlblForCollReuse', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtrty', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmnlVal', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Qlty', type=CompareCollateralQualityType3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HrcutOrMrgn', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CompareSecuritiesLendingType3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AvlblForCollReuse', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=CompareCFIIdentifier3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrCtry', type=CompareCountryCode3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qlty', type=CompareCollateralQualityType3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrId', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=CompareUnitPrice6, min=0, max=1, mutex_group=None, array=False),
 	))
 

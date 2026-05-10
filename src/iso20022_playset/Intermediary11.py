@@ -1,12 +1,12 @@
 import base_types
-import InvestmentFundRole2Code
-import Extended350Code
 import Account7
 import PartyIdentification2Choice
+import InvestmentFundRole2Code
+import Extended350Code
 
 class Intermediary11(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_XtndedRole", "_Id", "_Role"]
+	__slots__ = ["_Acct", "_Role", "_Id", "_XtndedRole"]
 	@property
 	def Acct(self):
 		return self._Acct
@@ -21,17 +21,17 @@ class Intermediary11(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def XtndedRole(self):
-		return self._XtndedRole
+	def Role(self):
+		return self._Role
 
-	@XtndedRole.setter
-	def XtndedRole(self, value):
-		self._XtndedRole = value if type(value) != auto else self.make_default("XtndedRole")
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != auto else self.make_default("Role")
 
-	@XtndedRole.deleter
-	def XtndedRole(self):
-		del self._XtndedRole
-		self._XtndedRole = None
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
 
 	@property
 	def Id(self):
@@ -47,22 +47,22 @@ class Intermediary11(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Role(self):
-		return self._Role
+	def XtndedRole(self):
+		return self._XtndedRole
 
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
+	@XtndedRole.setter
+	def XtndedRole(self, value):
+		self._XtndedRole = value if type(value) != auto else self.make_default("XtndedRole")
 
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
+	@XtndedRole.deleter
+	def XtndedRole(self):
+		del self._XtndedRole
+		self._XtndedRole = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XtndedRole', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedRole', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

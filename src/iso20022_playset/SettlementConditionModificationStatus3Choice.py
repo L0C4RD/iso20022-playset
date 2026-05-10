@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import SettlementConditionModificationStatus1Code
+import GenericIdentification30
 
 class SettlementConditionModificationStatus3Choice(base_types._BaseFieldType):
 

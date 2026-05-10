@@ -1,12 +1,25 @@
 import base_types
 import AlgorithmIdentification32
+import KEKIdentifier7
 import Number
 import Max500Binary
-import KEKIdentifier7
 
 class KEK9(base_types._BaseFieldType):
 
-	__slots__ = ["_KeyNcrptnAlgo", "_KEKId", "_NcrptdKey", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_KeyNcrptnAlgo", "_NcrptdKey", "_KEKId"]
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	@property
 	def KeyNcrptnAlgo(self):
 		return self._KeyNcrptnAlgo
@@ -19,19 +32,6 @@ class KEK9(base_types._BaseFieldType):
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
 		self._KeyNcrptnAlgo = None
-
-	@property
-	def KEKId(self):
-		return self._KEKId
-
-	@KEKId.setter
-	def KEKId(self, value):
-		self._KEKId = value if type(value) != auto else self.make_default("KEKId")
-
-	@KEKId.deleter
-	def KEKId(self):
-		del self._KEKId
-		self._KEKId = None
 
 	@property
 	def NcrptdKey(self):
@@ -47,22 +47,22 @@ class KEK9(base_types._BaseFieldType):
 		self._NcrptdKey = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def KEKId(self):
+		return self._KEKId
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@KEKId.setter
+	def KEKId(self, value):
+		self._KEKId = value if type(value) != auto else self.make_default("KEKId")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@KEKId.deleter
+	def KEKId(self):
+		del self._KEKId
+		self._KEKId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification32, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdKey', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),
 	))
 

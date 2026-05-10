@@ -1,12 +1,12 @@
 import base_types
-import ISODate
 import Max140Text
-import YesNoIndicator
+import ISODate
 import ActiveCurrencyAndAmount
+import YesNoIndicator
 
 class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToDbt", "_Rsn", "_DbtAuthstn", "_ValDtToDbt"]
+	__slots__ = ["_AmtToDbt", "_ValDtToDbt", "_Rsn", "_DbtAuthstn"]
 	@property
 	def AmtToDbt(self):
 		return self._AmtToDbt
@@ -19,6 +19,19 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 	def AmtToDbt(self):
 		del self._AmtToDbt
 		self._AmtToDbt = None
+
+	@property
+	def ValDtToDbt(self):
+		return self._ValDtToDbt
+
+	@ValDtToDbt.setter
+	def ValDtToDbt(self, value):
+		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
+
+	@ValDtToDbt.deleter
+	def ValDtToDbt(self):
+		del self._ValDtToDbt
+		self._ValDtToDbt = None
 
 	@property
 	def Rsn(self):
@@ -46,23 +59,10 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 		del self._DbtAuthstn
 		self._DbtAuthstn = None
 
-	@property
-	def ValDtToDbt(self):
-		return self._ValDtToDbt
-
-	@ValDtToDbt.setter
-	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != auto else self.make_default("ValDtToDbt")
-
-	@ValDtToDbt.deleter
-	def ValDtToDbt(self):
-		del self._ValDtToDbt
-		self._ValDtToDbt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtAuthstn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDtToDbt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

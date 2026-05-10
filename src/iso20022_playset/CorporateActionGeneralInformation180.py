@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import CorporateActionEventType112Choice
 import FinancialInstrumentAttributes132
-import Max35Text
 
 class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygScty", "_OffclCorpActnEvtId", "_EvtTp", "_CorpActnEvtId"]
+	__slots__ = ["_EvtTp", "_OffclCorpActnEvtId", "_UndrlygScty", "_CorpActnEvtId"]
 	@property
-	def UndrlygScty(self):
-		return self._UndrlygScty
+	def EvtTp(self):
+		return self._EvtTp
 
-	@UndrlygScty.setter
-	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != auto else self.make_default("UndrlygScty")
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
 
-	@UndrlygScty.deleter
-	def UndrlygScty(self):
-		del self._UndrlygScty
-		self._UndrlygScty = None
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -33,17 +33,17 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 		self._OffclCorpActnEvtId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
+	def UndrlygScty(self):
+		return self._UndrlygScty
 
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+	@UndrlygScty.setter
+	def UndrlygScty(self, value):
+		self._UndrlygScty = value if type(value) != auto else self.make_default("UndrlygScty")
 
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
+	@UndrlygScty.deleter
+	def UndrlygScty(self):
+		del self._UndrlygScty
+		self._UndrlygScty = None
 
 	@property
 	def CorpActnEvtId(self):
@@ -59,9 +59,9 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes132, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

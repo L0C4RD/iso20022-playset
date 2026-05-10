@@ -1,24 +1,11 @@
 import base_types
+import RestrictedFINXMax350Text
 import RestrictedFINZMax2048Text
 import UpdatedURLlnformation7
-import RestrictedFINXMax350Text
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
-	__slots__ = ["_Offerr", "_EvtPrcgWebSiteAdr", "_URLAdr", "_NewCpnyNm"]
-	@property
-	def Offerr(self):
-		return self._Offerr
-
-	@Offerr.setter
-	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
-
-	@Offerr.deleter
-	def Offerr(self):
-		del self._Offerr
-		self._Offerr = None
-
+	__slots__ = ["_EvtPrcgWebSiteAdr", "_URLAdr", "_NewCpnyNm", "_Offerr"]
 	@property
 	def EvtPrcgWebSiteAdr(self):
 		return self._EvtPrcgWebSiteAdr
@@ -58,10 +45,23 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		del self._NewCpnyNm
 		self._NewCpnyNm = None
 
+	@property
+	def Offerr(self):
+		return self._Offerr
+
+	@Offerr.setter
+	def Offerr(self, value):
+		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
+
+	@Offerr.deleter
+	def Offerr(self):
+		del self._Offerr
+		self._Offerr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewCpnyNm', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,53 +1,27 @@
 import base_types
+import AccountStatus2
+import Max35Text
+import AcceptedStatusReason1Choice
 import Account23
 import Status25Choice
-import Max35Text
-import ISODate
 import BlockedStatusReason2Choice
-import AcceptedStatusReason1Choice
-import AccountStatus2
+import ISODate
 
 class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctApplId", "_StsRsn", "_AcctSts", "_FATCARptgDt", "_Sts", "_CRSRptgDt", "_AcctId", "_BlckdSts", "_ExstgAcctId"]
+	__slots__ = ["_ExstgAcctId", "_FATCARptgDt", "_AcctId", "_Sts", "_AcctApplId", "_AcctSts", "_CRSRptgDt", "_StsRsn", "_BlckdSts"]
 	@property
-	def AcctApplId(self):
-		return self._AcctApplId
+	def ExstgAcctId(self):
+		return self._ExstgAcctId
 
-	@AcctApplId.setter
-	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != auto else self.make_default("AcctApplId")
+	@ExstgAcctId.setter
+	def ExstgAcctId(self, value):
+		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
 
-	@AcctApplId.deleter
-	def AcctApplId(self):
-		del self._AcctApplId
-		self._AcctApplId = None
-
-	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
-	@property
-	def AcctSts(self):
-		return self._AcctSts
-
-	@AcctSts.setter
-	def AcctSts(self, value):
-		self._AcctSts = value if type(value) != auto else self.make_default("AcctSts")
-
-	@AcctSts.deleter
-	def AcctSts(self):
-		del self._AcctSts
-		self._AcctSts = None
+	@ExstgAcctId.deleter
+	def ExstgAcctId(self):
+		del self._ExstgAcctId
+		self._ExstgAcctId = None
 
 	@property
 	def FATCARptgDt(self):
@@ -63,6 +37,19 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		self._FATCARptgDt = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
 	def Sts(self):
 		return self._Sts
 
@@ -74,6 +61,32 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
+
+	@property
+	def AcctApplId(self):
+		return self._AcctApplId
+
+	@AcctApplId.setter
+	def AcctApplId(self, value):
+		self._AcctApplId = value if type(value) != auto else self.make_default("AcctApplId")
+
+	@AcctApplId.deleter
+	def AcctApplId(self):
+		del self._AcctApplId
+		self._AcctApplId = None
+
+	@property
+	def AcctSts(self):
+		return self._AcctSts
+
+	@AcctSts.setter
+	def AcctSts(self, value):
+		self._AcctSts = value if type(value) != auto else self.make_default("AcctSts")
+
+	@AcctSts.deleter
+	def AcctSts(self):
+		del self._AcctSts
+		self._AcctSts = None
 
 	@property
 	def CRSRptgDt(self):
@@ -89,17 +102,17 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		self._CRSRptgDt = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def StsRsn(self):
+		return self._StsRsn
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	@property
 	def BlckdSts(self):
@@ -114,28 +127,15 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 		del self._BlckdSts
 		self._BlckdSts = None
 
-	@property
-	def ExstgAcctId(self):
-		return self._ExstgAcctId
-
-	@ExstgAcctId.setter
-	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
-
-	@ExstgAcctId.deleter
-	def ExstgAcctId(self):
-		del self._ExstgAcctId
-		self._ExstgAcctId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsRsn', type=AcceptedStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FATCARptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=Status25Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CRSRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckdSts', type=BlockedStatusReason2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FATCARptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=Status25Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSts', type=AccountStatus2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CRSRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=AcceptedStatusReason1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckdSts', type=BlockedStatusReason2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

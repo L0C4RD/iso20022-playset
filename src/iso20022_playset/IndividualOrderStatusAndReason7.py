@@ -1,15 +1,15 @@
 import base_types
-import Fee3
+import Max35Text
 import OrderStatus5Choice
-import HoldBackInformation3
-import PartyIdentification113
 import FundOrderData5
 import ExpectedExecutionDetails4
-import Max35Text
+import PartyIdentification113
+import HoldBackInformation3
+import Fee3
 
 class IndividualOrderStatusAndReason7(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrData", "_MstrRef", "_DealRef", "_RprdFee", "_StsInitr", "_GtgOrHldBckDtls", "_CxlRef", "_ClntRef", "_OrdrRef", "_OrdrSts", "_NewDtls"]
+	__slots__ = ["_OrdrData", "_OrdrRef", "_OrdrSts", "_NewDtls", "_DealRef", "_MstrRef", "_CxlRef", "_ClntRef", "_StsInitr", "_RprdFee", "_GtgOrHldBckDtls"]
 	@property
 	def OrdrData(self):
 		return self._OrdrData
@@ -22,97 +22,6 @@ class IndividualOrderStatusAndReason7(base_types._BaseFieldType):
 	def OrdrData(self):
 		del self._OrdrData
 		self._OrdrData = None
-
-	@property
-	def MstrRef(self):
-		return self._MstrRef
-
-	@MstrRef.setter
-	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
-
-	@MstrRef.deleter
-	def MstrRef(self):
-		del self._MstrRef
-		self._MstrRef = None
-
-	@property
-	def DealRef(self):
-		return self._DealRef
-
-	@DealRef.setter
-	def DealRef(self, value):
-		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
-
-	@DealRef.deleter
-	def DealRef(self):
-		del self._DealRef
-		self._DealRef = None
-
-	@property
-	def RprdFee(self):
-		return self._RprdFee
-
-	@RprdFee.setter
-	def RprdFee(self, value):
-		self._RprdFee = value if type(value) != auto else self.make_default("RprdFee")
-
-	@RprdFee.deleter
-	def RprdFee(self):
-		del self._RprdFee
-		self._RprdFee = None
-
-	@property
-	def StsInitr(self):
-		return self._StsInitr
-
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
-
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
-
-	@property
-	def GtgOrHldBckDtls(self):
-		return self._GtgOrHldBckDtls
-
-	@GtgOrHldBckDtls.setter
-	def GtgOrHldBckDtls(self, value):
-		self._GtgOrHldBckDtls = value if type(value) != auto else self.make_default("GtgOrHldBckDtls")
-
-	@GtgOrHldBckDtls.deleter
-	def GtgOrHldBckDtls(self):
-		del self._GtgOrHldBckDtls
-		self._GtgOrHldBckDtls = None
-
-	@property
-	def CxlRef(self):
-		return self._CxlRef
-
-	@CxlRef.setter
-	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
-
-	@CxlRef.deleter
-	def CxlRef(self):
-		del self._CxlRef
-		self._CxlRef = None
-
-	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
 
 	@property
 	def OrdrRef(self):
@@ -153,17 +62,108 @@ class IndividualOrderStatusAndReason7(base_types._BaseFieldType):
 		del self._NewDtls
 		self._NewDtls = None
 
+	@property
+	def DealRef(self):
+		return self._DealRef
+
+	@DealRef.setter
+	def DealRef(self, value):
+		self._DealRef = value if type(value) != auto else self.make_default("DealRef")
+
+	@DealRef.deleter
+	def DealRef(self):
+		del self._DealRef
+		self._DealRef = None
+
+	@property
+	def MstrRef(self):
+		return self._MstrRef
+
+	@MstrRef.setter
+	def MstrRef(self, value):
+		self._MstrRef = value if type(value) != auto else self.make_default("MstrRef")
+
+	@MstrRef.deleter
+	def MstrRef(self):
+		del self._MstrRef
+		self._MstrRef = None
+
+	@property
+	def CxlRef(self):
+		return self._CxlRef
+
+	@CxlRef.setter
+	def CxlRef(self, value):
+		self._CxlRef = value if type(value) != auto else self.make_default("CxlRef")
+
+	@CxlRef.deleter
+	def CxlRef(self):
+		del self._CxlRef
+		self._CxlRef = None
+
+	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
+	@property
+	def StsInitr(self):
+		return self._StsInitr
+
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
+
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
+
+	@property
+	def RprdFee(self):
+		return self._RprdFee
+
+	@RprdFee.setter
+	def RprdFee(self, value):
+		self._RprdFee = value if type(value) != auto else self.make_default("RprdFee")
+
+	@RprdFee.deleter
+	def RprdFee(self):
+		del self._RprdFee
+		self._RprdFee = None
+
+	@property
+	def GtgOrHldBckDtls(self):
+		return self._GtgOrHldBckDtls
+
+	@GtgOrHldBckDtls.setter
+	def GtgOrHldBckDtls(self, value):
+		self._GtgOrHldBckDtls = value if type(value) != auto else self.make_default("GtgOrHldBckDtls")
+
+	@GtgOrHldBckDtls.deleter
+	def GtgOrHldBckDtls(self):
+		del self._GtgOrHldBckDtls
+		self._GtgOrHldBckDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrdrData', type=FundOrderData5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GtgOrHldBckDtls', type=HoldBackInformation3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrSts', type=OrderStatus5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewDtls', type=ExpectedExecutionDetails4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GtgOrHldBckDtls', type=HoldBackInformation3, min=0, max=1, mutex_group=None, array=False),
 	))
 

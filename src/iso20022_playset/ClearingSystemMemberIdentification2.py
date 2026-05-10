@@ -1,6 +1,6 @@
 import base_types
-import ClearingSystemIdentification2Choice
 import Max35Text
+import ClearingSystemIdentification2Choice
 
 class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 

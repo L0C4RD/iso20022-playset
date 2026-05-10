@@ -1,25 +1,12 @@
 import base_types
-import ModelType1Choice
-import Max2000Text
 import BaseOneRate
 import TrueFalseIndicator
+import Max2000Text
+import ModelType1Choice
 
 class BackTestingMethodology1(base_types._BaseFieldType):
 
-	__slots__ = ["_MdlCnfdncLvl", "_Desc", "_VartnMrgnCleanInd", "_RskMdlTp"]
-	@property
-	def MdlCnfdncLvl(self):
-		return self._MdlCnfdncLvl
-
-	@MdlCnfdncLvl.setter
-	def MdlCnfdncLvl(self, value):
-		self._MdlCnfdncLvl = value if type(value) != auto else self.make_default("MdlCnfdncLvl")
-
-	@MdlCnfdncLvl.deleter
-	def MdlCnfdncLvl(self):
-		del self._MdlCnfdncLvl
-		self._MdlCnfdncLvl = None
-
+	__slots__ = ["_Desc", "_VartnMrgnCleanInd", "_MdlCnfdncLvl", "_RskMdlTp"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -47,6 +34,19 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 		self._VartnMrgnCleanInd = None
 
 	@property
+	def MdlCnfdncLvl(self):
+		return self._MdlCnfdncLvl
+
+	@MdlCnfdncLvl.setter
+	def MdlCnfdncLvl(self, value):
+		self._MdlCnfdncLvl = value if type(value) != auto else self.make_default("MdlCnfdncLvl")
+
+	@MdlCnfdncLvl.deleter
+	def MdlCnfdncLvl(self):
+		del self._MdlCnfdncLvl
+		self._MdlCnfdncLvl = None
+
+	@property
 	def RskMdlTp(self):
 		return self._RskMdlTp
 
@@ -60,9 +60,9 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 		self._RskMdlTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MdlCnfdncLvl', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnCleanInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdlCnfdncLvl', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RskMdlTp', type=ModelType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import ExternalEntryStatus1Code
 import Max35Text
+import ExternalEntryStatus1Code
 
 class EntryStatus1Choice(base_types._BaseFieldType):
 

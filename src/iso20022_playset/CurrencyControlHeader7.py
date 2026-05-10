@@ -1,8 +1,8 @@
 import base_types
-import Max15NumericText
-import ISODateTime
-import PartyIdentification272
 import Max35Text
+import Max15NumericText
+import PartyIdentification272
+import ISODateTime
 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlHeader7(base_types._BaseFieldType):

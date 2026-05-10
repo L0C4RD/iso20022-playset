@@ -1,23 +1,23 @@
 import base_types
-import MemoryUnit1Code
-import DecimalNumber
 import Max35Text
+import DecimalNumber
+import MemoryUnit1Code
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
-	__slots__ = ["_FreeSz", "_Unit", "_Id", "_TtlSz"]
+	__slots__ = ["_Id", "_Unit", "_FreeSz", "_TtlSz"]
 	@property
-	def FreeSz(self):
-		return self._FreeSz
+	def Id(self):
+		return self._Id
 
-	@FreeSz.setter
-	def FreeSz(self, value):
-		self._FreeSz = value if type(value) != auto else self.make_default("FreeSz")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@FreeSz.deleter
-	def FreeSz(self):
-		del self._FreeSz
-		self._FreeSz = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Unit(self):
@@ -33,17 +33,17 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		self._Unit = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def FreeSz(self):
+		return self._FreeSz
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@FreeSz.setter
+	def FreeSz(self, value):
+		self._FreeSz = value if type(value) != auto else self.make_default("FreeSz")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@FreeSz.deleter
+	def FreeSz(self):
+		del self._FreeSz
+		self._FreeSz = None
 
 	@property
 	def TtlSz(self):
@@ -59,9 +59,9 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 		self._TtlSz = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=MemoryUnit1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

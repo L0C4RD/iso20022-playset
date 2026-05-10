@@ -1,38 +1,12 @@
 import base_types
-import SupplementaryData1
-import CardPaymentEnvironment81
 import NonFinancialResponseContentComponent5
 import ResponseType11
+import CardPaymentEnvironment81
+import SupplementaryData1
 
 class NonFinancialResponseComponent5(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_RspnCntt", "_SplmtryData", "_Rspn"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
-	@property
-	def RspnCntt(self):
-		return self._RspnCntt
-
-	@RspnCntt.setter
-	def RspnCntt(self, value):
-		self._RspnCntt = value if type(value) != auto else self.make_default("RspnCntt")
-
-	@RspnCntt.deleter
-	def RspnCntt(self):
-		del self._RspnCntt
-		self._RspnCntt = None
-
+	__slots__ = ["_SplmtryData", "_Envt", "_Rspn", "_RspnCntt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -47,6 +21,19 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
 	def Rspn(self):
 		return self._Rspn
 
@@ -59,10 +46,23 @@ class NonFinancialResponseComponent5(base_types._BaseFieldType):
 		del self._Rspn
 		self._Rspn = None
 
+	@property
+	def RspnCntt(self):
+		return self._RspnCntt
+
+	@RspnCntt.setter
+	def RspnCntt(self, value):
+		self._RspnCntt = value if type(value) != auto else self.make_default("RspnCntt")
+
+	@RspnCntt.deleter
+	def RspnCntt(self):
+		del self._RspnCntt
+		self._RspnCntt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent5, min=1, max=None, mutex_group=None, array=True),
 	))
 

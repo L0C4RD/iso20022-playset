@@ -1,6 +1,6 @@
 import base_types
-import MemberReportOrError8Choice
 import MemberIdentification3Choice
+import MemberReportOrError8Choice
 
 class MemberReport6(base_types._BaseFieldType):
 

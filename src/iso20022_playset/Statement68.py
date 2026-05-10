@@ -1,26 +1,13 @@
 import base_types
-import DateAndDateTime2Choice
 import YesNoIndicator
-import RestrictedFINXMax16Text
 import UpdateType16Choice
+import RestrictedFINXMax16Text
 import Number3Choice
+import DateAndDateTime2Choice
 
 class Statement68(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtId", "_ActvtyInd", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp", "_RptNb", "_StmtDtTm"]
-	@property
-	def StmtId(self):
-		return self._StmtId
-
-	@StmtId.setter
-	def StmtId(self, value):
-		self._StmtId = value if type(value) != auto else self.make_default("StmtId")
-
-	@StmtId.deleter
-	def StmtId(self):
-		del self._StmtId
-		self._StmtId = None
-
+	__slots__ = ["_ActvtyInd", "_StmtId", "_RptNb", "_StmtDtTm", "_CtrPtyPrtflTrfNtfctnRef", "_UpdTp"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -35,30 +22,17 @@ class Statement68(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def CtrPtyPrtflTrfNtfctnRef(self):
-		return self._CtrPtyPrtflTrfNtfctnRef
+	def StmtId(self):
+		return self._StmtId
 
-	@CtrPtyPrtflTrfNtfctnRef.setter
-	def CtrPtyPrtflTrfNtfctnRef(self, value):
-		self._CtrPtyPrtflTrfNtfctnRef = value if type(value) != auto else self.make_default("CtrPtyPrtflTrfNtfctnRef")
+	@StmtId.setter
+	def StmtId(self, value):
+		self._StmtId = value if type(value) != auto else self.make_default("StmtId")
 
-	@CtrPtyPrtflTrfNtfctnRef.deleter
-	def CtrPtyPrtflTrfNtfctnRef(self):
-		del self._CtrPtyPrtflTrfNtfctnRef
-		self._CtrPtyPrtflTrfNtfctnRef = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
+	@StmtId.deleter
+	def StmtId(self):
+		del self._StmtId
+		self._StmtId = None
 
 	@property
 	def RptNb(self):
@@ -86,12 +60,38 @@ class Statement68(base_types._BaseFieldType):
 		del self._StmtDtTm
 		self._StmtDtTm = None
 
+	@property
+	def CtrPtyPrtflTrfNtfctnRef(self):
+		return self._CtrPtyPrtflTrfNtfctnRef
+
+	@CtrPtyPrtflTrfNtfctnRef.setter
+	def CtrPtyPrtflTrfNtfctnRef(self, value):
+		self._CtrPtyPrtflTrfNtfctnRef = value if type(value) != auto else self.make_default("CtrPtyPrtflTrfNtfctnRef")
+
+	@CtrPtyPrtflTrfNtfctnRef.deleter
+	def CtrPtyPrtflTrfNtfctnRef(self):
+		del self._CtrPtyPrtflTrfNtfctnRef
+		self._CtrPtyPrtflTrfNtfctnRef = None
+
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyPrtflTrfNtfctnRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

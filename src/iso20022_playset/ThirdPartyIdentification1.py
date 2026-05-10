@@ -1,6 +1,6 @@
 import base_types
-import PartyIdentification221
 import PartyRole3Code
+import PartyIdentification221
 
 class ThirdPartyIdentification1(base_types._BaseFieldType):
 

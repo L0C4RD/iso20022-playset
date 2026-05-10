@@ -1,52 +1,13 @@
 import base_types
-import DocumentType4Code
 import Max35Text
-import ISODate
 import Max140Text
+import ISODate
+import DocumentType4Code
 import Max256Text
 
 class DocumentGeneralInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_URL", "_IsseDt", "_SndrRcvrSeqId", "_DocNb", "_DocTp"]
-	@property
-	def URL(self):
-		return self._URL
-
-	@URL.setter
-	def URL(self, value):
-		self._URL = value if type(value) != auto else self.make_default("URL")
-
-	@URL.deleter
-	def URL(self):
-		del self._URL
-		self._URL = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def SndrRcvrSeqId(self):
-		return self._SndrRcvrSeqId
-
-	@SndrRcvrSeqId.setter
-	def SndrRcvrSeqId(self, value):
-		self._SndrRcvrSeqId = value if type(value) != auto else self.make_default("SndrRcvrSeqId")
-
-	@SndrRcvrSeqId.deleter
-	def SndrRcvrSeqId(self):
-		del self._SndrRcvrSeqId
-		self._SndrRcvrSeqId = None
-
+	__slots__ = ["_DocNb", "_DocTp", "_SndrRcvrSeqId", "_URL", "_IsseDt"]
 	@property
 	def DocNb(self):
 		return self._DocNb
@@ -73,11 +34,50 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 		del self._DocTp
 		self._DocTp = None
 
+	@property
+	def SndrRcvrSeqId(self):
+		return self._SndrRcvrSeqId
+
+	@SndrRcvrSeqId.setter
+	def SndrRcvrSeqId(self, value):
+		self._SndrRcvrSeqId = value if type(value) != auto else self.make_default("SndrRcvrSeqId")
+
+	@SndrRcvrSeqId.deleter
+	def SndrRcvrSeqId(self):
+		del self._SndrRcvrSeqId
+		self._SndrRcvrSeqId = None
+
+	@property
+	def URL(self):
+		return self._URL
+
+	@URL.setter
+	def URL(self, value):
+		self._URL = value if type(value) != auto else self.make_default("URL")
+
+	@URL.deleter
+	def URL(self):
+		del self._URL
+		self._URL = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocTp', type=DocumentType4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

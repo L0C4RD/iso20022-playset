@@ -1,23 +1,23 @@
 import base_types
-import BillingServicesAmount1
 import AmountAndDirection34
 import BillingServicesTax1
+import BillingServicesAmount1
 
 class BillingMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcChrgHstAmt", "_SvcTax", "_TaxId"]
+	__slots__ = ["_TaxId", "_SvcTax", "_SvcChrgHstAmt"]
 	@property
-	def SvcChrgHstAmt(self):
-		return self._SvcChrgHstAmt
+	def TaxId(self):
+		return self._TaxId
 
-	@SvcChrgHstAmt.setter
-	def SvcChrgHstAmt(self, value):
-		self._SvcChrgHstAmt = value if type(value) != auto else self.make_default("SvcChrgHstAmt")
+	@TaxId.setter
+	def TaxId(self, value):
+		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
 
-	@SvcChrgHstAmt.deleter
-	def SvcChrgHstAmt(self):
-		del self._SvcChrgHstAmt
-		self._SvcChrgHstAmt = None
+	@TaxId.deleter
+	def TaxId(self):
+		del self._TaxId
+		self._TaxId = None
 
 	@property
 	def SvcTax(self):
@@ -33,21 +33,21 @@ class BillingMethod2(base_types._BaseFieldType):
 		self._SvcTax = None
 
 	@property
-	def TaxId(self):
-		return self._TaxId
+	def SvcChrgHstAmt(self):
+		return self._SvcChrgHstAmt
 
-	@TaxId.setter
-	def TaxId(self, value):
-		self._TaxId = value if type(value) != auto else self.make_default("TaxId")
+	@SvcChrgHstAmt.setter
+	def SvcChrgHstAmt(self, value):
+		self._SvcChrgHstAmt = value if type(value) != auto else self.make_default("SvcChrgHstAmt")
 
-	@TaxId.deleter
-	def TaxId(self):
-		del self._TaxId
-		self._TaxId = None
+	@SvcChrgHstAmt.deleter
+	def SvcChrgHstAmt(self):
+		del self._SvcChrgHstAmt
+		self._SvcChrgHstAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxId', type=BillingServicesTax1, min=1, max=3, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SvcTax', type=BillingServicesAmount1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcChrgHstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 	))
 

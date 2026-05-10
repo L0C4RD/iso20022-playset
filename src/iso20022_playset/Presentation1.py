@@ -1,8 +1,8 @@
 import base_types
-import PresentationMedium1Choice
-import Max2000Text
 import Document8
 import PlaceOrUnderConfirmationChoice1
+import Max2000Text
+import PresentationMedium1Choice
 
 class Presentation1(base_types._BaseFieldType):
 

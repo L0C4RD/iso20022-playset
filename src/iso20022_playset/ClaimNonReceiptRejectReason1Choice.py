@@ -1,6 +1,6 @@
 import base_types
-import ExternalClaimNonReceiptRejection1Code
 import Max35Text
+import ExternalClaimNonReceiptRejection1Code
 
 class ClaimNonReceiptRejectReason1Choice(base_types._BaseFieldType):
 

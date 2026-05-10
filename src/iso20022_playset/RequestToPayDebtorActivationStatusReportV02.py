@@ -1,23 +1,23 @@
 import base_types
-import ActivationStatus3
-import SupplementaryData1
 import ActivationHeader3
+import SupplementaryData1
+import ActivationStatus3
 
 class RequestToPayDebtorActivationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlActvtnAndSts", "_SplmtryData", "_Hdr"]
+	__slots__ = ["_Hdr", "_SplmtryData", "_OrgnlActvtnAndSts"]
 	@property
-	def OrgnlActvtnAndSts(self):
-		return self._OrgnlActvtnAndSts
+	def Hdr(self):
+		return self._Hdr
 
-	@OrgnlActvtnAndSts.setter
-	def OrgnlActvtnAndSts(self, value):
-		self._OrgnlActvtnAndSts = value if type(value) != auto else self.make_default("OrgnlActvtnAndSts")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@OrgnlActvtnAndSts.deleter
-	def OrgnlActvtnAndSts(self):
-		del self._OrgnlActvtnAndSts
-		self._OrgnlActvtnAndSts = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class RequestToPayDebtorActivationStatusReportV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Hdr(self):
-		return self._Hdr
+	def OrgnlActvtnAndSts(self):
+		return self._OrgnlActvtnAndSts
 
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+	@OrgnlActvtnAndSts.setter
+	def OrgnlActvtnAndSts(self, value):
+		self._OrgnlActvtnAndSts = value if type(value) != auto else self.make_default("OrgnlActvtnAndSts")
 
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
+	@OrgnlActvtnAndSts.deleter
+	def OrgnlActvtnAndSts(self):
+		del self._OrgnlActvtnAndSts
+		self._OrgnlActvtnAndSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlActvtnAndSts', type=ActivationStatus3, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Hdr', type=ActivationHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlActvtnAndSts', type=ActivationStatus3, min=1, max=None, mutex_group=None, array=True),
 	))
 

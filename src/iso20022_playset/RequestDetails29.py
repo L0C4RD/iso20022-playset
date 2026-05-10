@@ -1,46 +1,98 @@
 import base_types
-import AutomaticBorrowing11Choice
-import UnilateralSplit4Choice
-import SettlementTransactionCondition5Code
-import PriorityNumeric5Choice
 import LinkageType4Choice
-import HoldIndicator7
 import Linkages66
-import YesNoIndicator
+import PriorityNumeric5Choice
 import RestrictionIdentification2
+import YesNoIndicator
 import References28
 import GenericIdentification47
+import HoldIndicator7
+import UnilateralSplit4Choice
+import AutomaticBorrowing11Choice
 import MatchingDenied4Choice
+import SettlementTransactionCondition5Code
 import SecuritiesRTGS5Choice
 
 class RequestDetails29(base_types._BaseFieldType):
 
-	__slots__ = ["_Lkg", "_OthrPrcg", "_SctiesRTGS", "_HldInd", "_UnltrlSplt", "_AutomtcBrrwg", "_Lnkgs", "_Ref", "_MtchgDnl", "_RtnInd", "_PrtlSttlmInd", "_RstrctnRef", "_Prty"]
+	__slots__ = ["_RstrctnRef", "_RtnInd", "_Prty", "_Ref", "_Lnkgs", "_HldInd", "_SctiesRTGS", "_MtchgDnl", "_UnltrlSplt", "_AutomtcBrrwg", "_PrtlSttlmInd", "_Lkg", "_OthrPrcg"]
 	@property
-	def Lkg(self):
-		return self._Lkg
+	def RstrctnRef(self):
+		return self._RstrctnRef
 
-	@Lkg.setter
-	def Lkg(self, value):
-		self._Lkg = value if type(value) != auto else self.make_default("Lkg")
+	@RstrctnRef.setter
+	def RstrctnRef(self, value):
+		self._RstrctnRef = value if type(value) != auto else self.make_default("RstrctnRef")
 
-	@Lkg.deleter
-	def Lkg(self):
-		del self._Lkg
-		self._Lkg = None
+	@RstrctnRef.deleter
+	def RstrctnRef(self):
+		del self._RstrctnRef
+		self._RstrctnRef = None
 
 	@property
-	def OthrPrcg(self):
-		return self._OthrPrcg
+	def RtnInd(self):
+		return self._RtnInd
 
-	@OthrPrcg.setter
-	def OthrPrcg(self, value):
-		self._OthrPrcg = value if type(value) != auto else self.make_default("OthrPrcg")
+	@RtnInd.setter
+	def RtnInd(self, value):
+		self._RtnInd = value if type(value) != auto else self.make_default("RtnInd")
 
-	@OthrPrcg.deleter
-	def OthrPrcg(self):
-		del self._OthrPrcg
-		self._OthrPrcg = None
+	@RtnInd.deleter
+	def RtnInd(self):
+		del self._RtnInd
+		self._RtnInd = None
+
+	@property
+	def Prty(self):
+		return self._Prty
+
+	@Prty.setter
+	def Prty(self, value):
+		self._Prty = value if type(value) != auto else self.make_default("Prty")
+
+	@Prty.deleter
+	def Prty(self):
+		del self._Prty
+		self._Prty = None
+
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
+	@property
+	def Lnkgs(self):
+		return self._Lnkgs
+
+	@Lnkgs.setter
+	def Lnkgs(self, value):
+		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
+
+	@Lnkgs.deleter
+	def Lnkgs(self):
+		del self._Lnkgs
+		self._Lnkgs = None
+
+	@property
+	def HldInd(self):
+		return self._HldInd
+
+	@HldInd.setter
+	def HldInd(self, value):
+		self._HldInd = value if type(value) != auto else self.make_default("HldInd")
+
+	@HldInd.deleter
+	def HldInd(self):
+		del self._HldInd
+		self._HldInd = None
 
 	@property
 	def SctiesRTGS(self):
@@ -56,17 +108,17 @@ class RequestDetails29(base_types._BaseFieldType):
 		self._SctiesRTGS = None
 
 	@property
-	def HldInd(self):
-		return self._HldInd
+	def MtchgDnl(self):
+		return self._MtchgDnl
 
-	@HldInd.setter
-	def HldInd(self, value):
-		self._HldInd = value if type(value) != auto else self.make_default("HldInd")
+	@MtchgDnl.setter
+	def MtchgDnl(self, value):
+		self._MtchgDnl = value if type(value) != auto else self.make_default("MtchgDnl")
 
-	@HldInd.deleter
-	def HldInd(self):
-		del self._HldInd
-		self._HldInd = None
+	@MtchgDnl.deleter
+	def MtchgDnl(self):
+		del self._MtchgDnl
+		self._MtchgDnl = None
 
 	@property
 	def UnltrlSplt(self):
@@ -95,58 +147,6 @@ class RequestDetails29(base_types._BaseFieldType):
 		self._AutomtcBrrwg = None
 
 	@property
-	def Lnkgs(self):
-		return self._Lnkgs
-
-	@Lnkgs.setter
-	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != auto else self.make_default("Lnkgs")
-
-	@Lnkgs.deleter
-	def Lnkgs(self):
-		del self._Lnkgs
-		self._Lnkgs = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
-
-	@property
-	def MtchgDnl(self):
-		return self._MtchgDnl
-
-	@MtchgDnl.setter
-	def MtchgDnl(self, value):
-		self._MtchgDnl = value if type(value) != auto else self.make_default("MtchgDnl")
-
-	@MtchgDnl.deleter
-	def MtchgDnl(self):
-		del self._MtchgDnl
-		self._MtchgDnl = None
-
-	@property
-	def RtnInd(self):
-		return self._RtnInd
-
-	@RtnInd.setter
-	def RtnInd(self, value):
-		self._RtnInd = value if type(value) != auto else self.make_default("RtnInd")
-
-	@RtnInd.deleter
-	def RtnInd(self):
-		del self._RtnInd
-		self._RtnInd = None
-
-	@property
 	def PrtlSttlmInd(self):
 		return self._PrtlSttlmInd
 
@@ -160,44 +160,44 @@ class RequestDetails29(base_types._BaseFieldType):
 		self._PrtlSttlmInd = None
 
 	@property
-	def RstrctnRef(self):
-		return self._RstrctnRef
+	def Lkg(self):
+		return self._Lkg
 
-	@RstrctnRef.setter
-	def RstrctnRef(self, value):
-		self._RstrctnRef = value if type(value) != auto else self.make_default("RstrctnRef")
+	@Lkg.setter
+	def Lkg(self, value):
+		self._Lkg = value if type(value) != auto else self.make_default("Lkg")
 
-	@RstrctnRef.deleter
-	def RstrctnRef(self):
-		del self._RstrctnRef
-		self._RstrctnRef = None
+	@Lkg.deleter
+	def Lkg(self):
+		del self._Lkg
+		self._Lkg = None
 
 	@property
-	def Prty(self):
-		return self._Prty
+	def OthrPrcg(self):
+		return self._OthrPrcg
 
-	@Prty.setter
-	def Prty(self, value):
-		self._Prty = value if type(value) != auto else self.make_default("Prty")
+	@OthrPrcg.setter
+	def OthrPrcg(self, value):
+		self._OthrPrcg = value if type(value) != auto else self.make_default("OthrPrcg")
 
-	@Prty.deleter
-	def Prty(self):
-		del self._Prty
-		self._Prty = None
+	@OthrPrcg.deleter
+	def OthrPrcg(self):
+		del self._OthrPrcg
+		self._OthrPrcg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lkg', type=LinkageType4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPrcg', type=GenericIdentification47, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RstrctnRef', type=RestrictionIdentification2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RtnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prty', type=PriorityNumeric5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=References28, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lnkgs', type=Linkages66, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='HldInd', type=HoldIndicator7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesRTGS', type=SecuritiesRTGS5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtchgDnl', type=MatchingDenied4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnltrlSplt', type=UnilateralSplit4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AutomtcBrrwg', type=AutomaticBorrowing11Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lnkgs', type=Linkages66, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Ref', type=References28, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtchgDnl', type=MatchingDenied4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtlSttlmInd', type=SettlementTransactionCondition5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RstrctnRef', type=RestrictionIdentification2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Prty', type=PriorityNumeric5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lkg', type=LinkageType4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPrcg', type=GenericIdentification47, min=0, max=None, mutex_group=None, array=True),
 	))
 

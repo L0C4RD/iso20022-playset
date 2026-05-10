@@ -1,7 +1,7 @@
 import base_types
+import CurrencyControlHeader8
 import SupplementaryData1
 import ContractRegistration7
-import CurrencyControlHeader8
 
 class ContractRegistrationRequestV04(base_types._BaseFieldType):
 

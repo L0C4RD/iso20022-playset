@@ -1,94 +1,29 @@
 import base_types
 import CardServiceType5Code
-import ISODateTime
-import Jurisdiction2
-import Exact15Text
-import KeyType1Code
 import ISO8583MessageReasonCode
-import AdditionalData2
-import ProtectedData2
-import AdditionalFee3
-import SupplementaryData1
-import Reconciliation4
 import ProgrammeMode5
-import SettlementService6
-import ProcessingResult26
-import Max256Text
-import Exact12Text
-import KeyExchangeData1
+import Jurisdiction2
+import ProtectedData2
 import Max35Text
-import Max12NumericText
+import ISODateTime
 import Header71
+import AdditionalFee3
+import Reconciliation4
+import KeyExchangeData1
+import Exact12Text
+import KeyType1Code
+import Max12NumericText
+import SupplementaryData1
+import Exact15Text
+import SettlementService6
 import ContentInformationType41
+import AdditionalData2
+import Max256Text
+import ProcessingResult26
 
 class KeyExchangeInitiationV04(base_types._BaseFieldType):
 
-	__slots__ = ["_Jursdctn", "_OthrKeyXchgTp", "_SplmtryData", "_AddtlData", "_Hdr", "_SttlmSvc", "_SysTracAudtNb", "_KeyXchgFctn", "_RtrvlRefNb", "_Prgrmm", "_TrnsmssnDtTm", "_KeyXchgTp", "_KeyXchgData", "_AltrnMsgRsn", "_Rcncltn", "_PrcgRslt", "_SctyTrlr", "_MsgRsn", "_PrtctdData", "_LifeCyclId", "_AddtlFee", "_OthrKeyXchgFctn"]
-	@property
-	def Jursdctn(self):
-		return self._Jursdctn
-
-	@Jursdctn.setter
-	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
-
-	@Jursdctn.deleter
-	def Jursdctn(self):
-		del self._Jursdctn
-		self._Jursdctn = None
-
-	@property
-	def OthrKeyXchgTp(self):
-		return self._OthrKeyXchgTp
-
-	@OthrKeyXchgTp.setter
-	def OthrKeyXchgTp(self, value):
-		self._OthrKeyXchgTp = value if type(value) != auto else self.make_default("OthrKeyXchgTp")
-
-	@OthrKeyXchgTp.deleter
-	def OthrKeyXchgTp(self):
-		del self._OthrKeyXchgTp
-		self._OthrKeyXchgTp = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def AddtlData(self):
-		return self._AddtlData
-
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
-
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_SttlmSvc", "_SysTracAudtNb", "_OthrKeyXchgTp", "_KeyXchgFctn", "_AltrnMsgRsn", "_KeyXchgData", "_Prgrmm", "_Rcncltn", "_AddtlData", "_OthrKeyXchgFctn", "_Jursdctn", "_LifeCyclId", "_RtrvlRefNb", "_SctyTrlr", "_Hdr", "_TrnsmssnDtTm", "_MsgRsn", "_PrcgRslt", "_KeyXchgTp", "_AddtlFee", "_PrtctdData", "_SplmtryData"]
 	@property
 	def SttlmSvc(self):
 		return self._SttlmSvc
@@ -116,6 +51,19 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 		self._SysTracAudtNb = None
 
 	@property
+	def OthrKeyXchgTp(self):
+		return self._OthrKeyXchgTp
+
+	@OthrKeyXchgTp.setter
+	def OthrKeyXchgTp(self, value):
+		self._OthrKeyXchgTp = value if type(value) != auto else self.make_default("OthrKeyXchgTp")
+
+	@OthrKeyXchgTp.deleter
+	def OthrKeyXchgTp(self):
+		del self._OthrKeyXchgTp
+		self._OthrKeyXchgTp = None
+
+	@property
 	def KeyXchgFctn(self):
 		return self._KeyXchgFctn
 
@@ -127,71 +75,6 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 	def KeyXchgFctn(self):
 		del self._KeyXchgFctn
 		self._KeyXchgFctn = None
-
-	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
-
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
-
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
-
-	@property
-	def Prgrmm(self):
-		return self._Prgrmm
-
-	@Prgrmm.setter
-	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
-
-	@Prgrmm.deleter
-	def Prgrmm(self):
-		del self._Prgrmm
-		self._Prgrmm = None
-
-	@property
-	def TrnsmssnDtTm(self):
-		return self._TrnsmssnDtTm
-
-	@TrnsmssnDtTm.setter
-	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
-
-	@TrnsmssnDtTm.deleter
-	def TrnsmssnDtTm(self):
-		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
-
-	@property
-	def KeyXchgTp(self):
-		return self._KeyXchgTp
-
-	@KeyXchgTp.setter
-	def KeyXchgTp(self, value):
-		self._KeyXchgTp = value if type(value) != auto else self.make_default("KeyXchgTp")
-
-	@KeyXchgTp.deleter
-	def KeyXchgTp(self):
-		del self._KeyXchgTp
-		self._KeyXchgTp = None
-
-	@property
-	def KeyXchgData(self):
-		return self._KeyXchgData
-
-	@KeyXchgData.setter
-	def KeyXchgData(self, value):
-		self._KeyXchgData = value if type(value) != auto else self.make_default("KeyXchgData")
-
-	@KeyXchgData.deleter
-	def KeyXchgData(self):
-		del self._KeyXchgData
-		self._KeyXchgData = None
 
 	@property
 	def AltrnMsgRsn(self):
@@ -207,6 +90,32 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 		self._AltrnMsgRsn = None
 
 	@property
+	def KeyXchgData(self):
+		return self._KeyXchgData
+
+	@KeyXchgData.setter
+	def KeyXchgData(self, value):
+		self._KeyXchgData = value if type(value) != auto else self.make_default("KeyXchgData")
+
+	@KeyXchgData.deleter
+	def KeyXchgData(self):
+		del self._KeyXchgData
+		self._KeyXchgData = None
+
+	@property
+	def Prgrmm(self):
+		return self._Prgrmm
+
+	@Prgrmm.setter
+	def Prgrmm(self, value):
+		self._Prgrmm = value if type(value) != auto else self.make_default("Prgrmm")
+
+	@Prgrmm.deleter
+	def Prgrmm(self):
+		del self._Prgrmm
+		self._Prgrmm = None
+
+	@property
 	def Rcncltn(self):
 		return self._Rcncltn
 
@@ -220,56 +129,43 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 		self._Rcncltn = None
 
 	@property
-	def PrcgRslt(self):
-		return self._PrcgRslt
+	def AddtlData(self):
+		return self._AddtlData
 
-	@PrcgRslt.setter
-	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
 
-	@PrcgRslt.deleter
-	def PrcgRslt(self):
-		del self._PrcgRslt
-		self._PrcgRslt = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
 
 	@property
-	def MsgRsn(self):
-		return self._MsgRsn
+	def OthrKeyXchgFctn(self):
+		return self._OthrKeyXchgFctn
 
-	@MsgRsn.setter
-	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
+	@OthrKeyXchgFctn.setter
+	def OthrKeyXchgFctn(self, value):
+		self._OthrKeyXchgFctn = value if type(value) != auto else self.make_default("OthrKeyXchgFctn")
 
-	@MsgRsn.deleter
-	def MsgRsn(self):
-		del self._MsgRsn
-		self._MsgRsn = None
+	@OthrKeyXchgFctn.deleter
+	def OthrKeyXchgFctn(self):
+		del self._OthrKeyXchgFctn
+		self._OthrKeyXchgFctn = None
 
 	@property
-	def PrtctdData(self):
-		return self._PrtctdData
+	def Jursdctn(self):
+		return self._Jursdctn
 
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+	@Jursdctn.setter
+	def Jursdctn(self, value):
+		self._Jursdctn = value if type(value) != auto else self.make_default("Jursdctn")
 
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
+	@Jursdctn.deleter
+	def Jursdctn(self):
+		del self._Jursdctn
+		self._Jursdctn = None
 
 	@property
 	def LifeCyclId(self):
@@ -285,6 +181,97 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 		self._LifeCyclId = None
 
 	@property
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
+
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
+
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def TrnsmssnDtTm(self):
+		return self._TrnsmssnDtTm
+
+	@TrnsmssnDtTm.setter
+	def TrnsmssnDtTm(self, value):
+		self._TrnsmssnDtTm = value if type(value) != auto else self.make_default("TrnsmssnDtTm")
+
+	@TrnsmssnDtTm.deleter
+	def TrnsmssnDtTm(self):
+		del self._TrnsmssnDtTm
+		self._TrnsmssnDtTm = None
+
+	@property
+	def MsgRsn(self):
+		return self._MsgRsn
+
+	@MsgRsn.setter
+	def MsgRsn(self, value):
+		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
+
+	@MsgRsn.deleter
+	def MsgRsn(self):
+		del self._MsgRsn
+		self._MsgRsn = None
+
+	@property
+	def PrcgRslt(self):
+		return self._PrcgRslt
+
+	@PrcgRslt.setter
+	def PrcgRslt(self, value):
+		self._PrcgRslt = value if type(value) != auto else self.make_default("PrcgRslt")
+
+	@PrcgRslt.deleter
+	def PrcgRslt(self):
+		del self._PrcgRslt
+		self._PrcgRslt = None
+
+	@property
+	def KeyXchgTp(self):
+		return self._KeyXchgTp
+
+	@KeyXchgTp.setter
+	def KeyXchgTp(self, value):
+		self._KeyXchgTp = value if type(value) != auto else self.make_default("KeyXchgTp")
+
+	@KeyXchgTp.deleter
+	def KeyXchgTp(self):
+		del self._KeyXchgTp
+		self._KeyXchgTp = None
+
+	@property
 	def AddtlFee(self):
 		return self._AddtlFee
 
@@ -298,40 +285,53 @@ class KeyExchangeInitiationV04(base_types._BaseFieldType):
 		self._AddtlFee = None
 
 	@property
-	def OthrKeyXchgFctn(self):
-		return self._OthrKeyXchgFctn
+	def PrtctdData(self):
+		return self._PrtctdData
 
-	@OthrKeyXchgFctn.setter
-	def OthrKeyXchgFctn(self, value):
-		self._OthrKeyXchgFctn = value if type(value) != auto else self.make_default("OthrKeyXchgFctn")
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
 
-	@OthrKeyXchgFctn.deleter
-	def OthrKeyXchgFctn(self):
-		del self._OthrKeyXchgFctn
-		self._OthrKeyXchgFctn = None
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrKeyXchgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrKeyXchgTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyXchgFctn', type=CardServiceType5Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyXchgTp', type=KeyType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyXchgData', type=KeyExchangeData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='KeyXchgData', type=KeyExchangeData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrKeyXchgFctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgRslt', type=ProcessingResult26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyXchgTp', type=KeyType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

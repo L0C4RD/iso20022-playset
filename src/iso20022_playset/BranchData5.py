@@ -1,12 +1,12 @@
 import base_types
-import Max140Text
-import PostalAddress27
 import Max35Text
+import PostalAddress27
+import Max140Text
 import LEIIdentifier
 
 class BranchData5(base_types._BaseFieldType):
 
-	__slots__ = ["_PstlAdr", "_LEI", "_Id", "_Nm"]
+	__slots__ = ["_PstlAdr", "_Id", "_LEI", "_Nm"]
 	@property
 	def PstlAdr(self):
 		return self._PstlAdr
@@ -21,19 +21,6 @@ class BranchData5(base_types._BaseFieldType):
 		self._PstlAdr = None
 
 	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -45,6 +32,19 @@ class BranchData5(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def Nm(self):
@@ -61,8 +61,8 @@ class BranchData5(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

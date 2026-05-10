@@ -1,51 +1,25 @@
 import base_types
-import Cheque21
-import InvestmentAccount60
-import CreditTransfer10
 import DirectDebitMandate8
+import InvestmentAccount60
 import PaymentCard34
+import Cheque21
+import CreditTransfer10
 
 class PaymentInstrument27Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DrctDbtDtls", "_ChqDtls", "_PmtCardDtls", "_CshAcctDtls", "_BkrsDrftDtls", "_CdtTrfDtls"]
+	__slots__ = ["_BkrsDrftDtls", "_CshAcctDtls", "_ChqDtls", "_DrctDbtDtls", "_PmtCardDtls", "_CdtTrfDtls"]
 	@property
-	def DrctDbtDtls(self):
-		return self._DrctDbtDtls
+	def BkrsDrftDtls(self):
+		return self._BkrsDrftDtls
 
-	@DrctDbtDtls.setter
-	def DrctDbtDtls(self, value):
-		self._DrctDbtDtls = value if type(value) != auto else self.make_default("DrctDbtDtls")
+	@BkrsDrftDtls.setter
+	def BkrsDrftDtls(self, value):
+		self._BkrsDrftDtls = value if type(value) != auto else self.make_default("BkrsDrftDtls")
 
-	@DrctDbtDtls.deleter
-	def DrctDbtDtls(self):
-		del self._DrctDbtDtls
-		self._DrctDbtDtls = None
-
-	@property
-	def ChqDtls(self):
-		return self._ChqDtls
-
-	@ChqDtls.setter
-	def ChqDtls(self, value):
-		self._ChqDtls = value if type(value) != auto else self.make_default("ChqDtls")
-
-	@ChqDtls.deleter
-	def ChqDtls(self):
-		del self._ChqDtls
-		self._ChqDtls = None
-
-	@property
-	def PmtCardDtls(self):
-		return self._PmtCardDtls
-
-	@PmtCardDtls.setter
-	def PmtCardDtls(self, value):
-		self._PmtCardDtls = value if type(value) != auto else self.make_default("PmtCardDtls")
-
-	@PmtCardDtls.deleter
-	def PmtCardDtls(self):
-		del self._PmtCardDtls
-		self._PmtCardDtls = None
+	@BkrsDrftDtls.deleter
+	def BkrsDrftDtls(self):
+		del self._BkrsDrftDtls
+		self._BkrsDrftDtls = None
 
 	@property
 	def CshAcctDtls(self):
@@ -61,17 +35,43 @@ class PaymentInstrument27Choice(base_types._BaseFieldType):
 		self._CshAcctDtls = None
 
 	@property
-	def BkrsDrftDtls(self):
-		return self._BkrsDrftDtls
+	def ChqDtls(self):
+		return self._ChqDtls
 
-	@BkrsDrftDtls.setter
-	def BkrsDrftDtls(self, value):
-		self._BkrsDrftDtls = value if type(value) != auto else self.make_default("BkrsDrftDtls")
+	@ChqDtls.setter
+	def ChqDtls(self, value):
+		self._ChqDtls = value if type(value) != auto else self.make_default("ChqDtls")
 
-	@BkrsDrftDtls.deleter
-	def BkrsDrftDtls(self):
-		del self._BkrsDrftDtls
-		self._BkrsDrftDtls = None
+	@ChqDtls.deleter
+	def ChqDtls(self):
+		del self._ChqDtls
+		self._ChqDtls = None
+
+	@property
+	def DrctDbtDtls(self):
+		return self._DrctDbtDtls
+
+	@DrctDbtDtls.setter
+	def DrctDbtDtls(self, value):
+		self._DrctDbtDtls = value if type(value) != auto else self.make_default("DrctDbtDtls")
+
+	@DrctDbtDtls.deleter
+	def DrctDbtDtls(self):
+		del self._DrctDbtDtls
+		self._DrctDbtDtls = None
+
+	@property
+	def PmtCardDtls(self):
+		return self._PmtCardDtls
+
+	@PmtCardDtls.setter
+	def PmtCardDtls(self, value):
+		self._PmtCardDtls = value if type(value) != auto else self.make_default("PmtCardDtls")
+
+	@PmtCardDtls.deleter
+	def PmtCardDtls(self):
+		del self._PmtCardDtls
+		self._PmtCardDtls = None
 
 	@property
 	def CdtTrfDtls(self):
@@ -87,11 +87,11 @@ class PaymentInstrument27Choice(base_types._BaseFieldType):
 		self._CdtTrfDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrctDbtDtls', type=DirectDebitMandate8, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ChqDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PmtCardDtls', type=PaymentCard34, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BkrsDrftDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ChqDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DrctDbtDtls', type=DirectDebitMandate8, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PmtCardDtls', type=PaymentCard34, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CdtTrfDtls', type=CreditTransfer10, min=0, max=1, mutex_group=1, array=False),
 	))
 

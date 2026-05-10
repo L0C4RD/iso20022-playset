@@ -1,23 +1,23 @@
 import base_types
 import Max105Text
-import GenericIdentification175
 import Max500Text
+import GenericIdentification175
 
 class NaturalPersonIdentification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Id", "_Dmcl"]
+	__slots__ = ["_Dmcl", "_Id", "_Nm"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def Dmcl(self):
+		return self._Dmcl
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Dmcl.setter
+	def Dmcl(self, value):
+		self._Dmcl = value if type(value) != auto else self.make_default("Dmcl")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Dmcl.deleter
+	def Dmcl(self):
+		del self._Dmcl
+		self._Dmcl = None
 
 	@property
 	def Id(self):
@@ -33,21 +33,21 @@ class NaturalPersonIdentification2(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Dmcl(self):
-		return self._Dmcl
+	def Nm(self):
+		return self._Nm
 
-	@Dmcl.setter
-	def Dmcl(self, value):
-		self._Dmcl = value if type(value) != auto else self.make_default("Dmcl")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Dmcl.deleter
-	def Dmcl(self):
-		del self._Dmcl
-		self._Dmcl = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dmcl', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

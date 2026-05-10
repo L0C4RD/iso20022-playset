@@ -1,11 +1,24 @@
 import base_types
-import AmountAndDirection34
-import BillingServiceIdentification2
 import DecimalNumber
+import BillingServiceIdentification2
+import AmountAndDirection34
 
 class BillingServiceParameters2(base_types._BaseFieldType):
 
-	__slots__ = ["_BkSvc", "_UnitPric", "_SvcChrgAmt", "_Vol"]
+	__slots__ = ["_SvcChrgAmt", "_BkSvc", "_UnitPric", "_Vol"]
+	@property
+	def SvcChrgAmt(self):
+		return self._SvcChrgAmt
+
+	@SvcChrgAmt.setter
+	def SvcChrgAmt(self, value):
+		self._SvcChrgAmt = value if type(value) != auto else self.make_default("SvcChrgAmt")
+
+	@SvcChrgAmt.deleter
+	def SvcChrgAmt(self):
+		del self._SvcChrgAmt
+		self._SvcChrgAmt = None
+
 	@property
 	def BkSvc(self):
 		return self._BkSvc
@@ -33,19 +46,6 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	@property
-	def SvcChrgAmt(self):
-		return self._SvcChrgAmt
-
-	@SvcChrgAmt.setter
-	def SvcChrgAmt(self, value):
-		self._SvcChrgAmt = value if type(value) != auto else self.make_default("SvcChrgAmt")
-
-	@SvcChrgAmt.deleter
-	def SvcChrgAmt(self):
-		del self._SvcChrgAmt
-		self._SvcChrgAmt = None
-
-	@property
 	def Vol(self):
 		return self._Vol
 
@@ -59,9 +59,9 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 		self._Vol = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SvcChrgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BkSvc', type=BillingServiceIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcChrgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

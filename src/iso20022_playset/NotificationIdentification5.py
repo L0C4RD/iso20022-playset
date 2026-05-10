@@ -1,6 +1,6 @@
 import base_types
-import DateAndDateTime2Choice
 import Max35Text
+import DateAndDateTime2Choice
 
 class NotificationIdentification5(base_types._BaseFieldType):
 

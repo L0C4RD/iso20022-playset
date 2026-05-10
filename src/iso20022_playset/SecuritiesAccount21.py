@@ -5,20 +5,7 @@ import AccountIdentification5
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
-	__slots__ = ["_BaseCcy", "_FXRate", "_SubAcct", "_Acct", "_RptgCcy"]
-	@property
-	def BaseCcy(self):
-		return self._BaseCcy
-
-	@BaseCcy.setter
-	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
-
-	@BaseCcy.deleter
-	def BaseCcy(self):
-		del self._BaseCcy
-		self._BaseCcy = None
-
+	__slots__ = ["_FXRate", "_SubAcct", "_Acct", "_RptgCcy", "_BaseCcy"]
 	@property
 	def FXRate(self):
 		return self._FXRate
@@ -71,11 +58,24 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		del self._RptgCcy
 		self._RptgCcy = None
 
+	@property
+	def BaseCcy(self):
+		return self._BaseCcy
+
+	@BaseCcy.setter
+	def BaseCcy(self, value):
+		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
+
+	@BaseCcy.deleter
+	def BaseCcy(self):
+		del self._BaseCcy
+		self._BaseCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
 import ProprietaryReason5
-import ProprietaryStatusAndReason7
 import UnmatchedStatus21Choice
+import ProprietaryStatusAndReason7
 
 class MatchingStatus32Choice(base_types._BaseFieldType):
 

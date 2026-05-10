@@ -5,20 +5,7 @@ import Exact4AlphaNumericText
 
 class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
-	__slots__ = ["_ClsgDt", "_NegPos", "_EndInvstrFlg", "_HldInd", "_PricgSchme"]
-	@property
-	def ClsgDt(self):
-		return self._ClsgDt
-
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
-
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
+	__slots__ = ["_NegPos", "_HldInd", "_PricgSchme", "_EndInvstrFlg", "_ClsgDt"]
 	@property
 	def NegPos(self):
 		return self._NegPos
@@ -31,19 +18,6 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 	def NegPos(self):
 		del self._NegPos
 		self._NegPos = None
-
-	@property
-	def EndInvstrFlg(self):
-		return self._EndInvstrFlg
-
-	@EndInvstrFlg.setter
-	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != auto else self.make_default("EndInvstrFlg")
-
-	@EndInvstrFlg.deleter
-	def EndInvstrFlg(self):
-		del self._EndInvstrFlg
-		self._EndInvstrFlg = None
 
 	@property
 	def HldInd(self):
@@ -71,11 +45,37 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 		del self._PricgSchme
 		self._PricgSchme = None
 
+	@property
+	def EndInvstrFlg(self):
+		return self._EndInvstrFlg
+
+	@EndInvstrFlg.setter
+	def EndInvstrFlg(self, value):
+		self._EndInvstrFlg = value if type(value) != auto else self.make_default("EndInvstrFlg")
+
+	@EndInvstrFlg.deleter
+	def EndInvstrFlg(self):
+		del self._EndInvstrFlg
+		self._EndInvstrFlg = None
+
+	@property
+	def ClsgDt(self):
+		return self._ClsgDt
+
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NegPos', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricgSchme', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndInvstrFlg', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

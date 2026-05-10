@@ -1,8 +1,8 @@
 import base_types
-import Channel1Choice
-import YesNoIndicator
 import DocumentFormat1Choice
+import Channel1Choice
 import UndertakingDocumentType2Choice
+import YesNoIndicator
 
 class Document10(base_types._BaseFieldType):
 

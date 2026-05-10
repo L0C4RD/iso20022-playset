@@ -1,7 +1,7 @@
 import base_types
 import PersonIdentification13
-import FinancialInstitutionIdentification21
 import OrganisationIdentification29
+import FinancialInstitutionIdentification21
 
 class TrackerParty2Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
+import RateAndAmountFormat65Choice
 import Percentage14Rate
 import RateAndAmountFormat64Choice
-import RateAndAmountFormat65Choice
 
 class CorporateActionRate130(base_types._BaseFieldType):
 
-	__slots__ = ["_PropsdRate", "_ReqdWhldgTaxRate", "_OvrsbcptRate", "_ReqdScndLvlTaxRate"]
+	__slots__ = ["_ReqdScndLvlTaxRate", "_ReqdWhldgTaxRate", "_OvrsbcptRate", "_PropsdRate"]
 	@property
-	def PropsdRate(self):
-		return self._PropsdRate
+	def ReqdScndLvlTaxRate(self):
+		return self._ReqdScndLvlTaxRate
 
-	@PropsdRate.setter
-	def PropsdRate(self, value):
-		self._PropsdRate = value if type(value) != auto else self.make_default("PropsdRate")
+	@ReqdScndLvlTaxRate.setter
+	def ReqdScndLvlTaxRate(self, value):
+		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
 
-	@PropsdRate.deleter
-	def PropsdRate(self):
-		del self._PropsdRate
-		self._PropsdRate = None
+	@ReqdScndLvlTaxRate.deleter
+	def ReqdScndLvlTaxRate(self):
+		del self._ReqdScndLvlTaxRate
+		self._ReqdScndLvlTaxRate = None
 
 	@property
 	def ReqdWhldgTaxRate(self):
@@ -46,22 +46,22 @@ class CorporateActionRate130(base_types._BaseFieldType):
 		self._OvrsbcptRate = None
 
 	@property
-	def ReqdScndLvlTaxRate(self):
-		return self._ReqdScndLvlTaxRate
+	def PropsdRate(self):
+		return self._PropsdRate
 
-	@ReqdScndLvlTaxRate.setter
-	def ReqdScndLvlTaxRate(self, value):
-		self._ReqdScndLvlTaxRate = value if type(value) != auto else self.make_default("ReqdScndLvlTaxRate")
+	@PropsdRate.setter
+	def PropsdRate(self, value):
+		self._PropsdRate = value if type(value) != auto else self.make_default("PropsdRate")
 
-	@ReqdScndLvlTaxRate.deleter
-	def ReqdScndLvlTaxRate(self):
-		del self._ReqdScndLvlTaxRate
-		self._ReqdScndLvlTaxRate = None
+	@PropsdRate.deleter
+	def PropsdRate(self):
+		del self._PropsdRate
+		self._PropsdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqdWhldgTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat64Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat65Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 	))
 

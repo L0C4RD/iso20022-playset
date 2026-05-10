@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax140Text
 import RestrictedFINXMax350Text
+import RestrictedFINXMax140Text
 
 class PartyTextInformation4(base_types._BaseFieldType):
 

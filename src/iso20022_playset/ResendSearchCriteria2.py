@@ -1,12 +1,25 @@
 import base_types
-import ISODate
-import SequenceRange1Choice
-import PartyIdentification136
 import Max35Text
+import SequenceRange1Choice
+import ISODate
+import PartyIdentification136
 
 class ResendSearchCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_BizDt", "_SeqNb", "_OrgnlMsgNmId", "_FileRef", "_Rcpt", "_SeqRg"]
+	__slots__ = ["_FileRef", "_BizDt", "_OrgnlMsgNmId", "_Rcpt", "_SeqRg", "_SeqNb"]
+	@property
+	def FileRef(self):
+		return self._FileRef
+
+	@FileRef.setter
+	def FileRef(self, value):
+		self._FileRef = value if type(value) != auto else self.make_default("FileRef")
+
+	@FileRef.deleter
+	def FileRef(self):
+		del self._FileRef
+		self._FileRef = None
+
 	@property
 	def BizDt(self):
 		return self._BizDt
@@ -21,19 +34,6 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 		self._BizDt = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
-
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
-
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
-	@property
 	def OrgnlMsgNmId(self):
 		return self._OrgnlMsgNmId
 
@@ -45,19 +45,6 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
 		self._OrgnlMsgNmId = None
-
-	@property
-	def FileRef(self):
-		return self._FileRef
-
-	@FileRef.setter
-	def FileRef(self, value):
-		self._FileRef = value if type(value) != auto else self.make_default("FileRef")
-
-	@FileRef.deleter
-	def FileRef(self):
-		del self._FileRef
-		self._FileRef = None
 
 	@property
 	def Rcpt(self):
@@ -85,12 +72,25 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 		del self._SeqRg
 		self._SeqRg = None
 
+	@property
+	def SeqNb(self):
+		return self._SeqNb
+
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BizDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FileRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlMsgNmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqRg', type=SequenceRange1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

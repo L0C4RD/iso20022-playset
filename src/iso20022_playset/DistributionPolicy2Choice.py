@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import DistributionPolicy1Code
+import GenericIdentification30
 
 class DistributionPolicy2Choice(base_types._BaseFieldType):
 

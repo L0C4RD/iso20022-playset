@@ -1,26 +1,13 @@
 import base_types
+import Max35Text
+import ATMSignature2Choice
+import CryptographicKey12
 import Max5000Binary
 import Max140Binary
-import ATMSignature2Choice
-import Max35Text
-import CryptographicKey12
 
 class SecurityParameters9(base_types._BaseFieldType):
 
-	__slots__ = ["_Cert", "_ReqdKey", "_ATMChllng", "_Key", "_SgntrChc"]
-	@property
-	def Cert(self):
-		return self._Cert
-
-	@Cert.setter
-	def Cert(self, value):
-		self._Cert = value if type(value) != auto else self.make_default("Cert")
-
-	@Cert.deleter
-	def Cert(self):
-		del self._Cert
-		self._Cert = None
-
+	__slots__ = ["_ReqdKey", "_SgntrChc", "_Cert", "_ATMChllng", "_Key"]
 	@property
 	def ReqdKey(self):
 		return self._ReqdKey
@@ -33,6 +20,32 @@ class SecurityParameters9(base_types._BaseFieldType):
 	def ReqdKey(self):
 		del self._ReqdKey
 		self._ReqdKey = None
+
+	@property
+	def SgntrChc(self):
+		return self._SgntrChc
+
+	@SgntrChc.setter
+	def SgntrChc(self, value):
+		self._SgntrChc = value if type(value) != auto else self.make_default("SgntrChc")
+
+	@SgntrChc.deleter
+	def SgntrChc(self):
+		del self._SgntrChc
+		self._SgntrChc = None
+
+	@property
+	def Cert(self):
+		return self._Cert
+
+	@Cert.setter
+	def Cert(self, value):
+		self._Cert = value if type(value) != auto else self.make_default("Cert")
+
+	@Cert.deleter
+	def Cert(self):
+		del self._Cert
+		self._Cert = None
 
 	@property
 	def ATMChllng(self):
@@ -60,24 +73,11 @@ class SecurityParameters9(base_types._BaseFieldType):
 		del self._Key
 		self._Key = None
 
-	@property
-	def SgntrChc(self):
-		return self._SgntrChc
-
-	@SgntrChc.setter
-	def SgntrChc(self, value):
-		self._SgntrChc = value if type(value) != auto else self.make_default("SgntrChc")
-
-	@SgntrChc.deleter
-	def SgntrChc(self):
-		del self._SgntrChc
-		self._SgntrChc = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqdKey', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Key', type=CryptographicKey12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

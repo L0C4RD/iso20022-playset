@@ -1,13 +1,13 @@
 import base_types
-import Max70Text
 import ATMDepositedMedia4
+import Max70Text
 import CardAccount21
 import DetailedAmount16
 import ContentInformationType10
 
 class ATMDepositComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_DpstdMdia", "_SubDpstId", "_DtldReqdAmt", "_PrtctdAcctData", "_AcctData"]
+	__slots__ = ["_DpstdMdia", "_SubDpstId", "_DtldReqdAmt", "_AcctData", "_PrtctdAcctData"]
 	@property
 	def DpstdMdia(self):
 		return self._DpstdMdia
@@ -48,19 +48,6 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		self._DtldReqdAmt = None
 
 	@property
-	def PrtctdAcctData(self):
-		return self._PrtctdAcctData
-
-	@PrtctdAcctData.setter
-	def PrtctdAcctData(self, value):
-		self._PrtctdAcctData = value if type(value) != auto else self.make_default("PrtctdAcctData")
-
-	@PrtctdAcctData.deleter
-	def PrtctdAcctData(self):
-		del self._PrtctdAcctData
-		self._PrtctdAcctData = None
-
-	@property
 	def AcctData(self):
 		return self._AcctData
 
@@ -73,11 +60,24 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		del self._AcctData
 		self._AcctData = None
 
+	@property
+	def PrtctdAcctData(self):
+		return self._PrtctdAcctData
+
+	@PrtctdAcctData.setter
+	def PrtctdAcctData(self, value):
+		self._PrtctdAcctData = value if type(value) != auto else self.make_default("PrtctdAcctData")
+
+	@PrtctdAcctData.deleter
+	def PrtctdAcctData(self):
+		del self._PrtctdAcctData
+		self._PrtctdAcctData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DpstdMdia', type=ATMDepositedMedia4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldReqdAmt', type=DetailedAmount16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AcctData', type=CardAccount21, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
 	))
 

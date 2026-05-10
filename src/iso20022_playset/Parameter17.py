@@ -1,23 +1,23 @@
 import base_types
 import Algorithm26Code
-import EncryptionFormat2Code
 import AlgorithmIdentification34
+import EncryptionFormat2Code
 
 class Parameter17(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptnFrmt", "_MskGnrtrAlgo", "_DgstAlgo"]
+	__slots__ = ["_DgstAlgo", "_MskGnrtrAlgo", "_NcrptnFrmt"]
 	@property
-	def NcrptnFrmt(self):
-		return self._NcrptnFrmt
+	def DgstAlgo(self):
+		return self._DgstAlgo
 
-	@NcrptnFrmt.setter
-	def NcrptnFrmt(self, value):
-		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
 
-	@NcrptnFrmt.deleter
-	def NcrptnFrmt(self):
-		del self._NcrptnFrmt
-		self._NcrptnFrmt = None
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -33,21 +33,21 @@ class Parameter17(base_types._BaseFieldType):
 		self._MskGnrtrAlgo = None
 
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
+	def NcrptnFrmt(self):
+		return self._NcrptnFrmt
 
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+	@NcrptnFrmt.setter
+	def NcrptnFrmt(self, value):
+		self._NcrptnFrmt = value if type(value) != auto else self.make_default("NcrptnFrmt")
 
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
+	@NcrptnFrmt.deleter
+	def NcrptnFrmt(self):
+		del self._NcrptnFrmt
+		self._NcrptnFrmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat2Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

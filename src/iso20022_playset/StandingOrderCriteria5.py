@@ -1,7 +1,7 @@
 import base_types
-import StandingOrderSearchCriteria5
 import StandingOrderReturnCriteria1
 import Max35Text
+import StandingOrderSearchCriteria5
 
 class StandingOrderCriteria5(base_types._BaseFieldType):
 

@@ -1,18 +1,31 @@
 import base_types
-import ClosingDate4Choice
 import Price14
-import AmountAndDirection5
-import Max140Text
-import AmountAndDirection29
 import TwoLegTransactionType4Choice
-import TradeDate8Choice
+import OtherAmounts16
 import TradeDate7Choice
 import Max35Text
-import OtherAmounts16
+import Max140Text
+import ClosingDate4Choice
+import AmountAndDirection29
+import AmountAndDirection5
+import TradeDate8Choice
 
 class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
-	__slots__ = ["_OpngLegId", "_ClsgSttlmAmt", "_ScndLegNrrtv", "_OthrAmts", "_ClsgDt", "_ClsgLegId", "_EndPric", "_GrssTradAmt", "_PrcgDt", "_TwoLegTxTp", "_TradDt"]
+	__slots__ = ["_ClsgDt", "_OpngLegId", "_OthrAmts", "_TwoLegTxTp", "_EndPric", "_ClsgLegId", "_ClsgSttlmAmt", "_PrcgDt", "_ScndLegNrrtv", "_GrssTradAmt", "_TradDt"]
+	@property
+	def ClsgDt(self):
+		return self._ClsgDt
+
+	@ClsgDt.setter
+	def ClsgDt(self, value):
+		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+
+	@ClsgDt.deleter
+	def ClsgDt(self):
+		del self._ClsgDt
+		self._ClsgDt = None
+
 	@property
 	def OpngLegId(self):
 		return self._OpngLegId
@@ -25,32 +38,6 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 	def OpngLegId(self):
 		del self._OpngLegId
 		self._OpngLegId = None
-
-	@property
-	def ClsgSttlmAmt(self):
-		return self._ClsgSttlmAmt
-
-	@ClsgSttlmAmt.setter
-	def ClsgSttlmAmt(self, value):
-		self._ClsgSttlmAmt = value if type(value) != auto else self.make_default("ClsgSttlmAmt")
-
-	@ClsgSttlmAmt.deleter
-	def ClsgSttlmAmt(self):
-		del self._ClsgSttlmAmt
-		self._ClsgSttlmAmt = None
-
-	@property
-	def ScndLegNrrtv(self):
-		return self._ScndLegNrrtv
-
-	@ScndLegNrrtv.setter
-	def ScndLegNrrtv(self, value):
-		self._ScndLegNrrtv = value if type(value) != auto else self.make_default("ScndLegNrrtv")
-
-	@ScndLegNrrtv.deleter
-	def ScndLegNrrtv(self):
-		del self._ScndLegNrrtv
-		self._ScndLegNrrtv = None
 
 	@property
 	def OthrAmts(self):
@@ -66,30 +53,17 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 		self._OthrAmts = None
 
 	@property
-	def ClsgDt(self):
-		return self._ClsgDt
+	def TwoLegTxTp(self):
+		return self._TwoLegTxTp
 
-	@ClsgDt.setter
-	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != auto else self.make_default("ClsgDt")
+	@TwoLegTxTp.setter
+	def TwoLegTxTp(self, value):
+		self._TwoLegTxTp = value if type(value) != auto else self.make_default("TwoLegTxTp")
 
-	@ClsgDt.deleter
-	def ClsgDt(self):
-		del self._ClsgDt
-		self._ClsgDt = None
-
-	@property
-	def ClsgLegId(self):
-		return self._ClsgLegId
-
-	@ClsgLegId.setter
-	def ClsgLegId(self, value):
-		self._ClsgLegId = value if type(value) != auto else self.make_default("ClsgLegId")
-
-	@ClsgLegId.deleter
-	def ClsgLegId(self):
-		del self._ClsgLegId
-		self._ClsgLegId = None
+	@TwoLegTxTp.deleter
+	def TwoLegTxTp(self):
+		del self._TwoLegTxTp
+		self._TwoLegTxTp = None
 
 	@property
 	def EndPric(self):
@@ -105,17 +79,30 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 		self._EndPric = None
 
 	@property
-	def GrssTradAmt(self):
-		return self._GrssTradAmt
+	def ClsgLegId(self):
+		return self._ClsgLegId
 
-	@GrssTradAmt.setter
-	def GrssTradAmt(self, value):
-		self._GrssTradAmt = value if type(value) != auto else self.make_default("GrssTradAmt")
+	@ClsgLegId.setter
+	def ClsgLegId(self, value):
+		self._ClsgLegId = value if type(value) != auto else self.make_default("ClsgLegId")
 
-	@GrssTradAmt.deleter
-	def GrssTradAmt(self):
-		del self._GrssTradAmt
-		self._GrssTradAmt = None
+	@ClsgLegId.deleter
+	def ClsgLegId(self):
+		del self._ClsgLegId
+		self._ClsgLegId = None
+
+	@property
+	def ClsgSttlmAmt(self):
+		return self._ClsgSttlmAmt
+
+	@ClsgSttlmAmt.setter
+	def ClsgSttlmAmt(self, value):
+		self._ClsgSttlmAmt = value if type(value) != auto else self.make_default("ClsgSttlmAmt")
+
+	@ClsgSttlmAmt.deleter
+	def ClsgSttlmAmt(self):
+		del self._ClsgSttlmAmt
+		self._ClsgSttlmAmt = None
 
 	@property
 	def PrcgDt(self):
@@ -131,17 +118,30 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 		self._PrcgDt = None
 
 	@property
-	def TwoLegTxTp(self):
-		return self._TwoLegTxTp
+	def ScndLegNrrtv(self):
+		return self._ScndLegNrrtv
 
-	@TwoLegTxTp.setter
-	def TwoLegTxTp(self, value):
-		self._TwoLegTxTp = value if type(value) != auto else self.make_default("TwoLegTxTp")
+	@ScndLegNrrtv.setter
+	def ScndLegNrrtv(self, value):
+		self._ScndLegNrrtv = value if type(value) != auto else self.make_default("ScndLegNrrtv")
 
-	@TwoLegTxTp.deleter
-	def TwoLegTxTp(self):
-		del self._TwoLegTxTp
-		self._TwoLegTxTp = None
+	@ScndLegNrrtv.deleter
+	def ScndLegNrrtv(self):
+		del self._ScndLegNrrtv
+		self._ScndLegNrrtv = None
+
+	@property
+	def GrssTradAmt(self):
+		return self._GrssTradAmt
+
+	@GrssTradAmt.setter
+	def GrssTradAmt(self, value):
+		self._GrssTradAmt = value if type(value) != auto else self.make_default("GrssTradAmt")
+
+	@GrssTradAmt.deleter
+	def GrssTradAmt(self):
+		del self._GrssTradAmt
+		self._GrssTradAmt = None
 
 	@property
 	def TradDt(self):
@@ -157,16 +157,16 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 		self._TradDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OpngLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgSttlmAmt', type=AmountAndDirection5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndLegNrrtv', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrAmts', type=OtherAmounts16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClsgDt', type=ClosingDate4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsgLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EndPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssTradAmt', type=AmountAndDirection29, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgDt', type=TradeDate7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OpngLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrAmts', type=OtherAmounts16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TwoLegTxTp', type=TwoLegTransactionType4Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EndPric', type=Price14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgLegId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsgSttlmAmt', type=AmountAndDirection5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgDt', type=TradeDate7Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndLegNrrtv', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssTradAmt', type=AmountAndDirection29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=TradeDate8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

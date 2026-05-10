@@ -1,6 +1,6 @@
 import base_types
-import ProformaStatusReason1
 import NoReasonCode
+import ProformaStatusReason1
 
 class ProformaStatusReason1Choice(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 import base_types
-import BusinessDayCriteria3Choice
 import QueryType2Code
+import BusinessDayCriteria3Choice
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 
-	__slots__ = ["_Crit", "_QryTp"]
-	@property
-	def Crit(self):
-		return self._Crit
-
-	@Crit.setter
-	def Crit(self, value):
-		self._Crit = value if type(value) != auto else self.make_default("Crit")
-
-	@Crit.deleter
-	def Crit(self):
-		del self._Crit
-		self._Crit = None
-
+	__slots__ = ["_QryTp", "_Crit"]
 	@property
 	def QryTp(self):
 		return self._QryTp
@@ -31,8 +18,21 @@ class BusinessDayQuery2(base_types._BaseFieldType):
 		del self._QryTp
 		self._QryTp = None
 
+	@property
+	def Crit(self):
+		return self._Crit
+
+	@Crit.setter
+	def Crit(self, value):
+		self._Crit = value if type(value) != auto else self.make_default("Crit")
+
+	@Crit.deleter
+	def Crit(self):
+		del self._Crit
+		self._Crit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Crit', type=BusinessDayCriteria3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Crit', type=BusinessDayCriteria3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

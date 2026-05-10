@@ -1,6 +1,6 @@
 import base_types
-import AdditionalInformation15
 import Max35Text
+import AdditionalInformation15
 
 class PensionPolicy1(base_types._BaseFieldType):
 

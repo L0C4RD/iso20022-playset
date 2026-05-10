@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import AddressType1Code
+import GenericIdentification47
 
 class AddressType1Choice(base_types._BaseFieldType):
 

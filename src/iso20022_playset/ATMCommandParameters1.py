@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import ATMSecurityConfiguration1
 import ATMStatus2Code
-import Max35Text
 
 class ATMCommandParameters1(base_types._BaseFieldType):
 

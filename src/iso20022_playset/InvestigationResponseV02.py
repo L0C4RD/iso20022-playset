@@ -1,23 +1,23 @@
 import base_types
+import InvestigationResponse9
 import SupplementaryData1
 import InvestigationRequest3
-import InvestigationResponse9
 
 class InvestigationResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_InvstgtnRspn", "_SplmtryData", "_OrgnlInvstgtnReq"]
+	__slots__ = ["_OrgnlInvstgtnReq", "_SplmtryData", "_InvstgtnRspn"]
 	@property
-	def InvstgtnRspn(self):
-		return self._InvstgtnRspn
+	def OrgnlInvstgtnReq(self):
+		return self._OrgnlInvstgtnReq
 
-	@InvstgtnRspn.setter
-	def InvstgtnRspn(self, value):
-		self._InvstgtnRspn = value if type(value) != auto else self.make_default("InvstgtnRspn")
+	@OrgnlInvstgtnReq.setter
+	def OrgnlInvstgtnReq(self, value):
+		self._OrgnlInvstgtnReq = value if type(value) != auto else self.make_default("OrgnlInvstgtnReq")
 
-	@InvstgtnRspn.deleter
-	def InvstgtnRspn(self):
-		del self._InvstgtnRspn
-		self._InvstgtnRspn = None
+	@OrgnlInvstgtnReq.deleter
+	def OrgnlInvstgtnReq(self):
+		del self._OrgnlInvstgtnReq
+		self._OrgnlInvstgtnReq = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def OrgnlInvstgtnReq(self):
-		return self._OrgnlInvstgtnReq
+	def InvstgtnRspn(self):
+		return self._InvstgtnRspn
 
-	@OrgnlInvstgtnReq.setter
-	def OrgnlInvstgtnReq(self, value):
-		self._OrgnlInvstgtnReq = value if type(value) != auto else self.make_default("OrgnlInvstgtnReq")
+	@InvstgtnRspn.setter
+	def InvstgtnRspn(self, value):
+		self._InvstgtnRspn = value if type(value) != auto else self.make_default("InvstgtnRspn")
 
-	@OrgnlInvstgtnReq.deleter
-	def OrgnlInvstgtnReq(self):
-		del self._OrgnlInvstgtnReq
-		self._OrgnlInvstgtnReq = None
+	@InvstgtnRspn.deleter
+	def InvstgtnRspn(self):
+		del self._InvstgtnRspn
+		self._InvstgtnRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InvstgtnRspn', type=InvestigationResponse9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlInvstgtnReq', type=InvestigationRequest3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstgtnRspn', type=InvestigationResponse9, min=1, max=1, mutex_group=None, array=False),
 	))
 

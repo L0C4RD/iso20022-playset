@@ -1,65 +1,26 @@
 import base_types
-import ISODateTime
-import Number
 import GenericIdentification176
+import ISODateTime
 import GenericIdentification177
-import TrueFalseIndicator
 import Max6Text
+import TrueFalseIndicator
+import Number
 
 class Header56(base_types._BaseFieldType):
 
-	__slots__ = ["_DwnldTrf", "_RcptPty", "_CreDtTm", "_FrmtVrsn", "_XchgId", "_InitgPty"]
+	__slots__ = ["_InitgPty", "_XchgId", "_DwnldTrf", "_CreDtTm", "_RcptPty", "_FrmtVrsn"]
 	@property
-	def DwnldTrf(self):
-		return self._DwnldTrf
+	def InitgPty(self):
+		return self._InitgPty
 
-	@DwnldTrf.setter
-	def DwnldTrf(self, value):
-		self._DwnldTrf = value if type(value) != auto else self.make_default("DwnldTrf")
+	@InitgPty.setter
+	def InitgPty(self, value):
+		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
 
-	@DwnldTrf.deleter
-	def DwnldTrf(self):
-		del self._DwnldTrf
-		self._DwnldTrf = None
-
-	@property
-	def RcptPty(self):
-		return self._RcptPty
-
-	@RcptPty.setter
-	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != auto else self.make_default("RcptPty")
-
-	@RcptPty.deleter
-	def RcptPty(self):
-		del self._RcptPty
-		self._RcptPty = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def FrmtVrsn(self):
-		return self._FrmtVrsn
-
-	@FrmtVrsn.setter
-	def FrmtVrsn(self, value):
-		self._FrmtVrsn = value if type(value) != auto else self.make_default("FrmtVrsn")
-
-	@FrmtVrsn.deleter
-	def FrmtVrsn(self):
-		del self._FrmtVrsn
-		self._FrmtVrsn = None
+	@InitgPty.deleter
+	def InitgPty(self):
+		del self._InitgPty
+		self._InitgPty = None
 
 	@property
 	def XchgId(self):
@@ -75,24 +36,63 @@ class Header56(base_types._BaseFieldType):
 		self._XchgId = None
 
 	@property
-	def InitgPty(self):
-		return self._InitgPty
+	def DwnldTrf(self):
+		return self._DwnldTrf
 
-	@InitgPty.setter
-	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != auto else self.make_default("InitgPty")
+	@DwnldTrf.setter
+	def DwnldTrf(self, value):
+		self._DwnldTrf = value if type(value) != auto else self.make_default("DwnldTrf")
 
-	@InitgPty.deleter
-	def InitgPty(self):
-		del self._InitgPty
-		self._InitgPty = None
+	@DwnldTrf.deleter
+	def DwnldTrf(self):
+		del self._DwnldTrf
+		self._DwnldTrf = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
+	def RcptPty(self):
+		return self._RcptPty
+
+	@RcptPty.setter
+	def RcptPty(self, value):
+		self._RcptPty = value if type(value) != auto else self.make_default("RcptPty")
+
+	@RcptPty.deleter
+	def RcptPty(self):
+		del self._RcptPty
+		self._RcptPty = None
+
+	@property
+	def FrmtVrsn(self):
+		return self._FrmtVrsn
+
+	@FrmtVrsn.setter
+	def FrmtVrsn(self, value):
+		self._FrmtVrsn = value if type(value) != auto else self.make_default("FrmtVrsn")
+
+	@FrmtVrsn.deleter
+	def FrmtVrsn(self):
+		del self._FrmtVrsn
+		self._FrmtVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DwnldTrf', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrmtVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=GenericIdentification176, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DwnldTrf', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptPty', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrmtVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
 import ChargeType3Choice
-import BranchAndFinancialInstitutionIdentification8
 import ActiveOrHistoricCurrencyAndAmount
+import BranchAndFinancialInstitutionIdentification8
 
 class Charges16(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_Agt"]
+	__slots__ = ["_Tp", "_Agt", "_Amt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -20,19 +20,6 @@ class Charges16(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
 	def Agt(self):
 		return self._Agt
 
@@ -45,9 +32,22 @@ class Charges16(base_types._BaseFieldType):
 		del self._Agt
 		self._Agt = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

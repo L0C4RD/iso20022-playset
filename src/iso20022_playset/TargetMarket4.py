@@ -1,27 +1,27 @@
 import base_types
+import LossBearing2
+import InvestorRequirements4
 import OtherTargetMarket1
 import RiskTolerance1
-import LossBearing2
-import InvestorKnowledge1
 import ISODate
+import InvestorKnowledge1
 import InvestorType2
-import InvestorRequirements4
 
 class TargetMarket4(base_types._BaseFieldType):
 
-	__slots__ = ["_AbltyToBearLosses", "_RskTlrnce", "_RefDt", "_ClntObjctvsAndNeeds", "_KnwldgAndOrExprnc", "_InvstrTp", "_Othr"]
+	__slots__ = ["_RefDt", "_RskTlrnce", "_AbltyToBearLosses", "_KnwldgAndOrExprnc", "_Othr", "_InvstrTp", "_ClntObjctvsAndNeeds"]
 	@property
-	def AbltyToBearLosses(self):
-		return self._AbltyToBearLosses
+	def RefDt(self):
+		return self._RefDt
 
-	@AbltyToBearLosses.setter
-	def AbltyToBearLosses(self, value):
-		self._AbltyToBearLosses = value if type(value) != auto else self.make_default("AbltyToBearLosses")
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
 
-	@AbltyToBearLosses.deleter
-	def AbltyToBearLosses(self):
-		del self._AbltyToBearLosses
-		self._AbltyToBearLosses = None
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
 
 	@property
 	def RskTlrnce(self):
@@ -37,30 +37,17 @@ class TargetMarket4(base_types._BaseFieldType):
 		self._RskTlrnce = None
 
 	@property
-	def RefDt(self):
-		return self._RefDt
+	def AbltyToBearLosses(self):
+		return self._AbltyToBearLosses
 
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+	@AbltyToBearLosses.setter
+	def AbltyToBearLosses(self, value):
+		self._AbltyToBearLosses = value if type(value) != auto else self.make_default("AbltyToBearLosses")
 
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
-
-	@property
-	def ClntObjctvsAndNeeds(self):
-		return self._ClntObjctvsAndNeeds
-
-	@ClntObjctvsAndNeeds.setter
-	def ClntObjctvsAndNeeds(self, value):
-		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
-
-	@ClntObjctvsAndNeeds.deleter
-	def ClntObjctvsAndNeeds(self):
-		del self._ClntObjctvsAndNeeds
-		self._ClntObjctvsAndNeeds = None
+	@AbltyToBearLosses.deleter
+	def AbltyToBearLosses(self):
+		del self._AbltyToBearLosses
+		self._AbltyToBearLosses = None
 
 	@property
 	def KnwldgAndOrExprnc(self):
@@ -76,6 +63,19 @@ class TargetMarket4(base_types._BaseFieldType):
 		self._KnwldgAndOrExprnc = None
 
 	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
 	def InvstrTp(self):
 		return self._InvstrTp
 
@@ -89,25 +89,25 @@ class TargetMarket4(base_types._BaseFieldType):
 		self._InvstrTp = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def ClntObjctvsAndNeeds(self):
+		return self._ClntObjctvsAndNeeds
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@ClntObjctvsAndNeeds.setter
+	def ClntObjctvsAndNeeds(self, value):
+		self._ClntObjctvsAndNeeds = value if type(value) != auto else self.make_default("ClntObjctvsAndNeeds")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@ClntObjctvsAndNeeds.deleter
+	def ClntObjctvsAndNeeds(self):
+		del self._ClntObjctvsAndNeeds
+		self._ClntObjctvsAndNeeds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrnce', type=RiskTolerance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KnwldgAndOrExprnc', type=InvestorKnowledge1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTp', type=InvestorType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarket1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='InvstrTp', type=InvestorType2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntObjctvsAndNeeds', type=InvestorRequirements4, min=0, max=1, mutex_group=None, array=False),
 	))
 

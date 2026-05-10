@@ -1,48 +1,35 @@
 import base_types
-import NotionalOrUnitBased1Choice
-import ContactAttributes5
 import QuotationType1Choice
-import ActiveCurrencyCode
-import SecurityIdentification40
+import CountryCode
+import ExPostCostCalculationBasis1Choice
+import YesNoIndicator
 import Max350Text
+import NotionalOrUnitBased1Choice
+import ActiveCurrencyCode
+import Max35Text
 import GovernanceProcess1Choice
 import Max140Text
 import SecurityClassificationType2Choice
-import ProductStructure1Choice
-import YesNoIndicator
-import ExPostCostCalculationBasis1Choice
-import Max35Text
 import AdditionalInformation15
-import CountryCode
+import ContactAttributes5
+import ProductStructure1Choice
+import SecurityIdentification40
 
 class SecurityIdentification47(base_types._BaseFieldType):
 
-	__slots__ = ["_CtryOfDmcl", "_LvrgdOrCntngntLblty", "_Id", "_ExPstCostClctnBsis", "_UmbrllNm", "_RegdDstrbtnCtry", "_PdctTp", "_IssrPdctGovncPrc", "_Issr", "_Nm", "_NoRtrcssnInd", "_ShrtNm", "_AddtlInf", "_NtnlOrUnitBased", "_BaseCcy", "_ClssfctnTp", "_ClssTp", "_NewUmbrll", "_QtnTp", "_PdctCtgyDE", "_PdctCtgy"]
+	__slots__ = ["_BaseCcy", "_Id", "_ExPstCostClctnBsis", "_ShrtNm", "_IssrPdctGovncPrc", "_PdctCtgyDE", "_ClssfctnTp", "_NewUmbrll", "_Nm", "_UmbrllNm", "_CtryOfDmcl", "_LvrgdOrCntngntLblty", "_AddtlInf", "_PdctCtgy", "_ClssTp", "_Issr", "_QtnTp", "_RegdDstrbtnCtry", "_NoRtrcssnInd", "_NtnlOrUnitBased", "_PdctTp"]
 	@property
-	def CtryOfDmcl(self):
-		return self._CtryOfDmcl
+	def BaseCcy(self):
+		return self._BaseCcy
 
-	@CtryOfDmcl.setter
-	def CtryOfDmcl(self, value):
-		self._CtryOfDmcl = value if type(value) != auto else self.make_default("CtryOfDmcl")
+	@BaseCcy.setter
+	def BaseCcy(self, value):
+		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
 
-	@CtryOfDmcl.deleter
-	def CtryOfDmcl(self):
-		del self._CtryOfDmcl
-		self._CtryOfDmcl = None
-
-	@property
-	def LvrgdOrCntngntLblty(self):
-		return self._LvrgdOrCntngntLblty
-
-	@LvrgdOrCntngntLblty.setter
-	def LvrgdOrCntngntLblty(self, value):
-		self._LvrgdOrCntngntLblty = value if type(value) != auto else self.make_default("LvrgdOrCntngntLblty")
-
-	@LvrgdOrCntngntLblty.deleter
-	def LvrgdOrCntngntLblty(self):
-		del self._LvrgdOrCntngntLblty
-		self._LvrgdOrCntngntLblty = None
+	@BaseCcy.deleter
+	def BaseCcy(self):
+		del self._BaseCcy
+		self._BaseCcy = None
 
 	@property
 	def Id(self):
@@ -71,43 +58,17 @@ class SecurityIdentification47(base_types._BaseFieldType):
 		self._ExPstCostClctnBsis = None
 
 	@property
-	def UmbrllNm(self):
-		return self._UmbrllNm
+	def ShrtNm(self):
+		return self._ShrtNm
 
-	@UmbrllNm.setter
-	def UmbrllNm(self, value):
-		self._UmbrllNm = value if type(value) != auto else self.make_default("UmbrllNm")
+	@ShrtNm.setter
+	def ShrtNm(self, value):
+		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
 
-	@UmbrllNm.deleter
-	def UmbrllNm(self):
-		del self._UmbrllNm
-		self._UmbrllNm = None
-
-	@property
-	def RegdDstrbtnCtry(self):
-		return self._RegdDstrbtnCtry
-
-	@RegdDstrbtnCtry.setter
-	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
-
-	@RegdDstrbtnCtry.deleter
-	def RegdDstrbtnCtry(self):
-		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
-
-	@property
-	def PdctTp(self):
-		return self._PdctTp
-
-	@PdctTp.setter
-	def PdctTp(self, value):
-		self._PdctTp = value if type(value) != auto else self.make_default("PdctTp")
-
-	@PdctTp.deleter
-	def PdctTp(self):
-		del self._PdctTp
-		self._PdctTp = None
+	@ShrtNm.deleter
+	def ShrtNm(self):
+		del self._ShrtNm
+		self._ShrtNm = None
 
 	@property
 	def IssrPdctGovncPrc(self):
@@ -123,95 +84,17 @@ class SecurityIdentification47(base_types._BaseFieldType):
 		self._IssrPdctGovncPrc = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def PdctCtgyDE(self):
+		return self._PdctCtgyDE
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@PdctCtgyDE.setter
+	def PdctCtgyDE(self, value):
+		self._PdctCtgyDE = value if type(value) != auto else self.make_default("PdctCtgyDE")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def NoRtrcssnInd(self):
-		return self._NoRtrcssnInd
-
-	@NoRtrcssnInd.setter
-	def NoRtrcssnInd(self, value):
-		self._NoRtrcssnInd = value if type(value) != auto else self.make_default("NoRtrcssnInd")
-
-	@NoRtrcssnInd.deleter
-	def NoRtrcssnInd(self):
-		del self._NoRtrcssnInd
-		self._NoRtrcssnInd = None
-
-	@property
-	def ShrtNm(self):
-		return self._ShrtNm
-
-	@ShrtNm.setter
-	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != auto else self.make_default("ShrtNm")
-
-	@ShrtNm.deleter
-	def ShrtNm(self):
-		del self._ShrtNm
-		self._ShrtNm = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def NtnlOrUnitBased(self):
-		return self._NtnlOrUnitBased
-
-	@NtnlOrUnitBased.setter
-	def NtnlOrUnitBased(self, value):
-		self._NtnlOrUnitBased = value if type(value) != auto else self.make_default("NtnlOrUnitBased")
-
-	@NtnlOrUnitBased.deleter
-	def NtnlOrUnitBased(self):
-		del self._NtnlOrUnitBased
-		self._NtnlOrUnitBased = None
-
-	@property
-	def BaseCcy(self):
-		return self._BaseCcy
-
-	@BaseCcy.setter
-	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != auto else self.make_default("BaseCcy")
-
-	@BaseCcy.deleter
-	def BaseCcy(self):
-		del self._BaseCcy
-		self._BaseCcy = None
+	@PdctCtgyDE.deleter
+	def PdctCtgyDE(self):
+		del self._PdctCtgyDE
+		self._PdctCtgyDE = None
 
 	@property
 	def ClssfctnTp(self):
@@ -227,6 +110,97 @@ class SecurityIdentification47(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
+	def NewUmbrll(self):
+		return self._NewUmbrll
+
+	@NewUmbrll.setter
+	def NewUmbrll(self, value):
+		self._NewUmbrll = value if type(value) != auto else self.make_default("NewUmbrll")
+
+	@NewUmbrll.deleter
+	def NewUmbrll(self):
+		del self._NewUmbrll
+		self._NewUmbrll = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def UmbrllNm(self):
+		return self._UmbrllNm
+
+	@UmbrllNm.setter
+	def UmbrllNm(self, value):
+		self._UmbrllNm = value if type(value) != auto else self.make_default("UmbrllNm")
+
+	@UmbrllNm.deleter
+	def UmbrllNm(self):
+		del self._UmbrllNm
+		self._UmbrllNm = None
+
+	@property
+	def CtryOfDmcl(self):
+		return self._CtryOfDmcl
+
+	@CtryOfDmcl.setter
+	def CtryOfDmcl(self, value):
+		self._CtryOfDmcl = value if type(value) != auto else self.make_default("CtryOfDmcl")
+
+	@CtryOfDmcl.deleter
+	def CtryOfDmcl(self):
+		del self._CtryOfDmcl
+		self._CtryOfDmcl = None
+
+	@property
+	def LvrgdOrCntngntLblty(self):
+		return self._LvrgdOrCntngntLblty
+
+	@LvrgdOrCntngntLblty.setter
+	def LvrgdOrCntngntLblty(self, value):
+		self._LvrgdOrCntngntLblty = value if type(value) != auto else self.make_default("LvrgdOrCntngntLblty")
+
+	@LvrgdOrCntngntLblty.deleter
+	def LvrgdOrCntngntLblty(self):
+		del self._LvrgdOrCntngntLblty
+		self._LvrgdOrCntngntLblty = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def PdctCtgy(self):
+		return self._PdctCtgy
+
+	@PdctCtgy.setter
+	def PdctCtgy(self, value):
+		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
+
+	@PdctCtgy.deleter
+	def PdctCtgy(self):
+		del self._PdctCtgy
+		self._PdctCtgy = None
+
+	@property
 	def ClssTp(self):
 		return self._ClssTp
 
@@ -240,17 +214,17 @@ class SecurityIdentification47(base_types._BaseFieldType):
 		self._ClssTp = None
 
 	@property
-	def NewUmbrll(self):
-		return self._NewUmbrll
+	def Issr(self):
+		return self._Issr
 
-	@NewUmbrll.setter
-	def NewUmbrll(self, value):
-		self._NewUmbrll = value if type(value) != auto else self.make_default("NewUmbrll")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@NewUmbrll.deleter
-	def NewUmbrll(self):
-		del self._NewUmbrll
-		self._NewUmbrll = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def QtnTp(self):
@@ -266,52 +240,78 @@ class SecurityIdentification47(base_types._BaseFieldType):
 		self._QtnTp = None
 
 	@property
-	def PdctCtgyDE(self):
-		return self._PdctCtgyDE
+	def RegdDstrbtnCtry(self):
+		return self._RegdDstrbtnCtry
 
-	@PdctCtgyDE.setter
-	def PdctCtgyDE(self, value):
-		self._PdctCtgyDE = value if type(value) != auto else self.make_default("PdctCtgyDE")
+	@RegdDstrbtnCtry.setter
+	def RegdDstrbtnCtry(self, value):
+		self._RegdDstrbtnCtry = value if type(value) != auto else self.make_default("RegdDstrbtnCtry")
 
-	@PdctCtgyDE.deleter
-	def PdctCtgyDE(self):
-		del self._PdctCtgyDE
-		self._PdctCtgyDE = None
+	@RegdDstrbtnCtry.deleter
+	def RegdDstrbtnCtry(self):
+		del self._RegdDstrbtnCtry
+		self._RegdDstrbtnCtry = None
 
 	@property
-	def PdctCtgy(self):
-		return self._PdctCtgy
+	def NoRtrcssnInd(self):
+		return self._NoRtrcssnInd
 
-	@PdctCtgy.setter
-	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != auto else self.make_default("PdctCtgy")
+	@NoRtrcssnInd.setter
+	def NoRtrcssnInd(self, value):
+		self._NoRtrcssnInd = value if type(value) != auto else self.make_default("NoRtrcssnInd")
 
-	@PdctCtgy.deleter
-	def PdctCtgy(self):
-		del self._PdctCtgy
-		self._PdctCtgy = None
+	@NoRtrcssnInd.deleter
+	def NoRtrcssnInd(self):
+		del self._NoRtrcssnInd
+		self._NoRtrcssnInd = None
+
+	@property
+	def NtnlOrUnitBased(self):
+		return self._NtnlOrUnitBased
+
+	@NtnlOrUnitBased.setter
+	def NtnlOrUnitBased(self, value):
+		self._NtnlOrUnitBased = value if type(value) != auto else self.make_default("NtnlOrUnitBased")
+
+	@NtnlOrUnitBased.deleter
+	def NtnlOrUnitBased(self):
+		del self._NtnlOrUnitBased
+		self._NtnlOrUnitBased = None
+
+	@property
+	def PdctTp(self):
+		return self._PdctTp
+
+	@PdctTp.setter
+	def PdctTp(self, value):
+		self._PdctTp = value if type(value) != auto else self.make_default("PdctTp")
+
+	@PdctTp.deleter
+	def PdctTp(self):
+		del self._PdctTp
+		self._PdctTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LvrgdOrCntngntLblty', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=SecurityIdentification40, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExPstCostClctnBsis', type=ExPostCostCalculationBasis1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UmbrllNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PdctTp', type=ProductStructure1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IssrPdctGovncPrc', type=GovernanceProcess1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NoRtrcssnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtnlOrUnitBased', type=NotionalOrUnitBased1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewUmbrll', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnTp', type=QuotationType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrPdctGovncPrc', type=GovernanceProcess1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCtgyDE', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=SecurityClassificationType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewUmbrll', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UmbrllNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LvrgdOrCntngntLblty', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PdctCtgy', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnTp', type=QuotationType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NoRtrcssnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlOrUnitBased', type=NotionalOrUnitBased1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctTp', type=ProductStructure1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

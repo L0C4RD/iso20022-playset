@@ -1,27 +1,14 @@
 import base_types
 import ResponseType8
-import Max8Text
-import ResponseType12
-import ATMFeeComponent1
 import Action7
+import Max8Text
 import PartyType16Code
+import ATMFeeComponent1
+import ResponseType12
 
 class AuthorisationResult20(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthstnNtty", "_AuthstnRspn", "_FeeToAdd", "_RspnTrac", "_AuthstnCd", "_Actn"]
-	@property
-	def AuthstnNtty(self):
-		return self._AuthstnNtty
-
-	@AuthstnNtty.setter
-	def AuthstnNtty(self, value):
-		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
-
-	@AuthstnNtty.deleter
-	def AuthstnNtty(self):
-		del self._AuthstnNtty
-		self._AuthstnNtty = None
-
+	__slots__ = ["_AuthstnRspn", "_Actn", "_AuthstnNtty", "_AuthstnCd", "_RspnTrac", "_FeeToAdd"]
 	@property
 	def AuthstnRspn(self):
 		return self._AuthstnRspn
@@ -36,30 +23,30 @@ class AuthorisationResult20(base_types._BaseFieldType):
 		self._AuthstnRspn = None
 
 	@property
-	def FeeToAdd(self):
-		return self._FeeToAdd
+	def Actn(self):
+		return self._Actn
 
-	@FeeToAdd.setter
-	def FeeToAdd(self, value):
-		self._FeeToAdd = value if type(value) != auto else self.make_default("FeeToAdd")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
 
-	@FeeToAdd.deleter
-	def FeeToAdd(self):
-		del self._FeeToAdd
-		self._FeeToAdd = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
-	def RspnTrac(self):
-		return self._RspnTrac
+	def AuthstnNtty(self):
+		return self._AuthstnNtty
 
-	@RspnTrac.setter
-	def RspnTrac(self, value):
-		self._RspnTrac = value if type(value) != auto else self.make_default("RspnTrac")
+	@AuthstnNtty.setter
+	def AuthstnNtty(self, value):
+		self._AuthstnNtty = value if type(value) != auto else self.make_default("AuthstnNtty")
 
-	@RspnTrac.deleter
-	def RspnTrac(self):
-		del self._RspnTrac
-		self._RspnTrac = None
+	@AuthstnNtty.deleter
+	def AuthstnNtty(self):
+		del self._AuthstnNtty
+		self._AuthstnNtty = None
 
 	@property
 	def AuthstnCd(self):
@@ -75,24 +62,37 @@ class AuthorisationResult20(base_types._BaseFieldType):
 		self._AuthstnCd = None
 
 	@property
-	def Actn(self):
-		return self._Actn
+	def RspnTrac(self):
+		return self._RspnTrac
 
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
+	@RspnTrac.setter
+	def RspnTrac(self, value):
+		self._RspnTrac = value if type(value) != auto else self.make_default("RspnTrac")
 
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
+	@RspnTrac.deleter
+	def RspnTrac(self):
+		del self._RspnTrac
+		self._RspnTrac = None
+
+	@property
+	def FeeToAdd(self):
+		return self._FeeToAdd
+
+	@FeeToAdd.setter
+	def FeeToAdd(self, value):
+		self._FeeToAdd = value if type(value) != auto else self.make_default("FeeToAdd")
+
+	@FeeToAdd.deleter
+	def FeeToAdd(self):
+		del self._FeeToAdd
+		self._FeeToAdd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthstnNtty', type=PartyType16Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthstnRspn', type=ResponseType12, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FeeToAdd', type=ATMFeeComponent1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RspnTrac', type=ResponseType8, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Actn', type=Action7, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AuthstnNtty', type=PartyType16Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnTrac', type=ResponseType8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FeeToAdd', type=ATMFeeComponent1, min=0, max=None, mutex_group=None, array=True),
 	))
 

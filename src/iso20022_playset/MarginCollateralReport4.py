@@ -1,11 +1,11 @@
 import base_types
-import CollateralPortfolioCode5Choice
-import CollateralisationType3Code
 import ISODateTime
+import CollateralisationType3Code
+import CollateralPortfolioCode5Choice
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_CollstnCtgy", "_TmStmp", "_CollPrtflCd"]
+	__slots__ = ["_CollstnCtgy", "_CollPrtflCd", "_TmStmp"]
 	@property
 	def CollstnCtgy(self):
 		return self._CollstnCtgy
@@ -20,19 +20,6 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 		self._CollstnCtgy = None
 
 	@property
-	def TmStmp(self):
-		return self._TmStmp
-
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
-
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
-
-	@property
 	def CollPrtflCd(self):
 		return self._CollPrtflCd
 
@@ -45,9 +32,22 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 		del self._CollPrtflCd
 		self._CollPrtflCd = None
 
+	@property
+	def TmStmp(self):
+		return self._TmStmp
+
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollstnCtgy', type=CollateralisationType3Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

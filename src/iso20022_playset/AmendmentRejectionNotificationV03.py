@@ -1,30 +1,17 @@
 import base_types
-import TransactionStatus4
-import RejectionReason1Choice
-import BICIdentification1
+import SimpleIdentificationInformation
 import MessageIdentification1
 import DocumentIdentification3
+import BICIdentification1
 import DocumentIdentification5
+import RejectionReason1Choice
 import PendingActivity2
 import Count1
-import SimpleIdentificationInformation
+import TransactionStatus4
 
 class AmendmentRejectionNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_DltaRptRef", "_ReqForActn", "_EstblishdBaselnId", "_TxId", "_UsrTxRef", "_RjctnRsn", "_NtfctnId", "_Initr", "_TxSts", "_RjctdAmdmntNb"]
-	@property
-	def DltaRptRef(self):
-		return self._DltaRptRef
-
-	@DltaRptRef.setter
-	def DltaRptRef(self, value):
-		self._DltaRptRef = value if type(value) != auto else self.make_default("DltaRptRef")
-
-	@DltaRptRef.deleter
-	def DltaRptRef(self):
-		del self._DltaRptRef
-		self._DltaRptRef = None
-
+	__slots__ = ["_ReqForActn", "_TxId", "_NtfctnId", "_DltaRptRef", "_EstblishdBaselnId", "_RjctdAmdmntNb", "_Initr", "_UsrTxRef", "_RjctnRsn", "_TxSts"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -37,6 +24,45 @@ class AmendmentRejectionNotificationV03(base_types._BaseFieldType):
 	def ReqForActn(self):
 		del self._ReqForActn
 		self._ReqForActn = None
+
+	@property
+	def TxId(self):
+		return self._TxId
+
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
+
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def DltaRptRef(self):
+		return self._DltaRptRef
+
+	@DltaRptRef.setter
+	def DltaRptRef(self, value):
+		self._DltaRptRef = value if type(value) != auto else self.make_default("DltaRptRef")
+
+	@DltaRptRef.deleter
+	def DltaRptRef(self):
+		del self._DltaRptRef
+		self._DltaRptRef = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -52,17 +78,30 @@ class AmendmentRejectionNotificationV03(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
-	def TxId(self):
-		return self._TxId
+	def RjctdAmdmntNb(self):
+		return self._RjctdAmdmntNb
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@RjctdAmdmntNb.setter
+	def RjctdAmdmntNb(self, value):
+		self._RjctdAmdmntNb = value if type(value) != auto else self.make_default("RjctdAmdmntNb")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@RjctdAmdmntNb.deleter
+	def RjctdAmdmntNb(self):
+		del self._RjctdAmdmntNb
+		self._RjctdAmdmntNb = None
+
+	@property
+	def Initr(self):
+		return self._Initr
+
+	@Initr.setter
+	def Initr(self, value):
+		self._Initr = value if type(value) != auto else self.make_default("Initr")
+
+	@Initr.deleter
+	def Initr(self):
+		del self._Initr
+		self._Initr = None
 
 	@property
 	def UsrTxRef(self):
@@ -91,32 +130,6 @@ class AmendmentRejectionNotificationV03(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
-	def Initr(self):
-		return self._Initr
-
-	@Initr.setter
-	def Initr(self, value):
-		self._Initr = value if type(value) != auto else self.make_default("Initr")
-
-	@Initr.deleter
-	def Initr(self):
-		del self._Initr
-		self._Initr = None
-
-	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -129,29 +142,16 @@ class AmendmentRejectionNotificationV03(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
-	@property
-	def RjctdAmdmntNb(self):
-		return self._RjctdAmdmntNb
-
-	@RjctdAmdmntNb.setter
-	def RjctdAmdmntNb(self, value):
-		self._RjctdAmdmntNb = value if type(value) != auto else self.make_default("RjctdAmdmntNb")
-
-	@RjctdAmdmntNb.deleter
-	def RjctdAmdmntNb(self):
-		del self._RjctdAmdmntNb
-		self._RjctdAmdmntNb = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DltaRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctdAmdmntNb', type=Count1, min=1, max=1, mutex_group=None, array=False),
 	))
 

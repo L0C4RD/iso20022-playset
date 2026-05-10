@@ -1,12 +1,12 @@
 import base_types
-import ISODate
-import EarlyPaymentsVAT1
 import CurrencyAndAmount
+import EarlyPaymentsVAT1
+import ISODate
 import PercentageRate
 
 class EarlyPayment1(base_types._BaseFieldType):
 
-	__slots__ = ["_DuePyblAmtWthEarlyPmt", "_DscntAmt", "_EarlyPmtDt", "_EarlyPmtTaxSpcfctn", "_DscntPct", "_EarlyPmtTaxTtl"]
+	__slots__ = ["_DuePyblAmtWthEarlyPmt", "_EarlyPmtTaxTtl", "_EarlyPmtDt", "_DscntPct", "_DscntAmt", "_EarlyPmtTaxSpcfctn"]
 	@property
 	def DuePyblAmtWthEarlyPmt(self):
 		return self._DuePyblAmtWthEarlyPmt
@@ -21,17 +21,17 @@ class EarlyPayment1(base_types._BaseFieldType):
 		self._DuePyblAmtWthEarlyPmt = None
 
 	@property
-	def DscntAmt(self):
-		return self._DscntAmt
+	def EarlyPmtTaxTtl(self):
+		return self._EarlyPmtTaxTtl
 
-	@DscntAmt.setter
-	def DscntAmt(self, value):
-		self._DscntAmt = value if type(value) != auto else self.make_default("DscntAmt")
+	@EarlyPmtTaxTtl.setter
+	def EarlyPmtTaxTtl(self, value):
+		self._EarlyPmtTaxTtl = value if type(value) != auto else self.make_default("EarlyPmtTaxTtl")
 
-	@DscntAmt.deleter
-	def DscntAmt(self):
-		del self._DscntAmt
-		self._DscntAmt = None
+	@EarlyPmtTaxTtl.deleter
+	def EarlyPmtTaxTtl(self):
+		del self._EarlyPmtTaxTtl
+		self._EarlyPmtTaxTtl = None
 
 	@property
 	def EarlyPmtDt(self):
@@ -47,19 +47,6 @@ class EarlyPayment1(base_types._BaseFieldType):
 		self._EarlyPmtDt = None
 
 	@property
-	def EarlyPmtTaxSpcfctn(self):
-		return self._EarlyPmtTaxSpcfctn
-
-	@EarlyPmtTaxSpcfctn.setter
-	def EarlyPmtTaxSpcfctn(self, value):
-		self._EarlyPmtTaxSpcfctn = value if type(value) != auto else self.make_default("EarlyPmtTaxSpcfctn")
-
-	@EarlyPmtTaxSpcfctn.deleter
-	def EarlyPmtTaxSpcfctn(self):
-		del self._EarlyPmtTaxSpcfctn
-		self._EarlyPmtTaxSpcfctn = None
-
-	@property
 	def DscntPct(self):
 		return self._DscntPct
 
@@ -73,24 +60,37 @@ class EarlyPayment1(base_types._BaseFieldType):
 		self._DscntPct = None
 
 	@property
-	def EarlyPmtTaxTtl(self):
-		return self._EarlyPmtTaxTtl
+	def DscntAmt(self):
+		return self._DscntAmt
 
-	@EarlyPmtTaxTtl.setter
-	def EarlyPmtTaxTtl(self, value):
-		self._EarlyPmtTaxTtl = value if type(value) != auto else self.make_default("EarlyPmtTaxTtl")
+	@DscntAmt.setter
+	def DscntAmt(self, value):
+		self._DscntAmt = value if type(value) != auto else self.make_default("DscntAmt")
 
-	@EarlyPmtTaxTtl.deleter
-	def EarlyPmtTaxTtl(self):
-		del self._EarlyPmtTaxTtl
-		self._EarlyPmtTaxTtl = None
+	@DscntAmt.deleter
+	def DscntAmt(self):
+		del self._DscntAmt
+		self._DscntAmt = None
+
+	@property
+	def EarlyPmtTaxSpcfctn(self):
+		return self._EarlyPmtTaxSpcfctn
+
+	@EarlyPmtTaxSpcfctn.setter
+	def EarlyPmtTaxSpcfctn(self, value):
+		self._EarlyPmtTaxSpcfctn = value if type(value) != auto else self.make_default("EarlyPmtTaxSpcfctn")
+
+	@EarlyPmtTaxSpcfctn.deleter
+	def EarlyPmtTaxSpcfctn(self):
+		del self._EarlyPmtTaxSpcfctn
+		self._EarlyPmtTaxSpcfctn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DuePyblAmtWthEarlyPmt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DscntAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyPmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyPmtTaxSpcfctn', type=EarlyPaymentsVAT1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DscntPct', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyPmtTaxTtl', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyPmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntPct', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DscntAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyPmtTaxSpcfctn', type=EarlyPaymentsVAT1, min=0, max=None, mutex_group=None, array=True),
 	))
 

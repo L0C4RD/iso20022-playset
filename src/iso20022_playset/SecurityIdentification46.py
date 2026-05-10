@@ -1,25 +1,12 @@
 import base_types
 import Max105Text
-import ISINOct2015Identifier
 import Max1000Text
 import UniqueProductIdentifier2Choice
+import ISINOct2015Identifier
 
 class SecurityIdentification46(base_types._BaseFieldType):
 
-	__slots__ = ["_AltrntvInstrmId", "_UnqPdctIdr", "_PdctDesc", "_ISIN"]
-	@property
-	def AltrntvInstrmId(self):
-		return self._AltrntvInstrmId
-
-	@AltrntvInstrmId.setter
-	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
-
-	@AltrntvInstrmId.deleter
-	def AltrntvInstrmId(self):
-		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
-
+	__slots__ = ["_UnqPdctIdr", "_PdctDesc", "_AltrntvInstrmId", "_ISIN"]
 	@property
 	def UnqPdctIdr(self):
 		return self._UnqPdctIdr
@@ -47,6 +34,19 @@ class SecurityIdentification46(base_types._BaseFieldType):
 		self._PdctDesc = None
 
 	@property
+	def AltrntvInstrmId(self):
+		return self._AltrntvInstrmId
+
+	@AltrntvInstrmId.setter
+	def AltrntvInstrmId(self, value):
+		self._AltrntvInstrmId = value if type(value) != auto else self.make_default("AltrntvInstrmId")
+
+	@AltrntvInstrmId.deleter
+	def AltrntvInstrmId(self):
+		del self._AltrntvInstrmId
+		self._AltrntvInstrmId = None
+
+	@property
 	def ISIN(self):
 		return self._ISIN
 
@@ -60,9 +60,9 @@ class SecurityIdentification46(base_types._BaseFieldType):
 		self._ISIN = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,69 +1,17 @@
 import base_types
-import ISODateTime
-import UnicodeChartsCode
-import CopyDuplicate1Code
-import Party51Choice
-import ImplementationSpecification1
 import SignatureEnvelope
 import YesNoIndicator
 import Max35Text
 import BusinessMessagePriorityCode
+import ISODateTime
+import CopyDuplicate1Code
+import ImplementationSpecification1
+import UnicodeChartsCode
+import Party51Choice
 
 class BusinessApplicationHeader8(base_types._BaseFieldType):
 
-	__slots__ = ["_CreDt", "_CharSet", "_PssblDplct", "_CpyDplct", "_MsgDefIdr", "_Fr", "_To", "_BizSvc", "_MktPrctc", "_BizMsgIdr", "_Prty", "_BizPrcgDt", "_Sgntr"]
-	@property
-	def CreDt(self):
-		return self._CreDt
-
-	@CreDt.setter
-	def CreDt(self, value):
-		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
-
-	@CreDt.deleter
-	def CreDt(self):
-		del self._CreDt
-		self._CreDt = None
-
-	@property
-	def CharSet(self):
-		return self._CharSet
-
-	@CharSet.setter
-	def CharSet(self, value):
-		self._CharSet = value if type(value) != auto else self.make_default("CharSet")
-
-	@CharSet.deleter
-	def CharSet(self):
-		del self._CharSet
-		self._CharSet = None
-
-	@property
-	def PssblDplct(self):
-		return self._PssblDplct
-
-	@PssblDplct.setter
-	def PssblDplct(self, value):
-		self._PssblDplct = value if type(value) != auto else self.make_default("PssblDplct")
-
-	@PssblDplct.deleter
-	def PssblDplct(self):
-		del self._PssblDplct
-		self._PssblDplct = None
-
-	@property
-	def CpyDplct(self):
-		return self._CpyDplct
-
-	@CpyDplct.setter
-	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
-
-	@CpyDplct.deleter
-	def CpyDplct(self):
-		del self._CpyDplct
-		self._CpyDplct = None
-
+	__slots__ = ["_MsgDefIdr", "_Sgntr", "_CharSet", "_BizMsgIdr", "_Prty", "_BizPrcgDt", "_BizSvc", "_MktPrctc", "_CreDt", "_Fr", "_PssblDplct", "_To", "_CpyDplct"]
 	@property
 	def MsgDefIdr(self):
 		return self._MsgDefIdr
@@ -78,56 +26,30 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 		self._MsgDefIdr = None
 
 	@property
-	def Fr(self):
-		return self._Fr
+	def Sgntr(self):
+		return self._Sgntr
 
-	@Fr.setter
-	def Fr(self, value):
-		self._Fr = value if type(value) != auto else self.make_default("Fr")
+	@Sgntr.setter
+	def Sgntr(self, value):
+		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
 
-	@Fr.deleter
-	def Fr(self):
-		del self._Fr
-		self._Fr = None
-
-	@property
-	def To(self):
-		return self._To
-
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != auto else self.make_default("To")
-
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
+	@Sgntr.deleter
+	def Sgntr(self):
+		del self._Sgntr
+		self._Sgntr = None
 
 	@property
-	def BizSvc(self):
-		return self._BizSvc
+	def CharSet(self):
+		return self._CharSet
 
-	@BizSvc.setter
-	def BizSvc(self, value):
-		self._BizSvc = value if type(value) != auto else self.make_default("BizSvc")
+	@CharSet.setter
+	def CharSet(self, value):
+		self._CharSet = value if type(value) != auto else self.make_default("CharSet")
 
-	@BizSvc.deleter
-	def BizSvc(self):
-		del self._BizSvc
-		self._BizSvc = None
-
-	@property
-	def MktPrctc(self):
-		return self._MktPrctc
-
-	@MktPrctc.setter
-	def MktPrctc(self, value):
-		self._MktPrctc = value if type(value) != auto else self.make_default("MktPrctc")
-
-	@MktPrctc.deleter
-	def MktPrctc(self):
-		del self._MktPrctc
-		self._MktPrctc = None
+	@CharSet.deleter
+	def CharSet(self):
+		del self._CharSet
+		self._CharSet = None
 
 	@property
 	def BizMsgIdr(self):
@@ -169,31 +91,109 @@ class BusinessApplicationHeader8(base_types._BaseFieldType):
 		self._BizPrcgDt = None
 
 	@property
-	def Sgntr(self):
-		return self._Sgntr
+	def BizSvc(self):
+		return self._BizSvc
 
-	@Sgntr.setter
-	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != auto else self.make_default("Sgntr")
+	@BizSvc.setter
+	def BizSvc(self, value):
+		self._BizSvc = value if type(value) != auto else self.make_default("BizSvc")
 
-	@Sgntr.deleter
-	def Sgntr(self):
-		del self._Sgntr
-		self._Sgntr = None
+	@BizSvc.deleter
+	def BizSvc(self):
+		del self._BizSvc
+		self._BizSvc = None
+
+	@property
+	def MktPrctc(self):
+		return self._MktPrctc
+
+	@MktPrctc.setter
+	def MktPrctc(self, value):
+		self._MktPrctc = value if type(value) != auto else self.make_default("MktPrctc")
+
+	@MktPrctc.deleter
+	def MktPrctc(self):
+		del self._MktPrctc
+		self._MktPrctc = None
+
+	@property
+	def CreDt(self):
+		return self._CreDt
+
+	@CreDt.setter
+	def CreDt(self, value):
+		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+
+	@CreDt.deleter
+	def CreDt(self):
+		del self._CreDt
+		self._CreDt = None
+
+	@property
+	def Fr(self):
+		return self._Fr
+
+	@Fr.setter
+	def Fr(self, value):
+		self._Fr = value if type(value) != auto else self.make_default("Fr")
+
+	@Fr.deleter
+	def Fr(self):
+		del self._Fr
+		self._Fr = None
+
+	@property
+	def PssblDplct(self):
+		return self._PssblDplct
+
+	@PssblDplct.setter
+	def PssblDplct(self, value):
+		self._PssblDplct = value if type(value) != auto else self.make_default("PssblDplct")
+
+	@PssblDplct.deleter
+	def PssblDplct(self):
+		del self._PssblDplct
+		self._PssblDplct = None
+
+	@property
+	def To(self):
+		return self._To
+
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != auto else self.make_default("To")
+
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
+
+	@property
+	def CpyDplct(self):
+		return self._CpyDplct
+
+	@CpyDplct.setter
+	def CpyDplct(self, value):
+		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
+
+	@CpyDplct.deleter
+	def CpyDplct(self):
+		del self._CpyDplct
+		self._CpyDplct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CreDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CharSet', type=UnicodeChartsCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PssblDplct', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgDefIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Fr', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='To', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktPrctc', type=ImplementationSpecification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CharSet', type=UnicodeChartsCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=BusinessMessagePriorityCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizPrcgDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizSvc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktPrctc', type=ImplementationSpecification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Fr', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PssblDplct', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

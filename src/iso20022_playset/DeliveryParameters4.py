@@ -1,23 +1,23 @@
 import base_types
-import NameAndAddress4
-import YesNoIndicator
 import ContactIdentification2
+import YesNoIndicator
+import NameAndAddress4
 
 class DeliveryParameters4(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctPrsn", "_NmAndAdr", "_RegdAdrInd"]
+	__slots__ = ["_RegdAdrInd", "_NmAndAdr", "_CtctPrsn"]
 	@property
-	def CtctPrsn(self):
-		return self._CtctPrsn
+	def RegdAdrInd(self):
+		return self._RegdAdrInd
 
-	@CtctPrsn.setter
-	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
+	@RegdAdrInd.setter
+	def RegdAdrInd(self, value):
+		self._RegdAdrInd = value if type(value) != auto else self.make_default("RegdAdrInd")
 
-	@CtctPrsn.deleter
-	def CtctPrsn(self):
-		del self._CtctPrsn
-		self._CtctPrsn = None
+	@RegdAdrInd.deleter
+	def RegdAdrInd(self):
+		del self._RegdAdrInd
+		self._RegdAdrInd = None
 
 	@property
 	def NmAndAdr(self):
@@ -33,21 +33,21 @@ class DeliveryParameters4(base_types._BaseFieldType):
 		self._NmAndAdr = None
 
 	@property
-	def RegdAdrInd(self):
-		return self._RegdAdrInd
+	def CtctPrsn(self):
+		return self._CtctPrsn
 
-	@RegdAdrInd.setter
-	def RegdAdrInd(self, value):
-		self._RegdAdrInd = value if type(value) != auto else self.make_default("RegdAdrInd")
+	@CtctPrsn.setter
+	def CtctPrsn(self, value):
+		self._CtctPrsn = value if type(value) != auto else self.make_default("CtctPrsn")
 
-	@RegdAdrInd.deleter
-	def RegdAdrInd(self):
-		del self._RegdAdrInd
-		self._RegdAdrInd = None
+	@CtctPrsn.deleter
+	def CtctPrsn(self):
+		del self._CtctPrsn
+		self._CtctPrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegdAdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
 

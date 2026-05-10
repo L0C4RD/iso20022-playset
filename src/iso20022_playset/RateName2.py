@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax24Text
 import RestrictedFINXMax8Text
+import RestrictedFINXMax24Text
 
 class RateName2(base_types._BaseFieldType):
 

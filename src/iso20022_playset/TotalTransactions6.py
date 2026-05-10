@@ -5,20 +5,7 @@ import NumberAndSumOfTransactions1
 
 class TotalTransactions6(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCdtNtries", "_TtlNtries", "_TtlDbtNtries", "_TtlNtriesPerBkTxCd"]
-	@property
-	def TtlCdtNtries(self):
-		return self._TtlCdtNtries
-
-	@TtlCdtNtries.setter
-	def TtlCdtNtries(self, value):
-		self._TtlCdtNtries = value if type(value) != auto else self.make_default("TtlCdtNtries")
-
-	@TtlCdtNtries.deleter
-	def TtlCdtNtries(self):
-		del self._TtlCdtNtries
-		self._TtlCdtNtries = None
-
+	__slots__ = ["_TtlNtries", "_TtlDbtNtries", "_TtlCdtNtries", "_TtlNtriesPerBkTxCd"]
 	@property
 	def TtlNtries(self):
 		return self._TtlNtries
@@ -46,6 +33,19 @@ class TotalTransactions6(base_types._BaseFieldType):
 		self._TtlDbtNtries = None
 
 	@property
+	def TtlCdtNtries(self):
+		return self._TtlCdtNtries
+
+	@TtlCdtNtries.setter
+	def TtlCdtNtries(self, value):
+		self._TtlCdtNtries = value if type(value) != auto else self.make_default("TtlCdtNtries")
+
+	@TtlCdtNtries.deleter
+	def TtlCdtNtries(self):
+		del self._TtlCdtNtries
+		self._TtlCdtNtries = None
+
+	@property
 	def TtlNtriesPerBkTxCd(self):
 		return self._TtlNtriesPerBkTxCd
 
@@ -59,9 +59,9 @@ class TotalTransactions6(base_types._BaseFieldType):
 		self._TtlNtriesPerBkTxCd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNtries', type=NumberAndSumOfTransactions4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlDbtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNtriesPerBkTxCd', type=TotalsPerBankTransactionCode5, min=0, max=None, mutex_group=None, array=True),
 	))
 

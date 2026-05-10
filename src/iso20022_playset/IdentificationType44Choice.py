@@ -1,6 +1,6 @@
 import base_types
-import TypeOfIdentification1Code
 import GenericIdentification47
+import TypeOfIdentification1Code
 
 class IdentificationType44Choice(base_types._BaseFieldType):
 

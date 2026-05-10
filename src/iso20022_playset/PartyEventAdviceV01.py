@@ -1,7 +1,7 @@
 import base_types
 import EventDescription1
-import BusinessLetter1
 import Max15NumericText
+import BusinessLetter1
 import EncapsulatedBusinessMessage1
 
 class PartyEventAdviceV01(base_types._BaseFieldType):

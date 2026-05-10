@@ -4,20 +4,7 @@ import RateTypeAndLookback2
 
 class RateOrName4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RateIndxDtls", "_Rate"]
-	@property
-	def RateIndxDtls(self):
-		return self._RateIndxDtls
-
-	@RateIndxDtls.setter
-	def RateIndxDtls(self, value):
-		self._RateIndxDtls = value if type(value) != auto else self.make_default("RateIndxDtls")
-
-	@RateIndxDtls.deleter
-	def RateIndxDtls(self):
-		del self._RateIndxDtls
-		self._RateIndxDtls = None
-
+	__slots__ = ["_Rate", "_RateIndxDtls"]
 	@property
 	def Rate(self):
 		return self._Rate
@@ -31,8 +18,21 @@ class RateOrName4Choice(base_types._BaseFieldType):
 		del self._Rate
 		self._Rate = None
 
+	@property
+	def RateIndxDtls(self):
+		return self._RateIndxDtls
+
+	@RateIndxDtls.setter
+	def RateIndxDtls(self, value):
+		self._RateIndxDtls = value if type(value) != auto else self.make_default("RateIndxDtls")
+
+	@RateIndxDtls.deleter
+	def RateIndxDtls(self):
+		del self._RateIndxDtls
+		self._RateIndxDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RateIndxDtls', type=RateTypeAndLookback2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RateIndxDtls', type=RateTypeAndLookback2, min=0, max=1, mutex_group=1, array=False),
 	))
 

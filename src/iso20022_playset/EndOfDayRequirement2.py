@@ -1,7 +1,7 @@
 import base_types
-import AmountAndDirection102
 import InitialMarginRequirement1
 import GenericIdentification165
+import AmountAndDirection102
 
 class EndOfDayRequirement2(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import PendingReason38Choice
 import RestrictedFINXMax210Text
+import PendingReason38Choice
 
 class PendingReason21(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
+import Max20000Text
 import PresentationDocumentFormat1Choice
 import Presentation3
-import Max20000Text
 
 class Document11(base_types._BaseFieldType):
 
-	__slots__ = ["_ElctrncDtls", "_Wrdg", "_Tp"]
+	__slots__ = ["_Tp", "_Wrdg", "_ElctrncDtls"]
 	@property
-	def ElctrncDtls(self):
-		return self._ElctrncDtls
+	def Tp(self):
+		return self._Tp
 
-	@ElctrncDtls.setter
-	def ElctrncDtls(self, value):
-		self._ElctrncDtls = value if type(value) != auto else self.make_default("ElctrncDtls")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@ElctrncDtls.deleter
-	def ElctrncDtls(self):
-		del self._ElctrncDtls
-		self._ElctrncDtls = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Wrdg(self):
@@ -33,21 +33,21 @@ class Document11(base_types._BaseFieldType):
 		self._Wrdg = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def ElctrncDtls(self):
+		return self._ElctrncDtls
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@ElctrncDtls.setter
+	def ElctrncDtls(self, value):
+		self._ElctrncDtls = value if type(value) != auto else self.make_default("ElctrncDtls")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@ElctrncDtls.deleter
+	def ElctrncDtls(self):
+		del self._ElctrncDtls
+		self._ElctrncDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Wrdg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PresentationDocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wrdg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),
 	))
 

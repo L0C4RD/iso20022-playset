@@ -1,12 +1,12 @@
 import base_types
-import FinancialInstrumentQuantity18Choice
-import AccountSubLevel24
-import PartyIdentification195Choice
 import Max35Text
+import PartyIdentification195Choice
+import AccountSubLevel24
+import FinancialInstrumentQuantity18Choice
 
 class SafekeepingAccount17(base_types._BaseFieldType):
 
-	__slots__ = ["_ShrhldgBalOnClntAcct", "_AcctSubLvl", "_SfkpgAcct", "_TtlShrhldgBal", "_AcctSvcr", "_ShrhldgBalOnOwnAcct"]
+	__slots__ = ["_ShrhldgBalOnClntAcct", "_SfkpgAcct", "_AcctSvcr", "_ShrhldgBalOnOwnAcct", "_AcctSubLvl", "_TtlShrhldgBal"]
 	@property
 	def ShrhldgBalOnClntAcct(self):
 		return self._ShrhldgBalOnClntAcct
@@ -21,19 +21,6 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 		self._ShrhldgBalOnClntAcct = None
 
 	@property
-	def AcctSubLvl(self):
-		return self._AcctSubLvl
-
-	@AcctSubLvl.setter
-	def AcctSubLvl(self, value):
-		self._AcctSubLvl = value if type(value) != auto else self.make_default("AcctSubLvl")
-
-	@AcctSubLvl.deleter
-	def AcctSubLvl(self):
-		del self._AcctSubLvl
-		self._AcctSubLvl = None
-
-	@property
 	def SfkpgAcct(self):
 		return self._SfkpgAcct
 
@@ -45,19 +32,6 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
 		self._SfkpgAcct = None
-
-	@property
-	def TtlShrhldgBal(self):
-		return self._TtlShrhldgBal
-
-	@TtlShrhldgBal.setter
-	def TtlShrhldgBal(self, value):
-		self._TtlShrhldgBal = value if type(value) != auto else self.make_default("TtlShrhldgBal")
-
-	@TtlShrhldgBal.deleter
-	def TtlShrhldgBal(self):
-		del self._TtlShrhldgBal
-		self._TtlShrhldgBal = None
 
 	@property
 	def AcctSvcr(self):
@@ -85,12 +59,38 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 		del self._ShrhldgBalOnOwnAcct
 		self._ShrhldgBalOnOwnAcct = None
 
+	@property
+	def AcctSubLvl(self):
+		return self._AcctSubLvl
+
+	@AcctSubLvl.setter
+	def AcctSubLvl(self, value):
+		self._AcctSubLvl = value if type(value) != auto else self.make_default("AcctSubLvl")
+
+	@AcctSubLvl.deleter
+	def AcctSubLvl(self):
+		del self._AcctSubLvl
+		self._AcctSubLvl = None
+
+	@property
+	def TtlShrhldgBal(self):
+		return self._TtlShrhldgBal
+
+	@TtlShrhldgBal.setter
+	def TtlShrhldgBal(self, value):
+		self._TtlShrhldgBal = value if type(value) != auto else self.make_default("TtlShrhldgBal")
+
+	@TtlShrhldgBal.deleter
+	def TtlShrhldgBal(self):
+		del self._TtlShrhldgBal
+		self._TtlShrhldgBal = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ShrhldgBalOnClntAcct', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSubLvl', type=AccountSubLevel24, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlShrhldgBal', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification195Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrhldgBalOnOwnAcct', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSubLvl', type=AccountSubLevel24, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlShrhldgBal', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

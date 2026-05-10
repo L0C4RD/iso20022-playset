@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax210Text
 import AcknowledgementReason16Choice
+import RestrictedFINXMax210Text
 
 class AcknowledgementReason13(base_types._BaseFieldType):
 

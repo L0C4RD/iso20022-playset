@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification36
 import AssetClassDetailedSubProductType16Code
+import GenericIdentification36
 
 class AssetClassDetailedSubProductType1Choice(base_types._BaseFieldType):
 

@@ -1,26 +1,26 @@
 import base_types
-import OnLineCapability1Code
+import CardDataReading8Code
 import PositiveNumber
 import DisplayCapabilities4
-import CardholderVerificationCapability4Code
 import TrueFalseIndicator
-import CardDataReading8Code
+import CardholderVerificationCapability4Code
+import OnLineCapability1Code
 
 class PointOfInteractionCapabilities9(base_types._BaseFieldType):
 
-	__slots__ = ["_CardRdngCpblties", "_PINLngthCpblties", "_MxScrptLngth", "_CardCaptrCpbl", "_CrdhldrVrfctnCpblties", "_ApprvlCdLngth", "_OnLineCpblties", "_MsgCpblties"]
+	__slots__ = ["_MxScrptLngth", "_PINLngthCpblties", "_OnLineCpblties", "_ApprvlCdLngth", "_CardRdngCpblties", "_MsgCpblties", "_CardCaptrCpbl", "_CrdhldrVrfctnCpblties"]
 	@property
-	def CardRdngCpblties(self):
-		return self._CardRdngCpblties
+	def MxScrptLngth(self):
+		return self._MxScrptLngth
 
-	@CardRdngCpblties.setter
-	def CardRdngCpblties(self, value):
-		self._CardRdngCpblties = value if type(value) != auto else self.make_default("CardRdngCpblties")
+	@MxScrptLngth.setter
+	def MxScrptLngth(self, value):
+		self._MxScrptLngth = value if type(value) != auto else self.make_default("MxScrptLngth")
 
-	@CardRdngCpblties.deleter
-	def CardRdngCpblties(self):
-		del self._CardRdngCpblties
-		self._CardRdngCpblties = None
+	@MxScrptLngth.deleter
+	def MxScrptLngth(self):
+		del self._MxScrptLngth
+		self._MxScrptLngth = None
 
 	@property
 	def PINLngthCpblties(self):
@@ -36,17 +36,56 @@ class PointOfInteractionCapabilities9(base_types._BaseFieldType):
 		self._PINLngthCpblties = None
 
 	@property
-	def MxScrptLngth(self):
-		return self._MxScrptLngth
+	def OnLineCpblties(self):
+		return self._OnLineCpblties
 
-	@MxScrptLngth.setter
-	def MxScrptLngth(self, value):
-		self._MxScrptLngth = value if type(value) != auto else self.make_default("MxScrptLngth")
+	@OnLineCpblties.setter
+	def OnLineCpblties(self, value):
+		self._OnLineCpblties = value if type(value) != auto else self.make_default("OnLineCpblties")
 
-	@MxScrptLngth.deleter
-	def MxScrptLngth(self):
-		del self._MxScrptLngth
-		self._MxScrptLngth = None
+	@OnLineCpblties.deleter
+	def OnLineCpblties(self):
+		del self._OnLineCpblties
+		self._OnLineCpblties = None
+
+	@property
+	def ApprvlCdLngth(self):
+		return self._ApprvlCdLngth
+
+	@ApprvlCdLngth.setter
+	def ApprvlCdLngth(self, value):
+		self._ApprvlCdLngth = value if type(value) != auto else self.make_default("ApprvlCdLngth")
+
+	@ApprvlCdLngth.deleter
+	def ApprvlCdLngth(self):
+		del self._ApprvlCdLngth
+		self._ApprvlCdLngth = None
+
+	@property
+	def CardRdngCpblties(self):
+		return self._CardRdngCpblties
+
+	@CardRdngCpblties.setter
+	def CardRdngCpblties(self, value):
+		self._CardRdngCpblties = value if type(value) != auto else self.make_default("CardRdngCpblties")
+
+	@CardRdngCpblties.deleter
+	def CardRdngCpblties(self):
+		del self._CardRdngCpblties
+		self._CardRdngCpblties = None
+
+	@property
+	def MsgCpblties(self):
+		return self._MsgCpblties
+
+	@MsgCpblties.setter
+	def MsgCpblties(self, value):
+		self._MsgCpblties = value if type(value) != auto else self.make_default("MsgCpblties")
+
+	@MsgCpblties.deleter
+	def MsgCpblties(self):
+		del self._MsgCpblties
+		self._MsgCpblties = None
 
 	@property
 	def CardCaptrCpbl(self):
@@ -74,53 +113,14 @@ class PointOfInteractionCapabilities9(base_types._BaseFieldType):
 		del self._CrdhldrVrfctnCpblties
 		self._CrdhldrVrfctnCpblties = None
 
-	@property
-	def ApprvlCdLngth(self):
-		return self._ApprvlCdLngth
-
-	@ApprvlCdLngth.setter
-	def ApprvlCdLngth(self, value):
-		self._ApprvlCdLngth = value if type(value) != auto else self.make_default("ApprvlCdLngth")
-
-	@ApprvlCdLngth.deleter
-	def ApprvlCdLngth(self):
-		del self._ApprvlCdLngth
-		self._ApprvlCdLngth = None
-
-	@property
-	def OnLineCpblties(self):
-		return self._OnLineCpblties
-
-	@OnLineCpblties.setter
-	def OnLineCpblties(self, value):
-		self._OnLineCpblties = value if type(value) != auto else self.make_default("OnLineCpblties")
-
-	@OnLineCpblties.deleter
-	def OnLineCpblties(self):
-		del self._OnLineCpblties
-		self._OnLineCpblties = None
-
-	@property
-	def MsgCpblties(self):
-		return self._MsgCpblties
-
-	@MsgCpblties.setter
-	def MsgCpblties(self, value):
-		self._MsgCpblties = value if type(value) != auto else self.make_default("MsgCpblties")
-
-	@MsgCpblties.deleter
-	def MsgCpblties(self):
-		del self._MsgCpblties
-		self._MsgCpblties = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CardRdngCpblties', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PINLngthCpblties', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MxScrptLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PINLngthCpblties', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OnLineCpblties', type=OnLineCapability1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlCdLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CardRdngCpblties', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgCpblties', type=DisplayCapabilities4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CardCaptrCpbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrVrfctnCpblties', type=CardholderVerificationCapability4Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApprvlCdLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OnLineCpblties', type=OnLineCapability1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgCpblties', type=DisplayCapabilities4, min=0, max=None, mutex_group=None, array=True),
 	))
 

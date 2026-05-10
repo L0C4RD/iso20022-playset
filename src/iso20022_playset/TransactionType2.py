@@ -1,23 +1,23 @@
 import base_types
-import CreditDebitCode
 import Limit2
+import CreditDebitCode
 import EntryStatus1Choice
 
 class TransactionType2(base_types._BaseFieldType):
 
-	__slots__ = ["_FlrLmt", "_CdtDbtInd", "_Sts"]
+	__slots__ = ["_Sts", "_CdtDbtInd", "_FlrLmt"]
 	@property
-	def FlrLmt(self):
-		return self._FlrLmt
+	def Sts(self):
+		return self._Sts
 
-	@FlrLmt.setter
-	def FlrLmt(self, value):
-		self._FlrLmt = value if type(value) != auto else self.make_default("FlrLmt")
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
 
-	@FlrLmt.deleter
-	def FlrLmt(self):
-		del self._FlrLmt
-		self._FlrLmt = None
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def CdtDbtInd(self):
@@ -33,21 +33,21 @@ class TransactionType2(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def FlrLmt(self):
+		return self._FlrLmt
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@FlrLmt.setter
+	def FlrLmt(self, value):
+		self._FlrLmt = value if type(value) != auto else self.make_default("FlrLmt")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@FlrLmt.deleter
+	def FlrLmt(self):
+		del self._FlrLmt
+		self._FlrLmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FlrLmt', type=Limit2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=EntryStatus1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlrLmt', type=Limit2, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
-import LoyaltyServerData1
 import LoyaltyRebates1
-import LoyaltyAccount3
 import LoyaltyAmount1
+import LoyaltyAccount3
+import LoyaltyServerData1
 
 class LoyaltyResult3(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Amt", "_Rbts", "_SvrData"]
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
+	__slots__ = ["_Amt", "_SvrData", "_Acct", "_Rbts"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -34,19 +21,6 @@ class LoyaltyResult3(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Rbts(self):
-		return self._Rbts
-
-	@Rbts.setter
-	def Rbts(self, value):
-		self._Rbts = value if type(value) != auto else self.make_default("Rbts")
-
-	@Rbts.deleter
-	def Rbts(self):
-		del self._Rbts
-		self._Rbts = None
-
-	@property
 	def SvrData(self):
 		return self._SvrData
 
@@ -59,10 +33,36 @@ class LoyaltyResult3(base_types._BaseFieldType):
 		del self._SvrData
 		self._SvrData = None
 
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
+
+	@property
+	def Rbts(self):
+		return self._Rbts
+
+	@Rbts.setter
+	def Rbts(self, value):
+		self._Rbts = value if type(value) != auto else self.make_default("Rbts")
+
+	@Rbts.deleter
+	def Rbts(self):
+		del self._Rbts
+		self._Rbts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=LoyaltyAccount3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=LoyaltyAmount1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rbts', type=LoyaltyRebates1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvrData', type=LoyaltyServerData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=LoyaltyAccount3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rbts', type=LoyaltyRebates1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import SafekeepingPlace1Code
 import AnyBICDec2014Identifier
+import SafekeepingPlace1Code
 
 class SafekeepingPlaceTypeAndAnyBICIdentifier4(base_types._BaseFieldType):
 

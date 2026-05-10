@@ -1,6 +1,6 @@
 import base_types
-import PartyIdentification139
 import Max35Text
+import PartyIdentification139
 
 class Account27(base_types._BaseFieldType):
 

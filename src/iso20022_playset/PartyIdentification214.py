@@ -1,24 +1,11 @@
 import base_types
 import Max350Text
-import PartyIdentification203Choice
 import PartyAddress1
+import PartyIdentification203Choice
 
 class PartyIdentification214(base_types._BaseFieldType):
 
-	__slots__ = ["_RspnRcptAdr", "_Id", "_RcptNm"]
-	@property
-	def RspnRcptAdr(self):
-		return self._RspnRcptAdr
-
-	@RspnRcptAdr.setter
-	def RspnRcptAdr(self, value):
-		self._RspnRcptAdr = value if type(value) != auto else self.make_default("RspnRcptAdr")
-
-	@RspnRcptAdr.deleter
-	def RspnRcptAdr(self):
-		del self._RspnRcptAdr
-		self._RspnRcptAdr = None
-
+	__slots__ = ["_Id", "_RspnRcptAdr", "_RcptNm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class PartyIdentification214(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def RspnRcptAdr(self):
+		return self._RspnRcptAdr
+
+	@RspnRcptAdr.setter
+	def RspnRcptAdr(self, value):
+		self._RspnRcptAdr = value if type(value) != auto else self.make_default("RspnRcptAdr")
+
+	@RspnRcptAdr.deleter
+	def RspnRcptAdr(self):
+		del self._RspnRcptAdr
+		self._RspnRcptAdr = None
 
 	@property
 	def RcptNm(self):
@@ -46,8 +46,8 @@ class PartyIdentification214(base_types._BaseFieldType):
 		self._RcptNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

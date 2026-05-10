@@ -1,12 +1,12 @@
 import base_types
-import ActionMessage11
-import TrueFalseIndicator
-import ResponseMode2Code
 import DocumentType7Code
+import TrueFalseIndicator
+import ActionMessage11
+import ResponseMode2Code
 
 class DevicePrintRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_IntgrtdPrtFlg", "_RspnMd", "_ReqrdSgntrFlg", "_DocQlfr", "_OutptCntt"]
+	__slots__ = ["_IntgrtdPrtFlg", "_OutptCntt", "_RspnMd", "_ReqrdSgntrFlg", "_DocQlfr"]
 	@property
 	def IntgrtdPrtFlg(self):
 		return self._IntgrtdPrtFlg
@@ -19,6 +19,19 @@ class DevicePrintRequest6(base_types._BaseFieldType):
 	def IntgrtdPrtFlg(self):
 		del self._IntgrtdPrtFlg
 		self._IntgrtdPrtFlg = None
+
+	@property
+	def OutptCntt(self):
+		return self._OutptCntt
+
+	@OutptCntt.setter
+	def OutptCntt(self, value):
+		self._OutptCntt = value if type(value) != auto else self.make_default("OutptCntt")
+
+	@OutptCntt.deleter
+	def OutptCntt(self):
+		del self._OutptCntt
+		self._OutptCntt = None
 
 	@property
 	def RspnMd(self):
@@ -59,24 +72,11 @@ class DevicePrintRequest6(base_types._BaseFieldType):
 		del self._DocQlfr
 		self._DocQlfr = None
 
-	@property
-	def OutptCntt(self):
-		return self._OutptCntt
-
-	@OutptCntt.setter
-	def OutptCntt(self, value):
-		self._OutptCntt = value if type(value) != auto else self.make_default("OutptCntt")
-
-	@OutptCntt.deleter
-	def OutptCntt(self):
-		del self._OutptCntt
-		self._OutptCntt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntgrtdPrtFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnMd', type=ResponseMode2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqrdSgntrFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),
 	))
 

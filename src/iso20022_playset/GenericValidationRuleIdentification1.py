@@ -1,24 +1,11 @@
 import base_types
-import ValidationRuleSchemeName1Choice
-import Max350Text
 import Max35Text
+import Max350Text
+import ValidationRuleSchemeName1Choice
 
 class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_SchmeNm", "_Desc", "_Id", "_Issr"]
-	@property
-	def SchmeNm(self):
-		return self._SchmeNm
-
-	@SchmeNm.setter
-	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
-
-	@SchmeNm.deleter
-	def SchmeNm(self):
-		del self._SchmeNm
-		self._SchmeNm = None
-
+	__slots__ = ["_Desc", "_Id", "_SchmeNm", "_Issr"]
 	@property
 	def Desc(self):
 		return self._Desc
@@ -46,6 +33,19 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
+	def SchmeNm(self):
+		return self._SchmeNm
+
+	@SchmeNm.setter
+	def SchmeNm(self, value):
+		self._SchmeNm = value if type(value) != auto else self.make_default("SchmeNm")
+
+	@SchmeNm.deleter
+	def SchmeNm(self):
+		del self._SchmeNm
+		self._SchmeNm = None
+
+	@property
 	def Issr(self):
 		return self._Issr
 
@@ -59,9 +59,9 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchmeNm', type=ValidationRuleSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchmeNm', type=ValidationRuleSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

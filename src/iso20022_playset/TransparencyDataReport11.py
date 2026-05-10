@@ -1,82 +1,17 @@
 import base_types
+import Max350Text
+import ISODate
+import ActiveCurrencyAndAmount
+import Max35Text
+import ActiveCurrencyAnd13DecimalAmount
+import ISINOct2015Identifier
 import EquityInstrumentReportingClassification1Code
 import DecimalNumberFraction5
-import Max350Text
-import ActiveCurrencyAndAmount
 import MICIdentifier
-import ISINOct2015Identifier
-import Max35Text
-import ISODate
-import ActiveCurrencyAnd13DecimalAmount
 
 class TransparencyDataReport11(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrmPric", "_TradgVn", "_TechRcrdId", "_NbOutsdngInstrms", "_FullNm", "_FinInstrmClssfctn", "_HldgsExcdgTtlVtngRghtThrshld", "_IssncSz", "_RptgDt", "_Id"]
-	@property
-	def InstrmPric(self):
-		return self._InstrmPric
-
-	@InstrmPric.setter
-	def InstrmPric(self, value):
-		self._InstrmPric = value if type(value) != auto else self.make_default("InstrmPric")
-
-	@InstrmPric.deleter
-	def InstrmPric(self):
-		del self._InstrmPric
-		self._InstrmPric = None
-
-	@property
-	def TradgVn(self):
-		return self._TradgVn
-
-	@TradgVn.setter
-	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
-
-	@TradgVn.deleter
-	def TradgVn(self):
-		del self._TradgVn
-		self._TradgVn = None
-
-	@property
-	def TechRcrdId(self):
-		return self._TechRcrdId
-
-	@TechRcrdId.setter
-	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
-
-	@TechRcrdId.deleter
-	def TechRcrdId(self):
-		del self._TechRcrdId
-		self._TechRcrdId = None
-
-	@property
-	def NbOutsdngInstrms(self):
-		return self._NbOutsdngInstrms
-
-	@NbOutsdngInstrms.setter
-	def NbOutsdngInstrms(self, value):
-		self._NbOutsdngInstrms = value if type(value) != auto else self.make_default("NbOutsdngInstrms")
-
-	@NbOutsdngInstrms.deleter
-	def NbOutsdngInstrms(self):
-		del self._NbOutsdngInstrms
-		self._NbOutsdngInstrms = None
-
-	@property
-	def FullNm(self):
-		return self._FullNm
-
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
-
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
-
+	__slots__ = ["_FinInstrmClssfctn", "_HldgsExcdgTtlVtngRghtThrshld", "_TechRcrdId", "_IssncSz", "_RptgDt", "_TradgVn", "_NbOutsdngInstrms", "_Id", "_FullNm", "_InstrmPric"]
 	@property
 	def FinInstrmClssfctn(self):
 		return self._FinInstrmClssfctn
@@ -102,6 +37,19 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 	def HldgsExcdgTtlVtngRghtThrshld(self):
 		del self._HldgsExcdgTtlVtngRghtThrshld
 		self._HldgsExcdgTtlVtngRghtThrshld = None
+
+	@property
+	def TechRcrdId(self):
+		return self._TechRcrdId
+
+	@TechRcrdId.setter
+	def TechRcrdId(self, value):
+		self._TechRcrdId = value if type(value) != auto else self.make_default("TechRcrdId")
+
+	@TechRcrdId.deleter
+	def TechRcrdId(self):
+		del self._TechRcrdId
+		self._TechRcrdId = None
 
 	@property
 	def IssncSz(self):
@@ -130,6 +78,32 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 		self._RptgDt = None
 
 	@property
+	def TradgVn(self):
+		return self._TradgVn
+
+	@TradgVn.setter
+	def TradgVn(self, value):
+		self._TradgVn = value if type(value) != auto else self.make_default("TradgVn")
+
+	@TradgVn.deleter
+	def TradgVn(self):
+		del self._TradgVn
+		self._TradgVn = None
+
+	@property
+	def NbOutsdngInstrms(self):
+		return self._NbOutsdngInstrms
+
+	@NbOutsdngInstrms.setter
+	def NbOutsdngInstrms(self, value):
+		self._NbOutsdngInstrms = value if type(value) != auto else self.make_default("NbOutsdngInstrms")
+
+	@NbOutsdngInstrms.deleter
+	def NbOutsdngInstrms(self):
+		del self._NbOutsdngInstrms
+		self._NbOutsdngInstrms = None
+
+	@property
 	def Id(self):
 		return self._Id
 
@@ -142,16 +116,42 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def FullNm(self):
+		return self._FullNm
+
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
+
+	@property
+	def InstrmPric(self):
+		return self._InstrmPric
+
+	@InstrmPric.setter
+	def InstrmPric(self, value):
+		self._InstrmPric = value if type(value) != auto else self.make_default("InstrmPric")
+
+	@InstrmPric.deleter
+	def InstrmPric(self):
+		del self._InstrmPric
+		self._InstrmPric = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrmPric', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOutsdngInstrms', type=DecimalNumberFraction5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmClssfctn', type=EquityInstrumentReportingClassification1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgsExcdgTtlVtngRghtThrshld', type=DecimalNumberFraction5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssncSz', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOutsdngInstrms', type=DecimalNumberFraction5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrmPric', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

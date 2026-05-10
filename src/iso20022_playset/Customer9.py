@@ -1,13 +1,13 @@
 import base_types
-import Max70Text
-import Max2NumericText
 import Credentials3
-import ContactPersonal1
+import Max70Text
 import Address2
+import Max2NumericText
+import ContactPersonal1
 
 class Customer9(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctct", "_Id", "_Adr", "_Nm", "_CstmrFileRefNb", "_Age"]
+	__slots__ = ["_Ctct", "_Age", "_Adr", "_Id", "_CstmrFileRefNb", "_Nm"]
 	@property
 	def Ctct(self):
 		return self._Ctct
@@ -22,17 +22,17 @@ class Customer9(base_types._BaseFieldType):
 		self._Ctct = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Age(self):
+		return self._Age
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Age.setter
+	def Age(self, value):
+		self._Age = value if type(value) != auto else self.make_default("Age")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Age.deleter
+	def Age(self):
+		del self._Age
+		self._Age = None
 
 	@property
 	def Adr(self):
@@ -48,17 +48,17 @@ class Customer9(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def Id(self):
+		return self._Id
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def CstmrFileRefNb(self):
@@ -74,24 +74,24 @@ class Customer9(base_types._BaseFieldType):
 		self._CstmrFileRefNb = None
 
 	@property
-	def Age(self):
-		return self._Age
+	def Nm(self):
+		return self._Nm
 
-	@Age.setter
-	def Age(self, value):
-		self._Age = value if type(value) != auto else self.make_default("Age")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@Age.deleter
-	def Age(self):
-		del self._Age
-		self._Age = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Age', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AmountPriceType1Code
 import GenericIdentification13
+import AmountPriceType1Code
 
 class AmountPriceType1FormatChoice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification36
 import Max350Text
+import GenericIdentification36
 
 class InnovativeFinance1(base_types._BaseFieldType):
 

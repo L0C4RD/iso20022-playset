@@ -1,12 +1,12 @@
 import base_types
 import CashInForecast5
 import ActiveOrHistoricCurrencyCode
-import NetCashForecast4
 import CashOutForecast5
+import NetCashForecast4
 
 class BreakdownByCurrency2(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_CshInFcst", "_CshOutFcst", "_NetCshFcst"]
+	__slots__ = ["_Ccy", "_CshOutFcst", "_CshInFcst", "_NetCshFcst"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -21,19 +21,6 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def CshInFcst(self):
-		return self._CshInFcst
-
-	@CshInFcst.setter
-	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
-
-	@CshInFcst.deleter
-	def CshInFcst(self):
-		del self._CshInFcst
-		self._CshInFcst = None
-
-	@property
 	def CshOutFcst(self):
 		return self._CshOutFcst
 
@@ -45,6 +32,19 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 	def CshOutFcst(self):
 		del self._CshOutFcst
 		self._CshOutFcst = None
+
+	@property
+	def CshInFcst(self):
+		return self._CshInFcst
+
+	@CshInFcst.setter
+	def CshInFcst(self, value):
+		self._CshInFcst = value if type(value) != auto else self.make_default("CshInFcst")
+
+	@CshInFcst.deleter
+	def CshInFcst(self):
+		del self._CshInFcst
+		self._CshInFcst = None
 
 	@property
 	def NetCshFcst(self):
@@ -61,8 +61,8 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
 	))
 

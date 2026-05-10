@@ -1,40 +1,14 @@
 import base_types
-import PartyAndSignature4
+import References3
+import SupplementaryData1
 import OrganisationIdentification39
 import AccountForAction1
-import SupplementaryData1
+import PartyAndSignature4
 import BranchAndFinancialInstitutionIdentification8
-import References3
 
 class AccountClosingAdditionalInformationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_SplmtryData", "_Refs", "_AcctId", "_OrgId", "_Fr", "_BalTrfAcct", "_AcctSvcrId", "_TrfAcctSvcrId"]
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Refs", "_OrgId", "_AcctId", "_Fr", "_BalTrfAcct", "_AcctSvcrId", "_DgtlSgntr", "_SplmtryData", "_TrfAcctSvcrId"]
 	@property
 	def Refs(self):
 		return self._Refs
@@ -49,19 +23,6 @@ class AccountClosingAdditionalInformationRequestV04(base_types._BaseFieldType):
 		self._Refs = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
-
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
-
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
-
-	@property
 	def OrgId(self):
 		return self._OrgId
 
@@ -73,6 +34,19 @@ class AccountClosingAdditionalInformationRequestV04(base_types._BaseFieldType):
 	def OrgId(self):
 		del self._OrgId
 		self._OrgId = None
+
+	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
 
 	@property
 	def Fr(self):
@@ -114,6 +88,32 @@ class AccountClosingAdditionalInformationRequestV04(base_types._BaseFieldType):
 		self._AcctSvcrId = None
 
 	@property
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
+
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
+
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def TrfAcctSvcrId(self):
 		return self._TrfAcctSvcrId
 
@@ -127,14 +127,14 @@ class AccountClosingAdditionalInformationRequestV04(base_types._BaseFieldType):
 		self._TrfAcctSvcrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Refs', type=References3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrfAcct', type=AccountForAction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrfAcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
 

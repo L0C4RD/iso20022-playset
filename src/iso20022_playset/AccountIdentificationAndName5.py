@@ -1,6 +1,6 @@
 import base_types
-import AccountIdentification4Choice
 import Max35Text
+import AccountIdentification4Choice
 
 class AccountIdentificationAndName5(base_types._BaseFieldType):
 

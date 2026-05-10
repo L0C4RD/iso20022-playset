@@ -1,24 +1,11 @@
 import base_types
+import EncryptedDataElement2
 import AlgorithmIdentification25
 import ContentType2Code
-import EncryptedDataElement2
 
 class EncryptedContent8(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdDataElmt", "_CnttNcrptnAlgo", "_CnttTp"]
-	@property
-	def NcrptdDataElmt(self):
-		return self._NcrptdDataElmt
-
-	@NcrptdDataElmt.setter
-	def NcrptdDataElmt(self, value):
-		self._NcrptdDataElmt = value if type(value) != auto else self.make_default("NcrptdDataElmt")
-
-	@NcrptdDataElmt.deleter
-	def NcrptdDataElmt(self):
-		del self._NcrptdDataElmt
-		self._NcrptdDataElmt = None
-
+	__slots__ = ["_CnttNcrptnAlgo", "_NcrptdDataElmt", "_CnttTp"]
 	@property
 	def CnttNcrptnAlgo(self):
 		return self._CnttNcrptnAlgo
@@ -31,6 +18,19 @@ class EncryptedContent8(base_types._BaseFieldType):
 	def CnttNcrptnAlgo(self):
 		del self._CnttNcrptnAlgo
 		self._CnttNcrptnAlgo = None
+
+	@property
+	def NcrptdDataElmt(self):
+		return self._NcrptdDataElmt
+
+	@NcrptdDataElmt.setter
+	def NcrptdDataElmt(self, value):
+		self._NcrptdDataElmt = value if type(value) != auto else self.make_default("NcrptdDataElmt")
+
+	@NcrptdDataElmt.deleter
+	def NcrptdDataElmt(self):
+		del self._NcrptdDataElmt
+		self._NcrptdDataElmt = None
 
 	@property
 	def CnttTp(self):
@@ -46,8 +46,8 @@ class EncryptedContent8(base_types._BaseFieldType):
 		self._CnttTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NcrptdDataElmt', type=EncryptedDataElement2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnttNcrptnAlgo', type=AlgorithmIdentification25, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdDataElmt', type=EncryptedDataElement2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

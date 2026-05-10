@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import NetDividendRateType7Code
+import GenericIdentification30
 
 class RateType79Choice(base_types._BaseFieldType):
 

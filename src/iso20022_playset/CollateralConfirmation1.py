@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import CollateralSubstitutionConfirmation1Code
 import Max140Text
-import Max35Text
 
 class CollateralConfirmation1(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import ExternalValidationRuleIdentification1Code
 import Max35Text
+import ExternalValidationRuleIdentification1Code
 
 class ValidationRuleSchemeName1Choice(base_types._BaseFieldType):
 

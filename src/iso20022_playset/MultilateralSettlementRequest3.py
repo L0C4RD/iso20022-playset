@@ -1,39 +1,13 @@
 import base_types
-import SettlementTimeRequest2
-import Number
+import Max35Text
 import MovementRecord2
 import Priority3Code
-import Max35Text
+import Number
+import SettlementTimeRequest2
 
 class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
-	__slots__ = ["_InstrPrty", "_SttlmCycl", "_SttlmTmReq", "_InstrId", "_SttlmPrty", "_MvmntRcrd", "_NbOfMvmntRcrds"]
-	@property
-	def InstrPrty(self):
-		return self._InstrPrty
-
-	@InstrPrty.setter
-	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != auto else self.make_default("InstrPrty")
-
-	@InstrPrty.deleter
-	def InstrPrty(self):
-		del self._InstrPrty
-		self._InstrPrty = None
-
-	@property
-	def SttlmCycl(self):
-		return self._SttlmCycl
-
-	@SttlmCycl.setter
-	def SttlmCycl(self, value):
-		self._SttlmCycl = value if type(value) != auto else self.make_default("SttlmCycl")
-
-	@SttlmCycl.deleter
-	def SttlmCycl(self):
-		del self._SttlmCycl
-		self._SttlmCycl = None
-
+	__slots__ = ["_SttlmTmReq", "_InstrId", "_MvmntRcrd", "_SttlmCycl", "_InstrPrty", "_SttlmPrty", "_NbOfMvmntRcrds"]
 	@property
 	def SttlmTmReq(self):
 		return self._SttlmTmReq
@@ -61,19 +35,6 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 		self._InstrId = None
 
 	@property
-	def SttlmPrty(self):
-		return self._SttlmPrty
-
-	@SttlmPrty.setter
-	def SttlmPrty(self, value):
-		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
-
-	@SttlmPrty.deleter
-	def SttlmPrty(self):
-		del self._SttlmPrty
-		self._SttlmPrty = None
-
-	@property
 	def MvmntRcrd(self):
 		return self._MvmntRcrd
 
@@ -85,6 +46,45 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 	def MvmntRcrd(self):
 		del self._MvmntRcrd
 		self._MvmntRcrd = None
+
+	@property
+	def SttlmCycl(self):
+		return self._SttlmCycl
+
+	@SttlmCycl.setter
+	def SttlmCycl(self, value):
+		self._SttlmCycl = value if type(value) != auto else self.make_default("SttlmCycl")
+
+	@SttlmCycl.deleter
+	def SttlmCycl(self):
+		del self._SttlmCycl
+		self._SttlmCycl = None
+
+	@property
+	def InstrPrty(self):
+		return self._InstrPrty
+
+	@InstrPrty.setter
+	def InstrPrty(self, value):
+		self._InstrPrty = value if type(value) != auto else self.make_default("InstrPrty")
+
+	@InstrPrty.deleter
+	def InstrPrty(self):
+		del self._InstrPrty
+		self._InstrPrty = None
+
+	@property
+	def SttlmPrty(self):
+		return self._SttlmPrty
+
+	@SttlmPrty.setter
+	def SttlmPrty(self, value):
+		self._SttlmPrty = value if type(value) != auto else self.make_default("SttlmPrty")
+
+	@SttlmPrty.deleter
+	def SttlmPrty(self):
+		del self._SttlmPrty
+		self._SttlmPrty = None
 
 	@property
 	def NbOfMvmntRcrds(self):
@@ -100,12 +100,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 		self._NbOfMvmntRcrds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstrPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmCycl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTmReq', type=SettlementTimeRequest2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MvmntRcrd', type=MovementRecord2, min=2, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SttlmCycl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstrPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrty', type=Priority3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfMvmntRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

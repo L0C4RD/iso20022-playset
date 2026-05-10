@@ -1,12 +1,12 @@
 import base_types
-import ISODateTime
+import Max35Text
 import Max15NumericText
 import DecimalNumber
-import Max35Text
+import ISODateTime
 
 class GroupHeader103(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CtrlSum", "_NbOfChqs", "_CreDtTm"]
+	__slots__ = ["_MsgId", "_CreDtTm", "_NbOfChqs", "_CtrlSum"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -21,17 +21,17 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def CtrlSum(self):
-		return self._CtrlSum
+	def CreDtTm(self):
+		return self._CreDtTm
 
-	@CtrlSum.setter
-	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
 
-	@CtrlSum.deleter
-	def CtrlSum(self):
-		del self._CtrlSum
-		self._CtrlSum = None
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def NbOfChqs(self):
@@ -47,22 +47,22 @@ class GroupHeader103(base_types._BaseFieldType):
 		self._NbOfChqs = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
+	def CtrlSum(self):
+		return self._CtrlSum
 
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+	@CtrlSum.setter
+	def CtrlSum(self, value):
+		self._CtrlSum = value if type(value) != auto else self.make_default("CtrlSum")
 
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
+	@CtrlSum.deleter
+	def CtrlSum(self):
+		del self._CtrlSum
+		self._CtrlSum = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfChqs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfChqs', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

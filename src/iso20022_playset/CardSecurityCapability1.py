@@ -1,6 +1,6 @@
 import base_types
-import CardSecurityCapability1Code
 import Max35Text
+import CardSecurityCapability1Code
 
 class CardSecurityCapability1(base_types._BaseFieldType):
 

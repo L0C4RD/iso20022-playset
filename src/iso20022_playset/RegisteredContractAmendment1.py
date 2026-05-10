@@ -1,25 +1,12 @@
 import base_types
-import ISODate
-import DocumentIdentification28
 import Max35Text
+import DocumentIdentification28
+import ISODate
 import Max1025Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_StartDt", "_AmdmntRsn", "_AmdmntDt", "_Doc"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_StartDt", "_AmdmntRsn", "_AddtlInf", "_AmdmntDt", "_Doc"]
 	@property
 	def StartDt(self):
 		return self._StartDt
@@ -45,6 +32,19 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
 		self._AmdmntRsn = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def AmdmntDt(self):
@@ -73,9 +73,9 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 		self._Doc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntRsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Doc', type=DocumentIdentification28, min=1, max=1, mutex_group=None, array=False),
 	))

@@ -1,12 +1,25 @@
 import base_types
-import Exact3NumericText
-import Number
-import ActiveCurrencyCode
 import Max35Text
+import ActiveCurrencyCode
+import Number
+import Exact3NumericText
 
 class CurrencyDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_AlphaCd", "_Dcml", "_NmrcCd"]
+	__slots__ = ["_Dcml", "_Nm", "_AlphaCd", "_NmrcCd"]
+	@property
+	def Dcml(self):
+		return self._Dcml
+
+	@Dcml.setter
+	def Dcml(self, value):
+		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
+
+	@Dcml.deleter
+	def Dcml(self):
+		del self._Dcml
+		self._Dcml = None
+
 	@property
 	def Nm(self):
 		return self._Nm
@@ -34,19 +47,6 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		self._AlphaCd = None
 
 	@property
-	def Dcml(self):
-		return self._Dcml
-
-	@Dcml.setter
-	def Dcml(self, value):
-		self._Dcml = value if type(value) != auto else self.make_default("Dcml")
-
-	@Dcml.deleter
-	def Dcml(self):
-		del self._Dcml
-		self._Dcml = None
-
-	@property
 	def NmrcCd(self):
 		return self._NmrcCd
 
@@ -60,9 +60,9 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		self._NmrcCd = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dcml', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

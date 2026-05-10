@@ -1,23 +1,10 @@
 import base_types
-import ISODate
 import CollateralType1Code
+import ISODate
 
 class CollateralMovement9(base_types._BaseFieldType):
 
-	__slots__ = ["_CollTp", "_Dt"]
-	@property
-	def CollTp(self):
-		return self._CollTp
-
-	@CollTp.setter
-	def CollTp(self, value):
-		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
-
-	@CollTp.deleter
-	def CollTp(self):
-		del self._CollTp
-		self._CollTp = None
-
+	__slots__ = ["_Dt", "_CollTp"]
 	@property
 	def Dt(self):
 		return self._Dt
@@ -31,8 +18,21 @@ class CollateralMovement9(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def CollTp(self):
+		return self._CollTp
+
+	@CollTp.setter
+	def CollTp(self, value):
+		self._CollTp = value if type(value) != auto else self.make_default("CollTp")
+
+	@CollTp.deleter
+	def CollTp(self):
+		del self._CollTp
+		self._CollTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CollTp', type=CollateralType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollTp', type=CollateralType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

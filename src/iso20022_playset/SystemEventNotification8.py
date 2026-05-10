@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
-import CardPaymentEnvironment81
 import PaymentContext30
+import CardPaymentEnvironment81
 import EventNotificationData7
+import SupplementaryData1
 
 class SystemEventNotification8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_EvtNtfctn"]
+	__slots__ = ["_Envt", "_Cntxt", "_EvtNtfctn", "_SplmtryData"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -34,19 +34,6 @@ class SystemEventNotification8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def EvtNtfctn(self):
 		return self._EvtNtfctn
 
@@ -59,10 +46,23 @@ class SystemEventNotification8(base_types._BaseFieldType):
 		del self._EvtNtfctn
 		self._EvtNtfctn = None
 
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EvtNtfctn', type=EventNotificationData7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

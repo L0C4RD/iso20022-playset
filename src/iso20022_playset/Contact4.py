@@ -1,28 +1,54 @@
 import base_types
+import PhoneNumber
+import Max2048Text
 import Max70Text
 import Max140Text
-import OtherContact1
-import PhoneNumber
-import NamePrefix2Code
-import PreferredContactMethod1Code
-import Max2048Text
 import Max35Text
+import OtherContact1
+import PreferredContactMethod1Code
+import NamePrefix2Code
 
 class Contact4(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailPurp", "_NmPrfx", "_Dept", "_Othr", "_MobNb", "_Rspnsblty", "_Nm", "_PhneNb", "_PrefrdMtd", "_FaxNb", "_JobTitl", "_EmailAdr"]
+	__slots__ = ["_FaxNb", "_Nm", "_EmailAdr", "_NmPrfx", "_Dept", "_EmailPurp", "_Rspnsblty", "_PhneNb", "_JobTitl", "_PrefrdMtd", "_MobNb", "_Othr"]
 	@property
-	def EmailPurp(self):
-		return self._EmailPurp
+	def FaxNb(self):
+		return self._FaxNb
 
-	@EmailPurp.setter
-	def EmailPurp(self, value):
-		self._EmailPurp = value if type(value) != auto else self.make_default("EmailPurp")
+	@FaxNb.setter
+	def FaxNb(self, value):
+		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
 
-	@EmailPurp.deleter
-	def EmailPurp(self):
-		del self._EmailPurp
-		self._EmailPurp = None
+	@FaxNb.deleter
+	def FaxNb(self):
+		del self._FaxNb
+		self._FaxNb = None
+
+	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
 
 	@property
 	def NmPrfx(self):
@@ -51,30 +77,17 @@ class Contact4(base_types._BaseFieldType):
 		self._Dept = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def EmailPurp(self):
+		return self._EmailPurp
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@EmailPurp.setter
+	def EmailPurp(self, value):
+		self._EmailPurp = value if type(value) != auto else self.make_default("EmailPurp")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
-
-	@property
-	def MobNb(self):
-		return self._MobNb
-
-	@MobNb.setter
-	def MobNb(self, value):
-		self._MobNb = value if type(value) != auto else self.make_default("MobNb")
-
-	@MobNb.deleter
-	def MobNb(self):
-		del self._MobNb
-		self._MobNb = None
+	@EmailPurp.deleter
+	def EmailPurp(self):
+		del self._EmailPurp
+		self._EmailPurp = None
 
 	@property
 	def Rspnsblty(self):
@@ -90,19 +103,6 @@ class Contact4(base_types._BaseFieldType):
 		self._Rspnsblty = None
 
 	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
 	def PhneNb(self):
 		return self._PhneNb
 
@@ -114,32 +114,6 @@ class Contact4(base_types._BaseFieldType):
 	def PhneNb(self):
 		del self._PhneNb
 		self._PhneNb = None
-
-	@property
-	def PrefrdMtd(self):
-		return self._PrefrdMtd
-
-	@PrefrdMtd.setter
-	def PrefrdMtd(self, value):
-		self._PrefrdMtd = value if type(value) != auto else self.make_default("PrefrdMtd")
-
-	@PrefrdMtd.deleter
-	def PrefrdMtd(self):
-		del self._PrefrdMtd
-		self._PrefrdMtd = None
-
-	@property
-	def FaxNb(self):
-		return self._FaxNb
-
-	@FaxNb.setter
-	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != auto else self.make_default("FaxNb")
-
-	@FaxNb.deleter
-	def FaxNb(self):
-		del self._FaxNb
-		self._FaxNb = None
 
 	@property
 	def JobTitl(self):
@@ -155,30 +129,56 @@ class Contact4(base_types._BaseFieldType):
 		self._JobTitl = None
 
 	@property
-	def EmailAdr(self):
-		return self._EmailAdr
+	def PrefrdMtd(self):
+		return self._PrefrdMtd
 
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+	@PrefrdMtd.setter
+	def PrefrdMtd(self, value):
+		self._PrefrdMtd = value if type(value) != auto else self.make_default("PrefrdMtd")
 
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
+	@PrefrdMtd.deleter
+	def PrefrdMtd(self):
+		del self._PrefrdMtd
+		self._PrefrdMtd = None
+
+	@property
+	def MobNb(self):
+		return self._MobNb
+
+	@MobNb.setter
+	def MobNb(self, value):
+		self._MobNb = value if type(value) != auto else self.make_default("MobNb")
+
+	@MobNb.deleter
+	def MobNb(self):
+		del self._MobNb
+		self._MobNb = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailPurp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dept', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherContact1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailPurp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspnsblty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrefrdMtd', type=PreferredContactMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='JobTitl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EmailAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefrdMtd', type=PreferredContactMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MobNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherContact1, min=0, max=None, mutex_group=None, array=True),
 	))
 

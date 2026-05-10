@@ -1,12 +1,25 @@
 import base_types
 import DocumentIdentification8
-import CorporateActionNotificationAdvice1
 import CorporateActionInformation2
+import CorporateActionNotificationAdvice1
 import NotificationCancellation1
 
 class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnGnlInf", "_NtfctnCxlTpAndLkg", "_CorpActnNtfctnDtls"]
+	__slots__ = ["_CorpActnNtfctnDtls", "_Id", "_CorpActnGnlInf", "_NtfctnCxlTpAndLkg"]
+	@property
+	def CorpActnNtfctnDtls(self):
+		return self._CorpActnNtfctnDtls
+
+	@CorpActnNtfctnDtls.setter
+	def CorpActnNtfctnDtls(self, value):
+		self._CorpActnNtfctnDtls = value if type(value) != auto else self.make_default("CorpActnNtfctnDtls")
+
+	@CorpActnNtfctnDtls.deleter
+	def CorpActnNtfctnDtls(self):
+		del self._CorpActnNtfctnDtls
+		self._CorpActnNtfctnDtls = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -46,23 +59,10 @@ class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 		del self._NtfctnCxlTpAndLkg
 		self._NtfctnCxlTpAndLkg = None
 
-	@property
-	def CorpActnNtfctnDtls(self):
-		return self._CorpActnNtfctnDtls
-
-	@CorpActnNtfctnDtls.setter
-	def CorpActnNtfctnDtls(self, value):
-		self._CorpActnNtfctnDtls = value if type(value) != auto else self.make_default("CorpActnNtfctnDtls")
-
-	@CorpActnNtfctnDtls.deleter
-	def CorpActnNtfctnDtls(self):
-		del self._CorpActnNtfctnDtls
-		self._CorpActnNtfctnDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnNtfctnDtls', type=CorporateActionNotificationAdvice1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnCxlTpAndLkg', type=NotificationCancellation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnNtfctnDtls', type=CorporateActionNotificationAdvice1, min=0, max=1, mutex_group=None, array=False),
 	))
 

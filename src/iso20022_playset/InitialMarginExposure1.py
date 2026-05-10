@@ -1,7 +1,7 @@
 import base_types
-import Amount3
-import TrueFalseIndicator
 import MarginType2Choice
+import TrueFalseIndicator
+import Amount3
 
 class InitialMarginExposure1(base_types._BaseFieldType):
 

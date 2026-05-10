@@ -1,6 +1,6 @@
 import base_types
-import SystemAndCurrency1
 import CalendarOrBusinessError1Choice
+import SystemAndCurrency1
 
 class CalendarReport1(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 import base_types
-import UnitOrFaceAmount1Choice
-import Max350Text
 import SecuritiesAccount10
+import Max350Text
+import UnitOrFaceAmount1Choice
 import SecurityIdentification7
 
 class SecuritiesProceeds1(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_PstngQty", "_SctyId", "_RcncltnDtls"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_PstngQty", "_SctyId", "_RcncltnDtls", "_AcctDtls"]
 	@property
 	def PstngQty(self):
 		return self._PstngQty
@@ -59,10 +46,23 @@ class SecuritiesProceeds1(base_types._BaseFieldType):
 		del self._RcncltnDtls
 		self._RcncltnDtls = None
 
+	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount10, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount10, min=1, max=2, mutex_group=None, array=False),
 	))
 

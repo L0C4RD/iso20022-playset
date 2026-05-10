@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import Max35Text
+import CountryCode
 
 class PartyIdentification15(base_types._BaseFieldType):
 

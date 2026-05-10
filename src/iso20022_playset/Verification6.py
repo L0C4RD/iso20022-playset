@@ -1,28 +1,28 @@
 import base_types
-import Max500Text
-import VerificationEntity2Code
-import ExternalAuthenticationMethod1Code
 import AdditionalData1
+import Max500Text
+import VerificationValue1
+import VerificationEntity2Code
+import Verification3Code
 import Max35Text
 import PINData1
-import VerificationValue1
-import Verification3Code
+import ExternalAuthenticationMethod1Code
 
 class Verification6(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrNtty", "_OthrRslt", "_OthrTp", "_Rslt", "_PINData", "_Ntty", "_SubTp", "_RsltDtls", "_Data"]
+	__slots__ = ["_Ntty", "_OthrNtty", "_OthrTp", "_SubTp", "_OthrRslt", "_Data", "_PINData", "_Rslt", "_Tp", "_RsltDtls"]
 	@property
-	def Tp(self):
-		return self._Tp
+	def Ntty(self):
+		return self._Ntty
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@Ntty.setter
+	def Ntty(self, value):
+		self._Ntty = value if type(value) != auto else self.make_default("Ntty")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@Ntty.deleter
+	def Ntty(self):
+		del self._Ntty
+		self._Ntty = None
 
 	@property
 	def OthrNtty(self):
@@ -38,19 +38,6 @@ class Verification6(base_types._BaseFieldType):
 		self._OthrNtty = None
 
 	@property
-	def OthrRslt(self):
-		return self._OthrRslt
-
-	@OthrRslt.setter
-	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
-
-	@OthrRslt.deleter
-	def OthrRslt(self):
-		del self._OthrRslt
-		self._OthrRslt = None
-
-	@property
 	def OthrTp(self):
 		return self._OthrTp
 
@@ -62,45 +49,6 @@ class Verification6(base_types._BaseFieldType):
 	def OthrTp(self):
 		del self._OthrTp
 		self._OthrTp = None
-
-	@property
-	def Rslt(self):
-		return self._Rslt
-
-	@Rslt.setter
-	def Rslt(self, value):
-		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
-
-	@Rslt.deleter
-	def Rslt(self):
-		del self._Rslt
-		self._Rslt = None
-
-	@property
-	def PINData(self):
-		return self._PINData
-
-	@PINData.setter
-	def PINData(self, value):
-		self._PINData = value if type(value) != auto else self.make_default("PINData")
-
-	@PINData.deleter
-	def PINData(self):
-		del self._PINData
-		self._PINData = None
-
-	@property
-	def Ntty(self):
-		return self._Ntty
-
-	@Ntty.setter
-	def Ntty(self, value):
-		self._Ntty = value if type(value) != auto else self.make_default("Ntty")
-
-	@Ntty.deleter
-	def Ntty(self):
-		del self._Ntty
-		self._Ntty = None
 
 	@property
 	def SubTp(self):
@@ -116,17 +64,17 @@ class Verification6(base_types._BaseFieldType):
 		self._SubTp = None
 
 	@property
-	def RsltDtls(self):
-		return self._RsltDtls
+	def OthrRslt(self):
+		return self._OthrRslt
 
-	@RsltDtls.setter
-	def RsltDtls(self, value):
-		self._RsltDtls = value if type(value) != auto else self.make_default("RsltDtls")
+	@OthrRslt.setter
+	def OthrRslt(self, value):
+		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
 
-	@RsltDtls.deleter
-	def RsltDtls(self):
-		del self._RsltDtls
-		self._RsltDtls = None
+	@OthrRslt.deleter
+	def OthrRslt(self):
+		del self._OthrRslt
+		self._OthrRslt = None
 
 	@property
 	def Data(self):
@@ -141,16 +89,68 @@ class Verification6(base_types._BaseFieldType):
 		del self._Data
 		self._Data = None
 
+	@property
+	def PINData(self):
+		return self._PINData
+
+	@PINData.setter
+	def PINData(self, value):
+		self._PINData = value if type(value) != auto else self.make_default("PINData")
+
+	@PINData.deleter
+	def PINData(self):
+		del self._PINData
+		self._PINData = None
+
+	@property
+	def Rslt(self):
+		return self._Rslt
+
+	@Rslt.setter
+	def Rslt(self, value):
+		self._Rslt = value if type(value) != auto else self.make_default("Rslt")
+
+	@Rslt.deleter
+	def Rslt(self):
+		del self._Rslt
+		self._Rslt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def RsltDtls(self):
+		return self._RsltDtls
+
+	@RsltDtls.setter
+	def RsltDtls(self, value):
+		self._RsltDtls = value if type(value) != auto else self.make_default("RsltDtls")
+
+	@RsltDtls.deleter
+	def RsltDtls(self):
+		del self._RsltDtls
+		self._RsltDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rslt', type=Verification3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PINData', type=PINData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntty', type=VerificationEntity2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsltDtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OthrRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=VerificationValue1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PINData', type=PINData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rslt', type=Verification3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsltDtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

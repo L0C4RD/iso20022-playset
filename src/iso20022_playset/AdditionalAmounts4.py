@@ -1,27 +1,14 @@
 import base_types
-import Max70Text
-import ImpliedCurrencyAndAmount
-import CreditDebit3Code
 import Max35Text
 import ISO3NumericCurrencyCode
 import ISO8583AmountTypeCode
+import ImpliedCurrencyAndAmount
+import Max70Text
+import CreditDebit3Code
 
 class AdditionalAmounts4(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbt", "_Ccy", "_Desc", "_Tp", "_Amt", "_OthrTp"]
-	@property
-	def CdtDbt(self):
-		return self._CdtDbt
-
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
-
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
+	__slots__ = ["_Ccy", "_Desc", "_Amt", "_OthrTp", "_CdtDbt", "_Tp"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -49,19 +36,6 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def Amt(self):
 		return self._Amt
 
@@ -87,12 +61,38 @@ class AdditionalAmounts4(base_types._BaseFieldType):
 		del self._OthrTp
 		self._OthrTp = None
 
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ISO8583AmountTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

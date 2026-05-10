@@ -1,27 +1,27 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import AmountAndCurrency1
 import Max35Text
-import TransactionIdentifier3
-import TrueFalseIndicator
 import ATMDepositComponent1
+import TransactionIdentifier3
+import ImpliedCurrencyAndAmount
 import Max10000Binary
+import TrueFalseIndicator
+import AmountAndCurrency1
 
 class ATMTransaction50(base_types._BaseFieldType):
 
-	__slots__ = ["_ICCRltdData", "_ReqdRct", "_TxId", "_TtlReqdAmt", "_SubDpst", "_TtlAmt", "_RcncltnId"]
+	__slots__ = ["_RcncltnId", "_ReqdRct", "_SubDpst", "_TxId", "_TtlReqdAmt", "_TtlAmt", "_ICCRltdData"]
 	@property
-	def ICCRltdData(self):
-		return self._ICCRltdData
+	def RcncltnId(self):
+		return self._RcncltnId
 
-	@ICCRltdData.setter
-	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
+	@RcncltnId.setter
+	def RcncltnId(self, value):
+		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
 
-	@ICCRltdData.deleter
-	def ICCRltdData(self):
-		del self._ICCRltdData
-		self._ICCRltdData = None
+	@RcncltnId.deleter
+	def RcncltnId(self):
+		del self._RcncltnId
+		self._RcncltnId = None
 
 	@property
 	def ReqdRct(self):
@@ -35,6 +35,19 @@ class ATMTransaction50(base_types._BaseFieldType):
 	def ReqdRct(self):
 		del self._ReqdRct
 		self._ReqdRct = None
+
+	@property
+	def SubDpst(self):
+		return self._SubDpst
+
+	@SubDpst.setter
+	def SubDpst(self, value):
+		self._SubDpst = value if type(value) != auto else self.make_default("SubDpst")
+
+	@SubDpst.deleter
+	def SubDpst(self):
+		del self._SubDpst
+		self._SubDpst = None
 
 	@property
 	def TxId(self):
@@ -63,19 +76,6 @@ class ATMTransaction50(base_types._BaseFieldType):
 		self._TtlReqdAmt = None
 
 	@property
-	def SubDpst(self):
-		return self._SubDpst
-
-	@SubDpst.setter
-	def SubDpst(self, value):
-		self._SubDpst = value if type(value) != auto else self.make_default("SubDpst")
-
-	@SubDpst.deleter
-	def SubDpst(self):
-		del self._SubDpst
-		self._SubDpst = None
-
-	@property
 	def TtlAmt(self):
 		return self._TtlAmt
 
@@ -89,25 +89,25 @@ class ATMTransaction50(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def RcncltnId(self):
-		return self._RcncltnId
+	def ICCRltdData(self):
+		return self._ICCRltdData
 
-	@RcncltnId.setter
-	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != auto else self.make_default("RcncltnId")
+	@ICCRltdData.setter
+	def ICCRltdData(self, value):
+		self._ICCRltdData = value if type(value) != auto else self.make_default("ICCRltdData")
 
-	@RcncltnId.deleter
-	def RcncltnId(self):
-		del self._RcncltnId
-		self._RcncltnId = None
+	@ICCRltdData.deleter
+	def ICCRltdData(self):
+		del self._ICCRltdData
+		self._ICCRltdData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdRct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubDpst', type=ATMDepositComponent1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubDpst', type=ATMDepositComponent1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlAmt', type=AmountAndCurrency1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

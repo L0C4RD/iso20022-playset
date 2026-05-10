@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
-import SettlementFailsData3
 import SettlementFailsReportHeader2
+import SettlementFailsData3
 import SettlementFailsDailyData3
+import SupplementaryData1
 
 class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_MnthlyAggt", "_SplmtryData", "_RptHdr", "_DalyData"]
+	__slots__ = ["_MnthlyAggt", "_RptHdr", "_SplmtryData", "_DalyData"]
 	@property
 	def MnthlyAggt(self):
 		return self._MnthlyAggt
@@ -21,19 +21,6 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 		self._MnthlyAggt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def RptHdr(self):
 		return self._RptHdr
 
@@ -45,6 +32,19 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 	def RptHdr(self):
 		del self._RptHdr
 		self._RptHdr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def DalyData(self):
@@ -61,8 +61,8 @@ class SettlementFailsMonthlyReportV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MnthlyAggt', type=SettlementFailsData3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=SettlementFailsReportHeader2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DalyData', type=SettlementFailsDailyData3, min=1, max=None, mutex_group=None, array=True),
 	))
 

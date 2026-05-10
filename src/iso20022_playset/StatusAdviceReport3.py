@@ -1,8 +1,8 @@
 import base_types
-import GenericValidationRuleIdentification1
-import OriginalReportStatistics3
-import ISODate
 import ReportingMessageStatus1Code
+import GenericValidationRuleIdentification1
+import ISODate
+import OriginalReportStatistics3
 
 class StatusAdviceReport3(base_types._BaseFieldType):
 

@@ -1,24 +1,11 @@
 import base_types
-import Max350Text
 import CurrencyDesignation1Code
+import Max350Text
 import CountryCode
 
 class CurrencyDesignation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Lctn", "_CcyDsgnt", "_AddtlInf"]
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
+	__slots__ = ["_CcyDsgnt", "_AddtlInf", "_Lctn"]
 	@property
 	def CcyDsgnt(self):
 		return self._CcyDsgnt
@@ -45,9 +32,22 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 		del self._AddtlInf
 		self._AddtlInf = None
 
+	@property
+	def Lctn(self):
+		return self._Lctn
+
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
+
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Lctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyDsgnt', type=CurrencyDesignation1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

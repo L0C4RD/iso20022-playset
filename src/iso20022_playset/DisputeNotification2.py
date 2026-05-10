@@ -1,23 +1,10 @@
 import base_types
-import VariationMarginDispute1
 import SegregatedIndependentAmountDispute2
+import VariationMarginDispute1
 
 class DisputeNotification2(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmtDspt", "_VartnMrgnDspt"]
-	@property
-	def SgrtdIndpdntAmtDspt(self):
-		return self._SgrtdIndpdntAmtDspt
-
-	@SgrtdIndpdntAmtDspt.setter
-	def SgrtdIndpdntAmtDspt(self, value):
-		self._SgrtdIndpdntAmtDspt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtDspt")
-
-	@SgrtdIndpdntAmtDspt.deleter
-	def SgrtdIndpdntAmtDspt(self):
-		del self._SgrtdIndpdntAmtDspt
-		self._SgrtdIndpdntAmtDspt = None
-
+	__slots__ = ["_VartnMrgnDspt", "_SgrtdIndpdntAmtDspt"]
 	@property
 	def VartnMrgnDspt(self):
 		return self._VartnMrgnDspt
@@ -31,8 +18,21 @@ class DisputeNotification2(base_types._BaseFieldType):
 		del self._VartnMrgnDspt
 		self._VartnMrgnDspt = None
 
+	@property
+	def SgrtdIndpdntAmtDspt(self):
+		return self._SgrtdIndpdntAmtDspt
+
+	@SgrtdIndpdntAmtDspt.setter
+	def SgrtdIndpdntAmtDspt(self, value):
+		self._SgrtdIndpdntAmtDspt = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtDspt")
+
+	@SgrtdIndpdntAmtDspt.deleter
+	def SgrtdIndpdntAmtDspt(self):
+		del self._SgrtdIndpdntAmtDspt
+		self._SgrtdIndpdntAmtDspt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SgrtdIndpdntAmtDspt', type=SegregatedIndependentAmountDispute2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgnDspt', type=VariationMarginDispute1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgrtdIndpdntAmtDspt', type=SegregatedIndependentAmountDispute2, min=0, max=1, mutex_group=None, array=False),
 	))
 

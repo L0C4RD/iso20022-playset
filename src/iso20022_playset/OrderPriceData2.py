@@ -4,19 +4,19 @@ import ActiveOrHistoricCurrencyCode
 
 class OrderPriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_CcyScndLeg", "_AddtlLmtPric", "_LmtPric", "_StopPric", "_PggdPric"]
+	__slots__ = ["_PggdPric", "_AddtlLmtPric", "_CcyScndLeg", "_StopPric", "_LmtPric"]
 	@property
-	def CcyScndLeg(self):
-		return self._CcyScndLeg
+	def PggdPric(self):
+		return self._PggdPric
 
-	@CcyScndLeg.setter
-	def CcyScndLeg(self, value):
-		self._CcyScndLeg = value if type(value) != auto else self.make_default("CcyScndLeg")
+	@PggdPric.setter
+	def PggdPric(self, value):
+		self._PggdPric = value if type(value) != auto else self.make_default("PggdPric")
 
-	@CcyScndLeg.deleter
-	def CcyScndLeg(self):
-		del self._CcyScndLeg
-		self._CcyScndLeg = None
+	@PggdPric.deleter
+	def PggdPric(self):
+		del self._PggdPric
+		self._PggdPric = None
 
 	@property
 	def AddtlLmtPric(self):
@@ -32,17 +32,17 @@ class OrderPriceData2(base_types._BaseFieldType):
 		self._AddtlLmtPric = None
 
 	@property
-	def LmtPric(self):
-		return self._LmtPric
+	def CcyScndLeg(self):
+		return self._CcyScndLeg
 
-	@LmtPric.setter
-	def LmtPric(self, value):
-		self._LmtPric = value if type(value) != auto else self.make_default("LmtPric")
+	@CcyScndLeg.setter
+	def CcyScndLeg(self, value):
+		self._CcyScndLeg = value if type(value) != auto else self.make_default("CcyScndLeg")
 
-	@LmtPric.deleter
-	def LmtPric(self):
-		del self._LmtPric
-		self._LmtPric = None
+	@CcyScndLeg.deleter
+	def CcyScndLeg(self):
+		del self._CcyScndLeg
+		self._CcyScndLeg = None
 
 	@property
 	def StopPric(self):
@@ -58,23 +58,23 @@ class OrderPriceData2(base_types._BaseFieldType):
 		self._StopPric = None
 
 	@property
-	def PggdPric(self):
-		return self._PggdPric
+	def LmtPric(self):
+		return self._LmtPric
 
-	@PggdPric.setter
-	def PggdPric(self, value):
-		self._PggdPric = value if type(value) != auto else self.make_default("PggdPric")
+	@LmtPric.setter
+	def LmtPric(self, value):
+		self._LmtPric = value if type(value) != auto else self.make_default("LmtPric")
 
-	@PggdPric.deleter
-	def PggdPric(self):
-		del self._PggdPric
-		self._PggdPric = None
+	@LmtPric.deleter
+	def LmtPric(self):
+		del self._LmtPric
+		self._LmtPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlLmtPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StopPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PggdPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlLmtPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CcyScndLeg', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StopPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LmtPric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

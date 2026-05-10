@@ -1,11 +1,11 @@
 import base_types
-import CashAccountSearchCriteria8
-import CashAccountReturnCriteria5
 import Max35Text
+import CashAccountReturnCriteria5
+import CashAccountSearchCriteria8
 
 class AccountCriteria8(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrCrit", "_NewQryNm", "_SchCrit"]
+	__slots__ = ["_RtrCrit", "_SchCrit", "_NewQryNm"]
 	@property
 	def RtrCrit(self):
 		return self._RtrCrit
@@ -20,19 +20,6 @@ class AccountCriteria8(base_types._BaseFieldType):
 		self._RtrCrit = None
 
 	@property
-	def NewQryNm(self):
-		return self._NewQryNm
-
-	@NewQryNm.setter
-	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
-
-	@NewQryNm.deleter
-	def NewQryNm(self):
-		del self._NewQryNm
-		self._NewQryNm = None
-
-	@property
 	def SchCrit(self):
 		return self._SchCrit
 
@@ -45,9 +32,22 @@ class AccountCriteria8(base_types._BaseFieldType):
 		del self._SchCrit
 		self._SchCrit = None
 
+	@property
+	def NewQryNm(self):
+		return self._NewQryNm
+
+	@NewQryNm.setter
+	def NewQryNm(self, value):
+		self._NewQryNm = value if type(value) != auto else self.make_default("NewQryNm")
+
+	@NewQryNm.deleter
+	def NewQryNm(self):
+		del self._NewQryNm
+		self._NewQryNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RtrCrit', type=CashAccountReturnCriteria5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=CashAccountSearchCriteria8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

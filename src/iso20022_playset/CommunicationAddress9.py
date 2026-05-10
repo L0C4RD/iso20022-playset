@@ -1,11 +1,24 @@
 import base_types
-import Max256Text
 import PhoneNumber
 import PostalAddress22
+import Max256Text
 
 class CommunicationAddress9(base_types._BaseFieldType):
 
-	__slots__ = ["_CstmrSvc", "_Phne", "_AddtlCtctInf", "_PstlAdr", "_URLAdr", "_Email"]
+	__slots__ = ["_Email", "_CstmrSvc", "_AddtlCtctInf", "_Phne", "_PstlAdr", "_URLAdr"]
+	@property
+	def Email(self):
+		return self._Email
+
+	@Email.setter
+	def Email(self, value):
+		self._Email = value if type(value) != auto else self.make_default("Email")
+
+	@Email.deleter
+	def Email(self):
+		del self._Email
+		self._Email = None
+
 	@property
 	def CstmrSvc(self):
 		return self._CstmrSvc
@@ -20,19 +33,6 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		self._CstmrSvc = None
 
 	@property
-	def Phne(self):
-		return self._Phne
-
-	@Phne.setter
-	def Phne(self, value):
-		self._Phne = value if type(value) != auto else self.make_default("Phne")
-
-	@Phne.deleter
-	def Phne(self):
-		del self._Phne
-		self._Phne = None
-
-	@property
 	def AddtlCtctInf(self):
 		return self._AddtlCtctInf
 
@@ -44,6 +44,19 @@ class CommunicationAddress9(base_types._BaseFieldType):
 	def AddtlCtctInf(self):
 		del self._AddtlCtctInf
 		self._AddtlCtctInf = None
+
+	@property
+	def Phne(self):
+		return self._Phne
+
+	@Phne.setter
+	def Phne(self, value):
+		self._Phne = value if type(value) != auto else self.make_default("Phne")
+
+	@Phne.deleter
+	def Phne(self):
+		del self._Phne
+		self._Phne = None
 
 	@property
 	def PstlAdr(self):
@@ -71,25 +84,12 @@ class CommunicationAddress9(base_types._BaseFieldType):
 		del self._URLAdr
 		self._URLAdr = None
 
-	@property
-	def Email(self):
-		return self._Email
-
-	@Email.setter
-	def Email(self, value):
-		self._Email = value if type(value) != auto else self.make_default("Email")
-
-	@Email.deleter
-	def Email(self):
-		del self._Email
-		self._Email = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrSvc', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlCtctInf', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Phne', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress22, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

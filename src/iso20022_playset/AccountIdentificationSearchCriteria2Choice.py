@@ -1,22 +1,22 @@
 import base_types
-import AccountIdentification4Choice
 import Max35Text
+import AccountIdentification4Choice
 
 class AccountIdentificationSearchCriteria2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_CTTxt", "_EQ", "_NCTTxt"]
+	__slots__ = ["_NCTTxt", "_EQ", "_CTTxt"]
 	@property
-	def CTTxt(self):
-		return self._CTTxt
+	def NCTTxt(self):
+		return self._NCTTxt
 
-	@CTTxt.setter
-	def CTTxt(self, value):
-		self._CTTxt = value if type(value) != auto else self.make_default("CTTxt")
+	@NCTTxt.setter
+	def NCTTxt(self, value):
+		self._NCTTxt = value if type(value) != auto else self.make_default("NCTTxt")
 
-	@CTTxt.deleter
-	def CTTxt(self):
-		del self._CTTxt
-		self._CTTxt = None
+	@NCTTxt.deleter
+	def NCTTxt(self):
+		del self._NCTTxt
+		self._NCTTxt = None
 
 	@property
 	def EQ(self):
@@ -32,21 +32,21 @@ class AccountIdentificationSearchCriteria2Choice(base_types._BaseFieldType):
 		self._EQ = None
 
 	@property
-	def NCTTxt(self):
-		return self._NCTTxt
+	def CTTxt(self):
+		return self._CTTxt
 
-	@NCTTxt.setter
-	def NCTTxt(self, value):
-		self._NCTTxt = value if type(value) != auto else self.make_default("NCTTxt")
+	@CTTxt.setter
+	def CTTxt(self, value):
+		self._CTTxt = value if type(value) != auto else self.make_default("CTTxt")
 
-	@NCTTxt.deleter
-	def NCTTxt(self):
-		del self._NCTTxt
-		self._NCTTxt = None
+	@CTTxt.deleter
+	def CTTxt(self):
+		del self._CTTxt
+		self._CTTxt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CTTxt', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='EQ', type=AccountIdentification4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NCTTxt', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='EQ', type=AccountIdentification4Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CTTxt', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

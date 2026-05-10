@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import DecimalNumber
+import PercentageRate
 
 class Quantity42Choice(base_types._BaseFieldType):
 

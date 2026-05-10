@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import MarginCallResponse1Code
+import GenericIdentification30
 
 class ResponseType1Choice(base_types._BaseFieldType):
 

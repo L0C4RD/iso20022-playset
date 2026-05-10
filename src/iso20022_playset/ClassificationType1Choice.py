@@ -1,6 +1,6 @@
 import base_types
-import CFIOct2015Identifier
 import GenericIdentification1
+import CFIOct2015Identifier
 
 class ClassificationType1Choice(base_types._BaseFieldType):
 

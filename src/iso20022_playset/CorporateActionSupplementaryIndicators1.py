@@ -3,58 +3,19 @@ import YesNoIndicator
 
 class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 
-	__slots__ = ["_SlctnDealrFeeInd", "_EscrwToMtrtyInd", "_StepUpPrvlgInd", "_RghtsRndUpPrvlgInd", "_RghtsTrfblInd", "_RghtsOvrsbcptInd", "_CondlPmtAplblInd", "_SrrndrShrsToAgtInd"]
+	__slots__ = ["_RghtsOvrsbcptInd", "_RghtsTrfblInd", "_EscrwToMtrtyInd", "_SlctnDealrFeeInd", "_CondlPmtAplblInd", "_SrrndrShrsToAgtInd", "_StepUpPrvlgInd", "_RghtsRndUpPrvlgInd"]
 	@property
-	def SlctnDealrFeeInd(self):
-		return self._SlctnDealrFeeInd
+	def RghtsOvrsbcptInd(self):
+		return self._RghtsOvrsbcptInd
 
-	@SlctnDealrFeeInd.setter
-	def SlctnDealrFeeInd(self, value):
-		self._SlctnDealrFeeInd = value if type(value) != auto else self.make_default("SlctnDealrFeeInd")
+	@RghtsOvrsbcptInd.setter
+	def RghtsOvrsbcptInd(self, value):
+		self._RghtsOvrsbcptInd = value if type(value) != auto else self.make_default("RghtsOvrsbcptInd")
 
-	@SlctnDealrFeeInd.deleter
-	def SlctnDealrFeeInd(self):
-		del self._SlctnDealrFeeInd
-		self._SlctnDealrFeeInd = None
-
-	@property
-	def EscrwToMtrtyInd(self):
-		return self._EscrwToMtrtyInd
-
-	@EscrwToMtrtyInd.setter
-	def EscrwToMtrtyInd(self, value):
-		self._EscrwToMtrtyInd = value if type(value) != auto else self.make_default("EscrwToMtrtyInd")
-
-	@EscrwToMtrtyInd.deleter
-	def EscrwToMtrtyInd(self):
-		del self._EscrwToMtrtyInd
-		self._EscrwToMtrtyInd = None
-
-	@property
-	def StepUpPrvlgInd(self):
-		return self._StepUpPrvlgInd
-
-	@StepUpPrvlgInd.setter
-	def StepUpPrvlgInd(self, value):
-		self._StepUpPrvlgInd = value if type(value) != auto else self.make_default("StepUpPrvlgInd")
-
-	@StepUpPrvlgInd.deleter
-	def StepUpPrvlgInd(self):
-		del self._StepUpPrvlgInd
-		self._StepUpPrvlgInd = None
-
-	@property
-	def RghtsRndUpPrvlgInd(self):
-		return self._RghtsRndUpPrvlgInd
-
-	@RghtsRndUpPrvlgInd.setter
-	def RghtsRndUpPrvlgInd(self, value):
-		self._RghtsRndUpPrvlgInd = value if type(value) != auto else self.make_default("RghtsRndUpPrvlgInd")
-
-	@RghtsRndUpPrvlgInd.deleter
-	def RghtsRndUpPrvlgInd(self):
-		del self._RghtsRndUpPrvlgInd
-		self._RghtsRndUpPrvlgInd = None
+	@RghtsOvrsbcptInd.deleter
+	def RghtsOvrsbcptInd(self):
+		del self._RghtsOvrsbcptInd
+		self._RghtsOvrsbcptInd = None
 
 	@property
 	def RghtsTrfblInd(self):
@@ -70,17 +31,30 @@ class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 		self._RghtsTrfblInd = None
 
 	@property
-	def RghtsOvrsbcptInd(self):
-		return self._RghtsOvrsbcptInd
+	def EscrwToMtrtyInd(self):
+		return self._EscrwToMtrtyInd
 
-	@RghtsOvrsbcptInd.setter
-	def RghtsOvrsbcptInd(self, value):
-		self._RghtsOvrsbcptInd = value if type(value) != auto else self.make_default("RghtsOvrsbcptInd")
+	@EscrwToMtrtyInd.setter
+	def EscrwToMtrtyInd(self, value):
+		self._EscrwToMtrtyInd = value if type(value) != auto else self.make_default("EscrwToMtrtyInd")
 
-	@RghtsOvrsbcptInd.deleter
-	def RghtsOvrsbcptInd(self):
-		del self._RghtsOvrsbcptInd
-		self._RghtsOvrsbcptInd = None
+	@EscrwToMtrtyInd.deleter
+	def EscrwToMtrtyInd(self):
+		del self._EscrwToMtrtyInd
+		self._EscrwToMtrtyInd = None
+
+	@property
+	def SlctnDealrFeeInd(self):
+		return self._SlctnDealrFeeInd
+
+	@SlctnDealrFeeInd.setter
+	def SlctnDealrFeeInd(self, value):
+		self._SlctnDealrFeeInd = value if type(value) != auto else self.make_default("SlctnDealrFeeInd")
+
+	@SlctnDealrFeeInd.deleter
+	def SlctnDealrFeeInd(self):
+		del self._SlctnDealrFeeInd
+		self._SlctnDealrFeeInd = None
 
 	@property
 	def CondlPmtAplblInd(self):
@@ -108,14 +82,40 @@ class CorporateActionSupplementaryIndicators1(base_types._BaseFieldType):
 		del self._SrrndrShrsToAgtInd
 		self._SrrndrShrsToAgtInd = None
 
+	@property
+	def StepUpPrvlgInd(self):
+		return self._StepUpPrvlgInd
+
+	@StepUpPrvlgInd.setter
+	def StepUpPrvlgInd(self, value):
+		self._StepUpPrvlgInd = value if type(value) != auto else self.make_default("StepUpPrvlgInd")
+
+	@StepUpPrvlgInd.deleter
+	def StepUpPrvlgInd(self):
+		del self._StepUpPrvlgInd
+		self._StepUpPrvlgInd = None
+
+	@property
+	def RghtsRndUpPrvlgInd(self):
+		return self._RghtsRndUpPrvlgInd
+
+	@RghtsRndUpPrvlgInd.setter
+	def RghtsRndUpPrvlgInd(self, value):
+		self._RghtsRndUpPrvlgInd = value if type(value) != auto else self.make_default("RghtsRndUpPrvlgInd")
+
+	@RghtsRndUpPrvlgInd.deleter
+	def RghtsRndUpPrvlgInd(self):
+		del self._RghtsRndUpPrvlgInd
+		self._RghtsRndUpPrvlgInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EscrwToMtrtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StepUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RghtsRndUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RghtsTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RghtsOvrsbcptInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsTrfblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EscrwToMtrtyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SlctnDealrFeeInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CondlPmtAplblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrrndrShrsToAgtInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StepUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RghtsRndUpPrvlgInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

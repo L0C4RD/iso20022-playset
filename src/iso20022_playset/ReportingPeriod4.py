@@ -1,24 +1,11 @@
 import base_types
-import QueryType3Code
 import DatePeriod3
+import QueryType3Code
 import TimePeriod2
 
 class ReportingPeriod4(base_types._BaseFieldType):
 
-	__slots__ = ["_FrToDt", "_Tp", "_FrToTm"]
-	@property
-	def FrToDt(self):
-		return self._FrToDt
-
-	@FrToDt.setter
-	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != auto else self.make_default("FrToDt")
-
-	@FrToDt.deleter
-	def FrToDt(self):
-		del self._FrToDt
-		self._FrToDt = None
-
+	__slots__ = ["_Tp", "_FrToDt", "_FrToTm"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -31,6 +18,19 @@ class ReportingPeriod4(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def FrToDt(self):
+		return self._FrToDt
+
+	@FrToDt.setter
+	def FrToDt(self, value):
+		self._FrToDt = value if type(value) != auto else self.make_default("FrToDt")
+
+	@FrToDt.deleter
+	def FrToDt(self):
+		del self._FrToDt
+		self._FrToDt = None
 
 	@property
 	def FrToTm(self):
@@ -46,8 +46,8 @@ class ReportingPeriod4(base_types._BaseFieldType):
 		self._FrToTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FrToDt', type=DatePeriod3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=QueryType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrToDt', type=DatePeriod3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrToTm', type=TimePeriod2, min=1, max=1, mutex_group=None, array=False),
 	))
 

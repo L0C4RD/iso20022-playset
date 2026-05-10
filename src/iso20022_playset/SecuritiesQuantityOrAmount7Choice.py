@@ -1,6 +1,6 @@
 import base_types
-import SecuritiesOption88
 import RestrictedFINActiveCurrencyAndAmount
+import SecuritiesOption88
 
 class SecuritiesQuantityOrAmount7Choice(base_types._BaseFieldType):
 

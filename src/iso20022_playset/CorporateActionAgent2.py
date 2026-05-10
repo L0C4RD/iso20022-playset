@@ -3,7 +3,46 @@ import PartyIdentification289
 
 class CorporateActionAgent2(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrAgt", "_RmktgAgt", "_PngAgt", "_Issr", "_InfAgt", "_SlctnAgt", "_RedAgt", "_Regar", "_TrfAgt"]
+	__slots__ = ["_SlctnAgt", "_TrfAgt", "_PngAgt", "_IssrAgt", "_RmktgAgt", "_Regar", "_RedAgt", "_InfAgt", "_Issr"]
+	@property
+	def SlctnAgt(self):
+		return self._SlctnAgt
+
+	@SlctnAgt.setter
+	def SlctnAgt(self, value):
+		self._SlctnAgt = value if type(value) != auto else self.make_default("SlctnAgt")
+
+	@SlctnAgt.deleter
+	def SlctnAgt(self):
+		del self._SlctnAgt
+		self._SlctnAgt = None
+
+	@property
+	def TrfAgt(self):
+		return self._TrfAgt
+
+	@TrfAgt.setter
+	def TrfAgt(self, value):
+		self._TrfAgt = value if type(value) != auto else self.make_default("TrfAgt")
+
+	@TrfAgt.deleter
+	def TrfAgt(self):
+		del self._TrfAgt
+		self._TrfAgt = None
+
+	@property
+	def PngAgt(self):
+		return self._PngAgt
+
+	@PngAgt.setter
+	def PngAgt(self, value):
+		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
+
+	@PngAgt.deleter
+	def PngAgt(self):
+		del self._PngAgt
+		self._PngAgt = None
+
 	@property
 	def IssrAgt(self):
 		return self._IssrAgt
@@ -31,56 +70,17 @@ class CorporateActionAgent2(base_types._BaseFieldType):
 		self._RmktgAgt = None
 
 	@property
-	def PngAgt(self):
-		return self._PngAgt
+	def Regar(self):
+		return self._Regar
 
-	@PngAgt.setter
-	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
+	@Regar.setter
+	def Regar(self, value):
+		self._Regar = value if type(value) != auto else self.make_default("Regar")
 
-	@PngAgt.deleter
-	def PngAgt(self):
-		del self._PngAgt
-		self._PngAgt = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def InfAgt(self):
-		return self._InfAgt
-
-	@InfAgt.setter
-	def InfAgt(self, value):
-		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
-
-	@InfAgt.deleter
-	def InfAgt(self):
-		del self._InfAgt
-		self._InfAgt = None
-
-	@property
-	def SlctnAgt(self):
-		return self._SlctnAgt
-
-	@SlctnAgt.setter
-	def SlctnAgt(self, value):
-		self._SlctnAgt = value if type(value) != auto else self.make_default("SlctnAgt")
-
-	@SlctnAgt.deleter
-	def SlctnAgt(self):
-		del self._SlctnAgt
-		self._SlctnAgt = None
+	@Regar.deleter
+	def Regar(self):
+		del self._Regar
+		self._Regar = None
 
 	@property
 	def RedAgt(self):
@@ -96,40 +96,40 @@ class CorporateActionAgent2(base_types._BaseFieldType):
 		self._RedAgt = None
 
 	@property
-	def Regar(self):
-		return self._Regar
+	def InfAgt(self):
+		return self._InfAgt
 
-	@Regar.setter
-	def Regar(self, value):
-		self._Regar = value if type(value) != auto else self.make_default("Regar")
+	@InfAgt.setter
+	def InfAgt(self, value):
+		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
 
-	@Regar.deleter
-	def Regar(self):
-		del self._Regar
-		self._Regar = None
+	@InfAgt.deleter
+	def InfAgt(self):
+		del self._InfAgt
+		self._InfAgt = None
 
 	@property
-	def TrfAgt(self):
-		return self._TrfAgt
+	def Issr(self):
+		return self._Issr
 
-	@TrfAgt.setter
-	def TrfAgt(self, value):
-		self._TrfAgt = value if type(value) != auto else self.make_default("TrfAgt")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@TrfAgt.deleter
-	def TrfAgt(self):
-		del self._TrfAgt
-		self._TrfAgt = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SlctnAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PngAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmktgAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PngAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SlctnAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RedAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Regar', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RedAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfAgt', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification289, min=0, max=1, mutex_group=None, array=False),
 	))
 

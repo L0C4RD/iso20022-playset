@@ -1,26 +1,13 @@
 import base_types
 import Max15NumericText
-import FinancingItemList1
+import EncapsulatedBusinessMessage1
 import DecimalNumber
 import BusinessLetter1
-import EncapsulatedBusinessMessage1
+import FinancingItemList1
 
 class InvoiceAssignmentStatusV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_AssgnmtList", "_AttchdMsg", "_AssgnmtCnt", "_ItmCnt", "_CtrlSum"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_AssgnmtList", "_ItmCnt", "_Hdr", "_AttchdMsg", "_AssgnmtCnt", "_CtrlSum"]
 	@property
 	def AssgnmtList(self):
 		return self._AssgnmtList
@@ -33,6 +20,32 @@ class InvoiceAssignmentStatusV01(base_types._BaseFieldType):
 	def AssgnmtList(self):
 		del self._AssgnmtList
 		self._AssgnmtList = None
+
+	@property
+	def ItmCnt(self):
+		return self._ItmCnt
+
+	@ItmCnt.setter
+	def ItmCnt(self, value):
+		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
+
+	@ItmCnt.deleter
+	def ItmCnt(self):
+		del self._ItmCnt
+		self._ItmCnt = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def AttchdMsg(self):
@@ -61,19 +74,6 @@ class InvoiceAssignmentStatusV01(base_types._BaseFieldType):
 		self._AssgnmtCnt = None
 
 	@property
-	def ItmCnt(self):
-		return self._ItmCnt
-
-	@ItmCnt.setter
-	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != auto else self.make_default("ItmCnt")
-
-	@ItmCnt.deleter
-	def ItmCnt(self):
-		del self._ItmCnt
-		self._ItmCnt = None
-
-	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
@@ -87,11 +87,11 @@ class InvoiceAssignmentStatusV01(base_types._BaseFieldType):
 		self._CtrlSum = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AssgnmtList', type=FinancingItemList1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AssgnmtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

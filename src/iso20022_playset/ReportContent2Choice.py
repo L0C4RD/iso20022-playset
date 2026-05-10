@@ -5,20 +5,7 @@ import Max10MbText
 
 class ReportContent2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Txt", "_Binry", "_PrtctdData"]
-	@property
-	def Txt(self):
-		return self._Txt
-
-	@Txt.setter
-	def Txt(self, value):
-		self._Txt = value if type(value) != auto else self.make_default("Txt")
-
-	@Txt.deleter
-	def Txt(self):
-		del self._Txt
-		self._Txt = None
-
+	__slots__ = ["_Binry", "_PrtctdData", "_Txt"]
 	@property
 	def Binry(self):
 		return self._Binry
@@ -45,9 +32,22 @@ class ReportContent2Choice(base_types._BaseFieldType):
 		del self._PrtctdData
 		self._PrtctdData = None
 
+	@property
+	def Txt(self):
+		return self._Txt
+
+	@Txt.setter
+	def Txt(self, value):
+		self._Txt = value if type(value) != auto else self.make_default("Txt")
+
+	@Txt.deleter
+	def Txt(self):
+		del self._Txt
+		self._Txt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Txt', type=Max10MbText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Binry', type=Max20MbBinary, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Txt', type=Max10MbText, min=0, max=1, mutex_group=1, array=False),
 	))
 

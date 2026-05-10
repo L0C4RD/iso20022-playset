@@ -1,6 +1,6 @@
 import base_types
-import Quantity48Choice
 import ShortLong1Code
+import Quantity48Choice
 
 class SignedQuantityFormat11(base_types._BaseFieldType):
 

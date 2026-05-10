@@ -1,24 +1,24 @@
 import base_types
 import Max105Text
-import RequestStatus1Code
 import FinancingRateOrAmountChoice
 import StatusReason4Choice
+import RequestStatus1Code
 
 class FinancingResult1(base_types._BaseFieldType):
 
-	__slots__ = ["_FincdAmt", "_StsRsn", "_FincgReqSts", "_AddtlStsRsnInf"]
+	__slots__ = ["_AddtlStsRsnInf", "_StsRsn", "_FincgReqSts", "_FincdAmt"]
 	@property
-	def FincdAmt(self):
-		return self._FincdAmt
+	def AddtlStsRsnInf(self):
+		return self._AddtlStsRsnInf
 
-	@FincdAmt.setter
-	def FincdAmt(self, value):
-		self._FincdAmt = value if type(value) != auto else self.make_default("FincdAmt")
+	@AddtlStsRsnInf.setter
+	def AddtlStsRsnInf(self, value):
+		self._AddtlStsRsnInf = value if type(value) != auto else self.make_default("AddtlStsRsnInf")
 
-	@FincdAmt.deleter
-	def FincdAmt(self):
-		del self._FincdAmt
-		self._FincdAmt = None
+	@AddtlStsRsnInf.deleter
+	def AddtlStsRsnInf(self):
+		del self._AddtlStsRsnInf
+		self._AddtlStsRsnInf = None
 
 	@property
 	def StsRsn(self):
@@ -47,22 +47,22 @@ class FinancingResult1(base_types._BaseFieldType):
 		self._FincgReqSts = None
 
 	@property
-	def AddtlStsRsnInf(self):
-		return self._AddtlStsRsnInf
+	def FincdAmt(self):
+		return self._FincdAmt
 
-	@AddtlStsRsnInf.setter
-	def AddtlStsRsnInf(self, value):
-		self._AddtlStsRsnInf = value if type(value) != auto else self.make_default("AddtlStsRsnInf")
+	@FincdAmt.setter
+	def FincdAmt(self, value):
+		self._FincdAmt = value if type(value) != auto else self.make_default("FincdAmt")
 
-	@AddtlStsRsnInf.deleter
-	def AddtlStsRsnInf(self):
-		del self._AddtlStsRsnInf
-		self._AddtlStsRsnInf = None
+	@FincdAmt.deleter
+	def FincdAmt(self):
+		del self._FincdAmt
+		self._FincdAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FincdAmt', type=FinancingRateOrAmountChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FincgReqSts', type=RequestStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FincdAmt', type=FinancingRateOrAmountChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,24 @@
 import base_types
-import SupplementaryData1
 import Max52Text
+import SupplementaryData1
 import RecordTechnicalData2
 import LEIIdentifier
 
 class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TechAttrbts", "_SubmitgPty", "_SplmtryData", "_TxId", "_ExctgPty"]
+	__slots__ = ["_ExctgPty", "_SubmitgPty", "_TechAttrbts", "_TxId", "_SplmtryData"]
 	@property
-	def TechAttrbts(self):
-		return self._TechAttrbts
+	def ExctgPty(self):
+		return self._ExctgPty
 
-	@TechAttrbts.setter
-	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != auto else self.make_default("TechAttrbts")
+	@ExctgPty.setter
+	def ExctgPty(self, value):
+		self._ExctgPty = value if type(value) != auto else self.make_default("ExctgPty")
 
-	@TechAttrbts.deleter
-	def TechAttrbts(self):
-		del self._TechAttrbts
-		self._TechAttrbts = None
+	@ExctgPty.deleter
+	def ExctgPty(self):
+		del self._ExctgPty
+		self._ExctgPty = None
 
 	@property
 	def SubmitgPty(self):
@@ -34,17 +34,17 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		self._SubmitgPty = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def TechAttrbts(self):
+		return self._TechAttrbts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@TechAttrbts.setter
+	def TechAttrbts(self, value):
+		self._TechAttrbts = value if type(value) != auto else self.make_default("TechAttrbts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@TechAttrbts.deleter
+	def TechAttrbts(self):
+		del self._TechAttrbts
+		self._TechAttrbts = None
 
 	@property
 	def TxId(self):
@@ -60,23 +60,23 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def ExctgPty(self):
-		return self._ExctgPty
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ExctgPty.setter
-	def ExctgPty(self, value):
-		self._ExctgPty = value if type(value) != auto else self.make_default("ExctgPty")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@ExctgPty.deleter
-	def ExctgPty(self):
-		del self._ExctgPty
-		self._ExctgPty = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

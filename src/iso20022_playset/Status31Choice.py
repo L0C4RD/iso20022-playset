@@ -1,25 +1,12 @@
 import base_types
-import TransferCancellationPendingStatus1
-import TransferCancellationStatus3
 import RejectionReason33
+import TransferCancellationPendingStatus1
 import CancelledCompleteReason1
+import TransferCancellationStatus3
 
 class Status31Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmplt", "_Pdg", "_Rjctd", "_Sts"]
-	@property
-	def Cmplt(self):
-		return self._Cmplt
-
-	@Cmplt.setter
-	def Cmplt(self, value):
-		self._Cmplt = value if type(value) != auto else self.make_default("Cmplt")
-
-	@Cmplt.deleter
-	def Cmplt(self):
-		del self._Cmplt
-		self._Cmplt = None
-
+	__slots__ = ["_Pdg", "_Sts", "_Rjctd", "_Cmplt"]
 	@property
 	def Pdg(self):
 		return self._Pdg
@@ -32,6 +19,19 @@ class Status31Choice(base_types._BaseFieldType):
 	def Pdg(self):
 		del self._Pdg
 		self._Pdg = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def Rjctd(self):
@@ -47,22 +47,22 @@ class Status31Choice(base_types._BaseFieldType):
 		self._Rjctd = None
 
 	@property
-	def Sts(self):
-		return self._Sts
+	def Cmplt(self):
+		return self._Cmplt
 
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
+	@Cmplt.setter
+	def Cmplt(self, value):
+		self._Cmplt = value if type(value) != auto else self.make_default("Cmplt")
 
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
+	@Cmplt.deleter
+	def Cmplt(self):
+		del self._Cmplt
+		self._Cmplt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cmplt', type=CancelledCompleteReason1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pdg', type=TransferCancellationPendingStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rjctd', type=RejectionReason33, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sts', type=TransferCancellationStatus3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rjctd', type=RejectionReason33, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cmplt', type=CancelledCompleteReason1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,38 +1,25 @@
 import base_types
-import EUDividendStatus1Code
-import EUCapitalGain2Code
 import PercentageRate
-import ActiveOrHistoricCurrencyAnd13DecimalAmount
+import EUDividendStatus1Code
 import Extended350Code
+import EUCapitalGain2Code
+import ActiveOrHistoricCurrencyAnd13DecimalAmount
 
 class TaxCalculationInformation4(base_types._BaseFieldType):
 
-	__slots__ = ["_TaxblIncmPerDvdd", "_XtndedEUDvddSts", "_XtndedEUCptlGn", "_EUCptlGn", "_PctgOfDebtClm", "_PctgGrdfthdDebt", "_EUDvddSts"]
+	__slots__ = ["_EUDvddSts", "_XtndedEUCptlGn", "_TaxblIncmPerDvdd", "_PctgOfDebtClm", "_XtndedEUDvddSts", "_PctgGrdfthdDebt", "_EUCptlGn"]
 	@property
-	def TaxblIncmPerDvdd(self):
-		return self._TaxblIncmPerDvdd
+	def EUDvddSts(self):
+		return self._EUDvddSts
 
-	@TaxblIncmPerDvdd.setter
-	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
+	@EUDvddSts.setter
+	def EUDvddSts(self, value):
+		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
 
-	@TaxblIncmPerDvdd.deleter
-	def TaxblIncmPerDvdd(self):
-		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
-
-	@property
-	def XtndedEUDvddSts(self):
-		return self._XtndedEUDvddSts
-
-	@XtndedEUDvddSts.setter
-	def XtndedEUDvddSts(self, value):
-		self._XtndedEUDvddSts = value if type(value) != auto else self.make_default("XtndedEUDvddSts")
-
-	@XtndedEUDvddSts.deleter
-	def XtndedEUDvddSts(self):
-		del self._XtndedEUDvddSts
-		self._XtndedEUDvddSts = None
+	@EUDvddSts.deleter
+	def EUDvddSts(self):
+		del self._EUDvddSts
+		self._EUDvddSts = None
 
 	@property
 	def XtndedEUCptlGn(self):
@@ -48,17 +35,17 @@ class TaxCalculationInformation4(base_types._BaseFieldType):
 		self._XtndedEUCptlGn = None
 
 	@property
-	def EUCptlGn(self):
-		return self._EUCptlGn
+	def TaxblIncmPerDvdd(self):
+		return self._TaxblIncmPerDvdd
 
-	@EUCptlGn.setter
-	def EUCptlGn(self, value):
-		self._EUCptlGn = value if type(value) != auto else self.make_default("EUCptlGn")
+	@TaxblIncmPerDvdd.setter
+	def TaxblIncmPerDvdd(self, value):
+		self._TaxblIncmPerDvdd = value if type(value) != auto else self.make_default("TaxblIncmPerDvdd")
 
-	@EUCptlGn.deleter
-	def EUCptlGn(self):
-		del self._EUCptlGn
-		self._EUCptlGn = None
+	@TaxblIncmPerDvdd.deleter
+	def TaxblIncmPerDvdd(self):
+		del self._TaxblIncmPerDvdd
+		self._TaxblIncmPerDvdd = None
 
 	@property
 	def PctgOfDebtClm(self):
@@ -74,6 +61,19 @@ class TaxCalculationInformation4(base_types._BaseFieldType):
 		self._PctgOfDebtClm = None
 
 	@property
+	def XtndedEUDvddSts(self):
+		return self._XtndedEUDvddSts
+
+	@XtndedEUDvddSts.setter
+	def XtndedEUDvddSts(self, value):
+		self._XtndedEUDvddSts = value if type(value) != auto else self.make_default("XtndedEUDvddSts")
+
+	@XtndedEUDvddSts.deleter
+	def XtndedEUDvddSts(self):
+		del self._XtndedEUDvddSts
+		self._XtndedEUDvddSts = None
+
+	@property
 	def PctgGrdfthdDebt(self):
 		return self._PctgGrdfthdDebt
 
@@ -87,25 +87,25 @@ class TaxCalculationInformation4(base_types._BaseFieldType):
 		self._PctgGrdfthdDebt = None
 
 	@property
-	def EUDvddSts(self):
-		return self._EUDvddSts
+	def EUCptlGn(self):
+		return self._EUCptlGn
 
-	@EUDvddSts.setter
-	def EUDvddSts(self, value):
-		self._EUDvddSts = value if type(value) != auto else self.make_default("EUDvddSts")
+	@EUCptlGn.setter
+	def EUCptlGn(self, value):
+		self._EUCptlGn = value if type(value) != auto else self.make_default("EUCptlGn")
 
-	@EUDvddSts.deleter
-	def EUDvddSts(self):
-		del self._EUDvddSts
-		self._EUDvddSts = None
+	@EUCptlGn.deleter
+	def EUCptlGn(self):
+		del self._EUCptlGn
+		self._EUCptlGn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XtndedEUDvddSts', type=Extended350Code, min=0, max=1, mutex_group=2, array=False),
-		base_types.FieldEntry(name='XtndedEUCptlGn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain2Code, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgGrdfthdDebt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EUDvddSts', type=EUDividendStatus1Code, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='XtndedEUCptlGn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TaxblIncmPerDvdd', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgOfDebtClm', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XtndedEUDvddSts', type=Extended350Code, min=0, max=1, mutex_group=2, array=False),
+		base_types.FieldEntry(name='PctgGrdfthdDebt', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain2Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

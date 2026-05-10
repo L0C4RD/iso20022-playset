@@ -1,23 +1,10 @@
 import base_types
-import YesNoIndicator
 import AnyBICDec2014Identifier
+import YesNoIndicator
 
 class CopyInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CpyInd", "_OrgnlRcvr"]
-	@property
-	def CpyInd(self):
-		return self._CpyInd
-
-	@CpyInd.setter
-	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
-
-	@CpyInd.deleter
-	def CpyInd(self):
-		del self._CpyInd
-		self._CpyInd = None
-
+	__slots__ = ["_OrgnlRcvr", "_CpyInd"]
 	@property
 	def OrgnlRcvr(self):
 		return self._OrgnlRcvr
@@ -31,8 +18,21 @@ class CopyInformation5(base_types._BaseFieldType):
 		del self._OrgnlRcvr
 		self._OrgnlRcvr = None
 
+	@property
+	def CpyInd(self):
+		return self._CpyInd
+
+	@CpyInd.setter
+	def CpyInd(self, value):
+		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
+
+	@CpyInd.deleter
+	def CpyInd(self):
+		del self._CpyInd
+		self._CpyInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlRcvr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -3,45 +3,19 @@ import RequestedIndicator
 
 class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrCSD", "_SctySts", "_IsseDt", "_IsseCcy", "_ISOSctyLngNm", "_FinInstrmId", "_TechIssrCSD", "_MinDnmtn", "_InvstrCSD", "_CtryOfIsse", "_MinMltplQty", "_SctiesQtyTp", "_DevtgSttlmUnit", "_ISOSctyShrtNm", "_CSD", "_MtrtyDt", "_ClssfctnFinInstrm"]
+	__slots__ = ["_InvstrCSD", "_IsseCcy", "_SctySts", "_CtryOfIsse", "_FinInstrmId", "_SctiesQtyTp", "_MinMltplQty", "_ISOSctyShrtNm", "_IsseDt", "_DevtgSttlmUnit", "_CSD", "_IssrCSD", "_ISOSctyLngNm", "_ClssfctnFinInstrm", "_TechIssrCSD", "_MinDnmtn", "_MtrtyDt"]
 	@property
-	def IssrCSD(self):
-		return self._IssrCSD
+	def InvstrCSD(self):
+		return self._InvstrCSD
 
-	@IssrCSD.setter
-	def IssrCSD(self, value):
-		self._IssrCSD = value if type(value) != auto else self.make_default("IssrCSD")
+	@InvstrCSD.setter
+	def InvstrCSD(self, value):
+		self._InvstrCSD = value if type(value) != auto else self.make_default("InvstrCSD")
 
-	@IssrCSD.deleter
-	def IssrCSD(self):
-		del self._IssrCSD
-		self._IssrCSD = None
-
-	@property
-	def SctySts(self):
-		return self._SctySts
-
-	@SctySts.setter
-	def SctySts(self, value):
-		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
-
-	@SctySts.deleter
-	def SctySts(self):
-		del self._SctySts
-		self._SctySts = None
-
-	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@InvstrCSD.deleter
+	def InvstrCSD(self):
+		del self._InvstrCSD
+		self._InvstrCSD = None
 
 	@property
 	def IsseCcy(self):
@@ -57,17 +31,30 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 		self._IsseCcy = None
 
 	@property
-	def ISOSctyLngNm(self):
-		return self._ISOSctyLngNm
+	def SctySts(self):
+		return self._SctySts
 
-	@ISOSctyLngNm.setter
-	def ISOSctyLngNm(self, value):
-		self._ISOSctyLngNm = value if type(value) != auto else self.make_default("ISOSctyLngNm")
+	@SctySts.setter
+	def SctySts(self, value):
+		self._SctySts = value if type(value) != auto else self.make_default("SctySts")
 
-	@ISOSctyLngNm.deleter
-	def ISOSctyLngNm(self):
-		del self._ISOSctyLngNm
-		self._ISOSctyLngNm = None
+	@SctySts.deleter
+	def SctySts(self):
+		del self._SctySts
+		self._SctySts = None
+
+	@property
+	def CtryOfIsse(self):
+		return self._CtryOfIsse
+
+	@CtryOfIsse.setter
+	def CtryOfIsse(self, value):
+		self._CtryOfIsse = value if type(value) != auto else self.make_default("CtryOfIsse")
+
+	@CtryOfIsse.deleter
+	def CtryOfIsse(self):
+		del self._CtryOfIsse
+		self._CtryOfIsse = None
 
 	@property
 	def FinInstrmId(self):
@@ -81,6 +68,123 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 	def FinInstrmId(self):
 		del self._FinInstrmId
 		self._FinInstrmId = None
+
+	@property
+	def SctiesQtyTp(self):
+		return self._SctiesQtyTp
+
+	@SctiesQtyTp.setter
+	def SctiesQtyTp(self, value):
+		self._SctiesQtyTp = value if type(value) != auto else self.make_default("SctiesQtyTp")
+
+	@SctiesQtyTp.deleter
+	def SctiesQtyTp(self):
+		del self._SctiesQtyTp
+		self._SctiesQtyTp = None
+
+	@property
+	def MinMltplQty(self):
+		return self._MinMltplQty
+
+	@MinMltplQty.setter
+	def MinMltplQty(self, value):
+		self._MinMltplQty = value if type(value) != auto else self.make_default("MinMltplQty")
+
+	@MinMltplQty.deleter
+	def MinMltplQty(self):
+		del self._MinMltplQty
+		self._MinMltplQty = None
+
+	@property
+	def ISOSctyShrtNm(self):
+		return self._ISOSctyShrtNm
+
+	@ISOSctyShrtNm.setter
+	def ISOSctyShrtNm(self, value):
+		self._ISOSctyShrtNm = value if type(value) != auto else self.make_default("ISOSctyShrtNm")
+
+	@ISOSctyShrtNm.deleter
+	def ISOSctyShrtNm(self):
+		del self._ISOSctyShrtNm
+		self._ISOSctyShrtNm = None
+
+	@property
+	def IsseDt(self):
+		return self._IsseDt
+
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def DevtgSttlmUnit(self):
+		return self._DevtgSttlmUnit
+
+	@DevtgSttlmUnit.setter
+	def DevtgSttlmUnit(self, value):
+		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
+
+	@DevtgSttlmUnit.deleter
+	def DevtgSttlmUnit(self):
+		del self._DevtgSttlmUnit
+		self._DevtgSttlmUnit = None
+
+	@property
+	def CSD(self):
+		return self._CSD
+
+	@CSD.setter
+	def CSD(self, value):
+		self._CSD = value if type(value) != auto else self.make_default("CSD")
+
+	@CSD.deleter
+	def CSD(self):
+		del self._CSD
+		self._CSD = None
+
+	@property
+	def IssrCSD(self):
+		return self._IssrCSD
+
+	@IssrCSD.setter
+	def IssrCSD(self, value):
+		self._IssrCSD = value if type(value) != auto else self.make_default("IssrCSD")
+
+	@IssrCSD.deleter
+	def IssrCSD(self):
+		del self._IssrCSD
+		self._IssrCSD = None
+
+	@property
+	def ISOSctyLngNm(self):
+		return self._ISOSctyLngNm
+
+	@ISOSctyLngNm.setter
+	def ISOSctyLngNm(self, value):
+		self._ISOSctyLngNm = value if type(value) != auto else self.make_default("ISOSctyLngNm")
+
+	@ISOSctyLngNm.deleter
+	def ISOSctyLngNm(self):
+		del self._ISOSctyLngNm
+		self._ISOSctyLngNm = None
+
+	@property
+	def ClssfctnFinInstrm(self):
+		return self._ClssfctnFinInstrm
+
+	@ClssfctnFinInstrm.setter
+	def ClssfctnFinInstrm(self, value):
+		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
+
+	@ClssfctnFinInstrm.deleter
+	def ClssfctnFinInstrm(self):
+		del self._ClssfctnFinInstrm
+		self._ClssfctnFinInstrm = None
 
 	@property
 	def TechIssrCSD(self):
@@ -109,97 +213,6 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 		self._MinDnmtn = None
 
 	@property
-	def InvstrCSD(self):
-		return self._InvstrCSD
-
-	@InvstrCSD.setter
-	def InvstrCSD(self, value):
-		self._InvstrCSD = value if type(value) != auto else self.make_default("InvstrCSD")
-
-	@InvstrCSD.deleter
-	def InvstrCSD(self):
-		del self._InvstrCSD
-		self._InvstrCSD = None
-
-	@property
-	def CtryOfIsse(self):
-		return self._CtryOfIsse
-
-	@CtryOfIsse.setter
-	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != auto else self.make_default("CtryOfIsse")
-
-	@CtryOfIsse.deleter
-	def CtryOfIsse(self):
-		del self._CtryOfIsse
-		self._CtryOfIsse = None
-
-	@property
-	def MinMltplQty(self):
-		return self._MinMltplQty
-
-	@MinMltplQty.setter
-	def MinMltplQty(self, value):
-		self._MinMltplQty = value if type(value) != auto else self.make_default("MinMltplQty")
-
-	@MinMltplQty.deleter
-	def MinMltplQty(self):
-		del self._MinMltplQty
-		self._MinMltplQty = None
-
-	@property
-	def SctiesQtyTp(self):
-		return self._SctiesQtyTp
-
-	@SctiesQtyTp.setter
-	def SctiesQtyTp(self, value):
-		self._SctiesQtyTp = value if type(value) != auto else self.make_default("SctiesQtyTp")
-
-	@SctiesQtyTp.deleter
-	def SctiesQtyTp(self):
-		del self._SctiesQtyTp
-		self._SctiesQtyTp = None
-
-	@property
-	def DevtgSttlmUnit(self):
-		return self._DevtgSttlmUnit
-
-	@DevtgSttlmUnit.setter
-	def DevtgSttlmUnit(self, value):
-		self._DevtgSttlmUnit = value if type(value) != auto else self.make_default("DevtgSttlmUnit")
-
-	@DevtgSttlmUnit.deleter
-	def DevtgSttlmUnit(self):
-		del self._DevtgSttlmUnit
-		self._DevtgSttlmUnit = None
-
-	@property
-	def ISOSctyShrtNm(self):
-		return self._ISOSctyShrtNm
-
-	@ISOSctyShrtNm.setter
-	def ISOSctyShrtNm(self, value):
-		self._ISOSctyShrtNm = value if type(value) != auto else self.make_default("ISOSctyShrtNm")
-
-	@ISOSctyShrtNm.deleter
-	def ISOSctyShrtNm(self):
-		del self._ISOSctyShrtNm
-		self._ISOSctyShrtNm = None
-
-	@property
-	def CSD(self):
-		return self._CSD
-
-	@CSD.setter
-	def CSD(self, value):
-		self._CSD = value if type(value) != auto else self.make_default("CSD")
-
-	@CSD.deleter
-	def CSD(self):
-		del self._CSD
-		self._CSD = None
-
-	@property
 	def MtrtyDt(self):
 		return self._MtrtyDt
 
@@ -212,36 +225,23 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 		del self._MtrtyDt
 		self._MtrtyDt = None
 
-	@property
-	def ClssfctnFinInstrm(self):
-		return self._ClssfctnFinInstrm
-
-	@ClssfctnFinInstrm.setter
-	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
-
-	@ClssfctnFinInstrm.deleter
-	def ClssfctnFinInstrm(self):
-		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrCSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctySts', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrCSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseCcy', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISOSctyLngNm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctySts', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryOfIsse', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQtyTp', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinMltplQty', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISOSctyShrtNm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DevtgSttlmUnit', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IssrCSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ISOSctyLngNm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnFinInstrm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechIssrCSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinDnmtn', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrCSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryOfIsse', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinMltplQty', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQtyTp', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DevtgSttlmUnit', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ISOSctyShrtNm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnFinInstrm', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

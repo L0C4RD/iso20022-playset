@@ -1,6 +1,6 @@
 import base_types
-import SafekeepingPlaceFormat39Choice
 import LEIIdentifier
+import SafekeepingPlaceFormat39Choice
 
 class SafeKeepingPlace4(base_types._BaseFieldType):
 

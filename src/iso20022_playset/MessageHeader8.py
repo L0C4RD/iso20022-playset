@@ -1,26 +1,13 @@
 import base_types
+import Max35Text
 import ISODateTime
 import Pagination1
-import OriginalBusinessQuery1
 import RequestType4Choice
-import Max35Text
+import OriginalBusinessQuery1
 
 class MessageHeader8(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgPgntn", "_MsgId", "_ReqTp", "_CreDtTm", "_QryNm", "_OrgnlBizQry"]
-	@property
-	def MsgPgntn(self):
-		return self._MsgPgntn
-
-	@MsgPgntn.setter
-	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
-
-	@MsgPgntn.deleter
-	def MsgPgntn(self):
-		del self._MsgPgntn
-		self._MsgPgntn = None
-
+	__slots__ = ["_MsgId", "_ReqTp", "_OrgnlBizQry", "_CreDtTm", "_MsgPgntn", "_QryNm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -48,6 +35,19 @@ class MessageHeader8(base_types._BaseFieldType):
 		self._ReqTp = None
 
 	@property
+	def OrgnlBizQry(self):
+		return self._OrgnlBizQry
+
+	@OrgnlBizQry.setter
+	def OrgnlBizQry(self, value):
+		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
+
+	@OrgnlBizQry.deleter
+	def OrgnlBizQry(self):
+		del self._OrgnlBizQry
+		self._OrgnlBizQry = None
+
+	@property
 	def CreDtTm(self):
 		return self._CreDtTm
 
@@ -59,6 +59,19 @@ class MessageHeader8(base_types._BaseFieldType):
 	def CreDtTm(self):
 		del self._CreDtTm
 		self._CreDtTm = None
+
+	@property
+	def MsgPgntn(self):
+		return self._MsgPgntn
+
+	@MsgPgntn.setter
+	def MsgPgntn(self, value):
+		self._MsgPgntn = value if type(value) != auto else self.make_default("MsgPgntn")
+
+	@MsgPgntn.deleter
+	def MsgPgntn(self):
+		del self._MsgPgntn
+		self._MsgPgntn = None
 
 	@property
 	def QryNm(self):
@@ -73,25 +86,12 @@ class MessageHeader8(base_types._BaseFieldType):
 		del self._QryNm
 		self._QryNm = None
 
-	@property
-	def OrgnlBizQry(self):
-		return self._OrgnlBizQry
-
-	@OrgnlBizQry.setter
-	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != auto else self.make_default("OrgnlBizQry")
-
-	@OrgnlBizQry.deleter
-	def OrgnlBizQry(self):
-		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqTp', type=RequestType4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

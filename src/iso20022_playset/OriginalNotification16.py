@@ -1,12 +1,12 @@
 import base_types
-import ISODateTime
+import Max35Text
 import GroupCancellationIndicator
 import OriginalNotificationReference14
-import Max35Text
+import ISODateTime
 
 class OriginalNotification16(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlNtfctnId", "_NtfctnCxl", "_OrgnlMsgId", "_OrgnlNtfctnRef", "_OrgnlCreDtTm"]
+	__slots__ = ["_OrgnlNtfctnId", "_OrgnlNtfctnRef", "_NtfctnCxl", "_OrgnlMsgId", "_OrgnlCreDtTm"]
 	@property
 	def OrgnlNtfctnId(self):
 		return self._OrgnlNtfctnId
@@ -19,6 +19,19 @@ class OriginalNotification16(base_types._BaseFieldType):
 	def OrgnlNtfctnId(self):
 		del self._OrgnlNtfctnId
 		self._OrgnlNtfctnId = None
+
+	@property
+	def OrgnlNtfctnRef(self):
+		return self._OrgnlNtfctnRef
+
+	@OrgnlNtfctnRef.setter
+	def OrgnlNtfctnRef(self, value):
+		self._OrgnlNtfctnRef = value if type(value) != auto else self.make_default("OrgnlNtfctnRef")
+
+	@OrgnlNtfctnRef.deleter
+	def OrgnlNtfctnRef(self):
+		del self._OrgnlNtfctnRef
+		self._OrgnlNtfctnRef = None
 
 	@property
 	def NtfctnCxl(self):
@@ -47,19 +60,6 @@ class OriginalNotification16(base_types._BaseFieldType):
 		self._OrgnlMsgId = None
 
 	@property
-	def OrgnlNtfctnRef(self):
-		return self._OrgnlNtfctnRef
-
-	@OrgnlNtfctnRef.setter
-	def OrgnlNtfctnRef(self, value):
-		self._OrgnlNtfctnRef = value if type(value) != auto else self.make_default("OrgnlNtfctnRef")
-
-	@OrgnlNtfctnRef.deleter
-	def OrgnlNtfctnRef(self):
-		del self._OrgnlNtfctnRef
-		self._OrgnlNtfctnRef = None
-
-	@property
 	def OrgnlCreDtTm(self):
 		return self._OrgnlCreDtTm
 
@@ -74,9 +74,9 @@ class OriginalNotification16(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtfctnCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference14, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

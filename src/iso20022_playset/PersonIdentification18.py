@@ -1,6 +1,6 @@
 import base_types
-import DateAndPlaceOfBirth1
 import GenericPersonIdentification2
+import DateAndPlaceOfBirth1
 
 class PersonIdentification18(base_types._BaseFieldType):
 

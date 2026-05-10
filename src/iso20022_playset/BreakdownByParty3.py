@@ -1,25 +1,25 @@
 import base_types
-import InvestmentAccount42
-import CashOutForecast5
 import CashInForecast5
-import NetCashForecast4
+import InvestmentAccount42
 import AdditionalParameters1
+import CashOutForecast5
+import NetCashForecast4
 
 class BreakdownByParty3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlParams", "_CshInFcst", "_NetCshFcst", "_Pty", "_CshOutFcst"]
+	__slots__ = ["_CshOutFcst", "_CshInFcst", "_NetCshFcst", "_AddtlParams", "_Pty"]
 	@property
-	def AddtlParams(self):
-		return self._AddtlParams
+	def CshOutFcst(self):
+		return self._CshOutFcst
 
-	@AddtlParams.setter
-	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != auto else self.make_default("AddtlParams")
+	@CshOutFcst.setter
+	def CshOutFcst(self, value):
+		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
 
-	@AddtlParams.deleter
-	def AddtlParams(self):
-		del self._AddtlParams
-		self._AddtlParams = None
+	@CshOutFcst.deleter
+	def CshOutFcst(self):
+		del self._CshOutFcst
+		self._CshOutFcst = None
 
 	@property
 	def CshInFcst(self):
@@ -48,6 +48,19 @@ class BreakdownByParty3(base_types._BaseFieldType):
 		self._NetCshFcst = None
 
 	@property
+	def AddtlParams(self):
+		return self._AddtlParams
+
+	@AddtlParams.setter
+	def AddtlParams(self, value):
+		self._AddtlParams = value if type(value) != auto else self.make_default("AddtlParams")
+
+	@AddtlParams.deleter
+	def AddtlParams(self):
+		del self._AddtlParams
+		self._AddtlParams = None
+
+	@property
 	def Pty(self):
 		return self._Pty
 
@@ -60,24 +73,11 @@ class BreakdownByParty3(base_types._BaseFieldType):
 		del self._Pty
 		self._Pty = None
 
-	@property
-	def CshOutFcst(self):
-		return self._CshOutFcst
-
-	@CshOutFcst.setter
-	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != auto else self.make_default("CshOutFcst")
-
-	@CshOutFcst.deleter
-	def CshOutFcst(self):
-		del self._CshOutFcst
-		self._CshOutFcst = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetCshFcst', type=NetCashForecast4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty', type=InvestmentAccount42, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshOutFcst', type=CashOutForecast5, min=0, max=None, mutex_group=None, array=True),
 	))
 

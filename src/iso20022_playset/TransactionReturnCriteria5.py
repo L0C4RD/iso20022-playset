@@ -1,11 +1,11 @@
 import base_types
-import SystemReturnCriteria2
 import PaymentReturnCriteria4
+import SystemReturnCriteria2
 import AccountCashEntryReturnCriteria3
 
 class TransactionReturnCriteria5(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtFrRtrCrit", "_PmtRtrCrit", "_AcctCshNtryRtrCrit", "_PmtToRtrCrit"]
+	__slots__ = ["_PmtFrRtrCrit", "_AcctCshNtryRtrCrit", "_PmtToRtrCrit", "_PmtRtrCrit"]
 	@property
 	def PmtFrRtrCrit(self):
 		return self._PmtFrRtrCrit
@@ -18,19 +18,6 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 	def PmtFrRtrCrit(self):
 		del self._PmtFrRtrCrit
 		self._PmtFrRtrCrit = None
-
-	@property
-	def PmtRtrCrit(self):
-		return self._PmtRtrCrit
-
-	@PmtRtrCrit.setter
-	def PmtRtrCrit(self, value):
-		self._PmtRtrCrit = value if type(value) != auto else self.make_default("PmtRtrCrit")
-
-	@PmtRtrCrit.deleter
-	def PmtRtrCrit(self):
-		del self._PmtRtrCrit
-		self._PmtRtrCrit = None
 
 	@property
 	def AcctCshNtryRtrCrit(self):
@@ -58,10 +45,23 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 		del self._PmtToRtrCrit
 		self._PmtToRtrCrit = None
 
+	@property
+	def PmtRtrCrit(self):
+		return self._PmtRtrCrit
+
+	@PmtRtrCrit.setter
+	def PmtRtrCrit(self, value):
+		self._PmtRtrCrit = value if type(value) != auto else self.make_default("PmtRtrCrit")
+
+	@PmtRtrCrit.deleter
+	def PmtRtrCrit(self):
+		del self._PmtRtrCrit
+		self._PmtRtrCrit = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtFrRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctCshNtryRtrCrit', type=AccountCashEntryReturnCriteria3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtToRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
 	))
 

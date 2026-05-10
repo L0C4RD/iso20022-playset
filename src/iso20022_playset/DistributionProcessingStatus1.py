@@ -1,6 +1,6 @@
 import base_types
-import ProcessedStatus3FormatChoice
 import Max350Text
+import ProcessedStatus3FormatChoice
 
 class DistributionProcessingStatus1(base_types._BaseFieldType):
 

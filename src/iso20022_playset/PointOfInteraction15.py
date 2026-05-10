@@ -1,27 +1,14 @@
 import base_types
+import Max35Text
 import Max70Text
 import PointOfInteractionComponent17
 import PointOfInteractionCapabilities9
 import GenericIdentification177
 import LocationCategory3Code
-import Max35Text
 
 class PointOfInteraction15(base_types._BaseFieldType):
 
-	__slots__ = ["_Cmpnt", "_Id", "_Cpblties", "_TermnlIntgtn", "_SysNm", "_TmZone", "_GrpId"]
-	@property
-	def Cmpnt(self):
-		return self._Cmpnt
-
-	@Cmpnt.setter
-	def Cmpnt(self, value):
-		self._Cmpnt = value if type(value) != auto else self.make_default("Cmpnt")
-
-	@Cmpnt.deleter
-	def Cmpnt(self):
-		del self._Cmpnt
-		self._Cmpnt = None
-
+	__slots__ = ["_Id", "_TermnlIntgtn", "_SysNm", "_TmZone", "_Cpblties", "_GrpId", "_Cmpnt"]
 	@property
 	def Id(self):
 		return self._Id
@@ -34,19 +21,6 @@ class PointOfInteraction15(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
-
-	@property
-	def Cpblties(self):
-		return self._Cpblties
-
-	@Cpblties.setter
-	def Cpblties(self, value):
-		self._Cpblties = value if type(value) != auto else self.make_default("Cpblties")
-
-	@Cpblties.deleter
-	def Cpblties(self):
-		del self._Cpblties
-		self._Cpblties = None
 
 	@property
 	def TermnlIntgtn(self):
@@ -88,6 +62,19 @@ class PointOfInteraction15(base_types._BaseFieldType):
 		self._TmZone = None
 
 	@property
+	def Cpblties(self):
+		return self._Cpblties
+
+	@Cpblties.setter
+	def Cpblties(self, value):
+		self._Cpblties = value if type(value) != auto else self.make_default("Cpblties")
+
+	@Cpblties.deleter
+	def Cpblties(self):
+		del self._Cpblties
+		self._Cpblties = None
+
+	@property
 	def GrpId(self):
 		return self._GrpId
 
@@ -100,13 +87,26 @@ class PointOfInteraction15(base_types._BaseFieldType):
 		del self._GrpId
 		self._GrpId = None
 
+	@property
+	def Cmpnt(self):
+		return self._Cmpnt
+
+	@Cmpnt.setter
+	def Cmpnt(self, value):
+		self._Cmpnt = value if type(value) != auto else self.make_default("Cmpnt")
+
+	@Cmpnt.deleter
+	def Cmpnt(self):
+		del self._Cmpnt
+		self._Cmpnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermnlIntgtn', type=LocationCategory3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
 	))
 

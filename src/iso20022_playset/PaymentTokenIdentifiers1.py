@@ -3,20 +3,7 @@ import Max35Text
 
 class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrvdrId", "_RqstrId"]
-	@property
-	def PrvdrId(self):
-		return self._PrvdrId
-
-	@PrvdrId.setter
-	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != auto else self.make_default("PrvdrId")
-
-	@PrvdrId.deleter
-	def PrvdrId(self):
-		del self._PrvdrId
-		self._PrvdrId = None
-
+	__slots__ = ["_RqstrId", "_PrvdrId"]
 	@property
 	def RqstrId(self):
 		return self._RqstrId
@@ -30,8 +17,21 @@ class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 		del self._RqstrId
 		self._RqstrId = None
 
+	@property
+	def PrvdrId(self):
+		return self._PrvdrId
+
+	@PrvdrId.setter
+	def PrvdrId(self, value):
+		self._PrvdrId = value if type(value) != auto else self.make_default("PrvdrId")
+
+	@PrvdrId.deleter
+	def PrvdrId(self):
+		del self._PrvdrId
+		self._PrvdrId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RqstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

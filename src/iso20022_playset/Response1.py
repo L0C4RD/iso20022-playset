@@ -1,6 +1,6 @@
 import base_types
-import ResponseType1Choice
 import Max140Text
+import ResponseType1Choice
 
 class Response1(base_types._BaseFieldType):
 

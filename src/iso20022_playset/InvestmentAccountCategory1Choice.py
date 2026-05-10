@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import InvestmentAccountCategory1Code
+import GenericIdentification47
 
 class InvestmentAccountCategory1Choice(base_types._BaseFieldType):
 

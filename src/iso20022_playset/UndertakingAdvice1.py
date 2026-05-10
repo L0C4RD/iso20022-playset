@@ -1,25 +1,12 @@
 import base_types
-import UndertakingConfirmation1
-import AdvisingPartyAdditionalInformation1
-import PartyAndSignature2
 import UndertakingIssuanceMessage
+import UndertakingConfirmation1
+import PartyAndSignature2
+import AdvisingPartyAdditionalInformation1
 
 class UndertakingAdvice1(base_types._BaseFieldType):
 
-	__slots__ = ["_UdrtkgIssncMsg", "_DgtlSgntr", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf"]
-	@property
-	def UdrtkgIssncMsg(self):
-		return self._UdrtkgIssncMsg
-
-	@UdrtkgIssncMsg.setter
-	def UdrtkgIssncMsg(self, value):
-		self._UdrtkgIssncMsg = value if type(value) != auto else self.make_default("UdrtkgIssncMsg")
-
-	@UdrtkgIssncMsg.deleter
-	def UdrtkgIssncMsg(self):
-		del self._UdrtkgIssncMsg
-		self._UdrtkgIssncMsg = None
-
+	__slots__ = ["_DgtlSgntr", "_ConfDtls", "_FrstAdvsgPtyAddtlInf", "_ScndAdvsgPtyAddtlInf", "_UdrtkgIssncMsg"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -72,11 +59,24 @@ class UndertakingAdvice1(base_types._BaseFieldType):
 		del self._ScndAdvsgPtyAddtlInf
 		self._ScndAdvsgPtyAddtlInf = None
 
+	@property
+	def UdrtkgIssncMsg(self):
+		return self._UdrtkgIssncMsg
+
+	@UdrtkgIssncMsg.setter
+	def UdrtkgIssncMsg(self, value):
+		self._UdrtkgIssncMsg = value if type(value) != auto else self.make_default("UdrtkgIssncMsg")
+
+	@UdrtkgIssncMsg.deleter
+	def UdrtkgIssncMsg(self):
+		del self._UdrtkgIssncMsg
+		self._UdrtkgIssncMsg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UdrtkgIssncMsg', type=UndertakingIssuanceMessage, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=3, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndAdvsgPtyAddtlInf', type=AdvisingPartyAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgIssncMsg', type=UndertakingIssuanceMessage, min=1, max=1, mutex_group=None, array=False),
 	))
 

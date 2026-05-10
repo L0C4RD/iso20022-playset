@@ -1,7 +1,7 @@
 import base_types
+import FinancialInstrumentIdentification2
 import CashAsset3
 import OtherAsset2
-import FinancialInstrumentIdentification2
 
 class FinancialInstrument63Choice(base_types._BaseFieldType):
 

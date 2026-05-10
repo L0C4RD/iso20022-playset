@@ -1,37 +1,24 @@
 import base_types
-import LEIIdentifier
+import Max50Text
 import AnyBICDec2014Identifier
 import NotReported1Code
-import Max50Text
+import LEIIdentifier
 
 class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntId", "_NotRptd", "_AnyBIC", "_LEI"]
+	__slots__ = ["_LEI", "_AnyBIC", "_NotRptd", "_ClntId"]
 	@property
-	def ClntId(self):
-		return self._ClntId
+	def LEI(self):
+		return self._LEI
 
-	@ClntId.setter
-	def ClntId(self, value):
-		self._ClntId = value if type(value) != auto else self.make_default("ClntId")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
 
-	@ClntId.deleter
-	def ClntId(self):
-		del self._ClntId
-		self._ClntId = None
-
-	@property
-	def NotRptd(self):
-		return self._NotRptd
-
-	@NotRptd.setter
-	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
-
-	@NotRptd.deleter
-	def NotRptd(self):
-		del self._NotRptd
-		self._NotRptd = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	@property
 	def AnyBIC(self):
@@ -47,22 +34,35 @@ class TradePartyIdentificationQuery8(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def LEI(self):
-		return self._LEI
+	def NotRptd(self):
+		return self._NotRptd
 
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
+	@NotRptd.setter
+	def NotRptd(self, value):
+		self._NotRptd = value if type(value) != auto else self.make_default("NotRptd")
 
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
+	@NotRptd.deleter
+	def NotRptd(self):
+		del self._NotRptd
+		self._NotRptd = None
+
+	@property
+	def ClntId(self):
+		return self._ClntId
+
+	@ClntId.setter
+	def ClntId(self, value):
+		self._ClntId = value if type(value) != auto else self.make_default("ClntId")
+
+	@ClntId.deleter
+	def ClntId(self):
+		del self._ClntId
+		self._ClntId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntId', type=Max50Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

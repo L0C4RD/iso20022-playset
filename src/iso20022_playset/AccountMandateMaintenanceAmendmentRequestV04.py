@@ -1,44 +1,18 @@
 import base_types
-import AccountContract2
-import OrganisationIdentification39
-import AccountForAction1
 import SupplementaryData1
-import References4
+import OrganisationIdentification39
 import ContractDocument1
 import PartyAndSignature4
+import AccountContract2
+import References4
+import AccountForAction1
+import Group5
 import OperationMandate6
 import BranchAndFinancialInstitutionIdentification8
-import Group5
 
 class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_UndrlygMstrAgrmt", "_DgtlSgntr", "_SplmtryData", "_OrgId", "_Fr", "_Refs", "_AcctSvcrId", "_AcctId", "_Grp", "_CtrctDts", "_Mndt"]
-	@property
-	def UndrlygMstrAgrmt(self):
-		return self._UndrlygMstrAgrmt
-
-	@UndrlygMstrAgrmt.setter
-	def UndrlygMstrAgrmt(self, value):
-		self._UndrlygMstrAgrmt = value if type(value) != auto else self.make_default("UndrlygMstrAgrmt")
-
-	@UndrlygMstrAgrmt.deleter
-	def UndrlygMstrAgrmt(self):
-		del self._UndrlygMstrAgrmt
-		self._UndrlygMstrAgrmt = None
-
-	@property
-	def DgtlSgntr(self):
-		return self._DgtlSgntr
-
-	@DgtlSgntr.setter
-	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
-
-	@DgtlSgntr.deleter
-	def DgtlSgntr(self):
-		del self._DgtlSgntr
-		self._DgtlSgntr = None
-
+	__slots__ = ["_SplmtryData", "_AcctId", "_OrgId", "_UndrlygMstrAgrmt", "_Fr", "_Refs", "_CtrctDts", "_AcctSvcrId", "_DgtlSgntr", "_Grp", "_Mndt"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -53,6 +27,19 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def AcctId(self):
+		return self._AcctId
+
+	@AcctId.setter
+	def AcctId(self, value):
+		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+
+	@AcctId.deleter
+	def AcctId(self):
+		del self._AcctId
+		self._AcctId = None
+
+	@property
 	def OrgId(self):
 		return self._OrgId
 
@@ -64,6 +51,19 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 	def OrgId(self):
 		del self._OrgId
 		self._OrgId = None
+
+	@property
+	def UndrlygMstrAgrmt(self):
+		return self._UndrlygMstrAgrmt
+
+	@UndrlygMstrAgrmt.setter
+	def UndrlygMstrAgrmt(self, value):
+		self._UndrlygMstrAgrmt = value if type(value) != auto else self.make_default("UndrlygMstrAgrmt")
+
+	@UndrlygMstrAgrmt.deleter
+	def UndrlygMstrAgrmt(self):
+		del self._UndrlygMstrAgrmt
+		self._UndrlygMstrAgrmt = None
 
 	@property
 	def Fr(self):
@@ -92,6 +92,19 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._Refs = None
 
 	@property
+	def CtrctDts(self):
+		return self._CtrctDts
+
+	@CtrctDts.setter
+	def CtrctDts(self, value):
+		self._CtrctDts = value if type(value) != auto else self.make_default("CtrctDts")
+
+	@CtrctDts.deleter
+	def CtrctDts(self):
+		del self._CtrctDts
+		self._CtrctDts = None
+
+	@property
 	def AcctSvcrId(self):
 		return self._AcctSvcrId
 
@@ -105,17 +118,17 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._AcctSvcrId = None
 
 	@property
-	def AcctId(self):
-		return self._AcctId
+	def DgtlSgntr(self):
+		return self._DgtlSgntr
 
-	@AcctId.setter
-	def AcctId(self, value):
-		self._AcctId = value if type(value) != auto else self.make_default("AcctId")
+	@DgtlSgntr.setter
+	def DgtlSgntr(self, value):
+		self._DgtlSgntr = value if type(value) != auto else self.make_default("DgtlSgntr")
 
-	@AcctId.deleter
-	def AcctId(self):
-		del self._AcctId
-		self._AcctId = None
+	@DgtlSgntr.deleter
+	def DgtlSgntr(self):
+		del self._DgtlSgntr
+		self._DgtlSgntr = None
 
 	@property
 	def Grp(self):
@@ -131,19 +144,6 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._Grp = None
 
 	@property
-	def CtrctDts(self):
-		return self._CtrctDts
-
-	@CtrctDts.setter
-	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != auto else self.make_default("CtrctDts")
-
-	@CtrctDts.deleter
-	def CtrctDts(self):
-		del self._CtrctDts
-		self._CtrctDts = None
-
-	@property
 	def Mndt(self):
 		return self._Mndt
 
@@ -157,16 +157,16 @@ class AccountMandateMaintenanceAmendmentRequestV04(base_types._BaseFieldType):
 		self._Mndt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification39, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygMstrAgrmt', type=ContractDocument1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=OrganisationIdentification39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Refs', type=References4, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Grp', type=Group5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctDts', type=AccountContract2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrId', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Grp', type=Group5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Mndt', type=OperationMandate6, min=0, max=None, mutex_group=None, array=True),
 	))
 

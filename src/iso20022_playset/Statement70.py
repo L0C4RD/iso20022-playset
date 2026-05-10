@@ -1,15 +1,28 @@
 import base_types
-import Frequency26Choice
-import DateAndDateTime2Choice
-import Number3Choice
-import YesNoIndicator
-import RestrictedFINXMax16Text
-import StatementStructure1Code
 import UpdateType16Choice
+import StatementStructure1Code
+import YesNoIndicator
+import Frequency26Choice
+import RestrictedFINXMax16Text
+import Number3Choice
+import DateAndDateTime2Choice
 
 class Statement70(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtId", "_QryRef", "_Frqcy", "_ActvtyInd", "_StmtStr", "_UpdTp", "_RptNb", "_StmtDtTm"]
+	__slots__ = ["_StmtStr", "_StmtId", "_StmtDtTm", "_Frqcy", "_ActvtyInd", "_QryRef", "_RptNb", "_UpdTp"]
+	@property
+	def StmtStr(self):
+		return self._StmtStr
+
+	@StmtStr.setter
+	def StmtStr(self, value):
+		self._StmtStr = value if type(value) != auto else self.make_default("StmtStr")
+
+	@StmtStr.deleter
+	def StmtStr(self):
+		del self._StmtStr
+		self._StmtStr = None
+
 	@property
 	def StmtId(self):
 		return self._StmtId
@@ -24,17 +37,17 @@ class Statement70(base_types._BaseFieldType):
 		self._StmtId = None
 
 	@property
-	def QryRef(self):
-		return self._QryRef
+	def StmtDtTm(self):
+		return self._StmtDtTm
 
-	@QryRef.setter
-	def QryRef(self, value):
-		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
+	@StmtDtTm.setter
+	def StmtDtTm(self, value):
+		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
 
-	@QryRef.deleter
-	def QryRef(self):
-		del self._QryRef
-		self._QryRef = None
+	@StmtDtTm.deleter
+	def StmtDtTm(self):
+		del self._StmtDtTm
+		self._StmtDtTm = None
 
 	@property
 	def Frqcy(self):
@@ -63,30 +76,17 @@ class Statement70(base_types._BaseFieldType):
 		self._ActvtyInd = None
 
 	@property
-	def StmtStr(self):
-		return self._StmtStr
+	def QryRef(self):
+		return self._QryRef
 
-	@StmtStr.setter
-	def StmtStr(self, value):
-		self._StmtStr = value if type(value) != auto else self.make_default("StmtStr")
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != auto else self.make_default("QryRef")
 
-	@StmtStr.deleter
-	def StmtStr(self):
-		del self._StmtStr
-		self._StmtStr = None
-
-	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
 
 	@property
 	def RptNb(self):
@@ -102,26 +102,26 @@ class Statement70(base_types._BaseFieldType):
 		self._RptNb = None
 
 	@property
-	def StmtDtTm(self):
-		return self._StmtDtTm
+	def UpdTp(self):
+		return self._UpdTp
 
-	@StmtDtTm.setter
-	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != auto else self.make_default("StmtDtTm")
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
 
-	@StmtDtTm.deleter
-	def StmtDtTm(self):
-		del self._StmtDtTm
-		self._StmtDtTm = None
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StmtStr', type=StatementStructure1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QryRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency26Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtStr', type=StatementStructure1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptNb', type=Number3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtDtTm', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

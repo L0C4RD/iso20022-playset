@@ -1,6 +1,6 @@
 import base_types
-import ExternalSystemErrorHandling1Code
 import Max35Text
+import ExternalSystemErrorHandling1Code
 
 class ErrorHandling3Choice(base_types._BaseFieldType):
 

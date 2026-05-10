@@ -1,45 +1,58 @@
 import base_types
-import Max70Text
-import ContactBusiness1
-import PartyIdentification285
-import CustomerAssigner1Code
 import AdditionalData1
+import Max70Text
+import VehicleRentalAgreement3
 import Address2
 import VehicleRentalInvoice3
-import DriverInParty3
+import PartyIdentification285
 import Max35Text
-import VehicleRentalAgreement3
-import CarRentalActivity1Code
 import LoyaltyProgramme4
+import CarRentalActivity1Code
+import CustomerAssigner1Code
+import DriverInParty3
+import ContactBusiness1
 
 class VehicleRentalService3(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlDrvr", "_CpnyNm", "_CpnyOthrTp", "_CpnyTp", "_CpnyAdr", "_RntrCorpNm", "_AddtlData", "_CpnyId", "_RntrCorpIdrAssgnr", "_PmryDrvr", "_SummryCmmdtyId", "_RntlInvc", "_RntlAgrmt", "_CpnyCtct", "_RntrNm", "_LltyPrgrmm", "_RntrCorpIdr"]
+	__slots__ = ["_PmryDrvr", "_RntrCorpIdrAssgnr", "_RntrCorpNm", "_CpnyOthrTp", "_RntrNm", "_CpnyTp", "_CpnyAdr", "_CpnyNm", "_AddtlDrvr", "_CpnyId", "_SummryCmmdtyId", "_LltyPrgrmm", "_RntlInvc", "_CpnyCtct", "_RntlAgrmt", "_RntrCorpIdr", "_AddtlData"]
 	@property
-	def AddtlDrvr(self):
-		return self._AddtlDrvr
+	def PmryDrvr(self):
+		return self._PmryDrvr
 
-	@AddtlDrvr.setter
-	def AddtlDrvr(self, value):
-		self._AddtlDrvr = value if type(value) != auto else self.make_default("AddtlDrvr")
+	@PmryDrvr.setter
+	def PmryDrvr(self, value):
+		self._PmryDrvr = value if type(value) != auto else self.make_default("PmryDrvr")
 
-	@AddtlDrvr.deleter
-	def AddtlDrvr(self):
-		del self._AddtlDrvr
-		self._AddtlDrvr = None
+	@PmryDrvr.deleter
+	def PmryDrvr(self):
+		del self._PmryDrvr
+		self._PmryDrvr = None
 
 	@property
-	def CpnyNm(self):
-		return self._CpnyNm
+	def RntrCorpIdrAssgnr(self):
+		return self._RntrCorpIdrAssgnr
 
-	@CpnyNm.setter
-	def CpnyNm(self, value):
-		self._CpnyNm = value if type(value) != auto else self.make_default("CpnyNm")
+	@RntrCorpIdrAssgnr.setter
+	def RntrCorpIdrAssgnr(self, value):
+		self._RntrCorpIdrAssgnr = value if type(value) != auto else self.make_default("RntrCorpIdrAssgnr")
 
-	@CpnyNm.deleter
-	def CpnyNm(self):
-		del self._CpnyNm
-		self._CpnyNm = None
+	@RntrCorpIdrAssgnr.deleter
+	def RntrCorpIdrAssgnr(self):
+		del self._RntrCorpIdrAssgnr
+		self._RntrCorpIdrAssgnr = None
+
+	@property
+	def RntrCorpNm(self):
+		return self._RntrCorpNm
+
+	@RntrCorpNm.setter
+	def RntrCorpNm(self, value):
+		self._RntrCorpNm = value if type(value) != auto else self.make_default("RntrCorpNm")
+
+	@RntrCorpNm.deleter
+	def RntrCorpNm(self):
+		del self._RntrCorpNm
+		self._RntrCorpNm = None
 
 	@property
 	def CpnyOthrTp(self):
@@ -53,6 +66,19 @@ class VehicleRentalService3(base_types._BaseFieldType):
 	def CpnyOthrTp(self):
 		del self._CpnyOthrTp
 		self._CpnyOthrTp = None
+
+	@property
+	def RntrNm(self):
+		return self._RntrNm
+
+	@RntrNm.setter
+	def RntrNm(self, value):
+		self._RntrNm = value if type(value) != auto else self.make_default("RntrNm")
+
+	@RntrNm.deleter
+	def RntrNm(self):
+		del self._RntrNm
+		self._RntrNm = None
 
 	@property
 	def CpnyTp(self):
@@ -81,30 +107,30 @@ class VehicleRentalService3(base_types._BaseFieldType):
 		self._CpnyAdr = None
 
 	@property
-	def RntrCorpNm(self):
-		return self._RntrCorpNm
+	def CpnyNm(self):
+		return self._CpnyNm
 
-	@RntrCorpNm.setter
-	def RntrCorpNm(self, value):
-		self._RntrCorpNm = value if type(value) != auto else self.make_default("RntrCorpNm")
+	@CpnyNm.setter
+	def CpnyNm(self, value):
+		self._CpnyNm = value if type(value) != auto else self.make_default("CpnyNm")
 
-	@RntrCorpNm.deleter
-	def RntrCorpNm(self):
-		del self._RntrCorpNm
-		self._RntrCorpNm = None
+	@CpnyNm.deleter
+	def CpnyNm(self):
+		del self._CpnyNm
+		self._CpnyNm = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def AddtlDrvr(self):
+		return self._AddtlDrvr
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@AddtlDrvr.setter
+	def AddtlDrvr(self, value):
+		self._AddtlDrvr = value if type(value) != auto else self.make_default("AddtlDrvr")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@AddtlDrvr.deleter
+	def AddtlDrvr(self):
+		del self._AddtlDrvr
+		self._AddtlDrvr = None
 
 	@property
 	def CpnyId(self):
@@ -120,32 +146,6 @@ class VehicleRentalService3(base_types._BaseFieldType):
 		self._CpnyId = None
 
 	@property
-	def RntrCorpIdrAssgnr(self):
-		return self._RntrCorpIdrAssgnr
-
-	@RntrCorpIdrAssgnr.setter
-	def RntrCorpIdrAssgnr(self, value):
-		self._RntrCorpIdrAssgnr = value if type(value) != auto else self.make_default("RntrCorpIdrAssgnr")
-
-	@RntrCorpIdrAssgnr.deleter
-	def RntrCorpIdrAssgnr(self):
-		del self._RntrCorpIdrAssgnr
-		self._RntrCorpIdrAssgnr = None
-
-	@property
-	def PmryDrvr(self):
-		return self._PmryDrvr
-
-	@PmryDrvr.setter
-	def PmryDrvr(self, value):
-		self._PmryDrvr = value if type(value) != auto else self.make_default("PmryDrvr")
-
-	@PmryDrvr.deleter
-	def PmryDrvr(self):
-		del self._PmryDrvr
-		self._PmryDrvr = None
-
-	@property
 	def SummryCmmdtyId(self):
 		return self._SummryCmmdtyId
 
@@ -157,58 +157,6 @@ class VehicleRentalService3(base_types._BaseFieldType):
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
 		self._SummryCmmdtyId = None
-
-	@property
-	def RntlInvc(self):
-		return self._RntlInvc
-
-	@RntlInvc.setter
-	def RntlInvc(self, value):
-		self._RntlInvc = value if type(value) != auto else self.make_default("RntlInvc")
-
-	@RntlInvc.deleter
-	def RntlInvc(self):
-		del self._RntlInvc
-		self._RntlInvc = None
-
-	@property
-	def RntlAgrmt(self):
-		return self._RntlAgrmt
-
-	@RntlAgrmt.setter
-	def RntlAgrmt(self, value):
-		self._RntlAgrmt = value if type(value) != auto else self.make_default("RntlAgrmt")
-
-	@RntlAgrmt.deleter
-	def RntlAgrmt(self):
-		del self._RntlAgrmt
-		self._RntlAgrmt = None
-
-	@property
-	def CpnyCtct(self):
-		return self._CpnyCtct
-
-	@CpnyCtct.setter
-	def CpnyCtct(self, value):
-		self._CpnyCtct = value if type(value) != auto else self.make_default("CpnyCtct")
-
-	@CpnyCtct.deleter
-	def CpnyCtct(self):
-		del self._CpnyCtct
-		self._CpnyCtct = None
-
-	@property
-	def RntrNm(self):
-		return self._RntrNm
-
-	@RntrNm.setter
-	def RntrNm(self, value):
-		self._RntrNm = value if type(value) != auto else self.make_default("RntrNm")
-
-	@RntrNm.deleter
-	def RntrNm(self):
-		del self._RntrNm
-		self._RntrNm = None
 
 	@property
 	def LltyPrgrmm(self):
@@ -224,6 +172,45 @@ class VehicleRentalService3(base_types._BaseFieldType):
 		self._LltyPrgrmm = None
 
 	@property
+	def RntlInvc(self):
+		return self._RntlInvc
+
+	@RntlInvc.setter
+	def RntlInvc(self, value):
+		self._RntlInvc = value if type(value) != auto else self.make_default("RntlInvc")
+
+	@RntlInvc.deleter
+	def RntlInvc(self):
+		del self._RntlInvc
+		self._RntlInvc = None
+
+	@property
+	def CpnyCtct(self):
+		return self._CpnyCtct
+
+	@CpnyCtct.setter
+	def CpnyCtct(self, value):
+		self._CpnyCtct = value if type(value) != auto else self.make_default("CpnyCtct")
+
+	@CpnyCtct.deleter
+	def CpnyCtct(self):
+		del self._CpnyCtct
+		self._CpnyCtct = None
+
+	@property
+	def RntlAgrmt(self):
+		return self._RntlAgrmt
+
+	@RntlAgrmt.setter
+	def RntlAgrmt(self, value):
+		self._RntlAgrmt = value if type(value) != auto else self.make_default("RntlAgrmt")
+
+	@RntlAgrmt.deleter
+	def RntlAgrmt(self):
+		del self._RntlAgrmt
+		self._RntlAgrmt = None
+
+	@property
 	def RntrCorpIdr(self):
 		return self._RntrCorpIdr
 
@@ -236,23 +223,36 @@ class VehicleRentalService3(base_types._BaseFieldType):
 		del self._RntrCorpIdr
 		self._RntrCorpIdr = None
 
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlDrvr', type=DriverInParty3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CpnyNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmryDrvr', type=DriverInParty3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntrCorpIdrAssgnr', type=CustomerAssigner1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntrCorpNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntrNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyTp', type=CarRentalActivity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpnyAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntrCorpNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CpnyNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlDrvr', type=DriverInParty3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CpnyId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntrCorpIdrAssgnr', type=CustomerAssigner1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmryDrvr', type=DriverInParty3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntlInvc', type=VehicleRentalInvoice3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntlAgrmt', type=VehicleRentalAgreement3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpnyCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RntrNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntlInvc', type=VehicleRentalInvoice3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpnyCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RntlAgrmt', type=VehicleRentalAgreement3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RntrCorpIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

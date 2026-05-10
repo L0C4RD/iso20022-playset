@@ -1,12 +1,25 @@
 import base_types
-import PurposeCode7Choice
+import Max35Text
 import Max140Text
 import Max70Text
-import Max35Text
+import PurposeCode7Choice
 
 class BlockChainAddressWallet1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Nm", "_Dsgnt", "_Id"]
+	__slots__ = ["_Dsgnt", "_Tp", "_Nm", "_Id"]
+	@property
+	def Dsgnt(self):
+		return self._Dsgnt
+
+	@Dsgnt.setter
+	def Dsgnt(self, value):
+		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
+
+	@Dsgnt.deleter
+	def Dsgnt(self):
+		del self._Dsgnt
+		self._Dsgnt = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -34,19 +47,6 @@ class BlockChainAddressWallet1(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def Dsgnt(self):
-		return self._Dsgnt
-
-	@Dsgnt.setter
-	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != auto else self.make_default("Dsgnt")
-
-	@Dsgnt.deleter
-	def Dsgnt(self):
-		del self._Dsgnt
-		self._Dsgnt = None
-
-	@property
 	def Id(self):
 		return self._Id
 
@@ -60,9 +60,9 @@ class BlockChainAddressWallet1(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PurposeCode7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

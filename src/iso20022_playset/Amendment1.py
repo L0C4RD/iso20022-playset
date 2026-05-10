@@ -1,72 +1,46 @@
 import base_types
-import ExpiryDetails1
-import Document9
-import UndertakingAmount2
-import Max2000Text
-import UndertakingTermination3
-import Max4AlphaNumericText
-import YesNoIndicator
 import Undertaking7
+import Document9
+import Undertaking11
+import YesNoIndicator
+import UndertakingTermination3
 import Narrative1
 import ISODate
-import Undertaking11
+import UndertakingAmount2
+import Max4AlphaNumericText
+import Max2000Text
 import CommunicationChannel1
+import ExpiryDetails1
 import PartyIdentification43
 
 class Amendment1(base_types._BaseFieldType):
 
-	__slots__ = ["_BnfcryCnsntReqInd", "_LclUdrtkg", "_UdrtkgAmtAdjstmnt", "_UdrtkgId", "_DlvryChanl", "_DtOfIssnc", "_NewXpryDtls", "_AddtlInf", "_TermntnDtls", "_AdvsgPty", "_ScndAdvsgPty", "_SeqNb", "_NewUdrtkgTermsAndConds", "_NewBnfcry", "_NclsdFile"]
+	__slots__ = ["_NewBnfcry", "_AdvsgPty", "_DlvryChanl", "_UdrtkgId", "_DtOfIssnc", "_TermntnDtls", "_LclUdrtkg", "_NewXpryDtls", "_AddtlInf", "_NewUdrtkgTermsAndConds", "_UdrtkgAmtAdjstmnt", "_NclsdFile", "_SeqNb", "_BnfcryCnsntReqInd", "_ScndAdvsgPty"]
 	@property
-	def BnfcryCnsntReqInd(self):
-		return self._BnfcryCnsntReqInd
+	def NewBnfcry(self):
+		return self._NewBnfcry
 
-	@BnfcryCnsntReqInd.setter
-	def BnfcryCnsntReqInd(self, value):
-		self._BnfcryCnsntReqInd = value if type(value) != auto else self.make_default("BnfcryCnsntReqInd")
+	@NewBnfcry.setter
+	def NewBnfcry(self, value):
+		self._NewBnfcry = value if type(value) != auto else self.make_default("NewBnfcry")
 
-	@BnfcryCnsntReqInd.deleter
-	def BnfcryCnsntReqInd(self):
-		del self._BnfcryCnsntReqInd
-		self._BnfcryCnsntReqInd = None
-
-	@property
-	def LclUdrtkg(self):
-		return self._LclUdrtkg
-
-	@LclUdrtkg.setter
-	def LclUdrtkg(self, value):
-		self._LclUdrtkg = value if type(value) != auto else self.make_default("LclUdrtkg")
-
-	@LclUdrtkg.deleter
-	def LclUdrtkg(self):
-		del self._LclUdrtkg
-		self._LclUdrtkg = None
+	@NewBnfcry.deleter
+	def NewBnfcry(self):
+		del self._NewBnfcry
+		self._NewBnfcry = None
 
 	@property
-	def UdrtkgAmtAdjstmnt(self):
-		return self._UdrtkgAmtAdjstmnt
+	def AdvsgPty(self):
+		return self._AdvsgPty
 
-	@UdrtkgAmtAdjstmnt.setter
-	def UdrtkgAmtAdjstmnt(self, value):
-		self._UdrtkgAmtAdjstmnt = value if type(value) != auto else self.make_default("UdrtkgAmtAdjstmnt")
+	@AdvsgPty.setter
+	def AdvsgPty(self, value):
+		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
 
-	@UdrtkgAmtAdjstmnt.deleter
-	def UdrtkgAmtAdjstmnt(self):
-		del self._UdrtkgAmtAdjstmnt
-		self._UdrtkgAmtAdjstmnt = None
-
-	@property
-	def UdrtkgId(self):
-		return self._UdrtkgId
-
-	@UdrtkgId.setter
-	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
-
-	@UdrtkgId.deleter
-	def UdrtkgId(self):
-		del self._UdrtkgId
-		self._UdrtkgId = None
+	@AdvsgPty.deleter
+	def AdvsgPty(self):
+		del self._AdvsgPty
+		self._AdvsgPty = None
 
 	@property
 	def DlvryChanl(self):
@@ -82,6 +56,19 @@ class Amendment1(base_types._BaseFieldType):
 		self._DlvryChanl = None
 
 	@property
+	def UdrtkgId(self):
+		return self._UdrtkgId
+
+	@UdrtkgId.setter
+	def UdrtkgId(self, value):
+		self._UdrtkgId = value if type(value) != auto else self.make_default("UdrtkgId")
+
+	@UdrtkgId.deleter
+	def UdrtkgId(self):
+		del self._UdrtkgId
+		self._UdrtkgId = None
+
+	@property
 	def DtOfIssnc(self):
 		return self._DtOfIssnc
 
@@ -93,6 +80,32 @@ class Amendment1(base_types._BaseFieldType):
 	def DtOfIssnc(self):
 		del self._DtOfIssnc
 		self._DtOfIssnc = None
+
+	@property
+	def TermntnDtls(self):
+		return self._TermntnDtls
+
+	@TermntnDtls.setter
+	def TermntnDtls(self, value):
+		self._TermntnDtls = value if type(value) != auto else self.make_default("TermntnDtls")
+
+	@TermntnDtls.deleter
+	def TermntnDtls(self):
+		del self._TermntnDtls
+		self._TermntnDtls = None
+
+	@property
+	def LclUdrtkg(self):
+		return self._LclUdrtkg
+
+	@LclUdrtkg.setter
+	def LclUdrtkg(self, value):
+		self._LclUdrtkg = value if type(value) != auto else self.make_default("LclUdrtkg")
+
+	@LclUdrtkg.deleter
+	def LclUdrtkg(self):
+		del self._LclUdrtkg
+		self._LclUdrtkg = None
 
 	@property
 	def NewXpryDtls(self):
@@ -121,43 +134,43 @@ class Amendment1(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def TermntnDtls(self):
-		return self._TermntnDtls
+	def NewUdrtkgTermsAndConds(self):
+		return self._NewUdrtkgTermsAndConds
 
-	@TermntnDtls.setter
-	def TermntnDtls(self, value):
-		self._TermntnDtls = value if type(value) != auto else self.make_default("TermntnDtls")
+	@NewUdrtkgTermsAndConds.setter
+	def NewUdrtkgTermsAndConds(self, value):
+		self._NewUdrtkgTermsAndConds = value if type(value) != auto else self.make_default("NewUdrtkgTermsAndConds")
 
-	@TermntnDtls.deleter
-	def TermntnDtls(self):
-		del self._TermntnDtls
-		self._TermntnDtls = None
-
-	@property
-	def AdvsgPty(self):
-		return self._AdvsgPty
-
-	@AdvsgPty.setter
-	def AdvsgPty(self, value):
-		self._AdvsgPty = value if type(value) != auto else self.make_default("AdvsgPty")
-
-	@AdvsgPty.deleter
-	def AdvsgPty(self):
-		del self._AdvsgPty
-		self._AdvsgPty = None
+	@NewUdrtkgTermsAndConds.deleter
+	def NewUdrtkgTermsAndConds(self):
+		del self._NewUdrtkgTermsAndConds
+		self._NewUdrtkgTermsAndConds = None
 
 	@property
-	def ScndAdvsgPty(self):
-		return self._ScndAdvsgPty
+	def UdrtkgAmtAdjstmnt(self):
+		return self._UdrtkgAmtAdjstmnt
 
-	@ScndAdvsgPty.setter
-	def ScndAdvsgPty(self, value):
-		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
+	@UdrtkgAmtAdjstmnt.setter
+	def UdrtkgAmtAdjstmnt(self, value):
+		self._UdrtkgAmtAdjstmnt = value if type(value) != auto else self.make_default("UdrtkgAmtAdjstmnt")
 
-	@ScndAdvsgPty.deleter
-	def ScndAdvsgPty(self):
-		del self._ScndAdvsgPty
-		self._ScndAdvsgPty = None
+	@UdrtkgAmtAdjstmnt.deleter
+	def UdrtkgAmtAdjstmnt(self):
+		del self._UdrtkgAmtAdjstmnt
+		self._UdrtkgAmtAdjstmnt = None
+
+	@property
+	def NclsdFile(self):
+		return self._NclsdFile
+
+	@NclsdFile.setter
+	def NclsdFile(self, value):
+		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
+
+	@NclsdFile.deleter
+	def NclsdFile(self):
+		del self._NclsdFile
+		self._NclsdFile = None
 
 	@property
 	def SeqNb(self):
@@ -173,59 +186,46 @@ class Amendment1(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
-	def NewUdrtkgTermsAndConds(self):
-		return self._NewUdrtkgTermsAndConds
+	def BnfcryCnsntReqInd(self):
+		return self._BnfcryCnsntReqInd
 
-	@NewUdrtkgTermsAndConds.setter
-	def NewUdrtkgTermsAndConds(self, value):
-		self._NewUdrtkgTermsAndConds = value if type(value) != auto else self.make_default("NewUdrtkgTermsAndConds")
+	@BnfcryCnsntReqInd.setter
+	def BnfcryCnsntReqInd(self, value):
+		self._BnfcryCnsntReqInd = value if type(value) != auto else self.make_default("BnfcryCnsntReqInd")
 
-	@NewUdrtkgTermsAndConds.deleter
-	def NewUdrtkgTermsAndConds(self):
-		del self._NewUdrtkgTermsAndConds
-		self._NewUdrtkgTermsAndConds = None
-
-	@property
-	def NewBnfcry(self):
-		return self._NewBnfcry
-
-	@NewBnfcry.setter
-	def NewBnfcry(self, value):
-		self._NewBnfcry = value if type(value) != auto else self.make_default("NewBnfcry")
-
-	@NewBnfcry.deleter
-	def NewBnfcry(self):
-		del self._NewBnfcry
-		self._NewBnfcry = None
+	@BnfcryCnsntReqInd.deleter
+	def BnfcryCnsntReqInd(self):
+		del self._BnfcryCnsntReqInd
+		self._BnfcryCnsntReqInd = None
 
 	@property
-	def NclsdFile(self):
-		return self._NclsdFile
+	def ScndAdvsgPty(self):
+		return self._ScndAdvsgPty
 
-	@NclsdFile.setter
-	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
+	@ScndAdvsgPty.setter
+	def ScndAdvsgPty(self, value):
+		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
 
-	@NclsdFile.deleter
-	def NclsdFile(self):
-		del self._NclsdFile
-		self._NclsdFile = None
+	@ScndAdvsgPty.deleter
+	def ScndAdvsgPty(self):
+		del self._ScndAdvsgPty
+		self._ScndAdvsgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BnfcryCnsntReqInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclUdrtkg', type=Undertaking11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdrtkgAmtAdjstmnt', type=UndertakingAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UdrtkgId', type=Undertaking7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewBnfcry', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgId', type=Undertaking7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtOfIssnc', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnDtls', type=UndertakingTermination3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclUdrtkg', type=Undertaking11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewXpryDtls', type=ExpiryDetails1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TermntnDtls', type=UndertakingTermination3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewUdrtkgTermsAndConds', type=Narrative1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NewBnfcry', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UdrtkgAmtAdjstmnt', type=UndertakingAmount2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NclsdFile', type=Document9, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryCnsntReqInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
 	))
 

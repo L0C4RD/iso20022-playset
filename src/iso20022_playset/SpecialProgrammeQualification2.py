@@ -1,23 +1,10 @@
 import base_types
-import SpecialProgrammeDetails2
 import Max35Text
+import SpecialProgrammeDetails2
 
 class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
-	__slots__ = ["_Dtl", "_Prgrmm"]
-	@property
-	def Dtl(self):
-		return self._Dtl
-
-	@Dtl.setter
-	def Dtl(self, value):
-		self._Dtl = value if type(value) != auto else self.make_default("Dtl")
-
-	@Dtl.deleter
-	def Dtl(self):
-		del self._Dtl
-		self._Dtl = None
-
+	__slots__ = ["_Prgrmm", "_Dtl"]
 	@property
 	def Prgrmm(self):
 		return self._Prgrmm
@@ -31,8 +18,21 @@ class SpecialProgrammeQualification2(base_types._BaseFieldType):
 		del self._Prgrmm
 		self._Prgrmm = None
 
+	@property
+	def Dtl(self):
+		return self._Dtl
+
+	@Dtl.setter
+	def Dtl(self, value):
+		self._Dtl = value if type(value) != auto else self.make_default("Dtl")
+
+	@Dtl.deleter
+	def Dtl(self):
+		del self._Dtl
+		self._Dtl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dtl', type=SpecialProgrammeDetails2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prgrmm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dtl', type=SpecialProgrammeDetails2, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
-import Price14
+import MarketIdentification93
 import DateTimePeriod1Choice
 import DateAndDateTime1Choice
-import MarketIdentification93
+import Price14
 
 class PriceInformation28(base_types._BaseFieldType):
 
-	__slots__ = ["_QtnDt", "_SrcOfPric", "_PricClctnPrd", "_Val"]
-	@property
-	def QtnDt(self):
-		return self._QtnDt
-
-	@QtnDt.setter
-	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
-
-	@QtnDt.deleter
-	def QtnDt(self):
-		del self._QtnDt
-		self._QtnDt = None
-
+	__slots__ = ["_SrcOfPric", "_PricClctnPrd", "_Val", "_QtnDt"]
 	@property
 	def SrcOfPric(self):
 		return self._SrcOfPric
@@ -59,10 +46,23 @@ class PriceInformation28(base_types._BaseFieldType):
 		del self._Val
 		self._Val = None
 
+	@property
+	def QtnDt(self):
+		return self._QtnDt
+
+	@QtnDt.setter
+	def QtnDt(self, value):
+		self._QtnDt = value if type(value) != auto else self.make_default("QtnDt")
+
+	@QtnDt.deleter
+	def QtnDt(self):
+		del self._QtnDt
+		self._QtnDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcOfPric', type=MarketIdentification93, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricClctnPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=Price14, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,25 +1,12 @@
 import base_types
-import Max1Number
-import RiskLevel1Code
 import TargetMarket2Code
 import OtherTargetMarketRiskTolerance1
+import RiskLevel1Code
+import Max1Number
 
 class RiskTolerance1(base_types._BaseFieldType):
 
-	__slots__ = ["_RskTlrncePRIIPSMthdlgy", "_RskTlrnceUCITSMthdlgy", "_Othr", "_RskTlrnceIntl", "_NotForInvstrsWthTheLwstRskTlrnceDE", "_RskTlrnceForNonPRIIPSAndNonUCITSES"]
-	@property
-	def RskTlrncePRIIPSMthdlgy(self):
-		return self._RskTlrncePRIIPSMthdlgy
-
-	@RskTlrncePRIIPSMthdlgy.setter
-	def RskTlrncePRIIPSMthdlgy(self, value):
-		self._RskTlrncePRIIPSMthdlgy = value if type(value) != auto else self.make_default("RskTlrncePRIIPSMthdlgy")
-
-	@RskTlrncePRIIPSMthdlgy.deleter
-	def RskTlrncePRIIPSMthdlgy(self):
-		del self._RskTlrncePRIIPSMthdlgy
-		self._RskTlrncePRIIPSMthdlgy = None
-
+	__slots__ = ["_RskTlrnceUCITSMthdlgy", "_Othr", "_NotForInvstrsWthTheLwstRskTlrnceDE", "_RskTlrnceIntl", "_RskTlrnceForNonPRIIPSAndNonUCITSES", "_RskTlrncePRIIPSMthdlgy"]
 	@property
 	def RskTlrnceUCITSMthdlgy(self):
 		return self._RskTlrnceUCITSMthdlgy
@@ -47,19 +34,6 @@ class RiskTolerance1(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def RskTlrnceIntl(self):
-		return self._RskTlrnceIntl
-
-	@RskTlrnceIntl.setter
-	def RskTlrnceIntl(self, value):
-		self._RskTlrnceIntl = value if type(value) != auto else self.make_default("RskTlrnceIntl")
-
-	@RskTlrnceIntl.deleter
-	def RskTlrnceIntl(self):
-		del self._RskTlrnceIntl
-		self._RskTlrnceIntl = None
-
-	@property
 	def NotForInvstrsWthTheLwstRskTlrnceDE(self):
 		return self._NotForInvstrsWthTheLwstRskTlrnceDE
 
@@ -71,6 +45,19 @@ class RiskTolerance1(base_types._BaseFieldType):
 	def NotForInvstrsWthTheLwstRskTlrnceDE(self):
 		del self._NotForInvstrsWthTheLwstRskTlrnceDE
 		self._NotForInvstrsWthTheLwstRskTlrnceDE = None
+
+	@property
+	def RskTlrnceIntl(self):
+		return self._RskTlrnceIntl
+
+	@RskTlrnceIntl.setter
+	def RskTlrnceIntl(self, value):
+		self._RskTlrnceIntl = value if type(value) != auto else self.make_default("RskTlrnceIntl")
+
+	@RskTlrnceIntl.deleter
+	def RskTlrnceIntl(self):
+		del self._RskTlrnceIntl
+		self._RskTlrnceIntl = None
 
 	@property
 	def RskTlrnceForNonPRIIPSAndNonUCITSES(self):
@@ -85,12 +72,25 @@ class RiskTolerance1(base_types._BaseFieldType):
 		del self._RskTlrnceForNonPRIIPSAndNonUCITSES
 		self._RskTlrnceForNonPRIIPSAndNonUCITSES = None
 
+	@property
+	def RskTlrncePRIIPSMthdlgy(self):
+		return self._RskTlrncePRIIPSMthdlgy
+
+	@RskTlrncePRIIPSMthdlgy.setter
+	def RskTlrncePRIIPSMthdlgy(self, value):
+		self._RskTlrncePRIIPSMthdlgy = value if type(value) != auto else self.make_default("RskTlrncePRIIPSMthdlgy")
+
+	@RskTlrncePRIIPSMthdlgy.deleter
+	def RskTlrncePRIIPSMthdlgy(self):
+		del self._RskTlrncePRIIPSMthdlgy
+		self._RskTlrncePRIIPSMthdlgy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RskTlrncePRIIPSMthdlgy', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RskTlrnceUCITSMthdlgy', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherTargetMarketRiskTolerance1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RskTlrnceIntl', type=RiskLevel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NotForInvstrsWthTheLwstRskTlrnceDE', type=TargetMarket2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrnceIntl', type=RiskLevel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RskTlrnceForNonPRIIPSAndNonUCITSES', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskTlrncePRIIPSMthdlgy', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

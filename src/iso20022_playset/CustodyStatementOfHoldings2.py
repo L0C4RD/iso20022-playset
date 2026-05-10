@@ -1,40 +1,14 @@
 import base_types
-import SafekeepingAccount2
-import TotalValueInPageAndStatement
-import Statement7
 import SubAccountIdentification5
+import Statement7
 import Extension1
+import TotalValueInPageAndStatement
 import AggregateBalanceInformation4
+import SafekeepingAccount2
 
 class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlVals", "_SubAcctDtls", "_StmtGnlDtls", "_AcctDtls", "_BalForAcct", "_Xtnsn"]
-	@property
-	def TtlVals(self):
-		return self._TtlVals
-
-	@TtlVals.setter
-	def TtlVals(self, value):
-		self._TtlVals = value if type(value) != auto else self.make_default("TtlVals")
-
-	@TtlVals.deleter
-	def TtlVals(self):
-		del self._TtlVals
-		self._TtlVals = None
-
-	@property
-	def SubAcctDtls(self):
-		return self._SubAcctDtls
-
-	@SubAcctDtls.setter
-	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
-
-	@SubAcctDtls.deleter
-	def SubAcctDtls(self):
-		del self._SubAcctDtls
-		self._SubAcctDtls = None
-
+	__slots__ = ["_StmtGnlDtls", "_TtlVals", "_AcctDtls", "_SubAcctDtls", "_Xtnsn", "_BalForAcct"]
 	@property
 	def StmtGnlDtls(self):
 		return self._StmtGnlDtls
@@ -47,6 +21,19 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
 		self._StmtGnlDtls = None
+
+	@property
+	def TtlVals(self):
+		return self._TtlVals
+
+	@TtlVals.setter
+	def TtlVals(self, value):
+		self._TtlVals = value if type(value) != auto else self.make_default("TtlVals")
+
+	@TtlVals.deleter
+	def TtlVals(self):
+		del self._TtlVals
+		self._TtlVals = None
 
 	@property
 	def AcctDtls(self):
@@ -62,17 +49,17 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 		self._AcctDtls = None
 
 	@property
-	def BalForAcct(self):
-		return self._BalForAcct
+	def SubAcctDtls(self):
+		return self._SubAcctDtls
 
-	@BalForAcct.setter
-	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
+	@SubAcctDtls.setter
+	def SubAcctDtls(self, value):
+		self._SubAcctDtls = value if type(value) != auto else self.make_default("SubAcctDtls")
 
-	@BalForAcct.deleter
-	def BalForAcct(self):
-		del self._BalForAcct
-		self._BalForAcct = None
+	@SubAcctDtls.deleter
+	def SubAcctDtls(self):
+		del self._SubAcctDtls
+		self._SubAcctDtls = None
 
 	@property
 	def Xtnsn(self):
@@ -87,12 +74,25 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 		del self._Xtnsn
 		self._Xtnsn = None
 
+	@property
+	def BalForAcct(self):
+		return self._BalForAcct
+
+	@BalForAcct.setter
+	def BalForAcct(self, value):
+		self._BalForAcct = value if type(value) != auto else self.make_default("BalForAcct")
+
+	@BalForAcct.deleter
+	def BalForAcct(self):
+		del self._BalForAcct
+		self._BalForAcct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BalForAcct', type=AggregateBalanceInformation4, min=0, max=None, mutex_group=None, array=True),
 	))
 

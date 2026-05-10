@@ -1,13 +1,26 @@
 import base_types
-import Max500Text
-import CreditDebitCode
-import DateAndDateTime2Choice
 import Max35Text
+import CreditDebitCode
+import Max500Text
 import Amount2Choice
+import DateAndDateTime2Choice
 
 class LimitJournalEntry3(base_types._BaseFieldType):
 
-	__slots__ = ["_JrnlDt", "_MktInfrstrctrTxId", "_AcctSvcrRef", "_PrcrTxId", "_TxId", "_AddtlNtryInf", "_CdtDbtInd", "_Amt"]
+	__slots__ = ["_AcctSvcrRef", "_JrnlDt", "_MktInfrstrctrTxId", "_Amt", "_PrcrTxId", "_AddtlNtryInf", "_CdtDbtInd", "_TxId"]
+	@property
+	def AcctSvcrRef(self):
+		return self._AcctSvcrRef
+
+	@AcctSvcrRef.setter
+	def AcctSvcrRef(self, value):
+		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
+
+	@AcctSvcrRef.deleter
+	def AcctSvcrRef(self):
+		del self._AcctSvcrRef
+		self._AcctSvcrRef = None
+
 	@property
 	def JrnlDt(self):
 		return self._JrnlDt
@@ -35,17 +48,17 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 		self._MktInfrstrctrTxId = None
 
 	@property
-	def AcctSvcrRef(self):
-		return self._AcctSvcrRef
+	def Amt(self):
+		return self._Amt
 
-	@AcctSvcrRef.setter
-	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != auto else self.make_default("AcctSvcrRef")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@AcctSvcrRef.deleter
-	def AcctSvcrRef(self):
-		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def PrcrTxId(self):
@@ -59,19 +72,6 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 	def PrcrTxId(self):
 		del self._PrcrTxId
 		self._PrcrTxId = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
 
 	@property
 	def AddtlNtryInf(self):
@@ -100,26 +100,26 @@ class LimitJournalEntry3(base_types._BaseFieldType):
 		self._CdtDbtInd = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def TxId(self):
+		return self._TxId
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='JrnlDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlNtryInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,14 +1,14 @@
 import base_types
 import ActiveOrHistoricCurrencyCode
 import SystemPartyIdentification8
-import SecurityIdentification19
-import AccountIdentification4Choice
-import BranchAndFinancialInstitutionIdentification8
 import PartyIdentification136
+import AccountIdentification4Choice
+import SecurityIdentification19
+import BranchAndFinancialInstitutionIdentification8
 
 class CollateralValueSearchCriteria4(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesAcctOwnr", "_CshAcctSvcr", "_SctiesAcctSvcr", "_Ccy", "_CshAcctId", "_FinInstrmId", "_CshAcctOwnr"]
+	__slots__ = ["_SctiesAcctOwnr", "_Ccy", "_CshAcctId", "_FinInstrmId", "_CshAcctSvcr", "_CshAcctOwnr", "_SctiesAcctSvcr"]
 	@property
 	def SctiesAcctOwnr(self):
 		return self._SctiesAcctOwnr
@@ -21,32 +21,6 @@ class CollateralValueSearchCriteria4(base_types._BaseFieldType):
 	def SctiesAcctOwnr(self):
 		del self._SctiesAcctOwnr
 		self._SctiesAcctOwnr = None
-
-	@property
-	def CshAcctSvcr(self):
-		return self._CshAcctSvcr
-
-	@CshAcctSvcr.setter
-	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
-
-	@CshAcctSvcr.deleter
-	def CshAcctSvcr(self):
-		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
-
-	@property
-	def SctiesAcctSvcr(self):
-		return self._SctiesAcctSvcr
-
-	@SctiesAcctSvcr.setter
-	def SctiesAcctSvcr(self, value):
-		self._SctiesAcctSvcr = value if type(value) != auto else self.make_default("SctiesAcctSvcr")
-
-	@SctiesAcctSvcr.deleter
-	def SctiesAcctSvcr(self):
-		del self._SctiesAcctSvcr
-		self._SctiesAcctSvcr = None
 
 	@property
 	def Ccy(self):
@@ -88,6 +62,19 @@ class CollateralValueSearchCriteria4(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
+	def CshAcctSvcr(self):
+		return self._CshAcctSvcr
+
+	@CshAcctSvcr.setter
+	def CshAcctSvcr(self, value):
+		self._CshAcctSvcr = value if type(value) != auto else self.make_default("CshAcctSvcr")
+
+	@CshAcctSvcr.deleter
+	def CshAcctSvcr(self):
+		del self._CshAcctSvcr
+		self._CshAcctSvcr = None
+
+	@property
 	def CshAcctOwnr(self):
 		return self._CshAcctOwnr
 
@@ -100,13 +87,26 @@ class CollateralValueSearchCriteria4(base_types._BaseFieldType):
 		del self._CshAcctOwnr
 		self._CshAcctOwnr = None
 
+	@property
+	def SctiesAcctSvcr(self):
+		return self._SctiesAcctSvcr
+
+	@SctiesAcctSvcr.setter
+	def SctiesAcctSvcr(self, value):
+		self._SctiesAcctSvcr = value if type(value) != auto else self.make_default("SctiesAcctSvcr")
+
+	@SctiesAcctSvcr.deleter
+	def SctiesAcctSvcr(self):
+		del self._SctiesAcctSvcr
+		self._SctiesAcctSvcr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshAcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshAcctSvcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,23 +1,10 @@
 import base_types
-import Header57
 import AcceptorRejection2
+import Header57
 
 class AcceptorRejectionV06(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_Rjct"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_Rjct", "_Hdr"]
 	@property
 	def Rjct(self):
 		return self._Rjct
@@ -31,8 +18,21 @@ class AcceptorRejectionV06(base_types._BaseFieldType):
 		del self._Rjct
 		self._Rjct = None
 
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header57, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rjct', type=AcceptorRejection2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header57, min=1, max=1, mutex_group=None, array=False),
 	))
 

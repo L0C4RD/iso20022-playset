@@ -1,8 +1,8 @@
 import base_types
+import Max35Text
+import ATMCassette3
 import TransactionIdentifier3
 import ATMOperation2Code
-import ATMCassette3
-import Max35Text
 
 class ATMTransaction30(base_types._BaseFieldType):
 

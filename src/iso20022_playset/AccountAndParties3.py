@@ -1,7 +1,7 @@
 import base_types
+import InvestigatedParties1Choice
 import CashAccount43
 import AuthorityRequestType1
-import InvestigatedParties1Choice
 
 class AccountAndParties3(base_types._BaseFieldType):
 

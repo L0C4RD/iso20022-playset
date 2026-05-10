@@ -1,7 +1,7 @@
 import base_types
-import ProprietaryQuantity1
-import OriginalAndCurrentQuantities1
 import FinancialInstrumentQuantity33Choice
+import OriginalAndCurrentQuantities1
+import ProprietaryQuantity1
 
 class TransactionQuantities4Choice(base_types._BaseFieldType):
 

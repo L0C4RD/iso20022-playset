@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import AdditionalBusinessProcess10Code
+import GenericIdentification30
 
 class AdditionalBusinessProcessFormat18Choice(base_types._BaseFieldType):
 

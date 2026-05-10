@@ -1,11 +1,11 @@
 import base_types
+import DateFormat57Choice
 import DateFormat43Choice
 import DateFormat30Choice
-import DateFormat57Choice
 
 class CorporateActionDate84(base_types._BaseFieldType):
 
-	__slots__ = ["_PmtDt", "_FXRateFxgDt", "_EarlstPmtDt", "_ValDt"]
+	__slots__ = ["_PmtDt", "_EarlstPmtDt", "_ValDt", "_FXRateFxgDt"]
 	@property
 	def PmtDt(self):
 		return self._PmtDt
@@ -18,19 +18,6 @@ class CorporateActionDate84(base_types._BaseFieldType):
 	def PmtDt(self):
 		del self._PmtDt
 		self._PmtDt = None
-
-	@property
-	def FXRateFxgDt(self):
-		return self._FXRateFxgDt
-
-	@FXRateFxgDt.setter
-	def FXRateFxgDt(self, value):
-		self._FXRateFxgDt = value if type(value) != auto else self.make_default("FXRateFxgDt")
-
-	@FXRateFxgDt.deleter
-	def FXRateFxgDt(self):
-		del self._FXRateFxgDt
-		self._FXRateFxgDt = None
 
 	@property
 	def EarlstPmtDt(self):
@@ -58,10 +45,23 @@ class CorporateActionDate84(base_types._BaseFieldType):
 		del self._ValDt
 		self._ValDt = None
 
+	@property
+	def FXRateFxgDt(self):
+		return self._FXRateFxgDt
+
+	@FXRateFxgDt.setter
+	def FXRateFxgDt(self, value):
+		self._FXRateFxgDt = value if type(value) != auto else self.make_default("FXRateFxgDt")
+
+	@FXRateFxgDt.deleter
+	def FXRateFxgDt(self):
+		del self._FXRateFxgDt
+		self._FXRateFxgDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtDt', type=DateFormat30Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FXRateFxgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlstPmtDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateFormat57Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FXRateFxgDt', type=DateFormat43Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

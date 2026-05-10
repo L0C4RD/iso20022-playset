@@ -1,6 +1,6 @@
 import base_types
-import ExternalDiscountAmountType1Code
 import Max35Text
+import ExternalDiscountAmountType1Code
 
 class DiscountAmountType1Choice(base_types._BaseFieldType):
 

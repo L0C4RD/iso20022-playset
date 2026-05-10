@@ -1,11 +1,24 @@
 import base_types
-import PartyType20Code
-import AdditionalData1
 import Max35Text
+import AdditionalData1
+import PartyType20Code
 
 class ProgrammeMode4(base_types._BaseFieldType):
 
-	__slots__ = ["_IdSelctdBy", "_PropsdId", "_ApldId", "_AddtlId"]
+	__slots__ = ["_ApldId", "_IdSelctdBy", "_PropsdId", "_AddtlId"]
+	@property
+	def ApldId(self):
+		return self._ApldId
+
+	@ApldId.setter
+	def ApldId(self, value):
+		self._ApldId = value if type(value) != auto else self.make_default("ApldId")
+
+	@ApldId.deleter
+	def ApldId(self):
+		del self._ApldId
+		self._ApldId = None
+
 	@property
 	def IdSelctdBy(self):
 		return self._IdSelctdBy
@@ -33,19 +46,6 @@ class ProgrammeMode4(base_types._BaseFieldType):
 		self._PropsdId = None
 
 	@property
-	def ApldId(self):
-		return self._ApldId
-
-	@ApldId.setter
-	def ApldId(self, value):
-		self._ApldId = value if type(value) != auto else self.make_default("ApldId")
-
-	@ApldId.deleter
-	def ApldId(self):
-		del self._ApldId
-		self._ApldId = None
-
-	@property
 	def AddtlId(self):
 		return self._AddtlId
 
@@ -59,9 +59,9 @@ class ProgrammeMode4(base_types._BaseFieldType):
 		self._AddtlId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='ApldId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IdSelctdBy', type=PartyType20Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PropsdId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApldId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

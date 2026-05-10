@@ -1,6 +1,6 @@
 import base_types
-import GovernanceProcessType1Code
 import GenericIdentification47
+import GovernanceProcessType1Code
 
 class GovernanceProcess1Choice(base_types._BaseFieldType):
 

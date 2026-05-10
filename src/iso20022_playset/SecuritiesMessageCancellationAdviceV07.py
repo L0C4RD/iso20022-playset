@@ -1,13 +1,13 @@
 import base_types
-import SecuritiesAccount19
-import PartyIdentification144
 import SupplementaryData1
+import PartyIdentification144
 import BlockChainAddressWallet3
 import References69Choice
+import SecuritiesAccount19
 
 class SecuritiesMessageCancellationAdviceV07(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_SplmtryData", "_SfkpgAcct", "_AcctOwnr", "_Ref"]
+	__slots__ = ["_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr", "_SplmtryData", "_Ref"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -20,19 +20,6 @@ class SecuritiesMessageCancellationAdviceV07(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
 
 	@property
 	def SfkpgAcct(self):
@@ -61,6 +48,19 @@ class SecuritiesMessageCancellationAdviceV07(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def Ref(self):
 		return self._Ref
 
@@ -75,9 +75,9 @@ class SecuritiesMessageCancellationAdviceV07(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ref', type=References69Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

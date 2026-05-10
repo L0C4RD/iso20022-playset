@@ -1,12 +1,12 @@
 import base_types
 import BranchAndFinancialInstitutionIdentification6
+import Max35Text
 import OriginalBusinessQuery1
 import ISODateTime
-import Max35Text
 
 class GroupHeader101(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdAgt", "_MsgId", "_CreDtTm", "_InstgAgt", "_OrgnlBizQry"]
+	__slots__ = ["_InstdAgt", "_MsgId", "_InstgAgt", "_CreDtTm", "_OrgnlBizQry"]
 	@property
 	def InstdAgt(self):
 		return self._InstdAgt
@@ -34,19 +34,6 @@ class GroupHeader101(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
 	def InstgAgt(self):
 		return self._InstgAgt
 
@@ -58,6 +45,19 @@ class GroupHeader101(base_types._BaseFieldType):
 	def InstgAgt(self):
 		del self._InstgAgt
 		self._InstgAgt = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
 
 	@property
 	def OrgnlBizQry(self):
@@ -75,8 +75,8 @@ class GroupHeader101(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstdAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstgAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlBizQry', type=OriginalBusinessQuery1, min=0, max=1, mutex_group=None, array=False),
 	))
 

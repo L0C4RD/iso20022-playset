@@ -1,13 +1,26 @@
 import base_types
 import ISODateTime
-import ATMCommandParameters1Choice
-import ATMCommandIdentification1
 import ATMCommand4Code
 import TMSContactLevel2Code
+import ATMCommandIdentification1
+import ATMCommandParameters1Choice
 
 class ATMCommand7(base_types._BaseFieldType):
 
-	__slots__ = ["_CmdId", "_DtTm", "_Tp", "_Urgcy", "_CmdParams"]
+	__slots__ = ["_CmdParams", "_CmdId", "_Urgcy", "_Tp", "_DtTm"]
+	@property
+	def CmdParams(self):
+		return self._CmdParams
+
+	@CmdParams.setter
+	def CmdParams(self, value):
+		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
+
+	@CmdParams.deleter
+	def CmdParams(self):
+		del self._CmdParams
+		self._CmdParams = None
+
 	@property
 	def CmdId(self):
 		return self._CmdId
@@ -20,32 +33,6 @@ class ATMCommand7(base_types._BaseFieldType):
 	def CmdId(self):
 		del self._CmdId
 		self._CmdId = None
-
-	@property
-	def DtTm(self):
-		return self._DtTm
-
-	@DtTm.setter
-	def DtTm(self, value):
-		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
-
-	@DtTm.deleter
-	def DtTm(self):
-		del self._DtTm
-		self._DtTm = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
 
 	@property
 	def Urgcy(self):
@@ -61,23 +48,36 @@ class ATMCommand7(base_types._BaseFieldType):
 		self._Urgcy = None
 
 	@property
-	def CmdParams(self):
-		return self._CmdParams
+	def Tp(self):
+		return self._Tp
 
-	@CmdParams.setter
-	def CmdParams(self, value):
-		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@CmdParams.deleter
-	def CmdParams(self):
-		del self._CmdParams
-		self._CmdParams = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def DtTm(self):
+		return self._DtTm
+
+	@DtTm.setter
+	def DtTm(self, value):
+		self._DtTm = value if type(value) != auto else self.make_default("DtTm")
+
+	@DtTm.deleter
+	def DtTm(self):
+		del self._DtTm
+		self._DtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ATMCommand4Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmdParams', type=ATMCommandParameters1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCommand4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

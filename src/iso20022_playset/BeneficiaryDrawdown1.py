@@ -1,7 +1,7 @@
 import base_types
-import BeneficiaryType1Choice
-import YesNoIndicator
 import AdditionalInformation15
+import YesNoIndicator
+import BeneficiaryType1Choice
 
 class BeneficiaryDrawdown1(base_types._BaseFieldType):
 

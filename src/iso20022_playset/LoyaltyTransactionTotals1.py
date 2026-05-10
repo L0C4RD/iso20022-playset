@@ -1,41 +1,15 @@
 import base_types
+import Max35Text
 import LoyaltyTypeTransactionTotals1Code
 import ImpliedCurrencyAndAmount
-import DetailedAmount15
-import Number
-import ActiveCurrencyCode
-import Max35Text
 import AmountUnit1Code
+import DetailedAmount15
+import ActiveCurrencyCode
+import Number
 
 class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 
-	__slots__ = ["_LltyUnit", "_TtlNb", "_Ccy", "_CardPdctPrfl", "_CmltvAmt", "_TxTp", "_DtldAmt", "_POIGrpId"]
-	@property
-	def LltyUnit(self):
-		return self._LltyUnit
-
-	@LltyUnit.setter
-	def LltyUnit(self, value):
-		self._LltyUnit = value if type(value) != auto else self.make_default("LltyUnit")
-
-	@LltyUnit.deleter
-	def LltyUnit(self):
-		del self._LltyUnit
-		self._LltyUnit = None
-
-	@property
-	def TtlNb(self):
-		return self._TtlNb
-
-	@TtlNb.setter
-	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != auto else self.make_default("TtlNb")
-
-	@TtlNb.deleter
-	def TtlNb(self):
-		del self._TtlNb
-		self._TtlNb = None
-
+	__slots__ = ["_Ccy", "_CardPdctPrfl", "_TxTp", "_TtlNb", "_CmltvAmt", "_LltyUnit", "_DtldAmt", "_POIGrpId"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -63,6 +37,32 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 		self._CardPdctPrfl = None
 
 	@property
+	def TxTp(self):
+		return self._TxTp
+
+	@TxTp.setter
+	def TxTp(self, value):
+		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+
+	@TxTp.deleter
+	def TxTp(self):
+		del self._TxTp
+		self._TxTp = None
+
+	@property
+	def TtlNb(self):
+		return self._TtlNb
+
+	@TtlNb.setter
+	def TtlNb(self, value):
+		self._TtlNb = value if type(value) != auto else self.make_default("TtlNb")
+
+	@TtlNb.deleter
+	def TtlNb(self):
+		del self._TtlNb
+		self._TtlNb = None
+
+	@property
 	def CmltvAmt(self):
 		return self._CmltvAmt
 
@@ -76,17 +76,17 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 		self._CmltvAmt = None
 
 	@property
-	def TxTp(self):
-		return self._TxTp
+	def LltyUnit(self):
+		return self._LltyUnit
 
-	@TxTp.setter
-	def TxTp(self, value):
-		self._TxTp = value if type(value) != auto else self.make_default("TxTp")
+	@LltyUnit.setter
+	def LltyUnit(self, value):
+		self._LltyUnit = value if type(value) != auto else self.make_default("LltyUnit")
 
-	@TxTp.deleter
-	def TxTp(self):
-		del self._TxTp
-		self._TxTp = None
+	@LltyUnit.deleter
+	def LltyUnit(self):
+		del self._LltyUnit
+		self._LltyUnit = None
 
 	@property
 	def DtldAmt(self):
@@ -115,12 +115,12 @@ class LoyaltyTransactionTotals1(base_types._BaseFieldType):
 		self._POIGrpId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LltyUnit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardPdctPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=LoyaltyTypeTransactionTotals1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LltyUnit', type=AmountUnit1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtldAmt', type=DetailedAmount15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

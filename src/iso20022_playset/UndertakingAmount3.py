@@ -1,6 +1,6 @@
 import base_types
-import Max2000Text
 import ActiveCurrencyAndAmount
+import Max2000Text
 
 class UndertakingAmount3(base_types._BaseFieldType):
 

@@ -1,23 +1,23 @@
 import base_types
-import OrganisationIdentification15Choice
 import TrueFalseIndicator
+import OrganisationIdentification15Choice
 import CounterpartyIdentification10
 
 class CounterpartyData86(base_types._BaseFieldType):
 
-	__slots__ = ["_AgtLndr", "_OthrCtrPty", "_TrptyAgt", "_RptgCtrPty"]
+	__slots__ = ["_RptgCtrPty", "_OthrCtrPty", "_TrptyAgt", "_AgtLndr"]
 	@property
-	def AgtLndr(self):
-		return self._AgtLndr
+	def RptgCtrPty(self):
+		return self._RptgCtrPty
 
-	@AgtLndr.setter
-	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != auto else self.make_default("AgtLndr")
+	@RptgCtrPty.setter
+	def RptgCtrPty(self, value):
+		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
 
-	@AgtLndr.deleter
-	def AgtLndr(self):
-		del self._AgtLndr
-		self._AgtLndr = None
+	@RptgCtrPty.deleter
+	def RptgCtrPty(self):
+		del self._RptgCtrPty
+		self._RptgCtrPty = None
 
 	@property
 	def OthrCtrPty(self):
@@ -46,22 +46,22 @@ class CounterpartyData86(base_types._BaseFieldType):
 		self._TrptyAgt = None
 
 	@property
-	def RptgCtrPty(self):
-		return self._RptgCtrPty
+	def AgtLndr(self):
+		return self._AgtLndr
 
-	@RptgCtrPty.setter
-	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != auto else self.make_default("RptgCtrPty")
+	@AgtLndr.setter
+	def AgtLndr(self, value):
+		self._AgtLndr = value if type(value) != auto else self.make_default("AgtLndr")
 
-	@RptgCtrPty.deleter
-	def RptgCtrPty(self):
-		del self._RptgCtrPty
-		self._RptgCtrPty = None
+	@AgtLndr.deleter
+	def AgtLndr(self):
+		del self._AgtLndr
+		self._AgtLndr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AgtLndr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgCtrPty', type=CounterpartyIdentification10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgCtrPty', type=CounterpartyIdentification10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AgtLndr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,38 +1,12 @@
 import base_types
-import MeetingCancellationReason2
-import MeetingReference10
-import SupplementaryData1
 import SecurityPosition23
+import MeetingCancellationReason2
+import SupplementaryData1
+import MeetingReference10
 
 class MeetingCancellationV10(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_SplmtryData", "_MtgRef", "_Scty"]
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_MtgRef", "_Scty", "_Rsn", "_SplmtryData"]
 	@property
 	def MtgRef(self):
 		return self._MtgRef
@@ -59,10 +33,36 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 		del self._Scty
 		self._Scty = None
 
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=MeetingCancellationReason2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Scty', type=SecurityPosition23, min=1, max=200, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Rsn', type=MeetingCancellationReason2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

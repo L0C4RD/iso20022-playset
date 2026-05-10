@@ -1,23 +1,10 @@
 import base_types
-import YesNoIndicator
 import Max35Text
+import YesNoIndicator
 
 class NotificationUpdate2(base_types._BaseFieldType):
 
-	__slots__ = ["_RcnfrmInstrs", "_PrvsNtfctnId"]
-	@property
-	def RcnfrmInstrs(self):
-		return self._RcnfrmInstrs
-
-	@RcnfrmInstrs.setter
-	def RcnfrmInstrs(self, value):
-		self._RcnfrmInstrs = value if type(value) != auto else self.make_default("RcnfrmInstrs")
-
-	@RcnfrmInstrs.deleter
-	def RcnfrmInstrs(self):
-		del self._RcnfrmInstrs
-		self._RcnfrmInstrs = None
-
+	__slots__ = ["_PrvsNtfctnId", "_RcnfrmInstrs"]
 	@property
 	def PrvsNtfctnId(self):
 		return self._PrvsNtfctnId
@@ -31,8 +18,21 @@ class NotificationUpdate2(base_types._BaseFieldType):
 		del self._PrvsNtfctnId
 		self._PrvsNtfctnId = None
 
+	@property
+	def RcnfrmInstrs(self):
+		return self._RcnfrmInstrs
+
+	@RcnfrmInstrs.setter
+	def RcnfrmInstrs(self, value):
+		self._RcnfrmInstrs = value if type(value) != auto else self.make_default("RcnfrmInstrs")
+
+	@RcnfrmInstrs.deleter
+	def RcnfrmInstrs(self):
+		del self._RcnfrmInstrs
+		self._RcnfrmInstrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcnfrmInstrs', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcnfrmInstrs', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

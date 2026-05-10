@@ -1,6 +1,6 @@
 import base_types
-import ATMStatus1Code
 import Max35Text
+import ATMStatus1Code
 
 class ATMStatus2(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import YesNoIndicator
 import Max35Text
+import YesNoIndicator
 
 class DataBaseCheck1(base_types._BaseFieldType):
 

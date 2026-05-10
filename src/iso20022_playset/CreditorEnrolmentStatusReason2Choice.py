@@ -1,6 +1,6 @@
 import base_types
-import ExternalCreditorEnrolmentStatusReason1Code
 import Max35Text
+import ExternalCreditorEnrolmentStatusReason1Code
 
 class CreditorEnrolmentStatusReason2Choice(base_types._BaseFieldType):
 

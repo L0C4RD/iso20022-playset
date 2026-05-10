@@ -1,12 +1,12 @@
 import base_types
-import Account23
-import Max350Text
 import Max35Text
+import Max350Text
 import AdditionalReference13
+import Account23
 
 class InvestmentAccountModification4(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyRef", "_AcctApplId", "_ClntRef", "_ExstgAcctId", "_ModRsn"]
+	__slots__ = ["_CtrPtyRef", "_AcctApplId", "_ExstgAcctId", "_ModRsn", "_ClntRef"]
 	@property
 	def CtrPtyRef(self):
 		return self._CtrPtyRef
@@ -34,19 +34,6 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 		self._AcctApplId = None
 
 	@property
-	def ClntRef(self):
-		return self._ClntRef
-
-	@ClntRef.setter
-	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
-
-	@ClntRef.deleter
-	def ClntRef(self):
-		del self._ClntRef
-		self._ClntRef = None
-
-	@property
 	def ExstgAcctId(self):
 		return self._ExstgAcctId
 
@@ -72,11 +59,24 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 		del self._ModRsn
 		self._ModRsn = None
 
+	@property
+	def ClntRef(self):
+		return self._ClntRef
+
+	@ClntRef.setter
+	def ClntRef(self, value):
+		self._ClntRef = value if type(value) != auto else self.make_default("ClntRef")
+
+	@ClntRef.deleter
+	def ClntRef(self):
+		del self._ClntRef
+		self._ClntRef = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ModRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

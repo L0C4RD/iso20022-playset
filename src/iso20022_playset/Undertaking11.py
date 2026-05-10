@@ -1,26 +1,13 @@
 import base_types
 import Narrative1
-import ExpiryDetails1
 import CommunicationChannel1
-import UndertakingAmount2
+import ExpiryDetails1
 import PartyIdentification43
+import UndertakingAmount2
 
 class Undertaking11(base_types._BaseFieldType):
 
-	__slots__ = ["_NewUdrtkgTermsAndConds", "_NewBnfcry", "_DlvryChanl", "_NewXpryDtls", "_NewUdrtkgAmt"]
-	@property
-	def NewUdrtkgTermsAndConds(self):
-		return self._NewUdrtkgTermsAndConds
-
-	@NewUdrtkgTermsAndConds.setter
-	def NewUdrtkgTermsAndConds(self, value):
-		self._NewUdrtkgTermsAndConds = value if type(value) != auto else self.make_default("NewUdrtkgTermsAndConds")
-
-	@NewUdrtkgTermsAndConds.deleter
-	def NewUdrtkgTermsAndConds(self):
-		del self._NewUdrtkgTermsAndConds
-		self._NewUdrtkgTermsAndConds = None
-
+	__slots__ = ["_NewBnfcry", "_NewXpryDtls", "_DlvryChanl", "_NewUdrtkgAmt", "_NewUdrtkgTermsAndConds"]
 	@property
 	def NewBnfcry(self):
 		return self._NewBnfcry
@@ -33,19 +20,6 @@ class Undertaking11(base_types._BaseFieldType):
 	def NewBnfcry(self):
 		del self._NewBnfcry
 		self._NewBnfcry = None
-
-	@property
-	def DlvryChanl(self):
-		return self._DlvryChanl
-
-	@DlvryChanl.setter
-	def DlvryChanl(self, value):
-		self._DlvryChanl = value if type(value) != auto else self.make_default("DlvryChanl")
-
-	@DlvryChanl.deleter
-	def DlvryChanl(self):
-		del self._DlvryChanl
-		self._DlvryChanl = None
 
 	@property
 	def NewXpryDtls(self):
@@ -61,6 +35,19 @@ class Undertaking11(base_types._BaseFieldType):
 		self._NewXpryDtls = None
 
 	@property
+	def DlvryChanl(self):
+		return self._DlvryChanl
+
+	@DlvryChanl.setter
+	def DlvryChanl(self, value):
+		self._DlvryChanl = value if type(value) != auto else self.make_default("DlvryChanl")
+
+	@DlvryChanl.deleter
+	def DlvryChanl(self):
+		del self._DlvryChanl
+		self._DlvryChanl = None
+
+	@property
 	def NewUdrtkgAmt(self):
 		return self._NewUdrtkgAmt
 
@@ -73,11 +60,24 @@ class Undertaking11(base_types._BaseFieldType):
 		del self._NewUdrtkgAmt
 		self._NewUdrtkgAmt = None
 
+	@property
+	def NewUdrtkgTermsAndConds(self):
+		return self._NewUdrtkgTermsAndConds
+
+	@NewUdrtkgTermsAndConds.setter
+	def NewUdrtkgTermsAndConds(self, value):
+		self._NewUdrtkgTermsAndConds = value if type(value) != auto else self.make_default("NewUdrtkgTermsAndConds")
+
+	@NewUdrtkgTermsAndConds.deleter
+	def NewUdrtkgTermsAndConds(self):
+		del self._NewUdrtkgTermsAndConds
+		self._NewUdrtkgTermsAndConds = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewUdrtkgTermsAndConds', type=Narrative1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewBnfcry', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewXpryDtls', type=ExpiryDetails1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewUdrtkgAmt', type=UndertakingAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewUdrtkgTermsAndConds', type=Narrative1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
+import CreditTransferTransaction70
 import SupplementaryData1
 import GroupHeader131
-import CreditTransferTransaction70
 
 class FIToFICustomerCreditTransferV13(base_types._BaseFieldType):
 

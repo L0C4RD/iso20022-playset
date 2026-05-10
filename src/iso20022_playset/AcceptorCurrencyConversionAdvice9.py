@@ -1,24 +1,11 @@
 import base_types
+import CardPaymentTransaction137
 import CardPaymentEnvironment81
 import CurrencyConversion30
-import CardPaymentTransaction137
 
 class AcceptorCurrencyConversionAdvice9(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Tx", "_CcyConvsRslt"]
-	@property
-	def Envt(self):
-		return self._Envt
-
-	@Envt.setter
-	def Envt(self, value):
-		self._Envt = value if type(value) != auto else self.make_default("Envt")
-
-	@Envt.deleter
-	def Envt(self):
-		del self._Envt
-		self._Envt = None
-
+	__slots__ = ["_Tx", "_Envt", "_CcyConvsRslt"]
 	@property
 	def Tx(self):
 		return self._Tx
@@ -31,6 +18,19 @@ class AcceptorCurrencyConversionAdvice9(base_types._BaseFieldType):
 	def Tx(self):
 		del self._Tx
 		self._Tx = None
+
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
 
 	@property
 	def CcyConvsRslt(self):
@@ -46,8 +46,8 @@ class AcceptorCurrencyConversionAdvice9(base_types._BaseFieldType):
 		self._CcyConvsRslt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction137, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion30, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import ContractValuationData8
-import TradeCounterpartyReport20
 import ISODateTime
+import TradeCounterpartyReport20
+import ContractValuationData8
 
 class CounterpartySpecificData36(base_types._BaseFieldType):
 

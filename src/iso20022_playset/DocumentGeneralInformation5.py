@@ -1,15 +1,15 @@
 import base_types
-import ExternalDocumentType1Code
-import Max35Text
-import ISODate
 import SignatureEnvelopeReference
-import BinaryFile1
+import Max35Text
 import Max140Text
+import ExternalDocumentType1Code
+import ISODate
 import Max256Text
+import BinaryFile1
 
 class DocumentGeneralInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_AttchdBinryFile", "_DocNm", "_SndrRcvrSeqId", "_IsseDt", "_DocNb", "_DocTp", "_URL", "_LkFileHash"]
+	__slots__ = ["_AttchdBinryFile", "_LkFileHash", "_SndrRcvrSeqId", "_DocNm", "_DocNb", "_IsseDt", "_URL", "_DocTp"]
 	@property
 	def AttchdBinryFile(self):
 		return self._AttchdBinryFile
@@ -24,17 +24,17 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 		self._AttchdBinryFile = None
 
 	@property
-	def DocNm(self):
-		return self._DocNm
+	def LkFileHash(self):
+		return self._LkFileHash
 
-	@DocNm.setter
-	def DocNm(self, value):
-		self._DocNm = value if type(value) != auto else self.make_default("DocNm")
+	@LkFileHash.setter
+	def LkFileHash(self, value):
+		self._LkFileHash = value if type(value) != auto else self.make_default("LkFileHash")
 
-	@DocNm.deleter
-	def DocNm(self):
-		del self._DocNm
-		self._DocNm = None
+	@LkFileHash.deleter
+	def LkFileHash(self):
+		del self._LkFileHash
+		self._LkFileHash = None
 
 	@property
 	def SndrRcvrSeqId(self):
@@ -50,17 +50,17 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 		self._SndrRcvrSeqId = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
+	def DocNm(self):
+		return self._DocNm
 
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
+	@DocNm.setter
+	def DocNm(self, value):
+		self._DocNm = value if type(value) != auto else self.make_default("DocNm")
 
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
+	@DocNm.deleter
+	def DocNm(self):
+		del self._DocNm
+		self._DocNm = None
 
 	@property
 	def DocNb(self):
@@ -76,17 +76,17 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 		self._DocNb = None
 
 	@property
-	def DocTp(self):
-		return self._DocTp
+	def IsseDt(self):
+		return self._IsseDt
 
-	@DocTp.setter
-	def DocTp(self, value):
-		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
 
-	@DocTp.deleter
-	def DocTp(self):
-		del self._DocTp
-		self._DocTp = None
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
 
 	@property
 	def URL(self):
@@ -102,26 +102,26 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 		self._URL = None
 
 	@property
-	def LkFileHash(self):
-		return self._LkFileHash
+	def DocTp(self):
+		return self._DocTp
 
-	@LkFileHash.setter
-	def LkFileHash(self, value):
-		self._LkFileHash = value if type(value) != auto else self.make_default("LkFileHash")
+	@DocTp.setter
+	def DocTp(self, value):
+		self._DocTp = value if type(value) != auto else self.make_default("DocTp")
 
-	@LkFileHash.deleter
-	def LkFileHash(self):
-		del self._LkFileHash
-		self._LkFileHash = None
+	@DocTp.deleter
+	def DocTp(self):
+		del self._DocTp
+		self._DocTp = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttchdBinryFile', type=BinaryFile1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkFileHash', type=SignatureEnvelopeReference, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocTp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

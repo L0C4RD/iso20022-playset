@@ -1,6 +1,6 @@
 import base_types
-import MICIdentifier
 import Max35Text
+import MICIdentifier
 
 class MarketIdentification3Choice(base_types._BaseFieldType):
 

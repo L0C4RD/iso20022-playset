@@ -1,12 +1,25 @@
 import base_types
-import InvestmentFundRole2Choice
-import OrderOriginatorEligibility1Code
-import Account22
 import PartyIdentification113
+import OrderOriginatorEligibility1Code
+import InvestmentFundRole2Choice
+import Account22
 
 class Intermediary40(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrOrgtrElgblty", "_Acct", "_Id", "_Role"]
+	__slots__ = ["_Id", "_OrdrOrgtrElgblty", "_Acct", "_Role"]
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	@property
 	def OrdrOrgtrElgblty(self):
 		return self._OrdrOrgtrElgblty
@@ -34,19 +47,6 @@ class Intermediary40(base_types._BaseFieldType):
 		self._Acct = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def Role(self):
 		return self._Role
 
@@ -60,9 +60,9 @@ class Intermediary40(base_types._BaseFieldType):
 		self._Role = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrOrgtrElgblty', type=OrderOriginatorEligibility1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PartyIdentification113, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=InvestmentFundRole2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

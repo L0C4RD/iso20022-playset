@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import InstructionProcessingStatus1Code
+import GenericIdentification30
 
 class InstructionProcessingStatus23Choice(base_types._BaseFieldType):
 

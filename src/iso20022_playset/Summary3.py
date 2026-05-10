@@ -8,7 +8,20 @@ import ExposureType13Code
 
 class Summary3(base_types._BaseFieldType):
 
-	__slots__ = ["_NetXcssDfcit", "_ValtnDtTm", "_SummryDtls", "_XpsdAmtPtyB", "_XpsdAmtPtyA", "_XpsrTp", "_TtlValOfColl", "_ReqdSttlmDt", "_NetXcssDfcitInd"]
+	__slots__ = ["_XpsrTp", "_NetXcssDfcit", "_ValtnDtTm", "_SummryDtls", "_TtlValOfColl", "_XpsdAmtPtyA", "_NetXcssDfcitInd", "_ReqdSttlmDt", "_XpsdAmtPtyB"]
+	@property
+	def XpsrTp(self):
+		return self._XpsrTp
+
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
+
 	@property
 	def NetXcssDfcit(self):
 		return self._NetXcssDfcit
@@ -49,17 +62,17 @@ class Summary3(base_types._BaseFieldType):
 		self._SummryDtls = None
 
 	@property
-	def XpsdAmtPtyB(self):
-		return self._XpsdAmtPtyB
+	def TtlValOfColl(self):
+		return self._TtlValOfColl
 
-	@XpsdAmtPtyB.setter
-	def XpsdAmtPtyB(self, value):
-		self._XpsdAmtPtyB = value if type(value) != auto else self.make_default("XpsdAmtPtyB")
+	@TtlValOfColl.setter
+	def TtlValOfColl(self, value):
+		self._TtlValOfColl = value if type(value) != auto else self.make_default("TtlValOfColl")
 
-	@XpsdAmtPtyB.deleter
-	def XpsdAmtPtyB(self):
-		del self._XpsdAmtPtyB
-		self._XpsdAmtPtyB = None
+	@TtlValOfColl.deleter
+	def TtlValOfColl(self):
+		del self._TtlValOfColl
+		self._TtlValOfColl = None
 
 	@property
 	def XpsdAmtPtyA(self):
@@ -75,30 +88,17 @@ class Summary3(base_types._BaseFieldType):
 		self._XpsdAmtPtyA = None
 
 	@property
-	def XpsrTp(self):
-		return self._XpsrTp
+	def NetXcssDfcitInd(self):
+		return self._NetXcssDfcitInd
 
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+	@NetXcssDfcitInd.setter
+	def NetXcssDfcitInd(self, value):
+		self._NetXcssDfcitInd = value if type(value) != auto else self.make_default("NetXcssDfcitInd")
 
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
-
-	@property
-	def TtlValOfColl(self):
-		return self._TtlValOfColl
-
-	@TtlValOfColl.setter
-	def TtlValOfColl(self, value):
-		self._TtlValOfColl = value if type(value) != auto else self.make_default("TtlValOfColl")
-
-	@TtlValOfColl.deleter
-	def TtlValOfColl(self):
-		del self._TtlValOfColl
-		self._TtlValOfColl = None
+	@NetXcssDfcitInd.deleter
+	def NetXcssDfcitInd(self):
+		del self._NetXcssDfcitInd
+		self._NetXcssDfcitInd = None
 
 	@property
 	def ReqdSttlmDt(self):
@@ -114,27 +114,27 @@ class Summary3(base_types._BaseFieldType):
 		self._ReqdSttlmDt = None
 
 	@property
-	def NetXcssDfcitInd(self):
-		return self._NetXcssDfcitInd
+	def XpsdAmtPtyB(self):
+		return self._XpsdAmtPtyB
 
-	@NetXcssDfcitInd.setter
-	def NetXcssDfcitInd(self, value):
-		self._NetXcssDfcitInd = value if type(value) != auto else self.make_default("NetXcssDfcitInd")
+	@XpsdAmtPtyB.setter
+	def XpsdAmtPtyB(self, value):
+		self._XpsdAmtPtyB = value if type(value) != auto else self.make_default("XpsdAmtPtyB")
 
-	@NetXcssDfcitInd.deleter
-	def NetXcssDfcitInd(self):
-		del self._NetXcssDfcitInd
-		self._NetXcssDfcitInd = None
+	@XpsdAmtPtyB.deleter
+	def XpsdAmtPtyB(self):
+		del self._XpsdAmtPtyB
+		self._XpsdAmtPtyB = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType13Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXcssDfcit', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SummryDtls', type=SummaryAmounts2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsdAmtPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsdAmtPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType13Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlValOfColl', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsdAmtPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXcssDfcitInd', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqdSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpsdAmtPtyB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

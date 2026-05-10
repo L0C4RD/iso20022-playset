@@ -1,24 +1,24 @@
 import base_types
-import Percentage14Rate
-import RateTypeAndPercentageRate18
-import RateValueType7Code
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
+import RateTypeAndPercentageRate18
+import Percentage14Rate
+import RateValueType7Code
 
 class RateAndAmountFormat70Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_RateTpAndRate", "_NotSpcfdRate"]
+	__slots__ = ["_RateTpAndRate", "_Rate", "_Amt", "_NotSpcfdRate"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def RateTpAndRate(self):
+		return self._RateTpAndRate
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@RateTpAndRate.setter
+	def RateTpAndRate(self, value):
+		self._RateTpAndRate = value if type(value) != auto else self.make_default("RateTpAndRate")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@RateTpAndRate.deleter
+	def RateTpAndRate(self):
+		del self._RateTpAndRate
+		self._RateTpAndRate = None
 
 	@property
 	def Rate(self):
@@ -34,17 +34,17 @@ class RateAndAmountFormat70Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def RateTpAndRate(self):
-		return self._RateTpAndRate
+	def Amt(self):
+		return self._Amt
 
-	@RateTpAndRate.setter
-	def RateTpAndRate(self, value):
-		self._RateTpAndRate = value if type(value) != auto else self.make_default("RateTpAndRate")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@RateTpAndRate.deleter
-	def RateTpAndRate(self):
-		del self._RateTpAndRate
-		self._RateTpAndRate = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def NotSpcfdRate(self):
@@ -60,9 +60,9 @@ class RateAndAmountFormat70Choice(base_types._BaseFieldType):
 		self._NotSpcfdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate18, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

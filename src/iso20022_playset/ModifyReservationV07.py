@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
-import MessageHeader1
 import Reservation4
 import CurrentOrDefaultReservation4Choice
+import MessageHeader1
+import SupplementaryData1
 
 class ModifyReservationV07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_MsgHdr", "_NewRsvatnValSet", "_RsvatnId"]
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_RsvatnId", "_NewRsvatnValSet"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,19 +34,6 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def NewRsvatnValSet(self):
-		return self._NewRsvatnValSet
-
-	@NewRsvatnValSet.setter
-	def NewRsvatnValSet(self, value):
-		self._NewRsvatnValSet = value if type(value) != auto else self.make_default("NewRsvatnValSet")
-
-	@NewRsvatnValSet.deleter
-	def NewRsvatnValSet(self):
-		del self._NewRsvatnValSet
-		self._NewRsvatnValSet = None
-
-	@property
 	def RsvatnId(self):
 		return self._RsvatnId
 
@@ -59,10 +46,23 @@ class ModifyReservationV07(base_types._BaseFieldType):
 		del self._RsvatnId
 		self._RsvatnId = None
 
+	@property
+	def NewRsvatnValSet(self):
+		return self._NewRsvatnValSet
+
+	@NewRsvatnValSet.setter
+	def NewRsvatnValSet(self, value):
+		self._NewRsvatnValSet = value if type(value) != auto else self.make_default("NewRsvatnValSet")
+
+	@NewRsvatnValSet.deleter
+	def NewRsvatnValSet(self):
+		del self._NewRsvatnValSet
+		self._NewRsvatnValSet = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewRsvatnValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsvatnId', type=CurrentOrDefaultReservation4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewRsvatnValSet', type=Reservation4, min=1, max=1, mutex_group=None, array=False),
 	))
 

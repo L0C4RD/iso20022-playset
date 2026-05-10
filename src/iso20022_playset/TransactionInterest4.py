@@ -1,6 +1,6 @@
 import base_types
-import ActiveOrHistoricCurrencyAndAmount
 import InterestRecord2
+import ActiveOrHistoricCurrencyAndAmount
 
 class TransactionInterest4(base_types._BaseFieldType):
 

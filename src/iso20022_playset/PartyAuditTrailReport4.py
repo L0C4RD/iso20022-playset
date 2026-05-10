@@ -1,23 +1,23 @@
 import base_types
+import SystemPartyIdentification8
 import DatePeriod3Choice
 import PartyAuditTrailOrError4Choice
-import SystemPartyIdentification8
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyId", "_DtPrd", "_PtyAudtTrlOrErr"]
+	__slots__ = ["_PtyAudtTrlOrErr", "_DtPrd", "_PtyId"]
 	@property
-	def PtyId(self):
-		return self._PtyId
+	def PtyAudtTrlOrErr(self):
+		return self._PtyAudtTrlOrErr
 
-	@PtyId.setter
-	def PtyId(self, value):
-		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
+	@PtyAudtTrlOrErr.setter
+	def PtyAudtTrlOrErr(self, value):
+		self._PtyAudtTrlOrErr = value if type(value) != auto else self.make_default("PtyAudtTrlOrErr")
 
-	@PtyId.deleter
-	def PtyId(self):
-		del self._PtyId
-		self._PtyId = None
+	@PtyAudtTrlOrErr.deleter
+	def PtyAudtTrlOrErr(self):
+		del self._PtyAudtTrlOrErr
+		self._PtyAudtTrlOrErr = None
 
 	@property
 	def DtPrd(self):
@@ -33,21 +33,21 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 		self._DtPrd = None
 
 	@property
-	def PtyAudtTrlOrErr(self):
-		return self._PtyAudtTrlOrErr
+	def PtyId(self):
+		return self._PtyId
 
-	@PtyAudtTrlOrErr.setter
-	def PtyAudtTrlOrErr(self, value):
-		self._PtyAudtTrlOrErr = value if type(value) != auto else self.make_default("PtyAudtTrlOrErr")
+	@PtyId.setter
+	def PtyId(self, value):
+		self._PtyId = value if type(value) != auto else self.make_default("PtyId")
 
-	@PtyAudtTrlOrErr.deleter
-	def PtyAudtTrlOrErr(self):
-		del self._PtyAudtTrlOrErr
-		self._PtyAudtTrlOrErr = None
+	@PtyId.deleter
+	def PtyId(self):
+		del self._PtyId
+		self._PtyId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtPrd', type=DatePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyAudtTrlOrErr', type=PartyAuditTrailOrError4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtPrd', type=DatePeriod3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
 

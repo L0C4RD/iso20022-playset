@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import DeliveryReturn1Code
+import GenericIdentification30
 
 class DeliveryReturn3Choice(base_types._BaseFieldType):
 

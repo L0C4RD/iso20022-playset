@@ -1,7 +1,7 @@
 import base_types
-import DateAndPlaceOfBirth1
 import GenericPersonIdentification2
 import Max256Text
+import DateAndPlaceOfBirth1
 
 class PersonIdentification20(base_types._BaseFieldType):
 

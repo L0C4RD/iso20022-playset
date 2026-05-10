@@ -1,25 +1,25 @@
 import base_types
-import RestrictedFINXMax16Text
-import SupplementaryData1
-import TransactionDetails162
 import TransactionIdentifications50
+import TransactionDetails162
+import SupplementaryData1
 import ProcessingStatus96Choice
+import RestrictedFINXMax16Text
 
 class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxId", "_CxlReqRef", "_PrcgSts", "_TxDtls"]
+	__slots__ = ["_PrcgSts", "_TxId", "_CxlReqRef", "_SplmtryData", "_TxDtls"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def TxId(self):
@@ -48,17 +48,17 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 		self._CxlReqRef = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TxDtls(self):
@@ -74,10 +74,10 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 		self._TxDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus96Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications50, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus96Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails162, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import BusinessProcessType1Code
+import GenericIdentification30
 
 class BusinessProcessType2Choice(base_types._BaseFieldType):
 

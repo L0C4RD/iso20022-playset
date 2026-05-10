@@ -1,15 +1,15 @@
 import base_types
-import CardPaymentEnvironment81
-import LoginResponse7
-import DiagnosisResponse7
 import PaymentContext30
+import CardPaymentEnvironment81
 import SupplementaryData1
+import DiagnosisResponse7
 import RetailerService5Code
+import LoginResponse7
 import ResponseType11
 
 class SessionManagementResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_LgnRspn", "_SvcCntt", "_Rspn", "_DgnssRspn"]
+	__slots__ = ["_Envt", "_LgnRspn", "_Cntxt", "_DgnssRspn", "_SvcCntt", "_Rspn", "_SplmtryData"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -22,6 +22,19 @@ class SessionManagementResponse8(base_types._BaseFieldType):
 	def Envt(self):
 		del self._Envt
 		self._Envt = None
+
+	@property
+	def LgnRspn(self):
+		return self._LgnRspn
+
+	@LgnRspn.setter
+	def LgnRspn(self, value):
+		self._LgnRspn = value if type(value) != auto else self.make_default("LgnRspn")
+
+	@LgnRspn.deleter
+	def LgnRspn(self):
+		del self._LgnRspn
+		self._LgnRspn = None
 
 	@property
 	def Cntxt(self):
@@ -37,30 +50,17 @@ class SessionManagementResponse8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def DgnssRspn(self):
+		return self._DgnssRspn
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@DgnssRspn.setter
+	def DgnssRspn(self, value):
+		self._DgnssRspn = value if type(value) != auto else self.make_default("DgnssRspn")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def LgnRspn(self):
-		return self._LgnRspn
-
-	@LgnRspn.setter
-	def LgnRspn(self, value):
-		self._LgnRspn = value if type(value) != auto else self.make_default("LgnRspn")
-
-	@LgnRspn.deleter
-	def LgnRspn(self):
-		del self._LgnRspn
-		self._LgnRspn = None
+	@DgnssRspn.deleter
+	def DgnssRspn(self):
+		del self._DgnssRspn
+		self._DgnssRspn = None
 
 	@property
 	def SvcCntt(self):
@@ -89,25 +89,25 @@ class SessionManagementResponse8(base_types._BaseFieldType):
 		self._Rspn = None
 
 	@property
-	def DgnssRspn(self):
-		return self._DgnssRspn
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@DgnssRspn.setter
-	def DgnssRspn(self, value):
-		self._DgnssRspn = value if type(value) != auto else self.make_default("DgnssRspn")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@DgnssRspn.deleter
-	def DgnssRspn(self):
-		del self._DgnssRspn
-		self._DgnssRspn = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LgnRspn', type=LoginResponse7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DgnssRspn', type=DiagnosisResponse7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgnssRspn', type=DiagnosisResponse7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

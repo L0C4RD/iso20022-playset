@@ -5,20 +5,7 @@ import SupplementaryData1
 
 class MandateCopyRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_UndrlygCpyReqDtls", "_SplmtryData"]
-	@property
-	def GrpHdr(self):
-		return self._GrpHdr
-
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
-
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
-
+	__slots__ = ["_UndrlygCpyReqDtls", "_GrpHdr", "_SplmtryData"]
 	@property
 	def UndrlygCpyReqDtls(self):
 		return self._UndrlygCpyReqDtls
@@ -31,6 +18,19 @@ class MandateCopyRequestV04(base_types._BaseFieldType):
 	def UndrlygCpyReqDtls(self):
 		del self._UndrlygCpyReqDtls
 		self._UndrlygCpyReqDtls = None
+
+	@property
+	def GrpHdr(self):
+		return self._GrpHdr
+
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	@property
 	def SplmtryData(self):
@@ -46,8 +46,8 @@ class MandateCopyRequestV04(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygCpyReqDtls', type=MandateCopy4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

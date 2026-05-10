@@ -1,40 +1,27 @@
 import base_types
-import YesNoIndicator
-import PensionSchemeType3Choice
+import Max35Text
 import AdditionalInformation15
-import TaxReference1
+import YesNoIndicator
 import PensionPolicy1
 import PensionTransferScope1Choice
-import Max35Text
+import TaxReference1
+import PensionSchemeType3Choice
 
 class Pension6(base_types._BaseFieldType):
 
-	__slots__ = ["_DrwdwnTrchId", "_TaxRef", "_AddtlInf", "_Tp", "_NonWrpprTrf", "_TrfScp", "_Id"]
+	__slots__ = ["_Id", "_AddtlInf", "_NonWrpprTrf", "_TaxRef", "_DrwdwnTrchId", "_TrfScp", "_Tp"]
 	@property
-	def DrwdwnTrchId(self):
-		return self._DrwdwnTrchId
+	def Id(self):
+		return self._Id
 
-	@DrwdwnTrchId.setter
-	def DrwdwnTrchId(self, value):
-		self._DrwdwnTrchId = value if type(value) != auto else self.make_default("DrwdwnTrchId")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@DrwdwnTrchId.deleter
-	def DrwdwnTrchId(self):
-		del self._DrwdwnTrchId
-		self._DrwdwnTrchId = None
-
-	@property
-	def TaxRef(self):
-		return self._TaxRef
-
-	@TaxRef.setter
-	def TaxRef(self, value):
-		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
-
-	@TaxRef.deleter
-	def TaxRef(self):
-		del self._TaxRef
-		self._TaxRef = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def AddtlInf(self):
@@ -50,19 +37,6 @@ class Pension6(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def NonWrpprTrf(self):
 		return self._NonWrpprTrf
 
@@ -74,6 +48,32 @@ class Pension6(base_types._BaseFieldType):
 	def NonWrpprTrf(self):
 		del self._NonWrpprTrf
 		self._NonWrpprTrf = None
+
+	@property
+	def TaxRef(self):
+		return self._TaxRef
+
+	@TaxRef.setter
+	def TaxRef(self, value):
+		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
+
+	@TaxRef.deleter
+	def TaxRef(self):
+		del self._TaxRef
+		self._TaxRef = None
+
+	@property
+	def DrwdwnTrchId(self):
+		return self._DrwdwnTrchId
+
+	@DrwdwnTrchId.setter
+	def DrwdwnTrchId(self, value):
+		self._DrwdwnTrchId = value if type(value) != auto else self.make_default("DrwdwnTrchId")
+
+	@DrwdwnTrchId.deleter
+	def DrwdwnTrchId(self):
+		del self._DrwdwnTrchId
+		self._DrwdwnTrchId = None
 
 	@property
 	def TrfScp(self):
@@ -89,25 +89,25 @@ class Pension6(base_types._BaseFieldType):
 		self._TrfScp = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def Tp(self):
+		return self._Tp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

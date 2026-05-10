@@ -1,6 +1,6 @@
 import base_types
-import GenericPersonIdentification1
 import NoReasonCode
+import GenericPersonIdentification1
 import Max50Text
 
 class ExecutingParty2Choice(base_types._BaseFieldType):

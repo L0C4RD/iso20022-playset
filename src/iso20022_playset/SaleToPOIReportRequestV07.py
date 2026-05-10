@@ -1,24 +1,11 @@
 import base_types
-import Header41
-import ReportRequest8
 import ContentInformationType38
+import ReportRequest8
+import Header41
 
 class SaleToPOIReportRequestV07(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_RptReq", "_SctyTrlr"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_RptReq", "_Hdr", "_SctyTrlr"]
 	@property
 	def RptReq(self):
 		return self._RptReq
@@ -31,6 +18,19 @@ class SaleToPOIReportRequestV07(base_types._BaseFieldType):
 	def RptReq(self):
 		del self._RptReq
 		self._RptReq = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	@property
 	def SctyTrlr(self):
@@ -46,8 +46,8 @@ class SaleToPOIReportRequestV07(base_types._BaseFieldType):
 		self._SctyTrlr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptReq', type=ReportRequest8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
 

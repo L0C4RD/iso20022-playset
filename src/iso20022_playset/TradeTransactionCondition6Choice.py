@@ -1,6 +1,6 @@
 import base_types
-import TradeTransactionCondition4Code
 import GenericIdentification47
+import TradeTransactionCondition4Code
 
 class TradeTransactionCondition6Choice(base_types._BaseFieldType):
 

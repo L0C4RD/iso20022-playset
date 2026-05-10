@@ -1,25 +1,12 @@
 import base_types
-import PostalAddress26
-import AnyBICDec2014Identifier
-import Max256Text
 import Max2048Text
+import Max256Text
+import AnyBICDec2014Identifier
+import PostalAddress26
 
 class PartyAddress1(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_URLAdr", "_AnyBIC", "_PstlAdr"]
-	@property
-	def EmailAdr(self):
-		return self._EmailAdr
-
-	@EmailAdr.setter
-	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
-
-	@EmailAdr.deleter
-	def EmailAdr(self):
-		del self._EmailAdr
-		self._EmailAdr = None
-
+	__slots__ = ["_URLAdr", "_AnyBIC", "_PstlAdr", "_EmailAdr"]
 	@property
 	def URLAdr(self):
 		return self._URLAdr
@@ -59,10 +46,23 @@ class PartyAddress1(base_types._BaseFieldType):
 		del self._PstlAdr
 		self._PstlAdr = None
 
+	@property
+	def EmailAdr(self):
+		return self._EmailAdr
+
+	@EmailAdr.setter
+	def EmailAdr(self, value):
+		self._EmailAdr = value if type(value) != auto else self.make_default("EmailAdr")
+
+	@EmailAdr.deleter
+	def EmailAdr(self):
+		del self._EmailAdr
+		self._EmailAdr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

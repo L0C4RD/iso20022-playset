@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import CRSSourceStatus1Code
+import GenericIdentification47
 
 class CRSSource1Choice(base_types._BaseFieldType):
 

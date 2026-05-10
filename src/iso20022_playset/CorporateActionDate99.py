@@ -4,7 +4,7 @@ import DateAndDateTime2Choice
 
 class CorporateActionDate99(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstPmtDt", "_ValDt", "_FXRateFxgDt", "_PstngDt", "_PmtDt"]
+	__slots__ = ["_EarlstPmtDt", "_ValDt", "_PmtDt", "_FXRateFxgDt", "_PstngDt"]
 	@property
 	def EarlstPmtDt(self):
 		return self._EarlstPmtDt
@@ -32,6 +32,19 @@ class CorporateActionDate99(base_types._BaseFieldType):
 		self._ValDt = None
 
 	@property
+	def PmtDt(self):
+		return self._PmtDt
+
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
+
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
+	@property
 	def FXRateFxgDt(self):
 		return self._FXRateFxgDt
 
@@ -57,24 +70,11 @@ class CorporateActionDate99(base_types._BaseFieldType):
 		del self._PstngDt
 		self._PstngDt = None
 
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EarlstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXRateFxgDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

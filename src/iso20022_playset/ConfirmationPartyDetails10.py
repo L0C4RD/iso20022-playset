@@ -1,41 +1,15 @@
 import base_types
-import AlternatePartyIdentification8
-import PartyTextInformation5
+import Max35Text
 import SecuritiesAccount35
+import AlternatePartyIdentification8
+import PartyIdentification117Choice
 import AccountIdentification55Choice
 import TradingPartyCapacity3Choice
-import Max35Text
-import PartyIdentification117Choice
+import PartyTextInformation5
 
 class ConfirmationPartyDetails10(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CshDtls", "_PrcgId", "_SfkpgAcct", "_PtyCpcty", "_AltrnId", "_Id"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def CshDtls(self):
-		return self._CshDtls
-
-	@CshDtls.setter
-	def CshDtls(self, value):
-		self._CshDtls = value if type(value) != auto else self.make_default("CshDtls")
-
-	@CshDtls.deleter
-	def CshDtls(self):
-		del self._CshDtls
-		self._CshDtls = None
-
+	__slots__ = ["_PrcgId", "_AddtlInf", "_PtyCpcty", "_SfkpgAcct", "_AltrnId", "_CshDtls", "_Id"]
 	@property
 	def PrcgId(self):
 		return self._PrcgId
@@ -50,17 +24,17 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._PrcgId = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def PtyCpcty(self):
@@ -76,6 +50,19 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._PtyCpcty = None
 
 	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
 	def AltrnId(self):
 		return self._AltrnId
 
@@ -87,6 +74,19 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 	def AltrnId(self):
 		del self._AltrnId
 		self._AltrnId = None
+
+	@property
+	def CshDtls(self):
+		return self._CshDtls
+
+	@CshDtls.setter
+	def CshDtls(self, value):
+		self._CshDtls = value if type(value) != auto else self.make_default("CshDtls")
+
+	@CshDtls.deleter
+	def CshDtls(self):
+		del self._CshDtls
+		self._CshDtls = None
 
 	@property
 	def Id(self):
@@ -102,12 +102,12 @@ class ConfirmationPartyDetails10(base_types._BaseFieldType):
 		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshDtls', type=AccountIdentification55Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification117Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

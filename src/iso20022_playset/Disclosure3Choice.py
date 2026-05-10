@@ -1,6 +1,6 @@
 import base_types
-import SafekeepingAccount17
 import NoReasonCode
+import SafekeepingAccount17
 
 class Disclosure3Choice(base_types._BaseFieldType):
 

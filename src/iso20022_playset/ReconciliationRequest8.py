@@ -1,12 +1,12 @@
 import base_types
-import ReconciliationRequestData1
+import PaymentContext30
 import CardPaymentEnvironment81
 import SupplementaryData1
-import PaymentContext30
+import ReconciliationRequestData1
 
 class ReconciliationRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_RcncltnReqData", "_SplmtryData"]
+	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_RcncltnReqData"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -34,19 +34,6 @@ class ReconciliationRequest8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def RcncltnReqData(self):
-		return self._RcncltnReqData
-
-	@RcncltnReqData.setter
-	def RcncltnReqData(self, value):
-		self._RcncltnReqData = value if type(value) != auto else self.make_default("RcncltnReqData")
-
-	@RcncltnReqData.deleter
-	def RcncltnReqData(self):
-		del self._RcncltnReqData
-		self._RcncltnReqData = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -59,10 +46,23 @@ class ReconciliationRequest8(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def RcncltnReqData(self):
+		return self._RcncltnReqData
+
+	@RcncltnReqData.setter
+	def RcncltnReqData(self, value):
+		self._RcncltnReqData = value if type(value) != auto else self.make_default("RcncltnReqData")
+
+	@RcncltnReqData.deleter
+	def RcncltnReqData(self):
+		del self._RcncltnReqData
+		self._RcncltnReqData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RcncltnReqData', type=ReconciliationRequestData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RcncltnReqData', type=ReconciliationRequestData1, min=1, max=1, mutex_group=None, array=False),
 	))
 

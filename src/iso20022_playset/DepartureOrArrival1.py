@@ -1,25 +1,12 @@
 import base_types
 import ISODate
-import ISOTime
-import Max70Text
 import Max256Text
+import Max70Text
+import ISOTime
 
 class DepartureOrArrival1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dt", "_Tm", "_Lctn", "_Desc"]
-	@property
-	def Dt(self):
-		return self._Dt
-
-	@Dt.setter
-	def Dt(self, value):
-		self._Dt = value if type(value) != auto else self.make_default("Dt")
-
-	@Dt.deleter
-	def Dt(self):
-		del self._Dt
-		self._Dt = None
-
+	__slots__ = ["_Tm", "_Lctn", "_Dt", "_Desc"]
 	@property
 	def Tm(self):
 		return self._Tm
@@ -47,6 +34,19 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 		self._Lctn = None
 
 	@property
+	def Dt(self):
+		return self._Dt
+
+	@Dt.setter
+	def Dt(self, value):
+		self._Dt = value if type(value) != auto else self.make_default("Dt")
+
+	@Dt.deleter
+	def Dt(self):
+		del self._Dt
+		self._Dt = None
+
+	@property
 	def Desc(self):
 		return self._Desc
 
@@ -60,9 +60,9 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 		self._Desc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lctn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

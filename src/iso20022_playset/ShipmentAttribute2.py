@@ -1,23 +1,23 @@
 import base_types
-import ISODate
 import CountryCode
 import ShipmentCondition1Choice
+import ISODate
 
 class ShipmentAttribute2(base_types._BaseFieldType):
 
-	__slots__ = ["_Conds", "_XpctdDt", "_CtryOfCntrPty"]
+	__slots__ = ["_CtryOfCntrPty", "_XpctdDt", "_Conds"]
 	@property
-	def Conds(self):
-		return self._Conds
+	def CtryOfCntrPty(self):
+		return self._CtryOfCntrPty
 
-	@Conds.setter
-	def Conds(self, value):
-		self._Conds = value if type(value) != auto else self.make_default("Conds")
+	@CtryOfCntrPty.setter
+	def CtryOfCntrPty(self, value):
+		self._CtryOfCntrPty = value if type(value) != auto else self.make_default("CtryOfCntrPty")
 
-	@Conds.deleter
-	def Conds(self):
-		del self._Conds
-		self._Conds = None
+	@CtryOfCntrPty.deleter
+	def CtryOfCntrPty(self):
+		del self._CtryOfCntrPty
+		self._CtryOfCntrPty = None
 
 	@property
 	def XpctdDt(self):
@@ -33,21 +33,21 @@ class ShipmentAttribute2(base_types._BaseFieldType):
 		self._XpctdDt = None
 
 	@property
-	def CtryOfCntrPty(self):
-		return self._CtryOfCntrPty
+	def Conds(self):
+		return self._Conds
 
-	@CtryOfCntrPty.setter
-	def CtryOfCntrPty(self, value):
-		self._CtryOfCntrPty = value if type(value) != auto else self.make_default("CtryOfCntrPty")
+	@Conds.setter
+	def Conds(self, value):
+		self._Conds = value if type(value) != auto else self.make_default("Conds")
 
-	@CtryOfCntrPty.deleter
-	def CtryOfCntrPty(self):
-		del self._CtryOfCntrPty
-		self._CtryOfCntrPty = None
+	@Conds.deleter
+	def Conds(self):
+		del self._Conds
+		self._Conds = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Conds', type=ShipmentCondition1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtryOfCntrPty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XpctdDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Conds', type=ShipmentCondition1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

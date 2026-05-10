@@ -1,25 +1,12 @@
 import base_types
 import SearchCriteria1
-import PositiveNumber
-import TrueFalseIndicator
 import SearchOutputOrder1
+import TrueFalseIndicator
+import PositiveNumber
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckStart", "_SchOutptOrdr", "_DscndgOrdr", "_SchCrit", "_BlckStop"]
-	@property
-	def BlckStart(self):
-		return self._BlckStart
-
-	@BlckStart.setter
-	def BlckStart(self, value):
-		self._BlckStart = value if type(value) != auto else self.make_default("BlckStart")
-
-	@BlckStart.deleter
-	def BlckStart(self):
-		del self._BlckStart
-		self._BlckStart = None
-
+	__slots__ = ["_SchOutptOrdr", "_DscndgOrdr", "_BlckStop", "_SchCrit", "_BlckStart"]
 	@property
 	def SchOutptOrdr(self):
 		return self._SchOutptOrdr
@@ -47,6 +34,19 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		self._DscndgOrdr = None
 
 	@property
+	def BlckStop(self):
+		return self._BlckStop
+
+	@BlckStop.setter
+	def BlckStop(self, value):
+		self._BlckStop = value if type(value) != auto else self.make_default("BlckStop")
+
+	@BlckStop.deleter
+	def BlckStop(self):
+		del self._BlckStop
+		self._BlckStop = None
+
+	@property
 	def SchCrit(self):
 		return self._SchCrit
 
@@ -60,23 +60,23 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 		self._SchCrit = None
 
 	@property
-	def BlckStop(self):
-		return self._BlckStop
+	def BlckStart(self):
+		return self._BlckStart
 
-	@BlckStop.setter
-	def BlckStop(self, value):
-		self._BlckStop = value if type(value) != auto else self.make_default("BlckStop")
+	@BlckStart.setter
+	def BlckStart(self, value):
+		self._BlckStart = value if type(value) != auto else self.make_default("BlckStart")
 
-	@BlckStop.deleter
-	def BlckStop(self):
-		del self._BlckStop
-		self._BlckStop = None
+	@BlckStart.deleter
+	def BlckStart(self):
+		del self._BlckStart
+		self._BlckStart = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchOutptOrdr', type=SearchOutputOrder1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DscndgOrdr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=SearchCriteria1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

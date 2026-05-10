@@ -1,7 +1,7 @@
 import base_types
+import Max2048Text
 import RemittanceLocationMethod2Code
 import NameAndAddress18
-import Max2048Text
 
 class RemittanceLocationData2(base_types._BaseFieldType):
 

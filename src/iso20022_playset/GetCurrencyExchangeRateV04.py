@@ -1,7 +1,7 @@
 import base_types
-import SupplementaryData1
 import CurrencyQueryDefinition3
 import MessageHeader1
+import SupplementaryData1
 
 class GetCurrencyExchangeRateV04(base_types._BaseFieldType):
 

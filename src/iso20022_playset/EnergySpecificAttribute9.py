@@ -1,36 +1,23 @@
 import base_types
+import EnergyLoadType1Code
 import DeliveryInterconnectionPoint1Choice
 import EnergyDeliveryAttribute10
-import EnergyLoadType1Code
 
 class EnergySpecificAttribute9(base_types._BaseFieldType):
 
-	__slots__ = ["_IntrCnnctnPt", "_DlvryPtOrZone", "_LdTp", "_DlvryAttr"]
+	__slots__ = ["_DlvryAttr", "_LdTp", "_DlvryPtOrZone", "_IntrCnnctnPt"]
 	@property
-	def IntrCnnctnPt(self):
-		return self._IntrCnnctnPt
+	def DlvryAttr(self):
+		return self._DlvryAttr
 
-	@IntrCnnctnPt.setter
-	def IntrCnnctnPt(self, value):
-		self._IntrCnnctnPt = value if type(value) != auto else self.make_default("IntrCnnctnPt")
+	@DlvryAttr.setter
+	def DlvryAttr(self, value):
+		self._DlvryAttr = value if type(value) != auto else self.make_default("DlvryAttr")
 
-	@IntrCnnctnPt.deleter
-	def IntrCnnctnPt(self):
-		del self._IntrCnnctnPt
-		self._IntrCnnctnPt = None
-
-	@property
-	def DlvryPtOrZone(self):
-		return self._DlvryPtOrZone
-
-	@DlvryPtOrZone.setter
-	def DlvryPtOrZone(self, value):
-		self._DlvryPtOrZone = value if type(value) != auto else self.make_default("DlvryPtOrZone")
-
-	@DlvryPtOrZone.deleter
-	def DlvryPtOrZone(self):
-		del self._DlvryPtOrZone
-		self._DlvryPtOrZone = None
+	@DlvryAttr.deleter
+	def DlvryAttr(self):
+		del self._DlvryAttr
+		self._DlvryAttr = None
 
 	@property
 	def LdTp(self):
@@ -46,22 +33,35 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		self._LdTp = None
 
 	@property
-	def DlvryAttr(self):
-		return self._DlvryAttr
+	def DlvryPtOrZone(self):
+		return self._DlvryPtOrZone
 
-	@DlvryAttr.setter
-	def DlvryAttr(self, value):
-		self._DlvryAttr = value if type(value) != auto else self.make_default("DlvryAttr")
+	@DlvryPtOrZone.setter
+	def DlvryPtOrZone(self, value):
+		self._DlvryPtOrZone = value if type(value) != auto else self.make_default("DlvryPtOrZone")
 
-	@DlvryAttr.deleter
-	def DlvryAttr(self):
-		del self._DlvryAttr
-		self._DlvryAttr = None
+	@DlvryPtOrZone.deleter
+	def DlvryPtOrZone(self):
+		del self._DlvryPtOrZone
+		self._DlvryPtOrZone = None
+
+	@property
+	def IntrCnnctnPt(self):
+		return self._IntrCnnctnPt
+
+	@IntrCnnctnPt.setter
+	def IntrCnnctnPt(self, value):
+		self._IntrCnnctnPt = value if type(value) != auto else self.make_default("IntrCnnctnPt")
+
+	@IntrCnnctnPt.deleter
+	def IntrCnnctnPt(self):
+		del self._IntrCnnctnPt
+		self._IntrCnnctnPt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvryAttr', type=EnergyDeliveryAttribute10, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryPtOrZone', type=DeliveryInterconnectionPoint1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

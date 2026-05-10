@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import Max350Text
+import PercentageRate
 
 class Commission18(base_types._BaseFieldType):
 

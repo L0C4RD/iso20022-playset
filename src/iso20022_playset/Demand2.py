@@ -1,25 +1,12 @@
 import base_types
+import Max35Text
+import ActiveCurrencyAndAmount
 import Max2000Text
 import ISODateTime
-import ActiveCurrencyAndAmount
-import Max35Text
 
 class Demand2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmissnDtTm", "_AddtlInf", "_Id", "_Amt"]
-	@property
-	def SubmissnDtTm(self):
-		return self._SubmissnDtTm
-
-	@SubmissnDtTm.setter
-	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != auto else self.make_default("SubmissnDtTm")
-
-	@SubmissnDtTm.deleter
-	def SubmissnDtTm(self):
-		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
-
+	__slots__ = ["_AddtlInf", "_Id", "_Amt", "_SubmissnDtTm"]
 	@property
 	def AddtlInf(self):
 		return self._AddtlInf
@@ -59,10 +46,23 @@ class Demand2(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def SubmissnDtTm(self):
+		return self._SubmissnDtTm
+
+	@SubmissnDtTm.setter
+	def SubmissnDtTm(self, value):
+		self._SubmissnDtTm = value if type(value) != auto else self.make_default("SubmissnDtTm")
+
+	@SubmissnDtTm.deleter
+	def SubmissnDtTm(self):
+		del self._SubmissnDtTm
+		self._SubmissnDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import MarginType1Code
+import GenericIdentification30
 
 class MarginType1Choice(base_types._BaseFieldType):
 

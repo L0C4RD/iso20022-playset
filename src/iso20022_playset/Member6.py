@@ -1,23 +1,23 @@
 import base_types
-import CommunicationAddress8
 import MemberIdentification3Choice
 import ContactIdentificationAndAddress1
+import CommunicationAddress8
 
 class Member6(base_types._BaseFieldType):
 
-	__slots__ = ["_CtctRef", "_MmbRtrAdr", "_ComAdr"]
+	__slots__ = ["_ComAdr", "_MmbRtrAdr", "_CtctRef"]
 	@property
-	def CtctRef(self):
-		return self._CtctRef
+	def ComAdr(self):
+		return self._ComAdr
 
-	@CtctRef.setter
-	def CtctRef(self, value):
-		self._CtctRef = value if type(value) != auto else self.make_default("CtctRef")
+	@ComAdr.setter
+	def ComAdr(self, value):
+		self._ComAdr = value if type(value) != auto else self.make_default("ComAdr")
 
-	@CtctRef.deleter
-	def CtctRef(self):
-		del self._CtctRef
-		self._CtctRef = None
+	@ComAdr.deleter
+	def ComAdr(self):
+		del self._ComAdr
+		self._ComAdr = None
 
 	@property
 	def MmbRtrAdr(self):
@@ -33,21 +33,21 @@ class Member6(base_types._BaseFieldType):
 		self._MmbRtrAdr = None
 
 	@property
-	def ComAdr(self):
-		return self._ComAdr
+	def CtctRef(self):
+		return self._CtctRef
 
-	@ComAdr.setter
-	def ComAdr(self, value):
-		self._ComAdr = value if type(value) != auto else self.make_default("ComAdr")
+	@CtctRef.setter
+	def CtctRef(self, value):
+		self._CtctRef = value if type(value) != auto else self.make_default("CtctRef")
 
-	@ComAdr.deleter
-	def ComAdr(self):
-		del self._ComAdr
-		self._ComAdr = None
+	@CtctRef.deleter
+	def CtctRef(self):
+		del self._CtctRef
+		self._CtctRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtctRef', type=ContactIdentificationAndAddress1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MmbRtrAdr', type=MemberIdentification3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtctRef', type=ContactIdentificationAndAddress1, min=0, max=None, mutex_group=None, array=True),
 	))
 

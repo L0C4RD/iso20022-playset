@@ -1,29 +1,16 @@
 import base_types
-import NettingIdentification2Choice
-import PaymentReceipt1Code
-import ActiveCurrencyAndAmount
-import Max35Text
 import PartyIdentification242Choice
-import Max10NumericText
 import CountryCode
 import SettlementParties120
+import NettingIdentification2Choice
+import Max10NumericText
+import ActiveCurrencyAndAmount
+import PaymentReceipt1Code
+import Max35Text
 
 class NetObligation3(base_types._BaseFieldType):
 
-	__slots__ = ["_OblgtnId", "_NetSvcCtrPtyId", "_OblgtnDrctn", "_CtrPtySttlmInstrs", "_TxsNb", "_Amt", "_PmtClrCentr", "_PtcptNetgId", "_CtrPtyNetgId"]
-	@property
-	def OblgtnId(self):
-		return self._OblgtnId
-
-	@OblgtnId.setter
-	def OblgtnId(self, value):
-		self._OblgtnId = value if type(value) != auto else self.make_default("OblgtnId")
-
-	@OblgtnId.deleter
-	def OblgtnId(self):
-		del self._OblgtnId
-		self._OblgtnId = None
-
+	__slots__ = ["_NetSvcCtrPtyId", "_PmtClrCentr", "_OblgtnId", "_PtcptNetgId", "_CtrPtySttlmInstrs", "_TxsNb", "_CtrPtyNetgId", "_OblgtnDrctn", "_Amt"]
 	@property
 	def NetSvcCtrPtyId(self):
 		return self._NetSvcCtrPtyId
@@ -38,17 +25,43 @@ class NetObligation3(base_types._BaseFieldType):
 		self._NetSvcCtrPtyId = None
 
 	@property
-	def OblgtnDrctn(self):
-		return self._OblgtnDrctn
+	def PmtClrCentr(self):
+		return self._PmtClrCentr
 
-	@OblgtnDrctn.setter
-	def OblgtnDrctn(self, value):
-		self._OblgtnDrctn = value if type(value) != auto else self.make_default("OblgtnDrctn")
+	@PmtClrCentr.setter
+	def PmtClrCentr(self, value):
+		self._PmtClrCentr = value if type(value) != auto else self.make_default("PmtClrCentr")
 
-	@OblgtnDrctn.deleter
-	def OblgtnDrctn(self):
-		del self._OblgtnDrctn
-		self._OblgtnDrctn = None
+	@PmtClrCentr.deleter
+	def PmtClrCentr(self):
+		del self._PmtClrCentr
+		self._PmtClrCentr = None
+
+	@property
+	def OblgtnId(self):
+		return self._OblgtnId
+
+	@OblgtnId.setter
+	def OblgtnId(self, value):
+		self._OblgtnId = value if type(value) != auto else self.make_default("OblgtnId")
+
+	@OblgtnId.deleter
+	def OblgtnId(self):
+		del self._OblgtnId
+		self._OblgtnId = None
+
+	@property
+	def PtcptNetgId(self):
+		return self._PtcptNetgId
+
+	@PtcptNetgId.setter
+	def PtcptNetgId(self, value):
+		self._PtcptNetgId = value if type(value) != auto else self.make_default("PtcptNetgId")
+
+	@PtcptNetgId.deleter
+	def PtcptNetgId(self):
+		del self._PtcptNetgId
+		self._PtcptNetgId = None
 
 	@property
 	def CtrPtySttlmInstrs(self):
@@ -77,45 +90,6 @@ class NetObligation3(base_types._BaseFieldType):
 		self._TxsNb = None
 
 	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
-	@property
-	def PmtClrCentr(self):
-		return self._PmtClrCentr
-
-	@PmtClrCentr.setter
-	def PmtClrCentr(self, value):
-		self._PmtClrCentr = value if type(value) != auto else self.make_default("PmtClrCentr")
-
-	@PmtClrCentr.deleter
-	def PmtClrCentr(self):
-		del self._PmtClrCentr
-		self._PmtClrCentr = None
-
-	@property
-	def PtcptNetgId(self):
-		return self._PtcptNetgId
-
-	@PtcptNetgId.setter
-	def PtcptNetgId(self, value):
-		self._PtcptNetgId = value if type(value) != auto else self.make_default("PtcptNetgId")
-
-	@PtcptNetgId.deleter
-	def PtcptNetgId(self):
-		del self._PtcptNetgId
-		self._PtcptNetgId = None
-
-	@property
 	def CtrPtyNetgId(self):
 		return self._CtrPtyNetgId
 
@@ -128,15 +102,41 @@ class NetObligation3(base_types._BaseFieldType):
 		del self._CtrPtyNetgId
 		self._CtrPtyNetgId = None
 
+	@property
+	def OblgtnDrctn(self):
+		return self._OblgtnDrctn
+
+	@OblgtnDrctn.setter
+	def OblgtnDrctn(self, value):
+		self._OblgtnDrctn = value if type(value) != auto else self.make_default("OblgtnDrctn")
+
+	@OblgtnDrctn.deleter
+	def OblgtnDrctn(self):
+		del self._OblgtnDrctn
+		self._OblgtnDrctn = None
+
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OblgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetSvcCtrPtyId', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OblgtnDrctn', type=PaymentReceipt1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtClrCentr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OblgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtcptNetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtySttlmInstrs', type=SettlementParties120, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsNb', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtClrCentr', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtcptNetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrPtyNetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OblgtnDrctn', type=PaymentReceipt1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

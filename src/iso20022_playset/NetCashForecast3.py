@@ -1,24 +1,11 @@
 import base_types
 import FinancialInstrumentQuantity1
-import FlowDirectionType1Code
 import ActiveOrHistoricCurrencyAndAmount
+import FlowDirectionType1Code
 
 class NetCashForecast3(base_types._BaseFieldType):
 
-	__slots__ = ["_FlowDrctn", "_NetUnitsNb", "_NetAmt"]
-	@property
-	def FlowDrctn(self):
-		return self._FlowDrctn
-
-	@FlowDrctn.setter
-	def FlowDrctn(self, value):
-		self._FlowDrctn = value if type(value) != auto else self.make_default("FlowDrctn")
-
-	@FlowDrctn.deleter
-	def FlowDrctn(self):
-		del self._FlowDrctn
-		self._FlowDrctn = None
-
+	__slots__ = ["_NetUnitsNb", "_FlowDrctn", "_NetAmt"]
 	@property
 	def NetUnitsNb(self):
 		return self._NetUnitsNb
@@ -31,6 +18,19 @@ class NetCashForecast3(base_types._BaseFieldType):
 	def NetUnitsNb(self):
 		del self._NetUnitsNb
 		self._NetUnitsNb = None
+
+	@property
+	def FlowDrctn(self):
+		return self._FlowDrctn
+
+	@FlowDrctn.setter
+	def FlowDrctn(self, value):
+		self._FlowDrctn = value if type(value) != auto else self.make_default("FlowDrctn")
+
+	@FlowDrctn.deleter
+	def FlowDrctn(self):
+		del self._FlowDrctn
+		self._FlowDrctn = None
 
 	@property
 	def NetAmt(self):
@@ -46,8 +46,8 @@ class NetCashForecast3(base_types._BaseFieldType):
 		self._NetAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FlowDrctn', type=FlowDirectionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FlowDrctn', type=FlowDirectionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

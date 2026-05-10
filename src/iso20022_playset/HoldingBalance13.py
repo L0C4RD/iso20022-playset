@@ -1,6 +1,6 @@
 import base_types
-import SignedQuantityFormat14
 import SecuritiesEntryType3Code
+import SignedQuantityFormat14
 
 class HoldingBalance13(base_types._BaseFieldType):
 

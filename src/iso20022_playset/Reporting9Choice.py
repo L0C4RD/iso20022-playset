@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import Reporting2Code
+import GenericIdentification47
 
 class Reporting9Choice(base_types._BaseFieldType):
 

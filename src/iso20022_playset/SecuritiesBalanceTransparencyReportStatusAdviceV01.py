@@ -8,19 +8,32 @@ import StatementReference1
 
 class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_SndrId", "_MsgId", "_RcvrId", "_SplmtryData", "_RltdStmt", "_Sts", "_NbOfItmsPerSts"]
+	__slots__ = ["_NbOfItmsPerSts", "_Sts", "_MsgId", "_RcvrId", "_SplmtryData", "_SndrId", "_RltdStmt"]
 	@property
-	def SndrId(self):
-		return self._SndrId
+	def NbOfItmsPerSts(self):
+		return self._NbOfItmsPerSts
 
-	@SndrId.setter
-	def SndrId(self, value):
-		self._SndrId = value if type(value) != auto else self.make_default("SndrId")
+	@NbOfItmsPerSts.setter
+	def NbOfItmsPerSts(self, value):
+		self._NbOfItmsPerSts = value if type(value) != auto else self.make_default("NbOfItmsPerSts")
 
-	@SndrId.deleter
-	def SndrId(self):
-		del self._SndrId
-		self._SndrId = None
+	@NbOfItmsPerSts.deleter
+	def NbOfItmsPerSts(self):
+		del self._NbOfItmsPerSts
+		self._NbOfItmsPerSts = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def MsgId(self):
@@ -62,6 +75,19 @@ class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldTy
 		self._SplmtryData = None
 
 	@property
+	def SndrId(self):
+		return self._SndrId
+
+	@SndrId.setter
+	def SndrId(self, value):
+		self._SndrId = value if type(value) != auto else self.make_default("SndrId")
+
+	@SndrId.deleter
+	def SndrId(self):
+		del self._SndrId
+		self._SndrId = None
+
+	@property
 	def RltdStmt(self):
 		return self._RltdStmt
 
@@ -74,39 +100,13 @@ class SecuritiesBalanceTransparencyReportStatusAdviceV01(base_types._BaseFieldTy
 		del self._RltdStmt
 		self._RltdStmt = None
 
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
-	@property
-	def NbOfItmsPerSts(self):
-		return self._NbOfItmsPerSts
-
-	@NbOfItmsPerSts.setter
-	def NbOfItmsPerSts(self, value):
-		self._NbOfItmsPerSts = value if type(value) != auto else self.make_default("NbOfItmsPerSts")
-
-	@NbOfItmsPerSts.deleter
-	def NbOfItmsPerSts(self):
-		del self._NbOfItmsPerSts
-		self._NbOfItmsPerSts = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SndrId', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfItmsPerSts', type=NumberOfItemsPerStatus1, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=ReportItemStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcvrId', type=PartyIdentification100, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SndrId', type=PartyIdentification100, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdStmt', type=StatementReference1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=ReportItemStatus1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfItmsPerSts', type=NumberOfItemsPerStatus1, min=0, max=2, mutex_group=None, array=True),
 	))
 

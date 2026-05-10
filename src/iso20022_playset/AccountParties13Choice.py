@@ -3,7 +3,7 @@ import InvestmentAccountOwnershipInformation17
 
 class AccountParties13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Nmnee", "_JntOwnr", "_PmryOwnr", "_Trstee"]
+	__slots__ = ["_Nmnee", "_JntOwnr", "_Trstee", "_PmryOwnr"]
 	@property
 	def Nmnee(self):
 		return self._Nmnee
@@ -31,19 +31,6 @@ class AccountParties13Choice(base_types._BaseFieldType):
 		self._JntOwnr = None
 
 	@property
-	def PmryOwnr(self):
-		return self._PmryOwnr
-
-	@PmryOwnr.setter
-	def PmryOwnr(self, value):
-		self._PmryOwnr = value if type(value) != auto else self.make_default("PmryOwnr")
-
-	@PmryOwnr.deleter
-	def PmryOwnr(self):
-		del self._PmryOwnr
-		self._PmryOwnr = None
-
-	@property
 	def Trstee(self):
 		return self._Trstee
 
@@ -56,10 +43,23 @@ class AccountParties13Choice(base_types._BaseFieldType):
 		del self._Trstee
 		self._Trstee = None
 
+	@property
+	def PmryOwnr(self):
+		return self._PmryOwnr
+
+	@PmryOwnr.setter
+	def PmryOwnr(self, value):
+		self._PmryOwnr = value if type(value) != auto else self.make_default("PmryOwnr")
+
+	@PmryOwnr.deleter
+	def PmryOwnr(self):
+		del self._PmryOwnr
+		self._PmryOwnr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nmnee', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='JntOwnr', type=InvestmentAccountOwnershipInformation17, min=1, max=5, mutex_group=1, array=True),
-		base_types.FieldEntry(name='PmryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Trstee', type=InvestmentAccountOwnershipInformation17, min=1, max=5, mutex_group=1, array=True),
+		base_types.FieldEntry(name='PmryOwnr', type=InvestmentAccountOwnershipInformation17, min=0, max=1, mutex_group=1, array=False),
 	))
 

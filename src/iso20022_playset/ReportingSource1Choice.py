@@ -1,6 +1,6 @@
 import base_types
-import ExternalReportingSource1Code
 import Max35Text
+import ExternalReportingSource1Code
 
 class ReportingSource1Choice(base_types._BaseFieldType):
 

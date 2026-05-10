@@ -1,24 +1,11 @@
 import base_types
+import Max35Text
 import PartyIdentification242Choice
 import UniqueTransactionIdentifier3
-import Max35Text
 
 class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtySdUnqTxIdr", "_RptgJursdctn", "_RptgPty"]
-	@property
-	def CtrPtySdUnqTxIdr(self):
-		return self._CtrPtySdUnqTxIdr
-
-	@CtrPtySdUnqTxIdr.setter
-	def CtrPtySdUnqTxIdr(self, value):
-		self._CtrPtySdUnqTxIdr = value if type(value) != auto else self.make_default("CtrPtySdUnqTxIdr")
-
-	@CtrPtySdUnqTxIdr.deleter
-	def CtrPtySdUnqTxIdr(self):
-		del self._CtrPtySdUnqTxIdr
-		self._CtrPtySdUnqTxIdr = None
-
+	__slots__ = ["_RptgJursdctn", "_CtrPtySdUnqTxIdr", "_RptgPty"]
 	@property
 	def RptgJursdctn(self):
 		return self._RptgJursdctn
@@ -31,6 +18,19 @@ class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 	def RptgJursdctn(self):
 		del self._RptgJursdctn
 		self._RptgJursdctn = None
+
+	@property
+	def CtrPtySdUnqTxIdr(self):
+		return self._CtrPtySdUnqTxIdr
+
+	@CtrPtySdUnqTxIdr.setter
+	def CtrPtySdUnqTxIdr(self, value):
+		self._CtrPtySdUnqTxIdr = value if type(value) != auto else self.make_default("CtrPtySdUnqTxIdr")
+
+	@CtrPtySdUnqTxIdr.deleter
+	def CtrPtySdUnqTxIdr(self):
+		del self._CtrPtySdUnqTxIdr
+		self._CtrPtySdUnqTxIdr = None
 
 	@property
 	def RptgPty(self):
@@ -46,8 +46,8 @@ class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 		self._RptgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtySdUnqTxIdr', type=UniqueTransactionIdentifier3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgJursdctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySdUnqTxIdr', type=UniqueTransactionIdentifier3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptgPty', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

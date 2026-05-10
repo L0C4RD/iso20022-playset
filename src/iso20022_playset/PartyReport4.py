@@ -1,23 +1,10 @@
 import base_types
-import PartyOrBusinessError4Choice
 import SystemPartyIdentification8
+import PartyOrBusinessError4Choice
 
 class PartyReport4(base_types._BaseFieldType):
 
-	__slots__ = ["_PtyOrErr", "_PtyId"]
-	@property
-	def PtyOrErr(self):
-		return self._PtyOrErr
-
-	@PtyOrErr.setter
-	def PtyOrErr(self, value):
-		self._PtyOrErr = value if type(value) != auto else self.make_default("PtyOrErr")
-
-	@PtyOrErr.deleter
-	def PtyOrErr(self):
-		del self._PtyOrErr
-		self._PtyOrErr = None
-
+	__slots__ = ["_PtyId", "_PtyOrErr"]
 	@property
 	def PtyId(self):
 		return self._PtyId
@@ -31,8 +18,21 @@ class PartyReport4(base_types._BaseFieldType):
 		del self._PtyId
 		self._PtyId = None
 
+	@property
+	def PtyOrErr(self):
+		return self._PtyOrErr
+
+	@PtyOrErr.setter
+	def PtyOrErr(self, value):
+		self._PtyOrErr = value if type(value) != auto else self.make_default("PtyOrErr")
+
+	@PtyOrErr.deleter
+	def PtyOrErr(self):
+		del self._PtyOrErr
+		self._PtyOrErr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PtyOrErr', type=PartyOrBusinessError4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyOrErr', type=PartyOrBusinessError4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

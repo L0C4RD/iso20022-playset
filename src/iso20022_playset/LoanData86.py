@@ -4,19 +4,19 @@ import Max52Text
 
 class LoanData86(base_types._BaseFieldType):
 
-	__slots__ = ["_TermntnDt", "_EvtDt", "_UnqTradIdr"]
+	__slots__ = ["_UnqTradIdr", "_EvtDt", "_TermntnDt"]
 	@property
-	def TermntnDt(self):
-		return self._TermntnDt
+	def UnqTradIdr(self):
+		return self._UnqTradIdr
 
-	@TermntnDt.setter
-	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
+	@UnqTradIdr.setter
+	def UnqTradIdr(self, value):
+		self._UnqTradIdr = value if type(value) != auto else self.make_default("UnqTradIdr")
 
-	@TermntnDt.deleter
-	def TermntnDt(self):
-		del self._TermntnDt
-		self._TermntnDt = None
+	@UnqTradIdr.deleter
+	def UnqTradIdr(self):
+		del self._UnqTradIdr
+		self._UnqTradIdr = None
 
 	@property
 	def EvtDt(self):
@@ -32,21 +32,21 @@ class LoanData86(base_types._BaseFieldType):
 		self._EvtDt = None
 
 	@property
-	def UnqTradIdr(self):
-		return self._UnqTradIdr
+	def TermntnDt(self):
+		return self._TermntnDt
 
-	@UnqTradIdr.setter
-	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != auto else self.make_default("UnqTradIdr")
+	@TermntnDt.setter
+	def TermntnDt(self, value):
+		self._TermntnDt = value if type(value) != auto else self.make_default("TermntnDt")
 
-	@UnqTradIdr.deleter
-	def UnqTradIdr(self):
-		del self._UnqTradIdr
-		self._UnqTradIdr = None
+	@TermntnDt.deleter
+	def TermntnDt(self):
+		del self._TermntnDt
+		self._TermntnDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TermntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TermntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

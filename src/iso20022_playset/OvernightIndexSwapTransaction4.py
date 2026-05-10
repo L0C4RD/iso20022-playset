@@ -1,44 +1,31 @@
 import base_types
-import DateAndDateTimeChoice
-import TransactionOperationType1Code
+import Max105Text
+import SupplementaryData1
 import ISODate
 import CounterpartyIdentification3Choice
-import LEIIdentifier
-import Max105Text
-import OvernightIndexSwapType1Code
-import PercentageRate
 import ActiveCurrencyAndAmount
-import SupplementaryData1
+import OvernightIndexSwapType1Code
+import DateAndDateTimeChoice
 import NovationStatus1Code
+import PercentageRate
+import TransactionOperationType1Code
+import LEIIdentifier
 
 class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_TradDt", "_SplmtryData", "_PrtryTxId", "_RptdTxSts", "_NvtnSts", "_BrnchId", "_TxTp", "_TxNmnlAmt", "_CtrPtyPrtryTxId", "_UnqTxIdr", "_MtrtyDt", "_StartDt", "_RltdPrtryTxId", "_FxdIntrstRate"]
+	__slots__ = ["_FxdIntrstRate", "_SplmtryData", "_RltdPrtryTxId", "_TradDt", "_TxTp", "_PrtryTxId", "_BrnchId", "_MtrtyDt", "_CtrPtyId", "_RptdTxSts", "_UnqTxIdr", "_StartDt", "_TxNmnlAmt", "_NvtnSts", "_CtrPtyPrtryTxId"]
 	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
+	def FxdIntrstRate(self):
+		return self._FxdIntrstRate
 
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+	@FxdIntrstRate.setter
+	def FxdIntrstRate(self, value):
+		self._FxdIntrstRate = value if type(value) != auto else self.make_default("FxdIntrstRate")
 
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
-	@property
-	def TradDt(self):
-		return self._TradDt
-
-	@TradDt.setter
-	def TradDt(self, value):
-		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
-
-	@TradDt.deleter
-	def TradDt(self):
-		del self._TradDt
-		self._TradDt = None
+	@FxdIntrstRate.deleter
+	def FxdIntrstRate(self):
+		del self._FxdIntrstRate
+		self._FxdIntrstRate = None
 
 	@property
 	def SplmtryData(self):
@@ -54,56 +41,30 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def PrtryTxId(self):
-		return self._PrtryTxId
+	def RltdPrtryTxId(self):
+		return self._RltdPrtryTxId
 
-	@PrtryTxId.setter
-	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != auto else self.make_default("PrtryTxId")
+	@RltdPrtryTxId.setter
+	def RltdPrtryTxId(self, value):
+		self._RltdPrtryTxId = value if type(value) != auto else self.make_default("RltdPrtryTxId")
 
-	@PrtryTxId.deleter
-	def PrtryTxId(self):
-		del self._PrtryTxId
-		self._PrtryTxId = None
-
-	@property
-	def RptdTxSts(self):
-		return self._RptdTxSts
-
-	@RptdTxSts.setter
-	def RptdTxSts(self, value):
-		self._RptdTxSts = value if type(value) != auto else self.make_default("RptdTxSts")
-
-	@RptdTxSts.deleter
-	def RptdTxSts(self):
-		del self._RptdTxSts
-		self._RptdTxSts = None
+	@RltdPrtryTxId.deleter
+	def RltdPrtryTxId(self):
+		del self._RltdPrtryTxId
+		self._RltdPrtryTxId = None
 
 	@property
-	def NvtnSts(self):
-		return self._NvtnSts
+	def TradDt(self):
+		return self._TradDt
 
-	@NvtnSts.setter
-	def NvtnSts(self, value):
-		self._NvtnSts = value if type(value) != auto else self.make_default("NvtnSts")
+	@TradDt.setter
+	def TradDt(self, value):
+		self._TradDt = value if type(value) != auto else self.make_default("TradDt")
 
-	@NvtnSts.deleter
-	def NvtnSts(self):
-		del self._NvtnSts
-		self._NvtnSts = None
-
-	@property
-	def BrnchId(self):
-		return self._BrnchId
-
-	@BrnchId.setter
-	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
-
-	@BrnchId.deleter
-	def BrnchId(self):
-		del self._BrnchId
-		self._BrnchId = None
+	@TradDt.deleter
+	def TradDt(self):
+		del self._TradDt
+		self._TradDt = None
 
 	@property
 	def TxTp(self):
@@ -119,43 +80,30 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 		self._TxTp = None
 
 	@property
-	def TxNmnlAmt(self):
-		return self._TxNmnlAmt
+	def PrtryTxId(self):
+		return self._PrtryTxId
 
-	@TxNmnlAmt.setter
-	def TxNmnlAmt(self, value):
-		self._TxNmnlAmt = value if type(value) != auto else self.make_default("TxNmnlAmt")
+	@PrtryTxId.setter
+	def PrtryTxId(self, value):
+		self._PrtryTxId = value if type(value) != auto else self.make_default("PrtryTxId")
 
-	@TxNmnlAmt.deleter
-	def TxNmnlAmt(self):
-		del self._TxNmnlAmt
-		self._TxNmnlAmt = None
-
-	@property
-	def CtrPtyPrtryTxId(self):
-		return self._CtrPtyPrtryTxId
-
-	@CtrPtyPrtryTxId.setter
-	def CtrPtyPrtryTxId(self, value):
-		self._CtrPtyPrtryTxId = value if type(value) != auto else self.make_default("CtrPtyPrtryTxId")
-
-	@CtrPtyPrtryTxId.deleter
-	def CtrPtyPrtryTxId(self):
-		del self._CtrPtyPrtryTxId
-		self._CtrPtyPrtryTxId = None
+	@PrtryTxId.deleter
+	def PrtryTxId(self):
+		del self._PrtryTxId
+		self._PrtryTxId = None
 
 	@property
-	def UnqTxIdr(self):
-		return self._UnqTxIdr
+	def BrnchId(self):
+		return self._BrnchId
 
-	@UnqTxIdr.setter
-	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+	@BrnchId.setter
+	def BrnchId(self, value):
+		self._BrnchId = value if type(value) != auto else self.make_default("BrnchId")
 
-	@UnqTxIdr.deleter
-	def UnqTxIdr(self):
-		del self._UnqTxIdr
-		self._UnqTxIdr = None
+	@BrnchId.deleter
+	def BrnchId(self):
+		del self._BrnchId
+		self._BrnchId = None
 
 	@property
 	def MtrtyDt(self):
@@ -171,6 +119,45 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
+
+	@property
+	def RptdTxSts(self):
+		return self._RptdTxSts
+
+	@RptdTxSts.setter
+	def RptdTxSts(self, value):
+		self._RptdTxSts = value if type(value) != auto else self.make_default("RptdTxSts")
+
+	@RptdTxSts.deleter
+	def RptdTxSts(self):
+		del self._RptdTxSts
+		self._RptdTxSts = None
+
+	@property
+	def UnqTxIdr(self):
+		return self._UnqTxIdr
+
+	@UnqTxIdr.setter
+	def UnqTxIdr(self, value):
+		self._UnqTxIdr = value if type(value) != auto else self.make_default("UnqTxIdr")
+
+	@UnqTxIdr.deleter
+	def UnqTxIdr(self):
+		del self._UnqTxIdr
+		self._UnqTxIdr = None
+
+	@property
 	def StartDt(self):
 		return self._StartDt
 
@@ -184,46 +171,59 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 		self._StartDt = None
 
 	@property
-	def RltdPrtryTxId(self):
-		return self._RltdPrtryTxId
+	def TxNmnlAmt(self):
+		return self._TxNmnlAmt
 
-	@RltdPrtryTxId.setter
-	def RltdPrtryTxId(self, value):
-		self._RltdPrtryTxId = value if type(value) != auto else self.make_default("RltdPrtryTxId")
+	@TxNmnlAmt.setter
+	def TxNmnlAmt(self, value):
+		self._TxNmnlAmt = value if type(value) != auto else self.make_default("TxNmnlAmt")
 
-	@RltdPrtryTxId.deleter
-	def RltdPrtryTxId(self):
-		del self._RltdPrtryTxId
-		self._RltdPrtryTxId = None
+	@TxNmnlAmt.deleter
+	def TxNmnlAmt(self):
+		del self._TxNmnlAmt
+		self._TxNmnlAmt = None
 
 	@property
-	def FxdIntrstRate(self):
-		return self._FxdIntrstRate
+	def NvtnSts(self):
+		return self._NvtnSts
 
-	@FxdIntrstRate.setter
-	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != auto else self.make_default("FxdIntrstRate")
+	@NvtnSts.setter
+	def NvtnSts(self, value):
+		self._NvtnSts = value if type(value) != auto else self.make_default("NvtnSts")
 
-	@FxdIntrstRate.deleter
-	def FxdIntrstRate(self):
-		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
+	@NvtnSts.deleter
+	def NvtnSts(self):
+		del self._NvtnSts
+		self._NvtnSts = None
+
+	@property
+	def CtrPtyPrtryTxId(self):
+		return self._CtrPtyPrtryTxId
+
+	@CtrPtyPrtryTxId.setter
+	def CtrPtyPrtryTxId(self, value):
+		self._CtrPtyPrtryTxId = value if type(value) != auto else self.make_default("CtrPtyPrtryTxId")
+
+	@CtrPtyPrtryTxId.deleter
+	def CtrPtyPrtryTxId(self):
+		del self._CtrPtyPrtryTxId
+		self._CtrPtyPrtryTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradDt', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptdTxSts', type=TransactionOperationType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NvtnSts', type=NovationStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTp', type=OvernightIndexSwapType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxNmnlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxdIntrstRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RltdPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradDt', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTp', type=OvernightIndexSwapType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryTxId', type=Max105Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptdTxSts', type=TransactionOperationType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnqTxIdr', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StartDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxNmnlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NvtnSts', type=NovationStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyPrtryTxId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

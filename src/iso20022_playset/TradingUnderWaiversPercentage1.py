@@ -1,24 +1,11 @@
 import base_types
-import PercentageRate
 import Max350Text
+import PercentageRate
 import MICIdentifier
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
-	__slots__ = ["_Dsclmr", "_TradgVn", "_TradgUdrWvrPctg"]
-	@property
-	def Dsclmr(self):
-		return self._Dsclmr
-
-	@Dsclmr.setter
-	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
-
-	@Dsclmr.deleter
-	def Dsclmr(self):
-		del self._Dsclmr
-		self._Dsclmr = None
-
+	__slots__ = ["_TradgVn", "_TradgUdrWvrPctg", "_Dsclmr"]
 	@property
 	def TradgVn(self):
 		return self._TradgVn
@@ -45,9 +32,22 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 		del self._TradgUdrWvrPctg
 		self._TradgUdrWvrPctg = None
 
+	@property
+	def Dsclmr(self):
+		return self._Dsclmr
+
+	@Dsclmr.setter
+	def Dsclmr(self, value):
+		self._Dsclmr = value if type(value) != auto else self.make_default("Dsclmr")
+
+	@Dsclmr.deleter
+	def Dsclmr(self):
+		del self._Dsclmr
+		self._Dsclmr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=MICIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgUdrWvrPctg', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

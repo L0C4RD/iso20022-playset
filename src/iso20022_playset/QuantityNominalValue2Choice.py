@@ -1,6 +1,6 @@
 import base_types
-import AmountAndDirection53
 import DecimalNumber
+import AmountAndDirection53
 
 class QuantityNominalValue2Choice(base_types._BaseFieldType):
 

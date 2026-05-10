@@ -1,22 +1,22 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ShortLong1Code
+import ImpliedCurrencyAndAmount
 
 class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtsdVal", "_FaceAmt", "_ShrtLngPos"]
+	__slots__ = ["_ShrtLngPos", "_FaceAmt", "_AmtsdVal"]
 	@property
-	def AmtsdVal(self):
-		return self._AmtsdVal
+	def ShrtLngPos(self):
+		return self._ShrtLngPos
 
-	@AmtsdVal.setter
-	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
+	@ShrtLngPos.setter
+	def ShrtLngPos(self, value):
+		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
 
-	@AmtsdVal.deleter
-	def AmtsdVal(self):
-		del self._AmtsdVal
-		self._AmtsdVal = None
+	@ShrtLngPos.deleter
+	def ShrtLngPos(self):
+		del self._ShrtLngPos
+		self._ShrtLngPos = None
 
 	@property
 	def FaceAmt(self):
@@ -32,21 +32,21 @@ class OriginalAndCurrentQuantities6(base_types._BaseFieldType):
 		self._FaceAmt = None
 
 	@property
-	def ShrtLngPos(self):
-		return self._ShrtLngPos
+	def AmtsdVal(self):
+		return self._AmtsdVal
 
-	@ShrtLngPos.setter
-	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != auto else self.make_default("ShrtLngPos")
+	@AmtsdVal.setter
+	def AmtsdVal(self, value):
+		self._AmtsdVal = value if type(value) != auto else self.make_default("AmtsdVal")
 
-	@ShrtLngPos.deleter
-	def ShrtLngPos(self):
-		del self._ShrtLngPos
-		self._ShrtLngPos = None
+	@AmtsdVal.deleter
+	def AmtsdVal(self):
+		del self._AmtsdVal
+		self._AmtsdVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

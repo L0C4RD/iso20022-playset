@@ -1,6 +1,6 @@
 import base_types
-import RiskInputData2
 import RiskAssessment3
+import RiskInputData2
 
 class RiskContext3(base_types._BaseFieldType):
 

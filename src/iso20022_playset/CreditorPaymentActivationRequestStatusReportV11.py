@@ -1,38 +1,12 @@
 import base_types
-import SupplementaryData1
-import OriginalGroupInformation32
 import OriginalPaymentInstruction47
+import SupplementaryData1
 import GroupHeader111
+import OriginalGroupInformation32
 
 class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlGrpInfAndSts", "_OrgnlPmtInfAndSts", "_GrpHdr", "_SplmtryData"]
-	@property
-	def OrgnlGrpInfAndSts(self):
-		return self._OrgnlGrpInfAndSts
-
-	@OrgnlGrpInfAndSts.setter
-	def OrgnlGrpInfAndSts(self, value):
-		self._OrgnlGrpInfAndSts = value if type(value) != auto else self.make_default("OrgnlGrpInfAndSts")
-
-	@OrgnlGrpInfAndSts.deleter
-	def OrgnlGrpInfAndSts(self):
-		del self._OrgnlGrpInfAndSts
-		self._OrgnlGrpInfAndSts = None
-
-	@property
-	def OrgnlPmtInfAndSts(self):
-		return self._OrgnlPmtInfAndSts
-
-	@OrgnlPmtInfAndSts.setter
-	def OrgnlPmtInfAndSts(self, value):
-		self._OrgnlPmtInfAndSts = value if type(value) != auto else self.make_default("OrgnlPmtInfAndSts")
-
-	@OrgnlPmtInfAndSts.deleter
-	def OrgnlPmtInfAndSts(self):
-		del self._OrgnlPmtInfAndSts
-		self._OrgnlPmtInfAndSts = None
-
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_OrgnlPmtInfAndSts", "_OrgnlGrpInfAndSts"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -59,10 +33,36 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def OrgnlPmtInfAndSts(self):
+		return self._OrgnlPmtInfAndSts
+
+	@OrgnlPmtInfAndSts.setter
+	def OrgnlPmtInfAndSts(self, value):
+		self._OrgnlPmtInfAndSts = value if type(value) != auto else self.make_default("OrgnlPmtInfAndSts")
+
+	@OrgnlPmtInfAndSts.deleter
+	def OrgnlPmtInfAndSts(self):
+		del self._OrgnlPmtInfAndSts
+		self._OrgnlPmtInfAndSts = None
+
+	@property
+	def OrgnlGrpInfAndSts(self):
+		return self._OrgnlGrpInfAndSts
+
+	@OrgnlGrpInfAndSts.setter
+	def OrgnlGrpInfAndSts(self, value):
+		self._OrgnlGrpInfAndSts = value if type(value) != auto else self.make_default("OrgnlGrpInfAndSts")
+
+	@OrgnlGrpInfAndSts.deleter
+	def OrgnlGrpInfAndSts(self):
+		del self._OrgnlGrpInfAndSts
+		self._OrgnlGrpInfAndSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupInformation32, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction47, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader111, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlPmtInfAndSts', type=OriginalPaymentInstruction47, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupInformation32, min=1, max=1, mutex_group=None, array=False),
 	))
 

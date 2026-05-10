@@ -1,12 +1,38 @@
 import base_types
-import AmountToAmountRatio3
-import AmountAndQuantityRatio5
-import RateValueType7Code
 import QuantityToQuantityRatio2
+import AmountAndQuantityRatio5
+import AmountToAmountRatio3
+import RateValueType7Code
 
 class RatioFormat24Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_QtyToQty", "_AmtToQty", "_AmtToAmt", "_QtyToAmt", "_NotSpcfdRate"]
+	__slots__ = ["_QtyToAmt", "_NotSpcfdRate", "_QtyToQty", "_AmtToQty", "_AmtToAmt"]
+	@property
+	def QtyToAmt(self):
+		return self._QtyToAmt
+
+	@QtyToAmt.setter
+	def QtyToAmt(self, value):
+		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
+
+	@QtyToAmt.deleter
+	def QtyToAmt(self):
+		del self._QtyToAmt
+		self._QtyToAmt = None
+
+	@property
+	def NotSpcfdRate(self):
+		return self._NotSpcfdRate
+
+	@NotSpcfdRate.setter
+	def NotSpcfdRate(self, value):
+		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
+
+	@NotSpcfdRate.deleter
+	def NotSpcfdRate(self):
+		del self._NotSpcfdRate
+		self._NotSpcfdRate = None
+
 	@property
 	def QtyToQty(self):
 		return self._QtyToQty
@@ -46,37 +72,11 @@ class RatioFormat24Choice(base_types._BaseFieldType):
 		del self._AmtToAmt
 		self._AmtToAmt = None
 
-	@property
-	def QtyToAmt(self):
-		return self._QtyToAmt
-
-	@QtyToAmt.setter
-	def QtyToAmt(self, value):
-		self._QtyToAmt = value if type(value) != auto else self.make_default("QtyToAmt")
-
-	@QtyToAmt.deleter
-	def QtyToAmt(self):
-		del self._QtyToAmt
-		self._QtyToAmt = None
-
-	@property
-	def NotSpcfdRate(self):
-		return self._NotSpcfdRate
-
-	@NotSpcfdRate.setter
-	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != auto else self.make_default("NotSpcfdRate")
-
-	@NotSpcfdRate.deleter
-	def NotSpcfdRate(self):
-		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToQty', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='QtyToAmt', type=AmountAndQuantityRatio5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

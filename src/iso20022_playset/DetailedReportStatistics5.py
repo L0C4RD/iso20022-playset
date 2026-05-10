@@ -4,19 +4,19 @@ import NumberOfTransactionsPerValidationRule5
 
 class DetailedReportStatistics5(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfRptsRjctdPerErr", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd", "_TtlNbOfRpts"]
+	__slots__ = ["_TtlNbOfRpts", "_TtlNbOfRptsAccptd", "_TtlNbOfRptsRjctd", "_NbOfRptsRjctdPerErr"]
 	@property
-	def NbOfRptsRjctdPerErr(self):
-		return self._NbOfRptsRjctdPerErr
+	def TtlNbOfRpts(self):
+		return self._TtlNbOfRpts
 
-	@NbOfRptsRjctdPerErr.setter
-	def NbOfRptsRjctdPerErr(self, value):
-		self._NbOfRptsRjctdPerErr = value if type(value) != auto else self.make_default("NbOfRptsRjctdPerErr")
+	@TtlNbOfRpts.setter
+	def TtlNbOfRpts(self, value):
+		self._TtlNbOfRpts = value if type(value) != auto else self.make_default("TtlNbOfRpts")
 
-	@NbOfRptsRjctdPerErr.deleter
-	def NbOfRptsRjctdPerErr(self):
-		del self._NbOfRptsRjctdPerErr
-		self._NbOfRptsRjctdPerErr = None
+	@TtlNbOfRpts.deleter
+	def TtlNbOfRpts(self):
+		del self._TtlNbOfRpts
+		self._TtlNbOfRpts = None
 
 	@property
 	def TtlNbOfRptsAccptd(self):
@@ -45,22 +45,22 @@ class DetailedReportStatistics5(base_types._BaseFieldType):
 		self._TtlNbOfRptsRjctd = None
 
 	@property
-	def TtlNbOfRpts(self):
-		return self._TtlNbOfRpts
+	def NbOfRptsRjctdPerErr(self):
+		return self._NbOfRptsRjctdPerErr
 
-	@TtlNbOfRpts.setter
-	def TtlNbOfRpts(self, value):
-		self._TtlNbOfRpts = value if type(value) != auto else self.make_default("TtlNbOfRpts")
+	@NbOfRptsRjctdPerErr.setter
+	def NbOfRptsRjctdPerErr(self, value):
+		self._NbOfRptsRjctdPerErr = value if type(value) != auto else self.make_default("NbOfRptsRjctdPerErr")
 
-	@TtlNbOfRpts.deleter
-	def TtlNbOfRpts(self):
-		del self._TtlNbOfRpts
-		self._TtlNbOfRpts = None
+	@NbOfRptsRjctdPerErr.deleter
+	def NbOfRptsRjctdPerErr(self):
+		del self._NbOfRptsRjctdPerErr
+		self._NbOfRptsRjctdPerErr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfRptsRjctdPerErr', type=NumberOfTransactionsPerValidationRule5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNbOfRpts', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfRptsAccptd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfRptsRjctd', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlNbOfRpts', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfRptsRjctdPerErr', type=NumberOfTransactionsPerValidationRule5, min=0, max=None, mutex_group=None, array=True),
 	))
 

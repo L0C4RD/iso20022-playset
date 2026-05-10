@@ -3,19 +3,19 @@ import AmountAndDirection14
 
 class BalanceAmounts6(base_types._BaseFieldType):
 
-	__slots__ = ["_HldgVal", "_BookVal", "_UrlsdGnLoss"]
+	__slots__ = ["_UrlsdGnLoss", "_BookVal", "_HldgVal"]
 	@property
-	def HldgVal(self):
-		return self._HldgVal
+	def UrlsdGnLoss(self):
+		return self._UrlsdGnLoss
 
-	@HldgVal.setter
-	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
+	@UrlsdGnLoss.setter
+	def UrlsdGnLoss(self, value):
+		self._UrlsdGnLoss = value if type(value) != auto else self.make_default("UrlsdGnLoss")
 
-	@HldgVal.deleter
-	def HldgVal(self):
-		del self._HldgVal
-		self._HldgVal = None
+	@UrlsdGnLoss.deleter
+	def UrlsdGnLoss(self):
+		del self._UrlsdGnLoss
+		self._UrlsdGnLoss = None
 
 	@property
 	def BookVal(self):
@@ -31,21 +31,21 @@ class BalanceAmounts6(base_types._BaseFieldType):
 		self._BookVal = None
 
 	@property
-	def UrlsdGnLoss(self):
-		return self._UrlsdGnLoss
+	def HldgVal(self):
+		return self._HldgVal
 
-	@UrlsdGnLoss.setter
-	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != auto else self.make_default("UrlsdGnLoss")
+	@HldgVal.setter
+	def HldgVal(self, value):
+		self._HldgVal = value if type(value) != auto else self.make_default("HldgVal")
 
-	@UrlsdGnLoss.deleter
-	def UrlsdGnLoss(self):
-		del self._UrlsdGnLoss
-		self._UrlsdGnLoss = None
+	@HldgVal.deleter
+	def HldgVal(self):
+		del self._HldgVal
+		self._HldgVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UrlsdGnLoss', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HldgVal', type=AmountAndDirection14, min=1, max=1, mutex_group=None, array=False),
 	))
 

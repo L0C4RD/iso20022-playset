@@ -1,6 +1,6 @@
 import base_types
-import Max500Binary
 import BytePadding1Code
+import Max500Binary
 
 class Parameter7(base_types._BaseFieldType):
 

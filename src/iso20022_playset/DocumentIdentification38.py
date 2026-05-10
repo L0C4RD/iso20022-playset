@@ -1,23 +1,23 @@
 import base_types
 import ProcessingPosition10Choice
-import DocumentIdentification4Choice
 import DocumentNumber6Choice
+import DocumentIdentification4Choice
 
 class DocumentIdentification38(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_DocNb", "_LkgTp"]
+	__slots__ = ["_LkgTp", "_DocNb", "_Id"]
 	@property
-	def Id(self):
-		return self._Id
+	def LkgTp(self):
+		return self._LkgTp
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@LkgTp.setter
+	def LkgTp(self, value):
+		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@LkgTp.deleter
+	def LkgTp(self):
+		del self._LkgTp
+		self._LkgTp = None
 
 	@property
 	def DocNb(self):
@@ -33,21 +33,21 @@ class DocumentIdentification38(base_types._BaseFieldType):
 		self._DocNb = None
 
 	@property
-	def LkgTp(self):
-		return self._LkgTp
+	def Id(self):
+		return self._Id
 
-	@LkgTp.setter
-	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != auto else self.make_default("LkgTp")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@LkgTp.deleter
-	def LkgTp(self):
-		del self._LkgTp
-		self._LkgTp = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=DocumentIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DocNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=DocumentNumber6Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=DocumentIdentification4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,40 +1,27 @@
 import base_types
-import Max70Text
 import ISODateTime
-import ATMCommandParameters3Choice
-import ATMCommandIdentification1
-import ATMCommand7Code
 import ATMCommandReason1Code
+import Max70Text
+import ATMCommandIdentification1
 import TMSContactLevel2Code
+import ATMCommandParameters3Choice
+import ATMCommand7Code
 
 class ATMCommand14(base_types._BaseFieldType):
 
-	__slots__ = ["_Urgcy", "_Tp", "_CmdId", "_CmdParams", "_TracRsn", "_DtTm", "_AddtlRsnInf", "_Rsn"]
+	__slots__ = ["_AddtlRsnInf", "_CmdId", "_Urgcy", "_DtTm", "_Tp", "_TracRsn", "_Rsn", "_CmdParams"]
 	@property
-	def Urgcy(self):
-		return self._Urgcy
+	def AddtlRsnInf(self):
+		return self._AddtlRsnInf
 
-	@Urgcy.setter
-	def Urgcy(self, value):
-		self._Urgcy = value if type(value) != auto else self.make_default("Urgcy")
+	@AddtlRsnInf.setter
+	def AddtlRsnInf(self, value):
+		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
 
-	@Urgcy.deleter
-	def Urgcy(self):
-		del self._Urgcy
-		self._Urgcy = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@AddtlRsnInf.deleter
+	def AddtlRsnInf(self):
+		del self._AddtlRsnInf
+		self._AddtlRsnInf = None
 
 	@property
 	def CmdId(self):
@@ -50,30 +37,17 @@ class ATMCommand14(base_types._BaseFieldType):
 		self._CmdId = None
 
 	@property
-	def CmdParams(self):
-		return self._CmdParams
+	def Urgcy(self):
+		return self._Urgcy
 
-	@CmdParams.setter
-	def CmdParams(self, value):
-		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
+	@Urgcy.setter
+	def Urgcy(self, value):
+		self._Urgcy = value if type(value) != auto else self.make_default("Urgcy")
 
-	@CmdParams.deleter
-	def CmdParams(self):
-		del self._CmdParams
-		self._CmdParams = None
-
-	@property
-	def TracRsn(self):
-		return self._TracRsn
-
-	@TracRsn.setter
-	def TracRsn(self, value):
-		self._TracRsn = value if type(value) != auto else self.make_default("TracRsn")
-
-	@TracRsn.deleter
-	def TracRsn(self):
-		del self._TracRsn
-		self._TracRsn = None
+	@Urgcy.deleter
+	def Urgcy(self):
+		del self._Urgcy
+		self._Urgcy = None
 
 	@property
 	def DtTm(self):
@@ -89,17 +63,30 @@ class ATMCommand14(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
-	def AddtlRsnInf(self):
-		return self._AddtlRsnInf
+	def Tp(self):
+		return self._Tp
 
-	@AddtlRsnInf.setter
-	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != auto else self.make_default("AddtlRsnInf")
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
 
-	@AddtlRsnInf.deleter
-	def AddtlRsnInf(self):
-		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def TracRsn(self):
+		return self._TracRsn
+
+	@TracRsn.setter
+	def TracRsn(self, value):
+		self._TracRsn = value if type(value) != auto else self.make_default("TracRsn")
+
+	@TracRsn.deleter
+	def TracRsn(self):
+		del self._TracRsn
+		self._TracRsn = None
 
 	@property
 	def Rsn(self):
@@ -114,14 +101,27 @@ class ATMCommand14(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def CmdParams(self):
+		return self._CmdParams
+
+	@CmdParams.setter
+	def CmdParams(self, value):
+		self._CmdParams = value if type(value) != auto else self.make_default("CmdParams")
+
+	@CmdParams.deleter
+	def CmdParams(self):
+		del self._CmdParams
+		self._CmdParams = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ATMCommand7Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmdParams', type=ATMCommandParameters3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TracRsn', type=ATMCommandReason1Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ATMCommand7Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TracRsn', type=ATMCommandReason1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rsn', type=ATMCommandReason1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmdParams', type=ATMCommandParameters3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

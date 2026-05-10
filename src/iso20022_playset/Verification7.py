@@ -1,14 +1,27 @@
 import base_types
-import Max500Text
-import VerificationEntity2Code
-import ExternalAuthenticationMethod1Code
 import Max35Text
 import AdditionalData1
+import Max500Text
+import ExternalAuthenticationMethod1Code
+import VerificationEntity2Code
 import Verification3Code
 
 class Verification7(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrRslt", "_OthrTp", "_Rslt", "_Ntty", "_AddtlInf", "_SubTp", "_RsltDtls", "_OthrNtty"]
+	__slots__ = ["_AddtlInf", "_Tp", "_OthrNtty", "_OthrTp", "_SubTp", "_OthrRslt", "_Rslt", "_Ntty", "_RsltDtls"]
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -23,17 +36,17 @@ class Verification7(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def OthrRslt(self):
-		return self._OthrRslt
+	def OthrNtty(self):
+		return self._OthrNtty
 
-	@OthrRslt.setter
-	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
+	@OthrNtty.setter
+	def OthrNtty(self, value):
+		self._OthrNtty = value if type(value) != auto else self.make_default("OthrNtty")
 
-	@OthrRslt.deleter
-	def OthrRslt(self):
-		del self._OthrRslt
-		self._OthrRslt = None
+	@OthrNtty.deleter
+	def OthrNtty(self):
+		del self._OthrNtty
+		self._OthrNtty = None
 
 	@property
 	def OthrTp(self):
@@ -47,6 +60,32 @@ class Verification7(base_types._BaseFieldType):
 	def OthrTp(self):
 		del self._OthrTp
 		self._OthrTp = None
+
+	@property
+	def SubTp(self):
+		return self._SubTp
+
+	@SubTp.setter
+	def SubTp(self, value):
+		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
+
+	@SubTp.deleter
+	def SubTp(self):
+		del self._SubTp
+		self._SubTp = None
+
+	@property
+	def OthrRslt(self):
+		return self._OthrRslt
+
+	@OthrRslt.setter
+	def OthrRslt(self, value):
+		self._OthrRslt = value if type(value) != auto else self.make_default("OthrRslt")
+
+	@OthrRslt.deleter
+	def OthrRslt(self):
+		del self._OthrRslt
+		self._OthrRslt = None
 
 	@property
 	def Rslt(self):
@@ -75,32 +114,6 @@ class Verification7(base_types._BaseFieldType):
 		self._Ntty = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def SubTp(self):
-		return self._SubTp
-
-	@SubTp.setter
-	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
-
-	@SubTp.deleter
-	def SubTp(self):
-		del self._SubTp
-		self._SubTp = None
-
-	@property
 	def RsltDtls(self):
 		return self._RsltDtls
 
@@ -113,28 +126,15 @@ class Verification7(base_types._BaseFieldType):
 		del self._RsltDtls
 		self._RsltDtls = None
 
-	@property
-	def OthrNtty(self):
-		return self._OthrNtty
-
-	@OthrNtty.setter
-	def OthrNtty(self, value):
-		self._OthrNtty = value if type(value) != auto else self.make_default("OthrNtty")
-
-	@OthrNtty.deleter
-	def OthrNtty(self):
-		del self._OthrNtty
-		self._OthrNtty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ExternalAuthenticationMethod1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRslt', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rslt', type=Verification3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntty', type=VerificationEntity2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsltDtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

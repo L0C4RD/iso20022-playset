@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import Max210Text
+import GenericIdentification30
 
 class ProprietaryReason4(base_types._BaseFieldType):
 

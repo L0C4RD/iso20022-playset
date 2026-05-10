@@ -1,6 +1,6 @@
 import base_types
-import ContentType2Code
 import AuthenticatedData10
+import ContentType2Code
 
 class ContentInformationType37(base_types._BaseFieldType):
 

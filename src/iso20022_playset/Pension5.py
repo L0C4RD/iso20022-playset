@@ -1,87 +1,35 @@
 import base_types
-import TaxReference1
-import DrawdownStatus1Choice
 import DecimalNumber
-import LumpSumType1Choice
-import PensionSchemeType3Choice
-import PensionPolicy1
-import MoneyPurchaseAnnualAllowance1
-import DateAndAmount2
 import YesNoIndicator
+import PensionTransferScope1Choice
+import MoneyPurchaseAnnualAllowance1
+import LumpSumType1Choice
+import PensionOrder1
 import Number
-import DrawdownType2Choice
+import TaxReference1
+import PensionSchemeType3Choice
 import Max35Text
 import AdditionalInformation15
-import PensionOrder1
-import PensionTransferScope1Choice
+import PensionPolicy1
+import DrawdownType2Choice
+import DateAndAmount2
+import DrawdownStatus1Choice
 
 class Pension5(base_types._BaseFieldType):
 
-	__slots__ = ["_MnyPurchsAnlAllwnc", "_TaxRef", "_RingFncdDrwdwnAssts", "_ClntLftmAllwncPrtcn", "_NbOfDrwdwnTrnchs", "_BlckTrfRef", "_ValOfPnsnPlcyOrPlanOrSchme", "_EstmtdVal", "_DrwdwnTp", "_TrfScp", "_TaxFreeCshAmt", "_BnftCrstllstnEvtOcrd", "_TaxFreeCshPrtcn", "_DrwdwnSts", "_RtrmntAge", "_Id", "_LumpSumTp", "_SfgrdBnft", "_NonWrpprTrf", "_AddtlInf", "_RtrmntAgePrtcn", "_BlckTrf", "_NonSfgrddGrntedBnfts", "_LftmAllwncPrtcn", "_Shrg", "_PnsnOrdr", "_DrwdwnTrchId", "_Tp"]
+	__slots__ = ["_Shrg", "_BlckTrfRef", "_ValOfPnsnPlcyOrPlanOrSchme", "_NonWrpprTrf", "_PnsnOrdr", "_TaxFreeCshAmt", "_BlckTrf", "_RtrmntAgePrtcn", "_DrwdwnSts", "_TaxRef", "_TrfScp", "_NbOfDrwdwnTrnchs", "_Id", "_Tp", "_BnftCrstllstnEvtOcrd", "_AddtlInf", "_EstmtdVal", "_DrwdwnTrchId", "_NonSfgrddGrntedBnfts", "_SfgrdBnft", "_MnyPurchsAnlAllwnc", "_DrwdwnTp", "_RtrmntAge", "_RingFncdDrwdwnAssts", "_TaxFreeCshPrtcn", "_LftmAllwncPrtcn", "_LumpSumTp", "_ClntLftmAllwncPrtcn"]
 	@property
-	def MnyPurchsAnlAllwnc(self):
-		return self._MnyPurchsAnlAllwnc
+	def Shrg(self):
+		return self._Shrg
 
-	@MnyPurchsAnlAllwnc.setter
-	def MnyPurchsAnlAllwnc(self, value):
-		self._MnyPurchsAnlAllwnc = value if type(value) != auto else self.make_default("MnyPurchsAnlAllwnc")
+	@Shrg.setter
+	def Shrg(self, value):
+		self._Shrg = value if type(value) != auto else self.make_default("Shrg")
 
-	@MnyPurchsAnlAllwnc.deleter
-	def MnyPurchsAnlAllwnc(self):
-		del self._MnyPurchsAnlAllwnc
-		self._MnyPurchsAnlAllwnc = None
-
-	@property
-	def TaxRef(self):
-		return self._TaxRef
-
-	@TaxRef.setter
-	def TaxRef(self, value):
-		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
-
-	@TaxRef.deleter
-	def TaxRef(self):
-		del self._TaxRef
-		self._TaxRef = None
-
-	@property
-	def RingFncdDrwdwnAssts(self):
-		return self._RingFncdDrwdwnAssts
-
-	@RingFncdDrwdwnAssts.setter
-	def RingFncdDrwdwnAssts(self, value):
-		self._RingFncdDrwdwnAssts = value if type(value) != auto else self.make_default("RingFncdDrwdwnAssts")
-
-	@RingFncdDrwdwnAssts.deleter
-	def RingFncdDrwdwnAssts(self):
-		del self._RingFncdDrwdwnAssts
-		self._RingFncdDrwdwnAssts = None
-
-	@property
-	def ClntLftmAllwncPrtcn(self):
-		return self._ClntLftmAllwncPrtcn
-
-	@ClntLftmAllwncPrtcn.setter
-	def ClntLftmAllwncPrtcn(self, value):
-		self._ClntLftmAllwncPrtcn = value if type(value) != auto else self.make_default("ClntLftmAllwncPrtcn")
-
-	@ClntLftmAllwncPrtcn.deleter
-	def ClntLftmAllwncPrtcn(self):
-		del self._ClntLftmAllwncPrtcn
-		self._ClntLftmAllwncPrtcn = None
-
-	@property
-	def NbOfDrwdwnTrnchs(self):
-		return self._NbOfDrwdwnTrnchs
-
-	@NbOfDrwdwnTrnchs.setter
-	def NbOfDrwdwnTrnchs(self, value):
-		self._NbOfDrwdwnTrnchs = value if type(value) != auto else self.make_default("NbOfDrwdwnTrnchs")
-
-	@NbOfDrwdwnTrnchs.deleter
-	def NbOfDrwdwnTrnchs(self):
-		del self._NbOfDrwdwnTrnchs
-		self._NbOfDrwdwnTrnchs = None
+	@Shrg.deleter
+	def Shrg(self):
+		del self._Shrg
+		self._Shrg = None
 
 	@property
 	def BlckTrfRef(self):
@@ -110,149 +58,6 @@ class Pension5(base_types._BaseFieldType):
 		self._ValOfPnsnPlcyOrPlanOrSchme = None
 
 	@property
-	def EstmtdVal(self):
-		return self._EstmtdVal
-
-	@EstmtdVal.setter
-	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != auto else self.make_default("EstmtdVal")
-
-	@EstmtdVal.deleter
-	def EstmtdVal(self):
-		del self._EstmtdVal
-		self._EstmtdVal = None
-
-	@property
-	def DrwdwnTp(self):
-		return self._DrwdwnTp
-
-	@DrwdwnTp.setter
-	def DrwdwnTp(self, value):
-		self._DrwdwnTp = value if type(value) != auto else self.make_default("DrwdwnTp")
-
-	@DrwdwnTp.deleter
-	def DrwdwnTp(self):
-		del self._DrwdwnTp
-		self._DrwdwnTp = None
-
-	@property
-	def TrfScp(self):
-		return self._TrfScp
-
-	@TrfScp.setter
-	def TrfScp(self, value):
-		self._TrfScp = value if type(value) != auto else self.make_default("TrfScp")
-
-	@TrfScp.deleter
-	def TrfScp(self):
-		del self._TrfScp
-		self._TrfScp = None
-
-	@property
-	def TaxFreeCshAmt(self):
-		return self._TaxFreeCshAmt
-
-	@TaxFreeCshAmt.setter
-	def TaxFreeCshAmt(self, value):
-		self._TaxFreeCshAmt = value if type(value) != auto else self.make_default("TaxFreeCshAmt")
-
-	@TaxFreeCshAmt.deleter
-	def TaxFreeCshAmt(self):
-		del self._TaxFreeCshAmt
-		self._TaxFreeCshAmt = None
-
-	@property
-	def BnftCrstllstnEvtOcrd(self):
-		return self._BnftCrstllstnEvtOcrd
-
-	@BnftCrstllstnEvtOcrd.setter
-	def BnftCrstllstnEvtOcrd(self, value):
-		self._BnftCrstllstnEvtOcrd = value if type(value) != auto else self.make_default("BnftCrstllstnEvtOcrd")
-
-	@BnftCrstllstnEvtOcrd.deleter
-	def BnftCrstllstnEvtOcrd(self):
-		del self._BnftCrstllstnEvtOcrd
-		self._BnftCrstllstnEvtOcrd = None
-
-	@property
-	def TaxFreeCshPrtcn(self):
-		return self._TaxFreeCshPrtcn
-
-	@TaxFreeCshPrtcn.setter
-	def TaxFreeCshPrtcn(self, value):
-		self._TaxFreeCshPrtcn = value if type(value) != auto else self.make_default("TaxFreeCshPrtcn")
-
-	@TaxFreeCshPrtcn.deleter
-	def TaxFreeCshPrtcn(self):
-		del self._TaxFreeCshPrtcn
-		self._TaxFreeCshPrtcn = None
-
-	@property
-	def DrwdwnSts(self):
-		return self._DrwdwnSts
-
-	@DrwdwnSts.setter
-	def DrwdwnSts(self, value):
-		self._DrwdwnSts = value if type(value) != auto else self.make_default("DrwdwnSts")
-
-	@DrwdwnSts.deleter
-	def DrwdwnSts(self):
-		del self._DrwdwnSts
-		self._DrwdwnSts = None
-
-	@property
-	def RtrmntAge(self):
-		return self._RtrmntAge
-
-	@RtrmntAge.setter
-	def RtrmntAge(self, value):
-		self._RtrmntAge = value if type(value) != auto else self.make_default("RtrmntAge")
-
-	@RtrmntAge.deleter
-	def RtrmntAge(self):
-		del self._RtrmntAge
-		self._RtrmntAge = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def LumpSumTp(self):
-		return self._LumpSumTp
-
-	@LumpSumTp.setter
-	def LumpSumTp(self, value):
-		self._LumpSumTp = value if type(value) != auto else self.make_default("LumpSumTp")
-
-	@LumpSumTp.deleter
-	def LumpSumTp(self):
-		del self._LumpSumTp
-		self._LumpSumTp = None
-
-	@property
-	def SfgrdBnft(self):
-		return self._SfgrdBnft
-
-	@SfgrdBnft.setter
-	def SfgrdBnft(self, value):
-		self._SfgrdBnft = value if type(value) != auto else self.make_default("SfgrdBnft")
-
-	@SfgrdBnft.deleter
-	def SfgrdBnft(self):
-		del self._SfgrdBnft
-		self._SfgrdBnft = None
-
-	@property
 	def NonWrpprTrf(self):
 		return self._NonWrpprTrf
 
@@ -264,84 +69,6 @@ class Pension5(base_types._BaseFieldType):
 	def NonWrpprTrf(self):
 		del self._NonWrpprTrf
 		self._NonWrpprTrf = None
-
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
-	@property
-	def RtrmntAgePrtcn(self):
-		return self._RtrmntAgePrtcn
-
-	@RtrmntAgePrtcn.setter
-	def RtrmntAgePrtcn(self, value):
-		self._RtrmntAgePrtcn = value if type(value) != auto else self.make_default("RtrmntAgePrtcn")
-
-	@RtrmntAgePrtcn.deleter
-	def RtrmntAgePrtcn(self):
-		del self._RtrmntAgePrtcn
-		self._RtrmntAgePrtcn = None
-
-	@property
-	def BlckTrf(self):
-		return self._BlckTrf
-
-	@BlckTrf.setter
-	def BlckTrf(self, value):
-		self._BlckTrf = value if type(value) != auto else self.make_default("BlckTrf")
-
-	@BlckTrf.deleter
-	def BlckTrf(self):
-		del self._BlckTrf
-		self._BlckTrf = None
-
-	@property
-	def NonSfgrddGrntedBnfts(self):
-		return self._NonSfgrddGrntedBnfts
-
-	@NonSfgrddGrntedBnfts.setter
-	def NonSfgrddGrntedBnfts(self, value):
-		self._NonSfgrddGrntedBnfts = value if type(value) != auto else self.make_default("NonSfgrddGrntedBnfts")
-
-	@NonSfgrddGrntedBnfts.deleter
-	def NonSfgrddGrntedBnfts(self):
-		del self._NonSfgrddGrntedBnfts
-		self._NonSfgrddGrntedBnfts = None
-
-	@property
-	def LftmAllwncPrtcn(self):
-		return self._LftmAllwncPrtcn
-
-	@LftmAllwncPrtcn.setter
-	def LftmAllwncPrtcn(self, value):
-		self._LftmAllwncPrtcn = value if type(value) != auto else self.make_default("LftmAllwncPrtcn")
-
-	@LftmAllwncPrtcn.deleter
-	def LftmAllwncPrtcn(self):
-		del self._LftmAllwncPrtcn
-		self._LftmAllwncPrtcn = None
-
-	@property
-	def Shrg(self):
-		return self._Shrg
-
-	@Shrg.setter
-	def Shrg(self, value):
-		self._Shrg = value if type(value) != auto else self.make_default("Shrg")
-
-	@Shrg.deleter
-	def Shrg(self):
-		del self._Shrg
-		self._Shrg = None
 
 	@property
 	def PnsnOrdr(self):
@@ -357,17 +84,108 @@ class Pension5(base_types._BaseFieldType):
 		self._PnsnOrdr = None
 
 	@property
-	def DrwdwnTrchId(self):
-		return self._DrwdwnTrchId
+	def TaxFreeCshAmt(self):
+		return self._TaxFreeCshAmt
 
-	@DrwdwnTrchId.setter
-	def DrwdwnTrchId(self, value):
-		self._DrwdwnTrchId = value if type(value) != auto else self.make_default("DrwdwnTrchId")
+	@TaxFreeCshAmt.setter
+	def TaxFreeCshAmt(self, value):
+		self._TaxFreeCshAmt = value if type(value) != auto else self.make_default("TaxFreeCshAmt")
 
-	@DrwdwnTrchId.deleter
-	def DrwdwnTrchId(self):
-		del self._DrwdwnTrchId
-		self._DrwdwnTrchId = None
+	@TaxFreeCshAmt.deleter
+	def TaxFreeCshAmt(self):
+		del self._TaxFreeCshAmt
+		self._TaxFreeCshAmt = None
+
+	@property
+	def BlckTrf(self):
+		return self._BlckTrf
+
+	@BlckTrf.setter
+	def BlckTrf(self, value):
+		self._BlckTrf = value if type(value) != auto else self.make_default("BlckTrf")
+
+	@BlckTrf.deleter
+	def BlckTrf(self):
+		del self._BlckTrf
+		self._BlckTrf = None
+
+	@property
+	def RtrmntAgePrtcn(self):
+		return self._RtrmntAgePrtcn
+
+	@RtrmntAgePrtcn.setter
+	def RtrmntAgePrtcn(self, value):
+		self._RtrmntAgePrtcn = value if type(value) != auto else self.make_default("RtrmntAgePrtcn")
+
+	@RtrmntAgePrtcn.deleter
+	def RtrmntAgePrtcn(self):
+		del self._RtrmntAgePrtcn
+		self._RtrmntAgePrtcn = None
+
+	@property
+	def DrwdwnSts(self):
+		return self._DrwdwnSts
+
+	@DrwdwnSts.setter
+	def DrwdwnSts(self, value):
+		self._DrwdwnSts = value if type(value) != auto else self.make_default("DrwdwnSts")
+
+	@DrwdwnSts.deleter
+	def DrwdwnSts(self):
+		del self._DrwdwnSts
+		self._DrwdwnSts = None
+
+	@property
+	def TaxRef(self):
+		return self._TaxRef
+
+	@TaxRef.setter
+	def TaxRef(self, value):
+		self._TaxRef = value if type(value) != auto else self.make_default("TaxRef")
+
+	@TaxRef.deleter
+	def TaxRef(self):
+		del self._TaxRef
+		self._TaxRef = None
+
+	@property
+	def TrfScp(self):
+		return self._TrfScp
+
+	@TrfScp.setter
+	def TrfScp(self, value):
+		self._TrfScp = value if type(value) != auto else self.make_default("TrfScp")
+
+	@TrfScp.deleter
+	def TrfScp(self):
+		del self._TrfScp
+		self._TrfScp = None
+
+	@property
+	def NbOfDrwdwnTrnchs(self):
+		return self._NbOfDrwdwnTrnchs
+
+	@NbOfDrwdwnTrnchs.setter
+	def NbOfDrwdwnTrnchs(self, value):
+		self._NbOfDrwdwnTrnchs = value if type(value) != auto else self.make_default("NbOfDrwdwnTrnchs")
+
+	@NbOfDrwdwnTrnchs.deleter
+	def NbOfDrwdwnTrnchs(self):
+		del self._NbOfDrwdwnTrnchs
+		self._NbOfDrwdwnTrnchs = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Tp(self):
@@ -382,34 +200,216 @@ class Pension5(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def BnftCrstllstnEvtOcrd(self):
+		return self._BnftCrstllstnEvtOcrd
+
+	@BnftCrstllstnEvtOcrd.setter
+	def BnftCrstllstnEvtOcrd(self, value):
+		self._BnftCrstllstnEvtOcrd = value if type(value) != auto else self.make_default("BnftCrstllstnEvtOcrd")
+
+	@BnftCrstllstnEvtOcrd.deleter
+	def BnftCrstllstnEvtOcrd(self):
+		del self._BnftCrstllstnEvtOcrd
+		self._BnftCrstllstnEvtOcrd = None
+
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
+	@property
+	def EstmtdVal(self):
+		return self._EstmtdVal
+
+	@EstmtdVal.setter
+	def EstmtdVal(self, value):
+		self._EstmtdVal = value if type(value) != auto else self.make_default("EstmtdVal")
+
+	@EstmtdVal.deleter
+	def EstmtdVal(self):
+		del self._EstmtdVal
+		self._EstmtdVal = None
+
+	@property
+	def DrwdwnTrchId(self):
+		return self._DrwdwnTrchId
+
+	@DrwdwnTrchId.setter
+	def DrwdwnTrchId(self, value):
+		self._DrwdwnTrchId = value if type(value) != auto else self.make_default("DrwdwnTrchId")
+
+	@DrwdwnTrchId.deleter
+	def DrwdwnTrchId(self):
+		del self._DrwdwnTrchId
+		self._DrwdwnTrchId = None
+
+	@property
+	def NonSfgrddGrntedBnfts(self):
+		return self._NonSfgrddGrntedBnfts
+
+	@NonSfgrddGrntedBnfts.setter
+	def NonSfgrddGrntedBnfts(self, value):
+		self._NonSfgrddGrntedBnfts = value if type(value) != auto else self.make_default("NonSfgrddGrntedBnfts")
+
+	@NonSfgrddGrntedBnfts.deleter
+	def NonSfgrddGrntedBnfts(self):
+		del self._NonSfgrddGrntedBnfts
+		self._NonSfgrddGrntedBnfts = None
+
+	@property
+	def SfgrdBnft(self):
+		return self._SfgrdBnft
+
+	@SfgrdBnft.setter
+	def SfgrdBnft(self, value):
+		self._SfgrdBnft = value if type(value) != auto else self.make_default("SfgrdBnft")
+
+	@SfgrdBnft.deleter
+	def SfgrdBnft(self):
+		del self._SfgrdBnft
+		self._SfgrdBnft = None
+
+	@property
+	def MnyPurchsAnlAllwnc(self):
+		return self._MnyPurchsAnlAllwnc
+
+	@MnyPurchsAnlAllwnc.setter
+	def MnyPurchsAnlAllwnc(self, value):
+		self._MnyPurchsAnlAllwnc = value if type(value) != auto else self.make_default("MnyPurchsAnlAllwnc")
+
+	@MnyPurchsAnlAllwnc.deleter
+	def MnyPurchsAnlAllwnc(self):
+		del self._MnyPurchsAnlAllwnc
+		self._MnyPurchsAnlAllwnc = None
+
+	@property
+	def DrwdwnTp(self):
+		return self._DrwdwnTp
+
+	@DrwdwnTp.setter
+	def DrwdwnTp(self, value):
+		self._DrwdwnTp = value if type(value) != auto else self.make_default("DrwdwnTp")
+
+	@DrwdwnTp.deleter
+	def DrwdwnTp(self):
+		del self._DrwdwnTp
+		self._DrwdwnTp = None
+
+	@property
+	def RtrmntAge(self):
+		return self._RtrmntAge
+
+	@RtrmntAge.setter
+	def RtrmntAge(self, value):
+		self._RtrmntAge = value if type(value) != auto else self.make_default("RtrmntAge")
+
+	@RtrmntAge.deleter
+	def RtrmntAge(self):
+		del self._RtrmntAge
+		self._RtrmntAge = None
+
+	@property
+	def RingFncdDrwdwnAssts(self):
+		return self._RingFncdDrwdwnAssts
+
+	@RingFncdDrwdwnAssts.setter
+	def RingFncdDrwdwnAssts(self, value):
+		self._RingFncdDrwdwnAssts = value if type(value) != auto else self.make_default("RingFncdDrwdwnAssts")
+
+	@RingFncdDrwdwnAssts.deleter
+	def RingFncdDrwdwnAssts(self):
+		del self._RingFncdDrwdwnAssts
+		self._RingFncdDrwdwnAssts = None
+
+	@property
+	def TaxFreeCshPrtcn(self):
+		return self._TaxFreeCshPrtcn
+
+	@TaxFreeCshPrtcn.setter
+	def TaxFreeCshPrtcn(self, value):
+		self._TaxFreeCshPrtcn = value if type(value) != auto else self.make_default("TaxFreeCshPrtcn")
+
+	@TaxFreeCshPrtcn.deleter
+	def TaxFreeCshPrtcn(self):
+		del self._TaxFreeCshPrtcn
+		self._TaxFreeCshPrtcn = None
+
+	@property
+	def LftmAllwncPrtcn(self):
+		return self._LftmAllwncPrtcn
+
+	@LftmAllwncPrtcn.setter
+	def LftmAllwncPrtcn(self, value):
+		self._LftmAllwncPrtcn = value if type(value) != auto else self.make_default("LftmAllwncPrtcn")
+
+	@LftmAllwncPrtcn.deleter
+	def LftmAllwncPrtcn(self):
+		del self._LftmAllwncPrtcn
+		self._LftmAllwncPrtcn = None
+
+	@property
+	def LumpSumTp(self):
+		return self._LumpSumTp
+
+	@LumpSumTp.setter
+	def LumpSumTp(self, value):
+		self._LumpSumTp = value if type(value) != auto else self.make_default("LumpSumTp")
+
+	@LumpSumTp.deleter
+	def LumpSumTp(self):
+		del self._LumpSumTp
+		self._LumpSumTp = None
+
+	@property
+	def ClntLftmAllwncPrtcn(self):
+		return self._ClntLftmAllwncPrtcn
+
+	@ClntLftmAllwncPrtcn.setter
+	def ClntLftmAllwncPrtcn(self, value):
+		self._ClntLftmAllwncPrtcn = value if type(value) != auto else self.make_default("ClntLftmAllwncPrtcn")
+
+	@ClntLftmAllwncPrtcn.deleter
+	def ClntLftmAllwncPrtcn(self):
+		del self._ClntLftmAllwncPrtcn
+		self._ClntLftmAllwncPrtcn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MnyPurchsAnlAllwnc', type=MoneyPurchaseAnnualAllowance1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RingFncdDrwdwnAssts', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClntLftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NbOfDrwdwnTrnchs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Shrg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckTrfRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValOfPnsnPlcyOrPlanOrSchme', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrwdwnTp', type=DrawdownType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxFreeCshAmt', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BnftCrstllstnEvtOcrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxFreeCshPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrwdwnSts', type=DrawdownStatus1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrmntAge', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LumpSumTp', type=LumpSumType1Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SfgrdBnft', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NonWrpprTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RtrmntAgePrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonSfgrddGrntedBnfts', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Shrg', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PnsnOrdr', type=PensionOrder1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxFreeCshAmt', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckTrf', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrmntAgePrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwdwnSts', type=DrawdownStatus1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRef', type=TaxReference1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NbOfDrwdwnTrnchs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PensionPolicy1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PensionSchemeType3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnftCrstllstnEvtOcrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwdwnTrchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonSfgrddGrntedBnfts', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfgrdBnft', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MnyPurchsAnlAllwnc', type=MoneyPurchaseAnnualAllowance1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrwdwnTp', type=DrawdownType2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrmntAge', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RingFncdDrwdwnAssts', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxFreeCshPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LumpSumTp', type=LumpSumType1Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClntLftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
-import DocumentIdentification9
-import AccountIdentification70
-import SupplementaryData1
 import References26
+import SupplementaryData1
+import AccountIdentification70
 import CorporateActionGeneralInformation181
+import DocumentIdentification9
 
 class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRef", "_SplmtryData", "_CorpActnGnlInf", "_AcctDtls", "_MktClmCreId"]
+	__slots__ = ["_TxRef", "_AcctDtls", "_CorpActnGnlInf", "_SplmtryData", "_MktClmCreId"]
 	@property
 	def TxRef(self):
 		return self._TxRef
@@ -22,17 +22,17 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		self._TxRef = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	@property
 	def CorpActnGnlInf(self):
@@ -48,17 +48,17 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 		self._CorpActnGnlInf = None
 
 	@property
-	def AcctDtls(self):
-		return self._AcctDtls
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def MktClmCreId(self):
@@ -75,9 +75,9 @@ class MarketClaimCancellationRequestV02(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MktClmCreId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
 	))
 

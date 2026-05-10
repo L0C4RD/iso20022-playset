@@ -1,23 +1,10 @@
 import base_types
-import AccountCriteria4Choice
 import QueryType2Code
+import AccountCriteria4Choice
 
 class AccountQuery4(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctCrit", "_QryTp"]
-	@property
-	def AcctCrit(self):
-		return self._AcctCrit
-
-	@AcctCrit.setter
-	def AcctCrit(self, value):
-		self._AcctCrit = value if type(value) != auto else self.make_default("AcctCrit")
-
-	@AcctCrit.deleter
-	def AcctCrit(self):
-		del self._AcctCrit
-		self._AcctCrit = None
-
+	__slots__ = ["_QryTp", "_AcctCrit"]
 	@property
 	def QryTp(self):
 		return self._QryTp
@@ -31,8 +18,21 @@ class AccountQuery4(base_types._BaseFieldType):
 		del self._QryTp
 		self._QryTp = None
 
+	@property
+	def AcctCrit(self):
+		return self._AcctCrit
+
+	@AcctCrit.setter
+	def AcctCrit(self, value):
+		self._AcctCrit = value if type(value) != auto else self.make_default("AcctCrit")
+
+	@AcctCrit.deleter
+	def AcctCrit(self):
+		del self._AcctCrit
+		self._AcctCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctCrit', type=AccountCriteria4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctCrit', type=AccountCriteria4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

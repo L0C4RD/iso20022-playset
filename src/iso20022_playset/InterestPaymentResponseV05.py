@@ -1,40 +1,14 @@
 import base_types
 import Max35Text
-import Obligation9
-import Agreement4
-import SupplementaryData1
 import InterestAmount3
+import SupplementaryData1
+import Agreement4
 import InterestResponse1
+import Obligation9
 
 class InterestPaymentResponseV05(base_types._BaseFieldType):
 
-	__slots__ = ["_Oblgtn", "_TxId", "_SplmtryData", "_IntrstDueToA", "_IntrstDueToB", "_Agrmt", "_IntrstRspn"]
-	@property
-	def Oblgtn(self):
-		return self._Oblgtn
-
-	@Oblgtn.setter
-	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
-
-	@Oblgtn.deleter
-	def Oblgtn(self):
-		del self._Oblgtn
-		self._Oblgtn = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_SplmtryData", "_Agrmt", "_IntrstRspn", "_IntrstDueToA", "_IntrstDueToB", "_TxId", "_Oblgtn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -47,6 +21,32 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def Agrmt(self):
+		return self._Agrmt
+
+	@Agrmt.setter
+	def Agrmt(self, value):
+		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
+
+	@Agrmt.deleter
+	def Agrmt(self):
+		del self._Agrmt
+		self._Agrmt = None
+
+	@property
+	def IntrstRspn(self):
+		return self._IntrstRspn
+
+	@IntrstRspn.setter
+	def IntrstRspn(self, value):
+		self._IntrstRspn = value if type(value) != auto else self.make_default("IntrstRspn")
+
+	@IntrstRspn.deleter
+	def IntrstRspn(self):
+		del self._IntrstRspn
+		self._IntrstRspn = None
 
 	@property
 	def IntrstDueToA(self):
@@ -75,38 +75,38 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 		self._IntrstDueToB = None
 
 	@property
-	def Agrmt(self):
-		return self._Agrmt
+	def TxId(self):
+		return self._TxId
 
-	@Agrmt.setter
-	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != auto else self.make_default("Agrmt")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Agrmt.deleter
-	def Agrmt(self):
-		del self._Agrmt
-		self._Agrmt = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
-	def IntrstRspn(self):
-		return self._IntrstRspn
+	def Oblgtn(self):
+		return self._Oblgtn
 
-	@IntrstRspn.setter
-	def IntrstRspn(self, value):
-		self._IntrstRspn = value if type(value) != auto else self.make_default("IntrstRspn")
+	@Oblgtn.setter
+	def Oblgtn(self, value):
+		self._Oblgtn = value if type(value) != auto else self.make_default("Oblgtn")
 
-	@IntrstRspn.deleter
-	def IntrstRspn(self):
-		del self._IntrstRspn
-		self._IntrstRspn = None
+	@Oblgtn.deleter
+	def Oblgtn(self):
+		del self._Oblgtn
+		self._Oblgtn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRspn', type=InterestResponse1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToA', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstDueToB', type=InterestAmount3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Oblgtn', type=Obligation9, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,12 +1,25 @@
 import base_types
-import InstalmentAmountDetailsType1Code
-import PercentageRate
-import Amount5
 import Max35Text
+import Amount5
+import PercentageRate
+import InstalmentAmountDetailsType1Code
 
 class InstalmentAmountDetails1(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_SubTp", "_Amt", "_OthrTp", "_Pctg"]
+	__slots__ = ["_Pctg", "_Tp", "_Amt", "_OthrTp", "_SubTp"]
+	@property
+	def Pctg(self):
+		return self._Pctg
+
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -19,19 +32,6 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
-
-	@property
-	def SubTp(self):
-		return self._SubTp
-
-	@SubTp.setter
-	def SubTp(self, value):
-		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
-
-	@SubTp.deleter
-	def SubTp(self):
-		del self._SubTp
-		self._SubTp = None
 
 	@property
 	def Amt(self):
@@ -60,23 +60,23 @@ class InstalmentAmountDetails1(base_types._BaseFieldType):
 		self._OthrTp = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def SubTp(self):
+		return self._SubTp
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@SubTp.setter
+	def SubTp(self, value):
+		self._SubTp = value if type(value) != auto else self.make_default("SubTp")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@SubTp.deleter
+	def SubTp(self):
+		del self._SubTp
+		self._SubTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=InstalmentAmountDetailsType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=Amount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

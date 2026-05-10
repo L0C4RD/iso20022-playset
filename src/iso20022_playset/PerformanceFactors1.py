@@ -1,22 +1,22 @@
 import base_types
-import DatePeriodDetails
 import DecimalNumber
+import DatePeriodDetails
 
 class PerformanceFactors1(base_types._BaseFieldType):
 
-	__slots__ = ["_NrmlPrfrmnc", "_CmltvCorpActnFctr", "_AcmltnPrd", "_CorpActnFctr"]
+	__slots__ = ["_AcmltnPrd", "_CmltvCorpActnFctr", "_CorpActnFctr", "_NrmlPrfrmnc"]
 	@property
-	def NrmlPrfrmnc(self):
-		return self._NrmlPrfrmnc
+	def AcmltnPrd(self):
+		return self._AcmltnPrd
 
-	@NrmlPrfrmnc.setter
-	def NrmlPrfrmnc(self, value):
-		self._NrmlPrfrmnc = value if type(value) != auto else self.make_default("NrmlPrfrmnc")
+	@AcmltnPrd.setter
+	def AcmltnPrd(self, value):
+		self._AcmltnPrd = value if type(value) != auto else self.make_default("AcmltnPrd")
 
-	@NrmlPrfrmnc.deleter
-	def NrmlPrfrmnc(self):
-		del self._NrmlPrfrmnc
-		self._NrmlPrfrmnc = None
+	@AcmltnPrd.deleter
+	def AcmltnPrd(self):
+		del self._AcmltnPrd
+		self._AcmltnPrd = None
 
 	@property
 	def CmltvCorpActnFctr(self):
@@ -32,19 +32,6 @@ class PerformanceFactors1(base_types._BaseFieldType):
 		self._CmltvCorpActnFctr = None
 
 	@property
-	def AcmltnPrd(self):
-		return self._AcmltnPrd
-
-	@AcmltnPrd.setter
-	def AcmltnPrd(self, value):
-		self._AcmltnPrd = value if type(value) != auto else self.make_default("AcmltnPrd")
-
-	@AcmltnPrd.deleter
-	def AcmltnPrd(self):
-		del self._AcmltnPrd
-		self._AcmltnPrd = None
-
-	@property
 	def CorpActnFctr(self):
 		return self._CorpActnFctr
 
@@ -57,10 +44,23 @@ class PerformanceFactors1(base_types._BaseFieldType):
 		del self._CorpActnFctr
 		self._CorpActnFctr = None
 
+	@property
+	def NrmlPrfrmnc(self):
+		return self._NrmlPrfrmnc
+
+	@NrmlPrfrmnc.setter
+	def NrmlPrfrmnc(self, value):
+		self._NrmlPrfrmnc = value if type(value) != auto else self.make_default("NrmlPrfrmnc")
+
+	@NrmlPrfrmnc.deleter
+	def NrmlPrfrmnc(self):
+		del self._NrmlPrfrmnc
+		self._NrmlPrfrmnc = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NrmlPrfrmnc', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmltvCorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcmltnPrd', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmltvCorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NrmlPrfrmnc', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

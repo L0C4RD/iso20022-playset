@@ -3,19 +3,19 @@ import PartyIdentificationAndAccount148
 
 class CashParties33(base_types._BaseFieldType):
 
-	__slots__ = ["_Cdtr", "_Intrmy", "_Dbtr", "_DbtrAgt", "_CdtrAgt"]
+	__slots__ = ["_DbtrAgt", "_Intrmy", "_Dbtr", "_CdtrAgt", "_Cdtr"]
 	@property
-	def Cdtr(self):
-		return self._Cdtr
+	def DbtrAgt(self):
+		return self._DbtrAgt
 
-	@Cdtr.setter
-	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+	@DbtrAgt.setter
+	def DbtrAgt(self, value):
+		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
 
-	@Cdtr.deleter
-	def Cdtr(self):
-		del self._Cdtr
-		self._Cdtr = None
+	@DbtrAgt.deleter
+	def DbtrAgt(self):
+		del self._DbtrAgt
+		self._DbtrAgt = None
 
 	@property
 	def Intrmy(self):
@@ -44,19 +44,6 @@ class CashParties33(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
-	def DbtrAgt(self):
-		return self._DbtrAgt
-
-	@DbtrAgt.setter
-	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != auto else self.make_default("DbtrAgt")
-
-	@DbtrAgt.deleter
-	def DbtrAgt(self):
-		del self._DbtrAgt
-		self._DbtrAgt = None
-
-	@property
 	def CdtrAgt(self):
 		return self._CdtrAgt
 
@@ -69,11 +56,24 @@ class CashParties33(base_types._BaseFieldType):
 		del self._CdtrAgt
 		self._CdtrAgt = None
 
+	@property
+	def Cdtr(self):
+		return self._Cdtr
+
+	@Cdtr.setter
+	def Cdtr(self, value):
+		self._Cdtr = value if type(value) != auto else self.make_default("Cdtr")
+
+	@Cdtr.deleter
+	def Cdtr(self):
+		del self._Cdtr
+		self._Cdtr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dbtr', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount148, min=0, max=1, mutex_group=None, array=False),
 	))
 

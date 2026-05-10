@@ -1,24 +1,24 @@
 import base_types
-import UnitOfMeasure8Choice
-import Schedule1
 import SecuritiesTransactionPrice17Choice
 import LongFraction19DecimalNumber
+import UnitOfMeasure8Choice
+import Schedule1
 
 class PriceData2(base_types._BaseFieldType):
 
-	__slots__ = ["_UnitOfMeasr", "_Pric", "_SchdlPrd", "_PricMltplr"]
+	__slots__ = ["_PricMltplr", "_Pric", "_UnitOfMeasr", "_SchdlPrd"]
 	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
+	def PricMltplr(self):
+		return self._PricMltplr
 
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+	@PricMltplr.setter
+	def PricMltplr(self, value):
+		self._PricMltplr = value if type(value) != auto else self.make_default("PricMltplr")
 
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+	@PricMltplr.deleter
+	def PricMltplr(self):
+		del self._PricMltplr
+		self._PricMltplr = None
 
 	@property
 	def Pric(self):
@@ -34,6 +34,19 @@ class PriceData2(base_types._BaseFieldType):
 		self._Pric = None
 
 	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
 	def SchdlPrd(self):
 		return self._SchdlPrd
 
@@ -46,23 +59,10 @@ class PriceData2(base_types._BaseFieldType):
 		del self._SchdlPrd
 		self._SchdlPrd = None
 
-	@property
-	def PricMltplr(self):
-		return self._PricMltplr
-
-	@PricMltplr.setter
-	def PricMltplr(self, value):
-		self._PricMltplr = value if type(value) != auto else self.make_default("PricMltplr")
-
-	@PricMltplr.deleter
-	def PricMltplr(self):
-		del self._PricMltplr
-		self._PricMltplr = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PricMltplr', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
 	))
 

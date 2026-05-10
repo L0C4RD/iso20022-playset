@@ -1,7 +1,7 @@
 import base_types
-import Max70Text
-import ImpliedCurrencyAndAmount
 import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
+import Max70Text
 
 class ATMFeeComponent1(base_types._BaseFieldType):
 

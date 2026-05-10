@@ -1,6 +1,6 @@
 import base_types
-import ExternalUnableToApplyMissingData1Code
 import Max35Text
+import ExternalUnableToApplyMissingData1Code
 
 class MissingData1Choice(base_types._BaseFieldType):
 

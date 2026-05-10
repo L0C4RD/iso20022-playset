@@ -1,26 +1,13 @@
 import base_types
-import PartyIdentification144
 import YesNoIndicator
+import PartyIdentification144
 import BlockChainAddressWallet2
 import AggregateBalanceInformation46
 import SecuritiesAccount25
 
 class SubAccountIdentification71(base_types._BaseFieldType):
 
-	__slots__ = ["_BalForSubAcct", "_ActvtyInd", "_SfkpgAcct", "_AcctOwnr", "_BlckChainAdrOrWllt"]
-	@property
-	def BalForSubAcct(self):
-		return self._BalForSubAcct
-
-	@BalForSubAcct.setter
-	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != auto else self.make_default("BalForSubAcct")
-
-	@BalForSubAcct.deleter
-	def BalForSubAcct(self):
-		del self._BalForSubAcct
-		self._BalForSubAcct = None
-
+	__slots__ = ["_ActvtyInd", "_SfkpgAcct", "_BlckChainAdrOrWllt", "_AcctOwnr", "_BalForSubAcct"]
 	@property
 	def ActvtyInd(self):
 		return self._ActvtyInd
@@ -48,6 +35,19 @@ class SubAccountIdentification71(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
 	def AcctOwnr(self):
 		return self._AcctOwnr
 
@@ -61,23 +61,23 @@ class SubAccountIdentification71(base_types._BaseFieldType):
 		self._AcctOwnr = None
 
 	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
+	def BalForSubAcct(self):
+		return self._BalForSubAcct
 
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+	@BalForSubAcct.setter
+	def BalForSubAcct(self, value):
+		self._BalForSubAcct = value if type(value) != auto else self.make_default("BalForSubAcct")
 
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@BalForSubAcct.deleter
+	def BalForSubAcct(self):
+		del self._BalForSubAcct
+		self._BalForSubAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation46, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount25, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalForSubAcct', type=AggregateBalanceInformation46, min=0, max=None, mutex_group=None, array=True),
 	))
 

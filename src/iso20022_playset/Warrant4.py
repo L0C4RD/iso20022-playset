@@ -1,24 +1,24 @@
 import base_types
 import BaseOneRate
-import Organisation38
-import Price8
 import WarrantStyle3Choice
+import Price8
+import Organisation38
 
 class Warrant4(base_types._BaseFieldType):
 
-	__slots__ = ["_WarrtAgt", "_Tp", "_SbcptPric", "_Mltplr"]
+	__slots__ = ["_SbcptPric", "_Tp", "_WarrtAgt", "_Mltplr"]
 	@property
-	def WarrtAgt(self):
-		return self._WarrtAgt
+	def SbcptPric(self):
+		return self._SbcptPric
 
-	@WarrtAgt.setter
-	def WarrtAgt(self, value):
-		self._WarrtAgt = value if type(value) != auto else self.make_default("WarrtAgt")
+	@SbcptPric.setter
+	def SbcptPric(self, value):
+		self._SbcptPric = value if type(value) != auto else self.make_default("SbcptPric")
 
-	@WarrtAgt.deleter
-	def WarrtAgt(self):
-		del self._WarrtAgt
-		self._WarrtAgt = None
+	@SbcptPric.deleter
+	def SbcptPric(self):
+		del self._SbcptPric
+		self._SbcptPric = None
 
 	@property
 	def Tp(self):
@@ -34,17 +34,17 @@ class Warrant4(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def SbcptPric(self):
-		return self._SbcptPric
+	def WarrtAgt(self):
+		return self._WarrtAgt
 
-	@SbcptPric.setter
-	def SbcptPric(self, value):
-		self._SbcptPric = value if type(value) != auto else self.make_default("SbcptPric")
+	@WarrtAgt.setter
+	def WarrtAgt(self, value):
+		self._WarrtAgt = value if type(value) != auto else self.make_default("WarrtAgt")
 
-	@SbcptPric.deleter
-	def SbcptPric(self):
-		del self._SbcptPric
-		self._SbcptPric = None
+	@WarrtAgt.deleter
+	def WarrtAgt(self):
+		del self._WarrtAgt
+		self._WarrtAgt = None
 
 	@property
 	def Mltplr(self):
@@ -60,9 +60,9 @@ class Warrant4(base_types._BaseFieldType):
 		self._Mltplr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='WarrtAgt', type=Organisation38, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Tp', type=WarrantStyle3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SbcptPric', type=Price8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=WarrantStyle3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WarrtAgt', type=Organisation38, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Mltplr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

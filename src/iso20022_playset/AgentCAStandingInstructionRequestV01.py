@@ -1,12 +1,25 @@
 import base_types
 import DocumentIdentification8
-import ContactPerson1
 import CorporateActionStandingInstruction1
+import ContactPerson1
 import CorporateActionStandingInstructionGeneralInformation1
 
 class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_StgInstrDtls", "_StgInstrGnlInf", "_CtctDtls"]
+	__slots__ = ["_StgInstrGnlInf", "_Id", "_StgInstrDtls", "_CtctDtls"]
+	@property
+	def StgInstrGnlInf(self):
+		return self._StgInstrGnlInf
+
+	@StgInstrGnlInf.setter
+	def StgInstrGnlInf(self, value):
+		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
+
+	@StgInstrGnlInf.deleter
+	def StgInstrGnlInf(self):
+		del self._StgInstrGnlInf
+		self._StgInstrGnlInf = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -34,19 +47,6 @@ class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 		self._StgInstrDtls = None
 
 	@property
-	def StgInstrGnlInf(self):
-		return self._StgInstrGnlInf
-
-	@StgInstrGnlInf.setter
-	def StgInstrGnlInf(self, value):
-		self._StgInstrGnlInf = value if type(value) != auto else self.make_default("StgInstrGnlInf")
-
-	@StgInstrGnlInf.deleter
-	def StgInstrGnlInf(self):
-		del self._StgInstrGnlInf
-		self._StgInstrGnlInf = None
-
-	@property
 	def CtctDtls(self):
 		return self._CtctDtls
 
@@ -60,9 +60,9 @@ class AgentCAStandingInstructionRequestV01(base_types._BaseFieldType):
 		self._CtctDtls = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgInstrDtls', type=CorporateActionStandingInstruction1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StgInstrGnlInf', type=CorporateActionStandingInstructionGeneralInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctDtls', type=ContactPerson1, min=0, max=1, mutex_group=None, array=False),
 	))
 

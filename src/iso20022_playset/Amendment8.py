@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import Max4AlphaNumericText
 import PartyIdentification43
-import Max35Text
 
 class Amendment8(base_types._BaseFieldType):
 
-	__slots__ = ["_BnfcryRefNb", "_Id", "_SeqNb", "_Issr"]
+	__slots__ = ["_SeqNb", "_Id", "_BnfcryRefNb", "_Issr"]
 	@property
-	def BnfcryRefNb(self):
-		return self._BnfcryRefNb
+	def SeqNb(self):
+		return self._SeqNb
 
-	@BnfcryRefNb.setter
-	def BnfcryRefNb(self, value):
-		self._BnfcryRefNb = value if type(value) != auto else self.make_default("BnfcryRefNb")
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
 
-	@BnfcryRefNb.deleter
-	def BnfcryRefNb(self):
-		del self._BnfcryRefNb
-		self._BnfcryRefNb = None
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
 
 	@property
 	def Id(self):
@@ -33,17 +33,17 @@ class Amendment8(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
+	def BnfcryRefNb(self):
+		return self._BnfcryRefNb
 
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+	@BnfcryRefNb.setter
+	def BnfcryRefNb(self, value):
+		self._BnfcryRefNb = value if type(value) != auto else self.make_default("BnfcryRefNb")
 
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
+	@BnfcryRefNb.deleter
+	def BnfcryRefNb(self):
+		del self._BnfcryRefNb
+		self._BnfcryRefNb = None
 
 	@property
 	def Issr(self):
@@ -59,9 +59,9 @@ class Amendment8(base_types._BaseFieldType):
 		self._Issr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 	))
 

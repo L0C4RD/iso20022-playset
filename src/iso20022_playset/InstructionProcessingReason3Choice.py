@@ -1,6 +1,6 @@
 import base_types
-import RejectionReason67
 import NoReasonCode
+import RejectionReason67
 
 class InstructionProcessingReason3Choice(base_types._BaseFieldType):
 

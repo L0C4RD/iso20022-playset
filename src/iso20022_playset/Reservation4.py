@@ -1,6 +1,6 @@
 import base_types
-import DateAndDateTime2Choice
 import Amount2Choice
+import DateAndDateTime2Choice
 
 class Reservation4(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 import base_types
 import OriginatorInformation1
-import Recipient15Choice
-import Number
 import EncryptedContent7
+import Number
+import Recipient15Choice
 
 class EnvelopedData11(base_types._BaseFieldType):
 
-	__slots__ = ["_Rcpt", "_NcrptdCntt", "_OrgtrInf", "_Vrsn"]
+	__slots__ = ["_Vrsn", "_Rcpt", "_OrgtrInf", "_NcrptdCntt"]
+	@property
+	def Vrsn(self):
+		return self._Vrsn
+
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
 	@property
 	def Rcpt(self):
 		return self._Rcpt
@@ -19,19 +32,6 @@ class EnvelopedData11(base_types._BaseFieldType):
 	def Rcpt(self):
 		del self._Rcpt
 		self._Rcpt = None
-
-	@property
-	def NcrptdCntt(self):
-		return self._NcrptdCntt
-
-	@NcrptdCntt.setter
-	def NcrptdCntt(self, value):
-		self._NcrptdCntt = value if type(value) != auto else self.make_default("NcrptdCntt")
-
-	@NcrptdCntt.deleter
-	def NcrptdCntt(self):
-		del self._NcrptdCntt
-		self._NcrptdCntt = None
 
 	@property
 	def OrgtrInf(self):
@@ -47,22 +47,22 @@ class EnvelopedData11(base_types._BaseFieldType):
 		self._OrgtrInf = None
 
 	@property
-	def Vrsn(self):
-		return self._Vrsn
+	def NcrptdCntt(self):
+		return self._NcrptdCntt
 
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
+	@NcrptdCntt.setter
+	def NcrptdCntt(self, value):
+		self._NcrptdCntt = value if type(value) != auto else self.make_default("NcrptdCntt")
 
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@NcrptdCntt.deleter
+	def NcrptdCntt(self):
+		del self._NcrptdCntt
+		self._NcrptdCntt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcpt', type=Recipient15Choice, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OrgtrInf', type=OriginatorInformation1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent7, min=0, max=1, mutex_group=None, array=False),
 	))
 

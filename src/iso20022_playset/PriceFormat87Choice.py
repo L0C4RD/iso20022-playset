@@ -1,13 +1,26 @@
 import base_types
-import AmountPrice5
-import RestrictedFINDecimalNumber
 import AmountPricePerFinancialInstrumentQuantity11
-import AmountPricePerAmount3
 import PercentagePrice2
+import RestrictedFINDecimalNumber
+import AmountPricePerAmount3
+import AmountPrice5
 
 class PriceFormat87Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_IndxPts", "_AmtPric", "_AmtPricPerFinInstrmQty", "_AmtPricPerAmt", "_PctgPric"]
+	__slots__ = ["_AmtPricPerAmt", "_IndxPts", "_PctgPric", "_AmtPricPerFinInstrmQty", "_AmtPric"]
+	@property
+	def AmtPricPerAmt(self):
+		return self._AmtPricPerAmt
+
+	@AmtPricPerAmt.setter
+	def AmtPricPerAmt(self, value):
+		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
+
+	@AmtPricPerAmt.deleter
+	def AmtPricPerAmt(self):
+		del self._AmtPricPerAmt
+		self._AmtPricPerAmt = None
+
 	@property
 	def IndxPts(self):
 		return self._IndxPts
@@ -22,17 +35,17 @@ class PriceFormat87Choice(base_types._BaseFieldType):
 		self._IndxPts = None
 
 	@property
-	def AmtPric(self):
-		return self._AmtPric
+	def PctgPric(self):
+		return self._PctgPric
 
-	@AmtPric.setter
-	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
+	@PctgPric.setter
+	def PctgPric(self, value):
+		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
 
-	@AmtPric.deleter
-	def AmtPric(self):
-		del self._AmtPric
-		self._AmtPric = None
+	@PctgPric.deleter
+	def PctgPric(self):
+		del self._PctgPric
+		self._PctgPric = None
 
 	@property
 	def AmtPricPerFinInstrmQty(self):
@@ -48,36 +61,23 @@ class PriceFormat87Choice(base_types._BaseFieldType):
 		self._AmtPricPerFinInstrmQty = None
 
 	@property
-	def AmtPricPerAmt(self):
-		return self._AmtPricPerAmt
+	def AmtPric(self):
+		return self._AmtPric
 
-	@AmtPricPerAmt.setter
-	def AmtPricPerAmt(self, value):
-		self._AmtPricPerAmt = value if type(value) != auto else self.make_default("AmtPricPerAmt")
+	@AmtPric.setter
+	def AmtPric(self, value):
+		self._AmtPric = value if type(value) != auto else self.make_default("AmtPric")
 
-	@AmtPricPerAmt.deleter
-	def AmtPricPerAmt(self):
-		del self._AmtPricPerAmt
-		self._AmtPricPerAmt = None
-
-	@property
-	def PctgPric(self):
-		return self._PctgPric
-
-	@PctgPric.setter
-	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != auto else self.make_default("PctgPric")
-
-	@PctgPric.deleter
-	def PctgPric(self):
-		del self._PctgPric
-		self._PctgPric = None
+	@AmtPric.deleter
+	def AmtPric(self):
+		del self._AmtPric
+		self._AmtPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AmtPricPerFinInstrmQty', type=AmountPricePerFinancialInstrumentQuantity11, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPricPerAmt', type=AmountPricePerAmount3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPricPerFinInstrmQty', type=AmountPricePerFinancialInstrumentQuantity11, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),
 	))
 

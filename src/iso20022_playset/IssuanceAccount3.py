@@ -1,7 +1,7 @@
 import base_types
 import BlockChainAddressWallet3
-import SecuritiesAccount19
 import YesNoIndicator
+import SecuritiesAccount19
 
 class IssuanceAccount3(base_types._BaseFieldType):
 

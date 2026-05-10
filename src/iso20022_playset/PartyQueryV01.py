@@ -1,25 +1,12 @@
 import base_types
+import PartyDataReturnCriteria2
+import MessageHeader2
 import SupplementaryData1
 import PartyDataSearchCriteria2
-import MessageHeader2
-import PartyDataReturnCriteria2
 
 class PartyQueryV01(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrCrit", "_SplmtryData", "_MsgHdr", "_SchCrit"]
-	@property
-	def RtrCrit(self):
-		return self._RtrCrit
-
-	@RtrCrit.setter
-	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
-
-	@RtrCrit.deleter
-	def RtrCrit(self):
-		del self._RtrCrit
-		self._RtrCrit = None
-
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_SchCrit", "_RtrCrit"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -59,10 +46,23 @@ class PartyQueryV01(base_types._BaseFieldType):
 		del self._SchCrit
 		self._SchCrit = None
 
+	@property
+	def RtrCrit(self):
+		return self._RtrCrit
+
+	@RtrCrit.setter
+	def RtrCrit(self, value):
+		self._RtrCrit = value if type(value) != auto else self.make_default("RtrCrit")
+
+	@RtrCrit.deleter
+	def RtrCrit(self):
+		del self._RtrCrit
+		self._RtrCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrCrit', type=PartyDataReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=PartyDataSearchCriteria2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrCrit', type=PartyDataReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 	))
 

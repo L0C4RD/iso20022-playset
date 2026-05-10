@@ -1,25 +1,12 @@
 import base_types
-import Max9NumericText
-import CardPaymentEnvironment81
-import ResponseType10
 import CardPaymentTransactionAdviceResponse5
+import CardPaymentEnvironment81
+import Max9NumericText
+import ResponseType10
 
 class CardPaymentDataSet38(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRspn", "_Envt", "_TxSeqCntr", "_Tx"]
-	@property
-	def TxRspn(self):
-		return self._TxRspn
-
-	@TxRspn.setter
-	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
-
-	@TxRspn.deleter
-	def TxRspn(self):
-		del self._TxRspn
-		self._TxRspn = None
-
+	__slots__ = ["_Envt", "_TxSeqCntr", "_Tx", "_TxRspn"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -59,10 +46,23 @@ class CardPaymentDataSet38(base_types._BaseFieldType):
 		del self._Tx
 		self._Tx = None
 
+	@property
+	def TxRspn(self):
+		return self._TxRspn
+
+	@TxRspn.setter
+	def TxRspn(self, value):
+		self._TxRspn = value if type(value) != auto else self.make_default("TxRspn")
+
+	@TxRspn.deleter
+	def TxRspn(self):
+		del self._TxRspn
+		self._TxRspn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxRspn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransactionAdviceResponse5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRspn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
 	))
 

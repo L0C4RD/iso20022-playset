@@ -1,25 +1,51 @@
 import base_types
-import SecuritiesAccount19
-import DateAndDateTime2Choice
 import YesNoIndicator
 import BlockChainAddressWallet3
 import CashAccount38
+import DateAndDateTime2Choice
+import SecuritiesAccount19
 
 class AccountLink7(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAcct", "_BlckChainAdrOrWllt", "_VldFr", "_SctiesAcct", "_CollstnInd", "_CshSttlmInd", "_DfltInd", "_VldTo"]
+	__slots__ = ["_CollstnInd", "_CshSttlmInd", "_VldTo", "_BlckChainAdrOrWllt", "_VldFr", "_CshAcct", "_SctiesAcct", "_DfltInd"]
 	@property
-	def CshAcct(self):
-		return self._CshAcct
+	def CollstnInd(self):
+		return self._CollstnInd
 
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+	@CollstnInd.setter
+	def CollstnInd(self, value):
+		self._CollstnInd = value if type(value) != auto else self.make_default("CollstnInd")
 
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
+	@CollstnInd.deleter
+	def CollstnInd(self):
+		del self._CollstnInd
+		self._CollstnInd = None
+
+	@property
+	def CshSttlmInd(self):
+		return self._CshSttlmInd
+
+	@CshSttlmInd.setter
+	def CshSttlmInd(self, value):
+		self._CshSttlmInd = value if type(value) != auto else self.make_default("CshSttlmInd")
+
+	@CshSttlmInd.deleter
+	def CshSttlmInd(self):
+		del self._CshSttlmInd
+		self._CshSttlmInd = None
+
+	@property
+	def VldTo(self):
+		return self._VldTo
+
+	@VldTo.setter
+	def VldTo(self, value):
+		self._VldTo = value if type(value) != auto else self.make_default("VldTo")
+
+	@VldTo.deleter
+	def VldTo(self):
+		del self._VldTo
+		self._VldTo = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -48,6 +74,19 @@ class AccountLink7(base_types._BaseFieldType):
 		self._VldFr = None
 
 	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
+	@property
 	def SctiesAcct(self):
 		return self._SctiesAcct
 
@@ -59,32 +98,6 @@ class AccountLink7(base_types._BaseFieldType):
 	def SctiesAcct(self):
 		del self._SctiesAcct
 		self._SctiesAcct = None
-
-	@property
-	def CollstnInd(self):
-		return self._CollstnInd
-
-	@CollstnInd.setter
-	def CollstnInd(self, value):
-		self._CollstnInd = value if type(value) != auto else self.make_default("CollstnInd")
-
-	@CollstnInd.deleter
-	def CollstnInd(self):
-		del self._CollstnInd
-		self._CollstnInd = None
-
-	@property
-	def CshSttlmInd(self):
-		return self._CshSttlmInd
-
-	@CshSttlmInd.setter
-	def CshSttlmInd(self, value):
-		self._CshSttlmInd = value if type(value) != auto else self.make_default("CshSttlmInd")
-
-	@CshSttlmInd.deleter
-	def CshSttlmInd(self):
-		del self._CshSttlmInd
-		self._CshSttlmInd = None
 
 	@property
 	def DfltInd(self):
@@ -99,27 +112,14 @@ class AccountLink7(base_types._BaseFieldType):
 		del self._DfltInd
 		self._DfltInd = None
 
-	@property
-	def VldTo(self):
-		return self._VldTo
-
-	@VldTo.setter
-	def VldTo(self, value):
-		self._VldTo = value if type(value) != auto else self.make_default("VldTo")
-
-	@VldTo.deleter
-	def VldTo(self):
-		del self._VldTo
-		self._VldTo = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAcct', type=CashAccount38, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollstnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshSttlmInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DfltInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldTo', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VldFr', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccount38, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DfltInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

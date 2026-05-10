@@ -1,24 +1,11 @@
 import base_types
-import OrganisationIdentification15Choice
 import ISODateTime
 import CounterpartyData89
+import OrganisationIdentification15Choice
 
 class CounterpartyData88(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPty", "_RptSubmitgNtty", "_RptgDtTm"]
-	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
-
+	__slots__ = ["_RptSubmitgNtty", "_RptgDtTm", "_CtrPty"]
 	@property
 	def RptSubmitgNtty(self):
 		return self._RptSubmitgNtty
@@ -45,9 +32,22 @@ class CounterpartyData88(base_types._BaseFieldType):
 		del self._RptgDtTm
 		self._RptgDtTm = None
 
+	@property
+	def CtrPty(self):
+		return self._CtrPty
+
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPty', type=CounterpartyData89, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=CounterpartyData89, min=1, max=2, mutex_group=None, array=False),
 	))
 

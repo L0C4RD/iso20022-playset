@@ -1,24 +1,24 @@
 import base_types
-import CategoryPurpose1Choice
 import ServiceLevel8Choice
-import MandateClassification1Choice
 import LocalInstrument2Choice
+import CategoryPurpose1Choice
+import MandateClassification1Choice
 
 class MandateTypeInformation2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtgyPurp", "_Clssfctn", "_SvcLvl", "_LclInstrm"]
+	__slots__ = ["_SvcLvl", "_Clssfctn", "_CtgyPurp", "_LclInstrm"]
 	@property
-	def CtgyPurp(self):
-		return self._CtgyPurp
+	def SvcLvl(self):
+		return self._SvcLvl
 
-	@CtgyPurp.setter
-	def CtgyPurp(self, value):
-		self._CtgyPurp = value if type(value) != auto else self.make_default("CtgyPurp")
+	@SvcLvl.setter
+	def SvcLvl(self, value):
+		self._SvcLvl = value if type(value) != auto else self.make_default("SvcLvl")
 
-	@CtgyPurp.deleter
-	def CtgyPurp(self):
-		del self._CtgyPurp
-		self._CtgyPurp = None
+	@SvcLvl.deleter
+	def SvcLvl(self):
+		del self._SvcLvl
+		self._SvcLvl = None
 
 	@property
 	def Clssfctn(self):
@@ -34,17 +34,17 @@ class MandateTypeInformation2(base_types._BaseFieldType):
 		self._Clssfctn = None
 
 	@property
-	def SvcLvl(self):
-		return self._SvcLvl
+	def CtgyPurp(self):
+		return self._CtgyPurp
 
-	@SvcLvl.setter
-	def SvcLvl(self, value):
-		self._SvcLvl = value if type(value) != auto else self.make_default("SvcLvl")
+	@CtgyPurp.setter
+	def CtgyPurp(self, value):
+		self._CtgyPurp = value if type(value) != auto else self.make_default("CtgyPurp")
 
-	@SvcLvl.deleter
-	def SvcLvl(self):
-		del self._SvcLvl
-		self._SvcLvl = None
+	@CtgyPurp.deleter
+	def CtgyPurp(self):
+		del self._CtgyPurp
+		self._CtgyPurp = None
 
 	@property
 	def LclInstrm(self):
@@ -60,9 +60,9 @@ class MandateTypeInformation2(base_types._BaseFieldType):
 		self._LclInstrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Clssfctn', type=MandateClassification1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvl', type=ServiceLevel8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clssfctn', type=MandateClassification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtgyPurp', type=CategoryPurpose1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclInstrm', type=LocalInstrument2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

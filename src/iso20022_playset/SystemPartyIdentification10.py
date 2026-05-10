@@ -1,6 +1,6 @@
 import base_types
-import ISODate
 import PartyIdentification136
+import ISODate
 
 class SystemPartyIdentification10(base_types._BaseFieldType):
 

@@ -1,15 +1,15 @@
 import base_types
-import TransactionStatus4
 import DocumentIdentification5
-import PendingActivity2
 import RejectionReason1Choice
-import MessageIdentification1
+import PendingActivity2
+import TransactionStatus4
 import SimpleIdentificationInformation
+import MessageIdentification1
 import DocumentIdentification3
 
 class MisMatchRejectionNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqForActn", "_EstblishdBaselnId", "_TxId", "_UsrTxRef", "_RjctnRsn", "_DataSetMtchRptRef", "_NtfctnId", "_TxSts"]
+	__slots__ = ["_ReqForActn", "_DataSetMtchRptRef", "_TxId", "_NtfctnId", "_EstblishdBaselnId", "_UsrTxRef", "_RjctnRsn", "_TxSts"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -24,17 +24,17 @@ class MisMatchRejectionNotificationV03(base_types._BaseFieldType):
 		self._ReqForActn = None
 
 	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
+	def DataSetMtchRptRef(self):
+		return self._DataSetMtchRptRef
 
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+	@DataSetMtchRptRef.setter
+	def DataSetMtchRptRef(self, value):
+		self._DataSetMtchRptRef = value if type(value) != auto else self.make_default("DataSetMtchRptRef")
 
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+	@DataSetMtchRptRef.deleter
+	def DataSetMtchRptRef(self):
+		del self._DataSetMtchRptRef
+		self._DataSetMtchRptRef = None
 
 	@property
 	def TxId(self):
@@ -48,6 +48,32 @@ class MisMatchRejectionNotificationV03(base_types._BaseFieldType):
 	def TxId(self):
 		del self._TxId
 		self._TxId = None
+
+	@property
+	def NtfctnId(self):
+		return self._NtfctnId
+
+	@NtfctnId.setter
+	def NtfctnId(self, value):
+		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
+
+	@NtfctnId.deleter
+	def NtfctnId(self):
+		del self._NtfctnId
+		self._NtfctnId = None
+
+	@property
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
+
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
+
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
 
 	@property
 	def UsrTxRef(self):
@@ -76,32 +102,6 @@ class MisMatchRejectionNotificationV03(base_types._BaseFieldType):
 		self._RjctnRsn = None
 
 	@property
-	def DataSetMtchRptRef(self):
-		return self._DataSetMtchRptRef
-
-	@DataSetMtchRptRef.setter
-	def DataSetMtchRptRef(self, value):
-		self._DataSetMtchRptRef = value if type(value) != auto else self.make_default("DataSetMtchRptRef")
-
-	@DataSetMtchRptRef.deleter
-	def DataSetMtchRptRef(self):
-		del self._DataSetMtchRptRef
-		self._DataSetMtchRptRef = None
-
-	@property
-	def NtfctnId(self):
-		return self._NtfctnId
-
-	@NtfctnId.setter
-	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != auto else self.make_default("NtfctnId")
-
-	@NtfctnId.deleter
-	def NtfctnId(self):
-		del self._NtfctnId
-		self._NtfctnId = None
-
-	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -116,12 +116,12 @@ class MisMatchRejectionNotificationV03(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataSetMtchRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataSetMtchRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINXMax16Text
 import ProcessingPosition23Choice
+import RestrictedFINXMax16Text
 
 class Linkages50(base_types._BaseFieldType):
 

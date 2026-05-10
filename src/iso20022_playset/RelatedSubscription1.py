@@ -1,11 +1,11 @@
 import base_types
-import AdditionalReference11
-import ActiveOrHistoricCurrencyAndAmount
 import DecimalNumber
+import ActiveOrHistoricCurrencyAndAmount
+import AdditionalReference11
 
 class RelatedSubscription1(base_types._BaseFieldType):
 
-	__slots__ = ["_DprctnDpstPerUnit", "_EqulstnCdtPerUnit", "_Ref", "_CntngntLqdtnPerUnit", "_RltdQty", "_RltdAmt"]
+	__slots__ = ["_DprctnDpstPerUnit", "_CntngntLqdtnPerUnit", "_RltdQty", "_EqulstnCdtPerUnit", "_RltdAmt", "_Ref"]
 	@property
 	def DprctnDpstPerUnit(self):
 		return self._DprctnDpstPerUnit
@@ -18,32 +18,6 @@ class RelatedSubscription1(base_types._BaseFieldType):
 	def DprctnDpstPerUnit(self):
 		del self._DprctnDpstPerUnit
 		self._DprctnDpstPerUnit = None
-
-	@property
-	def EqulstnCdtPerUnit(self):
-		return self._EqulstnCdtPerUnit
-
-	@EqulstnCdtPerUnit.setter
-	def EqulstnCdtPerUnit(self, value):
-		self._EqulstnCdtPerUnit = value if type(value) != auto else self.make_default("EqulstnCdtPerUnit")
-
-	@EqulstnCdtPerUnit.deleter
-	def EqulstnCdtPerUnit(self):
-		del self._EqulstnCdtPerUnit
-		self._EqulstnCdtPerUnit = None
-
-	@property
-	def Ref(self):
-		return self._Ref
-
-	@Ref.setter
-	def Ref(self, value):
-		self._Ref = value if type(value) != auto else self.make_default("Ref")
-
-	@Ref.deleter
-	def Ref(self):
-		del self._Ref
-		self._Ref = None
 
 	@property
 	def CntngntLqdtnPerUnit(self):
@@ -72,6 +46,19 @@ class RelatedSubscription1(base_types._BaseFieldType):
 		self._RltdQty = None
 
 	@property
+	def EqulstnCdtPerUnit(self):
+		return self._EqulstnCdtPerUnit
+
+	@EqulstnCdtPerUnit.setter
+	def EqulstnCdtPerUnit(self, value):
+		self._EqulstnCdtPerUnit = value if type(value) != auto else self.make_default("EqulstnCdtPerUnit")
+
+	@EqulstnCdtPerUnit.deleter
+	def EqulstnCdtPerUnit(self):
+		del self._EqulstnCdtPerUnit
+		self._EqulstnCdtPerUnit = None
+
+	@property
 	def RltdAmt(self):
 		return self._RltdAmt
 
@@ -84,12 +71,25 @@ class RelatedSubscription1(base_types._BaseFieldType):
 		del self._RltdAmt
 		self._RltdAmt = None
 
+	@property
+	def Ref(self):
+		return self._Ref
+
+	@Ref.setter
+	def Ref(self, value):
+		self._Ref = value if type(value) != auto else self.make_default("Ref")
+
+	@Ref.deleter
+	def Ref(self):
+		del self._Ref
+		self._Ref = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DprctnDpstPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EqulstnCdtPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ref', type=AdditionalReference11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CntngntLqdtnPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EqulstnCdtPerUnit', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ref', type=AdditionalReference11, min=1, max=1, mutex_group=None, array=False),
 	))
 

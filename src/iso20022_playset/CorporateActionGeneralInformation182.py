@@ -1,6 +1,6 @@
 import base_types
-import CorporateActionEventType112Choice
 import Max35Text
+import CorporateActionEventType112Choice
 
 class CorporateActionGeneralInformation182(base_types._BaseFieldType):
 

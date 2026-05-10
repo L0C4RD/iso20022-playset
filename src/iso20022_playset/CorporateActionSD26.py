@@ -5,20 +5,7 @@ import Max15AlphaNumericText
 
 class CorporateActionSD26(base_types._BaseFieldType):
 
-	__slots__ = ["_CertPrfx", "_CertClldAmt", "_CertNb"]
-	@property
-	def CertPrfx(self):
-		return self._CertPrfx
-
-	@CertPrfx.setter
-	def CertPrfx(self, value):
-		self._CertPrfx = value if type(value) != auto else self.make_default("CertPrfx")
-
-	@CertPrfx.deleter
-	def CertPrfx(self):
-		del self._CertPrfx
-		self._CertPrfx = None
-
+	__slots__ = ["_CertClldAmt", "_CertPrfx", "_CertNb"]
 	@property
 	def CertClldAmt(self):
 		return self._CertClldAmt
@@ -31,6 +18,19 @@ class CorporateActionSD26(base_types._BaseFieldType):
 	def CertClldAmt(self):
 		del self._CertClldAmt
 		self._CertClldAmt = None
+
+	@property
+	def CertPrfx(self):
+		return self._CertPrfx
+
+	@CertPrfx.setter
+	def CertPrfx(self, value):
+		self._CertPrfx = value if type(value) != auto else self.make_default("CertPrfx")
+
+	@CertPrfx.deleter
+	def CertPrfx(self):
+		del self._CertPrfx
+		self._CertPrfx = None
 
 	@property
 	def CertNb(self):
@@ -46,8 +46,8 @@ class CorporateActionSD26(base_types._BaseFieldType):
 		self._CertNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertPrfx', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertClldAmt', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertPrfx', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=Max15AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

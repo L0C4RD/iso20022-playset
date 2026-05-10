@@ -1,6 +1,6 @@
 import base_types
-import ExternalCreditorAgentInstruction1Code
 import Max140Text
+import ExternalCreditorAgentInstruction1Code
 
 class InstructionForCreditorAgent3(base_types._BaseFieldType):
 

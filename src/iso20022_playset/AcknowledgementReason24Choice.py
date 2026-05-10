@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import AcknowledgementReason10Code
+import GenericIdentification30
 
 class AcknowledgementReason24Choice(base_types._BaseFieldType):
 

@@ -1,18 +1,18 @@
 import base_types
-import AddressVerification1
-import AuthenticationMethod8Code
-import Exemption1Code
-import AuthenticationResult1Code
-import ExternallyDefinedData5
-import Max5000Binary
 import ContentInformationType40
+import Max5000Binary
+import Exemption1Code
+import ExternallyDefinedData5
+import AuthenticationResult1Code
+import AddressVerification1
 import Max35Text
-import OnLinePIN11
 import PersonIdentification15
+import OnLinePIN11
+import AuthenticationMethod8Code
 
 class CardholderAuthentication17(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdAuthntcnVal", "_AuthntcnVal", "_CrdhldrId", "_AuthntcnRslt", "_AdrVrfctn", "_CrdhldrOnLinePIN", "_AuthntcnAddtlInf", "_AuthntcnMtd", "_AuthntcnLvl", "_AuthntcnXmptn", "_AuthntcnTp"]
+	__slots__ = ["_PrtctdAuthntcnVal", "_AuthntcnMtd", "_AdrVrfctn", "_AuthntcnAddtlInf", "_AuthntcnTp", "_AuthntcnXmptn", "_AuthntcnLvl", "_AuthntcnVal", "_CrdhldrId", "_AuthntcnRslt", "_CrdhldrOnLinePIN"]
 	@property
 	def PrtctdAuthntcnVal(self):
 		return self._PrtctdAuthntcnVal
@@ -25,6 +25,84 @@ class CardholderAuthentication17(base_types._BaseFieldType):
 	def PrtctdAuthntcnVal(self):
 		del self._PrtctdAuthntcnVal
 		self._PrtctdAuthntcnVal = None
+
+	@property
+	def AuthntcnMtd(self):
+		return self._AuthntcnMtd
+
+	@AuthntcnMtd.setter
+	def AuthntcnMtd(self, value):
+		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
+
+	@AuthntcnMtd.deleter
+	def AuthntcnMtd(self):
+		del self._AuthntcnMtd
+		self._AuthntcnMtd = None
+
+	@property
+	def AdrVrfctn(self):
+		return self._AdrVrfctn
+
+	@AdrVrfctn.setter
+	def AdrVrfctn(self, value):
+		self._AdrVrfctn = value if type(value) != auto else self.make_default("AdrVrfctn")
+
+	@AdrVrfctn.deleter
+	def AdrVrfctn(self):
+		del self._AdrVrfctn
+		self._AdrVrfctn = None
+
+	@property
+	def AuthntcnAddtlInf(self):
+		return self._AuthntcnAddtlInf
+
+	@AuthntcnAddtlInf.setter
+	def AuthntcnAddtlInf(self, value):
+		self._AuthntcnAddtlInf = value if type(value) != auto else self.make_default("AuthntcnAddtlInf")
+
+	@AuthntcnAddtlInf.deleter
+	def AuthntcnAddtlInf(self):
+		del self._AuthntcnAddtlInf
+		self._AuthntcnAddtlInf = None
+
+	@property
+	def AuthntcnTp(self):
+		return self._AuthntcnTp
+
+	@AuthntcnTp.setter
+	def AuthntcnTp(self, value):
+		self._AuthntcnTp = value if type(value) != auto else self.make_default("AuthntcnTp")
+
+	@AuthntcnTp.deleter
+	def AuthntcnTp(self):
+		del self._AuthntcnTp
+		self._AuthntcnTp = None
+
+	@property
+	def AuthntcnXmptn(self):
+		return self._AuthntcnXmptn
+
+	@AuthntcnXmptn.setter
+	def AuthntcnXmptn(self, value):
+		self._AuthntcnXmptn = value if type(value) != auto else self.make_default("AuthntcnXmptn")
+
+	@AuthntcnXmptn.deleter
+	def AuthntcnXmptn(self):
+		del self._AuthntcnXmptn
+		self._AuthntcnXmptn = None
+
+	@property
+	def AuthntcnLvl(self):
+		return self._AuthntcnLvl
+
+	@AuthntcnLvl.setter
+	def AuthntcnLvl(self, value):
+		self._AuthntcnLvl = value if type(value) != auto else self.make_default("AuthntcnLvl")
+
+	@AuthntcnLvl.deleter
+	def AuthntcnLvl(self):
+		del self._AuthntcnLvl
+		self._AuthntcnLvl = None
 
 	@property
 	def AuthntcnVal(self):
@@ -66,19 +144,6 @@ class CardholderAuthentication17(base_types._BaseFieldType):
 		self._AuthntcnRslt = None
 
 	@property
-	def AdrVrfctn(self):
-		return self._AdrVrfctn
-
-	@AdrVrfctn.setter
-	def AdrVrfctn(self, value):
-		self._AdrVrfctn = value if type(value) != auto else self.make_default("AdrVrfctn")
-
-	@AdrVrfctn.deleter
-	def AdrVrfctn(self):
-		del self._AdrVrfctn
-		self._AdrVrfctn = None
-
-	@property
 	def CrdhldrOnLinePIN(self):
 		return self._CrdhldrOnLinePIN
 
@@ -91,82 +156,17 @@ class CardholderAuthentication17(base_types._BaseFieldType):
 		del self._CrdhldrOnLinePIN
 		self._CrdhldrOnLinePIN = None
 
-	@property
-	def AuthntcnAddtlInf(self):
-		return self._AuthntcnAddtlInf
-
-	@AuthntcnAddtlInf.setter
-	def AuthntcnAddtlInf(self, value):
-		self._AuthntcnAddtlInf = value if type(value) != auto else self.make_default("AuthntcnAddtlInf")
-
-	@AuthntcnAddtlInf.deleter
-	def AuthntcnAddtlInf(self):
-		del self._AuthntcnAddtlInf
-		self._AuthntcnAddtlInf = None
-
-	@property
-	def AuthntcnMtd(self):
-		return self._AuthntcnMtd
-
-	@AuthntcnMtd.setter
-	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != auto else self.make_default("AuthntcnMtd")
-
-	@AuthntcnMtd.deleter
-	def AuthntcnMtd(self):
-		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
-
-	@property
-	def AuthntcnLvl(self):
-		return self._AuthntcnLvl
-
-	@AuthntcnLvl.setter
-	def AuthntcnLvl(self, value):
-		self._AuthntcnLvl = value if type(value) != auto else self.make_default("AuthntcnLvl")
-
-	@AuthntcnLvl.deleter
-	def AuthntcnLvl(self):
-		del self._AuthntcnLvl
-		self._AuthntcnLvl = None
-
-	@property
-	def AuthntcnXmptn(self):
-		return self._AuthntcnXmptn
-
-	@AuthntcnXmptn.setter
-	def AuthntcnXmptn(self, value):
-		self._AuthntcnXmptn = value if type(value) != auto else self.make_default("AuthntcnXmptn")
-
-	@AuthntcnXmptn.deleter
-	def AuthntcnXmptn(self):
-		del self._AuthntcnXmptn
-		self._AuthntcnXmptn = None
-
-	@property
-	def AuthntcnTp(self):
-		return self._AuthntcnTp
-
-	@AuthntcnTp.setter
-	def AuthntcnTp(self, value):
-		self._AuthntcnTp = value if type(value) != auto else self.make_default("AuthntcnTp")
-
-	@AuthntcnTp.deleter
-	def AuthntcnTp(self):
-		del self._AuthntcnTp
-		self._AuthntcnTp = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod8Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdrVrfctn', type=AddressVerification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnAddtlInf', type=ExternallyDefinedData5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnXmptn', type=Exemption1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthntcnLvl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnVal', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrId', type=PersonIdentification15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnRslt', type=AuthenticationResult1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdrVrfctn', type=AddressVerification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CrdhldrOnLinePIN', type=OnLinePIN11, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnAddtlInf', type=ExternallyDefinedData5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod8Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnLvl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnXmptn', type=Exemption1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthntcnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

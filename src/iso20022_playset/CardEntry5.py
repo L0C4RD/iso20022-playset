@@ -1,25 +1,12 @@
 import base_types
+import CardAggregated2
+import PointOfInteraction1
 import PaymentCard4
 import CashAccount40
-import PointOfInteraction1
-import CardAggregated2
 
 class CardEntry5(base_types._BaseFieldType):
 
-	__slots__ = ["_AggtdNtry", "_PrePdAcct", "_POI", "_Card"]
-	@property
-	def AggtdNtry(self):
-		return self._AggtdNtry
-
-	@AggtdNtry.setter
-	def AggtdNtry(self, value):
-		self._AggtdNtry = value if type(value) != auto else self.make_default("AggtdNtry")
-
-	@AggtdNtry.deleter
-	def AggtdNtry(self):
-		del self._AggtdNtry
-		self._AggtdNtry = None
-
+	__slots__ = ["_PrePdAcct", "_POI", "_AggtdNtry", "_Card"]
 	@property
 	def PrePdAcct(self):
 		return self._PrePdAcct
@@ -47,6 +34,19 @@ class CardEntry5(base_types._BaseFieldType):
 		self._POI = None
 
 	@property
+	def AggtdNtry(self):
+		return self._AggtdNtry
+
+	@AggtdNtry.setter
+	def AggtdNtry(self, value):
+		self._AggtdNtry = value if type(value) != auto else self.make_default("AggtdNtry")
+
+	@AggtdNtry.deleter
+	def AggtdNtry(self):
+		del self._AggtdNtry
+		self._AggtdNtry = None
+
+	@property
 	def Card(self):
 		return self._Card
 
@@ -60,9 +60,9 @@ class CardEntry5(base_types._BaseFieldType):
 		self._Card = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AggtdNtry', type=CardAggregated2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POI', type=PointOfInteraction1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AggtdNtry', type=CardAggregated2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),
 	))
 

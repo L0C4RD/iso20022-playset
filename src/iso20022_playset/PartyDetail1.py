@@ -1,15 +1,15 @@
 import base_types
-import PostalAddress6
-import CommunicationAddress7
-import Max10Text
+import Max20000Text
 import CountryCode
+import Max10Text
 import Max350Text
 import SupervisingAuthorityIdentification1Choice
-import Max20000Text
+import CommunicationAddress7
+import PostalAddress6
 
 class PartyDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctct", "_PstlAdr", "_FullNm", "_Ctry", "_Cmnt", "_SprvsgAuthrty", "_PtyTp"]
+	__slots__ = ["_Ctct", "_PtyTp", "_Ctry", "_Cmnt", "_SprvsgAuthrty", "_PstlAdr", "_FullNm"]
 	@property
 	def Ctct(self):
 		return self._Ctct
@@ -24,30 +24,17 @@ class PartyDetail1(base_types._BaseFieldType):
 		self._Ctct = None
 
 	@property
-	def PstlAdr(self):
-		return self._PstlAdr
+	def PtyTp(self):
+		return self._PtyTp
 
-	@PstlAdr.setter
-	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
+	@PtyTp.setter
+	def PtyTp(self, value):
+		self._PtyTp = value if type(value) != auto else self.make_default("PtyTp")
 
-	@PstlAdr.deleter
-	def PstlAdr(self):
-		del self._PstlAdr
-		self._PstlAdr = None
-
-	@property
-	def FullNm(self):
-		return self._FullNm
-
-	@FullNm.setter
-	def FullNm(self, value):
-		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
-
-	@FullNm.deleter
-	def FullNm(self):
-		del self._FullNm
-		self._FullNm = None
+	@PtyTp.deleter
+	def PtyTp(self):
+		del self._PtyTp
+		self._PtyTp = None
 
 	@property
 	def Ctry(self):
@@ -89,25 +76,38 @@ class PartyDetail1(base_types._BaseFieldType):
 		self._SprvsgAuthrty = None
 
 	@property
-	def PtyTp(self):
-		return self._PtyTp
+	def PstlAdr(self):
+		return self._PstlAdr
 
-	@PtyTp.setter
-	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != auto else self.make_default("PtyTp")
+	@PstlAdr.setter
+	def PstlAdr(self, value):
+		self._PstlAdr = value if type(value) != auto else self.make_default("PstlAdr")
 
-	@PtyTp.deleter
-	def PtyTp(self):
-		del self._PtyTp
-		self._PtyTp = None
+	@PstlAdr.deleter
+	def PstlAdr(self):
+		del self._PstlAdr
+		self._PstlAdr = None
+
+	@property
+	def FullNm(self):
+		return self._FullNm
+
+	@FullNm.setter
+	def FullNm(self, value):
+		self._FullNm = value if type(value) != auto else self.make_default("FullNm")
+
+	@FullNm.deleter
+	def FullNm(self):
+		del self._FullNm
+		self._FullNm = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctct', type=CommunicationAddress7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyTp', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SprvsgAuthrty', type=SupervisingAuthorityIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyTp', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstlAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

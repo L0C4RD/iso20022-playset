@@ -1,24 +1,11 @@
 import base_types
-import OrganisationIdentification15Choice
-import Max52Text
 import TrueFalseIndicator
+import Max52Text
+import OrganisationIdentification15Choice
 
 class PositionSetDimensions15(base_types._BaseFieldType):
 
-	__slots__ = ["_OtlrsIncl", "_OthrCtrPty", "_RptgCtrPty", "_CollPrtflId"]
-	@property
-	def OtlrsIncl(self):
-		return self._OtlrsIncl
-
-	@OtlrsIncl.setter
-	def OtlrsIncl(self, value):
-		self._OtlrsIncl = value if type(value) != auto else self.make_default("OtlrsIncl")
-
-	@OtlrsIncl.deleter
-	def OtlrsIncl(self):
-		del self._OtlrsIncl
-		self._OtlrsIncl = None
-
+	__slots__ = ["_OthrCtrPty", "_OtlrsIncl", "_RptgCtrPty", "_CollPrtflId"]
 	@property
 	def OthrCtrPty(self):
 		return self._OthrCtrPty
@@ -31,6 +18,19 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
 		self._OthrCtrPty = None
+
+	@property
+	def OtlrsIncl(self):
+		return self._OtlrsIncl
+
+	@OtlrsIncl.setter
+	def OtlrsIncl(self, value):
+		self._OtlrsIncl = value if type(value) != auto else self.make_default("OtlrsIncl")
+
+	@OtlrsIncl.deleter
+	def OtlrsIncl(self):
+		del self._OtlrsIncl
+		self._OtlrsIncl = None
 
 	@property
 	def RptgCtrPty(self):
@@ -59,8 +59,8 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 		self._CollPrtflId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))

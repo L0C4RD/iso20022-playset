@@ -1,24 +1,11 @@
 import base_types
-import Response12Code
-import Max140Text
 import ResultDetail5Code
+import Max140Text
+import Response12Code
 
 class ResponseType12(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlRspnInf", "_Rspn", "_RspnRsn"]
-	@property
-	def AddtlRspnInf(self):
-		return self._AddtlRspnInf
-
-	@AddtlRspnInf.setter
-	def AddtlRspnInf(self, value):
-		self._AddtlRspnInf = value if type(value) != auto else self.make_default("AddtlRspnInf")
-
-	@AddtlRspnInf.deleter
-	def AddtlRspnInf(self):
-		del self._AddtlRspnInf
-		self._AddtlRspnInf = None
-
+	__slots__ = ["_Rspn", "_RspnRsn", "_AddtlRspnInf"]
 	@property
 	def Rspn(self):
 		return self._Rspn
@@ -45,9 +32,22 @@ class ResponseType12(base_types._BaseFieldType):
 		del self._RspnRsn
 		self._RspnRsn = None
 
+	@property
+	def AddtlRspnInf(self):
+		return self._AddtlRspnInf
+
+	@AddtlRspnInf.setter
+	def AddtlRspnInf(self, value):
+		self._AddtlRspnInf = value if type(value) != auto else self.make_default("AddtlRspnInf")
+
+	@AddtlRspnInf.deleter
+	def AddtlRspnInf(self):
+		del self._AddtlRspnInf
+		self._AddtlRspnInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlRspnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rspn', type=Response12Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnRsn', type=ResultDetail5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlRspnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

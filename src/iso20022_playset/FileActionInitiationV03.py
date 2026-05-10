@@ -1,109 +1,57 @@
 import base_types
-import Cardholder22
-import CardData15
 import DataRecord1Choice
-import Max140Text
-import PartyIdentification286
-import CorrectionIdentification1
-import ISO8583ResponseCode
-import Wallet3
-import AdditionalFee3
-import Token2
-import Max1000Text
-import TrueFalseIndicator
-import CustomerDevice5
-import SettlementService6
 import ProgrammeMode5
-import PartyIdentification284
-import OutputFormat5Code
-import Max256Text
+import Jurisdiction2
+import CardData15
+import Cardholder22
+import ProtectedData2
 import Max35Text
-import Max12NumericText
+import Header71
+import AdditionalFee3
+import FileActionType2Code
+import Reconciliation4
+import TrueFalseIndicator
+import Exact12Text
+import CorrectionIdentification1
+import SupplementaryData1
+import Exact15Text
+import SettlementService6
+import FileActionScope1Code
+import ISO8583ResponseCode
 import ContentInformationType41
 import PartyIdentification287
-import ISODateTime
-import Exact15Text
-import Jurisdiction2
-import ISO8583MessageReasonCode
-import Terminal7
 import AdditionalData2
-import SupplementaryData1
-import Reconciliation4
-import FileActionScope1Code
-import FileActionType2Code
-import Exact12Text
-import ProtectedData2
+import ISO8583MessageReasonCode
+import Wallet3
+import PartyIdentification286
+import Terminal7
+import ISODateTime
+import Token2
+import Max12NumericText
+import PartyIdentification284
 import ISODate
-import Header71
+import CustomerDevice5
+import Max140Text
+import OutputFormat5Code
+import Max1000Text
 import PointOfInteractionComponent16
+import Max256Text
 
 class FileActionInitiationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_Frmt", "_ActnDt", "_FileNm", "_SplmtryData", "_Pyer", "_OthrFileActnTp", "_SttlmSvc", "_CstmrDvc", "_RtrvlRefNb", "_Prgrmm", "_Accptr", "_Termnl", "_AltrnMsgRsn", "_FileActnTp", "_Rcncltn", "_Rcvr", "_SctyTrlr", "_MsgRsn", "_PrtctdData", "_Crdhldr", "_LifeCyclId", "_AddtlFee", "_FileSctyCd", "_Jursdctn", "_AddtlData", "_FileActnScp", "_Orgtr", "_Hdr", "_SysTracAudtNb", "_Acqrr", "_Wllt", "_Sndr", "_Conttn", "_Tkn", "_TrnsmssnDtTm", "_POICmpnt", "_Dstn", "_RspnCd", "_Pyee", "_TxDesc", "_Crrctn", "_Issr", "_DataRcrd", "_Card"]
+	__slots__ = ["_SysTracAudtNb", "_OthrFileActnTp", "_Pyee", "_DataRcrd", "_Termnl", "_Crrctn", "_Dstn", "_AddtlData", "_LifeCyclId", "_SctyTrlr", "_Hdr", "_AddtlFee", "_Issr", "_FileSctyCd", "_Orgtr", "_Sndr", "_SttlmSvc", "_FileActnScp", "_Conttn", "_Pyer", "_AltrnMsgRsn", "_Frmt", "_Wllt", "_FileActnTp", "_Rcvr", "_ActnDt", "_Prgrmm", "_Accptr", "_Rcncltn", "_Jursdctn", "_RtrvlRefNb", "_TrnsmssnDtTm", "_Tkn", "_CstmrDvc", "_TxDesc", "_MsgRsn", "_Card", "_POICmpnt", "_Crdhldr", "_RspnCd", "_FileNm", "_PrtctdData", "_Acqrr", "_SplmtryData"]
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def SysTracAudtNb(self):
+		return self._SysTracAudtNb
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+	@SysTracAudtNb.setter
+	def SysTracAudtNb(self, value):
+		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
-
-	@property
-	def ActnDt(self):
-		return self._ActnDt
-
-	@ActnDt.setter
-	def ActnDt(self, value):
-		self._ActnDt = value if type(value) != auto else self.make_default("ActnDt")
-
-	@ActnDt.deleter
-	def ActnDt(self):
-		del self._ActnDt
-		self._ActnDt = None
-
-	@property
-	def FileNm(self):
-		return self._FileNm
-
-	@FileNm.setter
-	def FileNm(self, value):
-		self._FileNm = value if type(value) != auto else self.make_default("FileNm")
-
-	@FileNm.deleter
-	def FileNm(self):
-		del self._FileNm
-		self._FileNm = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def Pyer(self):
-		return self._Pyer
-
-	@Pyer.setter
-	def Pyer(self, value):
-		self._Pyer = value if type(value) != auto else self.make_default("Pyer")
-
-	@Pyer.deleter
-	def Pyer(self):
-		del self._Pyer
-		self._Pyer = None
+	@SysTracAudtNb.deleter
+	def SysTracAudtNb(self):
+		del self._SysTracAudtNb
+		self._SysTracAudtNb = None
 
 	@property
 	def OthrFileActnTp(self):
@@ -119,6 +67,188 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._OthrFileActnTp = None
 
 	@property
+	def Pyee(self):
+		return self._Pyee
+
+	@Pyee.setter
+	def Pyee(self, value):
+		self._Pyee = value if type(value) != auto else self.make_default("Pyee")
+
+	@Pyee.deleter
+	def Pyee(self):
+		del self._Pyee
+		self._Pyee = None
+
+	@property
+	def DataRcrd(self):
+		return self._DataRcrd
+
+	@DataRcrd.setter
+	def DataRcrd(self, value):
+		self._DataRcrd = value if type(value) != auto else self.make_default("DataRcrd")
+
+	@DataRcrd.deleter
+	def DataRcrd(self):
+		del self._DataRcrd
+		self._DataRcrd = None
+
+	@property
+	def Termnl(self):
+		return self._Termnl
+
+	@Termnl.setter
+	def Termnl(self, value):
+		self._Termnl = value if type(value) != auto else self.make_default("Termnl")
+
+	@Termnl.deleter
+	def Termnl(self):
+		del self._Termnl
+		self._Termnl = None
+
+	@property
+	def Crrctn(self):
+		return self._Crrctn
+
+	@Crrctn.setter
+	def Crrctn(self, value):
+		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
+
+	@Crrctn.deleter
+	def Crrctn(self):
+		del self._Crrctn
+		self._Crrctn = None
+
+	@property
+	def Dstn(self):
+		return self._Dstn
+
+	@Dstn.setter
+	def Dstn(self, value):
+		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
+
+	@Dstn.deleter
+	def Dstn(self):
+		del self._Dstn
+		self._Dstn = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def LifeCyclId(self):
+		return self._LifeCyclId
+
+	@LifeCyclId.setter
+	def LifeCyclId(self, value):
+		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
+
+	@LifeCyclId.deleter
+	def LifeCyclId(self):
+		del self._LifeCyclId
+		self._LifeCyclId = None
+
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def AddtlFee(self):
+		return self._AddtlFee
+
+	@AddtlFee.setter
+	def AddtlFee(self, value):
+		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
+
+	@AddtlFee.deleter
+	def AddtlFee(self):
+		del self._AddtlFee
+		self._AddtlFee = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
+
+	@property
+	def FileSctyCd(self):
+		return self._FileSctyCd
+
+	@FileSctyCd.setter
+	def FileSctyCd(self, value):
+		self._FileSctyCd = value if type(value) != auto else self.make_default("FileSctyCd")
+
+	@FileSctyCd.deleter
+	def FileSctyCd(self):
+		del self._FileSctyCd
+		self._FileSctyCd = None
+
+	@property
+	def Orgtr(self):
+		return self._Orgtr
+
+	@Orgtr.setter
+	def Orgtr(self, value):
+		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
+
+	@Orgtr.deleter
+	def Orgtr(self):
+		del self._Orgtr
+		self._Orgtr = None
+
+	@property
+	def Sndr(self):
+		return self._Sndr
+
+	@Sndr.setter
+	def Sndr(self, value):
+		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
+
+	@Sndr.deleter
+	def Sndr(self):
+		del self._Sndr
+		self._Sndr = None
+
+	@property
 	def SttlmSvc(self):
 		return self._SttlmSvc
 
@@ -132,30 +262,121 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._SttlmSvc = None
 
 	@property
-	def CstmrDvc(self):
-		return self._CstmrDvc
+	def FileActnScp(self):
+		return self._FileActnScp
 
-	@CstmrDvc.setter
-	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
+	@FileActnScp.setter
+	def FileActnScp(self, value):
+		self._FileActnScp = value if type(value) != auto else self.make_default("FileActnScp")
 
-	@CstmrDvc.deleter
-	def CstmrDvc(self):
-		del self._CstmrDvc
-		self._CstmrDvc = None
+	@FileActnScp.deleter
+	def FileActnScp(self):
+		del self._FileActnScp
+		self._FileActnScp = None
 
 	@property
-	def RtrvlRefNb(self):
-		return self._RtrvlRefNb
+	def Conttn(self):
+		return self._Conttn
 
-	@RtrvlRefNb.setter
-	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
+	@Conttn.setter
+	def Conttn(self, value):
+		self._Conttn = value if type(value) != auto else self.make_default("Conttn")
 
-	@RtrvlRefNb.deleter
-	def RtrvlRefNb(self):
-		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+	@Conttn.deleter
+	def Conttn(self):
+		del self._Conttn
+		self._Conttn = None
+
+	@property
+	def Pyer(self):
+		return self._Pyer
+
+	@Pyer.setter
+	def Pyer(self, value):
+		self._Pyer = value if type(value) != auto else self.make_default("Pyer")
+
+	@Pyer.deleter
+	def Pyer(self):
+		del self._Pyer
+		self._Pyer = None
+
+	@property
+	def AltrnMsgRsn(self):
+		return self._AltrnMsgRsn
+
+	@AltrnMsgRsn.setter
+	def AltrnMsgRsn(self, value):
+		self._AltrnMsgRsn = value if type(value) != auto else self.make_default("AltrnMsgRsn")
+
+	@AltrnMsgRsn.deleter
+	def AltrnMsgRsn(self):
+		del self._AltrnMsgRsn
+		self._AltrnMsgRsn = None
+
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
+	@property
+	def Wllt(self):
+		return self._Wllt
+
+	@Wllt.setter
+	def Wllt(self, value):
+		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
+
+	@Wllt.deleter
+	def Wllt(self):
+		del self._Wllt
+		self._Wllt = None
+
+	@property
+	def FileActnTp(self):
+		return self._FileActnTp
+
+	@FileActnTp.setter
+	def FileActnTp(self, value):
+		self._FileActnTp = value if type(value) != auto else self.make_default("FileActnTp")
+
+	@FileActnTp.deleter
+	def FileActnTp(self):
+		del self._FileActnTp
+		self._FileActnTp = None
+
+	@property
+	def Rcvr(self):
+		return self._Rcvr
+
+	@Rcvr.setter
+	def Rcvr(self, value):
+		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
+
+	@Rcvr.deleter
+	def Rcvr(self):
+		del self._Rcvr
+		self._Rcvr = None
+
+	@property
+	def ActnDt(self):
+		return self._ActnDt
+
+	@ActnDt.setter
+	def ActnDt(self, value):
+		self._ActnDt = value if type(value) != auto else self.make_default("ActnDt")
+
+	@ActnDt.deleter
+	def ActnDt(self):
+		del self._ActnDt
+		self._ActnDt = None
 
 	@property
 	def Prgrmm(self):
@@ -184,45 +405,6 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._Accptr = None
 
 	@property
-	def Termnl(self):
-		return self._Termnl
-
-	@Termnl.setter
-	def Termnl(self, value):
-		self._Termnl = value if type(value) != auto else self.make_default("Termnl")
-
-	@Termnl.deleter
-	def Termnl(self):
-		del self._Termnl
-		self._Termnl = None
-
-	@property
-	def AltrnMsgRsn(self):
-		return self._AltrnMsgRsn
-
-	@AltrnMsgRsn.setter
-	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != auto else self.make_default("AltrnMsgRsn")
-
-	@AltrnMsgRsn.deleter
-	def AltrnMsgRsn(self):
-		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
-
-	@property
-	def FileActnTp(self):
-		return self._FileActnTp
-
-	@FileActnTp.setter
-	def FileActnTp(self, value):
-		self._FileActnTp = value if type(value) != auto else self.make_default("FileActnTp")
-
-	@FileActnTp.deleter
-	def FileActnTp(self):
-		del self._FileActnTp
-		self._FileActnTp = None
-
-	@property
 	def Rcncltn(self):
 		return self._Rcncltn
 
@@ -234,110 +416,6 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 	def Rcncltn(self):
 		del self._Rcncltn
 		self._Rcncltn = None
-
-	@property
-	def Rcvr(self):
-		return self._Rcvr
-
-	@Rcvr.setter
-	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != auto else self.make_default("Rcvr")
-
-	@Rcvr.deleter
-	def Rcvr(self):
-		del self._Rcvr
-		self._Rcvr = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
-	@property
-	def MsgRsn(self):
-		return self._MsgRsn
-
-	@MsgRsn.setter
-	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
-
-	@MsgRsn.deleter
-	def MsgRsn(self):
-		del self._MsgRsn
-		self._MsgRsn = None
-
-	@property
-	def PrtctdData(self):
-		return self._PrtctdData
-
-	@PrtctdData.setter
-	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
-
-	@PrtctdData.deleter
-	def PrtctdData(self):
-		del self._PrtctdData
-		self._PrtctdData = None
-
-	@property
-	def Crdhldr(self):
-		return self._Crdhldr
-
-	@Crdhldr.setter
-	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
-
-	@Crdhldr.deleter
-	def Crdhldr(self):
-		del self._Crdhldr
-		self._Crdhldr = None
-
-	@property
-	def LifeCyclId(self):
-		return self._LifeCyclId
-
-	@LifeCyclId.setter
-	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != auto else self.make_default("LifeCyclId")
-
-	@LifeCyclId.deleter
-	def LifeCyclId(self):
-		del self._LifeCyclId
-		self._LifeCyclId = None
-
-	@property
-	def AddtlFee(self):
-		return self._AddtlFee
-
-	@AddtlFee.setter
-	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != auto else self.make_default("AddtlFee")
-
-	@AddtlFee.deleter
-	def AddtlFee(self):
-		del self._AddtlFee
-		self._AddtlFee = None
-
-	@property
-	def FileSctyCd(self):
-		return self._FileSctyCd
-
-	@FileSctyCd.setter
-	def FileSctyCd(self, value):
-		self._FileSctyCd = value if type(value) != auto else self.make_default("FileSctyCd")
-
-	@FileSctyCd.deleter
-	def FileSctyCd(self):
-		del self._FileSctyCd
-		self._FileSctyCd = None
 
 	@property
 	def Jursdctn(self):
@@ -353,134 +431,17 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._Jursdctn = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def RtrvlRefNb(self):
+		return self._RtrvlRefNb
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@RtrvlRefNb.setter
+	def RtrvlRefNb(self, value):
+		self._RtrvlRefNb = value if type(value) != auto else self.make_default("RtrvlRefNb")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
-
-	@property
-	def FileActnScp(self):
-		return self._FileActnScp
-
-	@FileActnScp.setter
-	def FileActnScp(self, value):
-		self._FileActnScp = value if type(value) != auto else self.make_default("FileActnScp")
-
-	@FileActnScp.deleter
-	def FileActnScp(self):
-		del self._FileActnScp
-		self._FileActnScp = None
-
-	@property
-	def Orgtr(self):
-		return self._Orgtr
-
-	@Orgtr.setter
-	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != auto else self.make_default("Orgtr")
-
-	@Orgtr.deleter
-	def Orgtr(self):
-		del self._Orgtr
-		self._Orgtr = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
-	@property
-	def SysTracAudtNb(self):
-		return self._SysTracAudtNb
-
-	@SysTracAudtNb.setter
-	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != auto else self.make_default("SysTracAudtNb")
-
-	@SysTracAudtNb.deleter
-	def SysTracAudtNb(self):
-		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
-
-	@property
-	def Acqrr(self):
-		return self._Acqrr
-
-	@Acqrr.setter
-	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
-
-	@Acqrr.deleter
-	def Acqrr(self):
-		del self._Acqrr
-		self._Acqrr = None
-
-	@property
-	def Wllt(self):
-		return self._Wllt
-
-	@Wllt.setter
-	def Wllt(self, value):
-		self._Wllt = value if type(value) != auto else self.make_default("Wllt")
-
-	@Wllt.deleter
-	def Wllt(self):
-		del self._Wllt
-		self._Wllt = None
-
-	@property
-	def Sndr(self):
-		return self._Sndr
-
-	@Sndr.setter
-	def Sndr(self, value):
-		self._Sndr = value if type(value) != auto else self.make_default("Sndr")
-
-	@Sndr.deleter
-	def Sndr(self):
-		del self._Sndr
-		self._Sndr = None
-
-	@property
-	def Conttn(self):
-		return self._Conttn
-
-	@Conttn.setter
-	def Conttn(self, value):
-		self._Conttn = value if type(value) != auto else self.make_default("Conttn")
-
-	@Conttn.deleter
-	def Conttn(self):
-		del self._Conttn
-		self._Conttn = None
-
-	@property
-	def Tkn(self):
-		return self._Tkn
-
-	@Tkn.setter
-	def Tkn(self, value):
-		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
-
-	@Tkn.deleter
-	def Tkn(self):
-		del self._Tkn
-		self._Tkn = None
+	@RtrvlRefNb.deleter
+	def RtrvlRefNb(self):
+		del self._RtrvlRefNb
+		self._RtrvlRefNb = None
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -496,56 +457,30 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._TrnsmssnDtTm = None
 
 	@property
-	def POICmpnt(self):
-		return self._POICmpnt
+	def Tkn(self):
+		return self._Tkn
 
-	@POICmpnt.setter
-	def POICmpnt(self, value):
-		self._POICmpnt = value if type(value) != auto else self.make_default("POICmpnt")
+	@Tkn.setter
+	def Tkn(self, value):
+		self._Tkn = value if type(value) != auto else self.make_default("Tkn")
 
-	@POICmpnt.deleter
-	def POICmpnt(self):
-		del self._POICmpnt
-		self._POICmpnt = None
-
-	@property
-	def Dstn(self):
-		return self._Dstn
-
-	@Dstn.setter
-	def Dstn(self, value):
-		self._Dstn = value if type(value) != auto else self.make_default("Dstn")
-
-	@Dstn.deleter
-	def Dstn(self):
-		del self._Dstn
-		self._Dstn = None
+	@Tkn.deleter
+	def Tkn(self):
+		del self._Tkn
+		self._Tkn = None
 
 	@property
-	def RspnCd(self):
-		return self._RspnCd
+	def CstmrDvc(self):
+		return self._CstmrDvc
 
-	@RspnCd.setter
-	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != auto else self.make_default("RspnCd")
+	@CstmrDvc.setter
+	def CstmrDvc(self, value):
+		self._CstmrDvc = value if type(value) != auto else self.make_default("CstmrDvc")
 
-	@RspnCd.deleter
-	def RspnCd(self):
-		del self._RspnCd
-		self._RspnCd = None
-
-	@property
-	def Pyee(self):
-		return self._Pyee
-
-	@Pyee.setter
-	def Pyee(self, value):
-		self._Pyee = value if type(value) != auto else self.make_default("Pyee")
-
-	@Pyee.deleter
-	def Pyee(self):
-		del self._Pyee
-		self._Pyee = None
+	@CstmrDvc.deleter
+	def CstmrDvc(self):
+		del self._CstmrDvc
+		self._CstmrDvc = None
 
 	@property
 	def TxDesc(self):
@@ -561,43 +496,17 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		self._TxDesc = None
 
 	@property
-	def Crrctn(self):
-		return self._Crrctn
+	def MsgRsn(self):
+		return self._MsgRsn
 
-	@Crrctn.setter
-	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != auto else self.make_default("Crrctn")
+	@MsgRsn.setter
+	def MsgRsn(self, value):
+		self._MsgRsn = value if type(value) != auto else self.make_default("MsgRsn")
 
-	@Crrctn.deleter
-	def Crrctn(self):
-		del self._Crrctn
-		self._Crrctn = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
-
-	@property
-	def DataRcrd(self):
-		return self._DataRcrd
-
-	@DataRcrd.setter
-	def DataRcrd(self, value):
-		self._DataRcrd = value if type(value) != auto else self.make_default("DataRcrd")
-
-	@DataRcrd.deleter
-	def DataRcrd(self):
-		del self._DataRcrd
-		self._DataRcrd = None
+	@MsgRsn.deleter
+	def MsgRsn(self):
+		del self._MsgRsn
+		self._MsgRsn = None
 
 	@property
 	def Card(self):
@@ -612,50 +521,141 @@ class FileActionInitiationV03(base_types._BaseFieldType):
 		del self._Card
 		self._Card = None
 
+	@property
+	def POICmpnt(self):
+		return self._POICmpnt
+
+	@POICmpnt.setter
+	def POICmpnt(self, value):
+		self._POICmpnt = value if type(value) != auto else self.make_default("POICmpnt")
+
+	@POICmpnt.deleter
+	def POICmpnt(self):
+		del self._POICmpnt
+		self._POICmpnt = None
+
+	@property
+	def Crdhldr(self):
+		return self._Crdhldr
+
+	@Crdhldr.setter
+	def Crdhldr(self, value):
+		self._Crdhldr = value if type(value) != auto else self.make_default("Crdhldr")
+
+	@Crdhldr.deleter
+	def Crdhldr(self):
+		del self._Crdhldr
+		self._Crdhldr = None
+
+	@property
+	def RspnCd(self):
+		return self._RspnCd
+
+	@RspnCd.setter
+	def RspnCd(self, value):
+		self._RspnCd = value if type(value) != auto else self.make_default("RspnCd")
+
+	@RspnCd.deleter
+	def RspnCd(self):
+		del self._RspnCd
+		self._RspnCd = None
+
+	@property
+	def FileNm(self):
+		return self._FileNm
+
+	@FileNm.setter
+	def FileNm(self, value):
+		self._FileNm = value if type(value) != auto else self.make_default("FileNm")
+
+	@FileNm.deleter
+	def FileNm(self):
+		del self._FileNm
+		self._FileNm = None
+
+	@property
+	def PrtctdData(self):
+		return self._PrtctdData
+
+	@PrtctdData.setter
+	def PrtctdData(self, value):
+		self._PrtctdData = value if type(value) != auto else self.make_default("PrtctdData")
+
+	@PrtctdData.deleter
+	def PrtctdData(self):
+		del self._PrtctdData
+		self._PrtctdData = None
+
+	@property
+	def Acqrr(self):
+		return self._Acqrr
+
+	@Acqrr.setter
+	def Acqrr(self, value):
+		self._Acqrr = value if type(value) != auto else self.make_default("Acqrr")
+
+	@Acqrr.deleter
+	def Acqrr(self):
+		del self._Acqrr
+		self._Acqrr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Frmt', type=OutputFormat5Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ActnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pyer', type=PartyIdentification287, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrFileActnTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pyee', type=PartyIdentification287, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataRcrd', type=DataRecord1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Termnl', type=Terminal7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Crrctn', type=CorrectionIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileSctyCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSvc', type=SettlementService6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrDvc', type=CustomerDevice5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileActnScp', type=FileActionScope1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Conttn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pyer', type=PartyIdentification287, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Frmt', type=OutputFormat5Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Wllt', type=Wallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileActnTp', type=FileActionType2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ActnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prgrmm', type=ProgrammeMode5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Accptr', type=PartyIdentification284, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Termnl', type=Terminal7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FileActnTp', type=FileActionType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcncltn', type=Reconciliation4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Rcvr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType41, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Crdhldr', type=Cardholder22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LifeCyclId', type=Exact15Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FileSctyCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Jursdctn', type=Jurisdiction2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FileActnScp', type=FileActionScope1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Orgtr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header71, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysTracAudtNb', type=Max12NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Acqrr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Wllt', type=Wallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sndr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Conttn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tkn', type=Token2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrvlRefNb', type=Exact12Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent16, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Dstn', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Pyee', type=PartyIdentification287, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tkn', type=Token2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrDvc', type=CustomerDevice5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Crrctn', type=CorrectionIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataRcrd', type=DataRecord1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgRsn', type=ISO8583MessageReasonCode, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Card', type=CardData15, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent16, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Crdhldr', type=Cardholder22, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnCd', type=ISO8583ResponseCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FileNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdData', type=ProtectedData2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Acqrr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,16 +1,16 @@
 import base_types
 import PartyType26Code
+import FraudReportingAction1Code
+import ISODate
+import Max35Text
 import AuthenticationMethod12Code
+import TrueFalseIndicator
 import FraudType1Code
 import Max256Text
-import FraudReportingAction1Code
-import Max35Text
-import ISODate
-import TrueFalseIndicator
 
 class ReportedFraud4(base_types._BaseFieldType):
 
-	__slots__ = ["_ConfRptgDt", "_CaseLctrNb", "_OthrActn", "_CaseRef", "_Arrst", "_CmprmsdCrdntl", "_OthrTp", "_CrdhldrRptgDt", "_MktSgmt", "_InvstgtnSts", "_OthrRptgNtty", "_Actn", "_Tp", "_RptgNtty", "_SubmitrCaseRef"]
+	__slots__ = ["_ConfRptgDt", "_MktSgmt", "_Actn", "_OthrRptgNtty", "_CaseRef", "_OthrTp", "_CmprmsdCrdntl", "_CrdhldrRptgDt", "_RptgNtty", "_OthrActn", "_SubmitrCaseRef", "_Arrst", "_InvstgtnSts", "_CaseLctrNb", "_Tp"]
 	@property
 	def ConfRptgDt(self):
 		return self._ConfRptgDt
@@ -23,97 +23,6 @@ class ReportedFraud4(base_types._BaseFieldType):
 	def ConfRptgDt(self):
 		del self._ConfRptgDt
 		self._ConfRptgDt = None
-
-	@property
-	def CaseLctrNb(self):
-		return self._CaseLctrNb
-
-	@CaseLctrNb.setter
-	def CaseLctrNb(self, value):
-		self._CaseLctrNb = value if type(value) != auto else self.make_default("CaseLctrNb")
-
-	@CaseLctrNb.deleter
-	def CaseLctrNb(self):
-		del self._CaseLctrNb
-		self._CaseLctrNb = None
-
-	@property
-	def OthrActn(self):
-		return self._OthrActn
-
-	@OthrActn.setter
-	def OthrActn(self, value):
-		self._OthrActn = value if type(value) != auto else self.make_default("OthrActn")
-
-	@OthrActn.deleter
-	def OthrActn(self):
-		del self._OthrActn
-		self._OthrActn = None
-
-	@property
-	def CaseRef(self):
-		return self._CaseRef
-
-	@CaseRef.setter
-	def CaseRef(self, value):
-		self._CaseRef = value if type(value) != auto else self.make_default("CaseRef")
-
-	@CaseRef.deleter
-	def CaseRef(self):
-		del self._CaseRef
-		self._CaseRef = None
-
-	@property
-	def Arrst(self):
-		return self._Arrst
-
-	@Arrst.setter
-	def Arrst(self, value):
-		self._Arrst = value if type(value) != auto else self.make_default("Arrst")
-
-	@Arrst.deleter
-	def Arrst(self):
-		del self._Arrst
-		self._Arrst = None
-
-	@property
-	def CmprmsdCrdntl(self):
-		return self._CmprmsdCrdntl
-
-	@CmprmsdCrdntl.setter
-	def CmprmsdCrdntl(self, value):
-		self._CmprmsdCrdntl = value if type(value) != auto else self.make_default("CmprmsdCrdntl")
-
-	@CmprmsdCrdntl.deleter
-	def CmprmsdCrdntl(self):
-		del self._CmprmsdCrdntl
-		self._CmprmsdCrdntl = None
-
-	@property
-	def OthrTp(self):
-		return self._OthrTp
-
-	@OthrTp.setter
-	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
-
-	@OthrTp.deleter
-	def OthrTp(self):
-		del self._OthrTp
-		self._OthrTp = None
-
-	@property
-	def CrdhldrRptgDt(self):
-		return self._CrdhldrRptgDt
-
-	@CrdhldrRptgDt.setter
-	def CrdhldrRptgDt(self, value):
-		self._CrdhldrRptgDt = value if type(value) != auto else self.make_default("CrdhldrRptgDt")
-
-	@CrdhldrRptgDt.deleter
-	def CrdhldrRptgDt(self):
-		del self._CrdhldrRptgDt
-		self._CrdhldrRptgDt = None
 
 	@property
 	def MktSgmt(self):
@@ -129,17 +38,17 @@ class ReportedFraud4(base_types._BaseFieldType):
 		self._MktSgmt = None
 
 	@property
-	def InvstgtnSts(self):
-		return self._InvstgtnSts
+	def Actn(self):
+		return self._Actn
 
-	@InvstgtnSts.setter
-	def InvstgtnSts(self, value):
-		self._InvstgtnSts = value if type(value) != auto else self.make_default("InvstgtnSts")
+	@Actn.setter
+	def Actn(self, value):
+		self._Actn = value if type(value) != auto else self.make_default("Actn")
 
-	@InvstgtnSts.deleter
-	def InvstgtnSts(self):
-		del self._InvstgtnSts
-		self._InvstgtnSts = None
+	@Actn.deleter
+	def Actn(self):
+		del self._Actn
+		self._Actn = None
 
 	@property
 	def OthrRptgNtty(self):
@@ -155,30 +64,56 @@ class ReportedFraud4(base_types._BaseFieldType):
 		self._OthrRptgNtty = None
 
 	@property
-	def Actn(self):
-		return self._Actn
+	def CaseRef(self):
+		return self._CaseRef
 
-	@Actn.setter
-	def Actn(self, value):
-		self._Actn = value if type(value) != auto else self.make_default("Actn")
+	@CaseRef.setter
+	def CaseRef(self, value):
+		self._CaseRef = value if type(value) != auto else self.make_default("CaseRef")
 
-	@Actn.deleter
-	def Actn(self):
-		del self._Actn
-		self._Actn = None
+	@CaseRef.deleter
+	def CaseRef(self):
+		del self._CaseRef
+		self._CaseRef = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def OthrTp(self):
+		return self._OthrTp
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@OthrTp.setter
+	def OthrTp(self, value):
+		self._OthrTp = value if type(value) != auto else self.make_default("OthrTp")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@OthrTp.deleter
+	def OthrTp(self):
+		del self._OthrTp
+		self._OthrTp = None
+
+	@property
+	def CmprmsdCrdntl(self):
+		return self._CmprmsdCrdntl
+
+	@CmprmsdCrdntl.setter
+	def CmprmsdCrdntl(self, value):
+		self._CmprmsdCrdntl = value if type(value) != auto else self.make_default("CmprmsdCrdntl")
+
+	@CmprmsdCrdntl.deleter
+	def CmprmsdCrdntl(self):
+		del self._CmprmsdCrdntl
+		self._CmprmsdCrdntl = None
+
+	@property
+	def CrdhldrRptgDt(self):
+		return self._CrdhldrRptgDt
+
+	@CrdhldrRptgDt.setter
+	def CrdhldrRptgDt(self, value):
+		self._CrdhldrRptgDt = value if type(value) != auto else self.make_default("CrdhldrRptgDt")
+
+	@CrdhldrRptgDt.deleter
+	def CrdhldrRptgDt(self):
+		del self._CrdhldrRptgDt
+		self._CrdhldrRptgDt = None
 
 	@property
 	def RptgNtty(self):
@@ -194,6 +129,19 @@ class ReportedFraud4(base_types._BaseFieldType):
 		self._RptgNtty = None
 
 	@property
+	def OthrActn(self):
+		return self._OthrActn
+
+	@OthrActn.setter
+	def OthrActn(self, value):
+		self._OthrActn = value if type(value) != auto else self.make_default("OthrActn")
+
+	@OthrActn.deleter
+	def OthrActn(self):
+		del self._OthrActn
+		self._OthrActn = None
+
+	@property
 	def SubmitrCaseRef(self):
 		return self._SubmitrCaseRef
 
@@ -206,21 +154,73 @@ class ReportedFraud4(base_types._BaseFieldType):
 		del self._SubmitrCaseRef
 		self._SubmitrCaseRef = None
 
+	@property
+	def Arrst(self):
+		return self._Arrst
+
+	@Arrst.setter
+	def Arrst(self, value):
+		self._Arrst = value if type(value) != auto else self.make_default("Arrst")
+
+	@Arrst.deleter
+	def Arrst(self):
+		del self._Arrst
+		self._Arrst = None
+
+	@property
+	def InvstgtnSts(self):
+		return self._InvstgtnSts
+
+	@InvstgtnSts.setter
+	def InvstgtnSts(self, value):
+		self._InvstgtnSts = value if type(value) != auto else self.make_default("InvstgtnSts")
+
+	@InvstgtnSts.deleter
+	def InvstgtnSts(self):
+		del self._InvstgtnSts
+		self._InvstgtnSts = None
+
+	@property
+	def CaseLctrNb(self):
+		return self._CaseLctrNb
+
+	@CaseLctrNb.setter
+	def CaseLctrNb(self, value):
+		self._CaseLctrNb = value if type(value) != auto else self.make_default("CaseLctrNb")
+
+	@CaseLctrNb.deleter
+	def CaseLctrNb(self):
+		del self._CaseLctrNb
+		self._CaseLctrNb = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CaseLctrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrActn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Arrst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmprmsdCrdntl', type=AuthenticationMethod12Code, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktSgmt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstgtnSts', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrRptgNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Actn', type=FraudReportingAction1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=FraudType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRptgNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmprmsdCrdntl', type=AuthenticationMethod12Code, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CrdhldrRptgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgNtty', type=PartyType26Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrActn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrCaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Arrst', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstgtnSts', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CaseLctrNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=FraudType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

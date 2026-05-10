@@ -1,12 +1,25 @@
 import base_types
-import Max2000Text
 import Max35Text
-import DateAndDateTimeChoice
 import PartyIdentification43
+import DateAndDateTimeChoice
+import Max2000Text
 
 class UndertakingConfirmation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnfrmr", "_Conf", "_Dt", "_RefNb"]
+	__slots__ = ["_RefNb", "_Cnfrmr", "_Conf", "_Dt"]
+	@property
+	def RefNb(self):
+		return self._RefNb
+
+	@RefNb.setter
+	def RefNb(self, value):
+		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
+
+	@RefNb.deleter
+	def RefNb(self):
+		del self._RefNb
+		self._RefNb = None
+
 	@property
 	def Cnfrmr(self):
 		return self._Cnfrmr
@@ -46,23 +59,10 @@ class UndertakingConfirmation1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
-	@property
-	def RefNb(self):
-		return self._RefNb
-
-	@RefNb.setter
-	def RefNb(self, value):
-		self._RefNb = value if type(value) != auto else self.make_default("RefNb")
-
-	@RefNb.deleter
-	def RefNb(self):
-		del self._RefNb
-		self._RefNb = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cnfrmr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Conf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

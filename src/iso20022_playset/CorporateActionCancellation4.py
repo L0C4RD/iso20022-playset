@@ -1,23 +1,23 @@
 import base_types
-import RestrictedFINXMax140Text
-import CorporateActionCancellationReason1Code
 import CorporateActionEventStatus1
+import CorporateActionCancellationReason1Code
+import RestrictedFINXMax140Text
 
 class CorporateActionCancellation4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_CxlRsn", "_CxlRsnCd"]
+	__slots__ = ["_CxlRsnCd", "_CxlRsn", "_PrcgSts"]
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def CxlRsnCd(self):
+		return self._CxlRsnCd
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@CxlRsnCd.setter
+	def CxlRsnCd(self, value):
+		self._CxlRsnCd = value if type(value) != auto else self.make_default("CxlRsnCd")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@CxlRsnCd.deleter
+	def CxlRsnCd(self):
+		del self._CxlRsnCd
+		self._CxlRsnCd = None
 
 	@property
 	def CxlRsn(self):
@@ -33,21 +33,21 @@ class CorporateActionCancellation4(base_types._BaseFieldType):
 		self._CxlRsn = None
 
 	@property
-	def CxlRsnCd(self):
-		return self._CxlRsnCd
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@CxlRsnCd.setter
-	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != auto else self.make_default("CxlRsnCd")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
 
-	@CxlRsnCd.deleter
-	def CxlRsnCd(self):
-		del self._CxlRsnCd
-		self._CxlRsnCd = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
 	))
 

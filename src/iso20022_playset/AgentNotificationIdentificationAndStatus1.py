@@ -1,24 +1,11 @@
 import base_types
-import ISODateTime
-import NotificationAdviceStatus2Choice
 import Max35Text
+import NotificationAdviceStatus2Choice
+import ISODateTime
 
 class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_Id", "_CreDtTm"]
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
-
+	__slots__ = ["_Id", "_Sts", "_CreDtTm"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
 
 	@property
 	def CreDtTm(self):
@@ -46,8 +46,8 @@ class AgentNotificationIdentificationAndStatus1(base_types._BaseFieldType):
 		self._CreDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Sts', type=NotificationAdviceStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=NotificationAdviceStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
 

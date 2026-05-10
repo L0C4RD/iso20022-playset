@@ -1,39 +1,26 @@
 import base_types
-import Linkages75
-import IntraPositionProcessingStatus9Choice
-import TransactionIdentifications29
 import SupplementaryData1
+import Linkages75
+import TransactionIdentifications29
+import IntraPositionProcessingStatus9Choice
 import SettlementStatus16Choice
 import IntraPositionDetails60
 
 class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmSts", "_SplmtryData", "_TxId", "_Lkg", "_PrcgSts", "_TxDtls"]
+	__slots__ = ["_PrcgSts", "_TxId", "_Lkg", "_SplmtryData", "_TxDtls", "_SttlmSts"]
 	@property
-	def SttlmSts(self):
-		return self._SttlmSts
+	def PrcgSts(self):
+		return self._PrcgSts
 
-	@SttlmSts.setter
-	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
 
-	@SttlmSts.deleter
-	def SttlmSts(self):
-		del self._SttlmSts
-		self._SttlmSts = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
 
 	@property
 	def TxId(self):
@@ -62,17 +49,17 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 		self._Lkg = None
 
 	@property
-	def PrcgSts(self):
-		return self._PrcgSts
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def TxDtls(self):
@@ -87,12 +74,25 @@ class IntraPositionMovementStatusAdviceV08(base_types._BaseFieldType):
 		del self._TxDtls
 		self._TxDtls = None
 
+	@property
+	def SttlmSts(self):
+		return self._SttlmSts
+
+	@SttlmSts.setter
+	def SttlmSts(self, value):
+		self._SttlmSts = value if type(value) != auto else self.make_default("SttlmSts")
+
+	@SttlmSts.deleter
+	def SttlmSts(self):
+		del self._SttlmSts
+		self._SttlmSts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrcgSts', type=IntraPositionProcessingStatus9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications29, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lkg', type=Linkages75, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrcgSts', type=IntraPositionProcessingStatus9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxDtls', type=IntraPositionDetails60, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

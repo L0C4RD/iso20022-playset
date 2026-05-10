@@ -1,38 +1,12 @@
 import base_types
 import Max350Text
+import DebtIssuerType1Code
 import ActiveCurrencyAndAmount
 import ProductType6Code
-import DebtIssuerType1Code
 
 class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_RptgAsstTp", "_DebtIssrTp", "_Amt"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
-	def RptgAsstTp(self):
-		return self._RptgAsstTp
-
-	@RptgAsstTp.setter
-	def RptgAsstTp(self, value):
-		self._RptgAsstTp = value if type(value) != auto else self.make_default("RptgAsstTp")
-
-	@RptgAsstTp.deleter
-	def RptgAsstTp(self):
-		del self._RptgAsstTp
-		self._RptgAsstTp = None
-
+	__slots__ = ["_DebtIssrTp", "_Id", "_Amt", "_RptgAsstTp"]
 	@property
 	def DebtIssrTp(self):
 		return self._DebtIssrTp
@@ -47,6 +21,19 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 		self._DebtIssrTp = None
 
 	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
 	def Amt(self):
 		return self._Amt
 
@@ -59,10 +46,23 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def RptgAsstTp(self):
+		return self._RptgAsstTp
+
+	@RptgAsstTp.setter
+	def RptgAsstTp(self, value):
+		self._RptgAsstTp = value if type(value) != auto else self.make_default("RptgAsstTp")
+
+	@RptgAsstTp.deleter
+	def RptgAsstTp(self):
+		del self._RptgAsstTp
+		self._RptgAsstTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgAsstTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DebtIssrTp', type=DebtIssuerType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptgAsstTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

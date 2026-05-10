@@ -1,26 +1,13 @@
 import base_types
-import DateAndDateTimeChoice
-import Max2000Text
 import UndertakingAdvice1
+import DateAndDateTimeChoice
 import PartyAndSignature2
+import Max2000Text
 import PartyIdentification43
 
 class UndertakingIssuanceAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_DtOfAdvc", "_DgtlSgntr", "_ScndAdvsgPty", "_BkToBkInf", "_AdvsgPty", "_UdrtkgIssncAdvcDtls"]
-	@property
-	def DtOfAdvc(self):
-		return self._DtOfAdvc
-
-	@DtOfAdvc.setter
-	def DtOfAdvc(self, value):
-		self._DtOfAdvc = value if type(value) != auto else self.make_default("DtOfAdvc")
-
-	@DtOfAdvc.deleter
-	def DtOfAdvc(self):
-		del self._DtOfAdvc
-		self._DtOfAdvc = None
-
+	__slots__ = ["_DgtlSgntr", "_DtOfAdvc", "_UdrtkgIssncAdvcDtls", "_AdvsgPty", "_BkToBkInf", "_ScndAdvsgPty"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -35,30 +22,30 @@ class UndertakingIssuanceAdviceV01(base_types._BaseFieldType):
 		self._DgtlSgntr = None
 
 	@property
-	def ScndAdvsgPty(self):
-		return self._ScndAdvsgPty
+	def DtOfAdvc(self):
+		return self._DtOfAdvc
 
-	@ScndAdvsgPty.setter
-	def ScndAdvsgPty(self, value):
-		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
+	@DtOfAdvc.setter
+	def DtOfAdvc(self, value):
+		self._DtOfAdvc = value if type(value) != auto else self.make_default("DtOfAdvc")
 
-	@ScndAdvsgPty.deleter
-	def ScndAdvsgPty(self):
-		del self._ScndAdvsgPty
-		self._ScndAdvsgPty = None
+	@DtOfAdvc.deleter
+	def DtOfAdvc(self):
+		del self._DtOfAdvc
+		self._DtOfAdvc = None
 
 	@property
-	def BkToBkInf(self):
-		return self._BkToBkInf
+	def UdrtkgIssncAdvcDtls(self):
+		return self._UdrtkgIssncAdvcDtls
 
-	@BkToBkInf.setter
-	def BkToBkInf(self, value):
-		self._BkToBkInf = value if type(value) != auto else self.make_default("BkToBkInf")
+	@UdrtkgIssncAdvcDtls.setter
+	def UdrtkgIssncAdvcDtls(self, value):
+		self._UdrtkgIssncAdvcDtls = value if type(value) != auto else self.make_default("UdrtkgIssncAdvcDtls")
 
-	@BkToBkInf.deleter
-	def BkToBkInf(self):
-		del self._BkToBkInf
-		self._BkToBkInf = None
+	@UdrtkgIssncAdvcDtls.deleter
+	def UdrtkgIssncAdvcDtls(self):
+		del self._UdrtkgIssncAdvcDtls
+		self._UdrtkgIssncAdvcDtls = None
 
 	@property
 	def AdvsgPty(self):
@@ -74,24 +61,37 @@ class UndertakingIssuanceAdviceV01(base_types._BaseFieldType):
 		self._AdvsgPty = None
 
 	@property
-	def UdrtkgIssncAdvcDtls(self):
-		return self._UdrtkgIssncAdvcDtls
+	def BkToBkInf(self):
+		return self._BkToBkInf
 
-	@UdrtkgIssncAdvcDtls.setter
-	def UdrtkgIssncAdvcDtls(self, value):
-		self._UdrtkgIssncAdvcDtls = value if type(value) != auto else self.make_default("UdrtkgIssncAdvcDtls")
+	@BkToBkInf.setter
+	def BkToBkInf(self, value):
+		self._BkToBkInf = value if type(value) != auto else self.make_default("BkToBkInf")
 
-	@UdrtkgIssncAdvcDtls.deleter
-	def UdrtkgIssncAdvcDtls(self):
-		del self._UdrtkgIssncAdvcDtls
-		self._UdrtkgIssncAdvcDtls = None
+	@BkToBkInf.deleter
+	def BkToBkInf(self):
+		del self._BkToBkInf
+		self._BkToBkInf = None
+
+	@property
+	def ScndAdvsgPty(self):
+		return self._ScndAdvsgPty
+
+	@ScndAdvsgPty.setter
+	def ScndAdvsgPty(self, value):
+		self._ScndAdvsgPty = value if type(value) != auto else self.make_default("ScndAdvsgPty")
+
+	@ScndAdvsgPty.deleter
+	def ScndAdvsgPty(self):
+		del self._ScndAdvsgPty
+		self._ScndAdvsgPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtOfAdvc', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DtOfAdvc', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgIssncAdvcDtls', type=UndertakingAdvice1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AdvsgPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
 	))
 

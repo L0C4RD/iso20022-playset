@@ -1,11 +1,24 @@
 import base_types
+import SecuritiesTransactionPrice17Choice
 import Max100Text
 import SecuritiesTransactionPrice20Choice
-import SecuritiesTransactionPrice17Choice
 
 class Package4(base_types._BaseFieldType):
 
-	__slots__ = ["_Pric", "_FxSwpLkId", "_CmplxTradId", "_Sprd"]
+	__slots__ = ["_Sprd", "_Pric", "_FxSwpLkId", "_CmplxTradId"]
+	@property
+	def Sprd(self):
+		return self._Sprd
+
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
+
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
+
 	@property
 	def Pric(self):
 		return self._Pric
@@ -45,23 +58,10 @@ class Package4(base_types._BaseFieldType):
 		del self._CmplxTradId
 		self._CmplxTradId = None
 
-	@property
-	def Sprd(self):
-		return self._Sprd
-
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
-
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FxSwpLkId', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmplxTradId', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

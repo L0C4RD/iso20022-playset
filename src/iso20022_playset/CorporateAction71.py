@@ -1,11 +1,24 @@
 import base_types
-import CorporateActionDate86
-import CorporateActionEventStageFormat14Choice
 import LotteryTypeFormat4Choice
+import CorporateActionEventStageFormat14Choice
+import CorporateActionDate86
 
 class CorporateAction71(base_types._BaseFieldType):
 
-	__slots__ = ["_EvtStag", "_LtryTp", "_DtDtls"]
+	__slots__ = ["_DtDtls", "_EvtStag", "_LtryTp"]
+	@property
+	def DtDtls(self):
+		return self._DtDtls
+
+	@DtDtls.setter
+	def DtDtls(self, value):
+		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
+
+	@DtDtls.deleter
+	def DtDtls(self):
+		del self._DtDtls
+		self._DtDtls = None
+
 	@property
 	def EvtStag(self):
 		return self._EvtStag
@@ -32,22 +45,9 @@ class CorporateAction71(base_types._BaseFieldType):
 		del self._LtryTp
 		self._LtryTp = None
 
-	@property
-	def DtDtls(self):
-		return self._DtDtls
-
-	@DtDtls.setter
-	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != auto else self.make_default("DtDtls")
-
-	@DtDtls.deleter
-	def DtDtls(self):
-		del self._DtDtls
-		self._DtDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate86, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat14Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate86, min=0, max=1, mutex_group=None, array=False),
 	))
 

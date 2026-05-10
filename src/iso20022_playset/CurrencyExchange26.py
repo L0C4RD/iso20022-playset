@@ -1,38 +1,25 @@
 import base_types
-import BaseOneRate
 import ISODateTime
+import BaseOneRate
 import ActiveOrHistoricCurrencyCode
 import UUIDv4Identifier
 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyExchange26(base_types._BaseFieldType):
 
-	__slots__ = ["_QtId", "_UnitCcy", "_QtnDtTm", "_QtdCcy", "_PreAgrdXchgRate", "_FXAgt"]
+	__slots__ = ["_QtdCcy", "_QtnDtTm", "_QtId", "_FXAgt", "_UnitCcy", "_PreAgrdXchgRate"]
 	@property
-	def QtId(self):
-		return self._QtId
+	def QtdCcy(self):
+		return self._QtdCcy
 
-	@QtId.setter
-	def QtId(self, value):
-		self._QtId = value if type(value) != auto else self.make_default("QtId")
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
 
-	@QtId.deleter
-	def QtId(self):
-		del self._QtId
-		self._QtId = None
-
-	@property
-	def UnitCcy(self):
-		return self._UnitCcy
-
-	@UnitCcy.setter
-	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
-
-	@UnitCcy.deleter
-	def UnitCcy(self):
-		del self._UnitCcy
-		self._UnitCcy = None
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
 
 	@property
 	def QtnDtTm(self):
@@ -48,30 +35,17 @@ class CurrencyExchange26(base_types._BaseFieldType):
 		self._QtnDtTm = None
 
 	@property
-	def QtdCcy(self):
-		return self._QtdCcy
+	def QtId(self):
+		return self._QtId
 
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+	@QtId.setter
+	def QtId(self, value):
+		self._QtId = value if type(value) != auto else self.make_default("QtId")
 
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
-	@property
-	def PreAgrdXchgRate(self):
-		return self._PreAgrdXchgRate
-
-	@PreAgrdXchgRate.setter
-	def PreAgrdXchgRate(self, value):
-		self._PreAgrdXchgRate = value if type(value) != auto else self.make_default("PreAgrdXchgRate")
-
-	@PreAgrdXchgRate.deleter
-	def PreAgrdXchgRate(self):
-		del self._PreAgrdXchgRate
-		self._PreAgrdXchgRate = None
+	@QtId.deleter
+	def QtId(self):
+		del self._QtId
+		self._QtId = None
 
 	@property
 	def FXAgt(self):
@@ -86,12 +60,38 @@ class CurrencyExchange26(base_types._BaseFieldType):
 		del self._FXAgt
 		self._FXAgt = None
 
+	@property
+	def UnitCcy(self):
+		return self._UnitCcy
+
+	@UnitCcy.setter
+	def UnitCcy(self, value):
+		self._UnitCcy = value if type(value) != auto else self.make_default("UnitCcy")
+
+	@UnitCcy.deleter
+	def UnitCcy(self):
+		del self._UnitCcy
+		self._UnitCcy = None
+
+	@property
+	def PreAgrdXchgRate(self):
+		return self._PreAgrdXchgRate
+
+	@PreAgrdXchgRate.setter
+	def PreAgrdXchgRate(self, value):
+		self._PreAgrdXchgRate = value if type(value) != auto else self.make_default("PreAgrdXchgRate")
+
+	@PreAgrdXchgRate.deleter
+	def PreAgrdXchgRate(self):
+		del self._PreAgrdXchgRate
+		self._PreAgrdXchgRate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtId', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtdCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PreAgrdXchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtId', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FXAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PreAgrdXchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 	))
 

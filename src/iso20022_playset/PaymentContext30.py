@@ -1,12 +1,12 @@
 import base_types
-import PaymentContext29
 import DirectDebitContext1
-import SaleContext4
+import PaymentContext29
 import CreditTransferContext1
+import SaleContext4
 
 class PaymentContext30(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleCntxt", "_CdtTrfCntxt", "_DrctDbtCntxt", "_PmtCntxt"]
+	__slots__ = ["_SaleCntxt", "_CdtTrfCntxt", "_PmtCntxt", "_DrctDbtCntxt"]
 	@property
 	def SaleCntxt(self):
 		return self._SaleCntxt
@@ -34,19 +34,6 @@ class PaymentContext30(base_types._BaseFieldType):
 		self._CdtTrfCntxt = None
 
 	@property
-	def DrctDbtCntxt(self):
-		return self._DrctDbtCntxt
-
-	@DrctDbtCntxt.setter
-	def DrctDbtCntxt(self, value):
-		self._DrctDbtCntxt = value if type(value) != auto else self.make_default("DrctDbtCntxt")
-
-	@DrctDbtCntxt.deleter
-	def DrctDbtCntxt(self):
-		del self._DrctDbtCntxt
-		self._DrctDbtCntxt = None
-
-	@property
 	def PmtCntxt(self):
 		return self._PmtCntxt
 
@@ -59,10 +46,23 @@ class PaymentContext30(base_types._BaseFieldType):
 		del self._PmtCntxt
 		self._PmtCntxt = None
 
+	@property
+	def DrctDbtCntxt(self):
+		return self._DrctDbtCntxt
+
+	@DrctDbtCntxt.setter
+	def DrctDbtCntxt(self, value):
+		self._DrctDbtCntxt = value if type(value) != auto else self.make_default("DrctDbtCntxt")
+
+	@DrctDbtCntxt.deleter
+	def DrctDbtCntxt(self):
+		del self._DrctDbtCntxt
+		self._DrctDbtCntxt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SaleCntxt', type=SaleContext4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtTrfCntxt', type=CreditTransferContext1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrctDbtCntxt', type=DirectDebitContext1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtCntxt', type=PaymentContext29, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DrctDbtCntxt', type=DirectDebitContext1, min=0, max=1, mutex_group=None, array=False),
 	))
 

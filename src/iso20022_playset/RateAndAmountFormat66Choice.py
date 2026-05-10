@@ -1,23 +1,23 @@
 import base_types
+import RestrictedFINActiveCurrencyAnd13DecimalAmount
 import Percentage14Rate
 import RateTypeAndPercentageRate16
-import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class RateAndAmountFormat66Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_Rate", "_RateTpAndRate"]
+	__slots__ = ["_RateTpAndRate", "_Rate", "_Amt"]
 	@property
-	def Amt(self):
-		return self._Amt
+	def RateTpAndRate(self):
+		return self._RateTpAndRate
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@RateTpAndRate.setter
+	def RateTpAndRate(self, value):
+		self._RateTpAndRate = value if type(value) != auto else self.make_default("RateTpAndRate")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@RateTpAndRate.deleter
+	def RateTpAndRate(self):
+		del self._RateTpAndRate
+		self._RateTpAndRate = None
 
 	@property
 	def Rate(self):
@@ -33,21 +33,21 @@ class RateAndAmountFormat66Choice(base_types._BaseFieldType):
 		self._Rate = None
 
 	@property
-	def RateTpAndRate(self):
-		return self._RateTpAndRate
+	def Amt(self):
+		return self._Amt
 
-	@RateTpAndRate.setter
-	def RateTpAndRate(self, value):
-		self._RateTpAndRate = value if type(value) != auto else self.make_default("RateTpAndRate")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@RateTpAndRate.deleter
-	def RateTpAndRate(self):
-		del self._RateTpAndRate
-		self._RateTpAndRate = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate16, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

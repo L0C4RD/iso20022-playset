@@ -1,24 +1,11 @@
 import base_types
+import Max35Text
 import ISODate
 import ActiveCurrencyAndAmount
-import Max35Text
 
 class OriginalInvoiceInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_DocNb", "_TtlInvcAmt", "_PmtDueDt", "_IsseDt"]
-	@property
-	def DocNb(self):
-		return self._DocNb
-
-	@DocNb.setter
-	def DocNb(self, value):
-		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
-
-	@DocNb.deleter
-	def DocNb(self):
-		del self._DocNb
-		self._DocNb = None
-
+	__slots__ = ["_TtlInvcAmt", "_DocNb", "_IsseDt", "_PmtDueDt"]
 	@property
 	def TtlInvcAmt(self):
 		return self._TtlInvcAmt
@@ -33,17 +20,17 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		self._TtlInvcAmt = None
 
 	@property
-	def PmtDueDt(self):
-		return self._PmtDueDt
+	def DocNb(self):
+		return self._DocNb
 
-	@PmtDueDt.setter
-	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != auto else self.make_default("PmtDueDt")
+	@DocNb.setter
+	def DocNb(self, value):
+		self._DocNb = value if type(value) != auto else self.make_default("DocNb")
 
-	@PmtDueDt.deleter
-	def PmtDueDt(self):
-		del self._PmtDueDt
-		self._PmtDueDt = None
+	@DocNb.deleter
+	def DocNb(self):
+		del self._DocNb
+		self._DocNb = None
 
 	@property
 	def IsseDt(self):
@@ -58,10 +45,23 @@ class OriginalInvoiceInformation1(base_types._BaseFieldType):
 		del self._IsseDt
 		self._IsseDt = None
 
+	@property
+	def PmtDueDt(self):
+		return self._PmtDueDt
+
+	@PmtDueDt.setter
+	def PmtDueDt(self, value):
+		self._PmtDueDt = value if type(value) != auto else self.make_default("PmtDueDt")
+
+	@PmtDueDt.deleter
+	def PmtDueDt(self):
+		del self._PmtDueDt
+		self._PmtDueDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlInvcAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDueDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

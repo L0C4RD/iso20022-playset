@@ -1,14 +1,53 @@
 import base_types
-import Max70Text
 import Max35Text
-import Address2
-import ContactBusiness1
 import AdditionalData1
 import TravelAgencyPackage2
+import Max70Text
+import Address2
+import ContactBusiness1
 
 class TravelAgency4(base_types._BaseFieldType):
 
-	__slots__ = ["_TrvlPackg", "_ShrtNm", "_Cd", "_AddtlData", "_Adr", "_IATACd", "_Ctct", "_Nm", "_Assgnr"]
+	__slots__ = ["_IATACd", "_Assgnr", "_Adr", "_TrvlPackg", "_Nm", "_ShrtNm", "_Ctct", "_Cd", "_AddtlData"]
+	@property
+	def IATACd(self):
+		return self._IATACd
+
+	@IATACd.setter
+	def IATACd(self, value):
+		self._IATACd = value if type(value) != auto else self.make_default("IATACd")
+
+	@IATACd.deleter
+	def IATACd(self):
+		del self._IATACd
+		self._IATACd = None
+
+	@property
+	def Assgnr(self):
+		return self._Assgnr
+
+	@Assgnr.setter
+	def Assgnr(self, value):
+		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
+
+	@Assgnr.deleter
+	def Assgnr(self):
+		del self._Assgnr
+		self._Assgnr = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
+
 	@property
 	def TrvlPackg(self):
 		return self._TrvlPackg
@@ -23,6 +62,19 @@ class TravelAgency4(base_types._BaseFieldType):
 		self._TrvlPackg = None
 
 	@property
+	def Nm(self):
+		return self._Nm
+
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
+
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
+
+	@property
 	def ShrtNm(self):
 		return self._ShrtNm
 
@@ -34,6 +86,19 @@ class TravelAgency4(base_types._BaseFieldType):
 	def ShrtNm(self):
 		del self._ShrtNm
 		self._ShrtNm = None
+
+	@property
+	def Ctct(self):
+		return self._Ctct
+
+	@Ctct.setter
+	def Ctct(self, value):
+		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
+
+	@Ctct.deleter
+	def Ctct(self):
+		del self._Ctct
+		self._Ctct = None
 
 	@property
 	def Cd(self):
@@ -61,80 +126,15 @@ class TravelAgency4(base_types._BaseFieldType):
 		del self._AddtlData
 		self._AddtlData = None
 
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
-	@property
-	def IATACd(self):
-		return self._IATACd
-
-	@IATACd.setter
-	def IATACd(self, value):
-		self._IATACd = value if type(value) != auto else self.make_default("IATACd")
-
-	@IATACd.deleter
-	def IATACd(self):
-		del self._IATACd
-		self._IATACd = None
-
-	@property
-	def Ctct(self):
-		return self._Ctct
-
-	@Ctct.setter
-	def Ctct(self, value):
-		self._Ctct = value if type(value) != auto else self.make_default("Ctct")
-
-	@Ctct.deleter
-	def Ctct(self):
-		del self._Ctct
-		self._Ctct = None
-
-	@property
-	def Nm(self):
-		return self._Nm
-
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
-
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
-
-	@property
-	def Assgnr(self):
-		return self._Assgnr
-
-	@Assgnr.setter
-	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != auto else self.make_default("Assgnr")
-
-	@Assgnr.deleter
-	def Assgnr(self):
-		del self._Assgnr
-		self._Assgnr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='IATACd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrvlPackg', type=TravelAgencyPackage2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IATACd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ctct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

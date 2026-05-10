@@ -1,23 +1,23 @@
 import base_types
 import MICIdentifier
-import SecurityIdentification7
 import PartyIdentification2Choice
+import SecurityIdentification7
 
 class FinancialInstrumentDescription3(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfListg", "_SfkpgPlc", "_SctyId"]
+	__slots__ = ["_SctyId", "_SfkpgPlc", "_PlcOfListg"]
 	@property
-	def PlcOfListg(self):
-		return self._PlcOfListg
+	def SctyId(self):
+		return self._SctyId
 
-	@PlcOfListg.setter
-	def PlcOfListg(self, value):
-		self._PlcOfListg = value if type(value) != auto else self.make_default("PlcOfListg")
+	@SctyId.setter
+	def SctyId(self, value):
+		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
 
-	@PlcOfListg.deleter
-	def PlcOfListg(self):
-		del self._PlcOfListg
-		self._PlcOfListg = None
+	@SctyId.deleter
+	def SctyId(self):
+		del self._SctyId
+		self._SctyId = None
 
 	@property
 	def SfkpgPlc(self):
@@ -33,21 +33,21 @@ class FinancialInstrumentDescription3(base_types._BaseFieldType):
 		self._SfkpgPlc = None
 
 	@property
-	def SctyId(self):
-		return self._SctyId
+	def PlcOfListg(self):
+		return self._PlcOfListg
 
-	@SctyId.setter
-	def SctyId(self, value):
-		self._SctyId = value if type(value) != auto else self.make_default("SctyId")
+	@PlcOfListg.setter
+	def PlcOfListg(self, value):
+		self._PlcOfListg = value if type(value) != auto else self.make_default("PlcOfListg")
 
-	@SctyId.deleter
-	def SctyId(self):
-		del self._SctyId
-		self._SctyId = None
+	@PlcOfListg.deleter
+	def PlcOfListg(self):
+		del self._PlcOfListg
+		self._PlcOfListg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfListg', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

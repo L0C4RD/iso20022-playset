@@ -3,19 +3,19 @@ import Max350Text
 
 class CorporateActionNarrative2(base_types._BaseFieldType):
 
-	__slots__ = ["_InfToCmplyWth", "_TaxtnConds", "_RegnDtls", "_AddtlTxt", "_InfConds", "_DclrtnDtls"]
+	__slots__ = ["_InfConds", "_TaxtnConds", "_InfToCmplyWth", "_RegnDtls", "_AddtlTxt", "_DclrtnDtls"]
 	@property
-	def InfToCmplyWth(self):
-		return self._InfToCmplyWth
+	def InfConds(self):
+		return self._InfConds
 
-	@InfToCmplyWth.setter
-	def InfToCmplyWth(self, value):
-		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
+	@InfConds.setter
+	def InfConds(self, value):
+		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
 
-	@InfToCmplyWth.deleter
-	def InfToCmplyWth(self):
-		del self._InfToCmplyWth
-		self._InfToCmplyWth = None
+	@InfConds.deleter
+	def InfConds(self):
+		del self._InfConds
+		self._InfConds = None
 
 	@property
 	def TaxtnConds(self):
@@ -29,6 +29,19 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 	def TaxtnConds(self):
 		del self._TaxtnConds
 		self._TaxtnConds = None
+
+	@property
+	def InfToCmplyWth(self):
+		return self._InfToCmplyWth
+
+	@InfToCmplyWth.setter
+	def InfToCmplyWth(self, value):
+		self._InfToCmplyWth = value if type(value) != auto else self.make_default("InfToCmplyWth")
+
+	@InfToCmplyWth.deleter
+	def InfToCmplyWth(self):
+		del self._InfToCmplyWth
+		self._InfToCmplyWth = None
 
 	@property
 	def RegnDtls(self):
@@ -57,19 +70,6 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 		self._AddtlTxt = None
 
 	@property
-	def InfConds(self):
-		return self._InfConds
-
-	@InfConds.setter
-	def InfConds(self, value):
-		self._InfConds = value if type(value) != auto else self.make_default("InfConds")
-
-	@InfConds.deleter
-	def InfConds(self):
-		del self._InfConds
-		self._InfConds = None
-
-	@property
 	def DclrtnDtls(self):
 		return self._DclrtnDtls
 
@@ -83,11 +83,11 @@ class CorporateActionNarrative2(base_types._BaseFieldType):
 		self._DclrtnDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfToCmplyWth', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlTxt', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InfConds', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DclrtnDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

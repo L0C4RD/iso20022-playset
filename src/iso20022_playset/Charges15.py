@@ -1,23 +1,10 @@
 import base_types
-import ChargesRecord8
 import ActiveOrHistoricCurrencyAndAmount
+import ChargesRecord8
 
 class Charges15(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlChrgsAndTaxAmt", "_Rcrd"]
-	@property
-	def TtlChrgsAndTaxAmt(self):
-		return self._TtlChrgsAndTaxAmt
-
-	@TtlChrgsAndTaxAmt.setter
-	def TtlChrgsAndTaxAmt(self, value):
-		self._TtlChrgsAndTaxAmt = value if type(value) != auto else self.make_default("TtlChrgsAndTaxAmt")
-
-	@TtlChrgsAndTaxAmt.deleter
-	def TtlChrgsAndTaxAmt(self):
-		del self._TtlChrgsAndTaxAmt
-		self._TtlChrgsAndTaxAmt = None
-
+	__slots__ = ["_Rcrd", "_TtlChrgsAndTaxAmt"]
 	@property
 	def Rcrd(self):
 		return self._Rcrd
@@ -31,8 +18,21 @@ class Charges15(base_types._BaseFieldType):
 		del self._Rcrd
 		self._Rcrd = None
 
+	@property
+	def TtlChrgsAndTaxAmt(self):
+		return self._TtlChrgsAndTaxAmt
+
+	@TtlChrgsAndTaxAmt.setter
+	def TtlChrgsAndTaxAmt(self, value):
+		self._TtlChrgsAndTaxAmt = value if type(value) != auto else self.make_default("TtlChrgsAndTaxAmt")
+
+	@TtlChrgsAndTaxAmt.deleter
+	def TtlChrgsAndTaxAmt(self):
+		del self._TtlChrgsAndTaxAmt
+		self._TtlChrgsAndTaxAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlChrgsAndTaxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcrd', type=ChargesRecord8, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlChrgsAndTaxAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

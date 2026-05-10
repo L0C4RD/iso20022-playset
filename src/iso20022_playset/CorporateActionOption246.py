@@ -1,24 +1,24 @@
 import base_types
-import SecuritiesOption86
-import CorporateActionOption39Choice
 import OptionNumber1Choice
+import CorporateActionOption39Choice
 import CashOption112
+import SecuritiesOption86
 
 class CorporateActionOption246(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_CshMvmntDtls", "_OptnNb", "_SctiesMvmntDtls"]
+	__slots__ = ["_SctiesMvmntDtls", "_CshMvmntDtls", "_OptnTp", "_OptnNb"]
 	@property
-	def OptnTp(self):
-		return self._OptnTp
+	def SctiesMvmntDtls(self):
+		return self._SctiesMvmntDtls
 
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+	@SctiesMvmntDtls.setter
+	def SctiesMvmntDtls(self, value):
+		self._SctiesMvmntDtls = value if type(value) != auto else self.make_default("SctiesMvmntDtls")
 
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
+	@SctiesMvmntDtls.deleter
+	def SctiesMvmntDtls(self):
+		del self._SctiesMvmntDtls
+		self._SctiesMvmntDtls = None
 
 	@property
 	def CshMvmntDtls(self):
@@ -34,6 +34,19 @@ class CorporateActionOption246(base_types._BaseFieldType):
 		self._CshMvmntDtls = None
 
 	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
+
+	@property
 	def OptnNb(self):
 		return self._OptnNb
 
@@ -46,23 +59,10 @@ class CorporateActionOption246(base_types._BaseFieldType):
 		del self._OptnNb
 		self._OptnNb = None
 
-	@property
-	def SctiesMvmntDtls(self):
-		return self._SctiesMvmntDtls
-
-	@SctiesMvmntDtls.setter
-	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != auto else self.make_default("SctiesMvmntDtls")
-
-	@SctiesMvmntDtls.deleter
-	def SctiesMvmntDtls(self):
-		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption39Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption112, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntDtls', type=SecuritiesOption86, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption112, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption39Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnNb', type=OptionNumber1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

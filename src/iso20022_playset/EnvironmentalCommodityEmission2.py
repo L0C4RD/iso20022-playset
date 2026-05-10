@@ -1,24 +1,11 @@
 import base_types
-import AssetClassDetailedSubProductType8Code
 import AssetClassProductType3Code
+import AssetClassDetailedSubProductType8Code
 import AssetClassSubProductType10Code
 
 class EnvironmentalCommodityEmission2(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_SubPdct", "_AddtlSubPdct"]
-	@property
-	def BasePdct(self):
-		return self._BasePdct
-
-	@BasePdct.setter
-	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
-
-	@BasePdct.deleter
-	def BasePdct(self):
-		del self._BasePdct
-		self._BasePdct = None
-
+	__slots__ = ["_SubPdct", "_BasePdct", "_AddtlSubPdct"]
 	@property
 	def SubPdct(self):
 		return self._SubPdct
@@ -31,6 +18,19 @@ class EnvironmentalCommodityEmission2(base_types._BaseFieldType):
 	def SubPdct(self):
 		del self._SubPdct
 		self._SubPdct = None
+
+	@property
+	def BasePdct(self):
+		return self._BasePdct
+
+	@BasePdct.setter
+	def BasePdct(self, value):
+		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
+
+	@BasePdct.deleter
+	def BasePdct(self):
+		del self._BasePdct
+		self._BasePdct = None
 
 	@property
 	def AddtlSubPdct(self):
@@ -46,8 +46,8 @@ class EnvironmentalCommodityEmission2(base_types._BaseFieldType):
 		self._AddtlSubPdct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType10Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType8Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

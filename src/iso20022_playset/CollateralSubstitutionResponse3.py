@@ -1,24 +1,24 @@
 import base_types
 import Max140Text
-import RejectionReason68Code
-import ActiveCurrencyAndAmount
 import Max35Text
+import ActiveCurrencyAndAmount
+import RejectionReason68Code
 
 class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctnRsn", "_RjctnRsnInf", "_RjctdAmt", "_CollSbstitnReqId"]
+	__slots__ = ["_RjctdAmt", "_RjctnRsnInf", "_RjctnRsn", "_CollSbstitnReqId"]
 	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
+	def RjctdAmt(self):
+		return self._RjctdAmt
 
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+	@RjctdAmt.setter
+	def RjctdAmt(self, value):
+		self._RjctdAmt = value if type(value) != auto else self.make_default("RjctdAmt")
 
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
+	@RjctdAmt.deleter
+	def RjctdAmt(self):
+		del self._RjctdAmt
+		self._RjctdAmt = None
 
 	@property
 	def RjctnRsnInf(self):
@@ -34,17 +34,17 @@ class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 		self._RjctnRsnInf = None
 
 	@property
-	def RjctdAmt(self):
-		return self._RjctdAmt
+	def RjctnRsn(self):
+		return self._RjctnRsn
 
-	@RjctdAmt.setter
-	def RjctdAmt(self, value):
-		self._RjctdAmt = value if type(value) != auto else self.make_default("RjctdAmt")
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
 
-	@RjctdAmt.deleter
-	def RjctdAmt(self):
-		del self._RjctdAmt
-		self._RjctdAmt = None
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
 
 	@property
 	def CollSbstitnReqId(self):
@@ -60,9 +60,9 @@ class CollateralSubstitutionResponse3(base_types._BaseFieldType):
 		self._CollSbstitnReqId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsnInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=RejectionReason68Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollSbstitnReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

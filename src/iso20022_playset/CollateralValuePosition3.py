@@ -1,38 +1,12 @@
 import base_types
-import SecurityCharacteristics3
-import SecuritiesAccount19
 import ISODateTime
 import ActiveCurrencyAndAmount
+import SecuritiesAccount19
+import SecurityCharacteristics3
 
 class CollateralValuePosition3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlCollValtn", "_DataAccsTm", "_Scties", "_SctiesAcct"]
-	@property
-	def TtlCollValtn(self):
-		return self._TtlCollValtn
-
-	@TtlCollValtn.setter
-	def TtlCollValtn(self, value):
-		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
-
-	@TtlCollValtn.deleter
-	def TtlCollValtn(self):
-		del self._TtlCollValtn
-		self._TtlCollValtn = None
-
-	@property
-	def DataAccsTm(self):
-		return self._DataAccsTm
-
-	@DataAccsTm.setter
-	def DataAccsTm(self, value):
-		self._DataAccsTm = value if type(value) != auto else self.make_default("DataAccsTm")
-
-	@DataAccsTm.deleter
-	def DataAccsTm(self):
-		del self._DataAccsTm
-		self._DataAccsTm = None
-
+	__slots__ = ["_Scties", "_SctiesAcct", "_TtlCollValtn", "_DataAccsTm"]
 	@property
 	def Scties(self):
 		return self._Scties
@@ -59,10 +33,36 @@ class CollateralValuePosition3(base_types._BaseFieldType):
 		del self._SctiesAcct
 		self._SctiesAcct = None
 
+	@property
+	def TtlCollValtn(self):
+		return self._TtlCollValtn
+
+	@TtlCollValtn.setter
+	def TtlCollValtn(self, value):
+		self._TtlCollValtn = value if type(value) != auto else self.make_default("TtlCollValtn")
+
+	@TtlCollValtn.deleter
+	def TtlCollValtn(self):
+		del self._TtlCollValtn
+		self._TtlCollValtn = None
+
+	@property
+	def DataAccsTm(self):
+		return self._DataAccsTm
+
+	@DataAccsTm.setter
+	def DataAccsTm(self, value):
+		self._DataAccsTm = value if type(value) != auto else self.make_default("DataAccsTm")
+
+	@DataAccsTm.deleter
+	def DataAccsTm(self):
+		del self._DataAccsTm
+		self._DataAccsTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlCollValtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DataAccsTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Scties', type=SecurityCharacteristics3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCollValtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DataAccsTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

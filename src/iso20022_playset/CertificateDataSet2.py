@@ -1,21 +1,34 @@
 import base_types
-import Max70Text
+import YesNoIndicator
+import DatePeriodDetails
 import CertifiedCharacteristics2Choice
 import LineItemAndPOIdentification1
+import Max70Text
 import Max350Text
-import TradeCertificateType1Code
 import SingleTransport3
-import DatePeriodDetails
-import DocumentIdentification1
-import YesNoIndicator
-import Max35Text
+import TradeCertificateType1Code
 import ISODate
 import PostalAddress5
+import Max35Text
 import PartyIdentification26
+import DocumentIdentification1
 
 class CertificateDataSet2(base_types._BaseFieldType):
 
-	__slots__ = ["_AuthrsdInspctrInd", "_GoodsDesc", "_Manfctr", "_InspctnDt", "_Issr", "_Consgn", "_CertTp", "_PlcOfIsse", "_Consgnr", "_CertfdChrtcs", "_IsseDt", "_Trnsprt", "_DataSetId", "_LineItm", "_CertId", "_AddtlInf"]
+	__slots__ = ["_InspctnDt", "_AuthrsdInspctrInd", "_Trnsprt", "_Manfctr", "_CertId", "_Consgn", "_Consgnr", "_CertfdChrtcs", "_DataSetId", "_CertTp", "_LineItm", "_IsseDt", "_PlcOfIsse", "_GoodsDesc", "_Issr", "_AddtlInf"]
+	@property
+	def InspctnDt(self):
+		return self._InspctnDt
+
+	@InspctnDt.setter
+	def InspctnDt(self, value):
+		self._InspctnDt = value if type(value) != auto else self.make_default("InspctnDt")
+
+	@InspctnDt.deleter
+	def InspctnDt(self):
+		del self._InspctnDt
+		self._InspctnDt = None
+
 	@property
 	def AuthrsdInspctrInd(self):
 		return self._AuthrsdInspctrInd
@@ -30,17 +43,17 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		self._AuthrsdInspctrInd = None
 
 	@property
-	def GoodsDesc(self):
-		return self._GoodsDesc
+	def Trnsprt(self):
+		return self._Trnsprt
 
-	@GoodsDesc.setter
-	def GoodsDesc(self, value):
-		self._GoodsDesc = value if type(value) != auto else self.make_default("GoodsDesc")
+	@Trnsprt.setter
+	def Trnsprt(self, value):
+		self._Trnsprt = value if type(value) != auto else self.make_default("Trnsprt")
 
-	@GoodsDesc.deleter
-	def GoodsDesc(self):
-		del self._GoodsDesc
-		self._GoodsDesc = None
+	@Trnsprt.deleter
+	def Trnsprt(self):
+		del self._Trnsprt
+		self._Trnsprt = None
 
 	@property
 	def Manfctr(self):
@@ -56,30 +69,17 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		self._Manfctr = None
 
 	@property
-	def InspctnDt(self):
-		return self._InspctnDt
+	def CertId(self):
+		return self._CertId
 
-	@InspctnDt.setter
-	def InspctnDt(self, value):
-		self._InspctnDt = value if type(value) != auto else self.make_default("InspctnDt")
+	@CertId.setter
+	def CertId(self, value):
+		self._CertId = value if type(value) != auto else self.make_default("CertId")
 
-	@InspctnDt.deleter
-	def InspctnDt(self):
-		del self._InspctnDt
-		self._InspctnDt = None
-
-	@property
-	def Issr(self):
-		return self._Issr
-
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
-
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@CertId.deleter
+	def CertId(self):
+		del self._CertId
+		self._CertId = None
 
 	@property
 	def Consgn(self):
@@ -93,32 +93,6 @@ class CertificateDataSet2(base_types._BaseFieldType):
 	def Consgn(self):
 		del self._Consgn
 		self._Consgn = None
-
-	@property
-	def CertTp(self):
-		return self._CertTp
-
-	@CertTp.setter
-	def CertTp(self, value):
-		self._CertTp = value if type(value) != auto else self.make_default("CertTp")
-
-	@CertTp.deleter
-	def CertTp(self):
-		del self._CertTp
-		self._CertTp = None
-
-	@property
-	def PlcOfIsse(self):
-		return self._PlcOfIsse
-
-	@PlcOfIsse.setter
-	def PlcOfIsse(self, value):
-		self._PlcOfIsse = value if type(value) != auto else self.make_default("PlcOfIsse")
-
-	@PlcOfIsse.deleter
-	def PlcOfIsse(self):
-		del self._PlcOfIsse
-		self._PlcOfIsse = None
 
 	@property
 	def Consgnr(self):
@@ -147,32 +121,6 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		self._CertfdChrtcs = None
 
 	@property
-	def IsseDt(self):
-		return self._IsseDt
-
-	@IsseDt.setter
-	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
-
-	@IsseDt.deleter
-	def IsseDt(self):
-		del self._IsseDt
-		self._IsseDt = None
-
-	@property
-	def Trnsprt(self):
-		return self._Trnsprt
-
-	@Trnsprt.setter
-	def Trnsprt(self, value):
-		self._Trnsprt = value if type(value) != auto else self.make_default("Trnsprt")
-
-	@Trnsprt.deleter
-	def Trnsprt(self):
-		del self._Trnsprt
-		self._Trnsprt = None
-
-	@property
 	def DataSetId(self):
 		return self._DataSetId
 
@@ -184,6 +132,19 @@ class CertificateDataSet2(base_types._BaseFieldType):
 	def DataSetId(self):
 		del self._DataSetId
 		self._DataSetId = None
+
+	@property
+	def CertTp(self):
+		return self._CertTp
+
+	@CertTp.setter
+	def CertTp(self, value):
+		self._CertTp = value if type(value) != auto else self.make_default("CertTp")
+
+	@CertTp.deleter
+	def CertTp(self):
+		del self._CertTp
+		self._CertTp = None
 
 	@property
 	def LineItm(self):
@@ -199,17 +160,56 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		self._LineItm = None
 
 	@property
-	def CertId(self):
-		return self._CertId
+	def IsseDt(self):
+		return self._IsseDt
 
-	@CertId.setter
-	def CertId(self, value):
-		self._CertId = value if type(value) != auto else self.make_default("CertId")
+	@IsseDt.setter
+	def IsseDt(self, value):
+		self._IsseDt = value if type(value) != auto else self.make_default("IsseDt")
 
-	@CertId.deleter
-	def CertId(self):
-		del self._CertId
-		self._CertId = None
+	@IsseDt.deleter
+	def IsseDt(self):
+		del self._IsseDt
+		self._IsseDt = None
+
+	@property
+	def PlcOfIsse(self):
+		return self._PlcOfIsse
+
+	@PlcOfIsse.setter
+	def PlcOfIsse(self, value):
+		self._PlcOfIsse = value if type(value) != auto else self.make_default("PlcOfIsse")
+
+	@PlcOfIsse.deleter
+	def PlcOfIsse(self):
+		del self._PlcOfIsse
+		self._PlcOfIsse = None
+
+	@property
+	def GoodsDesc(self):
+		return self._GoodsDesc
+
+	@GoodsDesc.setter
+	def GoodsDesc(self, value):
+		self._GoodsDesc = value if type(value) != auto else self.make_default("GoodsDesc")
+
+	@GoodsDesc.deleter
+	def GoodsDesc(self):
+		del self._GoodsDesc
+		self._GoodsDesc = None
+
+	@property
+	def Issr(self):
+		return self._Issr
+
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
+
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def AddtlInf(self):
@@ -225,21 +225,21 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		self._AddtlInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AuthrsdInspctrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Manfctr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InspctnDt', type=DatePeriodDetails, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Issr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdInspctrInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Trnsprt', type=SingleTransport3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Manfctr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Consgn', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertTp', type=TradeCertificateType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcOfIsse', type=PostalAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Consgnr', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertfdChrtcs', type=CertifiedCharacteristics2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Trnsprt', type=SingleTransport3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataSetId', type=DocumentIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertTp', type=TradeCertificateType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LineItm', type=LineItemAndPOIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IsseDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfIsse', type=PostalAddress5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GoodsDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Issr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

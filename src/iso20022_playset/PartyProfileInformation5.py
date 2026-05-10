@@ -1,69 +1,30 @@
 import base_types
-import CertificationType1Choice
+import DataBaseCheck1
+import RiskLevel2Choice
+import YesNoIndicator
+import EventFrequency1Code
+import ISODate
 import KYCCheckType1Choice
 import Max140Text
-import RiskLevel2Choice
-import EventFrequency1Code
-import DataBaseCheck1
-import YesNoIndicator
-import CustomerConductClassification1Choice
 import Max35Text
-import ISODate
+import CustomerConductClassification1Choice
+import CertificationType1Choice
 
 class PartyProfileInformation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CertfctnInd", "_KnowYourCstmrChckTp", "_SlryRg", "_ChckngDt", "_ChckngFrqcy", "_SrcOfWlth", "_RskLvl", "_ChckngPty", "_KnowYourCstmrDBChck", "_CertTp", "_NxtRvsnDt", "_VldtngPty", "_CstmrCndctClssfctn", "_RspnsblPty"]
+	__slots__ = ["_ChckngPty", "_ChckngFrqcy", "_SrcOfWlth", "_VldtngPty", "_CstmrCndctClssfctn", "_KnowYourCstmrDBChck", "_RspnsblPty", "_KnowYourCstmrChckTp", "_CertfctnInd", "_SlryRg", "_CertTp", "_NxtRvsnDt", "_RskLvl", "_ChckngDt"]
 	@property
-	def CertfctnInd(self):
-		return self._CertfctnInd
+	def ChckngPty(self):
+		return self._ChckngPty
 
-	@CertfctnInd.setter
-	def CertfctnInd(self, value):
-		self._CertfctnInd = value if type(value) != auto else self.make_default("CertfctnInd")
+	@ChckngPty.setter
+	def ChckngPty(self, value):
+		self._ChckngPty = value if type(value) != auto else self.make_default("ChckngPty")
 
-	@CertfctnInd.deleter
-	def CertfctnInd(self):
-		del self._CertfctnInd
-		self._CertfctnInd = None
-
-	@property
-	def KnowYourCstmrChckTp(self):
-		return self._KnowYourCstmrChckTp
-
-	@KnowYourCstmrChckTp.setter
-	def KnowYourCstmrChckTp(self, value):
-		self._KnowYourCstmrChckTp = value if type(value) != auto else self.make_default("KnowYourCstmrChckTp")
-
-	@KnowYourCstmrChckTp.deleter
-	def KnowYourCstmrChckTp(self):
-		del self._KnowYourCstmrChckTp
-		self._KnowYourCstmrChckTp = None
-
-	@property
-	def SlryRg(self):
-		return self._SlryRg
-
-	@SlryRg.setter
-	def SlryRg(self, value):
-		self._SlryRg = value if type(value) != auto else self.make_default("SlryRg")
-
-	@SlryRg.deleter
-	def SlryRg(self):
-		del self._SlryRg
-		self._SlryRg = None
-
-	@property
-	def ChckngDt(self):
-		return self._ChckngDt
-
-	@ChckngDt.setter
-	def ChckngDt(self, value):
-		self._ChckngDt = value if type(value) != auto else self.make_default("ChckngDt")
-
-	@ChckngDt.deleter
-	def ChckngDt(self):
-		del self._ChckngDt
-		self._ChckngDt = None
+	@ChckngPty.deleter
+	def ChckngPty(self):
+		del self._ChckngPty
+		self._ChckngPty = None
 
 	@property
 	def ChckngFrqcy(self):
@@ -92,30 +53,30 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 		self._SrcOfWlth = None
 
 	@property
-	def RskLvl(self):
-		return self._RskLvl
+	def VldtngPty(self):
+		return self._VldtngPty
 
-	@RskLvl.setter
-	def RskLvl(self, value):
-		self._RskLvl = value if type(value) != auto else self.make_default("RskLvl")
+	@VldtngPty.setter
+	def VldtngPty(self, value):
+		self._VldtngPty = value if type(value) != auto else self.make_default("VldtngPty")
 
-	@RskLvl.deleter
-	def RskLvl(self):
-		del self._RskLvl
-		self._RskLvl = None
+	@VldtngPty.deleter
+	def VldtngPty(self):
+		del self._VldtngPty
+		self._VldtngPty = None
 
 	@property
-	def ChckngPty(self):
-		return self._ChckngPty
+	def CstmrCndctClssfctn(self):
+		return self._CstmrCndctClssfctn
 
-	@ChckngPty.setter
-	def ChckngPty(self, value):
-		self._ChckngPty = value if type(value) != auto else self.make_default("ChckngPty")
+	@CstmrCndctClssfctn.setter
+	def CstmrCndctClssfctn(self, value):
+		self._CstmrCndctClssfctn = value if type(value) != auto else self.make_default("CstmrCndctClssfctn")
 
-	@ChckngPty.deleter
-	def ChckngPty(self):
-		del self._ChckngPty
-		self._ChckngPty = None
+	@CstmrCndctClssfctn.deleter
+	def CstmrCndctClssfctn(self):
+		del self._CstmrCndctClssfctn
+		self._CstmrCndctClssfctn = None
 
 	@property
 	def KnowYourCstmrDBChck(self):
@@ -129,6 +90,58 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 	def KnowYourCstmrDBChck(self):
 		del self._KnowYourCstmrDBChck
 		self._KnowYourCstmrDBChck = None
+
+	@property
+	def RspnsblPty(self):
+		return self._RspnsblPty
+
+	@RspnsblPty.setter
+	def RspnsblPty(self, value):
+		self._RspnsblPty = value if type(value) != auto else self.make_default("RspnsblPty")
+
+	@RspnsblPty.deleter
+	def RspnsblPty(self):
+		del self._RspnsblPty
+		self._RspnsblPty = None
+
+	@property
+	def KnowYourCstmrChckTp(self):
+		return self._KnowYourCstmrChckTp
+
+	@KnowYourCstmrChckTp.setter
+	def KnowYourCstmrChckTp(self, value):
+		self._KnowYourCstmrChckTp = value if type(value) != auto else self.make_default("KnowYourCstmrChckTp")
+
+	@KnowYourCstmrChckTp.deleter
+	def KnowYourCstmrChckTp(self):
+		del self._KnowYourCstmrChckTp
+		self._KnowYourCstmrChckTp = None
+
+	@property
+	def CertfctnInd(self):
+		return self._CertfctnInd
+
+	@CertfctnInd.setter
+	def CertfctnInd(self, value):
+		self._CertfctnInd = value if type(value) != auto else self.make_default("CertfctnInd")
+
+	@CertfctnInd.deleter
+	def CertfctnInd(self):
+		del self._CertfctnInd
+		self._CertfctnInd = None
+
+	@property
+	def SlryRg(self):
+		return self._SlryRg
+
+	@SlryRg.setter
+	def SlryRg(self, value):
+		self._SlryRg = value if type(value) != auto else self.make_default("SlryRg")
+
+	@SlryRg.deleter
+	def SlryRg(self):
+		del self._SlryRg
+		self._SlryRg = None
 
 	@property
 	def CertTp(self):
@@ -157,58 +170,45 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 		self._NxtRvsnDt = None
 
 	@property
-	def VldtngPty(self):
-		return self._VldtngPty
+	def RskLvl(self):
+		return self._RskLvl
 
-	@VldtngPty.setter
-	def VldtngPty(self, value):
-		self._VldtngPty = value if type(value) != auto else self.make_default("VldtngPty")
+	@RskLvl.setter
+	def RskLvl(self, value):
+		self._RskLvl = value if type(value) != auto else self.make_default("RskLvl")
 
-	@VldtngPty.deleter
-	def VldtngPty(self):
-		del self._VldtngPty
-		self._VldtngPty = None
-
-	@property
-	def CstmrCndctClssfctn(self):
-		return self._CstmrCndctClssfctn
-
-	@CstmrCndctClssfctn.setter
-	def CstmrCndctClssfctn(self, value):
-		self._CstmrCndctClssfctn = value if type(value) != auto else self.make_default("CstmrCndctClssfctn")
-
-	@CstmrCndctClssfctn.deleter
-	def CstmrCndctClssfctn(self):
-		del self._CstmrCndctClssfctn
-		self._CstmrCndctClssfctn = None
+	@RskLvl.deleter
+	def RskLvl(self):
+		del self._RskLvl
+		self._RskLvl = None
 
 	@property
-	def RspnsblPty(self):
-		return self._RspnsblPty
+	def ChckngDt(self):
+		return self._ChckngDt
 
-	@RspnsblPty.setter
-	def RspnsblPty(self, value):
-		self._RspnsblPty = value if type(value) != auto else self.make_default("RspnsblPty")
+	@ChckngDt.setter
+	def ChckngDt(self, value):
+		self._ChckngDt = value if type(value) != auto else self.make_default("ChckngDt")
 
-	@RspnsblPty.deleter
-	def RspnsblPty(self):
-		del self._RspnsblPty
-		self._RspnsblPty = None
+	@ChckngDt.deleter
+	def ChckngDt(self):
+		del self._ChckngDt
+		self._ChckngDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CertfctnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KnowYourCstmrChckTp', type=KYCCheckType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SlryRg', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckngPty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ChckngFrqcy', type=EventFrequency1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcOfWlth', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RskLvl', type=RiskLevel2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChckngPty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KnowYourCstmrDBChck', type=DataBaseCheck1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertTp', type=CertificationType1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtRvsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtngPty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrCndctClssfctn', type=CustomerConductClassification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KnowYourCstmrDBChck', type=DataBaseCheck1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnsblPty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KnowYourCstmrChckTp', type=KYCCheckType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertfctnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SlryRg', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CertTp', type=CertificationType1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtRvsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RskLvl', type=RiskLevel2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChckngDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

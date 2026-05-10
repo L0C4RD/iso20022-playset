@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import ExternalRelativeTo1Code
+import PercentageRate
 
 class Percentage1(base_types._BaseFieldType):
 

@@ -1,25 +1,12 @@
 import base_types
-import Deposit1
-import OtherInvestment1
 import SecurityIdentificationAndAmount2
+import Deposit1
 import RepurchaseAgreement2
+import OtherInvestment1
 
 class Investment2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_UscrdCshDpst", "_RpAgrmt", "_CntrlBkDpst", "_OutrghtInvstmt", "_OthrInvstmts"]
-	@property
-	def UscrdCshDpst(self):
-		return self._UscrdCshDpst
-
-	@UscrdCshDpst.setter
-	def UscrdCshDpst(self, value):
-		self._UscrdCshDpst = value if type(value) != auto else self.make_default("UscrdCshDpst")
-
-	@UscrdCshDpst.deleter
-	def UscrdCshDpst(self):
-		del self._UscrdCshDpst
-		self._UscrdCshDpst = None
-
+	__slots__ = ["_RpAgrmt", "_UscrdCshDpst", "_OutrghtInvstmt", "_CntrlBkDpst", "_OthrInvstmts"]
 	@property
 	def RpAgrmt(self):
 		return self._RpAgrmt
@@ -34,17 +21,17 @@ class Investment2Choice(base_types._BaseFieldType):
 		self._RpAgrmt = None
 
 	@property
-	def CntrlBkDpst(self):
-		return self._CntrlBkDpst
+	def UscrdCshDpst(self):
+		return self._UscrdCshDpst
 
-	@CntrlBkDpst.setter
-	def CntrlBkDpst(self, value):
-		self._CntrlBkDpst = value if type(value) != auto else self.make_default("CntrlBkDpst")
+	@UscrdCshDpst.setter
+	def UscrdCshDpst(self, value):
+		self._UscrdCshDpst = value if type(value) != auto else self.make_default("UscrdCshDpst")
 
-	@CntrlBkDpst.deleter
-	def CntrlBkDpst(self):
-		del self._CntrlBkDpst
-		self._CntrlBkDpst = None
+	@UscrdCshDpst.deleter
+	def UscrdCshDpst(self):
+		del self._UscrdCshDpst
+		self._UscrdCshDpst = None
 
 	@property
 	def OutrghtInvstmt(self):
@@ -60,6 +47,19 @@ class Investment2Choice(base_types._BaseFieldType):
 		self._OutrghtInvstmt = None
 
 	@property
+	def CntrlBkDpst(self):
+		return self._CntrlBkDpst
+
+	@CntrlBkDpst.setter
+	def CntrlBkDpst(self, value):
+		self._CntrlBkDpst = value if type(value) != auto else self.make_default("CntrlBkDpst")
+
+	@CntrlBkDpst.deleter
+	def CntrlBkDpst(self):
+		del self._CntrlBkDpst
+		self._CntrlBkDpst = None
+
+	@property
 	def OthrInvstmts(self):
 		return self._OthrInvstmts
 
@@ -73,10 +73,10 @@ class Investment2Choice(base_types._BaseFieldType):
 		self._OthrInvstmts = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='UscrdCshDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RpAgrmt', type=RepurchaseAgreement2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CntrlBkDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='UscrdCshDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OutrghtInvstmt', type=SecurityIdentificationAndAmount2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CntrlBkDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OthrInvstmts', type=OtherInvestment1, min=0, max=1, mutex_group=1, array=False),
 	))
 

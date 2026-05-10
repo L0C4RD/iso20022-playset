@@ -4,20 +4,7 @@ import AccountManagementMessageReference5
 
 class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_ReqDtls"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_ReqDtls", "_MsgId"]
 	@property
 	def ReqDtls(self):
 		return self._ReqDtls
@@ -31,8 +18,21 @@ class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 		del self._ReqDtls
 		self._ReqDtls = None
 
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=AccountManagementMessageReference5, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

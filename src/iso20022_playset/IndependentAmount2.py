@@ -1,23 +1,23 @@
 import base_types
-import IndependentAmountConventionType1Code
 import Max140Text
 import ActiveCurrencyAndAmount
+import IndependentAmountConventionType1Code
 
 class IndependentAmount2(base_types._BaseFieldType):
 
-	__slots__ = ["_Cnvntn", "_Desc", "_Amt"]
+	__slots__ = ["_Amt", "_Desc", "_Cnvntn"]
 	@property
-	def Cnvntn(self):
-		return self._Cnvntn
+	def Amt(self):
+		return self._Amt
 
-	@Cnvntn.setter
-	def Cnvntn(self, value):
-		self._Cnvntn = value if type(value) != auto else self.make_default("Cnvntn")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@Cnvntn.deleter
-	def Cnvntn(self):
-		del self._Cnvntn
-		self._Cnvntn = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	@property
 	def Desc(self):
@@ -33,21 +33,21 @@ class IndependentAmount2(base_types._BaseFieldType):
 		self._Desc = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def Cnvntn(self):
+		return self._Cnvntn
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@Cnvntn.setter
+	def Cnvntn(self, value):
+		self._Cnvntn = value if type(value) != auto else self.make_default("Cnvntn")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@Cnvntn.deleter
+	def Cnvntn(self):
+		del self._Cnvntn
+		self._Cnvntn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Cnvntn', type=IndependentAmountConventionType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnvntn', type=IndependentAmountConventionType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

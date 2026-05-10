@@ -1,24 +1,11 @@
 import base_types
-import Max70Text
-import CountryCode
 import Max35Text
+import CountryCode
+import Max70Text
 
 class AlternateSecurityIdentification3(base_types._BaseFieldType):
 
-	__slots__ = ["_DmstIdSrc", "_Id", "_PrtryIdSrc"]
-	@property
-	def DmstIdSrc(self):
-		return self._DmstIdSrc
-
-	@DmstIdSrc.setter
-	def DmstIdSrc(self, value):
-		self._DmstIdSrc = value if type(value) != auto else self.make_default("DmstIdSrc")
-
-	@DmstIdSrc.deleter
-	def DmstIdSrc(self):
-		del self._DmstIdSrc
-		self._DmstIdSrc = None
-
+	__slots__ = ["_Id", "_DmstIdSrc", "_PrtryIdSrc"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class AlternateSecurityIdentification3(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def DmstIdSrc(self):
+		return self._DmstIdSrc
+
+	@DmstIdSrc.setter
+	def DmstIdSrc(self, value):
+		self._DmstIdSrc = value if type(value) != auto else self.make_default("DmstIdSrc")
+
+	@DmstIdSrc.deleter
+	def DmstIdSrc(self):
+		del self._DmstIdSrc
+		self._DmstIdSrc = None
 
 	@property
 	def PrtryIdSrc(self):
@@ -46,8 +46,8 @@ class AlternateSecurityIdentification3(base_types._BaseFieldType):
 		self._PrtryIdSrc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DmstIdSrc', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmstIdSrc', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryIdSrc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

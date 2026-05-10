@@ -1,13 +1,13 @@
 import base_types
-import TransactionDetails174
 import Max35Text
 import ProcessingStatus84Choice
-import SupplementaryData1
 import TransactionIdentifications52
+import SupplementaryData1
+import TransactionDetails174
 
 class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TxDtls", "_TxId", "_CxlReqRef", "_PrcgSts"]
+	__slots__ = ["_SplmtryData", "_CxlReqRef", "_TxDtls", "_TxId", "_PrcgSts"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,6 +20,19 @@ class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFi
 	def SplmtryData(self):
 		del self._SplmtryData
 		self._SplmtryData = None
+
+	@property
+	def CxlReqRef(self):
+		return self._CxlReqRef
+
+	@CxlReqRef.setter
+	def CxlReqRef(self, value):
+		self._CxlReqRef = value if type(value) != auto else self.make_default("CxlReqRef")
+
+	@CxlReqRef.deleter
+	def CxlReqRef(self):
+		del self._CxlReqRef
+		self._CxlReqRef = None
 
 	@property
 	def TxDtls(self):
@@ -48,19 +61,6 @@ class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFi
 		self._TxId = None
 
 	@property
-	def CxlReqRef(self):
-		return self._CxlReqRef
-
-	@CxlReqRef.setter
-	def CxlReqRef(self, value):
-		self._CxlReqRef = value if type(value) != auto else self.make_default("CxlReqRef")
-
-	@CxlReqRef.deleter
-	def CxlReqRef(self):
-		del self._CxlReqRef
-		self._CxlReqRef = None
-
-	@property
 	def PrcgSts(self):
 		return self._PrcgSts
 
@@ -75,9 +75,9 @@ class SecuritiesTransactionCancellationRequestStatusAdviceV08(base_types._BaseFi
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CxlReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails174, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications52, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus84Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import InformationDistribution2Code
 import GenericIdentification47
+import InformationDistribution2Code
 
 class InformationDistribution1Choice(base_types._BaseFieldType):
 

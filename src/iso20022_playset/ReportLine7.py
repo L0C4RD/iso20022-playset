@@ -1,24 +1,24 @@
 import base_types
-import DocumentIdentification7
 import CurrencyAndAmount
-import Adjustment6
 import Max35Text
+import DocumentIdentification7
+import Adjustment6
 
 class ReportLine7(base_types._BaseFieldType):
 
-	__slots__ = ["_Adjstmnt", "_TxId", "_NetAmt", "_PurchsOrdrRef"]
+	__slots__ = ["_NetAmt", "_TxId", "_PurchsOrdrRef", "_Adjstmnt"]
 	@property
-	def Adjstmnt(self):
-		return self._Adjstmnt
+	def NetAmt(self):
+		return self._NetAmt
 
-	@Adjstmnt.setter
-	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
 
-	@Adjstmnt.deleter
-	def Adjstmnt(self):
-		del self._Adjstmnt
-		self._Adjstmnt = None
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
 	def TxId(self):
@@ -34,19 +34,6 @@ class ReportLine7(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
-	@property
 	def PurchsOrdrRef(self):
 		return self._PurchsOrdrRef
 
@@ -59,10 +46,23 @@ class ReportLine7(base_types._BaseFieldType):
 		del self._PurchsOrdrRef
 		self._PurchsOrdrRef = None
 
+	@property
+	def Adjstmnt(self):
+		return self._Adjstmnt
+
+	@Adjstmnt.setter
+	def Adjstmnt(self, value):
+		self._Adjstmnt = value if type(value) != auto else self.make_default("Adjstmnt")
+
+	@Adjstmnt.deleter
+	def Adjstmnt(self):
+		del self._Adjstmnt
+		self._Adjstmnt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PurchsOrdrRef', type=DocumentIdentification7, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),
 	))
 

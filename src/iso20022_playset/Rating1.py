@@ -1,24 +1,11 @@
 import base_types
 import ISODateTime
-import RatingValueIdentifier
 import Max35Text
+import RatingValueIdentifier
 
 class Rating1(base_types._BaseFieldType):
 
-	__slots__ = ["_RatgSchme", "_ValId", "_ValDt"]
-	@property
-	def RatgSchme(self):
-		return self._RatgSchme
-
-	@RatgSchme.setter
-	def RatgSchme(self, value):
-		self._RatgSchme = value if type(value) != auto else self.make_default("RatgSchme")
-
-	@RatgSchme.deleter
-	def RatgSchme(self):
-		del self._RatgSchme
-		self._RatgSchme = None
-
+	__slots__ = ["_ValId", "_ValDt", "_RatgSchme"]
 	@property
 	def ValId(self):
 		return self._ValId
@@ -45,9 +32,22 @@ class Rating1(base_types._BaseFieldType):
 		del self._ValDt
 		self._ValDt = None
 
+	@property
+	def RatgSchme(self):
+		return self._RatgSchme
+
+	@RatgSchme.setter
+	def RatgSchme(self, value):
+		self._RatgSchme = value if type(value) != auto else self.make_default("RatgSchme")
+
+	@RatgSchme.deleter
+	def RatgSchme(self):
+		del self._RatgSchme
+		self._RatgSchme = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RatgSchme', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValId', type=RatingValueIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RatgSchme', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

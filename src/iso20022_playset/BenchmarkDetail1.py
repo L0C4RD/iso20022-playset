@@ -1,7 +1,7 @@
 import base_types
+import Max20000Text
 import Max350Text
 import BenchmarkCurveName2Code
-import Max20000Text
 
 class BenchmarkDetail1(base_types._BaseFieldType):
 

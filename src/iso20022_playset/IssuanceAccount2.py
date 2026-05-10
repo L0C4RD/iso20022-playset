@@ -1,6 +1,6 @@
 import base_types
-import SecuritiesAccount19
 import YesNoIndicator
+import SecuritiesAccount19
 
 class IssuanceAccount2(base_types._BaseFieldType):
 

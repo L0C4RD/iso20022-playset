@@ -1,14 +1,53 @@
 import base_types
-import PointOfInteractionCapabilities10
-import ActiveCurrencyCode
-import PostalAddress17
-import TransactionEnvironment2Code
-import ATMEquipment1
 import Max35Text
+import ATMEquipment1
+import PointOfInteractionCapabilities10
+import PostalAddress17
+import ActiveCurrencyCode
+import TransactionEnvironment2Code
 
 class AutomatedTellerMachine12(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Lctn", "_BaseCcy", "_LctnCtgy", "_AddtlId", "_Cpblties", "_SeqNb", "_Eqpmnt"]
+	__slots__ = ["_SeqNb", "_LctnCtgy", "_Eqpmnt", "_Id", "_BaseCcy", "_AddtlId", "_Cpblties", "_Lctn"]
+	@property
+	def SeqNb(self):
+		return self._SeqNb
+
+	@SeqNb.setter
+	def SeqNb(self, value):
+		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+
+	@SeqNb.deleter
+	def SeqNb(self):
+		del self._SeqNb
+		self._SeqNb = None
+
+	@property
+	def LctnCtgy(self):
+		return self._LctnCtgy
+
+	@LctnCtgy.setter
+	def LctnCtgy(self, value):
+		self._LctnCtgy = value if type(value) != auto else self.make_default("LctnCtgy")
+
+	@LctnCtgy.deleter
+	def LctnCtgy(self):
+		del self._LctnCtgy
+		self._LctnCtgy = None
+
+	@property
+	def Eqpmnt(self):
+		return self._Eqpmnt
+
+	@Eqpmnt.setter
+	def Eqpmnt(self, value):
+		self._Eqpmnt = value if type(value) != auto else self.make_default("Eqpmnt")
+
+	@Eqpmnt.deleter
+	def Eqpmnt(self):
+		del self._Eqpmnt
+		self._Eqpmnt = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -23,19 +62,6 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
-
-	@property
 	def BaseCcy(self):
 		return self._BaseCcy
 
@@ -47,19 +73,6 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 	def BaseCcy(self):
 		del self._BaseCcy
 		self._BaseCcy = None
-
-	@property
-	def LctnCtgy(self):
-		return self._LctnCtgy
-
-	@LctnCtgy.setter
-	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != auto else self.make_default("LctnCtgy")
-
-	@LctnCtgy.deleter
-	def LctnCtgy(self):
-		del self._LctnCtgy
-		self._LctnCtgy = None
 
 	@property
 	def AddtlId(self):
@@ -88,39 +101,26 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 		self._Cpblties = None
 
 	@property
-	def SeqNb(self):
-		return self._SeqNb
+	def Lctn(self):
+		return self._Lctn
 
-	@SeqNb.setter
-	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != auto else self.make_default("SeqNb")
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
 
-	@SeqNb.deleter
-	def SeqNb(self):
-		del self._SeqNb
-		self._SeqNb = None
-
-	@property
-	def Eqpmnt(self):
-		return self._Eqpmnt
-
-	@Eqpmnt.setter
-	def Eqpmnt(self, value):
-		self._Eqpmnt = value if type(value) != auto else self.make_default("Eqpmnt")
-
-	@Eqpmnt.deleter
-	def Eqpmnt(self):
-		del self._Eqpmnt
-		self._Eqpmnt = None
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LctnCtgy', type=TransactionEnvironment2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cpblties', type=PointOfInteractionCapabilities10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Eqpmnt', type=ATMEquipment1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=PostalAddress17, min=0, max=1, mutex_group=None, array=False),
 	))
 

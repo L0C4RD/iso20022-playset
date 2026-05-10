@@ -1,6 +1,6 @@
 import base_types
-import Max4AlphaNumericText
 import Max35Text
+import Max4AlphaNumericText
 
 class GenericIdentification163(base_types._BaseFieldType):
 

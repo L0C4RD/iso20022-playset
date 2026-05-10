@@ -1,6 +1,6 @@
 import base_types
-import Priority5Code
 import Max35Text
+import Priority5Code
 
 class Priority1Choice(base_types._BaseFieldType):
 

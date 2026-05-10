@@ -1,12 +1,12 @@
 import base_types
+import TransactionCounterpartyData11
+import CounterpartyIdentification12
 import CounterpartyIdentification11
 import OrganisationIdentification15Choice
-import CounterpartyIdentification12
-import TransactionCounterpartyData11
 
 class CounterpartyData89(base_types._BaseFieldType):
 
-	__slots__ = ["_RptgCtrPty", "_OthrPtyData", "_OthrCtrPty", "_NttyRspnsblForRpt"]
+	__slots__ = ["_RptgCtrPty", "_OthrCtrPty", "_NttyRspnsblForRpt", "_OthrPtyData"]
 	@property
 	def RptgCtrPty(self):
 		return self._RptgCtrPty
@@ -19,19 +19,6 @@ class CounterpartyData89(base_types._BaseFieldType):
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
 		self._RptgCtrPty = None
-
-	@property
-	def OthrPtyData(self):
-		return self._OthrPtyData
-
-	@OthrPtyData.setter
-	def OthrPtyData(self, value):
-		self._OthrPtyData = value if type(value) != auto else self.make_default("OthrPtyData")
-
-	@OthrPtyData.deleter
-	def OthrPtyData(self):
-		del self._OthrPtyData
-		self._OthrPtyData = None
 
 	@property
 	def OthrCtrPty(self):
@@ -59,10 +46,23 @@ class CounterpartyData89(base_types._BaseFieldType):
 		del self._NttyRspnsblForRpt
 		self._NttyRspnsblForRpt = None
 
+	@property
+	def OthrPtyData(self):
+		return self._OthrPtyData
+
+	@OthrPtyData.setter
+	def OthrPtyData(self, value):
+		self._OthrPtyData = value if type(value) != auto else self.make_default("OthrPtyData")
+
+	@OthrPtyData.deleter
+	def OthrPtyData(self):
+		del self._OthrPtyData
+		self._OthrPtyData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptgCtrPty', type=CounterpartyIdentification11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OthrPtyData', type=TransactionCounterpartyData11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCtrPty', type=CounterpartyIdentification12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrPtyData', type=TransactionCounterpartyData11, min=0, max=1, mutex_group=None, array=False),
 	))
 

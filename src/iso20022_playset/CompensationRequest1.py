@@ -1,27 +1,14 @@
 import base_types
+import Max140Text
 import DatePeriod2
+import PercentageRate
 import CashAccount40
 import ISODate
-import PercentageRate
-import Max140Text
 import ActiveCurrencyAndAmount
 
 class CompensationRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_Rsn", "_XpctdValDt", "_IntrstRate", "_Prd", "_Amt", "_CompstnAcct"]
-	@property
-	def Rsn(self):
-		return self._Rsn
-
-	@Rsn.setter
-	def Rsn(self, value):
-		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
-
-	@Rsn.deleter
-	def Rsn(self):
-		del self._Rsn
-		self._Rsn = None
-
+	__slots__ = ["_XpctdValDt", "_CompstnAcct", "_IntrstRate", "_Rsn", "_Prd", "_Amt"]
 	@property
 	def XpctdValDt(self):
 		return self._XpctdValDt
@@ -36,6 +23,19 @@ class CompensationRequest1(base_types._BaseFieldType):
 		self._XpctdValDt = None
 
 	@property
+	def CompstnAcct(self):
+		return self._CompstnAcct
+
+	@CompstnAcct.setter
+	def CompstnAcct(self, value):
+		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
+
+	@CompstnAcct.deleter
+	def CompstnAcct(self):
+		del self._CompstnAcct
+		self._CompstnAcct = None
+
+	@property
 	def IntrstRate(self):
 		return self._IntrstRate
 
@@ -47,6 +47,19 @@ class CompensationRequest1(base_types._BaseFieldType):
 	def IntrstRate(self):
 		del self._IntrstRate
 		self._IntrstRate = None
+
+	@property
+	def Rsn(self):
+		return self._Rsn
+
+	@Rsn.setter
+	def Rsn(self, value):
+		self._Rsn = value if type(value) != auto else self.make_default("Rsn")
+
+	@Rsn.deleter
+	def Rsn(self):
+		del self._Rsn
+		self._Rsn = None
 
 	@property
 	def Prd(self):
@@ -74,25 +87,12 @@ class CompensationRequest1(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
-	@property
-	def CompstnAcct(self):
-		return self._CompstnAcct
-
-	@CompstnAcct.setter
-	def CompstnAcct(self, value):
-		self._CompstnAcct = value if type(value) != auto else self.make_default("CompstnAcct")
-
-	@CompstnAcct.deleter
-	def CompstnAcct(self):
-		del self._CompstnAcct
-		self._CompstnAcct = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XpctdValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
 

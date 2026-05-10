@@ -1,14 +1,14 @@
 import base_types
+import ActiveCurrencyAnd13DecimalAmount
+import Max35Text
+import AdditionalInformation15
+import PercentageRate
 import YesNoIndicator
 import ISODate
-import AdditionalInformation15
-import Max35Text
-import PercentageRate
-import ActiveCurrencyAnd13DecimalAmount
 
 class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 
-	__slots__ = ["_CrstllstnAmt", "_EvtDt", "_EvtTpNm", "_LftmAllwncPrtcn", "_PctgOfAllwnc", "_AddtlInf", "_EvtTpNb"]
+	__slots__ = ["_CrstllstnAmt", "_EvtTpNm", "_AddtlInf", "_PctgOfAllwnc", "_EvtDt", "_LftmAllwncPrtcn", "_EvtTpNb"]
 	@property
 	def CrstllstnAmt(self):
 		return self._CrstllstnAmt
@@ -21,19 +21,6 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 	def CrstllstnAmt(self):
 		del self._CrstllstnAmt
 		self._CrstllstnAmt = None
-
-	@property
-	def EvtDt(self):
-		return self._EvtDt
-
-	@EvtDt.setter
-	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
-
-	@EvtDt.deleter
-	def EvtDt(self):
-		del self._EvtDt
-		self._EvtDt = None
 
 	@property
 	def EvtTpNm(self):
@@ -49,17 +36,17 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 		self._EvtTpNm = None
 
 	@property
-	def LftmAllwncPrtcn(self):
-		return self._LftmAllwncPrtcn
+	def AddtlInf(self):
+		return self._AddtlInf
 
-	@LftmAllwncPrtcn.setter
-	def LftmAllwncPrtcn(self, value):
-		self._LftmAllwncPrtcn = value if type(value) != auto else self.make_default("LftmAllwncPrtcn")
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
 
-	@LftmAllwncPrtcn.deleter
-	def LftmAllwncPrtcn(self):
-		del self._LftmAllwncPrtcn
-		self._LftmAllwncPrtcn = None
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
 
 	@property
 	def PctgOfAllwnc(self):
@@ -75,17 +62,30 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 		self._PctgOfAllwnc = None
 
 	@property
-	def AddtlInf(self):
-		return self._AddtlInf
+	def EvtDt(self):
+		return self._EvtDt
 
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+	@EvtDt.setter
+	def EvtDt(self, value):
+		self._EvtDt = value if type(value) != auto else self.make_default("EvtDt")
 
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
+	@EvtDt.deleter
+	def EvtDt(self):
+		del self._EvtDt
+		self._EvtDt = None
+
+	@property
+	def LftmAllwncPrtcn(self):
+		return self._LftmAllwncPrtcn
+
+	@LftmAllwncPrtcn.setter
+	def LftmAllwncPrtcn(self, value):
+		self._LftmAllwncPrtcn = value if type(value) != auto else self.make_default("LftmAllwncPrtcn")
+
+	@LftmAllwncPrtcn.deleter
+	def LftmAllwncPrtcn(self):
+		del self._LftmAllwncPrtcn
+		self._LftmAllwncPrtcn = None
 
 	@property
 	def EvtTpNb(self):
@@ -102,11 +102,11 @@ class BenefitCrystallisationEvent2(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrstllstnAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTpNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PctgOfAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PctgOfAllwnc', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LftmAllwncPrtcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EvtTpNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

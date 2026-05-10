@@ -1,8 +1,8 @@
 import base_types
+import Max35Text
+import RequestType3Choice
 import OriginalBusinessQuery1
 import ISODateTime
-import RequestType3Choice
-import Max35Text
 
 class MessageHeader6(base_types._BaseFieldType):
 

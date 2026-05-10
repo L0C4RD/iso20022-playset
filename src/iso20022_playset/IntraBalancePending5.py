@@ -1,6 +1,6 @@
 import base_types
-import IntraBalancePending6
 import PendingStatusAndReason2
+import IntraBalancePending6
 
 class IntraBalancePending5(base_types._BaseFieldType):
 

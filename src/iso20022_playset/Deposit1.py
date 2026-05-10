@@ -5,20 +5,7 @@ import LEIIdentifier
 
 class Deposit1(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyId", "_Val", "_MtrtyDt"]
-	@property
-	def CtrPtyId(self):
-		return self._CtrPtyId
-
-	@CtrPtyId.setter
-	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
-
-	@CtrPtyId.deleter
-	def CtrPtyId(self):
-		del self._CtrPtyId
-		self._CtrPtyId = None
-
+	__slots__ = ["_Val", "_CtrPtyId", "_MtrtyDt"]
 	@property
 	def Val(self):
 		return self._Val
@@ -31,6 +18,19 @@ class Deposit1(base_types._BaseFieldType):
 	def Val(self):
 		del self._Val
 		self._Val = None
+
+	@property
+	def CtrPtyId(self):
+		return self._CtrPtyId
+
+	@CtrPtyId.setter
+	def CtrPtyId(self, value):
+		self._CtrPtyId = value if type(value) != auto else self.make_default("CtrPtyId")
+
+	@CtrPtyId.deleter
+	def CtrPtyId(self):
+		del self._CtrPtyId
+		self._CtrPtyId = None
 
 	@property
 	def MtrtyDt(self):
@@ -46,8 +46,8 @@ class Deposit1(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CtrPtyId', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyId', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

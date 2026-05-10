@@ -1,6 +1,6 @@
 import base_types
-import FATCAStatus1Code
 import GenericIdentification47
+import FATCAStatus1Code
 
 class FATCAStatus2Choice(base_types._BaseFieldType):
 

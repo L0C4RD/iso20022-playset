@@ -1,6 +1,6 @@
 import base_types
-import ReportingRecordStatus1Code
 import Max15NumericText
+import ReportingRecordStatus1Code
 
 class NumberOfRecordsPerStatus1(base_types._BaseFieldType):
 

@@ -1,52 +1,26 @@
 import base_types
-import PartyIdentification242
-import DateAndDateTime2Choice
-import ExposureType11Code
 import CollateralAccount3
-import BlockChainAddressWallet5
+import PartyIdentification242
+import ExposureType11Code
 import PartyIdentification178Choice
+import BlockChainAddressWallet5
+import DateAndDateTime2Choice
 
 class Obligation11(base_types._BaseFieldType):
 
-	__slots__ = ["_SvcgPtyA", "_ValtnDt", "_BlckChainAdrOrWllt", "_CollAcctId", "_SvcgPtyB", "_PtyA", "_XpsrTp", "_PtyB"]
+	__slots__ = ["_PtyA", "_CollAcctId", "_XpsrTp", "_BlckChainAdrOrWllt", "_ValtnDt", "_SvcgPtyB", "_PtyB", "_SvcgPtyA"]
 	@property
-	def SvcgPtyA(self):
-		return self._SvcgPtyA
+	def PtyA(self):
+		return self._PtyA
 
-	@SvcgPtyA.setter
-	def SvcgPtyA(self, value):
-		self._SvcgPtyA = value if type(value) != auto else self.make_default("SvcgPtyA")
+	@PtyA.setter
+	def PtyA(self, value):
+		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
 
-	@SvcgPtyA.deleter
-	def SvcgPtyA(self):
-		del self._SvcgPtyA
-		self._SvcgPtyA = None
-
-	@property
-	def ValtnDt(self):
-		return self._ValtnDt
-
-	@ValtnDt.setter
-	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
-
-	@ValtnDt.deleter
-	def ValtnDt(self):
-		del self._ValtnDt
-		self._ValtnDt = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+	@PtyA.deleter
+	def PtyA(self):
+		del self._PtyA
+		self._PtyA = None
 
 	@property
 	def CollAcctId(self):
@@ -62,32 +36,6 @@ class Obligation11(base_types._BaseFieldType):
 		self._CollAcctId = None
 
 	@property
-	def SvcgPtyB(self):
-		return self._SvcgPtyB
-
-	@SvcgPtyB.setter
-	def SvcgPtyB(self, value):
-		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
-
-	@SvcgPtyB.deleter
-	def SvcgPtyB(self):
-		del self._SvcgPtyB
-		self._SvcgPtyB = None
-
-	@property
-	def PtyA(self):
-		return self._PtyA
-
-	@PtyA.setter
-	def PtyA(self, value):
-		self._PtyA = value if type(value) != auto else self.make_default("PtyA")
-
-	@PtyA.deleter
-	def PtyA(self):
-		del self._PtyA
-		self._PtyA = None
-
-	@property
 	def XpsrTp(self):
 		return self._XpsrTp
 
@@ -99,6 +47,45 @@ class Obligation11(base_types._BaseFieldType):
 	def XpsrTp(self):
 		del self._XpsrTp
 		self._XpsrTp = None
+
+	@property
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
+
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
+
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def ValtnDt(self):
+		return self._ValtnDt
+
+	@ValtnDt.setter
+	def ValtnDt(self, value):
+		self._ValtnDt = value if type(value) != auto else self.make_default("ValtnDt")
+
+	@ValtnDt.deleter
+	def ValtnDt(self):
+		del self._ValtnDt
+		self._ValtnDt = None
+
+	@property
+	def SvcgPtyB(self):
+		return self._SvcgPtyB
+
+	@SvcgPtyB.setter
+	def SvcgPtyB(self, value):
+		self._SvcgPtyB = value if type(value) != auto else self.make_default("SvcgPtyB")
+
+	@SvcgPtyB.deleter
+	def SvcgPtyB(self):
+		del self._SvcgPtyB
+		self._SvcgPtyB = None
 
 	@property
 	def PtyB(self):
@@ -113,14 +100,27 @@ class Obligation11(base_types._BaseFieldType):
 		del self._PtyB
 		self._PtyB = None
 
+	@property
+	def SvcgPtyA(self):
+		return self._SvcgPtyA
+
+	@SvcgPtyA.setter
+	def SvcgPtyA(self, value):
+		self._SvcgPtyA = value if type(value) != auto else self.make_default("SvcgPtyA")
+
+	@SvcgPtyA.deleter
+	def SvcgPtyA(self):
+		del self._SvcgPtyA
+		self._SvcgPtyA = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyA', type=PartyIdentification242, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollAcctId', type=CollateralAccount3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType11Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyB', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyB', type=PartyIdentification242, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcgPtyA', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

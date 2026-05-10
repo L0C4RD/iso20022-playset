@@ -1,7 +1,7 @@
 import base_types
 import PartyIdentification8
-import ContactIdentification1
 import CashAccount7
+import ContactIdentification1
 
 class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldType):
 

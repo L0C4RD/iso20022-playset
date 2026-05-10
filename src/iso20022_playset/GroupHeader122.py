@@ -1,14 +1,14 @@
 import base_types
-import ISODateTime
-import BranchAndFinancialInstitutionIdentification8
-import PartyIdentification272
 import Max35Text
+import ISODateTime
+import PartyIdentification272
 import CopyDuplicate1Code
 import Authorisation1Choice
+import BranchAndFinancialInstitutionIdentification8
 
 class GroupHeader122(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgRcpt", "_MsgId", "_CreDtTm", "_FwdgAgt", "_Authstn", "_CpyInd", "_InitgPty"]
+	__slots__ = ["_MsgRcpt", "_MsgId", "_CreDtTm", "_FwdgAgt", "_Authstn", "_InitgPty", "_CpyInd"]
 	@property
 	def MsgRcpt(self):
 		return self._MsgRcpt
@@ -75,19 +75,6 @@ class GroupHeader122(base_types._BaseFieldType):
 		self._Authstn = None
 
 	@property
-	def CpyInd(self):
-		return self._CpyInd
-
-	@CpyInd.setter
-	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
-
-	@CpyInd.deleter
-	def CpyInd(self):
-		del self._CpyInd
-		self._CpyInd = None
-
-	@property
 	def InitgPty(self):
 		return self._InitgPty
 
@@ -100,13 +87,26 @@ class GroupHeader122(base_types._BaseFieldType):
 		del self._InitgPty
 		self._InitgPty = None
 
+	@property
+	def CpyInd(self):
+		return self._CpyInd
+
+	@CpyInd.setter
+	def CpyInd(self, value):
+		self._CpyInd = value if type(value) != auto else self.make_default("CpyInd")
+
+	@CpyInd.deleter
+	def CpyInd(self):
+		del self._CpyInd
+		self._CpyInd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgRcpt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Authstn', type=Authorisation1Choice, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CpyInd', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyInd', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

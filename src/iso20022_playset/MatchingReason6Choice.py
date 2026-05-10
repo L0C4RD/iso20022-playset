@@ -1,6 +1,6 @@
 import base_types
-import UnmatchedReason23
 import NoReasonCode
+import UnmatchedReason23
 
 class MatchingReason6Choice(base_types._BaseFieldType):
 

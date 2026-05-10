@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
+import Max35Text
 import WithdrawalReason1
 import Exact4AlphaNumericText
-import Max35Text
+import SupplementaryData1
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_SplmtryData", "_WdrwlRsn", "_MtchgSysUnqRef", "_SttlmSsnIdr"]
+	__slots__ = ["_MsgId", "_MtchgSysUnqRef", "_WdrwlRsn", "_SplmtryData", "_SttlmSsnIdr"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -21,17 +21,17 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 		self._MsgId = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def MtchgSysUnqRef(self):
+		return self._MtchgSysUnqRef
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@MtchgSysUnqRef.setter
+	def MtchgSysUnqRef(self, value):
+		self._MtchgSysUnqRef = value if type(value) != auto else self.make_default("MtchgSysUnqRef")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@MtchgSysUnqRef.deleter
+	def MtchgSysUnqRef(self):
+		del self._MtchgSysUnqRef
+		self._MtchgSysUnqRef = None
 
 	@property
 	def WdrwlRsn(self):
@@ -47,17 +47,17 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 		self._WdrwlRsn = None
 
 	@property
-	def MtchgSysUnqRef(self):
-		return self._MtchgSysUnqRef
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@MtchgSysUnqRef.setter
-	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != auto else self.make_default("MtchgSysUnqRef")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@MtchgSysUnqRef.deleter
-	def MtchgSysUnqRef(self):
-		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def SttlmSsnIdr(self):
@@ -74,9 +74,9 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='WdrwlRsn', type=WithdrawalReason1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WdrwlRsn', type=WithdrawalReason1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSsnIdr', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import OrderEventType1Code
+import GenericIdentification30
 
 class OrderEventType1Choice(base_types._BaseFieldType):
 

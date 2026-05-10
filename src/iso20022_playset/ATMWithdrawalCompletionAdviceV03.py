@@ -1,8 +1,8 @@
 import base_types
-import ContentInformationType15
 import ATMWithdrawalCompletionAdvice3
-import ContentInformationType10
+import ContentInformationType15
 import Header32
+import ContentInformationType10
 
 class ATMWithdrawalCompletionAdviceV03(base_types._BaseFieldType):
 

@@ -4,20 +4,7 @@ import AbnormalValuesData4
 
 class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
-	__slots__ = ["_NbOfDerivsRptdWthOtlrs", "_NbOfDerivsRptd", "_Wrnngs"]
-	@property
-	def NbOfDerivsRptdWthOtlrs(self):
-		return self._NbOfDerivsRptdWthOtlrs
-
-	@NbOfDerivsRptdWthOtlrs.setter
-	def NbOfDerivsRptdWthOtlrs(self, value):
-		self._NbOfDerivsRptdWthOtlrs = value if type(value) != auto else self.make_default("NbOfDerivsRptdWthOtlrs")
-
-	@NbOfDerivsRptdWthOtlrs.deleter
-	def NbOfDerivsRptdWthOtlrs(self):
-		del self._NbOfDerivsRptdWthOtlrs
-		self._NbOfDerivsRptdWthOtlrs = None
-
+	__slots__ = ["_NbOfDerivsRptd", "_Wrnngs", "_NbOfDerivsRptdWthOtlrs"]
 	@property
 	def NbOfDerivsRptd(self):
 		return self._NbOfDerivsRptd
@@ -44,9 +31,22 @@ class DetailedTransactionStatistics28(base_types._BaseFieldType):
 		del self._Wrnngs
 		self._Wrnngs = None
 
+	@property
+	def NbOfDerivsRptdWthOtlrs(self):
+		return self._NbOfDerivsRptdWthOtlrs
+
+	@NbOfDerivsRptdWthOtlrs.setter
+	def NbOfDerivsRptdWthOtlrs(self, value):
+		self._NbOfDerivsRptdWthOtlrs = value if type(value) != auto else self.make_default("NbOfDerivsRptdWthOtlrs")
+
+	@NbOfDerivsRptdWthOtlrs.deleter
+	def NbOfDerivsRptdWthOtlrs(self):
+		del self._NbOfDerivsRptdWthOtlrs
+		self._NbOfDerivsRptdWthOtlrs = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NbOfDerivsRptdWthOtlrs', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDerivsRptd', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wrnngs', type=AbnormalValuesData4, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NbOfDerivsRptdWthOtlrs', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
-import ATMServiceType6Code
-import TrueFalseIndicator
 import Max35Text
+import TrueFalseIndicator
+import ATMServiceType6Code
 
 class ATMService11(base_types._BaseFieldType):
 
-	__slots__ = ["_MultiAcct", "_ATMSvcCd", "_SvcTp", "_CshBck", "_SvcVarntId", "_SvcRef"]
+	__slots__ = ["_MultiAcct", "_SvcVarntId", "_ATMSvcCd", "_CshBck", "_SvcTp", "_SvcRef"]
 	@property
 	def MultiAcct(self):
 		return self._MultiAcct
@@ -18,6 +18,19 @@ class ATMService11(base_types._BaseFieldType):
 	def MultiAcct(self):
 		del self._MultiAcct
 		self._MultiAcct = None
+
+	@property
+	def SvcVarntId(self):
+		return self._SvcVarntId
+
+	@SvcVarntId.setter
+	def SvcVarntId(self, value):
+		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
+
+	@SvcVarntId.deleter
+	def SvcVarntId(self):
+		del self._SvcVarntId
+		self._SvcVarntId = None
 
 	@property
 	def ATMSvcCd(self):
@@ -33,19 +46,6 @@ class ATMService11(base_types._BaseFieldType):
 		self._ATMSvcCd = None
 
 	@property
-	def SvcTp(self):
-		return self._SvcTp
-
-	@SvcTp.setter
-	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
-
-	@SvcTp.deleter
-	def SvcTp(self):
-		del self._SvcTp
-		self._SvcTp = None
-
-	@property
 	def CshBck(self):
 		return self._CshBck
 
@@ -59,17 +59,17 @@ class ATMService11(base_types._BaseFieldType):
 		self._CshBck = None
 
 	@property
-	def SvcVarntId(self):
-		return self._SvcVarntId
+	def SvcTp(self):
+		return self._SvcTp
 
-	@SvcVarntId.setter
-	def SvcVarntId(self, value):
-		self._SvcVarntId = value if type(value) != auto else self.make_default("SvcVarntId")
+	@SvcTp.setter
+	def SvcTp(self, value):
+		self._SvcTp = value if type(value) != auto else self.make_default("SvcTp")
 
-	@SvcVarntId.deleter
-	def SvcVarntId(self):
-		del self._SvcVarntId
-		self._SvcVarntId = None
+	@SvcTp.deleter
+	def SvcTp(self):
+		del self._SvcTp
+		self._SvcTp = None
 
 	@property
 	def SvcRef(self):
@@ -86,10 +86,10 @@ class ATMService11(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MultiAcct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SvcTp', type=ATMServiceType6Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshBck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcVarntId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ATMSvcCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshBck', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SvcTp', type=ATMServiceType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

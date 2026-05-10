@@ -1,95 +1,30 @@
 import base_types
-import Max70Text
-import UnitOfMeasure6Code
-import Max10Text
 import DecimalNumber
+import Max70Text
+import Max10Text
+import UnitOfMeasure6Code
+import AttendanceContext2Code
+import Max35Text
 import Max140Text
 import Max256Text
-import AttendanceContext2Code
-import PlusOrMinusIndicator
 import ImpliedCurrencyAndAmount
-import Max35Text
+import PlusOrMinusIndicator
 
 class Product6(base_types._BaseFieldType):
 
-	__slots__ = ["_PdctDesc", "_PdctAmtSgn", "_DlvrySvc", "_SaleChanl", "_DlvryLctn", "_AddtlPdctDesc", "_PdctCd", "_UnitPric", "_UnitPricSgn", "_PdctQty", "_AddtlPdctCd", "_PdctAmt", "_TaxTp", "_ItmId", "_ValAddedTax", "_UnitOfMeasr"]
+	__slots__ = ["_TaxTp", "_PdctCd", "_AddtlPdctCd", "_PdctAmtSgn", "_PdctDesc", "_DlvryLctn", "_ItmId", "_PdctAmt", "_UnitPricSgn", "_PdctQty", "_SaleChanl", "_DlvrySvc", "_AddtlPdctDesc", "_ValAddedTax", "_UnitPric", "_UnitOfMeasr"]
 	@property
-	def PdctDesc(self):
-		return self._PdctDesc
+	def TaxTp(self):
+		return self._TaxTp
 
-	@PdctDesc.setter
-	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
+	@TaxTp.setter
+	def TaxTp(self, value):
+		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
 
-	@PdctDesc.deleter
-	def PdctDesc(self):
-		del self._PdctDesc
-		self._PdctDesc = None
-
-	@property
-	def PdctAmtSgn(self):
-		return self._PdctAmtSgn
-
-	@PdctAmtSgn.setter
-	def PdctAmtSgn(self, value):
-		self._PdctAmtSgn = value if type(value) != auto else self.make_default("PdctAmtSgn")
-
-	@PdctAmtSgn.deleter
-	def PdctAmtSgn(self):
-		del self._PdctAmtSgn
-		self._PdctAmtSgn = None
-
-	@property
-	def DlvrySvc(self):
-		return self._DlvrySvc
-
-	@DlvrySvc.setter
-	def DlvrySvc(self, value):
-		self._DlvrySvc = value if type(value) != auto else self.make_default("DlvrySvc")
-
-	@DlvrySvc.deleter
-	def DlvrySvc(self):
-		del self._DlvrySvc
-		self._DlvrySvc = None
-
-	@property
-	def SaleChanl(self):
-		return self._SaleChanl
-
-	@SaleChanl.setter
-	def SaleChanl(self, value):
-		self._SaleChanl = value if type(value) != auto else self.make_default("SaleChanl")
-
-	@SaleChanl.deleter
-	def SaleChanl(self):
-		del self._SaleChanl
-		self._SaleChanl = None
-
-	@property
-	def DlvryLctn(self):
-		return self._DlvryLctn
-
-	@DlvryLctn.setter
-	def DlvryLctn(self, value):
-		self._DlvryLctn = value if type(value) != auto else self.make_default("DlvryLctn")
-
-	@DlvryLctn.deleter
-	def DlvryLctn(self):
-		del self._DlvryLctn
-		self._DlvryLctn = None
-
-	@property
-	def AddtlPdctDesc(self):
-		return self._AddtlPdctDesc
-
-	@AddtlPdctDesc.setter
-	def AddtlPdctDesc(self, value):
-		self._AddtlPdctDesc = value if type(value) != auto else self.make_default("AddtlPdctDesc")
-
-	@AddtlPdctDesc.deleter
-	def AddtlPdctDesc(self):
-		del self._AddtlPdctDesc
-		self._AddtlPdctDesc = None
+	@TaxTp.deleter
+	def TaxTp(self):
+		del self._TaxTp
+		self._TaxTp = None
 
 	@property
 	def PdctCd(self):
@@ -105,17 +40,82 @@ class Product6(base_types._BaseFieldType):
 		self._PdctCd = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
+	def AddtlPdctCd(self):
+		return self._AddtlPdctCd
 
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+	@AddtlPdctCd.setter
+	def AddtlPdctCd(self, value):
+		self._AddtlPdctCd = value if type(value) != auto else self.make_default("AddtlPdctCd")
 
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
+	@AddtlPdctCd.deleter
+	def AddtlPdctCd(self):
+		del self._AddtlPdctCd
+		self._AddtlPdctCd = None
+
+	@property
+	def PdctAmtSgn(self):
+		return self._PdctAmtSgn
+
+	@PdctAmtSgn.setter
+	def PdctAmtSgn(self, value):
+		self._PdctAmtSgn = value if type(value) != auto else self.make_default("PdctAmtSgn")
+
+	@PdctAmtSgn.deleter
+	def PdctAmtSgn(self):
+		del self._PdctAmtSgn
+		self._PdctAmtSgn = None
+
+	@property
+	def PdctDesc(self):
+		return self._PdctDesc
+
+	@PdctDesc.setter
+	def PdctDesc(self, value):
+		self._PdctDesc = value if type(value) != auto else self.make_default("PdctDesc")
+
+	@PdctDesc.deleter
+	def PdctDesc(self):
+		del self._PdctDesc
+		self._PdctDesc = None
+
+	@property
+	def DlvryLctn(self):
+		return self._DlvryLctn
+
+	@DlvryLctn.setter
+	def DlvryLctn(self, value):
+		self._DlvryLctn = value if type(value) != auto else self.make_default("DlvryLctn")
+
+	@DlvryLctn.deleter
+	def DlvryLctn(self):
+		del self._DlvryLctn
+		self._DlvryLctn = None
+
+	@property
+	def ItmId(self):
+		return self._ItmId
+
+	@ItmId.setter
+	def ItmId(self, value):
+		self._ItmId = value if type(value) != auto else self.make_default("ItmId")
+
+	@ItmId.deleter
+	def ItmId(self):
+		del self._ItmId
+		self._ItmId = None
+
+	@property
+	def PdctAmt(self):
+		return self._PdctAmt
+
+	@PdctAmt.setter
+	def PdctAmt(self, value):
+		self._PdctAmt = value if type(value) != auto else self.make_default("PdctAmt")
+
+	@PdctAmt.deleter
+	def PdctAmt(self):
+		del self._PdctAmt
+		self._PdctAmt = None
 
 	@property
 	def UnitPricSgn(self):
@@ -144,56 +144,43 @@ class Product6(base_types._BaseFieldType):
 		self._PdctQty = None
 
 	@property
-	def AddtlPdctCd(self):
-		return self._AddtlPdctCd
+	def SaleChanl(self):
+		return self._SaleChanl
 
-	@AddtlPdctCd.setter
-	def AddtlPdctCd(self, value):
-		self._AddtlPdctCd = value if type(value) != auto else self.make_default("AddtlPdctCd")
+	@SaleChanl.setter
+	def SaleChanl(self, value):
+		self._SaleChanl = value if type(value) != auto else self.make_default("SaleChanl")
 
-	@AddtlPdctCd.deleter
-	def AddtlPdctCd(self):
-		del self._AddtlPdctCd
-		self._AddtlPdctCd = None
-
-	@property
-	def PdctAmt(self):
-		return self._PdctAmt
-
-	@PdctAmt.setter
-	def PdctAmt(self, value):
-		self._PdctAmt = value if type(value) != auto else self.make_default("PdctAmt")
-
-	@PdctAmt.deleter
-	def PdctAmt(self):
-		del self._PdctAmt
-		self._PdctAmt = None
+	@SaleChanl.deleter
+	def SaleChanl(self):
+		del self._SaleChanl
+		self._SaleChanl = None
 
 	@property
-	def TaxTp(self):
-		return self._TaxTp
+	def DlvrySvc(self):
+		return self._DlvrySvc
 
-	@TaxTp.setter
-	def TaxTp(self, value):
-		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
+	@DlvrySvc.setter
+	def DlvrySvc(self, value):
+		self._DlvrySvc = value if type(value) != auto else self.make_default("DlvrySvc")
 
-	@TaxTp.deleter
-	def TaxTp(self):
-		del self._TaxTp
-		self._TaxTp = None
+	@DlvrySvc.deleter
+	def DlvrySvc(self):
+		del self._DlvrySvc
+		self._DlvrySvc = None
 
 	@property
-	def ItmId(self):
-		return self._ItmId
+	def AddtlPdctDesc(self):
+		return self._AddtlPdctDesc
 
-	@ItmId.setter
-	def ItmId(self, value):
-		self._ItmId = value if type(value) != auto else self.make_default("ItmId")
+	@AddtlPdctDesc.setter
+	def AddtlPdctDesc(self, value):
+		self._AddtlPdctDesc = value if type(value) != auto else self.make_default("AddtlPdctDesc")
 
-	@ItmId.deleter
-	def ItmId(self):
-		del self._ItmId
-		self._ItmId = None
+	@AddtlPdctDesc.deleter
+	def AddtlPdctDesc(self):
+		del self._AddtlPdctDesc
+		self._AddtlPdctDesc = None
 
 	@property
 	def ValAddedTax(self):
@@ -209,6 +196,19 @@ class Product6(base_types._BaseFieldType):
 		self._ValAddedTax = None
 
 	@property
+	def UnitPric(self):
+		return self._UnitPric
+
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
+
+	@property
 	def UnitOfMeasr(self):
 		return self._UnitOfMeasr
 
@@ -222,21 +222,21 @@ class Product6(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PdctDesc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctAmtSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrySvc', type=AttendanceContext2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleChanl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvryLctn', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPdctDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctAmtSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctDesc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryLctn', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPricSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ItmId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleChanl', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrySvc', type=AttendanceContext2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAddedTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure6Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

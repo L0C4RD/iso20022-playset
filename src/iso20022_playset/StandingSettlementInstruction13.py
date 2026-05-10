@@ -1,37 +1,11 @@
 import base_types
-import SettlementStandingInstructionDatabase4Choice
 import PartyIdentification117Choice
 import SettlementParties59
+import SettlementStandingInstructionDatabase4Choice
 
 class StandingSettlementInstruction13(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrRcvgSttlmPties", "_SttlmStgInstrDB", "_Vndr", "_OthrDlvrgSttlmPties"]
-	@property
-	def OthrRcvgSttlmPties(self):
-		return self._OthrRcvgSttlmPties
-
-	@OthrRcvgSttlmPties.setter
-	def OthrRcvgSttlmPties(self, value):
-		self._OthrRcvgSttlmPties = value if type(value) != auto else self.make_default("OthrRcvgSttlmPties")
-
-	@OthrRcvgSttlmPties.deleter
-	def OthrRcvgSttlmPties(self):
-		del self._OthrRcvgSttlmPties
-		self._OthrRcvgSttlmPties = None
-
-	@property
-	def SttlmStgInstrDB(self):
-		return self._SttlmStgInstrDB
-
-	@SttlmStgInstrDB.setter
-	def SttlmStgInstrDB(self, value):
-		self._SttlmStgInstrDB = value if type(value) != auto else self.make_default("SttlmStgInstrDB")
-
-	@SttlmStgInstrDB.deleter
-	def SttlmStgInstrDB(self):
-		del self._SttlmStgInstrDB
-		self._SttlmStgInstrDB = None
-
+	__slots__ = ["_Vndr", "_OthrRcvgSttlmPties", "_OthrDlvrgSttlmPties", "_SttlmStgInstrDB"]
 	@property
 	def Vndr(self):
 		return self._Vndr
@@ -46,6 +20,19 @@ class StandingSettlementInstruction13(base_types._BaseFieldType):
 		self._Vndr = None
 
 	@property
+	def OthrRcvgSttlmPties(self):
+		return self._OthrRcvgSttlmPties
+
+	@OthrRcvgSttlmPties.setter
+	def OthrRcvgSttlmPties(self, value):
+		self._OthrRcvgSttlmPties = value if type(value) != auto else self.make_default("OthrRcvgSttlmPties")
+
+	@OthrRcvgSttlmPties.deleter
+	def OthrRcvgSttlmPties(self):
+		del self._OthrRcvgSttlmPties
+		self._OthrRcvgSttlmPties = None
+
+	@property
 	def OthrDlvrgSttlmPties(self):
 		return self._OthrDlvrgSttlmPties
 
@@ -58,10 +45,23 @@ class StandingSettlementInstruction13(base_types._BaseFieldType):
 		del self._OthrDlvrgSttlmPties
 		self._OthrDlvrgSttlmPties = None
 
+	@property
+	def SttlmStgInstrDB(self):
+		return self._SttlmStgInstrDB
+
+	@SttlmStgInstrDB.setter
+	def SttlmStgInstrDB(self, value):
+		self._SttlmStgInstrDB = value if type(value) != auto else self.make_default("SttlmStgInstrDB")
+
+	@SttlmStgInstrDB.deleter
+	def SttlmStgInstrDB(self):
+		del self._SttlmStgInstrDB
+		self._SttlmStgInstrDB = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties59, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vndr', type=PartyIdentification117Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrRcvgSttlmPties', type=SettlementParties59, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrDlvrgSttlmPties', type=SettlementParties59, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

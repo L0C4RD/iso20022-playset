@@ -1,6 +1,6 @@
 import base_types
-import InvestigationLocationData1
 import Max35Text
+import InvestigationLocationData1
 
 class RelatedInvestigationData1(base_types._BaseFieldType):
 

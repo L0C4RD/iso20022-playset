@@ -1,25 +1,38 @@
 import base_types
-import TimeHorizon2Choice
-import OtherInvestmentNeed1
-import InvestmentNeed2Choice
 import SustainabilityPreferences2Code
+import OtherInvestmentNeed1
 import TargetMarket1Code
+import TimeHorizon2Choice
+import InvestmentNeed2Choice
 
 class InvestorRequirements4(base_types._BaseFieldType):
 
-	__slots__ = ["_RtrPrflPnsnSchmeDE", "_RtrPrflHdgg", "_Othr", "_OthrSpcfcInvstmtNeed", "_RtrPrflGrwth", "_MinHldgPrd", "_RtrPrflPrsrvtn", "_SstnbltyPrefs", "_RtrPrflIncm", "_OptnOrLvrgdRtrPrfl"]
+	__slots__ = ["_MinHldgPrd", "_RtrPrflGrwth", "_RtrPrflHdgg", "_Othr", "_SstnbltyPrefs", "_RtrPrflPrsrvtn", "_RtrPrflIncm", "_OptnOrLvrgdRtrPrfl", "_OthrSpcfcInvstmtNeed", "_RtrPrflPnsnSchmeDE"]
 	@property
-	def RtrPrflPnsnSchmeDE(self):
-		return self._RtrPrflPnsnSchmeDE
+	def MinHldgPrd(self):
+		return self._MinHldgPrd
 
-	@RtrPrflPnsnSchmeDE.setter
-	def RtrPrflPnsnSchmeDE(self, value):
-		self._RtrPrflPnsnSchmeDE = value if type(value) != auto else self.make_default("RtrPrflPnsnSchmeDE")
+	@MinHldgPrd.setter
+	def MinHldgPrd(self, value):
+		self._MinHldgPrd = value if type(value) != auto else self.make_default("MinHldgPrd")
 
-	@RtrPrflPnsnSchmeDE.deleter
-	def RtrPrflPnsnSchmeDE(self):
-		del self._RtrPrflPnsnSchmeDE
-		self._RtrPrflPnsnSchmeDE = None
+	@MinHldgPrd.deleter
+	def MinHldgPrd(self):
+		del self._MinHldgPrd
+		self._MinHldgPrd = None
+
+	@property
+	def RtrPrflGrwth(self):
+		return self._RtrPrflGrwth
+
+	@RtrPrflGrwth.setter
+	def RtrPrflGrwth(self, value):
+		self._RtrPrflGrwth = value if type(value) != auto else self.make_default("RtrPrflGrwth")
+
+	@RtrPrflGrwth.deleter
+	def RtrPrflGrwth(self):
+		del self._RtrPrflGrwth
+		self._RtrPrflGrwth = None
 
 	@property
 	def RtrPrflHdgg(self):
@@ -48,43 +61,17 @@ class InvestorRequirements4(base_types._BaseFieldType):
 		self._Othr = None
 
 	@property
-	def OthrSpcfcInvstmtNeed(self):
-		return self._OthrSpcfcInvstmtNeed
+	def SstnbltyPrefs(self):
+		return self._SstnbltyPrefs
 
-	@OthrSpcfcInvstmtNeed.setter
-	def OthrSpcfcInvstmtNeed(self, value):
-		self._OthrSpcfcInvstmtNeed = value if type(value) != auto else self.make_default("OthrSpcfcInvstmtNeed")
+	@SstnbltyPrefs.setter
+	def SstnbltyPrefs(self, value):
+		self._SstnbltyPrefs = value if type(value) != auto else self.make_default("SstnbltyPrefs")
 
-	@OthrSpcfcInvstmtNeed.deleter
-	def OthrSpcfcInvstmtNeed(self):
-		del self._OthrSpcfcInvstmtNeed
-		self._OthrSpcfcInvstmtNeed = None
-
-	@property
-	def RtrPrflGrwth(self):
-		return self._RtrPrflGrwth
-
-	@RtrPrflGrwth.setter
-	def RtrPrflGrwth(self, value):
-		self._RtrPrflGrwth = value if type(value) != auto else self.make_default("RtrPrflGrwth")
-
-	@RtrPrflGrwth.deleter
-	def RtrPrflGrwth(self):
-		del self._RtrPrflGrwth
-		self._RtrPrflGrwth = None
-
-	@property
-	def MinHldgPrd(self):
-		return self._MinHldgPrd
-
-	@MinHldgPrd.setter
-	def MinHldgPrd(self, value):
-		self._MinHldgPrd = value if type(value) != auto else self.make_default("MinHldgPrd")
-
-	@MinHldgPrd.deleter
-	def MinHldgPrd(self):
-		del self._MinHldgPrd
-		self._MinHldgPrd = None
+	@SstnbltyPrefs.deleter
+	def SstnbltyPrefs(self):
+		del self._SstnbltyPrefs
+		self._SstnbltyPrefs = None
 
 	@property
 	def RtrPrflPrsrvtn(self):
@@ -98,19 +85,6 @@ class InvestorRequirements4(base_types._BaseFieldType):
 	def RtrPrflPrsrvtn(self):
 		del self._RtrPrflPrsrvtn
 		self._RtrPrflPrsrvtn = None
-
-	@property
-	def SstnbltyPrefs(self):
-		return self._SstnbltyPrefs
-
-	@SstnbltyPrefs.setter
-	def SstnbltyPrefs(self, value):
-		self._SstnbltyPrefs = value if type(value) != auto else self.make_default("SstnbltyPrefs")
-
-	@SstnbltyPrefs.deleter
-	def SstnbltyPrefs(self):
-		del self._SstnbltyPrefs
-		self._SstnbltyPrefs = None
 
 	@property
 	def RtrPrflIncm(self):
@@ -138,16 +112,42 @@ class InvestorRequirements4(base_types._BaseFieldType):
 		del self._OptnOrLvrgdRtrPrfl
 		self._OptnOrLvrgdRtrPrfl = None
 
+	@property
+	def OthrSpcfcInvstmtNeed(self):
+		return self._OthrSpcfcInvstmtNeed
+
+	@OthrSpcfcInvstmtNeed.setter
+	def OthrSpcfcInvstmtNeed(self, value):
+		self._OthrSpcfcInvstmtNeed = value if type(value) != auto else self.make_default("OthrSpcfcInvstmtNeed")
+
+	@OthrSpcfcInvstmtNeed.deleter
+	def OthrSpcfcInvstmtNeed(self):
+		del self._OthrSpcfcInvstmtNeed
+		self._OthrSpcfcInvstmtNeed = None
+
+	@property
+	def RtrPrflPnsnSchmeDE(self):
+		return self._RtrPrflPnsnSchmeDE
+
+	@RtrPrflPnsnSchmeDE.setter
+	def RtrPrflPnsnSchmeDE(self, value):
+		self._RtrPrflPnsnSchmeDE = value if type(value) != auto else self.make_default("RtrPrflPnsnSchmeDE")
+
+	@RtrPrflPnsnSchmeDE.deleter
+	def RtrPrflPnsnSchmeDE(self):
+		del self._RtrPrflPnsnSchmeDE
+		self._RtrPrflPnsnSchmeDE = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RtrPrflPnsnSchmeDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinHldgPrd', type=TimeHorizon2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrPrflGrwth', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrPrflHdgg', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=OtherInvestmentNeed1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OthrSpcfcInvstmtNeed', type=InvestmentNeed2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrPrflGrwth', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MinHldgPrd', type=TimeHorizon2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RtrPrflPrsrvtn', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SstnbltyPrefs', type=SustainabilityPreferences2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrPrflPrsrvtn', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrPrflIncm', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnOrLvrgdRtrPrfl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrSpcfcInvstmtNeed', type=InvestmentNeed2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RtrPrflPnsnSchmeDE', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

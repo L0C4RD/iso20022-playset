@@ -1,11 +1,11 @@
 import base_types
-import Quantity1Code
-import OriginalAndCurrentQuantities4
 import FinancialInstrumentQuantity36Choice
+import OriginalAndCurrentQuantities4
+import Quantity1Code
 
 class Quantity55Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlAndCurFaceAmt", "_Cd", "_Qty"]
+	__slots__ = ["_OrgnlAndCurFaceAmt", "_Qty", "_Cd"]
 	@property
 	def OrgnlAndCurFaceAmt(self):
 		return self._OrgnlAndCurFaceAmt
@@ -20,19 +20,6 @@ class Quantity55Choice(base_types._BaseFieldType):
 		self._OrgnlAndCurFaceAmt = None
 
 	@property
-	def Cd(self):
-		return self._Cd
-
-	@Cd.setter
-	def Cd(self, value):
-		self._Cd = value if type(value) != auto else self.make_default("Cd")
-
-	@Cd.deleter
-	def Cd(self):
-		del self._Cd
-		self._Cd = None
-
-	@property
 	def Qty(self):
 		return self._Qty
 
@@ -45,9 +32,22 @@ class Quantity55Choice(base_types._BaseFieldType):
 		del self._Qty
 		self._Qty = None
 
+	@property
+	def Cd(self):
+		return self._Cd
+
+	@Cd.setter
+	def Cd(self, value):
+		self._Cd = value if type(value) != auto else self.make_default("Cd")
+
+	@Cd.deleter
+	def Cd(self):
+		del self._Cd
+		self._Cd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlAndCurFaceAmt', type=OriginalAndCurrentQuantities4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

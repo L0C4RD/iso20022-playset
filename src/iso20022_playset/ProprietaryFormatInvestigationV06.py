@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
 import Case6
-import CaseAssignment6
 import ProprietaryData7
+import SupplementaryData1
+import CaseAssignment6
 
 class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryData", "_SplmtryData", "_Assgnmt", "_Case"]
+	__slots__ = ["_PrtryData", "_Assgnmt", "_SplmtryData", "_Case"]
 	@property
 	def PrtryData(self):
 		return self._PrtryData
@@ -21,19 +21,6 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 		self._PrtryData = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
 	def Assgnmt(self):
 		return self._Assgnmt
 
@@ -45,6 +32,19 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 	def Assgnmt(self):
 		del self._Assgnmt
 		self._Assgnmt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def Case(self):
@@ -61,8 +61,8 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtryData', type=ProprietaryData7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 	))
 

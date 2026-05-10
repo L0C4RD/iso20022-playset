@@ -1,11 +1,24 @@
 import base_types
 import Max140Text
-import Exact4AlphaNumericText
 import BICIdentification1
+import Exact4AlphaNumericText
 
 class RequiredSubmission6(base_types._BaseFieldType):
 
-	__slots__ = ["_CertTp", "_Submitr", "_CertTpDesc"]
+	__slots__ = ["_CertTpDesc", "_CertTp", "_Submitr"]
+	@property
+	def CertTpDesc(self):
+		return self._CertTpDesc
+
+	@CertTpDesc.setter
+	def CertTpDesc(self, value):
+		self._CertTpDesc = value if type(value) != auto else self.make_default("CertTpDesc")
+
+	@CertTpDesc.deleter
+	def CertTpDesc(self):
+		del self._CertTpDesc
+		self._CertTpDesc = None
+
 	@property
 	def CertTp(self):
 		return self._CertTp
@@ -32,22 +45,9 @@ class RequiredSubmission6(base_types._BaseFieldType):
 		del self._Submitr
 		self._Submitr = None
 
-	@property
-	def CertTpDesc(self):
-		return self._CertTpDesc
-
-	@CertTpDesc.setter
-	def CertTpDesc(self, value):
-		self._CertTpDesc = value if type(value) != auto else self.make_default("CertTpDesc")
-
-	@CertTpDesc.deleter
-	def CertTpDesc(self):
-		del self._CertTpDesc
-		self._CertTpDesc = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CertTpDesc', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CertTpDesc', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

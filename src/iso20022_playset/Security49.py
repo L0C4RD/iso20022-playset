@@ -1,69 +1,30 @@
 import base_types
-import CollateralQualityType1Code
 import SecuritiesTransactionPrice19Choice
-import CFIOct2015Identifier
-import AmountAndDirection53
 import SecuritiesLendingType3Choice
-import ISINOct2015Identifier
-import ISODate
+import CFIOct2015Identifier
 import QuantityNominalValue2Choice
-import TrueFalseIndicator
+import ISODate
 import SecurityIssuer4
+import ISINOct2015Identifier
+import CollateralQualityType1Code
+import TrueFalseIndicator
+import AmountAndDirection53
 
 class Security49(base_types._BaseFieldType):
 
-	__slots__ = ["_Mtrty", "_QtyOrNmnlVal", "_Tp", "_Qlty", "_ExclsvArrgmnt", "_ClssfctnTp", "_UnitPric", "_Id", "_Issr", "_MktVal"]
+	__slots__ = ["_Issr", "_ExclsvArrgmnt", "_Mtrty", "_Tp", "_QtyOrNmnlVal", "_ClssfctnTp", "_Qlty", "_Id", "_UnitPric", "_MktVal"]
 	@property
-	def Mtrty(self):
-		return self._Mtrty
+	def Issr(self):
+		return self._Issr
 
-	@Mtrty.setter
-	def Mtrty(self, value):
-		self._Mtrty = value if type(value) != auto else self.make_default("Mtrty")
+	@Issr.setter
+	def Issr(self, value):
+		self._Issr = value if type(value) != auto else self.make_default("Issr")
 
-	@Mtrty.deleter
-	def Mtrty(self):
-		del self._Mtrty
-		self._Mtrty = None
-
-	@property
-	def QtyOrNmnlVal(self):
-		return self._QtyOrNmnlVal
-
-	@QtyOrNmnlVal.setter
-	def QtyOrNmnlVal(self, value):
-		self._QtyOrNmnlVal = value if type(value) != auto else self.make_default("QtyOrNmnlVal")
-
-	@QtyOrNmnlVal.deleter
-	def QtyOrNmnlVal(self):
-		del self._QtyOrNmnlVal
-		self._QtyOrNmnlVal = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def Qlty(self):
-		return self._Qlty
-
-	@Qlty.setter
-	def Qlty(self, value):
-		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
-
-	@Qlty.deleter
-	def Qlty(self):
-		del self._Qlty
-		self._Qlty = None
+	@Issr.deleter
+	def Issr(self):
+		del self._Issr
+		self._Issr = None
 
 	@property
 	def ExclsvArrgmnt(self):
@@ -79,6 +40,45 @@ class Security49(base_types._BaseFieldType):
 		self._ExclsvArrgmnt = None
 
 	@property
+	def Mtrty(self):
+		return self._Mtrty
+
+	@Mtrty.setter
+	def Mtrty(self, value):
+		self._Mtrty = value if type(value) != auto else self.make_default("Mtrty")
+
+	@Mtrty.deleter
+	def Mtrty(self):
+		del self._Mtrty
+		self._Mtrty = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def QtyOrNmnlVal(self):
+		return self._QtyOrNmnlVal
+
+	@QtyOrNmnlVal.setter
+	def QtyOrNmnlVal(self, value):
+		self._QtyOrNmnlVal = value if type(value) != auto else self.make_default("QtyOrNmnlVal")
+
+	@QtyOrNmnlVal.deleter
+	def QtyOrNmnlVal(self):
+		del self._QtyOrNmnlVal
+		self._QtyOrNmnlVal = None
+
+	@property
 	def ClssfctnTp(self):
 		return self._ClssfctnTp
 
@@ -92,17 +92,17 @@ class Security49(base_types._BaseFieldType):
 		self._ClssfctnTp = None
 
 	@property
-	def UnitPric(self):
-		return self._UnitPric
+	def Qlty(self):
+		return self._Qlty
 
-	@UnitPric.setter
-	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
+	@Qlty.setter
+	def Qlty(self, value):
+		self._Qlty = value if type(value) != auto else self.make_default("Qlty")
 
-	@UnitPric.deleter
-	def UnitPric(self):
-		del self._UnitPric
-		self._UnitPric = None
+	@Qlty.deleter
+	def Qlty(self):
+		del self._Qlty
+		self._Qlty = None
 
 	@property
 	def Id(self):
@@ -118,17 +118,17 @@ class Security49(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Issr(self):
-		return self._Issr
+	def UnitPric(self):
+		return self._UnitPric
 
-	@Issr.setter
-	def Issr(self, value):
-		self._Issr = value if type(value) != auto else self.make_default("Issr")
+	@UnitPric.setter
+	def UnitPric(self, value):
+		self._UnitPric = value if type(value) != auto else self.make_default("UnitPric")
 
-	@Issr.deleter
-	def Issr(self):
-		del self._Issr
-		self._Issr = None
+	@UnitPric.deleter
+	def UnitPric(self):
+		del self._UnitPric
+		self._UnitPric = None
 
 	@property
 	def MktVal(self):
@@ -144,15 +144,15 @@ class Security49(base_types._BaseFieldType):
 		self._MktVal = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Mtrty', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='QtyOrNmnlVal', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=SecuritiesLendingType3Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Qlty', type=CollateralQualityType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExclsvArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=SecuritiesTransactionPrice19Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=SecurityIssuer4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExclsvArrgmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mtrty', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=SecuritiesLendingType3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='QtyOrNmnlVal', type=QuantityNominalValue2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qlty', type=CollateralQualityType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=SecuritiesTransactionPrice19Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),
 	))
 

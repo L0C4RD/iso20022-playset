@@ -1,24 +1,11 @@
 import base_types
+import SimpleIdentificationInformation
 import MessageIdentification1
 import Reason2
-import SimpleIdentificationInformation
 
 class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_RltdMsgRef", "_RjctnId", "_RjctnRsn"]
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
+	__slots__ = ["_RltdMsgRef", "_TxId", "_RjctnRsn", "_RjctnId"]
 	@property
 	def RltdMsgRef(self):
 		return self._RltdMsgRef
@@ -33,17 +20,17 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 		self._RltdMsgRef = None
 
 	@property
-	def RjctnId(self):
-		return self._RjctnId
+	def TxId(self):
+		return self._TxId
 
-	@RjctnId.setter
-	def RjctnId(self, value):
-		self._RjctnId = value if type(value) != auto else self.make_default("RjctnId")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@RjctnId.deleter
-	def RjctnId(self):
-		del self._RjctnId
-		self._RjctnId = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	@property
 	def RjctnRsn(self):
@@ -58,10 +45,23 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 		del self._RjctnRsn
 		self._RjctnRsn = None
 
+	@property
+	def RjctnId(self):
+		return self._RjctnId
+
+	@RjctnId.setter
+	def RjctnId(self, value):
+		self._RjctnId = value if type(value) != auto else self.make_default("RjctnId")
+
+	@RjctnId.deleter
+	def RjctnId(self):
+		del self._RjctnId
+		self._RjctnId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

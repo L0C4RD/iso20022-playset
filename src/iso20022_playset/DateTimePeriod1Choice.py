@@ -1,23 +1,10 @@
 import base_types
-import DateTimePeriod1
 import ISODateTime
+import DateTimePeriod1
 
 class DateTimePeriod1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_DtTmRg", "_ToDtTm", "_FrDtTm"]
-	@property
-	def DtTmRg(self):
-		return self._DtTmRg
-
-	@DtTmRg.setter
-	def DtTmRg(self, value):
-		self._DtTmRg = value if type(value) != auto else self.make_default("DtTmRg")
-
-	@DtTmRg.deleter
-	def DtTmRg(self):
-		del self._DtTmRg
-		self._DtTmRg = None
-
+	__slots__ = ["_ToDtTm", "_FrDtTm", "_DtTmRg"]
 	@property
 	def ToDtTm(self):
 		return self._ToDtTm
@@ -44,9 +31,22 @@ class DateTimePeriod1Choice(base_types._BaseFieldType):
 		del self._FrDtTm
 		self._FrDtTm = None
 
+	@property
+	def DtTmRg(self):
+		return self._DtTmRg
+
+	@DtTmRg.setter
+	def DtTmRg(self, value):
+		self._DtTmRg = value if type(value) != auto else self.make_default("DtTmRg")
+
+	@DtTmRg.deleter
+	def DtTmRg(self):
+		del self._DtTmRg
+		self._DtTmRg = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DtTmRg', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='DtTmRg', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
-import StatementType5Choice
-import StatementBasis7Choice
-import Frequency25Choice
-import UpdateType15Choice
 import DateAndPeriod3Choice
+import StatementBasis7Choice
+import UpdateType15Choice
+import StatementType5Choice
+import Frequency25Choice
 
 class Statement83(base_types._BaseFieldType):
 
-	__slots__ = ["_StmtDtOrPrd", "_StmtBsis", "_UpdTp", "_StmtTp", "_Frqcy"]
+	__slots__ = ["_StmtDtOrPrd", "_StmtBsis", "_StmtTp", "_UpdTp", "_Frqcy"]
 	@property
 	def StmtDtOrPrd(self):
 		return self._StmtDtOrPrd
@@ -35,19 +35,6 @@ class Statement83(base_types._BaseFieldType):
 		self._StmtBsis = None
 
 	@property
-	def UpdTp(self):
-		return self._UpdTp
-
-	@UpdTp.setter
-	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
-
-	@UpdTp.deleter
-	def UpdTp(self):
-		del self._UpdTp
-		self._UpdTp = None
-
-	@property
 	def StmtTp(self):
 		return self._StmtTp
 
@@ -59,6 +46,19 @@ class Statement83(base_types._BaseFieldType):
 	def StmtTp(self):
 		del self._StmtTp
 		self._StmtTp = None
+
+	@property
+	def UpdTp(self):
+		return self._UpdTp
+
+	@UpdTp.setter
+	def UpdTp(self, value):
+		self._UpdTp = value if type(value) != auto else self.make_default("UpdTp")
+
+	@UpdTp.deleter
+	def UpdTp(self):
+		del self._UpdTp
+		self._UpdTp = None
 
 	@property
 	def Frqcy(self):
@@ -76,8 +76,8 @@ class Statement83(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StmtDtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtBsis', type=StatementBasis7Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtTp', type=StatementType5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,13 @@
 import base_types
-import Max70Text
-import Min3Max4Text
+import Max140Text
 import Max35Text
 import ISO3NumericCountryCode
-import Max140Text
+import Max70Text
+import Min3Max4Text
 
 class Organisation26(base_types._BaseFieldType):
 
-	__slots__ = ["_MrchntCtgyCd", "_Adr", "_CtryCd", "_CmonNm", "_RegdIdr"]
+	__slots__ = ["_MrchntCtgyCd", "_Adr", "_RegdIdr", "_CmonNm", "_CtryCd"]
 	@property
 	def MrchntCtgyCd(self):
 		return self._MrchntCtgyCd
@@ -35,17 +35,17 @@ class Organisation26(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
-	def CtryCd(self):
-		return self._CtryCd
+	def RegdIdr(self):
+		return self._RegdIdr
 
-	@CtryCd.setter
-	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != auto else self.make_default("CtryCd")
+	@RegdIdr.setter
+	def RegdIdr(self, value):
+		self._RegdIdr = value if type(value) != auto else self.make_default("RegdIdr")
 
-	@CtryCd.deleter
-	def CtryCd(self):
-		del self._CtryCd
-		self._CtryCd = None
+	@RegdIdr.deleter
+	def RegdIdr(self):
+		del self._RegdIdr
+		self._RegdIdr = None
 
 	@property
 	def CmonNm(self):
@@ -61,23 +61,23 @@ class Organisation26(base_types._BaseFieldType):
 		self._CmonNm = None
 
 	@property
-	def RegdIdr(self):
-		return self._RegdIdr
+	def CtryCd(self):
+		return self._CtryCd
 
-	@RegdIdr.setter
-	def RegdIdr(self, value):
-		self._RegdIdr = value if type(value) != auto else self.make_default("RegdIdr")
+	@CtryCd.setter
+	def CtryCd(self, value):
+		self._CtryCd = value if type(value) != auto else self.make_default("CtryCd")
 
-	@RegdIdr.deleter
-	def RegdIdr(self):
-		del self._RegdIdr
-		self._RegdIdr = None
+	@CtryCd.deleter
+	def CtryCd(self):
+		del self._CtryCd
+		self._CtryCd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MrchntCtgyCd', type=Min3Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegdIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryCd', type=ISO3NumericCountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

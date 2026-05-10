@@ -1,11 +1,11 @@
 import base_types
-import TrueFalseIndicator
 import Max140Text
+import TrueFalseIndicator
 import AmountOrRate1Choice
 
 class PaymentCondition2(base_types._BaseFieldType):
 
-	__slots__ = ["_DelyPnlty", "_GrntedPmtReqd", "_EarlyPmtAllwd", "_AmtModAllwd", "_ImdtPmtRbt"]
+	__slots__ = ["_DelyPnlty", "_AmtModAllwd", "_GrntedPmtReqd", "_ImdtPmtRbt", "_EarlyPmtAllwd"]
 	@property
 	def DelyPnlty(self):
 		return self._DelyPnlty
@@ -18,32 +18,6 @@ class PaymentCondition2(base_types._BaseFieldType):
 	def DelyPnlty(self):
 		del self._DelyPnlty
 		self._DelyPnlty = None
-
-	@property
-	def GrntedPmtReqd(self):
-		return self._GrntedPmtReqd
-
-	@GrntedPmtReqd.setter
-	def GrntedPmtReqd(self, value):
-		self._GrntedPmtReqd = value if type(value) != auto else self.make_default("GrntedPmtReqd")
-
-	@GrntedPmtReqd.deleter
-	def GrntedPmtReqd(self):
-		del self._GrntedPmtReqd
-		self._GrntedPmtReqd = None
-
-	@property
-	def EarlyPmtAllwd(self):
-		return self._EarlyPmtAllwd
-
-	@EarlyPmtAllwd.setter
-	def EarlyPmtAllwd(self, value):
-		self._EarlyPmtAllwd = value if type(value) != auto else self.make_default("EarlyPmtAllwd")
-
-	@EarlyPmtAllwd.deleter
-	def EarlyPmtAllwd(self):
-		del self._EarlyPmtAllwd
-		self._EarlyPmtAllwd = None
 
 	@property
 	def AmtModAllwd(self):
@@ -59,6 +33,19 @@ class PaymentCondition2(base_types._BaseFieldType):
 		self._AmtModAllwd = None
 
 	@property
+	def GrntedPmtReqd(self):
+		return self._GrntedPmtReqd
+
+	@GrntedPmtReqd.setter
+	def GrntedPmtReqd(self, value):
+		self._GrntedPmtReqd = value if type(value) != auto else self.make_default("GrntedPmtReqd")
+
+	@GrntedPmtReqd.deleter
+	def GrntedPmtReqd(self):
+		del self._GrntedPmtReqd
+		self._GrntedPmtReqd = None
+
+	@property
 	def ImdtPmtRbt(self):
 		return self._ImdtPmtRbt
 
@@ -71,11 +58,24 @@ class PaymentCondition2(base_types._BaseFieldType):
 		del self._ImdtPmtRbt
 		self._ImdtPmtRbt = None
 
+	@property
+	def EarlyPmtAllwd(self):
+		return self._EarlyPmtAllwd
+
+	@EarlyPmtAllwd.setter
+	def EarlyPmtAllwd(self, value):
+		self._EarlyPmtAllwd = value if type(value) != auto else self.make_default("EarlyPmtAllwd")
+
+	@EarlyPmtAllwd.deleter
+	def EarlyPmtAllwd(self):
+		del self._EarlyPmtAllwd
+		self._EarlyPmtAllwd = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DelyPnlty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrntedPmtReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EarlyPmtAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtModAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrntedPmtReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImdtPmtRbt', type=AmountOrRate1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlyPmtAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

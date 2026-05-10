@@ -1,7 +1,7 @@
 import base_types
-import RejectionReason21FormatChoice
 import Max140Text
 import Max35Text
+import RejectionReason21FormatChoice
 import Status4Code
 
 class InterestResponse1(base_types._BaseFieldType):

@@ -4,7 +4,7 @@ import PostalAddress26
 
 class PersonName1(base_types._BaseFieldType):
 
-	__slots__ = ["_Srnm", "_FrstNm", "_Adr"]
+	__slots__ = ["_Srnm", "_Adr", "_FrstNm"]
 	@property
 	def Srnm(self):
 		return self._Srnm
@@ -19,19 +19,6 @@ class PersonName1(base_types._BaseFieldType):
 		self._Srnm = None
 
 	@property
-	def FrstNm(self):
-		return self._FrstNm
-
-	@FrstNm.setter
-	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
-
-	@FrstNm.deleter
-	def FrstNm(self):
-		del self._FrstNm
-		self._FrstNm = None
-
-	@property
 	def Adr(self):
 		return self._Adr
 
@@ -44,9 +31,22 @@ class PersonName1(base_types._BaseFieldType):
 		del self._Adr
 		self._Adr = None
 
+	@property
+	def FrstNm(self):
+		return self._FrstNm
+
+	@FrstNm.setter
+	def FrstNm(self, value):
+		self._FrstNm = value if type(value) != auto else self.make_default("FrstNm")
+
+	@FrstNm.deleter
+	def FrstNm(self):
+		del self._FrstNm
+		self._FrstNm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Srnm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrstNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Adr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrstNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

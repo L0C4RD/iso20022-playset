@@ -1,15 +1,28 @@
 import base_types
-import SecuritiesAccount19
-import YesNoIndicator
-import CollateralEntryType1Code
 import Max35Text
+import FinancialInstrumentQuantity33Choice
+import CollateralEntryType1Code
+import YesNoIndicator
 import BlockChainAddressWallet3
 import SecurityIdentification19
-import FinancialInstrumentQuantity33Choice
+import SecuritiesAccount19
 
 class SecuritiesMovement9(base_types._BaseFieldType):
 
-	__slots__ = ["_BlckChainAdrOrWllt", "_CollMvmnt", "_Qty", "_FinInstrmId", "_SctiesMvmntTp", "_SfkpgAcct", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_ClntSctiesMvmntId"]
+	__slots__ = ["_Qty", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_FinInstrmId", "_SctiesMvmntTp", "_CollMvmnt", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_ClntSctiesMvmntId"]
+	@property
+	def Qty(self):
+		return self._Qty
+
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
+
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
+
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -24,30 +37,17 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def CollMvmnt(self):
-		return self._CollMvmnt
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@CollMvmnt.setter
-	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != auto else self.make_default("CollMvmnt")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@CollMvmnt.deleter
-	def CollMvmnt(self):
-		del self._CollMvmnt
-		self._CollMvmnt = None
-
-	@property
-	def Qty(self):
-		return self._Qty
-
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
-
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def FinInstrmId(self):
@@ -76,17 +76,17 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._SctiesMvmntTp = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def CollMvmnt(self):
+		return self._CollMvmnt
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@CollMvmnt.setter
+	def CollMvmnt(self, value):
+		self._CollMvmnt = value if type(value) != auto else self.make_default("CollMvmnt")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@CollMvmnt.deleter
+	def CollMvmnt(self):
+		del self._CollMvmnt
+		self._CollMvmnt = None
 
 	@property
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
@@ -115,12 +115,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 		self._ClntSctiesMvmntId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntTp', type=CollateralEntryType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

@@ -1,24 +1,11 @@
 import base_types
-import PercentagePrice2
 import PriceValueType10Code
 import AmountPrice3
+import PercentagePrice2
 
 class PriceFormat74Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_NotSpcfdPric", "_AmtPric", "_PctgPric"]
-	@property
-	def NotSpcfdPric(self):
-		return self._NotSpcfdPric
-
-	@NotSpcfdPric.setter
-	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
-
-	@NotSpcfdPric.deleter
-	def NotSpcfdPric(self):
-		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
-
+	__slots__ = ["_AmtPric", "_NotSpcfdPric", "_PctgPric"]
 	@property
 	def AmtPric(self):
 		return self._AmtPric
@@ -31,6 +18,19 @@ class PriceFormat74Choice(base_types._BaseFieldType):
 	def AmtPric(self):
 		del self._AmtPric
 		self._AmtPric = None
+
+	@property
+	def NotSpcfdPric(self):
+		return self._NotSpcfdPric
+
+	@NotSpcfdPric.setter
+	def NotSpcfdPric(self, value):
+		self._NotSpcfdPric = value if type(value) != auto else self.make_default("NotSpcfdPric")
+
+	@NotSpcfdPric.deleter
+	def NotSpcfdPric(self):
+		del self._NotSpcfdPric
+		self._NotSpcfdPric = None
 
 	@property
 	def PctgPric(self):
@@ -46,8 +46,8 @@ class PriceFormat74Choice(base_types._BaseFieldType):
 		self._PctgPric = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice3, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType10Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 	))
 

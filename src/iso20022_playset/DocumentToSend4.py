@@ -1,11 +1,11 @@
 import base_types
+import Max140Text
 import PartyIdentification125Choice
 import CommunicationMethod3Choice
-import Max140Text
 
 class DocumentToSend4(base_types._BaseFieldType):
 
-	__slots__ = ["_MtdOfTrnsmssn", "_Tp", "_Rcpt"]
+	__slots__ = ["_MtdOfTrnsmssn", "_Rcpt", "_Tp"]
 	@property
 	def MtdOfTrnsmssn(self):
 		return self._MtdOfTrnsmssn
@@ -20,19 +20,6 @@ class DocumentToSend4(base_types._BaseFieldType):
 		self._MtdOfTrnsmssn = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def Rcpt(self):
 		return self._Rcpt
 
@@ -45,9 +32,22 @@ class DocumentToSend4(base_types._BaseFieldType):
 		del self._Rcpt
 		self._Rcpt = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtdOfTrnsmssn', type=CommunicationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rcpt', type=PartyIdentification125Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

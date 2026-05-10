@@ -1,13 +1,26 @@
 import base_types
-import GenericIdentification30
-import ExposureType23Choice
-import YesNoIndicator
 import CollateralRole1Code
+import YesNoIndicator
 import CollateralTransactionType1Choice
+import ExposureType23Choice
+import GenericIdentification30
 
 class CollateralParameters12(base_types._BaseFieldType):
 
-	__slots__ = ["_SttlmApprvd", "_CollSd", "_CollApprvd", "_CollInstrTp", "_SttlmPrc", "_AutomtcAllcn", "_XpsrTp", "_Prty"]
+	__slots__ = ["_XpsrTp", "_SttlmApprvd", "_AutomtcAllcn", "_CollApprvd", "_CollInstrTp", "_CollSd", "_Prty", "_SttlmPrc"]
+	@property
+	def XpsrTp(self):
+		return self._XpsrTp
+
+	@XpsrTp.setter
+	def XpsrTp(self, value):
+		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
+
+	@XpsrTp.deleter
+	def XpsrTp(self):
+		del self._XpsrTp
+		self._XpsrTp = None
+
 	@property
 	def SttlmApprvd(self):
 		return self._SttlmApprvd
@@ -22,17 +35,17 @@ class CollateralParameters12(base_types._BaseFieldType):
 		self._SttlmApprvd = None
 
 	@property
-	def CollSd(self):
-		return self._CollSd
+	def AutomtcAllcn(self):
+		return self._AutomtcAllcn
 
-	@CollSd.setter
-	def CollSd(self, value):
-		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
+	@AutomtcAllcn.setter
+	def AutomtcAllcn(self, value):
+		self._AutomtcAllcn = value if type(value) != auto else self.make_default("AutomtcAllcn")
 
-	@CollSd.deleter
-	def CollSd(self):
-		del self._CollSd
-		self._CollSd = None
+	@AutomtcAllcn.deleter
+	def AutomtcAllcn(self):
+		del self._AutomtcAllcn
+		self._AutomtcAllcn = None
 
 	@property
 	def CollApprvd(self):
@@ -61,43 +74,17 @@ class CollateralParameters12(base_types._BaseFieldType):
 		self._CollInstrTp = None
 
 	@property
-	def SttlmPrc(self):
-		return self._SttlmPrc
+	def CollSd(self):
+		return self._CollSd
 
-	@SttlmPrc.setter
-	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != auto else self.make_default("SttlmPrc")
+	@CollSd.setter
+	def CollSd(self, value):
+		self._CollSd = value if type(value) != auto else self.make_default("CollSd")
 
-	@SttlmPrc.deleter
-	def SttlmPrc(self):
-		del self._SttlmPrc
-		self._SttlmPrc = None
-
-	@property
-	def AutomtcAllcn(self):
-		return self._AutomtcAllcn
-
-	@AutomtcAllcn.setter
-	def AutomtcAllcn(self, value):
-		self._AutomtcAllcn = value if type(value) != auto else self.make_default("AutomtcAllcn")
-
-	@AutomtcAllcn.deleter
-	def AutomtcAllcn(self):
-		del self._AutomtcAllcn
-		self._AutomtcAllcn = None
-
-	@property
-	def XpsrTp(self):
-		return self._XpsrTp
-
-	@XpsrTp.setter
-	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != auto else self.make_default("XpsrTp")
-
-	@XpsrTp.deleter
-	def XpsrTp(self):
-		del self._XpsrTp
-		self._XpsrTp = None
+	@CollSd.deleter
+	def CollSd(self):
+		del self._CollSd
+		self._CollSd = None
 
 	@property
 	def Prty(self):
@@ -112,14 +99,27 @@ class CollateralParameters12(base_types._BaseFieldType):
 		del self._Prty
 		self._Prty = None
 
+	@property
+	def SttlmPrc(self):
+		return self._SttlmPrc
+
+	@SttlmPrc.setter
+	def SttlmPrc(self, value):
+		self._SttlmPrc = value if type(value) != auto else self.make_default("SttlmPrc")
+
+	@SttlmPrc.deleter
+	def SttlmPrc(self):
+		del self._SttlmPrc
+		self._SttlmPrc = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AutomtcAllcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollInstrTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AutomtcAllcn', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CollSd', type=CollateralRole1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prty', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPrc', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
 

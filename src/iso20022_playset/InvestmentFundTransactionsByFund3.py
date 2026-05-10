@@ -1,27 +1,66 @@
 import base_types
-import PaginationBalance2
-import DistributionPolicy1Code
 import Max35Text
-import InvestmentFundTransaction4
-import Max350Text
 import FormOfSecurity1Code
+import DistributionPolicy1Code
 import SecurityIdentification3Choice
+import Max350Text
+import InvestmentFundTransaction4
+import PaginationBalance2
 
 class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 
-	__slots__ = ["_SctiesForm", "_SplmtryId", "_TxDtls", "_ClssTp", "_BalByPg", "_Nm", "_DstrbtnPlcy", "_Id"]
+	__slots__ = ["_Id", "_BalByPg", "_DstrbtnPlcy", "_ClssTp", "_SplmtryId", "_TxDtls", "_Nm", "_SctiesForm"]
 	@property
-	def SctiesForm(self):
-		return self._SctiesForm
+	def Id(self):
+		return self._Id
 
-	@SctiesForm.setter
-	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != auto else self.make_default("SctiesForm")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@SctiesForm.deleter
-	def SctiesForm(self):
-		del self._SctiesForm
-		self._SctiesForm = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def BalByPg(self):
+		return self._BalByPg
+
+	@BalByPg.setter
+	def BalByPg(self, value):
+		self._BalByPg = value if type(value) != auto else self.make_default("BalByPg")
+
+	@BalByPg.deleter
+	def BalByPg(self):
+		del self._BalByPg
+		self._BalByPg = None
+
+	@property
+	def DstrbtnPlcy(self):
+		return self._DstrbtnPlcy
+
+	@DstrbtnPlcy.setter
+	def DstrbtnPlcy(self, value):
+		self._DstrbtnPlcy = value if type(value) != auto else self.make_default("DstrbtnPlcy")
+
+	@DstrbtnPlcy.deleter
+	def DstrbtnPlcy(self):
+		del self._DstrbtnPlcy
+		self._DstrbtnPlcy = None
+
+	@property
+	def ClssTp(self):
+		return self._ClssTp
+
+	@ClssTp.setter
+	def ClssTp(self, value):
+		self._ClssTp = value if type(value) != auto else self.make_default("ClssTp")
+
+	@ClssTp.deleter
+	def ClssTp(self):
+		del self._ClssTp
+		self._ClssTp = None
 
 	@property
 	def SplmtryId(self):
@@ -50,32 +89,6 @@ class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 		self._TxDtls = None
 
 	@property
-	def ClssTp(self):
-		return self._ClssTp
-
-	@ClssTp.setter
-	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != auto else self.make_default("ClssTp")
-
-	@ClssTp.deleter
-	def ClssTp(self):
-		del self._ClssTp
-		self._ClssTp = None
-
-	@property
-	def BalByPg(self):
-		return self._BalByPg
-
-	@BalByPg.setter
-	def BalByPg(self, value):
-		self._BalByPg = value if type(value) != auto else self.make_default("BalByPg")
-
-	@BalByPg.deleter
-	def BalByPg(self):
-		del self._BalByPg
-		self._BalByPg = None
-
-	@property
 	def Nm(self):
 		return self._Nm
 
@@ -89,39 +102,26 @@ class InvestmentFundTransactionsByFund3(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def DstrbtnPlcy(self):
-		return self._DstrbtnPlcy
+	def SctiesForm(self):
+		return self._SctiesForm
 
-	@DstrbtnPlcy.setter
-	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != auto else self.make_default("DstrbtnPlcy")
+	@SctiesForm.setter
+	def SctiesForm(self, value):
+		self._SctiesForm = value if type(value) != auto else self.make_default("SctiesForm")
 
-	@DstrbtnPlcy.deleter
-	def DstrbtnPlcy(self):
-		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@SctiesForm.deleter
+	def SctiesForm(self):
+		del self._SctiesForm
+		self._SctiesForm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalByPg', type=PaginationBalance2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=InvestmentFundTransaction4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalByPg', type=PaginationBalance2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DstrbtnPlcy', type=DistributionPolicy1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=SecurityIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesForm', type=FormOfSecurity1Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

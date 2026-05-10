@@ -1,6 +1,6 @@
 import base_types
-import RejectionReason69
 import AdditionalReference14
+import RejectionReason69
 
 class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 

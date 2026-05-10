@@ -1,11 +1,11 @@
 import base_types
-import CorporateActionMovementProcessingStatus1
-import CorporateActionMovementFailedStatus1
 import CorporateActionMovementRejectionStatus1
+import CorporateActionMovementFailedStatus1
+import CorporateActionMovementProcessingStatus1
 
 class CorporateActionMovementStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcdSts", "_RjctdSts", "_FaildSts"]
+	__slots__ = ["_PrcdSts", "_FaildSts", "_RjctdSts"]
 	@property
 	def PrcdSts(self):
 		return self._PrcdSts
@@ -20,19 +20,6 @@ class CorporateActionMovementStatus1Choice(base_types._BaseFieldType):
 		self._PrcdSts = None
 
 	@property
-	def RjctdSts(self):
-		return self._RjctdSts
-
-	@RjctdSts.setter
-	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
-
-	@RjctdSts.deleter
-	def RjctdSts(self):
-		del self._RjctdSts
-		self._RjctdSts = None
-
-	@property
 	def FaildSts(self):
 		return self._FaildSts
 
@@ -45,9 +32,22 @@ class CorporateActionMovementStatus1Choice(base_types._BaseFieldType):
 		del self._FaildSts
 		self._FaildSts = None
 
+	@property
+	def RjctdSts(self):
+		return self._RjctdSts
+
+	@RjctdSts.setter
+	def RjctdSts(self, value):
+		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
+
+	@RjctdSts.deleter
+	def RjctdSts(self):
+		del self._RjctdSts
+		self._RjctdSts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionMovementProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='RjctdSts', type=CorporateActionMovementRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaildSts', type=CorporateActionMovementFailedStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RjctdSts', type=CorporateActionMovementRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
 

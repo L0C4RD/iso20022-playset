@@ -1,6 +1,6 @@
 import base_types
-import ISODateTime
 import CancelledStatusReason15Code
+import ISODateTime
 
 class RecordTechnicalData2(base_types._BaseFieldType):
 

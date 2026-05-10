@@ -1,11 +1,11 @@
 import base_types
-import ISODate
-import YesNoIndicator
 import DateFormat15Choice
+import YesNoIndicator
+import ISODate
 
 class BuyIn4(base_types._BaseFieldType):
 
-	__slots__ = ["_WrngInd", "_XpctdBuyInDt", "_CxlLmtDt", "_BuyInRvrsnDt"]
+	__slots__ = ["_WrngInd", "_XpctdBuyInDt", "_BuyInRvrsnDt", "_CxlLmtDt"]
 	@property
 	def WrngInd(self):
 		return self._WrngInd
@@ -33,19 +33,6 @@ class BuyIn4(base_types._BaseFieldType):
 		self._XpctdBuyInDt = None
 
 	@property
-	def CxlLmtDt(self):
-		return self._CxlLmtDt
-
-	@CxlLmtDt.setter
-	def CxlLmtDt(self, value):
-		self._CxlLmtDt = value if type(value) != auto else self.make_default("CxlLmtDt")
-
-	@CxlLmtDt.deleter
-	def CxlLmtDt(self):
-		del self._CxlLmtDt
-		self._CxlLmtDt = None
-
-	@property
 	def BuyInRvrsnDt(self):
 		return self._BuyInRvrsnDt
 
@@ -58,10 +45,23 @@ class BuyIn4(base_types._BaseFieldType):
 		del self._BuyInRvrsnDt
 		self._BuyInRvrsnDt = None
 
+	@property
+	def CxlLmtDt(self):
+		return self._CxlLmtDt
+
+	@CxlLmtDt.setter
+	def CxlLmtDt(self, value):
+		self._CxlLmtDt = value if type(value) != auto else self.make_default("CxlLmtDt")
+
+	@CxlLmtDt.deleter
+	def CxlLmtDt(self):
+		del self._CxlLmtDt
+		self._CxlLmtDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdBuyInDt', type=DateFormat15Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlLmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BuyInRvrsnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlLmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

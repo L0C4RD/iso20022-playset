@@ -1,7 +1,7 @@
 import base_types
-import MarketSpecificAttribute1
-import SystemSecuritiesAccount5
 import SystemRestriction1
+import SystemSecuritiesAccount5
+import MarketSpecificAttribute1
 
 class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 

@@ -1,29 +1,81 @@
 import base_types
-import RegulatoryTradingCapacity1Code
-import LEIIdentifier
-import TransactionData3
-import OrderInstructionData2
-import OrderPriceData2
 import ExecutingParty2Choice
-import OrderClassification2
+import TransactionData3
 import PersonOrOrganisation4Choice
+import OrderClassification2
+import OrderInstructionData2
 import TrueFalseIndicator
+import RegulatoryTradingCapacity1Code
+import OrderPriceData2
+import LEIIdentifier
 
 class OrderData4(base_types._BaseFieldType):
 
-	__slots__ = ["_TradgCpcty", "_InvstmtDcsnPrsn", "_ClntId", "_NonExctgBrkr", "_LqdtyPrvsnActvty", "_OrdrPrics", "_TxData", "_DrctElctrncAccs", "_SubmitgNtty", "_InstrData", "_ExctgPrsn", "_OrdrClssfctn"]
+	__slots__ = ["_TxData", "_OrdrClssfctn", "_ExctgPrsn", "_SubmitgNtty", "_NonExctgBrkr", "_InvstmtDcsnPrsn", "_ClntId", "_DrctElctrncAccs", "_OrdrPrics", "_InstrData", "_TradgCpcty", "_LqdtyPrvsnActvty"]
 	@property
-	def TradgCpcty(self):
-		return self._TradgCpcty
+	def TxData(self):
+		return self._TxData
 
-	@TradgCpcty.setter
-	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
+	@TxData.setter
+	def TxData(self, value):
+		self._TxData = value if type(value) != auto else self.make_default("TxData")
 
-	@TradgCpcty.deleter
-	def TradgCpcty(self):
-		del self._TradgCpcty
-		self._TradgCpcty = None
+	@TxData.deleter
+	def TxData(self):
+		del self._TxData
+		self._TxData = None
+
+	@property
+	def OrdrClssfctn(self):
+		return self._OrdrClssfctn
+
+	@OrdrClssfctn.setter
+	def OrdrClssfctn(self, value):
+		self._OrdrClssfctn = value if type(value) != auto else self.make_default("OrdrClssfctn")
+
+	@OrdrClssfctn.deleter
+	def OrdrClssfctn(self):
+		del self._OrdrClssfctn
+		self._OrdrClssfctn = None
+
+	@property
+	def ExctgPrsn(self):
+		return self._ExctgPrsn
+
+	@ExctgPrsn.setter
+	def ExctgPrsn(self, value):
+		self._ExctgPrsn = value if type(value) != auto else self.make_default("ExctgPrsn")
+
+	@ExctgPrsn.deleter
+	def ExctgPrsn(self):
+		del self._ExctgPrsn
+		self._ExctgPrsn = None
+
+	@property
+	def SubmitgNtty(self):
+		return self._SubmitgNtty
+
+	@SubmitgNtty.setter
+	def SubmitgNtty(self, value):
+		self._SubmitgNtty = value if type(value) != auto else self.make_default("SubmitgNtty")
+
+	@SubmitgNtty.deleter
+	def SubmitgNtty(self):
+		del self._SubmitgNtty
+		self._SubmitgNtty = None
+
+	@property
+	def NonExctgBrkr(self):
+		return self._NonExctgBrkr
+
+	@NonExctgBrkr.setter
+	def NonExctgBrkr(self, value):
+		self._NonExctgBrkr = value if type(value) != auto else self.make_default("NonExctgBrkr")
+
+	@NonExctgBrkr.deleter
+	def NonExctgBrkr(self):
+		del self._NonExctgBrkr
+		self._NonExctgBrkr = None
 
 	@property
 	def InvstmtDcsnPrsn(self):
@@ -52,30 +104,17 @@ class OrderData4(base_types._BaseFieldType):
 		self._ClntId = None
 
 	@property
-	def NonExctgBrkr(self):
-		return self._NonExctgBrkr
+	def DrctElctrncAccs(self):
+		return self._DrctElctrncAccs
 
-	@NonExctgBrkr.setter
-	def NonExctgBrkr(self, value):
-		self._NonExctgBrkr = value if type(value) != auto else self.make_default("NonExctgBrkr")
+	@DrctElctrncAccs.setter
+	def DrctElctrncAccs(self, value):
+		self._DrctElctrncAccs = value if type(value) != auto else self.make_default("DrctElctrncAccs")
 
-	@NonExctgBrkr.deleter
-	def NonExctgBrkr(self):
-		del self._NonExctgBrkr
-		self._NonExctgBrkr = None
-
-	@property
-	def LqdtyPrvsnActvty(self):
-		return self._LqdtyPrvsnActvty
-
-	@LqdtyPrvsnActvty.setter
-	def LqdtyPrvsnActvty(self, value):
-		self._LqdtyPrvsnActvty = value if type(value) != auto else self.make_default("LqdtyPrvsnActvty")
-
-	@LqdtyPrvsnActvty.deleter
-	def LqdtyPrvsnActvty(self):
-		del self._LqdtyPrvsnActvty
-		self._LqdtyPrvsnActvty = None
+	@DrctElctrncAccs.deleter
+	def DrctElctrncAccs(self):
+		del self._DrctElctrncAccs
+		self._DrctElctrncAccs = None
 
 	@property
 	def OrdrPrics(self):
@@ -91,45 +130,6 @@ class OrderData4(base_types._BaseFieldType):
 		self._OrdrPrics = None
 
 	@property
-	def TxData(self):
-		return self._TxData
-
-	@TxData.setter
-	def TxData(self, value):
-		self._TxData = value if type(value) != auto else self.make_default("TxData")
-
-	@TxData.deleter
-	def TxData(self):
-		del self._TxData
-		self._TxData = None
-
-	@property
-	def DrctElctrncAccs(self):
-		return self._DrctElctrncAccs
-
-	@DrctElctrncAccs.setter
-	def DrctElctrncAccs(self, value):
-		self._DrctElctrncAccs = value if type(value) != auto else self.make_default("DrctElctrncAccs")
-
-	@DrctElctrncAccs.deleter
-	def DrctElctrncAccs(self):
-		del self._DrctElctrncAccs
-		self._DrctElctrncAccs = None
-
-	@property
-	def SubmitgNtty(self):
-		return self._SubmitgNtty
-
-	@SubmitgNtty.setter
-	def SubmitgNtty(self, value):
-		self._SubmitgNtty = value if type(value) != auto else self.make_default("SubmitgNtty")
-
-	@SubmitgNtty.deleter
-	def SubmitgNtty(self):
-		del self._SubmitgNtty
-		self._SubmitgNtty = None
-
-	@property
 	def InstrData(self):
 		return self._InstrData
 
@@ -143,43 +143,43 @@ class OrderData4(base_types._BaseFieldType):
 		self._InstrData = None
 
 	@property
-	def ExctgPrsn(self):
-		return self._ExctgPrsn
+	def TradgCpcty(self):
+		return self._TradgCpcty
 
-	@ExctgPrsn.setter
-	def ExctgPrsn(self, value):
-		self._ExctgPrsn = value if type(value) != auto else self.make_default("ExctgPrsn")
+	@TradgCpcty.setter
+	def TradgCpcty(self, value):
+		self._TradgCpcty = value if type(value) != auto else self.make_default("TradgCpcty")
 
-	@ExctgPrsn.deleter
-	def ExctgPrsn(self):
-		del self._ExctgPrsn
-		self._ExctgPrsn = None
+	@TradgCpcty.deleter
+	def TradgCpcty(self):
+		del self._TradgCpcty
+		self._TradgCpcty = None
 
 	@property
-	def OrdrClssfctn(self):
-		return self._OrdrClssfctn
+	def LqdtyPrvsnActvty(self):
+		return self._LqdtyPrvsnActvty
 
-	@OrdrClssfctn.setter
-	def OrdrClssfctn(self, value):
-		self._OrdrClssfctn = value if type(value) != auto else self.make_default("OrdrClssfctn")
+	@LqdtyPrvsnActvty.setter
+	def LqdtyPrvsnActvty(self, value):
+		self._LqdtyPrvsnActvty = value if type(value) != auto else self.make_default("LqdtyPrvsnActvty")
 
-	@OrdrClssfctn.deleter
-	def OrdrClssfctn(self):
-		del self._OrdrClssfctn
-		self._OrdrClssfctn = None
+	@LqdtyPrvsnActvty.deleter
+	def LqdtyPrvsnActvty(self):
+		del self._LqdtyPrvsnActvty
+		self._LqdtyPrvsnActvty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradgCpcty', type=RegulatoryTradingCapacity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxData', type=TransactionData3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrClssfctn', type=OrderClassification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctgPrsn', type=ExecutingParty2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubmitgNtty', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NonExctgBrkr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtDcsnPrsn', type=ExecutingParty2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntId', type=PersonOrOrganisation4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonExctgBrkr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LqdtyPrvsnActvty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrPrics', type=OrderPriceData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxData', type=TransactionData3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DrctElctrncAccs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubmitgNtty', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrPrics', type=OrderPriceData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrData', type=OrderInstructionData2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctgPrsn', type=ExecutingParty2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrClssfctn', type=OrderClassification2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradgCpcty', type=RegulatoryTradingCapacity1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LqdtyPrvsnActvty', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

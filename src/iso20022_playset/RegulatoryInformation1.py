@@ -3,33 +3,7 @@ import Max35Text
 
 class RegulatoryInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Grp", "_Brnch", "_Othr", "_Sctr"]
-	@property
-	def Grp(self):
-		return self._Grp
-
-	@Grp.setter
-	def Grp(self, value):
-		self._Grp = value if type(value) != auto else self.make_default("Grp")
-
-	@Grp.deleter
-	def Grp(self):
-		del self._Grp
-		self._Grp = None
-
-	@property
-	def Brnch(self):
-		return self._Brnch
-
-	@Brnch.setter
-	def Brnch(self, value):
-		self._Brnch = value if type(value) != auto else self.make_default("Brnch")
-
-	@Brnch.deleter
-	def Brnch(self):
-		del self._Brnch
-		self._Brnch = None
-
+	__slots__ = ["_Othr", "_Sctr", "_Grp", "_Brnch"]
 	@property
 	def Othr(self):
 		return self._Othr
@@ -56,10 +30,36 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 		del self._Sctr
 		self._Sctr = None
 
+	@property
+	def Grp(self):
+		return self._Grp
+
+	@Grp.setter
+	def Grp(self, value):
+		self._Grp = value if type(value) != auto else self.make_default("Grp")
+
+	@Grp.deleter
+	def Grp(self):
+		del self._Grp
+		self._Grp = None
+
+	@property
+	def Brnch(self):
+		return self._Brnch
+
+	@Brnch.setter
+	def Brnch(self, value):
+		self._Brnch = value if type(value) != auto else self.make_default("Brnch")
+
+	@Brnch.deleter
+	def Brnch(self):
+		del self._Brnch
+		self._Brnch = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Grp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Grp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

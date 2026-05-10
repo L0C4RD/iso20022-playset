@@ -1,39 +1,13 @@
 import base_types
-import KeyUsage1Code
-import Number
-import CryptographicKeyType3Code
-import Min5Max16Binary
 import Max140Text
+import Min5Max16Binary
+import CryptographicKeyType3Code
+import Number
+import KeyUsage1Code
 
 class KEKIdentifier5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_KeyVrsn", "_KeyId", "_Fctn", "_SeqNb", "_DerivtnId"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def KeyVrsn(self):
-		return self._KeyVrsn
-
-	@KeyVrsn.setter
-	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
-
-	@KeyVrsn.deleter
-	def KeyVrsn(self):
-		del self._KeyVrsn
-		self._KeyVrsn = None
-
+	__slots__ = ["_KeyId", "_Fctn", "_SeqNb", "_KeyVrsn", "_Tp", "_DerivtnId"]
 	@property
 	def KeyId(self):
 		return self._KeyId
@@ -74,6 +48,32 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._SeqNb = None
 
 	@property
+	def KeyVrsn(self):
+		return self._KeyVrsn
+
+	@KeyVrsn.setter
+	def KeyVrsn(self, value):
+		self._KeyVrsn = value if type(value) != auto else self.make_default("KeyVrsn")
+
+	@KeyVrsn.deleter
+	def KeyVrsn(self):
+		del self._KeyVrsn
+		self._KeyVrsn = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
 	def DerivtnId(self):
 		return self._DerivtnId
 
@@ -87,11 +87,11 @@ class KEKIdentifier5(base_types._BaseFieldType):
 		self._DerivtnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='KeyId', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctn', type=KeyUsage1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,85 +1,20 @@
 import base_types
-import DateAndDateTimeChoice
 import ValuationTiming1Code
-import PartyIdentification2Choice
+import YesNoIndicator
 import FinancialInstrument8
 import ValuationStatistics3
-import ActiveOrHistoricCurrencyAndAmount
 import EventFrequency1Code
 import UnitPrice15
-import YesNoIndicator
-import PerformanceFactors1
 import FinancialInstrumentQuantity1
 import Max35Text
+import DateAndDateTimeChoice
+import PartyIdentification2Choice
+import ActiveOrHistoricCurrencyAndAmount
+import PerformanceFactors1
 
 class PriceValuation4(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNAV", "_FinInstrmDtls", "_ValtnDtTm", "_NxtValtnDtTm", "_ValtnFrqcy", "_OffclValtnInd", "_ValtnSttstcs", "_PrfrmncDtls", "_TtlUnitsNb", "_Id", "_FndMgmtCpny", "_NAVDtTm", "_SspdInd", "_PricDtls", "_PrvsValtnDtTm", "_ValtnTp"]
-	@property
-	def TtlNAV(self):
-		return self._TtlNAV
-
-	@TtlNAV.setter
-	def TtlNAV(self, value):
-		self._TtlNAV = value if type(value) != auto else self.make_default("TtlNAV")
-
-	@TtlNAV.deleter
-	def TtlNAV(self):
-		del self._TtlNAV
-		self._TtlNAV = None
-
-	@property
-	def FinInstrmDtls(self):
-		return self._FinInstrmDtls
-
-	@FinInstrmDtls.setter
-	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
-
-	@FinInstrmDtls.deleter
-	def FinInstrmDtls(self):
-		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
-
-	@property
-	def ValtnDtTm(self):
-		return self._ValtnDtTm
-
-	@ValtnDtTm.setter
-	def ValtnDtTm(self, value):
-		self._ValtnDtTm = value if type(value) != auto else self.make_default("ValtnDtTm")
-
-	@ValtnDtTm.deleter
-	def ValtnDtTm(self):
-		del self._ValtnDtTm
-		self._ValtnDtTm = None
-
-	@property
-	def NxtValtnDtTm(self):
-		return self._NxtValtnDtTm
-
-	@NxtValtnDtTm.setter
-	def NxtValtnDtTm(self, value):
-		self._NxtValtnDtTm = value if type(value) != auto else self.make_default("NxtValtnDtTm")
-
-	@NxtValtnDtTm.deleter
-	def NxtValtnDtTm(self):
-		del self._NxtValtnDtTm
-		self._NxtValtnDtTm = None
-
-	@property
-	def ValtnFrqcy(self):
-		return self._ValtnFrqcy
-
-	@ValtnFrqcy.setter
-	def ValtnFrqcy(self, value):
-		self._ValtnFrqcy = value if type(value) != auto else self.make_default("ValtnFrqcy")
-
-	@ValtnFrqcy.deleter
-	def ValtnFrqcy(self):
-		del self._ValtnFrqcy
-		self._ValtnFrqcy = None
-
+	__slots__ = ["_OffclValtnInd", "_FndMgmtCpny", "_SspdInd", "_PrfrmncDtls", "_FinInstrmDtls", "_NxtValtnDtTm", "_TtlUnitsNb", "_PrvsValtnDtTm", "_PricDtls", "_TtlNAV", "_ValtnSttstcs", "_ValtnTp", "_ValtnDtTm", "_Id", "_ValtnFrqcy", "_NAVDtTm"]
 	@property
 	def OffclValtnInd(self):
 		return self._OffclValtnInd
@@ -92,58 +27,6 @@ class PriceValuation4(base_types._BaseFieldType):
 	def OffclValtnInd(self):
 		del self._OffclValtnInd
 		self._OffclValtnInd = None
-
-	@property
-	def ValtnSttstcs(self):
-		return self._ValtnSttstcs
-
-	@ValtnSttstcs.setter
-	def ValtnSttstcs(self, value):
-		self._ValtnSttstcs = value if type(value) != auto else self.make_default("ValtnSttstcs")
-
-	@ValtnSttstcs.deleter
-	def ValtnSttstcs(self):
-		del self._ValtnSttstcs
-		self._ValtnSttstcs = None
-
-	@property
-	def PrfrmncDtls(self):
-		return self._PrfrmncDtls
-
-	@PrfrmncDtls.setter
-	def PrfrmncDtls(self, value):
-		self._PrfrmncDtls = value if type(value) != auto else self.make_default("PrfrmncDtls")
-
-	@PrfrmncDtls.deleter
-	def PrfrmncDtls(self):
-		del self._PrfrmncDtls
-		self._PrfrmncDtls = None
-
-	@property
-	def TtlUnitsNb(self):
-		return self._TtlUnitsNb
-
-	@TtlUnitsNb.setter
-	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != auto else self.make_default("TtlUnitsNb")
-
-	@TtlUnitsNb.deleter
-	def TtlUnitsNb(self):
-		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def FndMgmtCpny(self):
@@ -159,19 +42,6 @@ class PriceValuation4(base_types._BaseFieldType):
 		self._FndMgmtCpny = None
 
 	@property
-	def NAVDtTm(self):
-		return self._NAVDtTm
-
-	@NAVDtTm.setter
-	def NAVDtTm(self, value):
-		self._NAVDtTm = value if type(value) != auto else self.make_default("NAVDtTm")
-
-	@NAVDtTm.deleter
-	def NAVDtTm(self):
-		del self._NAVDtTm
-		self._NAVDtTm = None
-
-	@property
 	def SspdInd(self):
 		return self._SspdInd
 
@@ -185,17 +55,56 @@ class PriceValuation4(base_types._BaseFieldType):
 		self._SspdInd = None
 
 	@property
-	def PricDtls(self):
-		return self._PricDtls
+	def PrfrmncDtls(self):
+		return self._PrfrmncDtls
 
-	@PricDtls.setter
-	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != auto else self.make_default("PricDtls")
+	@PrfrmncDtls.setter
+	def PrfrmncDtls(self, value):
+		self._PrfrmncDtls = value if type(value) != auto else self.make_default("PrfrmncDtls")
 
-	@PricDtls.deleter
-	def PricDtls(self):
-		del self._PricDtls
-		self._PricDtls = None
+	@PrfrmncDtls.deleter
+	def PrfrmncDtls(self):
+		del self._PrfrmncDtls
+		self._PrfrmncDtls = None
+
+	@property
+	def FinInstrmDtls(self):
+		return self._FinInstrmDtls
+
+	@FinInstrmDtls.setter
+	def FinInstrmDtls(self, value):
+		self._FinInstrmDtls = value if type(value) != auto else self.make_default("FinInstrmDtls")
+
+	@FinInstrmDtls.deleter
+	def FinInstrmDtls(self):
+		del self._FinInstrmDtls
+		self._FinInstrmDtls = None
+
+	@property
+	def NxtValtnDtTm(self):
+		return self._NxtValtnDtTm
+
+	@NxtValtnDtTm.setter
+	def NxtValtnDtTm(self, value):
+		self._NxtValtnDtTm = value if type(value) != auto else self.make_default("NxtValtnDtTm")
+
+	@NxtValtnDtTm.deleter
+	def NxtValtnDtTm(self):
+		del self._NxtValtnDtTm
+		self._NxtValtnDtTm = None
+
+	@property
+	def TtlUnitsNb(self):
+		return self._TtlUnitsNb
+
+	@TtlUnitsNb.setter
+	def TtlUnitsNb(self, value):
+		self._TtlUnitsNb = value if type(value) != auto else self.make_default("TtlUnitsNb")
+
+	@TtlUnitsNb.deleter
+	def TtlUnitsNb(self):
+		del self._TtlUnitsNb
+		self._TtlUnitsNb = None
 
 	@property
 	def PrvsValtnDtTm(self):
@@ -211,6 +120,45 @@ class PriceValuation4(base_types._BaseFieldType):
 		self._PrvsValtnDtTm = None
 
 	@property
+	def PricDtls(self):
+		return self._PricDtls
+
+	@PricDtls.setter
+	def PricDtls(self, value):
+		self._PricDtls = value if type(value) != auto else self.make_default("PricDtls")
+
+	@PricDtls.deleter
+	def PricDtls(self):
+		del self._PricDtls
+		self._PricDtls = None
+
+	@property
+	def TtlNAV(self):
+		return self._TtlNAV
+
+	@TtlNAV.setter
+	def TtlNAV(self, value):
+		self._TtlNAV = value if type(value) != auto else self.make_default("TtlNAV")
+
+	@TtlNAV.deleter
+	def TtlNAV(self):
+		del self._TtlNAV
+		self._TtlNAV = None
+
+	@property
+	def ValtnSttstcs(self):
+		return self._ValtnSttstcs
+
+	@ValtnSttstcs.setter
+	def ValtnSttstcs(self, value):
+		self._ValtnSttstcs = value if type(value) != auto else self.make_default("ValtnSttstcs")
+
+	@ValtnSttstcs.deleter
+	def ValtnSttstcs(self):
+		del self._ValtnSttstcs
+		self._ValtnSttstcs = None
+
+	@property
 	def ValtnTp(self):
 		return self._ValtnTp
 
@@ -223,22 +171,74 @@ class PriceValuation4(base_types._BaseFieldType):
 		del self._ValtnTp
 		self._ValtnTp = None
 
+	@property
+	def ValtnDtTm(self):
+		return self._ValtnDtTm
+
+	@ValtnDtTm.setter
+	def ValtnDtTm(self, value):
+		self._ValtnDtTm = value if type(value) != auto else self.make_default("ValtnDtTm")
+
+	@ValtnDtTm.deleter
+	def ValtnDtTm(self):
+		del self._ValtnDtTm
+		self._ValtnDtTm = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def ValtnFrqcy(self):
+		return self._ValtnFrqcy
+
+	@ValtnFrqcy.setter
+	def ValtnFrqcy(self, value):
+		self._ValtnFrqcy = value if type(value) != auto else self.make_default("ValtnFrqcy")
+
+	@ValtnFrqcy.deleter
+	def ValtnFrqcy(self):
+		del self._ValtnFrqcy
+		self._ValtnFrqcy = None
+
+	@property
+	def NAVDtTm(self):
+		return self._NAVDtTm
+
+	@NAVDtTm.setter
+	def NAVDtTm(self, value):
+		self._NAVDtTm = value if type(value) != auto else self.make_default("NAVDtTm")
+
+	@NAVDtTm.deleter
+	def NAVDtTm(self):
+		del self._NAVDtTm
+		self._NAVDtTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtValtnDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnFrqcy', type=EventFrequency1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclValtnInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValtnSttstcs', type=ValuationStatistics3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PrfrmncDtls', type=PerformanceFactors1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FndMgmtCpny', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NAVDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SspdInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PricDtls', type=UnitPrice15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrfrmncDtls', type=PerformanceFactors1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtValtnDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlUnitsNb', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsValtnDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PricDtls', type=UnitPrice15, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TtlNAV', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ValtnSttstcs', type=ValuationStatistics3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValtnTp', type=ValuationTiming1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValtnFrqcy', type=EventFrequency1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NAVDtTm', type=DateAndDateTimeChoice, min=1, max=1, mutex_group=None, array=False),
 	))
 

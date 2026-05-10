@@ -1,11 +1,24 @@
 import base_types
-import DateAndDateTime2Choice
 import SecuritiesCertificate4
 import Max35Text
+import DateAndDateTime2Choice
 
 class RegistrationParameters6(base_types._BaseFieldType):
 
-	__slots__ = ["_CertNb", "_CertfctnId", "_RegarAcct", "_CertfctnDtTm"]
+	__slots__ = ["_CertfctnDtTm", "_CertNb", "_CertfctnId", "_RegarAcct"]
+	@property
+	def CertfctnDtTm(self):
+		return self._CertfctnDtTm
+
+	@CertfctnDtTm.setter
+	def CertfctnDtTm(self, value):
+		self._CertfctnDtTm = value if type(value) != auto else self.make_default("CertfctnDtTm")
+
+	@CertfctnDtTm.deleter
+	def CertfctnDtTm(self):
+		del self._CertfctnDtTm
+		self._CertfctnDtTm = None
+
 	@property
 	def CertNb(self):
 		return self._CertNb
@@ -45,23 +58,10 @@ class RegistrationParameters6(base_types._BaseFieldType):
 		del self._RegarAcct
 		self._RegarAcct = None
 
-	@property
-	def CertfctnDtTm(self):
-		return self._CertfctnDtTm
-
-	@CertfctnDtTm.setter
-	def CertfctnDtTm(self, value):
-		self._CertfctnDtTm = value if type(value) != auto else self.make_default("CertfctnDtTm")
-
-	@CertfctnDtTm.deleter
-	def CertfctnDtTm(self):
-		del self._CertfctnDtTm
-		self._CertfctnDtTm = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CertfctnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegarAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CertfctnDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

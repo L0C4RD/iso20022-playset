@@ -1,78 +1,26 @@
 import base_types
-import TransactionStatus4
+import Max35Text
+import CountryCode
 import BICIdentification1
 import PendingActivity1
 import PartyIdentification28
-import CountryCode
-import Max35Text
+import TransactionStatus4
 
 class ReportSpecification4(base_types._BaseFieldType):
 
-	__slots__ = ["_SubmitgBk", "_TxId", "_OblgrBk", "_CrspdtCtry", "_TxSts", "_Crspdt", "_BuyrCtry", "_Sellr", "_NttiesToBeRptd", "_PdgReqForActn", "_SubmitrTxRef", "_Buyr", "_SellrCtry"]
+	__slots__ = ["_SubmitrTxRef", "_Crspdt", "_OblgrBk", "_TxSts", "_SubmitgBk", "_Sellr", "_PdgReqForActn", "_SellrCtry", "_NttiesToBeRptd", "_BuyrCtry", "_Buyr", "_TxId", "_CrspdtCtry"]
 	@property
-	def SubmitgBk(self):
-		return self._SubmitgBk
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
 
-	@SubmitgBk.setter
-	def SubmitgBk(self, value):
-		self._SubmitgBk = value if type(value) != auto else self.make_default("SubmitgBk")
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
 
-	@SubmitgBk.deleter
-	def SubmitgBk(self):
-		del self._SubmitgBk
-		self._SubmitgBk = None
-
-	@property
-	def TxId(self):
-		return self._TxId
-
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
-
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def OblgrBk(self):
-		return self._OblgrBk
-
-	@OblgrBk.setter
-	def OblgrBk(self, value):
-		self._OblgrBk = value if type(value) != auto else self.make_default("OblgrBk")
-
-	@OblgrBk.deleter
-	def OblgrBk(self):
-		del self._OblgrBk
-		self._OblgrBk = None
-
-	@property
-	def CrspdtCtry(self):
-		return self._CrspdtCtry
-
-	@CrspdtCtry.setter
-	def CrspdtCtry(self, value):
-		self._CrspdtCtry = value if type(value) != auto else self.make_default("CrspdtCtry")
-
-	@CrspdtCtry.deleter
-	def CrspdtCtry(self):
-		del self._CrspdtCtry
-		self._CrspdtCtry = None
-
-	@property
-	def TxSts(self):
-		return self._TxSts
-
-	@TxSts.setter
-	def TxSts(self, value):
-		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
-
-	@TxSts.deleter
-	def TxSts(self):
-		del self._TxSts
-		self._TxSts = None
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	@property
 	def Crspdt(self):
@@ -88,17 +36,43 @@ class ReportSpecification4(base_types._BaseFieldType):
 		self._Crspdt = None
 
 	@property
-	def BuyrCtry(self):
-		return self._BuyrCtry
+	def OblgrBk(self):
+		return self._OblgrBk
 
-	@BuyrCtry.setter
-	def BuyrCtry(self, value):
-		self._BuyrCtry = value if type(value) != auto else self.make_default("BuyrCtry")
+	@OblgrBk.setter
+	def OblgrBk(self, value):
+		self._OblgrBk = value if type(value) != auto else self.make_default("OblgrBk")
 
-	@BuyrCtry.deleter
-	def BuyrCtry(self):
-		del self._BuyrCtry
-		self._BuyrCtry = None
+	@OblgrBk.deleter
+	def OblgrBk(self):
+		del self._OblgrBk
+		self._OblgrBk = None
+
+	@property
+	def TxSts(self):
+		return self._TxSts
+
+	@TxSts.setter
+	def TxSts(self, value):
+		self._TxSts = value if type(value) != auto else self.make_default("TxSts")
+
+	@TxSts.deleter
+	def TxSts(self):
+		del self._TxSts
+		self._TxSts = None
+
+	@property
+	def SubmitgBk(self):
+		return self._SubmitgBk
+
+	@SubmitgBk.setter
+	def SubmitgBk(self, value):
+		self._SubmitgBk = value if type(value) != auto else self.make_default("SubmitgBk")
+
+	@SubmitgBk.deleter
+	def SubmitgBk(self):
+		del self._SubmitgBk
+		self._SubmitgBk = None
 
 	@property
 	def Sellr(self):
@@ -114,19 +88,6 @@ class ReportSpecification4(base_types._BaseFieldType):
 		self._Sellr = None
 
 	@property
-	def NttiesToBeRptd(self):
-		return self._NttiesToBeRptd
-
-	@NttiesToBeRptd.setter
-	def NttiesToBeRptd(self, value):
-		self._NttiesToBeRptd = value if type(value) != auto else self.make_default("NttiesToBeRptd")
-
-	@NttiesToBeRptd.deleter
-	def NttiesToBeRptd(self):
-		del self._NttiesToBeRptd
-		self._NttiesToBeRptd = None
-
-	@property
 	def PdgReqForActn(self):
 		return self._PdgReqForActn
 
@@ -140,17 +101,43 @@ class ReportSpecification4(base_types._BaseFieldType):
 		self._PdgReqForActn = None
 
 	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
+	def SellrCtry(self):
+		return self._SellrCtry
 
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+	@SellrCtry.setter
+	def SellrCtry(self, value):
+		self._SellrCtry = value if type(value) != auto else self.make_default("SellrCtry")
 
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+	@SellrCtry.deleter
+	def SellrCtry(self):
+		del self._SellrCtry
+		self._SellrCtry = None
+
+	@property
+	def NttiesToBeRptd(self):
+		return self._NttiesToBeRptd
+
+	@NttiesToBeRptd.setter
+	def NttiesToBeRptd(self, value):
+		self._NttiesToBeRptd = value if type(value) != auto else self.make_default("NttiesToBeRptd")
+
+	@NttiesToBeRptd.deleter
+	def NttiesToBeRptd(self):
+		del self._NttiesToBeRptd
+		self._NttiesToBeRptd = None
+
+	@property
+	def BuyrCtry(self):
+		return self._BuyrCtry
+
+	@BuyrCtry.setter
+	def BuyrCtry(self, value):
+		self._BuyrCtry = value if type(value) != auto else self.make_default("BuyrCtry")
+
+	@BuyrCtry.deleter
+	def BuyrCtry(self):
+		del self._BuyrCtry
+		self._BuyrCtry = None
 
 	@property
 	def Buyr(self):
@@ -166,31 +153,44 @@ class ReportSpecification4(base_types._BaseFieldType):
 		self._Buyr = None
 
 	@property
-	def SellrCtry(self):
-		return self._SellrCtry
+	def TxId(self):
+		return self._TxId
 
-	@SellrCtry.setter
-	def SellrCtry(self, value):
-		self._SellrCtry = value if type(value) != auto else self.make_default("SellrCtry")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@SellrCtry.deleter
-	def SellrCtry(self):
-		del self._SellrCtry
-		self._SellrCtry = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def CrspdtCtry(self):
+		return self._CrspdtCtry
+
+	@CrspdtCtry.setter
+	def CrspdtCtry(self, value):
+		self._CrspdtCtry = value if type(value) != auto else self.make_default("CrspdtCtry")
+
+	@CrspdtCtry.deleter
+	def CrspdtCtry(self):
+		del self._CrspdtCtry
+		self._CrspdtCtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CrspdtCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Crspdt', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BuyrCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sellr', type=PartyIdentification28, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NttiesToBeRptd', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubmitrTxRef', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Buyr', type=PartyIdentification28, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Crspdt', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='OblgrBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubmitgBk', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sellr', type=PartyIdentification28, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SellrCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NttiesToBeRptd', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyrCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Buyr', type=PartyIdentification28, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CrspdtCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
 	))
 

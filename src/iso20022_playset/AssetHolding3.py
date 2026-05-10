@@ -1,23 +1,23 @@
 import base_types
-import AssetHolding3Choice
-import ActiveCurrencyAnd24Amount
 import CollateralAccountType3Code
+import ActiveCurrencyAnd24Amount
+import AssetHolding3Choice
 
 class AssetHolding3(base_types._BaseFieldType):
 
-	__slots__ = ["_AsstTp", "_PstHrcutVal", "_CollRqrmnt"]
+	__slots__ = ["_CollRqrmnt", "_PstHrcutVal", "_AsstTp"]
 	@property
-	def AsstTp(self):
-		return self._AsstTp
+	def CollRqrmnt(self):
+		return self._CollRqrmnt
 
-	@AsstTp.setter
-	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
+	@CollRqrmnt.setter
+	def CollRqrmnt(self, value):
+		self._CollRqrmnt = value if type(value) != auto else self.make_default("CollRqrmnt")
 
-	@AsstTp.deleter
-	def AsstTp(self):
-		del self._AsstTp
-		self._AsstTp = None
+	@CollRqrmnt.deleter
+	def CollRqrmnt(self):
+		del self._CollRqrmnt
+		self._CollRqrmnt = None
 
 	@property
 	def PstHrcutVal(self):
@@ -33,21 +33,21 @@ class AssetHolding3(base_types._BaseFieldType):
 		self._PstHrcutVal = None
 
 	@property
-	def CollRqrmnt(self):
-		return self._CollRqrmnt
+	def AsstTp(self):
+		return self._AsstTp
 
-	@CollRqrmnt.setter
-	def CollRqrmnt(self, value):
-		self._CollRqrmnt = value if type(value) != auto else self.make_default("CollRqrmnt")
+	@AsstTp.setter
+	def AsstTp(self, value):
+		self._AsstTp = value if type(value) != auto else self.make_default("AsstTp")
 
-	@CollRqrmnt.deleter
-	def CollRqrmnt(self):
-		del self._CollRqrmnt
-		self._CollRqrmnt = None
+	@AsstTp.deleter
+	def AsstTp(self):
+		del self._AsstTp
+		self._AsstTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AsstTp', type=AssetHolding3Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollRqrmnt', type=CollateralAccountType3Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstHrcutVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AsstTp', type=AssetHolding3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

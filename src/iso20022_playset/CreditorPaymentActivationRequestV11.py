@@ -1,11 +1,24 @@
 import base_types
-import SupplementaryData1
 import GroupHeader112
+import SupplementaryData1
 import PaymentInstruction46
 
 class CreditorPaymentActivationRequestV11(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_PmtInf"]
+	__slots__ = ["_PmtInf", "_SplmtryData", "_GrpHdr"]
+	@property
+	def PmtInf(self):
+		return self._PmtInf
+
+	@PmtInf.setter
+	def PmtInf(self, value):
+		self._PmtInf = value if type(value) != auto else self.make_default("PmtInf")
+
+	@PmtInf.deleter
+	def PmtInf(self):
+		del self._PmtInf
+		self._PmtInf = None
+
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -32,22 +45,9 @@ class CreditorPaymentActivationRequestV11(base_types._BaseFieldType):
 		del self._GrpHdr
 		self._GrpHdr = None
 
-	@property
-	def PmtInf(self):
-		return self._PmtInf
-
-	@PmtInf.setter
-	def PmtInf(self, value):
-		self._PmtInf = value if type(value) != auto else self.make_default("PmtInf")
-
-	@PmtInf.deleter
-	def PmtInf(self):
-		del self._PmtInf
-		self._PmtInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='PmtInf', type=PaymentInstruction46, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader112, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtInf', type=PaymentInstruction46, min=1, max=None, mutex_group=None, array=True),
 	))
 

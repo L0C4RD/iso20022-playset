@@ -4,20 +4,7 @@ import AssetClassProductType2Code
 
 class EnergyCommodityRenewableEnergy1(base_types._BaseFieldType):
 
-	__slots__ = ["_BasePdct", "_SubPdct"]
-	@property
-	def BasePdct(self):
-		return self._BasePdct
-
-	@BasePdct.setter
-	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
-
-	@BasePdct.deleter
-	def BasePdct(self):
-		del self._BasePdct
-		self._BasePdct = None
-
+	__slots__ = ["_SubPdct", "_BasePdct"]
 	@property
 	def SubPdct(self):
 		return self._SubPdct
@@ -31,8 +18,21 @@ class EnergyCommodityRenewableEnergy1(base_types._BaseFieldType):
 		del self._SubPdct
 		self._SubPdct = None
 
+	@property
+	def BasePdct(self):
+		return self._BasePdct
+
+	@BasePdct.setter
+	def BasePdct(self, value):
+		self._BasePdct = value if type(value) != auto else self.make_default("BasePdct")
+
+	@BasePdct.deleter
+	def BasePdct(self):
+		del self._BasePdct
+		self._BasePdct = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType28Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

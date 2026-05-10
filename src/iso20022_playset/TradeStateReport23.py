@@ -1,13 +1,13 @@
 import base_types
-import CounterpartySpecificData36
+import SupplementaryData1
 import DisseminationData1
 import CommonTradeDataReport72
-import SupplementaryData1
 import TechnicalAttributes5
+import CounterpartySpecificData36
 
 class TradeStateReport23(base_types._BaseFieldType):
 
-	__slots__ = ["_PblcDssmntnData", "_CtrPtySpcfcData", "_CmonTradData", "_SplmtryData", "_TechAttrbts"]
+	__slots__ = ["_PblcDssmntnData", "_SplmtryData", "_TechAttrbts", "_CmonTradData", "_CtrPtySpcfcData"]
 	@property
 	def PblcDssmntnData(self):
 		return self._PblcDssmntnData
@@ -20,32 +20,6 @@ class TradeStateReport23(base_types._BaseFieldType):
 	def PblcDssmntnData(self):
 		del self._PblcDssmntnData
 		self._PblcDssmntnData = None
-
-	@property
-	def CtrPtySpcfcData(self):
-		return self._CtrPtySpcfcData
-
-	@CtrPtySpcfcData.setter
-	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
-
-	@CtrPtySpcfcData.deleter
-	def CtrPtySpcfcData(self):
-		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
-
-	@property
-	def CmonTradData(self):
-		return self._CmonTradData
-
-	@CmonTradData.setter
-	def CmonTradData(self, value):
-		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
-
-	@CmonTradData.deleter
-	def CmonTradData(self):
-		del self._CmonTradData
-		self._CmonTradData = None
 
 	@property
 	def SplmtryData(self):
@@ -73,11 +47,37 @@ class TradeStateReport23(base_types._BaseFieldType):
 		del self._TechAttrbts
 		self._TechAttrbts = None
 
+	@property
+	def CmonTradData(self):
+		return self._CmonTradData
+
+	@CmonTradData.setter
+	def CmonTradData(self, value):
+		self._CmonTradData = value if type(value) != auto else self.make_default("CmonTradData")
+
+	@CmonTradData.deleter
+	def CmonTradData(self):
+		del self._CmonTradData
+		self._CmonTradData = None
+
+	@property
+	def CtrPtySpcfcData(self):
+		return self._CtrPtySpcfcData
+
+	@CtrPtySpcfcData.setter
+	def CtrPtySpcfcData(self, value):
+		self._CtrPtySpcfcData = value if type(value) != auto else self.make_default("CtrPtySpcfcData")
+
+	@CtrPtySpcfcData.deleter
+	def CtrPtySpcfcData(self):
+		del self._CtrPtySpcfcData
+		self._CtrPtySpcfcData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PblcDssmntnData', type=DisseminationData1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport72, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport72, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtySpcfcData', type=CounterpartySpecificData36, min=1, max=2, mutex_group=None, array=False),
 	))
 

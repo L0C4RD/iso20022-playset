@@ -1,23 +1,23 @@
 import base_types
 import StatusReportContent14
-import HostStatus1
 import Max35Text
+import HostStatus1
 
 class DiagnosisResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_LggdSaleId", "_POISts", "_HstSts"]
+	__slots__ = ["_HstSts", "_POISts", "_LggdSaleId"]
 	@property
-	def LggdSaleId(self):
-		return self._LggdSaleId
+	def HstSts(self):
+		return self._HstSts
 
-	@LggdSaleId.setter
-	def LggdSaleId(self, value):
-		self._LggdSaleId = value if type(value) != auto else self.make_default("LggdSaleId")
+	@HstSts.setter
+	def HstSts(self, value):
+		self._HstSts = value if type(value) != auto else self.make_default("HstSts")
 
-	@LggdSaleId.deleter
-	def LggdSaleId(self):
-		del self._LggdSaleId
-		self._LggdSaleId = None
+	@HstSts.deleter
+	def HstSts(self):
+		del self._HstSts
+		self._HstSts = None
 
 	@property
 	def POISts(self):
@@ -33,21 +33,21 @@ class DiagnosisResponse7(base_types._BaseFieldType):
 		self._POISts = None
 
 	@property
-	def HstSts(self):
-		return self._HstSts
+	def LggdSaleId(self):
+		return self._LggdSaleId
 
-	@HstSts.setter
-	def HstSts(self, value):
-		self._HstSts = value if type(value) != auto else self.make_default("HstSts")
+	@LggdSaleId.setter
+	def LggdSaleId(self, value):
+		self._LggdSaleId = value if type(value) != auto else self.make_default("LggdSaleId")
 
-	@HstSts.deleter
-	def HstSts(self):
-		del self._HstSts
-		self._HstSts = None
+	@LggdSaleId.deleter
+	def LggdSaleId(self):
+		del self._LggdSaleId
+		self._LggdSaleId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LggdSaleId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POISts', type=StatusReportContent14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstSts', type=HostStatus1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='POISts', type=StatusReportContent14, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LggdSaleId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

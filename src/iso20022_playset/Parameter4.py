@@ -5,7 +5,20 @@ import AlgorithmIdentification12
 
 class Parameter4(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptnFrmt", "_MskGnrtrAlgo", "_DgstAlgo"]
+	__slots__ = ["_DgstAlgo", "_NcrptnFrmt", "_MskGnrtrAlgo"]
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
+
 	@property
 	def NcrptnFrmt(self):
 		return self._NcrptnFrmt
@@ -32,22 +45,9 @@ class Parameter4(base_types._BaseFieldType):
 		del self._MskGnrtrAlgo
 		self._MskGnrtrAlgo = None
 
-	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification12, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

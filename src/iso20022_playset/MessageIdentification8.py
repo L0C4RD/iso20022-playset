@@ -1,7 +1,7 @@
 import base_types
 import ISODateTime
-import BranchAndFinancialInstitutionIdentification8
 import Max35Text
+import BranchAndFinancialInstitutionIdentification8
 
 class MessageIdentification8(base_types._BaseFieldType):
 

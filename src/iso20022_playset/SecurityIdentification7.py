@@ -1,7 +1,7 @@
 import base_types
-import ISINIdentifier
-import AlternateSecurityIdentification3
 import Max140Text
+import AlternateSecurityIdentification3
+import ISINIdentifier
 
 class SecurityIdentification7(base_types._BaseFieldType):
 

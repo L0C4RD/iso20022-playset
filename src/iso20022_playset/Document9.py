@@ -1,13 +1,13 @@
 import base_types
-import DocumentFormat1Choice
-import UndertakingDocumentType1Choice
 import Max35Text
 import Max2MBBinary
 import PartyAndSignature2
+import UndertakingDocumentType1Choice
+import DocumentFormat1Choice
 
 class Document9(base_types._BaseFieldType):
 
-	__slots__ = ["_DgtlSgntr", "_Id", "_Nclsr", "_Frmt", "_Tp"]
+	__slots__ = ["_DgtlSgntr", "_Nclsr", "_Id", "_Tp", "_Frmt"]
 	@property
 	def DgtlSgntr(self):
 		return self._DgtlSgntr
@@ -20,19 +20,6 @@ class Document9(base_types._BaseFieldType):
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
 		self._DgtlSgntr = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Nclsr(self):
@@ -48,17 +35,17 @@ class Document9(base_types._BaseFieldType):
 		self._Nclsr = None
 
 	@property
-	def Frmt(self):
-		return self._Frmt
+	def Id(self):
+		return self._Id
 
-	@Frmt.setter
-	def Frmt(self, value):
-		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@Frmt.deleter
-	def Frmt(self):
-		del self._Frmt
-		self._Frmt = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def Tp(self):
@@ -73,11 +60,24 @@ class Document9(base_types._BaseFieldType):
 		del self._Tp
 		self._Tp = None
 
+	@property
+	def Frmt(self):
+		return self._Frmt
+
+	@Frmt.setter
+	def Frmt(self, value):
+		self._Frmt = value if type(value) != auto else self.make_default("Frmt")
+
+	@Frmt.deleter
+	def Frmt(self):
+		del self._Frmt
+		self._Frmt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

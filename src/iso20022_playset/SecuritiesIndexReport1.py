@@ -1,25 +1,12 @@
 import base_types
+import Max35Text
+import CountryCode
 import FinancialInstrument46Choice
 import Period4Choice
-import CountryCode
-import Max35Text
 
 class SecuritiesIndexReport1(base_types._BaseFieldType):
 
-	__slots__ = ["_RqstngNtty", "_Indx", "_TechRcrdId", "_VldtyPrd"]
-	@property
-	def RqstngNtty(self):
-		return self._RqstngNtty
-
-	@RqstngNtty.setter
-	def RqstngNtty(self, value):
-		self._RqstngNtty = value if type(value) != auto else self.make_default("RqstngNtty")
-
-	@RqstngNtty.deleter
-	def RqstngNtty(self):
-		del self._RqstngNtty
-		self._RqstngNtty = None
-
+	__slots__ = ["_Indx", "_RqstngNtty", "_TechRcrdId", "_VldtyPrd"]
 	@property
 	def Indx(self):
 		return self._Indx
@@ -32,6 +19,19 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 	def Indx(self):
 		del self._Indx
 		self._Indx = None
+
+	@property
+	def RqstngNtty(self):
+		return self._RqstngNtty
+
+	@RqstngNtty.setter
+	def RqstngNtty(self, value):
+		self._RqstngNtty = value if type(value) != auto else self.make_default("RqstngNtty")
+
+	@RqstngNtty.deleter
+	def RqstngNtty(self):
+		del self._RqstngNtty
+		self._RqstngNtty = None
 
 	@property
 	def TechRcrdId(self):
@@ -60,8 +60,8 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 		self._VldtyPrd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RqstngNtty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RqstngNtty', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
 	))

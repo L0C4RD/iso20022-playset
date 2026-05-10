@@ -1,6 +1,6 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import Max35Text
+import ImpliedCurrencyAndAmount
 
 class Amount13(base_types._BaseFieldType):
 

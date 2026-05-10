@@ -1,38 +1,12 @@
 import base_types
-import Max70Text
-import Max16Text
-import POIComponentType1Code
 import Max35Text
+import POIComponentType1Code
+import Max16Text
+import Max70Text
 
 class PointOfInteractionComponent1(base_types._BaseFieldType):
 
-	__slots__ = ["_POICmpntTp", "_ManfctrId", "_SrlNb", "_ApprvlNb", "_Mdl", "_VrsnNb"]
-	@property
-	def POICmpntTp(self):
-		return self._POICmpntTp
-
-	@POICmpntTp.setter
-	def POICmpntTp(self, value):
-		self._POICmpntTp = value if type(value) != auto else self.make_default("POICmpntTp")
-
-	@POICmpntTp.deleter
-	def POICmpntTp(self):
-		del self._POICmpntTp
-		self._POICmpntTp = None
-
-	@property
-	def ManfctrId(self):
-		return self._ManfctrId
-
-	@ManfctrId.setter
-	def ManfctrId(self, value):
-		self._ManfctrId = value if type(value) != auto else self.make_default("ManfctrId")
-
-	@ManfctrId.deleter
-	def ManfctrId(self):
-		del self._ManfctrId
-		self._ManfctrId = None
-
+	__slots__ = ["_SrlNb", "_POICmpntTp", "_VrsnNb", "_Mdl", "_ApprvlNb", "_ManfctrId"]
 	@property
 	def SrlNb(self):
 		return self._SrlNb
@@ -47,17 +21,30 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._SrlNb = None
 
 	@property
-	def ApprvlNb(self):
-		return self._ApprvlNb
+	def POICmpntTp(self):
+		return self._POICmpntTp
 
-	@ApprvlNb.setter
-	def ApprvlNb(self, value):
-		self._ApprvlNb = value if type(value) != auto else self.make_default("ApprvlNb")
+	@POICmpntTp.setter
+	def POICmpntTp(self, value):
+		self._POICmpntTp = value if type(value) != auto else self.make_default("POICmpntTp")
 
-	@ApprvlNb.deleter
-	def ApprvlNb(self):
-		del self._ApprvlNb
-		self._ApprvlNb = None
+	@POICmpntTp.deleter
+	def POICmpntTp(self):
+		del self._POICmpntTp
+		self._POICmpntTp = None
+
+	@property
+	def VrsnNb(self):
+		return self._VrsnNb
+
+	@VrsnNb.setter
+	def VrsnNb(self, value):
+		self._VrsnNb = value if type(value) != auto else self.make_default("VrsnNb")
+
+	@VrsnNb.deleter
+	def VrsnNb(self):
+		del self._VrsnNb
+		self._VrsnNb = None
 
 	@property
 	def Mdl(self):
@@ -73,24 +60,37 @@ class PointOfInteractionComponent1(base_types._BaseFieldType):
 		self._Mdl = None
 
 	@property
-	def VrsnNb(self):
-		return self._VrsnNb
+	def ApprvlNb(self):
+		return self._ApprvlNb
 
-	@VrsnNb.setter
-	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != auto else self.make_default("VrsnNb")
+	@ApprvlNb.setter
+	def ApprvlNb(self, value):
+		self._ApprvlNb = value if type(value) != auto else self.make_default("ApprvlNb")
 
-	@VrsnNb.deleter
-	def VrsnNb(self):
-		del self._VrsnNb
-		self._VrsnNb = None
+	@ApprvlNb.deleter
+	def ApprvlNb(self):
+		del self._ApprvlNb
+		self._ApprvlNb = None
+
+	@property
+	def ManfctrId(self):
+		return self._ManfctrId
+
+	@ManfctrId.setter
+	def ManfctrId(self, value):
+		self._ManfctrId = value if type(value) != auto else self.make_default("ManfctrId")
+
+	@ManfctrId.deleter
+	def ManfctrId(self):
+		del self._ManfctrId
+		self._ManfctrId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='POICmpntTp', type=POIComponentType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ManfctrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICmpntTp', type=POIComponentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VrsnNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlNb', type=Max70Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ManfctrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

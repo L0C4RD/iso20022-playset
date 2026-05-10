@@ -1,12 +1,12 @@
 import base_types
+import ElectronicInvoice1
+import ActivationHeader3
 import SupplementaryData1
 import DebtorActivation5
-import ActivationHeader3
-import ElectronicInvoice1
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_ElctrncInvcData", "_Hdr", "_DbtrActvtn"]
+	__slots__ = ["_SplmtryData", "_Hdr", "_ElctrncInvcData", "_DbtrActvtn"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -21,19 +21,6 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def ElctrncInvcData(self):
-		return self._ElctrncInvcData
-
-	@ElctrncInvcData.setter
-	def ElctrncInvcData(self, value):
-		self._ElctrncInvcData = value if type(value) != auto else self.make_default("ElctrncInvcData")
-
-	@ElctrncInvcData.deleter
-	def ElctrncInvcData(self):
-		del self._ElctrncInvcData
-		self._ElctrncInvcData = None
-
-	@property
 	def Hdr(self):
 		return self._Hdr
 
@@ -45,6 +32,19 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 	def Hdr(self):
 		del self._Hdr
 		self._Hdr = None
+
+	@property
+	def ElctrncInvcData(self):
+		return self._ElctrncInvcData
+
+	@ElctrncInvcData.setter
+	def ElctrncInvcData(self, value):
+		self._ElctrncInvcData = value if type(value) != auto else self.make_default("ElctrncInvcData")
+
+	@ElctrncInvcData.deleter
+	def ElctrncInvcData(self):
+		del self._ElctrncInvcData
+		self._ElctrncInvcData = None
 
 	@property
 	def DbtrActvtn(self):
@@ -61,8 +61,8 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ElctrncInvcData', type=ElectronicInvoice1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=ActivationHeader3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ElctrncInvcData', type=ElectronicInvoice1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrActvtn', type=DebtorActivation5, min=1, max=None, mutex_group=None, array=True),
 	))
 

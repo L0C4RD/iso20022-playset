@@ -7,20 +7,7 @@ import EncapsulatedBusinessMessage1
 
 class InvoicePaymentReconciliationStatusV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Hdr", "_RcncltnList", "_AttchdMsg", "_ItmCnt", "_CtrlSum", "_RcncltnCnt"]
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
-
+	__slots__ = ["_RcncltnList", "_RcncltnCnt", "_ItmCnt", "_Hdr", "_AttchdMsg", "_CtrlSum"]
 	@property
 	def RcncltnList(self):
 		return self._RcncltnList
@@ -35,17 +22,17 @@ class InvoicePaymentReconciliationStatusV01(base_types._BaseFieldType):
 		self._RcncltnList = None
 
 	@property
-	def AttchdMsg(self):
-		return self._AttchdMsg
+	def RcncltnCnt(self):
+		return self._RcncltnCnt
 
-	@AttchdMsg.setter
-	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
+	@RcncltnCnt.setter
+	def RcncltnCnt(self, value):
+		self._RcncltnCnt = value if type(value) != auto else self.make_default("RcncltnCnt")
 
-	@AttchdMsg.deleter
-	def AttchdMsg(self):
-		del self._AttchdMsg
-		self._AttchdMsg = None
+	@RcncltnCnt.deleter
+	def RcncltnCnt(self):
+		del self._RcncltnCnt
+		self._RcncltnCnt = None
 
 	@property
 	def ItmCnt(self):
@@ -61,6 +48,32 @@ class InvoicePaymentReconciliationStatusV01(base_types._BaseFieldType):
 		self._ItmCnt = None
 
 	@property
+	def Hdr(self):
+		return self._Hdr
+
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
+
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
+
+	@property
+	def AttchdMsg(self):
+		return self._AttchdMsg
+
+	@AttchdMsg.setter
+	def AttchdMsg(self, value):
+		self._AttchdMsg = value if type(value) != auto else self.make_default("AttchdMsg")
+
+	@AttchdMsg.deleter
+	def AttchdMsg(self):
+		del self._AttchdMsg
+		self._AttchdMsg = None
+
+	@property
 	def CtrlSum(self):
 		return self._CtrlSum
 
@@ -73,25 +86,12 @@ class InvoicePaymentReconciliationStatusV01(base_types._BaseFieldType):
 		del self._CtrlSum
 		self._CtrlSum = None
 
-	@property
-	def RcncltnCnt(self):
-		return self._RcncltnCnt
-
-	@RcncltnCnt.setter
-	def RcncltnCnt(self, value):
-		self._RcncltnCnt = value if type(value) != auto else self.make_default("RcncltnCnt")
-
-	@RcncltnCnt.deleter
-	def RcncltnCnt(self):
-		del self._RcncltnCnt
-		self._RcncltnCnt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnList', type=ReconciliationList1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ItmCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=BusinessLetter1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

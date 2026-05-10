@@ -1,12 +1,12 @@
 import base_types
+import Max35Text
+import CurrencyAndAmount
 import PercentageRate
 import BankRole1Code
-import CurrencyAndAmount
-import Max35Text
 
 class Charges5(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_ChrgsPyee", "_ChrgsPyer", "_Amt", "_Pctg"]
+	__slots__ = ["_Tp", "_Pctg", "_Amt", "_ChrgsPyer", "_ChrgsPyee"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,30 +21,17 @@ class Charges5(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def ChrgsPyee(self):
-		return self._ChrgsPyee
+	def Pctg(self):
+		return self._Pctg
 
-	@ChrgsPyee.setter
-	def ChrgsPyee(self, value):
-		self._ChrgsPyee = value if type(value) != auto else self.make_default("ChrgsPyee")
+	@Pctg.setter
+	def Pctg(self, value):
+		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
 
-	@ChrgsPyee.deleter
-	def ChrgsPyee(self):
-		del self._ChrgsPyee
-		self._ChrgsPyee = None
-
-	@property
-	def ChrgsPyer(self):
-		return self._ChrgsPyer
-
-	@ChrgsPyer.setter
-	def ChrgsPyer(self, value):
-		self._ChrgsPyer = value if type(value) != auto else self.make_default("ChrgsPyer")
-
-	@ChrgsPyer.deleter
-	def ChrgsPyer(self):
-		del self._ChrgsPyer
-		self._ChrgsPyer = None
+	@Pctg.deleter
+	def Pctg(self):
+		del self._Pctg
+		self._Pctg = None
 
 	@property
 	def Amt(self):
@@ -60,23 +47,36 @@ class Charges5(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def Pctg(self):
-		return self._Pctg
+	def ChrgsPyer(self):
+		return self._ChrgsPyer
 
-	@Pctg.setter
-	def Pctg(self, value):
-		self._Pctg = value if type(value) != auto else self.make_default("Pctg")
+	@ChrgsPyer.setter
+	def ChrgsPyer(self, value):
+		self._ChrgsPyer = value if type(value) != auto else self.make_default("ChrgsPyer")
 
-	@Pctg.deleter
-	def Pctg(self):
-		del self._Pctg
-		self._Pctg = None
+	@ChrgsPyer.deleter
+	def ChrgsPyer(self):
+		del self._ChrgsPyer
+		self._ChrgsPyer = None
+
+	@property
+	def ChrgsPyee(self):
+		return self._ChrgsPyee
+
+	@ChrgsPyee.setter
+	def ChrgsPyee(self, value):
+		self._ChrgsPyee = value if type(value) != auto else self.make_default("ChrgsPyee")
+
+	@ChrgsPyee.deleter
+	def ChrgsPyee(self):
+		del self._ChrgsPyee
+		self._ChrgsPyee = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsPyee', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsPyer', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsPyer', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsPyee', type=BankRole1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

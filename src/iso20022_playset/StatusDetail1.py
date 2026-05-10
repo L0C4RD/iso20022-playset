@@ -1,26 +1,13 @@
 import base_types
-import Max10Text
-import CountryCode
 import Max20000Text
-import SupervisingAuthorityIdentification1
+import CountryCode
+import Max10Text
 import Period4Choice
+import SupervisingAuthorityIdentification1
 
 class StatusDetail1(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_ActvtyPrd", "_Sts", "_Ctry", "_Cmnt", "_CmptntAuthrty"]
-	@property
-	def StsRsn(self):
-		return self._StsRsn
-
-	@StsRsn.setter
-	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
-
-	@StsRsn.deleter
-	def StsRsn(self):
-		del self._StsRsn
-		self._StsRsn = None
-
+	__slots__ = ["_ActvtyPrd", "_Ctry", "_StsRsn", "_CmptntAuthrty", "_Cmnt", "_Sts"]
 	@property
 	def ActvtyPrd(self):
 		return self._ActvtyPrd
@@ -33,19 +20,6 @@ class StatusDetail1(base_types._BaseFieldType):
 	def ActvtyPrd(self):
 		del self._ActvtyPrd
 		self._ActvtyPrd = None
-
-	@property
-	def Sts(self):
-		return self._Sts
-
-	@Sts.setter
-	def Sts(self, value):
-		self._Sts = value if type(value) != auto else self.make_default("Sts")
-
-	@Sts.deleter
-	def Sts(self):
-		del self._Sts
-		self._Sts = None
 
 	@property
 	def Ctry(self):
@@ -61,17 +35,17 @@ class StatusDetail1(base_types._BaseFieldType):
 		self._Ctry = None
 
 	@property
-	def Cmnt(self):
-		return self._Cmnt
+	def StsRsn(self):
+		return self._StsRsn
 
-	@Cmnt.setter
-	def Cmnt(self, value):
-		self._Cmnt = value if type(value) != auto else self.make_default("Cmnt")
+	@StsRsn.setter
+	def StsRsn(self, value):
+		self._StsRsn = value if type(value) != auto else self.make_default("StsRsn")
 
-	@Cmnt.deleter
-	def Cmnt(self):
-		del self._Cmnt
-		self._Cmnt = None
+	@StsRsn.deleter
+	def StsRsn(self):
+		del self._StsRsn
+		self._StsRsn = None
 
 	@property
 	def CmptntAuthrty(self):
@@ -86,12 +60,38 @@ class StatusDetail1(base_types._BaseFieldType):
 		del self._CmptntAuthrty
 		self._CmptntAuthrty = None
 
+	@property
+	def Cmnt(self):
+		return self._Cmnt
+
+	@Cmnt.setter
+	def Cmnt(self, value):
+		self._Cmnt = value if type(value) != auto else self.make_default("Cmnt")
+
+	@Cmnt.deleter
+	def Cmnt(self):
+		del self._Cmnt
+		self._Cmnt = None
+
+	@property
+	def Sts(self):
+		return self._Sts
+
+	@Sts.setter
+	def Sts(self, value):
+		self._Sts = value if type(value) != auto else self.make_default("Sts")
+
+	@Sts.deleter
+	def Sts(self):
+		del self._Sts
+		self._Sts = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActvtyPrd', type=Period4Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CmptntAuthrty', type=SupervisingAuthorityIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

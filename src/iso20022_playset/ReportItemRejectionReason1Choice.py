@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import HoldingRejectionReason41Code
+import GenericIdentification30
 
 class ReportItemRejectionReason1Choice(base_types._BaseFieldType):
 

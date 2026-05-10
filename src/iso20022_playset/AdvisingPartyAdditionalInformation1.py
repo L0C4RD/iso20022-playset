@@ -1,6 +1,6 @@
 import base_types
-import Max2000Text
 import Max35Text
+import Max2000Text
 
 class AdvisingPartyAdditionalInformation1(base_types._BaseFieldType):
 

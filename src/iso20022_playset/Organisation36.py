@@ -1,14 +1,14 @@
 import base_types
-import PostalAddress1
 import Max35Text
-import ISODate
-import Max140Text
 import CountryCode
+import Max140Text
+import PostalAddress1
 import PartyIdentification140
+import ISODate
 
 class Organisation36(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnDt", "_TaxtnCtry", "_Nm", "_NtlRegnNb", "_CorpInvstrAdr", "_TaxIdNb", "_RegnCtry", "_Id", "_Purp"]
+	__slots__ = ["_RegnDt", "_TaxIdNb", "_TaxtnCtry", "_CorpInvstrAdr", "_RegnCtry", "_Nm", "_NtlRegnNb", "_Id", "_Purp"]
 	@property
 	def RegnDt(self):
 		return self._RegnDt
@@ -23,6 +23,19 @@ class Organisation36(base_types._BaseFieldType):
 		self._RegnDt = None
 
 	@property
+	def TaxIdNb(self):
+		return self._TaxIdNb
+
+	@TaxIdNb.setter
+	def TaxIdNb(self, value):
+		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
+
+	@TaxIdNb.deleter
+	def TaxIdNb(self):
+		del self._TaxIdNb
+		self._TaxIdNb = None
+
+	@property
 	def TaxtnCtry(self):
 		return self._TaxtnCtry
 
@@ -34,6 +47,32 @@ class Organisation36(base_types._BaseFieldType):
 	def TaxtnCtry(self):
 		del self._TaxtnCtry
 		self._TaxtnCtry = None
+
+	@property
+	def CorpInvstrAdr(self):
+		return self._CorpInvstrAdr
+
+	@CorpInvstrAdr.setter
+	def CorpInvstrAdr(self, value):
+		self._CorpInvstrAdr = value if type(value) != auto else self.make_default("CorpInvstrAdr")
+
+	@CorpInvstrAdr.deleter
+	def CorpInvstrAdr(self):
+		del self._CorpInvstrAdr
+		self._CorpInvstrAdr = None
+
+	@property
+	def RegnCtry(self):
+		return self._RegnCtry
+
+	@RegnCtry.setter
+	def RegnCtry(self, value):
+		self._RegnCtry = value if type(value) != auto else self.make_default("RegnCtry")
+
+	@RegnCtry.deleter
+	def RegnCtry(self):
+		del self._RegnCtry
+		self._RegnCtry = None
 
 	@property
 	def Nm(self):
@@ -60,45 +99,6 @@ class Organisation36(base_types._BaseFieldType):
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
 		self._NtlRegnNb = None
-
-	@property
-	def CorpInvstrAdr(self):
-		return self._CorpInvstrAdr
-
-	@CorpInvstrAdr.setter
-	def CorpInvstrAdr(self, value):
-		self._CorpInvstrAdr = value if type(value) != auto else self.make_default("CorpInvstrAdr")
-
-	@CorpInvstrAdr.deleter
-	def CorpInvstrAdr(self):
-		del self._CorpInvstrAdr
-		self._CorpInvstrAdr = None
-
-	@property
-	def TaxIdNb(self):
-		return self._TaxIdNb
-
-	@TaxIdNb.setter
-	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != auto else self.make_default("TaxIdNb")
-
-	@TaxIdNb.deleter
-	def TaxIdNb(self):
-		del self._TaxIdNb
-		self._TaxIdNb = None
-
-	@property
-	def RegnCtry(self):
-		return self._RegnCtry
-
-	@RegnCtry.setter
-	def RegnCtry(self, value):
-		self._RegnCtry = value if type(value) != auto else self.make_default("RegnCtry")
-
-	@RegnCtry.deleter
-	def RegnCtry(self):
-		del self._RegnCtry
-		self._RegnCtry = None
 
 	@property
 	def Id(self):
@@ -128,12 +128,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtlRegnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification140, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

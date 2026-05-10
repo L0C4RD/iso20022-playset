@@ -1,25 +1,12 @@
 import base_types
-import CorporateActionOption1FormatChoice
-import CorporateActionDeactivationInstructionRejectionStatus1
-import CorporateActionDeactivationInstructionProcessingStatus1
 import Exact3NumericText
+import CorporateActionDeactivationInstructionProcessingStatus1
+import CorporateActionDeactivationInstructionRejectionStatus1
+import CorporateActionOption1FormatChoice
 
 class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_RjctdSts", "_OptnTp", "_PrcdSts", "_OptnNb"]
-	@property
-	def RjctdSts(self):
-		return self._RjctdSts
-
-	@RjctdSts.setter
-	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
-
-	@RjctdSts.deleter
-	def RjctdSts(self):
-		del self._RjctdSts
-		self._RjctdSts = None
-
+	__slots__ = ["_OptnTp", "_PrcdSts", "_RjctdSts", "_OptnNb"]
 	@property
 	def OptnTp(self):
 		return self._OptnTp
@@ -47,6 +34,19 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 		self._PrcdSts = None
 
 	@property
+	def RjctdSts(self):
+		return self._RjctdSts
+
+	@RjctdSts.setter
+	def RjctdSts(self, value):
+		self._RjctdSts = value if type(value) != auto else self.make_default("RjctdSts")
+
+	@RjctdSts.deleter
+	def RjctdSts(self):
+		del self._RjctdSts
+		self._RjctdSts = None
+
+	@property
 	def OptnNb(self):
 		return self._OptnNb
 
@@ -60,9 +60,9 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 		self._OptnNb = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RjctdSts', type=CorporateActionDeactivationInstructionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionDeactivationInstructionProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RjctdSts', type=CorporateActionDeactivationInstructionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

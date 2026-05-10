@@ -3,20 +3,7 @@ import PartyIdentificationAndAccount222
 
 class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
-	__slots__ = ["_DlvrrsIntrmy1Dtls", "_DlvrrsIntrmy2Dtls", "_DlvrgAgtDtls", "_DlvrrsCtdnDtls"]
-	@property
-	def DlvrrsIntrmy1Dtls(self):
-		return self._DlvrrsIntrmy1Dtls
-
-	@DlvrrsIntrmy1Dtls.setter
-	def DlvrrsIntrmy1Dtls(self, value):
-		self._DlvrrsIntrmy1Dtls = value if type(value) != auto else self.make_default("DlvrrsIntrmy1Dtls")
-
-	@DlvrrsIntrmy1Dtls.deleter
-	def DlvrrsIntrmy1Dtls(self):
-		del self._DlvrrsIntrmy1Dtls
-		self._DlvrrsIntrmy1Dtls = None
-
+	__slots__ = ["_DlvrrsIntrmy2Dtls", "_DlvrrsCtdnDtls", "_DlvrrsIntrmy1Dtls", "_DlvrgAgtDtls"]
 	@property
 	def DlvrrsIntrmy2Dtls(self):
 		return self._DlvrrsIntrmy2Dtls
@@ -31,19 +18,6 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 		self._DlvrrsIntrmy2Dtls = None
 
 	@property
-	def DlvrgAgtDtls(self):
-		return self._DlvrgAgtDtls
-
-	@DlvrgAgtDtls.setter
-	def DlvrgAgtDtls(self, value):
-		self._DlvrgAgtDtls = value if type(value) != auto else self.make_default("DlvrgAgtDtls")
-
-	@DlvrgAgtDtls.deleter
-	def DlvrgAgtDtls(self):
-		del self._DlvrgAgtDtls
-		self._DlvrgAgtDtls = None
-
-	@property
 	def DlvrrsCtdnDtls(self):
 		return self._DlvrrsCtdnDtls
 
@@ -56,10 +30,36 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 		del self._DlvrrsCtdnDtls
 		self._DlvrrsCtdnDtls = None
 
+	@property
+	def DlvrrsIntrmy1Dtls(self):
+		return self._DlvrrsIntrmy1Dtls
+
+	@DlvrrsIntrmy1Dtls.setter
+	def DlvrrsIntrmy1Dtls(self, value):
+		self._DlvrrsIntrmy1Dtls = value if type(value) != auto else self.make_default("DlvrrsIntrmy1Dtls")
+
+	@DlvrrsIntrmy1Dtls.deleter
+	def DlvrrsIntrmy1Dtls(self):
+		del self._DlvrrsIntrmy1Dtls
+		self._DlvrrsIntrmy1Dtls = None
+
+	@property
+	def DlvrgAgtDtls(self):
+		return self._DlvrgAgtDtls
+
+	@DlvrgAgtDtls.setter
+	def DlvrgAgtDtls(self, value):
+		self._DlvrgAgtDtls = value if type(value) != auto else self.make_default("DlvrgAgtDtls")
+
+	@DlvrgAgtDtls.deleter
+	def DlvrgAgtDtls(self):
+		del self._DlvrgAgtDtls
+		self._DlvrgAgtDtls = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='DlvrrsIntrmy1Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsIntrmy2Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DlvrrsCtdnDtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrrsIntrmy1Dtls', type=PartyIdentificationAndAccount222, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),
 	))
 

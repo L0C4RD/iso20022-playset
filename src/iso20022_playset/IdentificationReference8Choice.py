@@ -3,72 +3,7 @@ import Max35Text
 
 class IdentificationReference8Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ClntOrdrLkId", "_InstgPtyTxId", "_AllcnId", "_CmplcId", "_MktInfrstrctrTxId", "_IndvAllcnId", "_BlckId", "_CmonId", "_ScndryAllcnId", "_CollTxId", "_ExctgPtyTxId", "_PoolId", "_IndxId"]
-	@property
-	def ClntOrdrLkId(self):
-		return self._ClntOrdrLkId
-
-	@ClntOrdrLkId.setter
-	def ClntOrdrLkId(self, value):
-		self._ClntOrdrLkId = value if type(value) != auto else self.make_default("ClntOrdrLkId")
-
-	@ClntOrdrLkId.deleter
-	def ClntOrdrLkId(self):
-		del self._ClntOrdrLkId
-		self._ClntOrdrLkId = None
-
-	@property
-	def InstgPtyTxId(self):
-		return self._InstgPtyTxId
-
-	@InstgPtyTxId.setter
-	def InstgPtyTxId(self, value):
-		self._InstgPtyTxId = value if type(value) != auto else self.make_default("InstgPtyTxId")
-
-	@InstgPtyTxId.deleter
-	def InstgPtyTxId(self):
-		del self._InstgPtyTxId
-		self._InstgPtyTxId = None
-
-	@property
-	def AllcnId(self):
-		return self._AllcnId
-
-	@AllcnId.setter
-	def AllcnId(self, value):
-		self._AllcnId = value if type(value) != auto else self.make_default("AllcnId")
-
-	@AllcnId.deleter
-	def AllcnId(self):
-		del self._AllcnId
-		self._AllcnId = None
-
-	@property
-	def CmplcId(self):
-		return self._CmplcId
-
-	@CmplcId.setter
-	def CmplcId(self, value):
-		self._CmplcId = value if type(value) != auto else self.make_default("CmplcId")
-
-	@CmplcId.deleter
-	def CmplcId(self):
-		del self._CmplcId
-		self._CmplcId = None
-
-	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
+	__slots__ = ["_IndvAllcnId", "_CollTxId", "_CmonId", "_ScndryAllcnId", "_InstgPtyTxId", "_ClntOrdrLkId", "_CmplcId", "_IndxId", "_ExctgPtyTxId", "_MktInfrstrctrTxId", "_BlckId", "_AllcnId", "_PoolId"]
 	@property
 	def IndvAllcnId(self):
 		return self._IndvAllcnId
@@ -83,17 +18,17 @@ class IdentificationReference8Choice(base_types._BaseFieldType):
 		self._IndvAllcnId = None
 
 	@property
-	def BlckId(self):
-		return self._BlckId
+	def CollTxId(self):
+		return self._CollTxId
 
-	@BlckId.setter
-	def BlckId(self, value):
-		self._BlckId = value if type(value) != auto else self.make_default("BlckId")
+	@CollTxId.setter
+	def CollTxId(self, value):
+		self._CollTxId = value if type(value) != auto else self.make_default("CollTxId")
 
-	@BlckId.deleter
-	def BlckId(self):
-		del self._BlckId
-		self._BlckId = None
+	@CollTxId.deleter
+	def CollTxId(self):
+		del self._CollTxId
+		self._CollTxId = None
 
 	@property
 	def CmonId(self):
@@ -122,17 +57,56 @@ class IdentificationReference8Choice(base_types._BaseFieldType):
 		self._ScndryAllcnId = None
 
 	@property
-	def CollTxId(self):
-		return self._CollTxId
+	def InstgPtyTxId(self):
+		return self._InstgPtyTxId
 
-	@CollTxId.setter
-	def CollTxId(self, value):
-		self._CollTxId = value if type(value) != auto else self.make_default("CollTxId")
+	@InstgPtyTxId.setter
+	def InstgPtyTxId(self, value):
+		self._InstgPtyTxId = value if type(value) != auto else self.make_default("InstgPtyTxId")
 
-	@CollTxId.deleter
-	def CollTxId(self):
-		del self._CollTxId
-		self._CollTxId = None
+	@InstgPtyTxId.deleter
+	def InstgPtyTxId(self):
+		del self._InstgPtyTxId
+		self._InstgPtyTxId = None
+
+	@property
+	def ClntOrdrLkId(self):
+		return self._ClntOrdrLkId
+
+	@ClntOrdrLkId.setter
+	def ClntOrdrLkId(self, value):
+		self._ClntOrdrLkId = value if type(value) != auto else self.make_default("ClntOrdrLkId")
+
+	@ClntOrdrLkId.deleter
+	def ClntOrdrLkId(self):
+		del self._ClntOrdrLkId
+		self._ClntOrdrLkId = None
+
+	@property
+	def CmplcId(self):
+		return self._CmplcId
+
+	@CmplcId.setter
+	def CmplcId(self, value):
+		self._CmplcId = value if type(value) != auto else self.make_default("CmplcId")
+
+	@CmplcId.deleter
+	def CmplcId(self):
+		del self._CmplcId
+		self._CmplcId = None
+
+	@property
+	def IndxId(self):
+		return self._IndxId
+
+	@IndxId.setter
+	def IndxId(self, value):
+		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
+
+	@IndxId.deleter
+	def IndxId(self):
+		del self._IndxId
+		self._IndxId = None
 
 	@property
 	def ExctgPtyTxId(self):
@@ -148,6 +122,45 @@ class IdentificationReference8Choice(base_types._BaseFieldType):
 		self._ExctgPtyTxId = None
 
 	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
+
+	@property
+	def BlckId(self):
+		return self._BlckId
+
+	@BlckId.setter
+	def BlckId(self, value):
+		self._BlckId = value if type(value) != auto else self.make_default("BlckId")
+
+	@BlckId.deleter
+	def BlckId(self):
+		del self._BlckId
+		self._BlckId = None
+
+	@property
+	def AllcnId(self):
+		return self._AllcnId
+
+	@AllcnId.setter
+	def AllcnId(self, value):
+		self._AllcnId = value if type(value) != auto else self.make_default("AllcnId")
+
+	@AllcnId.deleter
+	def AllcnId(self):
+		del self._AllcnId
+		self._AllcnId = None
+
+	@property
 	def PoolId(self):
 		return self._PoolId
 
@@ -160,32 +173,19 @@ class IdentificationReference8Choice(base_types._BaseFieldType):
 		del self._PoolId
 		self._PoolId = None
 
-	@property
-	def IndxId(self):
-		return self._IndxId
-
-	@IndxId.setter
-	def IndxId(self, value):
-		self._IndxId = value if type(value) != auto else self.make_default("IndxId")
-
-	@IndxId.deleter
-	def IndxId(self):
-		del self._IndxId
-		self._IndxId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClntOrdrLkId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='InstgPtyTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AllcnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CmplcId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndvAllcnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BlckId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ScndryAllcnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ExctgPtyTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='InstgPtyTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClntOrdrLkId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CmplcId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IndxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ExctgPtyTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BlckId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AllcnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='PoolId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -3,19 +3,19 @@ import Quantity10
 
 class Consignment3(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlVol", "_TtlWght", "_TtlQty"]
+	__slots__ = ["_TtlQty", "_TtlWght", "_TtlVol"]
 	@property
-	def TtlVol(self):
-		return self._TtlVol
+	def TtlQty(self):
+		return self._TtlQty
 
-	@TtlVol.setter
-	def TtlVol(self, value):
-		self._TtlVol = value if type(value) != auto else self.make_default("TtlVol")
+	@TtlQty.setter
+	def TtlQty(self, value):
+		self._TtlQty = value if type(value) != auto else self.make_default("TtlQty")
 
-	@TtlVol.deleter
-	def TtlVol(self):
-		del self._TtlVol
-		self._TtlVol = None
+	@TtlQty.deleter
+	def TtlQty(self):
+		del self._TtlQty
+		self._TtlQty = None
 
 	@property
 	def TtlWght(self):
@@ -31,21 +31,21 @@ class Consignment3(base_types._BaseFieldType):
 		self._TtlWght = None
 
 	@property
-	def TtlQty(self):
-		return self._TtlQty
+	def TtlVol(self):
+		return self._TtlVol
 
-	@TtlQty.setter
-	def TtlQty(self, value):
-		self._TtlQty = value if type(value) != auto else self.make_default("TtlQty")
+	@TtlVol.setter
+	def TtlVol(self, value):
+		self._TtlVol = value if type(value) != auto else self.make_default("TtlVol")
 
-	@TtlQty.deleter
-	def TtlQty(self):
-		del self._TtlQty
-		self._TtlQty = None
+	@TtlVol.deleter
+	def TtlVol(self):
+		del self._TtlVol
+		self._TtlVol = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlVol', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlWght', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlQty', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlWght', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlVol', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 	))
 

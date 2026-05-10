@@ -1,6 +1,6 @@
 import base_types
-import TaxExemptReason1Code
 import Max140Text
+import TaxExemptReason1Code
 
 class TaxExemptionReasonFormatChoice(base_types._BaseFieldType):
 

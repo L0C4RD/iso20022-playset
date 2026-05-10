@@ -1,22 +1,22 @@
 import base_types
-import Quantity52Choice
 import FinancialInstrumentQuantity33Choice
+import Quantity52Choice
 
 class SecuritiesOption79(base_types._BaseFieldType):
 
-	__slots__ = ["_InstdQty", "_CondlQty", "_AddtlRndUpQty"]
+	__slots__ = ["_AddtlRndUpQty", "_CondlQty", "_InstdQty"]
 	@property
-	def InstdQty(self):
-		return self._InstdQty
+	def AddtlRndUpQty(self):
+		return self._AddtlRndUpQty
 
-	@InstdQty.setter
-	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != auto else self.make_default("InstdQty")
+	@AddtlRndUpQty.setter
+	def AddtlRndUpQty(self, value):
+		self._AddtlRndUpQty = value if type(value) != auto else self.make_default("AddtlRndUpQty")
 
-	@InstdQty.deleter
-	def InstdQty(self):
-		del self._InstdQty
-		self._InstdQty = None
+	@AddtlRndUpQty.deleter
+	def AddtlRndUpQty(self):
+		del self._AddtlRndUpQty
+		self._AddtlRndUpQty = None
 
 	@property
 	def CondlQty(self):
@@ -32,21 +32,21 @@ class SecuritiesOption79(base_types._BaseFieldType):
 		self._CondlQty = None
 
 	@property
-	def AddtlRndUpQty(self):
-		return self._AddtlRndUpQty
+	def InstdQty(self):
+		return self._InstdQty
 
-	@AddtlRndUpQty.setter
-	def AddtlRndUpQty(self, value):
-		self._AddtlRndUpQty = value if type(value) != auto else self.make_default("AddtlRndUpQty")
+	@InstdQty.setter
+	def InstdQty(self, value):
+		self._InstdQty = value if type(value) != auto else self.make_default("InstdQty")
 
-	@AddtlRndUpQty.deleter
-	def AddtlRndUpQty(self):
-		del self._AddtlRndUpQty
-		self._AddtlRndUpQty = None
+	@InstdQty.deleter
+	def InstdQty(self):
+		del self._InstdQty
+		self._InstdQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InstdQty', type=Quantity52Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRndUpQty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CondlQty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InstdQty', type=Quantity52Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

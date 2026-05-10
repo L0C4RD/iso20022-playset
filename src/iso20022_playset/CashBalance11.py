@@ -1,27 +1,14 @@
 import base_types
 import CreditDebitCode
 import ImpliedCurrencyAndAmount
-import DateAndDateTime2Choice
+import BalanceStatus1Code
 import BalanceType9Choice
 import Number
-import BalanceStatus1Code
+import DateAndDateTime2Choice
 
 class CashBalance11(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_CdtDbtInd", "_NbOfPmts", "_Amt", "_ValDt", "_Sts"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_CdtDbtInd", "_NbOfPmts", "_Amt", "_Sts", "_Tp", "_ValDt"]
 	@property
 	def CdtDbtInd(self):
 		return self._CdtDbtInd
@@ -62,19 +49,6 @@ class CashBalance11(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
-	def ValDt(self):
-		return self._ValDt
-
-	@ValDt.setter
-	def ValDt(self, value):
-		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
-
-	@ValDt.deleter
-	def ValDt(self):
-		del self._ValDt
-		self._ValDt = None
-
-	@property
 	def Sts(self):
 		return self._Sts
 
@@ -87,12 +61,38 @@ class CashBalance11(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def ValDt(self):
+		return self._ValDt
+
+	@ValDt.setter
+	def ValDt(self, value):
+		self._ValDt = value if type(value) != auto else self.make_default("ValDt")
+
+	@ValDt.deleter
+	def ValDt(self):
+		del self._ValDt
+		self._ValDt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=BalanceType9Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=BalanceStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BalanceType9Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,22 @@
 import base_types
-import AccountIdentification1
 import PartyIdentification2Choice
+import AccountIdentification1
 
 class InvestmentAccount42(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctSvcr", "_AcctId", "_OwnrId"]
+	__slots__ = ["_OwnrId", "_AcctId", "_AcctSvcr"]
 	@property
-	def AcctSvcr(self):
-		return self._AcctSvcr
+	def OwnrId(self):
+		return self._OwnrId
 
-	@AcctSvcr.setter
-	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
+	@OwnrId.setter
+	def OwnrId(self, value):
+		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
 
-	@AcctSvcr.deleter
-	def AcctSvcr(self):
-		del self._AcctSvcr
-		self._AcctSvcr = None
+	@OwnrId.deleter
+	def OwnrId(self):
+		del self._OwnrId
+		self._OwnrId = None
 
 	@property
 	def AcctId(self):
@@ -32,21 +32,21 @@ class InvestmentAccount42(base_types._BaseFieldType):
 		self._AcctId = None
 
 	@property
-	def OwnrId(self):
-		return self._OwnrId
+	def AcctSvcr(self):
+		return self._AcctSvcr
 
-	@OwnrId.setter
-	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != auto else self.make_default("OwnrId")
+	@AcctSvcr.setter
+	def AcctSvcr(self, value):
+		self._AcctSvcr = value if type(value) != auto else self.make_default("AcctSvcr")
 
-	@OwnrId.deleter
-	def OwnrId(self):
-		del self._OwnrId
-		self._OwnrId = None
+	@AcctSvcr.deleter
+	def AcctSvcr(self):
+		del self._AcctSvcr
+		self._AcctSvcr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctId', type=AccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctId', type=AccountIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

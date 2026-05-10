@@ -1,26 +1,13 @@
 import base_types
-import GenericIdentification78
+import CountryCode
 import SafekeepingPlaceTypeAndText6
 import SafekeepingPlaceTypeAndIdentification1
+import GenericIdentification78
 import DTI2024Identifier
-import CountryCode
 
 class SafekeepingPlaceFormat42Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TpAndId", "_Prtry", "_DgtlLdgrId", "_Id", "_Ctry"]
-	@property
-	def TpAndId(self):
-		return self._TpAndId
-
-	@TpAndId.setter
-	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
-
-	@TpAndId.deleter
-	def TpAndId(self):
-		del self._TpAndId
-		self._TpAndId = None
-
+	__slots__ = ["_Prtry", "_DgtlLdgrId", "_TpAndId", "_Ctry", "_Id"]
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -48,17 +35,17 @@ class SafekeepingPlaceFormat42Choice(base_types._BaseFieldType):
 		self._DgtlLdgrId = None
 
 	@property
-	def Id(self):
-		return self._Id
+	def TpAndId(self):
+		return self._TpAndId
 
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
+	@TpAndId.setter
+	def TpAndId(self, value):
+		self._TpAndId = value if type(value) != auto else self.make_default("TpAndId")
 
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
+	@TpAndId.deleter
+	def TpAndId(self):
+		del self._TpAndId
+		self._TpAndId = None
 
 	@property
 	def Ctry(self):
@@ -73,11 +60,24 @@ class SafekeepingPlaceFormat42Choice(base_types._BaseFieldType):
 		del self._Ctry
 		self._Ctry = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification78, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DgtlLdgrId', type=DTI2024Identifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndIdentification1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Id', type=SafekeepingPlaceTypeAndText6, min=0, max=1, mutex_group=1, array=False),
 	))
 

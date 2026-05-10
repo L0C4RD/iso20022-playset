@@ -1,6 +1,6 @@
 import base_types
-import BlockedStatusReason2
 import NoReasonCode
+import BlockedStatusReason2
 
 class BlockedStatusReason2Choice(base_types._BaseFieldType):
 

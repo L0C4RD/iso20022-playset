@@ -1,12 +1,12 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import Max3NumericText
-import Max70Text
 import Max35Text
+import Max3NumericText
+import ImpliedCurrencyAndAmount
+import Max70Text
 
 class LodgingRoom2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Chldrn", "_Adlts", "_DalyRate", "_Lctn", "_BedTp", "_Gsts"]
+	__slots__ = ["_Tp", "_Gsts", "_BedTp", "_Lctn", "_DalyRate", "_Adlts", "_Chldrn"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,56 +21,17 @@ class LodgingRoom2(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Chldrn(self):
-		return self._Chldrn
+	def Gsts(self):
+		return self._Gsts
 
-	@Chldrn.setter
-	def Chldrn(self, value):
-		self._Chldrn = value if type(value) != auto else self.make_default("Chldrn")
+	@Gsts.setter
+	def Gsts(self, value):
+		self._Gsts = value if type(value) != auto else self.make_default("Gsts")
 
-	@Chldrn.deleter
-	def Chldrn(self):
-		del self._Chldrn
-		self._Chldrn = None
-
-	@property
-	def Adlts(self):
-		return self._Adlts
-
-	@Adlts.setter
-	def Adlts(self, value):
-		self._Adlts = value if type(value) != auto else self.make_default("Adlts")
-
-	@Adlts.deleter
-	def Adlts(self):
-		del self._Adlts
-		self._Adlts = None
-
-	@property
-	def DalyRate(self):
-		return self._DalyRate
-
-	@DalyRate.setter
-	def DalyRate(self, value):
-		self._DalyRate = value if type(value) != auto else self.make_default("DalyRate")
-
-	@DalyRate.deleter
-	def DalyRate(self):
-		del self._DalyRate
-		self._DalyRate = None
-
-	@property
-	def Lctn(self):
-		return self._Lctn
-
-	@Lctn.setter
-	def Lctn(self, value):
-		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
-
-	@Lctn.deleter
-	def Lctn(self):
-		del self._Lctn
-		self._Lctn = None
+	@Gsts.deleter
+	def Gsts(self):
+		del self._Gsts
+		self._Gsts = None
 
 	@property
 	def BedTp(self):
@@ -86,25 +47,64 @@ class LodgingRoom2(base_types._BaseFieldType):
 		self._BedTp = None
 
 	@property
-	def Gsts(self):
-		return self._Gsts
+	def Lctn(self):
+		return self._Lctn
 
-	@Gsts.setter
-	def Gsts(self, value):
-		self._Gsts = value if type(value) != auto else self.make_default("Gsts")
+	@Lctn.setter
+	def Lctn(self, value):
+		self._Lctn = value if type(value) != auto else self.make_default("Lctn")
 
-	@Gsts.deleter
-	def Gsts(self):
-		del self._Gsts
-		self._Gsts = None
+	@Lctn.deleter
+	def Lctn(self):
+		del self._Lctn
+		self._Lctn = None
+
+	@property
+	def DalyRate(self):
+		return self._DalyRate
+
+	@DalyRate.setter
+	def DalyRate(self, value):
+		self._DalyRate = value if type(value) != auto else self.make_default("DalyRate")
+
+	@DalyRate.deleter
+	def DalyRate(self):
+		del self._DalyRate
+		self._DalyRate = None
+
+	@property
+	def Adlts(self):
+		return self._Adlts
+
+	@Adlts.setter
+	def Adlts(self, value):
+		self._Adlts = value if type(value) != auto else self.make_default("Adlts")
+
+	@Adlts.deleter
+	def Adlts(self):
+		del self._Adlts
+		self._Adlts = None
+
+	@property
+	def Chldrn(self):
+		return self._Chldrn
+
+	@Chldrn.setter
+	def Chldrn(self, value):
+		self._Chldrn = value if type(value) != auto else self.make_default("Chldrn")
+
+	@Chldrn.deleter
+	def Chldrn(self):
+		del self._Chldrn
+		self._Chldrn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Chldrn', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adlts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DalyRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BedTp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Gsts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BedTp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Lctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DalyRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adlts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Chldrn', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

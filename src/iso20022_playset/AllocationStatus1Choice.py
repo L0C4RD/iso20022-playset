@@ -1,10 +1,23 @@
 import base_types
-import ProprietaryStatusAndReason6
 import ProprietaryReason4
+import ProprietaryStatusAndReason6
 
 class AllocationStatus1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_PrtlyAllctd", "_FullyAllctd"]
+	__slots__ = ["_FullyAllctd", "_Prtry", "_PrtlyAllctd"]
+	@property
+	def FullyAllctd(self):
+		return self._FullyAllctd
+
+	@FullyAllctd.setter
+	def FullyAllctd(self, value):
+		self._FullyAllctd = value if type(value) != auto else self.make_default("FullyAllctd")
+
+	@FullyAllctd.deleter
+	def FullyAllctd(self):
+		del self._FullyAllctd
+		self._FullyAllctd = None
+
 	@property
 	def Prtry(self):
 		return self._Prtry
@@ -31,22 +44,9 @@ class AllocationStatus1Choice(base_types._BaseFieldType):
 		del self._PrtlyAllctd
 		self._PrtlyAllctd = None
 
-	@property
-	def FullyAllctd(self):
-		return self._FullyAllctd
-
-	@FullyAllctd.setter
-	def FullyAllctd(self, value):
-		self._FullyAllctd = value if type(value) != auto else self.make_default("FullyAllctd")
-
-	@FullyAllctd.deleter
-	def FullyAllctd(self):
-		del self._FullyAllctd
-		self._FullyAllctd = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='FullyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtlyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='FullyAllctd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 	))
 

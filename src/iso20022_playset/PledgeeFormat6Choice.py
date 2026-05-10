@@ -1,7 +1,7 @@
 import base_types
 import PledgeeTypeAndAnyBICIdentifier2
-import GenericIdentification85
 import PledgeeTypeAndText2
+import GenericIdentification85
 
 class PledgeeFormat6Choice(base_types._BaseFieldType):
 

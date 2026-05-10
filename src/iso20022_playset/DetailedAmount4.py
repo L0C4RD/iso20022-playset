@@ -1,23 +1,10 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import Max140Text
+import ImpliedCurrencyAndAmount
 
 class DetailedAmount4(base_types._BaseFieldType):
 
-	__slots__ = ["_Labl", "_Amt"]
-	@property
-	def Labl(self):
-		return self._Labl
-
-	@Labl.setter
-	def Labl(self, value):
-		self._Labl = value if type(value) != auto else self.make_default("Labl")
-
-	@Labl.deleter
-	def Labl(self):
-		del self._Labl
-		self._Labl = None
-
+	__slots__ = ["_Amt", "_Labl"]
 	@property
 	def Amt(self):
 		return self._Amt
@@ -31,8 +18,21 @@ class DetailedAmount4(base_types._BaseFieldType):
 		del self._Amt
 		self._Amt = None
 
+	@property
+	def Labl(self):
+		return self._Labl
+
+	@Labl.setter
+	def Labl(self, value):
+		self._Labl = value if type(value) != auto else self.make_default("Labl")
+
+	@Labl.deleter
+	def Labl(self):
+		del self._Labl
+		self._Labl = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

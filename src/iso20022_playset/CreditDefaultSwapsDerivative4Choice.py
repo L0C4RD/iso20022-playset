@@ -1,12 +1,12 @@
 import base_types
-import CreditDefaultSwapDerivative6
 import CreditDefaultSwapSingleName2
 import CreditDefaultSwapIndex3
+import CreditDefaultSwapDerivative6
 import CreditDefaultSwapDerivative5
 
 class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SnglNmCdtDfltSwp", "_CdtDfltSwpIndx", "_CdtDfltSwpIndxDeriv", "_SnglNmCdtDfltSwpDeriv"]
+	__slots__ = ["_SnglNmCdtDfltSwp", "_CdtDfltSwpIndx", "_SnglNmCdtDfltSwpDeriv", "_CdtDfltSwpIndxDeriv"]
 	@property
 	def SnglNmCdtDfltSwp(self):
 		return self._SnglNmCdtDfltSwp
@@ -34,19 +34,6 @@ class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 		self._CdtDfltSwpIndx = None
 
 	@property
-	def CdtDfltSwpIndxDeriv(self):
-		return self._CdtDfltSwpIndxDeriv
-
-	@CdtDfltSwpIndxDeriv.setter
-	def CdtDfltSwpIndxDeriv(self, value):
-		self._CdtDfltSwpIndxDeriv = value if type(value) != auto else self.make_default("CdtDfltSwpIndxDeriv")
-
-	@CdtDfltSwpIndxDeriv.deleter
-	def CdtDfltSwpIndxDeriv(self):
-		del self._CdtDfltSwpIndxDeriv
-		self._CdtDfltSwpIndxDeriv = None
-
-	@property
 	def SnglNmCdtDfltSwpDeriv(self):
 		return self._SnglNmCdtDfltSwpDeriv
 
@@ -59,10 +46,23 @@ class CreditDefaultSwapsDerivative4Choice(base_types._BaseFieldType):
 		del self._SnglNmCdtDfltSwpDeriv
 		self._SnglNmCdtDfltSwpDeriv = None
 
+	@property
+	def CdtDfltSwpIndxDeriv(self):
+		return self._CdtDfltSwpIndxDeriv
+
+	@CdtDfltSwpIndxDeriv.setter
+	def CdtDfltSwpIndxDeriv(self, value):
+		self._CdtDfltSwpIndxDeriv = value if type(value) != auto else self.make_default("CdtDfltSwpIndxDeriv")
+
+	@CdtDfltSwpIndxDeriv.deleter
+	def CdtDfltSwpIndxDeriv(self):
+		del self._CdtDfltSwpIndxDeriv
+		self._CdtDfltSwpIndxDeriv = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SnglNmCdtDfltSwp', type=CreditDefaultSwapSingleName2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CdtDfltSwpIndx', type=CreditDefaultSwapIndex3, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CdtDfltSwpIndxDeriv', type=CreditDefaultSwapDerivative5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SnglNmCdtDfltSwpDeriv', type=CreditDefaultSwapDerivative6, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CdtDfltSwpIndxDeriv', type=CreditDefaultSwapDerivative5, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AssetClassSubProductType30Code
 import AssetClassProductType3Code
+import AssetClassSubProductType30Code
 
 class EnvironmentalCommodityWeather2(base_types._BaseFieldType):
 

@@ -1,16 +1,29 @@
 import base_types
-import IntentToPay2
-import TransactionStatus4
-import BICIdentification1
+import SimpleIdentificationInformation
 import MessageIdentification1
 import DocumentIdentification3
+import BICIdentification1
 import DocumentIdentification5
 import PendingActivity2
-import SimpleIdentificationInformation
+import TransactionStatus4
+import IntentToPay2
 
 class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqForActn", "_SellrBk", "_EstblishdBaselnId", "_BuyrBk", "_TxId", "_UsrTxRef", "_NtfctnId", "_InttToPay", "_TxSts"]
+	__slots__ = ["_InttToPay", "_ReqForActn", "_TxId", "_NtfctnId", "_EstblishdBaselnId", "_SellrBk", "_UsrTxRef", "_TxSts", "_BuyrBk"]
+	@property
+	def InttToPay(self):
+		return self._InttToPay
+
+	@InttToPay.setter
+	def InttToPay(self, value):
+		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
+
+	@InttToPay.deleter
+	def InttToPay(self):
+		del self._InttToPay
+		self._InttToPay = None
+
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -23,45 +36,6 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 	def ReqForActn(self):
 		del self._ReqForActn
 		self._ReqForActn = None
-
-	@property
-	def SellrBk(self):
-		return self._SellrBk
-
-	@SellrBk.setter
-	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
-
-	@SellrBk.deleter
-	def SellrBk(self):
-		del self._SellrBk
-		self._SellrBk = None
-
-	@property
-	def EstblishdBaselnId(self):
-		return self._EstblishdBaselnId
-
-	@EstblishdBaselnId.setter
-	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
-
-	@EstblishdBaselnId.deleter
-	def EstblishdBaselnId(self):
-		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
-
-	@property
-	def BuyrBk(self):
-		return self._BuyrBk
-
-	@BuyrBk.setter
-	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
-
-	@BuyrBk.deleter
-	def BuyrBk(self):
-		del self._BuyrBk
-		self._BuyrBk = None
 
 	@property
 	def TxId(self):
@@ -77,19 +51,6 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
-	@property
 	def NtfctnId(self):
 		return self._NtfctnId
 
@@ -103,17 +64,43 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		self._NtfctnId = None
 
 	@property
-	def InttToPay(self):
-		return self._InttToPay
+	def EstblishdBaselnId(self):
+		return self._EstblishdBaselnId
 
-	@InttToPay.setter
-	def InttToPay(self, value):
-		self._InttToPay = value if type(value) != auto else self.make_default("InttToPay")
+	@EstblishdBaselnId.setter
+	def EstblishdBaselnId(self, value):
+		self._EstblishdBaselnId = value if type(value) != auto else self.make_default("EstblishdBaselnId")
 
-	@InttToPay.deleter
-	def InttToPay(self):
-		del self._InttToPay
-		self._InttToPay = None
+	@EstblishdBaselnId.deleter
+	def EstblishdBaselnId(self):
+		del self._EstblishdBaselnId
+		self._EstblishdBaselnId = None
+
+	@property
+	def SellrBk(self):
+		return self._SellrBk
+
+	@SellrBk.setter
+	def SellrBk(self, value):
+		self._SellrBk = value if type(value) != auto else self.make_default("SellrBk")
+
+	@SellrBk.deleter
+	def SellrBk(self):
+		del self._SellrBk
+		self._SellrBk = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def TxSts(self):
@@ -128,15 +115,28 @@ class ForwardIntentToPayNotificationV02(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
+	@property
+	def BuyrBk(self):
+		return self._BuyrBk
+
+	@BuyrBk.setter
+	def BuyrBk(self, value):
+		self._BuyrBk = value if type(value) != auto else self.make_default("BuyrBk")
+
+	@BuyrBk.deleter
+	def BuyrBk(self):
+		del self._BuyrBk
+		self._BuyrBk = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InttToPay', type=IntentToPay2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SellrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

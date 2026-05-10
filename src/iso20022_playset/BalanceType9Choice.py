@@ -1,6 +1,6 @@
 import base_types
-import SystemBalanceType2Code
 import Max35Text
+import SystemBalanceType2Code
 
 class BalanceType9Choice(base_types._BaseFieldType):
 

@@ -1,12 +1,25 @@
 import base_types
 import PartyIdentification253Choice
-import TradeLeg12
 import SecuritiesAccount18
+import TradeLeg12
 import PartyIdentificationAndAccount227
 
 class TradeLegStatement4(base_types._BaseFieldType):
 
-	__slots__ = ["_TradLegsDtls", "_ClrAcct", "_NonClrMmb", "_ClrSgmt"]
+	__slots__ = ["_NonClrMmb", "_TradLegsDtls", "_ClrAcct", "_ClrSgmt"]
+	@property
+	def NonClrMmb(self):
+		return self._NonClrMmb
+
+	@NonClrMmb.setter
+	def NonClrMmb(self, value):
+		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
+
+	@NonClrMmb.deleter
+	def NonClrMmb(self):
+		del self._NonClrMmb
+		self._NonClrMmb = None
+
 	@property
 	def TradLegsDtls(self):
 		return self._TradLegsDtls
@@ -34,19 +47,6 @@ class TradeLegStatement4(base_types._BaseFieldType):
 		self._ClrAcct = None
 
 	@property
-	def NonClrMmb(self):
-		return self._NonClrMmb
-
-	@NonClrMmb.setter
-	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != auto else self.make_default("NonClrMmb")
-
-	@NonClrMmb.deleter
-	def NonClrMmb(self):
-		del self._NonClrMmb
-		self._NonClrMmb = None
-
-	@property
 	def ClrSgmt(self):
 		return self._ClrSgmt
 
@@ -60,9 +60,9 @@ class TradeLegStatement4(base_types._BaseFieldType):
 		self._ClrSgmt = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradLegsDtls', type=TradeLeg12, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

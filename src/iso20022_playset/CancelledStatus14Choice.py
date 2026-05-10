@@ -1,6 +1,6 @@
 import base_types
-import CancelledStatusReason13
 import NoReasonCode
+import CancelledStatusReason13
 
 class CancelledStatus14Choice(base_types._BaseFieldType):
 

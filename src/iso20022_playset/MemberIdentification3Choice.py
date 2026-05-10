@@ -1,23 +1,23 @@
 import base_types
 import BICFIDec2014Identifier
-import GenericFinancialIdentification1
 import ClearingSystemMemberIdentification2
+import GenericFinancialIdentification1
 
 class MemberIdentification3Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_ClrSysMmbId", "_BICFI", "_Othr"]
+	__slots__ = ["_Othr", "_BICFI", "_ClrSysMmbId"]
 	@property
-	def ClrSysMmbId(self):
-		return self._ClrSysMmbId
+	def Othr(self):
+		return self._Othr
 
-	@ClrSysMmbId.setter
-	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
 
-	@ClrSysMmbId.deleter
-	def ClrSysMmbId(self):
-		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
 
 	@property
 	def BICFI(self):
@@ -33,21 +33,21 @@ class MemberIdentification3Choice(base_types._BaseFieldType):
 		self._BICFI = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def ClrSysMmbId(self):
+		return self._ClrSysMmbId
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@ClrSysMmbId.setter
+	def ClrSysMmbId(self, value):
+		self._ClrSysMmbId = value if type(value) != auto else self.make_default("ClrSysMmbId")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@ClrSysMmbId.deleter
+	def ClrSysMmbId(self):
+		del self._ClrSysMmbId
+		self._ClrSysMmbId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericFinancialIdentification1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ClrSysMmbId', type=ClearingSystemMemberIdentification2, min=0, max=1, mutex_group=1, array=False),
 	))
 

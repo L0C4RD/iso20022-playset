@@ -1,11 +1,11 @@
 import base_types
-import ISODate
-import Max35Text
 import Max6Text
+import Max35Text
+import ISODate
 
 class ContractDocument1(base_types._BaseFieldType):
 
-	__slots__ = ["_Vrsn", "_SgnOffDt", "_Ref"]
+	__slots__ = ["_Vrsn", "_Ref", "_SgnOffDt"]
 	@property
 	def Vrsn(self):
 		return self._Vrsn
@@ -20,19 +20,6 @@ class ContractDocument1(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def SgnOffDt(self):
-		return self._SgnOffDt
-
-	@SgnOffDt.setter
-	def SgnOffDt(self, value):
-		self._SgnOffDt = value if type(value) != auto else self.make_default("SgnOffDt")
-
-	@SgnOffDt.deleter
-	def SgnOffDt(self):
-		del self._SgnOffDt
-		self._SgnOffDt = None
-
-	@property
 	def Ref(self):
 		return self._Ref
 
@@ -45,9 +32,22 @@ class ContractDocument1(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def SgnOffDt(self):
+		return self._SgnOffDt
+
+	@SgnOffDt.setter
+	def SgnOffDt(self, value):
+		self._SgnOffDt = value if type(value) != auto else self.make_default("SgnOffDt")
+
+	@SgnOffDt.deleter
+	def SgnOffDt(self):
+		del self._SgnOffDt
+		self._SgnOffDt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Vrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SgnOffDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgnOffDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

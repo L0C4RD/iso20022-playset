@@ -4,7 +4,20 @@ import GenericOrganisationType1
 
 class OrganisationType2(base_types._BaseFieldType):
 
-	__slots__ = ["_EmailAdr", "_LEI", "_AnyBIC", "_Othr"]
+	__slots__ = ["_Othr", "_EmailAdr", "_AnyBIC", "_LEI"]
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
 	@property
 	def EmailAdr(self):
 		return self._EmailAdr
@@ -17,19 +30,6 @@ class OrganisationType2(base_types._BaseFieldType):
 	def EmailAdr(self):
 		del self._EmailAdr
 		self._EmailAdr = None
-
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
 
 	@property
 	def AnyBIC(self):
@@ -45,22 +45,22 @@ class OrganisationType2(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
-	def Othr(self):
-		return self._Othr
+	def LEI(self):
+		return self._LEI
 
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
 
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LEI', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnyBIC', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericOrganisationType1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='EmailAdr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnyBIC', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LEI', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

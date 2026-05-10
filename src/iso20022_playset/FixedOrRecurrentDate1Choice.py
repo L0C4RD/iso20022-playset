@@ -1,6 +1,6 @@
 import base_types
-import ISODate
 import DateInformation1
+import ISODate
 
 class FixedOrRecurrentDate1Choice(base_types._BaseFieldType):
 

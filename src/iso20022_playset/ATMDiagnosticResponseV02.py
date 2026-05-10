@@ -1,12 +1,38 @@
 import base_types
-import Header31
 import ContentInformationType15
-import ATMDiagnosticResponse2
+import Header31
 import ContentInformationType10
+import ATMDiagnosticResponse2
 
 class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdATMDgnstcRspn", "_Hdr", "_ATMDgnstcRspn", "_SctyTrlr"]
+	__slots__ = ["_SctyTrlr", "_ATMDgnstcRspn", "_PrtctdATMDgnstcRspn", "_Hdr"]
+	@property
+	def SctyTrlr(self):
+		return self._SctyTrlr
+
+	@SctyTrlr.setter
+	def SctyTrlr(self, value):
+		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
+
+	@SctyTrlr.deleter
+	def SctyTrlr(self):
+		del self._SctyTrlr
+		self._SctyTrlr = None
+
+	@property
+	def ATMDgnstcRspn(self):
+		return self._ATMDgnstcRspn
+
+	@ATMDgnstcRspn.setter
+	def ATMDgnstcRspn(self, value):
+		self._ATMDgnstcRspn = value if type(value) != auto else self.make_default("ATMDgnstcRspn")
+
+	@ATMDgnstcRspn.deleter
+	def ATMDgnstcRspn(self):
+		del self._ATMDgnstcRspn
+		self._ATMDgnstcRspn = None
+
 	@property
 	def PrtctdATMDgnstcRspn(self):
 		return self._PrtctdATMDgnstcRspn
@@ -33,36 +59,10 @@ class ATMDiagnosticResponseV02(base_types._BaseFieldType):
 		del self._Hdr
 		self._Hdr = None
 
-	@property
-	def ATMDgnstcRspn(self):
-		return self._ATMDgnstcRspn
-
-	@ATMDgnstcRspn.setter
-	def ATMDgnstcRspn(self, value):
-		self._ATMDgnstcRspn = value if type(value) != auto else self.make_default("ATMDgnstcRspn")
-
-	@ATMDgnstcRspn.deleter
-	def ATMDgnstcRspn(self):
-		del self._ATMDgnstcRspn
-		self._ATMDgnstcRspn = None
-
-	@property
-	def SctyTrlr(self):
-		return self._SctyTrlr
-
-	@SctyTrlr.setter
-	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != auto else self.make_default("SctyTrlr")
-
-	@SctyTrlr.deleter
-	def SctyTrlr(self):
-		del self._SctyTrlr
-		self._SctyTrlr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMDgnstcRspn', type=ATMDiagnosticResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdATMDgnstcRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMDgnstcRspn', type=ATMDiagnosticResponse2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,7 +5,20 @@ import CorporateActionInformation1
 
 class AgentCADistributionBreakdownAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnGnlInf", "_CorpActnDstrbtnDtls"]
+	__slots__ = ["_CorpActnDstrbtnDtls", "_Id", "_CorpActnGnlInf"]
+	@property
+	def CorpActnDstrbtnDtls(self):
+		return self._CorpActnDstrbtnDtls
+
+	@CorpActnDstrbtnDtls.setter
+	def CorpActnDstrbtnDtls(self, value):
+		self._CorpActnDstrbtnDtls = value if type(value) != auto else self.make_default("CorpActnDstrbtnDtls")
+
+	@CorpActnDstrbtnDtls.deleter
+	def CorpActnDstrbtnDtls(self):
+		del self._CorpActnDstrbtnDtls
+		self._CorpActnDstrbtnDtls = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -32,22 +45,9 @@ class AgentCADistributionBreakdownAdviceV01(base_types._BaseFieldType):
 		del self._CorpActnGnlInf
 		self._CorpActnGnlInf = None
 
-	@property
-	def CorpActnDstrbtnDtls(self):
-		return self._CorpActnDstrbtnDtls
-
-	@CorpActnDstrbtnDtls.setter
-	def CorpActnDstrbtnDtls(self, value):
-		self._CorpActnDstrbtnDtls = value if type(value) != auto else self.make_default("CorpActnDstrbtnDtls")
-
-	@CorpActnDstrbtnDtls.deleter
-	def CorpActnDstrbtnDtls(self):
-		del self._CorpActnDstrbtnDtls
-		self._CorpActnDstrbtnDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='CorpActnDstrbtnDtls', type=EntitlementAdvice1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionInformation1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnDstrbtnDtls', type=EntitlementAdvice1, min=1, max=1, mutex_group=None, array=False),
 	))
 

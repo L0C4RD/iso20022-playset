@@ -1,25 +1,12 @@
 import base_types
+import StandingOrder10
+import MessageHeader1
 import SupplementaryData1
 import StandingOrderIdentification8
-import MessageHeader1
-import StandingOrder10
 
 class ModifyStandingOrderV08(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_SplmtryData", "_NewStgOrdrValSet", "_StgOrdrId"]
-	@property
-	def MsgHdr(self):
-		return self._MsgHdr
-
-	@MsgHdr.setter
-	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
-
-	@MsgHdr.deleter
-	def MsgHdr(self):
-		del self._MsgHdr
-		self._MsgHdr = None
-
+	__slots__ = ["_SplmtryData", "_MsgHdr", "_StgOrdrId", "_NewStgOrdrValSet"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,17 +21,17 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def NewStgOrdrValSet(self):
-		return self._NewStgOrdrValSet
+	def MsgHdr(self):
+		return self._MsgHdr
 
-	@NewStgOrdrValSet.setter
-	def NewStgOrdrValSet(self, value):
-		self._NewStgOrdrValSet = value if type(value) != auto else self.make_default("NewStgOrdrValSet")
+	@MsgHdr.setter
+	def MsgHdr(self, value):
+		self._MsgHdr = value if type(value) != auto else self.make_default("MsgHdr")
 
-	@NewStgOrdrValSet.deleter
-	def NewStgOrdrValSet(self):
-		del self._NewStgOrdrValSet
-		self._NewStgOrdrValSet = None
+	@MsgHdr.deleter
+	def MsgHdr(self):
+		del self._MsgHdr
+		self._MsgHdr = None
 
 	@property
 	def StgOrdrId(self):
@@ -59,10 +46,23 @@ class ModifyStandingOrderV08(base_types._BaseFieldType):
 		del self._StgOrdrId
 		self._StgOrdrId = None
 
+	@property
+	def NewStgOrdrValSet(self):
+		return self._NewStgOrdrValSet
+
+	@NewStgOrdrValSet.setter
+	def NewStgOrdrValSet(self, value):
+		self._NewStgOrdrValSet = value if type(value) != auto else self.make_default("NewStgOrdrValSet")
+
+	@NewStgOrdrValSet.deleter
+	def NewStgOrdrValSet(self):
+		del self._NewStgOrdrValSet
+		self._NewStgOrdrValSet = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewStgOrdrValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
 	))
 

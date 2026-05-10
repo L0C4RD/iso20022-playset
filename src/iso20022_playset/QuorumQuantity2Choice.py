@@ -1,6 +1,6 @@
 import base_types
-import Percentage14Rate
 import Max35Text
+import Percentage14Rate
 
 class QuorumQuantity2Choice(base_types._BaseFieldType):
 

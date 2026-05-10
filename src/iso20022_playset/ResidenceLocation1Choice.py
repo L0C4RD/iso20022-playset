@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import Max35Text
+import CountryCode
 
 class ResidenceLocation1Choice(base_types._BaseFieldType):
 

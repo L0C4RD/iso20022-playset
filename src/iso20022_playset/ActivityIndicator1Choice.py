@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification36
 import ISICIdentifier
+import GenericIdentification36
 
 class ActivityIndicator1Choice(base_types._BaseFieldType):
 

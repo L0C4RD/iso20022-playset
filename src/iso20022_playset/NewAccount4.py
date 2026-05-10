@@ -1,24 +1,11 @@
 import base_types
 import CashAccount43
-import IndividualPerson44
 import Organisation43
+import IndividualPerson44
 
 class NewAccount4(base_types._BaseFieldType):
 
-	__slots__ = ["_Acct", "_Org", "_AcctPty"]
-	@property
-	def Acct(self):
-		return self._Acct
-
-	@Acct.setter
-	def Acct(self, value):
-		self._Acct = value if type(value) != auto else self.make_default("Acct")
-
-	@Acct.deleter
-	def Acct(self):
-		del self._Acct
-		self._Acct = None
-
+	__slots__ = ["_Org", "_Acct", "_AcctPty"]
 	@property
 	def Org(self):
 		return self._Org
@@ -31,6 +18,19 @@ class NewAccount4(base_types._BaseFieldType):
 	def Org(self):
 		del self._Org
 		self._Org = None
+
+	@property
+	def Acct(self):
+		return self._Acct
+
+	@Acct.setter
+	def Acct(self, value):
+		self._Acct = value if type(value) != auto else self.make_default("Acct")
+
+	@Acct.deleter
+	def Acct(self):
+		del self._Acct
+		self._Acct = None
 
 	@property
 	def AcctPty(self):
@@ -46,8 +46,8 @@ class NewAccount4(base_types._BaseFieldType):
 		self._AcctPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Org', type=Organisation43, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctPty', type=IndividualPerson44, min=1, max=None, mutex_group=None, array=True),
 	))
 

@@ -1,37 +1,11 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ActiveCurrencyCode
+import ImpliedCurrencyAndAmount
 import DetailedAmount13
 
 class DetailedAmount12(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_AmtToDspns", "_Fees", "_Dontn"]
-	@property
-	def Ccy(self):
-		return self._Ccy
-
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
-
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def AmtToDspns(self):
-		return self._AmtToDspns
-
-	@AmtToDspns.setter
-	def AmtToDspns(self, value):
-		self._AmtToDspns = value if type(value) != auto else self.make_default("AmtToDspns")
-
-	@AmtToDspns.deleter
-	def AmtToDspns(self):
-		del self._AmtToDspns
-		self._AmtToDspns = None
-
+	__slots__ = ["_Fees", "_Ccy", "_Dontn", "_AmtToDspns"]
 	@property
 	def Fees(self):
 		return self._Fees
@@ -46,6 +20,19 @@ class DetailedAmount12(base_types._BaseFieldType):
 		self._Fees = None
 
 	@property
+	def Ccy(self):
+		return self._Ccy
+
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
 	def Dontn(self):
 		return self._Dontn
 
@@ -58,10 +45,23 @@ class DetailedAmount12(base_types._BaseFieldType):
 		del self._Dontn
 		self._Dontn = None
 
+	@property
+	def AmtToDspns(self):
+		return self._AmtToDspns
+
+	@AmtToDspns.setter
+	def AmtToDspns(self, value):
+		self._AmtToDspns = value if type(value) != auto else self.make_default("AmtToDspns")
+
+	@AmtToDspns.deleter
+	def AmtToDspns(self):
+		del self._AmtToDspns
+		self._AmtToDspns = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtToDspns', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fees', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dontn', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AmtToDspns', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

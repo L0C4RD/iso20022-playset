@@ -1,24 +1,24 @@
 import base_types
 import MandateRelatedInformation17
+import ContentInformationType39
 import PartyIdentification272
 import CashAccount40
-import ContentInformationType39
 
 class DirectDebitContext1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtctdDbtrAcct", "_Dbtr", "_Cdtr", "_DbtrAcct", "_CdtrAcct", "_PrtctdCdtrAcct", "_MndtRltdInf"]
+	__slots__ = ["_DbtrAcct", "_Dbtr", "_MndtRltdInf", "_Cdtr", "_CdtrAcct", "_PrtctdDbtrAcct", "_PrtctdCdtrAcct"]
 	@property
-	def PrtctdDbtrAcct(self):
-		return self._PrtctdDbtrAcct
+	def DbtrAcct(self):
+		return self._DbtrAcct
 
-	@PrtctdDbtrAcct.setter
-	def PrtctdDbtrAcct(self, value):
-		self._PrtctdDbtrAcct = value if type(value) != auto else self.make_default("PrtctdDbtrAcct")
+	@DbtrAcct.setter
+	def DbtrAcct(self, value):
+		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
 
-	@PrtctdDbtrAcct.deleter
-	def PrtctdDbtrAcct(self):
-		del self._PrtctdDbtrAcct
-		self._PrtctdDbtrAcct = None
+	@DbtrAcct.deleter
+	def DbtrAcct(self):
+		del self._DbtrAcct
+		self._DbtrAcct = None
 
 	@property
 	def Dbtr(self):
@@ -34,6 +34,19 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		self._Dbtr = None
 
 	@property
+	def MndtRltdInf(self):
+		return self._MndtRltdInf
+
+	@MndtRltdInf.setter
+	def MndtRltdInf(self, value):
+		self._MndtRltdInf = value if type(value) != auto else self.make_default("MndtRltdInf")
+
+	@MndtRltdInf.deleter
+	def MndtRltdInf(self):
+		del self._MndtRltdInf
+		self._MndtRltdInf = None
+
+	@property
 	def Cdtr(self):
 		return self._Cdtr
 
@@ -45,19 +58,6 @@ class DirectDebitContext1(base_types._BaseFieldType):
 	def Cdtr(self):
 		del self._Cdtr
 		self._Cdtr = None
-
-	@property
-	def DbtrAcct(self):
-		return self._DbtrAcct
-
-	@DbtrAcct.setter
-	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != auto else self.make_default("DbtrAcct")
-
-	@DbtrAcct.deleter
-	def DbtrAcct(self):
-		del self._DbtrAcct
-		self._DbtrAcct = None
 
 	@property
 	def CdtrAcct(self):
@@ -73,6 +73,19 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		self._CdtrAcct = None
 
 	@property
+	def PrtctdDbtrAcct(self):
+		return self._PrtctdDbtrAcct
+
+	@PrtctdDbtrAcct.setter
+	def PrtctdDbtrAcct(self, value):
+		self._PrtctdDbtrAcct = value if type(value) != auto else self.make_default("PrtctdDbtrAcct")
+
+	@PrtctdDbtrAcct.deleter
+	def PrtctdDbtrAcct(self):
+		del self._PrtctdDbtrAcct
+		self._PrtctdDbtrAcct = None
+
+	@property
 	def PrtctdCdtrAcct(self):
 		return self._PrtctdCdtrAcct
 
@@ -85,26 +98,13 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		del self._PrtctdCdtrAcct
 		self._PrtctdCdtrAcct = None
 
-	@property
-	def MndtRltdInf(self):
-		return self._MndtRltdInf
-
-	@MndtRltdInf.setter
-	def MndtRltdInf(self, value):
-		self._MndtRltdInf = value if type(value) != auto else self.make_default("MndtRltdInf")
-
-	@MndtRltdInf.deleter
-	def MndtRltdInf(self):
-		del self._MndtRltdInf
-		self._MndtRltdInf = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DbtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dbtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MndtRltdInf', type=MandateRelatedInformation17, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 	))
 

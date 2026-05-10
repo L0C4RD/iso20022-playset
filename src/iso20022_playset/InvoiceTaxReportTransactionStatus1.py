@@ -1,24 +1,24 @@
 import base_types
+import Max35Text
+import TaxReportingStatus2Code
 import GenericValidationRuleIdentification1
 import SupplementaryData1
-import TaxReportingStatus2Code
-import Max35Text
 
 class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_VldtnRule", "_SplmtryData", "_Sts", "_TaxRptId"]
+	__slots__ = ["_TaxRptId", "_SplmtryData", "_VldtnRule", "_Sts"]
 	@property
-	def VldtnRule(self):
-		return self._VldtnRule
+	def TaxRptId(self):
+		return self._TaxRptId
 
-	@VldtnRule.setter
-	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+	@TaxRptId.setter
+	def TaxRptId(self, value):
+		self._TaxRptId = value if type(value) != auto else self.make_default("TaxRptId")
 
-	@VldtnRule.deleter
-	def VldtnRule(self):
-		del self._VldtnRule
-		self._VldtnRule = None
+	@TaxRptId.deleter
+	def TaxRptId(self):
+		del self._TaxRptId
+		self._TaxRptId = None
 
 	@property
 	def SplmtryData(self):
@@ -34,6 +34,19 @@ class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
+	def VldtnRule(self):
+		return self._VldtnRule
+
+	@VldtnRule.setter
+	def VldtnRule(self, value):
+		self._VldtnRule = value if type(value) != auto else self.make_default("VldtnRule")
+
+	@VldtnRule.deleter
+	def VldtnRule(self):
+		del self._VldtnRule
+		self._VldtnRule = None
+
+	@property
 	def Sts(self):
 		return self._Sts
 
@@ -46,23 +59,10 @@ class InvoiceTaxReportTransactionStatus1(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
-	@property
-	def TaxRptId(self):
-		return self._TaxRptId
-
-	@TaxRptId.setter
-	def TaxRptId(self, value):
-		self._TaxRptId = value if type(value) != auto else self.make_default("TaxRptId")
-
-	@TaxRptId.deleter
-	def TaxRptId(self):
-		del self._TaxRptId
-		self._TaxRptId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Sts', type=TaxReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRptId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='VldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Sts', type=TaxReportingStatus2Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

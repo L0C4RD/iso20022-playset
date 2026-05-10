@@ -1,24 +1,11 @@
 import base_types
-import CashCollateral5
 import ActiveCurrencyAndAmount
 import Max1025Text
+import CashCollateral5
 
 class ContractCollateral1(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlInf", "_CollDesc", "_TtlAmt"]
-	@property
-	def AddtlInf(self):
-		return self._AddtlInf
-
-	@AddtlInf.setter
-	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
-
-	@AddtlInf.deleter
-	def AddtlInf(self):
-		del self._AddtlInf
-		self._AddtlInf = None
-
+	__slots__ = ["_CollDesc", "_TtlAmt", "_AddtlInf"]
 	@property
 	def CollDesc(self):
 		return self._CollDesc
@@ -45,9 +32,22 @@ class ContractCollateral1(base_types._BaseFieldType):
 		del self._TtlAmt
 		self._TtlAmt = None
 
+	@property
+	def AddtlInf(self):
+		return self._AddtlInf
+
+	@AddtlInf.setter
+	def AddtlInf(self, value):
+		self._AddtlInf = value if type(value) != auto else self.make_default("AddtlInf")
+
+	@AddtlInf.deleter
+	def AddtlInf(self):
+		del self._AddtlInf
+		self._AddtlInf = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollDesc', type=CashCollateral5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
-import RejectionReason23
-import AdditionalReference3
 import MessageIdentification1
+import AdditionalReference3
+import RejectionReason23
 
 class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Rsn", "_RltdRef"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_Rsn", "_RltdRef", "_MsgId"]
 	@property
 	def Rsn(self):
 		return self._Rsn
@@ -45,9 +32,22 @@ class SecuritiesMessageRejectionV03(base_types._BaseFieldType):
 		del self._RltdRef
 		self._RltdRef = None
 
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=RejectionReason23, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

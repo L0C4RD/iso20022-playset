@@ -6,19 +6,19 @@ import DateAndDateTime2Choice
 
 class DerivativeEvent6(base_types._BaseFieldType):
 
-	__slots__ = ["_AmdmntInd", "_Tp", "_Id", "_TmStmp"]
+	__slots__ = ["_TmStmp", "_Tp", "_Id", "_AmdmntInd"]
 	@property
-	def AmdmntInd(self):
-		return self._AmdmntInd
+	def TmStmp(self):
+		return self._TmStmp
 
-	@AmdmntInd.setter
-	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
+	@TmStmp.setter
+	def TmStmp(self, value):
+		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
 
-	@AmdmntInd.deleter
-	def AmdmntInd(self):
-		del self._AmdmntInd
-		self._AmdmntInd = None
+	@TmStmp.deleter
+	def TmStmp(self):
+		del self._TmStmp
+		self._TmStmp = None
 
 	@property
 	def Tp(self):
@@ -47,22 +47,22 @@ class DerivativeEvent6(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def TmStmp(self):
-		return self._TmStmp
+	def AmdmntInd(self):
+		return self._AmdmntInd
 
-	@TmStmp.setter
-	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != auto else self.make_default("TmStmp")
+	@AmdmntInd.setter
+	def AmdmntInd(self, value):
+		self._AmdmntInd = value if type(value) != auto else self.make_default("AmdmntInd")
 
-	@TmStmp.deleter
-	def TmStmp(self):
-		del self._TmStmp
-		self._TmStmp = None
+	@AmdmntInd.deleter
+	def AmdmntInd(self):
+		del self._AmdmntInd
+		self._AmdmntInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DerivativeEventType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=EventIdentifier1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

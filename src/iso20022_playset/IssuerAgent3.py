@@ -1,23 +1,10 @@
 import base_types
-import PartyIdentification129Choice
 import AgentRole1Code
+import PartyIdentification129Choice
 
 class IssuerAgent3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Role"]
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
+	__slots__ = ["_Role", "_Id"]
 	@property
 	def Role(self):
 		return self._Role
@@ -31,8 +18,21 @@ class IssuerAgent3(base_types._BaseFieldType):
 		del self._Role
 		self._Role = None
 
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=AgentRole1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

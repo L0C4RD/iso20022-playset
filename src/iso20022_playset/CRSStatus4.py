@@ -1,24 +1,11 @@
 import base_types
+import CountryCode
 import CRSSource1Choice
 import CRSStatus3Choice
-import CountryCode
 
 class CRSStatus4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_XcptnlRptgCtry", "_Src"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_XcptnlRptgCtry", "_Tp", "_Src"]
 	@property
 	def XcptnlRptgCtry(self):
 		return self._XcptnlRptgCtry
@@ -31,6 +18,19 @@ class CRSStatus4(base_types._BaseFieldType):
 	def XcptnlRptgCtry(self):
 		del self._XcptnlRptgCtry
 		self._XcptnlRptgCtry = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Src(self):
@@ -46,8 +46,8 @@ class CRSStatus4(base_types._BaseFieldType):
 		self._Src = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=CRSStatus3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcptnlRptgCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=CRSStatus3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Src', type=CRSSource1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

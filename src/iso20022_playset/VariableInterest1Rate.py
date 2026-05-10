@@ -1,6 +1,6 @@
 import base_types
-import Number
 import Max35Text
+import Number
 
 class VariableInterest1Rate(base_types._BaseFieldType):
 

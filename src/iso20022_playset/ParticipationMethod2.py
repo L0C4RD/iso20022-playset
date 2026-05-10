@@ -1,11 +1,24 @@
 import base_types
 import DateFormat58Choice
-import YesNoIndicator
 import ParticipationMethod3Choice
+import YesNoIndicator
 
 class ParticipationMethod2(base_types._BaseFieldType):
 
-	__slots__ = ["_SpprtdByAcctSvcr", "_RspnDdlnForVtng", "_PrtcptnMtd", "_IssrDdlnForVtng"]
+	__slots__ = ["_IssrDdlnForVtng", "_SpprtdByAcctSvcr", "_PrtcptnMtd", "_RspnDdlnForVtng"]
+	@property
+	def IssrDdlnForVtng(self):
+		return self._IssrDdlnForVtng
+
+	@IssrDdlnForVtng.setter
+	def IssrDdlnForVtng(self, value):
+		self._IssrDdlnForVtng = value if type(value) != auto else self.make_default("IssrDdlnForVtng")
+
+	@IssrDdlnForVtng.deleter
+	def IssrDdlnForVtng(self):
+		del self._IssrDdlnForVtng
+		self._IssrDdlnForVtng = None
+
 	@property
 	def SpprtdByAcctSvcr(self):
 		return self._SpprtdByAcctSvcr
@@ -18,19 +31,6 @@ class ParticipationMethod2(base_types._BaseFieldType):
 	def SpprtdByAcctSvcr(self):
 		del self._SpprtdByAcctSvcr
 		self._SpprtdByAcctSvcr = None
-
-	@property
-	def RspnDdlnForVtng(self):
-		return self._RspnDdlnForVtng
-
-	@RspnDdlnForVtng.setter
-	def RspnDdlnForVtng(self, value):
-		self._RspnDdlnForVtng = value if type(value) != auto else self.make_default("RspnDdlnForVtng")
-
-	@RspnDdlnForVtng.deleter
-	def RspnDdlnForVtng(self):
-		del self._RspnDdlnForVtng
-		self._RspnDdlnForVtng = None
 
 	@property
 	def PrtcptnMtd(self):
@@ -46,22 +46,22 @@ class ParticipationMethod2(base_types._BaseFieldType):
 		self._PrtcptnMtd = None
 
 	@property
-	def IssrDdlnForVtng(self):
-		return self._IssrDdlnForVtng
+	def RspnDdlnForVtng(self):
+		return self._RspnDdlnForVtng
 
-	@IssrDdlnForVtng.setter
-	def IssrDdlnForVtng(self, value):
-		self._IssrDdlnForVtng = value if type(value) != auto else self.make_default("IssrDdlnForVtng")
+	@RspnDdlnForVtng.setter
+	def RspnDdlnForVtng(self, value):
+		self._RspnDdlnForVtng = value if type(value) != auto else self.make_default("RspnDdlnForVtng")
 
-	@IssrDdlnForVtng.deleter
-	def IssrDdlnForVtng(self):
-		del self._IssrDdlnForVtng
-		self._IssrDdlnForVtng = None
+	@RspnDdlnForVtng.deleter
+	def RspnDdlnForVtng(self):
+		del self._RspnDdlnForVtng
+		self._RspnDdlnForVtng = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RspnDdlnForVtng', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtcptnMtd', type=ParticipationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssrDdlnForVtng', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtcptnMtd', type=ParticipationMethod3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnDdlnForVtng', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

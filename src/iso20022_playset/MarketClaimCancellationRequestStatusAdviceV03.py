@@ -1,14 +1,27 @@
 import base_types
-import DocumentIdentification9
-import SupplementaryData1
-import CorporateActionOption234
 import MarketClaimCancellationRequestStatus2Choice
+import CorporateActionOption234
 import References26
+import SupplementaryData1
 import CorporateActionGeneralInformation181
+import DocumentIdentification9
 
 class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRef", "_SplmtryData", "_CorpActnGnlInf", "_MktClmDtls", "_MktClmCxlReqSts", "_MktClmCxlReqId"]
+	__slots__ = ["_MktClmCxlReqSts", "_TxRef", "_MktClmDtls", "_MktClmCxlReqId", "_CorpActnGnlInf", "_SplmtryData"]
+	@property
+	def MktClmCxlReqSts(self):
+		return self._MktClmCxlReqSts
+
+	@MktClmCxlReqSts.setter
+	def MktClmCxlReqSts(self, value):
+		self._MktClmCxlReqSts = value if type(value) != auto else self.make_default("MktClmCxlReqSts")
+
+	@MktClmCxlReqSts.deleter
+	def MktClmCxlReqSts(self):
+		del self._MktClmCxlReqSts
+		self._MktClmCxlReqSts = None
+
 	@property
 	def TxRef(self):
 		return self._TxRef
@@ -21,32 +34,6 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 	def TxRef(self):
 		del self._TxRef
 		self._TxRef = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
 
 	@property
 	def MktClmDtls(self):
@@ -62,19 +49,6 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 		self._MktClmDtls = None
 
 	@property
-	def MktClmCxlReqSts(self):
-		return self._MktClmCxlReqSts
-
-	@MktClmCxlReqSts.setter
-	def MktClmCxlReqSts(self, value):
-		self._MktClmCxlReqSts = value if type(value) != auto else self.make_default("MktClmCxlReqSts")
-
-	@MktClmCxlReqSts.deleter
-	def MktClmCxlReqSts(self):
-		del self._MktClmCxlReqSts
-		self._MktClmCxlReqSts = None
-
-	@property
 	def MktClmCxlReqId(self):
 		return self._MktClmCxlReqId
 
@@ -87,12 +61,38 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 		del self._MktClmCxlReqId
 		self._MktClmCxlReqId = None
 
+	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmCxlReqSts', type=MarketClaimCancellationRequestStatus2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRef', type=References26, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmDtls', type=CorporateActionOption234, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmCxlReqId', type=DocumentIdentification9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

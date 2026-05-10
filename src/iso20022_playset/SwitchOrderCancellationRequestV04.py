@@ -1,53 +1,14 @@
 import base_types
-import AdditionalReference8
-import CopyInformation4
-import InvestmentFundOrder9
 import Max35Text
+import AdditionalReference8
 import AdditionalReference9
+import InvestmentFundOrder9
 import MessageIdentification1
+import CopyInformation4
 
 class SwitchOrderCancellationRequestV04(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_OrdrRefs", "_PoolRef", "_MstrRef", "_CpyDtls", "_PrvsRef"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
-	@property
-	def OrdrRefs(self):
-		return self._OrdrRefs
-
-	@OrdrRefs.setter
-	def OrdrRefs(self, value):
-		self._OrdrRefs = value if type(value) != auto else self.make_default("OrdrRefs")
-
-	@OrdrRefs.deleter
-	def OrdrRefs(self):
-		del self._OrdrRefs
-		self._OrdrRefs = None
-
-	@property
-	def PoolRef(self):
-		return self._PoolRef
-
-	@PoolRef.setter
-	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
-
-	@PoolRef.deleter
-	def PoolRef(self):
-		del self._PoolRef
-		self._PoolRef = None
-
+	__slots__ = ["_MstrRef", "_CpyDtls", "_MsgId", "_PoolRef", "_OrdrRefs", "_PrvsRef"]
 	@property
 	def MstrRef(self):
 		return self._MstrRef
@@ -75,6 +36,45 @@ class SwitchOrderCancellationRequestV04(base_types._BaseFieldType):
 		self._CpyDtls = None
 
 	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
+	@property
+	def PoolRef(self):
+		return self._PoolRef
+
+	@PoolRef.setter
+	def PoolRef(self, value):
+		self._PoolRef = value if type(value) != auto else self.make_default("PoolRef")
+
+	@PoolRef.deleter
+	def PoolRef(self):
+		del self._PoolRef
+		self._PoolRef = None
+
+	@property
+	def OrdrRefs(self):
+		return self._OrdrRefs
+
+	@OrdrRefs.setter
+	def OrdrRefs(self, value):
+		self._OrdrRefs = value if type(value) != auto else self.make_default("OrdrRefs")
+
+	@OrdrRefs.deleter
+	def OrdrRefs(self):
+		del self._OrdrRefs
+		self._OrdrRefs = None
+
+	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -88,11 +88,11 @@ class SwitchOrderCancellationRequestV04(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder9, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PoolRef', type=AdditionalReference9, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRefs', type=InvestmentFundOrder9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
 

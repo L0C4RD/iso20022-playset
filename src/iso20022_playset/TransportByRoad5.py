@@ -1,37 +1,11 @@
 import base_types
-import Max70Text
-import CountryCode
 import Max35Text
+import CountryCode
+import Max70Text
 
 class TransportByRoad5(base_types._BaseFieldType):
 
-	__slots__ = ["_PlcOfDlvry", "_CrrierAgtNm", "_PlcOfRct", "_RoadCrrierCtry", "_CrrierAgtCtry", "_RoadCrrierNm"]
-	@property
-	def PlcOfDlvry(self):
-		return self._PlcOfDlvry
-
-	@PlcOfDlvry.setter
-	def PlcOfDlvry(self, value):
-		self._PlcOfDlvry = value if type(value) != auto else self.make_default("PlcOfDlvry")
-
-	@PlcOfDlvry.deleter
-	def PlcOfDlvry(self):
-		del self._PlcOfDlvry
-		self._PlcOfDlvry = None
-
-	@property
-	def CrrierAgtNm(self):
-		return self._CrrierAgtNm
-
-	@CrrierAgtNm.setter
-	def CrrierAgtNm(self, value):
-		self._CrrierAgtNm = value if type(value) != auto else self.make_default("CrrierAgtNm")
-
-	@CrrierAgtNm.deleter
-	def CrrierAgtNm(self):
-		del self._CrrierAgtNm
-		self._CrrierAgtNm = None
-
+	__slots__ = ["_PlcOfRct", "_RoadCrrierNm", "_RoadCrrierCtry", "_CrrierAgtNm", "_CrrierAgtCtry", "_PlcOfDlvry"]
 	@property
 	def PlcOfRct(self):
 		return self._PlcOfRct
@@ -44,6 +18,19 @@ class TransportByRoad5(base_types._BaseFieldType):
 	def PlcOfRct(self):
 		del self._PlcOfRct
 		self._PlcOfRct = None
+
+	@property
+	def RoadCrrierNm(self):
+		return self._RoadCrrierNm
+
+	@RoadCrrierNm.setter
+	def RoadCrrierNm(self, value):
+		self._RoadCrrierNm = value if type(value) != auto else self.make_default("RoadCrrierNm")
+
+	@RoadCrrierNm.deleter
+	def RoadCrrierNm(self):
+		del self._RoadCrrierNm
+		self._RoadCrrierNm = None
 
 	@property
 	def RoadCrrierCtry(self):
@@ -59,6 +46,19 @@ class TransportByRoad5(base_types._BaseFieldType):
 		self._RoadCrrierCtry = None
 
 	@property
+	def CrrierAgtNm(self):
+		return self._CrrierAgtNm
+
+	@CrrierAgtNm.setter
+	def CrrierAgtNm(self, value):
+		self._CrrierAgtNm = value if type(value) != auto else self.make_default("CrrierAgtNm")
+
+	@CrrierAgtNm.deleter
+	def CrrierAgtNm(self):
+		del self._CrrierAgtNm
+		self._CrrierAgtNm = None
+
+	@property
 	def CrrierAgtCtry(self):
 		return self._CrrierAgtCtry
 
@@ -72,24 +72,24 @@ class TransportByRoad5(base_types._BaseFieldType):
 		self._CrrierAgtCtry = None
 
 	@property
-	def RoadCrrierNm(self):
-		return self._RoadCrrierNm
+	def PlcOfDlvry(self):
+		return self._PlcOfDlvry
 
-	@RoadCrrierNm.setter
-	def RoadCrrierNm(self, value):
-		self._RoadCrrierNm = value if type(value) != auto else self.make_default("RoadCrrierNm")
+	@PlcOfDlvry.setter
+	def PlcOfDlvry(self, value):
+		self._PlcOfDlvry = value if type(value) != auto else self.make_default("PlcOfDlvry")
 
-	@RoadCrrierNm.deleter
-	def RoadCrrierNm(self):
-		del self._RoadCrrierNm
-		self._RoadCrrierNm = None
+	@PlcOfDlvry.deleter
+	def PlcOfDlvry(self):
+		del self._PlcOfDlvry
+		self._PlcOfDlvry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfRct', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RoadCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RoadCrrierNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RoadCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=None, mutex_group=None, array=True),
 	))
 

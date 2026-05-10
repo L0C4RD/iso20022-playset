@@ -1,11 +1,24 @@
 import base_types
-import SecurityIdentification19
-import CorporateActionEventType112Choice
 import Max35Text
+import CorporateActionEventType112Choice
+import SecurityIdentification19
 
 class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 
-	__slots__ = ["_OffclCorpActnEvtId", "_FinInstrmId", "_EvtTp", "_CorpActnEvtId"]
+	__slots__ = ["_EvtTp", "_OffclCorpActnEvtId", "_FinInstrmId", "_CorpActnEvtId"]
+	@property
+	def EvtTp(self):
+		return self._EvtTp
+
+	@EvtTp.setter
+	def EvtTp(self, value):
+		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
+
+	@EvtTp.deleter
+	def EvtTp(self):
+		del self._EvtTp
+		self._EvtTp = None
+
 	@property
 	def OffclCorpActnEvtId(self):
 		return self._OffclCorpActnEvtId
@@ -33,19 +46,6 @@ class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def EvtTp(self):
-		return self._EvtTp
-
-	@EvtTp.setter
-	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != auto else self.make_default("EvtTp")
-
-	@EvtTp.deleter
-	def EvtTp(self):
-		del self._EvtTp
-		self._EvtTp = None
-
-	@property
 	def CorpActnEvtId(self):
 		return self._CorpActnEvtId
 
@@ -59,9 +59,9 @@ class CorporateActionGeneralInformation183(base_types._BaseFieldType):
 		self._CorpActnEvtId = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType112Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

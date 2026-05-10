@@ -1,23 +1,23 @@
 import base_types
-import SupplementaryData1
 import AccountNotification24
 import GroupHeader116
+import SupplementaryData1
 
 class BankToCustomerDebitCreditNotificationV13(base_types._BaseFieldType):
 
-	__slots__ = ["_GrpHdr", "_SplmtryData", "_Ntfctn"]
+	__slots__ = ["_Ntfctn", "_SplmtryData", "_GrpHdr"]
 	@property
-	def GrpHdr(self):
-		return self._GrpHdr
+	def Ntfctn(self):
+		return self._Ntfctn
 
-	@GrpHdr.setter
-	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
+	@Ntfctn.setter
+	def Ntfctn(self, value):
+		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
 
-	@GrpHdr.deleter
-	def GrpHdr(self):
-		del self._GrpHdr
-		self._GrpHdr = None
+	@Ntfctn.deleter
+	def Ntfctn(self):
+		del self._Ntfctn
+		self._Ntfctn = None
 
 	@property
 	def SplmtryData(self):
@@ -33,21 +33,21 @@ class BankToCustomerDebitCreditNotificationV13(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def Ntfctn(self):
-		return self._Ntfctn
+	def GrpHdr(self):
+		return self._GrpHdr
 
-	@Ntfctn.setter
-	def Ntfctn(self, value):
-		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
+	@GrpHdr.setter
+	def GrpHdr(self, value):
+		self._GrpHdr = value if type(value) != auto else self.make_default("GrpHdr")
 
-	@Ntfctn.deleter
-	def Ntfctn(self):
-		del self._Ntfctn
-		self._Ntfctn = None
+	@GrpHdr.deleter
+	def GrpHdr(self):
+		del self._GrpHdr
+		self._GrpHdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='GrpHdr', type=GroupHeader116, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ntfctn', type=AccountNotification24, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='GrpHdr', type=GroupHeader116, min=1, max=1, mutex_group=None, array=False),
 	))
 

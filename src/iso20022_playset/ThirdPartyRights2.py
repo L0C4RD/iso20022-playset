@@ -1,14 +1,27 @@
 import base_types
-import ISODateTime
-import LEIIdentifier
-import Max350Text
-import PartyIdentification125Choice
 import Max35Text
+import ISODateTime
+import Max350Text
 import ActiveCurrencyAndAmount
+import PartyIdentification125Choice
+import LEIIdentifier
 
 class ThirdPartyRights2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_DtTm", "_Hldr", "_Desc", "_LglNttyIdr"]
+	__slots__ = ["_Desc", "_Tp", "_Hldr", "_Amt", "_DtTm", "_LglNttyIdr"]
+	@property
+	def Desc(self):
+		return self._Desc
+
+	@Desc.setter
+	def Desc(self, value):
+		self._Desc = value if type(value) != auto else self.make_default("Desc")
+
+	@Desc.deleter
+	def Desc(self):
+		del self._Desc
+		self._Desc = None
+
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,6 +34,19 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 	def Tp(self):
 		del self._Tp
 		self._Tp = None
+
+	@property
+	def Hldr(self):
+		return self._Hldr
+
+	@Hldr.setter
+	def Hldr(self, value):
+		self._Hldr = value if type(value) != auto else self.make_default("Hldr")
+
+	@Hldr.deleter
+	def Hldr(self):
+		del self._Hldr
+		self._Hldr = None
 
 	@property
 	def Amt(self):
@@ -49,32 +75,6 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		self._DtTm = None
 
 	@property
-	def Hldr(self):
-		return self._Hldr
-
-	@Hldr.setter
-	def Hldr(self, value):
-		self._Hldr = value if type(value) != auto else self.make_default("Hldr")
-
-	@Hldr.deleter
-	def Hldr(self):
-		del self._Hldr
-		self._Hldr = None
-
-	@property
-	def Desc(self):
-		return self._Desc
-
-	@Desc.setter
-	def Desc(self, value):
-		self._Desc = value if type(value) != auto else self.make_default("Desc")
-
-	@Desc.deleter
-	def Desc(self):
-		del self._Desc
-		self._Desc = None
-
-	@property
 	def LglNttyIdr(self):
 		return self._LglNttyIdr
 
@@ -88,11 +88,11 @@ class ThirdPartyRights2(base_types._BaseFieldType):
 		self._LglNttyIdr = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hldr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hldr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LglNttyIdr', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

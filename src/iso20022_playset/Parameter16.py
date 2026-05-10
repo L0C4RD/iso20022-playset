@@ -1,24 +1,24 @@
 import base_types
-import Algorithm26Code
-import Number
 import Max140Text
+import Algorithm26Code
 import AlgorithmIdentification34
+import Number
 
 class Parameter16(base_types._BaseFieldType):
 
-	__slots__ = ["_TrlrFld", "_SaltLngth", "_OIDCrvNm", "_MskGnrtrAlgo", "_DgstAlgo"]
+	__slots__ = ["_OIDCrvNm", "_SaltLngth", "_DgstAlgo", "_MskGnrtrAlgo", "_TrlrFld"]
 	@property
-	def TrlrFld(self):
-		return self._TrlrFld
+	def OIDCrvNm(self):
+		return self._OIDCrvNm
 
-	@TrlrFld.setter
-	def TrlrFld(self, value):
-		self._TrlrFld = value if type(value) != auto else self.make_default("TrlrFld")
+	@OIDCrvNm.setter
+	def OIDCrvNm(self, value):
+		self._OIDCrvNm = value if type(value) != auto else self.make_default("OIDCrvNm")
 
-	@TrlrFld.deleter
-	def TrlrFld(self):
-		del self._TrlrFld
-		self._TrlrFld = None
+	@OIDCrvNm.deleter
+	def OIDCrvNm(self):
+		del self._OIDCrvNm
+		self._OIDCrvNm = None
 
 	@property
 	def SaltLngth(self):
@@ -34,17 +34,17 @@ class Parameter16(base_types._BaseFieldType):
 		self._SaltLngth = None
 
 	@property
-	def OIDCrvNm(self):
-		return self._OIDCrvNm
+	def DgstAlgo(self):
+		return self._DgstAlgo
 
-	@OIDCrvNm.setter
-	def OIDCrvNm(self, value):
-		self._OIDCrvNm = value if type(value) != auto else self.make_default("OIDCrvNm")
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
 
-	@OIDCrvNm.deleter
-	def OIDCrvNm(self):
-		del self._OIDCrvNm
-		self._OIDCrvNm = None
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -60,23 +60,23 @@ class Parameter16(base_types._BaseFieldType):
 		self._MskGnrtrAlgo = None
 
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
+	def TrlrFld(self):
+		return self._TrlrFld
 
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+	@TrlrFld.setter
+	def TrlrFld(self, value):
+		self._TrlrFld = value if type(value) != auto else self.make_default("TrlrFld")
 
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
+	@TrlrFld.deleter
+	def TrlrFld(self):
+		del self._TrlrFld
+		self._TrlrFld = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OIDCrvNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaltLngth', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrlrFld', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

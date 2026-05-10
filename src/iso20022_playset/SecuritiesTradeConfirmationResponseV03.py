@@ -1,14 +1,14 @@
 import base_types
-import StatusAndReason46
-import TransactiontIdentification4
 import Linkages76
 import SupplementaryData1
-import Clearing6
+import TransactiontIdentification4
+import StatusAndReason46
 import ConfirmationParties8
+import Clearing6
 
 class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Refs", "_ClrDtls", "_Sts", "_Id", "_ConfPties"]
+	__slots__ = ["_SplmtryData", "_Refs", "_Id", "_ClrDtls", "_Sts", "_ConfPties"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -34,6 +34,19 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 	def Refs(self):
 		del self._Refs
 		self._Refs = None
+
+	@property
+	def Id(self):
+		return self._Id
+
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
+
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
 
 	@property
 	def ClrDtls(self):
@@ -62,19 +75,6 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 		self._Sts = None
 
 	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
-
-	@property
 	def ConfPties(self):
 		return self._ConfPties
 
@@ -90,9 +90,9 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Refs', type=Linkages76, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClrDtls', type=Clearing6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=StatusAndReason46, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=TransactiontIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties8, min=0, max=None, mutex_group=None, array=True),
 	))
 

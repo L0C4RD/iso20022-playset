@@ -1,6 +1,6 @@
 import base_types
-import CorporateActionEventStage3Code
 import GenericIdentification47
+import CorporateActionEventStage3Code
 
 class CorporateActionEventStageFormat20Choice(base_types._BaseFieldType):
 

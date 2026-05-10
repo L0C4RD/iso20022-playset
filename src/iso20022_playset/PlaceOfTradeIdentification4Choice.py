@@ -1,12 +1,25 @@
 import base_types
-import MICIdentifier
+import Max35Text
 import CountryCode
 import AnyBICDec2014Identifier
-import Max35Text
+import MICIdentifier
 
 class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_OverTheCntr", "_Xchg", "_Pty", "_Ctry"]
+	__slots__ = ["_Pty", "_OverTheCntr", "_Xchg", "_Ctry"]
+	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
 	@property
 	def OverTheCntr(self):
 		return self._OverTheCntr
@@ -34,19 +47,6 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		self._Xchg = None
 
 	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
-	@property
 	def Ctry(self):
 		return self._Ctry
 
@@ -60,9 +60,9 @@ class PlaceOfTradeIdentification4Choice(base_types._BaseFieldType):
 		self._Ctry = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Pty', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OverTheCntr', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Xchg', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Pty', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,15 +1,15 @@
 import base_types
 import FinancialInstrument72
+import PriceInformation30
 import OpeningBalance5
 import Transaction161
 import ClosingBalance5
-import SecurityIdentification19
 import SafeKeepingPlace5
-import PriceInformation30
+import SecurityIdentification19
 
 class FinancialInstrumentDetails46(base_types._BaseFieldType):
 
-	__slots__ = ["_SfkpgPlc", "_Tx", "_OpngBal", "_FinInstrmId", "_ClsgBal", "_PricDtls", "_InvstmtFndsFinInstrmAttrbts"]
+	__slots__ = ["_SfkpgPlc", "_OpngBal", "_InvstmtFndsFinInstrmAttrbts", "_ClsgBal", "_PricDtls", "_FinInstrmId", "_Tx"]
 	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
@@ -22,19 +22,6 @@ class FinancialInstrumentDetails46(base_types._BaseFieldType):
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
-
-	@property
-	def Tx(self):
-		return self._Tx
-
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
-
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
 
 	@property
 	def OpngBal(self):
@@ -50,17 +37,17 @@ class FinancialInstrumentDetails46(base_types._BaseFieldType):
 		self._OpngBal = None
 
 	@property
-	def FinInstrmId(self):
-		return self._FinInstrmId
+	def InvstmtFndsFinInstrmAttrbts(self):
+		return self._InvstmtFndsFinInstrmAttrbts
 
-	@FinInstrmId.setter
-	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
+	@InvstmtFndsFinInstrmAttrbts.setter
+	def InvstmtFndsFinInstrmAttrbts(self, value):
+		self._InvstmtFndsFinInstrmAttrbts = value if type(value) != auto else self.make_default("InvstmtFndsFinInstrmAttrbts")
 
-	@FinInstrmId.deleter
-	def FinInstrmId(self):
-		del self._FinInstrmId
-		self._FinInstrmId = None
+	@InvstmtFndsFinInstrmAttrbts.deleter
+	def InvstmtFndsFinInstrmAttrbts(self):
+		del self._InvstmtFndsFinInstrmAttrbts
+		self._InvstmtFndsFinInstrmAttrbts = None
 
 	@property
 	def ClsgBal(self):
@@ -89,25 +76,38 @@ class FinancialInstrumentDetails46(base_types._BaseFieldType):
 		self._PricDtls = None
 
 	@property
-	def InvstmtFndsFinInstrmAttrbts(self):
-		return self._InvstmtFndsFinInstrmAttrbts
+	def FinInstrmId(self):
+		return self._FinInstrmId
 
-	@InvstmtFndsFinInstrmAttrbts.setter
-	def InvstmtFndsFinInstrmAttrbts(self, value):
-		self._InvstmtFndsFinInstrmAttrbts = value if type(value) != auto else self.make_default("InvstmtFndsFinInstrmAttrbts")
+	@FinInstrmId.setter
+	def FinInstrmId(self, value):
+		self._FinInstrmId = value if type(value) != auto else self.make_default("FinInstrmId")
 
-	@InvstmtFndsFinInstrmAttrbts.deleter
-	def InvstmtFndsFinInstrmAttrbts(self):
-		del self._InvstmtFndsFinInstrmAttrbts
-		self._InvstmtFndsFinInstrmAttrbts = None
+	@FinInstrmId.deleter
+	def FinInstrmId(self):
+		del self._FinInstrmId
+		self._FinInstrmId = None
+
+	@property
+	def Tx(self):
+		return self._Tx
+
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
+
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tx', type=Transaction161, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OpngBal', type=OpeningBalance5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstmtFndsFinInstrmAttrbts', type=FinancialInstrument72, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricDtls', type=PriceInformation30, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstmtFndsFinInstrmAttrbts', type=FinancialInstrument72, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tx', type=Transaction161, min=1, max=None, mutex_group=None, array=True),
 	))
 

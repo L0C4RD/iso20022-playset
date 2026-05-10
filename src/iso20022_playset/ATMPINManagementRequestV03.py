@@ -1,12 +1,25 @@
 import base_types
-import Header31
-import ContentInformationType15
 import ATMPINManagementRequest3
+import ContentInformationType15
+import Header31
 import ContentInformationType10
 
 class ATMPINManagementRequestV03(base_types._BaseFieldType):
 
-	__slots__ = ["_SctyTrlr", "_Hdr", "_PrtctdATMPINMgmtReq", "_ATMPINMgmtReq"]
+	__slots__ = ["_ATMPINMgmtReq", "_SctyTrlr", "_PrtctdATMPINMgmtReq", "_Hdr"]
+	@property
+	def ATMPINMgmtReq(self):
+		return self._ATMPINMgmtReq
+
+	@ATMPINMgmtReq.setter
+	def ATMPINMgmtReq(self, value):
+		self._ATMPINMgmtReq = value if type(value) != auto else self.make_default("ATMPINMgmtReq")
+
+	@ATMPINMgmtReq.deleter
+	def ATMPINMgmtReq(self):
+		del self._ATMPINMgmtReq
+		self._ATMPINMgmtReq = None
+
 	@property
 	def SctyTrlr(self):
 		return self._SctyTrlr
@@ -19,19 +32,6 @@ class ATMPINManagementRequestV03(base_types._BaseFieldType):
 	def SctyTrlr(self):
 		del self._SctyTrlr
 		self._SctyTrlr = None
-
-	@property
-	def Hdr(self):
-		return self._Hdr
-
-	@Hdr.setter
-	def Hdr(self, value):
-		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
-
-	@Hdr.deleter
-	def Hdr(self):
-		del self._Hdr
-		self._Hdr = None
 
 	@property
 	def PrtctdATMPINMgmtReq(self):
@@ -47,22 +47,22 @@ class ATMPINManagementRequestV03(base_types._BaseFieldType):
 		self._PrtctdATMPINMgmtReq = None
 
 	@property
-	def ATMPINMgmtReq(self):
-		return self._ATMPINMgmtReq
+	def Hdr(self):
+		return self._Hdr
 
-	@ATMPINMgmtReq.setter
-	def ATMPINMgmtReq(self, value):
-		self._ATMPINMgmtReq = value if type(value) != auto else self.make_default("ATMPINMgmtReq")
+	@Hdr.setter
+	def Hdr(self, value):
+		self._Hdr = value if type(value) != auto else self.make_default("Hdr")
 
-	@ATMPINMgmtReq.deleter
-	def ATMPINMgmtReq(self):
-		del self._ATMPINMgmtReq
-		self._ATMPINMgmtReq = None
+	@Hdr.deleter
+	def Hdr(self):
+		del self._Hdr
+		self._Hdr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtctdATMPINMgmtReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMPINMgmtReq', type=ATMPINManagementRequest3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtctdATMPINMgmtReq', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Hdr', type=Header31, min=1, max=1, mutex_group=None, array=False),
 	))
 

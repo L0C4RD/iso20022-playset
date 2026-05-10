@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import InformationDistribution1Choice
 import YesNoIndicator
-import Max35Text
 
 class Notification2(base_types._BaseFieldType):
 

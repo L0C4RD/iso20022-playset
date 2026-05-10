@@ -1,24 +1,11 @@
 import base_types
-import Max4AlphaNumericText
 import RestrictedFINDecimalNumber
+import Max4AlphaNumericText
 import Exact4AlphaNumericText
 
 class GenericIdentification144(base_types._BaseFieldType):
 
-	__slots__ = ["_Bal", "_Id", "_Issr", "_SchmeNm"]
-	@property
-	def Bal(self):
-		return self._Bal
-
-	@Bal.setter
-	def Bal(self, value):
-		self._Bal = value if type(value) != auto else self.make_default("Bal")
-
-	@Bal.deleter
-	def Bal(self):
-		del self._Bal
-		self._Bal = None
-
+	__slots__ = ["_Id", "_Issr", "_SchmeNm", "_Bal"]
 	@property
 	def Id(self):
 		return self._Id
@@ -58,10 +45,23 @@ class GenericIdentification144(base_types._BaseFieldType):
 		del self._SchmeNm
 		self._SchmeNm = None
 
+	@property
+	def Bal(self):
+		return self._Bal
+
+	@Bal.setter
+	def Bal(self, value):
+		self._Bal = value if type(value) != auto else self.make_default("Bal")
+
+	@Bal.deleter
+	def Bal(self):
+		del self._Bal
+		self._Bal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Bal', type=RestrictedFINDecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bal', type=RestrictedFINDecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
 

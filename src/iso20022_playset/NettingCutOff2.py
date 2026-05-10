@@ -1,23 +1,10 @@
 import base_types
-import NettingIdentification2Choice
 import CutOff1
+import NettingIdentification2Choice
 
 class NettingCutOff2(base_types._BaseFieldType):
 
-	__slots__ = ["_NewCutOff", "_NetgId"]
-	@property
-	def NewCutOff(self):
-		return self._NewCutOff
-
-	@NewCutOff.setter
-	def NewCutOff(self, value):
-		self._NewCutOff = value if type(value) != auto else self.make_default("NewCutOff")
-
-	@NewCutOff.deleter
-	def NewCutOff(self):
-		del self._NewCutOff
-		self._NewCutOff = None
-
+	__slots__ = ["_NetgId", "_NewCutOff"]
 	@property
 	def NetgId(self):
 		return self._NetgId
@@ -31,8 +18,21 @@ class NettingCutOff2(base_types._BaseFieldType):
 		del self._NetgId
 		self._NetgId = None
 
+	@property
+	def NewCutOff(self):
+		return self._NewCutOff
+
+	@NewCutOff.setter
+	def NewCutOff(self, value):
+		self._NewCutOff = value if type(value) != auto else self.make_default("NewCutOff")
+
+	@NewCutOff.deleter
+	def NewCutOff(self):
+		del self._NewCutOff
+		self._NewCutOff = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NewCutOff', type=CutOff1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewCutOff', type=CutOff1, min=1, max=None, mutex_group=None, array=True),
 	))
 

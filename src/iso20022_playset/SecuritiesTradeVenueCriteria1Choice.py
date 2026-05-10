@@ -1,6 +1,6 @@
 import base_types
-import MICIdentifier
 import AnyMIC1Code
+import MICIdentifier
 
 class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 

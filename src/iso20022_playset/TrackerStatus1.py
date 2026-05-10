@@ -1,12 +1,12 @@
 import base_types
-import PaymentStatusReason1
 import PaymentRejectReturnReason1
-import DateAndDateTime2Choice
 import ExternalPaymentTransactionStatus1Code
+import DateAndDateTime2Choice
+import PaymentStatusReason1
 
 class TrackerStatus1(base_types._BaseFieldType):
 
-	__slots__ = ["_Sts", "_RjctRtrRsn", "_StsRsn", "_Dt"]
+	__slots__ = ["_Sts", "_StsRsn", "_Dt", "_RjctRtrRsn"]
 	@property
 	def Sts(self):
 		return self._Sts
@@ -19,19 +19,6 @@ class TrackerStatus1(base_types._BaseFieldType):
 	def Sts(self):
 		del self._Sts
 		self._Sts = None
-
-	@property
-	def RjctRtrRsn(self):
-		return self._RjctRtrRsn
-
-	@RjctRtrRsn.setter
-	def RjctRtrRsn(self, value):
-		self._RjctRtrRsn = value if type(value) != auto else self.make_default("RjctRtrRsn")
-
-	@RjctRtrRsn.deleter
-	def RjctRtrRsn(self):
-		del self._RjctRtrRsn
-		self._RjctRtrRsn = None
 
 	@property
 	def StsRsn(self):
@@ -59,10 +46,23 @@ class TrackerStatus1(base_types._BaseFieldType):
 		del self._Dt
 		self._Dt = None
 
+	@property
+	def RjctRtrRsn(self):
+		return self._RjctRtrRsn
+
+	@RjctRtrRsn.setter
+	def RjctRtrRsn(self, value):
+		self._RjctRtrRsn = value if type(value) != auto else self.make_default("RjctRtrRsn")
+
+	@RjctRtrRsn.deleter
+	def RjctRtrRsn(self):
+		del self._RjctRtrRsn
+		self._RjctRtrRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctRtrRsn', type=PaymentRejectReturnReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctRtrRsn', type=PaymentRejectReturnReason1, min=0, max=None, mutex_group=None, array=True),
 	))
 

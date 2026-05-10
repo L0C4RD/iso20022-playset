@@ -1,41 +1,15 @@
 import base_types
 import RateFormat25Choice
-import RateAndAmountFormat73Choice
-import RateFormat12Choice
+import RateAndAmountFormat72Choice
+import RateAndAmountFormat74Choice
 import RateFormat24Choice
 import RateAndAmountFormat57Choice
-import RateAndAmountFormat74Choice
-import RateAndAmountFormat72Choice
+import RateAndAmountFormat73Choice
+import RateFormat12Choice
 
 class CorporateActionRate135(base_types._BaseFieldType):
 
-	__slots__ = ["_BidIntrvl", "_NxtFctr", "_IntrstRate", "_RinvstmtDscntRateToMkt", "_PrvsFctr", "_RealsdLoss", "_DclrdRate", "_RltdIndx", "_IntrstShrtfll", "_Sprd", "_IndxFctr", "_PctgSght"]
-	@property
-	def BidIntrvl(self):
-		return self._BidIntrvl
-
-	@BidIntrvl.setter
-	def BidIntrvl(self, value):
-		self._BidIntrvl = value if type(value) != auto else self.make_default("BidIntrvl")
-
-	@BidIntrvl.deleter
-	def BidIntrvl(self):
-		del self._BidIntrvl
-		self._BidIntrvl = None
-
-	@property
-	def NxtFctr(self):
-		return self._NxtFctr
-
-	@NxtFctr.setter
-	def NxtFctr(self, value):
-		self._NxtFctr = value if type(value) != auto else self.make_default("NxtFctr")
-
-	@NxtFctr.deleter
-	def NxtFctr(self):
-		del self._NxtFctr
-		self._NxtFctr = None
-
+	__slots__ = ["_IntrstRate", "_IndxFctr", "_PrvsFctr", "_NxtFctr", "_BidIntrvl", "_RinvstmtDscntRateToMkt", "_RltdIndx", "_RealsdLoss", "_Sprd", "_DclrdRate", "_IntrstShrtfll", "_PctgSght"]
 	@property
 	def IntrstRate(self):
 		return self._IntrstRate
@@ -48,97 +22,6 @@ class CorporateActionRate135(base_types._BaseFieldType):
 	def IntrstRate(self):
 		del self._IntrstRate
 		self._IntrstRate = None
-
-	@property
-	def RinvstmtDscntRateToMkt(self):
-		return self._RinvstmtDscntRateToMkt
-
-	@RinvstmtDscntRateToMkt.setter
-	def RinvstmtDscntRateToMkt(self, value):
-		self._RinvstmtDscntRateToMkt = value if type(value) != auto else self.make_default("RinvstmtDscntRateToMkt")
-
-	@RinvstmtDscntRateToMkt.deleter
-	def RinvstmtDscntRateToMkt(self):
-		del self._RinvstmtDscntRateToMkt
-		self._RinvstmtDscntRateToMkt = None
-
-	@property
-	def PrvsFctr(self):
-		return self._PrvsFctr
-
-	@PrvsFctr.setter
-	def PrvsFctr(self, value):
-		self._PrvsFctr = value if type(value) != auto else self.make_default("PrvsFctr")
-
-	@PrvsFctr.deleter
-	def PrvsFctr(self):
-		del self._PrvsFctr
-		self._PrvsFctr = None
-
-	@property
-	def RealsdLoss(self):
-		return self._RealsdLoss
-
-	@RealsdLoss.setter
-	def RealsdLoss(self, value):
-		self._RealsdLoss = value if type(value) != auto else self.make_default("RealsdLoss")
-
-	@RealsdLoss.deleter
-	def RealsdLoss(self):
-		del self._RealsdLoss
-		self._RealsdLoss = None
-
-	@property
-	def DclrdRate(self):
-		return self._DclrdRate
-
-	@DclrdRate.setter
-	def DclrdRate(self, value):
-		self._DclrdRate = value if type(value) != auto else self.make_default("DclrdRate")
-
-	@DclrdRate.deleter
-	def DclrdRate(self):
-		del self._DclrdRate
-		self._DclrdRate = None
-
-	@property
-	def RltdIndx(self):
-		return self._RltdIndx
-
-	@RltdIndx.setter
-	def RltdIndx(self, value):
-		self._RltdIndx = value if type(value) != auto else self.make_default("RltdIndx")
-
-	@RltdIndx.deleter
-	def RltdIndx(self):
-		del self._RltdIndx
-		self._RltdIndx = None
-
-	@property
-	def IntrstShrtfll(self):
-		return self._IntrstShrtfll
-
-	@IntrstShrtfll.setter
-	def IntrstShrtfll(self, value):
-		self._IntrstShrtfll = value if type(value) != auto else self.make_default("IntrstShrtfll")
-
-	@IntrstShrtfll.deleter
-	def IntrstShrtfll(self):
-		del self._IntrstShrtfll
-		self._IntrstShrtfll = None
-
-	@property
-	def Sprd(self):
-		return self._Sprd
-
-	@Sprd.setter
-	def Sprd(self, value):
-		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
-
-	@Sprd.deleter
-	def Sprd(self):
-		del self._Sprd
-		self._Sprd = None
 
 	@property
 	def IndxFctr(self):
@@ -154,6 +37,123 @@ class CorporateActionRate135(base_types._BaseFieldType):
 		self._IndxFctr = None
 
 	@property
+	def PrvsFctr(self):
+		return self._PrvsFctr
+
+	@PrvsFctr.setter
+	def PrvsFctr(self, value):
+		self._PrvsFctr = value if type(value) != auto else self.make_default("PrvsFctr")
+
+	@PrvsFctr.deleter
+	def PrvsFctr(self):
+		del self._PrvsFctr
+		self._PrvsFctr = None
+
+	@property
+	def NxtFctr(self):
+		return self._NxtFctr
+
+	@NxtFctr.setter
+	def NxtFctr(self, value):
+		self._NxtFctr = value if type(value) != auto else self.make_default("NxtFctr")
+
+	@NxtFctr.deleter
+	def NxtFctr(self):
+		del self._NxtFctr
+		self._NxtFctr = None
+
+	@property
+	def BidIntrvl(self):
+		return self._BidIntrvl
+
+	@BidIntrvl.setter
+	def BidIntrvl(self, value):
+		self._BidIntrvl = value if type(value) != auto else self.make_default("BidIntrvl")
+
+	@BidIntrvl.deleter
+	def BidIntrvl(self):
+		del self._BidIntrvl
+		self._BidIntrvl = None
+
+	@property
+	def RinvstmtDscntRateToMkt(self):
+		return self._RinvstmtDscntRateToMkt
+
+	@RinvstmtDscntRateToMkt.setter
+	def RinvstmtDscntRateToMkt(self, value):
+		self._RinvstmtDscntRateToMkt = value if type(value) != auto else self.make_default("RinvstmtDscntRateToMkt")
+
+	@RinvstmtDscntRateToMkt.deleter
+	def RinvstmtDscntRateToMkt(self):
+		del self._RinvstmtDscntRateToMkt
+		self._RinvstmtDscntRateToMkt = None
+
+	@property
+	def RltdIndx(self):
+		return self._RltdIndx
+
+	@RltdIndx.setter
+	def RltdIndx(self, value):
+		self._RltdIndx = value if type(value) != auto else self.make_default("RltdIndx")
+
+	@RltdIndx.deleter
+	def RltdIndx(self):
+		del self._RltdIndx
+		self._RltdIndx = None
+
+	@property
+	def RealsdLoss(self):
+		return self._RealsdLoss
+
+	@RealsdLoss.setter
+	def RealsdLoss(self, value):
+		self._RealsdLoss = value if type(value) != auto else self.make_default("RealsdLoss")
+
+	@RealsdLoss.deleter
+	def RealsdLoss(self):
+		del self._RealsdLoss
+		self._RealsdLoss = None
+
+	@property
+	def Sprd(self):
+		return self._Sprd
+
+	@Sprd.setter
+	def Sprd(self, value):
+		self._Sprd = value if type(value) != auto else self.make_default("Sprd")
+
+	@Sprd.deleter
+	def Sprd(self):
+		del self._Sprd
+		self._Sprd = None
+
+	@property
+	def DclrdRate(self):
+		return self._DclrdRate
+
+	@DclrdRate.setter
+	def DclrdRate(self, value):
+		self._DclrdRate = value if type(value) != auto else self.make_default("DclrdRate")
+
+	@DclrdRate.deleter
+	def DclrdRate(self):
+		del self._DclrdRate
+		self._DclrdRate = None
+
+	@property
+	def IntrstShrtfll(self):
+		return self._IntrstShrtfll
+
+	@IntrstShrtfll.setter
+	def IntrstShrtfll(self, value):
+		self._IntrstShrtfll = value if type(value) != auto else self.make_default("IntrstShrtfll")
+
+	@IntrstShrtfll.deleter
+	def IntrstShrtfll(self):
+		del self._IntrstShrtfll
+		self._IntrstShrtfll = None
+
+	@property
 	def PctgSght(self):
 		return self._PctgSght
 
@@ -167,17 +167,17 @@ class CorporateActionRate135(base_types._BaseFieldType):
 		self._PctgSght = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='BidIntrvl', type=RateAndAmountFormat73Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=RateAndAmountFormat72Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RinvstmtDscntRateToMkt', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RealsdLoss', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DclrdRate', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdIndx', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstShrtfll', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Sprd', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxFctr', type=RateAndAmountFormat57Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtFctr', type=RateFormat12Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BidIntrvl', type=RateAndAmountFormat73Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstmtDscntRateToMkt', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdIndx', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RealsdLoss', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Sprd', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DclrdRate', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstShrtfll', type=RateAndAmountFormat74Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PctgSght', type=RateFormat25Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

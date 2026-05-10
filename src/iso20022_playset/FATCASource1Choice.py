@@ -1,6 +1,6 @@
 import base_types
-import FATCASourceStatus1Code
 import GenericIdentification47
+import FATCASourceStatus1Code
 
 class FATCASource1Choice(base_types._BaseFieldType):
 

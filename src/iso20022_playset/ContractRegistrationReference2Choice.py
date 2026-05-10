@@ -1,23 +1,10 @@
 import base_types
-import DocumentIdentification35
 import Max35Text
+import DocumentIdentification35
 
 class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_RegdCtrctId", "_Ctrct"]
-	@property
-	def RegdCtrctId(self):
-		return self._RegdCtrctId
-
-	@RegdCtrctId.setter
-	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
-
-	@RegdCtrctId.deleter
-	def RegdCtrctId(self):
-		del self._RegdCtrctId
-		self._RegdCtrctId = None
-
+	__slots__ = ["_Ctrct", "_RegdCtrctId"]
 	@property
 	def Ctrct(self):
 		return self._Ctrct
@@ -31,8 +18,21 @@ class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 		del self._Ctrct
 		self._Ctrct = None
 
+	@property
+	def RegdCtrctId(self):
+		return self._RegdCtrctId
+
+	@RegdCtrctId.setter
+	def RegdCtrctId(self, value):
+		self._RegdCtrctId = value if type(value) != auto else self.make_default("RegdCtrctId")
+
+	@RegdCtrctId.deleter
+	def RegdCtrctId(self):
+		del self._RegdCtrctId
+		self._RegdCtrctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ctrct', type=DocumentIdentification35, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
 

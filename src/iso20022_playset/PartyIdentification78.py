@@ -1,6 +1,6 @@
 import base_types
-import IdentificationType1Code
 import Max35Text
+import IdentificationType1Code
 
 class PartyIdentification78(base_types._BaseFieldType):
 

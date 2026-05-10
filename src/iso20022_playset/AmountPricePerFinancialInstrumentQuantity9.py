@@ -1,25 +1,12 @@
 import base_types
-import FinancialInstrumentQuantity1Choice
-import ISODate
 import PriceRateOrAmount3Choice
+import ISODate
+import FinancialInstrumentQuantity1Choice
 import YieldedOrValueType1Choice
 
 class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmQty", "_PricFxgDt", "_AmtPricTp", "_PricVal"]
-	@property
-	def FinInstrmQty(self):
-		return self._FinInstrmQty
-
-	@FinInstrmQty.setter
-	def FinInstrmQty(self, value):
-		self._FinInstrmQty = value if type(value) != auto else self.make_default("FinInstrmQty")
-
-	@FinInstrmQty.deleter
-	def FinInstrmQty(self):
-		del self._FinInstrmQty
-		self._FinInstrmQty = None
-
+	__slots__ = ["_PricFxgDt", "_PricVal", "_AmtPricTp", "_FinInstrmQty"]
 	@property
 	def PricFxgDt(self):
 		return self._PricFxgDt
@@ -32,6 +19,19 @@ class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 	def PricFxgDt(self):
 		del self._PricFxgDt
 		self._PricFxgDt = None
+
+	@property
+	def PricVal(self):
+		return self._PricVal
+
+	@PricVal.setter
+	def PricVal(self, value):
+		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
+
+	@PricVal.deleter
+	def PricVal(self):
+		del self._PricVal
+		self._PricVal = None
 
 	@property
 	def AmtPricTp(self):
@@ -47,22 +47,22 @@ class AmountPricePerFinancialInstrumentQuantity9(base_types._BaseFieldType):
 		self._AmtPricTp = None
 
 	@property
-	def PricVal(self):
-		return self._PricVal
+	def FinInstrmQty(self):
+		return self._FinInstrmQty
 
-	@PricVal.setter
-	def PricVal(self, value):
-		self._PricVal = value if type(value) != auto else self.make_default("PricVal")
+	@FinInstrmQty.setter
+	def FinInstrmQty(self, value):
+		self._FinInstrmQty = value if type(value) != auto else self.make_default("FinInstrmQty")
 
-	@PricVal.deleter
-	def PricVal(self):
-		del self._PricVal
-		self._PricVal = None
+	@FinInstrmQty.deleter
+	def FinInstrmQty(self):
+		del self._FinInstrmQty
+		self._FinInstrmQty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricFxgDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtPricTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=PriceRateOrAmount3Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtPricTp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

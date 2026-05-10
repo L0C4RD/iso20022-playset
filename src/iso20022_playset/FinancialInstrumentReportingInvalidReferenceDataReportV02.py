@@ -1,12 +1,12 @@
 import base_types
+import Period4Choice
 import SupplementaryData1
 import Number
 import SecuritiesInvalidReferenceDataReport4
-import Period4Choice
 
 class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrms", "_DtPrd", "_SplmtryData", "_NbOfRcrds"]
+	__slots__ = ["_FinInstrms", "_NbOfRcrds", "_SplmtryData", "_DtPrd"]
 	@property
 	def FinInstrms(self):
 		return self._FinInstrms
@@ -21,17 +21,17 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 		self._FinInstrms = None
 
 	@property
-	def DtPrd(self):
-		return self._DtPrd
+	def NbOfRcrds(self):
+		return self._NbOfRcrds
 
-	@DtPrd.setter
-	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
+	@NbOfRcrds.setter
+	def NbOfRcrds(self, value):
+		self._NbOfRcrds = value if type(value) != auto else self.make_default("NbOfRcrds")
 
-	@DtPrd.deleter
-	def DtPrd(self):
-		del self._DtPrd
-		self._DtPrd = None
+	@NbOfRcrds.deleter
+	def NbOfRcrds(self):
+		del self._NbOfRcrds
+		self._NbOfRcrds = None
 
 	@property
 	def SplmtryData(self):
@@ -47,22 +47,22 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 		self._SplmtryData = None
 
 	@property
-	def NbOfRcrds(self):
-		return self._NbOfRcrds
+	def DtPrd(self):
+		return self._DtPrd
 
-	@NbOfRcrds.setter
-	def NbOfRcrds(self, value):
-		self._NbOfRcrds = value if type(value) != auto else self.make_default("NbOfRcrds")
+	@DtPrd.setter
+	def DtPrd(self, value):
+		self._DtPrd = value if type(value) != auto else self.make_default("DtPrd")
 
-	@NbOfRcrds.deleter
-	def NbOfRcrds(self):
-		del self._NbOfRcrds
-		self._NbOfRcrds = None
+	@DtPrd.deleter
+	def DtPrd(self):
+		del self._DtPrd
+		self._DtPrd = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrms', type=SecuritiesInvalidReferenceDataReport4, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DtPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NbOfRcrds', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DtPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

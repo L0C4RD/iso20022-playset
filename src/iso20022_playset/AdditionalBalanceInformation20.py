@@ -1,12 +1,12 @@
 import base_types
-import QuantityBreakdown57
 import Max140Text
 import Balance21
+import QuantityBreakdown57
 import SubBalanceType12Choice
 
 class AdditionalBalanceInformation20(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_SubBalTp", "_QtyBrkdwn", "_SubBalAddtlDtls"]
+	__slots__ = ["_Qty", "_QtyBrkdwn", "_SubBalTp", "_SubBalAddtlDtls"]
 	@property
 	def Qty(self):
 		return self._Qty
@@ -21,19 +21,6 @@ class AdditionalBalanceInformation20(base_types._BaseFieldType):
 		self._Qty = None
 
 	@property
-	def SubBalTp(self):
-		return self._SubBalTp
-
-	@SubBalTp.setter
-	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
-
-	@SubBalTp.deleter
-	def SubBalTp(self):
-		del self._SubBalTp
-		self._SubBalTp = None
-
-	@property
 	def QtyBrkdwn(self):
 		return self._QtyBrkdwn
 
@@ -45,6 +32,19 @@ class AdditionalBalanceInformation20(base_types._BaseFieldType):
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
 		self._QtyBrkdwn = None
+
+	@property
+	def SubBalTp(self):
+		return self._SubBalTp
+
+	@SubBalTp.setter
+	def SubBalTp(self, value):
+		self._SubBalTp = value if type(value) != auto else self.make_default("SubBalTp")
+
+	@SubBalTp.deleter
+	def SubBalTp(self):
+		del self._SubBalTp
+		self._SubBalTp = None
 
 	@property
 	def SubBalAddtlDtls(self):
@@ -61,8 +61,8 @@ class AdditionalBalanceInformation20(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=Balance21, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown57, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType12Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

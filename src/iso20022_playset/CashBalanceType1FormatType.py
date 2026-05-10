@@ -1,6 +1,6 @@
 import base_types
-import CashBalanceType1Code
 import GenericIdentification13
+import CashBalanceType1Code
 
 class CashBalanceType1FormatType(base_types._BaseFieldType):
 

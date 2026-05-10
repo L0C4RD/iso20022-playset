@@ -1,17 +1,17 @@
 import base_types
+import SupplementaryData1
+import OverallCollateralDetails2
+import CounterpartyAggregation3
+import TotalValueInPageAndStatement5
 import Transaction124
 import CollateralParties9
 import Pagination1
-import OverallCollateralDetails2
-import TotalValueInPageAndStatement5
-import SupplementaryData1
 import ExposureTypeAggregation3
-import CounterpartyAggregation3
 import Statement78
 
 class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Txs", "_SplmtryData", "_OvrllCollAggtn", "_AcctBaseCcyTtlAmts", "_XpsrTpAggtn", "_Pgntn", "_StmtGnlDtls", "_CtrPtyAggtn", "_CollPties"]
+	__slots__ = ["_Txs", "_XpsrTpAggtn", "_AcctBaseCcyTtlAmts", "_CollPties", "_StmtGnlDtls", "_Pgntn", "_OvrllCollAggtn", "_CtrPtyAggtn", "_SplmtryData"]
 	@property
 	def Txs(self):
 		return self._Txs
@@ -24,45 +24,6 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 	def Txs(self):
 		del self._Txs
 		self._Txs = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
-	@property
-	def OvrllCollAggtn(self):
-		return self._OvrllCollAggtn
-
-	@OvrllCollAggtn.setter
-	def OvrllCollAggtn(self, value):
-		self._OvrllCollAggtn = value if type(value) != auto else self.make_default("OvrllCollAggtn")
-
-	@OvrllCollAggtn.deleter
-	def OvrllCollAggtn(self):
-		del self._OvrllCollAggtn
-		self._OvrllCollAggtn = None
-
-	@property
-	def AcctBaseCcyTtlAmts(self):
-		return self._AcctBaseCcyTtlAmts
-
-	@AcctBaseCcyTtlAmts.setter
-	def AcctBaseCcyTtlAmts(self, value):
-		self._AcctBaseCcyTtlAmts = value if type(value) != auto else self.make_default("AcctBaseCcyTtlAmts")
-
-	@AcctBaseCcyTtlAmts.deleter
-	def AcctBaseCcyTtlAmts(self):
-		del self._AcctBaseCcyTtlAmts
-		self._AcctBaseCcyTtlAmts = None
 
 	@property
 	def XpsrTpAggtn(self):
@@ -78,17 +39,30 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 		self._XpsrTpAggtn = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def AcctBaseCcyTtlAmts(self):
+		return self._AcctBaseCcyTtlAmts
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@AcctBaseCcyTtlAmts.setter
+	def AcctBaseCcyTtlAmts(self, value):
+		self._AcctBaseCcyTtlAmts = value if type(value) != auto else self.make_default("AcctBaseCcyTtlAmts")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@AcctBaseCcyTtlAmts.deleter
+	def AcctBaseCcyTtlAmts(self):
+		del self._AcctBaseCcyTtlAmts
+		self._AcctBaseCcyTtlAmts = None
+
+	@property
+	def CollPties(self):
+		return self._CollPties
+
+	@CollPties.setter
+	def CollPties(self, value):
+		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
+
+	@CollPties.deleter
+	def CollPties(self):
+		del self._CollPties
+		self._CollPties = None
 
 	@property
 	def StmtGnlDtls(self):
@@ -104,6 +78,32 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 		self._StmtGnlDtls = None
 
 	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
+
+	@property
+	def OvrllCollAggtn(self):
+		return self._OvrllCollAggtn
+
+	@OvrllCollAggtn.setter
+	def OvrllCollAggtn(self, value):
+		self._OvrllCollAggtn = value if type(value) != auto else self.make_default("OvrllCollAggtn")
+
+	@OvrllCollAggtn.deleter
+	def OvrllCollAggtn(self):
+		del self._OvrllCollAggtn
+		self._OvrllCollAggtn = None
+
+	@property
 	def CtrPtyAggtn(self):
 		return self._CtrPtyAggtn
 
@@ -117,27 +117,27 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 		self._CtrPtyAggtn = None
 
 	@property
-	def CollPties(self):
-		return self._CollPties
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CollPties.setter
-	def CollPties(self, value):
-		self._CollPties = value if type(value) != auto else self.make_default("CollPties")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CollPties.deleter
-	def CollPties(self):
-		del self._CollPties
-		self._CollPties = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Txs', type=Transaction124, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OvrllCollAggtn', type=OverallCollateralDetails2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTpAggtn', type=ExposureTypeAggregation3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmtGnlDtls', type=Statement78, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPtyAggtn', type=CounterpartyAggregation3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollPties', type=CollateralParties9, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmtGnlDtls', type=Statement78, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OvrllCollAggtn', type=OverallCollateralDetails2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPtyAggtn', type=CounterpartyAggregation3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

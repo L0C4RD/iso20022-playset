@@ -1,11 +1,24 @@
 import base_types
-import AmountPriceType1Code
-import FinancialInstrumentQuantity36Choice
 import RestrictedFINActiveCurrencyAnd13DecimalAmount
+import FinancialInstrumentQuantity36Choice
+import AmountPriceType1Code
 
 class AmountPricePerFinancialInstrumentQuantity11(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmQty", "_PricVal", "_AmtPricTp"]
+	__slots__ = ["_AmtPricTp", "_FinInstrmQty", "_PricVal"]
+	@property
+	def AmtPricTp(self):
+		return self._AmtPricTp
+
+	@AmtPricTp.setter
+	def AmtPricTp(self, value):
+		self._AmtPricTp = value if type(value) != auto else self.make_default("AmtPricTp")
+
+	@AmtPricTp.deleter
+	def AmtPricTp(self):
+		del self._AmtPricTp
+		self._AmtPricTp = None
+
 	@property
 	def FinInstrmQty(self):
 		return self._FinInstrmQty
@@ -32,22 +45,9 @@ class AmountPricePerFinancialInstrumentQuantity11(base_types._BaseFieldType):
 		del self._PricVal
 		self._PricVal = None
 
-	@property
-	def AmtPricTp(self):
-		return self._AmtPricTp
-
-	@AmtPricTp.setter
-	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != auto else self.make_default("AmtPricTp")
-
-	@AmtPricTp.deleter
-	def AmtPricTp(self):
-		del self._AmtPricTp
-		self._AmtPricTp = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricVal', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtPricTp', type=AmountPriceType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

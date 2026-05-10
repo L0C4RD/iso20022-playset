@@ -1,24 +1,11 @@
 import base_types
-import AmountAndRateStatus1
 import ActiveCurrencyAnd13DecimalAmount
 import RateTypeAndAmountAndStatus56
+import AmountAndRateStatus1
 
 class NetDividendRateFormat37Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_RateTpAndAmtAndRateSts", "_AmtAndRateSts"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_RateTpAndAmtAndRateSts", "_AmtAndRateSts", "_Amt"]
 	@property
 	def RateTpAndAmtAndRateSts(self):
 		return self._RateTpAndAmtAndRateSts
@@ -45,9 +32,22 @@ class NetDividendRateFormat37Choice(base_types._BaseFieldType):
 		del self._AmtAndRateSts
 		self._AmtAndRateSts = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus56, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtAndRateSts', type=AmountAndRateStatus1, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

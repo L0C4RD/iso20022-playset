@@ -1,36 +1,23 @@
 import base_types
-import ISODate
 import Max20PositiveNumber
 import RejectionStatistics9
+import ISODate
 
 class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
-	__slots__ = ["_TtlNbOfTxsAccptd", "_TtlCrrctdRjctns", "_RjctnSttstcs", "_TtlNbOfTxsRjctd", "_TtlNbOfRpts", "_TtlNbOfRptsRjctd", "_TtlNbOfTxs", "_TtlNbOfRptsAccptd", "_RefDt"]
+	__slots__ = ["_TtlNbOfRpts", "_RjctnSttstcs", "_TtlNbOfRptsRjctd", "_TtlCrrctdRjctns", "_RefDt", "_TtlNbOfTxsAccptd", "_TtlNbOfTxsRjctd", "_TtlNbOfTxs", "_TtlNbOfRptsAccptd"]
 	@property
-	def TtlNbOfTxsAccptd(self):
-		return self._TtlNbOfTxsAccptd
+	def TtlNbOfRpts(self):
+		return self._TtlNbOfRpts
 
-	@TtlNbOfTxsAccptd.setter
-	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
+	@TtlNbOfRpts.setter
+	def TtlNbOfRpts(self, value):
+		self._TtlNbOfRpts = value if type(value) != auto else self.make_default("TtlNbOfRpts")
 
-	@TtlNbOfTxsAccptd.deleter
-	def TtlNbOfTxsAccptd(self):
-		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
-
-	@property
-	def TtlCrrctdRjctns(self):
-		return self._TtlCrrctdRjctns
-
-	@TtlCrrctdRjctns.setter
-	def TtlCrrctdRjctns(self, value):
-		self._TtlCrrctdRjctns = value if type(value) != auto else self.make_default("TtlCrrctdRjctns")
-
-	@TtlCrrctdRjctns.deleter
-	def TtlCrrctdRjctns(self):
-		del self._TtlCrrctdRjctns
-		self._TtlCrrctdRjctns = None
+	@TtlNbOfRpts.deleter
+	def TtlNbOfRpts(self):
+		del self._TtlNbOfRpts
+		self._TtlNbOfRpts = None
 
 	@property
 	def RjctnSttstcs(self):
@@ -46,32 +33,6 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 		self._RjctnSttstcs = None
 
 	@property
-	def TtlNbOfTxsRjctd(self):
-		return self._TtlNbOfTxsRjctd
-
-	@TtlNbOfTxsRjctd.setter
-	def TtlNbOfTxsRjctd(self, value):
-		self._TtlNbOfTxsRjctd = value if type(value) != auto else self.make_default("TtlNbOfTxsRjctd")
-
-	@TtlNbOfTxsRjctd.deleter
-	def TtlNbOfTxsRjctd(self):
-		del self._TtlNbOfTxsRjctd
-		self._TtlNbOfTxsRjctd = None
-
-	@property
-	def TtlNbOfRpts(self):
-		return self._TtlNbOfRpts
-
-	@TtlNbOfRpts.setter
-	def TtlNbOfRpts(self, value):
-		self._TtlNbOfRpts = value if type(value) != auto else self.make_default("TtlNbOfRpts")
-
-	@TtlNbOfRpts.deleter
-	def TtlNbOfRpts(self):
-		del self._TtlNbOfRpts
-		self._TtlNbOfRpts = None
-
-	@property
 	def TtlNbOfRptsRjctd(self):
 		return self._TtlNbOfRptsRjctd
 
@@ -83,6 +44,58 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 	def TtlNbOfRptsRjctd(self):
 		del self._TtlNbOfRptsRjctd
 		self._TtlNbOfRptsRjctd = None
+
+	@property
+	def TtlCrrctdRjctns(self):
+		return self._TtlCrrctdRjctns
+
+	@TtlCrrctdRjctns.setter
+	def TtlCrrctdRjctns(self, value):
+		self._TtlCrrctdRjctns = value if type(value) != auto else self.make_default("TtlCrrctdRjctns")
+
+	@TtlCrrctdRjctns.deleter
+	def TtlCrrctdRjctns(self):
+		del self._TtlCrrctdRjctns
+		self._TtlCrrctdRjctns = None
+
+	@property
+	def RefDt(self):
+		return self._RefDt
+
+	@RefDt.setter
+	def RefDt(self, value):
+		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
+
+	@RefDt.deleter
+	def RefDt(self):
+		del self._RefDt
+		self._RefDt = None
+
+	@property
+	def TtlNbOfTxsAccptd(self):
+		return self._TtlNbOfTxsAccptd
+
+	@TtlNbOfTxsAccptd.setter
+	def TtlNbOfTxsAccptd(self, value):
+		self._TtlNbOfTxsAccptd = value if type(value) != auto else self.make_default("TtlNbOfTxsAccptd")
+
+	@TtlNbOfTxsAccptd.deleter
+	def TtlNbOfTxsAccptd(self):
+		del self._TtlNbOfTxsAccptd
+		self._TtlNbOfTxsAccptd = None
+
+	@property
+	def TtlNbOfTxsRjctd(self):
+		return self._TtlNbOfTxsRjctd
+
+	@TtlNbOfTxsRjctd.setter
+	def TtlNbOfTxsRjctd(self, value):
+		self._TtlNbOfTxsRjctd = value if type(value) != auto else self.make_default("TtlNbOfTxsRjctd")
+
+	@TtlNbOfTxsRjctd.deleter
+	def TtlNbOfTxsRjctd(self):
+		del self._TtlNbOfTxsRjctd
+		self._TtlNbOfTxsRjctd = None
 
 	@property
 	def TtlNbOfTxs(self):
@@ -110,28 +123,15 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 		del self._TtlNbOfRptsAccptd
 		self._TtlNbOfRptsAccptd = None
 
-	@property
-	def RefDt(self):
-		return self._RefDt
-
-	@RefDt.setter
-	def RefDt(self, value):
-		self._RefDt = value if type(value) != auto else self.make_default("RefDt")
-
-	@RefDt.deleter
-	def RefDt(self):
-		del self._RefDt
-		self._RefDt = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlCrrctdRjctns', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnSttstcs', type=RejectionStatistics9, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfRpts', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnSttstcs', type=RejectionStatistics9, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlNbOfRptsRjctd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlCrrctdRjctns', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlNbOfTxsRjctd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfTxs', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfRptsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

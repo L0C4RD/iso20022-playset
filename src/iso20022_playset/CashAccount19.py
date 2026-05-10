@@ -1,7 +1,7 @@
 import base_types
 import CreditDebitCode
-import PartyIdentification2Choice
 import AccountIdentification2Choice
+import PartyIdentification2Choice
 
 class CashAccount19(base_types._BaseFieldType):
 

@@ -1,12 +1,12 @@
 import base_types
-import PercentageRate
-import PriceValue5
 import PriceValueChange1
 import DateOrDateTimePeriodChoice
+import PercentageRate
+import PriceValue5
 
 class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 
-	__slots__ = ["_PricChng", "_Yld", "_LwstPricVal", "_Prd", "_HghstPricVal"]
+	__slots__ = ["_PricChng", "_Yld", "_Prd", "_LwstPricVal", "_HghstPricVal"]
 	@property
 	def PricChng(self):
 		return self._PricChng
@@ -34,19 +34,6 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		self._Yld = None
 
 	@property
-	def LwstPricVal(self):
-		return self._LwstPricVal
-
-	@LwstPricVal.setter
-	def LwstPricVal(self, value):
-		self._LwstPricVal = value if type(value) != auto else self.make_default("LwstPricVal")
-
-	@LwstPricVal.deleter
-	def LwstPricVal(self):
-		del self._LwstPricVal
-		self._LwstPricVal = None
-
-	@property
 	def Prd(self):
 		return self._Prd
 
@@ -58,6 +45,19 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 	def Prd(self):
 		del self._Prd
 		self._Prd = None
+
+	@property
+	def LwstPricVal(self):
+		return self._LwstPricVal
+
+	@LwstPricVal.setter
+	def LwstPricVal(self, value):
+		self._LwstPricVal = value if type(value) != auto else self.make_default("LwstPricVal")
+
+	@LwstPricVal.deleter
+	def LwstPricVal(self):
+		del self._LwstPricVal
+		self._LwstPricVal = None
 
 	@property
 	def HghstPricVal(self):
@@ -75,8 +75,8 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=DateOrDateTimePeriodChoice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LwstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HghstPricVal', type=PriceValue5, min=0, max=1, mutex_group=None, array=False),
 	))
 

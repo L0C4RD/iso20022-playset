@@ -1,12 +1,12 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import ActiveOrHistoricCurrencyCode
-import ISINOct2015Identifier
 import Max35Text
+import ISINOct2015Identifier
+import ActiveOrHistoricCurrencyCode
+import ImpliedCurrencyAndAmount
 
 class VolumeCapReport2(base_types._BaseFieldType):
 
-	__slots__ = ["_TechRcrdId", "_Id", "_Ccy", "_TtlRefPricTradgVol", "_TtlTradgVol", "_TtlNgtdTxsTradgVol"]
+	__slots__ = ["_TechRcrdId", "_Ccy", "_Id", "_TtlNgtdTxsTradgVol", "_TtlTradgVol", "_TtlRefPricTradgVol"]
 	@property
 	def TechRcrdId(self):
 		return self._TechRcrdId
@@ -19,19 +19,6 @@ class VolumeCapReport2(base_types._BaseFieldType):
 	def TechRcrdId(self):
 		del self._TechRcrdId
 		self._TechRcrdId = None
-
-	@property
-	def Id(self):
-		return self._Id
-
-	@Id.setter
-	def Id(self, value):
-		self._Id = value if type(value) != auto else self.make_default("Id")
-
-	@Id.deleter
-	def Id(self):
-		del self._Id
-		self._Id = None
 
 	@property
 	def Ccy(self):
@@ -47,17 +34,30 @@ class VolumeCapReport2(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def TtlRefPricTradgVol(self):
-		return self._TtlRefPricTradgVol
+	def Id(self):
+		return self._Id
 
-	@TtlRefPricTradgVol.setter
-	def TtlRefPricTradgVol(self, value):
-		self._TtlRefPricTradgVol = value if type(value) != auto else self.make_default("TtlRefPricTradgVol")
+	@Id.setter
+	def Id(self, value):
+		self._Id = value if type(value) != auto else self.make_default("Id")
 
-	@TtlRefPricTradgVol.deleter
-	def TtlRefPricTradgVol(self):
-		del self._TtlRefPricTradgVol
-		self._TtlRefPricTradgVol = None
+	@Id.deleter
+	def Id(self):
+		del self._Id
+		self._Id = None
+
+	@property
+	def TtlNgtdTxsTradgVol(self):
+		return self._TtlNgtdTxsTradgVol
+
+	@TtlNgtdTxsTradgVol.setter
+	def TtlNgtdTxsTradgVol(self, value):
+		self._TtlNgtdTxsTradgVol = value if type(value) != auto else self.make_default("TtlNgtdTxsTradgVol")
+
+	@TtlNgtdTxsTradgVol.deleter
+	def TtlNgtdTxsTradgVol(self):
+		del self._TtlNgtdTxsTradgVol
+		self._TtlNgtdTxsTradgVol = None
 
 	@property
 	def TtlTradgVol(self):
@@ -73,24 +73,24 @@ class VolumeCapReport2(base_types._BaseFieldType):
 		self._TtlTradgVol = None
 
 	@property
-	def TtlNgtdTxsTradgVol(self):
-		return self._TtlNgtdTxsTradgVol
+	def TtlRefPricTradgVol(self):
+		return self._TtlRefPricTradgVol
 
-	@TtlNgtdTxsTradgVol.setter
-	def TtlNgtdTxsTradgVol(self, value):
-		self._TtlNgtdTxsTradgVol = value if type(value) != auto else self.make_default("TtlNgtdTxsTradgVol")
+	@TtlRefPricTradgVol.setter
+	def TtlRefPricTradgVol(self, value):
+		self._TtlRefPricTradgVol = value if type(value) != auto else self.make_default("TtlRefPricTradgVol")
 
-	@TtlNgtdTxsTradgVol.deleter
-	def TtlNgtdTxsTradgVol(self):
-		del self._TtlNgtdTxsTradgVol
-		self._TtlNgtdTxsTradgVol = None
+	@TtlRefPricTradgVol.deleter
+	def TtlRefPricTradgVol(self):
+		del self._TtlRefPricTradgVol
+		self._TtlRefPricTradgVol = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TechRcrdId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNgtdTxsTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlRefPricTradgVol', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

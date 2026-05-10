@@ -1,12 +1,12 @@
 import base_types
-import Account23
-import ConfirmationType1Choice
 import Max35Text
+import ConfirmationType1Choice
 import AdditionalReference13
+import Account23
 
 class AccountManagementConfirmation5(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrPtyRef", "_AcctApplId", "_ClntRef", "_ConfTp", "_ExstgAcctId"]
+	__slots__ = ["_CtrPtyRef", "_AcctApplId", "_ExstgAcctId", "_ClntRef", "_ConfTp"]
 	@property
 	def CtrPtyRef(self):
 		return self._CtrPtyRef
@@ -34,6 +34,19 @@ class AccountManagementConfirmation5(base_types._BaseFieldType):
 		self._AcctApplId = None
 
 	@property
+	def ExstgAcctId(self):
+		return self._ExstgAcctId
+
+	@ExstgAcctId.setter
+	def ExstgAcctId(self, value):
+		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
+
+	@ExstgAcctId.deleter
+	def ExstgAcctId(self):
+		del self._ExstgAcctId
+		self._ExstgAcctId = None
+
+	@property
 	def ClntRef(self):
 		return self._ClntRef
 
@@ -59,24 +72,11 @@ class AccountManagementConfirmation5(base_types._BaseFieldType):
 		del self._ConfTp
 		self._ConfTp = None
 
-	@property
-	def ExstgAcctId(self):
-		return self._ExstgAcctId
-
-	@ExstgAcctId.setter
-	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != auto else self.make_default("ExstgAcctId")
-
-	@ExstgAcctId.deleter
-	def ExstgAcctId(self):
-		del self._ExstgAcctId
-		self._ExstgAcctId = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTp', type=ConfirmationType1Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExstgAcctId', type=Account23, min=0, max=None, mutex_group=None, array=True),
 	))
 

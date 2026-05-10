@@ -1,6 +1,6 @@
 import base_types
-import CorporateActionFrequencyType5Code
 import GenericIdentification47
+import CorporateActionFrequencyType5Code
 
 class DividendTypeFormat10Choice(base_types._BaseFieldType):
 

@@ -1,13 +1,39 @@
 import base_types
-import Max70Text
 import ImpliedCurrencyAndAmount
+import Max70Text
+import ATMCounterType2Code
 import Number
 import ActiveCurrencyCode
-import ATMCounterType2Code
 
 class ATMTotals3(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_Amt", "_Prd", "_Ccy", "_Cnt", "_AddtlId"]
+	__slots__ = ["_Amt", "_Cnt", "_Id", "_AddtlId", "_Prd", "_Ccy"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
+	@property
+	def Cnt(self):
+		return self._Cnt
+
+	@Cnt.setter
+	def Cnt(self, value):
+		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
+
+	@Cnt.deleter
+	def Cnt(self):
+		del self._Cnt
+		self._Cnt = None
+
 	@property
 	def Id(self):
 		return self._Id
@@ -22,17 +48,17 @@ class ATMTotals3(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def AddtlId(self):
+		return self._AddtlId
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@AddtlId.setter
+	def AddtlId(self, value):
+		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@AddtlId.deleter
+	def AddtlId(self):
+		del self._AddtlId
+		self._AddtlId = None
 
 	@property
 	def Prd(self):
@@ -60,38 +86,12 @@ class ATMTotals3(base_types._BaseFieldType):
 		del self._Ccy
 		self._Ccy = None
 
-	@property
-	def Cnt(self):
-		return self._Cnt
-
-	@Cnt.setter
-	def Cnt(self, value):
-		self._Cnt = value if type(value) != auto else self.make_default("Cnt")
-
-	@Cnt.deleter
-	def Cnt(self):
-		del self._Cnt
-		self._Cnt = None
-
-	@property
-	def AddtlId(self):
-		return self._AddtlId
-
-	@AddtlId.setter
-	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != auto else self.make_default("AddtlId")
-
-	@AddtlId.deleter
-	def AddtlId(self):
-		del self._AddtlId
-		self._AddtlId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Id', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prd', type=ATMCounterType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import BillingMethod2
 import BillingMethod1
 import BillingMethod3
+import BillingMethod2
 
 class BillingMethod1Choice(base_types._BaseFieldType):
 

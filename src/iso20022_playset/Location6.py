@@ -1,25 +1,25 @@
 import base_types
-import Max70Text
 import Max35Text
 import ISO3NumericCurrencyCode
+import Max70Text
 import Address2
 import Max256Text
 
 class Location6(base_types._BaseFieldType):
 
-	__slots__ = ["_Nm", "_Adr", "_LclCcy", "_Cd", "_LclTmZone", "_Desc"]
+	__slots__ = ["_LclTmZone", "_Adr", "_Nm", "_Cd", "_LclCcy", "_Desc"]
 	@property
-	def Nm(self):
-		return self._Nm
+	def LclTmZone(self):
+		return self._LclTmZone
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@LclTmZone.setter
+	def LclTmZone(self, value):
+		self._LclTmZone = value if type(value) != auto else self.make_default("LclTmZone")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@LclTmZone.deleter
+	def LclTmZone(self):
+		del self._LclTmZone
+		self._LclTmZone = None
 
 	@property
 	def Adr(self):
@@ -35,17 +35,17 @@ class Location6(base_types._BaseFieldType):
 		self._Adr = None
 
 	@property
-	def LclCcy(self):
-		return self._LclCcy
+	def Nm(self):
+		return self._Nm
 
-	@LclCcy.setter
-	def LclCcy(self, value):
-		self._LclCcy = value if type(value) != auto else self.make_default("LclCcy")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@LclCcy.deleter
-	def LclCcy(self):
-		del self._LclCcy
-		self._LclCcy = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def Cd(self):
@@ -61,17 +61,17 @@ class Location6(base_types._BaseFieldType):
 		self._Cd = None
 
 	@property
-	def LclTmZone(self):
-		return self._LclTmZone
+	def LclCcy(self):
+		return self._LclCcy
 
-	@LclTmZone.setter
-	def LclTmZone(self, value):
-		self._LclTmZone = value if type(value) != auto else self.make_default("LclTmZone")
+	@LclCcy.setter
+	def LclCcy(self, value):
+		self._LclCcy = value if type(value) != auto else self.make_default("LclCcy")
 
-	@LclTmZone.deleter
-	def LclTmZone(self):
-		del self._LclTmZone
-		self._LclTmZone = None
+	@LclCcy.deleter
+	def LclCcy(self):
+		del self._LclCcy
+		self._LclCcy = None
 
 	@property
 	def Desc(self):
@@ -87,11 +87,11 @@ class Location6(base_types._BaseFieldType):
 		self._Desc = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LclTmZone', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclCcy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

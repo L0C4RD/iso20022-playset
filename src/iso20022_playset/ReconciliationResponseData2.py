@@ -1,24 +1,11 @@
 import base_types
-import TransactionTotalsSet2
-import ReconciliationType1Code
 import Max35Text
+import ReconciliationType1Code
+import TransactionTotalsSet2
 
 class ReconciliationResponseData2(base_types._BaseFieldType):
 
-	__slots__ = ["_RcncltnTp", "_POIRcncltnId", "_TxTtls"]
-	@property
-	def RcncltnTp(self):
-		return self._RcncltnTp
-
-	@RcncltnTp.setter
-	def RcncltnTp(self, value):
-		self._RcncltnTp = value if type(value) != auto else self.make_default("RcncltnTp")
-
-	@RcncltnTp.deleter
-	def RcncltnTp(self):
-		del self._RcncltnTp
-		self._RcncltnTp = None
-
+	__slots__ = ["_POIRcncltnId", "_RcncltnTp", "_TxTtls"]
 	@property
 	def POIRcncltnId(self):
 		return self._POIRcncltnId
@@ -31,6 +18,19 @@ class ReconciliationResponseData2(base_types._BaseFieldType):
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
 		self._POIRcncltnId = None
+
+	@property
+	def RcncltnTp(self):
+		return self._RcncltnTp
+
+	@RcncltnTp.setter
+	def RcncltnTp(self, value):
+		self._RcncltnTp = value if type(value) != auto else self.make_default("RcncltnTp")
+
+	@RcncltnTp.deleter
+	def RcncltnTp(self):
+		del self._RcncltnTp
+		self._RcncltnTp = None
 
 	@property
 	def TxTtls(self):
@@ -46,8 +46,8 @@ class ReconciliationResponseData2(base_types._BaseFieldType):
 		self._TxTtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcncltnTp', type=ReconciliationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcncltnTp', type=ReconciliationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotalsSet2, min=0, max=None, mutex_group=None, array=True),
 	))
 

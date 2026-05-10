@@ -1,57 +1,31 @@
 import base_types
-import Max2NumericText
+import Location6
 import AdditionalData1
-import Address2
-import CompanyAssigner2Code
-import LoyaltyProgramme4
-import AuthorisedAmount2
-import ContactPersonal1
-import Tax41
-import LodgingRoom2
 import Max70Text
-import Max4NumericText
-import DepartureOrArrival2
-import ContactBusiness1
-import PartyIdentification285
 import DepartureOrArrival1
 import LodgingActivity1Code
-import ISOMax3ACountryCode
-import ImpliedCurrencyAndAmount
-import Credentials3
 import Max35Text
-import Location6
+import ImpliedCurrencyAndAmount
+import LoyaltyProgramme4
+import Credentials3
 import TrueFalseIndicator
 import LodgingLineItem3
+import ContactPersonal1
+import LodgingRoom2
+import Max4NumericText
+import Address2
+import ISOMax3ACountryCode
+import AuthorisedAmount2
+import PartyIdentification285
+import DepartureOrArrival2
+import Tax41
+import Max2NumericText
+import CompanyAssigner2Code
+import ContactBusiness1
 
 class Lodging4(base_types._BaseFieldType):
 
-	__slots__ = ["_PrprtyCtry", "_PrprtyFireSftyAct", "_CstmrId", "_AddtlData", "_TtlTax", "_SummryCmmdtyId", "_CstmrAdr", "_LineItm", "_NoShow", "_Dprture", "_PrprtyCtct", "_PrprtyId", "_Arrvl", "_AuthrsdAmt", "_PrprtyTp", "_FolioNb", "_PrprtyOthrTp", "_TtlAmt", "_PrprtyAssgnr", "_PrstgsPrprty", "_Room", "_LltyPrgrmm", "_NbOfRooms", "_InsrncAmt", "_PrprtyNm", "_CstmrFileRefNb", "_Drtn", "_CstmrAge", "_Insrnc", "_CstmrCtct", "_CstmrNm", "_PrprtyLctn"]
-	@property
-	def PrprtyCtry(self):
-		return self._PrprtyCtry
-
-	@PrprtyCtry.setter
-	def PrprtyCtry(self, value):
-		self._PrprtyCtry = value if type(value) != auto else self.make_default("PrprtyCtry")
-
-	@PrprtyCtry.deleter
-	def PrprtyCtry(self):
-		del self._PrprtyCtry
-		self._PrprtyCtry = None
-
-	@property
-	def PrprtyFireSftyAct(self):
-		return self._PrprtyFireSftyAct
-
-	@PrprtyFireSftyAct.setter
-	def PrprtyFireSftyAct(self, value):
-		self._PrprtyFireSftyAct = value if type(value) != auto else self.make_default("PrprtyFireSftyAct")
-
-	@PrprtyFireSftyAct.deleter
-	def PrprtyFireSftyAct(self):
-		del self._PrprtyFireSftyAct
-		self._PrprtyFireSftyAct = None
-
+	__slots__ = ["_CstmrId", "_CstmrCtct", "_TtlTax", "_CstmrNm", "_PrprtyTp", "_CstmrAge", "_LltyPrgrmm", "_NoShow", "_PrprtyCtct", "_TtlAmt", "_PrstgsPrprty", "_CstmrAdr", "_PrprtyOthrTp", "_NbOfRooms", "_InsrncAmt", "_PrprtyNm", "_PrprtyId", "_Insrnc", "_PrprtyFireSftyAct", "_FolioNb", "_AddtlData", "_PrprtyAssgnr", "_Room", "_LineItm", "_CstmrFileRefNb", "_Dprture", "_PrprtyLctn", "_Arrvl", "_AuthrsdAmt", "_PrprtyCtry", "_SummryCmmdtyId", "_Drtn"]
 	@property
 	def CstmrId(self):
 		return self._CstmrId
@@ -66,17 +40,17 @@ class Lodging4(base_types._BaseFieldType):
 		self._CstmrId = None
 
 	@property
-	def AddtlData(self):
-		return self._AddtlData
+	def CstmrCtct(self):
+		return self._CstmrCtct
 
-	@AddtlData.setter
-	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+	@CstmrCtct.setter
+	def CstmrCtct(self, value):
+		self._CstmrCtct = value if type(value) != auto else self.make_default("CstmrCtct")
 
-	@AddtlData.deleter
-	def AddtlData(self):
-		del self._AddtlData
-		self._AddtlData = None
+	@CstmrCtct.deleter
+	def CstmrCtct(self):
+		del self._CstmrCtct
+		self._CstmrCtct = None
 
 	@property
 	def TtlTax(self):
@@ -92,121 +66,17 @@ class Lodging4(base_types._BaseFieldType):
 		self._TtlTax = None
 
 	@property
-	def SummryCmmdtyId(self):
-		return self._SummryCmmdtyId
+	def CstmrNm(self):
+		return self._CstmrNm
 
-	@SummryCmmdtyId.setter
-	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
+	@CstmrNm.setter
+	def CstmrNm(self, value):
+		self._CstmrNm = value if type(value) != auto else self.make_default("CstmrNm")
 
-	@SummryCmmdtyId.deleter
-	def SummryCmmdtyId(self):
-		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
-
-	@property
-	def CstmrAdr(self):
-		return self._CstmrAdr
-
-	@CstmrAdr.setter
-	def CstmrAdr(self, value):
-		self._CstmrAdr = value if type(value) != auto else self.make_default("CstmrAdr")
-
-	@CstmrAdr.deleter
-	def CstmrAdr(self):
-		del self._CstmrAdr
-		self._CstmrAdr = None
-
-	@property
-	def LineItm(self):
-		return self._LineItm
-
-	@LineItm.setter
-	def LineItm(self, value):
-		self._LineItm = value if type(value) != auto else self.make_default("LineItm")
-
-	@LineItm.deleter
-	def LineItm(self):
-		del self._LineItm
-		self._LineItm = None
-
-	@property
-	def NoShow(self):
-		return self._NoShow
-
-	@NoShow.setter
-	def NoShow(self, value):
-		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
-
-	@NoShow.deleter
-	def NoShow(self):
-		del self._NoShow
-		self._NoShow = None
-
-	@property
-	def Dprture(self):
-		return self._Dprture
-
-	@Dprture.setter
-	def Dprture(self, value):
-		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
-
-	@Dprture.deleter
-	def Dprture(self):
-		del self._Dprture
-		self._Dprture = None
-
-	@property
-	def PrprtyCtct(self):
-		return self._PrprtyCtct
-
-	@PrprtyCtct.setter
-	def PrprtyCtct(self, value):
-		self._PrprtyCtct = value if type(value) != auto else self.make_default("PrprtyCtct")
-
-	@PrprtyCtct.deleter
-	def PrprtyCtct(self):
-		del self._PrprtyCtct
-		self._PrprtyCtct = None
-
-	@property
-	def PrprtyId(self):
-		return self._PrprtyId
-
-	@PrprtyId.setter
-	def PrprtyId(self, value):
-		self._PrprtyId = value if type(value) != auto else self.make_default("PrprtyId")
-
-	@PrprtyId.deleter
-	def PrprtyId(self):
-		del self._PrprtyId
-		self._PrprtyId = None
-
-	@property
-	def Arrvl(self):
-		return self._Arrvl
-
-	@Arrvl.setter
-	def Arrvl(self, value):
-		self._Arrvl = value if type(value) != auto else self.make_default("Arrvl")
-
-	@Arrvl.deleter
-	def Arrvl(self):
-		del self._Arrvl
-		self._Arrvl = None
-
-	@property
-	def AuthrsdAmt(self):
-		return self._AuthrsdAmt
-
-	@AuthrsdAmt.setter
-	def AuthrsdAmt(self, value):
-		self._AuthrsdAmt = value if type(value) != auto else self.make_default("AuthrsdAmt")
-
-	@AuthrsdAmt.deleter
-	def AuthrsdAmt(self):
-		del self._AuthrsdAmt
-		self._AuthrsdAmt = None
+	@CstmrNm.deleter
+	def CstmrNm(self):
+		del self._CstmrNm
+		self._CstmrNm = None
 
 	@property
 	def PrprtyTp(self):
@@ -222,30 +92,56 @@ class Lodging4(base_types._BaseFieldType):
 		self._PrprtyTp = None
 
 	@property
-	def FolioNb(self):
-		return self._FolioNb
+	def CstmrAge(self):
+		return self._CstmrAge
 
-	@FolioNb.setter
-	def FolioNb(self, value):
-		self._FolioNb = value if type(value) != auto else self.make_default("FolioNb")
+	@CstmrAge.setter
+	def CstmrAge(self, value):
+		self._CstmrAge = value if type(value) != auto else self.make_default("CstmrAge")
 
-	@FolioNb.deleter
-	def FolioNb(self):
-		del self._FolioNb
-		self._FolioNb = None
+	@CstmrAge.deleter
+	def CstmrAge(self):
+		del self._CstmrAge
+		self._CstmrAge = None
 
 	@property
-	def PrprtyOthrTp(self):
-		return self._PrprtyOthrTp
+	def LltyPrgrmm(self):
+		return self._LltyPrgrmm
 
-	@PrprtyOthrTp.setter
-	def PrprtyOthrTp(self, value):
-		self._PrprtyOthrTp = value if type(value) != auto else self.make_default("PrprtyOthrTp")
+	@LltyPrgrmm.setter
+	def LltyPrgrmm(self, value):
+		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
 
-	@PrprtyOthrTp.deleter
-	def PrprtyOthrTp(self):
-		del self._PrprtyOthrTp
-		self._PrprtyOthrTp = None
+	@LltyPrgrmm.deleter
+	def LltyPrgrmm(self):
+		del self._LltyPrgrmm
+		self._LltyPrgrmm = None
+
+	@property
+	def NoShow(self):
+		return self._NoShow
+
+	@NoShow.setter
+	def NoShow(self, value):
+		self._NoShow = value if type(value) != auto else self.make_default("NoShow")
+
+	@NoShow.deleter
+	def NoShow(self):
+		del self._NoShow
+		self._NoShow = None
+
+	@property
+	def PrprtyCtct(self):
+		return self._PrprtyCtct
+
+	@PrprtyCtct.setter
+	def PrprtyCtct(self, value):
+		self._PrprtyCtct = value if type(value) != auto else self.make_default("PrprtyCtct")
+
+	@PrprtyCtct.deleter
+	def PrprtyCtct(self):
+		del self._PrprtyCtct
+		self._PrprtyCtct = None
 
 	@property
 	def TtlAmt(self):
@@ -261,19 +157,6 @@ class Lodging4(base_types._BaseFieldType):
 		self._TtlAmt = None
 
 	@property
-	def PrprtyAssgnr(self):
-		return self._PrprtyAssgnr
-
-	@PrprtyAssgnr.setter
-	def PrprtyAssgnr(self, value):
-		self._PrprtyAssgnr = value if type(value) != auto else self.make_default("PrprtyAssgnr")
-
-	@PrprtyAssgnr.deleter
-	def PrprtyAssgnr(self):
-		del self._PrprtyAssgnr
-		self._PrprtyAssgnr = None
-
-	@property
 	def PrstgsPrprty(self):
 		return self._PrstgsPrprty
 
@@ -287,30 +170,30 @@ class Lodging4(base_types._BaseFieldType):
 		self._PrstgsPrprty = None
 
 	@property
-	def Room(self):
-		return self._Room
+	def CstmrAdr(self):
+		return self._CstmrAdr
 
-	@Room.setter
-	def Room(self, value):
-		self._Room = value if type(value) != auto else self.make_default("Room")
+	@CstmrAdr.setter
+	def CstmrAdr(self, value):
+		self._CstmrAdr = value if type(value) != auto else self.make_default("CstmrAdr")
 
-	@Room.deleter
-	def Room(self):
-		del self._Room
-		self._Room = None
+	@CstmrAdr.deleter
+	def CstmrAdr(self):
+		del self._CstmrAdr
+		self._CstmrAdr = None
 
 	@property
-	def LltyPrgrmm(self):
-		return self._LltyPrgrmm
+	def PrprtyOthrTp(self):
+		return self._PrprtyOthrTp
 
-	@LltyPrgrmm.setter
-	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != auto else self.make_default("LltyPrgrmm")
+	@PrprtyOthrTp.setter
+	def PrprtyOthrTp(self, value):
+		self._PrprtyOthrTp = value if type(value) != auto else self.make_default("PrprtyOthrTp")
 
-	@LltyPrgrmm.deleter
-	def LltyPrgrmm(self):
-		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+	@PrprtyOthrTp.deleter
+	def PrprtyOthrTp(self):
+		del self._PrprtyOthrTp
+		self._PrprtyOthrTp = None
 
 	@property
 	def NbOfRooms(self):
@@ -352,43 +235,17 @@ class Lodging4(base_types._BaseFieldType):
 		self._PrprtyNm = None
 
 	@property
-	def CstmrFileRefNb(self):
-		return self._CstmrFileRefNb
+	def PrprtyId(self):
+		return self._PrprtyId
 
-	@CstmrFileRefNb.setter
-	def CstmrFileRefNb(self, value):
-		self._CstmrFileRefNb = value if type(value) != auto else self.make_default("CstmrFileRefNb")
+	@PrprtyId.setter
+	def PrprtyId(self, value):
+		self._PrprtyId = value if type(value) != auto else self.make_default("PrprtyId")
 
-	@CstmrFileRefNb.deleter
-	def CstmrFileRefNb(self):
-		del self._CstmrFileRefNb
-		self._CstmrFileRefNb = None
-
-	@property
-	def Drtn(self):
-		return self._Drtn
-
-	@Drtn.setter
-	def Drtn(self, value):
-		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
-
-	@Drtn.deleter
-	def Drtn(self):
-		del self._Drtn
-		self._Drtn = None
-
-	@property
-	def CstmrAge(self):
-		return self._CstmrAge
-
-	@CstmrAge.setter
-	def CstmrAge(self, value):
-		self._CstmrAge = value if type(value) != auto else self.make_default("CstmrAge")
-
-	@CstmrAge.deleter
-	def CstmrAge(self):
-		del self._CstmrAge
-		self._CstmrAge = None
+	@PrprtyId.deleter
+	def PrprtyId(self):
+		del self._PrprtyId
+		self._PrprtyId = None
 
 	@property
 	def Insrnc(self):
@@ -404,30 +261,108 @@ class Lodging4(base_types._BaseFieldType):
 		self._Insrnc = None
 
 	@property
-	def CstmrCtct(self):
-		return self._CstmrCtct
+	def PrprtyFireSftyAct(self):
+		return self._PrprtyFireSftyAct
 
-	@CstmrCtct.setter
-	def CstmrCtct(self, value):
-		self._CstmrCtct = value if type(value) != auto else self.make_default("CstmrCtct")
+	@PrprtyFireSftyAct.setter
+	def PrprtyFireSftyAct(self, value):
+		self._PrprtyFireSftyAct = value if type(value) != auto else self.make_default("PrprtyFireSftyAct")
 
-	@CstmrCtct.deleter
-	def CstmrCtct(self):
-		del self._CstmrCtct
-		self._CstmrCtct = None
+	@PrprtyFireSftyAct.deleter
+	def PrprtyFireSftyAct(self):
+		del self._PrprtyFireSftyAct
+		self._PrprtyFireSftyAct = None
 
 	@property
-	def CstmrNm(self):
-		return self._CstmrNm
+	def FolioNb(self):
+		return self._FolioNb
 
-	@CstmrNm.setter
-	def CstmrNm(self, value):
-		self._CstmrNm = value if type(value) != auto else self.make_default("CstmrNm")
+	@FolioNb.setter
+	def FolioNb(self, value):
+		self._FolioNb = value if type(value) != auto else self.make_default("FolioNb")
 
-	@CstmrNm.deleter
-	def CstmrNm(self):
-		del self._CstmrNm
-		self._CstmrNm = None
+	@FolioNb.deleter
+	def FolioNb(self):
+		del self._FolioNb
+		self._FolioNb = None
+
+	@property
+	def AddtlData(self):
+		return self._AddtlData
+
+	@AddtlData.setter
+	def AddtlData(self, value):
+		self._AddtlData = value if type(value) != auto else self.make_default("AddtlData")
+
+	@AddtlData.deleter
+	def AddtlData(self):
+		del self._AddtlData
+		self._AddtlData = None
+
+	@property
+	def PrprtyAssgnr(self):
+		return self._PrprtyAssgnr
+
+	@PrprtyAssgnr.setter
+	def PrprtyAssgnr(self, value):
+		self._PrprtyAssgnr = value if type(value) != auto else self.make_default("PrprtyAssgnr")
+
+	@PrprtyAssgnr.deleter
+	def PrprtyAssgnr(self):
+		del self._PrprtyAssgnr
+		self._PrprtyAssgnr = None
+
+	@property
+	def Room(self):
+		return self._Room
+
+	@Room.setter
+	def Room(self, value):
+		self._Room = value if type(value) != auto else self.make_default("Room")
+
+	@Room.deleter
+	def Room(self):
+		del self._Room
+		self._Room = None
+
+	@property
+	def LineItm(self):
+		return self._LineItm
+
+	@LineItm.setter
+	def LineItm(self, value):
+		self._LineItm = value if type(value) != auto else self.make_default("LineItm")
+
+	@LineItm.deleter
+	def LineItm(self):
+		del self._LineItm
+		self._LineItm = None
+
+	@property
+	def CstmrFileRefNb(self):
+		return self._CstmrFileRefNb
+
+	@CstmrFileRefNb.setter
+	def CstmrFileRefNb(self, value):
+		self._CstmrFileRefNb = value if type(value) != auto else self.make_default("CstmrFileRefNb")
+
+	@CstmrFileRefNb.deleter
+	def CstmrFileRefNb(self):
+		del self._CstmrFileRefNb
+		self._CstmrFileRefNb = None
+
+	@property
+	def Dprture(self):
+		return self._Dprture
+
+	@Dprture.setter
+	def Dprture(self, value):
+		self._Dprture = value if type(value) != auto else self.make_default("Dprture")
+
+	@Dprture.deleter
+	def Dprture(self):
+		del self._Dprture
+		self._Dprture = None
 
 	@property
 	def PrprtyLctn(self):
@@ -442,38 +377,103 @@ class Lodging4(base_types._BaseFieldType):
 		del self._PrprtyLctn
 		self._PrprtyLctn = None
 
+	@property
+	def Arrvl(self):
+		return self._Arrvl
+
+	@Arrvl.setter
+	def Arrvl(self, value):
+		self._Arrvl = value if type(value) != auto else self.make_default("Arrvl")
+
+	@Arrvl.deleter
+	def Arrvl(self):
+		del self._Arrvl
+		self._Arrvl = None
+
+	@property
+	def AuthrsdAmt(self):
+		return self._AuthrsdAmt
+
+	@AuthrsdAmt.setter
+	def AuthrsdAmt(self, value):
+		self._AuthrsdAmt = value if type(value) != auto else self.make_default("AuthrsdAmt")
+
+	@AuthrsdAmt.deleter
+	def AuthrsdAmt(self):
+		del self._AuthrsdAmt
+		self._AuthrsdAmt = None
+
+	@property
+	def PrprtyCtry(self):
+		return self._PrprtyCtry
+
+	@PrprtyCtry.setter
+	def PrprtyCtry(self, value):
+		self._PrprtyCtry = value if type(value) != auto else self.make_default("PrprtyCtry")
+
+	@PrprtyCtry.deleter
+	def PrprtyCtry(self):
+		del self._PrprtyCtry
+		self._PrprtyCtry = None
+
+	@property
+	def SummryCmmdtyId(self):
+		return self._SummryCmmdtyId
+
+	@SummryCmmdtyId.setter
+	def SummryCmmdtyId(self, value):
+		self._SummryCmmdtyId = value if type(value) != auto else self.make_default("SummryCmmdtyId")
+
+	@SummryCmmdtyId.deleter
+	def SummryCmmdtyId(self):
+		del self._SummryCmmdtyId
+		self._SummryCmmdtyId = None
+
+	@property
+	def Drtn(self):
+		return self._Drtn
+
+	@Drtn.setter
+	def Drtn(self, value):
+		self._Drtn = value if type(value) != auto else self.make_default("Drtn")
+
+	@Drtn.deleter
+	def Drtn(self):
+		del self._Drtn
+		self._Drtn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrprtyCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyFireSftyAct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrId', type=Credentials3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrCtct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LineItm', type=LodgingLineItem3, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Dprture', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Arrvl', type=DepartureOrArrival2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AuthrsdAmt', type=AuthorisedAmount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyTp', type=LodgingActivity1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FolioNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrprtyAssgnr', type=CompanyAssigner2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrstgsPrprty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Room', type=LodgingRoom2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrAge', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyPrgrmm', type=LoyaltyProgramme4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NoShow', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrprtyCtct', type=ContactBusiness1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrstgsPrprty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CstmrAdr', type=Address2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrprtyOthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfRooms', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InsrncAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrAge', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrprtyId', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Insrnc', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrCtct', type=ContactPersonal1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CstmrNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrprtyFireSftyAct', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FolioNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrprtyAssgnr', type=CompanyAssigner2Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Room', type=LodgingRoom2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LineItm', type=LodgingLineItem3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CstmrFileRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dprture', type=DepartureOrArrival1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyLctn', type=Location6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Arrvl', type=DepartureOrArrival2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AuthrsdAmt', type=AuthorisedAmount2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PrprtyCtry', type=ISOMax3ACountryCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SummryCmmdtyId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Drtn', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
 

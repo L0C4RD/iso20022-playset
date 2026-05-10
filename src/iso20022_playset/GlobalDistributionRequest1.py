@@ -1,40 +1,14 @@
 import base_types
-import DateFormat4Choice
-import CorporateActionOption1FormatChoice
-import Exact3NumericText
-import YesNoIndicator
 import SecurityMovement1
 import CashMovement1
+import CorporateActionOption1FormatChoice
+import YesNoIndicator
+import DateFormat4Choice
+import Exact3NumericText
 
 class GlobalDistributionRequest1(base_types._BaseFieldType):
 
-	__slots__ = ["_OptnTp", "_PmtDt", "_OptnNb", "_SctiesMvmnt", "_CshMvmnt", "_PradvcInd", "_RcrdDt"]
-	@property
-	def OptnTp(self):
-		return self._OptnTp
-
-	@OptnTp.setter
-	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
-
-	@OptnTp.deleter
-	def OptnTp(self):
-		del self._OptnTp
-		self._OptnTp = None
-
-	@property
-	def PmtDt(self):
-		return self._PmtDt
-
-	@PmtDt.setter
-	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
-
-	@PmtDt.deleter
-	def PmtDt(self):
-		del self._PmtDt
-		self._PmtDt = None
-
+	__slots__ = ["_OptnNb", "_SctiesMvmnt", "_CshMvmnt", "_PmtDt", "_OptnTp", "_RcrdDt", "_PradvcInd"]
 	@property
 	def OptnNb(self):
 		return self._OptnNb
@@ -75,17 +49,30 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 		self._CshMvmnt = None
 
 	@property
-	def PradvcInd(self):
-		return self._PradvcInd
+	def PmtDt(self):
+		return self._PmtDt
 
-	@PradvcInd.setter
-	def PradvcInd(self, value):
-		self._PradvcInd = value if type(value) != auto else self.make_default("PradvcInd")
+	@PmtDt.setter
+	def PmtDt(self, value):
+		self._PmtDt = value if type(value) != auto else self.make_default("PmtDt")
 
-	@PradvcInd.deleter
-	def PradvcInd(self):
-		del self._PradvcInd
-		self._PradvcInd = None
+	@PmtDt.deleter
+	def PmtDt(self):
+		del self._PmtDt
+		self._PmtDt = None
+
+	@property
+	def OptnTp(self):
+		return self._OptnTp
+
+	@OptnTp.setter
+	def OptnTp(self, value):
+		self._OptnTp = value if type(value) != auto else self.make_default("OptnTp")
+
+	@OptnTp.deleter
+	def OptnTp(self):
+		del self._OptnTp
+		self._OptnTp = None
 
 	@property
 	def RcrdDt(self):
@@ -100,13 +87,26 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 		del self._RcrdDt
 		self._RcrdDt = None
 
+	@property
+	def PradvcInd(self):
+		return self._PradvcInd
+
+	@PradvcInd.setter
+	def PradvcInd(self, value):
+		self._PradvcInd = value if type(value) != auto else self.make_default("PradvcInd")
+
+	@PradvcInd.deleter
+	def PradvcInd(self):
+		del self._PradvcInd
+		self._PradvcInd = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmnt', type=SecurityMovement1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CshMvmnt', type=CashMovement1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='PradvcInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdDt', type=DateFormat4Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PradvcInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

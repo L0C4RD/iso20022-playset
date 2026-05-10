@@ -1,53 +1,27 @@
 import base_types
-import SecuritiesAccount22
-import PartyIdentification144
-import TransactionIdentifications54
-import Pagination1
 import Max35Text
+import Pagination1
 import StatusTrail12
+import PartyIdentification144
+import SecuritiesAccount22
 import BlockChainAddressWallet3
+import TransactionIdentifications54
 
 class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_BlckChainAdrOrWllt", "_StsTrl", "_QryRef", "_SfkpgAcct", "_AcctOwnr", "_Pgntn"]
+	__slots__ = ["_SfkpgAcct", "_QryRef", "_BlckChainAdrOrWllt", "_Pgntn", "_AcctOwnr", "_TxId", "_StsTrl"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
-
-	@property
-	def BlckChainAdrOrWllt(self):
-		return self._BlckChainAdrOrWllt
-
-	@BlckChainAdrOrWllt.setter
-	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
-
-	@BlckChainAdrOrWllt.deleter
-	def BlckChainAdrOrWllt(self):
-		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
-
-	@property
-	def StsTrl(self):
-		return self._StsTrl
-
-	@StsTrl.setter
-	def StsTrl(self, value):
-		self._StsTrl = value if type(value) != auto else self.make_default("StsTrl")
-
-	@StsTrl.deleter
-	def StsTrl(self):
-		del self._StsTrl
-		self._StsTrl = None
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
 
 	@property
 	def QryRef(self):
@@ -63,17 +37,30 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 		self._QryRef = None
 
 	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
+	def BlckChainAdrOrWllt(self):
+		return self._BlckChainAdrOrWllt
 
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+	@BlckChainAdrOrWllt.setter
+	def BlckChainAdrOrWllt(self, value):
+		self._BlckChainAdrOrWllt = value if type(value) != auto else self.make_default("BlckChainAdrOrWllt")
 
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
+	@BlckChainAdrOrWllt.deleter
+	def BlckChainAdrOrWllt(self):
+		del self._BlckChainAdrOrWllt
+		self._BlckChainAdrOrWllt = None
+
+	@property
+	def Pgntn(self):
+		return self._Pgntn
+
+	@Pgntn.setter
+	def Pgntn(self, value):
+		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+
+	@Pgntn.deleter
+	def Pgntn(self):
+		del self._Pgntn
+		self._Pgntn = None
 
 	@property
 	def AcctOwnr(self):
@@ -89,25 +76,38 @@ class SecuritiesSettlementTransactionAuditTrailReportV06(base_types._BaseFieldTy
 		self._AcctOwnr = None
 
 	@property
-	def Pgntn(self):
-		return self._Pgntn
+	def TxId(self):
+		return self._TxId
 
-	@Pgntn.setter
-	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != auto else self.make_default("Pgntn")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@Pgntn.deleter
-	def Pgntn(self):
-		del self._Pgntn
-		self._Pgntn = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
+
+	@property
+	def StsTrl(self):
+		return self._StsTrl
+
+	@StsTrl.setter
+	def StsTrl(self, value):
+		self._StsTrl = value if type(value) != auto else self.make_default("StsTrl")
+
+	@StsTrl.deleter
+	def StsTrl(self):
+		del self._StsTrl
+		self._StsTrl = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=TransactionIdentifications54, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsTrl', type=StatusTrail12, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount22, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=TransactionIdentifications54, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsTrl', type=StatusTrail12, min=0, max=None, mutex_group=None, array=True),
 	))
 

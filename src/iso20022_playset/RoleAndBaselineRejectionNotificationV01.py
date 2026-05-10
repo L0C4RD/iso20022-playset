@@ -1,16 +1,16 @@
 import base_types
-import TransactionStatus4
-import BICIdentification1
-import MessageIdentification1
-import DocumentIdentification3
-import DocumentIdentification5
-import PendingActivity2
 import Reason2
 import SimpleIdentificationInformation
+import MessageIdentification1
+import DocumentIdentification3
+import BICIdentification1
+import DocumentIdentification5
+import PendingActivity2
+import TransactionStatus4
 
 class RoleAndBaselineRejectionNotificationV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqForActn", "_TxId", "_UsrTxRef", "_RjctnRsn", "_NtfctnId", "_Initr", "_EstblishdBaselnId", "_TxSts"]
+	__slots__ = ["_ReqForActn", "_TxId", "_NtfctnId", "_EstblishdBaselnId", "_Initr", "_UsrTxRef", "_TxSts", "_RjctnRsn"]
 	@property
 	def ReqForActn(self):
 		return self._ReqForActn
@@ -38,32 +38,6 @@ class RoleAndBaselineRejectionNotificationV01(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
-
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
-
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
-
-	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
-
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
-
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
-
-	@property
 	def NtfctnId(self):
 		return self._NtfctnId
 
@@ -75,19 +49,6 @@ class RoleAndBaselineRejectionNotificationV01(base_types._BaseFieldType):
 	def NtfctnId(self):
 		del self._NtfctnId
 		self._NtfctnId = None
-
-	@property
-	def Initr(self):
-		return self._Initr
-
-	@Initr.setter
-	def Initr(self, value):
-		self._Initr = value if type(value) != auto else self.make_default("Initr")
-
-	@Initr.deleter
-	def Initr(self):
-		del self._Initr
-		self._Initr = None
 
 	@property
 	def EstblishdBaselnId(self):
@@ -103,6 +64,32 @@ class RoleAndBaselineRejectionNotificationV01(base_types._BaseFieldType):
 		self._EstblishdBaselnId = None
 
 	@property
+	def Initr(self):
+		return self._Initr
+
+	@Initr.setter
+	def Initr(self, value):
+		self._Initr = value if type(value) != auto else self.make_default("Initr")
+
+	@Initr.deleter
+	def Initr(self):
+		del self._Initr
+		self._Initr = None
+
+	@property
+	def UsrTxRef(self):
+		return self._UsrTxRef
+
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
+
+	@property
 	def TxSts(self):
 		return self._TxSts
 
@@ -115,14 +102,27 @@ class RoleAndBaselineRejectionNotificationV01(base_types._BaseFieldType):
 		del self._TxSts
 		self._TxSts = None
 
+	@property
+	def RjctnRsn(self):
+		return self._RjctnRsn
+
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqForActn', type=PendingActivity2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=0, max=1, mutex_group=None, array=False),
 	))
 

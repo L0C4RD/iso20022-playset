@@ -3,7 +3,7 @@ import defusedxml.ElementTree as ET
 import xml.etree.ElementTree as ETree
 from collections import namedtuple as __namedtuple__
 
-import iso20022
+import iso20022_playset
 
 __node_info__ = __namedtuple__("__node_info__", ["ns", "msgtype", "tagname", "msgtype_normalised", "data"])
 
@@ -14,7 +14,7 @@ def parse_file(filepath, msgtype=None):
 	try:
 		tree = ET.parse(filepath)
 	except Exception as e:
-		raise iso20022.ParseError(str(e))
+		raise iso20022_playset.ParseError(str(e))
 
 	return parse_etree(tree, msgtype)
 
@@ -23,7 +23,7 @@ def parse_xml(xml, msgtype=None):
 	try:
 		tree = ETree.ElementTree(ET.fromstring(xml))
 	except Exception as e:
-		raise iso20022.ParseError(str(e))
+		raise iso20022_playset.ParseError(str(e))
 
 	return parse_etree(tree, msgtype)
 
@@ -50,13 +50,13 @@ def parse_etree(tree, msgtype=None):
 
 	# Get the class that we'll use to parse this node.
 	try:
-		msg_class = getattr(iso20022, nodeinfo.tagname)
+		msg_class = getattr(iso20022_playset, nodeinfo.tagname)
 	except AttributeError:
 		try:
-			msg_class_outer = getattr(iso20022, nodeinfo.msgtype_normalised)
+			msg_class_outer = getattr(iso20022_playset, nodeinfo.msgtype_normalised)
 			msg_class = getattr(msg_class_outer, nodeinfo.tagname)
 		except AttributeError:
-			raise iso20022.ParseError(f"No class for messages of type {nodeinfo.msgtype+':' if nodeinfo.msgtype is not None else ''}{classname}")
+			raise iso20022_playset.ParseError(f"No class for messages of type {nodeinfo.msgtype+':' if nodeinfo.msgtype is not None else ''}{classname}")
 
 	# Create a new item of this class.
 	msg = msg_class(data=nodeinfo.data, tag = nodeinfo.tagname, ns=nodeinfo.ns)

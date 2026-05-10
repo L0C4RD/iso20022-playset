@@ -1,6 +1,6 @@
 import base_types
-import Number
 import ISINOct2015Identifier
+import Number
 
 class FloatingRateNote2(base_types._BaseFieldType):
 

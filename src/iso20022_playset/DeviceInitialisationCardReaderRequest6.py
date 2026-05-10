@@ -1,25 +1,12 @@
 import base_types
-import TrueFalseIndicator
 import Number
-import ActionMessage11
+import TrueFalseIndicator
 import CardDataReading8Code
+import ActionMessage11
 
 class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
-	__slots__ = ["_MaxWtgTm", "_LeavCardFlg", "_ForceNtryMd", "_DispOutpt", "_WarmRstFlg"]
-	@property
-	def MaxWtgTm(self):
-		return self._MaxWtgTm
-
-	@MaxWtgTm.setter
-	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != auto else self.make_default("MaxWtgTm")
-
-	@MaxWtgTm.deleter
-	def MaxWtgTm(self):
-		del self._MaxWtgTm
-		self._MaxWtgTm = None
-
+	__slots__ = ["_LeavCardFlg", "_ForceNtryMd", "_DispOutpt", "_WarmRstFlg", "_MaxWtgTm"]
 	@property
 	def LeavCardFlg(self):
 		return self._LeavCardFlg
@@ -72,11 +59,24 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 		del self._WarmRstFlg
 		self._WarmRstFlg = None
 
+	@property
+	def MaxWtgTm(self):
+		return self._MaxWtgTm
+
+	@MaxWtgTm.setter
+	def MaxWtgTm(self, value):
+		self._MaxWtgTm = value if type(value) != auto else self.make_default("MaxWtgTm")
+
+	@MaxWtgTm.deleter
+	def MaxWtgTm(self):
+		del self._MaxWtgTm
+		self._MaxWtgTm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LeavCardFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ForceNtryMd', type=CardDataReading8Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WarmRstFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MaxWtgTm', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

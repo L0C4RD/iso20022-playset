@@ -1,6 +1,6 @@
 import base_types
-import Max70Text
 import Max35Text
+import Max70Text
 
 class CustomerDevice3(base_types._BaseFieldType):
 

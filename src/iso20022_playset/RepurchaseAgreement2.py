@@ -1,12 +1,12 @@
 import base_types
 import ISODate
-import RepurchaseAgreementType3Choice
 import ActiveCurrencyAndAmount
+import RepurchaseAgreementType3Choice
 import LEIIdentifier
 
 class RepurchaseAgreement2(base_types._BaseFieldType):
 
-	__slots__ = ["_ScndLegPric", "_CollMktVal", "_MtrtyDt", "_CtrPty", "_RpAgrmtTp", "_TrptyAgtId"]
+	__slots__ = ["_ScndLegPric", "_RpAgrmtTp", "_CollMktVal", "_MtrtyDt", "_TrptyAgtId", "_CtrPty"]
 	@property
 	def ScndLegPric(self):
 		return self._ScndLegPric
@@ -19,6 +19,19 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 	def ScndLegPric(self):
 		del self._ScndLegPric
 		self._ScndLegPric = None
+
+	@property
+	def RpAgrmtTp(self):
+		return self._RpAgrmtTp
+
+	@RpAgrmtTp.setter
+	def RpAgrmtTp(self, value):
+		self._RpAgrmtTp = value if type(value) != auto else self.make_default("RpAgrmtTp")
+
+	@RpAgrmtTp.deleter
+	def RpAgrmtTp(self):
+		del self._RpAgrmtTp
+		self._RpAgrmtTp = None
 
 	@property
 	def CollMktVal(self):
@@ -47,32 +60,6 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 		self._MtrtyDt = None
 
 	@property
-	def CtrPty(self):
-		return self._CtrPty
-
-	@CtrPty.setter
-	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
-
-	@CtrPty.deleter
-	def CtrPty(self):
-		del self._CtrPty
-		self._CtrPty = None
-
-	@property
-	def RpAgrmtTp(self):
-		return self._RpAgrmtTp
-
-	@RpAgrmtTp.setter
-	def RpAgrmtTp(self, value):
-		self._RpAgrmtTp = value if type(value) != auto else self.make_default("RpAgrmtTp")
-
-	@RpAgrmtTp.deleter
-	def RpAgrmtTp(self):
-		del self._RpAgrmtTp
-		self._RpAgrmtTp = None
-
-	@property
 	def TrptyAgtId(self):
 		return self._TrptyAgtId
 
@@ -85,12 +72,25 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 		del self._TrptyAgtId
 		self._TrptyAgtId = None
 
+	@property
+	def CtrPty(self):
+		return self._CtrPty
+
+	@CtrPty.setter
+	def CtrPty(self, value):
+		self._CtrPty = value if type(value) != auto else self.make_default("CtrPty")
+
+	@CtrPty.deleter
+	def CtrPty(self):
+		del self._CtrPty
+		self._CtrPty = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ScndLegPric', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtrPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
 

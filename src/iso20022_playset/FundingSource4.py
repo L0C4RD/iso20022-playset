@@ -1,23 +1,10 @@
 import base_types
-import FundingSourceType3Code
 import Max35Text
+import FundingSourceType3Code
 
 class FundingSource4(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_OthrTp", "_Ref"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_OthrTp", "_Tp", "_Ref"]
 	@property
 	def OthrTp(self):
 		return self._OthrTp
@@ -30,6 +17,19 @@ class FundingSource4(base_types._BaseFieldType):
 	def OthrTp(self):
 		del self._OthrTp
 		self._OthrTp = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Ref(self):
@@ -45,8 +45,8 @@ class FundingSource4(base_types._BaseFieldType):
 		self._Ref = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=FundingSourceType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=FundingSourceType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

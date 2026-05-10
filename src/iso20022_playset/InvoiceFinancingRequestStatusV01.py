@@ -1,6 +1,6 @@
 import base_types
-import MessageIdentification1
 import OriginalRequestInformation1
+import MessageIdentification1
 import FinancingInformationAndStatus1
 
 class InvoiceFinancingRequestStatusV01(base_types._BaseFieldType):

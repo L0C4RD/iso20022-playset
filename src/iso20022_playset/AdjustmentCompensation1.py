@@ -1,40 +1,14 @@
 import base_types
-import BranchAndFinancialInstitutionIdentification6
-import CashAccount40
-import DatePeriod5
-import PercentageRate
 import Max140Text
+import PercentageRate
+import CashAccount40
+import BranchAndFinancialInstitutionIdentification6
+import DatePeriod5
 import ActiveCurrencyAndAmount
 
 class AdjustmentCompensation1(base_types._BaseFieldType):
 
-	__slots__ = ["_Prd", "_InitlAmt", "_AmtDue", "_DueChrgs", "_Rsn", "_CompstnAgt", "_IntrstRate", "_CompstnAcct"]
-	@property
-	def Prd(self):
-		return self._Prd
-
-	@Prd.setter
-	def Prd(self, value):
-		self._Prd = value if type(value) != auto else self.make_default("Prd")
-
-	@Prd.deleter
-	def Prd(self):
-		del self._Prd
-		self._Prd = None
-
-	@property
-	def InitlAmt(self):
-		return self._InitlAmt
-
-	@InitlAmt.setter
-	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != auto else self.make_default("InitlAmt")
-
-	@InitlAmt.deleter
-	def InitlAmt(self):
-		del self._InitlAmt
-		self._InitlAmt = None
-
+	__slots__ = ["_AmtDue", "_Rsn", "_CompstnAgt", "_Prd", "_InitlAmt", "_DueChrgs", "_CompstnAcct", "_IntrstRate"]
 	@property
 	def AmtDue(self):
 		return self._AmtDue
@@ -47,19 +21,6 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 	def AmtDue(self):
 		del self._AmtDue
 		self._AmtDue = None
-
-	@property
-	def DueChrgs(self):
-		return self._DueChrgs
-
-	@DueChrgs.setter
-	def DueChrgs(self, value):
-		self._DueChrgs = value if type(value) != auto else self.make_default("DueChrgs")
-
-	@DueChrgs.deleter
-	def DueChrgs(self):
-		del self._DueChrgs
-		self._DueChrgs = None
 
 	@property
 	def Rsn(self):
@@ -88,17 +49,43 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 		self._CompstnAgt = None
 
 	@property
-	def IntrstRate(self):
-		return self._IntrstRate
+	def Prd(self):
+		return self._Prd
 
-	@IntrstRate.setter
-	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+	@Prd.setter
+	def Prd(self, value):
+		self._Prd = value if type(value) != auto else self.make_default("Prd")
 
-	@IntrstRate.deleter
-	def IntrstRate(self):
-		del self._IntrstRate
-		self._IntrstRate = None
+	@Prd.deleter
+	def Prd(self):
+		del self._Prd
+		self._Prd = None
+
+	@property
+	def InitlAmt(self):
+		return self._InitlAmt
+
+	@InitlAmt.setter
+	def InitlAmt(self, value):
+		self._InitlAmt = value if type(value) != auto else self.make_default("InitlAmt")
+
+	@InitlAmt.deleter
+	def InitlAmt(self):
+		del self._InitlAmt
+		self._InitlAmt = None
+
+	@property
+	def DueChrgs(self):
+		return self._DueChrgs
+
+	@DueChrgs.setter
+	def DueChrgs(self, value):
+		self._DueChrgs = value if type(value) != auto else self.make_default("DueChrgs")
+
+	@DueChrgs.deleter
+	def DueChrgs(self):
+		del self._DueChrgs
+		self._DueChrgs = None
 
 	@property
 	def CompstnAcct(self):
@@ -113,14 +100,27 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 		del self._CompstnAcct
 		self._CompstnAcct = None
 
+	@property
+	def IntrstRate(self):
+		return self._IntrstRate
+
+	@IntrstRate.setter
+	def IntrstRate(self, value):
+		self._IntrstRate = value if type(value) != auto else self.make_default("IntrstRate")
+
+	@IntrstRate.deleter
+	def IntrstRate(self):
+		del self._IntrstRate
+		self._IntrstRate = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prd', type=DatePeriod5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtDue', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DueChrgs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CompstnAgt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Prd', type=DatePeriod5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueChrgs', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CompstnAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

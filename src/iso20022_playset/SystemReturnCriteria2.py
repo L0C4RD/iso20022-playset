@@ -3,19 +3,19 @@ import RequestedIndicator
 
 class SystemReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysIdInd", "_AcctIdInd", "_CtryIdInd", "_MmbIdInd"]
+	__slots__ = ["_MmbIdInd", "_AcctIdInd", "_SysIdInd", "_CtryIdInd"]
 	@property
-	def SysIdInd(self):
-		return self._SysIdInd
+	def MmbIdInd(self):
+		return self._MmbIdInd
 
-	@SysIdInd.setter
-	def SysIdInd(self, value):
-		self._SysIdInd = value if type(value) != auto else self.make_default("SysIdInd")
+	@MmbIdInd.setter
+	def MmbIdInd(self, value):
+		self._MmbIdInd = value if type(value) != auto else self.make_default("MmbIdInd")
 
-	@SysIdInd.deleter
-	def SysIdInd(self):
-		del self._SysIdInd
-		self._SysIdInd = None
+	@MmbIdInd.deleter
+	def MmbIdInd(self):
+		del self._MmbIdInd
+		self._MmbIdInd = None
 
 	@property
 	def AcctIdInd(self):
@@ -31,6 +31,19 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 		self._AcctIdInd = None
 
 	@property
+	def SysIdInd(self):
+		return self._SysIdInd
+
+	@SysIdInd.setter
+	def SysIdInd(self, value):
+		self._SysIdInd = value if type(value) != auto else self.make_default("SysIdInd")
+
+	@SysIdInd.deleter
+	def SysIdInd(self):
+		del self._SysIdInd
+		self._SysIdInd = None
+
+	@property
 	def CtryIdInd(self):
 		return self._CtryIdInd
 
@@ -43,23 +56,10 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 		del self._CtryIdInd
 		self._CtryIdInd = None
 
-	@property
-	def MmbIdInd(self):
-		return self._MmbIdInd
-
-	@MmbIdInd.setter
-	def MmbIdInd(self, value):
-		self._MmbIdInd = value if type(value) != auto else self.make_default("MmbIdInd")
-
-	@MmbIdInd.deleter
-	def MmbIdInd(self):
-		del self._MmbIdInd
-		self._MmbIdInd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CtryIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtryIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,11 @@
 import base_types
+import MessageHeader1
 import SupplementaryData1
 import LimitStructure6
-import MessageHeader1
 
 class CreateLimitV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgHdr", "_LmtData", "_SplmtryData"]
+	__slots__ = ["_MsgHdr", "_SplmtryData", "_LmtData"]
 	@property
 	def MsgHdr(self):
 		return self._MsgHdr
@@ -20,19 +20,6 @@ class CreateLimitV02(base_types._BaseFieldType):
 		self._MsgHdr = None
 
 	@property
-	def LmtData(self):
-		return self._LmtData
-
-	@LmtData.setter
-	def LmtData(self, value):
-		self._LmtData = value if type(value) != auto else self.make_default("LmtData")
-
-	@LmtData.deleter
-	def LmtData(self):
-		del self._LmtData
-		self._LmtData = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -45,9 +32,22 @@ class CreateLimitV02(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def LmtData(self):
+		return self._LmtData
+
+	@LmtData.setter
+	def LmtData(self, value):
+		self._LmtData = value if type(value) != auto else self.make_default("LmtData")
+
+	@LmtData.deleter
+	def LmtData(self):
+		del self._LmtData
+		self._LmtData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LmtData', type=LimitStructure6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LmtData', type=LimitStructure6, min=1, max=None, mutex_group=None, array=True),
 	))
 

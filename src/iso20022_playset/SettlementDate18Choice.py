@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import DateAndDateTime2Choice
+import GenericIdentification30
 
 class SettlementDate18Choice(base_types._BaseFieldType):
 

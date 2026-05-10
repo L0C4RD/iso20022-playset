@@ -1,6 +1,6 @@
 import base_types
-import Rank1Code
 import GenericIdentification47
+import Rank1Code
 
 class AccountDesignation1Choice(base_types._BaseFieldType):
 

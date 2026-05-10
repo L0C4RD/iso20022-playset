@@ -1,38 +1,25 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import Number
-import ActiveCurrencyCode
 import ATMMediaType3Code
+import ImpliedCurrencyAndAmount
 import ATMCassetteCounters5
+import ActiveCurrencyCode
+import Number
 
 class ATMCassetteCounters6(base_types._BaseFieldType):
 
-	__slots__ = ["_Ccy", "_InitlCnt", "_MdiaCtgy", "_UnitVal", "_FlowTtls", "_CurAmt", "_CurNb"]
+	__slots__ = ["_FlowTtls", "_MdiaCtgy", "_CurNb", "_CurAmt", "_Ccy", "_UnitVal", "_InitlCnt"]
 	@property
-	def Ccy(self):
-		return self._Ccy
+	def FlowTtls(self):
+		return self._FlowTtls
 
-	@Ccy.setter
-	def Ccy(self, value):
-		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
+	@FlowTtls.setter
+	def FlowTtls(self, value):
+		self._FlowTtls = value if type(value) != auto else self.make_default("FlowTtls")
 
-	@Ccy.deleter
-	def Ccy(self):
-		del self._Ccy
-		self._Ccy = None
-
-	@property
-	def InitlCnt(self):
-		return self._InitlCnt
-
-	@InitlCnt.setter
-	def InitlCnt(self, value):
-		self._InitlCnt = value if type(value) != auto else self.make_default("InitlCnt")
-
-	@InitlCnt.deleter
-	def InitlCnt(self):
-		del self._InitlCnt
-		self._InitlCnt = None
+	@FlowTtls.deleter
+	def FlowTtls(self):
+		del self._FlowTtls
+		self._FlowTtls = None
 
 	@property
 	def MdiaCtgy(self):
@@ -48,30 +35,17 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 		self._MdiaCtgy = None
 
 	@property
-	def UnitVal(self):
-		return self._UnitVal
+	def CurNb(self):
+		return self._CurNb
 
-	@UnitVal.setter
-	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+	@CurNb.setter
+	def CurNb(self, value):
+		self._CurNb = value if type(value) != auto else self.make_default("CurNb")
 
-	@UnitVal.deleter
-	def UnitVal(self):
-		del self._UnitVal
-		self._UnitVal = None
-
-	@property
-	def FlowTtls(self):
-		return self._FlowTtls
-
-	@FlowTtls.setter
-	def FlowTtls(self, value):
-		self._FlowTtls = value if type(value) != auto else self.make_default("FlowTtls")
-
-	@FlowTtls.deleter
-	def FlowTtls(self):
-		del self._FlowTtls
-		self._FlowTtls = None
+	@CurNb.deleter
+	def CurNb(self):
+		del self._CurNb
+		self._CurNb = None
 
 	@property
 	def CurAmt(self):
@@ -87,25 +61,51 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 		self._CurAmt = None
 
 	@property
-	def CurNb(self):
-		return self._CurNb
+	def Ccy(self):
+		return self._Ccy
 
-	@CurNb.setter
-	def CurNb(self, value):
-		self._CurNb = value if type(value) != auto else self.make_default("CurNb")
+	@Ccy.setter
+	def Ccy(self, value):
+		self._Ccy = value if type(value) != auto else self.make_default("Ccy")
 
-	@CurNb.deleter
-	def CurNb(self):
-		del self._CurNb
-		self._CurNb = None
+	@Ccy.deleter
+	def Ccy(self):
+		del self._Ccy
+		self._Ccy = None
+
+	@property
+	def UnitVal(self):
+		return self._UnitVal
+
+	@UnitVal.setter
+	def UnitVal(self, value):
+		self._UnitVal = value if type(value) != auto else self.make_default("UnitVal")
+
+	@UnitVal.deleter
+	def UnitVal(self):
+		del self._UnitVal
+		self._UnitVal = None
+
+	@property
+	def InitlCnt(self):
+		return self._InitlCnt
+
+	@InitlCnt.setter
+	def InitlCnt(self, value):
+		self._InitlCnt = value if type(value) != auto else self.make_default("InitlCnt")
+
+	@InitlCnt.deleter
+	def InitlCnt(self):
+		del self._InitlCnt
+		self._InitlCnt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FlowTtls', type=ATMCassetteCounters5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MdiaCtgy', type=ATMMediaType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurNb', type=Number, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CurAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
 

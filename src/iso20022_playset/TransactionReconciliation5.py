@@ -1,39 +1,13 @@
 import base_types
-import Max70Text
-import TransactionTotals12
-import TransactionIdentifier1
 import Max35Text
+import TransactionTotals12
+import Max70Text
+import TransactionIdentifier1
 import TrueFalseIndicator
 
 class TransactionReconciliation5(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlTxData", "_TxTtls", "_ClsPrd", "_RcncltnTxId", "_RcncltnId"]
-	@property
-	def AddtlTxData(self):
-		return self._AddtlTxData
-
-	@AddtlTxData.setter
-	def AddtlTxData(self, value):
-		self._AddtlTxData = value if type(value) != auto else self.make_default("AddtlTxData")
-
-	@AddtlTxData.deleter
-	def AddtlTxData(self):
-		del self._AddtlTxData
-		self._AddtlTxData = None
-
-	@property
-	def TxTtls(self):
-		return self._TxTtls
-
-	@TxTtls.setter
-	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
-
-	@TxTtls.deleter
-	def TxTtls(self):
-		del self._TxTtls
-		self._TxTtls = None
-
+	__slots__ = ["_ClsPrd", "_RcncltnTxId", "_TxTtls", "_AddtlTxData", "_RcncltnId"]
 	@property
 	def ClsPrd(self):
 		return self._ClsPrd
@@ -61,6 +35,32 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 		self._RcncltnTxId = None
 
 	@property
+	def TxTtls(self):
+		return self._TxTtls
+
+	@TxTtls.setter
+	def TxTtls(self, value):
+		self._TxTtls = value if type(value) != auto else self.make_default("TxTtls")
+
+	@TxTtls.deleter
+	def TxTtls(self):
+		del self._TxTtls
+		self._TxTtls = None
+
+	@property
+	def AddtlTxData(self):
+		return self._AddtlTxData
+
+	@AddtlTxData.setter
+	def AddtlTxData(self, value):
+		self._AddtlTxData = value if type(value) != auto else self.make_default("AddtlTxData")
+
+	@AddtlTxData.deleter
+	def AddtlTxData(self):
+		del self._AddtlTxData
+		self._AddtlTxData = None
+
+	@property
 	def RcncltnId(self):
 		return self._RcncltnId
 
@@ -74,10 +74,10 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 		self._RcncltnId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ClsPrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnTxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

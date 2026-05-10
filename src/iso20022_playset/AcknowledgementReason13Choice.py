@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import RepoCallAcknowledgementReason2Code
+import GenericIdentification30
 
 class AcknowledgementReason13Choice(base_types._BaseFieldType):
 

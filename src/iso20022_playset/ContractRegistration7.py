@@ -2,12 +2,38 @@ import base_types
 import Max35Text
 import TradeParty6
 import SupplementaryData1
-import BranchAndFinancialInstitutionIdentification8
 import ContractRegistration8
+import BranchAndFinancialInstitutionIdentification8
 
 class ContractRegistration7(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnAgt", "_SplmtryData", "_CtrctRegnOpng", "_CtrctRegnId", "_RptgPty"]
+	__slots__ = ["_RptgPty", "_CtrctRegnOpng", "_RegnAgt", "_SplmtryData", "_CtrctRegnId"]
+	@property
+	def RptgPty(self):
+		return self._RptgPty
+
+	@RptgPty.setter
+	def RptgPty(self, value):
+		self._RptgPty = value if type(value) != auto else self.make_default("RptgPty")
+
+	@RptgPty.deleter
+	def RptgPty(self):
+		del self._RptgPty
+		self._RptgPty = None
+
+	@property
+	def CtrctRegnOpng(self):
+		return self._CtrctRegnOpng
+
+	@CtrctRegnOpng.setter
+	def CtrctRegnOpng(self, value):
+		self._CtrctRegnOpng = value if type(value) != auto else self.make_default("CtrctRegnOpng")
+
+	@CtrctRegnOpng.deleter
+	def CtrctRegnOpng(self):
+		del self._CtrctRegnOpng
+		self._CtrctRegnOpng = None
+
 	@property
 	def RegnAgt(self):
 		return self._RegnAgt
@@ -35,19 +61,6 @@ class ContractRegistration7(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def CtrctRegnOpng(self):
-		return self._CtrctRegnOpng
-
-	@CtrctRegnOpng.setter
-	def CtrctRegnOpng(self, value):
-		self._CtrctRegnOpng = value if type(value) != auto else self.make_default("CtrctRegnOpng")
-
-	@CtrctRegnOpng.deleter
-	def CtrctRegnOpng(self):
-		del self._CtrctRegnOpng
-		self._CtrctRegnOpng = None
-
-	@property
 	def CtrctRegnId(self):
 		return self._CtrctRegnId
 
@@ -60,24 +73,11 @@ class ContractRegistration7(base_types._BaseFieldType):
 		del self._CtrctRegnId
 		self._CtrctRegnId = None
 
-	@property
-	def RptgPty(self):
-		return self._RptgPty
-
-	@RptgPty.setter
-	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != auto else self.make_default("RptgPty")
-
-	@RptgPty.deleter
-	def RptgPty(self):
-		del self._RptgPty
-		self._RptgPty = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CtrctRegnOpng', type=ContractRegistration8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegnAgt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CtrctRegnOpng', type=ContractRegistration8, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CtrctRegnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptgPty', type=TradeParty6, min=1, max=1, mutex_group=None, array=False),
 	))
 

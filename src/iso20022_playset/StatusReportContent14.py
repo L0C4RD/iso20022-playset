@@ -1,29 +1,16 @@
 import base_types
-import DataSetRequest6
-import ISODateTime
 import PointOfInteractionComponent17
-import AttendanceContext1Code
-import Max140Text
-import PointOfInteractionCapabilities9
-import TMSEvent12
+import DataSetRequest6
 import Max35Text
+import Max140Text
+import ISODateTime
+import AttendanceContext1Code
+import TMSEvent12
+import PointOfInteractionCapabilities9
 
 class StatusReportContent14(base_types._BaseFieldType):
 
-	__slots__ = ["_Errs", "_DataSetReqrd", "_POIDtTm", "_Evt", "_POIGrpId", "_POICpblties", "_POICmpnt", "_AttndncCntxt"]
-	@property
-	def Errs(self):
-		return self._Errs
-
-	@Errs.setter
-	def Errs(self, value):
-		self._Errs = value if type(value) != auto else self.make_default("Errs")
-
-	@Errs.deleter
-	def Errs(self):
-		del self._Errs
-		self._Errs = None
-
+	__slots__ = ["_DataSetReqrd", "_POIGrpId", "_Evt", "_Errs", "_AttndncCntxt", "_POICmpnt", "_POIDtTm", "_POICpblties"]
 	@property
 	def DataSetReqrd(self):
 		return self._DataSetReqrd
@@ -36,32 +23,6 @@ class StatusReportContent14(base_types._BaseFieldType):
 	def DataSetReqrd(self):
 		del self._DataSetReqrd
 		self._DataSetReqrd = None
-
-	@property
-	def POIDtTm(self):
-		return self._POIDtTm
-
-	@POIDtTm.setter
-	def POIDtTm(self, value):
-		self._POIDtTm = value if type(value) != auto else self.make_default("POIDtTm")
-
-	@POIDtTm.deleter
-	def POIDtTm(self):
-		del self._POIDtTm
-		self._POIDtTm = None
-
-	@property
-	def Evt(self):
-		return self._Evt
-
-	@Evt.setter
-	def Evt(self, value):
-		self._Evt = value if type(value) != auto else self.make_default("Evt")
-
-	@Evt.deleter
-	def Evt(self):
-		del self._Evt
-		self._Evt = None
 
 	@property
 	def POIGrpId(self):
@@ -77,17 +38,43 @@ class StatusReportContent14(base_types._BaseFieldType):
 		self._POIGrpId = None
 
 	@property
-	def POICpblties(self):
-		return self._POICpblties
+	def Evt(self):
+		return self._Evt
 
-	@POICpblties.setter
-	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != auto else self.make_default("POICpblties")
+	@Evt.setter
+	def Evt(self, value):
+		self._Evt = value if type(value) != auto else self.make_default("Evt")
 
-	@POICpblties.deleter
-	def POICpblties(self):
-		del self._POICpblties
-		self._POICpblties = None
+	@Evt.deleter
+	def Evt(self):
+		del self._Evt
+		self._Evt = None
+
+	@property
+	def Errs(self):
+		return self._Errs
+
+	@Errs.setter
+	def Errs(self, value):
+		self._Errs = value if type(value) != auto else self.make_default("Errs")
+
+	@Errs.deleter
+	def Errs(self):
+		del self._Errs
+		self._Errs = None
+
+	@property
+	def AttndncCntxt(self):
+		return self._AttndncCntxt
+
+	@AttndncCntxt.setter
+	def AttndncCntxt(self, value):
+		self._AttndncCntxt = value if type(value) != auto else self.make_default("AttndncCntxt")
+
+	@AttndncCntxt.deleter
+	def AttndncCntxt(self):
+		del self._AttndncCntxt
+		self._AttndncCntxt = None
 
 	@property
 	def POICmpnt(self):
@@ -103,26 +90,39 @@ class StatusReportContent14(base_types._BaseFieldType):
 		self._POICmpnt = None
 
 	@property
-	def AttndncCntxt(self):
-		return self._AttndncCntxt
+	def POIDtTm(self):
+		return self._POIDtTm
 
-	@AttndncCntxt.setter
-	def AttndncCntxt(self, value):
-		self._AttndncCntxt = value if type(value) != auto else self.make_default("AttndncCntxt")
+	@POIDtTm.setter
+	def POIDtTm(self, value):
+		self._POIDtTm = value if type(value) != auto else self.make_default("POIDtTm")
 
-	@AttndncCntxt.deleter
-	def AttndncCntxt(self):
-		del self._AttndncCntxt
-		self._AttndncCntxt = None
+	@POIDtTm.deleter
+	def POIDtTm(self):
+		del self._POIDtTm
+		self._POIDtTm = None
+
+	@property
+	def POICpblties(self):
+		return self._POICpblties
+
+	@POICpblties.setter
+	def POICpblties(self, value):
+		self._POICpblties = value if type(value) != auto else self.make_default("POICpblties")
+
+	@POICpblties.deleter
+	def POICpblties(self):
+		del self._POICpblties
+		self._POICpblties = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Errs', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='DataSetReqrd', type=DataSetRequest6, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Evt', type=TMSEvent12, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='POIGrpId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Evt', type=TMSEvent12, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Errs', type=Max140Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='AttndncCntxt', type=AttendanceContext1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='POICpblties', type=PointOfInteractionCapabilities9, min=0, max=1, mutex_group=None, array=False),
 	))
 

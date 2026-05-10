@@ -1,11 +1,11 @@
 import base_types
-import PINFormat4Code
-import ContentInformationType10
 import Max35Text
+import ContentInformationType10
+import PINFormat4Code
 
 class OnLinePIN5(base_types._BaseFieldType):
 
-	__slots__ = ["_NcrptdPINBlck", "_AddtlInpt", "_PINFrmt"]
+	__slots__ = ["_NcrptdPINBlck", "_PINFrmt", "_AddtlInpt"]
 	@property
 	def NcrptdPINBlck(self):
 		return self._NcrptdPINBlck
@@ -20,19 +20,6 @@ class OnLinePIN5(base_types._BaseFieldType):
 		self._NcrptdPINBlck = None
 
 	@property
-	def AddtlInpt(self):
-		return self._AddtlInpt
-
-	@AddtlInpt.setter
-	def AddtlInpt(self, value):
-		self._AddtlInpt = value if type(value) != auto else self.make_default("AddtlInpt")
-
-	@AddtlInpt.deleter
-	def AddtlInpt(self):
-		del self._AddtlInpt
-		self._AddtlInpt = None
-
-	@property
 	def PINFrmt(self):
 		return self._PINFrmt
 
@@ -45,9 +32,22 @@ class OnLinePIN5(base_types._BaseFieldType):
 		del self._PINFrmt
 		self._PINFrmt = None
 
+	@property
+	def AddtlInpt(self):
+		return self._AddtlInpt
+
+	@AddtlInpt.setter
+	def AddtlInpt(self, value):
+		self._AddtlInpt = value if type(value) != auto else self.make_default("AddtlInpt")
+
+	@AddtlInpt.deleter
+	def AddtlInpt(self):
+		del self._AddtlInpt
+		self._AddtlInpt = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NcrptdPINBlck', type=ContentInformationType10, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlInpt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PINFrmt', type=PINFormat4Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlInpt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

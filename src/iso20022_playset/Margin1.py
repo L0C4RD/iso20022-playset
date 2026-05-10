@@ -4,20 +4,7 @@ import VariationMargin1
 
 class Margin1(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmtMrgn", "_VartnMrgn"]
-	@property
-	def SgrtdIndpdntAmtMrgn(self):
-		return self._SgrtdIndpdntAmtMrgn
-
-	@SgrtdIndpdntAmtMrgn.setter
-	def SgrtdIndpdntAmtMrgn(self, value):
-		self._SgrtdIndpdntAmtMrgn = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtMrgn")
-
-	@SgrtdIndpdntAmtMrgn.deleter
-	def SgrtdIndpdntAmtMrgn(self):
-		del self._SgrtdIndpdntAmtMrgn
-		self._SgrtdIndpdntAmtMrgn = None
-
+	__slots__ = ["_VartnMrgn", "_SgrtdIndpdntAmtMrgn"]
 	@property
 	def VartnMrgn(self):
 		return self._VartnMrgn
@@ -31,8 +18,21 @@ class Margin1(base_types._BaseFieldType):
 		del self._VartnMrgn
 		self._VartnMrgn = None
 
+	@property
+	def SgrtdIndpdntAmtMrgn(self):
+		return self._SgrtdIndpdntAmtMrgn
+
+	@SgrtdIndpdntAmtMrgn.setter
+	def SgrtdIndpdntAmtMrgn(self, value):
+		self._SgrtdIndpdntAmtMrgn = value if type(value) != auto else self.make_default("SgrtdIndpdntAmtMrgn")
+
+	@SgrtdIndpdntAmtMrgn.deleter
+	def SgrtdIndpdntAmtMrgn(self):
+		del self._SgrtdIndpdntAmtMrgn
+		self._SgrtdIndpdntAmtMrgn = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SgrtdIndpdntAmtMrgn', type=SegregatedIndependentAmountMargin1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SgrtdIndpdntAmtMrgn', type=SegregatedIndependentAmountMargin1, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,19 +5,19 @@ import TransactionVerificationResult5
 
 class ATMCustomer9(base_types._BaseFieldType):
 
-	__slots__ = ["_PrefrdLang", "_Prfl", "_AuthntcnRslt"]
+	__slots__ = ["_AuthntcnRslt", "_Prfl", "_PrefrdLang"]
 	@property
-	def PrefrdLang(self):
-		return self._PrefrdLang
+	def AuthntcnRslt(self):
+		return self._AuthntcnRslt
 
-	@PrefrdLang.setter
-	def PrefrdLang(self, value):
-		self._PrefrdLang = value if type(value) != auto else self.make_default("PrefrdLang")
+	@AuthntcnRslt.setter
+	def AuthntcnRslt(self, value):
+		self._AuthntcnRslt = value if type(value) != auto else self.make_default("AuthntcnRslt")
 
-	@PrefrdLang.deleter
-	def PrefrdLang(self):
-		del self._PrefrdLang
-		self._PrefrdLang = None
+	@AuthntcnRslt.deleter
+	def AuthntcnRslt(self):
+		del self._AuthntcnRslt
+		self._AuthntcnRslt = None
 
 	@property
 	def Prfl(self):
@@ -33,21 +33,21 @@ class ATMCustomer9(base_types._BaseFieldType):
 		self._Prfl = None
 
 	@property
-	def AuthntcnRslt(self):
-		return self._AuthntcnRslt
+	def PrefrdLang(self):
+		return self._PrefrdLang
 
-	@AuthntcnRslt.setter
-	def AuthntcnRslt(self, value):
-		self._AuthntcnRslt = value if type(value) != auto else self.make_default("AuthntcnRslt")
+	@PrefrdLang.setter
+	def PrefrdLang(self, value):
+		self._PrefrdLang = value if type(value) != auto else self.make_default("PrefrdLang")
 
-	@AuthntcnRslt.deleter
-	def AuthntcnRslt(self):
-		del self._AuthntcnRslt
-		self._AuthntcnRslt = None
+	@PrefrdLang.deleter
+	def PrefrdLang(self):
+		del self._PrefrdLang
+		self._PrefrdLang = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

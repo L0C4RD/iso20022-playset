@@ -1,27 +1,14 @@
 import base_types
-import NotificationType1Choice
-import RelatedNotificationData1
+import Max35Text
 import NotificationSubType1Choice
 import Max2000Text
+import RelatedNotificationData1
 import Document15
-import Max35Text
+import NotificationType1Choice
 
 class CorrespondenceNotification1(base_types._BaseFieldType):
 
-	__slots__ = ["_NtfctnTp", "_SndrNtfctnId", "_NtfctnNrrtv", "_NclsdFile", "_RltdNtfctnData", "_NtfctnSubTp"]
-	@property
-	def NtfctnTp(self):
-		return self._NtfctnTp
-
-	@NtfctnTp.setter
-	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
-
-	@NtfctnTp.deleter
-	def NtfctnTp(self):
-		del self._NtfctnTp
-		self._NtfctnTp = None
-
+	__slots__ = ["_SndrNtfctnId", "_NtfctnTp", "_NtfctnNrrtv", "_RltdNtfctnData", "_NclsdFile", "_NtfctnSubTp"]
 	@property
 	def SndrNtfctnId(self):
 		return self._SndrNtfctnId
@@ -34,6 +21,19 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 	def SndrNtfctnId(self):
 		del self._SndrNtfctnId
 		self._SndrNtfctnId = None
+
+	@property
+	def NtfctnTp(self):
+		return self._NtfctnTp
+
+	@NtfctnTp.setter
+	def NtfctnTp(self, value):
+		self._NtfctnTp = value if type(value) != auto else self.make_default("NtfctnTp")
+
+	@NtfctnTp.deleter
+	def NtfctnTp(self):
+		del self._NtfctnTp
+		self._NtfctnTp = None
 
 	@property
 	def NtfctnNrrtv(self):
@@ -49,19 +49,6 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 		self._NtfctnNrrtv = None
 
 	@property
-	def NclsdFile(self):
-		return self._NclsdFile
-
-	@NclsdFile.setter
-	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
-
-	@NclsdFile.deleter
-	def NclsdFile(self):
-		del self._NclsdFile
-		self._NclsdFile = None
-
-	@property
 	def RltdNtfctnData(self):
 		return self._RltdNtfctnData
 
@@ -73,6 +60,19 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 	def RltdNtfctnData(self):
 		del self._RltdNtfctnData
 		self._RltdNtfctnData = None
+
+	@property
+	def NclsdFile(self):
+		return self._NclsdFile
+
+	@NclsdFile.setter
+	def NclsdFile(self, value):
+		self._NclsdFile = value if type(value) != auto else self.make_default("NclsdFile")
+
+	@NclsdFile.deleter
+	def NclsdFile(self):
+		del self._NclsdFile
+		self._NclsdFile = None
 
 	@property
 	def NtfctnSubTp(self):
@@ -88,11 +88,11 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 		self._NtfctnSubTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtfctnTp', type=NotificationType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnTp', type=NotificationType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnNrrtv', type=Max2000Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='NclsdFile', type=Document15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdNtfctnData', type=RelatedNotificationData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='NclsdFile', type=Document15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtfctnSubTp', type=NotificationSubType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

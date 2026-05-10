@@ -1,23 +1,10 @@
 import base_types
-import Exact1NumericText
 import Max140Text
+import Exact1NumericText
 
 class TrackData1(base_types._BaseFieldType):
 
-	__slots__ = ["_TrckVal", "_TrckNb"]
-	@property
-	def TrckVal(self):
-		return self._TrckVal
-
-	@TrckVal.setter
-	def TrckVal(self, value):
-		self._TrckVal = value if type(value) != auto else self.make_default("TrckVal")
-
-	@TrckVal.deleter
-	def TrckVal(self):
-		del self._TrckVal
-		self._TrckVal = None
-
+	__slots__ = ["_TrckNb", "_TrckVal"]
 	@property
 	def TrckNb(self):
 		return self._TrckNb
@@ -31,8 +18,21 @@ class TrackData1(base_types._BaseFieldType):
 		del self._TrckNb
 		self._TrckNb = None
 
+	@property
+	def TrckVal(self):
+		return self._TrckVal
+
+	@TrckVal.setter
+	def TrckVal(self, value):
+		self._TrckVal = value if type(value) != auto else self.make_default("TrckVal")
+
+	@TrckVal.deleter
+	def TrckVal(self):
+		del self._TrckVal
+		self._TrckVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckNb', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrckVal', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

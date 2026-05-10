@@ -1,14 +1,27 @@
 import base_types
-import AutomatedTellerMachine11
-import Acquirer7
-import PaymentCard36
 import Max35Text
-import TerminalHosting1
+import PaymentCard36
+import Acquirer7
 import ATMCustomer8
+import AutomatedTellerMachine11
+import TerminalHosting1
 
 class ATMEnvironment17(base_types._BaseFieldType):
 
-	__slots__ = ["_HstgNtty", "_Cstmr", "_Card", "_ATMMgrId", "_Acqrr", "_ATM"]
+	__slots__ = ["_Card", "_HstgNtty", "_Cstmr", "_ATMMgrId", "_Acqrr", "_ATM"]
+	@property
+	def Card(self):
+		return self._Card
+
+	@Card.setter
+	def Card(self, value):
+		self._Card = value if type(value) != auto else self.make_default("Card")
+
+	@Card.deleter
+	def Card(self):
+		del self._Card
+		self._Card = None
+
 	@property
 	def HstgNtty(self):
 		return self._HstgNtty
@@ -34,19 +47,6 @@ class ATMEnvironment17(base_types._BaseFieldType):
 	def Cstmr(self):
 		del self._Cstmr
 		self._Cstmr = None
-
-	@property
-	def Card(self):
-		return self._Card
-
-	@Card.setter
-	def Card(self, value):
-		self._Card = value if type(value) != auto else self.make_default("Card")
-
-	@Card.deleter
-	def Card(self):
-		del self._Card
-		self._Card = None
 
 	@property
 	def ATMMgrId(self):
@@ -88,9 +88,9 @@ class ATMEnvironment17(base_types._BaseFieldType):
 		self._ATM = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Card', type=PaymentCard36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cstmr', type=ATMCustomer8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Card', type=PaymentCard36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Acqrr', type=Acquirer7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine11, min=1, max=1, mutex_group=None, array=False),

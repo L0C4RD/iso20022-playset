@@ -1,6 +1,6 @@
 import base_types
-import RepairReason9
 import NoReasonCode
+import RepairReason9
 
 class RepairStatus13Choice(base_types._BaseFieldType):
 

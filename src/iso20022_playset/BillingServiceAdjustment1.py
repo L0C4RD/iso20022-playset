@@ -1,15 +1,54 @@
 import base_types
-import AmountAndDirection34
-import DecimalNumber
-import BillingSubServiceIdentification1
-import Max35Text
-import ISODate
 import Max140Text
 import ServiceAdjustmentType1Code
+import Max35Text
+import DecimalNumber
+import AmountAndDirection34
+import ISODate
+import BillingSubServiceIdentification1
 
 class BillingServiceAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Desc", "_Amt", "_AdjstmntId", "_OrgnlPric", "_SubSvc", "_Tp", "_OrgnlChrgAmt", "_NewChrgAmt", "_NewVol", "_NewPric", "_BalReqrdAmt", "_VolChng", "_PricChng", "_OrgnlVol", "_ErrDt"]
+	__slots__ = ["_OrgnlVol", "_VolChng", "_BalReqrdAmt", "_Desc", "_OrgnlChrgAmt", "_NewVol", "_Tp", "_Amt", "_AdjstmntId", "_SubSvc", "_PricChng", "_OrgnlPric", "_ErrDt", "_NewChrgAmt", "_NewPric"]
+	@property
+	def OrgnlVol(self):
+		return self._OrgnlVol
+
+	@OrgnlVol.setter
+	def OrgnlVol(self, value):
+		self._OrgnlVol = value if type(value) != auto else self.make_default("OrgnlVol")
+
+	@OrgnlVol.deleter
+	def OrgnlVol(self):
+		del self._OrgnlVol
+		self._OrgnlVol = None
+
+	@property
+	def VolChng(self):
+		return self._VolChng
+
+	@VolChng.setter
+	def VolChng(self, value):
+		self._VolChng = value if type(value) != auto else self.make_default("VolChng")
+
+	@VolChng.deleter
+	def VolChng(self):
+		del self._VolChng
+		self._VolChng = None
+
+	@property
+	def BalReqrdAmt(self):
+		return self._BalReqrdAmt
+
+	@BalReqrdAmt.setter
+	def BalReqrdAmt(self, value):
+		self._BalReqrdAmt = value if type(value) != auto else self.make_default("BalReqrdAmt")
+
+	@BalReqrdAmt.deleter
+	def BalReqrdAmt(self):
+		del self._BalReqrdAmt
+		self._BalReqrdAmt = None
+
 	@property
 	def Desc(self):
 		return self._Desc
@@ -22,6 +61,45 @@ class BillingServiceAdjustment1(base_types._BaseFieldType):
 	def Desc(self):
 		del self._Desc
 		self._Desc = None
+
+	@property
+	def OrgnlChrgAmt(self):
+		return self._OrgnlChrgAmt
+
+	@OrgnlChrgAmt.setter
+	def OrgnlChrgAmt(self, value):
+		self._OrgnlChrgAmt = value if type(value) != auto else self.make_default("OrgnlChrgAmt")
+
+	@OrgnlChrgAmt.deleter
+	def OrgnlChrgAmt(self):
+		del self._OrgnlChrgAmt
+		self._OrgnlChrgAmt = None
+
+	@property
+	def NewVol(self):
+		return self._NewVol
+
+	@NewVol.setter
+	def NewVol(self, value):
+		self._NewVol = value if type(value) != auto else self.make_default("NewVol")
+
+	@NewVol.deleter
+	def NewVol(self):
+		del self._NewVol
+		self._NewVol = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
 
 	@property
 	def Amt(self):
@@ -50,19 +128,6 @@ class BillingServiceAdjustment1(base_types._BaseFieldType):
 		self._AdjstmntId = None
 
 	@property
-	def OrgnlPric(self):
-		return self._OrgnlPric
-
-	@OrgnlPric.setter
-	def OrgnlPric(self, value):
-		self._OrgnlPric = value if type(value) != auto else self.make_default("OrgnlPric")
-
-	@OrgnlPric.deleter
-	def OrgnlPric(self):
-		del self._OrgnlPric
-		self._OrgnlPric = None
-
-	@property
 	def SubSvc(self):
 		return self._SubSvc
 
@@ -74,97 +139,6 @@ class BillingServiceAdjustment1(base_types._BaseFieldType):
 	def SubSvc(self):
 		del self._SubSvc
 		self._SubSvc = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def OrgnlChrgAmt(self):
-		return self._OrgnlChrgAmt
-
-	@OrgnlChrgAmt.setter
-	def OrgnlChrgAmt(self, value):
-		self._OrgnlChrgAmt = value if type(value) != auto else self.make_default("OrgnlChrgAmt")
-
-	@OrgnlChrgAmt.deleter
-	def OrgnlChrgAmt(self):
-		del self._OrgnlChrgAmt
-		self._OrgnlChrgAmt = None
-
-	@property
-	def NewChrgAmt(self):
-		return self._NewChrgAmt
-
-	@NewChrgAmt.setter
-	def NewChrgAmt(self, value):
-		self._NewChrgAmt = value if type(value) != auto else self.make_default("NewChrgAmt")
-
-	@NewChrgAmt.deleter
-	def NewChrgAmt(self):
-		del self._NewChrgAmt
-		self._NewChrgAmt = None
-
-	@property
-	def NewVol(self):
-		return self._NewVol
-
-	@NewVol.setter
-	def NewVol(self, value):
-		self._NewVol = value if type(value) != auto else self.make_default("NewVol")
-
-	@NewVol.deleter
-	def NewVol(self):
-		del self._NewVol
-		self._NewVol = None
-
-	@property
-	def NewPric(self):
-		return self._NewPric
-
-	@NewPric.setter
-	def NewPric(self, value):
-		self._NewPric = value if type(value) != auto else self.make_default("NewPric")
-
-	@NewPric.deleter
-	def NewPric(self):
-		del self._NewPric
-		self._NewPric = None
-
-	@property
-	def BalReqrdAmt(self):
-		return self._BalReqrdAmt
-
-	@BalReqrdAmt.setter
-	def BalReqrdAmt(self, value):
-		self._BalReqrdAmt = value if type(value) != auto else self.make_default("BalReqrdAmt")
-
-	@BalReqrdAmt.deleter
-	def BalReqrdAmt(self):
-		del self._BalReqrdAmt
-		self._BalReqrdAmt = None
-
-	@property
-	def VolChng(self):
-		return self._VolChng
-
-	@VolChng.setter
-	def VolChng(self, value):
-		self._VolChng = value if type(value) != auto else self.make_default("VolChng")
-
-	@VolChng.deleter
-	def VolChng(self):
-		del self._VolChng
-		self._VolChng = None
 
 	@property
 	def PricChng(self):
@@ -180,17 +154,17 @@ class BillingServiceAdjustment1(base_types._BaseFieldType):
 		self._PricChng = None
 
 	@property
-	def OrgnlVol(self):
-		return self._OrgnlVol
+	def OrgnlPric(self):
+		return self._OrgnlPric
 
-	@OrgnlVol.setter
-	def OrgnlVol(self, value):
-		self._OrgnlVol = value if type(value) != auto else self.make_default("OrgnlVol")
+	@OrgnlPric.setter
+	def OrgnlPric(self, value):
+		self._OrgnlPric = value if type(value) != auto else self.make_default("OrgnlPric")
 
-	@OrgnlVol.deleter
-	def OrgnlVol(self):
-		del self._OrgnlVol
-		self._OrgnlVol = None
+	@OrgnlPric.deleter
+	def OrgnlPric(self):
+		del self._OrgnlPric
+		self._OrgnlPric = None
 
 	@property
 	def ErrDt(self):
@@ -205,21 +179,47 @@ class BillingServiceAdjustment1(base_types._BaseFieldType):
 		del self._ErrDt
 		self._ErrDt = None
 
+	@property
+	def NewChrgAmt(self):
+		return self._NewChrgAmt
+
+	@NewChrgAmt.setter
+	def NewChrgAmt(self, value):
+		self._NewChrgAmt = value if type(value) != auto else self.make_default("NewChrgAmt")
+
+	@NewChrgAmt.deleter
+	def NewChrgAmt(self):
+		del self._NewChrgAmt
+		self._NewChrgAmt = None
+
+	@property
+	def NewPric(self):
+		return self._NewPric
+
+	@NewPric.setter
+	def NewPric(self, value):
+		self._NewPric = value if type(value) != auto else self.make_default("NewPric")
+
+	@NewPric.deleter
+	def NewPric(self):
+		del self._NewPric
+		self._NewPric = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='OrgnlVol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VolChng', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalReqrdAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlChrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewVol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=ServiceAdjustmentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AdjstmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubSvc', type=BillingSubServiceIdentification1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=ServiceAdjustmentType1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlChrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewChrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewVol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NewPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalReqrdAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VolChng', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PricChng', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlVol', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ErrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewChrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NewPric', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,29 +1,42 @@
 import base_types
-import SecuritiesMovementStatus1Choice
-import ReceiveDelivery1Code
-import AmountAndDirection44
-import SecuritiesAccount19
 import YesNoIndicator
-import Max35Text
-import BlockChainAddressWallet3
-import SecurityIdentification19
 import Quantity51Choice
+import ReceiveDelivery1Code
+import SecurityIdentification19
+import SecuritiesMovementStatus1Choice
+import Max35Text
+import AmountAndDirection44
+import BlockChainAddressWallet3
+import SecuritiesAccount19
 
 class SecuritiesMovement8(base_types._BaseFieldType):
 
-	__slots__ = ["_PosTp", "_BlckChainAdrOrWllt", "_SctiesMvmntsApprvd", "_SfkpgAcct", "_MrgndVal", "_MvmntSts", "_SctiesMvmntTp", "_FinInstrmId", "_SctiesQty", "_CollMvmnt", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_ClntSctiesMvmntId"]
+	__slots__ = ["_SctiesMvmntTp", "_SctiesQty", "_BlckChainAdrOrWllt", "_SctiesMvmntsApprvd", "_SfkpgAcct", "_FinInstrmId", "_PosTp", "_MrgndVal", "_CollMvmnt", "_MvmntSts", "_TrptyAgtSvcPrvdrSctiesMvmntId", "_ClntSctiesMvmntId"]
 	@property
-	def PosTp(self):
-		return self._PosTp
+	def SctiesMvmntTp(self):
+		return self._SctiesMvmntTp
 
-	@PosTp.setter
-	def PosTp(self, value):
-		self._PosTp = value if type(value) != auto else self.make_default("PosTp")
+	@SctiesMvmntTp.setter
+	def SctiesMvmntTp(self, value):
+		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
 
-	@PosTp.deleter
-	def PosTp(self):
-		del self._PosTp
-		self._PosTp = None
+	@SctiesMvmntTp.deleter
+	def SctiesMvmntTp(self):
+		del self._SctiesMvmntTp
+		self._SctiesMvmntTp = None
+
+	@property
+	def SctiesQty(self):
+		return self._SctiesQty
+
+	@SctiesQty.setter
+	def SctiesQty(self, value):
+		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+
+	@SctiesQty.deleter
+	def SctiesQty(self):
+		del self._SctiesQty
+		self._SctiesQty = None
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -65,45 +78,6 @@ class SecuritiesMovement8(base_types._BaseFieldType):
 		self._SfkpgAcct = None
 
 	@property
-	def MrgndVal(self):
-		return self._MrgndVal
-
-	@MrgndVal.setter
-	def MrgndVal(self, value):
-		self._MrgndVal = value if type(value) != auto else self.make_default("MrgndVal")
-
-	@MrgndVal.deleter
-	def MrgndVal(self):
-		del self._MrgndVal
-		self._MrgndVal = None
-
-	@property
-	def MvmntSts(self):
-		return self._MvmntSts
-
-	@MvmntSts.setter
-	def MvmntSts(self, value):
-		self._MvmntSts = value if type(value) != auto else self.make_default("MvmntSts")
-
-	@MvmntSts.deleter
-	def MvmntSts(self):
-		del self._MvmntSts
-		self._MvmntSts = None
-
-	@property
-	def SctiesMvmntTp(self):
-		return self._SctiesMvmntTp
-
-	@SctiesMvmntTp.setter
-	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != auto else self.make_default("SctiesMvmntTp")
-
-	@SctiesMvmntTp.deleter
-	def SctiesMvmntTp(self):
-		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
-
-	@property
 	def FinInstrmId(self):
 		return self._FinInstrmId
 
@@ -117,17 +91,30 @@ class SecuritiesMovement8(base_types._BaseFieldType):
 		self._FinInstrmId = None
 
 	@property
-	def SctiesQty(self):
-		return self._SctiesQty
+	def PosTp(self):
+		return self._PosTp
 
-	@SctiesQty.setter
-	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != auto else self.make_default("SctiesQty")
+	@PosTp.setter
+	def PosTp(self, value):
+		self._PosTp = value if type(value) != auto else self.make_default("PosTp")
 
-	@SctiesQty.deleter
-	def SctiesQty(self):
-		del self._SctiesQty
-		self._SctiesQty = None
+	@PosTp.deleter
+	def PosTp(self):
+		del self._PosTp
+		self._PosTp = None
+
+	@property
+	def MrgndVal(self):
+		return self._MrgndVal
+
+	@MrgndVal.setter
+	def MrgndVal(self, value):
+		self._MrgndVal = value if type(value) != auto else self.make_default("MrgndVal")
+
+	@MrgndVal.deleter
+	def MrgndVal(self):
+		del self._MrgndVal
+		self._MrgndVal = None
 
 	@property
 	def CollMvmnt(self):
@@ -141,6 +128,19 @@ class SecuritiesMovement8(base_types._BaseFieldType):
 	def CollMvmnt(self):
 		del self._CollMvmnt
 		self._CollMvmnt = None
+
+	@property
+	def MvmntSts(self):
+		return self._MvmntSts
+
+	@MvmntSts.setter
+	def MvmntSts(self, value):
+		self._MvmntSts = value if type(value) != auto else self.make_default("MvmntSts")
+
+	@MvmntSts.deleter
+	def MvmntSts(self):
+		del self._MvmntSts
+		self._MvmntSts = None
 
 	@property
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
@@ -169,16 +169,16 @@ class SecuritiesMovement8(base_types._BaseFieldType):
 		self._ClntSctiesMvmntId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PosTp', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SctiesQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesMvmntsApprvd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrgndVal', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MvmntSts', type=SecuritiesMovementStatus1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesMvmntTp', type=ReceiveDelivery1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SctiesQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PosTp', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrgndVal', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CollMvmnt', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MvmntSts', type=SecuritiesMovementStatus1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntSctiesMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))

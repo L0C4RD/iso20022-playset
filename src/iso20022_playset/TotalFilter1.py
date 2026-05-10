@@ -3,33 +3,7 @@ import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
-	__slots__ = ["_ShftNb", "_TtlsGrpId", "_SaleId", "_CshrId", "_POIId"]
-	@property
-	def ShftNb(self):
-		return self._ShftNb
-
-	@ShftNb.setter
-	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != auto else self.make_default("ShftNb")
-
-	@ShftNb.deleter
-	def ShftNb(self):
-		del self._ShftNb
-		self._ShftNb = None
-
-	@property
-	def TtlsGrpId(self):
-		return self._TtlsGrpId
-
-	@TtlsGrpId.setter
-	def TtlsGrpId(self, value):
-		self._TtlsGrpId = value if type(value) != auto else self.make_default("TtlsGrpId")
-
-	@TtlsGrpId.deleter
-	def TtlsGrpId(self):
-		del self._TtlsGrpId
-		self._TtlsGrpId = None
-
+	__slots__ = ["_SaleId", "_CshrId", "_TtlsGrpId", "_POIId", "_ShftNb"]
 	@property
 	def SaleId(self):
 		return self._SaleId
@@ -57,6 +31,19 @@ class TotalFilter1(base_types._BaseFieldType):
 		self._CshrId = None
 
 	@property
+	def TtlsGrpId(self):
+		return self._TtlsGrpId
+
+	@TtlsGrpId.setter
+	def TtlsGrpId(self, value):
+		self._TtlsGrpId = value if type(value) != auto else self.make_default("TtlsGrpId")
+
+	@TtlsGrpId.deleter
+	def TtlsGrpId(self):
+		del self._TtlsGrpId
+		self._TtlsGrpId = None
+
+	@property
 	def POIId(self):
 		return self._POIId
 
@@ -69,11 +56,24 @@ class TotalFilter1(base_types._BaseFieldType):
 		del self._POIId
 		self._POIId = None
 
+	@property
+	def ShftNb(self):
+		return self._ShftNb
+
+	@ShftNb.setter
+	def ShftNb(self, value):
+		self._ShftNb = value if type(value) != auto else self.make_default("ShftNb")
+
+	@ShftNb.deleter
+	def ShftNb(self):
+		del self._ShftNb
+		self._ShftNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TtlsGrpId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POIId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ShftNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

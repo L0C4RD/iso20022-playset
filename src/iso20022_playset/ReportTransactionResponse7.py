@@ -4,20 +4,7 @@ import ServiceResponse9
 
 class ReportTransactionResponse7(base_types._BaseFieldType):
 
-	__slots__ = ["_TxRpt", "_RptFullSz", "_BlckStop", "_BlckStart"]
-	@property
-	def TxRpt(self):
-		return self._TxRpt
-
-	@TxRpt.setter
-	def TxRpt(self, value):
-		self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
-
-	@TxRpt.deleter
-	def TxRpt(self):
-		del self._TxRpt
-		self._TxRpt = None
-
+	__slots__ = ["_RptFullSz", "_BlckStop", "_BlckStart", "_TxRpt"]
 	@property
 	def RptFullSz(self):
 		return self._RptFullSz
@@ -57,10 +44,23 @@ class ReportTransactionResponse7(base_types._BaseFieldType):
 		del self._BlckStart
 		self._BlckStart = None
 
+	@property
+	def TxRpt(self):
+		return self._TxRpt
+
+	@TxRpt.setter
+	def TxRpt(self, value):
+		self._TxRpt = value if type(value) != auto else self.make_default("TxRpt")
+
+	@TxRpt.deleter
+	def TxRpt(self):
+		del self._TxRpt
+		self._TxRpt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxRpt', type=ServiceResponse9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptFullSz', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckStop', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxRpt', type=ServiceResponse9, min=0, max=None, mutex_group=None, array=True),
 	))
 

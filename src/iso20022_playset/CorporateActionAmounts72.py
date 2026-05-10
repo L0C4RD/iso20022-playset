@@ -3,58 +3,19 @@ import ActiveCurrencyAndAmount
 
 class CorporateActionAmounts72(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlTaxAmt", "_GrssAmt", "_TxTax", "_TaxCdtAmt", "_FsclStmpAmt", "_RgltryFeesAmt", "_PngAgtComssnAmt", "_ScndLvlTaxAmt", "_BuyUpAmt", "_RinvstmtAmt", "_TaxOnIncmAmt", "_TaxRclmAmt", "_FrgnIncmAmt", "_TaxDfrrdAmt", "_MktClmAmt", "_DmdFndAmt", "_AcrdIntrstAmt", "_LclBrkrComssnAmt", "_SlctnFees", "_CptlGn", "_StmpDtyAmt", "_BckUpWhldgTaxAmt", "_IntrstAmt", "_FullyFrnkdAmt", "_ExctgBrkrAmt", "_OrgnlAmt", "_FATCATaxAmt", "_NRATaxAmt", "_ValAddedTaxAmt", "_DmdRyltsAmt", "_NetAmt", "_EqulstnAmt", "_DmdIntrstAmt", "_DmdDvddAmt", "_ShppgFeesAmt", "_TaxFreeAmt", "_IndmntyAmt", "_CshInLieuOfShr", "_ManfctrdDvddPmtAmt", "_IncmPrtn", "_SndryOrOthrAmt", "_ChrgsAmt", "_DmdAmt", "_EntitldAmt", "_WhldgTaxAmt", "_UfrnkdAmt"]
+	__slots__ = ["_FATCATaxAmt", "_FsclStmpAmt", "_DmdFndAmt", "_CptlGn", "_IntrstAmt", "_OrgnlAmt", "_DmdDvddAmt", "_ExctgBrkrAmt", "_ShppgFeesAmt", "_DmdRyltsAmt", "_BuyUpAmt", "_NetAmt", "_TaxRclmAmt", "_FullyFrnkdAmt", "_StmpDtyAmt", "_AddtlTaxAmt", "_WhldgTaxAmt", "_NRATaxAmt", "_IndmntyAmt", "_RgltryFeesAmt", "_AcrdIntrstAmt", "_ChrgsAmt", "_FrgnIncmAmt", "_GrssAmt", "_DmdIntrstAmt", "_CshInLieuOfShr", "_EntitldAmt", "_TaxCdtAmt", "_LclBrkrComssnAmt", "_PngAgtComssnAmt", "_UfrnkdAmt", "_SlctnFees", "_ManfctrdDvddPmtAmt", "_TaxDfrrdAmt", "_SndryOrOthrAmt", "_DmdAmt", "_TaxOnIncmAmt", "_TxTax", "_MktClmAmt", "_EqulstnAmt", "_ValAddedTaxAmt", "_BckUpWhldgTaxAmt", "_TaxFreeAmt", "_IncmPrtn", "_RinvstmtAmt", "_ScndLvlTaxAmt"]
 	@property
-	def AddtlTaxAmt(self):
-		return self._AddtlTaxAmt
+	def FATCATaxAmt(self):
+		return self._FATCATaxAmt
 
-	@AddtlTaxAmt.setter
-	def AddtlTaxAmt(self, value):
-		self._AddtlTaxAmt = value if type(value) != auto else self.make_default("AddtlTaxAmt")
+	@FATCATaxAmt.setter
+	def FATCATaxAmt(self, value):
+		self._FATCATaxAmt = value if type(value) != auto else self.make_default("FATCATaxAmt")
 
-	@AddtlTaxAmt.deleter
-	def AddtlTaxAmt(self):
-		del self._AddtlTaxAmt
-		self._AddtlTaxAmt = None
-
-	@property
-	def GrssAmt(self):
-		return self._GrssAmt
-
-	@GrssAmt.setter
-	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
-
-	@GrssAmt.deleter
-	def GrssAmt(self):
-		del self._GrssAmt
-		self._GrssAmt = None
-
-	@property
-	def TxTax(self):
-		return self._TxTax
-
-	@TxTax.setter
-	def TxTax(self, value):
-		self._TxTax = value if type(value) != auto else self.make_default("TxTax")
-
-	@TxTax.deleter
-	def TxTax(self):
-		del self._TxTax
-		self._TxTax = None
-
-	@property
-	def TaxCdtAmt(self):
-		return self._TaxCdtAmt
-
-	@TaxCdtAmt.setter
-	def TaxCdtAmt(self, value):
-		self._TaxCdtAmt = value if type(value) != auto else self.make_default("TaxCdtAmt")
-
-	@TaxCdtAmt.deleter
-	def TaxCdtAmt(self):
-		del self._TaxCdtAmt
-		self._TaxCdtAmt = None
+	@FATCATaxAmt.deleter
+	def FATCATaxAmt(self):
+		del self._FATCATaxAmt
+		self._FATCATaxAmt = None
 
 	@property
 	def FsclStmpAmt(self):
@@ -70,136 +31,6 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		self._FsclStmpAmt = None
 
 	@property
-	def RgltryFeesAmt(self):
-		return self._RgltryFeesAmt
-
-	@RgltryFeesAmt.setter
-	def RgltryFeesAmt(self, value):
-		self._RgltryFeesAmt = value if type(value) != auto else self.make_default("RgltryFeesAmt")
-
-	@RgltryFeesAmt.deleter
-	def RgltryFeesAmt(self):
-		del self._RgltryFeesAmt
-		self._RgltryFeesAmt = None
-
-	@property
-	def PngAgtComssnAmt(self):
-		return self._PngAgtComssnAmt
-
-	@PngAgtComssnAmt.setter
-	def PngAgtComssnAmt(self, value):
-		self._PngAgtComssnAmt = value if type(value) != auto else self.make_default("PngAgtComssnAmt")
-
-	@PngAgtComssnAmt.deleter
-	def PngAgtComssnAmt(self):
-		del self._PngAgtComssnAmt
-		self._PngAgtComssnAmt = None
-
-	@property
-	def ScndLvlTaxAmt(self):
-		return self._ScndLvlTaxAmt
-
-	@ScndLvlTaxAmt.setter
-	def ScndLvlTaxAmt(self, value):
-		self._ScndLvlTaxAmt = value if type(value) != auto else self.make_default("ScndLvlTaxAmt")
-
-	@ScndLvlTaxAmt.deleter
-	def ScndLvlTaxAmt(self):
-		del self._ScndLvlTaxAmt
-		self._ScndLvlTaxAmt = None
-
-	@property
-	def BuyUpAmt(self):
-		return self._BuyUpAmt
-
-	@BuyUpAmt.setter
-	def BuyUpAmt(self, value):
-		self._BuyUpAmt = value if type(value) != auto else self.make_default("BuyUpAmt")
-
-	@BuyUpAmt.deleter
-	def BuyUpAmt(self):
-		del self._BuyUpAmt
-		self._BuyUpAmt = None
-
-	@property
-	def RinvstmtAmt(self):
-		return self._RinvstmtAmt
-
-	@RinvstmtAmt.setter
-	def RinvstmtAmt(self, value):
-		self._RinvstmtAmt = value if type(value) != auto else self.make_default("RinvstmtAmt")
-
-	@RinvstmtAmt.deleter
-	def RinvstmtAmt(self):
-		del self._RinvstmtAmt
-		self._RinvstmtAmt = None
-
-	@property
-	def TaxOnIncmAmt(self):
-		return self._TaxOnIncmAmt
-
-	@TaxOnIncmAmt.setter
-	def TaxOnIncmAmt(self, value):
-		self._TaxOnIncmAmt = value if type(value) != auto else self.make_default("TaxOnIncmAmt")
-
-	@TaxOnIncmAmt.deleter
-	def TaxOnIncmAmt(self):
-		del self._TaxOnIncmAmt
-		self._TaxOnIncmAmt = None
-
-	@property
-	def TaxRclmAmt(self):
-		return self._TaxRclmAmt
-
-	@TaxRclmAmt.setter
-	def TaxRclmAmt(self, value):
-		self._TaxRclmAmt = value if type(value) != auto else self.make_default("TaxRclmAmt")
-
-	@TaxRclmAmt.deleter
-	def TaxRclmAmt(self):
-		del self._TaxRclmAmt
-		self._TaxRclmAmt = None
-
-	@property
-	def FrgnIncmAmt(self):
-		return self._FrgnIncmAmt
-
-	@FrgnIncmAmt.setter
-	def FrgnIncmAmt(self, value):
-		self._FrgnIncmAmt = value if type(value) != auto else self.make_default("FrgnIncmAmt")
-
-	@FrgnIncmAmt.deleter
-	def FrgnIncmAmt(self):
-		del self._FrgnIncmAmt
-		self._FrgnIncmAmt = None
-
-	@property
-	def TaxDfrrdAmt(self):
-		return self._TaxDfrrdAmt
-
-	@TaxDfrrdAmt.setter
-	def TaxDfrrdAmt(self, value):
-		self._TaxDfrrdAmt = value if type(value) != auto else self.make_default("TaxDfrrdAmt")
-
-	@TaxDfrrdAmt.deleter
-	def TaxDfrrdAmt(self):
-		del self._TaxDfrrdAmt
-		self._TaxDfrrdAmt = None
-
-	@property
-	def MktClmAmt(self):
-		return self._MktClmAmt
-
-	@MktClmAmt.setter
-	def MktClmAmt(self, value):
-		self._MktClmAmt = value if type(value) != auto else self.make_default("MktClmAmt")
-
-	@MktClmAmt.deleter
-	def MktClmAmt(self):
-		del self._MktClmAmt
-		self._MktClmAmt = None
-
-	@property
 	def DmdFndAmt(self):
 		return self._DmdFndAmt
 
@@ -211,45 +42,6 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 	def DmdFndAmt(self):
 		del self._DmdFndAmt
 		self._DmdFndAmt = None
-
-	@property
-	def AcrdIntrstAmt(self):
-		return self._AcrdIntrstAmt
-
-	@AcrdIntrstAmt.setter
-	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
-
-	@AcrdIntrstAmt.deleter
-	def AcrdIntrstAmt(self):
-		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
-
-	@property
-	def LclBrkrComssnAmt(self):
-		return self._LclBrkrComssnAmt
-
-	@LclBrkrComssnAmt.setter
-	def LclBrkrComssnAmt(self, value):
-		self._LclBrkrComssnAmt = value if type(value) != auto else self.make_default("LclBrkrComssnAmt")
-
-	@LclBrkrComssnAmt.deleter
-	def LclBrkrComssnAmt(self):
-		del self._LclBrkrComssnAmt
-		self._LclBrkrComssnAmt = None
-
-	@property
-	def SlctnFees(self):
-		return self._SlctnFees
-
-	@SlctnFees.setter
-	def SlctnFees(self, value):
-		self._SlctnFees = value if type(value) != auto else self.make_default("SlctnFees")
-
-	@SlctnFees.deleter
-	def SlctnFees(self):
-		del self._SlctnFees
-		self._SlctnFees = None
 
 	@property
 	def CptlGn(self):
@@ -265,32 +57,6 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		self._CptlGn = None
 
 	@property
-	def StmpDtyAmt(self):
-		return self._StmpDtyAmt
-
-	@StmpDtyAmt.setter
-	def StmpDtyAmt(self, value):
-		self._StmpDtyAmt = value if type(value) != auto else self.make_default("StmpDtyAmt")
-
-	@StmpDtyAmt.deleter
-	def StmpDtyAmt(self):
-		del self._StmpDtyAmt
-		self._StmpDtyAmt = None
-
-	@property
-	def BckUpWhldgTaxAmt(self):
-		return self._BckUpWhldgTaxAmt
-
-	@BckUpWhldgTaxAmt.setter
-	def BckUpWhldgTaxAmt(self, value):
-		self._BckUpWhldgTaxAmt = value if type(value) != auto else self.make_default("BckUpWhldgTaxAmt")
-
-	@BckUpWhldgTaxAmt.deleter
-	def BckUpWhldgTaxAmt(self):
-		del self._BckUpWhldgTaxAmt
-		self._BckUpWhldgTaxAmt = None
-
-	@property
 	def IntrstAmt(self):
 		return self._IntrstAmt
 
@@ -302,32 +68,6 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 	def IntrstAmt(self):
 		del self._IntrstAmt
 		self._IntrstAmt = None
-
-	@property
-	def FullyFrnkdAmt(self):
-		return self._FullyFrnkdAmt
-
-	@FullyFrnkdAmt.setter
-	def FullyFrnkdAmt(self, value):
-		self._FullyFrnkdAmt = value if type(value) != auto else self.make_default("FullyFrnkdAmt")
-
-	@FullyFrnkdAmt.deleter
-	def FullyFrnkdAmt(self):
-		del self._FullyFrnkdAmt
-		self._FullyFrnkdAmt = None
-
-	@property
-	def ExctgBrkrAmt(self):
-		return self._ExctgBrkrAmt
-
-	@ExctgBrkrAmt.setter
-	def ExctgBrkrAmt(self, value):
-		self._ExctgBrkrAmt = value if type(value) != auto else self.make_default("ExctgBrkrAmt")
-
-	@ExctgBrkrAmt.deleter
-	def ExctgBrkrAmt(self):
-		del self._ExctgBrkrAmt
-		self._ExctgBrkrAmt = None
 
 	@property
 	def OrgnlAmt(self):
@@ -343,97 +83,6 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		self._OrgnlAmt = None
 
 	@property
-	def FATCATaxAmt(self):
-		return self._FATCATaxAmt
-
-	@FATCATaxAmt.setter
-	def FATCATaxAmt(self, value):
-		self._FATCATaxAmt = value if type(value) != auto else self.make_default("FATCATaxAmt")
-
-	@FATCATaxAmt.deleter
-	def FATCATaxAmt(self):
-		del self._FATCATaxAmt
-		self._FATCATaxAmt = None
-
-	@property
-	def NRATaxAmt(self):
-		return self._NRATaxAmt
-
-	@NRATaxAmt.setter
-	def NRATaxAmt(self, value):
-		self._NRATaxAmt = value if type(value) != auto else self.make_default("NRATaxAmt")
-
-	@NRATaxAmt.deleter
-	def NRATaxAmt(self):
-		del self._NRATaxAmt
-		self._NRATaxAmt = None
-
-	@property
-	def ValAddedTaxAmt(self):
-		return self._ValAddedTaxAmt
-
-	@ValAddedTaxAmt.setter
-	def ValAddedTaxAmt(self, value):
-		self._ValAddedTaxAmt = value if type(value) != auto else self.make_default("ValAddedTaxAmt")
-
-	@ValAddedTaxAmt.deleter
-	def ValAddedTaxAmt(self):
-		del self._ValAddedTaxAmt
-		self._ValAddedTaxAmt = None
-
-	@property
-	def DmdRyltsAmt(self):
-		return self._DmdRyltsAmt
-
-	@DmdRyltsAmt.setter
-	def DmdRyltsAmt(self, value):
-		self._DmdRyltsAmt = value if type(value) != auto else self.make_default("DmdRyltsAmt")
-
-	@DmdRyltsAmt.deleter
-	def DmdRyltsAmt(self):
-		del self._DmdRyltsAmt
-		self._DmdRyltsAmt = None
-
-	@property
-	def NetAmt(self):
-		return self._NetAmt
-
-	@NetAmt.setter
-	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
-
-	@NetAmt.deleter
-	def NetAmt(self):
-		del self._NetAmt
-		self._NetAmt = None
-
-	@property
-	def EqulstnAmt(self):
-		return self._EqulstnAmt
-
-	@EqulstnAmt.setter
-	def EqulstnAmt(self, value):
-		self._EqulstnAmt = value if type(value) != auto else self.make_default("EqulstnAmt")
-
-	@EqulstnAmt.deleter
-	def EqulstnAmt(self):
-		del self._EqulstnAmt
-		self._EqulstnAmt = None
-
-	@property
-	def DmdIntrstAmt(self):
-		return self._DmdIntrstAmt
-
-	@DmdIntrstAmt.setter
-	def DmdIntrstAmt(self, value):
-		self._DmdIntrstAmt = value if type(value) != auto else self.make_default("DmdIntrstAmt")
-
-	@DmdIntrstAmt.deleter
-	def DmdIntrstAmt(self):
-		del self._DmdIntrstAmt
-		self._DmdIntrstAmt = None
-
-	@property
 	def DmdDvddAmt(self):
 		return self._DmdDvddAmt
 
@@ -445,6 +94,19 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 	def DmdDvddAmt(self):
 		del self._DmdDvddAmt
 		self._DmdDvddAmt = None
+
+	@property
+	def ExctgBrkrAmt(self):
+		return self._ExctgBrkrAmt
+
+	@ExctgBrkrAmt.setter
+	def ExctgBrkrAmt(self, value):
+		self._ExctgBrkrAmt = value if type(value) != auto else self.make_default("ExctgBrkrAmt")
+
+	@ExctgBrkrAmt.deleter
+	def ExctgBrkrAmt(self):
+		del self._ExctgBrkrAmt
+		self._ExctgBrkrAmt = None
 
 	@property
 	def ShppgFeesAmt(self):
@@ -460,121 +122,95 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		self._ShppgFeesAmt = None
 
 	@property
-	def TaxFreeAmt(self):
-		return self._TaxFreeAmt
+	def DmdRyltsAmt(self):
+		return self._DmdRyltsAmt
 
-	@TaxFreeAmt.setter
-	def TaxFreeAmt(self, value):
-		self._TaxFreeAmt = value if type(value) != auto else self.make_default("TaxFreeAmt")
+	@DmdRyltsAmt.setter
+	def DmdRyltsAmt(self, value):
+		self._DmdRyltsAmt = value if type(value) != auto else self.make_default("DmdRyltsAmt")
 
-	@TaxFreeAmt.deleter
-	def TaxFreeAmt(self):
-		del self._TaxFreeAmt
-		self._TaxFreeAmt = None
-
-	@property
-	def IndmntyAmt(self):
-		return self._IndmntyAmt
-
-	@IndmntyAmt.setter
-	def IndmntyAmt(self, value):
-		self._IndmntyAmt = value if type(value) != auto else self.make_default("IndmntyAmt")
-
-	@IndmntyAmt.deleter
-	def IndmntyAmt(self):
-		del self._IndmntyAmt
-		self._IndmntyAmt = None
+	@DmdRyltsAmt.deleter
+	def DmdRyltsAmt(self):
+		del self._DmdRyltsAmt
+		self._DmdRyltsAmt = None
 
 	@property
-	def CshInLieuOfShr(self):
-		return self._CshInLieuOfShr
+	def BuyUpAmt(self):
+		return self._BuyUpAmt
 
-	@CshInLieuOfShr.setter
-	def CshInLieuOfShr(self, value):
-		self._CshInLieuOfShr = value if type(value) != auto else self.make_default("CshInLieuOfShr")
+	@BuyUpAmt.setter
+	def BuyUpAmt(self, value):
+		self._BuyUpAmt = value if type(value) != auto else self.make_default("BuyUpAmt")
 
-	@CshInLieuOfShr.deleter
-	def CshInLieuOfShr(self):
-		del self._CshInLieuOfShr
-		self._CshInLieuOfShr = None
-
-	@property
-	def ManfctrdDvddPmtAmt(self):
-		return self._ManfctrdDvddPmtAmt
-
-	@ManfctrdDvddPmtAmt.setter
-	def ManfctrdDvddPmtAmt(self, value):
-		self._ManfctrdDvddPmtAmt = value if type(value) != auto else self.make_default("ManfctrdDvddPmtAmt")
-
-	@ManfctrdDvddPmtAmt.deleter
-	def ManfctrdDvddPmtAmt(self):
-		del self._ManfctrdDvddPmtAmt
-		self._ManfctrdDvddPmtAmt = None
+	@BuyUpAmt.deleter
+	def BuyUpAmt(self):
+		del self._BuyUpAmt
+		self._BuyUpAmt = None
 
 	@property
-	def IncmPrtn(self):
-		return self._IncmPrtn
+	def NetAmt(self):
+		return self._NetAmt
 
-	@IncmPrtn.setter
-	def IncmPrtn(self, value):
-		self._IncmPrtn = value if type(value) != auto else self.make_default("IncmPrtn")
+	@NetAmt.setter
+	def NetAmt(self, value):
+		self._NetAmt = value if type(value) != auto else self.make_default("NetAmt")
 
-	@IncmPrtn.deleter
-	def IncmPrtn(self):
-		del self._IncmPrtn
-		self._IncmPrtn = None
-
-	@property
-	def SndryOrOthrAmt(self):
-		return self._SndryOrOthrAmt
-
-	@SndryOrOthrAmt.setter
-	def SndryOrOthrAmt(self, value):
-		self._SndryOrOthrAmt = value if type(value) != auto else self.make_default("SndryOrOthrAmt")
-
-	@SndryOrOthrAmt.deleter
-	def SndryOrOthrAmt(self):
-		del self._SndryOrOthrAmt
-		self._SndryOrOthrAmt = None
+	@NetAmt.deleter
+	def NetAmt(self):
+		del self._NetAmt
+		self._NetAmt = None
 
 	@property
-	def ChrgsAmt(self):
-		return self._ChrgsAmt
+	def TaxRclmAmt(self):
+		return self._TaxRclmAmt
 
-	@ChrgsAmt.setter
-	def ChrgsAmt(self, value):
-		self._ChrgsAmt = value if type(value) != auto else self.make_default("ChrgsAmt")
+	@TaxRclmAmt.setter
+	def TaxRclmAmt(self, value):
+		self._TaxRclmAmt = value if type(value) != auto else self.make_default("TaxRclmAmt")
 
-	@ChrgsAmt.deleter
-	def ChrgsAmt(self):
-		del self._ChrgsAmt
-		self._ChrgsAmt = None
-
-	@property
-	def DmdAmt(self):
-		return self._DmdAmt
-
-	@DmdAmt.setter
-	def DmdAmt(self, value):
-		self._DmdAmt = value if type(value) != auto else self.make_default("DmdAmt")
-
-	@DmdAmt.deleter
-	def DmdAmt(self):
-		del self._DmdAmt
-		self._DmdAmt = None
+	@TaxRclmAmt.deleter
+	def TaxRclmAmt(self):
+		del self._TaxRclmAmt
+		self._TaxRclmAmt = None
 
 	@property
-	def EntitldAmt(self):
-		return self._EntitldAmt
+	def FullyFrnkdAmt(self):
+		return self._FullyFrnkdAmt
 
-	@EntitldAmt.setter
-	def EntitldAmt(self, value):
-		self._EntitldAmt = value if type(value) != auto else self.make_default("EntitldAmt")
+	@FullyFrnkdAmt.setter
+	def FullyFrnkdAmt(self, value):
+		self._FullyFrnkdAmt = value if type(value) != auto else self.make_default("FullyFrnkdAmt")
 
-	@EntitldAmt.deleter
-	def EntitldAmt(self):
-		del self._EntitldAmt
-		self._EntitldAmt = None
+	@FullyFrnkdAmt.deleter
+	def FullyFrnkdAmt(self):
+		del self._FullyFrnkdAmt
+		self._FullyFrnkdAmt = None
+
+	@property
+	def StmpDtyAmt(self):
+		return self._StmpDtyAmt
+
+	@StmpDtyAmt.setter
+	def StmpDtyAmt(self, value):
+		self._StmpDtyAmt = value if type(value) != auto else self.make_default("StmpDtyAmt")
+
+	@StmpDtyAmt.deleter
+	def StmpDtyAmt(self):
+		del self._StmpDtyAmt
+		self._StmpDtyAmt = None
+
+	@property
+	def AddtlTaxAmt(self):
+		return self._AddtlTaxAmt
+
+	@AddtlTaxAmt.setter
+	def AddtlTaxAmt(self, value):
+		self._AddtlTaxAmt = value if type(value) != auto else self.make_default("AddtlTaxAmt")
+
+	@AddtlTaxAmt.deleter
+	def AddtlTaxAmt(self):
+		del self._AddtlTaxAmt
+		self._AddtlTaxAmt = None
 
 	@property
 	def WhldgTaxAmt(self):
@@ -590,6 +226,175 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		self._WhldgTaxAmt = None
 
 	@property
+	def NRATaxAmt(self):
+		return self._NRATaxAmt
+
+	@NRATaxAmt.setter
+	def NRATaxAmt(self, value):
+		self._NRATaxAmt = value if type(value) != auto else self.make_default("NRATaxAmt")
+
+	@NRATaxAmt.deleter
+	def NRATaxAmt(self):
+		del self._NRATaxAmt
+		self._NRATaxAmt = None
+
+	@property
+	def IndmntyAmt(self):
+		return self._IndmntyAmt
+
+	@IndmntyAmt.setter
+	def IndmntyAmt(self, value):
+		self._IndmntyAmt = value if type(value) != auto else self.make_default("IndmntyAmt")
+
+	@IndmntyAmt.deleter
+	def IndmntyAmt(self):
+		del self._IndmntyAmt
+		self._IndmntyAmt = None
+
+	@property
+	def RgltryFeesAmt(self):
+		return self._RgltryFeesAmt
+
+	@RgltryFeesAmt.setter
+	def RgltryFeesAmt(self, value):
+		self._RgltryFeesAmt = value if type(value) != auto else self.make_default("RgltryFeesAmt")
+
+	@RgltryFeesAmt.deleter
+	def RgltryFeesAmt(self):
+		del self._RgltryFeesAmt
+		self._RgltryFeesAmt = None
+
+	@property
+	def AcrdIntrstAmt(self):
+		return self._AcrdIntrstAmt
+
+	@AcrdIntrstAmt.setter
+	def AcrdIntrstAmt(self, value):
+		self._AcrdIntrstAmt = value if type(value) != auto else self.make_default("AcrdIntrstAmt")
+
+	@AcrdIntrstAmt.deleter
+	def AcrdIntrstAmt(self):
+		del self._AcrdIntrstAmt
+		self._AcrdIntrstAmt = None
+
+	@property
+	def ChrgsAmt(self):
+		return self._ChrgsAmt
+
+	@ChrgsAmt.setter
+	def ChrgsAmt(self, value):
+		self._ChrgsAmt = value if type(value) != auto else self.make_default("ChrgsAmt")
+
+	@ChrgsAmt.deleter
+	def ChrgsAmt(self):
+		del self._ChrgsAmt
+		self._ChrgsAmt = None
+
+	@property
+	def FrgnIncmAmt(self):
+		return self._FrgnIncmAmt
+
+	@FrgnIncmAmt.setter
+	def FrgnIncmAmt(self, value):
+		self._FrgnIncmAmt = value if type(value) != auto else self.make_default("FrgnIncmAmt")
+
+	@FrgnIncmAmt.deleter
+	def FrgnIncmAmt(self):
+		del self._FrgnIncmAmt
+		self._FrgnIncmAmt = None
+
+	@property
+	def GrssAmt(self):
+		return self._GrssAmt
+
+	@GrssAmt.setter
+	def GrssAmt(self, value):
+		self._GrssAmt = value if type(value) != auto else self.make_default("GrssAmt")
+
+	@GrssAmt.deleter
+	def GrssAmt(self):
+		del self._GrssAmt
+		self._GrssAmt = None
+
+	@property
+	def DmdIntrstAmt(self):
+		return self._DmdIntrstAmt
+
+	@DmdIntrstAmt.setter
+	def DmdIntrstAmt(self, value):
+		self._DmdIntrstAmt = value if type(value) != auto else self.make_default("DmdIntrstAmt")
+
+	@DmdIntrstAmt.deleter
+	def DmdIntrstAmt(self):
+		del self._DmdIntrstAmt
+		self._DmdIntrstAmt = None
+
+	@property
+	def CshInLieuOfShr(self):
+		return self._CshInLieuOfShr
+
+	@CshInLieuOfShr.setter
+	def CshInLieuOfShr(self, value):
+		self._CshInLieuOfShr = value if type(value) != auto else self.make_default("CshInLieuOfShr")
+
+	@CshInLieuOfShr.deleter
+	def CshInLieuOfShr(self):
+		del self._CshInLieuOfShr
+		self._CshInLieuOfShr = None
+
+	@property
+	def EntitldAmt(self):
+		return self._EntitldAmt
+
+	@EntitldAmt.setter
+	def EntitldAmt(self, value):
+		self._EntitldAmt = value if type(value) != auto else self.make_default("EntitldAmt")
+
+	@EntitldAmt.deleter
+	def EntitldAmt(self):
+		del self._EntitldAmt
+		self._EntitldAmt = None
+
+	@property
+	def TaxCdtAmt(self):
+		return self._TaxCdtAmt
+
+	@TaxCdtAmt.setter
+	def TaxCdtAmt(self, value):
+		self._TaxCdtAmt = value if type(value) != auto else self.make_default("TaxCdtAmt")
+
+	@TaxCdtAmt.deleter
+	def TaxCdtAmt(self):
+		del self._TaxCdtAmt
+		self._TaxCdtAmt = None
+
+	@property
+	def LclBrkrComssnAmt(self):
+		return self._LclBrkrComssnAmt
+
+	@LclBrkrComssnAmt.setter
+	def LclBrkrComssnAmt(self, value):
+		self._LclBrkrComssnAmt = value if type(value) != auto else self.make_default("LclBrkrComssnAmt")
+
+	@LclBrkrComssnAmt.deleter
+	def LclBrkrComssnAmt(self):
+		del self._LclBrkrComssnAmt
+		self._LclBrkrComssnAmt = None
+
+	@property
+	def PngAgtComssnAmt(self):
+		return self._PngAgtComssnAmt
+
+	@PngAgtComssnAmt.setter
+	def PngAgtComssnAmt(self, value):
+		self._PngAgtComssnAmt = value if type(value) != auto else self.make_default("PngAgtComssnAmt")
+
+	@PngAgtComssnAmt.deleter
+	def PngAgtComssnAmt(self):
+		del self._PngAgtComssnAmt
+		self._PngAgtComssnAmt = None
+
+	@property
 	def UfrnkdAmt(self):
 		return self._UfrnkdAmt
 
@@ -602,52 +407,247 @@ class CorporateActionAmounts72(base_types._BaseFieldType):
 		del self._UfrnkdAmt
 		self._UfrnkdAmt = None
 
+	@property
+	def SlctnFees(self):
+		return self._SlctnFees
+
+	@SlctnFees.setter
+	def SlctnFees(self, value):
+		self._SlctnFees = value if type(value) != auto else self.make_default("SlctnFees")
+
+	@SlctnFees.deleter
+	def SlctnFees(self):
+		del self._SlctnFees
+		self._SlctnFees = None
+
+	@property
+	def ManfctrdDvddPmtAmt(self):
+		return self._ManfctrdDvddPmtAmt
+
+	@ManfctrdDvddPmtAmt.setter
+	def ManfctrdDvddPmtAmt(self, value):
+		self._ManfctrdDvddPmtAmt = value if type(value) != auto else self.make_default("ManfctrdDvddPmtAmt")
+
+	@ManfctrdDvddPmtAmt.deleter
+	def ManfctrdDvddPmtAmt(self):
+		del self._ManfctrdDvddPmtAmt
+		self._ManfctrdDvddPmtAmt = None
+
+	@property
+	def TaxDfrrdAmt(self):
+		return self._TaxDfrrdAmt
+
+	@TaxDfrrdAmt.setter
+	def TaxDfrrdAmt(self, value):
+		self._TaxDfrrdAmt = value if type(value) != auto else self.make_default("TaxDfrrdAmt")
+
+	@TaxDfrrdAmt.deleter
+	def TaxDfrrdAmt(self):
+		del self._TaxDfrrdAmt
+		self._TaxDfrrdAmt = None
+
+	@property
+	def SndryOrOthrAmt(self):
+		return self._SndryOrOthrAmt
+
+	@SndryOrOthrAmt.setter
+	def SndryOrOthrAmt(self, value):
+		self._SndryOrOthrAmt = value if type(value) != auto else self.make_default("SndryOrOthrAmt")
+
+	@SndryOrOthrAmt.deleter
+	def SndryOrOthrAmt(self):
+		del self._SndryOrOthrAmt
+		self._SndryOrOthrAmt = None
+
+	@property
+	def DmdAmt(self):
+		return self._DmdAmt
+
+	@DmdAmt.setter
+	def DmdAmt(self, value):
+		self._DmdAmt = value if type(value) != auto else self.make_default("DmdAmt")
+
+	@DmdAmt.deleter
+	def DmdAmt(self):
+		del self._DmdAmt
+		self._DmdAmt = None
+
+	@property
+	def TaxOnIncmAmt(self):
+		return self._TaxOnIncmAmt
+
+	@TaxOnIncmAmt.setter
+	def TaxOnIncmAmt(self, value):
+		self._TaxOnIncmAmt = value if type(value) != auto else self.make_default("TaxOnIncmAmt")
+
+	@TaxOnIncmAmt.deleter
+	def TaxOnIncmAmt(self):
+		del self._TaxOnIncmAmt
+		self._TaxOnIncmAmt = None
+
+	@property
+	def TxTax(self):
+		return self._TxTax
+
+	@TxTax.setter
+	def TxTax(self, value):
+		self._TxTax = value if type(value) != auto else self.make_default("TxTax")
+
+	@TxTax.deleter
+	def TxTax(self):
+		del self._TxTax
+		self._TxTax = None
+
+	@property
+	def MktClmAmt(self):
+		return self._MktClmAmt
+
+	@MktClmAmt.setter
+	def MktClmAmt(self, value):
+		self._MktClmAmt = value if type(value) != auto else self.make_default("MktClmAmt")
+
+	@MktClmAmt.deleter
+	def MktClmAmt(self):
+		del self._MktClmAmt
+		self._MktClmAmt = None
+
+	@property
+	def EqulstnAmt(self):
+		return self._EqulstnAmt
+
+	@EqulstnAmt.setter
+	def EqulstnAmt(self, value):
+		self._EqulstnAmt = value if type(value) != auto else self.make_default("EqulstnAmt")
+
+	@EqulstnAmt.deleter
+	def EqulstnAmt(self):
+		del self._EqulstnAmt
+		self._EqulstnAmt = None
+
+	@property
+	def ValAddedTaxAmt(self):
+		return self._ValAddedTaxAmt
+
+	@ValAddedTaxAmt.setter
+	def ValAddedTaxAmt(self, value):
+		self._ValAddedTaxAmt = value if type(value) != auto else self.make_default("ValAddedTaxAmt")
+
+	@ValAddedTaxAmt.deleter
+	def ValAddedTaxAmt(self):
+		del self._ValAddedTaxAmt
+		self._ValAddedTaxAmt = None
+
+	@property
+	def BckUpWhldgTaxAmt(self):
+		return self._BckUpWhldgTaxAmt
+
+	@BckUpWhldgTaxAmt.setter
+	def BckUpWhldgTaxAmt(self, value):
+		self._BckUpWhldgTaxAmt = value if type(value) != auto else self.make_default("BckUpWhldgTaxAmt")
+
+	@BckUpWhldgTaxAmt.deleter
+	def BckUpWhldgTaxAmt(self):
+		del self._BckUpWhldgTaxAmt
+		self._BckUpWhldgTaxAmt = None
+
+	@property
+	def TaxFreeAmt(self):
+		return self._TaxFreeAmt
+
+	@TaxFreeAmt.setter
+	def TaxFreeAmt(self, value):
+		self._TaxFreeAmt = value if type(value) != auto else self.make_default("TaxFreeAmt")
+
+	@TaxFreeAmt.deleter
+	def TaxFreeAmt(self):
+		del self._TaxFreeAmt
+		self._TaxFreeAmt = None
+
+	@property
+	def IncmPrtn(self):
+		return self._IncmPrtn
+
+	@IncmPrtn.setter
+	def IncmPrtn(self, value):
+		self._IncmPrtn = value if type(value) != auto else self.make_default("IncmPrtn")
+
+	@IncmPrtn.deleter
+	def IncmPrtn(self):
+		del self._IncmPrtn
+		self._IncmPrtn = None
+
+	@property
+	def RinvstmtAmt(self):
+		return self._RinvstmtAmt
+
+	@RinvstmtAmt.setter
+	def RinvstmtAmt(self, value):
+		self._RinvstmtAmt = value if type(value) != auto else self.make_default("RinvstmtAmt")
+
+	@RinvstmtAmt.deleter
+	def RinvstmtAmt(self):
+		del self._RinvstmtAmt
+		self._RinvstmtAmt = None
+
+	@property
+	def ScndLvlTaxAmt(self):
+		return self._ScndLvlTaxAmt
+
+	@ScndLvlTaxAmt.setter
+	def ScndLvlTaxAmt(self, value):
+		self._ScndLvlTaxAmt = value if type(value) != auto else self.make_default("ScndLvlTaxAmt")
+
+	@ScndLvlTaxAmt.deleter
+	def ScndLvlTaxAmt(self):
+		del self._ScndLvlTaxAmt
+		self._ScndLvlTaxAmt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GrssAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxTax', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FsclStmpAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgltryFeesAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PngAgtComssnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScndLvlTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BuyUpAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RinvstmtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxOnIncmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxRclmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FrgnIncmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxDfrrdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktClmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmdFndAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LclBrkrComssnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SlctnFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CptlGn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StmpDtyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BckUpWhldgTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FullyFrnkdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ExctgBrkrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FATCATaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NRATaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ValAddedTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmdRyltsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NetAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EqulstnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FsclStmpAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmdFndAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CptlGn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DmdDvddAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ExctgBrkrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShppgFeesAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TaxFreeAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IndmntyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshInLieuOfShr', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ManfctrdDvddPmtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='IncmPrtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SndryOrOthrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DmdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EntitldAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmdRyltsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BuyUpAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NetAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxRclmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FullyFrnkdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StmpDtyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhldgTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NRATaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IndmntyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgltryFeesAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ChrgsAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FrgnIncmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GrssAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshInLieuOfShr', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EntitldAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LclBrkrComssnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PngAgtComssnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UfrnkdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SlctnFees', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ManfctrdDvddPmtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxDfrrdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SndryOrOthrAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DmdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxOnIncmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxTax', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktClmAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EqulstnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ValAddedTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BckUpWhldgTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TaxFreeAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='IncmPrtn', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RinvstmtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScndLvlTaxAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

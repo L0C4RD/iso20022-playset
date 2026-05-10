@@ -1,25 +1,12 @@
 import base_types
-import TransactionStatus4
+import SimpleIdentificationInformation
 import MessageIdentification1
 import Reason2
-import SimpleIdentificationInformation
+import TransactionStatus4
 
 class StatusExtensionRequestRejectionV03(base_types._BaseFieldType):
 
-	__slots__ = ["_StsNotToBeXtnded", "_TxId", "_RjctnRsn", "_RjctnId", "_SubmitrTxRef"]
-	@property
-	def StsNotToBeXtnded(self):
-		return self._StsNotToBeXtnded
-
-	@StsNotToBeXtnded.setter
-	def StsNotToBeXtnded(self, value):
-		self._StsNotToBeXtnded = value if type(value) != auto else self.make_default("StsNotToBeXtnded")
-
-	@StsNotToBeXtnded.deleter
-	def StsNotToBeXtnded(self):
-		del self._StsNotToBeXtnded
-		self._StsNotToBeXtnded = None
-
+	__slots__ = ["_TxId", "_SubmitrTxRef", "_RjctnId", "_RjctnRsn", "_StsNotToBeXtnded"]
 	@property
 	def TxId(self):
 		return self._TxId
@@ -34,17 +21,17 @@ class StatusExtensionRequestRejectionV03(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def RjctnRsn(self):
-		return self._RjctnRsn
+	def SubmitrTxRef(self):
+		return self._SubmitrTxRef
 
-	@RjctnRsn.setter
-	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
+	@SubmitrTxRef.setter
+	def SubmitrTxRef(self, value):
+		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
 
-	@RjctnRsn.deleter
-	def RjctnRsn(self):
-		del self._RjctnRsn
-		self._RjctnRsn = None
+	@SubmitrTxRef.deleter
+	def SubmitrTxRef(self):
+		del self._SubmitrTxRef
+		self._SubmitrTxRef = None
 
 	@property
 	def RjctnId(self):
@@ -60,23 +47,36 @@ class StatusExtensionRequestRejectionV03(base_types._BaseFieldType):
 		self._RjctnId = None
 
 	@property
-	def SubmitrTxRef(self):
-		return self._SubmitrTxRef
+	def RjctnRsn(self):
+		return self._RjctnRsn
 
-	@SubmitrTxRef.setter
-	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != auto else self.make_default("SubmitrTxRef")
+	@RjctnRsn.setter
+	def RjctnRsn(self, value):
+		self._RjctnRsn = value if type(value) != auto else self.make_default("RjctnRsn")
 
-	@SubmitrTxRef.deleter
-	def SubmitrTxRef(self):
-		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+	@RjctnRsn.deleter
+	def RjctnRsn(self):
+		del self._RjctnRsn
+		self._RjctnRsn = None
+
+	@property
+	def StsNotToBeXtnded(self):
+		return self._StsNotToBeXtnded
+
+	@StsNotToBeXtnded.setter
+	def StsNotToBeXtnded(self, value):
+		self._StsNotToBeXtnded = value if type(value) != auto else self.make_default("StsNotToBeXtnded")
+
+	@StsNotToBeXtnded.deleter
+	def StsNotToBeXtnded(self):
+		del self._StsNotToBeXtnded
+		self._StsNotToBeXtnded = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='StsNotToBeXtnded', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RjctnRsn', type=Reason2, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsNotToBeXtnded', type=TransactionStatus4, min=1, max=1, mutex_group=None, array=False),
 	))
 

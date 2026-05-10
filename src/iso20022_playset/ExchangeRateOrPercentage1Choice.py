@@ -1,6 +1,6 @@
 import base_types
-import PercentageRate
 import BaseOneRate
+import PercentageRate
 
 class ExchangeRateOrPercentage1Choice(base_types._BaseFieldType):
 

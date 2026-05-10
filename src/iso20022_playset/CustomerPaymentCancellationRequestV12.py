@@ -1,25 +1,25 @@
 import base_types
+import SupplementaryData1
+import CaseAssignment6
 import ControlData1
 import UnderlyingTransaction33
-import SupplementaryData1
 import Case6
-import CaseAssignment6
 
 class CustomerPaymentCancellationRequestV12(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_Undrlyg", "_Case", "_CtrlData", "_Assgnmt"]
+	__slots__ = ["_CtrlData", "_Undrlyg", "_Assgnmt", "_Case", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def CtrlData(self):
+		return self._CtrlData
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@CtrlData.setter
+	def CtrlData(self, value):
+		self._CtrlData = value if type(value) != auto else self.make_default("CtrlData")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@CtrlData.deleter
+	def CtrlData(self):
+		del self._CtrlData
+		self._CtrlData = None
 
 	@property
 	def Undrlyg(self):
@@ -35,6 +35,19 @@ class CustomerPaymentCancellationRequestV12(base_types._BaseFieldType):
 		self._Undrlyg = None
 
 	@property
+	def Assgnmt(self):
+		return self._Assgnmt
+
+	@Assgnmt.setter
+	def Assgnmt(self, value):
+		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
+
+	@Assgnmt.deleter
+	def Assgnmt(self):
+		del self._Assgnmt
+		self._Assgnmt = None
+
+	@property
 	def Case(self):
 		return self._Case
 
@@ -48,36 +61,23 @@ class CustomerPaymentCancellationRequestV12(base_types._BaseFieldType):
 		self._Case = None
 
 	@property
-	def CtrlData(self):
-		return self._CtrlData
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@CtrlData.setter
-	def CtrlData(self, value):
-		self._CtrlData = value if type(value) != auto else self.make_default("CtrlData")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@CtrlData.deleter
-	def CtrlData(self):
-		del self._CtrlData
-		self._CtrlData = None
-
-	@property
-	def Assgnmt(self):
-		return self._Assgnmt
-
-	@Assgnmt.setter
-	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != auto else self.make_default("Assgnmt")
-
-	@Assgnmt.deleter
-	def Assgnmt(self):
-		del self._Assgnmt
-		self._Assgnmt = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction33, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrlData', type=ControlData1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction33, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

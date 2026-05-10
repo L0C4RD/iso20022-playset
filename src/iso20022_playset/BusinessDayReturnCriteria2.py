@@ -3,58 +3,19 @@ import RequestedIndicator
 
 class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SysDtInd", "_SsnPrdInd", "_ClsrPrdInd", "_SysCcyInd", "_EvtInd", "_EvtTpInd", "_SysStsInd"]
+	__slots__ = ["_SysStsInd", "_EvtInd", "_ClsrPrdInd", "_SysDtInd", "_EvtTpInd", "_SysCcyInd", "_SsnPrdInd"]
 	@property
-	def SysDtInd(self):
-		return self._SysDtInd
+	def SysStsInd(self):
+		return self._SysStsInd
 
-	@SysDtInd.setter
-	def SysDtInd(self, value):
-		self._SysDtInd = value if type(value) != auto else self.make_default("SysDtInd")
+	@SysStsInd.setter
+	def SysStsInd(self, value):
+		self._SysStsInd = value if type(value) != auto else self.make_default("SysStsInd")
 
-	@SysDtInd.deleter
-	def SysDtInd(self):
-		del self._SysDtInd
-		self._SysDtInd = None
-
-	@property
-	def SsnPrdInd(self):
-		return self._SsnPrdInd
-
-	@SsnPrdInd.setter
-	def SsnPrdInd(self, value):
-		self._SsnPrdInd = value if type(value) != auto else self.make_default("SsnPrdInd")
-
-	@SsnPrdInd.deleter
-	def SsnPrdInd(self):
-		del self._SsnPrdInd
-		self._SsnPrdInd = None
-
-	@property
-	def ClsrPrdInd(self):
-		return self._ClsrPrdInd
-
-	@ClsrPrdInd.setter
-	def ClsrPrdInd(self, value):
-		self._ClsrPrdInd = value if type(value) != auto else self.make_default("ClsrPrdInd")
-
-	@ClsrPrdInd.deleter
-	def ClsrPrdInd(self):
-		del self._ClsrPrdInd
-		self._ClsrPrdInd = None
-
-	@property
-	def SysCcyInd(self):
-		return self._SysCcyInd
-
-	@SysCcyInd.setter
-	def SysCcyInd(self, value):
-		self._SysCcyInd = value if type(value) != auto else self.make_default("SysCcyInd")
-
-	@SysCcyInd.deleter
-	def SysCcyInd(self):
-		del self._SysCcyInd
-		self._SysCcyInd = None
+	@SysStsInd.deleter
+	def SysStsInd(self):
+		del self._SysStsInd
+		self._SysStsInd = None
 
 	@property
 	def EvtInd(self):
@@ -70,6 +31,32 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._EvtInd = None
 
 	@property
+	def ClsrPrdInd(self):
+		return self._ClsrPrdInd
+
+	@ClsrPrdInd.setter
+	def ClsrPrdInd(self, value):
+		self._ClsrPrdInd = value if type(value) != auto else self.make_default("ClsrPrdInd")
+
+	@ClsrPrdInd.deleter
+	def ClsrPrdInd(self):
+		del self._ClsrPrdInd
+		self._ClsrPrdInd = None
+
+	@property
+	def SysDtInd(self):
+		return self._SysDtInd
+
+	@SysDtInd.setter
+	def SysDtInd(self, value):
+		self._SysDtInd = value if type(value) != auto else self.make_default("SysDtInd")
+
+	@SysDtInd.deleter
+	def SysDtInd(self):
+		del self._SysDtInd
+		self._SysDtInd = None
+
+	@property
 	def EvtTpInd(self):
 		return self._EvtTpInd
 
@@ -83,25 +70,38 @@ class BusinessDayReturnCriteria2(base_types._BaseFieldType):
 		self._EvtTpInd = None
 
 	@property
-	def SysStsInd(self):
-		return self._SysStsInd
+	def SysCcyInd(self):
+		return self._SysCcyInd
 
-	@SysStsInd.setter
-	def SysStsInd(self, value):
-		self._SysStsInd = value if type(value) != auto else self.make_default("SysStsInd")
+	@SysCcyInd.setter
+	def SysCcyInd(self, value):
+		self._SysCcyInd = value if type(value) != auto else self.make_default("SysCcyInd")
 
-	@SysStsInd.deleter
-	def SysStsInd(self):
-		del self._SysStsInd
-		self._SysStsInd = None
+	@SysCcyInd.deleter
+	def SysCcyInd(self):
+		del self._SysCcyInd
+		self._SysCcyInd = None
+
+	@property
+	def SsnPrdInd(self):
+		return self._SsnPrdInd
+
+	@SsnPrdInd.setter
+	def SsnPrdInd(self, value):
+		self._SsnPrdInd = value if type(value) != auto else self.make_default("SsnPrdInd")
+
+	@SsnPrdInd.deleter
+	def SsnPrdInd(self):
+		del self._SsnPrdInd
+		self._SsnPrdInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SysDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsrPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SysCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='EvtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SysStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EvtTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SysCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SsnPrdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

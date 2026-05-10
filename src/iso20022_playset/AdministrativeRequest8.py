@@ -1,12 +1,12 @@
 import base_types
-import SupplementaryData1
+import PaymentContext30
 import CardPaymentEnvironment81
 import Max20000Text
-import PaymentContext30
+import SupplementaryData1
 
 class AdministrativeRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_Cntxt", "_AdmstvSvcId", "_SplmtryData"]
+	__slots__ = ["_Envt", "_Cntxt", "_SplmtryData", "_AdmstvSvcId"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -34,19 +34,6 @@ class AdministrativeRequest8(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def AdmstvSvcId(self):
-		return self._AdmstvSvcId
-
-	@AdmstvSvcId.setter
-	def AdmstvSvcId(self, value):
-		self._AdmstvSvcId = value if type(value) != auto else self.make_default("AdmstvSvcId")
-
-	@AdmstvSvcId.deleter
-	def AdmstvSvcId(self):
-		del self._AdmstvSvcId
-		self._AdmstvSvcId = None
-
-	@property
 	def SplmtryData(self):
 		return self._SplmtryData
 
@@ -59,10 +46,23 @@ class AdministrativeRequest8(base_types._BaseFieldType):
 		del self._SplmtryData
 		self._SplmtryData = None
 
+	@property
+	def AdmstvSvcId(self):
+		return self._AdmstvSvcId
+
+	@AdmstvSvcId.setter
+	def AdmstvSvcId(self, value):
+		self._AdmstvSvcId = value if type(value) != auto else self.make_default("AdmstvSvcId")
+
+	@AdmstvSvcId.deleter
+	def AdmstvSvcId(self):
+		del self._AdmstvSvcId
+		self._AdmstvSvcId = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AdmstvSvcId', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='AdmstvSvcId', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

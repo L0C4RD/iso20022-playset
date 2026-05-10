@@ -4,20 +4,7 @@ import Exact4NumericText
 
 class PriorityNumeric5Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Prtry", "_Nmrc"]
-	@property
-	def Prtry(self):
-		return self._Prtry
-
-	@Prtry.setter
-	def Prtry(self, value):
-		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
-
-	@Prtry.deleter
-	def Prtry(self):
-		del self._Prtry
-		self._Prtry = None
-
+	__slots__ = ["_Nmrc", "_Prtry"]
 	@property
 	def Nmrc(self):
 		return self._Nmrc
@@ -31,8 +18,21 @@ class PriorityNumeric5Choice(base_types._BaseFieldType):
 		del self._Nmrc
 		self._Nmrc = None
 
+	@property
+	def Prtry(self):
+		return self._Prtry
+
+	@Prtry.setter
+	def Prtry(self, value):
+		self._Prtry = value if type(value) != auto else self.make_default("Prtry")
+
+	@Prtry.deleter
+	def Prtry(self):
+		del self._Prtry
+		self._Prtry = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Nmrc', type=Exact4NumericText, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -3,7 +3,7 @@ import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_SpprtgDocJrnl", "_RgltryRuleVldtn", "_AddtlSpprtgDocJrnl", "_TxJrnl"]
+	__slots__ = ["_SpprtgDocJrnl", "_TxJrnl", "_AddtlSpprtgDocJrnl", "_RgltryRuleVldtn"]
 	@property
 	def SpprtgDocJrnl(self):
 		return self._SpprtgDocJrnl
@@ -18,17 +18,17 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._SpprtgDocJrnl = None
 
 	@property
-	def RgltryRuleVldtn(self):
-		return self._RgltryRuleVldtn
+	def TxJrnl(self):
+		return self._TxJrnl
 
-	@RgltryRuleVldtn.setter
-	def RgltryRuleVldtn(self, value):
-		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
+	@TxJrnl.setter
+	def TxJrnl(self, value):
+		self._TxJrnl = value if type(value) != auto else self.make_default("TxJrnl")
 
-	@RgltryRuleVldtn.deleter
-	def RgltryRuleVldtn(self):
-		del self._RgltryRuleVldtn
-		self._RgltryRuleVldtn = None
+	@TxJrnl.deleter
+	def TxJrnl(self):
+		del self._TxJrnl
+		self._TxJrnl = None
 
 	@property
 	def AddtlSpprtgDocJrnl(self):
@@ -44,22 +44,22 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 		self._AddtlSpprtgDocJrnl = None
 
 	@property
-	def TxJrnl(self):
-		return self._TxJrnl
+	def RgltryRuleVldtn(self):
+		return self._RgltryRuleVldtn
 
-	@TxJrnl.setter
-	def TxJrnl(self, value):
-		self._TxJrnl = value if type(value) != auto else self.make_default("TxJrnl")
+	@RgltryRuleVldtn.setter
+	def RgltryRuleVldtn(self, value):
+		self._RgltryRuleVldtn = value if type(value) != auto else self.make_default("RgltryRuleVldtn")
 
-	@TxJrnl.deleter
-	def TxJrnl(self):
-		del self._TxJrnl
-		self._TxJrnl = None
+	@RgltryRuleVldtn.deleter
+	def RgltryRuleVldtn(self):
+		del self._RgltryRuleVldtn
+		self._RgltryRuleVldtn = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RgltryRuleVldtn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,10 +1,10 @@
 import base_types
-import CancellationReason31Choice
 import Max35Text
+import CancellationReason31Choice
 
 class InvestmentFundOrder11(base_types._BaseFieldType):
 
-	__slots__ = ["_CxlRef", "_ClntRef", "_OrdrRef", "_DealRef", "_CxlRsn"]
+	__slots__ = ["_CxlRef", "_ClntRef", "_CxlRsn", "_OrdrRef", "_DealRef"]
 	@property
 	def CxlRef(self):
 		return self._CxlRef
@@ -32,6 +32,19 @@ class InvestmentFundOrder11(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
+	def CxlRsn(self):
+		return self._CxlRsn
+
+	@CxlRsn.setter
+	def CxlRsn(self, value):
+		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
+
+	@CxlRsn.deleter
+	def CxlRsn(self):
+		del self._CxlRsn
+		self._CxlRsn = None
+
+	@property
 	def OrdrRef(self):
 		return self._OrdrRef
 
@@ -57,24 +70,11 @@ class InvestmentFundOrder11(base_types._BaseFieldType):
 		del self._DealRef
 		self._DealRef = None
 
-	@property
-	def CxlRsn(self):
-		return self._CxlRsn
-
-	@CxlRsn.setter
-	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != auto else self.make_default("CxlRsn")
-
-	@CxlRsn.deleter
-	def CxlRsn(self):
-		del self._CxlRsn
-		self._CxlRsn = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlRsn', type=CancellationReason31Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlRsn', type=CancellationReason31Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

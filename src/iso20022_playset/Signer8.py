@@ -1,14 +1,14 @@
 import base_types
+import Number
+import AlgorithmIdentification36
+import GenericInformation1
 import Recipient13Choice
 import Max3000Binary
-import GenericInformation1
-import AlgorithmIdentification36
 import AlgorithmIdentification33
-import Number
 
 class Signer8(base_types._BaseFieldType):
 
-	__slots__ = ["_Sgntr", "_SgndAttrbts", "_SgntrAlgo", "_Vrsn", "_DgstAlgo", "_SgnrId"]
+	__slots__ = ["_Sgntr", "_SgndAttrbts", "_DgstAlgo", "_SgntrAlgo", "_Vrsn", "_SgnrId"]
 	@property
 	def Sgntr(self):
 		return self._Sgntr
@@ -34,6 +34,19 @@ class Signer8(base_types._BaseFieldType):
 	def SgndAttrbts(self):
 		del self._SgndAttrbts
 		self._SgndAttrbts = None
+
+	@property
+	def DgstAlgo(self):
+		return self._DgstAlgo
+
+	@DgstAlgo.setter
+	def DgstAlgo(self, value):
+		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
+
+	@DgstAlgo.deleter
+	def DgstAlgo(self):
+		del self._DgstAlgo
+		self._DgstAlgo = None
 
 	@property
 	def SgntrAlgo(self):
@@ -62,19 +75,6 @@ class Signer8(base_types._BaseFieldType):
 		self._Vrsn = None
 
 	@property
-	def DgstAlgo(self):
-		return self._DgstAlgo
-
-	@DgstAlgo.setter
-	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != auto else self.make_default("DgstAlgo")
-
-	@DgstAlgo.deleter
-	def DgstAlgo(self):
-		del self._DgstAlgo
-		self._DgstAlgo = None
-
-	@property
 	def SgnrId(self):
 		return self._SgnrId
 
@@ -90,9 +90,9 @@ class Signer8(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sgntr', type=Max3000Binary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndAttrbts', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrAlgo', type=AlgorithmIdentification33, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification36, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgnrId', type=Recipient13Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

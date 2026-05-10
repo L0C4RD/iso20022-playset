@@ -4,20 +4,7 @@ import ActiveCurrencyCode
 
 class AgreedRate3(base_types._BaseFieldType):
 
-	__slots__ = ["_QtdCcy", "_XchgRate", "_UnitCcy"]
-	@property
-	def QtdCcy(self):
-		return self._QtdCcy
-
-	@QtdCcy.setter
-	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
-
-	@QtdCcy.deleter
-	def QtdCcy(self):
-		del self._QtdCcy
-		self._QtdCcy = None
-
+	__slots__ = ["_XchgRate", "_UnitCcy", "_QtdCcy"]
 	@property
 	def XchgRate(self):
 		return self._XchgRate
@@ -44,9 +31,22 @@ class AgreedRate3(base_types._BaseFieldType):
 		del self._UnitCcy
 		self._UnitCcy = None
 
+	@property
+	def QtdCcy(self):
+		return self._QtdCcy
+
+	@QtdCcy.setter
+	def QtdCcy(self, value):
+		self._QtdCcy = value if type(value) != auto else self.make_default("QtdCcy")
+
+	@QtdCcy.deleter
+	def QtdCcy(self):
+		del self._QtdCcy
+		self._QtdCcy = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QtdCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
 

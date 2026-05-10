@@ -1,29 +1,29 @@
 import base_types
-import DateAndDateTime2Choice
-import CancellationIndividualStatus1Code
-import UUIDv4Identifier
-import Case6
-import ActiveOrHistoricCurrencyAndAmount
-import OriginalTransactionReference42
 import CancellationStatusReason5
-import Max35Text
+import UUIDv4Identifier
+import CancellationIndividualStatus1Code
 import ISODate
+import DateAndDateTime2Choice
+import Max35Text
+import OriginalTransactionReference42
+import ActiveOrHistoricCurrencyAndAmount
+import Case6
 
 class PaymentTransaction153(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlInstrId", "_UETR", "_CxlStsRsnInf", "_TxCxlSts", "_RslvdCase", "_CxlStsId", "_OrgnlReqdColltnDt", "_OrgnlEndToEndId", "_OrgnlReqdExctnDt", "_OrgnlInstdAmt", "_OrgnlTxRef"]
+	__slots__ = ["_OrgnlEndToEndId", "_UETR", "_OrgnlReqdColltnDt", "_RslvdCase", "_OrgnlInstrId", "_TxCxlSts", "_CxlStsId", "_OrgnlTxRef", "_CxlStsRsnInf", "_OrgnlReqdExctnDt", "_OrgnlInstdAmt"]
 	@property
-	def OrgnlInstrId(self):
-		return self._OrgnlInstrId
+	def OrgnlEndToEndId(self):
+		return self._OrgnlEndToEndId
 
-	@OrgnlInstrId.setter
-	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
+	@OrgnlEndToEndId.setter
+	def OrgnlEndToEndId(self, value):
+		self._OrgnlEndToEndId = value if type(value) != auto else self.make_default("OrgnlEndToEndId")
 
-	@OrgnlInstrId.deleter
-	def OrgnlInstrId(self):
-		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
+	@OrgnlEndToEndId.deleter
+	def OrgnlEndToEndId(self):
+		del self._OrgnlEndToEndId
+		self._OrgnlEndToEndId = None
 
 	@property
 	def UETR(self):
@@ -39,30 +39,17 @@ class PaymentTransaction153(base_types._BaseFieldType):
 		self._UETR = None
 
 	@property
-	def CxlStsRsnInf(self):
-		return self._CxlStsRsnInf
+	def OrgnlReqdColltnDt(self):
+		return self._OrgnlReqdColltnDt
 
-	@CxlStsRsnInf.setter
-	def CxlStsRsnInf(self, value):
-		self._CxlStsRsnInf = value if type(value) != auto else self.make_default("CxlStsRsnInf")
+	@OrgnlReqdColltnDt.setter
+	def OrgnlReqdColltnDt(self, value):
+		self._OrgnlReqdColltnDt = value if type(value) != auto else self.make_default("OrgnlReqdColltnDt")
 
-	@CxlStsRsnInf.deleter
-	def CxlStsRsnInf(self):
-		del self._CxlStsRsnInf
-		self._CxlStsRsnInf = None
-
-	@property
-	def TxCxlSts(self):
-		return self._TxCxlSts
-
-	@TxCxlSts.setter
-	def TxCxlSts(self, value):
-		self._TxCxlSts = value if type(value) != auto else self.make_default("TxCxlSts")
-
-	@TxCxlSts.deleter
-	def TxCxlSts(self):
-		del self._TxCxlSts
-		self._TxCxlSts = None
+	@OrgnlReqdColltnDt.deleter
+	def OrgnlReqdColltnDt(self):
+		del self._OrgnlReqdColltnDt
+		self._OrgnlReqdColltnDt = None
 
 	@property
 	def RslvdCase(self):
@@ -78,6 +65,32 @@ class PaymentTransaction153(base_types._BaseFieldType):
 		self._RslvdCase = None
 
 	@property
+	def OrgnlInstrId(self):
+		return self._OrgnlInstrId
+
+	@OrgnlInstrId.setter
+	def OrgnlInstrId(self, value):
+		self._OrgnlInstrId = value if type(value) != auto else self.make_default("OrgnlInstrId")
+
+	@OrgnlInstrId.deleter
+	def OrgnlInstrId(self):
+		del self._OrgnlInstrId
+		self._OrgnlInstrId = None
+
+	@property
+	def TxCxlSts(self):
+		return self._TxCxlSts
+
+	@TxCxlSts.setter
+	def TxCxlSts(self, value):
+		self._TxCxlSts = value if type(value) != auto else self.make_default("TxCxlSts")
+
+	@TxCxlSts.deleter
+	def TxCxlSts(self):
+		del self._TxCxlSts
+		self._TxCxlSts = None
+
+	@property
 	def CxlStsId(self):
 		return self._CxlStsId
 
@@ -91,30 +104,30 @@ class PaymentTransaction153(base_types._BaseFieldType):
 		self._CxlStsId = None
 
 	@property
-	def OrgnlReqdColltnDt(self):
-		return self._OrgnlReqdColltnDt
+	def OrgnlTxRef(self):
+		return self._OrgnlTxRef
 
-	@OrgnlReqdColltnDt.setter
-	def OrgnlReqdColltnDt(self, value):
-		self._OrgnlReqdColltnDt = value if type(value) != auto else self.make_default("OrgnlReqdColltnDt")
+	@OrgnlTxRef.setter
+	def OrgnlTxRef(self, value):
+		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
 
-	@OrgnlReqdColltnDt.deleter
-	def OrgnlReqdColltnDt(self):
-		del self._OrgnlReqdColltnDt
-		self._OrgnlReqdColltnDt = None
+	@OrgnlTxRef.deleter
+	def OrgnlTxRef(self):
+		del self._OrgnlTxRef
+		self._OrgnlTxRef = None
 
 	@property
-	def OrgnlEndToEndId(self):
-		return self._OrgnlEndToEndId
+	def CxlStsRsnInf(self):
+		return self._CxlStsRsnInf
 
-	@OrgnlEndToEndId.setter
-	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != auto else self.make_default("OrgnlEndToEndId")
+	@CxlStsRsnInf.setter
+	def CxlStsRsnInf(self, value):
+		self._CxlStsRsnInf = value if type(value) != auto else self.make_default("CxlStsRsnInf")
 
-	@OrgnlEndToEndId.deleter
-	def OrgnlEndToEndId(self):
-		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
+	@CxlStsRsnInf.deleter
+	def CxlStsRsnInf(self):
+		del self._CxlStsRsnInf
+		self._CxlStsRsnInf = None
 
 	@property
 	def OrgnlReqdExctnDt(self):
@@ -142,30 +155,17 @@ class PaymentTransaction153(base_types._BaseFieldType):
 		del self._OrgnlInstdAmt
 		self._OrgnlInstdAmt = None
 
-	@property
-	def OrgnlTxRef(self):
-		return self._OrgnlTxRef
-
-	@OrgnlTxRef.setter
-	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != auto else self.make_default("OrgnlTxRef")
-
-	@OrgnlTxRef.deleter
-	def OrgnlTxRef(self):
-		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlStsRsnInf', type=CancellationStatusReason5, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TxCxlSts', type=CancellationIndividualStatus1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlStsId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlEndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlReqdColltnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxCxlSts', type=CancellationIndividualStatus1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlStsId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference42, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlStsRsnInf', type=CancellationStatusReason5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OrgnlReqdExctnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlInstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlTxRef', type=OriginalTransactionReference42, min=0, max=1, mutex_group=None, array=False),
 	))
 

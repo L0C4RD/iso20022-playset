@@ -1,11 +1,24 @@
 import base_types
-import RepurchaseAgreementType1Choice
 import ProductClassification1
+import RepurchaseAgreementType1Choice
 import LEIIdentifier
 
 class RepurchaseAgreement3(base_types._BaseFieldType):
 
-	__slots__ = ["_RpAgrmtTp", "_PdctClssfctn", "_TrptyAgt"]
+	__slots__ = ["_TrptyAgt", "_RpAgrmtTp", "_PdctClssfctn"]
+	@property
+	def TrptyAgt(self):
+		return self._TrptyAgt
+
+	@TrptyAgt.setter
+	def TrptyAgt(self, value):
+		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
+
+	@TrptyAgt.deleter
+	def TrptyAgt(self):
+		del self._TrptyAgt
+		self._TrptyAgt = None
+
 	@property
 	def RpAgrmtTp(self):
 		return self._RpAgrmtTp
@@ -32,22 +45,9 @@ class RepurchaseAgreement3(base_types._BaseFieldType):
 		del self._PdctClssfctn
 		self._PdctClssfctn = None
 
-	@property
-	def TrptyAgt(self):
-		return self._TrptyAgt
-
-	@TrptyAgt.setter
-	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != auto else self.make_default("TrptyAgt")
-
-	@TrptyAgt.deleter
-	def TrptyAgt(self):
-		del self._TrptyAgt
-		self._TrptyAgt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='TrptyAgt', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RpAgrmtTp', type=RepurchaseAgreementType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctClssfctn', type=ProductClassification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrptyAgt', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,24 +1,11 @@
 import base_types
+import MultilateralSettlementRequest3
 import SupplementaryData1
 import GroupHeader104
-import MultilateralSettlementRequest3
 
 class MultilateralSettlementRequestV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_GrpHdr", "_SttlmReq"]
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_GrpHdr", "_SplmtryData", "_SttlmReq"]
 	@property
 	def GrpHdr(self):
 		return self._GrpHdr
@@ -31,6 +18,19 @@ class MultilateralSettlementRequestV02(base_types._BaseFieldType):
 	def GrpHdr(self):
 		del self._GrpHdr
 		self._GrpHdr = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	@property
 	def SttlmReq(self):
@@ -46,8 +46,8 @@ class MultilateralSettlementRequestV02(base_types._BaseFieldType):
 		self._SttlmReq = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader104, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmReq', type=MultilateralSettlementRequest3, min=1, max=None, mutex_group=None, array=True),
 	))
 

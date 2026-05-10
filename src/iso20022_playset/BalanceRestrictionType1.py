@@ -1,24 +1,11 @@
 import base_types
-import Max140Text
-import ProcessingType1Choice
 import GenericIdentification1
+import ProcessingType1Choice
+import Max140Text
 
 class BalanceRestrictionType1(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgTp", "_Tp", "_Desc"]
-	@property
-	def PrcgTp(self):
-		return self._PrcgTp
-
-	@PrcgTp.setter
-	def PrcgTp(self, value):
-		self._PrcgTp = value if type(value) != auto else self.make_default("PrcgTp")
-
-	@PrcgTp.deleter
-	def PrcgTp(self):
-		del self._PrcgTp
-		self._PrcgTp = None
-
+	__slots__ = ["_Tp", "_Desc", "_PrcgTp"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -45,9 +32,22 @@ class BalanceRestrictionType1(base_types._BaseFieldType):
 		del self._Desc
 		self._Desc = None
 
+	@property
+	def PrcgTp(self):
+		return self._PrcgTp
+
+	@PrcgTp.setter
+	def PrcgTp(self, value):
+		self._PrcgTp = value if type(value) != auto else self.make_default("PrcgTp")
+
+	@PrcgTp.deleter
+	def PrcgTp(self):
+		del self._PrcgTp
+		self._PrcgTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgTp', type=ProcessingType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgTp', type=ProcessingType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

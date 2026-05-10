@@ -1,15 +1,67 @@
 import base_types
-import RepairStatus12Choice
-import CancellationStatus24Choice
+import AcknowledgedAcceptedStatus21Choice
 import PendingStatus38Choice
 import PendingProcessingStatus18Choice
-import ProprietaryReason4
-import AcknowledgedAcceptedStatus21Choice
 import GeneratedStatus7Choice
+import ProprietaryReason4
+import RepairStatus12Choice
+import CancellationStatus24Choice
 
 class InstructionProcessingStatus42Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PdgPrcg", "_PdgCxl", "_ModReqd", "_CxlReqd", "_Canc", "_AckdAccptd", "_Gnrtd", "_Rpr"]
+	__slots__ = ["_Gnrtd", "_Canc", "_CxlReqd", "_ModReqd", "_PdgPrcg", "_PdgCxl", "_Rpr", "_AckdAccptd"]
+	@property
+	def Gnrtd(self):
+		return self._Gnrtd
+
+	@Gnrtd.setter
+	def Gnrtd(self, value):
+		self._Gnrtd = value if type(value) != auto else self.make_default("Gnrtd")
+
+	@Gnrtd.deleter
+	def Gnrtd(self):
+		del self._Gnrtd
+		self._Gnrtd = None
+
+	@property
+	def Canc(self):
+		return self._Canc
+
+	@Canc.setter
+	def Canc(self, value):
+		self._Canc = value if type(value) != auto else self.make_default("Canc")
+
+	@Canc.deleter
+	def Canc(self):
+		del self._Canc
+		self._Canc = None
+
+	@property
+	def CxlReqd(self):
+		return self._CxlReqd
+
+	@CxlReqd.setter
+	def CxlReqd(self, value):
+		self._CxlReqd = value if type(value) != auto else self.make_default("CxlReqd")
+
+	@CxlReqd.deleter
+	def CxlReqd(self):
+		del self._CxlReqd
+		self._CxlReqd = None
+
+	@property
+	def ModReqd(self):
+		return self._ModReqd
+
+	@ModReqd.setter
+	def ModReqd(self, value):
+		self._ModReqd = value if type(value) != auto else self.make_default("ModReqd")
+
+	@ModReqd.deleter
+	def ModReqd(self):
+		del self._ModReqd
+		self._ModReqd = None
+
 	@property
 	def PdgPrcg(self):
 		return self._PdgPrcg
@@ -37,43 +89,17 @@ class InstructionProcessingStatus42Choice(base_types._BaseFieldType):
 		self._PdgCxl = None
 
 	@property
-	def ModReqd(self):
-		return self._ModReqd
+	def Rpr(self):
+		return self._Rpr
 
-	@ModReqd.setter
-	def ModReqd(self, value):
-		self._ModReqd = value if type(value) != auto else self.make_default("ModReqd")
+	@Rpr.setter
+	def Rpr(self, value):
+		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
 
-	@ModReqd.deleter
-	def ModReqd(self):
-		del self._ModReqd
-		self._ModReqd = None
-
-	@property
-	def CxlReqd(self):
-		return self._CxlReqd
-
-	@CxlReqd.setter
-	def CxlReqd(self, value):
-		self._CxlReqd = value if type(value) != auto else self.make_default("CxlReqd")
-
-	@CxlReqd.deleter
-	def CxlReqd(self):
-		del self._CxlReqd
-		self._CxlReqd = None
-
-	@property
-	def Canc(self):
-		return self._Canc
-
-	@Canc.setter
-	def Canc(self, value):
-		self._Canc = value if type(value) != auto else self.make_default("Canc")
-
-	@Canc.deleter
-	def Canc(self):
-		del self._Canc
-		self._Canc = None
+	@Rpr.deleter
+	def Rpr(self):
+		del self._Rpr
+		self._Rpr = None
 
 	@property
 	def AckdAccptd(self):
@@ -88,40 +114,14 @@ class InstructionProcessingStatus42Choice(base_types._BaseFieldType):
 		del self._AckdAccptd
 		self._AckdAccptd = None
 
-	@property
-	def Gnrtd(self):
-		return self._Gnrtd
-
-	@Gnrtd.setter
-	def Gnrtd(self, value):
-		self._Gnrtd = value if type(value) != auto else self.make_default("Gnrtd")
-
-	@Gnrtd.deleter
-	def Gnrtd(self):
-		del self._Gnrtd
-		self._Gnrtd = None
-
-	@property
-	def Rpr(self):
-		return self._Rpr
-
-	@Rpr.setter
-	def Rpr(self, value):
-		self._Rpr = value if type(value) != auto else self.make_default("Rpr")
-
-	@Rpr.deleter
-	def Rpr(self):
-		del self._Rpr
-		self._Rpr = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Gnrtd', type=GeneratedStatus7Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Canc', type=CancellationStatus24Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='ModReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgPrcg', type=PendingProcessingStatus18Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgCxl', type=PendingStatus38Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='ModReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Canc', type=CancellationStatus24Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Gnrtd', type=GeneratedStatus7Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RepairStatus12Choice, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import Number
-import BICIdentification1
 import Max35Text
+import BICIdentification1
+import Number
 
 class DocumentIdentification1(base_types._BaseFieldType):
 

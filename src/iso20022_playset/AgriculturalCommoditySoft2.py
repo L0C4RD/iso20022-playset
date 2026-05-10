@@ -1,7 +1,7 @@
 import base_types
+import AssetClassProductType1Code
 import AssetClassSubProductType2Code
 import AssetClassDetailedSubProductType2Code
-import AssetClassProductType1Code
 
 class AgriculturalCommoditySoft2(base_types._BaseFieldType):
 

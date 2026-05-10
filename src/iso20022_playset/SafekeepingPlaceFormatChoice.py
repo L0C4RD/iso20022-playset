@@ -1,24 +1,11 @@
 import base_types
-import SafekeepingPlaceAsCodeAndPartyIdentification
-import GenericIdentification5
 import CountryCode
+import GenericIdentification5
+import SafekeepingPlaceAsCodeAndPartyIdentification
 
 class SafekeepingPlaceFormatChoice(base_types._BaseFieldType):
 
-	__slots__ = ["_IdAsDSS", "_Id", "_IdAsCtry"]
-	@property
-	def IdAsDSS(self):
-		return self._IdAsDSS
-
-	@IdAsDSS.setter
-	def IdAsDSS(self, value):
-		self._IdAsDSS = value if type(value) != auto else self.make_default("IdAsDSS")
-
-	@IdAsDSS.deleter
-	def IdAsDSS(self):
-		del self._IdAsDSS
-		self._IdAsDSS = None
-
+	__slots__ = ["_Id", "_IdAsDSS", "_IdAsCtry"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class SafekeepingPlaceFormatChoice(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def IdAsDSS(self):
+		return self._IdAsDSS
+
+	@IdAsDSS.setter
+	def IdAsDSS(self, value):
+		self._IdAsDSS = value if type(value) != auto else self.make_default("IdAsDSS")
+
+	@IdAsDSS.deleter
+	def IdAsDSS(self):
+		del self._IdAsDSS
+		self._IdAsDSS = None
 
 	@property
 	def IdAsCtry(self):
@@ -46,8 +46,8 @@ class SafekeepingPlaceFormatChoice(base_types._BaseFieldType):
 		self._IdAsCtry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IdAsDSS', type=GenericIdentification5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Id', type=SafekeepingPlaceAsCodeAndPartyIdentification, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='IdAsDSS', type=GenericIdentification5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IdAsCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
 

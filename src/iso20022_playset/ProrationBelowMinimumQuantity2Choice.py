@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import ProrationBelowMinimumQuantity1Code
+import GenericIdentification30
 
 class ProrationBelowMinimumQuantity2Choice(base_types._BaseFieldType):
 

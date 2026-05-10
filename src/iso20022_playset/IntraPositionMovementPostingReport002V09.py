@@ -1,27 +1,14 @@
 import base_types
-import PartyIdentification136Choice
+import FinancialInstrumentDetails44
+import Statement81
+import SecuritiesAccount30
 import Pagination1
 import BlockChainAddressWallet7
-import Statement81
-import FinancialInstrumentDetails44
-import SecuritiesAccount30
+import PartyIdentification136Choice
 
 class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrm", "_BlckChainAdrOrWllt", "_SfkpgAcct", "_AcctOwnr", "_Pgntn", "_StmtGnlDtls"]
-	@property
-	def FinInstrm(self):
-		return self._FinInstrm
-
-	@FinInstrm.setter
-	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
-
-	@FinInstrm.deleter
-	def FinInstrm(self):
-		del self._FinInstrm
-		self._FinInstrm = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_AcctOwnr", "_Pgntn", "_FinInstrm", "_SfkpgAcct", "_StmtGnlDtls"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -34,19 +21,6 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
 		self._BlckChainAdrOrWllt = None
-
-	@property
-	def SfkpgAcct(self):
-		return self._SfkpgAcct
-
-	@SfkpgAcct.setter
-	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
-
-	@SfkpgAcct.deleter
-	def SfkpgAcct(self):
-		del self._SfkpgAcct
-		self._SfkpgAcct = None
 
 	@property
 	def AcctOwnr(self):
@@ -75,6 +49,32 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	@property
+	def FinInstrm(self):
+		return self._FinInstrm
+
+	@FinInstrm.setter
+	def FinInstrm(self, value):
+		self._FinInstrm = value if type(value) != auto else self.make_default("FinInstrm")
+
+	@FinInstrm.deleter
+	def FinInstrm(self):
+		del self._FinInstrm
+		self._FinInstrm = None
+
+	@property
+	def SfkpgAcct(self):
+		return self._SfkpgAcct
+
+	@SfkpgAcct.setter
+	def SfkpgAcct(self, value):
+		self._SfkpgAcct = value if type(value) != auto else self.make_default("SfkpgAcct")
+
+	@SfkpgAcct.deleter
+	def SfkpgAcct(self):
+		del self._SfkpgAcct
+		self._SfkpgAcct = None
+
+	@property
 	def StmtGnlDtls(self):
 		return self._StmtGnlDtls
 
@@ -88,11 +88,11 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 		self._StmtGnlDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrumentDetails44, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrumentDetails44, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement81, min=1, max=1, mutex_group=None, array=False),
 	))
 

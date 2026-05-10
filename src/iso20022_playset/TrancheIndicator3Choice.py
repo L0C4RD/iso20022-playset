@@ -1,6 +1,6 @@
 import base_types
-import Tranche3
 import NoReasonCode
+import Tranche3
 
 class TrancheIndicator3Choice(base_types._BaseFieldType):
 

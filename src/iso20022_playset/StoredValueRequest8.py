@@ -1,23 +1,10 @@
 import base_types
-import TransactionIdentifier1
 import StoredValueData8
+import TransactionIdentifier1
 
 class StoredValueRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleTxId", "_Data"]
-	@property
-	def SaleTxId(self):
-		return self._SaleTxId
-
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
-
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
-
+	__slots__ = ["_Data", "_SaleTxId"]
 	@property
 	def Data(self):
 		return self._Data
@@ -31,8 +18,21 @@ class StoredValueRequest8(base_types._BaseFieldType):
 		del self._Data
 		self._Data = None
 
+	@property
+	def SaleTxId(self):
+		return self._SaleTxId
+
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
+
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Data', type=StoredValueData8, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
 

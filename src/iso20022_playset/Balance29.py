@@ -1,54 +1,15 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import BalanceType15Code
-import CreditDebit3Code
-import ISODate
 import Max35Text
 import ISO3NumericCurrencyCode
+import BalanceType15Code
+import ImpliedCurrencyAndAmount
+import CreditDebit3Code
+import ISODate
 import TrueFalseIndicator
 
 class Balance29(base_types._BaseFieldType):
 
-	__slots__ = ["_CdtDbt", "_Tp", "_BalDt", "_Ccy", "_CrdhldrCcy", "_Amt", "_OthrTp"]
-	@property
-	def CdtDbt(self):
-		return self._CdtDbt
-
-	@CdtDbt.setter
-	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
-
-	@CdtDbt.deleter
-	def CdtDbt(self):
-		del self._CdtDbt
-		self._CdtDbt = None
-
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
-	def BalDt(self):
-		return self._BalDt
-
-	@BalDt.setter
-	def BalDt(self, value):
-		self._BalDt = value if type(value) != auto else self.make_default("BalDt")
-
-	@BalDt.deleter
-	def BalDt(self):
-		del self._BalDt
-		self._BalDt = None
-
+	__slots__ = ["_Ccy", "_Amt", "_CrdhldrCcy", "_OthrTp", "_BalDt", "_Tp", "_CdtDbt"]
 	@property
 	def Ccy(self):
 		return self._Ccy
@@ -61,19 +22,6 @@ class Balance29(base_types._BaseFieldType):
 	def Ccy(self):
 		del self._Ccy
 		self._Ccy = None
-
-	@property
-	def CrdhldrCcy(self):
-		return self._CrdhldrCcy
-
-	@CrdhldrCcy.setter
-	def CrdhldrCcy(self, value):
-		self._CrdhldrCcy = value if type(value) != auto else self.make_default("CrdhldrCcy")
-
-	@CrdhldrCcy.deleter
-	def CrdhldrCcy(self):
-		del self._CrdhldrCcy
-		self._CrdhldrCcy = None
 
 	@property
 	def Amt(self):
@@ -89,6 +37,19 @@ class Balance29(base_types._BaseFieldType):
 		self._Amt = None
 
 	@property
+	def CrdhldrCcy(self):
+		return self._CrdhldrCcy
+
+	@CrdhldrCcy.setter
+	def CrdhldrCcy(self, value):
+		self._CrdhldrCcy = value if type(value) != auto else self.make_default("CrdhldrCcy")
+
+	@CrdhldrCcy.deleter
+	def CrdhldrCcy(self):
+		del self._CrdhldrCcy
+		self._CrdhldrCcy = None
+
+	@property
 	def OthrTp(self):
 		return self._OthrTp
 
@@ -101,13 +62,52 @@ class Balance29(base_types._BaseFieldType):
 		del self._OthrTp
 		self._OthrTp = None
 
+	@property
+	def BalDt(self):
+		return self._BalDt
+
+	@BalDt.setter
+	def BalDt(self, value):
+		self._BalDt = value if type(value) != auto else self.make_default("BalDt")
+
+	@BalDt.deleter
+	def BalDt(self):
+		del self._BalDt
+		self._BalDt = None
+
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
+	@property
+	def CdtDbt(self):
+		return self._CdtDbt
+
+	@CdtDbt.setter
+	def CdtDbt(self, value):
+		self._CdtDbt = value if type(value) != auto else self.make_default("CdtDbt")
+
+	@CdtDbt.deleter
+	def CdtDbt(self):
+		del self._CdtDbt
+		self._CdtDbt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=BalanceType15Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CrdhldrCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BalDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=BalanceType15Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

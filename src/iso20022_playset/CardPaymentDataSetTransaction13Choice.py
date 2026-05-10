@@ -1,38 +1,25 @@
 import base_types
-import CardPaymentDataSetTransaction52
-import CardPaymentDataSetTransaction53
 import CardPaymentDataSetTransaction50
+import CardPaymentDataSetTransaction53
 import TokenRequestComponent5
+import CardPaymentDataSetTransaction52
 import CardPaymentDataSetTransaction51
 
 class CardPaymentDataSetTransaction13Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_TknReq", "_AuthstnReq", "_Cxl", "_TknRspn", "_AuthstnRspn", "_Cmpltn"]
+	__slots__ = ["_AuthstnRspn", "_Cxl", "_TknRspn", "_AuthstnReq", "_Cmpltn", "_TknReq"]
 	@property
-	def TknReq(self):
-		return self._TknReq
+	def AuthstnRspn(self):
+		return self._AuthstnRspn
 
-	@TknReq.setter
-	def TknReq(self, value):
-		self._TknReq = value if type(value) != auto else self.make_default("TknReq")
+	@AuthstnRspn.setter
+	def AuthstnRspn(self, value):
+		self._AuthstnRspn = value if type(value) != auto else self.make_default("AuthstnRspn")
 
-	@TknReq.deleter
-	def TknReq(self):
-		del self._TknReq
-		self._TknReq = None
-
-	@property
-	def AuthstnReq(self):
-		return self._AuthstnReq
-
-	@AuthstnReq.setter
-	def AuthstnReq(self, value):
-		self._AuthstnReq = value if type(value) != auto else self.make_default("AuthstnReq")
-
-	@AuthstnReq.deleter
-	def AuthstnReq(self):
-		del self._AuthstnReq
-		self._AuthstnReq = None
+	@AuthstnRspn.deleter
+	def AuthstnRspn(self):
+		del self._AuthstnRspn
+		self._AuthstnRspn = None
 
 	@property
 	def Cxl(self):
@@ -61,17 +48,17 @@ class CardPaymentDataSetTransaction13Choice(base_types._BaseFieldType):
 		self._TknRspn = None
 
 	@property
-	def AuthstnRspn(self):
-		return self._AuthstnRspn
+	def AuthstnReq(self):
+		return self._AuthstnReq
 
-	@AuthstnRspn.setter
-	def AuthstnRspn(self, value):
-		self._AuthstnRspn = value if type(value) != auto else self.make_default("AuthstnRspn")
+	@AuthstnReq.setter
+	def AuthstnReq(self, value):
+		self._AuthstnReq = value if type(value) != auto else self.make_default("AuthstnReq")
 
-	@AuthstnRspn.deleter
-	def AuthstnRspn(self):
-		del self._AuthstnRspn
-		self._AuthstnRspn = None
+	@AuthstnReq.deleter
+	def AuthstnReq(self):
+		del self._AuthstnReq
+		self._AuthstnReq = None
 
 	@property
 	def Cmpltn(self):
@@ -86,12 +73,25 @@ class CardPaymentDataSetTransaction13Choice(base_types._BaseFieldType):
 		del self._Cmpltn
 		self._Cmpltn = None
 
+	@property
+	def TknReq(self):
+		return self._TknReq
+
+	@TknReq.setter
+	def TknReq(self, value):
+		self._TknReq = value if type(value) != auto else self.make_default("TknReq")
+
+	@TknReq.deleter
+	def TknReq(self):
+		del self._TknReq
+		self._TknReq = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TknReq', type=TokenRequestComponent5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AuthstnReq', type=CardPaymentDataSetTransaction52, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AuthstnRspn', type=CardPaymentDataSetTransaction53, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cxl', type=CardPaymentDataSetTransaction50, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TknRspn', type=TokenRequestComponent5, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='AuthstnRspn', type=CardPaymentDataSetTransaction53, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AuthstnReq', type=CardPaymentDataSetTransaction52, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cmpltn', type=CardPaymentDataSetTransaction51, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='TknReq', type=TokenRequestComponent5, min=0, max=1, mutex_group=1, array=False),
 	))
 

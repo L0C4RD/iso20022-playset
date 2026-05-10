@@ -1,23 +1,23 @@
 import base_types
 import OriginalMessageAndIssuer1
-import PaymentIdentification8Choice
 import RequestHandling4
+import PaymentIdentification8Choice
 
 class Receipt7(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqHdlg", "_OrgnlPmtId", "_OrgnlMsgId"]
+	__slots__ = ["_OrgnlMsgId", "_OrgnlPmtId", "_ReqHdlg"]
 	@property
-	def ReqHdlg(self):
-		return self._ReqHdlg
+	def OrgnlMsgId(self):
+		return self._OrgnlMsgId
 
-	@ReqHdlg.setter
-	def ReqHdlg(self, value):
-		self._ReqHdlg = value if type(value) != auto else self.make_default("ReqHdlg")
+	@OrgnlMsgId.setter
+	def OrgnlMsgId(self, value):
+		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
 
-	@ReqHdlg.deleter
-	def ReqHdlg(self):
-		del self._ReqHdlg
-		self._ReqHdlg = None
+	@OrgnlMsgId.deleter
+	def OrgnlMsgId(self):
+		del self._OrgnlMsgId
+		self._OrgnlMsgId = None
 
 	@property
 	def OrgnlPmtId(self):
@@ -33,21 +33,21 @@ class Receipt7(base_types._BaseFieldType):
 		self._OrgnlPmtId = None
 
 	@property
-	def OrgnlMsgId(self):
-		return self._OrgnlMsgId
+	def ReqHdlg(self):
+		return self._ReqHdlg
 
-	@OrgnlMsgId.setter
-	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != auto else self.make_default("OrgnlMsgId")
+	@ReqHdlg.setter
+	def ReqHdlg(self, value):
+		self._ReqHdlg = value if type(value) != auto else self.make_default("ReqHdlg")
 
-	@OrgnlMsgId.deleter
-	def OrgnlMsgId(self):
-		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+	@ReqHdlg.deleter
+	def ReqHdlg(self):
+		del self._ReqHdlg
+		self._ReqHdlg = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqHdlg', type=RequestHandling4, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OrgnlPmtId', type=PaymentIdentification8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlMsgId', type=OriginalMessageAndIssuer1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPmtId', type=PaymentIdentification8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqHdlg', type=RequestHandling4, min=0, max=None, mutex_group=None, array=True),
 	))
 

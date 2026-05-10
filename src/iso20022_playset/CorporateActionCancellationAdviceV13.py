@@ -1,40 +1,27 @@
 import base_types
-import CorporateActionCancellation3
-import PartyIdentification120Choice
 import AccountIdentification73Choice
-import Max8000Text
 import SupplementaryData1
-import CorporateAction72
+import PartyIdentification120Choice
+import Max8000Text
 import CorporateActionGeneralInformation174
+import CorporateActionCancellation3
+import CorporateAction72
 
 class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 
-	__slots__ = ["_IssrAgt", "_InfAgt", "_SplmtryData", "_AcctsDtls", "_PngAgt", "_CxlAdvcGnlInf", "_SlctnAgt", "_AddtlTxt", "_CorpActnGnlInf", "_RsellngAgt", "_Regar", "_DrpAgt", "_CorpActnDtls", "_PhysSctiesAgt", "_SubPngAgt"]
+	__slots__ = ["_PngAgt", "_SplmtryData", "_SlctnAgt", "_IssrAgt", "_Regar", "_InfAgt", "_AcctsDtls", "_CorpActnDtls", "_CorpActnGnlInf", "_PhysSctiesAgt", "_CxlAdvcGnlInf", "_RsellngAgt", "_DrpAgt", "_AddtlTxt", "_SubPngAgt"]
 	@property
-	def IssrAgt(self):
-		return self._IssrAgt
+	def PngAgt(self):
+		return self._PngAgt
 
-	@IssrAgt.setter
-	def IssrAgt(self, value):
-		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
+	@PngAgt.setter
+	def PngAgt(self, value):
+		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
 
-	@IssrAgt.deleter
-	def IssrAgt(self):
-		del self._IssrAgt
-		self._IssrAgt = None
-
-	@property
-	def InfAgt(self):
-		return self._InfAgt
-
-	@InfAgt.setter
-	def InfAgt(self, value):
-		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
-
-	@InfAgt.deleter
-	def InfAgt(self):
-		del self._InfAgt
-		self._InfAgt = None
+	@PngAgt.deleter
+	def PngAgt(self):
+		del self._PngAgt
+		self._PngAgt = None
 
 	@property
 	def SplmtryData(self):
@@ -50,45 +37,6 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 		self._SplmtryData = None
 
 	@property
-	def AcctsDtls(self):
-		return self._AcctsDtls
-
-	@AcctsDtls.setter
-	def AcctsDtls(self, value):
-		self._AcctsDtls = value if type(value) != auto else self.make_default("AcctsDtls")
-
-	@AcctsDtls.deleter
-	def AcctsDtls(self):
-		del self._AcctsDtls
-		self._AcctsDtls = None
-
-	@property
-	def PngAgt(self):
-		return self._PngAgt
-
-	@PngAgt.setter
-	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != auto else self.make_default("PngAgt")
-
-	@PngAgt.deleter
-	def PngAgt(self):
-		del self._PngAgt
-		self._PngAgt = None
-
-	@property
-	def CxlAdvcGnlInf(self):
-		return self._CxlAdvcGnlInf
-
-	@CxlAdvcGnlInf.setter
-	def CxlAdvcGnlInf(self, value):
-		self._CxlAdvcGnlInf = value if type(value) != auto else self.make_default("CxlAdvcGnlInf")
-
-	@CxlAdvcGnlInf.deleter
-	def CxlAdvcGnlInf(self):
-		del self._CxlAdvcGnlInf
-		self._CxlAdvcGnlInf = None
-
-	@property
 	def SlctnAgt(self):
 		return self._SlctnAgt
 
@@ -102,43 +50,17 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 		self._SlctnAgt = None
 
 	@property
-	def AddtlTxt(self):
-		return self._AddtlTxt
+	def IssrAgt(self):
+		return self._IssrAgt
 
-	@AddtlTxt.setter
-	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+	@IssrAgt.setter
+	def IssrAgt(self, value):
+		self._IssrAgt = value if type(value) != auto else self.make_default("IssrAgt")
 
-	@AddtlTxt.deleter
-	def AddtlTxt(self):
-		del self._AddtlTxt
-		self._AddtlTxt = None
-
-	@property
-	def CorpActnGnlInf(self):
-		return self._CorpActnGnlInf
-
-	@CorpActnGnlInf.setter
-	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
-
-	@CorpActnGnlInf.deleter
-	def CorpActnGnlInf(self):
-		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
-
-	@property
-	def RsellngAgt(self):
-		return self._RsellngAgt
-
-	@RsellngAgt.setter
-	def RsellngAgt(self, value):
-		self._RsellngAgt = value if type(value) != auto else self.make_default("RsellngAgt")
-
-	@RsellngAgt.deleter
-	def RsellngAgt(self):
-		del self._RsellngAgt
-		self._RsellngAgt = None
+	@IssrAgt.deleter
+	def IssrAgt(self):
+		del self._IssrAgt
+		self._IssrAgt = None
 
 	@property
 	def Regar(self):
@@ -154,17 +76,30 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 		self._Regar = None
 
 	@property
-	def DrpAgt(self):
-		return self._DrpAgt
+	def InfAgt(self):
+		return self._InfAgt
 
-	@DrpAgt.setter
-	def DrpAgt(self, value):
-		self._DrpAgt = value if type(value) != auto else self.make_default("DrpAgt")
+	@InfAgt.setter
+	def InfAgt(self, value):
+		self._InfAgt = value if type(value) != auto else self.make_default("InfAgt")
 
-	@DrpAgt.deleter
-	def DrpAgt(self):
-		del self._DrpAgt
-		self._DrpAgt = None
+	@InfAgt.deleter
+	def InfAgt(self):
+		del self._InfAgt
+		self._InfAgt = None
+
+	@property
+	def AcctsDtls(self):
+		return self._AcctsDtls
+
+	@AcctsDtls.setter
+	def AcctsDtls(self, value):
+		self._AcctsDtls = value if type(value) != auto else self.make_default("AcctsDtls")
+
+	@AcctsDtls.deleter
+	def AcctsDtls(self):
+		del self._AcctsDtls
+		self._AcctsDtls = None
 
 	@property
 	def CorpActnDtls(self):
@@ -180,6 +115,19 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 		self._CorpActnDtls = None
 
 	@property
+	def CorpActnGnlInf(self):
+		return self._CorpActnGnlInf
+
+	@CorpActnGnlInf.setter
+	def CorpActnGnlInf(self, value):
+		self._CorpActnGnlInf = value if type(value) != auto else self.make_default("CorpActnGnlInf")
+
+	@CorpActnGnlInf.deleter
+	def CorpActnGnlInf(self):
+		del self._CorpActnGnlInf
+		self._CorpActnGnlInf = None
+
+	@property
 	def PhysSctiesAgt(self):
 		return self._PhysSctiesAgt
 
@@ -191,6 +139,58 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 	def PhysSctiesAgt(self):
 		del self._PhysSctiesAgt
 		self._PhysSctiesAgt = None
+
+	@property
+	def CxlAdvcGnlInf(self):
+		return self._CxlAdvcGnlInf
+
+	@CxlAdvcGnlInf.setter
+	def CxlAdvcGnlInf(self, value):
+		self._CxlAdvcGnlInf = value if type(value) != auto else self.make_default("CxlAdvcGnlInf")
+
+	@CxlAdvcGnlInf.deleter
+	def CxlAdvcGnlInf(self):
+		del self._CxlAdvcGnlInf
+		self._CxlAdvcGnlInf = None
+
+	@property
+	def RsellngAgt(self):
+		return self._RsellngAgt
+
+	@RsellngAgt.setter
+	def RsellngAgt(self, value):
+		self._RsellngAgt = value if type(value) != auto else self.make_default("RsellngAgt")
+
+	@RsellngAgt.deleter
+	def RsellngAgt(self):
+		del self._RsellngAgt
+		self._RsellngAgt = None
+
+	@property
+	def DrpAgt(self):
+		return self._DrpAgt
+
+	@DrpAgt.setter
+	def DrpAgt(self, value):
+		self._DrpAgt = value if type(value) != auto else self.make_default("DrpAgt")
+
+	@DrpAgt.deleter
+	def DrpAgt(self):
+		del self._DrpAgt
+		self._DrpAgt = None
+
+	@property
+	def AddtlTxt(self):
+		return self._AddtlTxt
+
+	@AddtlTxt.setter
+	def AddtlTxt(self, value):
+		self._AddtlTxt = value if type(value) != auto else self.make_default("AddtlTxt")
+
+	@AddtlTxt.deleter
+	def AddtlTxt(self):
+		del self._AddtlTxt
+		self._AddtlTxt = None
 
 	@property
 	def SubPngAgt(self):
@@ -206,20 +206,20 @@ class CorporateActionCancellationAdviceV13(base_types._BaseFieldType):
 		self._SubPngAgt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='InfAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AcctsDtls', type=AccountIdentification73Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CxlAdvcGnlInf', type=CorporateActionCancellation3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SlctnAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='AddtlTxt', type=Max8000Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation174, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RsellngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='IssrAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Regar', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DrpAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InfAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctsDtls', type=AccountIdentification73Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction72, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation174, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhysSctiesAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlAdvcGnlInf', type=CorporateActionCancellation3, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RsellngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='DrpAgt', type=PartyIdentification120Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlTxt', type=Max8000Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification120Choice, min=0, max=None, mutex_group=None, array=True),
 	))
 

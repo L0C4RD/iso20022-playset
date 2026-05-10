@@ -1,6 +1,6 @@
 import base_types
-import RestrictedFINMax30Text
 import PledgeeType1Code
+import RestrictedFINMax30Text
 
 class PledgeeTypeAndText2(base_types._BaseFieldType):
 

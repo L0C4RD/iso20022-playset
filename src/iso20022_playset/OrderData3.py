@@ -5,20 +5,7 @@ import OrderData4
 
 class OrderData3(base_types._BaseFieldType):
 
-	__slots__ = ["_OrdrData", "_OrdrIdData", "_AuctnData"]
-	@property
-	def OrdrData(self):
-		return self._OrdrData
-
-	@OrdrData.setter
-	def OrdrData(self, value):
-		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
-
-	@OrdrData.deleter
-	def OrdrData(self):
-		del self._OrdrData
-		self._OrdrData = None
-
+	__slots__ = ["_OrdrIdData", "_AuctnData", "_OrdrData"]
 	@property
 	def OrdrIdData(self):
 		return self._OrdrIdData
@@ -45,9 +32,22 @@ class OrderData3(base_types._BaseFieldType):
 		del self._AuctnData
 		self._AuctnData = None
 
+	@property
+	def OrdrData(self):
+		return self._OrdrData
+
+	@OrdrData.setter
+	def OrdrData(self, value):
+		self._OrdrData = value if type(value) != auto else self.make_default("OrdrData")
+
+	@OrdrData.deleter
+	def OrdrData(self):
+		del self._OrdrData
+		self._OrdrData = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrdrData', type=OrderData4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrIdData', type=OrderIdentification2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuctnData', type=AuctionData2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrData', type=OrderData4, min=0, max=1, mutex_group=None, array=False),
 	))
 

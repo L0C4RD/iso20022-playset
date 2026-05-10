@@ -1,6 +1,6 @@
 import base_types
-import Product6
 import Max35Text
+import Product6
 
 class SaleItemRebate1(base_types._BaseFieldType):
 

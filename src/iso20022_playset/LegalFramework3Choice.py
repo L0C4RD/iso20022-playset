@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import LegalFramework1Code
+import GenericIdentification30
 
 class LegalFramework3Choice(base_types._BaseFieldType):
 

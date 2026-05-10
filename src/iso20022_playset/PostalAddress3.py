@@ -1,7 +1,7 @@
 import base_types
-import NameAndAddress4
 import AddressType1Code
 import YesNoIndicator
+import NameAndAddress4
 
 class PostalAddress3(base_types._BaseFieldType):
 

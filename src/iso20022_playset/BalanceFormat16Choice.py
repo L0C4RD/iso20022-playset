@@ -4,7 +4,7 @@ import SignedQuantityFormat12
 
 class BalanceFormat16Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_PartWayPrdUnits", "_FullPrdUnits", "_ElgblBal", "_NotElgblBal", "_Bal"]
+	__slots__ = ["_PartWayPrdUnits", "_NotElgblBal", "_FullPrdUnits", "_ElgblBal", "_Bal"]
 	@property
 	def PartWayPrdUnits(self):
 		return self._PartWayPrdUnits
@@ -17,6 +17,19 @@ class BalanceFormat16Choice(base_types._BaseFieldType):
 	def PartWayPrdUnits(self):
 		del self._PartWayPrdUnits
 		self._PartWayPrdUnits = None
+
+	@property
+	def NotElgblBal(self):
+		return self._NotElgblBal
+
+	@NotElgblBal.setter
+	def NotElgblBal(self, value):
+		self._NotElgblBal = value if type(value) != auto else self.make_default("NotElgblBal")
+
+	@NotElgblBal.deleter
+	def NotElgblBal(self):
+		del self._NotElgblBal
+		self._NotElgblBal = None
 
 	@property
 	def FullPrdUnits(self):
@@ -45,19 +58,6 @@ class BalanceFormat16Choice(base_types._BaseFieldType):
 		self._ElgblBal = None
 
 	@property
-	def NotElgblBal(self):
-		return self._NotElgblBal
-
-	@NotElgblBal.setter
-	def NotElgblBal(self, value):
-		self._NotElgblBal = value if type(value) != auto else self.make_default("NotElgblBal")
-
-	@NotElgblBal.deleter
-	def NotElgblBal(self):
-		del self._NotElgblBal
-		self._NotElgblBal = None
-
-	@property
 	def Bal(self):
 		return self._Bal
 
@@ -72,9 +72,9 @@ class BalanceFormat16Choice(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat12, min=0, max=1, mutex_group=1, array=False),
 	))
 

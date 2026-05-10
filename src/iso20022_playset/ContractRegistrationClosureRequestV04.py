@@ -1,7 +1,7 @@
 import base_types
-import SupplementaryData1
 import RegisteredContract19
 import CurrencyControlHeader8
+import SupplementaryData1
 
 class ContractRegistrationClosureRequestV04(base_types._BaseFieldType):
 

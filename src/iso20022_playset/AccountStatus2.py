@@ -1,54 +1,28 @@
 import base_types
-import ProformaStatusReason1Choice
-import OtherAccountStatus1
-import PendingOpeningStatusReason1Choice
-import DisabledStatusReason1Choice
-import ClosurePendingStatusReason1Choice
 import PendingStatusReason1Choice
+import OtherAccountStatus1
+import ClosurePendingStatusReason1Choice
 import EnabledStatusReason1Choice
 import ClosedStatusReason1Choice
+import DisabledStatusReason1Choice
+import PendingOpeningStatusReason1Choice
+import ProformaStatusReason1Choice
 
 class AccountStatus2(base_types._BaseFieldType):
 
-	__slots__ = ["_Pdg", "_Profrm", "_Othr", "_Clsd", "_Nbld", "_PdgOpng", "_ClsrPdg", "_Dsbld"]
+	__slots__ = ["_Dsbld", "_Clsd", "_PdgOpng", "_Pdg", "_ClsrPdg", "_Nbld", "_Othr", "_Profrm"]
 	@property
-	def Pdg(self):
-		return self._Pdg
+	def Dsbld(self):
+		return self._Dsbld
 
-	@Pdg.setter
-	def Pdg(self, value):
-		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+	@Dsbld.setter
+	def Dsbld(self, value):
+		self._Dsbld = value if type(value) != auto else self.make_default("Dsbld")
 
-	@Pdg.deleter
-	def Pdg(self):
-		del self._Pdg
-		self._Pdg = None
-
-	@property
-	def Profrm(self):
-		return self._Profrm
-
-	@Profrm.setter
-	def Profrm(self, value):
-		self._Profrm = value if type(value) != auto else self.make_default("Profrm")
-
-	@Profrm.deleter
-	def Profrm(self):
-		del self._Profrm
-		self._Profrm = None
-
-	@property
-	def Othr(self):
-		return self._Othr
-
-	@Othr.setter
-	def Othr(self, value):
-		self._Othr = value if type(value) != auto else self.make_default("Othr")
-
-	@Othr.deleter
-	def Othr(self):
-		del self._Othr
-		self._Othr = None
+	@Dsbld.deleter
+	def Dsbld(self):
+		del self._Dsbld
+		self._Dsbld = None
 
 	@property
 	def Clsd(self):
@@ -64,19 +38,6 @@ class AccountStatus2(base_types._BaseFieldType):
 		self._Clsd = None
 
 	@property
-	def Nbld(self):
-		return self._Nbld
-
-	@Nbld.setter
-	def Nbld(self, value):
-		self._Nbld = value if type(value) != auto else self.make_default("Nbld")
-
-	@Nbld.deleter
-	def Nbld(self):
-		del self._Nbld
-		self._Nbld = None
-
-	@property
 	def PdgOpng(self):
 		return self._PdgOpng
 
@@ -88,6 +49,19 @@ class AccountStatus2(base_types._BaseFieldType):
 	def PdgOpng(self):
 		del self._PdgOpng
 		self._PdgOpng = None
+
+	@property
+	def Pdg(self):
+		return self._Pdg
+
+	@Pdg.setter
+	def Pdg(self, value):
+		self._Pdg = value if type(value) != auto else self.make_default("Pdg")
+
+	@Pdg.deleter
+	def Pdg(self):
+		del self._Pdg
+		self._Pdg = None
 
 	@property
 	def ClsrPdg(self):
@@ -103,26 +77,52 @@ class AccountStatus2(base_types._BaseFieldType):
 		self._ClsrPdg = None
 
 	@property
-	def Dsbld(self):
-		return self._Dsbld
+	def Nbld(self):
+		return self._Nbld
 
-	@Dsbld.setter
-	def Dsbld(self, value):
-		self._Dsbld = value if type(value) != auto else self.make_default("Dsbld")
+	@Nbld.setter
+	def Nbld(self, value):
+		self._Nbld = value if type(value) != auto else self.make_default("Nbld")
 
-	@Dsbld.deleter
-	def Dsbld(self):
-		del self._Dsbld
-		self._Dsbld = None
+	@Nbld.deleter
+	def Nbld(self):
+		del self._Nbld
+		self._Nbld = None
+
+	@property
+	def Othr(self):
+		return self._Othr
+
+	@Othr.setter
+	def Othr(self, value):
+		self._Othr = value if type(value) != auto else self.make_default("Othr")
+
+	@Othr.deleter
+	def Othr(self):
+		del self._Othr
+		self._Othr = None
+
+	@property
+	def Profrm(self):
+		return self._Profrm
+
+	@Profrm.setter
+	def Profrm(self, value):
+		self._Profrm = value if type(value) != auto else self.make_default("Profrm")
+
+	@Profrm.deleter
+	def Profrm(self):
+		del self._Profrm
+		self._Profrm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pdg', type=PendingStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Profrm', type=ProformaStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Othr', type=OtherAccountStatus1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Clsd', type=ClosedStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nbld', type=EnabledStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgOpng', type=PendingOpeningStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClsrPdg', type=ClosurePendingStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dsbld', type=DisabledStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Clsd', type=ClosedStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdgOpng', type=PendingOpeningStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pdg', type=PendingStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ClsrPdg', type=ClosurePendingStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nbld', type=EnabledStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Othr', type=OtherAccountStatus1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Profrm', type=ProformaStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,22 +1,22 @@
 import base_types
-import ISODate
 import DecimalNumber
+import ISODate
 
 class ShipmentDateRange2(base_types._BaseFieldType):
 
-	__slots__ = ["_EarlstShipmntDt", "_SubQtyVal", "_LatstShipmntDt"]
+	__slots__ = ["_LatstShipmntDt", "_SubQtyVal", "_EarlstShipmntDt"]
 	@property
-	def EarlstShipmntDt(self):
-		return self._EarlstShipmntDt
+	def LatstShipmntDt(self):
+		return self._LatstShipmntDt
 
-	@EarlstShipmntDt.setter
-	def EarlstShipmntDt(self, value):
-		self._EarlstShipmntDt = value if type(value) != auto else self.make_default("EarlstShipmntDt")
+	@LatstShipmntDt.setter
+	def LatstShipmntDt(self, value):
+		self._LatstShipmntDt = value if type(value) != auto else self.make_default("LatstShipmntDt")
 
-	@EarlstShipmntDt.deleter
-	def EarlstShipmntDt(self):
-		del self._EarlstShipmntDt
-		self._EarlstShipmntDt = None
+	@LatstShipmntDt.deleter
+	def LatstShipmntDt(self):
+		del self._LatstShipmntDt
+		self._LatstShipmntDt = None
 
 	@property
 	def SubQtyVal(self):
@@ -32,21 +32,21 @@ class ShipmentDateRange2(base_types._BaseFieldType):
 		self._SubQtyVal = None
 
 	@property
-	def LatstShipmntDt(self):
-		return self._LatstShipmntDt
+	def EarlstShipmntDt(self):
+		return self._EarlstShipmntDt
 
-	@LatstShipmntDt.setter
-	def LatstShipmntDt(self, value):
-		self._LatstShipmntDt = value if type(value) != auto else self.make_default("LatstShipmntDt")
+	@EarlstShipmntDt.setter
+	def EarlstShipmntDt(self, value):
+		self._EarlstShipmntDt = value if type(value) != auto else self.make_default("EarlstShipmntDt")
 
-	@LatstShipmntDt.deleter
-	def LatstShipmntDt(self):
-		del self._LatstShipmntDt
-		self._LatstShipmntDt = None
+	@EarlstShipmntDt.deleter
+	def EarlstShipmntDt(self):
+		del self._EarlstShipmntDt
+		self._EarlstShipmntDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SubQtyVal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LatstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubQtyVal', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

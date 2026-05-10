@@ -1,6 +1,6 @@
 import base_types
-import DateAndDateTime2Choice
 import DateCode18Choice
+import DateAndDateTime2Choice
 
 class TerminationDate6Choice(base_types._BaseFieldType):
 

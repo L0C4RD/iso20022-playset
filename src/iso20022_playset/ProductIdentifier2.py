@@ -1,6 +1,6 @@
 import base_types
-import ProductIdentifier2Code
 import Max35Text
+import ProductIdentifier2Code
 
 class ProductIdentifier2(base_types._BaseFieldType):
 

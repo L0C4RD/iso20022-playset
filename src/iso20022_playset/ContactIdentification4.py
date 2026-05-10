@@ -1,13 +1,13 @@
 import base_types
-import NamePrefix1Code
 import PhoneNumber
 import Max35Text
+import NamePrefix1Code
 import Max350Text
 import Max256Text
 
 class ContactIdentification4(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_Role", "_NmPrfx", "_GvnNm", "_Nm", "_PhneNb", "_EmailAdr"]
+	__slots__ = ["_FaxNb", "_NmPrfx", "_PhneNb", "_Nm", "_GvnNm", "_Role", "_EmailAdr"]
 	@property
 	def FaxNb(self):
 		return self._FaxNb
@@ -20,19 +20,6 @@ class ContactIdentification4(base_types._BaseFieldType):
 	def FaxNb(self):
 		del self._FaxNb
 		self._FaxNb = None
-
-	@property
-	def Role(self):
-		return self._Role
-
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
-
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
 
 	@property
 	def NmPrfx(self):
@@ -48,17 +35,17 @@ class ContactIdentification4(base_types._BaseFieldType):
 		self._NmPrfx = None
 
 	@property
-	def GvnNm(self):
-		return self._GvnNm
+	def PhneNb(self):
+		return self._PhneNb
 
-	@GvnNm.setter
-	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
+	@PhneNb.setter
+	def PhneNb(self, value):
+		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
 
-	@GvnNm.deleter
-	def GvnNm(self):
-		del self._GvnNm
-		self._GvnNm = None
+	@PhneNb.deleter
+	def PhneNb(self):
+		del self._PhneNb
+		self._PhneNb = None
 
 	@property
 	def Nm(self):
@@ -74,17 +61,30 @@ class ContactIdentification4(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def PhneNb(self):
-		return self._PhneNb
+	def GvnNm(self):
+		return self._GvnNm
 
-	@PhneNb.setter
-	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+	@GvnNm.setter
+	def GvnNm(self, value):
+		self._GvnNm = value if type(value) != auto else self.make_default("GvnNm")
 
-	@PhneNb.deleter
-	def PhneNb(self):
-		del self._PhneNb
-		self._PhneNb = None
+	@GvnNm.deleter
+	def GvnNm(self):
+		del self._GvnNm
+		self._GvnNm = None
+
+	@property
+	def Role(self):
+		return self._Role
+
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != auto else self.make_default("Role")
+
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
 
 	@property
 	def EmailAdr(self):
@@ -101,11 +101,11 @@ class ContactIdentification4(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Role', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='GvnNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='GvnNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

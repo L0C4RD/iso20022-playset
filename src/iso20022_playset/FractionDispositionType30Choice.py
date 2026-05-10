@@ -1,6 +1,6 @@
 import base_types
-import FractionDispositionType11Code
 import GenericIdentification47
+import FractionDispositionType11Code
 
 class FractionDispositionType30Choice(base_types._BaseFieldType):
 

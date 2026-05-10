@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import InitialPhysicalForm1Code
+import GenericIdentification30
 
 class InitialPhysicalForm4Choice(base_types._BaseFieldType):
 

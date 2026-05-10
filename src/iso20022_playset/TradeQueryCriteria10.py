@@ -1,26 +1,13 @@
 import base_types
 import TrueFalseIndicator
+import TradePartyQueryCriteria5
+import TradeTypeQueryCriteria2
 import TradeAdditionalQueryCriteria7
 import TradeDateTimeQueryCriteria2
-import TradeTypeQueryCriteria2
-import TradePartyQueryCriteria5
 
 class TradeQueryCriteria10(base_types._BaseFieldType):
 
-	__slots__ = ["_TradTpCrit", "_OutsdngTradInd", "_TradLifeCyclHstry", "_OthrCrit", "_TmCrit", "_TradPtyCrit"]
-	@property
-	def TradTpCrit(self):
-		return self._TradTpCrit
-
-	@TradTpCrit.setter
-	def TradTpCrit(self, value):
-		self._TradTpCrit = value if type(value) != auto else self.make_default("TradTpCrit")
-
-	@TradTpCrit.deleter
-	def TradTpCrit(self):
-		del self._TradTpCrit
-		self._TradTpCrit = None
-
+	__slots__ = ["_OutsdngTradInd", "_TradTpCrit", "_OthrCrit", "_TradPtyCrit", "_TmCrit", "_TradLifeCyclHstry"]
 	@property
 	def OutsdngTradInd(self):
 		return self._OutsdngTradInd
@@ -35,17 +22,17 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 		self._OutsdngTradInd = None
 
 	@property
-	def TradLifeCyclHstry(self):
-		return self._TradLifeCyclHstry
+	def TradTpCrit(self):
+		return self._TradTpCrit
 
-	@TradLifeCyclHstry.setter
-	def TradLifeCyclHstry(self, value):
-		self._TradLifeCyclHstry = value if type(value) != auto else self.make_default("TradLifeCyclHstry")
+	@TradTpCrit.setter
+	def TradTpCrit(self, value):
+		self._TradTpCrit = value if type(value) != auto else self.make_default("TradTpCrit")
 
-	@TradLifeCyclHstry.deleter
-	def TradLifeCyclHstry(self):
-		del self._TradLifeCyclHstry
-		self._TradLifeCyclHstry = None
+	@TradTpCrit.deleter
+	def TradTpCrit(self):
+		del self._TradTpCrit
+		self._TradTpCrit = None
 
 	@property
 	def OthrCrit(self):
@@ -61,6 +48,19 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 		self._OthrCrit = None
 
 	@property
+	def TradPtyCrit(self):
+		return self._TradPtyCrit
+
+	@TradPtyCrit.setter
+	def TradPtyCrit(self, value):
+		self._TradPtyCrit = value if type(value) != auto else self.make_default("TradPtyCrit")
+
+	@TradPtyCrit.deleter
+	def TradPtyCrit(self):
+		del self._TradPtyCrit
+		self._TradPtyCrit = None
+
+	@property
 	def TmCrit(self):
 		return self._TmCrit
 
@@ -74,24 +74,24 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 		self._TmCrit = None
 
 	@property
-	def TradPtyCrit(self):
-		return self._TradPtyCrit
+	def TradLifeCyclHstry(self):
+		return self._TradLifeCyclHstry
 
-	@TradPtyCrit.setter
-	def TradPtyCrit(self, value):
-		self._TradPtyCrit = value if type(value) != auto else self.make_default("TradPtyCrit")
+	@TradLifeCyclHstry.setter
+	def TradLifeCyclHstry(self, value):
+		self._TradLifeCyclHstry = value if type(value) != auto else self.make_default("TradLifeCyclHstry")
 
-	@TradPtyCrit.deleter
-	def TradPtyCrit(self):
-		del self._TradPtyCrit
-		self._TradPtyCrit = None
+	@TradLifeCyclHstry.deleter
+	def TradLifeCyclHstry(self):
+		del self._TradLifeCyclHstry
+		self._TradLifeCyclHstry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TradTpCrit', type=TradeTypeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutsdngTradInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TradLifeCyclHstry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradTpCrit', type=TradeTypeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrCrit', type=TradeAdditionalQueryCriteria7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TmCrit', type=TradeDateTimeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyCrit', type=TradePartyQueryCriteria5, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TmCrit', type=TradeDateTimeQueryCriteria2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradLifeCyclHstry', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
 

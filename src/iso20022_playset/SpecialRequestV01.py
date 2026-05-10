@@ -1,23 +1,23 @@
 import base_types
+import SimpleIdentificationInformation
 import MessageIdentification1
 import Notification1
-import SimpleIdentificationInformation
 
 class SpecialRequestV01(base_types._BaseFieldType):
 
-	__slots__ = ["_ReqId", "_TxId", "_Ntfctn", "_SubmitrTxRef"]
+	__slots__ = ["_Ntfctn", "_TxId", "_SubmitrTxRef", "_ReqId"]
 	@property
-	def ReqId(self):
-		return self._ReqId
+	def Ntfctn(self):
+		return self._Ntfctn
 
-	@ReqId.setter
-	def ReqId(self, value):
-		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
+	@Ntfctn.setter
+	def Ntfctn(self, value):
+		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
 
-	@ReqId.deleter
-	def ReqId(self):
-		del self._ReqId
-		self._ReqId = None
+	@Ntfctn.deleter
+	def Ntfctn(self):
+		del self._Ntfctn
+		self._Ntfctn = None
 
 	@property
 	def TxId(self):
@@ -33,19 +33,6 @@ class SpecialRequestV01(base_types._BaseFieldType):
 		self._TxId = None
 
 	@property
-	def Ntfctn(self):
-		return self._Ntfctn
-
-	@Ntfctn.setter
-	def Ntfctn(self, value):
-		self._Ntfctn = value if type(value) != auto else self.make_default("Ntfctn")
-
-	@Ntfctn.deleter
-	def Ntfctn(self):
-		del self._Ntfctn
-		self._Ntfctn = None
-
-	@property
 	def SubmitrTxRef(self):
 		return self._SubmitrTxRef
 
@@ -58,10 +45,23 @@ class SpecialRequestV01(base_types._BaseFieldType):
 		del self._SubmitrTxRef
 		self._SubmitrTxRef = None
 
+	@property
+	def ReqId(self):
+		return self._ReqId
+
+	@ReqId.setter
+	def ReqId(self, value):
+		self._ReqId = value if type(value) != auto else self.make_default("ReqId")
+
+	@ReqId.deleter
+	def ReqId(self):
+		del self._ReqId
+		self._ReqId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntfctn', type=Notification1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

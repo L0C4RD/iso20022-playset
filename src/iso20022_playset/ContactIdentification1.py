@@ -1,12 +1,12 @@
 import base_types
-import Max256Text
-import NamePrefix1Code
 import PhoneNumber
+import NamePrefix1Code
+import Max256Text
 import Max35Text
 
 class ContactIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_FaxNb", "_Role", "_NmPrfx", "_PhneNb", "_Nm", "_GvnNm", "_EmailAdr"]
+	__slots__ = ["_FaxNb", "_NmPrfx", "_Nm", "_GvnNm", "_PhneNb", "_Role", "_EmailAdr"]
 	@property
 	def FaxNb(self):
 		return self._FaxNb
@@ -21,19 +21,6 @@ class ContactIdentification1(base_types._BaseFieldType):
 		self._FaxNb = None
 
 	@property
-	def Role(self):
-		return self._Role
-
-	@Role.setter
-	def Role(self, value):
-		self._Role = value if type(value) != auto else self.make_default("Role")
-
-	@Role.deleter
-	def Role(self):
-		del self._Role
-		self._Role = None
-
-	@property
 	def NmPrfx(self):
 		return self._NmPrfx
 
@@ -45,19 +32,6 @@ class ContactIdentification1(base_types._BaseFieldType):
 	def NmPrfx(self):
 		del self._NmPrfx
 		self._NmPrfx = None
-
-	@property
-	def PhneNb(self):
-		return self._PhneNb
-
-	@PhneNb.setter
-	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
-
-	@PhneNb.deleter
-	def PhneNb(self):
-		del self._PhneNb
-		self._PhneNb = None
 
 	@property
 	def Nm(self):
@@ -86,6 +60,32 @@ class ContactIdentification1(base_types._BaseFieldType):
 		self._GvnNm = None
 
 	@property
+	def PhneNb(self):
+		return self._PhneNb
+
+	@PhneNb.setter
+	def PhneNb(self, value):
+		self._PhneNb = value if type(value) != auto else self.make_default("PhneNb")
+
+	@PhneNb.deleter
+	def PhneNb(self):
+		del self._PhneNb
+		self._PhneNb = None
+
+	@property
+	def Role(self):
+		return self._Role
+
+	@Role.setter
+	def Role(self, value):
+		self._Role = value if type(value) != auto else self.make_default("Role")
+
+	@Role.deleter
+	def Role(self):
+		del self._Role
+		self._Role = None
+
+	@property
 	def EmailAdr(self):
 		return self._EmailAdr
 
@@ -100,11 +100,11 @@ class ContactIdentification1(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FaxNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Role', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmPrfx', type=NamePrefix1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GvnNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PhneNb', type=PhoneNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Role', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

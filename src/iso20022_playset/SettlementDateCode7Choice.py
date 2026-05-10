@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import SettlementDate4Code
+import GenericIdentification30
 
 class SettlementDateCode7Choice(base_types._BaseFieldType):
 

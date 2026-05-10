@@ -1,26 +1,26 @@
 import base_types
 import ActiveOrHistoricCurrencyCode
-import Number
+import Max25Text
 import ISINOct2015Identifier
 import ISODate
+import Number
 import RestrictedMonthExact2Number
-import Max25Text
 
 class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 
-	__slots__ = ["_NtnlCcy", "_Srs", "_UndrlygIndxNm", "_NxtRollDt", "_Vrsn", "_RollMnth", "_UndrlygIndxId"]
+	__slots__ = ["_UndrlygIndxId", "_Srs", "_UndrlygIndxNm", "_Vrsn", "_NtnlCcy", "_NxtRollDt", "_RollMnth"]
 	@property
-	def NtnlCcy(self):
-		return self._NtnlCcy
+	def UndrlygIndxId(self):
+		return self._UndrlygIndxId
 
-	@NtnlCcy.setter
-	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
+	@UndrlygIndxId.setter
+	def UndrlygIndxId(self, value):
+		self._UndrlygIndxId = value if type(value) != auto else self.make_default("UndrlygIndxId")
 
-	@NtnlCcy.deleter
-	def NtnlCcy(self):
-		del self._NtnlCcy
-		self._NtnlCcy = None
+	@UndrlygIndxId.deleter
+	def UndrlygIndxId(self):
+		del self._UndrlygIndxId
+		self._UndrlygIndxId = None
 
 	@property
 	def Srs(self):
@@ -49,19 +49,6 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		self._UndrlygIndxNm = None
 
 	@property
-	def NxtRollDt(self):
-		return self._NxtRollDt
-
-	@NxtRollDt.setter
-	def NxtRollDt(self, value):
-		self._NxtRollDt = value if type(value) != auto else self.make_default("NxtRollDt")
-
-	@NxtRollDt.deleter
-	def NxtRollDt(self):
-		del self._NxtRollDt
-		self._NxtRollDt = None
-
-	@property
 	def Vrsn(self):
 		return self._Vrsn
 
@@ -73,6 +60,32 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 	def Vrsn(self):
 		del self._Vrsn
 		self._Vrsn = None
+
+	@property
+	def NtnlCcy(self):
+		return self._NtnlCcy
+
+	@NtnlCcy.setter
+	def NtnlCcy(self, value):
+		self._NtnlCcy = value if type(value) != auto else self.make_default("NtnlCcy")
+
+	@NtnlCcy.deleter
+	def NtnlCcy(self):
+		del self._NtnlCcy
+		self._NtnlCcy = None
+
+	@property
+	def NxtRollDt(self):
+		return self._NxtRollDt
+
+	@NxtRollDt.setter
+	def NxtRollDt(self, value):
+		self._NxtRollDt = value if type(value) != auto else self.make_default("NxtRollDt")
+
+	@NxtRollDt.deleter
+	def NxtRollDt(self):
+		del self._NxtRollDt
+		self._NxtRollDt = None
 
 	@property
 	def RollMnth(self):
@@ -87,26 +100,13 @@ class CreditDefaultSwapIndex3(base_types._BaseFieldType):
 		del self._RollMnth
 		self._RollMnth = None
 
-	@property
-	def UndrlygIndxId(self):
-		return self._UndrlygIndxId
-
-	@UndrlygIndxId.setter
-	def UndrlygIndxId(self, value):
-		self._UndrlygIndxId = value if type(value) != auto else self.make_default("UndrlygIndxId")
-
-	@UndrlygIndxId.deleter
-	def UndrlygIndxId(self):
-		del self._UndrlygIndxId
-		self._UndrlygIndxId = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygIndxNm', type=Max25Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NxtRollDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NxtRollDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RollMnth', type=RestrictedMonthExact2Number, min=0, max=12, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UndrlygIndxId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
 

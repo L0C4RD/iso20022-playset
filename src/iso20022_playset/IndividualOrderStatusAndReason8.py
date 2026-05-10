@@ -1,13 +1,13 @@
 import base_types
+import Max35Text
 import FinancialInstrument57
 import CancellationStatus22Choice
 import PartyIdentification113
 import InvestmentAccount58
-import Max35Text
 
 class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 
-	__slots__ = ["_FinInstrmDtls", "_CxlSts", "_MstrRef", "_StsInitr", "_CxlRef", "_ClntRef", "_OrdrRef", "_InvstmtAcctDtls"]
+	__slots__ = ["_FinInstrmDtls", "_OrdrRef", "_MstrRef", "_CxlRef", "_ClntRef", "_StsInitr", "_InvstmtAcctDtls", "_CxlSts"]
 	@property
 	def FinInstrmDtls(self):
 		return self._FinInstrmDtls
@@ -22,17 +22,17 @@ class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 		self._FinInstrmDtls = None
 
 	@property
-	def CxlSts(self):
-		return self._CxlSts
+	def OrdrRef(self):
+		return self._OrdrRef
 
-	@CxlSts.setter
-	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
+	@OrdrRef.setter
+	def OrdrRef(self, value):
+		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
 
-	@CxlSts.deleter
-	def CxlSts(self):
-		del self._CxlSts
-		self._CxlSts = None
+	@OrdrRef.deleter
+	def OrdrRef(self):
+		del self._OrdrRef
+		self._OrdrRef = None
 
 	@property
 	def MstrRef(self):
@@ -46,19 +46,6 @@ class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 	def MstrRef(self):
 		del self._MstrRef
 		self._MstrRef = None
-
-	@property
-	def StsInitr(self):
-		return self._StsInitr
-
-	@StsInitr.setter
-	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
-
-	@StsInitr.deleter
-	def StsInitr(self):
-		del self._StsInitr
-		self._StsInitr = None
 
 	@property
 	def CxlRef(self):
@@ -87,17 +74,17 @@ class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 		self._ClntRef = None
 
 	@property
-	def OrdrRef(self):
-		return self._OrdrRef
+	def StsInitr(self):
+		return self._StsInitr
 
-	@OrdrRef.setter
-	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != auto else self.make_default("OrdrRef")
+	@StsInitr.setter
+	def StsInitr(self, value):
+		self._StsInitr = value if type(value) != auto else self.make_default("StsInitr")
 
-	@OrdrRef.deleter
-	def OrdrRef(self):
-		del self._OrdrRef
-		self._OrdrRef = None
+	@StsInitr.deleter
+	def StsInitr(self):
+		del self._StsInitr
+		self._StsInitr = None
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -112,14 +99,27 @@ class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 		del self._InvstmtAcctDtls
 		self._InvstmtAcctDtls = None
 
+	@property
+	def CxlSts(self):
+		return self._CxlSts
+
+	@CxlSts.setter
+	def CxlSts(self, value):
+		self._CxlSts = value if type(value) != auto else self.make_default("CxlSts")
+
+	@CxlSts.deleter
+	def CxlSts(self):
+		del self._CxlSts
+		self._CxlSts = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument57, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CxlSts', type=CancellationStatus22Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount58, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CxlSts', type=CancellationStatus22Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

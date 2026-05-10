@@ -1,12 +1,12 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import ATMMediaType4Code
+import ImpliedCurrencyAndAmount
 import Number
 import ActiveCurrencyCode
 
 class ATMTotals4(base_types._BaseFieldType):
 
-	__slots__ = ["_ATMBalNb", "_ATMCurNb", "_Ccy", "_ATMCur", "_MdiaTp", "_ATMBal"]
+	__slots__ = ["_ATMBalNb", "_ATMCurNb", "_ATMBal", "_Ccy", "_ATMCur", "_MdiaTp"]
 	@property
 	def ATMBalNb(self):
 		return self._ATMBalNb
@@ -32,6 +32,19 @@ class ATMTotals4(base_types._BaseFieldType):
 	def ATMCurNb(self):
 		del self._ATMCurNb
 		self._ATMCurNb = None
+
+	@property
+	def ATMBal(self):
+		return self._ATMBal
+
+	@ATMBal.setter
+	def ATMBal(self, value):
+		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
+
+	@ATMBal.deleter
+	def ATMBal(self):
+		del self._ATMBal
+		self._ATMBal = None
 
 	@property
 	def Ccy(self):
@@ -72,25 +85,12 @@ class ATMTotals4(base_types._BaseFieldType):
 		del self._MdiaTp
 		self._MdiaTp = None
 
-	@property
-	def ATMBal(self):
-		return self._ATMBal
-
-	@ATMBal.setter
-	def ATMBal(self, value):
-		self._ATMBal = value if type(value) != auto else self.make_default("ATMBal")
-
-	@ATMBal.deleter
-	def ATMBal(self):
-		del self._ATMBal
-		self._ATMBal = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMBalNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCurNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ATMCur', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MdiaTp', type=ATMMediaType4Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ATMBal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

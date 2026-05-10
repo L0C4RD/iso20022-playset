@@ -1,13 +1,26 @@
 import base_types
-import AdditionalInformation15
-import AccountOwnershipType6Code
 import ActiveCurrencyAnd13DecimalAmount
+import AdditionalInformation15
 import GeneralInvestmentAccountType2Choice
 import DateAndAmount2
+import AccountOwnershipType6Code
 
 class GeneralInvestment2(base_types._BaseFieldType):
 
-	__slots__ = ["_CurInvstmtAmt", "_AddtlInf", "_EstmtdVal", "_Tp", "_OwnrshTp"]
+	__slots__ = ["_Tp", "_CurInvstmtAmt", "_AddtlInf", "_EstmtdVal", "_OwnrshTp"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	@property
 	def CurInvstmtAmt(self):
 		return self._CurInvstmtAmt
@@ -48,19 +61,6 @@ class GeneralInvestment2(base_types._BaseFieldType):
 		self._EstmtdVal = None
 
 	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
-	@property
 	def OwnrshTp(self):
 		return self._OwnrshTp
 
@@ -74,10 +74,10 @@ class GeneralInvestment2(base_types._BaseFieldType):
 		self._OwnrshTp = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Tp', type=GeneralInvestmentAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CurInvstmtAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EstmtdVal', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tp', type=GeneralInvestmentAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrshTp', type=AccountOwnershipType6Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

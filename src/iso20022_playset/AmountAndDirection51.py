@@ -1,7 +1,7 @@
 import base_types
 import CreditDebitCode
-import ActiveOrHistoricCurrencyAndAmount
 import ActiveCurrencyAndAmount
+import ActiveOrHistoricCurrencyAndAmount
 
 class AmountAndDirection51(base_types._BaseFieldType):
 

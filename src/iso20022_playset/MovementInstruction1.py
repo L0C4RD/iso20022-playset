@@ -1,12 +1,12 @@
 import base_types
 import CashMovement2
 import ProceedsMovement1
-import UnderlyingSecurityMovement1
 import CorporateActionMovement1
+import UnderlyingSecurityMovement1
 
 class MovementInstruction1(base_types._BaseFieldType):
 
-	__slots__ = ["_MvmntGnlInf", "_PrcdsMvmntDtls", "_UndrlygSctiesMvmntDtls", "_UndrlygCshMvmntDtls"]
+	__slots__ = ["_MvmntGnlInf", "_UndrlygCshMvmntDtls", "_PrcdsMvmntDtls", "_UndrlygSctiesMvmntDtls"]
 	@property
 	def MvmntGnlInf(self):
 		return self._MvmntGnlInf
@@ -19,6 +19,19 @@ class MovementInstruction1(base_types._BaseFieldType):
 	def MvmntGnlInf(self):
 		del self._MvmntGnlInf
 		self._MvmntGnlInf = None
+
+	@property
+	def UndrlygCshMvmntDtls(self):
+		return self._UndrlygCshMvmntDtls
+
+	@UndrlygCshMvmntDtls.setter
+	def UndrlygCshMvmntDtls(self, value):
+		self._UndrlygCshMvmntDtls = value if type(value) != auto else self.make_default("UndrlygCshMvmntDtls")
+
+	@UndrlygCshMvmntDtls.deleter
+	def UndrlygCshMvmntDtls(self):
+		del self._UndrlygCshMvmntDtls
+		self._UndrlygCshMvmntDtls = None
 
 	@property
 	def PrcdsMvmntDtls(self):
@@ -46,23 +59,10 @@ class MovementInstruction1(base_types._BaseFieldType):
 		del self._UndrlygSctiesMvmntDtls
 		self._UndrlygSctiesMvmntDtls = None
 
-	@property
-	def UndrlygCshMvmntDtls(self):
-		return self._UndrlygCshMvmntDtls
-
-	@UndrlygCshMvmntDtls.setter
-	def UndrlygCshMvmntDtls(self, value):
-		self._UndrlygCshMvmntDtls = value if type(value) != auto else self.make_default("UndrlygCshMvmntDtls")
-
-	@UndrlygCshMvmntDtls.deleter
-	def UndrlygCshMvmntDtls(self):
-		del self._UndrlygCshMvmntDtls
-		self._UndrlygCshMvmntDtls = None
-
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MvmntGnlInf', type=CorporateActionMovement1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UndrlygCshMvmntDtls', type=CashMovement2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PrcdsMvmntDtls', type=ProceedsMovement1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UndrlygSctiesMvmntDtls', type=UnderlyingSecurityMovement1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='UndrlygCshMvmntDtls', type=CashMovement2, min=0, max=None, mutex_group=None, array=True),
 	))
 

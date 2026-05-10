@@ -1,12 +1,25 @@
 import base_types
-import ISODate
-import ContractRegistrationReference2Choice
 import ActiveCurrencyAndAmount
+import ISODate
 import Max1025Text
+import ContractRegistrationReference2Choice
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
-	__slots__ = ["_CtrctRef", "_AddtlInf", "_TxAmtInCtrctCcy", "_XpctdAdvncPmtRtrDt", "_XpctdShipmntDt"]
+	__slots__ = ["_XpctdShipmntDt", "_CtrctRef", "_AddtlInf", "_TxAmtInCtrctCcy", "_XpctdAdvncPmtRtrDt"]
+	@property
+	def XpctdShipmntDt(self):
+		return self._XpctdShipmntDt
+
+	@XpctdShipmntDt.setter
+	def XpctdShipmntDt(self, value):
+		self._XpctdShipmntDt = value if type(value) != auto else self.make_default("XpctdShipmntDt")
+
+	@XpctdShipmntDt.deleter
+	def XpctdShipmntDt(self):
+		del self._XpctdShipmntDt
+		self._XpctdShipmntDt = None
+
 	@property
 	def CtrctRef(self):
 		return self._CtrctRef
@@ -59,24 +72,11 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 		del self._XpctdAdvncPmtRtrDt
 		self._XpctdAdvncPmtRtrDt = None
 
-	@property
-	def XpctdShipmntDt(self):
-		return self._XpctdShipmntDt
-
-	@XpctdShipmntDt.setter
-	def XpctdShipmntDt(self, value):
-		self._XpctdShipmntDt = value if type(value) != auto else self.make_default("XpctdShipmntDt")
-
-	@XpctdShipmntDt.deleter
-	def XpctdShipmntDt(self):
-		del self._XpctdShipmntDt
-		self._XpctdShipmntDt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctRef', type=ContractRegistrationReference2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxAmtInCtrctCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdAdvncPmtRtrDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XpctdShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

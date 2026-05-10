@@ -1,6 +1,6 @@
 import base_types
-import CountryCode
 import NaturalPersonIdentification2
+import CountryCode
 
 class NaturalPersonIdentification3(base_types._BaseFieldType):
 

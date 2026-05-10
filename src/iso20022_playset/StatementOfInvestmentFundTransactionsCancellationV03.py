@@ -1,24 +1,24 @@
 import base_types
-import StatementOfInvestmentFundTransactions3
 import AdditionalReference2
 import MessageIdentification1
 import Pagination
+import StatementOfInvestmentFundTransactions3
 
 class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MsgPgntn", "_StmtToBeCanc", "_RltdRef", "_PrvsRef"]
+	__slots__ = ["_StmtToBeCanc", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_MsgId"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def StmtToBeCanc(self):
+		return self._StmtToBeCanc
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@StmtToBeCanc.setter
+	def StmtToBeCanc(self, value):
+		self._StmtToBeCanc = value if type(value) != auto else self.make_default("StmtToBeCanc")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@StmtToBeCanc.deleter
+	def StmtToBeCanc(self):
+		del self._StmtToBeCanc
+		self._StmtToBeCanc = None
 
 	@property
 	def MsgPgntn(self):
@@ -34,17 +34,17 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 		self._MsgPgntn = None
 
 	@property
-	def StmtToBeCanc(self):
-		return self._StmtToBeCanc
+	def PrvsRef(self):
+		return self._PrvsRef
 
-	@StmtToBeCanc.setter
-	def StmtToBeCanc(self, value):
-		self._StmtToBeCanc = value if type(value) != auto else self.make_default("StmtToBeCanc")
+	@PrvsRef.setter
+	def PrvsRef(self, value):
+		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
 
-	@StmtToBeCanc.deleter
-	def StmtToBeCanc(self):
-		del self._StmtToBeCanc
-		self._StmtToBeCanc = None
+	@PrvsRef.deleter
+	def PrvsRef(self):
+		del self._PrvsRef
+		self._PrvsRef = None
 
 	@property
 	def RltdRef(self):
@@ -60,23 +60,23 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 		self._RltdRef = None
 
 	@property
-	def PrvsRef(self):
-		return self._PrvsRef
+	def MsgId(self):
+		return self._MsgId
 
-	@PrvsRef.setter
-	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != auto else self.make_default("PrvsRef")
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
 
-	@PrvsRef.deleter
-	def PrvsRef(self):
-		del self._PrvsRef
-		self._PrvsRef = None
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=StatementOfInvestmentFundTransactions3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

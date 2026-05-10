@@ -1,25 +1,38 @@
 import base_types
-import LegalRestrictions5Choice
-import InvestorRestrictionType3Choice
-import SecurityRestrictionType2Choice
-import InvestorType3Choice
 import DateTimePeriod2
+import LegalRestrictions5Choice
+import SecurityRestrictionType2Choice
+import InvestorRestrictionType3Choice
+import InvestorType3Choice
 
 class SecurityRestriction3(base_types._BaseFieldType):
 
-	__slots__ = ["_RstrctnTp", "_LglRstrctnTp", "_InvstrTp", "_FctvPrd", "_InvstrRstrctnTp"]
+	__slots__ = ["_FctvPrd", "_InvstrRstrctnTp", "_LglRstrctnTp", "_InvstrTp", "_RstrctnTp"]
 	@property
-	def RstrctnTp(self):
-		return self._RstrctnTp
+	def FctvPrd(self):
+		return self._FctvPrd
 
-	@RstrctnTp.setter
-	def RstrctnTp(self, value):
-		self._RstrctnTp = value if type(value) != auto else self.make_default("RstrctnTp")
+	@FctvPrd.setter
+	def FctvPrd(self, value):
+		self._FctvPrd = value if type(value) != auto else self.make_default("FctvPrd")
 
-	@RstrctnTp.deleter
-	def RstrctnTp(self):
-		del self._RstrctnTp
-		self._RstrctnTp = None
+	@FctvPrd.deleter
+	def FctvPrd(self):
+		del self._FctvPrd
+		self._FctvPrd = None
+
+	@property
+	def InvstrRstrctnTp(self):
+		return self._InvstrRstrctnTp
+
+	@InvstrRstrctnTp.setter
+	def InvstrRstrctnTp(self, value):
+		self._InvstrRstrctnTp = value if type(value) != auto else self.make_default("InvstrRstrctnTp")
+
+	@InvstrRstrctnTp.deleter
+	def InvstrRstrctnTp(self):
+		del self._InvstrRstrctnTp
+		self._InvstrRstrctnTp = None
 
 	@property
 	def LglRstrctnTp(self):
@@ -48,36 +61,23 @@ class SecurityRestriction3(base_types._BaseFieldType):
 		self._InvstrTp = None
 
 	@property
-	def FctvPrd(self):
-		return self._FctvPrd
+	def RstrctnTp(self):
+		return self._RstrctnTp
 
-	@FctvPrd.setter
-	def FctvPrd(self, value):
-		self._FctvPrd = value if type(value) != auto else self.make_default("FctvPrd")
+	@RstrctnTp.setter
+	def RstrctnTp(self, value):
+		self._RstrctnTp = value if type(value) != auto else self.make_default("RstrctnTp")
 
-	@FctvPrd.deleter
-	def FctvPrd(self):
-		del self._FctvPrd
-		self._FctvPrd = None
-
-	@property
-	def InvstrRstrctnTp(self):
-		return self._InvstrRstrctnTp
-
-	@InvstrRstrctnTp.setter
-	def InvstrRstrctnTp(self, value):
-		self._InvstrRstrctnTp = value if type(value) != auto else self.make_default("InvstrRstrctnTp")
-
-	@InvstrRstrctnTp.deleter
-	def InvstrRstrctnTp(self):
-		del self._InvstrRstrctnTp
-		self._InvstrRstrctnTp = None
+	@RstrctnTp.deleter
+	def RstrctnTp(self):
+		del self._RstrctnTp
+		self._RstrctnTp = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RstrctnTp', type=SecurityRestrictionType2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LglRstrctnTp', type=LegalRestrictions5Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvstrTp', type=InvestorType3Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FctvPrd', type=DateTimePeriod2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrRstrctnTp', type=InvestorRestrictionType3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='LglRstrctnTp', type=LegalRestrictions5Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvstrTp', type=InvestorType3Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RstrctnTp', type=SecurityRestrictionType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

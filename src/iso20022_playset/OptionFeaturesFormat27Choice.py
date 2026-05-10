@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification47
 import OptionFeatures12Code
+import GenericIdentification47
 
 class OptionFeaturesFormat27Choice(base_types._BaseFieldType):
 

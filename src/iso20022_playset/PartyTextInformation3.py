@@ -1,10 +1,23 @@
 import base_types
-import RestrictedFINXMax140Text
 import RestrictedFINXMax350Text
+import RestrictedFINXMax140Text
 
 class PartyTextInformation3(base_types._BaseFieldType):
 
-	__slots__ = ["_DclrtnDtls", "_PtyCtctDtls", "_RegnDtls"]
+	__slots__ = ["_RegnDtls", "_DclrtnDtls", "_PtyCtctDtls"]
+	@property
+	def RegnDtls(self):
+		return self._RegnDtls
+
+	@RegnDtls.setter
+	def RegnDtls(self, value):
+		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
+
+	@RegnDtls.deleter
+	def RegnDtls(self):
+		del self._RegnDtls
+		self._RegnDtls = None
+
 	@property
 	def DclrtnDtls(self):
 		return self._DclrtnDtls
@@ -31,22 +44,9 @@ class PartyTextInformation3(base_types._BaseFieldType):
 		del self._PtyCtctDtls
 		self._PtyCtctDtls = None
 
-	@property
-	def RegnDtls(self):
-		return self._RegnDtls
-
-	@RegnDtls.setter
-	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != auto else self.make_default("RegnDtls")
-
-	@RegnDtls.deleter
-	def RegnDtls(self):
-		del self._RegnDtls
-		self._RegnDtls = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='RegnDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DclrtnDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyCtctDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RegnDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

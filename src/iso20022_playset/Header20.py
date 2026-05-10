@@ -1,40 +1,14 @@
 import base_types
-import ISODateTime
-import Max3NumericText
 import Max35Text
+import ISODateTime
 import ATMMessageFunction1
-import Traceability4
 import Max6Text
+import Max3NumericText
+import Traceability4
 
 class Header20(base_types._BaseFieldType):
 
-	__slots__ = ["_RcptPty", "_Tracblt", "_MsgFctn", "_XchgId", "_CreDtTm", "_PrcStat", "_InitgPty", "_PrtcolVrsn"]
-	@property
-	def RcptPty(self):
-		return self._RcptPty
-
-	@RcptPty.setter
-	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != auto else self.make_default("RcptPty")
-
-	@RcptPty.deleter
-	def RcptPty(self):
-		del self._RcptPty
-		self._RcptPty = None
-
-	@property
-	def Tracblt(self):
-		return self._Tracblt
-
-	@Tracblt.setter
-	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
-
-	@Tracblt.deleter
-	def Tracblt(self):
-		del self._Tracblt
-		self._Tracblt = None
-
+	__slots__ = ["_MsgFctn", "_XchgId", "_PrcStat", "_InitgPty", "_RcptPty", "_Tracblt", "_CreDtTm", "_PrtcolVrsn"]
 	@property
 	def MsgFctn(self):
 		return self._MsgFctn
@@ -60,19 +34,6 @@ class Header20(base_types._BaseFieldType):
 	def XchgId(self):
 		del self._XchgId
 		self._XchgId = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
 
 	@property
 	def PrcStat(self):
@@ -101,6 +62,45 @@ class Header20(base_types._BaseFieldType):
 		self._InitgPty = None
 
 	@property
+	def RcptPty(self):
+		return self._RcptPty
+
+	@RcptPty.setter
+	def RcptPty(self, value):
+		self._RcptPty = value if type(value) != auto else self.make_default("RcptPty")
+
+	@RcptPty.deleter
+	def RcptPty(self):
+		del self._RcptPty
+		self._RcptPty = None
+
+	@property
+	def Tracblt(self):
+		return self._Tracblt
+
+	@Tracblt.setter
+	def Tracblt(self, value):
+		self._Tracblt = value if type(value) != auto else self.make_default("Tracblt")
+
+	@Tracblt.deleter
+	def Tracblt(self):
+		del self._Tracblt
+		self._Tracblt = None
+
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
+	@property
 	def PrtcolVrsn(self):
 		return self._PrtcolVrsn
 
@@ -114,13 +114,13 @@ class Header20(base_types._BaseFieldType):
 		self._PrtcolVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RcptPty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Tracblt', type=Traceability4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MsgFctn', type=ATMMessageFunction1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgId', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcStat', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RcptPty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tracblt', type=Traceability4, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtcolVrsn', type=Max6Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

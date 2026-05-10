@@ -1,6 +1,6 @@
 import base_types
-import PendingProcessingReason14
 import NoReasonCode
+import PendingProcessingReason14
 
 class PendingProcessingStatus17Choice(base_types._BaseFieldType):
 

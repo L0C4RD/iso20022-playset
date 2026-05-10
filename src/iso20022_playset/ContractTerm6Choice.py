@@ -1,6 +1,6 @@
 import base_types
-import TrueFalseIndicator
 import TimeToMaturity2Choice
+import TrueFalseIndicator
 
 class ContractTerm6Choice(base_types._BaseFieldType):
 

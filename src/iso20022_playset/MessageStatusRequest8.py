@@ -1,7 +1,7 @@
 import base_types
-import SupplementaryData1
-import CardPaymentEnvironment81
 import PaymentContext30
+import CardPaymentEnvironment81
+import SupplementaryData1
 import MessageStatusRequestData2
 
 class MessageStatusRequest8(base_types._BaseFieldType):

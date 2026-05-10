@@ -4,58 +4,19 @@ import ActiveCurrencyAndAmount
 
 class CapitalRequirement1(base_types._BaseFieldType):
 
-	__slots__ = ["_OprlAndLglRsk", "_NtfctnBffr", "_CntrPtyRsk", "_BizRsk", "_MktRsk", "_WndgDwnOrRstrgRsk", "_CdtRsk"]
+	__slots__ = ["_CdtRsk", "_MktRsk", "_OprlAndLglRsk", "_CntrPtyRsk", "_WndgDwnOrRstrgRsk", "_NtfctnBffr", "_BizRsk"]
 	@property
-	def OprlAndLglRsk(self):
-		return self._OprlAndLglRsk
+	def CdtRsk(self):
+		return self._CdtRsk
 
-	@OprlAndLglRsk.setter
-	def OprlAndLglRsk(self, value):
-		self._OprlAndLglRsk = value if type(value) != auto else self.make_default("OprlAndLglRsk")
+	@CdtRsk.setter
+	def CdtRsk(self, value):
+		self._CdtRsk = value if type(value) != auto else self.make_default("CdtRsk")
 
-	@OprlAndLglRsk.deleter
-	def OprlAndLglRsk(self):
-		del self._OprlAndLglRsk
-		self._OprlAndLglRsk = None
-
-	@property
-	def NtfctnBffr(self):
-		return self._NtfctnBffr
-
-	@NtfctnBffr.setter
-	def NtfctnBffr(self, value):
-		self._NtfctnBffr = value if type(value) != auto else self.make_default("NtfctnBffr")
-
-	@NtfctnBffr.deleter
-	def NtfctnBffr(self):
-		del self._NtfctnBffr
-		self._NtfctnBffr = None
-
-	@property
-	def CntrPtyRsk(self):
-		return self._CntrPtyRsk
-
-	@CntrPtyRsk.setter
-	def CntrPtyRsk(self, value):
-		self._CntrPtyRsk = value if type(value) != auto else self.make_default("CntrPtyRsk")
-
-	@CntrPtyRsk.deleter
-	def CntrPtyRsk(self):
-		del self._CntrPtyRsk
-		self._CntrPtyRsk = None
-
-	@property
-	def BizRsk(self):
-		return self._BizRsk
-
-	@BizRsk.setter
-	def BizRsk(self, value):
-		self._BizRsk = value if type(value) != auto else self.make_default("BizRsk")
-
-	@BizRsk.deleter
-	def BizRsk(self):
-		del self._BizRsk
-		self._BizRsk = None
+	@CdtRsk.deleter
+	def CdtRsk(self):
+		del self._CdtRsk
+		self._CdtRsk = None
 
 	@property
 	def MktRsk(self):
@@ -71,6 +32,32 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._MktRsk = None
 
 	@property
+	def OprlAndLglRsk(self):
+		return self._OprlAndLglRsk
+
+	@OprlAndLglRsk.setter
+	def OprlAndLglRsk(self, value):
+		self._OprlAndLglRsk = value if type(value) != auto else self.make_default("OprlAndLglRsk")
+
+	@OprlAndLglRsk.deleter
+	def OprlAndLglRsk(self):
+		del self._OprlAndLglRsk
+		self._OprlAndLglRsk = None
+
+	@property
+	def CntrPtyRsk(self):
+		return self._CntrPtyRsk
+
+	@CntrPtyRsk.setter
+	def CntrPtyRsk(self, value):
+		self._CntrPtyRsk = value if type(value) != auto else self.make_default("CntrPtyRsk")
+
+	@CntrPtyRsk.deleter
+	def CntrPtyRsk(self):
+		del self._CntrPtyRsk
+		self._CntrPtyRsk = None
+
+	@property
 	def WndgDwnOrRstrgRsk(self):
 		return self._WndgDwnOrRstrgRsk
 
@@ -84,25 +71,38 @@ class CapitalRequirement1(base_types._BaseFieldType):
 		self._WndgDwnOrRstrgRsk = None
 
 	@property
-	def CdtRsk(self):
-		return self._CdtRsk
+	def NtfctnBffr(self):
+		return self._NtfctnBffr
 
-	@CdtRsk.setter
-	def CdtRsk(self, value):
-		self._CdtRsk = value if type(value) != auto else self.make_default("CdtRsk")
+	@NtfctnBffr.setter
+	def NtfctnBffr(self, value):
+		self._NtfctnBffr = value if type(value) != auto else self.make_default("NtfctnBffr")
 
-	@CdtRsk.deleter
-	def CdtRsk(self):
-		del self._CdtRsk
-		self._CdtRsk = None
+	@NtfctnBffr.deleter
+	def NtfctnBffr(self):
+		del self._NtfctnBffr
+		self._NtfctnBffr = None
+
+	@property
+	def BizRsk(self):
+		return self._BizRsk
+
+	@BizRsk.setter
+	def BizRsk(self, value):
+		self._BizRsk = value if type(value) != auto else self.make_default("BizRsk")
+
+	@BizRsk.deleter
+	def BizRsk(self):
+		del self._BizRsk
+		self._BizRsk = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OprlAndLglRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtfctnBffr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CntrPtyRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BizRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='WndgDwnOrRstrgRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OprlAndLglRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CntrPtyRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='WndgDwnOrRstrgRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtfctnBffr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BizRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType5Code
 import AssetClassSubProductType42Code
+import AssetClassProductType5Code
 
 class FertilizerCommoditySulphur2(base_types._BaseFieldType):
 

@@ -5,7 +5,7 @@ import DateFormat58Choice
 
 class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
-	__slots__ = ["_RegnMtd", "_MktDdln", "_AuthrsdPrxy", "_Ddln"]
+	__slots__ = ["_RegnMtd", "_AuthrsdPrxy", "_Ddln", "_MktDdln"]
 	@property
 	def RegnMtd(self):
 		return self._RegnMtd
@@ -18,19 +18,6 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 	def RegnMtd(self):
 		del self._RegnMtd
 		self._RegnMtd = None
-
-	@property
-	def MktDdln(self):
-		return self._MktDdln
-
-	@MktDdln.setter
-	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
-
-	@MktDdln.deleter
-	def MktDdln(self):
-		del self._MktDdln
-		self._MktDdln = None
 
 	@property
 	def AuthrsdPrxy(self):
@@ -58,10 +45,23 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 		del self._Ddln
 		self._Ddln = None
 
+	@property
+	def MktDdln(self):
+		return self._MktDdln
+
+	@MktDdln.setter
+	def MktDdln(self, value):
+		self._MktDdln = value if type(value) != auto else self.make_default("MktDdln")
+
+	@MktDdln.deleter
+	def MktDdln(self):
+		del self._MktDdln
+		self._MktDdln = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegnMtd', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthrsdPrxy', type=Proxy11, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ddln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

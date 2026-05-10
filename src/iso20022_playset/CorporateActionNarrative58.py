@@ -1,23 +1,23 @@
 import base_types
 import Max350Text
-import UpdatedURLlnformation6
 import Max2048Text
+import UpdatedURLlnformation6
 
 class CorporateActionNarrative58(base_types._BaseFieldType):
 
-	__slots__ = ["_Offerr", "_URLAdr", "_EvtPrcgWebSiteAdr", "_NewCpnyNm"]
+	__slots__ = ["_EvtPrcgWebSiteAdr", "_URLAdr", "_Offerr", "_NewCpnyNm"]
 	@property
-	def Offerr(self):
-		return self._Offerr
+	def EvtPrcgWebSiteAdr(self):
+		return self._EvtPrcgWebSiteAdr
 
-	@Offerr.setter
-	def Offerr(self, value):
-		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
+	@EvtPrcgWebSiteAdr.setter
+	def EvtPrcgWebSiteAdr(self, value):
+		self._EvtPrcgWebSiteAdr = value if type(value) != auto else self.make_default("EvtPrcgWebSiteAdr")
 
-	@Offerr.deleter
-	def Offerr(self):
-		del self._Offerr
-		self._Offerr = None
+	@EvtPrcgWebSiteAdr.deleter
+	def EvtPrcgWebSiteAdr(self):
+		del self._EvtPrcgWebSiteAdr
+		self._EvtPrcgWebSiteAdr = None
 
 	@property
 	def URLAdr(self):
@@ -33,17 +33,17 @@ class CorporateActionNarrative58(base_types._BaseFieldType):
 		self._URLAdr = None
 
 	@property
-	def EvtPrcgWebSiteAdr(self):
-		return self._EvtPrcgWebSiteAdr
+	def Offerr(self):
+		return self._Offerr
 
-	@EvtPrcgWebSiteAdr.setter
-	def EvtPrcgWebSiteAdr(self, value):
-		self._EvtPrcgWebSiteAdr = value if type(value) != auto else self.make_default("EvtPrcgWebSiteAdr")
+	@Offerr.setter
+	def Offerr(self, value):
+		self._Offerr = value if type(value) != auto else self.make_default("Offerr")
 
-	@EvtPrcgWebSiteAdr.deleter
-	def EvtPrcgWebSiteAdr(self):
-		del self._EvtPrcgWebSiteAdr
-		self._EvtPrcgWebSiteAdr = None
+	@Offerr.deleter
+	def Offerr(self):
+		del self._Offerr
+		self._Offerr = None
 
 	@property
 	def NewCpnyNm(self):
@@ -59,9 +59,9 @@ class CorporateActionNarrative58(base_types._BaseFieldType):
 		self._NewCpnyNm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Offerr', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation6, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Offerr', type=Max350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NewCpnyNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

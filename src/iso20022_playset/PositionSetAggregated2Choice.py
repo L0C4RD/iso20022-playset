@@ -1,6 +1,6 @@
 import base_types
-import PositionSetAggregated4
 import ReportPeriodActivity1Code
+import PositionSetAggregated4
 
 class PositionSetAggregated2Choice(base_types._BaseFieldType):
 

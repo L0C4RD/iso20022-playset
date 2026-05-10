@@ -1,12 +1,25 @@
 import base_types
+import ActiveCurrencyCode
 import ImpliedCurrencyAndAmount
 import Number
-import ActiveCurrencyCode
 import DetailedAmount13
 
 class DetailedAmount16(base_types._BaseFieldType):
 
-	__slots__ = ["_CshBckAmt", "_AmtToDpst", "_Dontn", "_Fees", "_Ccy", "_AcctSeqNb"]
+	__slots__ = ["_AcctSeqNb", "_CshBckAmt", "_Dontn", "_Fees", "_Ccy", "_AmtToDpst"]
+	@property
+	def AcctSeqNb(self):
+		return self._AcctSeqNb
+
+	@AcctSeqNb.setter
+	def AcctSeqNb(self, value):
+		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
+
+	@AcctSeqNb.deleter
+	def AcctSeqNb(self):
+		del self._AcctSeqNb
+		self._AcctSeqNb = None
+
 	@property
 	def CshBckAmt(self):
 		return self._CshBckAmt
@@ -19,19 +32,6 @@ class DetailedAmount16(base_types._BaseFieldType):
 	def CshBckAmt(self):
 		del self._CshBckAmt
 		self._CshBckAmt = None
-
-	@property
-	def AmtToDpst(self):
-		return self._AmtToDpst
-
-	@AmtToDpst.setter
-	def AmtToDpst(self, value):
-		self._AmtToDpst = value if type(value) != auto else self.make_default("AmtToDpst")
-
-	@AmtToDpst.deleter
-	def AmtToDpst(self):
-		del self._AmtToDpst
-		self._AmtToDpst = None
 
 	@property
 	def Dontn(self):
@@ -73,24 +73,24 @@ class DetailedAmount16(base_types._BaseFieldType):
 		self._Ccy = None
 
 	@property
-	def AcctSeqNb(self):
-		return self._AcctSeqNb
+	def AmtToDpst(self):
+		return self._AmtToDpst
 
-	@AcctSeqNb.setter
-	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != auto else self.make_default("AcctSeqNb")
+	@AmtToDpst.setter
+	def AmtToDpst(self, value):
+		self._AmtToDpst = value if type(value) != auto else self.make_default("AmtToDpst")
 
-	@AcctSeqNb.deleter
-	def AcctSeqNb(self):
-		del self._AcctSeqNb
-		self._AcctSeqNb = None
+	@AmtToDpst.deleter
+	def AmtToDpst(self):
+		del self._AmtToDpst
+		self._AmtToDpst = None
 
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshBckAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AmtToDpst', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dontn', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Fees', type=DetailedAmount13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AmtToDpst', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -5,20 +5,7 @@ import AdditionalInformation15
 
 class CashAsset3(base_types._BaseFieldType):
 
-	__slots__ = ["_CshAsstTp", "_TrfCcy", "_AddtlInf", "_HldgCcy"]
-	@property
-	def CshAsstTp(self):
-		return self._CshAsstTp
-
-	@CshAsstTp.setter
-	def CshAsstTp(self, value):
-		self._CshAsstTp = value if type(value) != auto else self.make_default("CshAsstTp")
-
-	@CshAsstTp.deleter
-	def CshAsstTp(self):
-		del self._CshAsstTp
-		self._CshAsstTp = None
-
+	__slots__ = ["_TrfCcy", "_CshAsstTp", "_AddtlInf", "_HldgCcy"]
 	@property
 	def TrfCcy(self):
 		return self._TrfCcy
@@ -31,6 +18,19 @@ class CashAsset3(base_types._BaseFieldType):
 	def TrfCcy(self):
 		del self._TrfCcy
 		self._TrfCcy = None
+
+	@property
+	def CshAsstTp(self):
+		return self._CshAsstTp
+
+	@CshAsstTp.setter
+	def CshAsstTp(self, value):
+		self._CshAsstTp = value if type(value) != auto else self.make_default("CshAsstTp")
+
+	@CshAsstTp.deleter
+	def CshAsstTp(self):
+		del self._CshAsstTp
+		self._CshAsstTp = None
 
 	@property
 	def AddtlInf(self):
@@ -59,8 +59,8 @@ class CashAsset3(base_types._BaseFieldType):
 		self._HldgCcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='CshAsstTp', type=CashAssetType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAsstTp', type=CashAssetType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))

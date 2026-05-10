@@ -1,6 +1,6 @@
 import base_types
-import OptionEventType1Choice
 import Max35Text
+import OptionEventType1Choice
 
 class OptionEvent2(base_types._BaseFieldType):
 

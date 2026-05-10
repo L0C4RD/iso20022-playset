@@ -1,24 +1,11 @@
 import base_types
+import Max35Text
 import ISODate
 import Max140Text
-import Max35Text
 
 class LegalOrganisation2(base_types._BaseFieldType):
 
-	__slots__ = ["_EstblishmtDt", "_Id", "_Nm", "_RegnDt"]
-	@property
-	def EstblishmtDt(self):
-		return self._EstblishmtDt
-
-	@EstblishmtDt.setter
-	def EstblishmtDt(self, value):
-		self._EstblishmtDt = value if type(value) != auto else self.make_default("EstblishmtDt")
-
-	@EstblishmtDt.deleter
-	def EstblishmtDt(self):
-		del self._EstblishmtDt
-		self._EstblishmtDt = None
-
+	__slots__ = ["_Id", "_RegnDt", "_Nm", "_EstblishmtDt"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,6 +18,19 @@ class LegalOrganisation2(base_types._BaseFieldType):
 	def Id(self):
 		del self._Id
 		self._Id = None
+
+	@property
+	def RegnDt(self):
+		return self._RegnDt
+
+	@RegnDt.setter
+	def RegnDt(self, value):
+		self._RegnDt = value if type(value) != auto else self.make_default("RegnDt")
+
+	@RegnDt.deleter
+	def RegnDt(self):
+		del self._RegnDt
+		self._RegnDt = None
 
 	@property
 	def Nm(self):
@@ -46,22 +46,22 @@ class LegalOrganisation2(base_types._BaseFieldType):
 		self._Nm = None
 
 	@property
-	def RegnDt(self):
-		return self._RegnDt
+	def EstblishmtDt(self):
+		return self._EstblishmtDt
 
-	@RegnDt.setter
-	def RegnDt(self, value):
-		self._RegnDt = value if type(value) != auto else self.make_default("RegnDt")
+	@EstblishmtDt.setter
+	def EstblishmtDt(self, value):
+		self._EstblishmtDt = value if type(value) != auto else self.make_default("EstblishmtDt")
 
-	@RegnDt.deleter
-	def RegnDt(self):
-		del self._RegnDt
-		self._RegnDt = None
+	@EstblishmtDt.deleter
+	def EstblishmtDt(self):
+		del self._EstblishmtDt
+		self._EstblishmtDt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='EstblishmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='EstblishmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

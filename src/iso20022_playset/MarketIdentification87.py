@@ -1,23 +1,23 @@
 import base_types
-import Purpose3Choice
-import CountryCode
 import ClassificationType1Choice
+import CountryCode
+import Purpose3Choice
 
 class MarketIdentification87(base_types._BaseFieldType):
 
-	__slots__ = ["_Ctry", "_SttlmPurp", "_ClssfctnTp"]
+	__slots__ = ["_ClssfctnTp", "_SttlmPurp", "_Ctry"]
 	@property
-	def Ctry(self):
-		return self._Ctry
+	def ClssfctnTp(self):
+		return self._ClssfctnTp
 
-	@Ctry.setter
-	def Ctry(self, value):
-		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
+	@ClssfctnTp.setter
+	def ClssfctnTp(self, value):
+		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
 
-	@Ctry.deleter
-	def Ctry(self):
-		del self._Ctry
-		self._Ctry = None
+	@ClssfctnTp.deleter
+	def ClssfctnTp(self):
+		del self._ClssfctnTp
+		self._ClssfctnTp = None
 
 	@property
 	def SttlmPurp(self):
@@ -33,21 +33,21 @@ class MarketIdentification87(base_types._BaseFieldType):
 		self._SttlmPurp = None
 
 	@property
-	def ClssfctnTp(self):
-		return self._ClssfctnTp
+	def Ctry(self):
+		return self._Ctry
 
-	@ClssfctnTp.setter
-	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != auto else self.make_default("ClssfctnTp")
+	@Ctry.setter
+	def Ctry(self, value):
+		self._Ctry = value if type(value) != auto else self.make_default("Ctry")
 
-	@ClssfctnTp.deleter
-	def ClssfctnTp(self):
-		del self._ClssfctnTp
-		self._ClssfctnTp = None
+	@Ctry.deleter
+	def Ctry(self):
+		del self._Ctry
+		self._Ctry = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SttlmPurp', type=Purpose3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType1Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SttlmPurp', type=Purpose3Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),
 	))
 

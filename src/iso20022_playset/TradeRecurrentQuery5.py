@@ -1,11 +1,24 @@
 import base_types
+import Max1000Text
 import ISODate
 import TradeQueryExecutionFrequency3
-import Max1000Text
 
 class TradeRecurrentQuery5(base_types._BaseFieldType):
 
-	__slots__ = ["_QryTp", "_Frqcy", "_VldUntil"]
+	__slots__ = ["_VldUntil", "_QryTp", "_Frqcy"]
+	@property
+	def VldUntil(self):
+		return self._VldUntil
+
+	@VldUntil.setter
+	def VldUntil(self, value):
+		self._VldUntil = value if type(value) != auto else self.make_default("VldUntil")
+
+	@VldUntil.deleter
+	def VldUntil(self):
+		del self._VldUntil
+		self._VldUntil = None
+
 	@property
 	def QryTp(self):
 		return self._QryTp
@@ -32,22 +45,9 @@ class TradeRecurrentQuery5(base_types._BaseFieldType):
 		del self._Frqcy
 		self._Frqcy = None
 
-	@property
-	def VldUntil(self):
-		return self._VldUntil
-
-	@VldUntil.setter
-	def VldUntil(self, value):
-		self._VldUntil = value if type(value) != auto else self.make_default("VldUntil")
-
-	@VldUntil.deleter
-	def VldUntil(self):
-		del self._VldUntil
-		self._VldUntil = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='VldUntil', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QryTp', type=Max1000Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=TradeQueryExecutionFrequency3, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VldUntil', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,7 +1,7 @@
 import base_types
-import SupplementaryData1
-import SecuritiesTransactionReport2
 import SecuritiesTransactionReport7
+import SecuritiesTransactionReport2
+import SupplementaryData1
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 

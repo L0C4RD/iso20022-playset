@@ -1,6 +1,6 @@
 import base_types
-import AssetClassProductType5Code
 import AssetClassSubProductType40Code
+import AssetClassProductType5Code
 
 class FertilizerCommodityDiammoniumPhosphate1(base_types._BaseFieldType):
 

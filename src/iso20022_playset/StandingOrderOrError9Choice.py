@@ -1,6 +1,6 @@
 import base_types
-import ErrorHandling5
 import StandingOrderReport3
+import ErrorHandling5
 
 class StandingOrderOrError9Choice(base_types._BaseFieldType):
 

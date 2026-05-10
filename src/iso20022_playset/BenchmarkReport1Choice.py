@@ -1,11 +1,24 @@
 import base_types
-import BenchmarkCancellation1
-import BenchmarkUpdate1
 import BenchmarkCreate1
+import BenchmarkUpdate1
+import BenchmarkCancellation1
 
 class BenchmarkReport1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Cret", "_Upd", "_Cxl"]
+	__slots__ = ["_Cxl", "_Cret", "_Upd"]
+	@property
+	def Cxl(self):
+		return self._Cxl
+
+	@Cxl.setter
+	def Cxl(self, value):
+		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
+
+	@Cxl.deleter
+	def Cxl(self):
+		del self._Cxl
+		self._Cxl = None
+
 	@property
 	def Cret(self):
 		return self._Cret
@@ -32,22 +45,9 @@ class BenchmarkReport1Choice(base_types._BaseFieldType):
 		del self._Upd
 		self._Upd = None
 
-	@property
-	def Cxl(self):
-		return self._Cxl
-
-	@Cxl.setter
-	def Cxl(self, value):
-		self._Cxl = value if type(value) != auto else self.make_default("Cxl")
-
-	@Cxl.deleter
-	def Cxl(self):
-		del self._Cxl
-		self._Cxl = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Cxl', type=BenchmarkCancellation1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Cret', type=BenchmarkCreate1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Upd', type=BenchmarkUpdate1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='Cxl', type=BenchmarkCancellation1, min=0, max=1, mutex_group=1, array=False),
 	))
 

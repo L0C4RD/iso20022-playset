@@ -1,6 +1,6 @@
 import base_types
-import MemberCriteria4
 import Max35Text
+import MemberCriteria4
 
 class MemberCriteriaDefinition2Choice(base_types._BaseFieldType):
 

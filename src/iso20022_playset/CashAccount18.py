@@ -1,8 +1,8 @@
 import base_types
 import CreditDebitCode
-import CashBalanceType1FormatType
-import PartyIdentification2Choice
 import AccountIdentification2Choice
+import PartyIdentification2Choice
+import CashBalanceType1FormatType
 
 class CashAccount18(base_types._BaseFieldType):
 

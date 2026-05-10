@@ -1,11 +1,11 @@
 import base_types
-import SupplementaryData1
 import TradeReportQuery13Choice
 import PartyIdentification121Choice
+import SupplementaryData1
 
 class SecuritiesFinancingReportingTransactionQueryV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_TradQryData", "_RqstngAuthrty"]
+	__slots__ = ["_SplmtryData", "_RqstngAuthrty", "_TradQryData"]
 	@property
 	def SplmtryData(self):
 		return self._SplmtryData
@@ -20,19 +20,6 @@ class SecuritiesFinancingReportingTransactionQueryV02(base_types._BaseFieldType)
 		self._SplmtryData = None
 
 	@property
-	def TradQryData(self):
-		return self._TradQryData
-
-	@TradQryData.setter
-	def TradQryData(self, value):
-		self._TradQryData = value if type(value) != auto else self.make_default("TradQryData")
-
-	@TradQryData.deleter
-	def TradQryData(self):
-		del self._TradQryData
-		self._TradQryData = None
-
-	@property
 	def RqstngAuthrty(self):
 		return self._RqstngAuthrty
 
@@ -45,9 +32,22 @@ class SecuritiesFinancingReportingTransactionQueryV02(base_types._BaseFieldType)
 		del self._RqstngAuthrty
 		self._RqstngAuthrty = None
 
+	@property
+	def TradQryData(self):
+		return self._TradQryData
+
+	@TradQryData.setter
+	def TradQryData(self, value):
+		self._TradQryData = value if type(value) != auto else self.make_default("TradQryData")
+
+	@TradQryData.deleter
+	def TradQryData(self):
+		del self._TradQryData
+		self._TradQryData = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='TradQryData', type=TradeReportQuery13Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TradQryData', type=TradeReportQuery13Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

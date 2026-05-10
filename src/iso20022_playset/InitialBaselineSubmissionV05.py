@@ -1,28 +1,15 @@
 import base_types
 import InstructionType1
+import BankContactPerson1Choice
+import SimpleIdentificationInformation
+import MessageIdentification1
 import Baseline5
 import ContactIdentification1
-import MessageIdentification1
-import SimpleIdentificationInformation
-import BankContactPerson1Choice
 import ContactIdentification3
 
 class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
-	__slots__ = ["_OthrBkCtctPrsn", "_SubmissnId", "_SellrCtctPrsn", "_BuyrCtctPrsn", "_BkCtctPrsn", "_Baseln", "_Instr", "_SubmitrTxRef"]
-	@property
-	def OthrBkCtctPrsn(self):
-		return self._OthrBkCtctPrsn
-
-	@OthrBkCtctPrsn.setter
-	def OthrBkCtctPrsn(self, value):
-		self._OthrBkCtctPrsn = value if type(value) != auto else self.make_default("OthrBkCtctPrsn")
-
-	@OthrBkCtctPrsn.deleter
-	def OthrBkCtctPrsn(self):
-		del self._OthrBkCtctPrsn
-		self._OthrBkCtctPrsn = None
-
+	__slots__ = ["_SubmissnId", "_Baseln", "_OthrBkCtctPrsn", "_BuyrCtctPrsn", "_SellrCtctPrsn", "_BkCtctPrsn", "_SubmitrTxRef", "_Instr"]
 	@property
 	def SubmissnId(self):
 		return self._SubmissnId
@@ -35,45 +22,6 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 	def SubmissnId(self):
 		del self._SubmissnId
 		self._SubmissnId = None
-
-	@property
-	def SellrCtctPrsn(self):
-		return self._SellrCtctPrsn
-
-	@SellrCtctPrsn.setter
-	def SellrCtctPrsn(self, value):
-		self._SellrCtctPrsn = value if type(value) != auto else self.make_default("SellrCtctPrsn")
-
-	@SellrCtctPrsn.deleter
-	def SellrCtctPrsn(self):
-		del self._SellrCtctPrsn
-		self._SellrCtctPrsn = None
-
-	@property
-	def BuyrCtctPrsn(self):
-		return self._BuyrCtctPrsn
-
-	@BuyrCtctPrsn.setter
-	def BuyrCtctPrsn(self, value):
-		self._BuyrCtctPrsn = value if type(value) != auto else self.make_default("BuyrCtctPrsn")
-
-	@BuyrCtctPrsn.deleter
-	def BuyrCtctPrsn(self):
-		del self._BuyrCtctPrsn
-		self._BuyrCtctPrsn = None
-
-	@property
-	def BkCtctPrsn(self):
-		return self._BkCtctPrsn
-
-	@BkCtctPrsn.setter
-	def BkCtctPrsn(self, value):
-		self._BkCtctPrsn = value if type(value) != auto else self.make_default("BkCtctPrsn")
-
-	@BkCtctPrsn.deleter
-	def BkCtctPrsn(self):
-		del self._BkCtctPrsn
-		self._BkCtctPrsn = None
 
 	@property
 	def Baseln(self):
@@ -89,17 +37,56 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 		self._Baseln = None
 
 	@property
-	def Instr(self):
-		return self._Instr
+	def OthrBkCtctPrsn(self):
+		return self._OthrBkCtctPrsn
 
-	@Instr.setter
-	def Instr(self, value):
-		self._Instr = value if type(value) != auto else self.make_default("Instr")
+	@OthrBkCtctPrsn.setter
+	def OthrBkCtctPrsn(self, value):
+		self._OthrBkCtctPrsn = value if type(value) != auto else self.make_default("OthrBkCtctPrsn")
 
-	@Instr.deleter
-	def Instr(self):
-		del self._Instr
-		self._Instr = None
+	@OthrBkCtctPrsn.deleter
+	def OthrBkCtctPrsn(self):
+		del self._OthrBkCtctPrsn
+		self._OthrBkCtctPrsn = None
+
+	@property
+	def BuyrCtctPrsn(self):
+		return self._BuyrCtctPrsn
+
+	@BuyrCtctPrsn.setter
+	def BuyrCtctPrsn(self, value):
+		self._BuyrCtctPrsn = value if type(value) != auto else self.make_default("BuyrCtctPrsn")
+
+	@BuyrCtctPrsn.deleter
+	def BuyrCtctPrsn(self):
+		del self._BuyrCtctPrsn
+		self._BuyrCtctPrsn = None
+
+	@property
+	def SellrCtctPrsn(self):
+		return self._SellrCtctPrsn
+
+	@SellrCtctPrsn.setter
+	def SellrCtctPrsn(self, value):
+		self._SellrCtctPrsn = value if type(value) != auto else self.make_default("SellrCtctPrsn")
+
+	@SellrCtctPrsn.deleter
+	def SellrCtctPrsn(self):
+		del self._SellrCtctPrsn
+		self._SellrCtctPrsn = None
+
+	@property
+	def BkCtctPrsn(self):
+		return self._BkCtctPrsn
+
+	@BkCtctPrsn.setter
+	def BkCtctPrsn(self, value):
+		self._BkCtctPrsn = value if type(value) != auto else self.make_default("BkCtctPrsn")
+
+	@BkCtctPrsn.deleter
+	def BkCtctPrsn(self):
+		del self._BkCtctPrsn
+		self._BkCtctPrsn = None
 
 	@property
 	def SubmitrTxRef(self):
@@ -114,14 +101,27 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 		del self._SubmitrTxRef
 		self._SubmitrTxRef = None
 
+	@property
+	def Instr(self):
+		return self._Instr
+
+	@Instr.setter
+	def Instr(self, value):
+		self._Instr = value if type(value) != auto else self.make_default("Instr")
+
+	@Instr.deleter
+	def Instr(self):
+		del self._Instr
+		self._Instr = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OthrBkCtctPrsn', type=ContactIdentification3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubmissnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SellrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BuyrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='BkCtctPrsn', type=BankContactPerson1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Baseln', type=Baseline5, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Instr', type=InstructionType1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OthrBkCtctPrsn', type=ContactIdentification3, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BuyrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SellrCtctPrsn', type=ContactIdentification1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='BkCtctPrsn', type=BankContactPerson1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Instr', type=InstructionType1, min=1, max=1, mutex_group=None, array=False),
 	))
 

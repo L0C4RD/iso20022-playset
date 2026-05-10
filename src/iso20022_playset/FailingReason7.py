@@ -1,6 +1,6 @@
 import base_types
-import Max210Text
 import FailingReason7Choice
+import Max210Text
 
 class FailingReason7(base_types._BaseFieldType):
 

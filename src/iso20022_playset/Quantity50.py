@@ -1,38 +1,25 @@
 import base_types
-import ImpliedCurrencyAndAmount
-import DecimalNumber
-import Max35Text
-import PercentageRate
 import ActiveCurrencyAnd13DecimalAmount
+import Max35Text
+import DecimalNumber
+import ImpliedCurrencyAndAmount
+import PercentageRate
 
 class Quantity50(base_types._BaseFieldType):
 
-	__slots__ = ["_PctgRate", "_Unit", "_CshAmt", "_OthrAsst", "_AmtsdVal", "_FaceAmt"]
+	__slots__ = ["_FaceAmt", "_CshAmt", "_OthrAsst", "_Unit", "_AmtsdVal", "_PctgRate"]
 	@property
-	def PctgRate(self):
-		return self._PctgRate
+	def FaceAmt(self):
+		return self._FaceAmt
 
-	@PctgRate.setter
-	def PctgRate(self, value):
-		self._PctgRate = value if type(value) != auto else self.make_default("PctgRate")
+	@FaceAmt.setter
+	def FaceAmt(self, value):
+		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
 
-	@PctgRate.deleter
-	def PctgRate(self):
-		del self._PctgRate
-		self._PctgRate = None
-
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
+	@FaceAmt.deleter
+	def FaceAmt(self):
+		del self._FaceAmt
+		self._FaceAmt = None
 
 	@property
 	def CshAmt(self):
@@ -61,6 +48,19 @@ class Quantity50(base_types._BaseFieldType):
 		self._OthrAsst = None
 
 	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
+
+	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal
 
@@ -74,24 +74,24 @@ class Quantity50(base_types._BaseFieldType):
 		self._AmtsdVal = None
 
 	@property
-	def FaceAmt(self):
-		return self._FaceAmt
+	def PctgRate(self):
+		return self._PctgRate
 
-	@FaceAmt.setter
-	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != auto else self.make_default("FaceAmt")
+	@PctgRate.setter
+	def PctgRate(self, value):
+		self._PctgRate = value if type(value) != auto else self.make_default("PctgRate")
 
-	@FaceAmt.deleter
-	def FaceAmt(self):
-		del self._FaceAmt
-		self._FaceAmt = None
+	@PctgRate.deleter
+	def PctgRate(self):
+		del self._PctgRate
+		self._PctgRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PctgRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CshAmt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrAsst', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PctgRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
 

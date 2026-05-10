@@ -4,19 +4,19 @@ import CashAccount7
 
 class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 
-	__slots__ = ["_FincgAcct", "_PtyId", "_CdtAcct"]
+	__slots__ = ["_CdtAcct", "_PtyId", "_FincgAcct"]
 	@property
-	def FincgAcct(self):
-		return self._FincgAcct
+	def CdtAcct(self):
+		return self._CdtAcct
 
-	@FincgAcct.setter
-	def FincgAcct(self, value):
-		self._FincgAcct = value if type(value) != auto else self.make_default("FincgAcct")
+	@CdtAcct.setter
+	def CdtAcct(self, value):
+		self._CdtAcct = value if type(value) != auto else self.make_default("CdtAcct")
 
-	@FincgAcct.deleter
-	def FincgAcct(self):
-		del self._FincgAcct
-		self._FincgAcct = None
+	@CdtAcct.deleter
+	def CdtAcct(self):
+		del self._CdtAcct
+		self._CdtAcct = None
 
 	@property
 	def PtyId(self):
@@ -32,21 +32,21 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 		self._PtyId = None
 
 	@property
-	def CdtAcct(self):
-		return self._CdtAcct
+	def FincgAcct(self):
+		return self._FincgAcct
 
-	@CdtAcct.setter
-	def CdtAcct(self, value):
-		self._CdtAcct = value if type(value) != auto else self.make_default("CdtAcct")
+	@FincgAcct.setter
+	def FincgAcct(self, value):
+		self._FincgAcct = value if type(value) != auto else self.make_default("FincgAcct")
 
-	@CdtAcct.deleter
-	def CdtAcct(self):
-		del self._CdtAcct
-		self._CdtAcct = None
+	@FincgAcct.deleter
+	def FincgAcct(self):
+		del self._FincgAcct
+		self._FincgAcct = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PtyId', type=PartyIdentification25, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PtyId', type=PartyIdentification25, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,26 +1,13 @@
 import base_types
-import DateAndDateTimeChoice
-import UnitOrFaceAmount1Choice
-import SecuritiesAccount9
 import Max35Text
+import DateAndDateTimeChoice
+import SecuritiesAccount9
+import UnitOrFaceAmount1Choice
 import SecurityIdentification7
 
 class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_PstngQty", "_SctyId", "_PstngId", "_PstngDtTm"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_PstngQty", "_SctyId", "_PstngDtTm", "_PstngId", "_AcctDtls"]
 	@property
 	def PstngQty(self):
 		return self._PstngQty
@@ -48,6 +35,19 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 		self._SctyId = None
 
 	@property
+	def PstngDtTm(self):
+		return self._PstngDtTm
+
+	@PstngDtTm.setter
+	def PstngDtTm(self, value):
+		self._PstngDtTm = value if type(value) != auto else self.make_default("PstngDtTm")
+
+	@PstngDtTm.deleter
+	def PstngDtTm(self):
+		del self._PstngDtTm
+		self._PstngDtTm = None
+
+	@property
 	def PstngId(self):
 		return self._PstngId
 
@@ -61,23 +61,23 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 		self._PstngId = None
 
 	@property
-	def PstngDtTm(self):
-		return self._PstngDtTm
+	def AcctDtls(self):
+		return self._AcctDtls
 
-	@PstngDtTm.setter
-	def PstngDtTm(self, value):
-		self._PstngDtTm = value if type(value) != auto else self.make_default("PstngDtTm")
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
 
-	@PstngDtTm.deleter
-	def PstngDtTm(self):
-		del self._PstngDtTm
-		self._PstngDtTm = None
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount9, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PstngId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount9, min=1, max=2, mutex_group=None, array=False),
 	))
 

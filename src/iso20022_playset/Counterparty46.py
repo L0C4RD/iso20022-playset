@@ -1,7 +1,7 @@
 import base_types
-import CounterpartyTradeNature15Choice
 import TrueFalseIndicator
 import PartyIdentification248Choice
+import CounterpartyTradeNature15Choice
 
 class Counterparty46(base_types._BaseFieldType):
 

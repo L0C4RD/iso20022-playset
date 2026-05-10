@@ -1,24 +1,11 @@
 import base_types
-import Percentage14Rate
-import RateAndAmountFormat59Choice
 import RateAndAmountFormat55Choice
+import RateAndAmountFormat59Choice
+import Percentage14Rate
 
 class CorporateActionRate127(base_types._BaseFieldType):
 
-	__slots__ = ["_PropsdRate", "_ReqdScndLvlTaxRate", "_OvrsbcptRate", "_ReqdWhldgTaxRate"]
-	@property
-	def PropsdRate(self):
-		return self._PropsdRate
-
-	@PropsdRate.setter
-	def PropsdRate(self, value):
-		self._PropsdRate = value if type(value) != auto else self.make_default("PropsdRate")
-
-	@PropsdRate.deleter
-	def PropsdRate(self):
-		del self._PropsdRate
-		self._PropsdRate = None
-
+	__slots__ = ["_ReqdScndLvlTaxRate", "_PropsdRate", "_OvrsbcptRate", "_ReqdWhldgTaxRate"]
 	@property
 	def ReqdScndLvlTaxRate(self):
 		return self._ReqdScndLvlTaxRate
@@ -31,6 +18,19 @@ class CorporateActionRate127(base_types._BaseFieldType):
 	def ReqdScndLvlTaxRate(self):
 		del self._ReqdScndLvlTaxRate
 		self._ReqdScndLvlTaxRate = None
+
+	@property
+	def PropsdRate(self):
+		return self._PropsdRate
+
+	@PropsdRate.setter
+	def PropsdRate(self, value):
+		self._PropsdRate = value if type(value) != auto else self.make_default("PropsdRate")
+
+	@PropsdRate.deleter
+	def PropsdRate(self):
+		del self._PropsdRate
+		self._PropsdRate = None
 
 	@property
 	def OvrsbcptRate(self):
@@ -59,8 +59,8 @@ class CorporateActionRate127(base_types._BaseFieldType):
 		self._ReqdWhldgTaxRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdScndLvlTaxRate', type=RateAndAmountFormat55Choice, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PropsdRate', type=Percentage14Rate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat59Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqdWhldgTaxRate', type=RateAndAmountFormat55Choice, min=0, max=None, mutex_group=None, array=True),
 	))

@@ -1,13 +1,13 @@
 import base_types
-import Max15NumericText
-import ISODateTime
-import PartyIdentification272
 import Max35Text
+import Max15NumericText
+import PartyIdentification272
+import ISODateTime
 import BranchAndFinancialInstitutionIdentification8
 
 class CurrencyControlHeader8(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_CreDtTm", "_FwdgAgt", "_NbOfItms", "_InitgPty"]
+	__slots__ = ["_MsgId", "_NbOfItms", "_FwdgAgt", "_InitgPty", "_CreDtTm"]
 	@property
 	def MsgId(self):
 		return self._MsgId
@@ -20,32 +20,6 @@ class CurrencyControlHeader8(base_types._BaseFieldType):
 	def MsgId(self):
 		del self._MsgId
 		self._MsgId = None
-
-	@property
-	def CreDtTm(self):
-		return self._CreDtTm
-
-	@CreDtTm.setter
-	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
-
-	@CreDtTm.deleter
-	def CreDtTm(self):
-		del self._CreDtTm
-		self._CreDtTm = None
-
-	@property
-	def FwdgAgt(self):
-		return self._FwdgAgt
-
-	@FwdgAgt.setter
-	def FwdgAgt(self, value):
-		self._FwdgAgt = value if type(value) != auto else self.make_default("FwdgAgt")
-
-	@FwdgAgt.deleter
-	def FwdgAgt(self):
-		del self._FwdgAgt
-		self._FwdgAgt = None
 
 	@property
 	def NbOfItms(self):
@@ -61,6 +35,19 @@ class CurrencyControlHeader8(base_types._BaseFieldType):
 		self._NbOfItms = None
 
 	@property
+	def FwdgAgt(self):
+		return self._FwdgAgt
+
+	@FwdgAgt.setter
+	def FwdgAgt(self, value):
+		self._FwdgAgt = value if type(value) != auto else self.make_default("FwdgAgt")
+
+	@FwdgAgt.deleter
+	def FwdgAgt(self):
+		del self._FwdgAgt
+		self._FwdgAgt = None
+
+	@property
 	def InitgPty(self):
 		return self._InitgPty
 
@@ -73,11 +60,24 @@ class CurrencyControlHeader8(base_types._BaseFieldType):
 		del self._InitgPty
 		self._InitgPty = None
 
+	@property
+	def CreDtTm(self):
+		return self._CreDtTm
+
+	@CreDtTm.setter
+	def CreDtTm(self, value):
+		self._CreDtTm = value if type(value) != auto else self.make_default("CreDtTm")
+
+	@CreDtTm.deleter
+	def CreDtTm(self):
+		del self._CreDtTm
+		self._CreDtTm = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FwdgAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitgPty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
 

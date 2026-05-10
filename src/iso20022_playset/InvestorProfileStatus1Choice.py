@@ -1,6 +1,6 @@
 import base_types
-import InvestorProfileStatus1Code
 import GenericIdentification47
+import InvestorProfileStatus1Code
 
 class InvestorProfileStatus1Choice(base_types._BaseFieldType):
 

@@ -5,19 +5,19 @@ import TrueFalseIndicator
 
 class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
-	__slots__ = ["_RefPty", "_NtnlCcy", "_SvrgnIssr"]
+	__slots__ = ["_SvrgnIssr", "_NtnlCcy", "_RefPty"]
 	@property
-	def RefPty(self):
-		return self._RefPty
+	def SvrgnIssr(self):
+		return self._SvrgnIssr
 
-	@RefPty.setter
-	def RefPty(self, value):
-		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
+	@SvrgnIssr.setter
+	def SvrgnIssr(self, value):
+		self._SvrgnIssr = value if type(value) != auto else self.make_default("SvrgnIssr")
 
-	@RefPty.deleter
-	def RefPty(self):
-		del self._RefPty
-		self._RefPty = None
+	@SvrgnIssr.deleter
+	def SvrgnIssr(self):
+		del self._SvrgnIssr
+		self._SvrgnIssr = None
 
 	@property
 	def NtnlCcy(self):
@@ -33,21 +33,21 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 		self._NtnlCcy = None
 
 	@property
-	def SvrgnIssr(self):
-		return self._SvrgnIssr
+	def RefPty(self):
+		return self._RefPty
 
-	@SvrgnIssr.setter
-	def SvrgnIssr(self, value):
-		self._SvrgnIssr = value if type(value) != auto else self.make_default("SvrgnIssr")
+	@RefPty.setter
+	def RefPty(self, value):
+		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
 
-	@SvrgnIssr.deleter
-	def SvrgnIssr(self):
-		del self._SvrgnIssr
-		self._SvrgnIssr = None
+	@RefPty.deleter
+	def RefPty(self):
+		del self._RefPty
+		self._RefPty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvrgnIssr', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

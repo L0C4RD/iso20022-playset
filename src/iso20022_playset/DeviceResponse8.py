@@ -1,46 +1,20 @@
 import base_types
-import CardPaymentEnvironment81
-import DeviceSecureInputResponse6
-import PaymentContext30
-import DeviceInputResponse6
-import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
 import DeviceDisplayResponse2
-import DeviceInitialisationCardReaderResponse2
-import DevicePrintResponse1
 import SupplementaryData1
+import DeviceSecureInputResponse6
+import DevicePrintResponse1
 import RetailerService9Code
 import DeviceTransmitMessageResponse1
+import PaymentContext30
+import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+import CardPaymentEnvironment81
 import ResponseType11
+import DeviceInputResponse6
+import DeviceInitialisationCardReaderResponse2
 
 class DeviceResponse8(base_types._BaseFieldType):
 
-	__slots__ = ["_Rspn", "_SplmtryData", "_Envt", "_PrtRspn", "_TrnsmssnRspn", "_ScrInptRspn", "_InitlstnCardRdrRspn", "_CardRdrApplPrtcolDataUnitRspn", "_SvcCntt", "_Cntxt", "_DispRspn", "_InptRspn"]
-	@property
-	def Rspn(self):
-		return self._Rspn
-
-	@Rspn.setter
-	def Rspn(self, value):
-		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
-
-	@Rspn.deleter
-	def Rspn(self):
-		del self._Rspn
-		self._Rspn = None
-
-	@property
-	def SplmtryData(self):
-		return self._SplmtryData
-
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
-
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
-
+	__slots__ = ["_Envt", "_TrnsmssnRspn", "_CardRdrApplPrtcolDataUnitRspn", "_SvcCntt", "_ScrInptRspn", "_Rspn", "_DispRspn", "_PrtRspn", "_InitlstnCardRdrRspn", "_Cntxt", "_SplmtryData", "_InptRspn"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -55,19 +29,6 @@ class DeviceResponse8(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def PrtRspn(self):
-		return self._PrtRspn
-
-	@PrtRspn.setter
-	def PrtRspn(self, value):
-		self._PrtRspn = value if type(value) != auto else self.make_default("PrtRspn")
-
-	@PrtRspn.deleter
-	def PrtRspn(self):
-		del self._PrtRspn
-		self._PrtRspn = None
-
-	@property
 	def TrnsmssnRspn(self):
 		return self._TrnsmssnRspn
 
@@ -79,32 +40,6 @@ class DeviceResponse8(base_types._BaseFieldType):
 	def TrnsmssnRspn(self):
 		del self._TrnsmssnRspn
 		self._TrnsmssnRspn = None
-
-	@property
-	def ScrInptRspn(self):
-		return self._ScrInptRspn
-
-	@ScrInptRspn.setter
-	def ScrInptRspn(self, value):
-		self._ScrInptRspn = value if type(value) != auto else self.make_default("ScrInptRspn")
-
-	@ScrInptRspn.deleter
-	def ScrInptRspn(self):
-		del self._ScrInptRspn
-		self._ScrInptRspn = None
-
-	@property
-	def InitlstnCardRdrRspn(self):
-		return self._InitlstnCardRdrRspn
-
-	@InitlstnCardRdrRspn.setter
-	def InitlstnCardRdrRspn(self, value):
-		self._InitlstnCardRdrRspn = value if type(value) != auto else self.make_default("InitlstnCardRdrRspn")
-
-	@InitlstnCardRdrRspn.deleter
-	def InitlstnCardRdrRspn(self):
-		del self._InitlstnCardRdrRspn
-		self._InitlstnCardRdrRspn = None
 
 	@property
 	def CardRdrApplPrtcolDataUnitRspn(self):
@@ -133,17 +68,30 @@ class DeviceResponse8(base_types._BaseFieldType):
 		self._SvcCntt = None
 
 	@property
-	def Cntxt(self):
-		return self._Cntxt
+	def ScrInptRspn(self):
+		return self._ScrInptRspn
 
-	@Cntxt.setter
-	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+	@ScrInptRspn.setter
+	def ScrInptRspn(self, value):
+		self._ScrInptRspn = value if type(value) != auto else self.make_default("ScrInptRspn")
 
-	@Cntxt.deleter
-	def Cntxt(self):
-		del self._Cntxt
-		self._Cntxt = None
+	@ScrInptRspn.deleter
+	def ScrInptRspn(self):
+		del self._ScrInptRspn
+		self._ScrInptRspn = None
+
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
 
 	@property
 	def DispRspn(self):
@@ -159,6 +107,58 @@ class DeviceResponse8(base_types._BaseFieldType):
 		self._DispRspn = None
 
 	@property
+	def PrtRspn(self):
+		return self._PrtRspn
+
+	@PrtRspn.setter
+	def PrtRspn(self, value):
+		self._PrtRspn = value if type(value) != auto else self.make_default("PrtRspn")
+
+	@PrtRspn.deleter
+	def PrtRspn(self):
+		del self._PrtRspn
+		self._PrtRspn = None
+
+	@property
+	def InitlstnCardRdrRspn(self):
+		return self._InitlstnCardRdrRspn
+
+	@InitlstnCardRdrRspn.setter
+	def InitlstnCardRdrRspn(self, value):
+		self._InitlstnCardRdrRspn = value if type(value) != auto else self.make_default("InitlstnCardRdrRspn")
+
+	@InitlstnCardRdrRspn.deleter
+	def InitlstnCardRdrRspn(self):
+		del self._InitlstnCardRdrRspn
+		self._InitlstnCardRdrRspn = None
+
+	@property
+	def Cntxt(self):
+		return self._Cntxt
+
+	@Cntxt.setter
+	def Cntxt(self, value):
+		self._Cntxt = value if type(value) != auto else self.make_default("Cntxt")
+
+	@Cntxt.deleter
+	def Cntxt(self):
+		del self._Cntxt
+		self._Cntxt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def InptRspn(self):
 		return self._InptRspn
 
@@ -172,17 +172,17 @@ class DeviceResponse8(base_types._BaseFieldType):
 		self._InptRspn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrtRspn', type=DevicePrintResponse1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnRspn', type=DeviceTransmitMessageResponse1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ScrInptRspn', type=DeviceSecureInputResponse6, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitlstnCardRdrRspn', type=DeviceInitialisationCardReaderResponse2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardRdrApplPrtcolDataUnitRspn', type=DeviceSendApplicationProtocolDataUnitCardReaderResponse1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService9Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ScrInptRspn', type=DeviceSecureInputResponse6, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DispRspn', type=DeviceDisplayResponse2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtRspn', type=DevicePrintResponse1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlstnCardRdrRspn', type=DeviceInitialisationCardReaderResponse2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InptRspn', type=DeviceInputResponse6, min=0, max=1, mutex_group=None, array=False),
 	))
 

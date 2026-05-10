@@ -1,6 +1,6 @@
 import base_types
-import DecimalNumber
 import Max35Text
+import DecimalNumber
 
 class Entitlement1Choice(base_types._BaseFieldType):
 

@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification30
 import YesNoIndicator
+import GenericIdentification30
 
 class SecuritiesRTGS4Choice(base_types._BaseFieldType):
 

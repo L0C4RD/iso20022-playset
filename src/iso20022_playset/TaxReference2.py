@@ -1,23 +1,10 @@
 import base_types
-import TaxReferenceType1Choice
 import Max35Text
+import TaxReferenceType1Choice
 
 class TaxReference2(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Ref"]
-	@property
-	def Tp(self):
-		return self._Tp
-
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
-
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
-
+	__slots__ = ["_Ref", "_Tp"]
 	@property
 	def Ref(self):
 		return self._Ref
@@ -31,8 +18,21 @@ class TaxReference2(base_types._BaseFieldType):
 		del self._Ref
 		self._Ref = None
 
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Tp', type=TaxReferenceType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Tp', type=TaxReferenceType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

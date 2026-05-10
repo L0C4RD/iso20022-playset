@@ -1,38 +1,12 @@
 import base_types
-import Party9Choice
-import CopyDuplicate1Code
-import ISONormalisedDateTime
 import Max35Text
+import CopyDuplicate1Code
+import Party9Choice
+import ISONormalisedDateTime
 
 class OriginalMessage1(base_types._BaseFieldType):
 
-	__slots__ = ["_To", "_CpyDplct", "_MsgDefIdr", "_CreDt", "_BizMsgIdr", "_Fr"]
-	@property
-	def To(self):
-		return self._To
-
-	@To.setter
-	def To(self, value):
-		self._To = value if type(value) != auto else self.make_default("To")
-
-	@To.deleter
-	def To(self):
-		del self._To
-		self._To = None
-
-	@property
-	def CpyDplct(self):
-		return self._CpyDplct
-
-	@CpyDplct.setter
-	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
-
-	@CpyDplct.deleter
-	def CpyDplct(self):
-		del self._CpyDplct
-		self._CpyDplct = None
-
+	__slots__ = ["_MsgDefIdr", "_To", "_BizMsgIdr", "_CreDt", "_CpyDplct", "_Fr"]
 	@property
 	def MsgDefIdr(self):
 		return self._MsgDefIdr
@@ -47,17 +21,17 @@ class OriginalMessage1(base_types._BaseFieldType):
 		self._MsgDefIdr = None
 
 	@property
-	def CreDt(self):
-		return self._CreDt
+	def To(self):
+		return self._To
 
-	@CreDt.setter
-	def CreDt(self, value):
-		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != auto else self.make_default("To")
 
-	@CreDt.deleter
-	def CreDt(self):
-		del self._CreDt
-		self._CreDt = None
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
 
 	@property
 	def BizMsgIdr(self):
@@ -73,6 +47,32 @@ class OriginalMessage1(base_types._BaseFieldType):
 		self._BizMsgIdr = None
 
 	@property
+	def CreDt(self):
+		return self._CreDt
+
+	@CreDt.setter
+	def CreDt(self, value):
+		self._CreDt = value if type(value) != auto else self.make_default("CreDt")
+
+	@CreDt.deleter
+	def CreDt(self):
+		del self._CreDt
+		self._CreDt = None
+
+	@property
+	def CpyDplct(self):
+		return self._CpyDplct
+
+	@CpyDplct.setter
+	def CpyDplct(self, value):
+		self._CpyDplct = value if type(value) != auto else self.make_default("CpyDplct")
+
+	@CpyDplct.deleter
+	def CpyDplct(self):
+		del self._CpyDplct
+		self._CpyDplct = None
+
+	@property
 	def Fr(self):
 		return self._Fr
 
@@ -86,11 +86,11 @@ class OriginalMessage1(base_types._BaseFieldType):
 		self._Fr = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='To', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MsgDefIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CreDt', type=ISONormalisedDateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CreDt', type=ISONormalisedDateTime, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fr', type=Party9Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

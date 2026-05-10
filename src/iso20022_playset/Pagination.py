@@ -4,20 +4,7 @@ import YesNoIndicator
 
 class Pagination(base_types._BaseFieldType):
 
-	__slots__ = ["_PgNb", "_LastPgInd"]
-	@property
-	def PgNb(self):
-		return self._PgNb
-
-	@PgNb.setter
-	def PgNb(self, value):
-		self._PgNb = value if type(value) != auto else self.make_default("PgNb")
-
-	@PgNb.deleter
-	def PgNb(self):
-		del self._PgNb
-		self._PgNb = None
-
+	__slots__ = ["_LastPgInd", "_PgNb"]
 	@property
 	def LastPgInd(self):
 		return self._LastPgInd
@@ -31,8 +18,21 @@ class Pagination(base_types._BaseFieldType):
 		del self._LastPgInd
 		self._LastPgInd = None
 
+	@property
+	def PgNb(self):
+		return self._PgNb
+
+	@PgNb.setter
+	def PgNb(self, value):
+		self._PgNb = value if type(value) != auto else self.make_default("PgNb")
+
+	@PgNb.deleter
+	def PgNb(self):
+		del self._PgNb
+		self._PgNb = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PgNb', type=Max5NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastPgInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PgNb', type=Max5NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
 

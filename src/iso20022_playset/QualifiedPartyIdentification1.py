@@ -1,26 +1,13 @@
 import base_types
 import xs:ID
 import GenericIdentification1
-import PartyIdentification2Choice
 import SingleQualifiedPartyIdentification1
+import PartyIdentification2Choice
 import Max256Text
 
 class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_Id", "_RoleDesc", "_Role", "_ShrtId"]
-	@property
-	def Pty(self):
-		return self._Pty
-
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
-
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
-
+	__slots__ = ["_Id", "_RoleDesc", "_Role", "_Pty", "_ShrtId"]
 	@property
 	def Id(self):
 		return self._Id
@@ -61,6 +48,19 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 		self._Role = None
 
 	@property
+	def Pty(self):
+		return self._Pty
+
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
+
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
+
+	@property
 	def ShrtId(self):
 		return self._ShrtId
 
@@ -74,10 +74,10 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 		self._ShrtId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=SingleQualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=XS_ID, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RoleDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=SingleQualifiedPartyIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

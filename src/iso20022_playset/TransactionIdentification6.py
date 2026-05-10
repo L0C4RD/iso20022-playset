@@ -3,7 +3,7 @@ import Max35Text
 
 class TransactionIdentification6(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcrTxId", "_MktInfrstrctrTxId", "_AcctOwnrTxId", "_AcctSvcrTxId"]
+	__slots__ = ["_PrcrTxId", "_AcctOwnrTxId", "_MktInfrstrctrTxId", "_AcctSvcrTxId"]
 	@property
 	def PrcrTxId(self):
 		return self._PrcrTxId
@@ -18,19 +18,6 @@ class TransactionIdentification6(base_types._BaseFieldType):
 		self._PrcrTxId = None
 
 	@property
-	def MktInfrstrctrTxId(self):
-		return self._MktInfrstrctrTxId
-
-	@MktInfrstrctrTxId.setter
-	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
-
-	@MktInfrstrctrTxId.deleter
-	def MktInfrstrctrTxId(self):
-		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
-
-	@property
 	def AcctOwnrTxId(self):
 		return self._AcctOwnrTxId
 
@@ -42,6 +29,19 @@ class TransactionIdentification6(base_types._BaseFieldType):
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
 		self._AcctOwnrTxId = None
+
+	@property
+	def MktInfrstrctrTxId(self):
+		return self._MktInfrstrctrTxId
+
+	@MktInfrstrctrTxId.setter
+	def MktInfrstrctrTxId(self, value):
+		self._MktInfrstrctrTxId = value if type(value) != auto else self.make_default("MktInfrstrctrTxId")
+
+	@MktInfrstrctrTxId.deleter
+	def MktInfrstrctrTxId(self):
+		del self._MktInfrstrctrTxId
+		self._MktInfrstrctrTxId = None
 
 	@property
 	def AcctSvcrTxId(self):
@@ -58,8 +58,8 @@ class TransactionIdentification6(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctSvcrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

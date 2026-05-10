@@ -1,25 +1,12 @@
 import base_types
+import Max35Text
 import IdentificationInformation5
 import VerificationReason1Choice
 import IdentificationVerificationIndicator
-import Max35Text
 
 class VerificationReport5(base_types._BaseFieldType):
 
-	__slots__ = ["_OrgnlId", "_Vrfctn", "_UpdtdPtyAndAcctId", "_OrgnlPtyAndAcctId", "_Rsn"]
-	@property
-	def OrgnlId(self):
-		return self._OrgnlId
-
-	@OrgnlId.setter
-	def OrgnlId(self, value):
-		self._OrgnlId = value if type(value) != auto else self.make_default("OrgnlId")
-
-	@OrgnlId.deleter
-	def OrgnlId(self):
-		del self._OrgnlId
-		self._OrgnlId = None
-
+	__slots__ = ["_Vrfctn", "_UpdtdPtyAndAcctId", "_Rsn", "_OrgnlId", "_OrgnlPtyAndAcctId"]
 	@property
 	def Vrfctn(self):
 		return self._Vrfctn
@@ -47,19 +34,6 @@ class VerificationReport5(base_types._BaseFieldType):
 		self._UpdtdPtyAndAcctId = None
 
 	@property
-	def OrgnlPtyAndAcctId(self):
-		return self._OrgnlPtyAndAcctId
-
-	@OrgnlPtyAndAcctId.setter
-	def OrgnlPtyAndAcctId(self, value):
-		self._OrgnlPtyAndAcctId = value if type(value) != auto else self.make_default("OrgnlPtyAndAcctId")
-
-	@OrgnlPtyAndAcctId.deleter
-	def OrgnlPtyAndAcctId(self):
-		del self._OrgnlPtyAndAcctId
-		self._OrgnlPtyAndAcctId = None
-
-	@property
 	def Rsn(self):
 		return self._Rsn
 
@@ -72,11 +46,37 @@ class VerificationReport5(base_types._BaseFieldType):
 		del self._Rsn
 		self._Rsn = None
 
+	@property
+	def OrgnlId(self):
+		return self._OrgnlId
+
+	@OrgnlId.setter
+	def OrgnlId(self, value):
+		self._OrgnlId = value if type(value) != auto else self.make_default("OrgnlId")
+
+	@OrgnlId.deleter
+	def OrgnlId(self):
+		del self._OrgnlId
+		self._OrgnlId = None
+
+	@property
+	def OrgnlPtyAndAcctId(self):
+		return self._OrgnlPtyAndAcctId
+
+	@OrgnlPtyAndAcctId.setter
+	def OrgnlPtyAndAcctId(self, value):
+		self._OrgnlPtyAndAcctId = value if type(value) != auto else self.make_default("OrgnlPtyAndAcctId")
+
+	@OrgnlPtyAndAcctId.deleter
+	def OrgnlPtyAndAcctId(self):
+		del self._OrgnlPtyAndAcctId
+		self._OrgnlPtyAndAcctId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrfctn', type=IdentificationVerificationIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdtdPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=VerificationReason1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OrgnlPtyAndAcctId', type=IdentificationInformation5, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,11 +1,24 @@
 import base_types
-import DateAndType1
-import DocumentType1
 import Max35Text
+import DocumentType1
+import DateAndType1
 
 class ReferredMandateDocument2(base_types._BaseFieldType):
 
-	__slots__ = ["_Nb", "_CdtrRef", "_RltdDt", "_Tp"]
+	__slots__ = ["_Tp", "_Nb", "_RltdDt", "_CdtrRef"]
+	@property
+	def Tp(self):
+		return self._Tp
+
+	@Tp.setter
+	def Tp(self, value):
+		self._Tp = value if type(value) != auto else self.make_default("Tp")
+
+	@Tp.deleter
+	def Tp(self):
+		del self._Tp
+		self._Tp = None
+
 	@property
 	def Nb(self):
 		return self._Nb
@@ -18,19 +31,6 @@ class ReferredMandateDocument2(base_types._BaseFieldType):
 	def Nb(self):
 		del self._Nb
 		self._Nb = None
-
-	@property
-	def CdtrRef(self):
-		return self._CdtrRef
-
-	@CdtrRef.setter
-	def CdtrRef(self, value):
-		self._CdtrRef = value if type(value) != auto else self.make_default("CdtrRef")
-
-	@CdtrRef.deleter
-	def CdtrRef(self):
-		del self._CdtrRef
-		self._CdtrRef = None
 
 	@property
 	def RltdDt(self):
@@ -46,22 +46,22 @@ class ReferredMandateDocument2(base_types._BaseFieldType):
 		self._RltdDt = None
 
 	@property
-	def Tp(self):
-		return self._Tp
+	def CdtrRef(self):
+		return self._CdtrRef
 
-	@Tp.setter
-	def Tp(self, value):
-		self._Tp = value if type(value) != auto else self.make_default("Tp")
+	@CdtrRef.setter
+	def CdtrRef(self, value):
+		self._CdtrRef = value if type(value) != auto else self.make_default("CdtrRef")
 
-	@Tp.deleter
-	def Tp(self):
-		del self._Tp
-		self._Tp = None
+	@CdtrRef.deleter
+	def CdtrRef(self):
+		del self._CdtrRef
+		self._CdtrRef = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CdtrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdDt', type=DateAndType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Nb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdDt', type=DateAndType1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CdtrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

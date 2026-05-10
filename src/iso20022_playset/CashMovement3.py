@@ -1,25 +1,12 @@
 import base_types
-import ISODate
 import DateAndDateTimeChoice
-import CashAccount18
+import ISODate
 import ActiveCurrencyAndAmount
+import CashAccount18
 
 class CashMovement3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctDtls", "_ValDt", "_PstngAmt", "_PstngDtTm"]
-	@property
-	def AcctDtls(self):
-		return self._AcctDtls
-
-	@AcctDtls.setter
-	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
-
-	@AcctDtls.deleter
-	def AcctDtls(self):
-		del self._AcctDtls
-		self._AcctDtls = None
-
+	__slots__ = ["_ValDt", "_PstngAmt", "_AcctDtls", "_PstngDtTm"]
 	@property
 	def ValDt(self):
 		return self._ValDt
@@ -47,6 +34,19 @@ class CashMovement3(base_types._BaseFieldType):
 		self._PstngAmt = None
 
 	@property
+	def AcctDtls(self):
+		return self._AcctDtls
+
+	@AcctDtls.setter
+	def AcctDtls(self, value):
+		self._AcctDtls = value if type(value) != auto else self.make_default("AcctDtls")
+
+	@AcctDtls.deleter
+	def AcctDtls(self):
+		del self._AcctDtls
+		self._AcctDtls = None
+
+	@property
 	def PstngDtTm(self):
 		return self._PstngDtTm
 
@@ -60,9 +60,9 @@ class CashMovement3(base_types._BaseFieldType):
 		self._PstngDtTm = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstngDtTm', type=DateAndDateTimeChoice, min=0, max=1, mutex_group=None, array=False),
 	))
 

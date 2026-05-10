@@ -1,6 +1,6 @@
 import base_types
-import Max350Text
 import ISO2ALanguageCode
+import Max350Text
 
 class UpdatedAdditionalInformation21(base_types._BaseFieldType):
 

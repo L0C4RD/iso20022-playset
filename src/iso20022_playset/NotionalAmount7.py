@@ -1,10 +1,23 @@
 import base_types
-import ActiveOrHistoricCurrencyAnd19DecimalAmount
 import LongFraction19DecimalNumber
+import ActiveOrHistoricCurrencyAnd19DecimalAmount
 
 class NotionalAmount7(base_types._BaseFieldType):
 
-	__slots__ = ["_WghtdAvrgDlta", "_AmtInFct", "_Amt"]
+	__slots__ = ["_Amt", "_WghtdAvrgDlta", "_AmtInFct"]
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	@property
 	def WghtdAvrgDlta(self):
 		return self._WghtdAvrgDlta
@@ -31,22 +44,9 @@ class NotionalAmount7(base_types._BaseFieldType):
 		del self._AmtInFct
 		self._AmtInFct = None
 
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WghtdAvrgDlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmtInFct', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

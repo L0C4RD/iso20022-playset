@@ -1,6 +1,6 @@
 import base_types
-import GenericIdentification36
 import Max350Text
+import GenericIdentification36
 
 class AdditionalInformation15(base_types._BaseFieldType):
 

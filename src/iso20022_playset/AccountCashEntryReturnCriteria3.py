@@ -3,45 +3,32 @@ import RequestedIndicator
 
 class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
-	__slots__ = ["_AcctTpInd", "_NtryAmtInd", "_NtryDtInd", "_AcctCcyInd", "_NtryRefInd", "_AcctSvcrInd", "_NtryStsInd", "_AcctOwnrInd"]
+	__slots__ = ["_AcctOwnrInd", "_AcctSvcrInd", "_AcctCcyInd", "_NtryRefInd", "_AcctTpInd", "_NtryStsInd", "_NtryAmtInd", "_NtryDtInd"]
 	@property
-	def AcctTpInd(self):
-		return self._AcctTpInd
+	def AcctOwnrInd(self):
+		return self._AcctOwnrInd
 
-	@AcctTpInd.setter
-	def AcctTpInd(self, value):
-		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
+	@AcctOwnrInd.setter
+	def AcctOwnrInd(self, value):
+		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
 
-	@AcctTpInd.deleter
-	def AcctTpInd(self):
-		del self._AcctTpInd
-		self._AcctTpInd = None
-
-	@property
-	def NtryAmtInd(self):
-		return self._NtryAmtInd
-
-	@NtryAmtInd.setter
-	def NtryAmtInd(self, value):
-		self._NtryAmtInd = value if type(value) != auto else self.make_default("NtryAmtInd")
-
-	@NtryAmtInd.deleter
-	def NtryAmtInd(self):
-		del self._NtryAmtInd
-		self._NtryAmtInd = None
+	@AcctOwnrInd.deleter
+	def AcctOwnrInd(self):
+		del self._AcctOwnrInd
+		self._AcctOwnrInd = None
 
 	@property
-	def NtryDtInd(self):
-		return self._NtryDtInd
+	def AcctSvcrInd(self):
+		return self._AcctSvcrInd
 
-	@NtryDtInd.setter
-	def NtryDtInd(self, value):
-		self._NtryDtInd = value if type(value) != auto else self.make_default("NtryDtInd")
+	@AcctSvcrInd.setter
+	def AcctSvcrInd(self, value):
+		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
 
-	@NtryDtInd.deleter
-	def NtryDtInd(self):
-		del self._NtryDtInd
-		self._NtryDtInd = None
+	@AcctSvcrInd.deleter
+	def AcctSvcrInd(self):
+		del self._AcctSvcrInd
+		self._AcctSvcrInd = None
 
 	@property
 	def AcctCcyInd(self):
@@ -70,17 +57,17 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._NtryRefInd = None
 
 	@property
-	def AcctSvcrInd(self):
-		return self._AcctSvcrInd
+	def AcctTpInd(self):
+		return self._AcctTpInd
 
-	@AcctSvcrInd.setter
-	def AcctSvcrInd(self, value):
-		self._AcctSvcrInd = value if type(value) != auto else self.make_default("AcctSvcrInd")
+	@AcctTpInd.setter
+	def AcctTpInd(self, value):
+		self._AcctTpInd = value if type(value) != auto else self.make_default("AcctTpInd")
 
-	@AcctSvcrInd.deleter
-	def AcctSvcrInd(self):
-		del self._AcctSvcrInd
-		self._AcctSvcrInd = None
+	@AcctTpInd.deleter
+	def AcctTpInd(self):
+		del self._AcctTpInd
+		self._AcctTpInd = None
 
 	@property
 	def NtryStsInd(self):
@@ -96,26 +83,39 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 		self._NtryStsInd = None
 
 	@property
-	def AcctOwnrInd(self):
-		return self._AcctOwnrInd
+	def NtryAmtInd(self):
+		return self._NtryAmtInd
 
-	@AcctOwnrInd.setter
-	def AcctOwnrInd(self, value):
-		self._AcctOwnrInd = value if type(value) != auto else self.make_default("AcctOwnrInd")
+	@NtryAmtInd.setter
+	def NtryAmtInd(self, value):
+		self._NtryAmtInd = value if type(value) != auto else self.make_default("NtryAmtInd")
 
-	@AcctOwnrInd.deleter
-	def AcctOwnrInd(self):
-		del self._AcctOwnrInd
-		self._AcctOwnrInd = None
+	@NtryAmtInd.deleter
+	def NtryAmtInd(self):
+		del self._NtryAmtInd
+		self._NtryAmtInd = None
+
+	@property
+	def NtryDtInd(self):
+		return self._NtryDtInd
+
+	@NtryDtInd.setter
+	def NtryDtInd(self, value):
+		self._NtryDtInd = value if type(value) != auto else self.make_default("NtryDtInd")
+
+	@NtryDtInd.deleter
+	def NtryDtInd(self):
+		del self._NtryDtInd
+		self._NtryDtInd = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='NtryDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryRefInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctSvcrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AcctTpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtryStsInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryAmtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='NtryDtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

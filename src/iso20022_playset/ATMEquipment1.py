@@ -1,23 +1,10 @@
 import base_types
-import ATMConfigurationParameter1
 import Max35Text
+import ATMConfigurationParameter1
 
 class ATMEquipment1(base_types._BaseFieldType):
 
-	__slots__ = ["_ApprvlNb", "_ApplPrvdr", "_SrlNb", "_ApplVrsn", "_CfgtnParam", "_ApplNm", "_Manfctr", "_Mdl"]
-	@property
-	def ApprvlNb(self):
-		return self._ApprvlNb
-
-	@ApprvlNb.setter
-	def ApprvlNb(self, value):
-		self._ApprvlNb = value if type(value) != auto else self.make_default("ApprvlNb")
-
-	@ApprvlNb.deleter
-	def ApprvlNb(self):
-		del self._ApprvlNb
-		self._ApprvlNb = None
-
+	__slots__ = ["_ApplPrvdr", "_Mdl", "_ApplNm", "_ApprvlNb", "_SrlNb", "_CfgtnParam", "_Manfctr", "_ApplVrsn"]
 	@property
 	def ApplPrvdr(self):
 		return self._ApplPrvdr
@@ -32,43 +19,17 @@ class ATMEquipment1(base_types._BaseFieldType):
 		self._ApplPrvdr = None
 
 	@property
-	def SrlNb(self):
-		return self._SrlNb
+	def Mdl(self):
+		return self._Mdl
 
-	@SrlNb.setter
-	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+	@Mdl.setter
+	def Mdl(self, value):
+		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
 
-	@SrlNb.deleter
-	def SrlNb(self):
-		del self._SrlNb
-		self._SrlNb = None
-
-	@property
-	def ApplVrsn(self):
-		return self._ApplVrsn
-
-	@ApplVrsn.setter
-	def ApplVrsn(self, value):
-		self._ApplVrsn = value if type(value) != auto else self.make_default("ApplVrsn")
-
-	@ApplVrsn.deleter
-	def ApplVrsn(self):
-		del self._ApplVrsn
-		self._ApplVrsn = None
-
-	@property
-	def CfgtnParam(self):
-		return self._CfgtnParam
-
-	@CfgtnParam.setter
-	def CfgtnParam(self, value):
-		self._CfgtnParam = value if type(value) != auto else self.make_default("CfgtnParam")
-
-	@CfgtnParam.deleter
-	def CfgtnParam(self):
-		del self._CfgtnParam
-		self._CfgtnParam = None
+	@Mdl.deleter
+	def Mdl(self):
+		del self._Mdl
+		self._Mdl = None
 
 	@property
 	def ApplNm(self):
@@ -84,6 +45,45 @@ class ATMEquipment1(base_types._BaseFieldType):
 		self._ApplNm = None
 
 	@property
+	def ApprvlNb(self):
+		return self._ApprvlNb
+
+	@ApprvlNb.setter
+	def ApprvlNb(self, value):
+		self._ApprvlNb = value if type(value) != auto else self.make_default("ApprvlNb")
+
+	@ApprvlNb.deleter
+	def ApprvlNb(self):
+		del self._ApprvlNb
+		self._ApprvlNb = None
+
+	@property
+	def SrlNb(self):
+		return self._SrlNb
+
+	@SrlNb.setter
+	def SrlNb(self, value):
+		self._SrlNb = value if type(value) != auto else self.make_default("SrlNb")
+
+	@SrlNb.deleter
+	def SrlNb(self):
+		del self._SrlNb
+		self._SrlNb = None
+
+	@property
+	def CfgtnParam(self):
+		return self._CfgtnParam
+
+	@CfgtnParam.setter
+	def CfgtnParam(self, value):
+		self._CfgtnParam = value if type(value) != auto else self.make_default("CfgtnParam")
+
+	@CfgtnParam.deleter
+	def CfgtnParam(self):
+		del self._CfgtnParam
+		self._CfgtnParam = None
+
+	@property
 	def Manfctr(self):
 		return self._Manfctr
 
@@ -97,26 +97,26 @@ class ATMEquipment1(base_types._BaseFieldType):
 		self._Manfctr = None
 
 	@property
-	def Mdl(self):
-		return self._Mdl
+	def ApplVrsn(self):
+		return self._ApplVrsn
 
-	@Mdl.setter
-	def Mdl(self, value):
-		self._Mdl = value if type(value) != auto else self.make_default("Mdl")
+	@ApplVrsn.setter
+	def ApplVrsn(self, value):
+		self._ApplVrsn = value if type(value) != auto else self.make_default("ApplVrsn")
 
-	@Mdl.deleter
-	def Mdl(self):
-		del self._Mdl
-		self._Mdl = None
+	@ApplVrsn.deleter
+	def ApplVrsn(self):
+		del self._ApplVrsn
+		self._ApplVrsn = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ApprvlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ApplPrvdr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ApplVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CfgtnParam', type=ATMConfigurationParameter1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='ApplNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mdl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApprvlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SrlNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CfgtnParam', type=ATMConfigurationParameter1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='Manfctr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='ApplVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

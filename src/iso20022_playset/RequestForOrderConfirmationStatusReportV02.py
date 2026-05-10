@@ -5,20 +5,7 @@ import Extension1
 
 class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_Xtnsn", "_ReqDtls"]
-	@property
-	def MsgId(self):
-		return self._MsgId
-
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
-
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
-
+	__slots__ = ["_Xtnsn", "_ReqDtls", "_MsgId"]
 	@property
 	def Xtnsn(self):
 		return self._Xtnsn
@@ -45,9 +32,22 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 		del self._ReqDtls
 		self._ReqDtls = None
 
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference10, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

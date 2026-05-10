@@ -1,11 +1,11 @@
 import base_types
-import UnitOfMeasure3Choice
 import Max15NumericText
 import DecimalNumber
+import UnitOfMeasure3Choice
 
 class Quantity9(base_types._BaseFieldType):
 
-	__slots__ = ["_Val", "_UnitOfMeasr", "_Fctr"]
+	__slots__ = ["_Val", "_Fctr", "_UnitOfMeasr"]
 	@property
 	def Val(self):
 		return self._Val
@@ -20,19 +20,6 @@ class Quantity9(base_types._BaseFieldType):
 		self._Val = None
 
 	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
-
-	@property
 	def Fctr(self):
 		return self._Fctr
 
@@ -45,9 +32,22 @@ class Quantity9(base_types._BaseFieldType):
 		del self._Fctr
 		self._Fctr = None
 
+	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Val', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Fctr', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

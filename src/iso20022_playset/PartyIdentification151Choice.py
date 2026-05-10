@@ -1,25 +1,12 @@
 import base_types
-import GenericIdentification84
-import NameAndAddress12
 import AnyBICDec2014Identifier
 import LEIIdentifier
+import GenericIdentification84
+import NameAndAddress12
 
 class PartyIdentification151Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_LEI", "_NmAndAdr", "_AnyBIC", "_PrtryId"]
-	@property
-	def LEI(self):
-		return self._LEI
-
-	@LEI.setter
-	def LEI(self, value):
-		self._LEI = value if type(value) != auto else self.make_default("LEI")
-
-	@LEI.deleter
-	def LEI(self):
-		del self._LEI
-		self._LEI = None
-
+	__slots__ = ["_NmAndAdr", "_AnyBIC", "_LEI", "_PrtryId"]
 	@property
 	def NmAndAdr(self):
 		return self._NmAndAdr
@@ -47,6 +34,19 @@ class PartyIdentification151Choice(base_types._BaseFieldType):
 		self._AnyBIC = None
 
 	@property
+	def LEI(self):
+		return self._LEI
+
+	@LEI.setter
+	def LEI(self, value):
+		self._LEI = value if type(value) != auto else self.make_default("LEI")
+
+	@LEI.deleter
+	def LEI(self):
+		del self._LEI
+		self._LEI = None
+
+	@property
 	def PrtryId(self):
 		return self._PrtryId
 
@@ -60,9 +60,9 @@ class PartyIdentification151Choice(base_types._BaseFieldType):
 		self._PrtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification84, min=0, max=1, mutex_group=1, array=False),
 	))
 

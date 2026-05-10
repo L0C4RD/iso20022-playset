@@ -5,7 +5,20 @@ import TechnicalValidationStatus1Code
 
 class ValidationStatusInformation1(base_types._BaseFieldType):
 
-	__slots__ = ["_StsRsn", "_Sts", "_AddtlStsRsnInf"]
+	__slots__ = ["_AddtlStsRsnInf", "_StsRsn", "_Sts"]
+	@property
+	def AddtlStsRsnInf(self):
+		return self._AddtlStsRsnInf
+
+	@AddtlStsRsnInf.setter
+	def AddtlStsRsnInf(self, value):
+		self._AddtlStsRsnInf = value if type(value) != auto else self.make_default("AddtlStsRsnInf")
+
+	@AddtlStsRsnInf.deleter
+	def AddtlStsRsnInf(self):
+		del self._AddtlStsRsnInf
+		self._AddtlStsRsnInf = None
+
 	@property
 	def StsRsn(self):
 		return self._StsRsn
@@ -32,22 +45,9 @@ class ValidationStatusInformation1(base_types._BaseFieldType):
 		del self._Sts
 		self._Sts = None
 
-	@property
-	def AddtlStsRsnInf(self):
-		return self._AddtlStsRsnInf
-
-	@AddtlStsRsnInf.setter
-	def AddtlStsRsnInf(self, value):
-		self._AddtlStsRsnInf = value if type(value) != auto else self.make_default("AddtlStsRsnInf")
-
-	@AddtlStsRsnInf.deleter
-	def AddtlStsRsnInf(self):
-		del self._AddtlStsRsnInf
-		self._AddtlStsRsnInf = None
-
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsRsn', type=StatusReason4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=TechnicalValidationStatus1Code, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 	))
 

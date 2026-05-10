@@ -1,24 +1,24 @@
 import base_types
 import StoredValueRequest8
-import PaymentAccountRequest1
 import TransactionIdentifier1
 import LoyaltyAccountRequest3
+import PaymentAccountRequest1
 
 class BalanceInquiryRequest8(base_types._BaseFieldType):
 
-	__slots__ = ["_SaleTxId", "_LltyAcctReq", "_StordValAcctReq", "_PmtAcctReq"]
+	__slots__ = ["_PmtAcctReq", "_LltyAcctReq", "_StordValAcctReq", "_SaleTxId"]
 	@property
-	def SaleTxId(self):
-		return self._SaleTxId
+	def PmtAcctReq(self):
+		return self._PmtAcctReq
 
-	@SaleTxId.setter
-	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
+	@PmtAcctReq.setter
+	def PmtAcctReq(self, value):
+		self._PmtAcctReq = value if type(value) != auto else self.make_default("PmtAcctReq")
 
-	@SaleTxId.deleter
-	def SaleTxId(self):
-		del self._SaleTxId
-		self._SaleTxId = None
+	@PmtAcctReq.deleter
+	def PmtAcctReq(self):
+		del self._PmtAcctReq
+		self._PmtAcctReq = None
 
 	@property
 	def LltyAcctReq(self):
@@ -47,22 +47,22 @@ class BalanceInquiryRequest8(base_types._BaseFieldType):
 		self._StordValAcctReq = None
 
 	@property
-	def PmtAcctReq(self):
-		return self._PmtAcctReq
+	def SaleTxId(self):
+		return self._SaleTxId
 
-	@PmtAcctReq.setter
-	def PmtAcctReq(self, value):
-		self._PmtAcctReq = value if type(value) != auto else self.make_default("PmtAcctReq")
+	@SaleTxId.setter
+	def SaleTxId(self, value):
+		self._SaleTxId = value if type(value) != auto else self.make_default("SaleTxId")
 
-	@PmtAcctReq.deleter
-	def PmtAcctReq(self):
-		del self._PmtAcctReq
-		self._PmtAcctReq = None
+	@SaleTxId.deleter
+	def SaleTxId(self):
+		del self._SaleTxId
+		self._SaleTxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtAcctReq', type=PaymentAccountRequest1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LltyAcctReq', type=LoyaltyAccountRequest3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StordValAcctReq', type=StoredValueRequest8, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtAcctReq', type=PaymentAccountRequest1, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
 

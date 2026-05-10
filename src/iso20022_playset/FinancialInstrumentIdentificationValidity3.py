@@ -1,6 +1,6 @@
 import base_types
-import ISODate
 import SecurityIdentification39
+import ISODate
 
 class FinancialInstrumentIdentificationValidity3(base_types._BaseFieldType):
 

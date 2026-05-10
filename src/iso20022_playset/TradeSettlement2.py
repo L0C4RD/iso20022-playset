@@ -1,17 +1,17 @@
 import base_types
-import Max4Text
 import Max500Text
 import CurrencyAndAmount
-import SettlementSubTotalCalculatedTax2
-import CreditorReferenceInformation2
-import EarlyPayment1
-import ISODate
-import CurrencyReference3
 import Period2
+import ISODate
+import Max4Text
+import EarlyPayment1
+import CreditorReferenceInformation2
+import CurrencyReference3
+import SettlementSubTotalCalculatedTax2
 
 class TradeSettlement2(base_types._BaseFieldType):
 
-	__slots__ = ["_SubTtlClctdTax", "_DlvryDt", "_XmptnRsnCd", "_XmptnRsn", "_BllgPrd", "_EarlyPmts", "_DueDt", "_DuePyblAmt", "_InvcCcyXchg", "_TaxTtlAmt", "_PmtRef"]
+	__slots__ = ["_SubTtlClctdTax", "_EarlyPmts", "_TaxTtlAmt", "_XmptnRsn", "_XmptnRsnCd", "_PmtRef", "_BllgPrd", "_DuePyblAmt", "_DlvryDt", "_InvcCcyXchg", "_DueDt"]
 	@property
 	def SubTtlClctdTax(self):
 		return self._SubTtlClctdTax
@@ -24,58 +24,6 @@ class TradeSettlement2(base_types._BaseFieldType):
 	def SubTtlClctdTax(self):
 		del self._SubTtlClctdTax
 		self._SubTtlClctdTax = None
-
-	@property
-	def DlvryDt(self):
-		return self._DlvryDt
-
-	@DlvryDt.setter
-	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
-
-	@DlvryDt.deleter
-	def DlvryDt(self):
-		del self._DlvryDt
-		self._DlvryDt = None
-
-	@property
-	def XmptnRsnCd(self):
-		return self._XmptnRsnCd
-
-	@XmptnRsnCd.setter
-	def XmptnRsnCd(self, value):
-		self._XmptnRsnCd = value if type(value) != auto else self.make_default("XmptnRsnCd")
-
-	@XmptnRsnCd.deleter
-	def XmptnRsnCd(self):
-		del self._XmptnRsnCd
-		self._XmptnRsnCd = None
-
-	@property
-	def XmptnRsn(self):
-		return self._XmptnRsn
-
-	@XmptnRsn.setter
-	def XmptnRsn(self, value):
-		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
-
-	@XmptnRsn.deleter
-	def XmptnRsn(self):
-		del self._XmptnRsn
-		self._XmptnRsn = None
-
-	@property
-	def BllgPrd(self):
-		return self._BllgPrd
-
-	@BllgPrd.setter
-	def BllgPrd(self, value):
-		self._BllgPrd = value if type(value) != auto else self.make_default("BllgPrd")
-
-	@BllgPrd.deleter
-	def BllgPrd(self):
-		del self._BllgPrd
-		self._BllgPrd = None
 
 	@property
 	def EarlyPmts(self):
@@ -91,17 +39,69 @@ class TradeSettlement2(base_types._BaseFieldType):
 		self._EarlyPmts = None
 
 	@property
-	def DueDt(self):
-		return self._DueDt
+	def TaxTtlAmt(self):
+		return self._TaxTtlAmt
 
-	@DueDt.setter
-	def DueDt(self, value):
-		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
+	@TaxTtlAmt.setter
+	def TaxTtlAmt(self, value):
+		self._TaxTtlAmt = value if type(value) != auto else self.make_default("TaxTtlAmt")
 
-	@DueDt.deleter
-	def DueDt(self):
-		del self._DueDt
-		self._DueDt = None
+	@TaxTtlAmt.deleter
+	def TaxTtlAmt(self):
+		del self._TaxTtlAmt
+		self._TaxTtlAmt = None
+
+	@property
+	def XmptnRsn(self):
+		return self._XmptnRsn
+
+	@XmptnRsn.setter
+	def XmptnRsn(self, value):
+		self._XmptnRsn = value if type(value) != auto else self.make_default("XmptnRsn")
+
+	@XmptnRsn.deleter
+	def XmptnRsn(self):
+		del self._XmptnRsn
+		self._XmptnRsn = None
+
+	@property
+	def XmptnRsnCd(self):
+		return self._XmptnRsnCd
+
+	@XmptnRsnCd.setter
+	def XmptnRsnCd(self, value):
+		self._XmptnRsnCd = value if type(value) != auto else self.make_default("XmptnRsnCd")
+
+	@XmptnRsnCd.deleter
+	def XmptnRsnCd(self):
+		del self._XmptnRsnCd
+		self._XmptnRsnCd = None
+
+	@property
+	def PmtRef(self):
+		return self._PmtRef
+
+	@PmtRef.setter
+	def PmtRef(self, value):
+		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
+
+	@PmtRef.deleter
+	def PmtRef(self):
+		del self._PmtRef
+		self._PmtRef = None
+
+	@property
+	def BllgPrd(self):
+		return self._BllgPrd
+
+	@BllgPrd.setter
+	def BllgPrd(self, value):
+		self._BllgPrd = value if type(value) != auto else self.make_default("BllgPrd")
+
+	@BllgPrd.deleter
+	def BllgPrd(self):
+		del self._BllgPrd
+		self._BllgPrd = None
 
 	@property
 	def DuePyblAmt(self):
@@ -117,6 +117,19 @@ class TradeSettlement2(base_types._BaseFieldType):
 		self._DuePyblAmt = None
 
 	@property
+	def DlvryDt(self):
+		return self._DlvryDt
+
+	@DlvryDt.setter
+	def DlvryDt(self, value):
+		self._DlvryDt = value if type(value) != auto else self.make_default("DlvryDt")
+
+	@DlvryDt.deleter
+	def DlvryDt(self):
+		del self._DlvryDt
+		self._DlvryDt = None
+
+	@property
 	def InvcCcyXchg(self):
 		return self._InvcCcyXchg
 
@@ -130,42 +143,29 @@ class TradeSettlement2(base_types._BaseFieldType):
 		self._InvcCcyXchg = None
 
 	@property
-	def TaxTtlAmt(self):
-		return self._TaxTtlAmt
+	def DueDt(self):
+		return self._DueDt
 
-	@TaxTtlAmt.setter
-	def TaxTtlAmt(self, value):
-		self._TaxTtlAmt = value if type(value) != auto else self.make_default("TaxTtlAmt")
+	@DueDt.setter
+	def DueDt(self, value):
+		self._DueDt = value if type(value) != auto else self.make_default("DueDt")
 
-	@TaxTtlAmt.deleter
-	def TaxTtlAmt(self):
-		del self._TaxTtlAmt
-		self._TaxTtlAmt = None
-
-	@property
-	def PmtRef(self):
-		return self._PmtRef
-
-	@PmtRef.setter
-	def PmtRef(self, value):
-		self._PmtRef = value if type(value) != auto else self.make_default("PmtRef")
-
-	@PmtRef.deleter
-	def PmtRef(self):
-		del self._PmtRef
-		self._PmtRef = None
+	@DueDt.deleter
+	def DueDt(self):
+		del self._DueDt
+		self._DueDt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SubTtlClctdTax', type=SettlementSubTotalCalculatedTax2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DlvryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnRsnCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='XmptnRsn', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BllgPrd', type=Period2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='EarlyPmts', type=EarlyPayment1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='DuePyblAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InvcCcyXchg', type=CurrencyReference3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnRsn', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='XmptnRsnCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtRef', type=CreditorReferenceInformation2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BllgPrd', type=Period2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DuePyblAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DlvryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InvcCcyXchg', type=CurrencyReference3, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
 

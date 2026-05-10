@@ -1,25 +1,25 @@
 import base_types
+import Max35Text
+import BICIdentification1
 import DocumentIdentification5
 import PendingActivity2
-import BICIdentification1
 import ActivityDetails1
-import Max35Text
 
 class ActivityReportItems3(base_types._BaseFieldType):
 
-	__slots__ = ["_TxId", "_PdgReqForActn", "_RptdItm", "_RptdNtty", "_UsrTxRef"]
+	__slots__ = ["_RptdItm", "_PdgReqForActn", "_UsrTxRef", "_RptdNtty", "_TxId"]
 	@property
-	def TxId(self):
-		return self._TxId
+	def RptdItm(self):
+		return self._RptdItm
 
-	@TxId.setter
-	def TxId(self, value):
-		self._TxId = value if type(value) != auto else self.make_default("TxId")
+	@RptdItm.setter
+	def RptdItm(self, value):
+		self._RptdItm = value if type(value) != auto else self.make_default("RptdItm")
 
-	@TxId.deleter
-	def TxId(self):
-		del self._TxId
-		self._TxId = None
+	@RptdItm.deleter
+	def RptdItm(self):
+		del self._RptdItm
+		self._RptdItm = None
 
 	@property
 	def PdgReqForActn(self):
@@ -35,17 +35,17 @@ class ActivityReportItems3(base_types._BaseFieldType):
 		self._PdgReqForActn = None
 
 	@property
-	def RptdItm(self):
-		return self._RptdItm
+	def UsrTxRef(self):
+		return self._UsrTxRef
 
-	@RptdItm.setter
-	def RptdItm(self, value):
-		self._RptdItm = value if type(value) != auto else self.make_default("RptdItm")
+	@UsrTxRef.setter
+	def UsrTxRef(self, value):
+		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
 
-	@RptdItm.deleter
-	def RptdItm(self):
-		del self._RptdItm
-		self._RptdItm = None
+	@UsrTxRef.deleter
+	def UsrTxRef(self):
+		del self._UsrTxRef
+		self._UsrTxRef = None
 
 	@property
 	def RptdNtty(self):
@@ -61,23 +61,23 @@ class ActivityReportItems3(base_types._BaseFieldType):
 		self._RptdNtty = None
 
 	@property
-	def UsrTxRef(self):
-		return self._UsrTxRef
+	def TxId(self):
+		return self._TxId
 
-	@UsrTxRef.setter
-	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != auto else self.make_default("UsrTxRef")
+	@TxId.setter
+	def TxId(self, value):
+		self._TxId = value if type(value) != auto else self.make_default("TxId")
 
-	@UsrTxRef.deleter
-	def UsrTxRef(self):
-		del self._UsrTxRef
-		self._UsrTxRef = None
+	@TxId.deleter
+	def TxId(self):
+		del self._TxId
+		self._TxId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptdItm', type=ActivityDetails1, min=1, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='RptdNtty', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptdNtty', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
 

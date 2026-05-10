@@ -1,6 +1,6 @@
 import base_types
-import DateTimePeriod1
 import Period2
+import DateTimePeriod1
 
 class Period7Choice(base_types._BaseFieldType):
 

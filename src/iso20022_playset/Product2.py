@@ -1,25 +1,51 @@
 import base_types
-import Max70Text
+import Max35Text
+import DecimalNumber
 import UnitOfMeasure1Code
 import ImpliedCurrencyAndAmount
-import DecimalNumber
-import Max35Text
+import Max70Text
 
 class Product2(base_types._BaseFieldType):
 
-	__slots__ = ["_AddtlPdctInf", "_UnitOfMeasr", "_UnitPric", "_PdctQty", "_PdctAmt", "_TaxTp", "_PdctCd"]
+	__slots__ = ["_TaxTp", "_PdctCd", "_PdctQty", "_UnitOfMeasr", "_UnitPric", "_PdctAmt", "_AddtlPdctInf"]
 	@property
-	def AddtlPdctInf(self):
-		return self._AddtlPdctInf
+	def TaxTp(self):
+		return self._TaxTp
 
-	@AddtlPdctInf.setter
-	def AddtlPdctInf(self, value):
-		self._AddtlPdctInf = value if type(value) != auto else self.make_default("AddtlPdctInf")
+	@TaxTp.setter
+	def TaxTp(self, value):
+		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
 
-	@AddtlPdctInf.deleter
-	def AddtlPdctInf(self):
-		del self._AddtlPdctInf
-		self._AddtlPdctInf = None
+	@TaxTp.deleter
+	def TaxTp(self):
+		del self._TaxTp
+		self._TaxTp = None
+
+	@property
+	def PdctCd(self):
+		return self._PdctCd
+
+	@PdctCd.setter
+	def PdctCd(self, value):
+		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
+
+	@PdctCd.deleter
+	def PdctCd(self):
+		del self._PdctCd
+		self._PdctCd = None
+
+	@property
+	def PdctQty(self):
+		return self._PdctQty
+
+	@PdctQty.setter
+	def PdctQty(self, value):
+		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
+
+	@PdctQty.deleter
+	def PdctQty(self):
+		del self._PdctQty
+		self._PdctQty = None
 
 	@property
 	def UnitOfMeasr(self):
@@ -48,19 +74,6 @@ class Product2(base_types._BaseFieldType):
 		self._UnitPric = None
 
 	@property
-	def PdctQty(self):
-		return self._PdctQty
-
-	@PdctQty.setter
-	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != auto else self.make_default("PdctQty")
-
-	@PdctQty.deleter
-	def PdctQty(self):
-		del self._PdctQty
-		self._PdctQty = None
-
-	@property
 	def PdctAmt(self):
 		return self._PdctAmt
 
@@ -74,38 +87,25 @@ class Product2(base_types._BaseFieldType):
 		self._PdctAmt = None
 
 	@property
-	def TaxTp(self):
-		return self._TaxTp
+	def AddtlPdctInf(self):
+		return self._AddtlPdctInf
 
-	@TaxTp.setter
-	def TaxTp(self, value):
-		self._TaxTp = value if type(value) != auto else self.make_default("TaxTp")
+	@AddtlPdctInf.setter
+	def AddtlPdctInf(self, value):
+		self._AddtlPdctInf = value if type(value) != auto else self.make_default("AddtlPdctInf")
 
-	@TaxTp.deleter
-	def TaxTp(self):
-		del self._TaxTp
-		self._TaxTp = None
-
-	@property
-	def PdctCd(self):
-		return self._PdctCd
-
-	@PdctCd.setter
-	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != auto else self.make_default("PdctCd")
-
-	@PdctCd.deleter
-	def PdctCd(self):
-		del self._PdctCd
-		self._PdctCd = None
+	@AddtlPdctInf.deleter
+	def AddtlPdctInf(self):
+		del self._AddtlPdctInf
+		self._AddtlPdctInf = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AddtlPdctInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PdctAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctCd', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctQty', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitPric', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PdctAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AddtlPdctInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

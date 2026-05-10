@@ -1,24 +1,11 @@
 import base_types
+import Channel1Choice
 import DocumentFormat1Choice
 import Max256Text
-import Channel1Choice
 
 class Presentation3(base_types._BaseFieldType):
 
-	__slots__ = ["_Adr", "_Chanl", "_Frmt"]
-	@property
-	def Adr(self):
-		return self._Adr
-
-	@Adr.setter
-	def Adr(self, value):
-		self._Adr = value if type(value) != auto else self.make_default("Adr")
-
-	@Adr.deleter
-	def Adr(self):
-		del self._Adr
-		self._Adr = None
-
+	__slots__ = ["_Chanl", "_Adr", "_Frmt"]
 	@property
 	def Chanl(self):
 		return self._Chanl
@@ -31,6 +18,19 @@ class Presentation3(base_types._BaseFieldType):
 	def Chanl(self):
 		del self._Chanl
 		self._Chanl = None
+
+	@property
+	def Adr(self):
+		return self._Adr
+
+	@Adr.setter
+	def Adr(self, value):
+		self._Adr = value if type(value) != auto else self.make_default("Adr")
+
+	@Adr.deleter
+	def Adr(self):
+		del self._Adr
+		self._Adr = None
 
 	@property
 	def Frmt(self):
@@ -46,8 +46,8 @@ class Presentation3(base_types._BaseFieldType):
 		self._Frmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Adr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Chanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Adr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frmt', type=DocumentFormat1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

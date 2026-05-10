@@ -1,34 +1,34 @@
 import base_types
-import Price14
-import OptionRight2Choice
-import ISODateTime
-import Rating1
-import Max256Text
-import ActiveCurrencyAndAmount
 import UnderlyingRatio2
 import UnitOfMeasure1Code
-import ISOYearMonth
-import Number
+import Price14
 import YesNoIndicator
+import OptionRight2Choice
+import ISOYearMonth
+import Appearance1Code
+import ActiveCurrencyAndAmount
+import Number
+import ISODateTime
+import Max256Text
+import Rating1
 import DateAndDateTime1Choice
 import FutureAndOptionContractType1Code
-import Appearance1Code
 
 class FutureOrOptionDetails3(base_types._BaseFieldType):
 
-	__slots__ = ["_MinSz", "_AnncmntDt", "_IssePric", "_Apprnc", "_Purp", "_Ratio", "_OptnRghts", "_FutrDt", "_UnitOfMeasr", "_PosLmt", "_NearTermPosLmt", "_Ratg", "_MinTradgPricgIncrmt", "_FrstDealgDt", "_StrpblInd", "_FutrAndOptnCtrctTp", "_LastTx", "_CtrctSttlmMnth", "_LastDlvryDt", "_SprdTx"]
+	__slots__ = ["_IssePric", "_AnncmntDt", "_Ratg", "_MinSz", "_FutrAndOptnCtrctTp", "_SprdTx", "_StrpblInd", "_Purp", "_PosLmt", "_NearTermPosLmt", "_FrstDealgDt", "_CtrctSttlmMnth", "_OptnRghts", "_Apprnc", "_Ratio", "_FutrDt", "_LastDlvryDt", "_MinTradgPricgIncrmt", "_UnitOfMeasr", "_LastTx"]
 	@property
-	def MinSz(self):
-		return self._MinSz
+	def IssePric(self):
+		return self._IssePric
 
-	@MinSz.setter
-	def MinSz(self, value):
-		self._MinSz = value if type(value) != auto else self.make_default("MinSz")
+	@IssePric.setter
+	def IssePric(self, value):
+		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
 
-	@MinSz.deleter
-	def MinSz(self):
-		del self._MinSz
-		self._MinSz = None
+	@IssePric.deleter
+	def IssePric(self):
+		del self._IssePric
+		self._IssePric = None
 
 	@property
 	def AnncmntDt(self):
@@ -44,30 +44,69 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 		self._AnncmntDt = None
 
 	@property
-	def IssePric(self):
-		return self._IssePric
+	def Ratg(self):
+		return self._Ratg
 
-	@IssePric.setter
-	def IssePric(self, value):
-		self._IssePric = value if type(value) != auto else self.make_default("IssePric")
+	@Ratg.setter
+	def Ratg(self, value):
+		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
 
-	@IssePric.deleter
-	def IssePric(self):
-		del self._IssePric
-		self._IssePric = None
+	@Ratg.deleter
+	def Ratg(self):
+		del self._Ratg
+		self._Ratg = None
 
 	@property
-	def Apprnc(self):
-		return self._Apprnc
+	def MinSz(self):
+		return self._MinSz
 
-	@Apprnc.setter
-	def Apprnc(self, value):
-		self._Apprnc = value if type(value) != auto else self.make_default("Apprnc")
+	@MinSz.setter
+	def MinSz(self, value):
+		self._MinSz = value if type(value) != auto else self.make_default("MinSz")
 
-	@Apprnc.deleter
-	def Apprnc(self):
-		del self._Apprnc
-		self._Apprnc = None
+	@MinSz.deleter
+	def MinSz(self):
+		del self._MinSz
+		self._MinSz = None
+
+	@property
+	def FutrAndOptnCtrctTp(self):
+		return self._FutrAndOptnCtrctTp
+
+	@FutrAndOptnCtrctTp.setter
+	def FutrAndOptnCtrctTp(self, value):
+		self._FutrAndOptnCtrctTp = value if type(value) != auto else self.make_default("FutrAndOptnCtrctTp")
+
+	@FutrAndOptnCtrctTp.deleter
+	def FutrAndOptnCtrctTp(self):
+		del self._FutrAndOptnCtrctTp
+		self._FutrAndOptnCtrctTp = None
+
+	@property
+	def SprdTx(self):
+		return self._SprdTx
+
+	@SprdTx.setter
+	def SprdTx(self, value):
+		self._SprdTx = value if type(value) != auto else self.make_default("SprdTx")
+
+	@SprdTx.deleter
+	def SprdTx(self):
+		del self._SprdTx
+		self._SprdTx = None
+
+	@property
+	def StrpblInd(self):
+		return self._StrpblInd
+
+	@StrpblInd.setter
+	def StrpblInd(self, value):
+		self._StrpblInd = value if type(value) != auto else self.make_default("StrpblInd")
+
+	@StrpblInd.deleter
+	def StrpblInd(self):
+		del self._StrpblInd
+		self._StrpblInd = None
 
 	@property
 	def Purp(self):
@@ -81,58 +120,6 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 	def Purp(self):
 		del self._Purp
 		self._Purp = None
-
-	@property
-	def Ratio(self):
-		return self._Ratio
-
-	@Ratio.setter
-	def Ratio(self, value):
-		self._Ratio = value if type(value) != auto else self.make_default("Ratio")
-
-	@Ratio.deleter
-	def Ratio(self):
-		del self._Ratio
-		self._Ratio = None
-
-	@property
-	def OptnRghts(self):
-		return self._OptnRghts
-
-	@OptnRghts.setter
-	def OptnRghts(self, value):
-		self._OptnRghts = value if type(value) != auto else self.make_default("OptnRghts")
-
-	@OptnRghts.deleter
-	def OptnRghts(self):
-		del self._OptnRghts
-		self._OptnRghts = None
-
-	@property
-	def FutrDt(self):
-		return self._FutrDt
-
-	@FutrDt.setter
-	def FutrDt(self, value):
-		self._FutrDt = value if type(value) != auto else self.make_default("FutrDt")
-
-	@FutrDt.deleter
-	def FutrDt(self):
-		del self._FutrDt
-		self._FutrDt = None
-
-	@property
-	def UnitOfMeasr(self):
-		return self._UnitOfMeasr
-
-	@UnitOfMeasr.setter
-	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
-
-	@UnitOfMeasr.deleter
-	def UnitOfMeasr(self):
-		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
 
 	@property
 	def PosLmt(self):
@@ -161,32 +148,6 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 		self._NearTermPosLmt = None
 
 	@property
-	def Ratg(self):
-		return self._Ratg
-
-	@Ratg.setter
-	def Ratg(self, value):
-		self._Ratg = value if type(value) != auto else self.make_default("Ratg")
-
-	@Ratg.deleter
-	def Ratg(self):
-		del self._Ratg
-		self._Ratg = None
-
-	@property
-	def MinTradgPricgIncrmt(self):
-		return self._MinTradgPricgIncrmt
-
-	@MinTradgPricgIncrmt.setter
-	def MinTradgPricgIncrmt(self, value):
-		self._MinTradgPricgIncrmt = value if type(value) != auto else self.make_default("MinTradgPricgIncrmt")
-
-	@MinTradgPricgIncrmt.deleter
-	def MinTradgPricgIncrmt(self):
-		del self._MinTradgPricgIncrmt
-		self._MinTradgPricgIncrmt = None
-
-	@property
 	def FrstDealgDt(self):
 		return self._FrstDealgDt
 
@@ -198,45 +159,6 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 	def FrstDealgDt(self):
 		del self._FrstDealgDt
 		self._FrstDealgDt = None
-
-	@property
-	def StrpblInd(self):
-		return self._StrpblInd
-
-	@StrpblInd.setter
-	def StrpblInd(self, value):
-		self._StrpblInd = value if type(value) != auto else self.make_default("StrpblInd")
-
-	@StrpblInd.deleter
-	def StrpblInd(self):
-		del self._StrpblInd
-		self._StrpblInd = None
-
-	@property
-	def FutrAndOptnCtrctTp(self):
-		return self._FutrAndOptnCtrctTp
-
-	@FutrAndOptnCtrctTp.setter
-	def FutrAndOptnCtrctTp(self, value):
-		self._FutrAndOptnCtrctTp = value if type(value) != auto else self.make_default("FutrAndOptnCtrctTp")
-
-	@FutrAndOptnCtrctTp.deleter
-	def FutrAndOptnCtrctTp(self):
-		del self._FutrAndOptnCtrctTp
-		self._FutrAndOptnCtrctTp = None
-
-	@property
-	def LastTx(self):
-		return self._LastTx
-
-	@LastTx.setter
-	def LastTx(self, value):
-		self._LastTx = value if type(value) != auto else self.make_default("LastTx")
-
-	@LastTx.deleter
-	def LastTx(self):
-		del self._LastTx
-		self._LastTx = None
 
 	@property
 	def CtrctSttlmMnth(self):
@@ -252,6 +174,58 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 		self._CtrctSttlmMnth = None
 
 	@property
+	def OptnRghts(self):
+		return self._OptnRghts
+
+	@OptnRghts.setter
+	def OptnRghts(self, value):
+		self._OptnRghts = value if type(value) != auto else self.make_default("OptnRghts")
+
+	@OptnRghts.deleter
+	def OptnRghts(self):
+		del self._OptnRghts
+		self._OptnRghts = None
+
+	@property
+	def Apprnc(self):
+		return self._Apprnc
+
+	@Apprnc.setter
+	def Apprnc(self, value):
+		self._Apprnc = value if type(value) != auto else self.make_default("Apprnc")
+
+	@Apprnc.deleter
+	def Apprnc(self):
+		del self._Apprnc
+		self._Apprnc = None
+
+	@property
+	def Ratio(self):
+		return self._Ratio
+
+	@Ratio.setter
+	def Ratio(self, value):
+		self._Ratio = value if type(value) != auto else self.make_default("Ratio")
+
+	@Ratio.deleter
+	def Ratio(self):
+		del self._Ratio
+		self._Ratio = None
+
+	@property
+	def FutrDt(self):
+		return self._FutrDt
+
+	@FutrDt.setter
+	def FutrDt(self, value):
+		self._FutrDt = value if type(value) != auto else self.make_default("FutrDt")
+
+	@FutrDt.deleter
+	def FutrDt(self):
+		del self._FutrDt
+		self._FutrDt = None
+
+	@property
 	def LastDlvryDt(self):
 		return self._LastDlvryDt
 
@@ -265,38 +239,64 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 		self._LastDlvryDt = None
 
 	@property
-	def SprdTx(self):
-		return self._SprdTx
+	def MinTradgPricgIncrmt(self):
+		return self._MinTradgPricgIncrmt
 
-	@SprdTx.setter
-	def SprdTx(self, value):
-		self._SprdTx = value if type(value) != auto else self.make_default("SprdTx")
+	@MinTradgPricgIncrmt.setter
+	def MinTradgPricgIncrmt(self, value):
+		self._MinTradgPricgIncrmt = value if type(value) != auto else self.make_default("MinTradgPricgIncrmt")
 
-	@SprdTx.deleter
-	def SprdTx(self):
-		del self._SprdTx
-		self._SprdTx = None
+	@MinTradgPricgIncrmt.deleter
+	def MinTradgPricgIncrmt(self):
+		del self._MinTradgPricgIncrmt
+		self._MinTradgPricgIncrmt = None
+
+	@property
+	def UnitOfMeasr(self):
+		return self._UnitOfMeasr
+
+	@UnitOfMeasr.setter
+	def UnitOfMeasr(self, value):
+		self._UnitOfMeasr = value if type(value) != auto else self.make_default("UnitOfMeasr")
+
+	@UnitOfMeasr.deleter
+	def UnitOfMeasr(self):
+		del self._UnitOfMeasr
+		self._UnitOfMeasr = None
+
+	@property
+	def LastTx(self):
+		return self._LastTx
+
+	@LastTx.setter
+	def LastTx(self, value):
+		self._LastTx = value if type(value) != auto else self.make_default("LastTx")
+
+	@LastTx.deleter
+	def LastTx(self):
+		del self._LastTx
+		self._LastTx = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MinSz', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssePric', type=Price14, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Apprnc', type=Appearance1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ratg', type=Rating1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='MinSz', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='FutrAndOptnCtrctTp', type=FutureAndOptionContractType1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SprdTx', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='StrpblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ratio', type=UnderlyingRatio2, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='OptnRghts', type=OptionRight2Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FutrDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PosLmt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NearTermPosLmt', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Ratg', type=Rating1, min=0, max=None, mutex_group=None, array=True),
-		base_types.FieldEntry(name='MinTradgPricgIncrmt', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FrstDealgDt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StrpblInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='FutrAndOptnCtrctTp', type=FutureAndOptionContractType1Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='LastTx', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='OptnRghts', type=OptionRight2Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Apprnc', type=Appearance1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Ratio', type=UnderlyingRatio2, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='FutrDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LastDlvryDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SprdTx', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MinTradgPricgIncrmt', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure1Code, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='LastTx', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
 

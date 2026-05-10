@@ -1,11 +1,11 @@
 import base_types
-import Collateral1
-import MarginCollateral1
 import ActiveCurrencyAndAmount
+import MarginCollateral1
+import Collateral1
 
 class CollateralBalance1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_SgrtdIndpdntAmt", "_CollDtls", "_TtlColl"]
+	__slots__ = ["_SgrtdIndpdntAmt", "_TtlColl", "_CollDtls"]
 	@property
 	def SgrtdIndpdntAmt(self):
 		return self._SgrtdIndpdntAmt
@@ -20,19 +20,6 @@ class CollateralBalance1Choice(base_types._BaseFieldType):
 		self._SgrtdIndpdntAmt = None
 
 	@property
-	def CollDtls(self):
-		return self._CollDtls
-
-	@CollDtls.setter
-	def CollDtls(self, value):
-		self._CollDtls = value if type(value) != auto else self.make_default("CollDtls")
-
-	@CollDtls.deleter
-	def CollDtls(self):
-		del self._CollDtls
-		self._CollDtls = None
-
-	@property
 	def TtlColl(self):
 		return self._TtlColl
 
@@ -45,9 +32,22 @@ class CollateralBalance1Choice(base_types._BaseFieldType):
 		del self._TtlColl
 		self._TtlColl = None
 
+	@property
+	def CollDtls(self):
+		return self._CollDtls
+
+	@CollDtls.setter
+	def CollDtls(self, value):
+		self._CollDtls = value if type(value) != auto else self.make_default("CollDtls")
+
+	@CollDtls.deleter
+	def CollDtls(self):
+		del self._CollDtls
+		self._CollDtls = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=MarginCollateral1, min=0, max=1, mutex_group=1, array=False),
-		base_types.FieldEntry(name='CollDtls', type=Collateral1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TtlColl', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='CollDtls', type=Collateral1, min=0, max=1, mutex_group=1, array=False),
 	))
 

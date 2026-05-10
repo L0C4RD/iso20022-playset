@@ -1,23 +1,23 @@
 import base_types
-import Max70Text
 import BEIIdentifier
+import Max70Text
 import GenericIdentification4
 
 class PartyIdentification25(base_types._BaseFieldType):
 
-	__slots__ = ["_PrtryId", "_BEI", "_Nm"]
+	__slots__ = ["_Nm", "_BEI", "_PrtryId"]
 	@property
-	def PrtryId(self):
-		return self._PrtryId
+	def Nm(self):
+		return self._Nm
 
-	@PrtryId.setter
-	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
+	@Nm.setter
+	def Nm(self, value):
+		self._Nm = value if type(value) != auto else self.make_default("Nm")
 
-	@PrtryId.deleter
-	def PrtryId(self):
-		del self._PrtryId
-		self._PrtryId = None
+	@Nm.deleter
+	def Nm(self):
+		del self._Nm
+		self._Nm = None
 
 	@property
 	def BEI(self):
@@ -33,21 +33,21 @@ class PartyIdentification25(base_types._BaseFieldType):
 		self._BEI = None
 
 	@property
-	def Nm(self):
-		return self._Nm
+	def PrtryId(self):
+		return self._PrtryId
 
-	@Nm.setter
-	def Nm(self, value):
-		self._Nm = value if type(value) != auto else self.make_default("Nm")
+	@PrtryId.setter
+	def PrtryId(self, value):
+		self._PrtryId = value if type(value) != auto else self.make_default("PrtryId")
 
-	@Nm.deleter
-	def Nm(self):
-		del self._Nm
-		self._Nm = None
+	@PrtryId.deleter
+	def PrtryId(self):
+		del self._PrtryId
+		self._PrtryId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrtryId', type=GenericIdentification4, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='BEI', type=BEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='BEI', type=BEIIdentifier, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrtryId', type=GenericIdentification4, min=0, max=1, mutex_group=None, array=False),
 	))
 

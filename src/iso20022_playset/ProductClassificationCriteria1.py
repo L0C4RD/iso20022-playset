@@ -4,20 +4,7 @@ import CFIOct2015Identifier
 
 class ProductClassificationCriteria1(base_types._BaseFieldType):
 
-	__slots__ = ["_ClssfctnFinInstrm", "_UnqPdctIdr"]
-	@property
-	def ClssfctnFinInstrm(self):
-		return self._ClssfctnFinInstrm
-
-	@ClssfctnFinInstrm.setter
-	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
-
-	@ClssfctnFinInstrm.deleter
-	def ClssfctnFinInstrm(self):
-		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
-
+	__slots__ = ["_UnqPdctIdr", "_ClssfctnFinInstrm"]
 	@property
 	def UnqPdctIdr(self):
 		return self._UnqPdctIdr
@@ -31,8 +18,21 @@ class ProductClassificationCriteria1(base_types._BaseFieldType):
 		del self._UnqPdctIdr
 		self._UnqPdctIdr = None
 
+	@property
+	def ClssfctnFinInstrm(self):
+		return self._ClssfctnFinInstrm
+
+	@ClssfctnFinInstrm.setter
+	def ClssfctnFinInstrm(self, value):
+		self._ClssfctnFinInstrm = value if type(value) != auto else self.make_default("ClssfctnFinInstrm")
+
+	@ClssfctnFinInstrm.deleter
+	def ClssfctnFinInstrm(self):
+		del self._ClssfctnFinInstrm
+		self._ClssfctnFinInstrm = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='ClssfctnFinInstrm', type=CFIOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnqPdctIdr', type=Max52Text, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClssfctnFinInstrm', type=CFIOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 	))
 

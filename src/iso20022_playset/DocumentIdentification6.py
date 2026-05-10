@@ -1,7 +1,7 @@
 import base_types
+import Max35Text
 import Max3NumericText
 import Number
-import Max35Text
 
 class DocumentIdentification6(base_types._BaseFieldType):
 

@@ -1,23 +1,10 @@
 import base_types
-import Max37Text
 import Max19HexBinaryText
+import Max37Text
 
 class Track2Data1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_HexBinryVal", "_TxtVal"]
-	@property
-	def HexBinryVal(self):
-		return self._HexBinryVal
-
-	@HexBinryVal.setter
-	def HexBinryVal(self, value):
-		self._HexBinryVal = value if type(value) != auto else self.make_default("HexBinryVal")
-
-	@HexBinryVal.deleter
-	def HexBinryVal(self):
-		del self._HexBinryVal
-		self._HexBinryVal = None
-
+	__slots__ = ["_TxtVal", "_HexBinryVal"]
 	@property
 	def TxtVal(self):
 		return self._TxtVal
@@ -31,8 +18,21 @@ class Track2Data1Choice(base_types._BaseFieldType):
 		del self._TxtVal
 		self._TxtVal = None
 
+	@property
+	def HexBinryVal(self):
+		return self._HexBinryVal
+
+	@HexBinryVal.setter
+	def HexBinryVal(self, value):
+		self._HexBinryVal = value if type(value) != auto else self.make_default("HexBinryVal")
+
+	@HexBinryVal.deleter
+	def HexBinryVal(self):
+		del self._HexBinryVal
+		self._HexBinryVal = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='HexBinryVal', type=Max19HexBinaryText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TxtVal', type=Max37Text, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='HexBinryVal', type=Max19HexBinaryText, min=0, max=1, mutex_group=1, array=False),
 	))
 

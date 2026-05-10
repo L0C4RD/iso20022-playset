@@ -1,13 +1,13 @@
 import base_types
-import CashAccountIdentification6Choice
 import QuantityBreakdown69
+import CashAccountIdentification6Choice
+import SafeKeepingPlace4
 import RestrictedFINXMax210Text
 import FinancialInstrumentQuantity36Choice
-import SafeKeepingPlace4
 
 class QuantityAndAccount107(base_types._BaseFieldType):
 
-	__slots__ = ["_DnmtnChc", "_QtyBrkdwn", "_SttlmQty", "_CshAcct", "_SfkpgPlc"]
+	__slots__ = ["_DnmtnChc", "_QtyBrkdwn", "_SttlmQty", "_SfkpgPlc", "_CshAcct"]
 	@property
 	def DnmtnChc(self):
 		return self._DnmtnChc
@@ -48,19 +48,6 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 		self._SttlmQty = None
 
 	@property
-	def CshAcct(self):
-		return self._CshAcct
-
-	@CshAcct.setter
-	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
-
-	@CshAcct.deleter
-	def CshAcct(self):
-		del self._CshAcct
-		self._CshAcct = None
-
-	@property
 	def SfkpgPlc(self):
 		return self._SfkpgPlc
 
@@ -73,11 +60,24 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 		del self._SfkpgPlc
 		self._SfkpgPlc = None
 
+	@property
+	def CshAcct(self):
+		return self._CshAcct
+
+	@CshAcct.setter
+	def CshAcct(self, value):
+		self._CshAcct = value if type(value) != auto else self.make_default("CshAcct")
+
+	@CshAcct.deleter
+	def CshAcct(self):
+		del self._CshAcct
+		self._CshAcct = None
+
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DnmtnChc', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace4, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

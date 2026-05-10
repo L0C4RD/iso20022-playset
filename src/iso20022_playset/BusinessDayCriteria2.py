@@ -1,24 +1,11 @@
 import base_types
-import BusinessDaySearchCriteria2
 import Max35Text
+import BusinessDaySearchCriteria2
 import BusinessDayReturnCriteria2
 
 class BusinessDayCriteria2(base_types._BaseFieldType):
 
-	__slots__ = ["_SchCrit", "_RtrCrit", "_NewQryNm"]
-	@property
-	def SchCrit(self):
-		return self._SchCrit
-
-	@SchCrit.setter
-	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
-
-	@SchCrit.deleter
-	def SchCrit(self):
-		del self._SchCrit
-		self._SchCrit = None
-
+	__slots__ = ["_RtrCrit", "_NewQryNm", "_SchCrit"]
 	@property
 	def RtrCrit(self):
 		return self._RtrCrit
@@ -45,9 +32,22 @@ class BusinessDayCriteria2(base_types._BaseFieldType):
 		del self._NewQryNm
 		self._NewQryNm = None
 
+	@property
+	def SchCrit(self):
+		return self._SchCrit
+
+	@SchCrit.setter
+	def SchCrit(self, value):
+		self._SchCrit = value if type(value) != auto else self.make_default("SchCrit")
+
+	@SchCrit.deleter
+	def SchCrit(self):
+		del self._SchCrit
+		self._SchCrit = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SchCrit', type=BusinessDaySearchCriteria2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RtrCrit', type=BusinessDayReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SchCrit', type=BusinessDaySearchCriteria2, min=0, max=None, mutex_group=None, array=True),
 	))
 

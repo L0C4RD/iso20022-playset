@@ -1,6 +1,6 @@
 import base_types
-import TerminalManagementErrorAction2Code
 import TerminalManagementActionResult5Code
+import TerminalManagementErrorAction2Code
 
 class ErrorAction5(base_types._BaseFieldType):
 

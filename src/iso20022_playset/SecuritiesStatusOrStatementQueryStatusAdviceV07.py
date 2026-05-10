@@ -1,28 +1,15 @@
 import base_types
-import StatusOrStatement13Choice
-import SecuritiesAccount19
-import PartyIdentification144
-import ProcessingStatus89Choice
-import SupplementaryData1
 import DocumentIdentification54
+import SupplementaryData1
+import PartyIdentification144
+import SecuritiesAccount19
 import BlockChainAddressWallet3
+import ProcessingStatus89Choice
+import StatusOrStatement13Choice
 
 class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType):
 
-	__slots__ = ["_PrcgSts", "_BlckChainAdrOrWllt", "_SplmtryData", "_SfkpgAcct", "_AcctOwnr", "_QryDtls", "_StsOrStmtReqd"]
-	@property
-	def PrcgSts(self):
-		return self._PrcgSts
-
-	@PrcgSts.setter
-	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
-
-	@PrcgSts.deleter
-	def PrcgSts(self):
-		del self._PrcgSts
-		self._PrcgSts = None
-
+	__slots__ = ["_BlckChainAdrOrWllt", "_StsOrStmtReqd", "_SfkpgAcct", "_AcctOwnr", "_PrcgSts", "_SplmtryData", "_QryDtls"]
 	@property
 	def BlckChainAdrOrWllt(self):
 		return self._BlckChainAdrOrWllt
@@ -37,17 +24,17 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 		self._BlckChainAdrOrWllt = None
 
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def StsOrStmtReqd(self):
+		return self._StsOrStmtReqd
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@StsOrStmtReqd.setter
+	def StsOrStmtReqd(self, value):
+		self._StsOrStmtReqd = value if type(value) != auto else self.make_default("StsOrStmtReqd")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@StsOrStmtReqd.deleter
+	def StsOrStmtReqd(self):
+		del self._StsOrStmtReqd
+		self._StsOrStmtReqd = None
 
 	@property
 	def SfkpgAcct(self):
@@ -76,6 +63,32 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 		self._AcctOwnr = None
 
 	@property
+	def PrcgSts(self):
+		return self._PrcgSts
+
+	@PrcgSts.setter
+	def PrcgSts(self, value):
+		self._PrcgSts = value if type(value) != auto else self.make_default("PrcgSts")
+
+	@PrcgSts.deleter
+	def PrcgSts(self):
+		del self._PrcgSts
+		self._PrcgSts = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	@property
 	def QryDtls(self):
 		return self._QryDtls
 
@@ -88,26 +101,13 @@ class SecuritiesStatusOrStatementQueryStatusAdviceV07(base_types._BaseFieldType)
 		del self._QryDtls
 		self._QryDtls = None
 
-	@property
-	def StsOrStmtReqd(self):
-		return self._StsOrStmtReqd
-
-	@StsOrStmtReqd.setter
-	def StsOrStmtReqd(self, value):
-		self._StsOrStmtReqd = value if type(value) != auto else self.make_default("StsOrStmtReqd")
-
-	@StsOrStmtReqd.deleter
-	def StsOrStmtReqd(self):
-		del self._StsOrStmtReqd
-		self._StsOrStmtReqd = None
-
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus89Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='StsOrStmtReqd', type=StatusOrStatement13Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus89Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='QryDtls', type=DocumentIdentification54, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='StsOrStmtReqd', type=StatusOrStatement13Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

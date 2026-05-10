@@ -1,6 +1,6 @@
 import base_types
-import PostalAddress27
 import Max140Text
+import PostalAddress27
 
 class NameAndAddress18(base_types._BaseFieldType):
 

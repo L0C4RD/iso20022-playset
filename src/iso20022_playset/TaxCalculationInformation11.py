@@ -4,20 +4,7 @@ import ActiveCurrencyAndAmount
 
 class TaxCalculationInformation11(base_types._BaseFieldType):
 
-	__slots__ = ["_Bsis", "_TaxblAmt"]
-	@property
-	def Bsis(self):
-		return self._Bsis
-
-	@Bsis.setter
-	def Bsis(self, value):
-		self._Bsis = value if type(value) != auto else self.make_default("Bsis")
-
-	@Bsis.deleter
-	def Bsis(self):
-		del self._Bsis
-		self._Bsis = None
-
+	__slots__ = ["_TaxblAmt", "_Bsis"]
 	@property
 	def TaxblAmt(self):
 		return self._TaxblAmt
@@ -31,8 +18,21 @@ class TaxCalculationInformation11(base_types._BaseFieldType):
 		del self._TaxblAmt
 		self._TaxblAmt = None
 
+	@property
+	def Bsis(self):
+		return self._Bsis
+
+	@Bsis.setter
+	def Bsis(self, value):
+		self._Bsis = value if type(value) != auto else self.make_default("Bsis")
+
+	@Bsis.deleter
+	def Bsis(self):
+		del self._Bsis
+		self._Bsis = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Bsis', type=TaxBasis1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxblAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Bsis', type=TaxBasis1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
 

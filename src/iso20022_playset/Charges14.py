@@ -1,12 +1,12 @@
 import base_types
-import CashAccount40
-import ChargeType3Choice
 import BranchAndFinancialInstitutionIdentification8
+import ChargeType3Choice
 import ActiveOrHistoricCurrencyAndAmount
+import CashAccount40
 
 class Charges14(base_types._BaseFieldType):
 
-	__slots__ = ["_Tp", "_Amt", "_Agt", "_AgtAcct"]
+	__slots__ = ["_Tp", "_AgtAcct", "_Agt", "_Amt"]
 	@property
 	def Tp(self):
 		return self._Tp
@@ -21,17 +21,17 @@ class Charges14(base_types._BaseFieldType):
 		self._Tp = None
 
 	@property
-	def Amt(self):
-		return self._Amt
+	def AgtAcct(self):
+		return self._AgtAcct
 
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
+	@AgtAcct.setter
+	def AgtAcct(self, value):
+		self._AgtAcct = value if type(value) != auto else self.make_default("AgtAcct")
 
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
+	@AgtAcct.deleter
+	def AgtAcct(self):
+		del self._AgtAcct
+		self._AgtAcct = None
 
 	@property
 	def Agt(self):
@@ -47,22 +47,22 @@ class Charges14(base_types._BaseFieldType):
 		self._Agt = None
 
 	@property
-	def AgtAcct(self):
-		return self._AgtAcct
+	def Amt(self):
+		return self._Amt
 
-	@AgtAcct.setter
-	def AgtAcct(self, value):
-		self._AgtAcct = value if type(value) != auto else self.make_default("AgtAcct")
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
 
-	@AgtAcct.deleter
-	def AgtAcct(self):
-		del self._AgtAcct
-		self._AgtAcct = None
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=ChargeType3Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
 

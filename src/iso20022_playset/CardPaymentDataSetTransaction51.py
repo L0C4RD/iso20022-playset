@@ -1,13 +1,13 @@
 import base_types
-import CardPaymentEnvironment81
-import CardPaymentTransaction140
 import PaymentContext30
+import CardPaymentEnvironment81
 import Max9NumericText
+import CardPaymentTransaction140
 import Traceability8
 
 class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 
-	__slots__ = ["_Envt", "_TxSeqCntr", "_Cntxt", "_Tx", "_Tracblt"]
+	__slots__ = ["_Envt", "_Tx", "_Cntxt", "_TxSeqCntr", "_Tracblt"]
 	@property
 	def Envt(self):
 		return self._Envt
@@ -22,17 +22,17 @@ class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 		self._Envt = None
 
 	@property
-	def TxSeqCntr(self):
-		return self._TxSeqCntr
+	def Tx(self):
+		return self._Tx
 
-	@TxSeqCntr.setter
-	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
+	@Tx.setter
+	def Tx(self, value):
+		self._Tx = value if type(value) != auto else self.make_default("Tx")
 
-	@TxSeqCntr.deleter
-	def TxSeqCntr(self):
-		del self._TxSeqCntr
-		self._TxSeqCntr = None
+	@Tx.deleter
+	def Tx(self):
+		del self._Tx
+		self._Tx = None
 
 	@property
 	def Cntxt(self):
@@ -48,17 +48,17 @@ class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 		self._Cntxt = None
 
 	@property
-	def Tx(self):
-		return self._Tx
+	def TxSeqCntr(self):
+		return self._TxSeqCntr
 
-	@Tx.setter
-	def Tx(self, value):
-		self._Tx = value if type(value) != auto else self.make_default("Tx")
+	@TxSeqCntr.setter
+	def TxSeqCntr(self, value):
+		self._TxSeqCntr = value if type(value) != auto else self.make_default("TxSeqCntr")
 
-	@Tx.deleter
-	def Tx(self):
-		del self._Tx
-		self._Tx = None
+	@TxSeqCntr.deleter
+	def TxSeqCntr(self):
+		del self._TxSeqCntr
+		self._TxSeqCntr = None
 
 	@property
 	def Tracblt(self):
@@ -75,9 +75,9 @@ class CardPaymentDataSetTransaction51(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction140, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
 	))
 

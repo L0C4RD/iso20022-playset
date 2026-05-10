@@ -1,23 +1,23 @@
 import base_types
 import InstrumentIdentification6Choice
-import UnitOfMeasure8Choice
 import LongFraction19DecimalNumber
+import UnitOfMeasure8Choice
 
 class BasketConstituents3(base_types._BaseFieldType):
 
-	__slots__ = ["_Qty", "_UnitOfMeasr", "_InstrmId"]
+	__slots__ = ["_InstrmId", "_UnitOfMeasr", "_Qty"]
 	@property
-	def Qty(self):
-		return self._Qty
+	def InstrmId(self):
+		return self._InstrmId
 
-	@Qty.setter
-	def Qty(self, value):
-		self._Qty = value if type(value) != auto else self.make_default("Qty")
+	@InstrmId.setter
+	def InstrmId(self, value):
+		self._InstrmId = value if type(value) != auto else self.make_default("InstrmId")
 
-	@Qty.deleter
-	def Qty(self):
-		del self._Qty
-		self._Qty = None
+	@InstrmId.deleter
+	def InstrmId(self):
+		del self._InstrmId
+		self._InstrmId = None
 
 	@property
 	def UnitOfMeasr(self):
@@ -33,21 +33,21 @@ class BasketConstituents3(base_types._BaseFieldType):
 		self._UnitOfMeasr = None
 
 	@property
-	def InstrmId(self):
-		return self._InstrmId
+	def Qty(self):
+		return self._Qty
 
-	@InstrmId.setter
-	def InstrmId(self, value):
-		self._InstrmId = value if type(value) != auto else self.make_default("InstrmId")
+	@Qty.setter
+	def Qty(self, value):
+		self._Qty = value if type(value) != auto else self.make_default("Qty")
 
-	@InstrmId.deleter
-	def InstrmId(self):
-		del self._InstrmId
-		self._InstrmId = None
+	@Qty.deleter
+	def Qty(self):
+		del self._Qty
+		self._Qty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstrmId', type=InstrumentIdentification6Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Qty', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
 

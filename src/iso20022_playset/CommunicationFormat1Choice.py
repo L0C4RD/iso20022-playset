@@ -1,6 +1,6 @@
 import base_types
-import ExternalCommunicationFormat1Code
 import Max35Text
+import ExternalCommunicationFormat1Code
 
 class CommunicationFormat1Choice(base_types._BaseFieldType):
 

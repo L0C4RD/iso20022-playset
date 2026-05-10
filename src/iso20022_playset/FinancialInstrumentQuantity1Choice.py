@@ -1,23 +1,10 @@
 import base_types
-import ImpliedCurrencyAndAmount
 import DecimalNumber
+import ImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity1Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_Unit", "_AmtsdVal", "_FaceAmt"]
-	@property
-	def Unit(self):
-		return self._Unit
-
-	@Unit.setter
-	def Unit(self, value):
-		self._Unit = value if type(value) != auto else self.make_default("Unit")
-
-	@Unit.deleter
-	def Unit(self):
-		del self._Unit
-		self._Unit = None
-
+	__slots__ = ["_AmtsdVal", "_Unit", "_FaceAmt"]
 	@property
 	def AmtsdVal(self):
 		return self._AmtsdVal
@@ -30,6 +17,19 @@ class FinancialInstrumentQuantity1Choice(base_types._BaseFieldType):
 	def AmtsdVal(self):
 		del self._AmtsdVal
 		self._AmtsdVal = None
+
+	@property
+	def Unit(self):
+		return self._Unit
+
+	@Unit.setter
+	def Unit(self, value):
+		self._Unit = value if type(value) != auto else self.make_default("Unit")
+
+	@Unit.deleter
+	def Unit(self):
+		del self._Unit
+		self._Unit = None
 
 	@property
 	def FaceAmt(self):
@@ -45,8 +45,8 @@ class FinancialInstrumentQuantity1Choice(base_types._BaseFieldType):
 		self._FaceAmt = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='Unit', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FaceAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
 

@@ -3,19 +3,19 @@ import ActiveOrHistoricCurrencyAnd20DecimalAmount
 
 class ReceivedMarginOrCollateral6(base_types._BaseFieldType):
 
-	__slots__ = ["_InitlMrgnRcvdPreHrcut", "_VartnMrgnRcvdPstHrcut", "_VartnMrgnRcvdPreHrcut", "_InitlMrgnRcvdPstHrcut", "_XcssCollRcvd"]
+	__slots__ = ["_InitlMrgnRcvdPstHrcut", "_VartnMrgnRcvdPstHrcut", "_XcssCollRcvd", "_InitlMrgnRcvdPreHrcut", "_VartnMrgnRcvdPreHrcut"]
 	@property
-	def InitlMrgnRcvdPreHrcut(self):
-		return self._InitlMrgnRcvdPreHrcut
+	def InitlMrgnRcvdPstHrcut(self):
+		return self._InitlMrgnRcvdPstHrcut
 
-	@InitlMrgnRcvdPreHrcut.setter
-	def InitlMrgnRcvdPreHrcut(self, value):
-		self._InitlMrgnRcvdPreHrcut = value if type(value) != auto else self.make_default("InitlMrgnRcvdPreHrcut")
+	@InitlMrgnRcvdPstHrcut.setter
+	def InitlMrgnRcvdPstHrcut(self, value):
+		self._InitlMrgnRcvdPstHrcut = value if type(value) != auto else self.make_default("InitlMrgnRcvdPstHrcut")
 
-	@InitlMrgnRcvdPreHrcut.deleter
-	def InitlMrgnRcvdPreHrcut(self):
-		del self._InitlMrgnRcvdPreHrcut
-		self._InitlMrgnRcvdPreHrcut = None
+	@InitlMrgnRcvdPstHrcut.deleter
+	def InitlMrgnRcvdPstHrcut(self):
+		del self._InitlMrgnRcvdPstHrcut
+		self._InitlMrgnRcvdPstHrcut = None
 
 	@property
 	def VartnMrgnRcvdPstHrcut(self):
@@ -31,32 +31,6 @@ class ReceivedMarginOrCollateral6(base_types._BaseFieldType):
 		self._VartnMrgnRcvdPstHrcut = None
 
 	@property
-	def VartnMrgnRcvdPreHrcut(self):
-		return self._VartnMrgnRcvdPreHrcut
-
-	@VartnMrgnRcvdPreHrcut.setter
-	def VartnMrgnRcvdPreHrcut(self, value):
-		self._VartnMrgnRcvdPreHrcut = value if type(value) != auto else self.make_default("VartnMrgnRcvdPreHrcut")
-
-	@VartnMrgnRcvdPreHrcut.deleter
-	def VartnMrgnRcvdPreHrcut(self):
-		del self._VartnMrgnRcvdPreHrcut
-		self._VartnMrgnRcvdPreHrcut = None
-
-	@property
-	def InitlMrgnRcvdPstHrcut(self):
-		return self._InitlMrgnRcvdPstHrcut
-
-	@InitlMrgnRcvdPstHrcut.setter
-	def InitlMrgnRcvdPstHrcut(self, value):
-		self._InitlMrgnRcvdPstHrcut = value if type(value) != auto else self.make_default("InitlMrgnRcvdPstHrcut")
-
-	@InitlMrgnRcvdPstHrcut.deleter
-	def InitlMrgnRcvdPstHrcut(self):
-		del self._InitlMrgnRcvdPstHrcut
-		self._InitlMrgnRcvdPstHrcut = None
-
-	@property
 	def XcssCollRcvd(self):
 		return self._XcssCollRcvd
 
@@ -69,11 +43,37 @@ class ReceivedMarginOrCollateral6(base_types._BaseFieldType):
 		del self._XcssCollRcvd
 		self._XcssCollRcvd = None
 
+	@property
+	def InitlMrgnRcvdPreHrcut(self):
+		return self._InitlMrgnRcvdPreHrcut
+
+	@InitlMrgnRcvdPreHrcut.setter
+	def InitlMrgnRcvdPreHrcut(self, value):
+		self._InitlMrgnRcvdPreHrcut = value if type(value) != auto else self.make_default("InitlMrgnRcvdPreHrcut")
+
+	@InitlMrgnRcvdPreHrcut.deleter
+	def InitlMrgnRcvdPreHrcut(self):
+		del self._InitlMrgnRcvdPreHrcut
+		self._InitlMrgnRcvdPreHrcut = None
+
+	@property
+	def VartnMrgnRcvdPreHrcut(self):
+		return self._VartnMrgnRcvdPreHrcut
+
+	@VartnMrgnRcvdPreHrcut.setter
+	def VartnMrgnRcvdPreHrcut(self, value):
+		self._VartnMrgnRcvdPreHrcut = value if type(value) != auto else self.make_default("VartnMrgnRcvdPreHrcut")
+
+	@VartnMrgnRcvdPreHrcut.deleter
+	def VartnMrgnRcvdPreHrcut(self):
+		del self._VartnMrgnRcvdPreHrcut
+		self._VartnMrgnRcvdPreHrcut = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='InitlMrgnRcvdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VartnMrgnRcvdPstHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='VartnMrgnRcvdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InitlMrgnRcvdPstHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnRcvdPstHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcssCollRcvd', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitlMrgnRcvdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='VartnMrgnRcvdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

@@ -1,13 +1,39 @@
 import base_types
-import Max70Text
-import CardPaymentTransactionDetails53
-import TransactionIdentifier1
 import Max35Text
 import Max140Text
+import CardPaymentTransactionDetails53
+import Max70Text
+import TransactionIdentifier1
 
 class CardPaymentTransaction137(base_types._BaseFieldType):
 
-	__slots__ = ["_TxDtls", "_IntrchngData", "_RcptTxId", "_InitrTxId", "_RcncltnId", "_MrchntRefData", "_SaleRefId", "_TxId"]
+	__slots__ = ["_SaleRefId", "_InitrTxId", "_TxDtls", "_IntrchngData", "_RcptTxId", "_RcncltnId", "_TxId", "_MrchntRefData"]
+	@property
+	def SaleRefId(self):
+		return self._SaleRefId
+
+	@SaleRefId.setter
+	def SaleRefId(self, value):
+		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
+
+	@SaleRefId.deleter
+	def SaleRefId(self):
+		del self._SaleRefId
+		self._SaleRefId = None
+
+	@property
+	def InitrTxId(self):
+		return self._InitrTxId
+
+	@InitrTxId.setter
+	def InitrTxId(self, value):
+		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
+
+	@InitrTxId.deleter
+	def InitrTxId(self):
+		del self._InitrTxId
+		self._InitrTxId = None
+
 	@property
 	def TxDtls(self):
 		return self._TxDtls
@@ -48,19 +74,6 @@ class CardPaymentTransaction137(base_types._BaseFieldType):
 		self._RcptTxId = None
 
 	@property
-	def InitrTxId(self):
-		return self._InitrTxId
-
-	@InitrTxId.setter
-	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != auto else self.make_default("InitrTxId")
-
-	@InitrTxId.deleter
-	def InitrTxId(self):
-		del self._InitrTxId
-		self._InitrTxId = None
-
-	@property
 	def RcncltnId(self):
 		return self._RcncltnId
 
@@ -72,32 +85,6 @@ class CardPaymentTransaction137(base_types._BaseFieldType):
 	def RcncltnId(self):
 		del self._RcncltnId
 		self._RcncltnId = None
-
-	@property
-	def MrchntRefData(self):
-		return self._MrchntRefData
-
-	@MrchntRefData.setter
-	def MrchntRefData(self, value):
-		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
-
-	@MrchntRefData.deleter
-	def MrchntRefData(self):
-		del self._MrchntRefData
-		self._MrchntRefData = None
-
-	@property
-	def SaleRefId(self):
-		return self._SaleRefId
-
-	@SaleRefId.setter
-	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != auto else self.make_default("SaleRefId")
-
-	@SaleRefId.deleter
-	def SaleRefId(self):
-		del self._SaleRefId
-		self._SaleRefId = None
 
 	@property
 	def TxId(self):
@@ -112,14 +99,27 @@ class CardPaymentTransaction137(base_types._BaseFieldType):
 		del self._TxId
 		self._TxId = None
 
+	@property
+	def MrchntRefData(self):
+		return self._MrchntRefData
+
+	@MrchntRefData.setter
+	def MrchntRefData(self, value):
+		self._MrchntRefData = value if type(value) != auto else self.make_default("MrchntRefData")
+
+	@MrchntRefData.deleter
+	def MrchntRefData(self):
+		del self._MrchntRefData
+		self._MrchntRefData = None
+
 	_field_defs = frozenset((
+		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDtls', type=CardPaymentTransactionDetails53, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrchngData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcptTxId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='SaleRefId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MrchntRefData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
 

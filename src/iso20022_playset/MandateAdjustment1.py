@@ -1,25 +1,12 @@
 import base_types
-import PercentageRate
 import Frequency37Choice
-import TrueFalseIndicator
 import ActiveCurrencyAndAmount
+import TrueFalseIndicator
+import PercentageRate
 
 class MandateAdjustment1(base_types._BaseFieldType):
 
-	__slots__ = ["_Amt", "_DtAdjstmntRuleInd", "_Rate", "_Ctgy"]
-	@property
-	def Amt(self):
-		return self._Amt
-
-	@Amt.setter
-	def Amt(self, value):
-		self._Amt = value if type(value) != auto else self.make_default("Amt")
-
-	@Amt.deleter
-	def Amt(self):
-		del self._Amt
-		self._Amt = None
-
+	__slots__ = ["_DtAdjstmntRuleInd", "_Rate", "_Ctgy", "_Amt"]
 	@property
 	def DtAdjstmntRuleInd(self):
 		return self._DtAdjstmntRuleInd
@@ -59,10 +46,23 @@ class MandateAdjustment1(base_types._BaseFieldType):
 		del self._Ctgy
 		self._Ctgy = None
 
+	@property
+	def Amt(self):
+		return self._Amt
+
+	@Amt.setter
+	def Amt(self, value):
+		self._Amt = value if type(value) != auto else self.make_default("Amt")
+
+	@Amt.deleter
+	def Amt(self):
+		del self._Amt
+		self._Amt = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DtAdjstmntRuleInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctgy', type=Frequency37Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
 

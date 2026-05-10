@@ -1,24 +1,24 @@
 import base_types
 import AdditionalReference2
 import MessageIdentification1
-import CustodyStatementOfHoldings2
 import Pagination
+import CustodyStatementOfHoldings2
 
 class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 
-	__slots__ = ["_MsgId", "_MsgPgntn", "_RltdRef", "_PrvsRef", "_StmtToBeCanc"]
+	__slots__ = ["_StmtToBeCanc", "_MsgPgntn", "_PrvsRef", "_RltdRef", "_MsgId"]
 	@property
-	def MsgId(self):
-		return self._MsgId
+	def StmtToBeCanc(self):
+		return self._StmtToBeCanc
 
-	@MsgId.setter
-	def MsgId(self, value):
-		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+	@StmtToBeCanc.setter
+	def StmtToBeCanc(self, value):
+		self._StmtToBeCanc = value if type(value) != auto else self.make_default("StmtToBeCanc")
 
-	@MsgId.deleter
-	def MsgId(self):
-		del self._MsgId
-		self._MsgId = None
+	@StmtToBeCanc.deleter
+	def StmtToBeCanc(self):
+		del self._StmtToBeCanc
+		self._StmtToBeCanc = None
 
 	@property
 	def MsgPgntn(self):
@@ -34,19 +34,6 @@ class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._MsgPgntn = None
 
 	@property
-	def RltdRef(self):
-		return self._RltdRef
-
-	@RltdRef.setter
-	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
-
-	@RltdRef.deleter
-	def RltdRef(self):
-		del self._RltdRef
-		self._RltdRef = None
-
-	@property
 	def PrvsRef(self):
 		return self._PrvsRef
 
@@ -60,23 +47,36 @@ class CustodyStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		self._PrvsRef = None
 
 	@property
-	def StmtToBeCanc(self):
-		return self._StmtToBeCanc
+	def RltdRef(self):
+		return self._RltdRef
 
-	@StmtToBeCanc.setter
-	def StmtToBeCanc(self, value):
-		self._StmtToBeCanc = value if type(value) != auto else self.make_default("StmtToBeCanc")
+	@RltdRef.setter
+	def RltdRef(self, value):
+		self._RltdRef = value if type(value) != auto else self.make_default("RltdRef")
 
-	@StmtToBeCanc.deleter
-	def StmtToBeCanc(self):
-		del self._StmtToBeCanc
-		self._StmtToBeCanc = None
+	@RltdRef.deleter
+	def RltdRef(self):
+		del self._RltdRef
+		self._RltdRef = None
+
+	@property
+	def MsgId(self):
+		return self._MsgId
+
+	@MsgId.setter
+	def MsgId(self, value):
+		self._MsgId = value if type(value) != auto else self.make_default("MsgId")
+
+	@MsgId.deleter
+	def MsgId(self):
+		del self._MsgId
+		self._MsgId = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=CustodyStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgPgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
 

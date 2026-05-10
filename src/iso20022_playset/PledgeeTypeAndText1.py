@@ -1,23 +1,10 @@
 import base_types
-import PledgeeType1Code
 import Max35Text
+import PledgeeType1Code
 
 class PledgeeTypeAndText1(base_types._BaseFieldType):
 
-	__slots__ = ["_PldgeeTp", "_Id"]
-	@property
-	def PldgeeTp(self):
-		return self._PldgeeTp
-
-	@PldgeeTp.setter
-	def PldgeeTp(self, value):
-		self._PldgeeTp = value if type(value) != auto else self.make_default("PldgeeTp")
-
-	@PldgeeTp.deleter
-	def PldgeeTp(self):
-		del self._PldgeeTp
-		self._PldgeeTp = None
-
+	__slots__ = ["_Id", "_PldgeeTp"]
 	@property
 	def Id(self):
 		return self._Id
@@ -31,8 +18,21 @@ class PledgeeTypeAndText1(base_types._BaseFieldType):
 		del self._Id
 		self._Id = None
 
+	@property
+	def PldgeeTp(self):
+		return self._PldgeeTp
+
+	@PldgeeTp.setter
+	def PldgeeTp(self, value):
+		self._PldgeeTp = value if type(value) != auto else self.make_default("PldgeeTp")
+
+	@PldgeeTp.deleter
+	def PldgeeTp(self):
+		del self._PldgeeTp
+		self._PldgeeTp = None
+
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='PldgeeTp', type=PledgeeType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PldgeeTp', type=PledgeeType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
 

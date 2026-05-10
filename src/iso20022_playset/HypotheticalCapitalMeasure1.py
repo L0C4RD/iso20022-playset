@@ -1,6 +1,6 @@
 import base_types
-import ActiveCurrencyAndAmount
 import Max35Text
+import ActiveCurrencyAndAmount
 
 class HypotheticalCapitalMeasure1(base_types._BaseFieldType):
 

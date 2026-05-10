@@ -1,24 +1,11 @@
 import base_types
-import AmountToAmountRatio3
 import RateValueType7Code
+import AmountToAmountRatio3
 import QuantityToQuantityRatio2
 
 class RatioFormat23Choice(base_types._BaseFieldType):
 
-	__slots__ = ["_AmtToAmt", "_QtyToQty", "_NotSpcfdRate"]
-	@property
-	def AmtToAmt(self):
-		return self._AmtToAmt
-
-	@AmtToAmt.setter
-	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
-
-	@AmtToAmt.deleter
-	def AmtToAmt(self):
-		del self._AmtToAmt
-		self._AmtToAmt = None
-
+	__slots__ = ["_QtyToQty", "_AmtToAmt", "_NotSpcfdRate"]
 	@property
 	def QtyToQty(self):
 		return self._QtyToQty
@@ -31,6 +18,19 @@ class RatioFormat23Choice(base_types._BaseFieldType):
 	def QtyToQty(self):
 		del self._QtyToQty
 		self._QtyToQty = None
+
+	@property
+	def AmtToAmt(self):
+		return self._AmtToAmt
+
+	@AmtToAmt.setter
+	def AmtToAmt(self, value):
+		self._AmtToAmt = value if type(value) != auto else self.make_default("AmtToAmt")
+
+	@AmtToAmt.deleter
+	def AmtToAmt(self):
+		del self._AmtToAmt
+		self._AmtToAmt = None
 
 	@property
 	def NotSpcfdRate(self):
@@ -46,8 +46,8 @@ class RatioFormat23Choice(base_types._BaseFieldType):
 		self._NotSpcfdRate = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
+		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 	))
 

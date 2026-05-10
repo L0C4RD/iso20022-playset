@@ -1,11 +1,11 @@
 import base_types
+import CorporateActionInformationStatus1Choice
 import DocumentIdentification8
 import CorporateActionAdditionalInformation1
-import CorporateActionInformationStatus1Choice
 
 class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
-	__slots__ = ["_Id", "_CorpActnAddtlInf", "_AgtCAInfAdvcId", "_InfStsDtls"]
+	__slots__ = ["_Id", "_AgtCAInfAdvcId", "_CorpActnAddtlInf", "_InfStsDtls"]
 	@property
 	def Id(self):
 		return self._Id
@@ -20,19 +20,6 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 		self._Id = None
 
 	@property
-	def CorpActnAddtlInf(self):
-		return self._CorpActnAddtlInf
-
-	@CorpActnAddtlInf.setter
-	def CorpActnAddtlInf(self, value):
-		self._CorpActnAddtlInf = value if type(value) != auto else self.make_default("CorpActnAddtlInf")
-
-	@CorpActnAddtlInf.deleter
-	def CorpActnAddtlInf(self):
-		del self._CorpActnAddtlInf
-		self._CorpActnAddtlInf = None
-
-	@property
 	def AgtCAInfAdvcId(self):
 		return self._AgtCAInfAdvcId
 
@@ -44,6 +31,19 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 	def AgtCAInfAdvcId(self):
 		del self._AgtCAInfAdvcId
 		self._AgtCAInfAdvcId = None
+
+	@property
+	def CorpActnAddtlInf(self):
+		return self._CorpActnAddtlInf
+
+	@CorpActnAddtlInf.setter
+	def CorpActnAddtlInf(self, value):
+		self._CorpActnAddtlInf = value if type(value) != auto else self.make_default("CorpActnAddtlInf")
+
+	@CorpActnAddtlInf.deleter
+	def CorpActnAddtlInf(self):
+		del self._CorpActnAddtlInf
+		self._CorpActnAddtlInf = None
 
 	@property
 	def InfStsDtls(self):
@@ -60,8 +60,8 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='CorpActnAddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AgtCAInfAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='CorpActnAddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfStsDtls', type=CorporateActionInformationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
 

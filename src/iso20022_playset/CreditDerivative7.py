@@ -1,40 +1,27 @@
 import base_types
-import PercentageRate
-import DebtInstrumentSeniorityType2Code
-import Number
 import Max35Text
+import DebtInstrumentSeniorityType2Code
 import DerivativePartyIdentification1Choice
+import PercentageRate
 import Frequency13Code
 import TrueFalseIndicator
+import Number
 
 class CreditDerivative7(base_types._BaseFieldType):
 
-	__slots__ = ["_RefPty", "_Vrsn", "_Snrty", "_TrchInd", "_PmtFrqcy", "_Srs", "_ClctnBsis", "_IndxFctr"]
+	__slots__ = ["_ClctnBsis", "_Snrty", "_IndxFctr", "_RefPty", "_Srs", "_TrchInd", "_Vrsn", "_PmtFrqcy"]
 	@property
-	def RefPty(self):
-		return self._RefPty
+	def ClctnBsis(self):
+		return self._ClctnBsis
 
-	@RefPty.setter
-	def RefPty(self, value):
-		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
+	@ClctnBsis.setter
+	def ClctnBsis(self, value):
+		self._ClctnBsis = value if type(value) != auto else self.make_default("ClctnBsis")
 
-	@RefPty.deleter
-	def RefPty(self):
-		del self._RefPty
-		self._RefPty = None
-
-	@property
-	def Vrsn(self):
-		return self._Vrsn
-
-	@Vrsn.setter
-	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
-
-	@Vrsn.deleter
-	def Vrsn(self):
-		del self._Vrsn
-		self._Vrsn = None
+	@ClctnBsis.deleter
+	def ClctnBsis(self):
+		del self._ClctnBsis
+		self._ClctnBsis = None
 
 	@property
 	def Snrty(self):
@@ -50,30 +37,30 @@ class CreditDerivative7(base_types._BaseFieldType):
 		self._Snrty = None
 
 	@property
-	def TrchInd(self):
-		return self._TrchInd
+	def IndxFctr(self):
+		return self._IndxFctr
 
-	@TrchInd.setter
-	def TrchInd(self, value):
-		self._TrchInd = value if type(value) != auto else self.make_default("TrchInd")
+	@IndxFctr.setter
+	def IndxFctr(self, value):
+		self._IndxFctr = value if type(value) != auto else self.make_default("IndxFctr")
 
-	@TrchInd.deleter
-	def TrchInd(self):
-		del self._TrchInd
-		self._TrchInd = None
+	@IndxFctr.deleter
+	def IndxFctr(self):
+		del self._IndxFctr
+		self._IndxFctr = None
 
 	@property
-	def PmtFrqcy(self):
-		return self._PmtFrqcy
+	def RefPty(self):
+		return self._RefPty
 
-	@PmtFrqcy.setter
-	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+	@RefPty.setter
+	def RefPty(self, value):
+		self._RefPty = value if type(value) != auto else self.make_default("RefPty")
 
-	@PmtFrqcy.deleter
-	def PmtFrqcy(self):
-		del self._PmtFrqcy
-		self._PmtFrqcy = None
+	@RefPty.deleter
+	def RefPty(self):
+		del self._RefPty
+		self._RefPty = None
 
 	@property
 	def Srs(self):
@@ -89,39 +76,52 @@ class CreditDerivative7(base_types._BaseFieldType):
 		self._Srs = None
 
 	@property
-	def ClctnBsis(self):
-		return self._ClctnBsis
+	def TrchInd(self):
+		return self._TrchInd
 
-	@ClctnBsis.setter
-	def ClctnBsis(self, value):
-		self._ClctnBsis = value if type(value) != auto else self.make_default("ClctnBsis")
+	@TrchInd.setter
+	def TrchInd(self, value):
+		self._TrchInd = value if type(value) != auto else self.make_default("TrchInd")
 
-	@ClctnBsis.deleter
-	def ClctnBsis(self):
-		del self._ClctnBsis
-		self._ClctnBsis = None
+	@TrchInd.deleter
+	def TrchInd(self):
+		del self._TrchInd
+		self._TrchInd = None
 
 	@property
-	def IndxFctr(self):
-		return self._IndxFctr
+	def Vrsn(self):
+		return self._Vrsn
 
-	@IndxFctr.setter
-	def IndxFctr(self, value):
-		self._IndxFctr = value if type(value) != auto else self.make_default("IndxFctr")
+	@Vrsn.setter
+	def Vrsn(self, value):
+		self._Vrsn = value if type(value) != auto else self.make_default("Vrsn")
 
-	@IndxFctr.deleter
-	def IndxFctr(self):
-		del self._IndxFctr
-		self._IndxFctr = None
+	@Vrsn.deleter
+	def Vrsn(self):
+		del self._Vrsn
+		self._Vrsn = None
+
+	@property
+	def PmtFrqcy(self):
+		return self._PmtFrqcy
+
+	@PmtFrqcy.setter
+	def PmtFrqcy(self, value):
+		self._PmtFrqcy = value if type(value) != auto else self.make_default("PmtFrqcy")
+
+	@PmtFrqcy.deleter
+	def PmtFrqcy(self):
+		del self._PmtFrqcy
+		self._PmtFrqcy = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Snrty', type=DebtInstrumentSeniorityType2Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='TrchInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PmtFrqcy', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ClctnBsis', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Snrty', type=DebtInstrumentSeniorityType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IndxFctr', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RefPty', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Srs', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='TrchInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PmtFrqcy', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
 	))
 

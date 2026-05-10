@@ -1,26 +1,52 @@
 import base_types
-import ReportParameters3
 import MarginReport2
 import Pagination
-import PartyIdentification35Choice
 import SupplementaryData1
+import PartyIdentification35Choice
 import MarginCalculation1
+import ReportParameters3
 
 class MarginReportV02(base_types._BaseFieldType):
 
-	__slots__ = ["_SplmtryData", "_RptParams", "_Pgntn", "_ClrMmb", "_RptSummry", "_RptDtls"]
+	__slots__ = ["_ClrMmb", "_RptDtls", "_RptSummry", "_RptParams", "_Pgntn", "_SplmtryData"]
 	@property
-	def SplmtryData(self):
-		return self._SplmtryData
+	def ClrMmb(self):
+		return self._ClrMmb
 
-	@SplmtryData.setter
-	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
+	@ClrMmb.setter
+	def ClrMmb(self, value):
+		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
 
-	@SplmtryData.deleter
-	def SplmtryData(self):
-		del self._SplmtryData
-		self._SplmtryData = None
+	@ClrMmb.deleter
+	def ClrMmb(self):
+		del self._ClrMmb
+		self._ClrMmb = None
+
+	@property
+	def RptDtls(self):
+		return self._RptDtls
+
+	@RptDtls.setter
+	def RptDtls(self, value):
+		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
+
+	@RptDtls.deleter
+	def RptDtls(self):
+		del self._RptDtls
+		self._RptDtls = None
+
+	@property
+	def RptSummry(self):
+		return self._RptSummry
+
+	@RptSummry.setter
+	def RptSummry(self, value):
+		self._RptSummry = value if type(value) != auto else self.make_default("RptSummry")
+
+	@RptSummry.deleter
+	def RptSummry(self):
+		del self._RptSummry
+		self._RptSummry = None
 
 	@property
 	def RptParams(self):
@@ -49,50 +75,24 @@ class MarginReportV02(base_types._BaseFieldType):
 		self._Pgntn = None
 
 	@property
-	def ClrMmb(self):
-		return self._ClrMmb
+	def SplmtryData(self):
+		return self._SplmtryData
 
-	@ClrMmb.setter
-	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != auto else self.make_default("ClrMmb")
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != auto else self.make_default("SplmtryData")
 
-	@ClrMmb.deleter
-	def ClrMmb(self):
-		del self._ClrMmb
-		self._ClrMmb = None
-
-	@property
-	def RptSummry(self):
-		return self._RptSummry
-
-	@RptSummry.setter
-	def RptSummry(self, value):
-		self._RptSummry = value if type(value) != auto else self.make_default("RptSummry")
-
-	@RptSummry.deleter
-	def RptSummry(self):
-		del self._RptSummry
-		self._RptSummry = None
-
-	@property
-	def RptDtls(self):
-		return self._RptDtls
-
-	@RptDtls.setter
-	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != auto else self.make_default("RptDtls")
-
-	@RptDtls.deleter
-	def RptDtls(self):
-		del self._RptDtls
-		self._RptDtls = None
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptDtls', type=MarginReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='RptSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptParams', type=ReportParameters3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pgntn', type=Pagination, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptSummry', type=MarginCalculation1, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='RptDtls', type=MarginReport2, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
 

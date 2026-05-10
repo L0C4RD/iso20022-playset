@@ -1,23 +1,23 @@
 import base_types
+import Max35Text
 import SafekeepingPlace1Code
 import PartyIdentification3
-import Max35Text
 
 class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
-	__slots__ = ["_Pty", "_PlcSfkpg", "_Nrrtv"]
+	__slots__ = ["_Nrrtv", "_PlcSfkpg", "_Pty"]
 	@property
-	def Pty(self):
-		return self._Pty
+	def Nrrtv(self):
+		return self._Nrrtv
 
-	@Pty.setter
-	def Pty(self, value):
-		self._Pty = value if type(value) != auto else self.make_default("Pty")
+	@Nrrtv.setter
+	def Nrrtv(self, value):
+		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
 
-	@Pty.deleter
-	def Pty(self):
-		del self._Pty
-		self._Pty = None
+	@Nrrtv.deleter
+	def Nrrtv(self):
+		del self._Nrrtv
+		self._Nrrtv = None
 
 	@property
 	def PlcSfkpg(self):
@@ -33,21 +33,21 @@ class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 		self._PlcSfkpg = None
 
 	@property
-	def Nrrtv(self):
-		return self._Nrrtv
+	def Pty(self):
+		return self._Pty
 
-	@Nrrtv.setter
-	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != auto else self.make_default("Nrrtv")
+	@Pty.setter
+	def Pty(self, value):
+		self._Pty = value if type(value) != auto else self.make_default("Pty")
 
-	@Nrrtv.deleter
-	def Nrrtv(self):
-		del self._Nrrtv
-		self._Nrrtv = None
+	@Pty.deleter
+	def Pty(self):
+		del self._Pty
+		self._Pty = None
 
 	_field_defs = frozenset((
-		base_types.FieldEntry(name='Pty', type=PartyIdentification3, min=0, max=1, mutex_group=None, array=False),
-		base_types.FieldEntry(name='PlcSfkpg', type=SafekeepingPlace1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nrrtv', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='PlcSfkpg', type=SafekeepingPlace1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Pty', type=PartyIdentification3, min=0, max=1, mutex_group=None, array=False),
 	))
 
