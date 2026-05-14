@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage12 import ActionMessage12
 from ._RetailerService2Code import RetailerService2Code
@@ -50,4 +53,3 @@ class EnableServiceRequest7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcsNbld', type=RetailerService2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxActn', type=TransactionAction1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

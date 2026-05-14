@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommunicationAddress9 import CommunicationAddress9
 from ._GenericIdentification192 import GenericIdentification192
@@ -80,4 +83,3 @@ class Organisation45(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LctnCtgy', type=LocationCategory4Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

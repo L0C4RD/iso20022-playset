@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification165 import GenericIdentification165
 from ._Max2000Text import Max2000Text
@@ -80,4 +83,3 @@ class ScenarioDefinition2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StrssItm', type=StressItem1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StrtgyStrssTp', type=StrategyStressType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

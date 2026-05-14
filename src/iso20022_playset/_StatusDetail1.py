@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._Max10Text import Max10Text
@@ -94,4 +97,3 @@ class StatusDetail1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

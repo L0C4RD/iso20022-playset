@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExpectedCollateral2 import ExpectedCollateral2
 from ._ExpectedCollateralMovement2 import ExpectedCollateralMovement2
@@ -35,4 +38,3 @@ class ExpectedCollateral2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=ExpectedCollateralMovement2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdCollDtls', type=ExpectedCollateral2, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CalendarOrBusinessError1Choice import CalendarOrBusinessError1Choice
 from ._SystemAndCurrency1 import SystemAndCurrency1
@@ -35,4 +38,3 @@ class CalendarReport1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CalOrErr', type=CalendarOrBusinessError1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svc', type=SystemAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentInformationType38 import ContentInformationType38
 from ._MaintenanceDelegationRequest12 import MaintenanceDelegationRequest12
@@ -50,4 +53,3 @@ class MaintenanceDelegationRequestV12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MntncDlgtnReq', type=MaintenanceDelegationRequest12, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=1, max=1, mutex_group=None, array=False),
 	))
-

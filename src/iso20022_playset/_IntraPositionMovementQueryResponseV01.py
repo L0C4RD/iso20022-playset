@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraPositionMovements6 import IntraPositionMovements6
 from ._IntraPositionReport4 import IntraPositionReport4
@@ -50,4 +53,3 @@ class IntraPositionMovementQueryResponseV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptGnlDtls', type=IntraPositionReport4, min=1, max=1, mutex_group=None, array=False),
 	))
-

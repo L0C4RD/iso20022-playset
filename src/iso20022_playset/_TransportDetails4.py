@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Charge25 import Charge25
 from ._Consignment3 import Consignment3
@@ -110,4 +113,3 @@ class TransportDetails4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrnsprtDocRef', type=DocumentIdentification7, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtdGoods', type=TransportedGoods1, min=1, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataModification2Code import DataModification2Code
 from ._PartyProfileInformation5 import PartyProfileInformation5
@@ -35,4 +38,3 @@ class ModificationScope27(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InvstrPrflVldtn', type=PartyProfileInformation5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

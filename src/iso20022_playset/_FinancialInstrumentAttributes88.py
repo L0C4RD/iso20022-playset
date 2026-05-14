@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Frequency11Code import Frequency11Code
 from ._InterestRateContractTerm1 import InterestRateContractTerm1
@@ -50,4 +53,3 @@ class FinancialInstrumentAttributes88(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtFrqcy', type=Frequency11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Stdstn', type=Standardisation1Code, min=0, max=3, mutex_group=None, array=True),
 	))
-

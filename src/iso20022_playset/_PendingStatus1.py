@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PendingStatus71Choice import PendingStatus71Choice
 from ._Quantity51Choice import Quantity51Choice
@@ -35,4 +38,3 @@ class PendingStatus1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PdgQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdgRsn', type=PendingStatus71Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

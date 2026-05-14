@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountAndBalance54 import AccountAndBalance54
 from ._CorporateAction78 import CorporateAction78
@@ -213,4 +216,3 @@ class CorporateActionMovementReversalAdvice002V16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference10 import AdditionalReference10
 from ._Max35Text import Max35Text
@@ -290,4 +293,3 @@ class Transaction167(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails184, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
-

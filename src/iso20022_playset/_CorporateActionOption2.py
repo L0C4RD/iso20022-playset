@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._Exact3NumericText import Exact3NumericText
@@ -35,4 +38,3 @@ class CorporateActionOption2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 	))
-

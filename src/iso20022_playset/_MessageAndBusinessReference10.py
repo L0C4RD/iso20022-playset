@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference8 import AdditionalReference8
 from ._InvestmentFundOrder8 import InvestmentFundOrder8
@@ -50,4 +53,3 @@ class MessageAndBusinessReference10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ref', type=References62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
-

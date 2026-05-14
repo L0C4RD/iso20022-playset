@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._Max140Text import Max140Text
@@ -35,4 +38,3 @@ class OtherTypeOfCollateral3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

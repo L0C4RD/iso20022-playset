@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReferences2 import AdditionalReferences2
 from ._Max35Text import Max35Text
@@ -94,4 +97,3 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 		base_types.FieldEntry(name='Sts', type=Status5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat49Choice import DateFormat49Choice
 from ._DateFormat54Choice import DateFormat54Choice
@@ -77,4 +80,3 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnDdln', type=DateFormat54Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

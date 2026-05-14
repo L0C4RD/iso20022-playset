@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencyExchange20 import CurrencyExchange20
 from ._ErrorHandling3 import ErrorHandling3
@@ -35,4 +38,3 @@ class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling3, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='CcyXchg', type=CurrencyExchange20, min=0, max=1, mutex_group=1, array=False),
 	))
-

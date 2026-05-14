@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorReferenceInformation2 import CreditorReferenceInformation2
 from ._CurrencyAndAmount import CurrencyAndAmount
@@ -168,4 +171,3 @@ class TradeSettlement2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='XmptnRsn', type=Max500Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnRsnCd', type=Max4Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

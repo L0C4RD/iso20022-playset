@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMMediaType1Code import ATMMediaType1Code
 from ._ATMMediaType4Code import ATMMediaType4Code
@@ -181,4 +184,3 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RctPrtg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WdrwlMdia', type=ATMMediaType1Code, min=0, max=None, mutex_group=None, array=True),
 	))
-

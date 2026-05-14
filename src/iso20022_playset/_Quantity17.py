@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DecimalNumber import DecimalNumber
 from ._UnitOfMeasure11Code import UnitOfMeasure11Code
@@ -35,4 +38,3 @@ class Quantity17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure11Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
-

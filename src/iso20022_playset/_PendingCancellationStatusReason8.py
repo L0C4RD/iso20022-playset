@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PendingCancellationReason6Choice import PendingCancellationReason6Choice
 from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
@@ -35,4 +38,3 @@ class PendingCancellationStatusReason8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINXMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsnCd', type=PendingCancellationReason6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection61 import AmountAndDirection61
 from ._DigitalTokenAmount2 import DigitalTokenAmount2
@@ -35,4 +38,3 @@ class SecuritiesTransactionPrice7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DgtlTknQty', type=DigitalTokenAmount2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MntryVal', type=AmountAndDirection61, min=1, max=1, mutex_group=None, array=False),
 	))
-

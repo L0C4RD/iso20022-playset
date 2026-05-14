@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencyAndAmount import CurrencyAndAmount
 from ._Max4Text import Max4Text
@@ -50,4 +53,3 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DscntTaxTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
-

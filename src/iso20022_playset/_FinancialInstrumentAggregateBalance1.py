@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentAggregateBalance1Choice import FinancialInstrumentAggregateBalance1Choice
 from ._ISODate import ISODate
@@ -50,4 +53,3 @@ class FinancialInstrumentAggregateBalance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ItmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pric', type=Price6, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionNotificationType2Code import CorporateActionNotificationType2Code
 from ._DocumentIdentification8 import DocumentIdentification8
@@ -35,4 +38,3 @@ class NotificationCancellation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LkdAgtCANtfctnAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnCxlTp', type=CorporateActionNotificationType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

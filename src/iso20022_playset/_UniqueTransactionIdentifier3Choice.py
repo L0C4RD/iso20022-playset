@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification175 import GenericIdentification175
 from ._NoReasonCode import NoReasonCode
@@ -50,4 +53,3 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification175, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
-

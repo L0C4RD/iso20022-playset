@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmountRange2 import ActiveOrHistoricCurrencyAndAmountRange2
 from ._ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
@@ -35,4 +38,3 @@ class ActiveOrHistoricAmountRange2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CcyAndAmtRg', type=ActiveOrHistoricCurrencyAndAmountRange2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ImpldCcyAndAmtRg', type=ImpliedCurrencyAndAmountRange1, min=0, max=1, mutex_group=1, array=False),
 	))
-

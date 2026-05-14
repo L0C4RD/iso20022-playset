@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditiononalInformation13 import AdditiononalInformation13
 from ._DataModification1Code import DataModification1Code
@@ -35,4 +38,3 @@ class ModificationScope45(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlInf', type=AdditiononalInformation13, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassProductType3Code import AssetClassProductType3Code
 from ._AssetClassSubProductType49Code import AssetClassSubProductType49Code
@@ -35,4 +38,3 @@ class EnvironmentCommodityOther1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType3Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType49Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

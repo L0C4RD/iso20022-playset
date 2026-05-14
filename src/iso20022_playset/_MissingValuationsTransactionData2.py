@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection106 import AmountAndDirection106
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -50,4 +53,3 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValtnAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnTmStmp', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

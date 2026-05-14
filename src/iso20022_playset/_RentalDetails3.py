@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
 from ._ISODateTime import ISODateTime
@@ -124,4 +127,3 @@ class RentalDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TmPrdRate', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmPrdUnit', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

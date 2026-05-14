@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
 from ._SystemRestriction1 import SystemRestriction1
@@ -50,4 +53,3 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SysRstrctn', type=SystemRestriction1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SysSctiesAcct', type=SystemSecuritiesAccount5, min=0, max=1, mutex_group=1, array=False),
 	))
-

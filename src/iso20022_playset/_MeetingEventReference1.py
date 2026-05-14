@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MeetingEventReference1Choice import MeetingEventReference1Choice
 from ._ProcessingPosition3Code import ProcessingPosition3Code
@@ -35,4 +38,3 @@ class MeetingEventReference1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EvtId', type=MeetingEventReference1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition3Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

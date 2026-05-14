@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Vote15 import Vote15
 from ._Vote21 import Vote21
@@ -35,4 +38,3 @@ class Vote18Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GblVoteInstr', type=Vote15, min=1, max=1000, mutex_group=1, array=True),
 		base_types.FieldEntry(name='VoteInstr', type=Vote21, min=1, max=1000, mutex_group=1, array=True),
 	))
-

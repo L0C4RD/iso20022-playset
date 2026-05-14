@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateOrDateTimePeriod3Choice import DateOrDateTimePeriod3Choice
 from ._GenericIdentification30 import GenericIdentification30
@@ -50,4 +53,3 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RmvlTp', type=Removal1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
-

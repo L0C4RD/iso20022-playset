@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._Max2000Text import Max2000Text
@@ -94,4 +97,3 @@ class UndertakingIssuanceAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ScndAdvsgPty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgIssncAdvcDtls', type=UndertakingAdvice1, min=1, max=1, mutex_group=None, array=False),
 	))
-

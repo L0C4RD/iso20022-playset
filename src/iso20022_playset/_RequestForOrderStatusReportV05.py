@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Extension1 import Extension1
 from ._MessageAndBusinessReference15 import MessageAndBusinessReference15
@@ -50,4 +53,3 @@ class RequestForOrderStatusReportV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqDtls', type=MessageAndBusinessReference15, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

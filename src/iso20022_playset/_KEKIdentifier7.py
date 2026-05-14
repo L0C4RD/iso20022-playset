@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max140Text import Max140Text
 from ._Max500Binary import Max500Binary
@@ -64,4 +67,3 @@ class KEKIdentifier7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='KeyVrsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

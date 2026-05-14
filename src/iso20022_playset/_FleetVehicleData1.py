@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._CardDataReading5Code import CardDataReading5Code
@@ -238,4 +241,3 @@ class FleetVehicleData1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrlrNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitNb', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

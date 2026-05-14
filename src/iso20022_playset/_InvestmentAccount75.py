@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountStatusUpdateInstruction1 import AccountStatusUpdateInstruction1
 from ._AccountType2Choice import AccountType2Choice
@@ -571,4 +574,3 @@ class InvestmentAccount75(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=AccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxChanlTp', type=TransactionChannelType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

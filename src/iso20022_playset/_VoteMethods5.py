@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommunicationAddress12 import CommunicationAddress12
 from ._MailAddress1 import MailAddress1
@@ -65,4 +68,3 @@ class VoteMethods5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VoteByTel', type=Max35Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VoteThrghNtwk', type=VoteThroughNetwork1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

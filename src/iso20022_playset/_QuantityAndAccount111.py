@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
 from ._PartyIdentification156 import PartyIdentification156
@@ -80,4 +83,3 @@ class QuantityAndAccount111(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown69, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace4, min=0, max=1, mutex_group=None, array=False),
 	))
-

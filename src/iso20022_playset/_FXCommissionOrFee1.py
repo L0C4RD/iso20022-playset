@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountOrRate4Choice import AmountOrRate4Choice
 from ._FXAmountType1Choice import FXAmountType1Choice
@@ -50,4 +53,3 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=FXAmountType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalReference11 import AdditionalReference11
@@ -95,4 +98,3 @@ class SwitchOrderCancellationRequestV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PoolRef', type=AdditionalReference11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),
 	))
-

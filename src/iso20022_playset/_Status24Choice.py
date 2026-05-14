@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IndividualOrderStatusAndReason7 import IndividualOrderStatusAndReason7
 from ._OrderStatusAndReason10 import OrderStatusAndReason10
@@ -50,4 +53,3 @@ class Status24Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrdrDtlsRpt', type=OrderStatusAndReason10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SwtchOrdrDtlsRpt', type=SwitchOrderStatusAndReason2, min=1, max=None, mutex_group=1, array=True),
 	))
-

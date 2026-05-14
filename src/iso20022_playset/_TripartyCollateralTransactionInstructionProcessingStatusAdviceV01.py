@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationStatus30Choice import CancellationStatus30Choice
 from ._CashMovement7 import CashMovement7
@@ -200,4 +203,3 @@ class TripartyCollateralTransactionInstructionProcessingStatusAdviceV01(base_typ
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications46, min=1, max=1, mutex_group=None, array=False),
 	))
-

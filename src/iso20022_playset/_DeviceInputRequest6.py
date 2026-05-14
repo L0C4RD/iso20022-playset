@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage11 import ActionMessage11
 from ._InputData6 import InputData6
@@ -35,4 +38,3 @@ class DeviceInputRequest6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptData', type=InputData6, min=1, max=1, mutex_group=None, array=False),
 	))
-

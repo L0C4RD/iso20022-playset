@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Quantity10 import Quantity10
 
@@ -48,4 +51,3 @@ class Consignment3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlVol', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlWght', type=Quantity10, min=0, max=1, mutex_group=None, array=False),
 	))
-

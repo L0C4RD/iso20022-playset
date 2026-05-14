@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContactIdentification4 import ContactIdentification4
 from ._PartyIdentification2Choice import PartyIdentification2Choice
@@ -35,4 +38,3 @@ class ContactPerson1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstnId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

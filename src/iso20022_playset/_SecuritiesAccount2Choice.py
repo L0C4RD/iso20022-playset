@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecuritiesAccountRange2 import SecuritiesAccountRange2
@@ -35,4 +38,3 @@ class SecuritiesAccount2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Acct', type=SecuritiesAccount19, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Rg', type=SecuritiesAccountRange2, min=0, max=1, mutex_group=1, array=False),
 	))
-

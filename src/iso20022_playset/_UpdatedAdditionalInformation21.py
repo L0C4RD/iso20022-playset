@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._Max350Text import Max350Text
@@ -35,4 +38,3 @@ class UpdatedAdditionalInformation21(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Lang', type=ISO2ALanguageCode, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorReferenceInformation3 import CreditorReferenceInformation3
 from ._Garnishment4 import Garnishment4
@@ -124,4 +127,3 @@ class StructuredRemittanceInformation18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RfrdDocInf', type=ReferredDocumentInformation8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxRmt', type=TaxData1, min=0, max=1, mutex_group=None, array=False),
 	))
-

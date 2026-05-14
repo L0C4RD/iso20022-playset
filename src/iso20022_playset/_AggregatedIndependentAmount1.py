@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IndependentAmount1 import IndependentAmount1
 from ._IndependentAmount2 import IndependentAmount2
@@ -63,4 +66,3 @@ class AggregatedIndependentAmount1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Trad', type=IndependentAmount1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAtRsk', type=IndependentAmount1, min=0, max=1, mutex_group=None, array=False),
 	))
-

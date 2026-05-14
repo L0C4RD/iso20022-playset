@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max20PositiveDecimalNumber import Max20PositiveDecimalNumber
 from ._Max20PositiveNumber import Max20PositiveNumber
@@ -35,4 +38,3 @@ class InternalisationDataVolume1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val', type=Max20PositiveDecimalNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vol', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CheckType1Code import CheckType1Code
 from ._Max35Text import Max35Text
@@ -107,4 +110,3 @@ class Check1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ChckTrckData2', type=TrackData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ctry', type=Max3Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

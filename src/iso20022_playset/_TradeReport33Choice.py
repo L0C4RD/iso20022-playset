@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeData43 import TradeData43
 
@@ -160,4 +163,3 @@ class TradeReport33Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Termntn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ValtnUpd', type=TradeData43, min=0, max=1, mutex_group=1, array=False),
 	))
-

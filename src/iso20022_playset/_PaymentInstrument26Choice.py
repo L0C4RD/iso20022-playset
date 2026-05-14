@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Cheque21 import Cheque21
 from ._CreditTransfer10 import CreditTransfer10
@@ -64,4 +67,3 @@ class PaymentInstrument26Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ChqDtls', type=Cheque21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshAcctDtls', type=InvestmentAccount60, min=0, max=1, mutex_group=1, array=False),
 	))
-

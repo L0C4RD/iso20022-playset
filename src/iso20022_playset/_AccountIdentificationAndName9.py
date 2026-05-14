@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._GenericAccountIdentification1 import GenericAccountIdentification1
@@ -65,4 +68,3 @@ class AccountIdentificationAndName9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=None, array=False),
 	))
-

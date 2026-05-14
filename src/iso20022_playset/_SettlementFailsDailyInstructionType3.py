@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementDailyFailureReason1Choice import SettlementDailyFailureReason1Choice
 
@@ -62,4 +65,3 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FreeOfPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtFreeOfDlvry', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

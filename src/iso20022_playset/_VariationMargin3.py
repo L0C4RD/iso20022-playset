@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Amount2 import Amount2
 from ._SecurityIdentification14 import SecurityIdentification14
@@ -106,4 +109,3 @@ class VariationMargin3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlMrkToMkt', type=Amount2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlVartnMrgn', type=TotalVariationMargin1, min=1, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Max3NumericText import Max3NumericText
@@ -35,4 +38,3 @@ class MaximumAmountByPeriod1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MaxAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfDays', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

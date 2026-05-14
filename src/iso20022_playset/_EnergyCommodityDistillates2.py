@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassProductType2Code import AssetClassProductType2Code
 from ._AssetClassSubProductType25Code import AssetClassSubProductType25Code
@@ -35,4 +38,3 @@ class EnergyCommodityDistillates2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType25Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

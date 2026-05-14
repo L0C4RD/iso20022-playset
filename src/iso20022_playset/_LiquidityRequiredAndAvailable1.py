@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LiquidResources1 import LiquidResources1
 from ._SettlementDate6Code import SettlementDate6Code
@@ -50,4 +53,3 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LqdtyHrzn', type=SettlementDate6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StrssLqdRsrcRqrmnt', type=StressLiquidResourceRequirement1, min=1, max=1, mutex_group=None, array=False),
 	))
-

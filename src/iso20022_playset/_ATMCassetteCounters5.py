@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCounterType3Code import ATMCounterType3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -204,4 +207,3 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RtrctdNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ATMCounterType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

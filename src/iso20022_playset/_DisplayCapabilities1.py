@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max3NumericText import Max3NumericText
 from ._UserInterface2Code import UserInterface2Code
@@ -49,4 +52,3 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LineWidth', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfLines', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

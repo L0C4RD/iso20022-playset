@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection95 import AmountAndDirection95
 from ._CashParties41 import CashParties41
@@ -244,4 +247,3 @@ class SecuritiesSettlementTransactionDetails57(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmTpAndAddtlParams', type=SettlementTypeAndAdditionalParameters14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails147, min=0, max=1, mutex_group=None, array=False),
 	))
-

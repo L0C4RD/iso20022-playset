@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._Max8Text import Max8Text
@@ -50,4 +53,3 @@ class GenericIdentification6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Inf', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Issr', type=Max8Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

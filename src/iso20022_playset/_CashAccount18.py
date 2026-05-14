@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification2Choice import AccountIdentification2Choice
 from ._CashBalanceType1FormatType import CashBalanceType1FormatType
@@ -65,4 +68,3 @@ class CashAccount18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BalTp', type=CashBalanceType1FormatType, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),
 	))
-

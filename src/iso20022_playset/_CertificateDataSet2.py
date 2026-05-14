@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CertifiedCharacteristics2Choice import CertifiedCharacteristics2Choice
 from ._DatePeriodDetails import DatePeriodDetails
@@ -242,4 +245,3 @@ class CertificateDataSet2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PlcOfIsse', type=PostalAddress5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trnsprt', type=SingleTransport3, min=0, max=1, mutex_group=None, array=False),
 	))
-

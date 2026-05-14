@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Activity1 import Activity1
 from ._BICIdentification1 import BICIdentification1
@@ -50,4 +53,3 @@ class ActivityDetails1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Initr', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
-

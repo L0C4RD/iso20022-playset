@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContactIdentification1 import ContactIdentification1
 from ._PartyIdentification8 import PartyIdentification8
@@ -35,4 +38,3 @@ class PartyIdentificationAndContactInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtctInf', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
-

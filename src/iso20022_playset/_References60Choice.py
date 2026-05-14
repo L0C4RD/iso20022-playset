@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericDocumentIdentification6 import GenericDocumentIdentification6
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
@@ -64,4 +67,3 @@ class References60Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesFincgTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=SettlementTypeAndIdentification22, min=0, max=1, mutex_group=1, array=False),
 	))
-

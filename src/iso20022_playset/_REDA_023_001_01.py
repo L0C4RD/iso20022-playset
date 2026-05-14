@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesAccountModificationRequestV01 import SecuritiesAccountModificationRequestV01
 
@@ -22,4 +25,3 @@ class REDA_023_001_01():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesAcctModReq', type=SecuritiesAccountModificationRequestV01, min=1, max=1, mutex_group=None, array=False),
 		))
-

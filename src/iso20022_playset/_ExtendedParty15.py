@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Extended350Code import Extended350Code
 from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
@@ -35,4 +38,3 @@ class ExtendedParty15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrPtyDtls', type=InvestmentAccountOwnershipInformation17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedPtyRole', type=Extended350Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Mandate21 import Mandate21
 from ._MandateAmendmentReason3 import MandateAmendmentReason3
@@ -80,4 +83,3 @@ class MandateAmendment8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlMsgInf', type=OriginalMessageInformation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

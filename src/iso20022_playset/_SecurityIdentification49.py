@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification175 import GenericIdentification175
 from ._ISINOct2015Identifier import ISINOct2015Identifier
@@ -65,4 +68,3 @@ class SecurityIdentification49(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PdctDesc', type=Max1000Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=UniqueProductIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

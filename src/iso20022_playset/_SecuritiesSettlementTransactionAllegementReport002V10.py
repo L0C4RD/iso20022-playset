@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 from ._Pagination1 import Pagination1
@@ -95,4 +98,3 @@ class SecuritiesSettlementTransactionAllegementReport002V10(base_types._BaseFiel
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement69, min=1, max=1, mutex_group=None, array=False),
 	))
-

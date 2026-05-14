@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeliveryInterconnectionPoint1Choice import DeliveryInterconnectionPoint1Choice
 from ._EnergyDeliveryAttribute10 import EnergyDeliveryAttribute10
@@ -64,4 +67,3 @@ class EnergySpecificAttribute9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrCnnctnPt', type=DeliveryInterconnectionPoint1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LdTp', type=EnergyLoadType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

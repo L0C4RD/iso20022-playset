@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DecimalNumber import DecimalNumber
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
@@ -79,4 +82,3 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SchmeNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtLngPos', type=ShortLong1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateAction1Choice import CorporateAction1Choice
 from ._TransactionType2Choice import TransactionType2Choice
@@ -35,4 +38,3 @@ class TransactionType1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CorpActnTp', type=CorporateAction1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TxTp', type=TransactionType2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InvoiceRequestInformation1 import InvoiceRequestInformation1
 from ._RequestGroupInformation1 import RequestGroupInformation1
@@ -35,4 +38,3 @@ class InvoiceFinancingRequestV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InvcReqInf', type=InvoiceRequestInformation1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ReqGrpInf', type=RequestGroupInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

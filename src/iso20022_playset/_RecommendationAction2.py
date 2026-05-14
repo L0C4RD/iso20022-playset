@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max256Text import Max256Text
 from ._RecommendedActionCode1 import RecommendedActionCode1
@@ -35,4 +38,3 @@ class RecommendationAction2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Actn', type=RecommendedActionCode1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Dtls', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

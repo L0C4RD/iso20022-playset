@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._BeneficiaryType1Choice import BeneficiaryType1Choice
@@ -79,4 +82,3 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtOfDth', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DthUdrLmt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

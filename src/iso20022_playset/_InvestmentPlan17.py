@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashSettlement3 import CashSettlement3
 from ._Frequency20Choice import Frequency20Choice
@@ -271,4 +274,3 @@ class InvestmentPlan17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfInstlmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

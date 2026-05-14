@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODate import ISODate
 from ._PriceStatus2Code import PriceStatus2Code
@@ -35,4 +38,3 @@ class ExerciseDate1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrstExrcDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PdgDtAplbl', type=PriceStatus2Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

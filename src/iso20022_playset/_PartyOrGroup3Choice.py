@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._PartyAndCertificate6 import PartyAndCertificate6
@@ -35,4 +38,3 @@ class PartyOrGroup3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pty', type=PartyAndCertificate6, min=0, max=1, mutex_group=1, array=False),
 	))
-

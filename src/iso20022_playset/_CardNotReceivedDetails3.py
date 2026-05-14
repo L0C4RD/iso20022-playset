@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Address2 import Address2
 from ._CardSecurityCapability1 import CardSecurityCapability1
@@ -109,4 +112,3 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MlngAdrUstrd', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldFr', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

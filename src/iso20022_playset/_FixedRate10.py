@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
 from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
@@ -50,4 +53,3 @@ class FixedRate10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=SecuritiesTransactionPrice14Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthorityRequestType1 import AuthorityRequestType1
 from ._Max500Text import Max500Text
@@ -50,4 +53,3 @@ class PaymentInstrumentType1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AuthrtyReqTp', type=AuthorityRequestType1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='CardNb', type=Min8Max28NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Header23 import Header23
 from ._Max35NumericText import Max35NumericText
@@ -139,4 +142,3 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 		base_types.FieldEntry(name='TradDtl', type=Trade9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),
 	))
-

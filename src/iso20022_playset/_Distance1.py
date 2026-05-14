@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._Max10NumericText import Max10NumericText
@@ -92,4 +95,3 @@ class Distance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure10Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

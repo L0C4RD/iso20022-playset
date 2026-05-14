@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Adjustment6 import Adjustment6
 from ._CurrencyAndAmount import CurrencyAndAmount
@@ -65,4 +68,3 @@ class ReportLine6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ComrclDocRef', type=InvoiceIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

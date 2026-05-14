@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesTransactionPostingReport002V12 import SecuritiesTransactionPostingReport002V12
 
@@ -22,4 +25,3 @@ class SEMT_017_002_12():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesTxPstngRpt', type=SecuritiesTransactionPostingReport002V12, min=1, max=1, mutex_group=None, array=False),
 		))
-

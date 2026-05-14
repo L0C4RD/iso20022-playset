@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataSetCategory7Code import DataSetCategory7Code
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class ATMConfigurationParameter1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=DataSetCategory7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialPartySectorType2Code import FinancialPartySectorType2Code
 from ._NACEDomainIdentifier import NACEDomainIdentifier
@@ -50,4 +53,3 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NFISctr', type=NACEDomainIdentifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

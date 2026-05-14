@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Case6 import Case6
 from ._CaseAssignment6 import CaseAssignment6
@@ -80,4 +83,3 @@ class FIToFIPaymentCancellationRequestV11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Undrlyg', type=UnderlyingTransaction34, min=1, max=None, mutex_group=None, array=True),
 	))
-

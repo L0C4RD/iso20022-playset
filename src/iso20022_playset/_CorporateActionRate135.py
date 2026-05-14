@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
 from ._RateAndAmountFormat72Choice import RateAndAmountFormat72Choice
@@ -180,4 +183,3 @@ class CorporateActionRate135(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdIndx', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=RateFormat24Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

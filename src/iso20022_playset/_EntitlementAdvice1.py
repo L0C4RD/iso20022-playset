@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
 from ._DateFormat4Choice import DateFormat4Choice
@@ -79,4 +82,3 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RcrdDt', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

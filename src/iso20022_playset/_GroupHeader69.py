@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
 from ._ISODate import ISODate
@@ -122,4 +125,3 @@ class GroupHeader69(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SellrTaxRprtv', type=PartyIdentification116, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxRptPurp', type=ExternalDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

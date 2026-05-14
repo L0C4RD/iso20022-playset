@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max105Text import Max105Text
 from ._PartyIdentification32 import PartyIdentification32
@@ -50,4 +53,3 @@ class StatusReasonInformation8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Orgtr', type=PartyIdentification32, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=StatusReason6Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

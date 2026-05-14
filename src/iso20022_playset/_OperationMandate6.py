@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
 from ._Channel2Choice import Channel2Choice
@@ -139,4 +142,3 @@ class OperationMandate6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SgntrOrdrInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StartDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

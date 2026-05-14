@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BillingMethod1 import BillingMethod1
 from ._BillingMethod2 import BillingMethod2
@@ -50,4 +53,3 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MtdB', type=BillingMethod2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='MtdD', type=BillingMethod3, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._UnderlyingPaymentInstruction9 import UnderlyingPaymentInstruction9
 from ._UnderlyingPaymentTransaction8 import UnderlyingPaymentTransaction8
@@ -50,4 +53,3 @@ class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrBk', type=UnderlyingPaymentTransaction8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StmtNtry', type=UnderlyingStatementEntry3, min=0, max=1, mutex_group=1, array=False),
 	))
-

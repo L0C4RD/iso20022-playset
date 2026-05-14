@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceCounterparty1Code import BalanceCounterparty1Code
 from ._BalanceType11Choice import BalanceType11Choice
@@ -79,4 +82,3 @@ class CashBalance14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=BalanceType11Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValDt', type=DateAndDateTimeSearch4Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

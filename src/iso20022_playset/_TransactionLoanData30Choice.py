@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LoanData135 import LoanData135
 from ._LoanData136 import LoanData136
@@ -65,4 +68,3 @@ class TransactionLoanData30Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RpTrad', type=LoanData135, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesLndg', type=LoanData137, min=0, max=1, mutex_group=1, array=False),
 	))
-

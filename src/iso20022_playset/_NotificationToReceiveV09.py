@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountNotification26 import AccountNotification26
 from ._GroupHeader117 import GroupHeader117
@@ -50,4 +53,3 @@ class NotificationToReceiveV09(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ntfctn', type=AccountNotification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

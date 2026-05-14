@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AdditionalInformation15 import AdditionalInformation15
@@ -122,4 +125,3 @@ class EmploymentDetails1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StartDt', type=DateFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxCd', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 	))
-

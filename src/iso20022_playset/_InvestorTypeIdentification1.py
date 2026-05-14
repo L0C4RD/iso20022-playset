@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InvestorClassificationType1Code import InvestorClassificationType1Code
 from ._Max1025Text import Max1025Text
@@ -35,4 +38,3 @@ class InvestorTypeIdentification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InvstrTpId', type=InvestorClassificationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstrTpIdNrrtv', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

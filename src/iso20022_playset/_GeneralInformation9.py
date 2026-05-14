@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AgreementConditions1 import AgreementConditions1
@@ -226,4 +229,3 @@ class GeneralInformation9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdTradRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SndrToRcvrInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

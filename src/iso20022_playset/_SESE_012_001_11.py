@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PortfolioTransferInstructionV11 import PortfolioTransferInstructionV11
 
@@ -22,4 +25,3 @@ class SESE_012_001_11():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PrtflTrfInstr', type=PortfolioTransferInstructionV11, min=1, max=1, mutex_group=None, array=False),
 		))
-

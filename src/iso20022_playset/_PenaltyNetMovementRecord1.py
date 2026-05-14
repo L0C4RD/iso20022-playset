@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection5 import AmountAndDirection5
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
@@ -80,4 +83,3 @@ class PenaltyNetMovementRecord1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ShrtfllValtn', type=AmountAndDirection5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition5Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

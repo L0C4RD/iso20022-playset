@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMPropertyType1Code import ATMPropertyType1Code
 from ._Max2000Text import Max2000Text
@@ -50,4 +53,3 @@ class ATMPropertyComponent1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrprtyTp', type=ATMPropertyType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrprtyVal', type=Max2000Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

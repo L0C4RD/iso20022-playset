@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClearingSystemIdentification2Choice import ClearingSystemIdentification2Choice
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrSysId', type=ClearingSystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MmbId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._GenericIdentification30 import GenericIdentification30
@@ -122,4 +125,3 @@ class Account36(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification132, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 	))
-

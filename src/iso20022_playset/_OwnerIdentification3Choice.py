@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IndividualPersonIdentification2Choice import IndividualPersonIdentification2Choice
 from ._PartyIdentification139 import PartyIdentification139
@@ -35,4 +38,3 @@ class OwnerIdentification3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndvOwnrId', type=IndividualPersonIdentification2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgOwnrId', type=PartyIdentification139, min=0, max=1, mutex_group=1, array=False),
 	))
-

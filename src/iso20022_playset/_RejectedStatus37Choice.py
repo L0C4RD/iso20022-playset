@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NoReasonCode import NoReasonCode
 from ._RejectedStatusReason35 import RejectedStatusReason35
@@ -35,4 +38,3 @@ class RejectedStatus37Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=RejectedStatusReason35, min=1, max=None, mutex_group=1, array=True),
 	))
-

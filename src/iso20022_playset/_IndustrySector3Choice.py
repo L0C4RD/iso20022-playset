@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalIndustrySectorClassification1Code import ExternalIndustrySectorClassification1Code
 from ._NACEDomain2025Identifier import NACEDomain2025Identifier
@@ -35,4 +38,3 @@ class IndustrySector3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NACETxnmySctr', type=NACEDomain2025Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RgltryTxnmySctr', type=ExternalIndustrySectorClassification1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

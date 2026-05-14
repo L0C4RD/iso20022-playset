@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentAttributes119 import FinancialInstrumentAttributes119
 from ._IntraPositionDetails63 import IntraPositionDetails63
@@ -50,4 +53,3 @@ class FinancialInstrumentDetails44(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification20, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBal', type=IntraPositionDetails63, min=1, max=None, mutex_group=None, array=True),
 	))
-

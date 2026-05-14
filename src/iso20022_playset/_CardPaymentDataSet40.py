@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentDataSetTransaction13Choice import CardPaymentDataSetTransaction13Choice
 from ._CommonData14 import CommonData14
@@ -95,4 +98,3 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tx', type=CardPaymentDataSetTransaction13Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
 	))
-

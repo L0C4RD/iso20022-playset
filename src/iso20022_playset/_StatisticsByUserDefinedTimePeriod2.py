@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateOrDateTimePeriodChoice import DateOrDateTimePeriodChoice
 from ._PercentageRate import PercentageRate
@@ -79,4 +82,3 @@ class StatisticsByUserDefinedTimePeriod2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yld', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 	))
-

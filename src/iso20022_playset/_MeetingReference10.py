@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODateTime import ISODateTime
 from ._Max35Text import Max35Text
@@ -109,4 +112,3 @@ class MeetingReference10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MtgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MeetingType4Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

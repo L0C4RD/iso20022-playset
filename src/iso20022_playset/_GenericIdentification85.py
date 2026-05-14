@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification47 import GenericIdentification47
 from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
@@ -35,4 +38,3 @@ class GenericIdentification85(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax30Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GenericIdentification47, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AttendanceContext2Code import AttendanceContext2Code
 from ._DecimalNumber import DecimalNumber
@@ -239,4 +242,3 @@ class Product6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UnitPricSgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValAddedTax', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LaxPayload import LaxPayload
 from ._PayloadDescription2 import PayloadDescription2
@@ -37,4 +40,3 @@ class HEAD_002_001_01():
 			base_types.FieldEntry(name='Pyld', type=LaxPayload, min=0, max=None, mutex_group=None, array=True),
 			base_types.FieldEntry(name='PyldDesc', type=PayloadDescription2, min=1, max=1, mutex_group=None, array=False),
 		))
-

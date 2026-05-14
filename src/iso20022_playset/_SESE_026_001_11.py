@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesSettlementTransactionReversalAdviceV11 import SecuritiesSettlementTransactionReversalAdviceV11
 
@@ -22,4 +25,3 @@ class SESE_026_001_11():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxRvslAdvc', type=SecuritiesSettlementTransactionReversalAdviceV11, min=1, max=1, mutex_group=None, array=False),
 		))
-

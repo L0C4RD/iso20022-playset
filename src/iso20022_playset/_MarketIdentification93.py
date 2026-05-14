@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarketIdentification3Choice import MarketIdentification3Choice
 from ._MarketType18Choice import MarketType18Choice
@@ -35,4 +38,3 @@ class MarketIdentification93(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=MarketIdentification3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=MarketType18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

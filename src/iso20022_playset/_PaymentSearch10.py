@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
 from ._ActiveCurrencyCode import ActiveCurrencyCode
@@ -288,4 +291,3 @@ class PaymentSearch10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=None, mutex_group=None, array=True),
 	))
-

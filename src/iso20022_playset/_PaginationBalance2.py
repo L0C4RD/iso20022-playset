@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosingBalance3Choice import ClosingBalance3Choice
 from ._OpeningBalance3Choice import OpeningBalance3Choice
@@ -35,4 +38,3 @@ class PaginationBalance2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OpngBal', type=OpeningBalance3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

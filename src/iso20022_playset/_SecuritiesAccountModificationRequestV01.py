@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageHeader1 import MessageHeader1
 from ._SecuritiesAccount19 import SecuritiesAccount19
@@ -65,4 +68,3 @@ class SecuritiesAccountModificationRequestV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

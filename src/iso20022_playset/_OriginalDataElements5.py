@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO8583ResponseCode import ISO8583ResponseCode
 from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
@@ -109,4 +112,3 @@ class OriginalDataElements5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=OriginalTransactionIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
 from ._GenericPersonIdentification2 import GenericPersonIdentification2
@@ -50,4 +53,3 @@ class PersonIdentification20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification2, min=0, max=None, mutex_group=None, array=True),
 	))
-

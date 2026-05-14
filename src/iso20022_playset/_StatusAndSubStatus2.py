@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
 from ._Status27Choice import Status27Choice
@@ -35,4 +38,3 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StsCd', type=Status27Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubStsCd', type=Exact4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

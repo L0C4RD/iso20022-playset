@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReferences2 import AdditionalReferences2
 from ._Confirmation1 import Confirmation1
@@ -125,4 +128,3 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 		base_types.FieldEntry(name='TradDtl', type=Trade8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgSdId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),
 	))
-

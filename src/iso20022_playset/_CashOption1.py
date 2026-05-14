@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CorporateActionAmounts1 import CorporateActionAmounts1
@@ -80,4 +83,3 @@ class CashOption1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=ForeignExchangeTerms8, min=0, max=1, mutex_group=None, array=False),
 	))
-

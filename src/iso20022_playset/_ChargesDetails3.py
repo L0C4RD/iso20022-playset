@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
 from ._ChargesType1Choice import ChargesType1Choice
@@ -35,4 +38,3 @@ class ChargesDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AmtOrPctg', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ChargesType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashMovement5 import CashMovement5
 from ._CollateralDate2 import CollateralDate2
@@ -140,4 +143,3 @@ class TripartyCollateralAllegementNotificationV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications44, min=1, max=1, mutex_group=None, array=False),
 	))
-

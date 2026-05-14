@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._LanguageVersion1Code import LanguageVersion1Code
@@ -78,4 +81,3 @@ class Document26(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlOrTrnsltd', type=LanguageVersion1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=Max2048Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

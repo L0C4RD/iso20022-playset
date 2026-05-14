@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CharacterSearch1Choice import CharacterSearch1Choice
 from ._InformationQualifierType1 import InformationQualifierType1
@@ -50,4 +53,3 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sbjt', type=CharacterSearch1Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

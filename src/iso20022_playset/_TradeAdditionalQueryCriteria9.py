@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateSectorCriteria6 import CorporateSectorCriteria6
 from ._DerivativeEventType3Code import DerivativeEventType3Code
@@ -125,4 +128,3 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NtrOfCtrPty', type=PartyNatureType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdctClssfctn', type=ProductClassificationCriteria1, min=0, max=1, mutex_group=None, array=False),
 	))
-

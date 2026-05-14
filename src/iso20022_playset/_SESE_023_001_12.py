@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesSettlementTransactionInstructionV12 import SecuritiesSettlementTransactionInstructionV12
 
@@ -22,4 +25,3 @@ class SESE_023_001_12():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxInstr', type=SecuritiesSettlementTransactionInstructionV12, min=1, max=1, mutex_group=None, array=False),
 		))
-

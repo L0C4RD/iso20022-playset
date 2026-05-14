@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClassificationType1Choice import ClassificationType1Choice
 from ._ForeignExchangeRate3 import ForeignExchangeRate3
@@ -109,4 +112,3 @@ class PenaltyFinancialInstrumentIdentification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SbjtToPnlties', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesPnltyRateData', type=PenaltyRate1, min=0, max=1, mutex_group=None, array=False),
 	))
-

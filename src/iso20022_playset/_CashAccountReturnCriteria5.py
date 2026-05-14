@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashBalanceReturnCriteria2 import CashBalanceReturnCriteria2
 from ._RequestedIndicator import RequestedIndicator
@@ -147,4 +150,3 @@ class CashAccountReturnCriteria5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StgOrdrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentType2Code import ContentType2Code
 from ._SignedData4 import SignedData4
@@ -35,4 +38,3 @@ class ContentInformationType14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndData', type=SignedData4, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CertificateReference2 import CertificateReference2
@@ -80,4 +83,3 @@ class TransactionCertificate5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=Exact1NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

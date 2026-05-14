@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._FinancingResult1 import FinancingResult1
@@ -50,4 +53,3 @@ class InstalmentFinancingInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InstlmtSeqId', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InstlmtTtlAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

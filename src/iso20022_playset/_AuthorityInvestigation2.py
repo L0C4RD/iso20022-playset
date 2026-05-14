@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthorityRequestType1 import AuthorityRequestType1
 from ._InvestigatedParties1Choice import InvestigatedParties1Choice
@@ -64,4 +67,3 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InvstgtdRoles', type=InvestigatedParties1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AuthorityRequestType1, min=1, max=1, mutex_group=None, array=False),
 	))
-

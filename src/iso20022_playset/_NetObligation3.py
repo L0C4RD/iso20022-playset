@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CountryCode import CountryCode
@@ -139,4 +142,3 @@ class NetObligation3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtcptNetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsNb', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

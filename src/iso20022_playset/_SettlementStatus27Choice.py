@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
@@ -63,4 +66,3 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Usttld', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),
 	))
-

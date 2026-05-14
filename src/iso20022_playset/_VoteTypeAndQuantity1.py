@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Number import Number
 from ._VoteInstructionType1Choice import VoteInstructionType1Choice
@@ -35,4 +38,3 @@ class VoteTypeAndQuantity1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VoteInstrTp', type=VoteInstructionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoteQty', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
-

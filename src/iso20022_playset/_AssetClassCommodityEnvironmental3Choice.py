@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EnvironmentCommodityOther2 import EnvironmentCommodityOther2
 from ._EnvironmentalCommodityCarbonRelated2 import EnvironmentalCommodityCarbonRelated2
@@ -65,4 +68,3 @@ class AssetClassCommodityEnvironmental3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Othr', type=EnvironmentCommodityOther2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Wthr', type=EnvironmentalCommodityWeather2, min=0, max=1, mutex_group=1, array=False),
 	))
-

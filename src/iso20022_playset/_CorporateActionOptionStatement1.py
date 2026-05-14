@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BuyerProtectionInstructionDetails1 import BuyerProtectionInstructionDetails1
 from ._CorporateActionOption47Choice import CorporateActionOption47Choice
@@ -50,4 +53,3 @@ class CorporateActionOptionStatement1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption47Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionElection4 import CorporateActionElection4
 from ._CorporateActionGeneralInformation195 import CorporateActionGeneralInformation195
@@ -95,4 +98,3 @@ class BuyerProtectionInstructionAllegementNotificationV01(base_types._BaseFieldT
 		base_types.FieldEntry(name='RltdSttlmInstr', type=RelatedSettlementInstruction3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

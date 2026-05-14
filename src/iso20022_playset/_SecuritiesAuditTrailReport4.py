@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
@@ -50,4 +53,3 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAudtTrlOrErr', type=AuditTrailOrBusinessError6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NameAndAddress8 import NameAndAddress8
 from ._PartyIdentification265 import PartyIdentification265
@@ -50,4 +53,3 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NmAndAdr', type=NameAndAddress8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification266, min=0, max=1, mutex_group=1, array=False),
 	))
-

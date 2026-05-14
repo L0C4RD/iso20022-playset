@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMDepositedMedia4 import ATMDepositedMedia4
 from ._CardAccount21 import CardAccount21
@@ -80,4 +83,3 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdAcctData', type=ContentInformationType10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubDpstId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

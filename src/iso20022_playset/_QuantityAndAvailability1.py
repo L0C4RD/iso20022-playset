@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._YesNoIndicator import YesNoIndicator
@@ -35,4 +38,3 @@ class QuantityAndAvailability1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AvlbtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

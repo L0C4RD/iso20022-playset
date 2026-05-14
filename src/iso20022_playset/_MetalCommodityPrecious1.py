@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassDetailedSubProductType11Code import AssetClassDetailedSubProductType11Code
 from ._AssetClassProductType7Code import AssetClassProductType7Code
@@ -50,4 +53,3 @@ class MetalCommodityPrecious1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType7Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType16Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

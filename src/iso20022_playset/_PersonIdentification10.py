@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericPersonIdentification1 import GenericPersonIdentification1
 from ._ISODate import ISODate
@@ -64,4 +67,3 @@ class PersonIdentification10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Nm', type=Max140Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericPersonIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
-

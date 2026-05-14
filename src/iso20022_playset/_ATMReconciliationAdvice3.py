@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommand8 import ATMCommand8
 from ._ATMCommand9 import ATMCommand9
@@ -65,4 +68,3 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment22, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction36, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification205Choice import PartyIdentification205Choice
 from ._PartyRole6Choice import PartyRole6Choice
@@ -35,4 +38,3 @@ class PartyIdentification218(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=PartyIdentification205Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=PartyRole6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

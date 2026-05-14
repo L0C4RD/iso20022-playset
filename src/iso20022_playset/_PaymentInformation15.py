@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount7 import CashAccount7
 from ._PaymentMethod4Code import PaymentMethod4Code
@@ -35,4 +38,3 @@ class PaymentInformation15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=PaymentMethod4Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

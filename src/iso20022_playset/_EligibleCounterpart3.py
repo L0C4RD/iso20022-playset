@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EligibilityIdentification3Choice import EligibilityIdentification3Choice
 from ._EligibilityType1Code import EligibilityType1Code
@@ -93,4 +96,3 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VldFr', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldTo', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

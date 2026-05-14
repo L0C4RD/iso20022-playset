@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContractModification9 import ContractModification9
 from ._ContractType15 import ContractType15
@@ -50,4 +53,3 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtrctMod', type=ContractModification9, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxData', type=TradeTransaction50, min=1, max=1, mutex_group=None, array=False),
 	))
-

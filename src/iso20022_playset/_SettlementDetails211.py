@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AutomaticBorrowing8Choice import AutomaticBorrowing8Choice
 from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
@@ -363,4 +366,3 @@ class SettlementDetails211(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType24Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

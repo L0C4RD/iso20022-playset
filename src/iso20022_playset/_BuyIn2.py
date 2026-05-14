@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashCompensation1 import CashCompensation1
 from ._ISODate import ISODate
@@ -94,4 +97,3 @@ class BuyIn2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqrdCshCompstn', type=CashCompensation1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesBuyIn', type=SecuritiesCompensation1, min=0, max=1, mutex_group=None, array=False),
 	))
-

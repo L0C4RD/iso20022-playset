@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClearingPartyAndTime14 import ClearingPartyAndTime14
 from ._NoReasonCode import NoReasonCode
@@ -35,4 +38,3 @@ class Cleared16Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime14, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NonClrd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
-

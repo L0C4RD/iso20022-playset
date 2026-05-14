@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max500Text import Max500Text
 from ._NetworkType1Code import NetworkType1Code
@@ -35,4 +38,3 @@ class NetworkParameters9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AdrVal', type=Max500Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtwkTp', type=NetworkType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

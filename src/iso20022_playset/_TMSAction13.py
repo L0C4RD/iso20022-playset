@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentInformationType39 import ContentInformationType39
 from ._DataSetCategory20Code import DataSetCategory20Code
@@ -332,4 +335,3 @@ class TMSAction13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=TerminalManagementAction5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trggr', type=TerminalManagementActionTrigger1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

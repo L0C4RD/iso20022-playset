@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashReuseData1 import CashReuseData1
 from ._SecurityReuseData1 import SecurityReuseData1
@@ -35,4 +38,3 @@ class CollateralType19(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Csh', type=CashReuseData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Scty', type=SecurityReuseData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

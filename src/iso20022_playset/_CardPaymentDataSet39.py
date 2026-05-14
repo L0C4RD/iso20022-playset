@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentDataSet38 import CardPaymentDataSet38
 from ._DataSetIdentification5 import DataSetIdentification5
@@ -137,4 +140,3 @@ class CardPaymentDataSet39(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SspdTx', type=CardPaymentDataSet38, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=1, max=None, mutex_group=None, array=True),
 	))
-

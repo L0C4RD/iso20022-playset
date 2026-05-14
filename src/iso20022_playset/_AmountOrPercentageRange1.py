@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Operation1Code import Operation1Code
 from ._Term1 import Term1
@@ -35,4 +38,3 @@ class AmountOrPercentageRange1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Opr', type=Operation1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=Term1, min=0, max=10, mutex_group=None, array=True),
 	))
-

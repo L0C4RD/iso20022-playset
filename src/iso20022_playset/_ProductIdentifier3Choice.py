@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max12Text import Max12Text
 from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
@@ -35,4 +38,3 @@ class ProductIdentifier3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UndrlygPdctIdr', type=UnderlyingProductIdentifier1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UnqPdctIdr', type=Max12Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

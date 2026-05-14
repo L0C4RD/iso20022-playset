@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentificationAndName6 import AccountIdentificationAndName6
 from ._FinancialInstitutionIdentification16 import FinancialInstitutionIdentification16
@@ -176,4 +179,3 @@ class CreditTransfer9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrmyAgt2', type=FinancialInstitutionIdentification16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntrmyAgt2Acct', type=AccountIdentificationAndName6, min=0, max=1, mutex_group=None, array=False),
 	))
-

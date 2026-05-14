@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
 
@@ -34,4 +37,3 @@ class CompareReferenceParty1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=DerivativePartyIdentification1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

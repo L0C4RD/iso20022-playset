@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollaterisedData12 import CollaterisedData12
 from ._NoReasonCode import NoReasonCode
@@ -35,4 +38,3 @@ class CollateralFlag13Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Collsd', type=CollaterisedData12, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Uncollsd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 	))
-

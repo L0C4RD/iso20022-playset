@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._GenericIdentification189 import GenericIdentification189
@@ -65,4 +68,3 @@ class SafekeepingPlaceFormat43Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification189, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TpAndId', type=SafekeepingPlaceTypeAndAnyBICIdentifier4, min=0, max=1, mutex_group=1, array=False),
 	))
-

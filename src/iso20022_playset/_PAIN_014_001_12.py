@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorPaymentActivationRequestStatusReportV12 import CreditorPaymentActivationRequestStatusReportV12
 
@@ -22,4 +25,3 @@ class PAIN_014_001_12():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CdtrPmtActvtnReqStsRpt', type=CreditorPaymentActivationRequestStatusReportV12, min=1, max=1, mutex_group=None, array=False),
 		))
-

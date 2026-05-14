@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AggregateBalanceInformation44 import AggregateBalanceInformation44
 from ._BlockChainAddressWallet6 import BlockChainAddressWallet6
@@ -80,4 +83,3 @@ class SubAccountIdentification69(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount34, min=0, max=1, mutex_group=None, array=False),
 	))
-

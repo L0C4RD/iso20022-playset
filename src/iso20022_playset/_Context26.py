@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._CardDataReading11Code import CardDataReading11Code
@@ -909,4 +912,3 @@ class Context26(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VATDcmnttnRspn', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XtndedAuthstn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

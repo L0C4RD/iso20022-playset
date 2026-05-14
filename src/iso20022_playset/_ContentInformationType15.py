@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthenticatedData4 import AuthenticatedData4
 from ._ContentType2Code import ContentType2Code
@@ -35,4 +38,3 @@ class ContentInformationType15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

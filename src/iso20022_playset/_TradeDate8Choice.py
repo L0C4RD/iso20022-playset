@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._TradeDateCode3Choice import TradeDateCode3Choice
@@ -35,4 +38,3 @@ class TradeDate8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtCd', type=TradeDateCode3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

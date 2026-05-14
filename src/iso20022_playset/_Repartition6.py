@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._FinancialInstrument87 import FinancialInstrument87
@@ -50,4 +53,3 @@ class Repartition6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrm', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=UnitsOrAmountOrPercentage1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

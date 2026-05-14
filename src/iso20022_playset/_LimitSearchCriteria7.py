@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
@@ -167,4 +170,3 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UsdAmt', type=ActiveAmountRange3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsdPctg', type=PercentageRange1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

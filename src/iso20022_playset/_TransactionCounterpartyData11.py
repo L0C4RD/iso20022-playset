@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
 from ._PartyIdentification236Choice import PartyIdentification236Choice
@@ -92,4 +95,3 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmPties', type=SettlementParties34Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

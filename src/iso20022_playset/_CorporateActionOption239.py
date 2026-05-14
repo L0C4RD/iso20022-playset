@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
@@ -227,4 +230,3 @@ class CorporateActionOption239(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlElgblBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UinstdBal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=None, array=False),
 	))
-

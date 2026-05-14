@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
 from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
@@ -95,4 +98,3 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 		base_types.FieldEntry(name='StgInstrTp', type=StandingInstructionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentDescription3, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InstructionProcessingStatus45Choice import InstructionProcessingStatus45Choice
 from ._MatchingStatus32Choice import MatchingStatus32Choice
@@ -79,4 +82,3 @@ class Status39Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus31Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

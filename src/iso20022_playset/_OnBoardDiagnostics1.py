@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max10NumberFraction2 import Max10NumberFraction2
 from ._Max12NumericText import Max12NumericText
@@ -278,4 +281,3 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RfrgrtnHrs', type=Max10NumberFraction2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RfrgrtnTmprtr', type=Max6NumberFraction2, min=0, max=1, mutex_group=None, array=False),
 	))
-

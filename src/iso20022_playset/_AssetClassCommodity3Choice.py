@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassCommodityAgricultural1Choice import AssetClassCommodityAgricultural1Choice
 from ._AssetClassCommodityEnergy1Choice import AssetClassCommodityEnergy1Choice
@@ -215,4 +218,3 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Plprpln', type=AssetClassCommodityPolypropylene1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Ppr', type=AssetClassCommodityPaper1Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

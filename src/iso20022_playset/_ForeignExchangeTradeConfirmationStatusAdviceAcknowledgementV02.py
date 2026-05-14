@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation5 import AdditionalInformation5
 from ._AffirmStatus1Code import AffirmStatus1Code
@@ -154,4 +157,3 @@ class ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02(base_types.
 		base_types.FieldEntry(name='TradId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgMd', type=TradingModeType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

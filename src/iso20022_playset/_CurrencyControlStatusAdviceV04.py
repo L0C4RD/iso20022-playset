@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencyControlGroupStatus3 import CurrencyControlGroupStatus3
 from ._CurrencyControlHeader7 import CurrencyControlHeader7
@@ -65,4 +68,3 @@ class CurrencyControlStatusAdviceV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PackgSts', type=CurrencyControlPackageStatus3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

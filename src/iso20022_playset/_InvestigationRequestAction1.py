@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InvestigationActionReason1 import InvestigationActionReason1
 from ._InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
@@ -35,4 +38,3 @@ class InvestigationRequestAction1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Actn', type=InvestigationRequestAction1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ActnRsn', type=InvestigationActionReason1, min=0, max=1, mutex_group=None, array=False),
 	))
-

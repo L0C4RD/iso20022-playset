@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardTransaction3Choice import CardTransaction3Choice
 from ._CashAccount40 import CashAccount40
@@ -65,4 +68,3 @@ class CardTransaction18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrePdAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardTransaction3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

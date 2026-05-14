@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max2048Text import Max2048Text
 from ._NameAndAddress16 import NameAndAddress16
@@ -50,4 +53,3 @@ class RemittanceLocationData1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Mtd', type=RemittanceLocationMethod2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=NameAndAddress16, min=0, max=1, mutex_group=None, array=False),
 	))
-

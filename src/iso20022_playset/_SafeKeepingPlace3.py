@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
 from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
@@ -35,4 +38,3 @@ class SafeKeepingPlace3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlcFrmt', type=SafekeepingPlaceFormat29Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

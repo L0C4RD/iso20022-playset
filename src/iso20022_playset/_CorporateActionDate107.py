@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BorrowerLendingDeadline6 import BorrowerLendingDeadline6
 from ._DateFormat49Choice import DateFormat49Choice
@@ -162,4 +165,3 @@ class CorporateActionDate107(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StockLndgDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

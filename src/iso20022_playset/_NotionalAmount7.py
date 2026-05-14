@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
@@ -49,4 +52,3 @@ class NotionalAmount7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AmtInFct', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WghtdAvrgDlta', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
-

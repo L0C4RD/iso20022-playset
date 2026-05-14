@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DefinedAttributes1Choice import DefinedAttributes1Choice
 from ._FinancialInstrumentAttributes88 import FinancialInstrumentAttributes88
@@ -35,4 +38,3 @@ class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtrctAttrbts', type=FinancialInstrumentAttributes88, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DfndAttrbts', type=DefinedAttributes1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

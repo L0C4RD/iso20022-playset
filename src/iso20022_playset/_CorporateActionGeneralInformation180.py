@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
 from ._FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
@@ -64,4 +67,3 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes132, min=0, max=1, mutex_group=None, array=False),
 	))
-

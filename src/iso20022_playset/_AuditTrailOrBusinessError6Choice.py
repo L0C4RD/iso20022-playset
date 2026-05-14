@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuditTrail1 import AuditTrail1
 from ._ErrorHandling5 import ErrorHandling5
@@ -35,4 +38,3 @@ class AuditTrailOrBusinessError6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AudtTrl', type=AuditTrail1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 	))
-

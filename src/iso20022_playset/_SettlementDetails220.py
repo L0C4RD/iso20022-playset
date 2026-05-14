@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AutomaticBorrowing6Choice import AutomaticBorrowing6Choice
 from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
@@ -466,4 +469,3 @@ class SettlementDetails220(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Trckg', type=Tracking4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType25Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

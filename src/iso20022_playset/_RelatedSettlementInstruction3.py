@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection110 import AmountAndDirection110
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
@@ -168,4 +171,3 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradDt', type=TradeDate8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=0, max=1, mutex_group=None, array=False),
 	))
-

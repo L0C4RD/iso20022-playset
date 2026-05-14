@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._AdditionalServiceType3Code import AdditionalServiceType3Code
@@ -65,4 +68,3 @@ class AdditionalService3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubTp', type=Max10Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=AdditionalServiceType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
 from ._ISINOct2015Identifier import ISINOct2015Identifier
@@ -35,4 +38,3 @@ class FinancialInstrument46Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

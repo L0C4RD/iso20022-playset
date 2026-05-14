@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCustomerProfile6 import ATMCustomerProfile6
 from ._CardholderAuthentication8 import CardholderAuthentication8
@@ -65,4 +68,3 @@ class ATMCustomer8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SelctdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

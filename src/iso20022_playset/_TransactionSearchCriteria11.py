@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccountEntrySearch8 import CashAccountEntrySearch8
 from ._PaymentSearch10 import PaymentSearch10
@@ -64,4 +67,3 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtSch', type=PaymentSearch10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtTo', type=SystemSearch5, min=0, max=None, mutex_group=None, array=True),
 	))
-

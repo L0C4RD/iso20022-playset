@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DetailedAbnormalValuesStatistics4Choice import DetailedAbnormalValuesStatistics4Choice
 from ._DetailedMissingMarginInformationStatistics4Choice import DetailedMissingMarginInformationStatistics4Choice
@@ -65,4 +68,3 @@ class DetailedStatisticsPerCounterparty17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MssngValtn', type=DetailedMissingValuationsStatistics4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
-

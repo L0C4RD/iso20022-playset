@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection5 import AmountAndDirection5
 from ._CashAccount40 import CashAccount40
@@ -122,4 +125,3 @@ class MovementRecord2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmAgt', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmAgtAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),
 	))
-

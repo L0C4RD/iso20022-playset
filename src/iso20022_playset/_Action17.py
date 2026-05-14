@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage11 import ActionMessage11
 from ._ActionType15Code import ActionType15Code
@@ -80,4 +83,3 @@ class Action17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rtry', type=ProcessRetry3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmCond', type=ProcessTiming6, min=0, max=1, mutex_group=None, array=False),
 	))
-

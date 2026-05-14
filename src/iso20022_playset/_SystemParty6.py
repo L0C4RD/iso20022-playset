@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Contact14 import Contact14
 from ._ISODate import ISODate
@@ -184,4 +187,3 @@ class SystemParty6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TechAdr', type=TechnicalIdentification2Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=SystemPartyType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

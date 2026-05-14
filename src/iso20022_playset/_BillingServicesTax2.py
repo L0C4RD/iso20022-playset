@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection34 import AmountAndDirection34
 from ._DecimalNumber import DecimalNumber
@@ -65,4 +68,3 @@ class BillingServicesTax2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PricgAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),
 	))
-

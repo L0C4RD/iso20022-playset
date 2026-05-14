@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Percentage14Rate import Percentage14Rate
 from ._RateAndAmountFormat66Choice import RateAndAmountFormat66Choice
@@ -151,4 +154,3 @@ class CorporateActionRate132(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxCdtRate', type=RateFormat28Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat66Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

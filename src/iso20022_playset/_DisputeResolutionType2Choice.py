@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DisputeResolutionType2Code import DisputeResolutionType2Code
 from ._GenericIdentification30 import GenericIdentification30
@@ -35,4 +38,3 @@ class DisputeResolutionType2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=DisputeResolutionType2Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 	))
-

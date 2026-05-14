@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FixedRate10 import FixedRate10
 from ._FloatingRate13 import FloatingRate13
@@ -35,4 +38,3 @@ class InterestRate33Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Fltg', type=FloatingRate13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Fxd', type=FixedRate10, min=0, max=1, mutex_group=1, array=False),
 	))
-

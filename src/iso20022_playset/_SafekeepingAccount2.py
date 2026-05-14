@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
 from ._Intermediary11 import Intermediary11
@@ -108,4 +111,3 @@ class SafekeepingAccount2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrmyInf', type=Intermediary11, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

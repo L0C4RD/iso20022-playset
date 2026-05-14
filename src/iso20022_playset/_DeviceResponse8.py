@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._DeviceDisplayResponse2 import DeviceDisplayResponse2
@@ -185,4 +188,3 @@ class DeviceResponse8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcCntt', type=RetailerService9Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrnsmssnRspn', type=DeviceTransmitMessageResponse1, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommand7 import ATMCommand7
 from ._ATMEnvironment6 import ATMEnvironment6
@@ -35,4 +38,3 @@ class ATMDiagnosticResponse2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
 	))
-

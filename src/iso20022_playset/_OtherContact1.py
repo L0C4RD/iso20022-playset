@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max128Text import Max128Text
 from ._Max4Text import Max4Text
@@ -35,4 +38,3 @@ class OtherContact1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ChanlTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=Max128Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

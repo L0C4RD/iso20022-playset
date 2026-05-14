@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._ISODateTime import ISODateTime
@@ -95,4 +98,3 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgPrd', type=Period11Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMDevice2Code import ATMDevice2Code
 from ._ATMEquipment1 import ATMEquipment1
@@ -138,4 +141,3 @@ class AutomatedTellerMachine11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LctnCtgy', type=TransactionEnvironment2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

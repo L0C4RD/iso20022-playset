@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialIdentificationSchemeName1Choice import FinancialIdentificationSchemeName1Choice
 from ._Max35Text import Max35Text
@@ -49,4 +52,3 @@ class GenericFinancialIdentification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=FinancialIdentificationSchemeName1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

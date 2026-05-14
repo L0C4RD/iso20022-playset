@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BankTransactionCodeStructure5 import BankTransactionCodeStructure5
 from ._ProprietaryBankTransactionCodeStructure1 import ProprietaryBankTransactionCodeStructure1
@@ -35,4 +38,3 @@ class BankTransactionCodeStructure4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Domn', type=BankTransactionCodeStructure5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryBankTransactionCodeStructure1, min=0, max=1, mutex_group=None, array=False),
 	))
-

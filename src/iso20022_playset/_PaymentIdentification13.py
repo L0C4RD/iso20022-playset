@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._UUIDv4Identifier import UUIDv4Identifier
@@ -77,4 +80,3 @@ class PaymentIdentification13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
-

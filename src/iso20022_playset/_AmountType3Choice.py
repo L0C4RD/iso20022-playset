@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._EquivalentAmount2 import EquivalentAmount2
@@ -35,4 +38,3 @@ class AmountType3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EqvtAmt', type=EquivalentAmount2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InstdAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CertificationType1Choice import CertificationType1Choice
 from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
@@ -211,4 +214,3 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SrcOfWlth', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtngPty', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

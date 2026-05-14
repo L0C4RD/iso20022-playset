@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DatePeriod3Choice import DatePeriod3Choice
 from ._PartyAuditTrailOrError4Choice import PartyAuditTrailOrError4Choice
@@ -50,4 +53,3 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyAudtTrlOrErr', type=PartyAuditTrailOrError4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
-

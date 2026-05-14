@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalProductInformation3 import AdditionalProductInformation3
 from ._CashAccount205 import CashAccount205
@@ -408,4 +411,3 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Vrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

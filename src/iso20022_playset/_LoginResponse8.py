@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage12 import ActionMessage12
 from ._ISODateTime import ISODateTime
@@ -65,4 +68,3 @@ class LoginResponse8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='POIDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='POISftwr', type=PointOfInteractionComponent18, min=1, max=None, mutex_group=None, array=True),
 	))
-

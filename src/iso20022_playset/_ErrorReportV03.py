@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Count1 import Count1
 from ._DocumentIdentification3 import DocumentIdentification3
@@ -139,4 +142,3 @@ class ErrorReportV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxSts', type=TransactionStatus4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=1, mutex_group=None, array=False),
 	))
-

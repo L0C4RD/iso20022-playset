@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionStandingInstructionCancellationProcessingStatus1 import CorporateActionStandingInstructionCancellationProcessingStatus1
 from ._CorporateActionStandingInstructionCancellationRejectionStatus1 import CorporateActionStandingInstructionCancellationRejectionStatus1
@@ -35,4 +38,3 @@ class StandingInstructionCancellationStatus1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionStandingInstructionCancellationProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionStandingInstructionCancellationRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
-

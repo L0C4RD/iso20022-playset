@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max210Text import Max210Text
 from ._RejectionAndRepairReason25Choice import RejectionAndRepairReason25Choice
@@ -35,4 +38,3 @@ class RejectionOrRepairReason25(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=RejectionAndRepairReason25Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

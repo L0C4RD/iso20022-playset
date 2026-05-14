@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Linkages52 import Linkages52
 from ._OtherParties45 import OtherParties45
@@ -65,4 +68,3 @@ class SecuritiesTradeConfirmationCancellationV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Refs', type=Linkages52, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

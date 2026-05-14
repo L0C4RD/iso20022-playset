@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DatePeriod2 import DatePeriod2
 from ._DecimalNumber import DecimalNumber
@@ -63,4 +66,3 @@ class PerformanceFactors5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CorpActnFctr', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NrmlPrfrmnc', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
-

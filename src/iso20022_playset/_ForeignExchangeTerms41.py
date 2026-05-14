@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BaseOne14Rate import BaseOne14Rate
@@ -64,4 +67,3 @@ class ForeignExchangeTerms41(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UnitCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOne14Rate, min=1, max=1, mutex_group=None, array=False),
 	))
-

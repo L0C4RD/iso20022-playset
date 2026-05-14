@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDataReading8Code import CardDataReading8Code
 from ._ICCResetData1 import ICCResetData1
@@ -50,4 +53,3 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CardNtryMd', type=CardDataReading8Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ICCRstData', type=ICCResetData1, min=0, max=1, mutex_group=None, array=False),
 	))
-

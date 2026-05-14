@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 
@@ -34,4 +37,3 @@ class CompareISINIdentifier4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BranchData2 import BranchData2
 from ._FinancialInstitutionIdentification8 import FinancialInstitutionIdentification8
@@ -35,4 +38,3 @@ class BranchAndFinancialInstitutionIdentification5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BrnchId', type=BranchData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
-

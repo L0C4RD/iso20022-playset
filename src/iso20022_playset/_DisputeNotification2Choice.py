@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DisputeNotification2 import DisputeNotification2
 from ._SegregatedIndependentAmountDispute2 import SegregatedIndependentAmountDispute2
@@ -35,4 +38,3 @@ class DisputeNotification2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DsptNtfctnDtls', type=DisputeNotification2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SgrtdIndpdntAmtDsptDtls', type=SegregatedIndependentAmountDispute2, min=0, max=1, mutex_group=1, array=False),
 	))
-

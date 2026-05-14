@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalPartyRelationshipType1Code import ExternalPartyRelationshipType1Code
 from ._Max100Text import Max100Text
@@ -35,4 +38,3 @@ class TradeCounterpartyRelationship1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=ExternalPartyRelationshipType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max100Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

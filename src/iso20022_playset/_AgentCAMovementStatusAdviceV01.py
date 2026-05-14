@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionInformation1 import CorporateActionInformation1
 from ._CorporateActionMovementStatus1Choice import CorporateActionMovementStatus1Choice
@@ -121,4 +124,3 @@ class AgentCAMovementStatusAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MvmntCxlStsDtls', type=CorporateMovementStatus2, min=0, max=1, mutex_group=2, array=False),
 		base_types.FieldEntry(name='MvmntStsDtls', type=CorporateActionMovementStatus1Choice, min=0, max=1, mutex_group=2, array=False),
 	))
-

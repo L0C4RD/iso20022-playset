@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GDPRDataConsent1Choice import GDPRDataConsent1Choice
 from ._ISODate import ISODate
@@ -50,4 +53,3 @@ class GDPRData1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CnsntInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnsntTp', type=GDPRDataConsent1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

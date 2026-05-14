@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount17 import CashAccount17
 from ._Max350Text import Max350Text
@@ -65,4 +68,3 @@ class CorporateActionStandingInstruction1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NetOrGrss', type=StandingInstructionGrossNet1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesDstrbtnDtls', type=SecuritiesAccount6, min=0, max=1, mutex_group=1, array=False),
 	))
-

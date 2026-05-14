@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProcessingStatus68Choice import ProcessingStatus68Choice
 from ._ProprietaryReason4 import ProprietaryReason4
@@ -50,4 +53,3 @@ class IntraBalanceStatusType2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sttld', type=ProprietaryReason4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus26Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

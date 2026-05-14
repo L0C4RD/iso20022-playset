@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Demand1 import Demand1
 from ._Max2000Text import Max2000Text
@@ -50,4 +53,3 @@ class UndertakingDemandV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgDmndDtls', type=Demand1, min=1, max=1, mutex_group=None, array=False),
 	))
-

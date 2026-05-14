@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceFormat88Choice import PriceFormat88Choice
 from ._PriceFormat89Choice import PriceFormat89Choice
@@ -50,4 +53,3 @@ class PriceDetails42(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat89Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GncCshPricRcvdPerPdct', type=PriceFormat90Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

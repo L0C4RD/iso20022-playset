@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
 from ._Max50Text import Max50Text
@@ -166,4 +169,3 @@ class OrderInstructionData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RtgStrtgy', type=Max50Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SlfExctnPrvntn', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMSecurityConfiguration2 import ATMSecurityConfiguration2
 from ._ATMSecurityConfiguration3 import ATMSecurityConfiguration3
@@ -110,4 +113,3 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ncrptn', type=ATMSecurityConfiguration3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PIN', type=ATMSecurityConfiguration5, min=0, max=1, mutex_group=None, array=False),
 	))
-

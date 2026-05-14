@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
@@ -288,4 +291,3 @@ class Transfer36(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrfRsn', type=TransferReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsDtls', type=Unit12, min=0, max=None, mutex_group=None, array=True),
 	))
-

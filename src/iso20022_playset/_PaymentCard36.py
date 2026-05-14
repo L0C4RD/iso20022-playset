@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDataReading1Code import CardDataReading1Code
 from ._ContentInformationType10 import ContentInformationType10
@@ -95,4 +98,3 @@ class PaymentCard36(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PlainCardData', type=PlainCardData25, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdCardData', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 	))
-

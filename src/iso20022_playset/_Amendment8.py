@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._Max4AlphaNumericText import Max4AlphaNumericText
@@ -64,4 +67,3 @@ class Amendment8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Issr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

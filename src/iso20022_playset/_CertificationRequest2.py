@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CertificateIssuer1 import CertificateIssuer1
 from ._Number import Number
@@ -65,4 +68,3 @@ class CertificationRequest2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SbjtPblcKeyInf', type=PublicRSAKey2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

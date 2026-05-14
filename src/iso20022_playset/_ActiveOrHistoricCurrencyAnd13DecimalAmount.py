@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 
@@ -14,4 +17,3 @@ class ActiveOrHistoricCurrencyAnd13DecimalAmount(base_types._BaseDataType_Decima
 	_max_totaldigits = 18
 	_max_fractiondigits = 13
 	_min_inclusive = 0
-

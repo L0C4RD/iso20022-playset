@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GracePeriodUnitType1Code import GracePeriodUnitType1Code
 from ._Max35Text import Max35Text
@@ -50,4 +53,3 @@ class GracePeriod1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tm', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitTp', type=GracePeriodUnitType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

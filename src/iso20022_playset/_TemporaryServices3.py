@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._Amount12 import Amount12
@@ -340,4 +343,3 @@ class TemporaryServices3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TmSheet', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WkEndg', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

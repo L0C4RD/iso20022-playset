@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PostalAddress28 import PostalAddress28
 
@@ -34,4 +37,3 @@ class UpdateLogAddress2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='New', type=PostalAddress28, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Od', type=PostalAddress28, min=1, max=1, mutex_group=None, array=False),
 	))
-

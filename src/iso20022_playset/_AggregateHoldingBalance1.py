@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentAggregateBalance1 import FinancialInstrumentAggregateBalance1
 from ._FormOfSecurity1Code import FormOfSecurity1Code
@@ -80,4 +83,3 @@ class AggregateHoldingBalance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='HldgPhysTp', type=PhysicalTransferType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

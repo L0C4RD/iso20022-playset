@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference14 import AdditionalReference14
 
@@ -48,4 +51,3 @@ class LinkedMessage6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference14, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference14, min=0, max=1, mutex_group=1, array=False),
 	))
-

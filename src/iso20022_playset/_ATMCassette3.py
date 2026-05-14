@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCassetteCounters6 import ATMCassetteCounters6
 from ._ATMCassetteStatus1Code import ATMCassetteStatus1Code
@@ -123,4 +126,3 @@ class ATMCassette3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubTp', type=ATMNoteType1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=ATMCassetteType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

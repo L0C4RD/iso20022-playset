@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 import re
 import defusedxml.ElementTree as ET
 import xml.etree.ElementTree as ETree
@@ -78,5 +81,3 @@ def __extract_nsinfo__(node):
 		normalised_msgtype = None if msgtype is None else msgtype.replace(".", "_").upper()
 
 		return __node_info__(ns, msgtype, tagname, normalised_msgtype, node.text)
-
-

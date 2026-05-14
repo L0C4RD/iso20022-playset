@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesIndexReport1 import SecuritiesIndexReport1
 from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
@@ -50,4 +53,3 @@ class FinancialInstrumentReportingReferenceDataIndexReportV01(base_types._BaseFi
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

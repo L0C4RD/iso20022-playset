@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._PriceValueAndRate4 import PriceValueAndRate4
@@ -64,4 +67,3 @@ class PriceInformation10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvsPric', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=TypeOfPrice27Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

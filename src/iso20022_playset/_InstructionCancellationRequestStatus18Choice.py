@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancelledStatus14Choice import CancelledStatus14Choice
 from ._NoSpecifiedReason1 import NoSpecifiedReason1
@@ -80,4 +83,3 @@ class InstructionCancellationRequestStatus18Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus54Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

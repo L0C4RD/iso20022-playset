@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max10000Binary import Max10000Binary
 from ._Max256Text import Max256Text
@@ -138,4 +141,3 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prxy', type=NetworkParameters8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

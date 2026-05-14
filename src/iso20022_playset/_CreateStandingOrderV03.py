@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageHeader1 import MessageHeader1
 from ._StandingOrder10 import StandingOrder10
@@ -65,4 +68,3 @@ class CreateStandingOrderV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValSet', type=StandingOrder10, min=1, max=1, mutex_group=None, array=False),
 	))
-

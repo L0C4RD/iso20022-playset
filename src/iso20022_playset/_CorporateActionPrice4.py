@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceFormat2Choice import PriceFormat2Choice
 
@@ -34,4 +37,3 @@ class CorporateActionPrice4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndctvPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

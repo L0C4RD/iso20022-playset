@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max350Text import Max350Text
 from ._OrderWaiverReason3Choice import OrderWaiverReason3Choice
@@ -35,4 +38,3 @@ class OrderWaiver1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InfVal', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrWvrRsn', type=OrderWaiverReason3Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

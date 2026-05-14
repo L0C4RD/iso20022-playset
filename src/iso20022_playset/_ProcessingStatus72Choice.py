@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
 from ._Reason18Choice import Reason18Choice
@@ -78,4 +81,3 @@ class ProcessingStatus72Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=Reason18Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

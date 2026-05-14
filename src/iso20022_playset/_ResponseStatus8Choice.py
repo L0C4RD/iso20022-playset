@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ConsentStatus5Choice import ConsentStatus5Choice
 from ._PendingStatus20Choice import PendingStatus20Choice
@@ -50,4 +53,3 @@ class ResponseStatus8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pdg', type=PendingStatus20Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus27Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

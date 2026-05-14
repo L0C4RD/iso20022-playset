@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralMarginCorrection6 import CollateralMarginCorrection6
 from ._CollateralMarginError4 import CollateralMarginError4
@@ -64,4 +67,3 @@ class TradeReport21Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='New', type=CollateralMarginCorrection6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TradUpd', type=CollateralMarginMarginUpdate5, min=0, max=1, mutex_group=1, array=False),
 	))
-

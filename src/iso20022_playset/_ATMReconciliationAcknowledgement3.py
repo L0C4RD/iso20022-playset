@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMTransaction52 import ATMTransaction52
 from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
@@ -35,4 +38,3 @@ class ATMReconciliationAcknowledgement3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction52, min=1, max=1, mutex_group=None, array=False),
 	))
-

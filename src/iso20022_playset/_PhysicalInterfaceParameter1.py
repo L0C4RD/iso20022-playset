@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max2KBinary import Max2KBinary
 from ._Max35Binary import Max35Binary
@@ -93,4 +96,3 @@ class PhysicalInterfaceParameter1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctyPrfl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

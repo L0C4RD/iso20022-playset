@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcquirerHostConfiguration10 import AcquirerHostConfiguration10
 from ._AcquirerProtocolExchangeBehavior2 import AcquirerProtocolExchangeBehavior2
@@ -353,4 +356,3 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlsPerCcy', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

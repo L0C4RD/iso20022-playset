@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification118Choice import PartyIdentification118Choice
 from ._PositionAccount1 import PositionAccount1
@@ -35,4 +38,3 @@ class MarginAccount1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=PartyIdentification118Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PosAcct', type=PositionAccount1, min=1, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IssuerAndSerialNumber2 import IssuerAndSerialNumber2
 from ._Max140Binary import Max140Binary
@@ -35,4 +38,3 @@ class Recipient13Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IssrAndSrlNb', type=IssuerAndSerialNumber2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SbjtKeyIdr', type=Max140Binary, min=0, max=1, mutex_group=1, array=False),
 	))
-

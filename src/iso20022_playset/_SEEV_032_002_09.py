@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventProcessingStatusAdvice002V09 import CorporateActionEventProcessingStatusAdvice002V09
 
@@ -22,4 +25,3 @@ class SEEV_032_002_09():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnEvtPrcgStsAdvc', type=CorporateActionEventProcessingStatusAdvice002V09, min=1, max=1, mutex_group=None, array=False),
 		))
-

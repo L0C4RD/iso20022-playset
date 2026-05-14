@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._Amount22 import Amount22
@@ -139,4 +142,3 @@ class TelecomServices3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LineItm', type=TelecomServicesLineItem3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlTax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentIdentification7Choice import FinancialInstrumentIdentification7Choice
 
@@ -34,4 +37,3 @@ class SwapLegIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SwpIn', type=FinancialInstrumentIdentification7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SwpOut', type=FinancialInstrumentIdentification7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

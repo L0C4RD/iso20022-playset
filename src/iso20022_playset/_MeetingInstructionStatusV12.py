@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EligiblePosition17 import EligiblePosition17
 from ._InstructionType2Choice import InstructionType2Choice
@@ -139,4 +142,3 @@ class MeetingInstructionStatusV12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VoteCstgPty', type=PartyIdentification226Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

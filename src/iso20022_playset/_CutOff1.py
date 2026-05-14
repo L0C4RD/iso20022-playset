@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DateOffsetText import DateOffsetText
@@ -65,4 +68,3 @@ class CutOff1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CutOffUpdId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDtOffset', type=DateOffsetText, min=1, max=1, mutex_group=None, array=False),
 	))
-

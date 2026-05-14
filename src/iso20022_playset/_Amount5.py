@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
 from ._PlusOrMinusIndicator import PlusOrMinusIndicator
@@ -35,4 +38,3 @@ class Amount5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

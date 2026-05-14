@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Period7Choice import Period7Choice
@@ -35,4 +38,3 @@ class DateAndPeriod3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmtDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='StmtPrd', type=Period7Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

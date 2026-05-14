@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType123Choice import CorporateActionEventType123Choice
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
@@ -93,4 +96,3 @@ class CorporateActionGeneralInformation193(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrctnlQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

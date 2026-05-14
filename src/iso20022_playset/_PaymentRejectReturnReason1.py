@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max105Text import Max105Text
 from ._ReturnReason5Choice import ReturnReason5Choice
@@ -35,4 +38,3 @@ class PaymentRejectReturnReason1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Rsn', type=ReturnReason5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

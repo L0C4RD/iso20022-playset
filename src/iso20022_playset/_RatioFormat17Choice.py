@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountToAmountRatio2 import AmountToAmountRatio2
 from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
@@ -50,4 +53,3 @@ class RatioFormat17Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=1, array=False),
 	))
-

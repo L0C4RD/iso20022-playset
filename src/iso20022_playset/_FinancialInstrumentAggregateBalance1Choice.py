@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentAggregateBalance2 import FinancialInstrumentAggregateBalance2
 from ._YesNoIndicator import YesNoIndicator
@@ -35,4 +38,3 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='HldgBal', type=FinancialInstrumentAggregateBalance2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='HldgsInd', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
-

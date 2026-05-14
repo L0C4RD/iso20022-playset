@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage12 import ActionMessage12
 from ._Max140Text import Max140Text
@@ -65,4 +68,3 @@ class AbortData7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxSucss', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

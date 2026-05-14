@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NameAndAddress9 import NameAndAddress9
 from ._VoteInstructionType1Choice import VoteInstructionType1Choice
@@ -35,4 +38,3 @@ class VoteInstructionForMeetingResolution3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Shrhldr', type=NameAndAddress9, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='VoteIndctn', type=VoteInstructionType1Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

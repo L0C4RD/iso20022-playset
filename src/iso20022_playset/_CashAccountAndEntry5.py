@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount43 import CashAccount43
 from ._CashEntry2 import CashEntry2
@@ -35,4 +38,3 @@ class CashAccountAndEntry5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ntry', type=CashEntry2, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LegalOrganisation2 import LegalOrganisation2
 from ._PartyIdentification272 import PartyIdentification272
@@ -50,4 +53,3 @@ class TradeParty6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxPty', type=TaxParty4, min=0, max=None, mutex_group=None, array=True),
 	))
-

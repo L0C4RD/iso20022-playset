@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AffirmationStatus9Choice import AffirmationStatus9Choice
 from ._AllocationSatus4Choice import AllocationSatus4Choice
@@ -214,4 +217,3 @@ class Status22Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmCondModSts', type=SettlementConditionModificationStatus4Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus25Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

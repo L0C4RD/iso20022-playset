@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InstructionProcessingStatus6 import InstructionProcessingStatus6
 from ._PendingStatus70Choice import PendingStatus70Choice
@@ -50,4 +53,3 @@ class InstructionStatus13Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgSts', type=InstructionProcessingStatus6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus55Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

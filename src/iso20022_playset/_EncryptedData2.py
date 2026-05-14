@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EncryptedDataElement2 import EncryptedDataElement2
 from ._Exact1HexBinaryText import Exact1HexBinaryText
@@ -152,4 +155,3 @@ class EncryptedData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NcrptdFrmt', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PddgMtd', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Pagination1 import Pagination1
 from ._PartyIdentification253Choice import PartyIdentification253Choice
@@ -95,4 +98,3 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmtDtls', type=TradeLegStatement4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StmtParams', type=Statement86, min=1, max=1, mutex_group=None, array=False),
 	))
-

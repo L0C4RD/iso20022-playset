@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification192 import PartyIdentification192
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
@@ -49,4 +52,3 @@ class AdditionalReference12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ref', type=RestrictedFINXMax35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RefIssr', type=PartyIdentification192, min=0, max=1, mutex_group=None, array=False),
 	))
-

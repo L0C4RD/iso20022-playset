@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationReason16Choice import CancellationReason16Choice
 from ._DatePeriod2 import DatePeriod2
@@ -95,4 +98,3 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RgltryData', type=InvoiceLegalIssue5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svc', type=SystemAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 	))
-

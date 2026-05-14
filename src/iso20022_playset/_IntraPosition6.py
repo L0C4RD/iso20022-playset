@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
@@ -109,4 +112,3 @@ class IntraPosition6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

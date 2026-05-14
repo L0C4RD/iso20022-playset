@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Account34 import Account34
 from ._ContactIdentification2 import ContactIdentification2
@@ -65,4 +68,3 @@ class Intermediary48(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Role', type=Role8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

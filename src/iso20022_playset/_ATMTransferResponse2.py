@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMContext19 import ATMContext19
 from ._ATMEnvironment21 import ATMEnvironment21
@@ -50,4 +53,3 @@ class ATMTransferResponse2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment21, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=ATMTransaction39, min=1, max=1, mutex_group=None, array=False),
 	))
-

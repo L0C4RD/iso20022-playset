@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommand7Code import ATMCommand7Code
 from ._ATMCommandIdentification1 import ATMCommandIdentification1
@@ -124,4 +127,3 @@ class ATMCommand14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TracRsn', type=ATMCommandReason1Code, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Urgcy', type=TMSContactLevel2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

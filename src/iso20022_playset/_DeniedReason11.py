@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeniedReason16Choice import DeniedReason16Choice
 from ._Max210Text import Max210Text
@@ -35,4 +38,3 @@ class DeniedReason11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Cd', type=DeniedReason16Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

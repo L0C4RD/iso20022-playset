@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
 from ._CountryCode import CountryCode
@@ -124,4 +127,3 @@ class PartyIdentificationAndAccount197(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

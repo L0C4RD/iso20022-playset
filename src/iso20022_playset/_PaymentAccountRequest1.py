@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardAccountType3Code import CardAccountType3Code
 from ._CustomerOrder1 import CustomerOrder1
@@ -50,4 +53,3 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctTp', type=CardAccountType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification1 import AccountIdentification1
 from ._SecuritiesAccountPurposeType1Code import SecuritiesAccountPurposeType1Code
@@ -35,4 +38,3 @@ class AccountIdentificationAndPurpose(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=AccountIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Purp', type=SecuritiesAccountPurposeType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

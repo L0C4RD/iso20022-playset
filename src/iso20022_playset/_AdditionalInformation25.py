@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification36 import GenericIdentification36
 from ._Max350Text import Max350Text
@@ -64,4 +67,3 @@ class AdditionalInformation25(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QryTp', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnRsn', type=RejectedReason33Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

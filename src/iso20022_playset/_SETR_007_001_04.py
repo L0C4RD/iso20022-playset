@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SubscriptionBulkOrderV04 import SubscriptionBulkOrderV04
 
@@ -22,4 +25,3 @@ class SETR_007_001_04():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SbcptBlkOrdr', type=SubscriptionBulkOrderV04, min=1, max=1, mutex_group=None, array=False),
 		))
-

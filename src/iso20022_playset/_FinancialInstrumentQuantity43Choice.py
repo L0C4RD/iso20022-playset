@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max30DecimalNumber import Max30DecimalNumber
 from ._Quantity5Code import Quantity5Code
@@ -79,4 +82,3 @@ class FinancialInstrumentQuantity43Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FaceAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
-

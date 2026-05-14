@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InformationQualify1Code import InformationQualify1Code
 from ._InputResultData6 import InputResultData6
@@ -50,4 +53,3 @@ class InputResult6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InfQlfr', type=InformationQualify1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InptRsltData', type=InputResultData6, min=1, max=1, mutex_group=None, array=False),
 	))
-

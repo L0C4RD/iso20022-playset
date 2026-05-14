@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AttendanceContext1Code import AttendanceContext1Code
 from ._CardDataReading1Code import CardDataReading1Code
@@ -166,4 +169,3 @@ class PaymentContext3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxChanl', type=TransactionChannel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxEnvt', type=TransactionEnvironment1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

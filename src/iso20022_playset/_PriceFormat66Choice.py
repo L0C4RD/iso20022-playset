@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountPrice3 import AmountPrice3
 from ._AmountPricePerAmount2 import AmountPricePerAmount2
@@ -95,4 +98,3 @@ class PriceFormat66Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NotSpcfdPric', type=PriceValueType9Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice1, min=0, max=1, mutex_group=1, array=False),
 	))
-

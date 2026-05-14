@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._Exact3NumericText import Exact3NumericText
@@ -65,4 +68,3 @@ class CurrencyDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Nm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NmrcCd', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

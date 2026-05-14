@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesAccount19 import SecuritiesAccount19
 from ._SecuritiesAccountOrBusinessError3Choice import SecuritiesAccountOrBusinessError3Choice
@@ -35,4 +38,3 @@ class SecuritiesAccountReport3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesAcctOrErr', type=SecuritiesAccountOrBusinessError3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

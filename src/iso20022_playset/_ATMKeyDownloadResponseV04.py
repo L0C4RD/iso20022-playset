@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMKeyDownloadResponse5 import ATMKeyDownloadResponse5
 from ._ContentInformationType10 import ContentInformationType10
@@ -65,4 +68,3 @@ class ATMKeyDownloadResponseV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdATMKeyDwnldRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType13, min=0, max=1, mutex_group=None, array=False),
 	))
-

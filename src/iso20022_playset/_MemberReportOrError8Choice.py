@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ErrorHandling3 import ErrorHandling3
 from ._Member7 import Member7
@@ -35,4 +38,3 @@ class MemberReportOrError8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mmb', type=Member7, min=0, max=1, mutex_group=1, array=False),
 	))
-

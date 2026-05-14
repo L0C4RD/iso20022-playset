@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationStatusReason5 import CancellationStatusReason5
 from ._Case6 import Case6
@@ -153,4 +156,3 @@ class OriginalGroupHeader23(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlNbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RslvdCase', type=Case6, min=0, max=1, mutex_group=None, array=False),
 	))
-

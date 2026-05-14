@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TotalDetails1Code import TotalDetails1Code
 from ._TotalFilter1 import TotalFilter1
@@ -35,4 +38,3 @@ class ReportGetTotalsRequest1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlDtls', type=TotalDetails1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFltr', type=TotalFilter1, min=0, max=1, mutex_group=None, array=False),
 	))
-

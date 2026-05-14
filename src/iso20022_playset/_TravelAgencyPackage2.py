@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CustomerReference1 import CustomerReference1
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -151,4 +154,3 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RsvatnNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

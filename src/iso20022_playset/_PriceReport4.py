@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceValuation5 import PriceValuation5
 
@@ -20,4 +23,3 @@ class PriceReport4(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricValtnDtls', type=PriceValuation5, min=1, max=None, mutex_group=None, array=True),
 	))
-

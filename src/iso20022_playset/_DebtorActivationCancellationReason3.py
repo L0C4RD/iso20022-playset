@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DebtorActivationCancellationReason1Choice import DebtorActivationCancellationReason1Choice
 from ._Max105Text import Max105Text
@@ -50,4 +53,3 @@ class DebtorActivationCancellationReason3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Orgtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=DebtorActivationCancellationReason1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._Max35Text import Max35Text
@@ -125,4 +128,3 @@ class SecuritiesSettlementTransactionModificationRequestStatusAdviceV07(base_typ
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails171, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications33, min=0, max=1, mutex_group=None, array=False),
 	))
-

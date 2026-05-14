@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ChargesDetails3 import ChargesDetails3
 from ._FreightCharges1Code import FreightCharges1Code
@@ -35,4 +38,3 @@ class Charge24(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Chrgs', type=ChargesDetails3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=FreightCharges1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

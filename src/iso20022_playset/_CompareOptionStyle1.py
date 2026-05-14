@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OptionStyle6Code import OptionStyle6Code
 
@@ -34,4 +37,3 @@ class CompareOptionStyle1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=OptionStyle6Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=OptionStyle6Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

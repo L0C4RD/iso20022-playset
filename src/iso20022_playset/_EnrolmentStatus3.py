@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorEnrolmentStatusReason3 import CreditorEnrolmentStatusReason3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -95,4 +98,3 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=ServiceStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=CreditorEnrolmentStatusReason3, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountDetails4 import AccountDetails4
 from ._AdditionalAmounts4 import AdditionalAmounts4
@@ -494,4 +497,3 @@ class ReversalResponseV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxChrtcs', type=TransactionCharacteristics1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification57, min=1, max=1, mutex_group=None, array=False),
 	))
-

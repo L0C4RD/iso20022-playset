@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditTransferContext1 import CreditTransferContext1
 from ._DirectDebitContext1 import DirectDebitContext1
@@ -65,4 +68,3 @@ class PaymentContext30(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtCntxt', type=PaymentContext29, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SaleCntxt', type=SaleContext4, min=0, max=1, mutex_group=None, array=False),
 	))
-

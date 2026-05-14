@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount27 import CashAccount27
 from ._DemandDocumentation1 import DemandDocumentation1
@@ -182,4 +185,3 @@ class Demand1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=DemandType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking6, min=1, max=1, mutex_group=None, array=False),
 	))
-

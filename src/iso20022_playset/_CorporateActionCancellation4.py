@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
 from ._CorporateActionEventStatus1 import CorporateActionEventStatus1
@@ -50,4 +53,3 @@ class CorporateActionCancellation4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CxlRsnCd', type=CorporateActionCancellationReason1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionEventStatus1, min=1, max=1, mutex_group=None, array=False),
 	))
-

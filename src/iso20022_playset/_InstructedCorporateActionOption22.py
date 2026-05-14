@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceFormat14Choice import BalanceFormat14Choice
 from ._CorporateActionEventDeadlines4 import CorporateActionEventDeadlines4
@@ -181,4 +184,3 @@ class InstructedCorporateActionOption22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OptnRtrdInstdBal', type=SignedQuantityFormat16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OptnTp', type=CorporateActionOption36Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

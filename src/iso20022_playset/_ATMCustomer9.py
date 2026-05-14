@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCustomerProfile2 import ATMCustomerProfile2
 from ._LanguageCode import LanguageCode
@@ -50,4 +53,3 @@ class ATMCustomer9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrefrdLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prfl', type=ATMCustomerProfile2, min=0, max=1, mutex_group=None, array=False),
 	))
-

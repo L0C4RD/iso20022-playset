@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentificationAndAccount177 import PartyIdentificationAndAccount177
 from ._PartyIdentificationAndAccount178 import PartyIdentificationAndAccount178
@@ -77,4 +80,3 @@ class CashParties38(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DbtrAgt', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Intrmy', type=PartyIdentificationAndAccount178, min=0, max=1, mutex_group=None, array=False),
 	))
-

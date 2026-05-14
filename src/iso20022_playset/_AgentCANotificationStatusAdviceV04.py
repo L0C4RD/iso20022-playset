@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AgentDocumentIdentificationAndStatus2Choice import AgentDocumentIdentificationAndStatus2Choice
 from ._CorporateActionGeneralInformation175 import CorporateActionGeneralInformation175
@@ -35,4 +38,3 @@ class AgentCANotificationStatusAdviceV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AgtDocIdAndSts', type=AgentDocumentIdentificationAndStatus2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation175, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountLevel1Code import AccountLevel1Code
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
@@ -50,4 +53,3 @@ class ParentCashAccount5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Lvl', type=AccountLevel1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
-

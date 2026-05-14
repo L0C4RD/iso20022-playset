@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CounterpartyData89 import CounterpartyData89
 from ._ISODateTime import ISODateTime
@@ -50,4 +53,3 @@ class CounterpartyData88(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptSubmitgNtty', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
-

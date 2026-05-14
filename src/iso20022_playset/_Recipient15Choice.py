@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._KEK9 import KEK9
 from ._KEKIdentifier7 import KEKIdentifier7
@@ -50,4 +53,3 @@ class Recipient15Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='KeyIdr', type=KEKIdentifier7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='KeyTrnsprt', type=KeyTransport10, min=0, max=1, mutex_group=1, array=False),
 	))
-

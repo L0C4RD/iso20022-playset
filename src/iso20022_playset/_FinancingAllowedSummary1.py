@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._CashAccount7 import CashAccount7
@@ -108,4 +111,3 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlAccptdItmsAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlFincdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SignedQuantityFormat10 import SignedQuantityFormat10
 from ._SignedQuantityFormat11 import SignedQuantityFormat11
@@ -49,4 +52,3 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NotElgblBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=1, array=False),
 	))
-

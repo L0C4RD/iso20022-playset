@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification38Choice import AccountIdentification38Choice
 from ._AmountAndForeignExchange1 import AmountAndForeignExchange1
@@ -124,4 +127,3 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tax', type=BillingTaxRecord2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlInvcAmt', type=AmountAndForeignExchange1, min=1, max=1, mutex_group=None, array=False),
 	))
-

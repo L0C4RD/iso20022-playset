@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountOpeningInstructionV08 import AccountOpeningInstructionV08
 
@@ -22,4 +25,3 @@ class ACMT_001_001_08():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctOpngInstr', type=AccountOpeningInstructionV08, min=1, max=1, mutex_group=None, array=False),
 		))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._DecimalNumberFraction5 import DecimalNumberFraction5
@@ -35,4 +38,3 @@ class NumberAndVolume2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Nb', type=DecimalNumberFraction5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vol', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

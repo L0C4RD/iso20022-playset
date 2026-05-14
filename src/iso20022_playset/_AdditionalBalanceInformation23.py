@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._SubBalanceQuantity9Choice import SubBalanceQuantity9Choice
@@ -50,4 +53,3 @@ class AdditionalBalanceInformation23(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType14Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

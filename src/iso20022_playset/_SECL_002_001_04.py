@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeLegNotificationCancellationV04 import TradeLegNotificationCancellationV04
 
@@ -22,4 +25,3 @@ class SECL_002_001_04():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TradLegNtfctnCxl', type=TradeLegNotificationCancellationV04, min=1, max=1, mutex_group=None, array=False),
 		))
-

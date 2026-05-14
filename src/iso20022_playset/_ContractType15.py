@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CFIOct2015Identifier import CFIOct2015Identifier
 from ._CountryCode import CountryCode
@@ -169,4 +172,3 @@ class ContractType15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UndrlygAsstTradgPltfmIdr', type=MICIdentifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygInstrm', type=SecurityIdentification41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

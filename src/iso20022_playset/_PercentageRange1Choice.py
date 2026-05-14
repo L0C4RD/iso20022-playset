@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FromToPercentageRange1 import FromToPercentageRange1
 from ._PercentageRangeBoundary1 import PercentageRangeBoundary1
@@ -78,4 +81,3 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NEQ', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='To', type=PercentageRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
 	))
-

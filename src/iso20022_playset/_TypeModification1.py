@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccountType2Choice import CashAccountType2Choice
 from ._Modification1Code import Modification1Code
@@ -35,4 +38,3 @@ class TypeModification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CashAccountType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

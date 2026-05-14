@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AmountAndDirection106 import AmountAndDirection106
@@ -50,4 +53,3 @@ class NotionalAmount6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchdlPrd', type=Schedule11, min=0, max=None, mutex_group=None, array=True),
 	))
-

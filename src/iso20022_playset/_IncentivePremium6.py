@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat3Choice import DateFormat3Choice
 from ._IncentivePremiumType2Choice import IncentivePremiumType2Choice
@@ -65,4 +68,3 @@ class IncentivePremium6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtDt', type=DateFormat3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=IncentivePremiumType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

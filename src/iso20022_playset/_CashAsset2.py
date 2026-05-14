@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AdditionalInformation15 import AdditionalInformation15
@@ -50,4 +53,3 @@ class CashAsset2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CshAsstTp', type=CashAssetType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DatePeriod2 import DatePeriod2
@@ -94,4 +97,3 @@ class InterestStatement5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlIntrstAmtDueToB', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
-

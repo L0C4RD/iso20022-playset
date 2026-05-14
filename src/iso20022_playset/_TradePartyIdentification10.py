@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FundIdentification6 import FundIdentification6
 from ._OptionParty1Code import OptionParty1Code
@@ -80,4 +83,3 @@ class TradePartyIdentification10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmitgPty', type=PartyIdentificationAndAccount119, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyId', type=PartyIdentification265, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountSubLevel25 import AccountSubLevel25
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
@@ -49,4 +52,3 @@ class AccountSubLevel24(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dsclsr', type=AccountSubLevel25, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NonDscldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

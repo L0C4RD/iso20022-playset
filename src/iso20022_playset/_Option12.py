@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OptionDateOrPeriod1Choice import OptionDateOrPeriod1Choice
 from ._OptionType1Code import OptionType1Code
@@ -35,4 +38,3 @@ class Option12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtOrPrd', type=OptionDateOrPeriod1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=OptionType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

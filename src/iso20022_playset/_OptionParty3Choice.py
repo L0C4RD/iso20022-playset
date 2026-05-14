@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification30 import GenericIdentification30
 from ._OptionParty1Code import OptionParty1Code
@@ -35,4 +38,3 @@ class OptionParty3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=OptionParty1Code, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 	))
-

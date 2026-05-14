@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FailingReason13 import FailingReason13
 from ._NoReasonCode import NoReasonCode
@@ -35,4 +38,3 @@ class FailingStatus15Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=FailingReason13, min=1, max=None, mutex_group=1, array=True),
 	))
-

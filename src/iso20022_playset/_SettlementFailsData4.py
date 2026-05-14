@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementFailsDerogation1 import SettlementFailsDerogation1
 from ._SettlementFailureReason3 import SettlementFailureReason3
@@ -50,4 +53,3 @@ class SettlementFailsData4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FailrRsn', type=SettlementFailureReason3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
 	))
-

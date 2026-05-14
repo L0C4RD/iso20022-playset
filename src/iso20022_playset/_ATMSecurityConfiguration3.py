@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Algorithm13Code import Algorithm13Code
 from ._Algorithm15Code import Algorithm15Code
@@ -108,4 +111,3 @@ class ATMSecurityConfiguration3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SmmtrcTrnsprtKey', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SmmtrcTrnsprtKeyAlgo', type=Algorithm13Code, min=0, max=None, mutex_group=None, array=True),
 	))
-

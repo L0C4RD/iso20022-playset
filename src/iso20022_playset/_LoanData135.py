@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Cleared16Choice import Cleared16Choice
 from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
@@ -242,4 +245,3 @@ class LoanData135(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

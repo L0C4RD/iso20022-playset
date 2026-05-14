@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeMinimusApplicable1 import DeMinimusApplicable1
 from ._DeMinimusNotApplicable1 import DeMinimusNotApplicable1
@@ -35,4 +38,3 @@ class DeMinimus1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DeMnmsAplbl', type=DeMinimusApplicable1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DeMnmsNotAplbl', type=DeMinimusNotApplicable1, min=0, max=1, mutex_group=1, array=False),
 	))
-

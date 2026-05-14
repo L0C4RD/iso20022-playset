@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
 
@@ -34,4 +37,3 @@ class CompareSeniorityType1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=DebtInstrumentSeniorityType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=DebtInstrumentSeniorityType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

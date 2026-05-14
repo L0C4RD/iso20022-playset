@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -140,4 +143,3 @@ class TradeTransactionIdentification24(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TechRcrdId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqIdr', type=UniqueTransactionIdentifier2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

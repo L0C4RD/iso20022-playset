@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RequestForDuplicateV07 import RequestForDuplicateV07
 
@@ -22,4 +25,3 @@ class CAMT_033_001_07():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqForDplct', type=RequestForDuplicateV07, min=1, max=1, mutex_group=None, array=False),
 		))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommunicationFormat1Choice import CommunicationFormat1Choice
 from ._CommunicationMethod2Choice import CommunicationMethod2Choice
@@ -65,4 +68,3 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Frmt', type=CommunicationFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Frqcy', type=Frequency7Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

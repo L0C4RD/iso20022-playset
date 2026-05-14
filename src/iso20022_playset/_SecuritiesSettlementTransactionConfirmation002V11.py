@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalParameters31 import AdditionalParameters31
 from ._AmountAndDirection96 import AmountAndDirection96
@@ -259,4 +262,3 @@ class SecuritiesSettlementTransactionConfirmation002V11(base_types._BaseFieldTyp
 		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails128, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxIdDtls', type=SettlementTypeAndIdentification28, min=1, max=1, mutex_group=None, array=False),
 	))
-

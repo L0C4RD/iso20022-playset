@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BBANIdentifier import BBANIdentifier
 from ._IBANIdentifier import IBANIdentifier
@@ -65,4 +68,3 @@ class CashAccountIdentification1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IBAN', type=IBANIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UPIC', type=UPICIdentifier, min=0, max=1, mutex_group=1, array=False),
 	))
-

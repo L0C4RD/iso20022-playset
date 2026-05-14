@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Fee3 import Fee3
 from ._FinancialInstrument57 import FinancialInstrument57
@@ -80,4 +83,3 @@ class SwitchLegReferences2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LegRjctnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RprdFee', type=Fee3, min=0, max=10, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
 from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
@@ -49,4 +52,3 @@ class PartyTextInformation3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyCtctDtls', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnDtls', type=RestrictedFINXMax350Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

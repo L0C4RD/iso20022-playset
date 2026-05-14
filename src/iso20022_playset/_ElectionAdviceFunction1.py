@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentIdentification8 import DocumentIdentification8
 from ._ElectionType1Code import ElectionType1Code
@@ -63,4 +66,3 @@ class ElectionAdviceFunction1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ElctnTp', type=ElectionType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsAgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AgreedRate3 import AgreedRate3
 from ._AmountsAndValueDate8 import AmountsAndValueDate8
@@ -50,4 +53,3 @@ class SplitTradeDetails5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StsDtls', type=TradeData16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradAmts', type=AmountsAndValueDate8, min=1, max=1, mutex_group=None, array=False),
 	))
-

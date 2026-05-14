@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BusinessInformationCriteria1 import BusinessInformationCriteria1
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class GeneralBusinessInformationCriteriaDefinition1Choice(base_types._BaseFieldT
 		base_types.FieldEntry(name='NewCrit', type=BusinessInformationCriteria1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

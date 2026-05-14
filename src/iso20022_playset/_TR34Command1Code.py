@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 
 class TR34Command1Code(base_types._BaseDataType_String):
@@ -9,4 +12,3 @@ class TR34Command1Code(base_types._BaseDataType_String):
 		"RBND",
 		"UBND",
 	}
-

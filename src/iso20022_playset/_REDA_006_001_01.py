@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecurityCreationRequestV01 import SecurityCreationRequestV01
 
@@ -22,4 +25,3 @@ class REDA_006_001_01():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyCreReq', type=SecurityCreationRequestV01, min=1, max=1, mutex_group=None, array=False),
 		))
-

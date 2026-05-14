@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._AcceptorData1 import AcceptorData1
@@ -379,4 +382,3 @@ class AddendumInitiationV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification62, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSpcfcData', type=TransactionSpecificData1, min=0, max=1, mutex_group=None, array=False),
 	))
-

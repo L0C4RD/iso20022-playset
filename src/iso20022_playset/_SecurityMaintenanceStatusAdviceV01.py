@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageHeader12 import MessageHeader12
 from ._ProcessingStatus72Choice import ProcessingStatus72Choice
@@ -65,4 +68,3 @@ class SecurityMaintenanceStatusAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus72Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

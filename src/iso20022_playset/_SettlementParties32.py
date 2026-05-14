@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification63 import PartyIdentification63
 from ._PartyIdentificationAndAccount95 import PartyIdentificationAndAccount95
@@ -91,4 +94,3 @@ class SettlementParties32(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pty4', type=PartyIdentificationAndAccount95, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pty5', type=PartyIdentificationAndAccount95, min=0, max=1, mutex_group=None, array=False),
 	))
-

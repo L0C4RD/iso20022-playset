@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DefaultFundContributionReportV02 import DefaultFundContributionReportV02
 
@@ -22,4 +25,3 @@ class SECL_006_001_02():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DfltFndCntrbtnRpt', type=DefaultFundContributionReportV02, min=1, max=1, mutex_group=None, array=False),
 		))
-

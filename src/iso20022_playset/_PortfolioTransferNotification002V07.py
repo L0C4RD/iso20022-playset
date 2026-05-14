@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 from ._Pagination1 import Pagination1
@@ -95,4 +98,3 @@ class PortfolioTransferNotification002V07(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement68, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfNtfctnDtls', type=SecuritiesTradeDetails139, min=0, max=None, mutex_group=None, array=True),
 	))
-

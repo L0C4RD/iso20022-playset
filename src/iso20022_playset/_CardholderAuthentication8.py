@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthenticationMethod7Code import AuthenticationMethod7Code
 from ._ContentInformationType10 import ContentInformationType10
@@ -80,4 +83,3 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TknReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

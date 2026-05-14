@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralParties9 import CollateralParties9
 from ._CounterpartyAggregation3 import CounterpartyAggregation3
@@ -140,4 +143,3 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Txs', type=Transaction124, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XpsrTpAggtn', type=ExposureTypeAggregation3, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TimeToMaturity2Choice import TimeToMaturity2Choice
 from ._TrueFalseIndicator import TrueFalseIndicator
@@ -35,4 +38,3 @@ class ContractTerm6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Fxd', type=TimeToMaturity2Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Opn', type=TrueFalseIndicator, min=0, max=1, mutex_group=1, array=False),
 	))
-

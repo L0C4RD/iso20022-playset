@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NetworkParameters7 import NetworkParameters7
 from ._NetworkType2Code import NetworkType2Code
@@ -35,4 +38,3 @@ class NetworkParameters8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Accs', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=NetworkType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

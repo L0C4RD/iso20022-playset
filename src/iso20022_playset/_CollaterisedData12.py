@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralType21 import CollateralType21
 from ._ISODate import ISODate
@@ -65,4 +68,3 @@ class CollaterisedData12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CollValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

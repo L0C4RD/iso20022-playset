@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcquirerToAcceptorFileBody2 import AcquirerToAcceptorFileBody2
 from ._ContentInformationType38 import ContentInformationType38
@@ -65,4 +68,3 @@ class AcquirerToAcceptorBatchFileExchangeV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType38, min=0, max=1, mutex_group=None, array=False),
 	))
-

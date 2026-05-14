@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NotificationCancellationProcessingStatus2 import NotificationCancellationProcessingStatus2
 from ._NotificationCancellationRejectionReason2 import NotificationCancellationRejectionReason2
@@ -35,4 +38,3 @@ class NotificationCancellationRequestStatus2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=NotificationCancellationProcessingStatus2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=NotificationCancellationRejectionReason2, min=0, max=1, mutex_group=1, array=False),
 	))
-

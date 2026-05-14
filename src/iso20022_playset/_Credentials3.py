@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Authority1 import Authority1
 from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
@@ -94,4 +97,3 @@ class Credentials3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val', type=Max70Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryDt', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),
 	))
-

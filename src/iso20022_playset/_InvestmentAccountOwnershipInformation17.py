@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountingStatus1Choice import AccountingStatus1Choice
 from ._AdditiononalInformation13 import AdditiononalInformation13
@@ -479,4 +482,3 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxXmptn', type=TaxExemptionReason2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WorkgCptl', type=DateAndAmount1, min=0, max=1, mutex_group=None, array=False),
 	))
-

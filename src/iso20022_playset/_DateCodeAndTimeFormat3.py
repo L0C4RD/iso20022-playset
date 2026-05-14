@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateCode21Choice import DateCode21Choice
 from ._ISOTime import ISOTime
@@ -35,4 +38,3 @@ class DateCodeAndTimeFormat3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtCd', type=DateCode21Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=1, max=1, mutex_group=None, array=False),
 	))
-

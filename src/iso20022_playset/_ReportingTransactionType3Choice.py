@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesTransactionReport2 import SecuritiesTransactionReport2
 from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
@@ -50,4 +53,3 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='New', type=SecuritiesTransactionReport7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=1, array=True),
 	))
-

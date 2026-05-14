@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MatchingCriteria10 import MatchingCriteria10
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
@@ -49,4 +52,3 @@ class ReconciliationResult10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtrPty2', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MtchgCrit', type=MatchingCriteria10, min=1, max=1, mutex_group=None, array=False),
 	))
-

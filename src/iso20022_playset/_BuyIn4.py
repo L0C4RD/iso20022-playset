@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat15Choice import DateFormat15Choice
 from ._ISODate import ISODate
@@ -64,4 +67,3 @@ class BuyIn4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='WrngInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdBuyInDt', type=DateFormat15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

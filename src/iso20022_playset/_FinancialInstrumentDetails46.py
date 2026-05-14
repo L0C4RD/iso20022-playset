@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosingBalance5 import ClosingBalance5
 from ._FinancialInstrument72 import FinancialInstrument72
@@ -110,4 +113,3 @@ class FinancialInstrumentDetails46(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=Transaction161, min=1, max=None, mutex_group=None, array=True),
 	))
-

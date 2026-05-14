@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._LEIIdentifier import LEIIdentifier
@@ -35,4 +38,3 @@ class FinancialInstrument53(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=None, mutex_group=None, array=True),
 	))
-

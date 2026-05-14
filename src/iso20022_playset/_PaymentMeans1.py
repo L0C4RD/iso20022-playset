@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
 from ._CashAccount16 import CashAccount16
@@ -93,4 +96,3 @@ class PaymentMeans1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PyerDbtrAcct', type=CashAccount16, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PyerFI', type=BranchAndFinancialInstitutionIdentification4, min=0, max=1, mutex_group=None, array=False),
 	))
-

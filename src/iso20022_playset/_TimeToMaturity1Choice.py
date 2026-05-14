@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SpecialPurpose2Code import SpecialPurpose2Code
 from ._TimeToMaturityPeriod1 import TimeToMaturityPeriod1
@@ -35,4 +38,3 @@ class TimeToMaturity1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prd', type=TimeToMaturityPeriod1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Spcl', type=SpecialPurpose2Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

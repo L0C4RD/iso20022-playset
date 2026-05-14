@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Operation3Code import Operation3Code
 from ._TradePartyIdentificationQuery8 import TradePartyIdentificationQuery8
@@ -162,4 +165,3 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmitgAgt', type=TradePartyIdentificationQuery8, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=TradePartyIdentificationQuery8, min=0, max=1, mutex_group=None, array=False),
 	))
-

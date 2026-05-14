@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndRateStatus2 import AmountAndRateStatus2
 from ._RateType13Code import RateType13Code
@@ -65,4 +68,3 @@ class GrossDividendRateFormat41Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateType13Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus59, min=0, max=1, mutex_group=1, array=False),
 	))
-

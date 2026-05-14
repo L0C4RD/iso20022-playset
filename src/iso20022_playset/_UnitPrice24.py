@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
 from ._Charge33 import Charge33
@@ -240,4 +243,3 @@ class UnitPrice24(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValInAltrntvCcy', type=PriceValue1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValInInvstmtCcy', type=PriceValue1, min=1, max=None, mutex_group=None, array=True),
 	))
-

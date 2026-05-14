@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Exact1HexBinaryText import Exact1HexBinaryText
 from ._Max16HexBinaryText import Max16HexBinaryText
@@ -138,4 +141,3 @@ class PINData1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NcrptdPINBlck', type=Max16HexBinaryText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PINBlckFrmt', type=Max2NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

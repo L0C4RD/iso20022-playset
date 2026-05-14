@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODateTime import ISODateTime
 from ._LanguageCode import LanguageCode
@@ -192,4 +195,3 @@ class EventDescription1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdLttr', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdMsg', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),
 	))
-

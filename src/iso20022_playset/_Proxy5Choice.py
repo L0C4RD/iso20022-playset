@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProxyAppointmentInformation6 import ProxyAppointmentInformation6
 from ._ProxyNotAllowed1Code import ProxyNotAllowed1Code
@@ -35,4 +38,3 @@ class Proxy5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prxy', type=ProxyAppointmentInformation6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrxyNotAllwd', type=ProxyNotAllowed1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

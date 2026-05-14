@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentNumber6Choice import DocumentNumber6Choice
 from ._PairedOrTurnedQuantity6Choice import PairedOrTurnedQuantity6Choice
@@ -65,4 +68,3 @@ class Linkages70(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References58Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PoliticalExposureType2Choice import PoliticalExposureType2Choice
 from ._PoliticallyExposedPersonStatus1Choice import PoliticallyExposedPersonStatus1Choice
@@ -35,4 +38,3 @@ class PoliticallyExposedPerson1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PltclyXpsdPrsnSts', type=PoliticallyExposedPersonStatus1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PltclyXpsdPrsnTp', type=PoliticalExposureType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

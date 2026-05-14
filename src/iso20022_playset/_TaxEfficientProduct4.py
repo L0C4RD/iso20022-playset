@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._PreviousYear2Choice import PreviousYear2Choice
@@ -65,4 +68,3 @@ class TaxEfficientProduct4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvsYrs', type=PreviousYear2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxEffcntPdctTp', type=TaxEfficientProductType2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

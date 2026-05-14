@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
@@ -580,4 +583,3 @@ class CorporateAction2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesQtySght', type=UnitOrFaceAmountOrCode1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxblIncmPerShrClctd', type=TaxableIncomePerShareCalculated2Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

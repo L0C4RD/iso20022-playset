@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NotReported1Code import NotReported1Code
 from ._PartyIdentification248Choice import PartyIdentification248Choice
@@ -35,4 +38,3 @@ class TradePartyIdentificationQuery10Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=PartyIdentification248Choice, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

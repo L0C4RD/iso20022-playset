@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 import unittest
 from iso20022_playset._ACMT_001_001_08 import ACMT_001_001_08
 from iso20022_playset._ACMT_002_001_08 import ACMT_002_001_08
@@ -49431,4 +49434,3 @@ class Testadmi.002.001.01(unittest.TestCase, SharedTests):
 
 if __name__ == '__main__':
 	unittest.main()
-

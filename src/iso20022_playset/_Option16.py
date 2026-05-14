@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AgreedRate3 import AgreedRate3
@@ -259,4 +262,3 @@ class Option16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='XpryDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpryLctn', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Account10Choice import Account10Choice
 from ._CashParties43 import CashParties43
@@ -228,4 +231,3 @@ class CashOption105(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxVchrDtls', type=TaxVoucher4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification175 import GenericIdentification175
 from ._Max105Text import Max105Text
@@ -50,4 +53,3 @@ class NaturalPersonIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=GenericIdentification175, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max105Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

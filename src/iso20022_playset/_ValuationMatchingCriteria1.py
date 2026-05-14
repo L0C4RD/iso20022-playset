@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
 from ._CompareValuationType1 import CompareValuationType1
@@ -35,4 +38,3 @@ class ValuationMatchingCriteria1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtrctVal', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CompareValuationType1, min=0, max=1, mutex_group=None, array=False),
 	))
-

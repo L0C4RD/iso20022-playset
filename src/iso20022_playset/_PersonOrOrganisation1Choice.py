@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InternalPartyRole1Code import InternalPartyRole1Code
 from ._LEIIdentifier import LEIIdentifier
@@ -65,4 +68,3 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MIC', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prsn', type=PersonIdentification10, min=0, max=1, mutex_group=1, array=False),
 	))
-

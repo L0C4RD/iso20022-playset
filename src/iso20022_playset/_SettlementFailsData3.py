@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementDataVolume2 import SettlementDataVolume2
 from ._SettlementFailsCurrency2 import SettlementFailsCurrency2
@@ -125,4 +128,3 @@ class SettlementFailsData3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ttl', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlSttlmPnlties', type=SettlementDataVolume2, min=0, max=1, mutex_group=None, array=False),
 	))
-

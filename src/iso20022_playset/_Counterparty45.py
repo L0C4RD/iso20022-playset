@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
 from ._CountryCode import CountryCode
@@ -109,4 +112,3 @@ class Counterparty45(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity7Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradrLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

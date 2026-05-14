@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType35Code import CorporateActionEventType35Code
 from ._ExtendedEventType7Code import ExtendedEventType7Code
@@ -35,4 +38,3 @@ class CorporateActionEventType105Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PlainCorpEvtTp', type=CorporateActionEventType35Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedCorpEvtTp', type=ExtendedEventType7Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

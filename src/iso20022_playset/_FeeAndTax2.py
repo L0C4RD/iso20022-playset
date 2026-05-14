@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DigitalPaymentSettlement3 import DigitalPaymentSettlement3
 from ._Fee9 import Fee9
@@ -65,4 +68,3 @@ class FeeAndTax2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndvFee', type=Fee9, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvTax', type=Tax42, min=0, max=None, mutex_group=None, array=True),
 	))
-

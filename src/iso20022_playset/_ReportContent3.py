@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EncryptedData2 import EncryptedData2
 from ._Max10MbText import Max10MbText
@@ -65,4 +68,3 @@ class ReportContent3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptLineSeq', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txt', type=Max10MbText, min=0, max=1, mutex_group=None, array=False),
 	))
-

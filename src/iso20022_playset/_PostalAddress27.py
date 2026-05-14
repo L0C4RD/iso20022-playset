@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AddressType3Choice import AddressType3Choice
 from ._CountryCode import CountryCode
@@ -263,4 +266,3 @@ class PostalAddress27(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TwnNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitNb', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

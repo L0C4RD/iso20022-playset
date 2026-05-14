@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
@@ -341,4 +344,3 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UusdTaxDdctn', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WdrwlForResdtlPurchsPrgrs', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

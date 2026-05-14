@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorEnrolmentAmendment6 import CreditorEnrolmentAmendment6
 from ._CreditorEnrolmentAmendmentReason3 import CreditorEnrolmentAmendmentReason3
@@ -80,4 +83,3 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlEnrlmnt', type=OriginalEnrolment3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

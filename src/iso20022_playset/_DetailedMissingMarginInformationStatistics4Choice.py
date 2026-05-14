@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DetailedTransactionStatistics26 import DetailedTransactionStatistics26
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
@@ -35,4 +38,3 @@ class DetailedMissingMarginInformationStatistics4Choice(base_types._BaseFieldTyp
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpt', type=DetailedTransactionStatistics26, min=0, max=1, mutex_group=1, array=False),
 	))
-

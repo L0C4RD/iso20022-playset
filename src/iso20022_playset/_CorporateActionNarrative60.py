@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._UpdatedAdditionalInformation20 import UpdatedAdditionalInformation20
 from ._UpdatedURLlnformation6 import UpdatedURLlnformation6
@@ -175,4 +178,3 @@ class CorporateActionNarrative60(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation20, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation6, min=0, max=None, mutex_group=None, array=True),
 	))
-

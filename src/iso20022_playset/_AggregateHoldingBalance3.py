@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AggregateHoldingBalance1 import AggregateHoldingBalance1
 from ._Intermediary29 import Intermediary29
@@ -35,4 +38,3 @@ class AggregateHoldingBalance3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Agt', type=Intermediary29, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='BalForAcct', type=AggregateHoldingBalance1, min=1, max=None, mutex_group=None, array=True),
 	))
-

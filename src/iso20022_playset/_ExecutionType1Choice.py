@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EventType1Choice import EventType1Choice
 from ._ISOTime import ISOTime
@@ -35,4 +38,3 @@ class ExecutionType1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Evt', type=EventType1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=1, array=False),
 	))
-

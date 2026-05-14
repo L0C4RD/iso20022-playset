@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationStatusInformation1 import CancellationStatusInformation1
 from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
@@ -109,4 +112,3 @@ class OriginalRequestInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrmyAgt', type=FinancialInstitutionIdentification6, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

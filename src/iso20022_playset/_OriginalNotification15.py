@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODateTime import ISODateTime
 from ._Max140Text import Max140Text
@@ -94,4 +97,3 @@ class OriginalNotification15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlNtfctnRef', type=OriginalNotificationReference13, min=0, max=None, mutex_group=None, array=True),
 	))
-

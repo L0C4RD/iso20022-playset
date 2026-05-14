@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentificationAndName7 import AccountIdentificationAndName7
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
@@ -50,4 +53,3 @@ class CashAccount206(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctTpDesc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 	))
-

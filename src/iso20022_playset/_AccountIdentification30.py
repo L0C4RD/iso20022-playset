@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification26 import AccountIdentification26
 from ._AccountInformationType1Code import AccountInformationType1Code
@@ -35,4 +38,3 @@ class AccountIdentification30(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctTp', type=AccountInformationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=AccountIdentification26, min=1, max=1, mutex_group=None, array=False),
 	))
-

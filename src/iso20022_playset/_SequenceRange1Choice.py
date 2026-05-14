@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._SequenceRange1 import SequenceRange1
@@ -77,4 +80,3 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NEQSeq', type=Max35Text, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='ToSeq', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

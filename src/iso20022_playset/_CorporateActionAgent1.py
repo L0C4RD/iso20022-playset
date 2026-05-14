@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AgentRole1FormatChoice import AgentRole1FormatChoice
 from ._NameAndAddress5 import NameAndAddress5
@@ -50,4 +53,3 @@ class CorporateActionAgent1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AgtRole', type=AgentRole1FormatChoice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CtctPrsn', type=NameAndAddress5, min=0, max=1, mutex_group=None, array=False),
 	))
-

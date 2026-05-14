@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalBusinessProcessFormat16Choice import AdditionalBusinessProcessFormat16Choice
 from ._CorporateActionDate89 import CorporateActionDate89
@@ -65,4 +68,3 @@ class CorporateAction74(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EvtStag', type=CorporateActionEventStageFormat15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LtryTp', type=LotteryTypeFormat5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

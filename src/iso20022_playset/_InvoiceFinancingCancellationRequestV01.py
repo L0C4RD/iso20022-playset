@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationRequestInformation1 import CancellationRequestInformation1
 from ._MessageIdentification1 import MessageIdentification1
@@ -35,4 +38,3 @@ class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlReqInf', type=CancellationRequestInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

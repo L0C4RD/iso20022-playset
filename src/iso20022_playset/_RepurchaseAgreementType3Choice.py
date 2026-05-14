@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeneralCollateral3 import GeneralCollateral3
 from ._SpecificCollateral2 import SpecificCollateral2
@@ -35,4 +38,3 @@ class RepurchaseAgreementType3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GnlColl', type=GeneralCollateral3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SpcfcColl', type=SpecificCollateral2, min=0, max=1, mutex_group=1, array=False),
 	))
-

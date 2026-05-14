@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection21 import AmountAndDirection21
 from ._DateFormat66Choice import DateFormat66Choice
@@ -243,4 +246,3 @@ class NetPosition4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg13, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TradgCpcty', type=TradingCapacity5Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

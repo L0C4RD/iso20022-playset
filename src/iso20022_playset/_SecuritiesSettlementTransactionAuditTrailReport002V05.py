@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 from ._Pagination1 import Pagination1
@@ -110,4 +113,3 @@ class SecuritiesSettlementTransactionAuditTrailReport002V05(base_types._BaseFiel
 		base_types.FieldEntry(name='StsTrl', type=StatusTrail11, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications34, min=0, max=1, mutex_group=None, array=False),
 	))
-

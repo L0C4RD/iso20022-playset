@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NotionalAmount5 import NotionalAmount5
 from ._NotionalAmount6 import NotionalAmount6
@@ -35,4 +38,3 @@ class NotionalAmountLegs5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrstLeg', type=NotionalAmount5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndLeg', type=NotionalAmount6, min=0, max=1, mutex_group=None, array=False),
 	))
-

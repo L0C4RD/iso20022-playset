@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventReference4Choice import CorporateActionEventReference4Choice
 from ._ProcessingPosition10Choice import ProcessingPosition10Choice
@@ -35,4 +38,3 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EvtId', type=CorporateActionEventReference4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LkgTp', type=ProcessingPosition10Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

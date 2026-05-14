@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionDate3 import CorporateActionDate3
 from ._CorporateActionPrice4 import CorporateActionPrice4
@@ -225,4 +228,3 @@ class SecurityOption1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TempFinInstrmInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 	))
-

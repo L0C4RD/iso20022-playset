@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ConfirmationRejectedStatus2 import ConfirmationRejectedStatus2
 from ._OrderConfirmationStatus1Code import OrderConfirmationStatus1Code
@@ -49,4 +52,3 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ConfRjctd', type=ConfirmationRejectedStatus2, min=1, max=10, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Sts', type=OrderConfirmationStatus1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

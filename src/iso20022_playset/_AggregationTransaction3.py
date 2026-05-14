@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DetailedAmount21 import DetailedAmount21
 from ._ISODateTime import ISODateTime
@@ -64,4 +67,3 @@ class AggregationTransaction3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LastPmtDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NbOfPmts', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount7 import CashAccount7
 from ._PartyIdentification25 import PartyIdentification25
@@ -49,4 +52,3 @@ class PartyIdentificationAndAccount6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FincgAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification25, min=1, max=1, mutex_group=None, array=False),
 	))
-

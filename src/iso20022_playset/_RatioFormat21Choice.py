@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountToAmountRatio3 import AmountToAmountRatio3
 from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
@@ -35,4 +38,3 @@ class RatioFormat21Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyToQty', type=QuantityToQuantityRatio2, min=0, max=1, mutex_group=1, array=False),
 	))
-

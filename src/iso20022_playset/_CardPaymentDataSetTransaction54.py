@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
 from ._CardPaymentTransaction151 import CardPaymentTransaction151
@@ -80,4 +83,3 @@ class CardPaymentDataSetTransaction54(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction151, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSeqCntr', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

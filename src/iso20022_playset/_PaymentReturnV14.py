@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GroupHeader123 import GroupHeader123
 from ._OriginalGroupHeader19 import OriginalGroupHeader19
@@ -65,4 +68,3 @@ class PaymentReturnV14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxInf', type=PaymentTransaction163, min=0, max=None, mutex_group=None, array=True),
 	))
-

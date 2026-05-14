@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CitizenshipInformation2 import CitizenshipInformation2
 from ._DataModification2Code import DataModification2Code
@@ -35,4 +38,3 @@ class ModificationScope39(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ctznsh', type=CitizenshipInformation2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

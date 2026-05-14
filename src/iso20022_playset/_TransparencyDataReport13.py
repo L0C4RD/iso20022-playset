@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISINOct2015Identifier import ISINOct2015Identifier
 from ._ISODate import ISODate
@@ -123,4 +126,3 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxsExctdExclgPreTradWvr', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsExctdExclgPstTradLrgInScaleWvr', type=NumberAndVolume2, min=1, max=1, mutex_group=None, array=False),
 	))
-

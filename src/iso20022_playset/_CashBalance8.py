@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._BalanceType13 import BalanceType13
@@ -95,4 +98,3 @@ class CashBalance8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=BalanceType13, min=1, max=1, mutex_group=None, array=False),
 	))
-

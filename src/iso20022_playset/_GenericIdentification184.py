@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max100Text import Max100Text
 from ._Max210Text import Max210Text
@@ -35,4 +38,3 @@ class GenericIdentification184(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=Max210Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Src', type=Max100Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

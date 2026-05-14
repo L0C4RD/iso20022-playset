@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
 from ._CashSettlementSystem6Choice import CashSettlementSystem6Choice
@@ -170,4 +173,3 @@ class SettlementDetails224(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmpDtyTaxBsis', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition43Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

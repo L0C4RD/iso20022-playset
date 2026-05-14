@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection31 import AmountAndDirection31
 from ._BalanceType7Choice import BalanceType7Choice
@@ -65,4 +68,3 @@ class BalanceDetails6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=BalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Urlsd', type=Unrealised1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

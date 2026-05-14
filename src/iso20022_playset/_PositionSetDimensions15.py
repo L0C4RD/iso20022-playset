@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max52Text import Max52Text
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
@@ -64,4 +67,3 @@ class PositionSetDimensions15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._CashAccount206 import CashAccount206
@@ -49,4 +52,3 @@ class CashAccount205(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScndryAcct', type=CashAccount206, min=0, max=1, mutex_group=None, array=False),
 	))
-

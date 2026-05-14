@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeneralInvestment2 import GeneralInvestment2
 from ._Pension5 import Pension5
@@ -50,4 +53,3 @@ class FundPortfolio7Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pnsn', type=Pension5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TaxEffcntPdct', type=TaxEfficientProduct7, min=0, max=1, mutex_group=1, array=False),
 	))
-

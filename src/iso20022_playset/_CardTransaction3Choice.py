@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardAggregated2 import CardAggregated2
 from ._CardIndividualTransaction2 import CardIndividualTransaction2
@@ -35,4 +38,3 @@ class CardTransaction3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Aggtd', type=CardAggregated2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Indv', type=CardIndividualTransaction2, min=0, max=1, mutex_group=1, array=False),
 	))
-

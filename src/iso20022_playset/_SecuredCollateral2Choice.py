@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralValuation6 import CollateralValuation6
 from ._CollateralValuation7 import CollateralValuation7
@@ -63,4 +66,3 @@ class SecuredCollateral2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PoolColl', type=CollateralValuation6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SnglColl', type=CollateralValuation6, min=0, max=1, mutex_group=1, array=False),
 	))
-

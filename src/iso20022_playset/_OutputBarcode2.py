@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BarcodeType1Code import BarcodeType1Code
 from ._Max16Text import Max16Text
@@ -95,4 +98,3 @@ class OutputBarcode2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QRCdNcodgMd', type=QRCodeEncodingMode1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='QRCdVrsn', type=Max16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

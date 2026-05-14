@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommodityDerivative4 import CommodityDerivative4
 from ._ContractForDifference2 import ContractForDifference2
@@ -110,4 +113,3 @@ class Derivative3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FX', type=ForeignExchangeDerivative2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IntrstRate', type=InterestRateDerivative5, min=0, max=1, mutex_group=1, array=False),
 	))
-

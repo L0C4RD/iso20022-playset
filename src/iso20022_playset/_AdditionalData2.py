@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class AdditionalData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

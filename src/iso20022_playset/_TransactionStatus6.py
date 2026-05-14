@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralStatus1Code import CollateralStatus1Code
 from ._CollateralStatus2Choice import CollateralStatus2Choice
@@ -35,4 +38,3 @@ class TransactionStatus6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CvrgSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ExctnSts', type=CollateralStatus2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

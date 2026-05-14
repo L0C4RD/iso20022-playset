@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection66 import AmountAndDirection66
 from ._QuantityAndAccount105 import QuantityAndAccount105
@@ -154,4 +157,3 @@ class SecuritiesFinancingModificationInstruction002V08(base_types._BaseFieldType
 		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails103, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTpAndModAddtlParams', type=TransactionTypeAndAdditionalParameters20, min=1, max=1, mutex_group=None, array=False),
 	))
-

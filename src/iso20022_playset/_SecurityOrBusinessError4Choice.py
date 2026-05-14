@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BusinessError4 import BusinessError4
 from ._SecurityAttributes11 import SecurityAttributes11
@@ -35,4 +38,3 @@ class SecurityOrBusinessError4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizErr', type=BusinessError4, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SctyRpt', type=SecurityAttributes11, min=1, max=None, mutex_group=1, array=True),
 	))
-

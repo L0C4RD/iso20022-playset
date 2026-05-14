@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceMetrics3 import PriceMetrics3
 from ._VolumeMetrics5 import VolumeMetrics5
@@ -35,4 +38,3 @@ class PositionSetMetrics13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PricMtrcs', type=PriceMetrics3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VolMtrcs', type=VolumeMetrics5, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LoanContract4 import LoanContract4
 from ._TradeContract4 import TradeContract4
@@ -35,4 +38,3 @@ class UnderlyingContract4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ln', type=LoanContract4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Trad', type=TradeContract4, min=0, max=1, mutex_group=1, array=False),
 	))
-

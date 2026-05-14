@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountStatusUpdateInstruction1Choice import AccountStatusUpdateInstruction1Choice
 from ._AccountStatusUpdateInstructionReason1Choice import AccountStatusUpdateInstructionReason1Choice
@@ -35,4 +38,3 @@ class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UpdInstr', type=AccountStatusUpdateInstruction1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdInstrRsn', type=AccountStatusUpdateInstructionReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

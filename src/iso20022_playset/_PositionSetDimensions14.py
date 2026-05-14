@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralData33 import CollateralData33
 from ._CounterpartyData86 import CounterpartyData86
@@ -65,4 +68,3 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LnData', type=LoanData134, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OtlrsIncl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

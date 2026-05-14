@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference8 import AdditionalReference8
 
@@ -34,4 +37,3 @@ class References62Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),
 	))
-

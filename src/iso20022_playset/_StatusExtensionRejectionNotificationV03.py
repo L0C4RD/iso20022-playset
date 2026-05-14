@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentIdentification3 import DocumentIdentification3
 from ._DocumentIdentification5 import DocumentIdentification5
@@ -110,4 +113,3 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrTxRef', type=DocumentIdentification5, min=0, max=2, mutex_group=None, array=True),
 	))
-

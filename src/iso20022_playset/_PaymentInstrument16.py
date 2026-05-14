@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._FundOrderType5Choice import FundOrderType5Choice
@@ -50,4 +53,3 @@ class PaymentInstrument16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InstrmTp', type=FundPaymentType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrTp', type=FundOrderType5Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

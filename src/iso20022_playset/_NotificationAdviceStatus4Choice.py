@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NotificationAcceptedWithWarningStatus1 import NotificationAcceptedWithWarningStatus1
 from ._NotificationPendingStatus1 import NotificationPendingStatus1
@@ -65,4 +68,3 @@ class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=NotificationProcessingStatus2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=NotificationRejectionReason3, min=0, max=1, mutex_group=1, array=False),
 	))
-

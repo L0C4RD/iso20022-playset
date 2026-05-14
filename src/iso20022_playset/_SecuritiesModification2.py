@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProcessingStatus71Choice import ProcessingStatus71Choice
 from ._SecuritiesAccount19 import SecuritiesAccount19
@@ -65,4 +68,3 @@ class SecuritiesModification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus71Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 	))
-

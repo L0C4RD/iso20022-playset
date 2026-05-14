@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Quantity49Choice import Quantity49Choice
 from ._SignedQuantityFormat10 import SignedQuantityFormat10
@@ -49,4 +52,3 @@ class TotalEligibleBalanceFormat10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FullPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PartWayPrdUnits', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),
 	))
-

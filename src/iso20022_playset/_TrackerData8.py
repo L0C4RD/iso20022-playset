@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -105,4 +108,3 @@ class TrackerData8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RtrdConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RtrdConfdDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

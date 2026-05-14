@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationStatus22Choice import CancellationStatus22Choice
 from ._FinancialInstrument57 import FinancialInstrument57
@@ -122,4 +125,3 @@ class IndividualOrderStatusAndReason8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInitr', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),
 	))
-

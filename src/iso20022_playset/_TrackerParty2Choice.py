@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
 from ._OrganisationIdentification29 import OrganisationIdentification29
@@ -50,4 +53,3 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification29, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrvtId', type=PersonIdentification13, min=0, max=1, mutex_group=1, array=False),
 	))
-

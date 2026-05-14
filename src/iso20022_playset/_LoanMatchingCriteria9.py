@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareActiveOrHistoricCurrencyAndAmount3 import CompareActiveOrHistoricCurrencyAndAmount3
 from ._CompareAgreementType2 import CompareAgreementType2
@@ -715,4 +718,3 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UnqTradIdr', type=CompareText2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=CompareDate3, min=0, max=1, mutex_group=None, array=False),
 	))
-

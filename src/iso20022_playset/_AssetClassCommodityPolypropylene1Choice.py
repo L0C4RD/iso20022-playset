@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PolypropyleneCommodityPlastic1 import PolypropyleneCommodityPlastic1
 
@@ -20,4 +23,3 @@ class AssetClassCommodityPolypropylene1Choice(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Plstc', type=PolypropyleneCommodityPlastic1, min=0, max=1, mutex_group=1, array=False),
 	))
-

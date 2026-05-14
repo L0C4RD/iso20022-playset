@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification1 import AccountIdentification1
 from ._AccountIdentification3 import AccountIdentification3
@@ -50,4 +53,3 @@ class AccountIdentificationFormatChoice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IdAsDSS', type=AccountIdentification3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SmplId', type=AccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
-

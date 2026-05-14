@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Number import Number
 from ._Percentage14Rate import Percentage14Rate
@@ -35,4 +38,3 @@ class NumberOrPercentage2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ThrshldNb', type=Number, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ThrshldPctg', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 	))
-

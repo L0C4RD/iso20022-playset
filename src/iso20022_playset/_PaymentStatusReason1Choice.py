@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancelledStatusReason1Code import CancelledStatusReason1Code
 from ._Max35Text import Max35Text
@@ -110,4 +113,3 @@ class PaymentStatusReason1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sspd', type=SuspendedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatusReason1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

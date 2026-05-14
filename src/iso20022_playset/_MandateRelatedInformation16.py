@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmendmentInformationDetails15 import AmendmentInformationDetails15
 from ._Exact2NumericText import Exact2NumericText
@@ -153,4 +156,3 @@ class MandateRelatedInformation16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

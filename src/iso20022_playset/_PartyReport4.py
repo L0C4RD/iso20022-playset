@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyOrBusinessError4Choice import PartyOrBusinessError4Choice
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
@@ -35,4 +38,3 @@ class PartyReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyOrErr', type=PartyOrBusinessError4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BankContactPerson1Choice import BankContactPerson1Choice
 from ._Baseline5 import Baseline5
@@ -124,4 +127,3 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmissnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
-

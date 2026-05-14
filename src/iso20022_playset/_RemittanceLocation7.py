@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._RemittanceLocationData1 import RemittanceLocationData1
@@ -35,4 +38,3 @@ class RemittanceLocation7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RmtLctnDtls', type=RemittanceLocationData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

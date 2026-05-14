@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BenchmarkCurveName6Choice import BenchmarkCurveName6Choice
 from ._InterestRateContractTerm2 import InterestRateContractTerm2
@@ -50,4 +53,3 @@ class FloatingInterestRate6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName6Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=1, max=1, mutex_group=None, array=False),
 	))
-

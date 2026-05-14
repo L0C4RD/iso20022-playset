@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Pagination1 import Pagination1
 from ._SecuritiesReport2 import SecuritiesReport2
@@ -50,4 +53,3 @@ class SecuritiesSettlementTransactionQueryResponseV01(base_types._BaseFieldType)
 		base_types.FieldEntry(name='RptGnlDtls', type=SecuritiesReport2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txs', type=SecuritiesSettlementTransactions6, min=0, max=None, mutex_group=None, array=True),
 	))
-

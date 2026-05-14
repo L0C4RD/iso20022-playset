@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._AggregatedPenaltyAmount2 import AggregatedPenaltyAmount2
@@ -64,4 +67,3 @@ class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtrPtyCSDAggtdAmt', type=AggregatedPenaltyAmount2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='GblNetAmt', type=AmountAndDirection5, min=0, max=1, mutex_group=None, array=False),
 	))
-

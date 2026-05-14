@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DecimalNumber import DecimalNumber
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -79,4 +82,3 @@ class Product5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QtyLmt', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure6Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

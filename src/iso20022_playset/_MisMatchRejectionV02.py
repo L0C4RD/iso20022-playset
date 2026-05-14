@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageIdentification1 import MessageIdentification1
 from ._RejectionReason1Choice import RejectionReason1Choice
@@ -78,4 +81,3 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
-

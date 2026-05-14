@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
 from ._GenericIdentification39 import GenericIdentification39
@@ -50,4 +53,3 @@ class QuantityBreakdown65(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LotQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification47, min=0, max=1, mutex_group=None, array=False),
 	))
-

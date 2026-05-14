@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
 from ._ItemDescription2 import ItemDescription2
@@ -249,4 +252,3 @@ class Vote22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='WthMgmt', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wthhld', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountStatementDetails3 import AccountStatementDetails3
 from ._ISODate import ISODate
@@ -50,4 +53,3 @@ class AccountStatementData3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dtls', type=AccountStatementDetails3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),
 	))
-

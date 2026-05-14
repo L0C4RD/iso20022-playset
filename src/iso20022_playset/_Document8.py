@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max20000Text import Max20000Text
 from ._Presentation3 import Presentation3
@@ -50,4 +53,3 @@ class Document8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=PresentationDocumentFormat1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wrdg', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

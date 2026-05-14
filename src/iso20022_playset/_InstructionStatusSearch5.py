@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 from ._Max4AlphaNumericText import Max4AlphaNumericText
@@ -50,4 +53,3 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtInstrStsDtTm', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtryStsRsn', type=Max4AlphaNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

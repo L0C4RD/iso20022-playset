@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceDetails5 import BalanceDetails5
 from ._BalanceDetails6 import BalanceDetails6
@@ -35,4 +38,3 @@ class PortfolioBalance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtldBal', type=BalanceDetails6, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SummryBal', type=BalanceDetails5, min=1, max=None, mutex_group=1, array=True),
 	))
-

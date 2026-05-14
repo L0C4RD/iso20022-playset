@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExpectedExecutionDetails5 import ExpectedExecutionDetails5
 from ._Fee12 import Fee12
@@ -180,4 +183,3 @@ class IndividualOrderStatusAndReason9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RprdFee', type=Fee12, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsInitr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 	))
-

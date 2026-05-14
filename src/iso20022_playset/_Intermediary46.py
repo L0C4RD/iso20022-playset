@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Account32 import Account32
 from ._CommunicationAddress6 import CommunicationAddress6
@@ -124,4 +127,3 @@ class Intermediary46(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress6, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WvdTrlrComssnInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

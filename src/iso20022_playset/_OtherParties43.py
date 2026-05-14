@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentificationAndAccount165 import PartyIdentificationAndAccount165
 from ._PartyIdentificationAndAccount197 import PartyIdentificationAndAccount197
@@ -92,4 +95,3 @@ class OtherParties43(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradRgltr', type=PartyIdentificationAndAccount165, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=PartyIdentificationAndAccount198, min=0, max=1, mutex_group=None, array=False),
 	))
-

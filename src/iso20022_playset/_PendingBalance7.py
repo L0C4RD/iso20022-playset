@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementTypeAndIdentification25 import SettlementTypeAndIdentification25
 from ._SignedQuantityFormat10 import SignedQuantityFormat10
@@ -35,4 +38,3 @@ class PendingBalance7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat10, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdgTxs', type=SettlementTypeAndIdentification25, min=0, max=None, mutex_group=None, array=True),
 	))
-

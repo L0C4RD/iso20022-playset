@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LoyaltyAccount3 import LoyaltyAccount3
 from ._LoyaltyAmount1 import LoyaltyAmount1
@@ -65,4 +68,3 @@ class LoyaltyResult3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rbts', type=LoyaltyRebates1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvrData', type=LoyaltyServerData1, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProcessingStatus66Choice import ProcessingStatus66Choice
 from ._SettlementStatus16Choice import SettlementStatus16Choice
@@ -35,4 +38,3 @@ class PendingStatusAndReason2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgSts', type=ProcessingStatus66Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus16Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

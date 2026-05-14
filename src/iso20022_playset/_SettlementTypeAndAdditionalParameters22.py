@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
 from ._ReceiveDelivery1Code import ReceiveDelivery1Code
@@ -135,4 +138,3 @@ class SettlementTypeAndAdditionalParameters22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollInstrId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

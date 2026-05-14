@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClearingMember1 import ClearingMember1
 from ._SupplementaryData1 import SupplementaryData1
@@ -35,4 +38,3 @@ class CCPClearingMemberReportV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrMmb', type=ClearingMember1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

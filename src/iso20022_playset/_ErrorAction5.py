@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
 from ._TerminalManagementErrorAction2Code import TerminalManagementErrorAction2Code
@@ -35,4 +38,3 @@ class ErrorAction5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ActnRslt', type=TerminalManagementActionResult5Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ActnToPrc', type=TerminalManagementErrorAction2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

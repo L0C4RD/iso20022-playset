@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentType2Code import ContentType2Code
 from ._Max100KBinary import Max100KBinary
@@ -35,4 +38,3 @@ class EncapsulatedContent3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cntt', type=Max100KBinary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

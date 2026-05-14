@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MissingMarginData2 import MissingMarginData2
 from ._Number import Number
@@ -63,4 +66,3 @@ class DetailedTransactionStatistics26(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NbOfOutsdngDerivsWthOutdtdMrgnInf', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wrnngs', type=MissingMarginData2, min=1, max=None, mutex_group=None, array=True),
 	))
-

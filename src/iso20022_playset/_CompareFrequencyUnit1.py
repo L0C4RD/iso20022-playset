@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Frequency13Code import Frequency13Code
 
@@ -34,4 +37,3 @@ class CompareFrequencyUnit1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=Frequency13Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

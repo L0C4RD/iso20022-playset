@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountInterest4 import AccountInterest4
 from ._CashAccount40 import CashAccount40
@@ -229,4 +232,3 @@ class AccountNotification24(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgSrc', type=ReportingSource1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxsSummry', type=TotalTransactions6, min=0, max=1, mutex_group=None, array=False),
 	))
-

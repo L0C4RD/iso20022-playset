@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataModification1Code import DataModification1Code
 from ._DocumentToSend4 import DocumentToSend4
@@ -35,4 +38,3 @@ class ModificationScope44(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcLvlAgrmt', type=DocumentToSend4, min=1, max=1, mutex_group=None, array=False),
 	))
-

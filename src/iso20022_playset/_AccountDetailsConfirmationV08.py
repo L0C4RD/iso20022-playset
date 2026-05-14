@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountManagementConfirmation5 import AccountManagementConfirmation5
 from ._AccountParties17 import AccountParties17
@@ -244,4 +247,3 @@ class AccountDetailsConfirmationV08(base_types._BaseFieldType):
 		base_types.FieldEntry(name='WdrwlInvstmtPlan', type=InvestmentPlan17, min=0, max=10, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthorityInvestigation2 import AuthorityInvestigation2
 from ._PartyIdentification272 import PartyIdentification272
@@ -35,4 +38,3 @@ class CustomerIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AuthrtyReq', type=AuthorityInvestigation2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Pty', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 	))
-

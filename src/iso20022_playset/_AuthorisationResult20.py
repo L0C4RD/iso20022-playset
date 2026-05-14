@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMFeeComponent1 import ATMFeeComponent1
 from ._Action7 import Action7
@@ -95,4 +98,3 @@ class AuthorisationResult20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FeeToAdd', type=ATMFeeComponent1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RspnTrac', type=ResponseType8, min=0, max=None, mutex_group=None, array=True),
 	))
-

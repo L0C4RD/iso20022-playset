@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptorCancellationAdvice14 import AcceptorCancellationAdvice14
 from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
@@ -50,4 +53,3 @@ class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CmpltnAdvc', type=AcceptorCompletionAdvice14, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlAdvc', type=AcceptorCancellationAdvice14, min=0, max=1, mutex_group=None, array=False),
 	))
-

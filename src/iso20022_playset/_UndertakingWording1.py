@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO2ALanguageCode import ISO2ALanguageCode
 from ._ModelFormIdentification1 import ModelFormIdentification1
@@ -50,4 +53,3 @@ class UndertakingWording1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqdWrdgLang', type=ISO2ALanguageCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgTermsAndConds', type=Narrative1, min=0, max=None, mutex_group=None, array=True),
 	))
-

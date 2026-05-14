@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference8 import AdditionalReference8
 from ._AdditionalReference9 import AdditionalReference9
@@ -124,4 +127,3 @@ class SubscriptionOrderConfirmationCancellationInstructionV02(base_types._BaseFi
 		base_types.FieldEntry(name='PrvsRef', type=AdditionalReference8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference8, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Reason21Choice import Reason21Choice
 from ._SecurityIdentification19 import SecurityIdentification19
@@ -50,4 +53,3 @@ class AdditionalQueryParameters15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rsn', type=Reason21Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Sts', type=Status19Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ModificationLevel1Code import ModificationLevel1Code
 from ._TransactionOperationType6Code import TransactionOperationType6Code
@@ -35,4 +38,3 @@ class ContractModification3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Lvl', type=ModificationLevel1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

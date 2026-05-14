@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BeneficialOwnership4Choice import BeneficialOwnership4Choice
 from ._BlockTrade4Choice import BlockTrade4Choice
@@ -275,4 +278,3 @@ class SettlementDetails232(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmTxCond', type=SettlementTransactionCondition41Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxCpcty', type=TaxCapacityParty4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

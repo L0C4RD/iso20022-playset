@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalRegulatoryReportingType1Code import ExternalRegulatoryReportingType1Code
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class RegulatoryReportingType1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=ExternalRegulatoryReportingType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max10NumericText import Max10NumericText
 from ._ReportContent2Choice import ReportContent2Choice
@@ -35,4 +38,3 @@ class ReportContent2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrmtdCntt', type=ReportContent2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptLineSeq', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

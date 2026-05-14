@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMSignature2Choice import ATMSignature2Choice
 from ._CryptographicKey12 import CryptographicKey12
@@ -80,4 +83,3 @@ class SecurityParameters9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqdKey', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrChc', type=ATMSignature2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

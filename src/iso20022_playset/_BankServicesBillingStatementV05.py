@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ReportHeader6 import ReportHeader6
 from ._StatementGroup5 import StatementGroup5
@@ -35,4 +38,3 @@ class BankServicesBillingStatementV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BllgStmtGrp', type=StatementGroup5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RptHdr', type=ReportHeader6, min=1, max=1, mutex_group=None, array=False),
 	))
-

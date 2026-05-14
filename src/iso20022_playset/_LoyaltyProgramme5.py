@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Address2 import Address2
 from ._CardholderName3 import CardholderName3
@@ -194,4 +197,3 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValTp', type=LoyaltyValueType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

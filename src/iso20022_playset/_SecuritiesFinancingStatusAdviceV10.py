@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MatchingStatus26Choice import MatchingStatus26Choice
 from ._ProcessingStatus83Choice import ProcessingStatus83Choice
@@ -124,4 +127,3 @@ class SecuritiesFinancingStatusAdviceV10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxDtls', type=SecuritiesFinancingTransactionDetails57, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications53, min=1, max=1, mutex_group=None, array=False),
 	))
-

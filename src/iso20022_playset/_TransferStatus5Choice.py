@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationPendingStatus7Choice import CancellationPendingStatus7Choice
 from ._CancelledStatus13Choice import CancelledStatus13Choice
@@ -140,4 +143,3 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=TransferInstructionStatus5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Umtchd', type=TransferUnmatchedStatus4Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

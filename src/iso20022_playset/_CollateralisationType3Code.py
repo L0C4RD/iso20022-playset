@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 
 class CollateralisationType3Code(base_types._BaseDataType_String):
@@ -14,4 +17,3 @@ class CollateralisationType3Code(base_types._BaseDataType_String):
 		"PRC2",
 		"UNCL",
 	}
-

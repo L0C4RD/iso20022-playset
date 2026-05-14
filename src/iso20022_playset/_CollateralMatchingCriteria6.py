@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareDate3 import CompareDate3
 from ._CompareSecurityIdentification4 import CompareSecurityIdentification4
@@ -79,4 +82,3 @@ class CollateralMatchingCriteria6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NetXpsrCollstnInd', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UncollsdFlg', type=CompareTrueFalseIndicator3, min=0, max=1, mutex_group=None, array=False),
 	))
-

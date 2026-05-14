@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount40 import CashAccount40
 from ._ContentInformationType39 import ContentInformationType39
@@ -107,4 +110,3 @@ class DirectDebitContext1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdCdtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdDbtrAcct', type=ContentInformationType39, min=0, max=1, mutex_group=None, array=False),
 	))
-

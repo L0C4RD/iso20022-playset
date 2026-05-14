@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountSubLevel24 import AccountSubLevel24
 from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
@@ -93,4 +96,3 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ShrhldgBalOnOwnAcct', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlShrhldgBal', type=FinancialInstrumentQuantity18Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

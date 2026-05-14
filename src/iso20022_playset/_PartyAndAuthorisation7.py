@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Authorisation2 import Authorisation2
 from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
@@ -50,4 +53,3 @@ class PartyAndAuthorisation7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyOrGrp', type=PartyOrGroup3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgntrOrdr', type=Max15PlusSignedNumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

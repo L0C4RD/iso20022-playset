@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionReversalReason12Choice import CorporateActionReversalReason12Choice
 from ._RestrictedFINXMax256Text import RestrictedFINXMax256Text
@@ -35,4 +38,3 @@ class CorporateActionReversalReason10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINXMax256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=CorporateActionReversalReason12Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

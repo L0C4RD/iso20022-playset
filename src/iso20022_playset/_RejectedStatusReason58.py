@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RejectedReason61Choice import RejectedReason61Choice
 from ._RestrictedFINMax210Text import RestrictedFINMax210Text
@@ -35,4 +38,3 @@ class RejectedStatusReason58(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINMax210Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsnCd', type=RejectedReason61Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

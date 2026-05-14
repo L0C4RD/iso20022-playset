@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountManagementMessageReference5 import AccountManagementMessageReference5
 from ._MessageIdentification1 import MessageIdentification1
@@ -35,4 +38,3 @@ class RequestForAccountManagementStatusReportV06(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ReqDtls', type=AccountManagementMessageReference5, min=1, max=1, mutex_group=None, array=False),
 	))
-

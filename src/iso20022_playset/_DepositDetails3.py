@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDepositType1Code import CardDepositType1Code
 from ._CreditDebit3Code import CreditDebit3Code
@@ -65,4 +68,3 @@ class DepositDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CardDepositType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

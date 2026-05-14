@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraBalancePending6 import IntraBalancePending6
 from ._PendingStatusAndReason2 import PendingStatusAndReason2
@@ -35,4 +38,3 @@ class IntraBalancePending5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Mvmnt', type=IntraBalancePending6, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StsAndRsn', type=PendingStatusAndReason2, min=0, max=1, mutex_group=None, array=False),
 	))
-

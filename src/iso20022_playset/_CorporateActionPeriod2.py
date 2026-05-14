@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Period1 import Period1
 
@@ -104,4 +107,3 @@ class CorporateActionPeriod2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RvcbltyPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SellThruIssrPrd', type=Period1, min=0, max=1, mutex_group=None, array=False),
 	))
-

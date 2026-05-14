@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification75Choice import AccountIdentification75Choice
 from ._CorporateAction76 import CorporateAction76
@@ -207,4 +210,3 @@ class CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13(base_type
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubPngAgt', type=PartyIdentification137Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

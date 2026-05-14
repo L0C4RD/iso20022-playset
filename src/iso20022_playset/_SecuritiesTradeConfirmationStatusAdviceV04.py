@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AffirmationStatus11Choice import AffirmationStatus11Choice
 from ._CancellationProcessingStatus10Choice import CancellationProcessingStatus10Choice
@@ -198,4 +201,3 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RplcmntPrcgSts', type=ReplacementProcessingStatus10Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

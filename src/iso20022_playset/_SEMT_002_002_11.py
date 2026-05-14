@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesBalanceCustodyReport002V11 import SecuritiesBalanceCustodyReport002V11
 
@@ -22,4 +25,3 @@ class SEMT_002_002_11():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesBalCtdyRpt', type=SecuritiesBalanceCustodyReport002V11, min=1, max=1, mutex_group=None, array=False),
 		))
-

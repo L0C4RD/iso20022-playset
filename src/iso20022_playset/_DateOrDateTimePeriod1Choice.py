@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DatePeriod2 import DatePeriod2
 from ._DateTimePeriod1 import DateTimePeriod1
@@ -35,4 +38,3 @@ class DateOrDateTimePeriod1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dt', type=DatePeriod2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='DtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=1, array=False),
 	))
-

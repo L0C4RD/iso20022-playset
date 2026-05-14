@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CapturedSignature1 import CapturedSignature1
 from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
@@ -199,4 +202,3 @@ class RetailerPaymentResult8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxRspn', type=CardPaymentTransaction152, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=CardPaymentServiceType12Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

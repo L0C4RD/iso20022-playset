@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification136 import PartyIdentification136
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
@@ -35,4 +38,3 @@ class SystemPartyIdentification2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CmbndId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgId', type=PartyIdentification136, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._GenericOrganisationIdentification2 import GenericOrganisationIdentification2
@@ -35,4 +38,3 @@ class OrganisationIdentification32(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericOrganisationIdentification2, min=0, max=None, mutex_group=None, array=True),
 	))
-

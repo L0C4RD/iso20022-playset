@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._AssetFXSubProductType1Code import AssetFXSubProductType1Code
@@ -35,4 +38,3 @@ class DerivativeForeignExchange3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FxTp', type=AssetFXSubProductType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

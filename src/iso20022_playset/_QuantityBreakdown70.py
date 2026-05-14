@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Balance23 import Balance23
 from ._BalanceAmounts6 import BalanceAmounts6
@@ -123,4 +126,3 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LotQty', type=Balance23, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice32Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

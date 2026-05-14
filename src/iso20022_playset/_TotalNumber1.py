@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Exact3NumericText import Exact3NumericText
 
@@ -34,4 +37,3 @@ class TotalNumber1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CurInstrNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlOfLkdInstrs', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

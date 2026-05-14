@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
 from ._PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
@@ -35,4 +38,3 @@ class PositionSet22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dmnsns', type=PositionSetCollateralDimensions3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtrcs', type=PositionSetCollateralMetrics2, min=1, max=1, mutex_group=None, array=False),
 	))
-

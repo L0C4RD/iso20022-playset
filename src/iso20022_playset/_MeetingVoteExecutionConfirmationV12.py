@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DetailedInstructionStatus22 import DetailedInstructionStatus22
 from ._Max2048Text import Max2048Text
@@ -124,4 +127,3 @@ class MeetingVoteExecutionConfirmationV12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VoteInstrs', type=DetailedInstructionStatus22, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VoteInstrsConfURLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

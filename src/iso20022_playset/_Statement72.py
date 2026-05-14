@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionStatementReportingType1Code import CorporateActionStatementReportingType1Code
 from ._CorporateActionStatementType2Code import CorporateActionStatementType2Code
@@ -155,4 +158,3 @@ class Statement72(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmtTp', type=CorporateActionStatementType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType15Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

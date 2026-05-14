@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._CardholderName2 import CardholderName2
@@ -124,4 +127,3 @@ class LocalData21(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ocptn', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvtData', type=ATICALaxProcessing, min=0, max=None, mutex_group=None, array=True),
 	))
-

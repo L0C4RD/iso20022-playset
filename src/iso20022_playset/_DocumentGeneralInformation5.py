@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BinaryFile1 import BinaryFile1
 from ._ExternalDocumentType1Code import ExternalDocumentType1Code
@@ -124,4 +127,3 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SndrRcvrSeqId', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

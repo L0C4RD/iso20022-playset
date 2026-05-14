@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommandIdentification1 import ATMCommandIdentification1
 from ._ATMEnvironment9 import ATMEnvironment9
@@ -50,4 +53,3 @@ class HostToATMRequest1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment9, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ConfirmationPartyDetails11 import ConfirmationPartyDetails11
 from ._ConfirmationPartyDetails12 import ConfirmationPartyDetails12
@@ -192,4 +195,3 @@ class ConfirmationParties9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StepOutFirm', type=ConfirmationPartyDetails11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradBnfcryPty', type=ConfirmationPartyDetails14, min=0, max=1, mutex_group=None, array=False),
 	))
-

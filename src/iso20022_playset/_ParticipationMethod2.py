@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat58Choice import DateFormat58Choice
 from ._ParticipationMethod3Choice import ParticipationMethod3Choice
@@ -64,4 +67,3 @@ class ParticipationMethod2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RspnDdlnForVtng', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpprtdByAcctSvcr', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

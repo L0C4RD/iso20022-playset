@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateEventNarrative4 import CorporateEventNarrative4
 from ._IssuerAgent3 import IssuerAgent3
@@ -215,4 +218,3 @@ class MeetingNotificationV13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vote', type=VoteParameters10, min=0, max=1, mutex_group=None, array=False),
 	))
-

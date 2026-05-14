@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Channel1Choice import Channel1Choice
 from ._DocumentFormat1Choice import DocumentFormat1Choice
@@ -79,4 +82,3 @@ class Document10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PresntnChanl', type=Channel1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SgndInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

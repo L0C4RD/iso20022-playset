@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMAccountUsage1Code import ATMAccountUsage1Code
 from ._ATMService29 import ATMService29
@@ -169,4 +172,3 @@ class CardAccount18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DfltAcctInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

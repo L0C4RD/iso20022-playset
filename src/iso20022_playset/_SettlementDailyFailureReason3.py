@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementTotalData1Choice import SettlementTotalData1Choice
 
@@ -34,4 +37,3 @@ class SettlementDailyFailureReason3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FaildCsh', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FaildScties', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IndividualPerson29 import IndividualPerson29
 from ._Organisation23 import Organisation23
@@ -35,4 +38,3 @@ class RegisteredShareholderName1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndvPrsn', type=IndividualPerson29, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Org', type=Organisation23, min=0, max=1, mutex_group=1, array=False),
 	))
-

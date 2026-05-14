@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Case6 import Case6
 from ._DecimalNumber import DecimalNumber
@@ -139,4 +142,3 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtInfCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInf', type=PaymentTransaction154, min=0, max=None, mutex_group=None, array=True),
 	))
-

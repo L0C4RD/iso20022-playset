@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MandateReason1Choice import MandateReason1Choice
 from ._Max105Text import Max105Text
@@ -50,4 +53,3 @@ class AcceptanceResult6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRjctRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RjctRsn', type=MandateReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

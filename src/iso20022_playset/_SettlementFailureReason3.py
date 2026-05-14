@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max2Fraction1NonNegativeNumber import Max2Fraction1NonNegativeNumber
 from ._SettlementFailureReason2 import SettlementFailureReason2
@@ -35,4 +38,3 @@ class SettlementFailureReason3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AvrgDrtn', type=Max2Fraction1NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Desc', type=SettlementFailureReason2, min=1, max=None, mutex_group=None, array=True),
 	))
-

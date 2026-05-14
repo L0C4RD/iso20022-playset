@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrument58 import FinancialInstrument58
 from ._ISINOct2015Identifier import ISINOct2015Identifier
@@ -35,4 +38,3 @@ class BasketDescription3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Indx', type=FinancialInstrument58, min=0, max=None, mutex_group=None, array=True),
 	))
-

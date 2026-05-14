@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentType3Code import ContentType3Code
 from ._EncryptedData2 import EncryptedData2
@@ -50,4 +53,3 @@ class ProtectedData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EnvlpdData', type=EnvelopedData12, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptdData', type=EncryptedData2, min=0, max=1, mutex_group=None, array=False),
 	))
-

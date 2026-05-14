@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PTRREvent3 import PTRREvent3
 
@@ -34,4 +37,3 @@ class ComparePostTradeRiskReduction2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=PTRREvent3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=PTRREvent3, min=0, max=1, mutex_group=None, array=False),
 	))
-

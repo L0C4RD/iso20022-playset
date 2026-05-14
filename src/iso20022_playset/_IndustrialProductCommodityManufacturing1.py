@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassProductType6Code import AssetClassProductType6Code
 from ._AssetClassSubProductType34Code import AssetClassSubProductType34Code
@@ -35,4 +38,3 @@ class IndustrialProductCommodityManufacturing1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType6Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType34Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

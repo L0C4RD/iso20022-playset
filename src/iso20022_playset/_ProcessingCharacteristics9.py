@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._AdditionalInformation15 import AdditionalInformation15
@@ -227,4 +230,3 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SwtchAuthstn', type=Forms1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitsInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

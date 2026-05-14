@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentIdentification3Choice import DocumentIdentification3Choice
 from ._DocumentNumber5Choice import DocumentNumber5Choice
@@ -35,4 +38,3 @@ class DocumentIdentification33(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DocNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

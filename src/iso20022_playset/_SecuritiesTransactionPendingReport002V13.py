@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
 from ._Pagination1 import Pagination1
@@ -110,4 +113,3 @@ class SecuritiesTransactionPendingReport002V13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=StatusAndReason45, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Txs', type=Transaction125, min=0, max=None, mutex_group=None, array=True),
 	))
-

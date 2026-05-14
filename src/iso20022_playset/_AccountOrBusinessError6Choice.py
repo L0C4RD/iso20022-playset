@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccountData1 import CashAccountData1
 from ._ErrorHandling5 import ErrorHandling5
@@ -35,4 +38,3 @@ class AccountOrBusinessError6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Acct', type=CashAccountData1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalAuthorityExchangeReason1Code import ExternalAuthorityExchangeReason1Code
 from ._ISODateTime import ISODateTime
@@ -35,4 +38,3 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RctDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRsn', type=ExternalAuthorityExchangeReason1Code, min=1, max=None, mutex_group=None, array=True),
 	))
-

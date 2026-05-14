@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification125Choice import PartyIdentification125Choice
 from ._Referred1Code import Referred1Code
@@ -35,4 +38,3 @@ class ReferredAgent3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rfrd', type=Referred1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RfrdPlcmntAgt', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

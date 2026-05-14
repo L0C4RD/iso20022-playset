@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification13 import GenericIdentification13
 from ._Max4Text import Max4Text
@@ -35,4 +38,3 @@ class CodeOrProprietary1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=Max4Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification13, min=0, max=1, mutex_group=1, array=False),
 	))
-

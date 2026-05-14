@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINMax35Text import RestrictedFINMax35Text
 
@@ -20,4 +23,3 @@ class TransactionIdentification1(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=RestrictedFINMax35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

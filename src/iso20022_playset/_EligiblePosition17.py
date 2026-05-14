@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._HoldingBalance13 import HoldingBalance13
 from ._Max140Text import Max140Text
@@ -65,4 +68,3 @@ class EligiblePosition17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HldgBal', type=HoldingBalance13, min=1, max=3, mutex_group=None, array=True),
 	))
-

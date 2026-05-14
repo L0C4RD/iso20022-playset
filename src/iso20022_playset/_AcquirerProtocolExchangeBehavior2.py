@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationProcess2Code import CancellationProcess2Code
 from ._ExchangeConfiguration10 import ExchangeConfiguration10
@@ -65,4 +68,3 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CxlXchg', type=CancellationProcess2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinCaptr', type=FinancialCapture1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

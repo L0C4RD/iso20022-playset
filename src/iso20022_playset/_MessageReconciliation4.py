@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Number import Number
 from ._ReconciliationMessageType2Code import ReconciliationMessageType2Code
@@ -35,4 +38,3 @@ class MessageReconciliation4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cnt', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ReconciliationMessageType2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

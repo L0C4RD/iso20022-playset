@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max4AlphaNumericText import Max4AlphaNumericText
 from ._SubBalanceQuantity2Choice import SubBalanceQuantity2Choice
@@ -35,4 +38,3 @@ class SecuritiesPosition1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 	))
-

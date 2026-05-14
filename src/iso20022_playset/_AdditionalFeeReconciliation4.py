@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISO8583FeeTypeCode import ISO8583FeeTypeCode
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -65,4 +68,3 @@ class AdditionalFeeReconciliation4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Impct', type=ReconciliationImpact1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ISO8583FeeTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))
-

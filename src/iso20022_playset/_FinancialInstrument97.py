@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Debt5 import Debt5
 from ._Derivative4 import Derivative4
@@ -65,4 +68,3 @@ class FinancialInstrument97(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Eqty', type=Equity3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Warrt', type=Warrant4, min=0, max=1, mutex_group=None, array=False),
 	))
-

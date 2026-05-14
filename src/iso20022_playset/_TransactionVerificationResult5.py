@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthenticationEntity2Code import AuthenticationEntity2Code
 from ._AuthenticationMethod7Code import AuthenticationMethod7Code
@@ -80,4 +83,3 @@ class TransactionVerificationResult5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rslt', type=Verification1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VrfctnNtty', type=AuthenticationEntity2Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

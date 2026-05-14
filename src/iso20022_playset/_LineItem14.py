@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencyAndAmount import CurrencyAndAmount
 from ._LineItemDetails12 import LineItemDetails12
@@ -133,4 +136,3 @@ class LineItem14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PdgLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PdgTtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

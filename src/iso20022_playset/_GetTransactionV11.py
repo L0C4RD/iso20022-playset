@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageHeader9 import MessageHeader9
 from ._SupplementaryData1 import SupplementaryData1
@@ -50,4 +53,3 @@ class GetTransactionV11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxQryDef', type=TransactionQuery8, min=0, max=1, mutex_group=None, array=False),
 	))
-

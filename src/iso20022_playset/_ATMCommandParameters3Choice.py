@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommandParameters1 import ATMCommandParameters1
 from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
@@ -95,4 +98,3 @@ class ATMCommandParameters3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctyDvc', type=ATMCommandParameters1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

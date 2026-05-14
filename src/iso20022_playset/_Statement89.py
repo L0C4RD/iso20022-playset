@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndPeriod3Choice import DateAndPeriod3Choice
 from ._StatementType7Choice import StatementType7Choice
@@ -50,4 +53,3 @@ class Statement89(base_types._BaseFieldType):
 		base_types.FieldEntry(name='HstrcData', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtTp', type=StatementType7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

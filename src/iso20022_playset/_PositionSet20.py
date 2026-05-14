@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PositionSetDimensions15 import PositionSetDimensions15
 from ._PositionSetMetrics10 import PositionSetMetrics10
@@ -35,4 +38,3 @@ class PositionSet20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dmnsns', type=PositionSetDimensions15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Mtrcs', type=PositionSetMetrics10, min=1, max=1, mutex_group=None, array=False),
 	))
-

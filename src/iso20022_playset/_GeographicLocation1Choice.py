@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeographicCoordinates1 import GeographicCoordinates1
 from ._UTMCoordinates1 import UTMCoordinates1
@@ -35,4 +38,3 @@ class GeographicLocation1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GeogcCordints', type=GeographicCoordinates1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UTMCordints', type=UTMCoordinates1, min=0, max=1, mutex_group=1, array=False),
 	))
-

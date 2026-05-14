@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionInformation2 import CorporateActionInformation2
 from ._CorporateActionNotificationAdvice1 import CorporateActionNotificationAdvice1
@@ -65,4 +68,3 @@ class AgentCANotificationCancellationRequestV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NtfctnCxlTpAndLkg', type=NotificationCancellation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

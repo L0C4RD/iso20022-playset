@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CryptographicKeyType3Code import CryptographicKeyType3Code
 from ._ISODateTime import ISODateTime
@@ -197,4 +200,3 @@ class CryptographicKey12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=CryptographicKeyType3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

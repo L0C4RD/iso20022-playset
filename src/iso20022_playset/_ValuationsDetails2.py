@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BaseOneRate import BaseOneRate
 from ._CollateralAmount9 import CollateralAmount9
@@ -35,4 +38,3 @@ class ValuationsDetails2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Hrcut', type=BaseOneRate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount9, min=1, max=None, mutex_group=None, array=True),
 	))
-

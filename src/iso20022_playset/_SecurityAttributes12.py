@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommonFinancialInstrumentAttributes12 import CommonFinancialInstrumentAttributes12
 from ._FinancialInstrument97 import FinancialInstrument97
@@ -50,4 +53,3 @@ class SecurityAttributes12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrmTp', type=FinancialInstrument97, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

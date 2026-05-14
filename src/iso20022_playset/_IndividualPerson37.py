@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CitizenshipInformation2 import CitizenshipInformation2
 from ._CivilStatus1Choice import CivilStatus1Choice
@@ -312,4 +315,3 @@ class IndividualPerson37(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvcOfBirth', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=1, max=10, mutex_group=None, array=True),
 	))
-

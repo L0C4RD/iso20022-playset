@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountOwnershipType6Code import AccountOwnershipType6Code
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
@@ -80,4 +83,3 @@ class GeneralInvestment2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OwnrshTp', type=AccountOwnershipType6Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=GeneralInvestmentAccountType2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

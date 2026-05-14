@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Commodity42 import Commodity42
 from ._Security48 import Security48
@@ -35,4 +38,3 @@ class SecurityCommodity7Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cmmdty', type=Commodity42, min=0, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Scty', type=Security48, min=0, max=None, mutex_group=1, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max52Text import Max52Text
 from ._NotApplicable1Code import NotApplicable1Code
@@ -35,4 +38,3 @@ class PortfolioCode3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NoPrtfl', type=NotApplicable1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification5 import AccountIdentification5
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
@@ -78,4 +81,3 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcct', type=AccountIdentification5, min=0, max=1, mutex_group=None, array=False),
 	))
-

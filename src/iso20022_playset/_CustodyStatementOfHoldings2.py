@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
 from ._Extension1 import Extension1
@@ -95,4 +98,3 @@ class CustodyStatementOfHoldings2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlVals', type=TotalValueInPageAndStatement, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

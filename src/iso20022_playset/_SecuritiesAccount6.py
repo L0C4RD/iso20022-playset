@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
@@ -79,4 +82,3 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference14 import AdditionalReference14
 from ._RejectionReason69 import RejectionReason69
@@ -35,4 +38,3 @@ class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=RejectionReason69, min=1, max=1, mutex_group=None, array=False),
 	))
-

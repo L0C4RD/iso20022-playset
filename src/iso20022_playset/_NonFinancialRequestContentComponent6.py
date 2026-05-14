@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentTransaction146 import CardPaymentTransaction146
 from ._ExternallyDefinedData5 import ExternallyDefinedData5
@@ -50,4 +53,3 @@ class NonFinancialRequestContentComponent6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NonFinReqTp', type=NonFinancialRequestType2Code, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction146, min=0, max=1, mutex_group=None, array=False),
 	))
-

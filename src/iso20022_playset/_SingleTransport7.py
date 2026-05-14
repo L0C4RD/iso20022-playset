@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TransportByAir5 import TransportByAir5
 from ._TransportByRail5 import TransportByRail5
@@ -65,4 +68,3 @@ class SingleTransport7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrnsprtByRoad', type=TransportByRoad5, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TrnsprtBySea', type=TransportBySea6, min=0, max=None, mutex_group=None, array=True),
 	))
-

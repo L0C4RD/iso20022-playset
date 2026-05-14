@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceFormat11Choice import BalanceFormat11Choice
 from ._Quantity49Choice import Quantity49Choice
@@ -203,4 +206,3 @@ class CorporateActionBalanceDetails42(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradDtPosBal', type=BalanceFormat11Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlElgblBal', type=Quantity49Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

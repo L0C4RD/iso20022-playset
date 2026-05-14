@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ErrorHandling5 import ErrorHandling5
 from ._SecurityIdentification39 import SecurityIdentification39
@@ -35,4 +38,3 @@ class BusinessError4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),
 	))
-

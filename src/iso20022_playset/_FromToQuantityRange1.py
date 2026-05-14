@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._QuantityRangeBoundary1 import QuantityRangeBoundary1
 
@@ -34,4 +37,3 @@ class FromToQuantityRange1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrQty', type=QuantityRangeBoundary1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ToQty', type=QuantityRangeBoundary1, min=1, max=1, mutex_group=None, array=False),
 	))
-

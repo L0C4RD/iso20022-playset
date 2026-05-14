@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancelOrderReport1 import CancelOrderReport1
 from ._NewOrderReport2 import NewOrderReport2
@@ -35,4 +38,3 @@ class OrderReport2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cxl', type=CancelOrderReport1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=NewOrderReport2, min=0, max=1, mutex_group=1, array=False),
 	))
-

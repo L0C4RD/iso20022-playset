@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification5 import AccountIdentification5
 from ._FinancialAssetBalanceType1Code import FinancialAssetBalanceType1Code
@@ -50,4 +53,3 @@ class BalanceType7Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=FinancialAssetBalanceType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesFinancingModificationInstructionV10 import SecuritiesFinancingModificationInstructionV10
 
@@ -22,4 +25,3 @@ class SESE_036_001_10():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgModInstr', type=SecuritiesFinancingModificationInstructionV10, min=1, max=1, mutex_group=None, array=False),
 		))
-

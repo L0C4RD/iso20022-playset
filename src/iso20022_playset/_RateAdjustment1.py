@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODate import ISODate
 from ._PercentageRate import PercentageRate
@@ -35,4 +38,3 @@ class RateAdjustment1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AdjstmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
-

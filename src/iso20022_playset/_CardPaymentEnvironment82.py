@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Acquirer10 import Acquirer10
 from ._Cardholder21 import Cardholder21
@@ -228,4 +231,3 @@ class CardPaymentEnvironment82(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcPrvdr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Wllt', type=CustomerDevice3, min=0, max=1, mutex_group=None, array=False),
 	))
-

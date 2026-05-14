@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Address2 import Address2
 from ._ContactBusiness1 import ContactBusiness1
@@ -137,4 +140,3 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LctnCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmSgmt', type=TimeSegment1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Algorithm20Code import Algorithm20Code
 from ._AlgorithmIdentification26 import AlgorithmIdentification26
@@ -35,4 +38,3 @@ class Parameter13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm20Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MskGnrtrAlgo', type=AlgorithmIdentification26, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentReportingNonEquityTradingActivityReportV01 import FinancialInstrumentReportingNonEquityTradingActivityReportV01
 
@@ -22,4 +25,3 @@ class AUTH_041_001_01():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgNonEqtyTradgActvtyRpt', type=FinancialInstrumentReportingNonEquityTradingActivityReportV01, min=1, max=1, mutex_group=None, array=False),
 		))
-

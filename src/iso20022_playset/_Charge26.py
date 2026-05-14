@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountOrRate3Choice import AmountOrRate3Choice
 from ._ChargeType4Choice import ChargeType4Choice
@@ -35,4 +38,3 @@ class Charge26(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ChrgApld', type=AmountOrRate3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=ChargeType4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

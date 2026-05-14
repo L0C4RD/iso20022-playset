@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionMovementRejectionStatus2 import CorporateActionMovementRejectionStatus2
 from ._CorporationActionMovementProcessingStatus2 import CorporationActionMovementProcessingStatus2
@@ -35,4 +38,3 @@ class CorporateMovementStatus2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=CorporationActionMovementProcessingStatus2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionMovementRejectionStatus2, min=1, max=1, mutex_group=None, array=False),
 	))
-

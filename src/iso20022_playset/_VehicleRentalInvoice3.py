@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Address2 import Address2
 from ._Amount21 import Amount21
@@ -396,4 +399,3 @@ class VehicleRentalInvoice3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TtlDstnc', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

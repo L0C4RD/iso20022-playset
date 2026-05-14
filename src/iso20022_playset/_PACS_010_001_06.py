@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstitutionDirectDebitV06 import FinancialInstitutionDirectDebitV06
 
@@ -22,4 +25,3 @@ class PACS_010_001_06():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIDrctDbt', type=FinancialInstitutionDirectDebitV06, min=1, max=1, mutex_group=None, array=False),
 		))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommunicationAddress11 import CommunicationAddress11
 from ._DateFormat58Choice import DateFormat58Choice
@@ -279,4 +282,3 @@ class VoteParameters10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VtngBlltElctrncAdr', type=CommunicationAddress11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VtngBlltReqAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
-

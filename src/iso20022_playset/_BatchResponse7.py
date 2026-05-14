@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PerformedTransaction7 import PerformedTransaction7
 from ._TransactionIdentifier1 import TransactionIdentifier1
@@ -49,4 +52,3 @@ class BatchResponse7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrfrmdTx', type=PerformedTransaction7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SaleBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
-

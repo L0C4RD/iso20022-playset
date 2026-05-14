@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Pagination1 import Pagination1
 from ._SupplementaryData1 import SupplementaryData1
@@ -65,4 +68,3 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StsDtls', type=TradeData45, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDataRpt', type=TradeDataReport2, min=1, max=None, mutex_group=None, array=True),
 	))
-

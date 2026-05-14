@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification43 import PartyIdentification43
 from ._ProprietaryData3 import ProprietaryData3
@@ -35,4 +38,3 @@ class PartyAndSignature2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgntr', type=ProprietaryData3, min=1, max=1, mutex_group=None, array=False),
 	))
-

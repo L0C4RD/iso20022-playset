@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InputResult6 import InputResult6
 from ._OutputResult2 import OutputResult2
@@ -35,4 +38,3 @@ class DeviceInputResponse6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InptRslt', type=InputResult6, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OutptRslt', type=OutputResult2, min=0, max=1, mutex_group=None, array=False),
 	))
-

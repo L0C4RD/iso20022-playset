@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeAdditionalQueryCriteria9 import TradeAdditionalQueryCriteria9
 from ._TradeDateTimeQueryCriteria6 import TradeDateTimeQueryCriteria6
@@ -108,4 +111,3 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradLifeCyclHstry', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradPtyCrit', type=TradePartyQueryCriteria7, min=0, max=1, mutex_group=None, array=False),
 	))
-

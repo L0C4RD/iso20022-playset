@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max10KBinary import Max10KBinary
 from ._Max140Binary import Max140Binary
@@ -50,4 +53,3 @@ class ManagementPlanContent14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='KeyNcphrmntCert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
-

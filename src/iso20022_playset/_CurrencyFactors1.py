@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AgreedRate2 import AgreedRate2
 from ._CurrencyCode import CurrencyCode
@@ -79,4 +82,3 @@ class CurrencyFactors1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ShrtPosLmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VoltlyMrgn', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
-

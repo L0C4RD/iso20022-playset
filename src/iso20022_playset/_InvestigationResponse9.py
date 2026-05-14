@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InvestigationData6 import InvestigationData6
 from ._InvestigationStatus2 import InvestigationStatus2
@@ -79,4 +82,3 @@ class InvestigationResponse9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NxtRspndr', type=Party40Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspndrInvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

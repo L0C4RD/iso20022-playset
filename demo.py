@@ -4,7 +4,7 @@
 import os
 import sys
 
-import iso20022_playset as iso20022
+import iso20022_playset
 
 def demo_1():
 
@@ -15,7 +15,7 @@ def demo_1():
 
 	# Parse from file.
 	path_to_xml = os.path.join(".", "sample_msgs", "sample-pain-002-001-14.xml")
-	isomsg = iso20022.parse_file(path_to_xml)
+	isomsg = iso20022_playset.parse_file(path_to_xml)
 	print(type(isomsg))
 
 
@@ -34,7 +34,7 @@ def demo_1():
 			</CstmrPmtStsRpt>
 		</Document>
 	"""
-	isomsg = iso20022.parse_xml(xml_string)
+	isomsg = iso20022_playset.parse_xml(xml_string)
 	print(type(isomsg))
 
 
@@ -42,7 +42,7 @@ def demo_1():
 	import xml.etree.ElementTree as ET
 
 	tree = ET.parse(path_to_xml)
-	isomsg = iso20022.parse_etree(tree)
+	isomsg = iso20022_playset.parse_etree(tree)
 	print(type(isomsg))
 
 	
@@ -50,7 +50,7 @@ def demo_1():
 	import defusedxml.ElementTree as dxET
 
 	tree = dxET.parse(path_to_xml)
-	isomsg = iso20022.parse_etree(tree)
+	isomsg = iso20022_playset.parse_etree(tree)
 	print(type(isomsg))
 
 
@@ -66,22 +66,22 @@ def demo_2():
 	"""
 
 	# Make from scratch.
-	isomsg = iso20022.PAIN_002_001_14.Document("Document")
+	isomsg = iso20022_playset.PAIN_002_001_14.Document("Document")
 
-	isomsg.CstmrPmtStsRpt = iso20022.CustomerPaymentStatusReportV14("CstmrPmtStsRpt")
-	isomsg.CstmrPmtStsRpt.GrpHdr = iso20022.GroupHeader128("GrpHdr")
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022.OriginalGroupHeader22("OrgnlGrpInfAndSts")
+	isomsg.CstmrPmtStsRpt = iso20022_playset.CustomerPaymentStatusReportV14("CstmrPmtStsRpt")
+	isomsg.CstmrPmtStsRpt.GrpHdr = iso20022_playset.GroupHeader128("GrpHdr")
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022_playset.OriginalGroupHeader22("OrgnlGrpInfAndSts")
 
-	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022.Max35Text("MsgId")
+	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022_playset.Max35Text("MsgId")
 	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId.set("Example header msgid")
 
-	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022.ISODateTime("CreDtTm")
+	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022_playset.ISODateTime("CreDtTm")
 	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm.set("1970-01-01T12:00:00")
 
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022.Max35Text("OrgnlMsgId")
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022_playset.Max35Text("OrgnlMsgId")
 	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
 
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022.Max35Text("OrgnlMsgNmId")
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022_playset.Max35Text("OrgnlMsgNmId")
 	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
 	print(isomsg.to_xml())
@@ -89,22 +89,22 @@ def demo_2():
 
 
 	# Create using defaults.
-	isomsg = iso20022.PAIN_002_001_14.Document("Document")
+	isomsg = iso20022_playset.PAIN_002_001_14.Document("Document")
 
-	isomsg.CstmrPmtStsRpt = iso20022.auto()
-	isomsg.CstmrPmtStsRpt.GrpHdr = iso20022.auto()
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022.auto()
+	isomsg.CstmrPmtStsRpt = iso20022_playset.auto()
+	isomsg.CstmrPmtStsRpt.GrpHdr = iso20022_playset.auto()
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022_playset.auto()
 
-	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022.auto()
+	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022_playset.auto()
 	isomsg.CstmrPmtStsRpt.GrpHdr.MsgId.set("Example header msgid")
 
-	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022.auto()
+	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022_playset.auto()
 	isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm.set("1970-01-01T12:00:00")
 
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022.auto()
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022_playset.auto()
 	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
 
-	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022.auto()
+	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022_playset.auto()
 	isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
 	print(isomsg.to_xml())
@@ -139,7 +139,7 @@ def demo_2():
 			</RsltnOfInvstgtn>
 		</Document>
 	"""
-	isomsg = iso20022.parse_xml(xml_string)
+	isomsg = iso20022_playset.parse_xml(xml_string)
 
 	isomsg.validate()
 
@@ -185,7 +185,7 @@ def demo_3():
 			</RsltnOfInvstgtn>
 		</Document>
 	"""
-	isomsg = iso20022.parse_xml(xml_string)
+	isomsg = iso20022_playset.parse_xml(xml_string)
 	isomsg.validate()
 
 
@@ -193,7 +193,7 @@ def demo_3():
 	isomsg.RsltnOfInvstgtn.Assgnmt.Id.set("A"*36) # This is a Max35Text field
 	try:
 		isomsg.validate()
-	except iso20022.ValidateError as e:
+	except iso20022_playset.ValidateError as e:
 		print(f"{str(e)}")
 
 
@@ -211,7 +211,7 @@ def demo_4():
 	"""
 
 	# Generate messages of a given type.
-	isomsg = iso20022.TSMT_049_001_01.Document("Document")
+	isomsg = iso20022_playset.TSMT_049_001_01.Document("Document")
 	for _ in range(3):
 		isomsg.generate()
 		print(isomsg.to_xml())

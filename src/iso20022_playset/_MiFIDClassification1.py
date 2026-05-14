@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max350Text import Max350Text
 from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
@@ -35,4 +38,3 @@ class MiFIDClassification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Clssfctn', type=OrderOriginatorEligibility1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nrrtv', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetHolding1 import AssetHolding1
 from ._GenericIdentification165 import GenericIdentification165
@@ -35,4 +38,3 @@ class CollateralAccount4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AsstHldg', type=AssetHolding1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 	))
-

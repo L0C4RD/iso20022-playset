@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
@@ -169,4 +172,3 @@ class ContractRegistrationStatement4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlCtrctTrnvrSum', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxJrnl', type=TransactionCertificate4, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Branch5Choice import Branch5Choice
 from ._CollateralRole1Code import CollateralRole1Code
@@ -65,4 +68,3 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ntr', type=CounterpartyTradeNature7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sd', type=CollateralRole1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

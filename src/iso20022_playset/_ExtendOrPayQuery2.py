@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Demand4 import Demand4
 from ._DemandStatus1Code import DemandStatus1Code
@@ -50,4 +53,3 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=DemandStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentAdjustment1 import DocumentAdjustment1
 from ._DocumentAmount1 import DocumentAmount1
@@ -35,4 +38,3 @@ class RemittanceAmount4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RmtAmtAndTp', type=DocumentAmount1, min=0, max=None, mutex_group=None, array=True),
 	))
-

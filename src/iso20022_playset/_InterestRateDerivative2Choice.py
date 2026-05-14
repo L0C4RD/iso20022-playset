@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SwapType1Code import SwapType1Code
 from ._UnderlyingInterestRateType3Code import UnderlyingInterestRateType3Code
@@ -35,4 +38,3 @@ class InterestRateDerivative2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Othr', type=UnderlyingInterestRateType3Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SwpRltd', type=SwapType1Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

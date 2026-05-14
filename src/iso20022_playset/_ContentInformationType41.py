@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MACData1 import MACData1
 from ._Max8HexBinaryText import Max8HexBinaryText
@@ -35,4 +38,3 @@ class ContentInformationType41(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MAC', type=Max8HexBinaryText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MACData', type=MACData1, min=1, max=1, mutex_group=None, array=False),
 	))
-

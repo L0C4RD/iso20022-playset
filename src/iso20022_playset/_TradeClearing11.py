@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Cleared23Choice import Cleared23Choice
 from ._ClearingObligationType1Code import ClearingObligationType1Code
@@ -50,4 +53,3 @@ class TradeClearing11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrSts', type=Cleared23Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraGrp', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

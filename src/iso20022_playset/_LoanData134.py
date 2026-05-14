@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._ContractTerm6Choice import ContractTerm6Choice
@@ -198,4 +201,3 @@ class LoanData134(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Term', type=ContractTerm6Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgVn', type=TradingVenueType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

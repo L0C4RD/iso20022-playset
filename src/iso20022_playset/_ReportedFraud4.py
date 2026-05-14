@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthenticationMethod12Code import AuthenticationMethod12Code
 from ._FraudReportingAction1Code import FraudReportingAction1Code
@@ -223,4 +226,3 @@ class ReportedFraud4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmitrCaseRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=FraudType1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType41Code import CorporateActionEventType41Code
 from ._GenericIdentification30 import GenericIdentification30
@@ -35,4 +38,3 @@ class CorporateActionEventType125Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=CorporateActionEventType41Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 	))
-

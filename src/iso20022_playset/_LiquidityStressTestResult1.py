@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CoverTwoDefaulters1 import CoverTwoDefaulters1
 from ._LiquidityRequiredAndAvailable1 import LiquidityRequiredAndAvailable1
@@ -50,4 +53,3 @@ class LiquidityStressTestResult1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LqdtyReqrdAndAvlbl', type=LiquidityRequiredAndAvailable1, min=6, max=6, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScnroDfltrs', type=CoverTwoDefaulters1, min=1, max=1, mutex_group=None, array=False),
 	))
-

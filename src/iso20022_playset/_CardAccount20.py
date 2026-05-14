@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountChoiceMethod1Code import AccountChoiceMethod1Code
 from ._AccountIdentification80Choice import AccountIdentification80Choice
@@ -110,4 +113,3 @@ class CardAccount20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SelctnMtd', type=AccountChoiceMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Svcr', type=PartyIdentification177Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

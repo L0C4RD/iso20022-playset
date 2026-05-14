@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndType1 import DateAndType1
 from ._DocumentType1 import DocumentType1
@@ -64,4 +67,3 @@ class ReferredMandateDocument2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdDt', type=DateAndType1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1, min=0, max=1, mutex_group=None, array=False),
 	))
-

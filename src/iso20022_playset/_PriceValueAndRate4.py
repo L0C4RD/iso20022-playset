@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PercentageRate import PercentageRate
 from ._PriceAndDirection1 import PriceAndDirection1
@@ -35,4 +38,3 @@ class PriceValueAndRate4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PriceAndDirection1, min=0, max=1, mutex_group=None, array=False),
 	))
-

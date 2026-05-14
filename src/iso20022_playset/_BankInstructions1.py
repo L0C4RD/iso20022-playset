@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODate import ISODate
 from ._Max2000Text import Max2000Text
@@ -35,4 +38,3 @@ class BankInstructions1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LastDtForRspn', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txt', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 	))
-

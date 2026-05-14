@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Document8 import Document8
 from ._Max2000Text import Max2000Text
@@ -65,4 +68,3 @@ class Presentation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Mdm', type=PresentationMedium1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PlcOfPresntnOrUdrConfChc', type=PlaceOrUnderConfirmationChoice1, min=0, max=1, mutex_group=None, array=False),
 	))
-

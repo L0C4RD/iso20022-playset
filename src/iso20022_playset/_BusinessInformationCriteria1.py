@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeneralBusinessInformationReturnCriteria1 import GeneralBusinessInformationReturnCriteria1
 from ._GeneralBusinessInformationSearchCriteria1 import GeneralBusinessInformationSearchCriteria1
@@ -50,4 +53,3 @@ class BusinessInformationCriteria1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RtrCrit', type=GeneralBusinessInformationReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=GeneralBusinessInformationSearchCriteria1, min=0, max=None, mutex_group=None, array=True),
 	))
-

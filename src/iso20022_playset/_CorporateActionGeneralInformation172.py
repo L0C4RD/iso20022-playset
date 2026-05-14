@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventProcessingType2Code import CorporateActionEventProcessingType2Code
 from ._CorporateActionEventType106Choice import CorporateActionEventType106Choice
@@ -123,4 +126,3 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubEvtTp', type=DTCCSubEventType9Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygScty', type=FinancialInstrumentAttributes126, min=1, max=None, mutex_group=None, array=True),
 	))
-

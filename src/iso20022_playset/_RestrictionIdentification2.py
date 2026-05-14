@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
 from ._RestrictionReference1Code import RestrictionReference1Code
@@ -35,4 +38,3 @@ class RestrictionIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=RestrictionReference1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

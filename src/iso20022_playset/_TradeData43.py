@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CommonTradeDataReport71 import CommonTradeDataReport71
 from ._CounterpartySpecificData36 import CounterpartySpecificData36
@@ -95,4 +98,3 @@ class TradeData43(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TechAttrbts', type=TechnicalAttributes5, min=0, max=1, mutex_group=None, array=False),
 	))
-

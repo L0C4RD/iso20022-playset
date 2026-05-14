@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Fee1 import Fee1
 from ._Max35Text import Max35Text
@@ -50,4 +53,3 @@ class FeeAndTax1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndvFee', type=Fee1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='IndvTax', type=Tax30, min=0, max=None, mutex_group=None, array=True),
 	))
-

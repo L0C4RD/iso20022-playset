@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountPrice5 import AmountPrice5
 from ._AmountPricePerAmount3 import AmountPricePerAmount3
@@ -80,4 +83,3 @@ class PriceFormat87Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndxPts', type=RestrictedFINDecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PctgPric', type=PercentagePrice2, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InformationType1Choice import InformationType1Choice
 from ._Max350Text import Max350Text
@@ -35,4 +38,3 @@ class AdditionalInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InfTp', type=InformationType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InfVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

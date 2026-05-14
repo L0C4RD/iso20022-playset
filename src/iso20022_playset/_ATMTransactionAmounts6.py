@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMTransactionAmounts7 import ATMTransactionAmounts7
 from ._ActiveCurrencyCode import ActiveCurrencyCode
@@ -64,4 +67,3 @@ class ATMTransactionAmounts6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MaxPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MinPssblAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 	))
-

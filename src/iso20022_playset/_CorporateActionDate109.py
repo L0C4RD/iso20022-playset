@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat49Choice import DateFormat49Choice
 from ._DateFormat67Choice import DateFormat67Choice
@@ -35,4 +38,3 @@ class CorporateActionDate109(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CoverXprtnDdln', type=DateFormat67Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradgDt', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

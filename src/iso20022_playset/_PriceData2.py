@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 from ._Schedule1 import Schedule1
@@ -65,4 +68,3 @@ class PriceData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SchdlPrd', type=Schedule1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure8Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

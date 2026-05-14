@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
@@ -63,4 +66,3 @@ class FundBalance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlUnitsFrCshOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlUnitsFrUnitOrdrs', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=None, array=False),
 	))
-

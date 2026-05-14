@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
 from ._ChequeType2Code import ChequeType2Code
@@ -180,4 +183,3 @@ class Cheque19(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RgnlClrZone', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sgntr', type=Max70Text, min=0, max=5, mutex_group=None, array=True),
 	))
-

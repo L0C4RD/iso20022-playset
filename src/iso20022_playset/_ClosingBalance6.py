@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosingBalance7Choice import ClosingBalance7Choice
 from ._ShortLong1Code import ShortLong1Code
@@ -35,4 +38,3 @@ class ClosingBalance6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtLngInd', type=ShortLong1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

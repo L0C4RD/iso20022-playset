@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DecimalNumber import DecimalNumber
 from ._FromToQuantityRange1 import FromToQuantityRange1
@@ -78,4 +81,3 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NEQQty', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ToQty', type=QuantityRangeBoundary1, min=0, max=1, mutex_group=1, array=False),
 	))
-

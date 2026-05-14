@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeQueryCriteria10 import TradeQueryCriteria10
 from ._TradeRecurrentQuery5 import TradeRecurrentQuery5
@@ -35,4 +38,3 @@ class TradeReportQuery13Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AdHocQry', type=TradeQueryCriteria10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcrntQry', type=TradeRecurrentQuery5, min=0, max=1, mutex_group=1, array=False),
 	))
-

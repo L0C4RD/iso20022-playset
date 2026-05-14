@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
@@ -110,4 +113,3 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxSubTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=ISO8583TransactionTypeCode, min=1, max=1, mutex_group=None, array=False),
 	))
-

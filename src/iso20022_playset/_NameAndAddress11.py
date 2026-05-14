@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PostalAddress7 import PostalAddress7
 from ._RestrictedFINMax35Text import RestrictedFINMax35Text
@@ -35,4 +38,3 @@ class NameAndAddress11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Adr', type=PostalAddress7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=RestrictedFINMax35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

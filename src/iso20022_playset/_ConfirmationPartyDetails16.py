@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification55Choice import AccountIdentification55Choice
 from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
@@ -125,4 +128,3 @@ class ConfirmationPartyDetails16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PtyCpcty', type=TradingPartyCapacity3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount35, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTimeChoice import DateAndDateTimeChoice
 from ._DateType6Code import DateType6Code
@@ -50,4 +53,3 @@ class DateFormat4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NotSpcfdDt', type=DateType6Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification13, min=0, max=1, mutex_group=1, array=False),
 	))
-

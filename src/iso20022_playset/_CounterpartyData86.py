@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CounterpartyIdentification10 import CounterpartyIdentification10
 from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
@@ -64,4 +67,3 @@ class CounterpartyData86(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgCtrPty', type=CounterpartyIdentification10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

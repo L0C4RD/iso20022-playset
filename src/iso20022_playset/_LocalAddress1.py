@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max100Text import Max100Text
 from ._Max200Text import Max200Text
@@ -120,4 +123,3 @@ class LocalAddress1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StrtNm', type=Max200Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TwnNm', type=Max100Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

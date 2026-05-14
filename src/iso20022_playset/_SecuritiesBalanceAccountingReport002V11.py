@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AggregateBalanceInformation43 import AggregateBalanceInformation43
 from ._BlockChainAddressWallet10 import BlockChainAddressWallet10
@@ -169,4 +172,3 @@ class SecuritiesBalanceAccountingReport002V11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StmtGnlDtls', type=Statement76, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubAcctDtls', type=SubAccountIdentification68, min=0, max=None, mutex_group=None, array=True),
 	))
-

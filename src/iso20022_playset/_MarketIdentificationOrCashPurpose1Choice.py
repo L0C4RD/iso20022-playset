@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalMarketArea1Code import ExternalMarketArea1Code
 from ._MarketIdentification87 import MarketIdentification87
@@ -35,4 +38,3 @@ class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CshSSIPurp', type=ExternalMarketArea1Code, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SttlmInstrMktId', type=MarketIdentification87, min=0, max=1, mutex_group=1, array=False),
 	))
-

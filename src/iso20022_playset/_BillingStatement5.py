@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceAdjustment1 import BalanceAdjustment1
 from ._BillingBalance1 import BillingBalance1
@@ -200,4 +203,3 @@ class BillingStatement5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcAdjstmnt', type=BillingServiceAdjustment1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxRgn', type=BillingTaxRegion3, min=0, max=None, mutex_group=None, array=True),
 	))
-

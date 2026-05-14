@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcknowledgementReason12Choice import AcknowledgementReason12Choice
 from ._AcknowledgementReason13Choice import AcknowledgementReason13Choice
@@ -200,4 +203,3 @@ class Reason19Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RprRsn', type=RepairReason11Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='UmtchdRsn', type=UnmatchedReason22Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

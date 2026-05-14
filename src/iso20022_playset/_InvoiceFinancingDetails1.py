@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancingResult1 import FinancingResult1
 from ._InstalmentFinancingInformation1 import InstalmentFinancingInformation1
@@ -65,4 +68,3 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlInvcInf', type=OriginalInvoiceInformation1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Spplr', type=PartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
-

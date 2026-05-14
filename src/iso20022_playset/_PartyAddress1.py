@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._Max2048Text import Max2048Text
@@ -65,4 +68,3 @@ class PartyAddress1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URLAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

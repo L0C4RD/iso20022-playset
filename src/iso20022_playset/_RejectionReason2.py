@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODateTime import ISODateTime
 from ._Max20000Text import Max20000Text
@@ -79,4 +82,3 @@ class RejectionReason2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RjctnDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RsnDesc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

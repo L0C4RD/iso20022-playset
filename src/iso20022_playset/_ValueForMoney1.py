@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssessmentOfValueRequiredUnderCOLLUKType1Code import AssessmentOfValueRequiredUnderCOLLUKType1Code
 from ._EMTDataReportingVFMUKType1Code import EMTDataReportingVFMUKType1Code
@@ -124,4 +127,3 @@ class ValueForMoney1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RvwDtUK', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RvwNxtDueUK', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraPositionDetails60 import IntraPositionDetails60
 from ._IntraPositionProcessingStatus11Choice import IntraPositionProcessingStatus11Choice
@@ -95,4 +98,3 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxDtls', type=IntraPositionDetails60, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications29, min=1, max=1, mutex_group=None, array=False),
 	))
-

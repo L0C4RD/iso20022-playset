@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max140Text import Max140Text
 from ._StatusAdviceReport3 import StatusAdviceReport3
@@ -65,4 +68,3 @@ class MessageReportHeader4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RcrdSts', type=StatusReportRecord3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementFailsDailyInstructionType1Choice import SettlementFailsDailyInstructionType1Choice
 
@@ -34,4 +37,3 @@ class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CrossCSD', type=SettlementFailsDailyInstructionType1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IntraCSD', type=SettlementFailsDailyInstructionType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

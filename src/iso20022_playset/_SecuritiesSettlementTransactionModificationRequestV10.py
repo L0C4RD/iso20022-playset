@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TransactionDetails176 import TransactionDetails176
 from ._UpdateType39Choice import UpdateType39Choice
@@ -35,4 +38,3 @@ class SecuritiesSettlementTransactionModificationRequestV10(base_types._BaseFiel
 		base_types.FieldEntry(name='ModfdTxDtls', type=TransactionDetails176, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType39Choice, min=1, max=3, mutex_group=None, array=True),
 	))
-

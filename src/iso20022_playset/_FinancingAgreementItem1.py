@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AgreementItemAction1Code import AgreementItemAction1Code
 from ._FinancialItemParameters1 import FinancialItemParameters1
@@ -167,4 +170,3 @@ class FinancingAgreementItem1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdGrntLttr', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VldtnStsInf', type=ValidationStatusInformation1, min=0, max=1, mutex_group=None, array=False),
 	))
-

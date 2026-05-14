@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATICALaxProcessing import ATICALaxProcessing
 from ._Address4 import Address4
@@ -412,4 +415,3 @@ class Invoice4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxRclmMtd', type=TaxReclaimMethod1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxTtl', type=Tax44, min=0, max=None, mutex_group=None, array=True),
 	))
-

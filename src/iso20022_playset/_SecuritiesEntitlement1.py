@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecurityIdentification7 import SecurityIdentification7
 from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
@@ -35,4 +38,3 @@ class SecuritiesEntitlement1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EntitldSctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=1, max=1, mutex_group=None, array=False),
 	))
-

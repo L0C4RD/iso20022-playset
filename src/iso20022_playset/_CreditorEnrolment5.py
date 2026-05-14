@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorServiceEnrolment1 import CreditorServiceEnrolment1
 from ._Max10KBinary import Max10KBinary
@@ -94,4 +97,3 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MrchntCtgyCd', type=MerchantCategoryCodeIdentifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UltmtCdtr', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),
 	))
-

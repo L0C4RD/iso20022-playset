@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentFormat1Choice import DocumentFormat1Choice
 from ._Max2MBBinary import Max2MBBinary
@@ -80,4 +83,3 @@ class Document9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Nclsr', type=Max2MBBinary, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=UndertakingDocumentType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

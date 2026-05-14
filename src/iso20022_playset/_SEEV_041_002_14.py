@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionInstructionCancellationRequestStatusAdvice002V14 import CorporateActionInstructionCancellationRequestStatusAdvice002V14
 
@@ -22,4 +25,3 @@ class SEEV_041_002_14():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnInstrCxlReqStsAdvc', type=CorporateActionInstructionCancellationRequestStatusAdvice002V14, min=1, max=1, mutex_group=None, array=False),
 		))
-

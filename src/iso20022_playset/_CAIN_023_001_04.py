@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardManagementInitiationV04 import CardManagementInitiationV04
 
@@ -22,4 +25,3 @@ class CAIN_023_001_04():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CardMgmtInitn', type=CardManagementInitiationV04, min=1, max=1, mutex_group=None, array=False),
 		))
-

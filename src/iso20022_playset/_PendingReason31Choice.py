@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification30 import GenericIdentification30
 from ._PendingReason1Code import PendingReason1Code
@@ -35,4 +38,3 @@ class PendingReason31Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=PendingReason1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),
 	))
-

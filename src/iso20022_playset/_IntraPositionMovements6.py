@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraPositionMovement10 import IntraPositionMovement10
 from ._IntraPositionStatusAndReason4 import IntraPositionStatusAndReason4
@@ -65,4 +68,3 @@ class IntraPositionMovements6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsAndRsn', type=IntraPositionStatusAndReason4, min=0, max=1, mutex_group=None, array=False),
 	))
-

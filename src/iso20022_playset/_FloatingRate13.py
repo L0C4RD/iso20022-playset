@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FloatingRateIdentification8Choice import FloatingRateIdentification8Choice
 from ._ISINOct2015Identifier import ISINOct2015Identifier
@@ -153,4 +156,3 @@ class FloatingRate13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RstFrqcy', type=InterestRateFrequency3Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice20Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

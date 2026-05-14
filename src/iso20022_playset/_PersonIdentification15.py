@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
 from ._GenericIdentification4 import GenericIdentification4
@@ -247,4 +250,3 @@ class PersonIdentification15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SclSctyNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxIdNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

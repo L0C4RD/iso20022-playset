@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMAccountStatement3 import ATMAccountStatement3
 from ._ATMCommand7 import ATMCommand7
@@ -170,4 +173,3 @@ class ATMTransaction48(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType12, min=1, max=1, mutex_group=None, array=False),
 	))
-

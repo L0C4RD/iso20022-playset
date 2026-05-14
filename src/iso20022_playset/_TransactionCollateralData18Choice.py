@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Collateral52 import Collateral52
 from ._CollateralFlag13Choice import CollateralFlag13Choice
@@ -64,4 +67,3 @@ class TransactionCollateralData18Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RpTrad', type=Collateral52, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesLndg', type=CollateralFlag13Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

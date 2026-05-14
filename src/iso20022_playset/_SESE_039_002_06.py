@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06 import SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06
 
@@ -22,4 +25,3 @@ class SESE_039_002_06():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxModReqStsAdvc', type=SecuritiesSettlementTransactionModificationRequestStatusAdvice002V06, min=1, max=1, mutex_group=None, array=False),
 		))
-

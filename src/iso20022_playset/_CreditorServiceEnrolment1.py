@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._Max2048Text import Max2048Text
@@ -93,4 +96,3 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcDescLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vsblty', type=Visibilty1, min=0, max=1, mutex_group=None, array=False),
 	))
-

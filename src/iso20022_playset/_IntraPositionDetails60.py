@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -169,4 +172,3 @@ class IntraPositionDetails60(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmQty', type=FinancialInstrumentQuantity33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

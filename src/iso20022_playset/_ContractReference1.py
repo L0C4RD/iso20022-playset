@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentType1Choice import DocumentType1Choice
 from ._Max500Text import Max500Text
@@ -35,4 +38,3 @@ class ContractReference1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ref', type=Max500Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DocumentType1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

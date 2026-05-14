@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._AmountDetails3 import AmountDetails3
@@ -537,4 +540,3 @@ class TripLeg3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='XchgdTckt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgdTcktNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

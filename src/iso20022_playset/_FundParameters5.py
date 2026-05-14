@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._FinancialInstrument71 import FinancialInstrument71
@@ -79,4 +82,3 @@ class FundParameters5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FndMgmtCpny', type=PartyIdentification139, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='RegdDstrbtnCtry', type=CountryCode, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDataReading8Code import CardDataReading8Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -266,4 +269,3 @@ class SaleContext4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SpltPmt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SpnsrdMrchnt', type=Organisation26, min=0, max=None, mutex_group=None, array=True),
 	))
-

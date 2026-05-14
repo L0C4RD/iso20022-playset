@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ContractSize1 import ContractSize1
@@ -65,4 +68,3 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PricCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountAndBalance61 import AccountAndBalance61
 from ._CorporateActionEventReference3 import CorporateActionEventReference3
@@ -184,4 +187,3 @@ class CorporateActionInstructionV13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctInstr', type=ProtectInstruction1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

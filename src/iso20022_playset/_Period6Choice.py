@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateType8Code import DateType8Code
 from ._Period11 import Period11
@@ -35,4 +38,3 @@ class Period6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prd', type=Period11, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrdCd', type=DateType8Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

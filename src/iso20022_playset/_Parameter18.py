@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Algorithm26Code import Algorithm26Code
 
@@ -20,4 +23,3 @@ class Parameter18(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

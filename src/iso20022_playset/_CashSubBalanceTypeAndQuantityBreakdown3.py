@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndQuantityBreakdown1 import AmountAndQuantityBreakdown1
 from ._CashBalanceType3Choice import CashBalanceType3Choice
@@ -35,4 +38,3 @@ class CashSubBalanceTypeAndQuantityBreakdown3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QtyBrkdwn', type=AmountAndQuantityBreakdown1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=CashBalanceType3Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

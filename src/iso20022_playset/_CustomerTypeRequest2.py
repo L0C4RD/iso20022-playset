@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OrganisationType2 import OrganisationType2
 from ._PersonType2 import PersonType2
@@ -50,4 +53,3 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvtTp', type=PersonType2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max350Text import Max350Text
 from ._PartyAddress1 import PartyAddress1
@@ -50,4 +53,3 @@ class PartyIdentification214(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RcptNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RspnRcptAdr', type=PartyAddress1, min=1, max=1, mutex_group=None, array=False),
 	))
-

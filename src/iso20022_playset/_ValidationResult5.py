@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ElementIdentification1 import ElementIdentification1
 from ._Max350Text import Max350Text
@@ -65,4 +68,3 @@ class ValidationResult5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RuleId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateAction83 import CorporateAction83
 from ._CorporateActionAgent2 import CorporateActionAgent2
@@ -125,4 +128,3 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrvsNtfctnId', type=DocumentIdentification31, min=0, max=1, mutex_group=None, array=False),
 	))
-

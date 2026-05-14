@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._UTIIdentifier import UTIIdentifier
 
@@ -34,4 +37,3 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrrUnqTxIdr', type=UTIIdentifier, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UnqTxIdr', type=UTIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
-

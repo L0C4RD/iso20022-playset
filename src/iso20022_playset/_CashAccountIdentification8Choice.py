@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericAccountIdentification1 import GenericAccountIdentification1
 from ._IBAN2007Identifier import IBAN2007Identifier
@@ -35,4 +38,3 @@ class CashAccountIdentification8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Othr', type=GenericAccountIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISOMonth import ISOMonth
 from ._ISOYear import ISOYear
@@ -50,4 +53,3 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Svc', type=SystemAndCurrency1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Yr', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
 	))
-

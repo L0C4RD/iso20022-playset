@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarginRequirement1 import MarginRequirement1
 from ._Requirement1 import Requirement1
@@ -35,4 +38,3 @@ class MarginRequirement1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MrgnRqrmnt', type=Requirement1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SgrtdIndpdntAmtRqrmnt', type=MarginRequirement1, min=0, max=1, mutex_group=1, array=False),
 	))
-

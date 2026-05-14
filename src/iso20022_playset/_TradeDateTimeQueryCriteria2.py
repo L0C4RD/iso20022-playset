@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateOrBlankQuery2Choice import DateOrBlankQuery2Choice
 from ._DateTimePeriod1 import DateTimePeriod1
@@ -63,4 +66,3 @@ class TradeDateTimeQueryCriteria2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgDtTm', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnDt', type=DateOrBlankQuery2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

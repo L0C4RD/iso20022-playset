@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Future4 import Future4
 from ._Option15 import Option15
@@ -35,4 +38,3 @@ class Derivative4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Futr', type=Future4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Optn', type=Option15, min=0, max=1, mutex_group=None, array=False),
 	))
-

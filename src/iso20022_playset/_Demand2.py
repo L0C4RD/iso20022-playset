@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._ISODateTime import ISODateTime
@@ -65,4 +68,3 @@ class Demand2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubmissnDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._PersonOrOrganisation1Choice import PersonOrOrganisation1Choice
@@ -35,4 +38,3 @@ class PartyIdentification76(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CtryOfBrnch', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PersonOrOrganisation1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

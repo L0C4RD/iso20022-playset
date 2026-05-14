@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._PartyIdentification132 import PartyIdentification132
@@ -78,4 +81,3 @@ class Account34(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification132, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnAdr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),
 	))
-

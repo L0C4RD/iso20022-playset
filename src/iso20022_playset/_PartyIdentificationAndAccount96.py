@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification26 import AccountIdentification26
 from ._PartyIdentification64 import PartyIdentification64
@@ -35,4 +38,3 @@ class PartyIdentificationAndAccount96(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification26, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification64, min=1, max=1, mutex_group=None, array=False),
 	))
-

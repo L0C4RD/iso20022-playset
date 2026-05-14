@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountNotification25 import AccountNotification25
 from ._GroupHeader116 import GroupHeader116
@@ -50,4 +53,3 @@ class BankToCustomerDebitCreditNotificationV14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ntfctn', type=AccountNotification25, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

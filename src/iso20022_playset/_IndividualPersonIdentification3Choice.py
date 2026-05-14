@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification81 import GenericIdentification81
 from ._IndividualPerson35 import IndividualPerson35
@@ -35,4 +38,3 @@ class IndividualPersonIdentification3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IdNb', type=GenericIdentification81, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrsnNm', type=IndividualPerson35, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SupplementaryData1 import SupplementaryData1
 from ._TradeTransactionIdentification15 import TradeTransactionIdentification15
@@ -35,4 +38,3 @@ class SecuritiesFinancingReportingPairingRequestV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification15, min=1, max=None, mutex_group=None, array=True),
 	))
-

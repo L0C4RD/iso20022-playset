@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._DistributionStrategy1Choice import DistributionStrategy1Choice
@@ -50,4 +53,3 @@ class OtherDistributionStrategy1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DstrbtnStrtgyTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trgt', type=DistributionStrategy1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

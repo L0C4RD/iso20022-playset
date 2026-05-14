@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationReason36Choice import CancellationReason36Choice
 from ._Clearing8 import Clearing8
@@ -140,4 +143,3 @@ class TradeLegNotificationCancellationV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmDtls', type=Settlement2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradLegDtls', type=TradeLeg14, min=1, max=1, mutex_group=None, array=False),
 	))
-

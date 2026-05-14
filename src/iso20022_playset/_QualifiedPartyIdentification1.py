@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification1 import GenericIdentification1
 from ._Max256Text import Max256Text
@@ -80,4 +83,3 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RoleDesc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

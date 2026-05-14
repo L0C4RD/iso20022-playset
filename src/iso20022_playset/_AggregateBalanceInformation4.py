@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
@@ -240,4 +243,3 @@ class AggregateBalanceInformation4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrvsHldgVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormatChoice, min=0, max=1, mutex_group=None, array=False),
 	))
-

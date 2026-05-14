@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionBalanceDetails41 import CorporateActionBalanceDetails41
 from ._Max140Text import Max140Text
@@ -80,4 +83,3 @@ class AccountAndBalance58(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SfkpgAcct', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat42Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

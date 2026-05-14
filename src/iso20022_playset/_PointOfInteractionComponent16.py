@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._Max70Text import Max70Text
@@ -78,4 +81,3 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SrlNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=POIComponentType5Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

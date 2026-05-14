@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AffirmationStatus8Choice import AffirmationStatus8Choice
 from ._AllocationSatus3Choice import AllocationSatus3Choice
@@ -214,4 +217,3 @@ class Status19Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmCondModSts', type=SettlementConditionModificationStatus3Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus19Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

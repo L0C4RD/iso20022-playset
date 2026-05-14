@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BICIdentification1 import BICIdentification1
 from ._DataSetType2Code import DataSetType2Code
@@ -80,4 +83,3 @@ class DocumentIdentification10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=DataSetType2Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
-

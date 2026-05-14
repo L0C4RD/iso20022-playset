@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FeeCollectionIdentification1 import FeeCollectionIdentification1
 from ._Max35Text import Max35Text
@@ -50,4 +53,3 @@ class FeeCollectionReference2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=FeeCollectionIdentification1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrAssgnrNtty', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

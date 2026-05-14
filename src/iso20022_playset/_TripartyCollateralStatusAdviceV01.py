@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AllocationStatus1Choice import AllocationStatus1Choice
 from ._CashMovement7 import CashMovement7
@@ -185,4 +188,3 @@ class TripartyCollateralStatusAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus27Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications46, min=1, max=1, mutex_group=None, array=False),
 	))
-

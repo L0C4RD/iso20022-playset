@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyCancellation1 import PartyCancellation1
 from ._PartyUpdate1 import PartyUpdate1
@@ -35,4 +38,3 @@ class PartyReport1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cxl', type=PartyCancellation1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Upd', type=PartyUpdate1, min=0, max=1, mutex_group=1, array=False),
 	))
-

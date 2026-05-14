@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
@@ -95,4 +98,3 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesSubBalTp', type=GenericIdentification30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TpOfPric', type=TypeOfPrice29Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

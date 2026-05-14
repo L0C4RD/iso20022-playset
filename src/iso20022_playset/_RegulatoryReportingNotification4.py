@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
 from ._Max35Text import Max35Text
@@ -65,4 +68,3 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxCert', type=TransactionCertificate4, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

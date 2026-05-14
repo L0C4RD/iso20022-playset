@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeneralBusinessOrError8Choice import GeneralBusinessOrError8Choice
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class GeneralBusinessReport6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizInfRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='GnlBizOrErr', type=GeneralBusinessOrError8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

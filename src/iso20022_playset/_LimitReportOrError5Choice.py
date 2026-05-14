@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ErrorHandling5 import ErrorHandling5
 from ._Limits8 import Limits8
@@ -35,4 +38,3 @@ class LimitReportOrError5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizRpt', type=Limits8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 	))
-

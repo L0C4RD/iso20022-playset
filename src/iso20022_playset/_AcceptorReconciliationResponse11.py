@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
 from ._ResponseType10 import ResponseType10
@@ -50,4 +53,3 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tx', type=TransactionReconciliation5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxRspn', type=ResponseType10, min=1, max=1, mutex_group=None, array=False),
 	))
-

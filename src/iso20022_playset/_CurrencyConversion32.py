@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMExchangeRateComponent1 import ATMExchangeRateComponent1
 from ._ActionMessage5 import ActionMessage5
@@ -196,4 +199,3 @@ class CurrencyConversion32(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VldUntil', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
-

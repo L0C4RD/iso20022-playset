@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
 from ._GenericIdentification56 import GenericIdentification56
@@ -50,4 +53,3 @@ class SubBalanceQuantity6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='QtyAndAvlbty', type=QuantityAndAvailability1, min=0, max=1, mutex_group=1, array=False),
 	))
-

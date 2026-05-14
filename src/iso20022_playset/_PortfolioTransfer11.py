@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._AllOtherCash1 import AllOtherCash1
@@ -168,4 +171,3 @@ class PortfolioTransfer11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrfConfId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

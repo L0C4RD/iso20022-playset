@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthorisationResult19 import AuthorisationResult19
 from ._CardPaymentTransaction138 import CardPaymentTransaction138
@@ -253,4 +256,3 @@ class CardPaymentTransaction143(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSucss', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
-

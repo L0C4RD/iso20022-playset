@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommand15 import ATMCommand15
 from ._ATMCommand16 import ATMCommand16
@@ -80,4 +83,3 @@ class ATMDeviceReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CmdRslt', type=ATMCommand15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment6, min=1, max=1, mutex_group=None, array=False),
 	))
-

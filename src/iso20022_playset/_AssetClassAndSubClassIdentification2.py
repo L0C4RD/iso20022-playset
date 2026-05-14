@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NonEquityAssetClass1Code import NonEquityAssetClass1Code
 from ._NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
@@ -50,4 +53,3 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DerivSubClss', type=NonEquitySubClass1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='FinInstrmClssfctn', type=NonEquityInstrumentReportingClassification1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

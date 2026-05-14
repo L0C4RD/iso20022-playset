@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DocumentGeneralInformation1 import DocumentGeneralInformation1
@@ -140,4 +143,3 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RfrdDoc', type=ReferredDocumentInformation2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Spplr', type=PartyAndAccountIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

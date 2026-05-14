@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Price7 import Price7
 
@@ -34,4 +37,3 @@ class PriceType4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Indctv', type=Price7, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Mkt', type=Price7, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation28 import AdditionalInformation28
 from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
@@ -95,4 +98,3 @@ class SecuritiesSettlementConditionsModificationRequest002V09(base_types._BaseFi
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount30, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

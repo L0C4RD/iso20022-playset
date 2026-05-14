@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GroupHeader122 import GroupHeader122
 from ._RemittanceLocation10 import RemittanceLocation10
@@ -50,4 +53,3 @@ class RemittanceLocationAdviceV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RmtLctn', type=RemittanceLocation10, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

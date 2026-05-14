@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMDepositResponse2 import ATMDepositResponse2
 from ._ContentInformationType10 import ContentInformationType10
@@ -65,4 +68,3 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdATMDpstRspn', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
-

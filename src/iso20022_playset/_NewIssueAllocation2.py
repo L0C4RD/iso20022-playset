@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeMinimus1Choice import DeMinimus1Choice
 from ._Max350Text import Max350Text
@@ -50,4 +53,3 @@ class NewIssueAllocation2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rstrctd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptPrsnRsn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

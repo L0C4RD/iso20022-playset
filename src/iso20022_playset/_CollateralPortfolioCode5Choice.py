@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarginPortfolio3 import MarginPortfolio3
 from ._PortfolioCode3Choice import PortfolioCode3Choice
@@ -35,4 +38,3 @@ class CollateralPortfolioCode5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MrgnPrtflCd', type=MarginPortfolio3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtfl', type=PortfolioCode3Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptorRejection2 import AcceptorRejection2
 from ._Header41 import Header41
@@ -35,4 +38,3 @@ class SaleToPOIMessageRejectionV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rjct', type=AcceptorRejection2, min=1, max=1, mutex_group=None, array=False),
 	))
-

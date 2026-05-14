@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosingDate4Choice import ClosingDate4Choice
 from ._CollateralAmount14 import CollateralAmount14
@@ -35,4 +38,3 @@ class DealTransactionDetails7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClsgDt', type=ClosingDate4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DealDtlsAmt', type=CollateralAmount14, min=0, max=1, mutex_group=None, array=False),
 	))
-

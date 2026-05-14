@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ErrorHandling5 import ErrorHandling5
 from ._LimitJournal3 import LimitJournal3
@@ -35,4 +38,3 @@ class LimitJournalReportOrError8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='LmtJrnl', type=LimitJournal3, min=0, max=1, mutex_group=1, array=False),
 	))
-

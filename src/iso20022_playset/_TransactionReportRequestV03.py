@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageIdentification1 import MessageIdentification1
 from ._ReportSpecification4 import ReportSpecification4
@@ -35,4 +38,3 @@ class TransactionReportRequestV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSpcfctn', type=ReportSpecification4, min=1, max=1, mutex_group=None, array=False),
 	))
-

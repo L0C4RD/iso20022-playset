@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BaseOneRate import BaseOneRate
 from ._ExchangeRateType1Code import ExchangeRateType1Code
@@ -50,4 +53,3 @@ class ExchangeRateInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RateTp', type=ExchangeRateType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),
 	))
-

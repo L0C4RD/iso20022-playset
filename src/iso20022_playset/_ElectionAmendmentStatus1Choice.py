@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionAmendmentProcessingStatus1 import CorporateActionAmendmentProcessingStatus1
 from ._CorporateActionAmendmentRejectionStatus1 import CorporateActionAmendmentRejectionStatus1
@@ -35,4 +38,3 @@ class ElectionAmendmentStatus1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionAmendmentProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=CorporateActionAmendmentRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
-

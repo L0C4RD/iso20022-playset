@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashCollateralResponse3 import CashCollateralResponse3
 from ._OtherCollateralResponse3 import OtherCollateralResponse3
@@ -50,4 +53,3 @@ class CollateralResponse3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrCollRspn', type=OtherCollateralResponse3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SctiesCollRspn', type=SecuritiesCollateralResponse2, min=0, max=None, mutex_group=None, array=True),
 	))
-

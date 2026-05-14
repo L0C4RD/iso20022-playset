@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference2 import AdditionalReference2
 from ._MessageIdentification1 import MessageIdentification1
@@ -79,4 +82,3 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=StatementOfInvestmentFundTransactions3, min=0, max=1, mutex_group=None, array=False),
 	))
-

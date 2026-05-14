@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentificationAndName5 import AccountIdentificationAndName5
 from ._BranchData4 import BranchData4
@@ -164,4 +167,3 @@ class DirectDebitMandate8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MndtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RegnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

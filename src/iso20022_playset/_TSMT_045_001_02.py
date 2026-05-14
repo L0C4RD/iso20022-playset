@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ForwardIntentToPayNotificationV02 import ForwardIntentToPayNotificationV02
 
@@ -22,4 +25,3 @@ class TSMT_045_001_02():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FwdInttToPayNtfctn', type=ForwardIntentToPayNotificationV02, min=1, max=1, mutex_group=None, array=False),
 		))
-

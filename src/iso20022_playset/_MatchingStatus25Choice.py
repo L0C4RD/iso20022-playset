@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ProprietaryReason4 import ProprietaryReason4
 from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
@@ -50,4 +53,3 @@ class MatchingStatus25Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Umtchd', type=UnmatchedStatus17Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

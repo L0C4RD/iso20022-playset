@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification1 import GenericIdentification1
 from ._Max350Text import Max350Text
@@ -50,4 +53,3 @@ class CancellationPendingStatus7Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max350Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

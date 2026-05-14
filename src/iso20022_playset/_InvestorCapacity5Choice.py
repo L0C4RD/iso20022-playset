@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Eligibility1Code import Eligibility1Code
 from ._GenericIdentification47 import GenericIdentification47
@@ -35,4 +38,3 @@ class InvestorCapacity5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=Eligibility1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification47, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection52 import AmountAndDirection52
 from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
@@ -183,4 +186,3 @@ class QuantityAndAccount115(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SfkpgPlc', type=SafeKeepingPlace5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttldQty', type=Quantity51Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

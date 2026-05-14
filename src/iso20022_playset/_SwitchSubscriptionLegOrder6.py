@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
@@ -200,4 +203,3 @@ class SwitchSubscriptionLegOrder6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmAndCtdyDtls', type=FundSettlementParameters11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxOvrhd', type=FeeAndTax1, min=0, max=1, mutex_group=None, array=False),
 	))
-

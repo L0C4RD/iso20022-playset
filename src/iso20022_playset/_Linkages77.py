@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentNumber17Choice import DocumentNumber17Choice
 from ._IdentificationReference16Choice import IdentificationReference16Choice
@@ -35,4 +38,3 @@ class Linkages77(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber17Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=IdentificationReference16Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

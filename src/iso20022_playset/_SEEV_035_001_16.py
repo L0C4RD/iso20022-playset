@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionMovementPreliminaryAdviceV16 import CorporateActionMovementPreliminaryAdviceV16
 
@@ -22,4 +25,3 @@ class SEEV_035_001_16():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnMvmntPrlimryAdvc', type=CorporateActionMovementPreliminaryAdviceV16, min=1, max=1, mutex_group=None, array=False),
 		))
-

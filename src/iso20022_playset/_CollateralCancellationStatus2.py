@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max35Text import Max35Text
 from ._RejectionStatus3 import RejectionStatus3
@@ -50,4 +53,3 @@ class CollateralCancellationStatus2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CollStsCd', type=Status4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RjctnDtls', type=RejectionStatus3, min=0, max=1, mutex_group=None, array=False),
 	))
-

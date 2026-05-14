@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
 from ._GenericIdentification1 import GenericIdentification1
@@ -35,4 +38,3 @@ class PartyIdentification126Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtryId', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),
 	))
-

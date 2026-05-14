@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationStatus29Choice import CancellationStatus29Choice
 from ._PendingStatus56Choice import PendingStatus56Choice
@@ -80,4 +83,3 @@ class CancellationStatus30Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rjctd', type=RejectionStatus34Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

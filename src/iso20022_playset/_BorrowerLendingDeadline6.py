@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat49Choice import DateFormat49Choice
 from ._PartyIdentification136Choice import PartyIdentification136Choice
@@ -35,4 +38,3 @@ class BorrowerLendingDeadline6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Brrwr', type=PartyIdentification136Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StockLndgDdln', type=DateFormat49Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

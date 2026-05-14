@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCassette3 import ATMCassette3
 from ._ATMTotals4 import ATMTotals4
@@ -360,4 +363,3 @@ class ATMTransaction53(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=ATMTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

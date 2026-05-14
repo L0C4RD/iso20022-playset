@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentInformationType39 import ContentInformationType39
 from ._CryptographicKeyType5Code import CryptographicKeyType5Code
@@ -297,4 +300,3 @@ class CryptographicKey19(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=CryptographicKeyType5Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

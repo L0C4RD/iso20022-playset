@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OrderCancellationStatus2Code import OrderCancellationStatus2Code
 from ._RejectedStatus10 import RejectedStatus10
@@ -35,4 +38,3 @@ class CancellationStatus22Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus10, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sts', type=OrderCancellationStatus2Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

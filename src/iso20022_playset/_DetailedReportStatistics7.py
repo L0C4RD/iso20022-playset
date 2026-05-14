@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max20PositiveNumber import Max20PositiveNumber
 from ._NumberOfTransactionsPerValidationRule6 import NumberOfTransactionsPerValidationRule6
@@ -63,4 +66,3 @@ class DetailedReportStatistics7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlNbOfRptsAccptd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNbOfRptsRjctd', type=Max20PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionTaken1Code import ActionTaken1Code
 from ._AdditionalInformation30 import AdditionalInformation30
@@ -79,4 +82,3 @@ class FraudDispositionStatus2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrActnTaken', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WrngData', type=Max256Text, min=0, max=None, mutex_group=None, array=True),
 	))
-

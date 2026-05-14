@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionDeactivationCancellationStatus1Choice import CorporateActionDeactivationCancellationStatus1Choice
 from ._CorporateActionDeactivationInstructionStatus1 import CorporateActionDeactivationInstructionStatus1
@@ -93,4 +96,3 @@ class AgentCADeactivationStatusAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DeactvtnInstrSts', type=CorporateActionDeactivationInstructionStatus1, min=1, max=None, mutex_group=2, array=True),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
-

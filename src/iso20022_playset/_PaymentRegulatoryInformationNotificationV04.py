@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencyControlHeader9 import CurrencyControlHeader9
 from ._RegulatoryReportingNotification4 import RegulatoryReportingNotification4
@@ -50,4 +53,3 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxNtfctn', type=RegulatoryReportingNotification4, min=1, max=None, mutex_group=None, array=True),
 	))
-

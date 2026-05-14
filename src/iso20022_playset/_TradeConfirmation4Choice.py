@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeConfirmation5 import TradeConfirmation5
 from ._TradeNonConfirmation1 import TradeNonConfirmation1
@@ -35,4 +38,3 @@ class TradeConfirmation4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Confd', type=TradeConfirmation5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NonConfd', type=TradeNonConfirmation1, min=0, max=1, mutex_group=1, array=False),
 	))
-

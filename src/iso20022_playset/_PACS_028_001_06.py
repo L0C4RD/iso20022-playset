@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FIToFIPaymentStatusRequestV06 import FIToFIPaymentStatusRequestV06
 
@@ -22,4 +25,3 @@ class PACS_028_001_06():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFIPmtStsReq', type=FIToFIPaymentStatusRequestV06, min=1, max=1, mutex_group=None, array=False),
 		))
-

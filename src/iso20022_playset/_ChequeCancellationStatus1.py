@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ChequeCancellationStatus1Choice import ChequeCancellationStatus1Choice
 from ._ChequePartyRole1Code import ChequePartyRole1Code
@@ -50,4 +53,3 @@ class ChequeCancellationStatus1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Orgtr', type=ChequePartyRole1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ChequeCancellationStatus1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

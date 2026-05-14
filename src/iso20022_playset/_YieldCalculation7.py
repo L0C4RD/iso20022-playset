@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CalculationType1Code import CalculationType1Code
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
@@ -94,4 +97,3 @@ class YieldCalculation7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

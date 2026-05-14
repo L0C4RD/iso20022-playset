@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateTimePeriod1Choice import DateTimePeriod1Choice
 from ._Instruction1Code import Instruction1Code
@@ -65,4 +68,3 @@ class PaymentInstruction33(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prty', type=Priority1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

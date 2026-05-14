@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceFormat62Choice import PriceFormat62Choice
 from ._PriceFormat88Choice import PriceFormat88Choice
@@ -77,4 +80,3 @@ class CorporateActionPrice94(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MinMltplCshToInst', type=PriceFormat62Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OverSbcptDpstPric', type=PriceFormat88Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

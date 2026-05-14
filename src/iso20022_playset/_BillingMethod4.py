@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BillingServiceParameters2 import BillingServiceParameters2
 from ._TaxCalculation1 import TaxCalculation1
@@ -35,4 +38,3 @@ class BillingMethod4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SvcDtl', type=BillingServiceParameters2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxClctn', type=TaxCalculation1, min=1, max=1, mutex_group=None, array=False),
 	))
-

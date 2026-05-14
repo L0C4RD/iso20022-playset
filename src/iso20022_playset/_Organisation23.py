@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max350Text import Max350Text
 from ._Max35Text import Max35Text
@@ -50,4 +53,3 @@ class Organisation23(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PstlAdr', type=PostalAddress21, min=1, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

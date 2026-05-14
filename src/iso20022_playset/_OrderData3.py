@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuctionData2 import AuctionData2
 from ._OrderData4 import OrderData4
@@ -50,4 +53,3 @@ class OrderData3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrdrData', type=OrderData4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrIdData', type=OrderIdentification2, min=1, max=1, mutex_group=None, array=False),
 	))
-

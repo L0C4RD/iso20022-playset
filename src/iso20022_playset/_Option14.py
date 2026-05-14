@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExoticOptionStyle1Code import ExoticOptionStyle1Code
 from ._OptionEvent2 import OptionEvent2
@@ -80,4 +83,3 @@ class Option14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OptnTp', type=OptionType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnStyle', type=OptionStyle5Code, min=1, max=4, mutex_group=None, array=True),
 	))
-

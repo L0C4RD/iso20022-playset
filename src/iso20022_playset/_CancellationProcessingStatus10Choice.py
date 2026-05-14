@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancellationReason39Choice import CancellationReason39Choice
 from ._ProprietaryReason4 import ProprietaryReason4
@@ -64,4 +67,3 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CxlReqd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PrtrySts', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
-

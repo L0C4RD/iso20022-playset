@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection49 import AmountAndDirection49
 from ._CalculationMethod1Code import CalculationMethod1Code
@@ -122,4 +125,3 @@ class CollateralAmount18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxAmtBrkdwn', type=CollateralTransactionAmountBreakdown2, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValSght', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),
 	))
-

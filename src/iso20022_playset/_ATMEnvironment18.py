@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCustomer8 import ATMCustomer8
 from ._Acquirer7 import Acquirer7
@@ -95,4 +98,3 @@ class ATMEnvironment18(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cstmr', type=ATMCustomer8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstgNtty', type=TerminalHosting1, min=0, max=1, mutex_group=None, array=False),
 	))
-

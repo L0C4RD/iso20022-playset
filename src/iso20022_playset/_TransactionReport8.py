@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PaymentIdentification8Choice import PaymentIdentification8Choice
 from ._TransactionOrError6Choice import TransactionOrError6Choice
@@ -35,4 +38,3 @@ class TransactionReport8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxOrErr', type=TransactionOrError6Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

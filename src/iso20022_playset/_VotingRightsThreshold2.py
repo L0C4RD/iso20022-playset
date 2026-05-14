@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NumberOrPercentage2Choice import NumberOrPercentage2Choice
 from ._ThresholdBasis1Choice import ThresholdBasis1Choice
@@ -35,4 +38,3 @@ class VotingRightsThreshold2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Thrshld', type=NumberOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThrshldBsis', type=ThresholdBasis1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

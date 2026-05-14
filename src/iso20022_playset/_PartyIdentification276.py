@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification217 import PartyIdentification217
 from ._PartyIdentification275 import PartyIdentification275
@@ -35,4 +38,3 @@ class PartyIdentification276(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LglPrsn', type=PartyIdentification275, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='NtrlPrsn', type=PartyIdentification217, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
 from ._BalanceTransferReference1 import BalanceTransferReference1
@@ -50,4 +53,3 @@ class BalanceTransfer7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BalTrfMtd', type=SettlementMethod7Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTrfRef', type=BalanceTransferReference1, min=0, max=1, mutex_group=None, array=False),
 	))
-

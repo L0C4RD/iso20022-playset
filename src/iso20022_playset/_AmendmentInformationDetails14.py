@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
 from ._CashAccount40 import CashAccount40
@@ -181,4 +184,3 @@ class AmendmentInformationDetails14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlRsn', type=MandateSetupReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlTrckgDays', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

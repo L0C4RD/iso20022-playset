@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
 from ._AmountAndRateStatus1 import AmountAndRateStatus1
@@ -65,4 +68,3 @@ class NetDividendRateFormat38Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateValueType7Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndAmtAndRateSts', type=RateTypeAndAmountAndStatus56, min=0, max=1, mutex_group=1, array=False),
 	))
-

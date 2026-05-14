@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ReuseDataReportCorrection14 import ReuseDataReportCorrection14
 from ._ReuseDataReportError5 import ReuseDataReportError5
@@ -64,4 +67,3 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Err', type=ReuseDataReportError5, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='New', type=ReuseDataReportNew6, min=0, max=1, mutex_group=1, array=False),
 	))
-

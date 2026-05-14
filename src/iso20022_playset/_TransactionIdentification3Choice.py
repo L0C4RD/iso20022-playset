@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeTransactionIdentification16 import TradeTransactionIdentification16
 from ._TradeTransactionIdentification17 import TradeTransactionIdentification17
@@ -50,4 +53,3 @@ class TransactionIdentification3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='MrgnRptg', type=TradeTransactionIdentification16, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tx', type=TradeTransactionIdentification20, min=0, max=1, mutex_group=1, array=False),
 	))
-

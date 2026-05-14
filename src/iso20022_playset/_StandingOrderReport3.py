@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._StandingOrderIdentification8 import StandingOrderIdentification8
 from ._StandingOrderOrError10Choice import StandingOrderOrError10Choice
@@ -35,4 +38,3 @@ class StandingOrderReport3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StgOrdrOrErr', type=StandingOrderOrError10Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

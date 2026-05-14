@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from ._ISINOct2015Identifier import ISINOct2015Identifier
@@ -50,4 +53,3 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktVal', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 	))
-

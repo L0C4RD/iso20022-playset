@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrument107 import FinancialInstrument107
 from ._InvestmentAccount81 import InvestmentAccount81
@@ -120,4 +123,3 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NonceId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrdrRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

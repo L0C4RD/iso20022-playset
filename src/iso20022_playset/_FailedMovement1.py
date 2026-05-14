@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._FailedSettlementReason1FormatChoice import FailedSettlementReason1FormatChoice
@@ -65,4 +68,3 @@ class FailedMovement1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctyId', type=SecurityIdentification7, min=0, max=1, mutex_group=None, array=False),
 	))
-

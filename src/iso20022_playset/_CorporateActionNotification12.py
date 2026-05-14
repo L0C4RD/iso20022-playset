@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionNotificationType1Code import CorporateActionNotificationType1Code
 from ._CorporateActionProcessingStatus7Choice import CorporateActionProcessingStatus7Choice
@@ -50,4 +53,3 @@ class CorporateActionNotification12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NtfctnTp', type=CorporateActionNotificationType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgSts', type=CorporateActionProcessingStatus7Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Address4 import Address4
 from ._LocalData10 import LocalData10
@@ -136,4 +139,3 @@ class FinancialInstitution10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Phne', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='URL', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

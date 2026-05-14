@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PriceValue5 import PriceValue5
 from ._PriceValueChange1 import PriceValueChange1
@@ -77,4 +80,3 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OneYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ThreeYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),
 	))
-

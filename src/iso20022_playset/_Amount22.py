@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -65,4 +68,3 @@ class Amount22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tax', type=Tax41, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeliveringPartiesAndAccount21 import DeliveringPartiesAndAccount21
 from ._ReceivingPartiesAndAccount21 import ReceivingPartiesAndAccount21
@@ -35,4 +38,3 @@ class SettlementParties37Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DlvrgSttlmPties', type=DeliveringPartiesAndAccount21, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RcvgSttlmPties', type=ReceivingPartiesAndAccount21, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ResponseStatus6Choice import ResponseStatus6Choice
 from ._SupplementaryData1 import SupplementaryData1
@@ -65,4 +68,3 @@ class SecuritiesSettlementTransactionCounterpartyResponseV05(base_types._BaseFie
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails173, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentification6, min=1, max=1, mutex_group=None, array=False),
 	))
-

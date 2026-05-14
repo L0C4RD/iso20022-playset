@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
 from ._CompareDate3 import CompareDate3
@@ -79,4 +82,3 @@ class CompareOtherPayment1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrPmtRcvr', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrPmtTp', type=CompareOtherPaymentType1, min=0, max=1, mutex_group=None, array=False),
 	))
-

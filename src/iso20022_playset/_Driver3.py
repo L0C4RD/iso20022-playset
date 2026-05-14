@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
@@ -267,4 +270,3 @@ class Driver3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Mplyr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

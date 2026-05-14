@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 
 class CardAccountType3Code(base_types._BaseDataType_String):
@@ -26,4 +29,3 @@ class CardAccountType3Code(base_types._BaseDataType_String):
 		"PRPD",
 		"FLTC",
 	}
-

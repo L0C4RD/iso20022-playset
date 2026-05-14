@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MasterAgreement7 import MasterAgreement7
 from ._Max140Text import Max140Text
@@ -122,4 +125,3 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrptyAgt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnqTradIdr', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

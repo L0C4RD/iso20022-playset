@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AddressVerification1 import AddressVerification1
 from ._AuthenticationMethod8Code import AuthenticationMethod8Code
@@ -169,4 +172,3 @@ class CardholderAuthentication17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CrdhldrOnLinePIN', type=OnLinePIN11, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrtctdAuthntcnVal', type=ContentInformationType40, min=0, max=1, mutex_group=None, array=False),
 	))
-

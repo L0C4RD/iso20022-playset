@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralProposalResponse1Code import CollateralProposalResponse1Code
 from ._CollateralResponse3 import CollateralResponse3
@@ -50,4 +53,3 @@ class CollateralProposalResponseType4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rspn', type=CollateralResponse3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=CollateralProposalResponse1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

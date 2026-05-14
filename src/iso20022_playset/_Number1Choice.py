@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification7 import GenericIdentification7
 from ._Max3NumericText import Max3NumericText
@@ -35,4 +38,3 @@ class Number1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NbId', type=Max3NumericText, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification7, min=0, max=1, mutex_group=1, array=False),
 	))
-

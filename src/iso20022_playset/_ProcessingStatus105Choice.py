@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcknowledgedAcceptedStatus24Choice import AcknowledgedAcceptedStatus24Choice
 from ._CancellationStatus15Choice import CancellationStatus15Choice
@@ -110,4 +113,3 @@ class ProcessingStatus105Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rjctd', type=RejectionOrRepairStatus43Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpr', type=RejectionOrRepairStatus42Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

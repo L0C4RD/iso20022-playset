@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Mandate22 import Mandate22
 from ._Max35Text import Max35Text
@@ -35,4 +38,3 @@ class OriginalMandate11Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlMndt', type=Mandate22, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OrgnlMndtId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

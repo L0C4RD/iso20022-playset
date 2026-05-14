@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
 from ._Extended350Code import Extended350Code
@@ -65,4 +68,3 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedSubBalTp', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

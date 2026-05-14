@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OriginalGroupHeader21 import OriginalGroupHeader21
 from ._OriginalPaymentInstruction55 import OriginalPaymentInstruction55
@@ -35,4 +38,3 @@ class UnderlyingTransaction37(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlGrpInfAndCxl', type=OriginalGroupHeader21, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OrgnlPmtInfAndCxl', type=OriginalPaymentInstruction55, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashSettlementSystemPlace1Choice import CashSettlementSystemPlace1Choice
 from ._Quantity83Choice import Quantity83Choice
@@ -50,4 +53,3 @@ class DigitalPaymentSettlement1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Qty', type=Quantity83Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

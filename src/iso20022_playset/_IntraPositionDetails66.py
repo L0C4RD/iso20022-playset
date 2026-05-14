@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraPositionMovementDetails21 import IntraPositionMovementDetails21
 from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
@@ -50,4 +53,3 @@ class IntraPositionDetails66(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntraPosMvmnt', type=IntraPositionMovementDetails21, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgPlc', type=SafekeepingPlaceFormat41Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

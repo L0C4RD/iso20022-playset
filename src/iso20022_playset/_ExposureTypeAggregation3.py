@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralAmount16 import CollateralAmount16
 from ._CollateralStatus1Code import CollateralStatus1Code
@@ -80,4 +83,3 @@ class ExposureTypeAggregation3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount16, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

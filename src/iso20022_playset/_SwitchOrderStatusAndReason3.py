@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExpectedExecution6 import ExpectedExecution6
 from ._FundOrderData6 import FundOrderData6
@@ -165,4 +168,3 @@ class SwitchOrderStatusAndReason3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrdrSts', type=OrderStatus7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsInitr', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClearingChannel2Code import ClearingChannel2Code
 from ._GenericIdentification30 import GenericIdentification30
@@ -110,4 +113,3 @@ class RequestDetails22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prty', type=PriorityNumeric4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ref', type=References14, min=1, max=1, mutex_group=None, array=False),
 	))
-

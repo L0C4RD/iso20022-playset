@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMReject2 import ATMReject2
 from ._Header33 import Header33
@@ -35,4 +38,3 @@ class ATMRejectV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ATMRjct', type=ATMReject2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Hdr', type=Header33, min=1, max=1, mutex_group=None, array=False),
 	))
-

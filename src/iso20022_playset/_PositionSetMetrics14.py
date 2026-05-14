@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PositionSetBuyerAndSeller2 import PositionSetBuyerAndSeller2
 
@@ -34,4 +37,3 @@ class PositionSetMetrics14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Clean', type=PositionSetBuyerAndSeller2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Ttl', type=PositionSetBuyerAndSeller2, min=0, max=1, mutex_group=None, array=False),
 	))
-

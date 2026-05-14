@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Collateral54 import Collateral54
 from ._CollateralMovement13 import CollateralMovement13
@@ -35,4 +38,3 @@ class CollateralMovement6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CollMvmntDrctn', type=CollateralMovement13, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rtr', type=Collateral54, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExecutingParty2Choice import ExecutingParty2Choice
 from ._LEIIdentifier import LEIIdentifier
@@ -182,4 +185,3 @@ class OrderData4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradgCpcty', type=RegulatoryTradingCapacity1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxData', type=TransactionData3, min=0, max=1, mutex_group=None, array=False),
 	))
-

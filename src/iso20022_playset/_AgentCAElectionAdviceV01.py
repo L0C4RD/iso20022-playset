@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContactPerson1 import ContactPerson1
 from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
@@ -95,4 +98,3 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ElctnDtls', type=CorporateActionElection3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),
 	))
-

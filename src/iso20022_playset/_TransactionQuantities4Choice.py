@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
 from ._OriginalAndCurrentQuantities1 import OriginalAndCurrentQuantities1
@@ -50,4 +53,3 @@ class TransactionQuantities4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Prtry', type=ProprietaryQuantity1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantity33Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

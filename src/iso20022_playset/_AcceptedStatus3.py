@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptedStatus13Choice import AcceptedStatus13Choice
 from ._Quantity54Choice import Quantity54Choice
@@ -35,4 +38,3 @@ class AcceptedStatus3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AccptdQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AccptdRsn', type=AcceptedStatus13Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

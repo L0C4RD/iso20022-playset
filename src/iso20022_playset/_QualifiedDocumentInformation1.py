@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AlgorithmAndDigest1 import AlgorithmAndDigest1
 from ._BinaryFile1 import BinaryFile1
@@ -169,4 +172,3 @@ class QualifiedDocumentInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='URL', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max6Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

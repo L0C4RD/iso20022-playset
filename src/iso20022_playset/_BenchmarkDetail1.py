@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
 from ._Max20000Text import Max20000Text
@@ -50,4 +53,3 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName2Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

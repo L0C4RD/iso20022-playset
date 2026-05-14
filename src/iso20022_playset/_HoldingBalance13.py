@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesEntryType3Code import SecuritiesEntryType3Code
 from ._SignedQuantityFormat14 import SignedQuantityFormat14
@@ -35,4 +38,3 @@ class HoldingBalance13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat14, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='BalTp', type=SecuritiesEntryType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentServiceType10Code import CardPaymentServiceType10Code
 from ._GenericIdentification176 import GenericIdentification176
@@ -169,4 +172,3 @@ class CertificateManagementRequest4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TMId', type=GenericIdentification176, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhtListId', type=PointOfInteraction6, min=0, max=1, mutex_group=None, array=False),
 	))
-

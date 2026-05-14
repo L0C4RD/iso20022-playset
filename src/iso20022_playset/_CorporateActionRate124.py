@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ForeignExchangeTerms38 import ForeignExchangeTerms38
 from ._GrossDividendRateFormat43Choice import GrossDividendRateFormat43Choice
@@ -182,4 +185,3 @@ class CorporateActionRate124(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TaxblIncmPerDvddShr', type=RateTypeAndAmountAndStatus26, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='WhldgTaxRate', type=RateAndAmountFormat56Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

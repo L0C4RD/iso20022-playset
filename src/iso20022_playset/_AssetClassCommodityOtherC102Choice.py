@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._OtherC10CommodityDeliverable2 import OtherC10CommodityDeliverable2
 from ._OtherC10CommodityNonDeliverable2 import OtherC10CommodityNonDeliverable2
@@ -35,4 +38,3 @@ class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Dlvrbl', type=OtherC10CommodityDeliverable2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='NonDlvrbl', type=OtherC10CommodityNonDeliverable2, min=0, max=1, mutex_group=1, array=False),
 	))
-

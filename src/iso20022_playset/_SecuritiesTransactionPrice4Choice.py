@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesTransactionPrice1 import SecuritiesTransactionPrice1
 from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
@@ -35,4 +38,3 @@ class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NoPric', type=SecuritiesTransactionPrice1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

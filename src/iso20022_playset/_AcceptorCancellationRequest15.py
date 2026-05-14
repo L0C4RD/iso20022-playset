@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
 from ._CardPaymentTransaction150 import CardPaymentTransaction150
@@ -50,4 +53,3 @@ class AcceptorCancellationRequest15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment82, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransaction150, min=1, max=1, mutex_group=None, array=False),
 	))
-

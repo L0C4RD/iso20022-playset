@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashCompare3 import CashCompare3
 from ._Commodity42 import Commodity42
@@ -50,4 +53,3 @@ class SecurityCommodityCash4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Csh', type=CashCompare3, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Scty', type=Security48, min=0, max=None, mutex_group=None, array=True),
 	))
-

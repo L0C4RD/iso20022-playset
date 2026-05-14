@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Amendment8 import Amendment8
 from ._UndertakingStatus2Code import UndertakingStatus2Code
@@ -35,4 +38,3 @@ class Amendment7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AmdmntId', type=Amendment8, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AmdmntSts', type=UndertakingStatus2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

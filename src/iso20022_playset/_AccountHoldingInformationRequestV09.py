@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalReference10 import AdditionalReference10
 from ._AdditionalReference11 import AdditionalReference11
@@ -254,4 +257,3 @@ class AccountHoldingInformationRequestV09(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrfrAcct', type=InvestmentAccount69, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

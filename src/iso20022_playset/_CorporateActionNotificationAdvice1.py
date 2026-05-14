@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateAction2 import CorporateAction2
 from ._CorporateActionOption1 import CorporateActionOption1
@@ -35,4 +38,3 @@ class CorporateActionNotificationAdvice1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CorpActnDtls', type=CorporateAction2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CorpActnOptnDtls', type=CorporateActionOption1, min=0, max=None, mutex_group=None, array=True),
 	))
-

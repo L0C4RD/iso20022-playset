@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
 from ._InstructionQueryType1Code import InstructionQueryType1Code
@@ -109,4 +112,3 @@ class SecuritiesModificationQueryCriteria1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcgSts', type=ModificationProcessingStatus9Choice, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount19, min=0, max=None, mutex_group=None, array=True),
 	))
-

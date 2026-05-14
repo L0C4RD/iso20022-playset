@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthorityRequestType1 import AuthorityRequestType1
 from ._CashAccount43 import CashAccount43
@@ -50,4 +53,3 @@ class AccountAndParties3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='InvstgtdPties', type=InvestigatedParties1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

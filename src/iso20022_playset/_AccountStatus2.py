@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosedStatusReason1Choice import ClosedStatusReason1Choice
 from ._ClosurePendingStatusReason1Choice import ClosurePendingStatusReason1Choice
@@ -125,4 +128,3 @@ class AccountStatus2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PdgOpng', type=PendingOpeningStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Profrm', type=ProformaStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RiskAssessment4 import RiskAssessment4
 from ._RiskInputData3 import RiskInputData3
@@ -35,4 +38,3 @@ class RiskContext4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Assmnt', type=RiskAssessment4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='InptData', type=RiskInputData3, min=0, max=None, mutex_group=None, array=True),
 	))
-

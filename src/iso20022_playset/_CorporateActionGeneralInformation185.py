@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType114Choice import CorporateActionEventType114Choice
 from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
@@ -63,4 +66,3 @@ class CorporateActionGeneralInformation185(base_types._BaseFieldType):
 		base_types.FieldEntry(name='EvtTp', type=CorporateActionEventType114Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OffclCorpActnEvtId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

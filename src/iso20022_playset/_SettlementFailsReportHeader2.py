@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._DatePeriod2 import DatePeriod2
@@ -80,4 +83,3 @@ class SettlementFailsReportHeader2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptgPrd', type=DatePeriod2, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctiesSttlmSys', type=SecuritiesSettlementSystemIdentification2, min=1, max=1, mutex_group=None, array=False),
 	))
-

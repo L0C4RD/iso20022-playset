@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
 from ._TradeReport33Choice import TradeReport33Choice
@@ -35,4 +38,3 @@ class TradeData59Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Rpt', type=TradeReport33Choice, min=1, max=None, mutex_group=1, array=True),
 	))
-

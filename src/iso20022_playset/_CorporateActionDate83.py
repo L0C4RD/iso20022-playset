@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat30Choice import DateFormat30Choice
 from ._DateFormat43Choice import DateFormat43Choice
@@ -497,4 +500,3 @@ class CorporateActionDate83(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UcondlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='WhlyUcondlDt', type=DateFormat30Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
 from ._DueDate1 import DueDate1
@@ -110,4 +113,3 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SchCrit', type=SearchCriteria2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

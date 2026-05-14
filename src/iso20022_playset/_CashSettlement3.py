@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccount204 import CashAccount204
 from ._PaymentInstrument17 import PaymentInstrument17
@@ -35,4 +38,3 @@ class CashSettlement3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='OthrCshSttlmDtls', type=PaymentInstrument17, min=0, max=None, mutex_group=None, array=True),
 	))
-

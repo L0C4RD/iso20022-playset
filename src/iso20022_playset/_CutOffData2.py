@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._NettingCutOff2 import NettingCutOff2
 from ._PartyIdentification242Choice import PartyIdentification242Choice
@@ -35,4 +38,3 @@ class CutOffData2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NetgCutOffDtls', type=NettingCutOff2, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtcptId', type=PartyIdentification242Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

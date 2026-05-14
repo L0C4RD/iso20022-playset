@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Account10Choice import Account10Choice
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
@@ -94,4 +97,3 @@ class CashOption109(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PstngDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

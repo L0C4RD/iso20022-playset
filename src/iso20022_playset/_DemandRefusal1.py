@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Demand2 import Demand2
 from ._Discrepancy1 import Discrepancy1
@@ -137,4 +140,3 @@ class DemandRefusal1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=Refused7Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
-

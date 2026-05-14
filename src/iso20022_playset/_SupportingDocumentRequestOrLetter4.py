@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
 from ._ISODate import ISODate
@@ -183,4 +186,3 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Tp', type=SupportLetterType1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

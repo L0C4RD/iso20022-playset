@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
 
@@ -34,4 +37,3 @@ class UpdateLogMarketSpecificAttribute1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='New', type=MarketSpecificAttribute1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Od', type=MarketSpecificAttribute1, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BankToCustomerStatementV13 import BankToCustomerStatementV13
 
@@ -22,4 +25,3 @@ class CAMT_053_001_13():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BkToCstmrStmt', type=BankToCustomerStatementV13, min=1, max=1, mutex_group=None, array=False),
 		))
-

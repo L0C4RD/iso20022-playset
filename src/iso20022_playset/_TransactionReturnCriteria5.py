@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountCashEntryReturnCriteria3 import AccountCashEntryReturnCriteria3
 from ._PaymentReturnCriteria4 import PaymentReturnCriteria4
@@ -64,4 +67,3 @@ class TransactionReturnCriteria5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtRtrCrit', type=PaymentReturnCriteria4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtToRtrCrit', type=SystemReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 	))
-

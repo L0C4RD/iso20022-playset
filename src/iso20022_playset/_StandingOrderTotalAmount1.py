@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TotalAmountAndCurrency1 import TotalAmountAndCurrency1
 
@@ -62,4 +65,3 @@ class StandingOrderTotalAmount1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SetPrdfndOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SetStgOrdr', type=TotalAmountAndCurrency1, min=1, max=1, mutex_group=None, array=False),
 	))
-

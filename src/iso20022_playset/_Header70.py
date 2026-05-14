@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification176 import GenericIdentification176
 from ._GenericIdentification177 import GenericIdentification177
@@ -125,4 +128,3 @@ class Header70(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tracblt', type=Traceability8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='XchgId', type=Number, min=1, max=1, mutex_group=None, array=False),
 	))
-

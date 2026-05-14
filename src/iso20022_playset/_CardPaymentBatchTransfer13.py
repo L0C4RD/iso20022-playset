@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentDataSet40 import CardPaymentDataSet40
 from ._TransactionTotals12 import TransactionTotals12
@@ -35,4 +38,3 @@ class CardPaymentBatchTransfer13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DataSet', type=CardPaymentDataSet40, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TxTtls', type=TransactionTotals12, min=0, max=None, mutex_group=None, array=True),
 	))
-

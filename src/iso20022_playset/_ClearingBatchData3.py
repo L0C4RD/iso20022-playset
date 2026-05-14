@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClearingMethod2Code import ClearingMethod2Code
 from ._CreditDebit3Code import CreditDebit3Code
@@ -208,4 +211,3 @@ class ClearingBatchData3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlsCdtDbt', type=CreditDebit3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlsCnt', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

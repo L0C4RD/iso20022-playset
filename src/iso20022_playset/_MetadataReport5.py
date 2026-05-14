@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClassificationType4 import ClassificationType4
 from ._Document28 import Document28
@@ -94,4 +97,3 @@ class MetadataReport5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdPdctIdr', type=SecurityIdentification49, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SubmitgNtty', type=PartyIdentification260Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

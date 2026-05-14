@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODateTime import ISODateTime
 from ._MatchingStatus25Choice import MatchingStatus25Choice
@@ -169,4 +172,3 @@ class StatusTrail13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmSts', type=SettlementStatus32Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UsrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

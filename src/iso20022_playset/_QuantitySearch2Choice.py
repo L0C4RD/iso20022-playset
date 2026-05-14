@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantitySearch2 import FinancialInstrumentQuantitySearch2
 from ._FinancialInstrumentQuantitySearch2Choice import FinancialInstrumentQuantitySearch2Choice
@@ -35,4 +38,3 @@ class QuantitySearch2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OrgnlAndCurFace', type=FinancialInstrumentQuantitySearch2, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantitySearch2Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

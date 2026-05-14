@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SubBalanceQuantity5Choice import SubBalanceQuantity5Choice
 from ._SubBalanceType9Choice import SubBalanceType9Choice
@@ -35,4 +38,3 @@ class SubBalanceBreakdown1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity5Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType9Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

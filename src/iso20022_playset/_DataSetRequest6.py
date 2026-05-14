@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentInformationType39 import ContentInformationType39
 from ._CryptographicKey18 import CryptographicKey18
@@ -94,4 +97,3 @@ class DataSetRequest6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SsnKey', type=CryptographicKey18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
-

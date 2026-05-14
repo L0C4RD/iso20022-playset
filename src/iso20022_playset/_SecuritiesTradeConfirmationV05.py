@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection28 import AmountAndDirection28
 from ._CashParties33 import CashParties33
@@ -334,4 +337,3 @@ class SecuritiesTradeConfirmationV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TwoLegTxDtls', type=TwoLegTransactionDetails5, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygFinInstrm', type=UnderlyingFinancialInstrument7, min=0, max=None, mutex_group=None, array=True),
 	))
-

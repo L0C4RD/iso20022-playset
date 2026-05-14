@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BytePadding1Code import BytePadding1Code
 from ._EncryptionFormat1Code import EncryptionFormat1Code
@@ -50,4 +53,3 @@ class Parameter6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InitlstnVctr', type=Max500Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='NcrptnFrmt', type=EncryptionFormat1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

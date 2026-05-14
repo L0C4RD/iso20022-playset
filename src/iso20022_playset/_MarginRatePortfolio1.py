@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
 from ._Max2000Text import Max2000Text
@@ -49,4 +52,3 @@ class MarginRatePortfolio1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LngMrgnRate', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ShrtMrgnRate', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),
 	))
-

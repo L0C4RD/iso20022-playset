@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeviceIdentificationType2Code import DeviceIdentificationType2Code
 from ._Max70Text import Max70Text
@@ -49,4 +52,3 @@ class DeviceIdentification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=DeviceIdentificationType2Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

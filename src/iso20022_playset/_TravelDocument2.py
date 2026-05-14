@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ISODate import ISODate
 from ._ISOMax3ACountryCode import ISOMax3ACountryCode
@@ -108,4 +111,3 @@ class TravelDocument2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=OfficialDocumentType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AutoExtend1Choice import AutoExtend1Choice
 from ._ISODate import ISODate
@@ -50,4 +53,3 @@ class AutoExtension1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NonXtnsnNtfctn', type=NonExtension1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Prd', type=AutoExtend1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

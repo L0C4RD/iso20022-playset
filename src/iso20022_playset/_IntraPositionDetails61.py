@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection55 import AmountAndDirection55
 from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
@@ -166,4 +169,3 @@ class IntraPositionDetails61(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttldQty', type=FinancialInstrumentQuantity36Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SttlmDt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

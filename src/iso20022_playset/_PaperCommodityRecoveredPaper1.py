@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassProductType8Code import AssetClassProductType8Code
 from ._AssetClassSubProductType38Code import AssetClassSubProductType38Code
@@ -35,4 +38,3 @@ class PaperCommodityRecoveredPaper1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType8Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType38Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

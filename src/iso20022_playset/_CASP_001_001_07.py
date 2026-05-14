@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SaleToPOIServiceRequestV07 import SaleToPOIServiceRequestV07
 
@@ -22,4 +25,3 @@ class CASP_001_001_07():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOISvcReq', type=SaleToPOIServiceRequestV07, min=1, max=1, mutex_group=None, array=False),
 		))
-

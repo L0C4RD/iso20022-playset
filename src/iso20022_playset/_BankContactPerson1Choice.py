@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContactIdentification1 import ContactIdentification1
 
@@ -34,4 +37,3 @@ class BankContactPerson1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BuyrBkCtctPrsn', type=ContactIdentification1, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SellrBkCtctPrsn', type=ContactIdentification1, min=1, max=None, mutex_group=1, array=True),
 	))
-

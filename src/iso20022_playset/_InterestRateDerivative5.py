@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyCode import ActiveCurrencyCode
 from ._BondDerivative2 import BondDerivative2
@@ -95,4 +98,3 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UndrlygSwpMtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UndrlygTp', type=InterestRateDerivative2Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

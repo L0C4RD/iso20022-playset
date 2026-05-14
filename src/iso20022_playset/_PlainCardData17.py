@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDataReading5Code import CardDataReading5Code
 from ._Max104Text import Max104Text
@@ -95,4 +98,3 @@ class PlainCardData17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Trck2', type=Max37Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Trck3', type=Max104Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

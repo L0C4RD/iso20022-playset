@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
 from ._FloatingInterestRate8 import FloatingInterestRate8
@@ -64,4 +67,3 @@ class DerivativeInterest3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

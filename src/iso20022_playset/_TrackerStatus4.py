@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountConsistencyType1Code import AmountConsistencyType1Code
 from ._DateAndDateTime2Choice import DateAndDateTime2Choice
@@ -80,4 +83,3 @@ class TrackerStatus4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sts', type=ExternalPaymentTransactionStatus1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StsRsn', type=PaymentStatusReason1, min=0, max=None, mutex_group=None, array=True),
 	))
-

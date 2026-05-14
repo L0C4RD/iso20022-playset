@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CallIn1Code import CallIn1Code
 from ._Exact4AlphaNumericText import Exact4AlphaNumericText
@@ -110,4 +113,3 @@ class ReportData5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=CallIn1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
-

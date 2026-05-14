@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._Exact7NumericText import Exact7NumericText
@@ -177,4 +180,3 @@ class TransportBySea5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='VsslNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VygNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

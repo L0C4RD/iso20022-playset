@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max1Number import Max1Number
 from ._OtherTargetMarketRiskTolerance1 import OtherTargetMarketRiskTolerance1
@@ -93,4 +96,3 @@ class RiskTolerance1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RskTlrncePRIIPSMthdlgy', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RskTlrnceUCITSMthdlgy', type=Max1Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

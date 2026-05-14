@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AssetClassDetailedSubProductType34Code import AssetClassDetailedSubProductType34Code
 from ._AssetClassProductType4Code import AssetClassProductType4Code
@@ -50,4 +53,3 @@ class FreightCommodityWet2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType4Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubPdct', type=AssetClassSubProductType32Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

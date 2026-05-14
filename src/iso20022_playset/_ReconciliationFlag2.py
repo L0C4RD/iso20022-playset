@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
 from ._TrueFalseIndicator import TrueFalseIndicator
@@ -91,4 +94,3 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PairdSts', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptTp', type=TradeRepositoryReportingType1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

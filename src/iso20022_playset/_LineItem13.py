@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Adjustment7 import Adjustment7
 from ._Charge24 import Charge24
@@ -212,4 +215,3 @@ class LineItem13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrnsShipmnt', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 	))
-

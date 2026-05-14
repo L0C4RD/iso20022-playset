@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PositiveNumber import PositiveNumber
 from ._UnitOfMeasure5Choice import UnitOfMeasure5Choice
@@ -35,4 +38,3 @@ class ContractSize1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LotSz', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Unit', type=UnitOfMeasure5Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

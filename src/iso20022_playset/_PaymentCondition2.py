@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountOrRate1Choice import AmountOrRate1Choice
 from ._Max140Text import Max140Text
@@ -78,4 +81,3 @@ class PaymentCondition2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GrntedPmtReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ImdtPmtRbt', type=AmountOrRate1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

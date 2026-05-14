@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
 from ._RequestedIndicator import RequestedIndicator
@@ -35,4 +38,3 @@ class GenericPersonType1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchmeNm', type=PersonIdentificationSchemeName1Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

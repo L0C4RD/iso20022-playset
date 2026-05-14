@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
 
@@ -34,4 +37,3 @@ class CompareLongFraction19DecimalNumber1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Val1', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val2', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=None, array=False),
 	))
-

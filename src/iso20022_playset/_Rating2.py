@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarketIdentification89 import MarketIdentification89
 from ._Max10Text import Max10Text
@@ -35,4 +38,3 @@ class Rating2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ratg', type=Max10Text, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SrcOfRatg', type=MarketIdentification89, min=1, max=1, mutex_group=None, array=False),
 	))
-

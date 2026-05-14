@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptorCancellationRequestV14 import AcceptorCancellationRequestV14
 
@@ -22,4 +25,3 @@ class CAAA_005_001_14():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrCxlReq', type=AcceptorCancellationRequestV14, min=1, max=1, mutex_group=None, array=False),
 		))
-

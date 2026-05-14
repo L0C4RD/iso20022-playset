@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification5 import GenericIdentification5
 from ._MICIdentifier import MICIdentifier
@@ -50,4 +53,3 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NonLclMktPlc', type=PriceSource, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='PlcAsDSS', type=GenericIdentification5, min=0, max=1, mutex_group=1, array=False),
 	))
-

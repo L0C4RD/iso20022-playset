@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMEnvironment9 import ATMEnvironment9
 
@@ -20,4 +23,3 @@ class HostToATMAcknowledgement1(base_types._BaseFieldType):
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment9, min=1, max=1, mutex_group=None, array=False),
 	))
-

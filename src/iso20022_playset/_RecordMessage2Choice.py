@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max2MBBinary import Max2MBBinary
 
@@ -510,4 +513,3 @@ class RecordMessage2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmRptgInitn', type=Max2MBBinary, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SttlmRptgRspn', type=Max2MBBinary, min=0, max=1, mutex_group=1, array=False),
 	))
-

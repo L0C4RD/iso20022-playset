@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DeviceResponse8 import DeviceResponse8
 from ._ISODateTime import ISODateTime
@@ -95,4 +98,3 @@ class TMSEvent12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TermnlMgrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),
 	))
-

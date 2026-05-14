@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max20000Text import Max20000Text
 from ._NarrativeType1Choice import NarrativeType1Choice
@@ -35,4 +38,3 @@ class Narrative1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=NarrativeType1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Txt', type=Max20000Text, min=1, max=5, mutex_group=None, array=True),
 	))
-

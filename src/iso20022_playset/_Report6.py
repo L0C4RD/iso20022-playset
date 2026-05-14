@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateAndDateTime1Choice import DateAndDateTime1Choice
 from ._Frequency25Choice import Frequency25Choice
@@ -110,4 +113,3 @@ class Report6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RptNb', type=Max5NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=StatementUpdateTypeCodeAndDSSCode1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

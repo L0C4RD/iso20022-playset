@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection5 import AmountAndDirection5
 from ._PartyIdentification136 import PartyIdentification136
@@ -65,4 +68,3 @@ class PenaltyPerCounterparty4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PnltyDtls', type=PenaltyRecord4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='PtyId', type=PenaltyPartyIdentification1, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CSCManagement1Code import CSCManagement1Code
 from ._Min3Max4NumericText import Min3Max4NumericText
@@ -35,4 +38,3 @@ class CardSecurityInformation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CSCMgmt', type=CSCManagement1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CSCVal', type=Min3Max4NumericText, min=0, max=1, mutex_group=None, array=False),
 	))
-

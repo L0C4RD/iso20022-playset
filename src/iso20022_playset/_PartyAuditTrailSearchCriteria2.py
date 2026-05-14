@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
 from ._SystemPartyIdentification8 import SystemPartyIdentification8
@@ -35,4 +38,3 @@ class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),
 	))
-

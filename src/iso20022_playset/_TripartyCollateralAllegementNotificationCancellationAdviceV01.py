@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection49 import AmountAndDirection49
 from ._CollateralParties8 import CollateralParties8
@@ -140,4 +143,3 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 		base_types.FieldEntry(name='TxInstrId', type=TransactionIdentifications44, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

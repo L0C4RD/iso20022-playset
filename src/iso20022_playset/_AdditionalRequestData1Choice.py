@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdjustmentRequest1 import AdjustmentRequest1
 from ._CompensationRequest1 import CompensationRequest1
@@ -65,4 +68,3 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqdDbtAuthstn', type=DebitAuthorisation3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='ReqdValtn', type=AdjustmentRequest1, min=0, max=1, mutex_group=1, array=False),
 	))
-

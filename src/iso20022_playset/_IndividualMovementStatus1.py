@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DistributionRejectionStatus1 import DistributionRejectionStatus1
 from ._Max35Text import Max35Text
@@ -50,4 +53,3 @@ class IndividualMovementStatus1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrcdSts', type=MovementProcessingStatus1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RjctdSts', type=DistributionRejectionStatus1, min=0, max=1, mutex_group=1, array=False),
 	))
-

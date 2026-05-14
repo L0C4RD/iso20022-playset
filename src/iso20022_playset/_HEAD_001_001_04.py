@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BusinessApplicationHeader8 import BusinessApplicationHeader8
 from ._BusinessMessagePriorityCode import BusinessMessagePriorityCode
@@ -213,4 +216,3 @@ class HEAD_001_001_04():
 			base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),
 			base_types.FieldEntry(name='To', type=Party51Choice, min=1, max=1, mutex_group=None, array=False),
 		))
-

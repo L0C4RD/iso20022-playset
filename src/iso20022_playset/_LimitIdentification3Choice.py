@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LimitIdentification8 import LimitIdentification8
 from ._LimitIdentification9 import LimitIdentification9
@@ -63,4 +66,3 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cur', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Dflt', type=LimitIdentification8, min=0, max=1, mutex_group=1, array=False),
 	))
-

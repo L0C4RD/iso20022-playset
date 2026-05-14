@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BillingCancellationReport3 import BillingCancellationReport3
 from ._BillingReport6 import BillingReport6
@@ -50,4 +53,3 @@ class BillingReportOrError6Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CxlRpt', type=BillingCancellationReport3, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 	))
-

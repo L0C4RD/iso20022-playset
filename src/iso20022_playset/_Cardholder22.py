@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._Address2 import Address2
@@ -125,4 +128,3 @@ class Cardholder22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LclData', type=LocalData13, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Nm', type=CardholderName3, min=0, max=1, mutex_group=None, array=False),
 	))
-

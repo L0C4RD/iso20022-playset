@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LoyaltyRequest8 import LoyaltyRequest8
 from ._PaymentRequest8 import PaymentRequest8
@@ -50,4 +53,3 @@ class TransactionToPerform8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtReq', type=PaymentRequest8, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RvslReq', type=ReversalRequest8, min=0, max=1, mutex_group=1, array=False),
 	))
-

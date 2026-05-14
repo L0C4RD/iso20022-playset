@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._UpdateLogAddress2 import UpdateLogAddress2
 from ._UpdateLogContact2 import UpdateLogContact2
@@ -184,4 +187,3 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TechAdr', type=UpdateLogTechnicalAddress1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Tp', type=UpdateLogSystemPartyType1, min=0, max=1, mutex_group=1, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContentInformationType10 import ContentInformationType10
 from ._ContentInformationType15 import ContentInformationType15
@@ -65,4 +68,3 @@ class HostToATMAcknowledgementV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtctdHstToATMAck', type=ContentInformationType10, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SctyTrlr', type=ContentInformationType15, min=0, max=1, mutex_group=None, array=False),
 	))
-

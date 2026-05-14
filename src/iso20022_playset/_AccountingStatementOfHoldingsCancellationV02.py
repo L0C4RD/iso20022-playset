@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountingStatementOfHoldings2 import AccountingStatementOfHoldings2
 from ._AdditionalReference2 import AdditionalReference2
@@ -79,4 +82,3 @@ class AccountingStatementOfHoldingsCancellationV02(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='StmtToBeCanc', type=AccountingStatementOfHoldings2, min=0, max=1, mutex_group=None, array=False),
 	))
-

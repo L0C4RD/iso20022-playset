@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EligiblePosition18 import EligiblePosition18
 from ._SecurityIdentification19 import SecurityIdentification19
@@ -35,4 +38,3 @@ class SecurityPosition20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pos', type=EligiblePosition18, min=0, max=1000, mutex_group=None, array=True),
 	))
-

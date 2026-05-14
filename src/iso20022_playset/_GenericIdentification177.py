@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Geolocation1 import Geolocation1
 from ._Max35Text import Max35Text
@@ -108,4 +111,3 @@ class GenericIdentification177(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ShrtNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=PartyType33Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

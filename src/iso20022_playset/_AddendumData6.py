@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData2 import AdditionalData2
 from ._FleetData6 import FleetData6
@@ -170,4 +173,3 @@ class AddendumData6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrvlAgcy', type=TravelAgency4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VhclRntl', type=VehicleRentalService3, min=0, max=None, mutex_group=None, array=True),
 	))
-

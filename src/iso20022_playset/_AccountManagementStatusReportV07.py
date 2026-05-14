@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountManagementStatusAndReason5 import AccountManagementStatusAndReason5
 from ._AdditionalReference13 import AdditionalReference13
@@ -80,4 +83,3 @@ class AccountManagementStatusReportV07(base_types._BaseFieldType):
 		base_types.FieldEntry(name='StsRpt', type=AccountManagementStatusAndReason5, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Xtnsn', type=Extension1, min=0, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LotteryFeatureType1Code import LotteryFeatureType1Code
 from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
@@ -35,4 +38,3 @@ class CorporateActionLotteryEvent1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FeatrTp', type=LotteryFeatureType1Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=LotteryTypeFormat4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

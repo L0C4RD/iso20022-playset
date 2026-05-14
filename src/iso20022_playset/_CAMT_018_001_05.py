@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GetBusinessDayInformationV05 import GetBusinessDayInformationV05
 
@@ -22,4 +25,3 @@ class CAMT_018_001_05():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetBizDayInf', type=GetBusinessDayInformationV05, min=1, max=1, mutex_group=None, array=False),
 		))
-

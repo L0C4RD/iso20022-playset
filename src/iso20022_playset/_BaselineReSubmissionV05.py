@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BankContactPerson1Choice import BankContactPerson1Choice
 from ._Baseline5 import Baseline5
@@ -123,4 +126,3 @@ class BaselineReSubmissionV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubmitrTxRef', type=SimpleIdentificationInformation, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=SimpleIdentificationInformation, min=1, max=1, mutex_group=None, array=False),
 	))
-

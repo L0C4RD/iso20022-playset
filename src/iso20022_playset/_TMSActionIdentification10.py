@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataSetIdentification11 import DataSetIdentification11
 from ._TerminalManagementAction5Code import TerminalManagementAction5Code
@@ -35,4 +38,3 @@ class TMSActionIdentification10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction5Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification11, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountParties12Choice import AccountParties12Choice
 from ._ExtendedParty14 import ExtendedParty14
@@ -205,4 +208,3 @@ class AccountParties17(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sttlr', type=InvestmentAccountOwnershipInformation16, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SucssrOnDth', type=InvestmentAccountOwnershipInformation16, min=0, max=None, mutex_group=None, array=True),
 	))
-

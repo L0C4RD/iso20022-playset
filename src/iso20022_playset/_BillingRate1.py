@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BillingRateIdentification1Choice import BillingRateIdentification1Choice
 from ._Number import Number
@@ -64,4 +67,3 @@ class BillingRate1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=BillingRateIdentification1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),
 	))
-

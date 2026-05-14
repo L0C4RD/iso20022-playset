@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification4Choice import AccountIdentification4Choice
 from ._CurrencyCode import CurrencyCode
@@ -251,4 +254,3 @@ class FinancialItemParameters1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SellrFinAgt', type=XS_IDREF, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradMkt', type=TradeMarket1Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

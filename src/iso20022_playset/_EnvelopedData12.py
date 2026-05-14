@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EncryptedContent8 import EncryptedContent8
 from ._Number import Number
@@ -50,4 +53,3 @@ class EnvelopedData12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rcpt', type=Recipient7Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

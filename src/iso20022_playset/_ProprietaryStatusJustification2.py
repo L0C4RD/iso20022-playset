@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max256Text import Max256Text
 from ._Max4AlphaNumericText import Max4AlphaNumericText
@@ -35,4 +38,3 @@ class ProprietaryStatusJustification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtryStsRsn', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=Max256Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

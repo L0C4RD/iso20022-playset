@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardDataReading8Code import CardDataReading8Code
 from ._ISODateTime import ISODateTime
@@ -80,4 +83,3 @@ class DetailedAmount21(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Labl', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

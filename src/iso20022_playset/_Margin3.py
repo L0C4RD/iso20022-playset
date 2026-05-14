@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Amount2 import Amount2
 from ._Margin4 import Margin4
@@ -50,4 +53,3 @@ class Margin3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrMrgn', type=Margin4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin3, min=0, max=None, mutex_group=None, array=True),
 	))
-

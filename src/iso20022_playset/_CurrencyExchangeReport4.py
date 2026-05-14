@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CurrencySourceTarget1 import CurrencySourceTarget1
 from ._ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
@@ -35,4 +38,3 @@ class CurrencyExchangeReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CcyRef', type=CurrencySourceTarget1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CcyXchgOrErr', type=ExchangeRateReportOrError4Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

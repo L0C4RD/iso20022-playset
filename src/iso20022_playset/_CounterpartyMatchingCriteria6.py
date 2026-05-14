@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareLegDirection2 import CompareLegDirection2
 from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
@@ -50,4 +53,3 @@ class CounterpartyMatchingCriteria6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='OthrCtrPty', type=CompareOrganisationIdentification7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgCtrPty', type=CompareOrganisationIdentification6, min=0, max=1, mutex_group=None, array=False),
 	))
-

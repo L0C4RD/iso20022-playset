@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification165 import GenericIdentification165
 from ._Position1 import Position1
@@ -35,4 +38,3 @@ class PositionAccount2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Pos', type=Position1, min=1, max=None, mutex_group=None, array=True),
 	))
-

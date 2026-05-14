@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max15NumericText import Max15NumericText
 from ._ReportItemStatus1Code import ReportItemStatus1Code
@@ -35,4 +38,3 @@ class NumberOfItemsPerStatus1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=ReportItemStatus1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

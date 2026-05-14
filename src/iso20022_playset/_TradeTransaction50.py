@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AllocationIndicator1Code import AllocationIndicator1Code
 from ._AssetClassCommodity7Choice import AssetClassCommodity7Choice
@@ -551,4 +554,3 @@ class TradeTransaction50(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxPric', type=PriceData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XprtnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),
 	))
-

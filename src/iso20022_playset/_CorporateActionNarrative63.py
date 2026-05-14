@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
 from ._RestrictedFINZMax2048Text import RestrictedFINZMax2048Text
@@ -64,4 +67,3 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Offerr', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='URLAdr', type=UpdatedURLlnformation7, min=0, max=None, mutex_group=None, array=True),
 	))
-

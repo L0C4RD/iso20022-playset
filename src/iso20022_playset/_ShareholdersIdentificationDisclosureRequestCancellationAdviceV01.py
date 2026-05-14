@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DisclosureRequestCancellationReason1Code import DisclosureRequestCancellationReason1Code
 from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
@@ -65,4 +68,3 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 		base_types.FieldEntry(name='IssrDsclsrReqRef', type=DisclosureRequestIdentification1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

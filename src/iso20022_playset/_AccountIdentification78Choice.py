@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountAndBalance65 import AccountAndBalance65
 from ._AccountIdentification10 import AccountIdentification10
@@ -35,4 +38,3 @@ class AccountIdentification78Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctsListAndBalDtls', type=AccountAndBalance65, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='ForAllAccts', type=AccountIdentification10, min=0, max=1, mutex_group=1, array=False),
 	))
-

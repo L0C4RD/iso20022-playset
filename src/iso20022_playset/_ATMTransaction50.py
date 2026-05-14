@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMDepositComponent1 import ATMDepositComponent1
 from ._AmountAndCurrency1 import AmountAndCurrency1
@@ -110,4 +113,3 @@ class ATMTransaction50(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlReqdAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifier3, min=1, max=1, mutex_group=None, array=False),
 	))
-

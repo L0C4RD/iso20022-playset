@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Agreement4 import Agreement4
 from ._ExpectedCollateral2Choice import ExpectedCollateral2Choice
@@ -182,4 +185,3 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='XpctdCollDueToA', type=ExpectedCollateral2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpctdCollDueToB', type=ExpectedCollateral2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

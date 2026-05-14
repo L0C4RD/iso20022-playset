@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalAmounts4 import AdditionalAmounts4
 from ._AdditionalData2 import AdditionalData2
@@ -540,4 +543,3 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Vrfctn', type=Verification7, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Wllt', type=Wallet3, min=0, max=1, mutex_group=None, array=False),
 	))
-

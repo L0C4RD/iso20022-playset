@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RestrictedFINXMax30Text import RestrictedFINXMax30Text
 from ._SafekeepingPlace2Code import SafekeepingPlace2Code
@@ -35,4 +38,3 @@ class SafekeepingPlaceTypeAndText9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax30Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SfkpgPlcTp', type=SafekeepingPlace2Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

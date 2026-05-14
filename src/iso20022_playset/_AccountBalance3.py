@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Balance29 import Balance29
 from ._ISO8583AccountTypeCode import ISO8583AccountTypeCode
@@ -35,4 +38,3 @@ class AccountBalance3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctTp', type=ISO8583AccountTypeCode, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Bal', type=Balance29, min=1, max=None, mutex_group=None, array=True),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Extended350Code import Extended350Code
 from ._GenericIdentification1 import GenericIdentification1
@@ -65,4 +68,3 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rsn', type=TransferUnmatchedReason3Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XtndedRsn', type=Extended350Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

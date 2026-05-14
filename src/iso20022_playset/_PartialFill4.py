@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MarketIdentification97 import MarketIdentification97
 from ._Price14 import Price14
@@ -122,4 +125,3 @@ class PartialFill4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RmngQty', type=QuantityOrAmount2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradDt', type=TradeDate7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

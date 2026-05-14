@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AlgorithmIdentification15 import AlgorithmIdentification15
 from ._EncapsulatedContent3 import EncapsulatedContent3
@@ -80,4 +83,3 @@ class AuthenticatedData4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rcpt', type=Recipient4Choice, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentificationAndAccount225 import PartyIdentificationAndAccount225
 from ._PartyIdentificationAndAccount226 import PartyIdentificationAndAccount226
@@ -49,4 +52,3 @@ class CashParties43(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CdtrAgt', type=PartyIdentificationAndAccount226, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='MktClmCtrPty', type=PartyIdentificationAndAccount225, min=0, max=1, mutex_group=None, array=False),
 	))
-

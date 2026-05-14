@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptorRejection3 import AcceptorRejection3
 from ._TMSHeader1 import TMSHeader1
@@ -35,4 +38,3 @@ class TerminalManagementRejectionV05(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rjct', type=AcceptorRejection3, min=1, max=1, mutex_group=None, array=False),
 	))
-

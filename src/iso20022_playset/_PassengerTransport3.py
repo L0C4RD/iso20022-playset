@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalData1 import AdditionalData1
 from ._AmountDetails3 import AmountDetails3
@@ -299,4 +302,3 @@ class PassengerTransport3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrvlAuthstnCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TtlAmt', type=AmountDetails3, min=0, max=None, mutex_group=None, array=True),
 	))
-

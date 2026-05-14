@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max100KBinary import Max100KBinary
 from ._Max9999HexBinaryText import Max9999HexBinaryText
@@ -35,4 +38,3 @@ class EncryptedData2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Binry', type=Max100KBinary, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='HexBinry', type=Max9999HexBinaryText, min=0, max=1, mutex_group=1, array=False),
 	))
-

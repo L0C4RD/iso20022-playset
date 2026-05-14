@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
 from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
@@ -49,4 +52,3 @@ class FinancialInstrumentQuantity32Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='NmnlVal', type=ActiveOrHistoricCurrencyAnd19DecimalAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Unit', type=LongFraction19DecimalNumber, min=0, max=1, mutex_group=1, array=False),
 	))
-

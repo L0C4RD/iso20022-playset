@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IndicativeOrMarketPrice13Choice import IndicativeOrMarketPrice13Choice
 from ._PriceFormat77Choice import PriceFormat77Choice
@@ -64,4 +67,3 @@ class CorporateActionPrice88(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndctvOrMktPric', type=IndicativeOrMarketPrice13Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='IssePric', type=PriceFormat77Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

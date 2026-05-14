@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AffirmationStatus9Choice import AffirmationStatus9Choice
 from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
@@ -333,4 +336,3 @@ class SecuritiesTradeDetails130(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TradOrgtrRole', type=TradeOriginator4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TradTxCond', type=TradeTransactionCondition6Choice, min=0, max=None, mutex_group=None, array=True),
 	))
-

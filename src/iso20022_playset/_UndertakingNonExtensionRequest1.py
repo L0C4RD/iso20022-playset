@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification43 import PartyIdentification43
 from ._Undertaking9 import Undertaking9
@@ -35,4 +38,3 @@ class UndertakingNonExtensionRequest1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RqstngPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UdrtkgId', type=Undertaking9, min=1, max=1, mutex_group=None, array=False),
 	))
-

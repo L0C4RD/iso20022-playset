@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataModification1Code import DataModification1Code
 from ._SecuritiesAccountModification2Choice import SecuritiesAccountModification2Choice
@@ -35,4 +38,3 @@ class SecuritiesAccountModification2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqdMod', type=SecuritiesAccountModification2Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

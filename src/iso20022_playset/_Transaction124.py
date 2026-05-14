@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BasketIdentificationAndEligibilitySetProfile1 import BasketIdentificationAndEligibilitySetProfile1
 from ._CashBalance15 import CashBalance15
@@ -301,4 +304,3 @@ class Transaction124(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValtnAmts', type=CollateralAmount17, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XpsrTp', type=ExposureType23Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

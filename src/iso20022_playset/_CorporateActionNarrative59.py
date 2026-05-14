@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._UpdatedAdditionalInformation19 import UpdatedAdditionalInformation19
 from ._UpdatedAdditionalInformation21 import UpdatedAdditionalInformation21
@@ -119,4 +122,3 @@ class CorporateActionNarrative59(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctyRstrctn', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='TaxtnConds', type=UpdatedAdditionalInformation21, min=0, max=None, mutex_group=None, array=True),
 	))
-

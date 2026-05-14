@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
 from ._CollateralAmount4 import CollateralAmount4
@@ -138,4 +141,3 @@ class ValuationsDetails1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ValtnDtlsAmt', type=CollateralAmount4, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValtnFctrBrkdwn', type=ValuationFactorBreakdown1, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._IntraBalanceQueryCriteria12 import IntraBalanceQueryCriteria12
 from ._MovementResponseType1Code import MovementResponseType1Code
@@ -35,4 +38,3 @@ class IntraBalanceQueryDefinition12(base_types._BaseFieldType):
 		base_types.FieldEntry(name='QryTp', type=MovementResponseType1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=IntraBalanceQueryCriteria12, min=1, max=1, mutex_group=None, array=False),
 	))
-

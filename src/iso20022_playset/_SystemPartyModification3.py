@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataModification1Code import DataModification1Code
 from ._SystemPartyModification3Choice import SystemPartyModification3Choice
@@ -35,4 +38,3 @@ class SystemPartyModification3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqdMod', type=SystemPartyModification3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

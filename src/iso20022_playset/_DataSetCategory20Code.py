@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 
 class DataSetCategory20Code(base_types._BaseDataType_String):
@@ -27,4 +30,3 @@ class DataSetCategory20Code(base_types._BaseDataType_String):
 		"SPRP",
 		"PROB",
 	}
-

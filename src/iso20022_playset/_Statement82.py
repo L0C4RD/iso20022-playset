@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Frequency26Choice import Frequency26Choice
 from ._Number3Choice import Number3Choice
@@ -138,4 +141,3 @@ class Statement82(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UpdTp', type=UpdateType16Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

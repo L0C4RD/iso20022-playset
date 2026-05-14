@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max140Binary import Max140Binary
 from ._Max35Binary import Max35Binary
@@ -35,4 +38,3 @@ class ICCResetData1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ATRVal', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CardSts', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),
 	))
-

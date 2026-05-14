@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification178Choice import PartyIdentification178Choice
 from ._YesNoIndicator import YesNoIndicator
@@ -35,4 +38,3 @@ class CollateralOwnership4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClntNm', type=PartyIdentification178Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Prtry', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DateFormat41Choice import DateFormat41Choice
 from ._DateFormat49Choice import DateFormat49Choice
@@ -64,4 +67,3 @@ class CorporateActionDate97(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PmtDt', type=DateFormat41Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValDt', type=DateFormat64Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

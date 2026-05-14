@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GeneralCollateral4 import GeneralCollateral4
 from ._SpecificCollateral3 import SpecificCollateral3
@@ -35,4 +38,3 @@ class CollateralType22Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='GnlColl', type=GeneralCollateral4, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SpcfcColl', type=SpecificCollateral3, min=0, max=1, mutex_group=1, array=False),
 	))
-

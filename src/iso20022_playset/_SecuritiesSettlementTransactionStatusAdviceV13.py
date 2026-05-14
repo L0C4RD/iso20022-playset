@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Linkages41 import Linkages41
 from ._MatchingStatus24Choice import MatchingStatus24Choice
@@ -124,4 +127,3 @@ class SecuritiesSettlementTransactionStatusAdviceV13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxDtls', type=TransactionDetails166, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=TransactionIdentifications47, min=1, max=1, mutex_group=None, array=False),
 	))
-

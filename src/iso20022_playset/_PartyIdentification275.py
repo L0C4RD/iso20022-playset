@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActivityIndicator1Choice import ActivityIndicator1Choice
 from ._CountryCode import CountryCode
@@ -125,4 +128,3 @@ class PartyIdentification275(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Ownrsh', type=Ownership1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='YrOfIncorprtn', type=ISOYear, min=0, max=1, mutex_group=None, array=False),
 	))
-

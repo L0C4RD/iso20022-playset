@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalBalanceInformation20 import AdditionalBalanceInformation20
 from ._Balance21 import Balance21
@@ -80,4 +83,3 @@ class SubBalanceInformation20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SubBalAddtlDtls', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SubBalanceType11Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

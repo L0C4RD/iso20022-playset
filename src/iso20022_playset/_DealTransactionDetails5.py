@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ClosingDate4Choice import ClosingDate4Choice
 from ._CollateralAmount18 import CollateralAmount18
@@ -185,4 +188,3 @@ class DealTransactionDetails5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sprd', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TermntnOptn', type=RepoTerminationOption1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

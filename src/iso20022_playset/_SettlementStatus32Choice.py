@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FailingStatus15Choice import FailingStatus15Choice
 from ._PendingStatus73Choice import PendingStatus73Choice
@@ -50,4 +53,3 @@ class SettlementStatus32Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Pdg', type=PendingStatus73Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=ProprietaryStatusAndReason6, min=0, max=1, mutex_group=1, array=False),
 	))
-

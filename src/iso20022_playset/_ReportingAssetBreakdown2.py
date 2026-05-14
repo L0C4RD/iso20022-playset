@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._DebtIssuerType1Code import DebtIssuerType1Code
@@ -65,4 +68,3 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Id', type=Max350Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptgAsstTp', type=ProductType6Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

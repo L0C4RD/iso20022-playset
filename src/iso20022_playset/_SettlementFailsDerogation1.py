@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SettlementFailsJustification1 import SettlementFailsJustification1
 from ._TrueFalseIndicator import TrueFalseIndicator
@@ -35,4 +38,3 @@ class SettlementFailsDerogation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ElgbltyInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Justfn', type=SettlementFailsJustification1, min=0, max=1, mutex_group=None, array=False),
 	))
-

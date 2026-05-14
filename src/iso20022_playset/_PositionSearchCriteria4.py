@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._OtherParties46 import OtherParties46
@@ -124,4 +127,3 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SfkpgAcct', type=SecuritiesAccount2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SubBalTp', type=SecuritiesBalanceType7Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

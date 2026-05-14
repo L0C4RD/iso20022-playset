@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BenchmarkCurveName10Choice import BenchmarkCurveName10Choice
 from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
@@ -108,4 +111,3 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Sprd', type=SecuritiesTransactionPrice18Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Term', type=InterestRateContractTerm2, min=0, max=1, mutex_group=None, array=False),
 	))
-

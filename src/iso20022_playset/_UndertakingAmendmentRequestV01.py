@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Amendment3 import Amendment3
 from ._Max2000Text import Max2000Text
@@ -50,4 +53,3 @@ class UndertakingAmendmentRequestV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='InstrsToBk', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),
 		base_types.FieldEntry(name='UdrtkgAmdmntReqDtls', type=Amendment3, min=1, max=1, mutex_group=None, array=False),
 	))
-

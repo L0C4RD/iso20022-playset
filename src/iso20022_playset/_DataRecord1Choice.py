@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max10MbText import Max10MbText
 from ._Max20MbBinary import Max20MbBinary
@@ -35,4 +38,3 @@ class DataRecord1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Binry', type=Max20MbBinary, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='Txt', type=Max10MbText, min=1, max=None, mutex_group=1, array=True),
 	))
-

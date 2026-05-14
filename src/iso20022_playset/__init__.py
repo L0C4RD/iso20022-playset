@@ -1,6 +1,9 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 import importlib
 
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
 _EXPORTS = {
 	"parse_etree" : ".parsers",

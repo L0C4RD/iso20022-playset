@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GroupHeader110 import GroupHeader110
 from ._Mandate23 import Mandate23
@@ -50,4 +53,3 @@ class MandateInitiationRequestV08(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Mndt', type=Mandate23, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

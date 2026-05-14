@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max16Text import Max16Text
 from ._Number import Number
@@ -49,4 +52,3 @@ class UTMCoordinates1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='UTMNrthwrd', type=Number, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UTMZone', type=Max16Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashCollateral3 import CashCollateral3
 from ._Max140Text import Max140Text
@@ -108,4 +111,3 @@ class Collateral55(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SctiesColl', type=SecuritiesCollateral10, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='StdSttlmInstrs', type=Max140Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

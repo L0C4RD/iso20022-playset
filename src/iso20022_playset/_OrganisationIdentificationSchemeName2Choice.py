@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExternalOrganisationIdentification1Code import ExternalOrganisationIdentification1Code
 from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
@@ -35,4 +38,3 @@ class OrganisationIdentificationSchemeName2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=ExternalOrganisationIdentification1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

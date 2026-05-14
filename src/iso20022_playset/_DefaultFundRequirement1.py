@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._GenericIdentification165 import GenericIdentification165
@@ -50,4 +53,3 @@ class DefaultFundRequirement1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrMmbId', type=GenericIdentification165, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SvcId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

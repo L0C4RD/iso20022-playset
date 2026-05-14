@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ExchangePolicy2Code import ExchangePolicy2Code
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -109,4 +112,3 @@ class ExchangeConfiguration10(base_types._BaseFieldType):
 		base_types.FieldEntry(name='XchgFaild', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XchgPlcy', type=ExchangePolicy2Code, min=1, max=None, mutex_group=None, array=True),
 	))
-

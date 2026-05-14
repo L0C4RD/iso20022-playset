@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EventFrequency1Code import EventFrequency1Code
 from ._GenericIdentification7 import GenericIdentification7
@@ -35,4 +38,3 @@ class FrequencyCodeAndDSSCode1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrqcyAsCd', type=EventFrequency1Code, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='FrqcyAsDSS', type=GenericIdentification7, min=0, max=1, mutex_group=1, array=False),
 	))
-

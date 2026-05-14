@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Charges16 import Charges16
 from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
@@ -196,4 +199,3 @@ class PaymentTransaction160(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrckrData', type=TrackerData7, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxSts', type=ExternalPaymentTransactionStatus1Code, min=0, max=1, mutex_group=None, array=False),
 	))
-

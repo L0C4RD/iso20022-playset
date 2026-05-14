@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
 from ._Max50Text import Max50Text
@@ -80,4 +83,3 @@ class TransactionData3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxPric', type=SecuritiesTransactionPrice4Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

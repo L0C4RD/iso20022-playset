@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._EICIdentifier import EICIdentifier
 from ._Max52Text import Max52Text
@@ -35,4 +38,3 @@ class DeliveryInterconnectionPoint1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Cd', type=EICIdentifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=Max52Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

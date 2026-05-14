@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AcceptorBatchTransferResponseV14 import AcceptorBatchTransferResponseV14
 
@@ -22,4 +25,3 @@ class CAAA_012_001_14():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrBtchTrfRspn', type=AcceptorBatchTransferResponseV14, min=1, max=1, mutex_group=None, array=False),
 		))
-

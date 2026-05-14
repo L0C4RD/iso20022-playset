@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionGeneralInformation182 import CorporateActionGeneralInformation182
 from ._CorporateActionNarrative10 import CorporateActionNarrative10
@@ -125,4 +128,3 @@ class CorporateActionInstructionCancellationRequestStatusAdviceV15(base_types._B
 		base_types.FieldEntry(name='PrtctInstr', type=ProtectInstruction4, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

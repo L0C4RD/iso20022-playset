@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._MessageReference import MessageReference
 from ._RejectionReason2 import RejectionReason2
@@ -35,4 +38,3 @@ class admi.002.001.01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RltdRef', type=MessageReference, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Rsn', type=RejectionReason2, min=1, max=1, mutex_group=None, array=False),
 	))
-

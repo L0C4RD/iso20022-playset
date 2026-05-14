@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
 from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
@@ -124,4 +127,3 @@ class CreditDerivative7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrchInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

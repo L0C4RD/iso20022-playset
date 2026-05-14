@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CounterpartyData92 import CounterpartyData92
 from ._DetailedReportStatistics7 import DetailedReportStatistics7
@@ -50,4 +53,3 @@ class RejectionStatistics9(base_types._BaseFieldType):
 		base_types.FieldEntry(name='DerivSttstcs', type=DetailedTransactionStatistics7Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics7, min=1, max=1, mutex_group=None, array=False),
 	))
-

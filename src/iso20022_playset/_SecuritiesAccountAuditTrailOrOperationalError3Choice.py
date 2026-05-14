@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ErrorHandling5 import ErrorHandling5
 from ._SecuritiesAccountAuditTrailReport3 import SecuritiesAccountAuditTrailReport3
@@ -35,4 +38,3 @@ class SecuritiesAccountAuditTrailOrOperationalError3Choice(base_types._BaseField
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),
 		base_types.FieldEntry(name='SctiesAcctAudtTrlRpt', type=SecuritiesAccountAuditTrailReport3, min=1, max=None, mutex_group=1, array=True),
 	))
-

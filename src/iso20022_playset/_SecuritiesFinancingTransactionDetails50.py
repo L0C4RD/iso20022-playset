@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection59 import AmountAndDirection59
 from ._Exact3NumericText import Exact3NumericText
@@ -198,4 +201,3 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TxCallDely', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VarblRateSpprt', type=RateName2, min=0, max=1, mutex_group=None, array=False),
 	))
-

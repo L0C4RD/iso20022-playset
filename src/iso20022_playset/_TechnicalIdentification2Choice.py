@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BICFIDec2014Identifier import BICFIDec2014Identifier
 from ._Max256Text import Max256Text
@@ -35,4 +38,3 @@ class TechnicalIdentification2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='TechAdr', type=Max256Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

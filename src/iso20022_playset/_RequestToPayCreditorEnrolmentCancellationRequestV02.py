@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditorEnrolmentCancellation3 import CreditorEnrolmentCancellation3
 from ._EnrolmentHeader3 import EnrolmentHeader3
@@ -50,4 +53,3 @@ class RequestToPayCreditorEnrolmentCancellationRequestV02(base_types._BaseFieldT
 		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

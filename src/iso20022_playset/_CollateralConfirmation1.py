@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CollateralSubstitutionConfirmation1Code import CollateralSubstitutionConfirmation1Code
 from ._Max140Text import Max140Text
@@ -64,4 +67,3 @@ class CollateralConfirmation1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CollSbstitnRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ConfTp', type=CollateralSubstitutionConfirmation1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

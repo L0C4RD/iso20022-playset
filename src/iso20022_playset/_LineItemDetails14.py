@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Adjustment6 import Adjustment6
 from ._Charge25 import Charge25
@@ -184,4 +187,3 @@ class LineItemDetails14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='UnitPric', type=UnitPrice18, min=0, max=1, mutex_group=None, array=False),
 	))
-

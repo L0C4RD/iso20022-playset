@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AuthenticationEntity1Code import AuthenticationEntity1Code
 from ._AuthenticationMethod1Code import AuthenticationMethod1Code
@@ -35,4 +38,3 @@ class CardholderAuthentication2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AuthntcnNtty', type=AuthenticationEntity1Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

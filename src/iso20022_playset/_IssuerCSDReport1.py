@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._InternalisationData1 import InternalisationData1
 from ._IssuerCSDIdentification1 import IssuerCSDIdentification1
@@ -94,4 +97,3 @@ class IssuerCSDReport1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TtlCshTrf', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxTp', type=SettlementInternaliserTransactionType1, min=1, max=1, mutex_group=None, array=False),
 	))
-

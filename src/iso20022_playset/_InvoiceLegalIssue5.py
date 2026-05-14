@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Max210Text import Max210Text
 from ._PartyIdentification272 import PartyIdentification272
@@ -64,4 +67,3 @@ class InvoiceLegalIssue5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Invcr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PmtMtd', type=PaymentMethod3Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMCommand15 import ATMCommand15
 from ._ATMCommand16 import ATMCommand16
@@ -95,4 +98,3 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Envt', type=ATMEnvironment15, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='HstChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),
 	))
-

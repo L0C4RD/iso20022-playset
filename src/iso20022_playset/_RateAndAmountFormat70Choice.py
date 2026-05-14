@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Percentage14Rate import Percentage14Rate
 from ._RateTypeAndPercentageRate18 import RateTypeAndPercentageRate18
@@ -65,4 +68,3 @@ class RateAndAmountFormat70Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rate', type=Percentage14Rate, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='RateTpAndRate', type=RateTypeAndPercentageRate18, min=0, max=1, mutex_group=1, array=False),
 	))
-

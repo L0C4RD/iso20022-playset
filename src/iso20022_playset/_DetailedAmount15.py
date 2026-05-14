@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DetailedAmount4 import DetailedAmount4
 from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
@@ -105,4 +108,3 @@ class DetailedAmount15(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Srchrg', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='ValAddedTax', type=DetailedAmount4, min=0, max=None, mutex_group=None, array=True),
 	))
-

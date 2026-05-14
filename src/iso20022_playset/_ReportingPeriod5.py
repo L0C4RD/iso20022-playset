@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DatePeriod3 import DatePeriod3
 from ._QueryType3Code import QueryType3Code
@@ -50,4 +53,3 @@ class ReportingPeriod5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='FrToTm', type=TimePeriodDetails1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tp', type=QueryType3Code, min=1, max=1, mutex_group=None, array=False),
 	))
-

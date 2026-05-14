@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalRightCode1Choice import AdditionalRightCode1Choice
 from ._AdditionalRightThreshold2Choice import AdditionalRightThreshold2Choice
@@ -79,4 +82,3 @@ class AdditionalRights4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlRghtMktDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='AddtlRghtThrshld', type=AdditionalRightThreshold2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

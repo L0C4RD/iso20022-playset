@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BuyInResponseV03 import BuyInResponseV03
 
@@ -22,4 +25,3 @@ class SECL_008_001_03():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyInRspn', type=BuyInResponseV03, min=1, max=1, mutex_group=None, array=False),
 		))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
 from ._CardPaymentTransactionAdviceResponse8 import CardPaymentTransactionAdviceResponse8
@@ -65,4 +68,3 @@ class AcceptorCompletionAdviceResponse14(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TMSTrggr', type=TMSTrigger1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Tx', type=CardPaymentTransactionAdviceResponse8, min=1, max=1, mutex_group=None, array=False),
 	))
-

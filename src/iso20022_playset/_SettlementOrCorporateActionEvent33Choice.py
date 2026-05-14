@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CorporateActionEventType101Choice import CorporateActionEventType101Choice
 from ._SecuritiesTransactionType58Choice import SecuritiesTransactionType58Choice
@@ -35,4 +38,3 @@ class SettlementOrCorporateActionEvent33Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CorpActnEvtTp', type=CorporateActionEventType101Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='SctiesTxTp', type=SecuritiesTransactionType58Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

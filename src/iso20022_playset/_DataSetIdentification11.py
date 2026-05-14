@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._DataSetCategory20Code import DataSetCategory20Code
 from ._ISODateTime import ISODateTime
@@ -64,4 +67,3 @@ class DataSetIdentification11(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=DataSetCategory20Code, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vrsn', type=Max256Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

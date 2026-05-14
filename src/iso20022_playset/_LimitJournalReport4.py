@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LimitIdentification7 import LimitIdentification7
 from ._LimitJournalReportOrError8Choice import LimitJournalReportOrError8Choice
@@ -35,4 +38,3 @@ class LimitJournalReport4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='LmtId', type=LimitIdentification7, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='LmtRpt', type=LimitJournalReportOrError8Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

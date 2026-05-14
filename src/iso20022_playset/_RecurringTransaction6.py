@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActionMessage11 import ActionMessage11
 from ._Frequency3Code import Frequency3Code
@@ -80,4 +83,3 @@ class RecurringTransaction6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrdUnit', type=Frequency3Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),
 	))
-

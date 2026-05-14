@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
 from ._Number import Number
@@ -35,4 +38,3 @@ class InitialAmount1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='InitlNbOfInstlmts', type=Number, min=0, max=1, mutex_group=1, array=False),
 	))
-

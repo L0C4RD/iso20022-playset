@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Amount17 import Amount17
 from ._Number import Number
@@ -63,4 +66,3 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IntrchngFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='PrcgFee', type=Amount17, min=0, max=1, mutex_group=None, array=False),
 	))
-

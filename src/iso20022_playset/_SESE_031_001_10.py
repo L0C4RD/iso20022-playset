@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SecuritiesSettlementConditionModificationStatusAdviceV10 import SecuritiesSettlementConditionModificationStatusAdviceV10
 
@@ -22,4 +25,3 @@ class SESE_031_001_10():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmCondModStsAdvc', type=SecuritiesSettlementConditionModificationStatusAdviceV10, min=1, max=1, mutex_group=None, array=False),
 		))
-

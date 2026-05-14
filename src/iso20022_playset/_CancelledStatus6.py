@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CancelledStatus17Choice import CancelledStatus17Choice
 from ._Quantity54Choice import Quantity54Choice
@@ -35,4 +38,3 @@ class CancelledStatus6(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CancQty', type=Quantity54Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='CxlRsn', type=CancelledStatus17Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

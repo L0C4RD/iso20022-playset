@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
 from ._ATMStatus1Code import ATMStatus1Code
@@ -50,4 +53,3 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ReqrdCfgtnParam', type=ATMConfigurationParameter1, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='XpctdMsgFctn', type=MessageFunction8Code, min=0, max=1, mutex_group=1, array=False),
 	))
-

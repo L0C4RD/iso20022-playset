@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._RateStatus4Choice import RateStatus4Choice
 from ._RateType45Choice import RateType45Choice
@@ -50,4 +53,3 @@ class RateTypeAndAmountAndStatus32(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RateSts', type=RateStatus4Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='RateTp', type=RateType45Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
 from ._ComparePercentageRate3 import ComparePercentageRate3
@@ -35,4 +38,3 @@ class CashCompare3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='HrcutOrMrgn', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Val', type=CompareAmountAndDirection2, min=0, max=1, mutex_group=None, array=False),
 	))
-

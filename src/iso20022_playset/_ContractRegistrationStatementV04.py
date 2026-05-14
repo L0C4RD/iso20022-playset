@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ContractRegistrationStatement4 import ContractRegistrationStatement4
 from ._CurrencyControlHeader7 import CurrencyControlHeader7
@@ -50,4 +53,3 @@ class ContractRegistrationStatementV04(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Stmt', type=ContractRegistrationStatement4, min=1, max=None, mutex_group=None, array=True),
 	))
-

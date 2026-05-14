@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._BlockChainAddressWallet11 import BlockChainAddressWallet11
 from ._IBAN2007Identifier import IBAN2007Identifier
@@ -50,4 +53,3 @@ class CashAccountIdentification10Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Prtry', type=RestrictedFINX2Max34Text, min=0, max=1, mutex_group=1, array=False),
 	))
-

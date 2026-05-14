@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._Account31 import Account31
 from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
@@ -303,4 +306,3 @@ class ReceiveInformation20(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Trfee', type=PartyIdentification139, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrfeeRegdAcct', type=Account31, min=0, max=1, mutex_group=None, array=False),
 	))
-

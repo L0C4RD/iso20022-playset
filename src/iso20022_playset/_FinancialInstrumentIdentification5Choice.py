@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._FinancialInstrument48Choice import FinancialInstrument48Choice
 from ._FinancialInstrument53 import FinancialInstrument53
@@ -35,4 +38,3 @@ class FinancialInstrumentIdentification5Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Bskt', type=FinancialInstrument53, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='Sngl', type=FinancialInstrument48Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

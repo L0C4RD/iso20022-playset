@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
 from ._CorporateActionAmounts72 import CorporateActionAmounts72
@@ -213,4 +216,3 @@ class CashOption104(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RateAndAmtDtls', type=Rate42, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XmptnTp', type=GenericIdentification30, min=0, max=None, mutex_group=None, array=True),
 	))
-

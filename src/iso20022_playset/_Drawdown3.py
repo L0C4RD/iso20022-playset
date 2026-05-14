@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._EmploymentDetails1 import EmploymentDetails1
@@ -35,4 +38,3 @@ class Drawdown3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='MplymntDtls', type=EmploymentDetails1, min=0, max=1, mutex_group=None, array=False),
 	))
-

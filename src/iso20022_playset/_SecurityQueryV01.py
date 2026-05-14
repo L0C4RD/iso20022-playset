@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification1 import GenericIdentification1
 from ._MessageHeader1 import MessageHeader1
@@ -80,4 +83,3 @@ class SecurityQueryV01(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SmlSetRtrCrit', type=SecuritiesReturnCriteria1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
 	))
-

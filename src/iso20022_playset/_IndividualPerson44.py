@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CitizenshipInformation1 import CitizenshipInformation1
 from ._CommunicationAddress3 import CommunicationAddress3
@@ -255,4 +258,3 @@ class IndividualPerson44(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ScndryComAdr', type=CommunicationAddress3, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TaxtnCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

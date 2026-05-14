@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PaymentReceipt6 import PaymentReceipt6
 from ._StoredValueData8 import StoredValueData8
@@ -64,4 +67,3 @@ class StoredValueResponse8(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rslt', type=StoredValueData8, min=0, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='SaleTxId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),
 	))
-

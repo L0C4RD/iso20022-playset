@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CustodyStatementOfHoldingsV02 import CustodyStatementOfHoldingsV02
 
@@ -22,4 +25,3 @@ class SEMT_002_001_02():
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CtdyStmtOfHldgsV02', type=CustodyStatementOfHoldingsV02, min=1, max=1, mutex_group=None, array=False),
 		))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AlternatePartyIdentification4 import AlternatePartyIdentification4
 from ._PartyIdentification33Choice import PartyIdentification33Choice
@@ -65,4 +68,3 @@ class PartyIdentificationAndAccount31(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Id', type=PartyIdentification33Choice, min=1, max=1, mutex_group=None, array=False),
 	))
-

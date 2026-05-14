@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LimitReturnCriteria2 import LimitReturnCriteria2
 from ._LimitSearchCriteria7 import LimitSearchCriteria7
@@ -50,4 +53,3 @@ class LimitCriteria7(base_types._BaseFieldType):
 		base_types.FieldEntry(name='RtrCrit', type=LimitReturnCriteria2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='SchCrit', type=LimitSearchCriteria7, min=0, max=None, mutex_group=None, array=True),
 	))
-

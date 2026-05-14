@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._GenericIdentification36 import GenericIdentification36
 from ._Max210Text import Max210Text
@@ -50,4 +53,3 @@ class ProprietaryStatusAndReason5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Rsn', type=ProprietaryReason1Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Sts', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),
 	))
-

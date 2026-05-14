@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._SegregatedIndependentAmountMargin1 import SegregatedIndependentAmountMargin1
 from ._VariationMargin1 import VariationMargin1
@@ -35,4 +38,3 @@ class Margin1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SgrtdIndpdntAmtMrgn', type=SegregatedIndependentAmountMargin1, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VartnMrgn', type=VariationMargin1, min=1, max=1, mutex_group=None, array=False),
 	))
-

@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CreditDebit3Code import CreditDebit3Code
 from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
@@ -167,4 +170,3 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 		base_types.FieldEntry(name='ShrtDesc', type=Max70Text, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),
 	))
-

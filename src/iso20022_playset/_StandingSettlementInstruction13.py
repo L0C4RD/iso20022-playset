@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartyIdentification117Choice import PartyIdentification117Choice
 from ._SettlementParties59 import SettlementParties59
@@ -64,4 +67,3 @@ class StandingSettlementInstruction13(base_types._BaseFieldType):
 		base_types.FieldEntry(name='SttlmStgInstrDB', type=SettlementStandingInstructionDatabase4Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='Vndr', type=PartyIdentification117Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

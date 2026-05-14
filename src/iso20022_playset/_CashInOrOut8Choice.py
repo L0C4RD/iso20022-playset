@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PaymentInstrument28Choice import PaymentInstrument28Choice
 from ._PaymentInstrument30Choice import PaymentInstrument30Choice
@@ -35,4 +38,3 @@ class CashInOrOut8Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='CshInPmtInstrm', type=PaymentInstrument30Choice, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='CshOutPmtInstrm', type=PaymentInstrument28Choice, min=0, max=1, mutex_group=1, array=False),
 	))
-

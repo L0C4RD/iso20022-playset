@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._PartialSettlement2Code import PartialSettlement2Code
 from ._PreConfirmation1Code import PreConfirmation1Code
@@ -64,4 +67,3 @@ class AdditionalParameters32(base_types._BaseFieldType):
 		base_types.FieldEntry(name='PrtlSttlm', type=PartialSettlement2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TrptyAgtSvcPrvdrCollTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),
 	))
-

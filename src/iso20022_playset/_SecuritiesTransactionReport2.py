@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._LEIIdentifier import LEIIdentifier
 from ._Max52Text import Max52Text
@@ -79,4 +82,3 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TechAttrbts', type=RecordTechnicalData2, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),
 	))
-

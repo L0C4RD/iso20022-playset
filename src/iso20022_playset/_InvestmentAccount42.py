@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AccountIdentification1 import AccountIdentification1
 from ._PartyIdentification2Choice import PartyIdentification2Choice
@@ -49,4 +52,3 @@ class InvestmentAccount42(base_types._BaseFieldType):
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='OwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),
 	))
-

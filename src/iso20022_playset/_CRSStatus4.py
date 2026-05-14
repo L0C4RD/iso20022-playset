@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CRSSource1Choice import CRSSource1Choice
 from ._CRSStatus3Choice import CRSStatus3Choice
@@ -50,4 +53,3 @@ class CRSStatus4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=CRSStatus3Choice, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='XcptnlRptgCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),
 	))
-

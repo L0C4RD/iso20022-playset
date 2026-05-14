@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CountryCode import CountryCode
 from ._GenericIdentification37 import GenericIdentification37
@@ -50,4 +53,3 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 		base_types.FieldEntry(name='IndxId', type=GenericIdentification37, min=0, max=1, mutex_group=1, array=False),
 		base_types.FieldEntry(name='IssrCtry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),
 	))
-

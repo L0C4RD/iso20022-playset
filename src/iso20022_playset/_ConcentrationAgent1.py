@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._ConcentrationAccount1 import ConcentrationAccount1
 from ._LEIIdentifier import LEIIdentifier
@@ -35,4 +38,3 @@ class ConcentrationAgent1(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Acct', type=ConcentrationAccount1, min=1, max=None, mutex_group=None, array=True),
 		base_types.FieldEntry(name='Id', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),
 	))
-

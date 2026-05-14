@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._CustomerType2Code import CustomerType2Code
 from ._Max35Text import Max35Text
@@ -122,4 +125,3 @@ class Customer4(base_types._BaseFieldType):
 		base_types.FieldEntry(name='Tp', type=CustomerType2Code, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='VIPInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),
 	))
-

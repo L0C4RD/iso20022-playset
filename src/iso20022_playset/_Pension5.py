@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AdditionalInformation15 import AdditionalInformation15
 from ._DateAndAmount2 import DateAndAmount2
@@ -412,4 +415,3 @@ class Pension5(base_types._BaseFieldType):
 		base_types.FieldEntry(name='TrfScp', type=PensionTransferScope1Choice, min=0, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='ValOfPnsnPlcyOrPlanOrSchme', type=DateAndAmount2, min=0, max=1, mutex_group=None, array=False),
 	))
-

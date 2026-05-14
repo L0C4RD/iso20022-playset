@@ -1,3 +1,6 @@
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 from . import base_types
 from ._AmountAndDirection88 import AmountAndDirection88
 from ._CashParties42 import CashParties42
@@ -257,4 +260,3 @@ class SecuritiesSettlementTransactionAllegementNotificationV11(base_types._BaseF
 		base_types.FieldEntry(name='TradDtls', type=SecuritiesTradeDetails144, min=1, max=1, mutex_group=None, array=False),
 		base_types.FieldEntry(name='TxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),
 	))
-
