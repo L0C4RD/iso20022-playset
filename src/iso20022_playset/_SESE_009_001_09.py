@@ -1,0 +1,25 @@
+from . import base_types
+from ._RequestForTransferStatusReportV09 import RequestForTransferStatusReportV09
+
+class SESE_009_001_09():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ReqForTrfStsRpt"]
+		@property
+		def ReqForTrfStsRpt(self):
+			return self._ReqForTrfStsRpt
+
+		@ReqForTrfStsRpt.setter
+		def ReqForTrfStsRpt(self, value):
+			self._ReqForTrfStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForTrfStsRpt")
+
+		@ReqForTrfStsRpt.deleter
+		def ReqForTrfStsRpt(self):
+			del self._ReqForTrfStsRpt
+			self._ReqForTrfStsRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ReqForTrfStsRpt', type=RequestForTransferStatusReportV09, min=1, max=1, mutex_group=None, array=False),
+		))
+

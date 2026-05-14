@@ -1,0 +1,25 @@
+from . import base_types
+from ._EligibleSecuritiesCreationRequestV01 import EligibleSecuritiesCreationRequestV01
+
+class REDA_025_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ElgblSctiesCreReq"]
+		@property
+		def ElgblSctiesCreReq(self):
+			return self._ElgblSctiesCreReq
+
+		@ElgblSctiesCreReq.setter
+		def ElgblSctiesCreReq(self, value):
+			self._ElgblSctiesCreReq = value if type(value) != base_types.auto else self.make_default("ElgblSctiesCreReq")
+
+		@ElgblSctiesCreReq.deleter
+		def ElgblSctiesCreReq(self):
+			del self._ElgblSctiesCreReq
+			self._ElgblSctiesCreReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ElgblSctiesCreReq', type=EligibleSecuritiesCreationRequestV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

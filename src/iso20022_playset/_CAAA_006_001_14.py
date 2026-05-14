@@ -1,0 +1,25 @@
+from . import base_types
+from ._AcceptorCancellationResponseV14 import AcceptorCancellationResponseV14
+
+class CAAA_006_001_14():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AccptrCxlRspn"]
+		@property
+		def AccptrCxlRspn(self):
+			return self._AccptrCxlRspn
+
+		@AccptrCxlRspn.setter
+		def AccptrCxlRspn(self, value):
+			self._AccptrCxlRspn = value if type(value) != base_types.auto else self.make_default("AccptrCxlRspn")
+
+		@AccptrCxlRspn.deleter
+		def AccptrCxlRspn(self):
+			del self._AccptrCxlRspn
+			self._AccptrCxlRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AccptrCxlRspn', type=AcceptorCancellationResponseV14, min=1, max=1, mutex_group=None, array=False),
+		))
+

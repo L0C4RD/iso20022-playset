@@ -1,0 +1,53 @@
+from . import base_types
+from ._RegulatoryAuthority2 import RegulatoryAuthority2
+from ._RegulatoryReportingType1Code import RegulatoryReportingType1Code
+from ._StructuredRegulatoryReporting5 import StructuredRegulatoryReporting5
+
+class RegulatoryReporting10(base_types._BaseFieldType):
+
+	__slots__ = ["_Authrty", "_DbtCdtRptgInd", "_Dtls"]
+	@property
+	def Authrty(self):
+		return self._Authrty
+
+	@Authrty.setter
+	def Authrty(self, value):
+		self._Authrty = value if type(value) != base_types.auto else self.make_default("Authrty")
+
+	@Authrty.deleter
+	def Authrty(self):
+		del self._Authrty
+		self._Authrty = None
+
+	@property
+	def DbtCdtRptgInd(self):
+		return self._DbtCdtRptgInd
+
+	@DbtCdtRptgInd.setter
+	def DbtCdtRptgInd(self, value):
+		self._DbtCdtRptgInd = value if type(value) != base_types.auto else self.make_default("DbtCdtRptgInd")
+
+	@DbtCdtRptgInd.deleter
+	def DbtCdtRptgInd(self):
+		del self._DbtCdtRptgInd
+		self._DbtCdtRptgInd = None
+
+	@property
+	def Dtls(self):
+		return self._Dtls
+
+	@Dtls.setter
+	def Dtls(self, value):
+		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+
+	@Dtls.deleter
+	def Dtls(self):
+		del self._Dtls
+		self._Dtls = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Authrty', type=RegulatoryAuthority2, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='DbtCdtRptgInd', type=RegulatoryReportingType1Code, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Dtls', type=StructuredRegulatoryReporting5, min=0, max=None, mutex_group=None, array=True),
+	))
+

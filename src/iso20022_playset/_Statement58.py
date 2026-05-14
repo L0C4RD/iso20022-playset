@@ -1,0 +1,81 @@
+from . import base_types
+from ._Max35Text import Max35Text
+from ._TrueFalseIndicator import TrueFalseIndicator
+from ._YesNoIndicator import YesNoIndicator
+
+class Statement58(base_types._BaseFieldType):
+
+	__slots__ = ["_ActvtyInd", "_HstrcData", "_QryRef", "_RptId", "_SubAcctInd"]
+	@property
+	def ActvtyInd(self):
+		return self._ActvtyInd
+
+	@ActvtyInd.setter
+	def ActvtyInd(self, value):
+		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+
+	@ActvtyInd.deleter
+	def ActvtyInd(self):
+		del self._ActvtyInd
+		self._ActvtyInd = None
+
+	@property
+	def HstrcData(self):
+		return self._HstrcData
+
+	@HstrcData.setter
+	def HstrcData(self, value):
+		self._HstrcData = value if type(value) != base_types.auto else self.make_default("HstrcData")
+
+	@HstrcData.deleter
+	def HstrcData(self):
+		del self._HstrcData
+		self._HstrcData = None
+
+	@property
+	def QryRef(self):
+		return self._QryRef
+
+	@QryRef.setter
+	def QryRef(self, value):
+		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+
+	@QryRef.deleter
+	def QryRef(self):
+		del self._QryRef
+		self._QryRef = None
+
+	@property
+	def RptId(self):
+		return self._RptId
+
+	@RptId.setter
+	def RptId(self, value):
+		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+
+	@RptId.deleter
+	def RptId(self):
+		del self._RptId
+		self._RptId = None
+
+	@property
+	def SubAcctInd(self):
+		return self._SubAcctInd
+
+	@SubAcctInd.setter
+	def SubAcctInd(self, value):
+		self._SubAcctInd = value if type(value) != base_types.auto else self.make_default("SubAcctInd")
+
+	@SubAcctInd.deleter
+	def SubAcctInd(self):
+		del self._SubAcctInd
+		self._SubAcctInd = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='HstrcData', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='QryRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='SubAcctInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),
+	))
+

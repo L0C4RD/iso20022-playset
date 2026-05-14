@@ -1,0 +1,25 @@
+from . import base_types
+from ._RequestForOrderStatusReportV05 import RequestForOrderStatusReportV05
+
+class SETR_018_001_05():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ReqForOrdrStsRpt"]
+		@property
+		def ReqForOrdrStsRpt(self):
+			return self._ReqForOrdrStsRpt
+
+		@ReqForOrdrStsRpt.setter
+		def ReqForOrdrStsRpt(self, value):
+			self._ReqForOrdrStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForOrdrStsRpt")
+
+		@ReqForOrdrStsRpt.deleter
+		def ReqForOrdrStsRpt(self):
+			del self._ReqForOrdrStsRpt
+			self._ReqForOrdrStsRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ReqForOrdrStsRpt', type=RequestForOrderStatusReportV05, min=1, max=1, mutex_group=None, array=False),
+		))
+

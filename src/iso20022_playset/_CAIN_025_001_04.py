@@ -1,0 +1,25 @@
+from . import base_types
+from ._AddendumInitiationV04 import AddendumInitiationV04
+
+class CAIN_025_001_04():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AdddmInitn"]
+		@property
+		def AdddmInitn(self):
+			return self._AdddmInitn
+
+		@AdddmInitn.setter
+		def AdddmInitn(self, value):
+			self._AdddmInitn = value if type(value) != base_types.auto else self.make_default("AdddmInitn")
+
+		@AdddmInitn.deleter
+		def AdddmInitn(self):
+			del self._AdddmInitn
+			self._AdddmInitn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AdddmInitn', type=AddendumInitiationV04, min=1, max=1, mutex_group=None, array=False),
+		))
+

@@ -1,0 +1,25 @@
+from . import base_types
+from ._RedemptionOrderConfirmationV06 import RedemptionOrderConfirmationV06
+
+class SETR_006_001_06():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_RedOrdrConf"]
+		@property
+		def RedOrdrConf(self):
+			return self._RedOrdrConf
+
+		@RedOrdrConf.setter
+		def RedOrdrConf(self, value):
+			self._RedOrdrConf = value if type(value) != base_types.auto else self.make_default("RedOrdrConf")
+
+		@RedOrdrConf.deleter
+		def RedOrdrConf(self):
+			del self._RedOrdrConf
+			self._RedOrdrConf = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='RedOrdrConf', type=RedemptionOrderConfirmationV06, min=1, max=1, mutex_group=None, array=False),
+		))
+

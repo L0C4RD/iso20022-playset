@@ -1,0 +1,68 @@
+from . import base_types
+from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
+from ._NonFinancialResponseContentComponent6 import NonFinancialResponseContentComponent6
+from ._ResponseType11 import ResponseType11
+from ._SupplementaryData1 import SupplementaryData1
+
+class NonFinancialResponseComponent6(base_types._BaseFieldType):
+
+	__slots__ = ["_Envt", "_Rspn", "_RspnCntt", "_SplmtryData"]
+	@property
+	def Envt(self):
+		return self._Envt
+
+	@Envt.setter
+	def Envt(self, value):
+		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+
+	@Envt.deleter
+	def Envt(self):
+		del self._Envt
+		self._Envt = None
+
+	@property
+	def Rspn(self):
+		return self._Rspn
+
+	@Rspn.setter
+	def Rspn(self, value):
+		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+
+	@Rspn.deleter
+	def Rspn(self):
+		del self._Rspn
+		self._Rspn = None
+
+	@property
+	def RspnCntt(self):
+		return self._RspnCntt
+
+	@RspnCntt.setter
+	def RspnCntt(self, value):
+		self._RspnCntt = value if type(value) != base_types.auto else self.make_default("RspnCntt")
+
+	@RspnCntt.deleter
+	def RspnCntt(self):
+		del self._RspnCntt
+		self._RspnCntt = None
+
+	@property
+	def SplmtryData(self):
+		return self._SplmtryData
+
+	@SplmtryData.setter
+	def SplmtryData(self, value):
+		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+
+	@SplmtryData.deleter
+	def SplmtryData(self):
+		del self._SplmtryData
+		self._SplmtryData = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment82, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='Rspn', type=ResponseType11, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='RspnCntt', type=NonFinancialResponseContentComponent6, min=1, max=None, mutex_group=None, array=True),
+		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),
+	))
+

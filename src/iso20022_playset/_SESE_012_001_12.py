@@ -1,0 +1,25 @@
+from . import base_types
+from ._PortfolioTransferInstructionV12 import PortfolioTransferInstructionV12
+
+class SESE_012_001_12():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_PrtflTrfInstr"]
+		@property
+		def PrtflTrfInstr(self):
+			return self._PrtflTrfInstr
+
+		@PrtflTrfInstr.setter
+		def PrtflTrfInstr(self, value):
+			self._PrtflTrfInstr = value if type(value) != base_types.auto else self.make_default("PrtflTrfInstr")
+
+		@PrtflTrfInstr.deleter
+		def PrtflTrfInstr(self):
+			del self._PrtflTrfInstr
+			self._PrtflTrfInstr = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='PrtflTrfInstr', type=PortfolioTransferInstructionV12, min=1, max=1, mutex_group=None, array=False),
+		))
+

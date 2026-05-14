@@ -1,0 +1,25 @@
+from . import base_types
+from ._FIToFIPaymentCancellationRequestV12 import FIToFIPaymentCancellationRequestV12
+
+class CAMT_056_001_12():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_FIToFIPmtCxlReq"]
+		@property
+		def FIToFIPmtCxlReq(self):
+			return self._FIToFIPmtCxlReq
+
+		@FIToFIPmtCxlReq.setter
+		def FIToFIPmtCxlReq(self, value):
+			self._FIToFIPmtCxlReq = value if type(value) != base_types.auto else self.make_default("FIToFIPmtCxlReq")
+
+		@FIToFIPmtCxlReq.deleter
+		def FIToFIPmtCxlReq(self):
+			del self._FIToFIPmtCxlReq
+			self._FIToFIPmtCxlReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='FIToFIPmtCxlReq', type=FIToFIPaymentCancellationRequestV12, min=1, max=1, mutex_group=None, array=False),
+		))
+

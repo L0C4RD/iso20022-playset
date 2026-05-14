@@ -1,0 +1,37 @@
+from . import base_types
+from ._SecuritiesAccount19 import SecuritiesAccount19
+
+class SecuritiesAccountRange2(base_types._BaseFieldType):
+
+	__slots__ = ["_Fr", "_To"]
+	@property
+	def Fr(self):
+		return self._Fr
+
+	@Fr.setter
+	def Fr(self, value):
+		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+
+	@Fr.deleter
+	def Fr(self):
+		del self._Fr
+		self._Fr = None
+
+	@property
+	def To(self):
+		return self._To
+
+	@To.setter
+	def To(self, value):
+		self._To = value if type(value) != base_types.auto else self.make_default("To")
+
+	@To.deleter
+	def To(self):
+		del self._To
+		self._To = None
+
+	_field_defs = frozenset((
+		base_types.FieldEntry(name='Fr', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
+		base_types.FieldEntry(name='To', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),
+	))
+

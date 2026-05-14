@@ -1,0 +1,25 @@
+from . import base_types
+from ._SecuritiesAccountPositionQueryV01 import SecuritiesAccountPositionQueryV01
+
+class SEMT_025_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_SctiesAcctPosQry"]
+		@property
+		def SctiesAcctPosQry(self):
+			return self._SctiesAcctPosQry
+
+		@SctiesAcctPosQry.setter
+		def SctiesAcctPosQry(self, value):
+			self._SctiesAcctPosQry = value if type(value) != base_types.auto else self.make_default("SctiesAcctPosQry")
+
+		@SctiesAcctPosQry.deleter
+		def SctiesAcctPosQry(self):
+			del self._SctiesAcctPosQry
+			self._SctiesAcctPosQry = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='SctiesAcctPosQry', type=SecuritiesAccountPositionQueryV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

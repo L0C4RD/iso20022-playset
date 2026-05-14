@@ -1,0 +1,25 @@
+from . import base_types
+from ._CollateralDataStatusAdviceV01 import CollateralDataStatusAdviceV01
+
+class REDA_028_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_CollDataStsAdvc"]
+		@property
+		def CollDataStsAdvc(self):
+			return self._CollDataStsAdvc
+
+		@CollDataStsAdvc.setter
+		def CollDataStsAdvc(self, value):
+			self._CollDataStsAdvc = value if type(value) != base_types.auto else self.make_default("CollDataStsAdvc")
+
+		@CollDataStsAdvc.deleter
+		def CollDataStsAdvc(self):
+			del self._CollDataStsAdvc
+			self._CollDataStsAdvc = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='CollDataStsAdvc', type=CollateralDataStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

@@ -1,0 +1,25 @@
+from . import base_types
+from ._BuyerProtectionInstructionReportV01 import BuyerProtectionInstructionReportV01
+
+class SEEV_067_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_BuyrPrtcnInstrRpt"]
+		@property
+		def BuyrPrtcnInstrRpt(self):
+			return self._BuyrPrtcnInstrRpt
+
+		@BuyrPrtcnInstrRpt.setter
+		def BuyrPrtcnInstrRpt(self, value):
+			self._BuyrPrtcnInstrRpt = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrRpt")
+
+		@BuyrPrtcnInstrRpt.deleter
+		def BuyrPrtcnInstrRpt(self):
+			del self._BuyrPrtcnInstrRpt
+			self._BuyrPrtcnInstrRpt = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='BuyrPrtcnInstrRpt', type=BuyerProtectionInstructionReportV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

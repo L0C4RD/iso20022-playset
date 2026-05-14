@@ -1,0 +1,25 @@
+from . import base_types
+from ._SecuritiesSettlementTransactionModificationRequestV11 import SecuritiesSettlementTransactionModificationRequestV11
+
+class SESE_038_001_11():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_SctiesSttlmTxModReq"]
+		@property
+		def SctiesSttlmTxModReq(self):
+			return self._SctiesSttlmTxModReq
+
+		@SctiesSttlmTxModReq.setter
+		def SctiesSttlmTxModReq(self, value):
+			self._SctiesSttlmTxModReq = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxModReq")
+
+		@SctiesSttlmTxModReq.deleter
+		def SctiesSttlmTxModReq(self):
+			del self._SctiesSttlmTxModReq
+			self._SctiesSttlmTxModReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='SctiesSttlmTxModReq', type=SecuritiesSettlementTransactionModificationRequestV11, min=1, max=1, mutex_group=None, array=False),
+		))
+

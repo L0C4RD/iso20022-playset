@@ -1,0 +1,25 @@
+from . import base_types
+from ._AcceptorBatchTransferV15 import AcceptorBatchTransferV15
+
+class CAAA_011_001_15():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_AccptrBtchTrf"]
+		@property
+		def AccptrBtchTrf(self):
+			return self._AccptrBtchTrf
+
+		@AccptrBtchTrf.setter
+		def AccptrBtchTrf(self, value):
+			self._AccptrBtchTrf = value if type(value) != base_types.auto else self.make_default("AccptrBtchTrf")
+
+		@AccptrBtchTrf.deleter
+		def AccptrBtchTrf(self):
+			del self._AccptrBtchTrf
+			self._AccptrBtchTrf = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='AccptrBtchTrf', type=AcceptorBatchTransferV15, min=1, max=1, mutex_group=None, array=False),
+		))
+

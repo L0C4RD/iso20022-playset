@@ -1,0 +1,25 @@
+from . import base_types
+from ._ResolutionOfInvestigationV14 import ResolutionOfInvestigationV14
+
+class CAMT_029_001_14():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_RsltnOfInvstgtn"]
+		@property
+		def RsltnOfInvstgtn(self):
+			return self._RsltnOfInvstgtn
+
+		@RsltnOfInvstgtn.setter
+		def RsltnOfInvstgtn(self, value):
+			self._RsltnOfInvstgtn = value if type(value) != base_types.auto else self.make_default("RsltnOfInvstgtn")
+
+		@RsltnOfInvstgtn.deleter
+		def RsltnOfInvstgtn(self):
+			del self._RsltnOfInvstgtn
+			self._RsltnOfInvstgtn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='RsltnOfInvstgtn', type=ResolutionOfInvestigationV14, min=1, max=1, mutex_group=None, array=False),
+		))
+

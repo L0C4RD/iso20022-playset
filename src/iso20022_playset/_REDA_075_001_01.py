@@ -1,0 +1,25 @@
+from . import base_types
+from ._EligibleSecuritiesDeletionRequestV01 import EligibleSecuritiesDeletionRequestV01
+
+class REDA_075_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_ElgblSctiesDeltnReq"]
+		@property
+		def ElgblSctiesDeltnReq(self):
+			return self._ElgblSctiesDeltnReq
+
+		@ElgblSctiesDeltnReq.setter
+		def ElgblSctiesDeltnReq(self, value):
+			self._ElgblSctiesDeltnReq = value if type(value) != base_types.auto else self.make_default("ElgblSctiesDeltnReq")
+
+		@ElgblSctiesDeltnReq.deleter
+		def ElgblSctiesDeltnReq(self):
+			del self._ElgblSctiesDeltnReq
+			self._ElgblSctiesDeltnReq = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='ElgblSctiesDeltnReq', type=EligibleSecuritiesDeletionRequestV01, min=1, max=1, mutex_group=None, array=False),
+		))
+

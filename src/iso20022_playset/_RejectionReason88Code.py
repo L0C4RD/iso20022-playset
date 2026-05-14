@@ -1,0 +1,15 @@
+from . import base_types
+
+class RejectionReason88Code(base_types._BaseDataType_String):
+
+	_values = {
+		"ULNK",
+		"LATE",
+		"OTHR",
+		"DCAN",
+		"DPRG",
+		"DUPL",
+		"ECMD",
+		"ECRD",
+	}
+

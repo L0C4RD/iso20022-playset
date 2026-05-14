@@ -1,0 +1,25 @@
+from . import base_types
+from ._IntraPositionMovementQueryResponseV01 import IntraPositionMovementQueryResponseV01
+
+class SEMT_029_001_01():
+
+	class Document(base_types._BaseFieldType):
+
+		__slots__ = ["_IntraPosMvmntQryRspn"]
+		@property
+		def IntraPosMvmntQryRspn(self):
+			return self._IntraPosMvmntQryRspn
+
+		@IntraPosMvmntQryRspn.setter
+		def IntraPosMvmntQryRspn(self, value):
+			self._IntraPosMvmntQryRspn = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntQryRspn")
+
+		@IntraPosMvmntQryRspn.deleter
+		def IntraPosMvmntQryRspn(self):
+			del self._IntraPosMvmntQryRspn
+			self._IntraPosMvmntQryRspn = None
+
+		_field_defs = frozenset((
+			base_types.FieldEntry(name='IntraPosMvmntQryRspn', type=IntraPositionMovementQueryResponseV01, min=1, max=1, mutex_group=None, array=False),
+		))
+
