@@ -8,6 +8,14 @@ class AUTH_059_001_02():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:auth.059.001.02",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_CCPIncmStmtAndCptlAdqcyRpt"]
 		@property
 		def CCPIncmStmtAndCptlAdqcyRpt(self):

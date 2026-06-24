@@ -8,6 +8,14 @@ class CASP_003_001_07():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:casp.003.001.07",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_SaleToPOIRcncltnReq"]
 		@property
 		def SaleToPOIRcncltnReq(self):

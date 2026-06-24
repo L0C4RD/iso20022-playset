@@ -17,6 +17,14 @@ class HEAD_001_001_04():
 
 	class BusinessApplicationHeaderV04(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:head.001.001.04",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_BizMsgIdr", "_BizPrcgDt", "_BizSvc", "_CharSet", "_CpyDplct", "_CreDt", "_Fr", "_MktPrctc", "_MsgDefIdr", "_Prty", "_PssblDplct", "_Rltd", "_Sgntr", "_To"]
 		@property
 		def BizMsgIdr(self):

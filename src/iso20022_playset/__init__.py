@@ -3,7 +3,7 @@
 
 import importlib
 
-__version__ = "1.1.4"
+__version__ = "1.1.5"
 
 _EXPORTS = {
 	"parse_etree" : ".parsers",

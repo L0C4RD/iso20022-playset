@@ -8,6 +8,14 @@ class CAAA_004_001_13():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:caaa.004.001.13",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_AccptrCmpltnAdvcRspn"]
 		@property
 		def AccptrCmpltnAdvcRspn(self):

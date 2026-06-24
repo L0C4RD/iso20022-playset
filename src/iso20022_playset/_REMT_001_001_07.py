@@ -8,6 +8,14 @@ class REMT_001_001_07():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:remt.001.001.07",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_RmtAdvc"]
 		@property
 		def RmtAdvc(self):

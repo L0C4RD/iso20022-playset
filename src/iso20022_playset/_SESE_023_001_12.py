@@ -8,6 +8,14 @@ class SESE_023_001_12():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:sese.023.001.12",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_SctiesSttlmTxInstr"]
 		@property
 		def SctiesSttlmTxInstr(self):

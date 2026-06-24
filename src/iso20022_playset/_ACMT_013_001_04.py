@@ -8,6 +8,14 @@ class ACMT_013_001_04():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:acmt.013.001.04",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_AcctRptReq"]
 		@property
 		def AcctRptReq(self):

@@ -8,6 +8,14 @@ class COLR_012_001_05():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:colr.012.001.05",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_CollSbstitnConf"]
 		@property
 		def CollSbstitnConf(self):

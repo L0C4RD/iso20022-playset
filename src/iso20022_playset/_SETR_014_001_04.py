@@ -8,6 +8,14 @@ class SETR_014_001_04():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:setr.014.001.04",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_SwtchOrdrCxlReq"]
 		@property
 		def SwtchOrdrCxlReq(self):

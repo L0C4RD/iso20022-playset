@@ -8,6 +8,14 @@ class CAMT_030_001_06():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:camt.030.001.06",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_NtfctnOfCaseAssgnmt"]
 		@property
 		def NtfctnOfCaseAssgnmt(self):

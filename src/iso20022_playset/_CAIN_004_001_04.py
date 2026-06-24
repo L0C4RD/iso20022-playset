@@ -8,6 +8,14 @@ class CAIN_004_001_04():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:cain.004.001.04",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_FinRspn"]
 		@property
 		def FinRspn(self):

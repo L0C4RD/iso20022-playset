@@ -8,6 +8,14 @@ class REDA_004_001_07():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:reda.004.001.07",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_FndRefDataRpt"]
 		@property
 		def FndRefDataRpt(self):

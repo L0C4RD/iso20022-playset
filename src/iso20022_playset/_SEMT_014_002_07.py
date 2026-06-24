@@ -8,6 +8,14 @@ class SEMT_014_002_07():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:semt.014.002.07",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_IntraPosMvmntStsAdvc"]
 		@property
 		def IntraPosMvmntStsAdvc(self):

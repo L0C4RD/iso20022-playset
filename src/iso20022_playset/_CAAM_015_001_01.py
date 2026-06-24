@@ -8,6 +8,14 @@ class CAAM_015_001_01():
 
 	class Document(base_types._BaseFieldType):
 
+		attrib = {
+			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:caam.015.001.01",
+		}
+
+		_attrib_defs = frozenset((
+			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+		))
+
 		__slots__ = ["_ATMRcncltnReq"]
 		@property
 		def ATMRcncltnReq(self):
