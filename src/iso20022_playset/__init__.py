@@ -3,7 +3,7 @@
 
 import importlib
 
-__version__ = "1.1.3"
+__version__ = "1.1.4"
 
 _EXPORTS = {
 	"parse_etree" : ".parsers",
@@ -12378,9 +12378,17 @@ _EXPORTS = {
 __all__ = set(_EXPORTS.keys())
 
 def __getattr__(name):
-	if name not in _EXPORTS:
-		raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
-	module = importlib.import_module(_EXPORTS[name], package=__name__)
-	obj = getattr(module, name)
-	globals()[name] = obj
+	export_name = name
+	if export_name not in _EXPORTS:
+		normalised_name = name.replace(".", "_").upper()
+		if normalised_name in _EXPORTS:
+			export_name = normalised_name
+		else:
+			raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+	module = importlib.import_module(_EXPORTS[export_name], package=__name__)
+	obj = getattr(module, export_name)
+	globals()[export_name] = obj
+	if name != export_name:
+		globals()[name] = obj
 	return obj
