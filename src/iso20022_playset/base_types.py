@@ -104,10 +104,30 @@ class _BaseElemType(object):
 		except Exception as e:
 			raise XMLError(f"{self._whoami()} : Could not create XML")
 
+		attr_pairs = []
 		if self._attrib_defs is not None:
-			attr_pairs = [ f'{ad.name}="{self.attrib.get(ad.name)}"' for ad in self._attrib_defs if self.attrib.get(ad.name, None) is not None ]
-		else:
-			attr_pairs = []
+			for ad in self._attrib_defs:
+
+				# Attempt to get the attribute value.
+				attrib_val = self.attrib.get(ad.name, None)
+
+				if attrib_val is not None:
+
+					try:
+						if type(attrib_val) != ad.type:
+							xml_attr_repr = str(attrib_val)
+						else:
+							xml_attr_repr = str(attrib_val.get())
+		
+					except Exception as e:
+						raise XMLError(f"{self._whoami()} : Could not convert {ad.name} to string for XML")
+					
+					attr_pairs.append(f'{ad.name}="{xml_attr_repr}"')
+
+		#if self._attrib_defs is not None:
+		#	attr_pairs = [ f'{ad.name}="{self.attrib.get(ad.name)}"' for ad in self._attrib_defs if self.attrib.get(ad.name, None) is not None ]
+		#else:
+		#	attr_pairs = []
 
 		xml_toks = [self.tag()] + attr_pairs
 
