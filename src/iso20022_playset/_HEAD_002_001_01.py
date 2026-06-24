@@ -10,11 +10,11 @@ class HEAD_002_001_01():
 	class BusinessFileHeaderV01(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:head.002.001.01",
+			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:head.002.001.01"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
 		))
 
 		__slots__ = ["_Pyld", "_PyldDesc"]

@@ -9,11 +9,11 @@ class SEMT_028_001_01():
 	class Document(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : "urn:iso:std:iso:20022:tech:xsd:semt.028.001.01",
+			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:semt.028.001.01"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=xs:string, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
 		))
 
 		__slots__ = ["_IntraPosMvmntQry"]
