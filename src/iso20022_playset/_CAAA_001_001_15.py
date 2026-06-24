@@ -9,11 +9,11 @@ class CAAA_001_001_15():
 	class Document(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:caaa.001.001.15"),
+			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:caaa.001.001.15"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
 		))
 
 		__slots__ = ["_AccptrAuthstnReq"]

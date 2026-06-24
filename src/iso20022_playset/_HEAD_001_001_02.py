@@ -18,11 +18,11 @@ class HEAD_001_001_02():
 	class BusinessApplicationHeaderV02(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:head.001.001.02"),
+			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:head.001.001.02"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
 		))
 
 		__slots__ = ["_BizMsgIdr", "_BizPrcgDt", "_BizSvc", "_CharSet", "_CpyDplct", "_CreDt", "_Fr", "_MktPrctc", "_MsgDefIdr", "_Prty", "_PssblDplct", "_Rltd", "_Sgntr", "_To"]

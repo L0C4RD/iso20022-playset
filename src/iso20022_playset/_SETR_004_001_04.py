@@ -9,11 +9,11 @@ class SETR_004_001_04():
 	class Document(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:setr.004.001.04"),
+			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:setr.004.001.04"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
 		))
 
 		__slots__ = ["_RedOrdr"]

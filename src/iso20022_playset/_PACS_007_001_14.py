@@ -9,11 +9,11 @@ class PACS_007_001_14():
 	class Document(base_types._BaseFieldType):
 
 		attrib = {
-			"xmlns" : base_types.DataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:pacs.007.001.14"),
+			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:pacs.007.001.14"),
 		}
 
 		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types.DataType_String, required=True),
+			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
 		))
 
 		__slots__ = ["_FIToFIPmtRvsl"]
