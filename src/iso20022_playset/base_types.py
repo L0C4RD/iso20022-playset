@@ -56,7 +56,7 @@ class _BaseElemType(object):
 					raise ParseError(f"{self._whoami()} : Missing required attribute {attrib_def.name}")
 
 				try:
-					self.attrib[attrib_def.name] = attrib_def.type(data = this_attrib_data)
+					self.attrib[attrib_def.name] = attrib_def.type(None, data = this_attrib_data)
 				except:
 					raise ParseError(f"{self._whoami()} : Could not parse attribute {attrib_def.name}")
 
