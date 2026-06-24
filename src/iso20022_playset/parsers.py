@@ -51,21 +51,30 @@ def parse_etree(tree, msgtype=None):
 	# Get info from this node.
 	nodeinfo = __extract_nsinfo__(node)
 
+
 	# Get the class that we'll use to parse this node.
 	try:
 		msg_class = getattr(iso20022_playset, nodeinfo.tagname)
 	except AttributeError:
-		try:
-			msg_class_outer = getattr(iso20022_playset, nodeinfo.msgtype_normalised)
-			msg_class = getattr(msg_class_outer, nodeinfo.tagname)
-		except AttributeError:
-			raise iso20022_playset.ParseError(f"No class for messages of type {nodeinfo.msgtype+':' if nodeinfo.msgtype is not None else ''}{classname}")
+		msg_class = None
+		if nodeinfo.msgtype_normalised is not None:
+			try:
+				msg_class_outer = getattr(iso20022_playset, nodeinfo.msgtype_normalised)
+				msg_class = getattr(msg_class_outer, nodeinfo.tagname)
+			except AttributeError:
+				pass
+
+		if msg_class is None:
+			raise iso20022_playset.ParseError(
+				f"No class for messages of type {nodeinfo.msgtype+':' if nodeinfo.msgtype is not None else ''}{nodeinfo.tagname}"
+			)
 
 	# Create a new item of this class.
 	msg = msg_class(data=nodeinfo.data, tag = nodeinfo.tagname, ns=nodeinfo.ns)
 	msg.parse(node)
 
 	return msg
+
 
 def __extract_nsinfo__(node):
 
