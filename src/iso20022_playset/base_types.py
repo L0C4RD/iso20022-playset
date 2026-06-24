@@ -49,6 +49,10 @@ class _BaseElemType(object):
 		# Parse attribs
 		if self._attrib_defs is not None:
 			for attrib_def in self._attrib_defs:
+				
+				#etree doesn't expose xmlns as an attribute, so we have to handle it specially.
+				if attrib_def.name == "xmlns":
+					continue
 
 				try:
 					this_attrib_data = node_in.attrib.get(attrib_def.name)
@@ -71,15 +75,28 @@ class _BaseElemType(object):
 		# Validate attribs
 		if self._attrib_defs is not None:
 			for attrib_def in self._attrib_defs:
-				try:
-					assert(attrib_def.name in self.attrib)
-					this_attrib = self.attrib[attrib_def.name]
-					assert(type(this_attrib) == attrib_def.type)
 
-					try:
-						this_attrib.validate(this_path)
-					except ValidateError as e:
-						raise AssertionError(str(e))
+				try:
+
+					if attrib_def.name == "xmlns":
+						assert(self.__class__.__name__ == "Document")
+						outer_name = self.__class__.__qualname__.rsplit(".", 1)[0]
+						expected_xmlns = "urn:iso:std:iso:20022:tech:xsd:" + outer_name.lower().replace("_", ".")
+
+						xmlns_obj = self.attrib.get("xmlns", None)
+						assert(type(xmlns_obj) == _BaseDataType_String)
+						assert(xmlns_obj.get() == expected_xmlns)
+
+					else:
+
+						assert(attrib_def.name in self.attrib)
+						this_attrib = self.attrib[attrib_def.name]
+						assert(type(this_attrib) == attrib_def.type)
+
+						try:
+							this_attrib.validate(this_path)
+						except ValidateError as e:
+							raise AssertionError(str(e))
 
 				except AssertionError as e:
 					raise ValidateError(f"{this_path}[{attrib_def.name}] : Invalid value")
