@@ -1,6 +1,9 @@
 # GPLv3.0 License.
 # See LICENSE.md file in the project root for full license information.
 
+# GPLv3.0 License.
+# See LICENSE.md file in the project root for full license information.
+
 import re
 import base64
 from collections import namedtuple
@@ -47,9 +50,17 @@ class _BaseElemType(object):
 	def parse(self, node_in, path_in=None, force=False):
 
 		# Parse attribs
+		self._parse_attribs(node_in)
+
+		# Parse the rest of the data.
+		self._do_parse(node_in, path_in, force)
+
+	def _parse_attribs(self, node_in):
+
+		# Parse attribs
 		if self._attrib_defs is not None:
 			for attrib_def in self._attrib_defs:
-				
+                
 				#etree doesn't expose xmlns as an attribute, so we have to handle it specially.
 				if attrib_def.name == "xmlns":
 					continue
@@ -63,9 +74,6 @@ class _BaseElemType(object):
 					self.attrib[attrib_def.name] = attrib_def.type(None, data = this_attrib_data)
 				except:
 					raise ParseError(f"{self._whoami()} : Could not parse attribute {attrib_def.name}")
-
-		# Parse the rest of the data.
-		self._do_parse(node_in, path_in, force)
 
 	def validate(self, path_in=None):
 
@@ -448,6 +456,8 @@ class _BaseDataType_String(_BaseDataType):
 	
 	def parse(self, node_in, path_in=None, force=False):
 
+		self._parse_attribs(node_in)
+
 		self.data = node_in.text
 		
 		if force:
@@ -522,6 +532,8 @@ class _BaseDataType_B64Binary(_BaseDataType):
 
 	def parse(self, node_in, path_in=None, force=False):
 
+		self._parse_attribs(node_in)
+
 		self.data = node_in.text
 		
 		if force:
@@ -568,6 +580,8 @@ class _BaseDataType_Decimal(_BaseDataType):
 		return float(self.data)
 
 	def parse(self, node_in, path_in=None, force=False):
+
+		self._parse_attribs(node_in)
 
 		self.data = node_in.text
 
@@ -653,6 +667,8 @@ class _BaseDataType_Date(_BaseDataType):
 	
 	def parse(self, node_in, path_in=None, force=False):
 
+		self._parse_attribs(node_in)
+
 		self.data = node_in.text
 		
 		if force:
@@ -722,6 +738,8 @@ class _BaseDataType_DateTime(_BaseDataType):
 	_pattern = None
 	
 	def parse(self, node_in, path_in=None, force=False):
+
+		self._parse_attribs(node_in)
 
 		self.data = node_in.text
 		
