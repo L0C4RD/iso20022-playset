@@ -6,15 +6,10 @@ from ._RequestForAccountManagementStatusReportV06 import RequestForAccountManage
 
 class ACMT_005_001_06():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:acmt.005.001.06"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:acmt.005.001.06"
+		_docname = "acmt.005.001.06"
 
 		__slots__ = ["_ReqForAcctMgmtStsRpt"]
 		@property

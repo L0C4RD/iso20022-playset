@@ -6,15 +6,10 @@ from ._NotificationToReceiveStatusReportV09 import NotificationToReceiveStatusRe
 
 class CAMT_059_001_09():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:camt.059.001.09"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:camt.059.001.09"
+		_docname = "camt.059.001.09"
 
 		__slots__ = ["_NtfctnToRcvStsRpt"]
 		@property

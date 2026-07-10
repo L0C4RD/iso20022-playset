@@ -6,15 +6,10 @@ from ._AcceptorConfigurationUpdateV15 import AcceptorConfigurationUpdateV15
 
 class CATM_003_001_15():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:catm.003.001.15"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:catm.003.001.15"
+		_docname = "catm.003.001.15"
 
 		__slots__ = ["_AccptrCfgtnUpd"]
 		@property

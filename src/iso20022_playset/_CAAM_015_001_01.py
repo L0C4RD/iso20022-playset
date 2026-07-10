@@ -6,15 +6,10 @@ from ._ATMReconciliationRequestV01 import ATMReconciliationRequestV01
 
 class CAAM_015_001_01():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:caam.015.001.01"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:caam.015.001.01"
+		_docname = "caam.015.001.01"
 
 		__slots__ = ["_ATMRcncltnReq"]
 		@property

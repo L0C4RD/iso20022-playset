@@ -6,15 +6,10 @@ from ._ForeignExchangeTradeWithdrawalNotificationV03 import ForeignExchangeTrade
 
 class FXTR_013_001_03():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:fxtr.013.001.03"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:fxtr.013.001.03"
+		_docname = "fxtr.013.001.03"
 
 		__slots__ = ["_FXTradWdrwlNtfctn"]
 		@property

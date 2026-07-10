@@ -6,15 +6,10 @@ from ._SecuritiesSettlementTransactionAuditTrailReport002V05 import SecuritiesSe
 
 class SEMT_022_002_05():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:semt.022.002.05"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:semt.022.002.05"
+		_docname = "semt.022.002.05"
 
 		__slots__ = ["_SctiesSttlmTxAudtTrlRpt"]
 		@property

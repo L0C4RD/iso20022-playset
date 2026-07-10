@@ -6,15 +6,10 @@ from ._CreditorPaymentActivationRequestStatusReportV12 import CreditorPaymentAct
 
 class PAIN_014_001_12():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:pain.014.001.12"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:pain.014.001.12"
+		_docname = "pain.014.001.12"
 
 		__slots__ = ["_CdtrPmtActvtnReqStsRpt"]
 		@property

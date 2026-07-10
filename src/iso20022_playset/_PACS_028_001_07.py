@@ -6,15 +6,10 @@ from ._FIToFIPaymentStatusRequestV07 import FIToFIPaymentStatusRequestV07
 
 class PACS_028_001_07():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:pacs.028.001.07"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:pacs.028.001.07"
+		_docname = "pacs.028.001.07"
 
 		__slots__ = ["_FIToFIPmtStsReq"]
 		@property

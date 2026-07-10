@@ -6,15 +6,10 @@ from ._BankToCustomerStatementV14 import BankToCustomerStatementV14
 
 class CAMT_053_001_14():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:camt.053.001.14"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:camt.053.001.14"
+		_docname = "camt.053.001.14"
 
 		__slots__ = ["_BkToCstmrStmt"]
 		@property

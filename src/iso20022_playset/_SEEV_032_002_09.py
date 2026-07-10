@@ -6,15 +6,10 @@ from ._CorporateActionEventProcessingStatusAdvice002V09 import CorporateActionEv
 
 class SEEV_032_002_09():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:seev.032.002.09"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:seev.032.002.09"
+		_docname = "seev.032.002.09"
 
 		__slots__ = ["_CorpActnEvtPrcgStsAdvc"]
 		@property

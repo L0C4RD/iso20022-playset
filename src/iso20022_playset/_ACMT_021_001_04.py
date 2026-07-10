@@ -6,15 +6,10 @@ from ._AccountClosingAdditionalInformationRequestV04 import AccountClosingAdditi
 
 class ACMT_021_001_04():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:acmt.021.001.04"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:acmt.021.001.04"
+		_docname = "acmt.021.001.04"
 
 		__slots__ = ["_AcctClsgAddtlInfReq"]
 		@property

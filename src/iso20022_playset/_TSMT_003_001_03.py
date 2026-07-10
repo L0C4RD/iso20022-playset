@@ -6,15 +6,10 @@ from ._ActivityReportRequestV03 import ActivityReportRequestV03
 
 class TSMT_003_001_03():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:tsmt.003.001.03"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:tsmt.003.001.03"
+		_docname = "tsmt.003.001.03"
 
 		__slots__ = ["_ActvtyReqRpt"]
 		@property

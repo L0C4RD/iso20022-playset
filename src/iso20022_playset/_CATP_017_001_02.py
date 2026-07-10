@@ -6,15 +6,10 @@ from ._ATMTransferResponseV02 import ATMTransferResponseV02
 
 class CATP_017_001_02():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:catp.017.001.02"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:catp.017.001.02"
+		_docname = "catp.017.001.02"
 
 		__slots__ = ["_ATMTrfRspn"]
 		@property

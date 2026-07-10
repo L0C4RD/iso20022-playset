@@ -154,6 +154,10 @@ class _BaseElemType(object):
 		#else:
 		#	attr_pairs = []
 
+		# Get the namespace if we have one.
+		if hasattr(self, "_xmlns") and self._xmlns is not None:
+			attr_pairs = [f'xmlns="{self._xmlns}"'] + attr_pairs
+
 		xml_toks = [self.tag()] + attr_pairs
 
 		xml = (indent * indentlevel) + "<" + " ".join(xml_toks)
@@ -444,7 +448,16 @@ class _BaseFieldType(_BaseElemType):
 		# Set the attribute
 		setattr(self, field_def.name, this_field)
 
+class _BaseFieldType_Document(_BaseFieldType):
 
+	_xmlns = None
+	_docname = None
+
+	def xmlns(self):
+		return self._xmlns
+	
+	def msgtype(self):
+		return self._docname
 
 class _BaseDataType_String(_BaseDataType):
 

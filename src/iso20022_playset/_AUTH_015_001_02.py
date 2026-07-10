@@ -6,15 +6,10 @@ from ._MoneyMarketOvernightIndexSwapsStatisticalReportV02 import MoneyMarketOver
 
 class AUTH_015_001_02():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:auth.015.001.02"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:auth.015.001.02"
+		_docname = "auth.015.001.02"
 
 		__slots__ = ["_MnyMktOvrnghtIndxSwpsSttstclRpt"]
 		@property

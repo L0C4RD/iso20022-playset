@@ -15,15 +15,10 @@ from ._YesNoIndicator import YesNoIndicator
 
 class HEAD_001_001_04():
 
-	class BusinessApplicationHeaderV04(base_types._BaseFieldType):
+	class BusinessApplicationHeaderV04(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:head.001.001.04"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:head.001.001.04"
+		_docname = "head.001.001.04"
 
 		__slots__ = ["_BizMsgIdr", "_BizPrcgDt", "_BizSvc", "_CharSet", "_CpyDplct", "_CreDt", "_Fr", "_MktPrctc", "_MsgDefIdr", "_Prty", "_PssblDplct", "_Rltd", "_Sgntr", "_To"]
 		@property

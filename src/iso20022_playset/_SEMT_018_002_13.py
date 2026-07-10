@@ -6,15 +6,10 @@ from ._SecuritiesTransactionPendingReport002V13 import SecuritiesTransactionPend
 
 class SEMT_018_002_13():
 
-	class Document(base_types._BaseFieldType):
+	class Document(base_types._BaseFieldType_Document):
 
-		attrib = {
-			"xmlns" : base_types._BaseDataType_String(None, data="urn:iso:std:iso:20022:tech:xsd:semt.018.002.13"),
-		}
-
-		_attrib_defs = frozenset((
-			base_types.AttributeEntry(name='xmlns', type=base_types._BaseDataType_String, required=True),
-		))
+		_xmlns = "urn:iso:std:iso:20022:tech:xsd:semt.018.002.13"
+		_docname = "semt.018.002.13"
 
 		__slots__ = ["_SctiesTxPdgRpt"]
 		@property
