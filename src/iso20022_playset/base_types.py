@@ -745,9 +745,14 @@ class _BaseDataType_gMonth(_BaseDataType_Date):
 
 class _BaseDataType_DateTime(_BaseDataType):
 
-	_pattern_UTC_time = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{3})?Z"
-	_pattern_UTC_localtime = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{3})?([+-](0[0-9]|1[0-4]):[0-5][0-9])"
-	_pattern_UTC_localtime_offset = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{3})?"
+	# Technically the third is now redundant.
+	# These patterns are slightly more permissive than in the ISO 20022 spec,
+	# but allow us to use python's datetime.toisoformat() and fromisoformat() 
+	# functions, which is convenient.
+
+	_pattern_UTC_time = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z?"
+	_pattern_UTC_localtime = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?([+-](0[0-9]|1[0-4]):[0-5][0-9])"
+	_pattern_UTC_localtime_offset = r"[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?"
 	_pattern = None
 	
 	def parse(self, node_in, path_in=None, force=False):
