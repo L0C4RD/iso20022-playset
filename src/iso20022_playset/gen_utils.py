@@ -133,4 +133,4 @@ def list_length(field_def):
     return secrets.choice(range(min, max+1))
 
 def choose_one(iterable_in):
-    return secrets.choice(iterable_in)
+    return secrets.choice(tuple(iterable_in))
