@@ -60,13 +60,13 @@ def random_string_b64(min, max):
 
     return base64.b64encode(secrets.token_bytes(bytes_length))
 
-def random_decimal(min, max, max_fractiondigits, max_totaldigits):
+def random_decimal(min_value, max_value, max_fractiondigits, max_totaldigits):
 
     inner_max_totaldigits = DEFAULT_MAX_TOTALDIGITS if max_totaldigits is None else max_totaldigits
     inner_max_fractiondigits = DEFAULT_MAX_FRACTIONDIGITS if max_fractiondigits is None else max_fractiondigits
 
-    inner_max_string = ("9"*inner_max_totaldigits) if max is None else str(max)
-    inner_min_string = ("-" + "9"*inner_max_totaldigits) if min is None else str(min)
+    inner_max_string = ("9"*inner_max_totaldigits) if max_value is None else str(max_value)
+    inner_min_string = ("-" + "9"*inner_max_totaldigits) if min_value is None else str(min_value)
     inner_max = float(inner_max_string)
     inner_min = float(inner_min_string)
 
@@ -88,6 +88,8 @@ def random_decimal(min, max, max_fractiondigits, max_totaldigits):
 
     integer_length = secrets.choice(range(0, max_integer_length+1))
     integer_string = "".join(secrets.choice(string.digits) for _ in range(integer_length))
+    if integer_string == "":
+        integer_string = "0"
 
     integer_max = False
     if is_negative:
