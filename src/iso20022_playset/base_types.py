@@ -28,14 +28,18 @@ class UninitialisedField(object):
 	def __init__(self, parent, relative_name, auto_type, is_array):
 		self.parent=parent
 		self.relative_name=relative_name
-		self.auto_type = auto_type
+		self.auto_type=auto_type
 		self.is_array=is_array
 		
 	def auto(self):
-		replacement = self.auto_type()
+		if self.auto_type is None:
+			raise ValueError(f"Cannot auto-initialise {self.relative_name}: no type defined")
+
+		replacement = self.auto_type(self.relative_name)
 		if self.is_array:
 			replacement = [replacement,]
 		setattr(self.parent, self.relative_name, replacement)
+
 
 class _BaseElemType(object):
 
@@ -49,17 +53,12 @@ class _BaseElemType(object):
 		self._tag=tag
 		self._ns=ns
 
-		# If we have any slots, set them to None
-		#if hasattr(self, "__slots__"):
-		#	for slot in self.__slots__:
-		#		if not hasattr(self, slot):  # avoid overwriting already-set slots
-		#			object.__setattr__(self, slot, None)
-		
-		# If we have any fields, initialise them to UninitialisedField
-		if self._field_defs is not None:
-			for field_def in self._field_defs:
-				setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
-				
+		# If the subclass defines any fields, initialise them to UninitialisedField.
+		field_defs = getattr(self, "_field_defs", None)
+			if field_defs is not None:
+				for field_def in field_defs:
+					setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
+
 		# If we have any attributes, make a dictionary of them.
 		if self._attrib_defs is not None:
 			self.attrib = { ad.name: None for ad in self._attrib_defs }
