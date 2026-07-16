@@ -91,20 +91,20 @@ import iso20022_playset
 
 isomsg = iso20022_playset.PAIN_002_001_14.Document("Document")
 
-isomsg.CstmrPmtStsRpt = iso20022_playset.auto()
-isomsg.CstmrPmtStsRpt.GrpHdr = iso20022_playset.auto()
-isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts = iso20022_playset.auto()
+isomsg.CstmrPmtStsRpt.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.auto()
 
-isomsg.CstmrPmtStsRpt.GrpHdr.MsgId = iso20022_playset.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr.MsgId.auto()
 isomsg.CstmrPmtStsRpt.GrpHdr.MsgId.set("Example header msgid")
 
-isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm = iso20022_playset.auto()
+isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm.auto()
 isomsg.CstmrPmtStsRpt.GrpHdr.CreDtTm.set("1970-01-01T12:00:00")
 
-isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId = iso20022_playset.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.auto()
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
 
-isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022_playset.auto()
+isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.auto()
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
 print(isomsg.to_xml())

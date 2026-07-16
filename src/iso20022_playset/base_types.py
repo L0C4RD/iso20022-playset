@@ -15,9 +15,6 @@ FieldEntry = namedtuple("FieldEntry", ["name", "type", "min", "max", "mutex_grou
 
 AttributeEntry = namedtuple("AttributeEntry", ["name", "type", "required"])
 
-class auto(object):
-	pass
-
 class UninitialisedField(object):
 
 	parent=None
@@ -55,9 +52,9 @@ class _BaseElemType(object):
 
 		# If the subclass defines any fields, initialise them to UninitialisedField.
 		field_defs = getattr(self, "_field_defs", None)
-			if field_defs is not None:
-				for field_def in field_defs:
-					setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
+		if field_defs is not None:
+			for field_def in field_defs:
+				setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
 
 		# If we have any attributes, make a dictionary of them.
 		if self._attrib_defs is not None:
@@ -87,7 +84,7 @@ class _BaseElemType(object):
 		# Parse attribs
 		if self._attrib_defs is not None:
 			for attrib_def in self._attrib_defs:
-                
+				
 				#etree doesn't expose xmlns as an attribute, so we have to handle it specially.
 				if attrib_def.name == "xmlns":
 					continue
